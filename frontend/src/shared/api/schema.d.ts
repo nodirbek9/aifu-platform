@@ -3717,6 +3717,11 @@ export interface components {
             /** Format: uuid */
             quizId?: string;
             score?: number;
+            /**
+             * Format: date-time
+             * @description The server's clock when this answer was written. A countdown to expiresAt is measured from here, not from the clock of the student's computer
+             */
+            serverTime?: string;
             /** Format: date-time */
             startedAt?: string;
             /** @enum {string} */
@@ -6136,14 +6141,25 @@ export interface components {
             /** Format: int32 */
             ordinal?: number;
         };
-        /** @description One selectable option as served to the student — never carries isCorrect */
+        /** @description One option as served to the student. What gives the answer away — correct, correctPosition, pairKey — is present only once the quiz's reveal policy opens the review of this attempt */
         ServedOptionView: {
+            /** @description Choice questions, in a review: whether this option is right */
+            correct?: boolean;
+            /**
+             * Format: int32
+             * @description Ordering questions, in a review: the option's place in the right order, from 0
+             */
+            correctPosition?: number;
             /** Format: uuid */
             id?: string;
+            /** @description Matching questions, in a review: options with the same key belong together */
+            pairKey?: string;
             text?: string;
         };
         /** @description One served question, with the student's own recorded response */
         ServedQuestionView: {
+            /** @description Short-answer and numeric questions, in a review: an accepted answer */
+            correctAnswer?: string;
             explanation?: string;
             hint?: string;
             isCorrect?: boolean;

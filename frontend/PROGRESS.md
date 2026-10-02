@@ -6,7 +6,7 @@ The single record of progress (AGENTS.md §8). A new session resumes from this f
 |---|---|---|
 | F0 | Foundation: design system, shell, auth | **reported** 2026-10-02 (the owner asked to go on to F1 without waiting) |
 | F1 | Student: dashboard, courses, lesson | **reported** 2026-10-02 |
-| F2 | Student: practice task, quiz, work list | **in progress** — the task, "Try it" and the work list are done; the quiz (S-06) is next |
+| F2 | Student: practice task, quiz, work list | **reported** 2026-10-02 |
 | F3 | Student: timetable, grades, attendance, the rest | not started |
 | F4a | Teacher: timetable, class session, journal | not started |
 | F4b | Teacher: authoring, review, gradebook, analytics | not started |
@@ -97,40 +97,100 @@ Backend requests added: none that block; three conveniences are listed in BACKEN
 Demo data: the e2e global setup clears student3's lesson progress before each run (the API does
 not let a student un-complete a lesson).
 
-## F2 — Student: practice task, quiz, work list (in progress)
+## F2 — report
 
-Done and verified:
+Spec IDs done: S-05.1 – S-05.8 (practice task), S-04.4 ("Try it"), S-06.1 – S-06.4 (quiz),
+S-07 (all my work).
+
+Built:
 - `shared/editor`: CodeMirror 6 for Python, Java and C++ — highlighting from the design tokens
   (follows light / dark by itself), auto-indent, bracket matching, line numbers, four-space tab,
   font size, read-only mode. A separate chunk (607 kB), loaded only where code is shown.
-- S-05 practice task (`/student/courses/:courseId/tasks/:taskId`, a focus page):
-  statement, input / output, constraints, limits, examples with copy, hints opened one at a
-  time (S-05.1); language tabs with each language's starter code, a draft per task and language
-  that survives reload and language switch, reset with confirmation (S-05.2); font size, full
-  screen, Ctrl+Enter / Ctrl+Shift+Enter shown on the buttons (S-05.3); Run with custom input
-  (S-05.4); Run examples with input / expected / actual for a failed one (S-05.5); Submit with
-  an idempotency key, live queued → running status, the verdict reveal (tests tick in, then the
-  verdict and the score), hidden tests shown without data (S-05.6); history, opening an attempt
-  read-only and restoring it into the editor, attempts left and the deadline (S-05.7); the
-  teacher's feedback under a submission (S-05.8). Resizable panes on desktop; Task / Code /
-  Result tabs with pinned actions on a phone.
-- S-04.4 "Try it": a lesson example opens in a runner in place; lesson code is now highlighted.
+- S-05 practice task (`/student/courses/:courseId/tasks/:taskId`, a focus page): statement,
+  input / output, constraints, limits, examples with copy, hints opened one at a time; language
+  tabs with each language's starter code, a draft per task and language that survives reload and
+  language switch, reset with confirmation; font size, full screen, shortcuts on the buttons;
+  Run with custom input; Run examples with input / expected / actual for a failed one; Submit
+  with an idempotency key, live queued → running status, the verdict reveal, hidden tests shown
+  without data; history, opening an attempt read-only and restoring it, attempts left and the
+  deadline; the teacher's feedback. Resizable panes on desktop; Task / Code / Result tabs with
+  pinned actions on a phone.
+- S-04.4 "Try it": a lesson example opens in a runner in place; lesson code is highlighted.
 - S-07 Assignments: one list across courses, filters by course, type and state kept in the
   address, sorted by deadline.
-- Gates: lint, typecheck, unit tests, i18n (341 keys × 3), build. `npm run e2e`: 46 passed
-  (23 flows × desktop and phone), with code really running in the sandbox: a correct Python
-  solution run, checked on the examples, submitted and accepted; a wrong answer; a Java
-  compilation error; a hint; "Try it" in a lesson; the work list filters.
-- Screenshots of the task page (light, dark, phone tabs), the runner and the work list — looked at.
+- S-06 Quiz (`/student/courses/:courseId/quizzes/:quizId`, a focus page; `features/quiz`):
+  - start screen: description, time limit, attempts used / allowed, pass mark, points, deadline,
+    the rules (including what the teacher's review policy will show), the earlier attempts with
+    their scores; starting a timed quiz asks first — the clock starts on the confirmation;
+  - the attempt: one question per screen, a numbered navigator (answered / unanswered / current /
+    marked "come back later"), Previous / Next, the position kept in the address (`?q=`);
+  - all seven question types of the API: single choice, multiple choice, true / false, numeric
+    (comma or dot; what is not a number is said to be so and is not sent), short answer,
+    ordering (up / down buttons, announced to screen readers; an untouched order can be
+    confirmed as it stands), matching (press two items to pair them; a pair can be split);
+  - answers saved as the student goes — at once for a choice, after a pause for typing — one
+    request at a time per question with the newest value winning; "Saving… / Saved / Not saved +
+    Retry" in the header;
+  - the clock runs on the server's time (`serverTime`), turns to the warning colour in the last
+    two minutes and to red in the last thirty seconds, is announced at five minutes and at one;
+    at zero the attempt hands itself in;
+  - resume: reload returns to the same question with the answers in place; the quiz's own
+    address goes straight into an open attempt; leaving asks first and says the clock keeps
+    running;
+  - finishing: a confirmation with answered / total, the unanswered questions as links, the
+    time left; unsaved answers are flushed first and block the hand-in if they cannot be saved;
+  - result: score (counted up once for a fresh result, instantly under reduced motion), percent,
+    passed / not passed against the pass mark, "closed by time" when the clock handed it in;
+    the review when the policy opens it — per question the verdict (right / partly / wrong /
+    not answered), points, the right options, the right order, the right pairs, an accepted
+    typed answer, the explanation; otherwise a note saying when the review opens; the teacher's
+    feedback on the attempt.
 
-Not done yet:
-- **S-06 Quiz** — the whole screen (start, questions with navigator, timer, autosave, resume,
-  result and review). The route `/student/courses/:courseId/quizzes/:quizId` is still a
-  placeholder. This is what remains of F2.
+Backend changed for this phase (by Claude; see `docs/03-API-GUIDE.md` §4 and §8):
+- An attempt whose time ran out used to become `EXPIRED` with no score: every saved answer was
+  lost. Now the clock hands it in and it is graded like any submission.
+- Options were never mixed, although quizzes say `shuffleOptions`; ordering questions were
+  served in the right order. Options are now mixed per attempt, stably.
+- The review told only "right / wrong". It now also tells the right options, order, pairs and
+  an accepted typed answer — only when the review policy opens it.
+- Ordering answers are graded by sequence, not by raw position numbers the client cannot know.
+- `AttemptDetail.serverTime` for the countdown.
+- Demo data: quiz `DAS-Q-M2` in the Dasturlash course with all seven question types in uz / ru /
+  en (seed `V909`), bound to lecture M2 with a deadline and three attempts.
+
+Verified (run, not assumed):
+- `npm run lint`, `typecheck`, `test` (67 tests), `i18n:check` (437 keys × 3), `build`.
+- `npm run e2e`: 54 passed (27 flows × desktop and phone). New for the quiz: every question
+  type answered, reload mid-attempt, finish, result 9 / 10 with the review; leaving and
+  resuming, marks, the unanswered list, result 1 / 10; the time running out with nobody
+  pressing anything (the flow moves the attempt's end to eight seconds from now in the
+  development database) → handed in, 3 / 10, "closed by time"; switching the language
+  mid-attempt keeps the answer.
+- Code really runs in the sandbox in the coding flows: a correct Python solution run, checked
+  on the examples, submitted and accepted; a wrong answer; a Java compilation error; a hint;
+  "Try it" in a lesson; the work list filters.
+- Backend: `AssessmentIT` (12 tests, three new: time-up grades what was saved; the next start
+  closes a stale attempt; ordering options are mixed, stable and graded by order),
+  `OpenApiContractIT`, `DevSeedIT`.
+- Screenshots of the quiz (start, each kind of question, the finish dialog, the result, the
+  start screen after an attempt) at 1440, 768 and 390, light and dark — looked at.
+
+Not verified / not done:
 - A solution in Java and in C++ submitted through the UI (acceptance step 4): only Python is
   submitted by the flow; Java is exercised by a run (compile error). The backend proved all
   three end to end; the UI path is the same code.
-- The 429 (rate limit) and 422 (attempt limit) messages: built, not provoked in a flow.
-- The verdict reveal was seen running in the flow, not reviewed frame by frame.
+- The 429 (rate limit) and 422 (attempt limit) messages of the task page: built, not provoked.
+- The quiz with a review policy other than "after the attempt" (never / after the last attempt /
+  after the deadline): the "review is closed" note is built from the same absence of data the
+  unit tests cover, but no demo quiz with such a policy was walked through in the browser.
+- A quiz without a time limit, and a quiz whose attempts are used up: built, not walked through.
+- "Not saved + Retry" (the network failing mid-attempt): built, not provoked in a flow.
+- The teacher's feedback on an attempt: built; no demo attempt has feedback.
+- Quiz question prompts are plain text (the API has no rich text or code formatting for them).
 
-Demo data: the e2e global setup also clears student3's submissions to DAS-S1-A8 before a run.
+Demo data: the quiz flows delete student3's attempts at `DAS-Q-M2` before each test; the e2e
+global setup also clears student3's lesson progress and submissions to DAS-S1-A8.
+
+## F3 — Student: timetable, grades, attendance, the rest (next)
+
+Not started. The prompt is in `docs/05-FRONTEND-PROMPTS.md`.

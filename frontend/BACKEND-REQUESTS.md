@@ -48,3 +48,12 @@ Today: `GET /timetable/today` returns only today; the next class needs week-by-w
 Proposal: add `nextClass` (a `ClassView`) to the answer of `GET /timetable/today`.
 Meanwhile: the empty day links to the timetable page.
 
+## Deadlines are not enforced (found in F2, quiz)
+
+- **Screens:** S-05 practice task, S-06 quiz.
+- **What happens:** an activity's `dueAt` / `availableFrom` are returned and shown, but
+  `POST /quizzes/{id}/attempts` and `POST /submissions` accept work after the deadline (the
+  error code `ACTIVITY_NOT_AVAILABLE` exists and is never raised).
+- **Needs a decision from the owner, not only code:** block late work, or accept it and mark it
+  late for the teacher. Until then the UI shows the deadline as passed and does not block.
+

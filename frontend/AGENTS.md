@@ -64,13 +64,17 @@ e2e/                         support.ts (signIn, texts), *.spec.ts; shots.spec.t
 - **What a feature exposes.** Another feature may import a feature's `model.ts`, `queries.ts` and
   a component meant for reuse (`courses/activity-row.tsx`); pages and their parts stay private.
   The dashboard and the lesson page compose `courses` and `timetable` this way.
-- **Focus pages** (the lesson, the practice task; later presentation mode) are routes outside
+- **Focus pages** (the lesson, the practice task, the quiz; later presentation mode) are routes outside
   `ShellRoute`, with their own slim header — see `studentFocusRoutes` in `router.tsx`.
 - **The code editor** (`shared/editor/code-editor.tsx`) is heavy: import it with `lazy()`. What
   is light — the language list and names — is in `shared/editor/languages.ts`. Its colours are
   the `--syntax-*` tokens.
 - **Runs and submissions** are followed with `useRunQuery` / `useSubmissionQuery`
   (`features/coding/queries.ts`): they poll by `pollInterval` and stop when the job is finished.
+- **The quiz** (`features/quiz`): the page keeps the answers while an attempt is open and saves
+  them through `useAnswerSaver` (one request at a time per question, newest value wins); the
+  clock is `remainingSeconds(attempt, now)` on the server's time. A review is "open" when the
+  server sent `isCorrect` — never decide it from the policy in the browser.
 - **Dates.** Always through `shared/lib/dates.ts`: campus time zone, and Uzbek written by hand
   (browsers print "M10" for October in Uzbek). Never `toLocaleString` in a component.
 - **Untyped JSON** (`payload`, `settings` of a lesson block) is read with `readString` and
@@ -85,7 +89,9 @@ e2e/                         support.ts (signIn, texts), *.spec.ts; shots.spec.t
 - **E2E.** Real backend, no interception. `signIn(page, account)` first resets the account's
   saved language to Uzbek through the API. Tests run serially (one worker): the refresh token is
   single use. A wrong-password test uses an account that does not exist, so nobody gets locked.
-  `e2e/global-setup.ts` clears the demo student's lesson progress in the dev database before a run.
+  `e2e/db.ts` reaches the development database (through the Compose Postgres container) for
+  what the API cannot do: `e2e/global-setup.ts` clears the demo student's lesson progress and
+  submissions before a run; the quiz flows clear their attempts and move an attempt's end closer.
 
 ## Decisions made while building (beyond DESIGN-DECISIONS.md)
 
