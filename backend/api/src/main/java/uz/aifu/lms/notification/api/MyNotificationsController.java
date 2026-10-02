@@ -1,5 +1,7 @@
 package uz.aifu.lms.notification.api;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.api.PageableSupport;
 import uz.aifu.lms.common.security.CurrentUserProvider;
+import uz.aifu.lms.notification.api.dto.NotificationDtos.NotificationContext;
 import uz.aifu.lms.notification.api.dto.NotificationDtos.NotificationView;
 import uz.aifu.lms.notification.api.dto.NotificationDtos.UnreadCountView;
 import uz.aifu.lms.notification.app.NotificationService;
@@ -32,14 +35,17 @@ public class MyNotificationsController {
     private final NotificationService notifications;
     private final PageableSupport pageableSupport;
     private final CurrentUserProvider currentUser;
+    private final ObjectMapper objectMapper;
 
     public MyNotificationsController(
             NotificationService notifications,
             PageableSupport pageableSupport,
-            CurrentUserProvider currentUser) {
+            CurrentUserProvider currentUser,
+            ObjectMapper objectMapper) {
         this.notifications = notifications;
         this.pageableSupport = pageableSupport;
         this.currentUser = currentUser;
+        this.objectMapper = objectMapper;
     }
 
     @GetMapping("/api/v1/notifications/me")
@@ -49,7 +55,7 @@ public class MyNotificationsController {
             @RequestParam(defaultValue = "false") boolean unreadOnly, Pageable pageable) {
         UUID callerId = currentUser.require().id();
         var page = notifications.listOwn(callerId, unreadOnly, pageableSupport.sanitize(pageable));
-        return PageResponse.of(page, MyNotificationsController::toView);
+        return PageResponse.of(page, this::toView);
     }
 
     @GetMapping("/api/v1/notifications/me/unread-count")
@@ -74,15 +80,31 @@ public class MyNotificationsController {
         return new UnreadCountView(0);
     }
 
-    private static NotificationView toView(Notification n) {
+    private NotificationView toView(Notification n) {
         return new NotificationView(
                 n.getId(),
                 n.getType(),
                 n.getChannel(),
                 n.getStatus(),
                 n.getPayload(),
+                contextOf(n),
                 n.getCreatedAt(),
                 n.getSentAt(),
                 n.getReadAt());
+    }
+
+    /**
+     * The payload as the contract describes it. A payload that cannot be read (a row written by an
+     * older version) gives no context rather than a failed list.
+     */
+    private NotificationContext contextOf(Notification n) {
+        if (n.getPayload() == null || n.getPayload().isBlank()) {
+            return null;
+        }
+        try {
+            return objectMapper.readValue(n.getPayload(), NotificationContext.class);
+        } catch (JsonProcessingException e) {
+            return null;
+        }
     }
 }

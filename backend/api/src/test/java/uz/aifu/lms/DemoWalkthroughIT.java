@@ -302,6 +302,85 @@ class DemoWalkthroughIT {
         assertThat(opened.get(1).hasNonNull("body")).isFalse();
     }
 
+    // ------------------------------------------------------------------ 4. the rest of the
+    // student's side
+
+    @Test
+    void student_findsLessonsBySearch_readsGradesByComponent_andIsToldWhatHappened() {
+        String student = login("student3");
+        String courseId =
+                only(
+                                get(student, "/api/v1/enrollments/me").get("content"),
+                                e -> e.get("cohortCode").asText().equals("DI-26-01-S1"))
+                        .get("courseId")
+                        .asText();
+        String enrollmentId =
+                only(
+                                get(student, "/api/v1/enrollments/me").get("content"),
+                                e -> e.get("cohortCode").asText().equals("DI-26-01-S1"))
+                        .get("id")
+                        .asText();
+
+        // search: the beginning of a word finds the student's lessons, each with its course
+        JsonNode found = get(student, "/api/v1/search?q=massiv&locale=uz");
+        assertThat(found).isNotEmpty();
+        assertThat(texts(found, "resultType")).contains("LESSON").doesNotContain("SUBJECT");
+        found.forEach(hit -> assertThat(hit.hasNonNull("courseId")).isTrue());
+        assertThat(texts(get(student, "/api/v1/search?q=dastur&locale=ru"), "resultType"))
+                .as("Uzbek titles are found by someone reading in Russian")
+                .contains("COURSE", "LESSON");
+        // the ICT student is in another course: none of this is theirs to find
+        assertThat(get(login("student1"), "/api/v1/search?q=massiv&locale=uz")).isEmpty();
+
+        // grades: the university's scheme with what is earned so far
+        JsonNode grades = get(student, "/api/v1/enrollments/" + enrollmentId + "/grades?locale=uz");
+        assertThat(grades.get("courseId").asText()).isEqualTo(courseId);
+        assertThat(texts(grades.get("components"), "code"))
+                .containsExactly(
+                        "JN", "JN_ATTENDANCE", "JN_PRACTICAL", "JN_INDEPENDENT", "ON", "YaN");
+        JsonNode jn = only(grades.get("components"), c -> c.get("code").asText().equals("JN"));
+        assertThat(jn.get("earned").decimalValue()).isEqualByComparingTo("24");
+        assertThat(jn.get("gatePassed").asBoolean()).isTrue();
+        JsonNode yan = only(grades.get("components"), c -> c.get("code").asText().equals("YaN"));
+        assertThat(yan.get("graded").asBoolean()).isFalse();
+        assertThat(yan.hasNonNull("gatePassed")).isFalse();
+        assertThat(grades.get("complete").asBoolean()).isFalse();
+        assertThat(grades.get("finalScore").decimalValue()).isEqualByComparingTo("48");
+        assertThat(grades.get("admittedToFinal").asBoolean()).isTrue();
+        assertThat(grades.get("entries")).hasSize(4);
+        // the corrected practical mark is still in the history
+        assertThat(texts(grades.get("history"), "status"))
+                .containsExactlyInAnyOrder(
+                        "PUBLISHED", "PUBLISHED", "PUBLISHED", "PUBLISHED", "REVISED");
+
+        // notifications: each says what it is about
+        JsonNode notifications = get(student, "/api/v1/notifications/me").get("content");
+        assertThat(texts(notifications, "type"))
+                .contains("GRADE_PUBLISHED", "ANNOUNCEMENT", "TIMETABLE_CHANGED");
+        JsonNode moved =
+                only(
+                        notifications,
+                        n ->
+                                n.get("type").asText().equals("TIMETABLE_CHANGED")
+                                        && n.get("context").get("kind").asText().equals("MOVED"));
+        assertThat(moved.get("context").get("date").asText()).isEqualTo("2026-10-19");
+        assertThat(moved.get("context").get("newDate").asText()).isEqualTo("2026-10-20");
+        assertThat(moved.get("context").get("courseId").asText()).isEqualTo(courseId);
+        assertThat(get(student, "/api/v1/notifications/me/unread-count").get("count").asInt())
+                .isGreaterThan(0);
+
+        // the next class: one that is held, not before today
+        ResponseEntity<JsonNode> next =
+                exchange(student, HttpMethod.GET, "/api/v1/timetable/next", null);
+        assertThat(next.getStatusCode()).isIn(HttpStatus.OK, HttpStatus.NO_CONTENT);
+        if (next.getStatusCode() == HttpStatus.OK) {
+            assertThat(next.getBody().get("status").asText())
+                    .isIn("SCHEDULED", "MOVED_IN", "REPLACED");
+            assertThat(next.getBody().get("date").asText())
+                    .isGreaterThanOrEqualTo(java.time.LocalDate.now().minusDays(1).toString());
+        }
+    }
+
     // ------------------------------------------------------------------ helpers
 
     private String login(String username) {

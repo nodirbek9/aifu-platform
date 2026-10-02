@@ -61,6 +61,28 @@ class FinalScoreCalculatorTest {
                     new GradeBand(bd(0), bd("59.99"), "2", false));
 
     @Test
+    void severalWorksUnderOneComponent_weighByTheirOwnMaximums_neverReplaceEachOther() {
+        // three practical tasks marked out of 100, in a component worth 10 points:
+        // (100 + 50 + 90) / 300 of 10 = 8 — not 9, the last one, and not 240
+        List<EarnedEntry> earned =
+                List.of(
+                        new EarnedEntry(JN_PRACTICAL, bd(100), bd(100)),
+                        new EarnedEntry(JN_PRACTICAL, bd(50), bd(100)),
+                        new EarnedEntry(JN_PRACTICAL, bd(90), bd(100)),
+                        new EarnedEntry(JN_ATTENDANCE, bd(10), bd(10)));
+
+        var perComponent = calculator.earnedPerComponent(IAKTT1105_COMPONENTS, earned);
+
+        assertThat(perComponent.get(JN_PRACTICAL)).isEqualByComparingTo("8.00");
+        assertThat(perComponent.get(JN_ATTENDANCE)).isEqualByComparingTo("10.00");
+        assertThat(perComponent.get(JN_INDEPENDENT)).isEqualByComparingTo("0");
+        // the parent earns what its children earned
+        assertThat(perComponent.get(JN)).isEqualByComparingTo("18.00");
+        assertThat(calculator.compute(IAKTT1105_COMPONENTS, earned, AIFU_100_5_BANDS).finalScore())
+                .isEqualByComparingTo("18.00");
+    }
+
+    @Test
     void fullMarks_scoresOneHundred_bandFive_admitted_noDebt() {
         List<EarnedEntry> earned =
                 List.of(

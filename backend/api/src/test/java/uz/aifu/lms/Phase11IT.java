@@ -115,6 +115,17 @@ class Phase11IT extends AbstractIntegrationTest {
         List<?> content = response.getBody().content();
         assertThat(content)
                 .anyMatch(row -> ((java.util.Map<?, ?>) row).get("type").equals("GRADE_PUBLISHED"));
+        // the notification says, typed, what it is about: enough to name the course and open it
+        java.util.Map<?, ?> grade =
+                content.stream()
+                        .map(row -> (java.util.Map<?, ?>) row)
+                        .filter(row -> row.get("type").equals("GRADE_PUBLISHED"))
+                        .findFirst()
+                        .orElseThrow();
+        java.util.Map<?, ?> context = (java.util.Map<?, ?>) grade.get("context");
+        assertThat(context.get("courseId")).isEqualTo(course.getId().toString());
+        assertThat(context.get("enrollmentId")).isEqualTo(enrollment.getId().toString());
+        assertThat(context.get("finalScore")).isEqualTo("70.00");
     }
 
     @Test
@@ -140,6 +151,40 @@ class Phase11IT extends AbstractIntegrationTest {
         assertThat(response.getBody())
                 .extracting(SearchResultView::entityId)
                 .contains(course.getId());
+    }
+
+    @Test
+    void search_matchesWordsAsTheyAreTyped_andOnlyInCoursesTheCallerCanOpen() {
+        Course course = enrollmentFixtures.publishedCourse(150);
+        User admin = userFixtures.activeUser(RoleCode.ADMIN);
+        User enrolled = userFixtures.activeUser(RoleCode.STUDENT);
+        User outsider = userFixtures.activeUser(RoleCode.STUDENT);
+        enrollments.enroll(
+                course.getId(), enrolled.getId(), EnrollmentSource.ADMIN, admin.getId(), null);
+
+        // "Fixt" is the beginning of "Fixture course …": a prefix finds it
+        assertThat(search(login(enrolled), "Fixt"))
+                .extracting(SearchResultView::entityId)
+                .containsExactly(course.getId());
+        assertThat(search(login(enrolled), "Fixt").get(0).courseId()).isEqualTo(course.getId());
+        assertThat(search(login(enrolled), "Fixt").get(0).resultType()).isEqualTo("COURSE");
+        // a student who is not in the course cannot find it, however published it is
+        assertThat(search(login(outsider), "Fixt")).isEmpty();
+        // nothing typed can be read as query syntax
+        assertThat(search(login(enrolled), "Fixt & | ! ( :* ')")).isNotEmpty();
+        assertThat(search(login(enrolled), "!!! ((( ")).isEmpty();
+    }
+
+    private List<SearchResultView> search(String token, String text) {
+        ResponseEntity<SearchResultView[]> response =
+                rest.exchange(
+                        url("/api/v1/search?locale=uz&limit=100&q={q}"),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(token)),
+                        SearchResultView[].class,
+                        text);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        return List.of(response.getBody());
     }
 
     @Test

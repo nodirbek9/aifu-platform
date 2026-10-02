@@ -144,11 +144,31 @@ class GradingIT extends AbstractIntegrationTest {
         assertThat(afterSecond.entries()).hasSize(1);
         assertThat(afterSecond.entries().get(0).id()).isEqualTo(second.id());
         assertThat(afterSecond.finalScore()).isEqualByComparingTo("85.00");
+        // the grades page: the scheme with what was earned, and the correction kept in the history
+        assertThat(afterSecond.courseId()).isEqualTo(course.getId());
+        assertThat(afterSecond.components())
+                .singleElement()
+                .satisfies(
+                        component -> {
+                            assertThat(component.id()).isEqualTo(jn.getId());
+                            assertThat(component.earned()).isEqualByComparingTo("85");
+                            assertThat(component.graded()).isTrue();
+                        });
+        assertThat(afterSecond.complete()).isTrue();
+        assertThat(afterSecond.history())
+                .extracting(GradeEntryView::id)
+                .containsExactly(second.id(), first.id());
+        assertThat(afterSecond.history().get(1).status()).isEqualTo(GradeEntryStatus.REVISED);
 
         voidGrade(adminToken, second.id(), "Data entry error");
         EnrollmentGradeSummary afterVoid = myGrades(studentToken, enrollment.getId());
         assertThat(afterVoid.entries()).isEmpty();
         assertThat(afterVoid.finalScore()).isEqualByComparingTo("0.00");
+        assertThat(afterVoid.components().get(0).graded()).isFalse();
+        assertThat(afterVoid.complete()).isFalse();
+        assertThat(afterVoid.history())
+                .extracting(GradeEntryView::status)
+                .containsExactly(GradeEntryStatus.VOIDED, GradeEntryStatus.REVISED);
     }
 
     @Test

@@ -3,10 +3,15 @@ package uz.aifu.lms.grading.app;
 import java.math.BigDecimal;
 import java.time.Clock;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
@@ -29,6 +34,7 @@ import uz.aifu.lms.common.error.ErrorCode;
 import uz.aifu.lms.common.error.Exceptions;
 import uz.aifu.lms.common.events.NotificationRequestedEvent;
 import uz.aifu.lms.common.events.QuizAttemptGradedEvent;
+import uz.aifu.lms.common.i18n.LocaleCode;
 import uz.aifu.lms.curriculum.app.ActivityService;
 import uz.aifu.lms.curriculum.domain.Activity;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
@@ -91,6 +97,162 @@ public class GradeEntryService {
     public List<GradeEntry> listCurrentForEnrollment(UUID enrollmentId) {
         return gradeEntries.findByEnrollment_IdAndStatusOrderByEvaluatedAtDesc(
                 enrollmentId, GradeEntryStatus.PUBLISHED);
+    }
+
+    /**
+     * A student's grades in one course, laid out by the course's assessment scheme (spec S-08).
+     * What each component has earned comes from the same calculator that derives the final score,
+     * so the page and the final score can never disagree.
+     */
+    @Transactional(readOnly = true)
+    public StudentGradebook gradebookFor(UUID enrollmentId, String locale) {
+        Enrollment enrollment = enrollments.require(enrollmentId);
+        List<AssessmentComponent> components =
+                courses.listAssessmentComponents(enrollment.getCourse().getId());
+        List<GradeEntry> current = listCurrentForEnrollment(enrollmentId);
+        List<GradeEntry> all =
+                gradeEntries.findByEnrollment_IdAndStatusInOrderByEvaluatedAtDesc(
+                        enrollmentId,
+                        List.of(
+                                GradeEntryStatus.PUBLISHED,
+                                GradeEntryStatus.REVISED,
+                                GradeEntryStatus.VOIDED));
+
+        List<ComponentSpec> specs = components.stream().map(GradeEntryService::toSpec).toList();
+        Map<UUID, BigDecimal> earned = calculator.earnedPerComponent(specs, toEarned(current));
+        Set<UUID> gradedDirectly =
+                current.stream()
+                        .map(GradeEntry::getAssessmentComponentId)
+                        .filter(java.util.Objects::nonNull)
+                        .collect(Collectors.toSet());
+
+        List<StudentGradebook.ComponentLine> lines = new ArrayList<>();
+        boolean complete = false;
+        List<AssessmentComponent> topLevel = ordered(components, null);
+        if (!topLevel.isEmpty()) {
+            complete = true;
+            for (AssessmentComponent top : topLevel) {
+                List<AssessmentComponent> children = ordered(components, top.getId());
+                boolean graded =
+                        gradedDirectly.contains(top.getId())
+                                || children.stream()
+                                        .anyMatch(c -> gradedDirectly.contains(c.getId()));
+                complete = complete && graded;
+                lines.add(toLine(top, earned, graded));
+                for (AssessmentComponent child : children) {
+                    lines.add(toLine(child, earned, gradedDirectly.contains(child.getId())));
+                }
+            }
+        }
+
+        Map<UUID, String> codes =
+                components.stream()
+                        .filter(c -> c.getCode() != null)
+                        .collect(
+                                Collectors.toMap(
+                                        AssessmentComponent::getId, AssessmentComponent::getCode));
+        Map<UUID, String> titles = activityTitles(all, locale);
+        return new StudentGradebook(
+                enrollment,
+                lines,
+                current.stream().map(e -> toEntryLine(e, titles, codes)).toList(),
+                all.stream().map(e -> toEntryLine(e, titles, codes)).toList(),
+                complete);
+    }
+
+    private static List<AssessmentComponent> ordered(
+            List<AssessmentComponent> components, UUID parentId) {
+        return components.stream()
+                .filter(
+                        c ->
+                                parentId == null
+                                        ? c.getParent() == null
+                                        : c.getParent() != null
+                                                && parentId.equals(c.getParent().getId()))
+                .sorted(Comparator.comparingInt(AssessmentComponent::getDisplayOrder))
+                .toList();
+    }
+
+    private StudentGradebook.ComponentLine toLine(
+            AssessmentComponent component, Map<UUID, BigDecimal> earned, boolean graded) {
+        ComponentSpec spec = toSpec(component);
+        BigDecimal points = earned.getOrDefault(component.getId(), BigDecimal.ZERO);
+        Boolean gatePassed =
+                spec.minPassPercent() != null && graded
+                        ? calculator.passesGate(points, spec)
+                        : null;
+        return new StudentGradebook.ComponentLine(
+                spec.id(),
+                spec.parentId(),
+                component.getCode(),
+                spec.kind(),
+                spec.maxPoints(),
+                spec.minPassPercent(),
+                spec.blocksFinal(),
+                points,
+                graded,
+                gatePassed);
+    }
+
+    private static StudentGradebook.EntryLine toEntryLine(
+            GradeEntry entry, Map<UUID, String> titles, Map<UUID, String> codes) {
+        return new StudentGradebook.EntryLine(
+                entry,
+                entry.getActivityId() == null ? null : titles.get(entry.getActivityId()),
+                entry.getAssessmentComponentId() == null
+                        ? null
+                        : codes.get(entry.getAssessmentComponentId()));
+    }
+
+    /** The title of each graded activity: in the reader's language, else Uzbek, else any. */
+    private Map<UUID, String> activityTitles(List<GradeEntry> entries, String locale) {
+        Set<UUID> activityIds =
+                entries.stream()
+                        .map(GradeEntry::getActivityId)
+                        .filter(java.util.Objects::nonNull)
+                        .collect(Collectors.toSet());
+        Map<UUID, String> titles = new HashMap<>();
+        activities
+                .listTranslationsForActivities(activityIds)
+                .forEach(
+                        (activityId, translations) ->
+                                translations.stream()
+                                        .min(
+                                                Comparator.comparingInt(
+                                                        t ->
+                                                                t.getLocale().equals(locale)
+                                                                        ? 0
+                                                                        : t.getLocale()
+                                                                                        .equals(
+                                                                                                LocaleCode
+                                                                                                        .DEFAULT
+                                                                                                        .code())
+                                                                                ? 1
+                                                                                : 2))
+                                        .ifPresent(t -> titles.put(activityId, t.getTitle())));
+        return titles;
+    }
+
+    private static ComponentSpec toSpec(AssessmentComponent c) {
+        return new ComponentSpec(
+                c.getId(),
+                c.getParent() == null ? null : c.getParent().getId(),
+                c.getKind(),
+                c.getMaxPoints(),
+                c.getMinPassPercent(),
+                c.isBlocksFinal());
+    }
+
+    private static List<EarnedEntry> toEarned(List<GradeEntry> current) {
+        return current.stream()
+                .filter(e -> e.getAssessmentComponentId() != null)
+                .map(
+                        e ->
+                                new EarnedEntry(
+                                        e.getAssessmentComponentId(),
+                                        e.getScore(),
+                                        e.getMaxScore()))
+                .toList();
     }
 
     @Transactional(readOnly = true)
@@ -314,30 +476,8 @@ public class GradeEntryService {
         List<AssessmentComponent> components = courses.listAssessmentComponents(course.getId());
         List<GradeEntry> current = listCurrentForEnrollment(enrollmentId);
 
-        List<ComponentSpec> specs =
-                components.stream()
-                        .map(
-                                c ->
-                                        new ComponentSpec(
-                                                c.getId(),
-                                                c.getParent() == null
-                                                        ? null
-                                                        : c.getParent().getId(),
-                                                c.getKind(),
-                                                c.getMaxPoints(),
-                                                c.getMinPassPercent(),
-                                                c.isBlocksFinal()))
-                        .toList();
-        List<EarnedEntry> earned =
-                current.stream()
-                        .filter(e -> e.getAssessmentComponentId() != null)
-                        .map(
-                                e ->
-                                        new EarnedEntry(
-                                                e.getAssessmentComponentId(),
-                                                e.getScore(),
-                                                e.getMaxScore()))
-                        .toList();
+        List<ComponentSpec> specs = components.stream().map(GradeEntryService::toSpec).toList();
+        List<EarnedEntry> earned = toEarned(current);
         List<GradeBand> bands =
                 course.getGradeScale() == null
                         ? List.of()
@@ -363,6 +503,7 @@ public class GradeEntryService {
                 result.academicDebt());
         Map<String, Object> payload = new java.util.LinkedHashMap<>();
         payload.put("enrollmentId", enrollmentId.toString());
+        payload.put("courseId", course.getId().toString());
         payload.put("finalScore", result.finalScore().toString());
         if (result.bandSymbol() != null) {
             payload.put("finalGradeSymbol", result.bandSymbol());

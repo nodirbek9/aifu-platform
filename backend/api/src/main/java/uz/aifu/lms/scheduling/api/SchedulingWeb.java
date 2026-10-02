@@ -3,6 +3,7 @@ package uz.aifu.lms.scheduling.api;
 import jakarta.servlet.http.HttpServletRequest;
 import java.time.Clock;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import org.springframework.stereotype.Component;
 import uz.aifu.lms.common.i18n.LocaleCode;
 import uz.aifu.lms.common.i18n.LocaleResolver;
@@ -26,6 +27,11 @@ class SchedulingWeb {
 
     LocalDate today() {
         return WeekCalendar.today(clock);
+    }
+
+    /** The time of day on the campus clock. */
+    LocalTime timeNow() {
+        return LocalTime.now(clock.withZone(WeekCalendar.CAMPUS_ZONE));
     }
 
     LocalDate dateOrToday(LocalDate date) {

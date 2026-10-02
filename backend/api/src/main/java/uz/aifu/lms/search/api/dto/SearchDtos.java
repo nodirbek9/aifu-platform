@@ -9,5 +9,14 @@ public final class SearchDtos {
 
     @Schema(description = "One ranked search hit")
     public record SearchResultView(
-            String resultType, UUID entityId, String title, String snippet, double rank) {}
+            @Schema(allowableValues = {"SUBJECT", "COURSE", "LESSON"}) String resultType,
+            UUID entityId,
+            @Schema(
+                            description =
+                                    "The course a hit is opened in: the course itself, the course"
+                                            + " of a lesson; absent for a subject")
+                    UUID courseId,
+            String title,
+            String snippet,
+            double rank) {}
 }

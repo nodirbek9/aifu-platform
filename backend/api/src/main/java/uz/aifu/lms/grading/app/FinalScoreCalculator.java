@@ -16,6 +16,12 @@ import uz.aifu.lms.academics.domain.AssessmentComponentKind;
  * final, and under {@code min_pass_percent} of the FINAL-kind component becomes an academic debtor.
  * A pure function — no repository, no entity, easily unit-tested (mirrors {@code
  * execution-worker.grading.Scorer}'s split from Phase 8).
+ *
+ * <p>What a component has earned is the share of its own points that its entries earned of theirs:
+ * {@code maxPoints × Σ score / Σ maxScore}. One entry marked out of the component's own maximum is
+ * simply its score; several graded works under one component (five practical tasks out of 100 each,
+ * in a component worth 10 points) weigh by their own maximums — never one of them replacing the
+ * others, and never more than the component is worth.
  */
 @Component
 public class FinalScoreCalculator {
@@ -24,36 +30,23 @@ public class FinalScoreCalculator {
             List<ComponentSpec> components,
             List<EarnedEntry> earnedEntries,
             List<GradeBand> bands) {
-        Map<UUID, BigDecimal> earnedByComponent = new HashMap<>();
-        for (EarnedEntry entry : earnedEntries) {
-            earnedByComponent.put(entry.componentId(), entry.score());
-        }
+        Map<UUID, BigDecimal> earnedByComponent = earnedPerComponent(components, earnedEntries);
 
         List<ComponentSpec> topLevel =
                 components.stream().filter(ComponentSpec::isTopLevel).toList();
+
         Map<UUID, BigDecimal> earnedByTopLevel = new HashMap<>();
         BigDecimal finalScore = BigDecimal.ZERO;
         boolean admittedToFinal = true;
         boolean academicDebt = false;
 
         for (ComponentSpec top : topLevel) {
-            List<ComponentSpec> children =
-                    components.stream().filter(c -> top.id().equals(c.parentId())).toList();
-            BigDecimal earned =
-                    children.isEmpty()
-                            ? earnedByComponent.getOrDefault(top.id(), BigDecimal.ZERO)
-                            : children.stream()
-                                    .map(
-                                            c ->
-                                                    earnedByComponent.getOrDefault(
-                                                            c.id(), BigDecimal.ZERO))
-                                    .reduce(BigDecimal.ZERO, BigDecimal::add);
+            BigDecimal earned = earnedByComponent.getOrDefault(top.id(), BigDecimal.ZERO);
             earnedByTopLevel.put(top.id(), earned);
             finalScore = finalScore.add(earned);
 
             if (top.minPassPercent() != null) {
-                BigDecimal earnedPercent = percentOf(earned, top.maxPoints());
-                boolean passedGate = earnedPercent.compareTo(top.minPassPercent()) >= 0;
+                boolean passedGate = passesGate(earned, top);
                 if (top.blocksFinal() && !passedGate) {
                     admittedToFinal = false;
                 }
@@ -71,6 +64,55 @@ public class FinalScoreCalculator {
                 admittedToFinal,
                 academicDebt,
                 earnedByTopLevel);
+    }
+
+    /**
+     * What every component has earned: a component that is graded directly by its entries, a
+     * component with children by the sum of its children. A component nobody has graded yet has
+     * earned zero.
+     */
+    public Map<UUID, BigDecimal> earnedPerComponent(
+            List<ComponentSpec> components, List<EarnedEntry> earnedEntries) {
+        Map<UUID, BigDecimal> scoreSums = new HashMap<>();
+        Map<UUID, BigDecimal> maxSums = new HashMap<>();
+        for (EarnedEntry entry : earnedEntries) {
+            scoreSums.merge(entry.componentId(), entry.score(), BigDecimal::add);
+            maxSums.merge(entry.componentId(), entry.maxScore(), BigDecimal::add);
+        }
+
+        Map<UUID, BigDecimal> direct = new HashMap<>();
+        for (ComponentSpec component : components) {
+            BigDecimal maxSum = maxSums.get(component.id());
+            if (maxSum == null || maxSum.signum() == 0 || component.maxPoints() == null) {
+                direct.put(component.id(), BigDecimal.ZERO);
+                continue;
+            }
+            direct.put(
+                    component.id(),
+                    component
+                            .maxPoints()
+                            .multiply(scoreSums.get(component.id()))
+                            .divide(maxSum, 2, RoundingMode.HALF_UP));
+        }
+
+        Map<UUID, BigDecimal> earned = new HashMap<>();
+        for (ComponentSpec component : components) {
+            List<ComponentSpec> children =
+                    components.stream().filter(c -> component.id().equals(c.parentId())).toList();
+            earned.put(
+                    component.id(),
+                    children.isEmpty()
+                            ? direct.get(component.id())
+                            : children.stream()
+                                    .map(c -> direct.get(c.id()))
+                                    .reduce(BigDecimal.ZERO, BigDecimal::add));
+        }
+        return earned;
+    }
+
+    /** Whether what was earned reaches the component's own pass mark. */
+    public boolean passesGate(BigDecimal earned, ComponentSpec component) {
+        return percentOf(earned, component.maxPoints()).compareTo(component.minPassPercent()) >= 0;
     }
 
     private static BigDecimal percentOf(BigDecimal earned, BigDecimal maxPoints) {

@@ -6,9 +6,14 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 import java.util.UUID;
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.error.Exceptions;
 import uz.aifu.lms.common.security.AuthenticatedUser;
 import uz.aifu.lms.common.security.CurrentUserProvider;
+import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.ClassView;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.DayView;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.PairSlotView;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.RoomView;
@@ -42,6 +48,11 @@ public class TimetableController {
 
     /** Matches no class: a student who has no group yet gets an empty week, not everyone's. */
     private static final UUID NOBODY = new UUID(0L, 0L);
+
+    /** The statuses of a class that takes place (see {@code ClassView.status}). */
+    private static final Set<String> HELD = Set.of("SCHEDULED", "MOVED_IN", "REPLACED");
+
+    private static final int WEEKS_AHEAD = 4;
 
     private final TimetableQueryService queries;
     private final SchedulingReferenceService reference;
@@ -87,6 +98,40 @@ public class TimetableController {
         LocalDate today = web.today();
         WeekView week = queries.week(today, myFilter(as), web.locale(locale, http));
         return week.days().stream().filter(d -> d.date().equals(today)).findFirst().orElseThrow();
+    }
+
+    @GetMapping("/next")
+    @Operation(
+            summary = "My next class that will actually be held",
+            description =
+                    "The first class after now (campus time) that is not cancelled, moved away or"
+                            + " on a holiday, looking four weeks ahead. 204 when there is none.")
+    public ResponseEntity<ClassView> next(
+            @RequestParam(required = false) String as,
+            @RequestParam(required = false) String locale,
+            HttpServletRequest http) {
+        LocalDate today = web.today();
+        LocalTime now = web.timeNow();
+        for (int week = 0; week < WEEKS_AHEAD; week++) {
+            WeekView view =
+                    queries.week(today.plusWeeks(week), myFilter(as), web.locale(locale, http));
+            Optional<ClassView> found =
+                    view.days().stream()
+                            .flatMap(day -> day.classes().stream())
+                            .filter(c -> HELD.contains(c.status()))
+                            .filter(
+                                    c ->
+                                            c.date().isAfter(today)
+                                                    || (c.date().equals(today)
+                                                            && c.startsAt().isAfter(now)))
+                            .min(
+                                    Comparator.comparing(ClassView::date)
+                                            .thenComparing(ClassView::startsAt));
+            if (found.isPresent()) {
+                return ResponseEntity.ok(found.get());
+            }
+        }
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("/week")

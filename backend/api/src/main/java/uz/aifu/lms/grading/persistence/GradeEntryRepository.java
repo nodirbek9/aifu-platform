@@ -1,5 +1,6 @@
 package uz.aifu.lms.grading.persistence;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -21,6 +22,10 @@ public interface GradeEntryRepository extends JpaRepository<GradeEntry, UUID> {
      */
     List<GradeEntry> findByEnrollment_IdAndStatusOrderByEvaluatedAtDesc(
             UUID enrollmentId, GradeEntryStatus status);
+
+    /** Every entry of an enrollment in the given states, newest first — the grade history. */
+    List<GradeEntry> findByEnrollment_IdAndStatusInOrderByEvaluatedAtDesc(
+            UUID enrollmentId, Collection<GradeEntryStatus> statuses);
 
     /** Backs the teacher-facing course roster — join through {@code enrollment.course}. */
     @Query(

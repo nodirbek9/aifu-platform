@@ -299,7 +299,7 @@ The caller's own enrollment grade summary
 
 | Method | Path | What it does | Query | Body | Returns |
 |---|---|---|---|---|---|
-| GET | `/enrollments/{id}/grades` | The caller's own current published grade entries + derived final score |  |  | 200 EnrollmentGradeSummary |
+| GET | `/enrollments/{id}/grades` | My grades in one course: the assessment scheme with earned points, the entries that count, the history, and the derived final score | locale? |  | 200 EnrollmentGradeSummary |
 
 ## My progress
 
@@ -365,11 +365,11 @@ Departments and academic programmes
 
 ## Search
 
-Full-text catalogue search (subjects + courses)
+Search over my courses and their lessons
 
 | Method | Path | What it does | Query | Body | Returns |
 |---|---|---|---|---|---|
-| GET | `/search` | Search subjects and courses | q, locale?, limit? |  | 200 SearchResultView[] |
+| GET | `/search` | Search my courses and their lessons | q, locale?, limit? |  | 200 SearchResultView[] |
 
 ## Subjects
 
@@ -601,6 +601,7 @@ The published timetable: my week, today, by group / teacher / room
 |---|---|---|---|---|---|
 | GET | `/timetable/directory` | Groups and teachers that have classes, to look up anybody's week | date? |  | 200 TimetableDirectory |
 | GET | `/timetable/me` | My week | date?, as?, locale? |  | 200 WeekView |
+| GET | `/timetable/next` | My next class that will actually be held | as?, locale? |  | 200 ClassView |
 | GET | `/timetable/pair-slots` | The bell schedule |  |  | 200 PairSlotView[] |
 | GET | `/timetable/rooms` | Rooms (to look up a room's week) |  |  | 200 RoomView[] |
 | GET | `/timetable/today` | My classes today (campus date, Asia/Tashkent) | as?, locale? |  | 200 DayView |

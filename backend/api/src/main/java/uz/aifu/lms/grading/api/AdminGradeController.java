@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.api.PageableSupport;
+import uz.aifu.lms.common.i18n.LocaleCode;
 import uz.aifu.lms.common.security.CurrentUserProvider;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.Enrollment;
@@ -82,8 +83,7 @@ public class AdminGradeController {
     public EnrollmentGradeSummary get(@PathVariable UUID id) {
         Enrollment enrollment = enrollments.require(id);
         accessGuard.requireCourseEditor(enrollment.getCourse().getId());
-        List<GradeEntry> entries = grades.listCurrentForEnrollment(id);
-        return GradeMapper.toSummary(enrollment, entries);
+        return GradeMapper.toSummary(grades.gradebookFor(id, LocaleCode.DEFAULT.code()));
     }
 
     @ResponseStatus(HttpStatus.CREATED)

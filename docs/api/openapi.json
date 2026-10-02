@@ -1006,6 +1006,46 @@
           }
         }
       },
+      "ComponentGradeView" : {
+        "description" : "One component of the course's assessment scheme with what the student has earned in it. A component with children earns the sum of its children",
+        "properties" : {
+          "blocksFinal" : {
+            "type" : "boolean"
+          },
+          "code" : {
+            "type" : "string"
+          },
+          "earned" : {
+            "type" : "number"
+          },
+          "gatePassed" : {
+            "description" : "Whether the earned share reaches minPassPercent; null when there is no pass mark or nothing is graded yet",
+            "type" : "boolean"
+          },
+          "graded" : {
+            "description" : "Something in the component (or in one of its children) is graded",
+            "type" : "boolean"
+          },
+          "id" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "kind" : {
+            "enum" : [ "CONTINUOUS", "MIDTERM", "FINAL", "ATTENDANCE", "INDEPENDENT_WORK", "PRACTICAL_ACTIVITY", "PROJECT", "COURSE_WORK" ],
+            "type" : "string"
+          },
+          "maxPoints" : {
+            "type" : "number"
+          },
+          "minPassPercent" : {
+            "type" : "number"
+          },
+          "parentComponentId" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        }
+      },
       "ConflictView" : {
         "description" : "Why a class cannot be placed: who or what is already busy, and with what.",
         "properties" : {
@@ -2017,7 +2057,7 @@
         }
       },
       "EnrollmentGradeSummary" : {
-        "description" : "One enrollment's current published grade entries + derived final score",
+        "description" : "A student's grades in one course: the assessment scheme with earned points, the entries that count now, the history, and the derived final score",
         "properties" : {
           "academicDebt" : {
             "type" : "boolean"
@@ -2025,11 +2065,26 @@
           "admittedToFinal" : {
             "type" : "boolean"
           },
+          "complete" : {
+            "description" : "Every top-level component is graded: the final score and its grade are the result of the course. Until then they are a running total",
+            "type" : "boolean"
+          },
+          "components" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ComponentGradeView"
+            },
+            "type" : "array"
+          },
+          "courseId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
           "enrollmentId" : {
             "format" : "uuid",
             "type" : "string"
           },
           "entries" : {
+            "description" : "The entries that count now, newest first",
             "items" : {
               "$ref" : "#/components/schemas/GradeEntryView"
             },
@@ -2044,6 +2099,13 @@
           },
           "finalScore" : {
             "type" : "number"
+          },
+          "history" : {
+            "description" : "Every entry there ever was, newest first: grades are append-only, a corrected (REVISED) or VOIDED grade stays here",
+            "items" : {
+              "$ref" : "#/components/schemas/GradeEntryView"
+            },
+            "type" : "array"
           }
         }
       },
@@ -2408,6 +2470,10 @@
             "format" : "uuid",
             "type" : "string"
           },
+          "componentCode" : {
+            "description" : "The code of the component the entry counts towards (student view only)",
+            "type" : "string"
+          },
           "evaluatedAt" : {
             "format" : "date-time",
             "type" : "string"
@@ -2448,6 +2514,10 @@
           },
           "supersedesId" : {
             "format" : "uuid",
+            "type" : "string"
+          },
+          "title" : {
+            "description" : "The graded work's title in the reader's language, when the entry came from an activity (student view only)",
             "type" : "string"
           },
           "voidReason" : {
@@ -3518,12 +3588,89 @@
           }
         }
       },
+      "NotificationContext" : {
+        "description" : "What a notification is about: the ids to open it by and the words to show. Which fields are present depends on the type — ENROLLMENT_CREATED: courseId, enrollmentId. ANNOUNCEMENT: announcementId, title, and courseId or groupId. GRADE_PUBLISHED: courseId, enrollmentId, finalScore, finalGradeSymbol. TEACHER_FEEDBACK: courseId, targetType, targetId, and codingTaskId or quizId. TIMETABLE_CHANGED: courseId, entryId, kind, date, pairNo, and newDate, newPairNo, newRoom, reason when they apply",
+        "properties" : {
+          "announcementId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "codingTaskId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "courseId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "date" : {
+            "format" : "date",
+            "type" : "string"
+          },
+          "enrollmentId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "entryId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "finalGradeSymbol" : {
+            "type" : "string"
+          },
+          "finalScore" : {
+            "type" : "string"
+          },
+          "groupId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "kind" : {
+            "type" : "string"
+          },
+          "newDate" : {
+            "format" : "date",
+            "type" : "string"
+          },
+          "newPairNo" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "newRoom" : {
+            "type" : "string"
+          },
+          "pairNo" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "quizId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "reason" : {
+            "type" : "string"
+          },
+          "targetId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "targetType" : {
+            "type" : "string"
+          },
+          "title" : {
+            "type" : "string"
+          }
+        }
+      },
       "NotificationView" : {
         "description" : "One in-app notification",
         "properties" : {
           "channel" : {
             "enum" : [ "IN_APP", "EMAIL", "PUSH" ],
             "type" : "string"
+          },
+          "context" : {
+            "$ref" : "#/components/schemas/NotificationContext"
           },
           "createdAt" : {
             "format" : "date-time",
@@ -3534,6 +3681,7 @@
             "type" : "string"
           },
           "payloadJson" : {
+            "description" : "The raw payload; prefer `context`, which is the same, typed",
             "type" : "string"
           },
           "readAt" : {
@@ -5293,6 +5441,11 @@
       "SearchResultView" : {
         "description" : "One ranked search hit",
         "properties" : {
+          "courseId" : {
+            "description" : "The course a hit is opened in: the course itself, the course of a lesson; absent for a subject",
+            "format" : "uuid",
+            "type" : "string"
+          },
           "entityId" : {
             "format" : "uuid",
             "type" : "string"
@@ -5302,6 +5455,7 @@
             "type" : "number"
           },
           "resultType" : {
+            "enum" : [ "SUBJECT", "COURSE", "LESSON" ],
             "type" : "string"
           },
           "snippet" : {
@@ -12868,6 +13022,20 @@
             "format" : "uuid",
             "type" : "string"
           }
+        }, {
+          "in" : "query",
+          "name" : "locale",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "header",
+          "name" : "Accept-Language",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
         } ],
         "responses" : {
           "200" : {
@@ -12894,7 +13062,7 @@
         "security" : [ {
           "bearerAuth" : [ ]
         } ],
-        "summary" : "The caller's own current published grade entries + derived final score",
+        "summary" : "My grades in one course: the assessment scheme with earned points, the entries that count, the history, and the derived final score",
         "tags" : [ "My grades" ]
       }
     },
@@ -13929,7 +14097,7 @@
     },
     "/api/v1/search" : {
       "get" : {
-        "description" : "Ranked by relevance; only PUBLISHED subjects/courses can ever appear.",
+        "description" : "Each word typed is matched as a prefix, in every language the text exists in; the reader's language ranks first. A student finds the courses they are enrolled in and the published lessons of those courses; a teacher those they teach; an administrator everything, and the subject catalogue as well.",
         "operationId" : "search_1",
         "parameters" : [ {
           "in" : "query",
@@ -13982,7 +14150,7 @@
         "security" : [ {
           "bearerAuth" : [ ]
         } ],
-        "summary" : "Search subjects and courses",
+        "summary" : "Search my courses and their lessons",
         "tags" : [ "Search" ]
       }
     },
@@ -19445,6 +19613,54 @@
         "tags" : [ "Timetable" ]
       }
     },
+    "/api/v1/timetable/next" : {
+      "get" : {
+        "description" : "The first class after now (campus time) that is not cancelled, moved away or on a holiday, looking four weeks ahead. 204 when there is none.",
+        "operationId" : "next",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "as",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "locale",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ClassView"
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description" : "Any failure (4xx, 5xx): the error envelope"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "summary" : "My next class that will actually be held",
+        "tags" : [ "Timetable" ]
+      }
+    },
     "/api/v1/timetable/pair-slots" : {
       "get" : {
         "operationId" : "pairSlots",
@@ -19729,6 +19945,9 @@
     "description" : "Account provisioning and lifecycle administration",
     "name" : "Admin: users"
   }, {
+    "description" : "Search over my courses and their lessons",
+    "name" : "Search"
+  }, {
     "description" : "A teacher's own course progress roster",
     "name" : "Teacher: course progress"
   }, {
@@ -19743,9 +19962,6 @@
   }, {
     "description" : "Manual entry, override, and the course grade roster",
     "name" : "Teacher: grades"
-  }, {
-    "description" : "Full-text catalogue search (subjects + courses)",
-    "name" : "Search"
   }, {
     "description" : "The caller's own in-app notifications",
     "name" : "Notifications"

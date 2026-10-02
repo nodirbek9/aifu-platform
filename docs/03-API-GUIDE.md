@@ -125,6 +125,9 @@ docker compose up -d --build
   options of a pair with the same `ordinal`. Short answer sends `responseText` (trim it: the
   checker does not), numeric sends `responseNumber`. Options arrive already mixed, in an order
   that is stable for the attempt.
+- **A component's points.** What a component has earned is `maxPoints × Σ score / Σ maxScore`
+  of the entries that count in it: several graded works under one component weigh by their own
+  maximums. The server computes it (`components[].earned`); never add entries up in the browser.
 - **Quiz review.** What gives the answer away — `isCorrect`, `pointsAwarded`, `explanation`,
   `correctAnswer` on a question; `correct`, `correctPosition`, `pairKey` on an option — is
   present only when the quiz's `revealPolicy` opens the review of that attempt. Their absence is
@@ -160,9 +163,9 @@ Paths are under `/api/v1`. "→" means "then, with the result".
 | Screen | Endpoints |
 |---|---|
 | Login, session (G-08) | `POST /auth/login`, `GET /auth/me`, `POST /auth/refresh`, `PUT /auth/password`, `POST /auth/logout` |
-| Notifications (S-09) | `GET /notifications/me?unreadOnly=`, `GET /notifications/me/unread-count` (poll every 60 s), `POST /notifications/{id}/read`, `POST /notifications/me/read-all`. `payloadJson` is a JSON string with ids to link to (`courseId`, `codingTaskId`, `quizId`, `announcementId`, …) |
+| Notifications (S-09) | `GET /notifications/me?unreadOnly=`, `GET /notifications/me/unread-count` (poll every 60 s), `POST /notifications/{id}/read`, `POST /notifications/me/read-all`. `context` is what the notification is about, typed: ids to open it by (`courseId`, `codingTaskId`, `quizId`, `announcementId`, …) and words to show (`title`, `date`, `newDate`, `reason`, `finalScore`, …); which fields are present depends on `type` (listed in the schema). Course titles are not in it: look the course up by `courseId` |
 | Announcements | `GET /announcements/me`, `GET /courses/{id}/announcements` |
-| Search (S-09) | `GET /search?q=&locale=` — subjects and courses |
+| Search (S-09) | `GET /search?q=&locale=` — my courses and their published lessons (`resultType` `COURSE` / `LESSON`, each with the `courseId` to open it in); an administrator also gets `SUBJECT`. Every word is matched as a prefix, in any language the text exists in, so ask as the user types (two characters and up, debounced) |
 | Profile (S-09) | `GET /auth/me`, `PATCH /auth/me`, `PUT /auth/password` |
 | Timetable of anybody | `GET /timetable/directory` (groups, teachers), `GET /timetable/rooms` → `GET /timetable/week?date=&groupId=\|teacherId=\|roomId=` |
 
@@ -170,7 +173,7 @@ Paths are under `/api/v1`. "→" means "then, with the result".
 
 | Screen | Endpoints |
 |---|---|
-| S-01 Dashboard | `GET /timetable/today` · `GET /enrollments/me` → per course `GET /courses/{id}/plan/me` (progress, `continueLessonId`) · `GET /activities/me` (first five that are not `COMPLETED`) · `GET /notifications/me/unread-count`. Load the four blocks independently |
+| S-01 Dashboard | `GET /timetable/today` (an empty day: `GET /timetable/next` — my next class that is really held, 204 when none in four weeks) · `GET /enrollments/me` → per course `GET /courses/{id}/plan/me` (progress, `continueLessonId`) · `GET /activities/me` (first five that are not `COMPLETED`) · `GET /notifications/me/unread-count`. Load the four blocks independently |
 | S-02 My timetable | `GET /timetable/me?date=` (any date of the week). Class sheet: `GET /class-sessions/{entryId}/{date}/topic` (lesson of the class, if linked) |
 | S-03 Courses | `GET /enrollments/me` → `GET /courses/{id}` (title in `translations`, teachers, hours, assessment scheme) and `GET /courses/{id}/progress/me` |
 | S-03 Course page | Plan: `GET /courses/{id}/plan/me`. Syllabus: `GET /courses/{id}` + `GET /subjects/{subjectId}` (aim, outcomes). Work: `GET /activities/me?courseId=`. Grades: `GET /enrollments/{enrollmentId}/grades` |
@@ -178,7 +181,7 @@ Paths are under `/api/v1`. "→" means "then, with the result".
 | S-05 Task | `GET /courses/{courseId}/coding-tasks/{id}` (statement, languages with starter code, examples) · `GET /coding-tasks/{id}/hints`, `POST …/hints/{hintId}/reveal` · Run: `POST /runs {codingTaskId, languageCode, sourceCode, stdin}` · Run examples: `POST /runs {…, mode: EXAMPLES}` · `GET /runs/{id}` · Submit: `POST /submissions`, `GET /submissions/{id}` · history: `GET /coding-tasks/{id}/submissions/me` · feedback: `GET /feedback/me?targetType=SUBMISSION&targetId=` |
 | S-06 Quiz | `GET /courses/{courseId}/quizzes/{id}`, `GET /quizzes/{id}/attempts/me` · start `POST /quizzes/{id}/attempts` · `GET /attempts/{id}` (resume) · answer `POST /attempts/{id}/questions/{questionId}/answer` · `POST /attempts/{id}/submit` |
 | S-07 Assignments | `GET /activities/me?state=` — `type` + `referenceId` say what to open (`QUIZ` → quiz, `CODING_TASK` → task) |
-| S-08 Grades | `GET /enrollments/me` → `GET /enrollments/{id}/grades`; component names and weights from `GET /courses/{id}` (`assessmentComponents`) |
+| S-08 Grades | `GET /enrollments/me` → `GET /enrollments/{id}/grades?locale=`: `components` (the JN / ON / YaN scheme with `earned`, `maxPoints`, `graded`, `minPassPercent`, `gatePassed`; a part carries `parentComponentId`), `entries` (what counts now), `history` (every entry, `REVISED` and `VOIDED` included), `finalScore`, `finalGradeSymbol`, `admittedToFinal`, `complete`. Until `complete` the score is a running total and the symbol means nothing yet — do not show it as the grade |
 | S-10 Attendance | `GET /attendance/me?courseId=` |
 
 Drafts of the student's code (per task and language) are kept in `localStorage`; the server
@@ -257,7 +260,7 @@ time and verdict for them. `maxAttempts` of the task limits submissions (422
 
 ## 8. Known gaps (do not work around them silently)
 
-- Search covers subjects and courses, not lessons.
+- Search covers course and lesson titles and summaries, not the text inside lessons.
 - A lesson's prerequisites are reported by the plan (`locked`), not enforced when a lesson is
   opened by URL: the lesson page should show the "locked" state itself.
 - Hint `penaltyPercent` is stored but not applied to scores; do not show it to students.
