@@ -73,6 +73,12 @@ public final class Perm {
     public static final String ANNOUNCEMENT_WRITE = "ANNOUNCEMENT_WRITE";
     public static final String SYSTEM_CONFIG_MANAGE = "SYSTEM_CONFIG_MANAGE";
 
+    // scheduling
+    public static final String GROUP_READ = "GROUP_READ";
+    public static final String GROUP_MANAGE = "GROUP_MANAGE";
+    public static final String TIMETABLE_READ = "TIMETABLE_READ";
+    public static final String TIMETABLE_MANAGE = "TIMETABLE_MANAGE";
+
     /** Convenience for {@code @PreAuthorize}. */
     public static final String HAS_AUDIT_READ = "hasAuthority('AUDIT_READ')";
 }

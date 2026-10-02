@@ -81,7 +81,10 @@ class ProgressIT extends AbstractIntegrationTest {
         ResponseEntity<LessonProgressView> second =
                 recordProgress(studentToken, setup.lessonIds.get(0), ProgressStatus.COMPLETED);
         assertThat(second.getStatusCode()).isEqualTo(HttpStatus.OK);
-        assertThat(second.getBody().completedAt()).isEqualTo(firstCompletedAt);
+        // PostgreSQL keeps microseconds; the first response still carries the JVM clock's finer
+        // value.
+        assertThat(second.getBody().completedAt().truncatedTo(java.time.temporal.ChronoUnit.MICROS))
+                .isEqualTo(firstCompletedAt.truncatedTo(java.time.temporal.ChronoUnit.MICROS));
         assertThat(second.getBody().viewCount()).isEqualTo(2);
 
         CourseProgressView courseProgress = myCourseProgress(studentToken, setup.course.getId());

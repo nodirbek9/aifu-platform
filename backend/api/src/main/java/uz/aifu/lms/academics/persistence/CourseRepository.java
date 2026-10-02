@@ -1,6 +1,7 @@
 package uz.aifu.lms.academics.persistence;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.domain.Page;
@@ -21,6 +22,13 @@ public interface CourseRepository extends JpaRepository<Course, UUID> {
             UUID subjectId, UUID termId, String cohortCode);
 
     boolean existsByIdAndDeletedAtIsNull(UUID id);
+
+    /** Batched read for label lookups (timetable cells, load reports): subject and term fetched. */
+    @EntityGraph(attributePaths = {"subject", "term"})
+    List<Course> findByIdIn(Collection<UUID> ids);
+
+    @EntityGraph(attributePaths = {"subject", "term"})
+    List<Course> findByTerm_IdAndDeletedAtIsNull(UUID termId);
 
     /**
      * Backs {@code /teacher/courses} — the id set itself is the ownership scoping (already derived

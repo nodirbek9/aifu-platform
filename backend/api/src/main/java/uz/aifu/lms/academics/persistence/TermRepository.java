@@ -1,5 +1,6 @@
 package uz.aifu.lms.academics.persistence;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.EntityGraph;
@@ -15,4 +16,8 @@ public interface TermRepository extends JpaRepository<Term, UUID> {
 
     @EntityGraph(attributePaths = "academicYear")
     List<Term> findAllByOrderByAcademicYear_StartsOnDescOrdinalAsc();
+
+    @EntityGraph(attributePaths = "academicYear")
+    List<Term> findByStartsOnLessThanEqualAndEndsOnGreaterThanEqualOrderByStartsOnDesc(
+            LocalDate startsOnOrBefore, LocalDate endsOnOrAfter);
 }

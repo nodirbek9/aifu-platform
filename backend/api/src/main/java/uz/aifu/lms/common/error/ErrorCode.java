@@ -43,6 +43,7 @@ public enum ErrorCode {
     ENROLLMENT_INVALID_TRANSITION(HttpStatus.CONFLICT),
     ATTEMPT_ALREADY_OPEN(HttpStatus.CONFLICT),
     ATTEMPT_ALREADY_SUBMITTED(HttpStatus.CONFLICT),
+    TIMETABLE_CONFLICT(HttpStatus.CONFLICT),
 
     // --- domain rules (semantically valid request, refused by a business rule) ---
     ATTEMPT_LIMIT_REACHED(HttpStatus.UNPROCESSABLE_ENTITY),

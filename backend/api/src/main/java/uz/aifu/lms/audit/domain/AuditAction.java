@@ -84,6 +84,13 @@ public enum AuditAction {
     FILE_UPLOADED,
     FILE_DELETED,
 
+    // --- Scheduling ---
+    GROUP_CHANGED,
+    TIMETABLE_PUBLISHED,
+    TIMETABLE_ENTRY_CHANGED,
+    TIMETABLE_CONFLICT_OVERRIDDEN,
+    TIMETABLE_EXCEPTION_ADDED,
+
     // --- Admin / system ---
     ADMIN_ACTION,
     CONFIGURATION_CHANGED,

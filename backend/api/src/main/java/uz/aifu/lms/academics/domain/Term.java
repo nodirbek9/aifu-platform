@@ -43,6 +43,10 @@ public class Term {
     @Column(name = "is_placeholder", nullable = false)
     private boolean placeholder;
 
+    /** {@code ODD} or {@code EVEN}: the parity of the term's first week ("toq/juft hafta"). */
+    @Column(name = "first_week_parity", nullable = false)
+    private String firstWeekParity = "ODD";
+
     protected Term() {}
 
     public Term(
@@ -92,5 +96,17 @@ public class Term {
 
     public boolean isPlaceholder() {
         return placeholder;
+    }
+
+    public String getFirstWeekParity() {
+        return firstWeekParity;
+    }
+
+    public void changeFirstWeekParity(String parity) {
+        if (!"ODD".equals(parity) && !"EVEN".equals(parity)) {
+            throw Exceptions.rule(
+                    ErrorCode.VALIDATION_FAILED, "firstWeekParity must be ODD or EVEN");
+        }
+        this.firstWeekParity = parity;
     }
 }

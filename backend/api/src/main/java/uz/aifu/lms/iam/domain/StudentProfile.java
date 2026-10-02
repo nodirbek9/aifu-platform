@@ -73,4 +73,13 @@ public class StudentProfile {
     public String getStudyForm() {
         return studyForm;
     }
+
+    public User getUser() {
+        return user;
+    }
+
+    /** Moves the student to another group ({@code null} = no group). The code must exist. */
+    public void assignGroup(String groupCode) {
+        this.groupCode = (groupCode == null || groupCode.isBlank()) ? null : groupCode.trim();
+    }
 }

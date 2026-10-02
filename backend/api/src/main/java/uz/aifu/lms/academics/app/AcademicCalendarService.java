@@ -1,5 +1,6 @@
 package uz.aifu.lms.academics.app;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.stereotype.Service;
@@ -76,6 +77,20 @@ public class AcademicCalendarService {
     @Transactional(readOnly = true)
     public Term requireTerm(UUID id) {
         return terms.findById(id).orElseThrow(() -> Exceptions.notFound("Term", id));
+    }
+
+    /** The terms a calendar date falls in, the most recently started first (normally one). */
+    @Transactional(readOnly = true)
+    public List<Term> findTermsContaining(LocalDate date) {
+        return terms.findByStartsOnLessThanEqualAndEndsOnGreaterThanEqualOrderByStartsOnDesc(
+                date, date);
+    }
+
+    @Transactional
+    public Term changeFirstWeekParity(UUID termId, String parity) {
+        Term term = requireTerm(termId);
+        term.changeFirstWeekParity(parity);
+        return term;
     }
 
     @Transactional
