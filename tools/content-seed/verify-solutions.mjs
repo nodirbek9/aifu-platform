@@ -1,7 +1,8 @@
-// Runs every coding task's reference solutions (Python and Java) against its test cases, in
-// the same images the docker-run sandbox uses, and reports any mismatch.
+// Runs every coding task's reference solutions (Python, Java and C++) against its test cases,
+// in the same images the docker-run sandbox uses, and reports any mismatch. Also checks that
+// every C++ starter compiles: a student must never begin from code that does not build.
 //   node tools/content-seed/verify-solutions.mjs [TASK-CODE-PREFIX]
-// Needs Docker. One container per language runs all tasks, so a full check takes ~1-2 min.
+// Needs Docker. One container per language runs all tasks, so a full check takes ~2-3 min.
 import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
@@ -10,6 +11,7 @@ import { fileURLToPath } from 'node:url'
 
 const here = path.dirname(fileURLToPath(import.meta.url))
 const prefix = process.argv[2] ?? ''
+const cpp = (await import('./content/_cpp.mjs')).default
 const tasks = []
 for (const m of ['das1110', 'mta1204', 'kia1406', 'kot1306', 'iaktt1105']) {
   const mod = (await import(`./content/${m}.mjs`)).default
@@ -25,6 +27,10 @@ for (const t of tasks) {
   fs.mkdirSync(dir)
   if (t.python) fs.writeFileSync(path.join(dir, 'sol.py'), t.python.solution)
   if (t.java) fs.writeFileSync(path.join(dir, 'Main.java'), t.java.solution)
+  if (cpp[t.code]) {
+    fs.writeFileSync(path.join(dir, 'main.cpp'), cpp[t.code].solution)
+    fs.writeFileSync(path.join(dir, 'starter.cpp'), cpp[t.code].starter)
+  }
   t.tests.forEach(([stdin, expected], i) => {
     fs.writeFileSync(path.join(dir, `${i}.in`), stdin)
     fs.writeFileSync(path.join(dir, `${i}.expected`), expected)
@@ -36,10 +42,14 @@ const pyScript = loop('[ -f sol.py ] && for f in *.in; do timeout 10 python3 sol
 const javaScript = loop(
   '[ -f Main.java ] && mkdir -p cls && javac -encoding UTF-8 -d cls Main.java 2> javac.err && for f in *.in; do timeout 10 java -Xss16m -cp cls Main < "$f" > "${f%.in}.java.out" 2>"${f%.in}.java.err"; done',
 )
+const cppScript = loop(
+  '[ -f main.cpp ] && g++ -std=c++17 -fsyntax-only starter.cpp 2> starter.err; [ -f main.cpp ] && g++ -std=c++17 -O2 -pipe -o main.bin main.cpp 2> gpp.err && for f in *.in; do timeout 10 ./main.bin < "$f" > "${f%.in}.cpp.out" 2>"${f%.in}.cpp.err"; done',
+)
 const mount = `${work.replace(/\\/g, '/')}:/w`
 const env = { ...process.env, MSYS_NO_PATHCONV: '1' }
 execFileSync('docker', ['run', '--rm', '--network=none', '-v', mount, 'python:3.11-slim', 'sh', '-c', pyScript], { stdio: 'inherit', env })
 execFileSync('docker', ['run', '--rm', '--network=none', '-v', mount, 'eclipse-temurin:21-jdk', 'sh', '-c', javaScript], { stdio: 'inherit', env })
+execFileSync('docker', ['run', '--rm', '--network=none', '-v', mount, 'gcc:13', 'sh', '-c', cppScript], { stdio: 'inherit', env })
 
 const norm = (s) => s.replace(/\r\n/g, '\n').trim()
 let failures = 0
@@ -50,10 +60,28 @@ for (const t of tasks) {
     failures++
     console.log(`FAIL ${t.code} java: compile error\n${fs.readFileSync(javacErr, 'utf8')}`)
   }
+  if (!cpp[t.code]) {
+    failures++
+    console.log(`FAIL ${t.code} cpp: no C++ solution in content/_cpp.mjs`)
+  }
+  for (const [file, what] of [['gpp.err', 'solution'], ['starter.err', 'starter']]) {
+    const errFile = path.join(dir, file)
+    const text = fs.existsSync(errFile) ? fs.readFileSync(errFile, 'utf8') : ''
+    if (/\berror\b/.test(text)) {
+      failures++
+      console.log(`FAIL ${t.code} cpp ${what}: compile error\n${text}`)
+    }
+  }
   t.tests.forEach(([, expected], i) => {
-    for (const lang of ['py', 'java']) {
+    for (const lang of ['py', 'java', 'cpp']) {
       const outFile = path.join(dir, `${i}.${lang}.out`)
-      if (!fs.existsSync(outFile)) continue
+      if (!fs.existsSync(outFile)) {
+        if (lang === 'cpp' && cpp[t.code]) {
+          failures++
+          console.log(`FAIL ${t.code} cpp test ${i}: did not run`)
+        }
+        continue
+      }
       const got = norm(fs.readFileSync(outFile, 'utf8'))
       if (got !== norm(expected)) {
         failures++

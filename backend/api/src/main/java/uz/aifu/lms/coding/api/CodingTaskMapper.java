@@ -158,7 +158,11 @@ final class CodingTaskMapper {
                 t.instructions(),
                 t.constraintsText(),
                 t.fallback(),
-                languages.stream().map(CodingTaskMapper::toLanguageView).toList(),
+                // A language that was switched off is not offered, whatever the task still lists.
+                languages.stream()
+                        .filter(l -> l.getLanguage().isEnabled())
+                        .map(CodingTaskMapper::toLanguageView)
+                        .toList(),
                 examples);
     }
 
