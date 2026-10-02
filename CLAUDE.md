@@ -7,7 +7,8 @@ Everything else is discoverable from here. Do not duplicate docs into this file.
 
 The **AIFU Learning Platform** — a multi-subject university LMS for Aniq va Ijtimoiy Fanlar
 Universiteti (AIFU). This repository holds the backend (`backend/`, the rules below) and, from v3,
-the new frontend in `frontend/` (its own rules: `frontend/AGENTS.md`).
+the new frontend in `frontend/` (its own rules: the root `AGENTS.md`). **This file governs
+`backend/`, `docker/`, `tools/` and the database; do not apply it to `frontend/`.**
 
 **What the product must do is in `docs/01-PRODUCT-SPEC.md`; how it is built and what is still to
 build is in `docs/02-ARCHITECTURE.md`. Read both before adding a feature.**
@@ -36,7 +37,9 @@ Inside `api`, one Java package per domain module under `uz.aifu.lms.<module>`:
 common   iam        academics   curriculum  enrollment
 progress assessment coding      execution   grading
 files    notification analytics audit       search
-scheduling  (student groups, rooms, bell schedule, timetable, teaching load — V019)
+scheduling   (student groups, rooms, bell schedule, timetable, teaching load — V019)
+attendance   (class sessions, attendance journal — V021)
+announcement (messages to a course or a group — V024)
 ```
 
 Each module has the same four layers. Depend inward only:
@@ -68,7 +71,7 @@ Lombok (records + explicit constructors instead). Each exclusion is argued in `d
 ## 4. Commands
 
 ```bash
-# Full local stack (API + Postgres + Judge0 + worker)
+# Full local stack (API + Postgres + execution worker with the docker-run sandbox)
 cp .env.example .env            # then edit secrets
 docker compose up --build
 
@@ -83,9 +86,11 @@ cd backend
 ./mvnw -pl api test -Dtest=QuizGradingServiceTest
 ./mvnw spotless:apply            # formatting (google-java-format AOSP)
 
-# OpenAPI
+# OpenAPI: docs/api/openapi.json is the committed contract; OpenApiContractIT fails when the
+# code and the file differ. After changing an endpoint or a DTO, regenerate both files:
+./mvnw -pl api verify -Pit -Dtest=OpenApiContractIT -Dsurefire.failIfNoSpecifiedTests=false -Dopenapi.write=true
+node ../tools/api-docs/endpoints.mjs        # docs/api/ENDPOINTS.md
 open http://localhost:8080/swagger-ui.html
-curl -s localhost:8080/v3/api-docs > docs/api/openapi.generated.json
 ```
 
 Health: `GET /actuator/health/liveness`, `/actuator/health/readiness`.
@@ -164,7 +169,7 @@ Health: `GET /actuator/health/liveness`, `/actuator/health/readiness`.
 - Errors always use `ApiError` (`code`, `message`, `details`, `requestId`, `timestamp`,
   `path`) produced by `GlobalExceptionHandler`. Error `code` values are a closed enum
   (`common.error.ErrorCode`) that the frontend may switch on. **Never leak stack traces,
-  SQL, or class names.** See `docs/api/error-model.md`.
+  SQL, or class names.** The codes and what a client does with each: `docs/03-API-GUIDE.md` §2.
 - Every endpoint carries springdoc annotations with at least one example payload. An
   endpoint without OpenAPI documentation is incomplete.
 - `Idempotency-Key` header is honoured on `POST /submissions` and `POST /quiz-attempts/*/submit`.
@@ -202,8 +207,15 @@ a schema redesign.** Full model: `docs/domain/domain-model.md`.
 - Adding a new module and forgetting `ArchitectureBoundaryTest`'s module registry.
 - Writing an integration test without `@Tag("it")` ⇒ it runs in the fast unit profile and fails.
 - Assuming locale `uz` has a Postgres FTS dictionary. It does not; `simple` + `unaccent` is used.
-- The teaching languages are **Python, Java and C++** (V018, V020; product spec S-05). Go is
-  still an enabled row from the first brief, but no task carries a Go solution.
+- The teaching languages are **Python, Java and C++** (V018, V020; product spec S-05). Go was
+  disabled in V023. Every task needs a starter and a reference solution in all three;
+  `node tools/content-seed/verify-solutions.mjs` runs them against the tests.
+- `class_sessions` are keyed by what the class is (course, date, pair, groups, subgroup), not by
+  the timetable entry id — an entry id changes when a corrected timetable is published.
+- Ungraded runs (`code_runs`) and graded submissions are separate tables and separate worker
+  loops. A new column the worker must write needs a column-level GRANT for
+  `aifu_execution_worker` (see V022) — `RunLoopIT` runs as that role and will tell you.
+- Jackson omits null fields (`non_null`): in tests use `hasNonNull`, in docs say "absent".
 - Timetable writes go through `TimetableService`, which locks the timetable row before the
   conflict check. Never insert a `timetable_entries` row any other way.
 
@@ -216,9 +228,10 @@ a schema redesign.** Full model: `docs/domain/domain-model.md`.
 | What is still unknown | `docs/academic-analysis/PENDING-INPUTS.md` |
 | Adding a new subject/syllabus | `docs/academic-analysis/HOW-TO-ONBOARD-A-SYLLABUS.md` |
 | Entity-by-entity reference | `docs/domain/domain-model.md`, `docs/database/schema.md` |
-| Endpoint contract | `docs/api/README.md`, `docs/api/openapi.yaml` |
+| Endpoint contract | `docs/api/openapi.json`, `docs/api/ENDPOINTS.md`, `docs/03-API-GUIDE.md` |
+| Frontend rules, design, phases | `AGENTS.md`, `docs/04-DESIGN-BRIEF.md`, `docs/05-FRONTEND-PROMPTS.md` |
 | Sandbox threat model | `docs/code-execution/security-model.md` |
-| What to build next | `docs/planning/phase-plan.md` |
+| What to build next | `docs/02-ARCHITECTURE.md` §9 |
 | Task-specific coding rules | `skills/` (load the one matching your task) |
 
 ## 14. Working agreement for AI agents

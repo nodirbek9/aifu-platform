@@ -1,7 +1,8 @@
 # AIFU Learning Platform — Architecture (v3)
 
-Companion to `01-PRODUCT-SPEC.md`. It says how the product is built: what is kept, what is added,
-and how the new frontend is structured.
+Companion to `01-PRODUCT-SPEC.md`. It says how the product is built: what was kept, what was
+added, and how the new frontend is structured. **The backend (B0–B5) is built and tested; the
+frontend (F0–F6) and the full three-language content (C) are next.**
 
 ## 1. Decisions
 
@@ -13,7 +14,7 @@ and how the new frontend is structured.
 | D4 | **One repository** `aifu-platform/` with `backend/`, `frontend/`, `content/`, `docs/`, under git | Nothing was under git before; one repo keeps API and UI changes together |
 | D5 | **Types generated from OpenAPI** | The frontend cannot drift from the API; a missing endpoint is a compile error, not a runtime surprise |
 | D6 | **Content is data, not dev seed**: lesson packs in `content/` imported by a tool | Lessons must exist in every environment, in three languages, and be re-importable after edits |
-| D7 | Code runs in **Python, Java, C++** through the existing execution worker | C++ already has a row (disabled) and a Judge0 id; Java was added in V018 |
+| D7 | Code runs in **Python, Java, C++** through the existing execution worker | Java came in V018, C++ in V020; Go is no longer offered (V023) |
 
 ## 2. System overview
 
@@ -50,7 +51,7 @@ sequenceDiagram
   participant X as Sandbox
   S->>A: POST /submissions {taskId, language, source}
   A->>D: insert submission + execution_job (one tx)
-  A-->>S: 202 {submissionId, status: QUEUED}
+  A-->>S: 201 {id, status: QUEUED}
   W->>D: claim job (SKIP LOCKED)
   W->>X: compile + run each test (limits, no network)
   X-->>W: stdout, exit, time, memory
@@ -65,9 +66,9 @@ sequenceDiagram
 
 Spring Boot 3.3, Java 21, PostgreSQL 16, Flyway, modular monolith with ArchUnit-enforced
 boundaries, plus the execution worker. Modules: `common iam academics curriculum enrollment
-progress assessment coding execution grading files notification analytics audit search`.
-About 180 endpoints under `/api/v1` (catalogue, curriculum authoring, lessons, quizzes, coding
-tasks, submissions, grades, analytics, users, audit). Read `backend/CLAUDE.md` before changing it:
+progress assessment coding execution grading files notification analytics audit search
+scheduling attendance announcement`.
+250 operations under `/api/v1` (`docs/api/ENDPOINTS.md`). Read `CLAUDE.md` before changing it:
 its rules (Flyway only, DTO records, permission checks in `AccessGuard`, no student code in the API
 process) stay in force.
 
@@ -220,48 +221,68 @@ Endpoints (all under `/api/v1`) — **built and tested (V019, `SchedulingIT`)**:
 Class statuses in a week: `SCHEDULED`, `CANCELLED`, `MOVED_OUT` (original slot of a moved class),
 `MOVED_IN` (its new slot), `REPLACED` (other teacher or room), `HOLIDAY`.
 
-### 4.3 Attendance and class sessions (B3)
-`class_sessions` (entry + date, linked `lesson_id`, teacher notes) is created on first open of
-a class occurrence; `attendance_records` (session, student, status PRESENT / ABSENT / LATE /
-EXCUSED, note). Endpoints: `GET/PUT /teacher/class-sessions/{entryId}/{date}`,
-`PUT …/attendance`, `GET /teacher/courses/{id}/attendance` (journal grid),
-`GET /attendance/me?courseId=`.
+### 4.3 Attendance and class sessions (B3) — built (V021, `AttendanceIT`)
+A class occurrence is addressed by `entryId` + `date`. Its `class_sessions` row is created on the
+first write and is keyed by what the class **is** (course, date, pair, groups, subgroup), not by
+the timetable entry id, so the journal survives publishing a corrected timetable.
+`attendance_records`: session, student, status `PRESENT | ABSENT | LATE | EXCUSED`, note.
 
-### 4.4 Coding: three languages and "Run" (B4)
-- Migration V020 enables `cpp` and the docker-run sandbox has a `gcc:13` spec — **done**. `go`
-  stays an enabled row but unused.
-- `POST /runs {taskId?, language, source, stdin?, mode: CUSTOM | EXAMPLES}` → 202; `GET /runs/{id}`.
-  Same queue and sandbox as submissions, lower priority, rate-limited per student, results kept
-  24 h, never graded, never touches hidden tests.
-- `GET /coding-tasks/{id}/hints` (student; revealed one at a time, reveal is recorded).
-- `GET /submissions/{id}/feedback` (student reads the teacher's feedback).
-- `POST /teacher/coding-tasks/{id}/verify` — runs every reference solution against all tests.
-- Content: C++ starter + solution for each of the 52 existing tasks (see `05-CONTENT-PROMPTS.md`).
+| Method and path | Who | Purpose |
+|---|---|---|
+| `GET/PUT /teacher/class-sessions/{entryId}/{date}` | TEACHER | The class page: roster with marks, linked or suggested lesson, topic, notes |
+| `PUT /teacher/class-sessions/{entryId}/{date}/attendance` | TEACHER | Mark attendance (editable later, audited) |
+| `GET /teacher/courses/{id}/class-plan?groupId=` | TEACHER | Calendar-thematic plan: every class of the term with its topic |
+| `GET /teacher/courses/{id}/attendance?groupId=&from=&to=` | TEACHER | Journal grid with totals |
+| `GET /attendance/me?courseId=` | STUDENT | Own attendance |
+| `GET /class-sessions/{entryId}/{date}/topic` | any signed-in user of the class | The lesson linked to a class |
 
-### 4.5 Small additions (B5)
-- `GET /courses/{id}/lessons/progress/me` — status of every lesson of a course for the student.
-- Teacher-only lesson plan: a `LESSON_PLAN` content block type with `visibility = TEACHER_ONLY`.
-- Announcements: `POST /teacher/courses/{id}/announcements`, `GET /announcements/me`.
-- Exports: gradebook and attendance journal as `.xlsx`.
+### 4.4 Coding: three languages and "Run" (B4) — built (V020, V022, V023)
+- Languages offered: **Python, Java, C++** (`gcc:13` in the docker-run sandbox). Go is disabled.
+  All 53 seeded tasks carry a starter and a verified reference solution in each language
+  (`tools/content-seed/verify-solutions.mjs`).
+- `POST /runs {codingTaskId?, languageCode, sourceCode, stdin?, mode: CUSTOM | EXAMPLES}` → 202;
+  `GET /runs/{id}`. A separate `code_runs` table and worker loop: never graded, never an attempt,
+  never touches hidden tests; limited per user (2 in flight, 30 per minute); kept 24 hours.
+- `GET /coding-tasks/{id}/hints`, `POST …/hints/{hintId}/reveal` — revealed one at a time.
+- `GET /feedback/me?targetType=SUBMISSION&targetId=` — the student reads the teacher's feedback.
+- `POST` + `GET /teacher/coding-tasks/{id}/verification` — runs every reference solution against
+  every test (spec T-05).
+- Proven end to end on the Compose stack (API → queue → worker → sandbox) in all three languages.
+
+### 4.5 Small additions (B5) — built (V024)
+- `GET /courses/{id}/plan/me` — the course plan with the status of every lesson, `locked`, and
+  `continueLessonId`; `GET /activities/me` — the student's work list with states.
+- Teacher-only lesson plan: the `LESSON_PLAN` content block (always `TEACHER_ONLY`; the student
+  endpoint never returns it).
+- Announcements (module `announcement`): `POST/DELETE /teacher/announcements`,
+  `GET /announcements/me`, `GET /courses/{id}/announcements`; students are notified.
+- Student import with groups: `POST /admin/users/import` (JSON rows, `dryRun`); the browser reads
+  the Excel / CSV file. Enroll a group: `POST /admin/enrollments/by-group`.
+- **Exports are done in the browser** from the same JSON the screens show (gradebook, journal,
+  timetable); the backend has no export endpoints and no spreadsheet dependency.
 - `GET /me/dashboard` is **not** added: the dashboard composes existing endpoints in parallel.
-- Student import with group: `POST /admin/users/import` (CSV/XLSX).
-- OpenAPI: `docs/api/openapi.json` committed and regenerated in CI; the frontend generates types
-  from it.
+- `PATCH /auth/me`, `POST /notifications/me/read-all`, `GET /timetable/directory`,
+  `GET /reference/departments|programmes`.
+- The contract `docs/api/openapi.json` is committed and checked by `OpenApiContractIT`;
+  `docs/api/ENDPOINTS.md` is generated from it; `docs/03-API-GUIDE.md` explains how to use it.
+- A demo semester (dev seed V908) backs the acceptance demo; `DemoWalkthroughIT` walks it
+  through the API.
 
-### 4.6 Content pipeline (B6)
-`content/<SUBJECT_CODE>/…` holds lesson packs as files (Markdown with front matter + YAML for
-tasks and quizzes), one folder per locale. `tools/content-import` validates them (every lesson has
-all required sections, every task has three language solutions that pass its tests) and upserts
-through the same services the teacher editors use. It replaces the 12 000-line dev seed SQL as the
-way content enters a database.
+### 4.6 Content pipeline (C) — planned
+`content/<SUBJECT_CODE>/…` will hold lesson packs as files (Markdown with front matter + YAML for
+tasks and quizzes), one folder per locale, validated and imported by a tool through the same
+services the teacher editors use (see `06-CONTENT-GUIDE.md`, to be written). Today the content
+enters through the generated dev seed (`tools/content-seed`), in Uzbek only.
 
 ## 5. Frontend architecture (new)
 
-**Stack.** React 18 + TypeScript (strict) · Vite · Tailwind CSS with design tokens · shadcn/ui
-(Radix primitives) · React Router 6 (lazy routes) · TanStack Query (server state) · React Hook
-Form + Zod · react-i18next (uz / ru / en) · CodeMirror 6 (python, java, cpp) · dnd-kit (timetable
-drag and drop) · Recharts (analytics) · Motion + GSAP (animation) · openapi-typescript +
-openapi-fetch (typed API client) · Vitest + Testing Library · Playwright (e2e).
+The rules the frontend agent works by are in the root `AGENTS.md`; this section is the summary.
+
+**Stack.** React 19 + TypeScript (strict) · Vite · Tailwind CSS 4 with design tokens · shadcn/ui
+(Radix primitives) · React Router 7 (lazy routes, view transitions) · TanStack Query (server
+state) · React Hook Form + Zod · react-i18next (uz / ru / en) · CodeMirror 6 (python, java, cpp)
+· dnd-kit (timetable drag and drop) · Recharts (analytics) · CSS transitions + GSAP (animation)
+· openapi-typescript + openapi-fetch (typed API client) · Vitest + Testing Library · Playwright.
 
 ```mermaid
 flowchart TB
@@ -314,29 +335,27 @@ flowchart LR
 
 ## 6. Design direction
 
-AIFU's emblem is a shield split navy over magenta. Tokens: navy `#0A2F5F` (structure, primary),
-magenta `#E8105A` (the single "next action / now" accent), neutral cool greys, status colours for
-status only, six session-type colours (lecture, seminar, practical, lab, independent, course
-work) used consistently in the timetable, course plan and badges. Type: a slab serif for headings
-and long lesson prose, a grotesque with good Cyrillic for UI, JetBrains Mono for code (ligatures
-off). The designer-model is free to raise the craft (layout, depth, illustration, motion) inside
-these constraints; the logo is in `backend/academic-materials/branding/`.
+Fixed in `04-DESIGN-BRIEF.md`. In short: the look of a major university's platform, built on
+AIFU's emblem — a shield split navy `#002E60` over magenta `#FF0158` (values measured from the
+logo in `academic-materials/branding/`). Navy is structure; magenta is the single "now / next
+action" accent; six session-type colours are used identically in the timetable, the course plan
+and badges. Type: a slab serif for headlines (echoing the emblem), a text serif for lesson prose,
+a Cyrillic-first sans for the interface, JetBrains Mono for code.
 
 ## 7. Motion
 
-Purposeful, not decorative: route transitions (fade + 8 px slide, 200 ms); staggered list reveal
-on first load only; progress rings and bars animate to their value; the verdict reveal after a
-submission (tests tick in one by one, then the verdict); drag feedback and conflict shake in the
-timetable builder; a subtle animated hero on login and the student dashboard (GSAP). Animate only
-`transform` and `opacity`; everything is disabled under `prefers-reduced-motion`.
+Purposeful, not decorative; the choreographed moments are listed in `04-DESIGN-BRIEF.md` §8
+(login, first dashboard load, route changes, progress, the verdict reveal, timetable drag and
+conflict, reading progress, micro-interactions). Only `transform` and `opacity`; everything is
+off under `prefers-reduced-motion`.
 
 ## 8. Quality gates
 
 - Backend: `./mvnw clean verify -Pit` green; new modules get unit + integration tests, including
   conflict detection cases and authorization (a student cannot read another group's attendance).
-- Frontend: `npm run lint && npm run typecheck && npm test && npm run build` green; i18n key
-  parity check; Playwright flows for the acceptance demo (SPEC §9) on desktop and mobile sizes.
-- One `scripts/verify` at the repo root runs both. `docker compose up --build` starts everything.
+- Frontend: `npm run lint && npm run typecheck && npm test && npm run i18n:check && npm run build`
+  green; Playwright flows for the acceptance demo (SPEC §9) on desktop and phone sizes.
+- `docker compose up --build` starts the backend stack; the frontend joins it in F6.
 
 ## 9. Build order
 
@@ -352,5 +371,5 @@ flowchart LR
   C --> F6
 ```
 
-Backend prompts: `03-BACKEND-PROMPTS.md`. Frontend prompts: `04-FRONTEND-PROMPTS.md`.
-Content prompts: `05-CONTENT-PROMPTS.md`.
+Where things are: API guide `03-API-GUIDE.md` · design brief `04-DESIGN-BRIEF.md` · frontend
+phase prompts `05-FRONTEND-PROMPTS.md` · content guide `06-CONTENT-GUIDE.md` (to be written).

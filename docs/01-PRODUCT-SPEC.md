@@ -7,7 +7,9 @@ attempts had strong engineering documents and no product spec, so each model bui
 the product. Every feature below has an ID and acceptance criteria; a feature is done only when
 every criterion can be shown on a running system.
 
-Legend: ✅ backend exists · 🔧 backend exists, needs a small addition · 🆕 new backend work.
+**Backend status (2 October 2026): the backend of every screen below is built**, including the ones
+marked 🔧 and 🆕 — those marks only record what had to be added for v3. Which endpoints serve
+which screen is in `03-API-GUIDE.md` §6; what the API still lacks is in its §8.
 🤖 marks a detail the spec author decided because the owner didn't specify it — change freely.
 
 ## 1. Product in one paragraph
@@ -43,7 +45,7 @@ One account may hold several roles (a teacher who is also admin); the UI offers 
 - G-04 **No mock data.** Everything comes from the API. A missing endpoint is a backend task, not a
   reason to fake data.
 - G-05 **Light and dark theme**, remembered per user; respects the system setting on first visit.
-- G-06 **Motion with purpose** (see ARCHITECTURE §7): page and list transitions, progress
+- G-06 **Motion with purpose** (see `04-DESIGN-BRIEF.md` §8): page and list transitions, progress
   animations, verdict reveal. Smooth at 60 fps, off under `prefers-reduced-motion`.
 - G-07 **Accessibility:** keyboard reachable, visible focus, labels on inputs, contrast ≥ 4.5:1.
 - G-08 **Auth:** login with username + password; forced password change on first login; silent
@@ -86,7 +88,7 @@ The owner's main complaint was empty lessons. A lesson is a complete, readable c
 - S-04.1 Layout: content column (max ~70 characters wide, comfortable type), a sticky **table of
   contents** built from the lesson's headings (desktop: right rail; phone: a drawer), a reading
   progress bar, previous / next lesson.
-- S-04.2 Every lesson shows, in this order (content rules in `05-CONTENT-PROMPTS.md`): title and
+- S-04.2 Every lesson shows, in this order (content rules in `06-CONTENT-GUIDE.md`): title and
   meta (type, hours, reading time) → **learning objectives** → **theory** in sections with headings
   → **worked examples** → **code examples** with syntax highlighting, copy button and language tabs
   (Python / Java / C++) → diagrams and tables where they help → **key terms** → **summary** →
@@ -96,10 +98,9 @@ The owner's main complaint was empty lessons. A lesson is a complete, readable c
   warning), diagram, table, case study, file download, link, embed, quiz reference, coding-task
   reference, activity reference.
 - S-04.4 **Try it**: a code example can be opened in a small runner (same editor as S-05) and
-  executed without leaving the lesson. 🆕 needs the run endpoint.
+  executed without leaving the lesson. 🆕
 - S-04.5 "Mark as done" (or automatic when the student reaches the end and passes the self-check
-  🤖); status is saved on the server and shown in the course plan. 🔧 needs the per-lesson status
-  list endpoint.
+  🤖); status is saved on the server and shown in the course plan. 🔧
 - S-04.6 Language switch re-renders the lesson in the chosen language without losing position.
 
 ### S-05 Practice task (code editor) 🔧
@@ -122,7 +123,7 @@ The owner's second main complaint: no place to write code, and not in three lang
   Hidden test data is never shown. ✅
 - S-05.7 Submission history: every attempt with time, language, verdict, score; clicking one shows
   its code (read-only) and can restore it into the editor. Attempt limit and deadline are shown.
-- S-05.8 Teacher feedback on a submission is visible to the student. 🆕 student feedback endpoint
+- S-05.8 Teacher feedback on a submission is visible to the student. 🆕
 
 ### S-06 Quiz ✅
 - S-06.1 Start screen: rules, time limit, attempts left, deadline. Start creates an attempt.
