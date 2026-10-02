@@ -114,7 +114,8 @@ aifu:
     access-key: ${STORAGE_ACCESS_KEY:}
     secret-key: ${STORAGE_SECRET_KEY:}
     region: ${STORAGE_REGION:us-east-1}
-    allowed-content-types: image/png,image/jpeg,image/gif,image/webp,video/mp4,application/pdf,text/plain,application/zip
+    # Lesson media and teaching materials: images, video, audio, PDF, Office documents, archives.
+    allowed-content-types: image/png,image/jpeg,image/gif,image/webp,video/mp4,audio/mpeg,audio/mp4,audio/ogg,application/pdf,text/plain,application/zip,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/vnd.openxmlformats-officedocument.presentationml.presentation,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
   execution:
     # The API only ENQUEUES. It never runs code and never calls the sandbox. (ADR-006)
     max-source-bytes: ${EXECUTION_MAX_SOURCE_BYTES:131072}
