@@ -43,19 +43,24 @@ docker compose up -d --build
   `sort=property,asc|desc`, and answer `PageResponse…` `{content, page, size, totalElements,
   totalPages, hasNext, hasPrevious}`. Endpoints that return a plain array are small by nature.
 - **Errors.** Every failure is
-  `{code, message, details?, requestId, timestamp, path}`. Branch on `code`, never on `message`.
-  Show `message` only as a fallback; translate by `code`. Keep `requestId` in the error UI.
+  `{code, message, details?, requestId, timestamp, path}` — schema `ApiError` in the contract,
+  declared as the `default` response of every operation, with the closed list of codes as the
+  enum of `code`. Branch on `code`, never on `message`. Show `message` only as a fallback;
+  translate by `code` (every code of the enum gets a text in all three languages). Keep
+  `requestId` in the error UI.
 
 | HTTP | `code` | What the UI does |
 |---|---|---|
-| 400 | `VALIDATION_FAILED` (`details.fields` = field → message), `MALFORMED_REQUEST`, `UNSUPPORTED_LOCALE` | Mark the fields |
+| 400 | `VALIDATION_FAILED` (`details.fields` = field → message), `MALFORMED_REQUEST`, `UNSUPPORTED_LOCALE`, `PAGE_SIZE_EXCEEDED` | Mark the fields |
 | 401 | `AUTH_INVALID_CREDENTIALS`, `AUTH_ACCOUNT_NOT_ACTIVE` | Login form error |
 | 401 | `AUTH_TOKEN_EXPIRED` | Refresh once, retry the request |
 | 401 | `AUTH_TOKEN_MISSING`, `AUTH_TOKEN_INVALID`, `AUTH_REFRESH_TOKEN_INVALID`, `AUTH_REFRESH_TOKEN_REUSED` | Clear the session, go to login |
 | 403 | `AUTH_FORBIDDEN`, `NOT_COURSE_TEACHER`, `NOT_ENROLLED` | "No access" page or message |
+| 403 | `AUTH_PASSWORD_CHANGE_REQUIRED` | Reserved; today the server does not send it (section 3, point 3) — if it comes, go to the change-password page |
 | 404 | `RESOURCE_NOT_FOUND` | Not-found state. Also returned for things that exist but are not yours |
-| 409 | `TIMETABLE_CONFLICT` (`details.conflicts`, `details.warnings`), `RESOURCE_ALREADY_EXISTS`, `CONCURRENT_MODIFICATION`, `ENROLLMENT_DUPLICATE`, `ATTEMPT_ALREADY_OPEN`, `ATTEMPT_ALREADY_SUBMITTED` | Explain; for `CONCURRENT_MODIFICATION` reload and retry |
-| 422 | `ATTEMPT_LIMIT_REACHED`, `ATTEMPT_EXPIRED`, `LANGUAGE_NOT_ENABLED`, `SOURCE_TOO_LARGE`, `UNSAFE_CONTENT_REJECTED`, `INVALID_STATE_TRANSITION`, `TRANSLATION_INCOMPLETE`, `PUBLICATION_VALIDATION_FAILED`, `GRADE_IMMUTABLE`, `FILE_TYPE_NOT_ALLOWED` | Explain next to the action |
+| 409 | `TIMETABLE_CONFLICT` (`details.conflicts`, `details.warnings`), `RESOURCE_ALREADY_EXISTS`, `CONCURRENT_MODIFICATION`, `ENROLLMENT_DUPLICATE`, `ENROLLMENT_CLOSED`, `ENROLLMENT_INVALID_TRANSITION`, `ATTEMPT_ALREADY_OPEN`, `ATTEMPT_ALREADY_SUBMITTED`, `IDEMPOTENCY_KEY_REUSED` | Explain; for `CONCURRENT_MODIFICATION` reload and retry |
+| 422 | `ATTEMPT_LIMIT_REACHED`, `ATTEMPT_EXPIRED`, `LANGUAGE_NOT_ENABLED`, `SOURCE_TOO_LARGE`, `UNSAFE_CONTENT_REJECTED`, `INVALID_STATE_TRANSITION`, `TRANSLATION_INCOMPLETE`, `PUBLICATION_VALIDATION_FAILED`, `GRADE_IMMUTABLE`, `FILE_TYPE_NOT_ALLOWED`, `ACTIVITY_NOT_AVAILABLE`, `LESSON_PREREQUISITE_NOT_MET`, `CONTENT_NOT_PUBLISHED`, `ASSESSMENT_WEIGHTS_INVALID` | Explain next to the action |
+| 500 | `INTERNAL_ERROR` | Error state with retry and the request id |
 | 429 | `RATE_LIMIT_EXCEEDED`, `TOO_MANY_CONCURRENT_SUBMISSIONS` | "Wait a moment"; do not retry automatically |
 | 503 | `EXECUTION_ENGINE_UNAVAILABLE`, `STORAGE_UNAVAILABLE` | Error state with retry |
 

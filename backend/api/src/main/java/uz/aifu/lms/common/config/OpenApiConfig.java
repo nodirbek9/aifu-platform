@@ -1,23 +1,33 @@
 package uz.aifu.lms.common.config;
 
+import io.swagger.v3.core.converter.ModelConverters;
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
 import io.swagger.v3.oas.models.media.ArraySchema;
+import io.swagger.v3.oas.models.media.Content;
 import io.swagger.v3.oas.models.media.IntegerSchema;
+import io.swagger.v3.oas.models.media.MediaType;
+import io.swagger.v3.oas.models.media.ObjectSchema;
+import io.swagger.v3.oas.models.media.Schema;
 import io.swagger.v3.oas.models.media.StringSchema;
 import io.swagger.v3.oas.models.parameters.QueryParameter;
+import io.swagger.v3.oas.models.responses.ApiResponse;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.servers.Server;
 import java.time.LocalTime;
+import java.util.Arrays;
 import java.util.List;
+import org.springdoc.core.customizers.GlobalOpenApiCustomizer;
 import org.springdoc.core.customizers.GlobalOperationCustomizer;
 import org.springdoc.core.utils.SpringDocUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import uz.aifu.lms.common.error.ApiError;
+import uz.aifu.lms.common.error.ErrorCode;
 
 /** OpenAPI 3.1 definition. The future frontend integrates from this; keep it accurate. */
 @Configuration
@@ -119,5 +129,58 @@ public class OpenApiConfig {
                             .schema(new ArraySchema().items(new StringSchema())));
             return operation;
         };
+    }
+
+    /**
+     * Every operation fails with the same envelope, so every operation declares it as its {@code
+     * default} response. That puts {@code ApiError} into the contract together with the closed list
+     * of its codes: a generated client then types an error and can switch over {@code code}
+     * exhaustively, instead of treating a failure as an untyped body.
+     */
+    @Bean
+    public GlobalOpenApiCustomizer apiErrorOnEveryOperation() {
+        return openApi -> {
+            Schema<?> apiError = ModelConverters.getInstance().read(ApiError.class).get("ApiError");
+            StringSchema code = new StringSchema();
+            code.setDescription("Stable machine-readable code the client may branch on");
+            Arrays.stream(ErrorCode.values()).map(Enum::name).forEach(code::addEnumItem);
+            apiError.addProperty("code", code);
+            // Free-form on purpose: its keys depend on the code ("fields", "conflicts", ...).
+            apiError.addProperty(
+                    "details",
+                    new ObjectSchema()
+                            .additionalProperties(true)
+                            .description("Structured context; field errors appear under 'fields'"));
+            openApi.getComponents().addSchemas("ApiError", apiError);
+
+            if (openApi.getPaths() == null) {
+                return;
+            }
+            openApi.getPaths()
+                    .values()
+                    .forEach(
+                            path ->
+                                    path.readOperations()
+                                            .forEach(
+                                                    operation ->
+                                                            operation
+                                                                    .getResponses()
+                                                                    .addApiResponse(
+                                                                            "default", failure())));
+        };
+    }
+
+    private static ApiResponse failure() {
+        return new ApiResponse()
+                .description("Any failure (4xx, 5xx): the error envelope")
+                .content(
+                        new Content()
+                                .addMediaType(
+                                        "application/json",
+                                        new MediaType()
+                                                .schema(
+                                                        new Schema<>()
+                                                                .$ref(
+                                                                        "#/components/schemas/ApiError"))));
     }
 }

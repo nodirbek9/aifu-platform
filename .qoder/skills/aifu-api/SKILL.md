@@ -75,8 +75,12 @@ export const authFetch: typeof fetch = async (input, init) => {
 
 ## Errors
 
-One mapper turns a failed response into `ApiProblem { status, code, message, details, requestId }`.
-`code` → translated text in `i18n` (`errors.<CODE>`); `message` is only the fallback.
+Every operation declares the error envelope as its `default` response, so the `error` that
+`openapi-fetch` returns is typed as `components['schemas']['ApiError']` and `code` is a union of
+every code the server can send. One mapper turns it into
+`ApiProblem { status, code, message, details, requestId }` (a network failure becomes a problem
+with its own code). `code` → translated text in `i18n` (`errors.<CODE>`, one key per code of the
+union, checked by a test); `message` is only the fallback.
 
 | Code | UI |
 |---|---|

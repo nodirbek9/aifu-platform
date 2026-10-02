@@ -3,8 +3,9 @@ package uz.aifu.lms.common.error;
 import org.springframework.http.HttpStatus;
 
 /**
- * The closed set of machine-readable error codes. This is part of the frontend contract (see {@code
- * docs/api/error-model.md}); a client may branch on these values.
+ * The closed set of machine-readable error codes. This is part of the frontend contract: the
+ * OpenAPI file lists them as the values of {@code ApiError.code}, and {@code docs/03-API-GUIDE.md}
+ * §2 says what a client does with each; a client may branch on these values.
  *
  * <p>Adding a code is additive and safe. Renaming or removing one is a BREAKING change.
  */
