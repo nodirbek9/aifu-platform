@@ -1,0 +1,407 @@
+
+
+O'ZBEKISTON RESPUBLIKASI 
+OLIY TA'LIM, FAN VA INNOVATSIYALAR VAZIRLIGI
+
+ANIQ VA IJTIMOIY FANLAR UNIVERSITETI
+
+
+"TASDIQLAYMAN"
+O'quv va ilmiy ishlar bo'yicha
+prorektor _______ K.A.Shakarov
+_______________________ 
+2026 yil "___" _________
+
+
+
+DASTURLASH
+FANINING O'QUV DASTURI
+(kunduzgi ta'lim shakli)
+
+
+Bilim sohasi:
+600 000 - Axborot-kommunikatsiya texnologiyalari
+500 000 - Tabiiy fanlar, matematika va statistika
+Ta'lim sohasi:
+610 000 - Axborot-kommunikatiya texnologiyalari
+540 000 - Matematika va statistika
+Ta'lim yo'nalishlari:
+60610600 - Dasturiy injiniring
+
+70540101 - Matematika
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Toshkent-2026
+
+Mazkur o'quv dasturi Aniq va ijtimoiy fanlar universiteti Kengashining 2026-yil ___- avgustdagi ___-sonli yig'ilish bayoni bilan ma'qullangan.
+
+Mazkur o'quv dasturi Aniq va ijtimoiy fanlar universiteti "Aniq fanlar" kafedrasi tomonidan taqdim etilgan (kafedraning 2026-yil __avgustdagi ___-sonli yig'ilish bayoni).
+
+
+Tuzuvchi:
+B. Akbarov - Aniq va ijtimoiy fanlar universiteti "Aniq fanlar" kafedrasi dotsenti v.b.
+A. Zoxidov - Aniq va ijtimoiy fanlar universiteti, "Aniq fanlar" kafedrasi katta o'qituvchisi.
+
+Taqrizchilar:
+N.A.Ignatev - Mirzo Ulug'bek nomidagi O'zbekiston Milliy universiteti "Dasturiy injiniring va sun'iy intellekt" kafedrasi professori, fizika-matematika fanlari doktori.
+Sh.F.Madraximov - Mirzo Ulug'bek nomidagi O'zbekiston Milliy universiteti "Dasturiy injiniring va sun'iy intellekt" kafedrasi professori, texnika fanlari doktori.
+
+1.
+   Fan ma'lumotlari
+Fan/modul kodi
+DAS1110
+O'quv yili
+2026-2027
+Semestr
+1-semestr
+2-semestr
+Kreditlar 
+1-semestr - 6
+2-semestr - 5
+Fan/modul turi
+Majburiy
+Ta'lim tili 
+O'zbek
+O'quv rejadagi tartib raqami
+60610600 - 1.09
+Haftadagi dars soatlari 
+1-semestr - 4
+2-semestr - 4
+Fanning nomi
+Dasturlash
+Jami yuklama (soat)
+Auditoriya mashg'ulotlari jami - 120 soat, shundan:
+Mustaqil ta'lim (soat)
+Kurs ishi
+
+
+Ma'ruza
+Amaliy
+
+
+
+330
+1-semestr - 180
+2-semestr - 150
+60
+1-semestr - 30
+2-semestr - 30
+60
+1-semestr - 30
+2-semestr - 30
+210
+1-semestr-120
+2-semestr-90
+-
+
+2.
+Fanning mazmuni
+Fanni o'qitishdan maqsad - talabalarga dasturlash tillarining fundamental tushunchalari va algoritmlash usullarini, turli sohaga tegishli amaliy masalalarni yechishni, mantiqiy fikrlashni o'rgatish, turli xil dasturlash muhitlarida ilovalar yaratish va ularni amaliyotga tatbiq etish ko'nikmalarini hosil qilishdan iborat. Shuningdek, obyektga yo'naltirilgan dasturlash tamoyillari va dasturlash tillarining takomillashgan imkoniyatlari bilan tanishtirish, zamonaviy dasturlash muhitlarida foydalanuvchi interfeysi imkoniyatlarini o'rgatish hamda turli sohaga tegishli amaliy masalalarni yechish ko'nikmalarini shakllantirishdir.
+
+Fanning vazifasi - dasturlashni o'rganayotgan talabalar uchun texnologik innovatsiyalarni qabul qilish, nazariy bilimlar va amaliy ko'nikmalarni shakllantirish, turli sohaga tegishli hodisa va jarayonlarga uslubiy yondashuvni hamda ilmiy dunyoqarashni rivojlantirish, texnik bilimlarga oid masalalarni zamonaviy dasturlash tillari yordamida hal etish va ularning usullarini kasbiy faoliyatga qo'llay olishga erishishdan iborat.
+
+3.
+Fanni o?zlashtirish uchun zarur boshlang?ich bilimlar
+1.
+(ALG112318) Algebra
+
+4.
+Ta'lim natijalari (TN)
+
+Kasbiy kompetensiyalar:
+TN1
+Axborot, uni saqlash usullari, qayta ishlash va uzatish, hisoblash tizimlarining matematik va dasturiy ta'minoti, ularni fan sohalarida, ishlab chiqarish va ta'limda qo'llash xususiyatlari bo'lishi kerak.
+TN2
+Kompyuterni dasturiy ta'minoti, dastur turlari va xususiyatlari haqida tasavvurga ega bo'lishi kerak.
+TN3
+Yuqori darajadagi dasturlash tillarini, dasturiy ta'minotni, dasturlash texnologiyalaridan foydalanish ko'nikmalariga ega bo'lishi kerak.
+TN4
+Tadbiqiy va hisoblash matematikasi masalalarini y?chish algoritmlarini tuzish bo'yicha nazariy bilimlarga ega bo'lishi kerak.
+TN5
+Vektor analiz, maydon nazariyasi va kompleks o'zgaruvchili funksiyalar nazariyasining asosiy tushunchalari, ta'rif va teoremalari haqida bilimga ega bo'lishi kerak.
+
+Ko?nikmalar:
+TN6
+Fanni o'rganishda talabalar tegishli jarayonlar haqida tasavvurga ega bo'lishlari, ayni paytda ularni mantiqiy fikrlash va to'g'ri xulosalar chiqara olishi kerak.
+TN7
+Obyektga yo'naltirilgan dasturlash konsepsiyalari, inkapsulyatsiya, vorislik, polimorfizm qoidalarini o'rganish va amaliy masalalarni ular yordamida y?chish ko'nikmalariga ega bo'lishi kerak.
+TN8
+Tadbiqiy masalalarni y?chish algoritmini tuzish, matematik (kompyuter) modelini qurish va uning dasturiy ta'minotini yaratish, chiziqli ro'yxatlar hosil qilish, strukturada berilganlarni jamlash va ko'rsatgichlar bilan ishlash ko'nikmasiga bo'lishi kerak.
+TN9
+Olingan bilim va ko'nikmalarni o'z mutaxassisligi doirasidagi muammolarni tahlil qilish va ularga yechim topishda mustaqil va ijodiy qo'llay olishi kerak.
+
+5.
+Fan mazmuni va mashg'ulotlar shakli:
+Soat
+
+Ma'ruza (M)
+30
+1-semestr
+
+    ?1 
+Dasturlashning asosiy tushunchalari.
+2
+    ?2 
+Dasturlash tillarining tuzilmasi.
+2
+    ?3 
+Tarmoqlanuvchi jarayonlarni tashkil etish.
+2
+    ?4 
+Takrorlanuvchi jarayonlarni tashkil etish.
+2
+    ?5 
+Bir o'lchovli massivlar.
+2
+    ?6 
+Ko'p o'lchovli massivlar.
+4
+    ?7 
+Funksiyalar bilan ishlash.
+2
+    ?8 
+Rekursiv funksiyalar bilan ishlash.
+2
+    ?9 
+Dinamik xotira bilan ishlash.
+4
+    ?10 
+Satrlarga va kengaytirilgan belgilar.
+4
+    ?11 
+String toifasidagi satrlar.
+2
+    ?12 
+Fayllar bilan ishlash.
+2
+2-semestr
+30
+M1
+Saralash algoritmlari.
+2
+M2
+Obyektga yo'naltirilgan dasturlash asoslari.
+4
+M3
+Obyektlar massivi.
+4
+M4
+Inkapsulyatsiya va merosxo'rlik. Polimorfizm.
+4
+M5
+Shablonlar bilan ishlash.
+6
+M6
+Konteynerlar (kolleksiyalar).
+4
+M7
+Visual Studio muhitida dasturlash.
+2
+M8
+Komponentalar bilan ishlash.
+4
+
+Mashg'ulotlar shakli: amaliy mashg'ulot (A)
+
+1-semestr
+30
+    ?1 
+Kompilyator turlari. Identifikator va ularning turlari.
+4
+    ?2 
+Ma'lumot turlari. Kiritish va chiqarish funksiyalari. Operatorlar.
+2
+    ?3 
+Mantiqiy amallar va matematik funksiyalar bilan ishlash.
+4
+    ?4 
+Tarmoqlanuvchi jarayonlarni tashkil etish.Shartli o'tish operatori. 
+2
+    ?5 
+Tarmoqlanuvchi jarayonlarni tashkil etish. Tanlash operatori. Ternar operator.
+4
+    ?6 
+Takrorlanuvchi jarayonlarni tashkil etish. Parametrli takrorlash operatori. Old shartli takrorlash operatori.
+4
+    ?7 
+Takrorlanuvchi jarayonlarni tashkil etish. Parametrli takrorlash operatori. Old shartli takrorlash operatori.
+2
+    ?8 
+Takrorlanuvchi jarayonlarni tashkil etish. So'ng shartli takrorlanuvchi operatorlar. Ichma-ich takrorlanish jarayonlari.
+4
+    ?9 
+Bir o'lchamli massivlar. Statik massivlar. Elementlarni saralash usullari. Elementlarni qidirish usullari. Elementlar ustida amallarni ko'rsatish.
+4
+2-semestr
+30
+A1
+Ko'p o'lchamli massivlar. Statik massivlar. Elementlarni saralash usullari.
+4
+A2
+Elementlarni qidirish usullari. Elementlar ustida amallarni ko'rsatish.
+6
+A3
+Funksiyalar bilan ishlash. Funksiya tavsifi. Qiymat qaytaruvchi funksiya. Funksiya-protsedura. Funksiyalarni qayta yuklash.
+4
+A4
+Rekursiv funksiya. Foydalanuvchi kutubxonasini tashkil etish.
+4
+A5
+Dinamik xotira bilan ishlash. Ko'rsatkichlar. Dinamik bir o'lchamli massivlar. Dinamik ko'p o'lchamli massivlar. 
+4
+A6
+Satrlarga va kengaytirilgan belgilar. Belgilar bilan ishlash. ASCII kodlari. Belgilar va satrlar bilan ishlovchi funksiyalar.
+2
+A7
+Satrlar bilan ishlovchi funksiyalar.
+2
+A8
+Matnli fayllar haqida umumiy tushuncha. Fayllar va oqimlar.
+4
+
+
+Mustaqil ta'lim (MT)
+
+
+1-semestr
+120
+1
+Tarmoqlanuvchi jarayonlarni tashkil etish (algoritm va dastur).
+20
+2
+Takrorlanuvchi jarayonlarni tashkil etish (algoritm va dastur).
+20
+
+Massivlarni tashkil etish.
+20
+
+Matritsalarni tashkil etish.
+20
+
+Vektorlarni tashkil etish.
+20
+
+Ichma-ich joylashgan siklik jarayonlarni tashkil etish.
+20
+
+2-semestr
+90
+1
+Bir o'lchamli massivlarning funksiya parametrlari sifatida qo'llanilishi.
+30
+2
+Matritsalarning funksiya parametrlari sifatida qo'llanilishi.
+10
+3
+Dinamik massivlar va ko'rsatkichlar.
+10
+4
+ Rekursiv jarayonlarni tashkil etish.
+10
+5
+Ichma-ich joylashgan rekursiv jarayonlarni tashkil etish.
+10
+6
+Satrlar bilan ishlash.
+10
+7
+O'zaro bog'langan sinflarni tashkil etish.
+10
+*Izoh: Fan (modul) yuzasidan talabalar bajaradigan mustaqil ish topshiriqlari variativ tavsifga ega bo'lishi lozim. Mustaqil ish topshiriqlarining 1/3 qismi kichik guruhlarda hamkorlikda ishlash (kooperativlik)ga mo 'Ijallangan bo 'lishi kerak.
+
+7.
+Ta'lim texnologiyalari va metodlari
+    - ma'ruzalar; 
+    -  amaliy, laboratoriya ishlami bajarish va xulosalash; 
+    - interfaol keys-stadilar;
+    -  blits-so'rov;
+    -  gumhlarda ishlash;
+    -  taqdimotlar qilish; 
+    - jamoa bo'lib ishlash va himoya qilish uchun loyihalar.__
+
+8.
+Talabalar tomonidan kreditlarni olish uchun talablar
+Fanga oid nazariy va uslubiy tushunchalarni to'la o'zlashtirish, tahlil natijalarini to'ri aks ettira olish, o'rganilayotgan jarayonlar haqida mustaqil mushohada yuritish va nazorat uchun berilgan vazifa va topshiriqlarni bajarish, yakuniy nazorat bo'yicha yozma ishni topshirish. 
+
+9.
+Talabala bilimini baholash mezoni
+      a) 90-100 ball (5 baho) olish uchun talabaning bilim darajasi quyidagilarga javob berishi lozim:
+    - fanning mohiyati va mazmunini to'liq yorita olsa;
+    -  fandagi mavzularni bayon qilishda ilmiylik va mantiqiylik saqlanib, ilmiy xatolik va chalkashliklarga yo'l qo'ymasa;
+    -  fan bo'yicha mavzu materiallarining nazariy yoki amaliy ahamiyati haqida aniq tasavvurga ega bo'lsa; 
+    -  fan doirasida mustaqil erkin fikrlash qobiliyatini namoyon eta olsa; 
+    -  berilgan savollarga aniq va lo'nda javob bera olsa; 
+    -  konspektga puxta tayyorlangan bo'lsa; 
+    -  mustaqil topshiriqlarni to'liq va aniq bajargan bo'lsa; 
+    -  barcha amaliy ko'nikma va malakalami o'zlashtirgan bo'Isa; 
+    -  nazariy bilimlarni turli vaziyatda qo'llash olish; 
+    - tizimli yondashish, uzviylikka amal qilish.____
+
+     b) 80-89 ball (4 baho) olish uchun talabaning bilim darajasi quyidagilarga javob berishi lozim:
+    - fanning mohiyati va mazmunini tushungan, fandagi mavzularni bayon qilishda ilmiy va mantiqiy chalkashliklarga yo'l qo'ymasa; 
+    -  fanning mazmunini amaliy ahamiyatini tushungan bo'lsa; 
+    -  fan bo'yicha berilgan vazifa va topshiriqlarni o'quv dasturi doirasida bajarsa; 
+    - fan bo'yicha berilgan savollarga to'g'ri javob bera olsa; 
+    -  fan bo'yicha konspektini puxta shakllantirgan bo'lsa; 
+    -  fan bo'yicha mustaqil topshiriqlarni to'liq bajargan bo'lsa; 
+    -  barcha amaliy ko'nikma va malakalarni o'zlashtirishga harakat qilgan bo'lsa; 
+    - barcha amaliy ko'nikma va malakalarni o'zlashtirishga harakat qilgan bo'lsa.
+
+      d) 60-79 ball (3 baho) olish uchun talabaning bilim darajasi quyidagilarga javob berishi lozim:
+    - fan haqida umumiy tushunchaga ega bo'lsa; 
+    -  fandagi mavzularni tor doirada yoritib, bayon qilishda ayrim chalkashliklarga yo'l qo'yilsa; 
+    -  fan bo'yicha mustaqil topshiriqlarni to'liq bajargan bo'lsa; 
+    - bayon qilish ravon bo'lmasa;
+    - fan bo'yicha savollarga mujmal va chalkash javoblar olinsa; 
+    - fan bo'yicha matn puxta shakllantirilmagan bo'lsa._
+     e) quyidagi hollarda talabaning bilim darajasi qoniqarsiz 0-59 ball (2 baho) bilan baholanishi mumkin:
+    - fan bo'yicha mashg'ulotlarga tayyorgarlik ko'rilmagan bo'lsa; 
+    -  fan bo'yicha mashg'ulotlarga doir hech qanday tasavvurga ega bo'lmasa; 
+    - fan bo'yicha mustaqil topshiriqlami to'liq bajarmagan bo'lsa; 
+    - fan bo'yicha matnlami boshqalardan k?'chirib olganligi sezilib tursa; 
+    -  fan bo'yicha matnda jiddiy xato va chalkashliklarga yo'l qo'yilgan bo'lsa; 
+    -  fanga doir berilgan savollarga javob olinmasa; fanni bilmasa.
+
+
+10. Foydalanilgan adabiyotlar
+Asosiy adabiyotlar
+1.
+Mo'minov B.B. Dasturlash 1. Darslik. - T.: "Nihol print", 2021. - 280 b.
+2.
+Mo'minov B.B. Dasturlash 2. Darslik. - T.: "Nihol print", 2021. - 604 b.
+3.
+Nazirov Sh.A., Qobulov R.V., Bobojonov M.R., Raxmanov Q.S. C va C++ tili. - T.: "Voris-nashriyot" MChJ, 2013. - 488 b.
+4.
+Abdullayeva Z.Sh., Ishniyozov O.O. Dasturlash I va Dasturlash II fanidan o'quv qo'llanma. - 2022. - 141 b.
+5.
+Xaidarova M.O., Mallayev O.U., Abdullaeva Z.Sh., Sattarov A.B. "Programmirovanie na C++" fanidan laboratoriya ishlarini bajarish bo'yicha metodik qo'llanma. - TUIT, Toshkent, 2017. - 145 b.
+Qo?shimcha adabiyotlar
+3.
+Horton I. Beginning Visual C++ 2012. - C.: John Wiley & Sons, Inc., 2012. - 988 p.
+4.
+Ziborov V.V. MS Visual C++ 2010 v srede .NET. - M.: Piter, 2012. - 320 s.
+Axborot manbalari
+5.
+www.aifu.uz - Aniq va ijtimoiy fanlar universiteti rasmiy web-sayti
+6.
+www.edu.uz  - O'zbekiston respublikasi oliy ta'lim, fan va innovatsiyalar vazirligi rasmiy web-sayti
+7.
+www.unilibrary.uz - Yagona elektron kutubxona tizimi web-sayti
+8.
+https://n.ziyouz.com/kutubxona/category/145-matematika  - milliy elektron kutubxona web-saytining matematikaga oid elektron kitoblar sahifasi
+9.
+https://www.natlib.uz/ - O'zbekiston  milliy kutubxonasi rasmiy web-sayti
+

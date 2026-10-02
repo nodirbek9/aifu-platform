@@ -1,0 +1,38 @@
+# Execution worker. NO web server: this process must expose no inbound port (ADR-006).
+spring:
+  application:
+    name: aifu-lms-execution-worker
+  main:
+    web-application-type: none
+  datasource:
+    # Restricted role created in migration V014. It cannot read users, tokens or audit data.
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:aifu_lms}
+    username: ${DB_WORKER_USERNAME:aifu_execution_worker}
+    password: ${DB_WORKER_PASSWORD:}
+    hikari:
+      pool-name: aifu-worker-pool
+      maximum-pool-size: ${DB_POOL_MAX:5}
+  flyway:
+    enabled: false        # the API owns the migration history; the worker must never migrate
+
+aifu:
+  worker:
+    id: ${HOSTNAME:worker-local}
+    concurrency: ${EXECUTION_WORKER_CONCURRENCY:2}
+    poll-interval: ${EXECUTION_POLL_INTERVAL:PT1S}
+    claim-batch-size: 5
+    lease-duration: PT2M
+    max-attempts: 3
+  sandbox:
+    engine: ${EXECUTION_ENGINE:judge0}        # judge0 | docker-run | noop
+    judge0-url: ${EXECUTION_JUDGE0_URL:http://judge0-server:2358}
+    judge0-token: ${EXECUTION_JUDGE0_TOKEN:}
+    default-cpu-time-limit-ms: ${EXECUTION_DEFAULT_CPU_TIME_LIMIT_MS:5000}
+    default-wall-time-limit-ms: ${EXECUTION_DEFAULT_WALL_TIME_LIMIT_MS:10000}
+    default-memory-limit-kb: ${EXECUTION_DEFAULT_MEMORY_LIMIT_KB:262144}
+    max-processes: 64
+    max-output-bytes: ${EXECUTION_MAX_OUTPUT_BYTES:65536}
+    enable-network: false                     # MUST stay false. See ADR-006.
+logging:
+  level:
+    uz.aifu.lms.worker: INFO

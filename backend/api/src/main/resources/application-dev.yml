@@ -1,0 +1,28 @@
+# Development profile. Loads DEV-ONLY seed data. Never activate in production.
+spring:
+  flyway:
+    # db/seed contains development fixtures ONLY (ADR-009). Production never sees this location.
+    locations: classpath:db/migration,classpath:db/seed
+    # Dev databases already hold the V9xx seeds, so a schema migration added later (V017, V018 …)
+    # has a lower version than the newest applied one. Out-of-order lets it apply in dev;
+    # production has no seeds and keeps the default strict ordering.
+    out-of-order: true
+  jpa:
+    show-sql: false
+    properties:
+      hibernate.format_sql: true
+  datasource:
+    password: ${DB_PASSWORD:dev_only_app_password_change_me}
+
+aifu:
+  jwt:
+    # Dev-only placeholder. Fails the startup validator if you ship this to production.
+    secret: ${JWT_SECRET:dev_only_insecure_secret_do_not_use_anywhere_real_0123456789}
+  security:
+    cors-allowed-origins: http://localhost:3000,http://localhost:5173,http://localhost:4200
+
+logging:
+  level:
+    uz.aifu.lms: DEBUG
+    org.hibernate.SQL: INFO
+    org.springframework.security: INFO

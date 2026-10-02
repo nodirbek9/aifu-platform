@@ -1,0 +1,374 @@
+
+
+ANIQ VA IJTIMOIY FANLAR UNIVERSITETI
+
+
+“TASDIQLAYMAN”
+      Aniq va ijtimoiy fanlar universiteti rektori G‘.I.Botirov
+_______________________ 
+2025 yil “___” _________
+
+
+KIBERXAVFSIZLIK ASOSLARI FANI BO’YICHA 
+SILLABUS
+
+(Ta’lim shakli: bakalavr (kunduzgi))
+
+Bilim sohalari:
+600 000 –  Axborot kommunikatsiya texnologiyalari
+Taʼlim sohalari:
+610 000 –  Axborot kommunikatsiya texnologiyalari
+Ta’lim yo‘nalishlari:
+60610400 –   Dasturiy injiniring
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Toshkent – 2025
+Modul /FAN SILLABUS
+60610400 – Dasturiy injiniring
+
+Oʻquv yili:
+2025/2026
+Fan nomi:
+Kiberxavfsizlik Asoslari
+Fan turi:
+Majburiy
+Fan kodi:
+KIA1406
+Yil:
+2
+Semestr
+3
+Ta’lim shakli:
+Kunduzgi
+Ta’lim turi
+Bakalavriat
+Mashgʻulotlar shakli va semestrga 
+Jami
+3-semestr
+ajratilgan soatlar:
+180
+180
+Ma’ruza
+30
+30
+Amaliy mashgʻulotlar
+60
+60
+Laboratoriya mashgʻulotlari
+-
+-
+Seminar
+-
+-
+Mustaqil ta’lim
+90
+90
+Kredit miqdori:
+6
+6
+Baholash shakli:
+Imtihon
+Fan tili:
+O‘zbek
+
+
+Fan maqsadi (FM)
+FM1
+Fanni o‘qitishdan maqsad — talabalar kasbiy faoliyatida axborot tizimlari va axborot resurslarining kiberxavfsizligini ta'minlash bo‘yicha masalalarni yechishda bilim, ko‘nikma va malaka shakllantirishdan iborat.
+
+Fanning vazifasi — talabalarni kiberxavfsizlikning asosiy tushunchalari bilan tanishtirish, kriptografiya asoslari, foydalanishni nazoratlash, tarmoq, bulutli hisoblash, internet va kompyuter xavfsizligini ta'minlashning hamda axborot xavfsizligiga tahdidlar va ularga qarshi kurashishni samarali usul va vositalarini o'rgatishdan iborat.
+
+Fanni oʻzlashtirish uchun zarur boshlangʻich bilimlar
+1.
+Informatika va OT asoslari: kompyuter savodxonligi; Windows/Linux muhitida asosiy sozlamalar, fayl tizimi, foydalanuvchi va guruhlar bilan ishlash.
+2.
+Tarmoq asoslari: IP manzillash, LAN/WLAN, marshrutlash va oddiy tarmoq uskunalari haqida boshlang‘ich tushuncha.
+Ta’lim natijalari (TN)
+
+Bilimlar jihatidan:
+TN1
+Kiberxavfsizlik konsepsiyalari: konfidensiallik, yaxlitlik, foydalanish mumkinligi (CIA), tahdid, zaiflik, risk, xavfsizlik nazoratlari (controls). Risklarni boshqarish: risk darajasi/ chastotasi, risk matritsasi, jarayon bosqichlari va tashkilot darajasida risklarni boshqarish yondashuvlari. Kriptografiya asoslari: simmetrik va ochiq kalitli shifrlash, xesh va MAC, elektron raqamli imzo, kriptografik protokollar. Identifikatsiya va autentifikatsiya: parol tizimlari, ko‘p omilli autentifikatsiya, biometrik yondashuvlar; foydalanishni boshqarish modellari. Fizik xavfsizlik: tabiiy va sun’iy tahdidlar, kirishni nazorat qilish, axborotni xavfsiz yo‘q qilish usullari.
+
+Koʻnikmalar jihatidan:
+TN2
+Risk tahlili: aktivlarni aniqlash, tahdid/zaifliklarni xaritalash, risk matritsasini tuzish va ustuvorliklarni belgilash. Kriptovositalar bilan ishlash: fayl/diskni shifrlash, kalitlar yaratish/saqlash, xabarni imzolash va verifikatsiya, sertifikat zanjirini tekshirish. Tarmoq xavfsizligi amaliyoti: trafikni kuzatish va tahlil qilish (paket tahlili vositalari), firewall qoidalarini yozish, VPN ulash.
+Zaxira va tiklash: zaxira strategiyasini tanlash, tiklash jarayonini sinovdan o‘tkazish; loglarni to‘plash, saqlash va auditi uchun minimal tartib yaratish.
+
+Fan mazmuni
+Mashg‘ulotlar shakli: III-semestr ma’ruza (M)
+Soat
+	•	
+Kiberxavfsizlik tushunchalari va asosiy tamoyillari. Axborot xavfsizligi, konfidensiallik, yaxlitlik, foydalanish mumkinligi. Tahdid, zaiflik, risk va boshqaruv vositalari.
+2
+	•	
+Risklarni boshqarish. Risk darajasi va chastotasi, risk matritsasi, Risk Management Information Systems (RMIS).
+2
+	•	
+Kiberjinoyatchilik va huquqiy asoslar. Ichki va tashqi kiberjinoyatlar, xalqaro va milliy qonunlar, kiberetika, raqamli kriminalistika.
+2
+	•	
+Kiberxavfsizlik arxitekturasi va siyosati. Xavfsizlik strategiyasi, siyosati, iyerarxiyasi va turlari.
+2
+	•	
+Kriptografiyaga kirish. Asosiy tushunchalar, kriptotizimlar, Kerkxofs prinsipi, tarixiy usullar.
+2
+	•	
+Simmetrik kriptografik algoritmlar. Oqimli va blokli shifrlash, A5/1 va AES misolida.
+2
+	•	
+Ochiq kalitli kriptotizimlar. RSA, modul arifmetikasi, ochiq kalitlar, afzallik va muammolar.
+2
+	•	
+Xesh funksiyalar va elektron raqamli imzo. Hash, MAC, ERI, PKI, X.509 sertifikatlari.
+2
+	•	
+Kriptografik protokollar va ilovalar. SSL/TLS, IPSec, SSH, blockchain, e-hukumat va elektron to‘lovlar.
+2
+	•	
+Identifikatsiya va autentifikatsiya. Parollar, biometrik tizimlar, ko‘p omilli autentifikatsiya.
+2
+	•	
+Foydalanishni boshqarish modellari. DAC, MAC, RBAC, ABAC, ACL va matritsalar.
+2
+	•	
+Fizik xavfsizlik. Tabiiy va sun’iy tahdidlar, nazorat choralari, axborotni yo‘q qilish usullari. 
+2
+	•	
+Tarmoq xavfsizligi. OSI va TCP/IP modellari, zaiflik va tahdidlar, DoS hujumlari.
+2
+	•	
+Tarmoq xavfsizligini ta’minlovchi vositalar. Firewall, VPN, IDS, DLP, honeypot.
+2
+	•	
+Bulutli hisoblash va IoT xavfsizligi. Bulutli tizimlar, maxfiylik masalalari, IoT arxitekturasi va tahdidlar.
+2
+Jami
+30
+Mashg‘ulotlar shakli: III-semestr amaliy mashg‘ulot (A)
+
+	•	
+Axborot xavfsizligi tushunchalari bo‘yicha test va keys-stadi.
+4
+	•	
+Risk matritsasini qurish va risklarni baholash (amaliy misol).
+4
+	•	
+Kiberjinoyatlar bo‘yicha real voqealarni tahlil qilish (case study).
+4
+	•	
+Xavfsizlik siyosati loyihasini ishlab chiqish (oddiy tashkilot misolida).
+4
+	•	
+Klassik shifrlash usullari (Caesar, Vigenere)ni qo‘llash.
+4
+	•	
+Simmetrik algoritmlar (AES) bilan shifrlash dasturida mashq.
+4
+	•	
+RSA algoritmini oddiy misol orqali qo‘llash.
+4
+	•	
+Hash funksiyalar va ERI yaratish (onlayn vositalarda).
+4
+	•	
+SSL/TLS sertifikatini tekshirish (brauzer misolida).
+4
+	•	
+Windows OTda foydalanuvchi autentifikatsiyasi va parol siyosatini sozlash.	
+4
+	•	
+Linux OTda fayl va katalog huquqlarini boshqarish.
+4
+	•	
+Fizik xavfsizlik bo‘yicha real misollarni tahlil qilish (keys).
+4
+	•	
+Tarmoq trafikini monitoring qilish (Wireshark yoki shunga o‘xshash vosita).
+4
+	•	
+Virtual VPN ulash va trafikni himoyalash.
+4
+	•	
+IoT qurilmalari xavfsizlik zaifliklarini o‘rganish (keys yoki taqdimot).
+4
+Jami
+60
+
+
+
+
+Mustaqil ta’lim (MT)
+Ma’ruza va amaliy mashg‘ulotlar mavzularini o‘zlashtirish
+6
+Mustaqil ish va uyga vazifalarni bajarish
+6
+Axboronıi ximoyaiashning kriptografık usullari. Enigma shifrlash mashinasi va uning bardoshliligi
+6
+Axborotni foydalanuvchanligini ta'minlashda antivirus, IDS, lPS, TE vositalarining o‘rni. Zararli dasturiy vositalarni klassifikatsiyasi va himoya usullari.
+6
+Axborot-kommunikatsiya	texnologiyalari	xavfsizligiga bo’1adigan tahdidlar. Zararkunanda dasturlarning turlari.
+6
+Kompyuter viruslari va virusdan himoyalanish usullari. Xorijiy davlatlarning elektron raqamli imzo algoritmlari tahlili. Identifıkatsiya va autentifıkatsiya tushunchasi va vazifalari. 
+6
+Axborot tizimlari va resurslaridan ruxsatsiz foydalanishlarni aniqlash uslubiyati. Simsiz aloqa tizimlarida axborot resurslarini himoyalash.
+6
+Axborotni ruxsatsiz foydalanishlardan himoyalash. Ijtimoiy injeneriyada hujumlar tahlili.
+6
+Zamonaviy antivirus dasturiy vositalari va ulaming imkoniyatlari. Kiberjinoyat va kiberhuquq.
+6
+Tarmoqda uzatiluvchi axborotni himoyalashda kriptografiyaning o'mi. Zararkunanda dasturlar va ulardan himoyalanish (masalan, Maiwarebytes misolida).
+6
+Kiberjinoyatchilikni keng tarqalishining sabablari. Yuz tasviriga asoslangan autentifikatsiya usuli va uning xususiyatlari.
+6
+Barmoq iziga asoslangan autentifikatsiya usuli. Elektron raqamli imzo.
+6
+Kiberxavfsizlik sohasida karyera yo‘llarini o’rganish. Axborot xavfsizligi sohasida ish boshlash.
+6
+Kiberxavfsizlik sohasida mashhur sertifıkatlar. Parollarni boshqarish tizimlari (masadan, LastPass) va ulardan foydalanish
+4
+Virtual himoyalangan tarmoq va undan amaliyotda foydalanish (masalan CyberGhost yoki ExpressVPN misolida). 
+4
+Sotsial injineriya. ESET NOD32 antivirus vositasidan foydaianish.
+2
+Windows OTda zaxira nusxalashni (Backup and Restore) amalga oshirish. Windows OTda imtiyozlar turlari, fayl va kataloglar uchun foydalanishni boshqarish tartibi.
+2
+Jami
+90
+
+
+
+
+
+
+Asosiy va qoʻshimcha oʻquv adabiyotlar hamda axborot manbaalari
+
+Asosiy adabiyotlar
+1.
+Robin Sharp, Introduction to Cybersecurity: A Multidisciplinary Challenge, Textbook, - Springer Cham, 2023. — 452 p.
+2.
+S.K. Ganiyev, A.A. Ganiyev, Z.T. Xudoykulov. Kiberxafsizlik asoslari: o‘quv qo'llanma, -T.: “Nihol print” OK, 2021 . — 224 b.
+3
+Tairakawa Kousho. Securing the Digital Frontier: An lritroduction to Cybcrsccurity for Beginners. Independently published, 2G2S. — 139 p.
+Qo‘shimcha adabiyotlar
+	•	
+Ian Neil. (2018). CompTIA security+ certification guide: master IT security essentials and exam topics for CompTIA security+ SY0-501 certification, Birmingham: Packt Publishin. (online access from PolyU Library) (No. of words required: 10,000 words).
+	•	
+Wu, C. (2021 ). IoT Network Layer Security. In Internet of Things Security (Advances in Computer Science and Technology, pp. 107- 123). Singapores Springer Singapore, (online access from PolyU Library), ISBN: 981 1613710 ISBN: 9789811 613715, DOI: 10. I007/978-981- 16-1372-2_7.
+
+Internet saytlar
+	•	
+www.aifu.uz  – Aniq va ijyimoiy fanlar universiteti rasmiy web-sayti
+	•	
+https://www.cisco.com/site/us/en/learn/training-certifications/training/netacad/index.html- Axborot ta’lim portali
+	•	
+www.edu.uz  – O‘zbekiston respublikasi oliy ta’lim, fan va innovatsiyalar vazirligi rasmiy web-sayti
+	•	
+www.unilibrary.uz   – Yagona elektron kutubxona tizimi web-sayti
+
+
+
+
+
+
+
+
+
+
+Talabalar bilimini baholash
+Ushbu fan (modul) bo‘yicha talabalar bilimini baholash semestr davomida o‘quv materiallarini (testlar va yozma ishlar) bajarishga asoslanadi. Dars davomida talabalar 100 ballik tizimda baholanadi. Shundan, talabaning dars mashg‘ulotlaridagi ishtiroki, mustaqil ishlar va joriy natijalar uchun 30 ball, oraliq nazorat uchun 30 ball, yakuniy nazorat uchun 40 ball beriladi. Yakuniy nazorat yozma va og‘zaki shaklda amalga oshiriladi. Joriy, oraliq va nazorat vazifalari quyidagicha taqsimlanadi:
+TALABALAR BILIMINI BAHOLASH TARTIBI
+Reytingni baholash turlari
+Maks. ball
+Bajariladigan topshiriqlar
+Topshiriqlarni bajarilish muddati*
+joriy nazorat, shundan
+30 
+O‘quv jarayonining jadvali bo‘yicha
+
+Dars mashg‘ulotlaridagi ishtiroki
+10
+talabaning dars jadvaliga muvoffiq maʼruza, seminar, amaliy mashgʼulot, laboratoriya mashgʼulotlarida ishtirok etishi. Talabalarning dars mashgʼulotlariga ishtirok etishlari majburiy hisoblanadi va talablarning dars mashgʼulotlariga ishtiroki ragʼbatlantiriladi
+Fanning dars jadvalidagi auditoriya vaqtiga mos holda 
+Amaliy mashg‘ulotlardagi faolligi
+
+10
+fanning xususiyatidan kelib chiqqan holda, seminar, laboratoriya va amaliy mashgʼulotlarda ogʼzaki soʼrov, test oʼtkazish, suhbat, nazorat ishi, kollokvium, keys stadi, kazus yoki fabula vaziyatli topshiriqlar, loyiha, kurs ishi, uy vazifalarini bajarishi
+Fanning dars jadvalidagi auditoriya vaqtiga mos holda
+Mustaqil ta’lim, shundan
+10
+talabalar mustaqil ishlari platforma orqali test va har bir mavzu bo‘yicha alohida topshiriqlar shaklida tashkil etiladi
+Fanga ajratilgan auditoriya soatlari tugaguniga qadar
+Oraliq nazorat
+30
+Yozma 
+Akademik o‘quv yili grafigi bo‘yicha
+Yakuniy nazorat
+40
+Yozma 
+Akademik o‘quv yili grafigi bo‘yicha
+Jami
+100
+
+
+
+Talabaning semestr davomida fan bo‘yicha to‘plagan umumiy bali har bir nazorat turidan belgilangan qoidalarga muvofiq quyidagi formula orqali hisoblanadi:
+YaB=JN+ON+YaN
+bu yerda: JN – joriy nazorat; ON – oraliq nazorat; YaN – yakuniy nazorat.
+Eslatma: dars mashgʼultotlaridagi ishtiroki, joriy nazorat (30 ball) va oraliq nazoratlar uchun ajratilgan ballarning (30 ball) har biridan kamida 60 foizini toʼplay olmagan talabaning yakuniy nazoratga kirishiga ruxsat berilmaydi. Shuningdek, yakuniy nazorat uchun ajratilgan jami 40 ballning kamida 60 foizini to‘play olmagan talaba akademik qarzdor hisoblanadi.
+
+Fan oʻqituvchisi toʻgʻrisida ma’lumot
+
+Muallif (lar):
+Zoxidov Abdulla, katta o’qituvchi
+E-mail:
+zokhidovabdulla@gmail.com  
+Telefon raqami
+(90) 040-33-95
+Tashkilot:
+Aniq va ijtimoiy fanlar universiteti, “Aniq fanlar” kafedrasi
+Taqrizchilar:
+Sh. Pulatov  Muhammad al-Xorazmiy nomidagi TATU, “Mobil aloqa texnologiyalari” kafedrasi dotsenti, texnika fanlari nomzodi
+B. Akbarov – AIFU, “Aniq fanlar” kafedrasi, katta o’qituvchi
+
+Mazkur Sillabus “Aniq fanlar” kafedrasining 2025-yil ___- _________dagi ____-sonli yigʻilish bayoni bilan ma’qullangan.
+
+Mazkur Sillabus Aniq va ijtimoiy fanlar universiteti Kengashining 
+2025 yil __- _________dagi ___-sonli yigʻilish bayoni bilan tasdiqlangan.
+
+
+
+Oʻquv-uslubiy bo‘lim boshligʻi					Sh. Prenov
+
+
+Kafedra mudiri							K. Raximov
+
+Tuzuvchi								A. Zoxidov
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

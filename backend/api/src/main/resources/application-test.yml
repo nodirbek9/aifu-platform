@@ -1,0 +1,19 @@
+# Test profile. Datasource is supplied by Testcontainers (see AbstractIntegrationTest).
+spring:
+  flyway:
+    locations: classpath:db/migration      # deterministic: tests build their own fixtures
+  jpa:
+    hibernate:
+      ddl-auto: validate
+aifu:
+  jwt:
+    secret: test_only_secret_value_used_exclusively_in_tests_0123456789
+  security:
+    # High enough that a test exercising lockout (several deliberate failures) never trips the
+    # per-IP rate limiter as a side effect — the rate limiter itself is not what these tests cover.
+    auth-rate-limit-per-minute: 1000
+  execution:
+    engine: noop
+logging:
+  level:
+    uz.aifu.lms: INFO

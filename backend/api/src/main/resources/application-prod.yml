@@ -1,0 +1,16 @@
+# Production profile. Everything sensitive comes from the environment.
+spring:
+  flyway:
+    locations: classpath:db/migration      # seed data is NEVER loaded here
+springdoc:
+  swagger-ui:
+    enabled: ${SWAGGER_UI_ENABLED:false}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+logging:
+  level:
+    root: ${LOG_LEVEL:INFO}
+    uz.aifu.lms: ${LOG_LEVEL:INFO}

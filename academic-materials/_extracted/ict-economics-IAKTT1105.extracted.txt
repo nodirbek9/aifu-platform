@@ -1,0 +1,504 @@
+
+
+ANIQ VA IJTIMOIY FANLAR UNIVERSITETI
+
+
+"TASDIQLAYMAN"
+      Aniq va ijtimoiy fanlar universiteti rektori G'.I.Botirov
+_______________________ 
+2025 yil "___" _________
+
+
+IQTISODIYOTDA AXBOROT KOMMUNIKATSION TEXNOLOGIYALAR VA TIZIMLAR FANI BO'YICHA 
+SILLABUS
+
+Ta'lim shakli: bakalavr (kunduzgi)
+
+Bilim sohasi:
+400 000 - Biznes, boshqaruv va huquq
+Ta'lim sohasi:
+410 000 - Biznes va boshqaruv
+Ta'lim yo'nalishlari:
+60410100 - Iqtisodiyot
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Toshkent - 2025
+Modul /FAN SILLABUS
+60410100 - Iqtisodiyot
+
+O?quv yili:
+2025/2026
+Fan nomi:
+Iqtisodiyotda axborot kommunikatsion texnologiyalar va tizimlar
+Fan turi:
+Majburiy
+Fan kodi:
+IAKTT1105
+Yil:
+1
+Semestr
+1
+Ta'lim shakli:
+Kunduzgi
+Ta'lim turi
+Bakalavriat
+Mashg?ulotlar shakli va semestrga 
+Jami
+1-semestr
+ajratilgan soatlar:
+150
+150
+Ma'ruza
+30
+30
+Amaliy mashg?ulotlar
+
+
+Laboratoriya mashg?ulotlari
+
+
+Seminar
+30
+30
+Mustaqil ta'lim
+90
+90
+Kredit miqdori:
+5
+5
+Baholash shakli:
+Imtihon
+Fan tili:
+O'zbek
+Kafedra:
+Aniq fanlar
+Fan prof?ssor-o'qituvchisi:
+Akbarov Baxriddin Xusniddin o'g'li
+T?l.:+998 97 372-33-73
+E-mail: bahriddin.akbarov@gmail.com 
+Qabul kunlari:
+S?shanba, Payshanba 14.00-16.00
+Baholash shakllari: aralash (og'zaki va yozma)
+
+
+
+
+Fan maqsadi (FM)
+FM1
+Fanni o'qitishdan maqsad - talabalarda mazkur fanning nazariy va amaliy asoslarini o?zlashtirish, iqtisodiyotning turli soha va tarmoqlari statistik ma'lumotlarini qayta ishlash va tashkil qilish tendensiyalari haqida nazariy-metodologik va ilmiy-amaliy bilim hosil qilishdan iborat. 
+Fanning vazifasi - turli iqtisodiyot tarmoqlarining axborot tizimlari tasnifi va ularda qo'llanilayotgan axborot texnologiyalari, raqamli va axborot texnologiyalarining rivojlanish tendensiyalari, rivojlanish yo'nalishlari va ularning tavsifi haqida tasavvurga ega bo'lishi kerak.
+
+Fanni o?zlashtirish uchun zarur boshlang?ich bilimlar
+1.
+Ushbu fanni o'rganishda boshlang'ich matematik bilimlarga ega bo'lishi zarur.
+2.
+Kompyuter qurulmalari bilan ishlash ko'nikmasi bo'lishi zarur.
+
+Ta'lim natijalari (TN)
+
+Bilimlar jihatidan:
+TN1
+Turli iqtisodiyot tarmoqlarining axborot tizimlari tasnifi va ularda qo'llanilayotgan axborot texnologiyalari, raqamli va axborot 
+texnologiyalarining rivojlanish tendensiyalari, rivojlanish yo'nalishlari va ularning tavsifi haqida tasavvurga ega bo'lishi.
+TN2
+Lokal hisoblash tarmoqlari va internet tarmog'i funksional 
+imkoniyatlaridan foydalana olishi.
+
+Ko'nikmalar jihatidan:
+TN3
+Zamonaviy amaliy dasturiy ta'minotini bilishi va ulardan foydalana olishi kerak.
+Iqtisodiyotning turli soha va tarmoqlari statistik ma'lumotlarini qayta ishlash va tashkil qilish bo'yicha tasavvurga ega bo'lishi.
+
+Fan mazmuni
+Mashg'ulotlar shakli:  I-semestr ma'ruza (M)
+Soat
+    ?1 
+"Iqtisodiyotda axborot-kommunikatsiya texnologiyalari va tizimlari" faniga kirish
+2
+    ?2 
+Axborot texnologiyalarining infratuzilmasi
+2
+    ?3 
+Iqtisodiyotda foydalaniladigan dasturiy mahsulotlar
+2
+    ?4 
+Jadval redaktorlardan iqtisodiy masalalarni echish jarayonida foydalanish
+2
+    ?5 
+Taqdimotlarni ishlab chiqishning instrumental vositalari
+2
+    ?6 
+Tarmoq texnologiyalari va internet xizmatlari
+2
+    ?7 
+Ma'lumotlar bazalari va katta hajmdagi ma'lumotlar bilan ishlash texnologiyalari
+2
+    ?8 
+Algoritmlashtirish va dasturlash asoslari
+2
+    ?9 
+Axborot tizimlarning tushunchasi
+2
+    ?10 
+Elektron hukumat
+2
+    ?11 
+Bulutli texnologiyalar va ular bilan ishlash
+2
+    ?12 
+Blokcheyn texnologiyasi va undan foydalanish yo'llari
+2
+    ?13 
+Elektron biznes va mobil tijorat
+2
+    ?14 
+Axborot xavfsizligi ta`minlash usullari
+2
+    ?15 
+Iqtisodiyotning kasbiy faoliyatidagi axborot komplekslari va texnologiyalari
+2
+Jami
+30
+Mashg'ulotlar shakli: I-semestr seminar mashg'ulot (S)
+
+S1
+Iqtisodiyotda axborot-kommunikatsion texnologiyalar va tizimlar fanining ahamiyati, maqsadi va vazifalari.
+2
+S2
+Iqtisodiy masalalarni echish jarayonida foydalaniladigan axborotni 
+kiritish, chiqarish va saqlash uchun zamonaviy qurilmalarning turlari.
+2
+S3
+Microsoft Windows, Apple Macintosh va Lunix operatsion tizimlarining umumiy tavsiflari.
+2
+S4
+Microsoft Excel dasturida ma'lumotlarni ko'rish, qayta ishlash va umumlashtirish vositalari.
+2
+S5
+Taqdimot muharririda amallarni bajarish.
+2
+S6
+Tarmoq texnologiyalaridan milliy iqtisodiyot tarmoqlari va sohalarida foydalanish.
+2
+S7
+Katta ma'lumotlarni (Big Data) qayta ishlash texnologiyalari.
+2
+S8
+Hisoblash jarayonlarining grafik tasviri.
+2
+S9
+Axborot tizimlarining asosiy tarkibiy qismlari.
+2
+S10
+Interaktiv xizmatlar va ular bilan ishlash.
+2
+S11
+Bulutli texnologiyalarni turli sohalarda amalga oshirish tamoyillari.
+2
+S12
+Blockcheyn texnologiyasidan turli tarmoq sohalarida foydalanish xususiyatlari.
+2
+S13
+Internet-banking, Internet-savdo, Internet-sug'urta, Internet-marketing.
+2
+S14
+Axborotni himoya qilish uchun kriptografik usullardan foydalanish.
+2
+S15
+Soliq hisobotlari va bank kredit, omonat turlari.
+2
+Jami
+30
+
+
+
+Mustaqil ta'lim (MT)
+MT1
+Ma'ruza va amaliy mashg'ulotlar mavzularini o'zlashtirish
+30
+MT2
+Ma'lumotlarni statistik tahlil qilish vositalari.
+2
+MT3
+Taqdimot muharrirlarining asosiy tushunchasi va tamoyillari.
+2
+MT4
+Zamonaviy taqdimot muharrirlari tahlili.
+2
+MT5
+Kompyuter tarmoqlari tushunchasi va turlari.
+2
+MT6
+Tarmoq texnologiyalaridan milliy iqtisodiyot tarmoqlari va sohalarida foydalanish.
+2
+MT7
+Internet xizmatlari bilan ishlash. 
+2
+MT8
+Ma'lumotlar bazalari va ularni ishlab chiqish modellari.
+2
+MT9
+Katta ma'lumotlarni (Big Data) qayta ishlash texnologiyalari.
+2
+MT10
+Algoritm tushunchasi va uning xususiyatlari.
+2
+MT11
+Hisoblash jarayonlarining grafik tasviri.
+2
+MT12
+Dasturlash tillari haqida umumiy ma'lumot.
+2
+MT13
+Tarmoqlanuvchi hisoblash jarayonini dasturlash.
+2
+MT14
+Axborot tizimlarining tashkilotdagi o'rni va vazifalari.
+2
+MT15
+Axborot tizimlarining asosiy tarkibiy qismlari.
+2
+MT16
+Axborot tizimlarining tasnifi.
+2
+MT17
+Elektron hukumat tushunchasi va vazifalari.
+2
+MT18
+Elektron hukumatni joriy etish bo'yicha jahon tajribasi.
+2
+MT19
+Interaktiv xizmatlar va ular bilan ishlash.
+2
+MT20
+Bulutli texnologiyalarning asosiy turlari.
+2
+MT21
+Bulutli texnologiyalarda axborot xavfsizligini ta'minlash.
+2
+MT22
+Blockcheyn texnologiyasi va uning qo'llanilishi.
+2
+MT23
+Blockcheyn ishlash tamoyili.
+2
+MT24
+Blockcheyn texnologiyasidan turli tarmoq sohalarida foydalanish xususiyatlari.
+2
+MT25
+Elektron bozor va elektron tovarlar tushunchasi.
+2
+MT26
+Elektron biznes va elektron tijorat modellar.
+2
+MT27
+Internet-banking, Internet-savdo, Internet-sug'urta, Internet-marketing.
+2
+MT28
+Mobil tijorat.
+2
+MT29
+Axborot xavfsizligi tushunchasi va zarurati.
+2
+MT30
+Axborotni himoya qilish uchun kriptografik usullardan foydalanish.
+2
+MT31
+Soliq hisobotlarini yuborish.
+2
+Jami
+90
+
+
+Asosiy va qo?shimcha o?quv adabiyotlar hamda axborot manbaalari
+
+Asosiy adabiyotlar
+1.
+M.Aripov, B.Begalov, U.Begimqulov, M.Mamarajabov Axborot  Texnoloyalari: - Noshir. Toshkent. 2009 - 178 b
+2.
+Shoaxmedov N.X, Abdullayeva I.M. Iqtisodiyotda axborot- kommunikatsiya texnologiyalari va tizimlari: Innavatsion rivojlanish nashriyot-manbaa uyi 2021-248 b
+3.
+F.E Jamonqulova, I.E.SHadmanov Iqtisodiyotda axborot-kommunikatsiyon texnologiyalar va tizimlar: Iqtisod-moliya 2022
+Qo'shimcha adabiyotlar
+    1. 
+O'zbekiston Respublikasi Prezidenti Shavkat Mirziyoevning Oliy Majlisga Murojaatnomasi", 24 yanvar 2020 yil
+    2. 
+O'zbekiston Respublikasi Prezidentining "O'zbekiston Respublikasini yanada rivojlantirish bo'yicha harakatlar strategiyasi to'g'risida"gi 2017 yil 7 fevral, PF-4947-son farmoni.
+    3. 
+Informatsionnie sistemi v ekonomike: uchebnik. / Pod red. G.?. Titorenko. - M.: YuNITI-D?N?, 2009.
+    4. 
+Using R for Introductory Econometrics 2nd Edition. / Florian Heiss 2020
+    5. 
+Kodolova I.L. Informatsionnie texnologii resheniya ekonomicheskix zadach, Uchebnoe posobie, Kazan?: Kazanskiy universitet, 2018.
+
+Internet saytlar
+    1. 
+www.aifu.uz  - Aniq va ijyimoiy fanlar universiteti rasmiy web-sayti
+    2. 
+www.ziyonet.uz - Axborot ta'lim portali
+    3. 
+www.unilibrary.uz   - Yagona elektron kutubxona tizimi web-sayti
+    4. 
+www.elkutubhona.narod.uz
+    5. 
+www.ru.wikipedia.org
+    6. 
+www.w3schools.com
+    7. 
+www.ziyonet.uz
+
+
+
+
+
+
+
+
+
+
+
+
+
+Talabalar bilimini baholash
+Ushbu fan (modul) bo'yicha talabalar bilimini baholash semestr davomida o'quv materiallarini (testlar va yozma ishlar) bajarishga asoslanadi. Dars davomida talabalar 100 ballik tizimda baholanadi. Shundan, talabaning dars mashg'ulotlaridagi ishtiroki, mustaqil ishlar va joriy natijalar uchun 30 ball, oraliq nazorat uchun 30 ball, yakuniy nazorat uchun 40 ball beriladi. Yakuniy nazorat yozma va og'zaki shaklda amalga oshiriladi. Joriy, oraliq va nazorat vazifalari quyidagicha taqsimlanadi:
+TALABALAR BILIMINI BAHOLASH TARTIBI
+Reytingni baholash turlari
+Maks. ball
+Bajariladigan topshiriqlar
+Topshiriqlarni bajarilish muddati*
+joriy nazorat, shundan
+30 
+O'quv jarayonining jadvali bo'yicha
+
+Dars mashg'ulotlaridagi ishtiroki
+10
+talabaning dars jadvaliga muvoffiq ma?ruza, seminar, amaliy mashg?ulot, laboratoriya mashg?ulotlarida ishtirok etishi. Talabalarning dars mashg?ulotlariga ishtirok etishlari majburiy hisoblanadi va talablarning dars mashg?ulotlariga ishtiroki rag?batlantiriladi
+Fanning dars jadvalidagi auditoriya vaqtiga mos holda 
+Amaliy mashg'ulotlardagi faolligi
+
+10
+fanning xususiyatidan kelib chiqqan holda, seminar, laboratoriya va amaliy mashg?ulotlarda og?zaki so?rov, test o?tkazish, suhbat, nazorat ishi, kollokvium, keys stadi, kazus yoki fabula vaziyatli topshiriqlar, loyiha, kurs ishi, uy vazifalarini bajarishi
+Fanning dars jadvalidagi auditoriya vaqtiga mos holda
+Mustaqil ta'lim, shundan
+10
+talabalar mustaqil ishlari platforma orqali test va har bir mavzu bo'yicha alohida topshiriqlar shaklida tashkil etiladi
+Fanga ajratilgan auditoriya soatlari tugaguniga qadar
+Oraliq nazorat
+30
+Yozma 
+Akademik o'quv yili grafigi bo'yicha
+Yakuniy nazorat
+40
+Yozma 
+Akademik o'quv yili grafigi bo'yicha
+Jami
+100
+
+
+
+Talabaning semestr davomida fan bo'yicha to'plagan umumiy bali har bir nazorat turidan belgilangan qoidalarga muvofiq quyidagi formula orqali hisoblanadi:
+YaB=JN+ON+YaN
+bu yerda: JN - joriy nazorat; ON - oraliq nazorat; YaN - yakuniy nazorat.
+Eslatma: dars mashg?ultotlaridagi ishtiroki, joriy nazorat (30 ball) va oraliq nazoratlar uchun ajratilgan ballarning (30 ball) har biridan kamida 60 foizini to?play olmagan talabaning yakuniy nazoratga kirishiga ruxsat berilmaydi. Shuningdek, yakuniy nazorat uchun ajratilgan jami 40 ballning kamida 60 foizini to'play olmagan talaba akademik qarzdor hisoblanadi.
+
+Fan o?qituvchisi to?g?risida ma'lumot
+
+
+Mazkur Sillabus "Aniq fanlar" kafedrasining 2025-yil ___- _________dagi ____-sonli yig?ilish bayoni bilan ma'qullangan.
+
+Mazkur Sillabus Aniq va ijtimoiy fanlar universiteti Kengashining 
+2025 yil __- _________dagi ___-sonli yig?ilish bayoni bilan tasdiqlangan.
+
+
+
+O?quv-uslubiy bo'lim boshlig?i				          Sh.Prenov
+
+
+Kafedra mudiri							K.Raximov
+
+Tuzuvchi								B.Akbarov
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aniq fanlar kafedrasidagi "Iqtisodiyotda axborot kommunikatsion texnologiyalar va tizimlar" fanini sillabusiga nufuzli QS va THE reytinglaridagi Top-300 ga kirgan OTM ta'lim dasturlari asosida takomillashtirildi va qo'shimchalar kiritildi.
+
+?
+??? nomi
+QS        
+THE  
+Top-300 ta'lim dasturi asosida kiritilgan qo'shimchalar
+Mazkur dasturdagi
+mavzu nomi
+Xavolalar
+1
+Massachusetts Institute of Technology (MIT), AQSh
+14-
+o'rin
+2-
+o'rin
+Introduction to Computational Thinking and Data Science
+
+Katta ma'lumotlar va ma'lumotlarni tahlil qilish asoslari
+https://ocw.mit.edu/courses/6-0002-introduction-to-computational-thinking-and-data-science-fall-2016/ 
+2
+Massachusetts Institute of Technology (MIT), AQSh
+14-o'rin
+2-o'rin
+6.5830 Database Systems
+Ma'lumotlar bazalari: munosabatli model, so'rovlarni optimallashtirish, tranzaksiyalar
+https://ocw.mit.edu/courses/6-5830-database-systems-fall-2023/ 
+3
+University of California, Berkeley, AQSh
+12-o'rin
+11-o'rin
+CS 161: Computer Security  
+Axborot xavfsizligi va kriptografiya asoslari
+https://www2.eecs.berkeley.edu/Courses/CS161/ 
+4
+University of California, Berkeley, AQSh
+12-o'rin
+11-o'rin
+CS 294-151: Blockchain and CryptoEconomics
+Blokcheyn va kriptoiqtisodiyot
+https://berkeley-blockchain.github.io/cs294-151-f18 
+5
+National University of Singapore (NUS), Singapur
+8-o'rin
+17-o'rin
+CS2105: Introduction to Computer Networks
+Tarmoq texnologiyalari va internet protokollari (HTTP, DNS, TCP/UDP, IP)
+https://nusmods.com/courses/CS2105/introduction-to-computer-networks 
+6
+London School of Economics (LSE), BAA
+56-o'rin
+46-o'rin
+MG209: E-business
+Elektron biznes, internet-savdo va raqamli strategiya
+https://www.lse.ac.uk/resources/calendar2023-2024/courseGuides/MG/2023_MG209.htm 
+
+

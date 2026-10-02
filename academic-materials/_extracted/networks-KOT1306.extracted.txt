@@ -1,0 +1,350 @@
+
+
+ANIQ VA IJTIMOIY FANLAR UNIVERSITETI
+
+
+“TASDIQLAYMAN”
+Aniq va ijtimoiy fanlar universiteti rektori G‘.I.Botirov
+_______________________ 
+2025 yil “___” _________
+
+KOMPYUTER TARMOQLARI FANI BO’YICHA 
+SILLABUS
+
+Ta’lim shakli: bakalavr (kunduzgi)
+
+Bilim sohalari:
+600 000 – Axborot kommunikatsiya texnologiyalari
+Taʼlim sohalari:
+610 000 – Axborot kommunikatsiya texnologiyalari
+Ta’lim yo‘nalishlari:
+60610400 – Dasturiy injiniring
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Toshkent – 2025
+Modul /FAN SILLABUS
+60610400 – Dasturiy injiniring
+
+Oʻquv yili:
+2025/2026
+Fan nomi:
+Kompyuter tarmoqlari
+Fan turi:
+Majburiy
+Fan kodi:
+KOT1306
+Yil:
+2
+Semestr
+3
+Ta’lim shakli:
+Kunduzgi
+Ta’lim turi
+Bakalavriat
+Mashgʻulotlar shakli va semestrga 
+Jami
+3-semestr
+ajratilgan soatlar:
+180
+180
+Ma’ruza
+30
+30
+Amaliy mashgʻulotlar
+30
+30
+Laboratoriya mashgʻulotlari
+-
+-
+Seminar
+-
+-
+Mustaqil ta’lim
+120
+120
+Kredit miqdori:
+6
+6
+Baholash shakli:
+Imtihon
+Fan tili:
+O‘zbek
+
+
+
+
+Fan maqsadi (FM)
+FM1
+Fanni o‘qitishdan maqsad – tarmoqlar va axborotni uzatish tizimlarining arxitekurasi va elementlarini; tarmoqlarni va axborot uzatish tizimlarini tashkillanish tamoyillari va ishlashini; lokal va global kompyuter tarmoqlari va axborot uzatish tizimlarining texnik va dasturiy komponentalari strukturasi va bajaradigan vazifasini; axborot uzatish tizimlarida berilganlarni uzatish texnologiyasini; kompyuter tarmoqlari protokollarini; axborot hafvsizligi talablariga muvofiq tarmoqlardan va axborot tizimlaridan foydalanishning xususiyatlarini o‘rganish bo‘yicha bilim va ko‘nikmasini hosil qilishdan iborat.
+Fanning vazifasi – talabalarda zamonaviy axborot muhitida tarmoqlarning va axborotni uzatish tizimlarining ahamiyati va imkonyatini tushunishini shakllantirish, o‘z kasbiy sohasida zamonaviy tarmoqlardan va axborot uzatish tizimlaridan foydalanishni o‘rgatishdan iborat.
+
+Fanni oʻzlashtirish uchun zarur boshlangʻich bilimlar
+1.
+Ushbu fanni o‘rganishda kompyuter tarmoqlari bo‘yicha ma’lum bilimlarga ega bo‘lishi zarur.
+2.
+Tarmoq texnologiyalari bilan ishlay olish ko‘nikmalariga ega bo‘lish.
+
+Ta’lim natijalari (TN)
+
+Bilimlar jihatidan:
+TN1
+Kompyuter tarmoqlarini tashkil qilish va uning faoliyati tamoyillari, lokal tarmoqlarda qurilmalarni o‘zaro bog‘lanishini tashkil qilish, lokal tarmoqlarning tayanch topologiyalari, zamonaviy, keng tarqalgan protokollar, tarmoq manzili va marshrutlash asoslari, marshrutlash algoritmlari haqida bilim va tassavvurga ega bo‘lishi;
+
+Koʻnikmalar jihatidan:
+TN2
+lokal tarmoq yaratish, kerakli qurilmalar tanlash, tarmoqni sozlash, tarmoqda ishlash, unda umumiy resurslarni yaratish va ulardan foydalanish ko‘nikmalariga ega bo‘lishi;
+ochiq tizimlararo aloqaning OSI etalon modeli va uning pog‘onalarga bo‘linishi, pog‘onalar orasidagi bog‘lanishlar, tarmoqlarning lokal, mintaqaviy va global turlari, ularning o‘xshashligi va farqlanishi, TCP/IP lokal tarmoq ishini diagnostika qilish vositalari, kamchiliklarni bartaraf qilish usullari bo‘yicha malakalariga ega bo‘lishi kerak
+
+Fan mazmuni
+Mashg‘ulotlar shakli: III-semestr ma’ruza (M)
+Soat
+	•	
+Kirish. Hisoblash tarmoqlarining rivojlanish tarixi. Kompyuter tarmoqlari klassifikatsiyasi.
+2
+	•	
+Tarmoq qurishning asosiy tamoyillari. Tarmoq topologiyalari. Tarmoq arxitekturasi. Tarmoq qurilmalari.
+2
+	•	
+ISO/OSI modeli. Ochiq tizimlarning o‘zaro muloqoti.  ISO/OSI modeli. Tarmoq pog‘onalari. Protokol, interfeys, standartlar tushunchalari.
+2
+	•	
+Berilganlarni uzatish usullari. Berilganlarni uzatishning fizik muhitlari. Berilganlarni kodlash va uzatish usullari.
+2
+	•	
+Ethernet texnologiyalari. Ethernet texnologiyalari. Tarmoq tugunlarini manzillash. MACmanzil tushunchasi.
+2
+	•	
+Token Ring va boshqa texnologiyalar. Token Ring, 100VG-AnyLAN, FDDI, Wi-Fi texnologiyalari.
+2
+	•	
+TCP/IP protokollar steki. Tarmoqlararo berilganlarni almashish tamoyillari. TCP/IP protokollar steki. IP protokollari haqida tushuncha.
+2
+	•	
+IPv4 protokoli asosida tarmoq tugunlarini manzillash. IPv4 protokoli va uning asosida tarmoq tugunlarini manzillash usullari.
+2
+	•	
+Tarmoq protokollari va marshrutlash protokollari. Tarmoq protokollari va xizmatlari (ARP, ICMP, DHCP). Marshrutlash protokollari va ularning ishlash tamoyillari.
+2
+	•	
+Transport pog‘onasining vazifalari. Transport pog‘onasining vazifalari. TCP va UDP protokollari. Soketlar tushunchasi.
+2
+	•	
+Amaliy pog‘ona protokollari va xizmatlari. Amaliy pog‘ona protokollari va xizmatlari. Veb server xizmati. HTTP, FTP, elektron pochta protokollari.
+2
+	•	
+Internet tarmog‘i va DNS xizmati.
+Internet tarmog‘i. DNS xizmati va uning ishlash tamoyili.
+2
+	•	
+Server operatsion tizimlar va ishchi guruhlar. Server operatsion tizimlar va ularning vazifalari. Ishchi guruhlar va domenli tizimlar.
+2
+	•	
+Tarmoqlarda xavfsizlik muammolari. Tarmoqlarda xavfsizlik muammolari. Xavfsizlikni ta’minlash usullari (Firewall, VPN, IDS)
+2
+	•	
+Tarmoq muammolarini bartaraf qilish. Tarmoqning ishlashi jarayonida yuzaga keladigan muammolarni aniqlash va ularni bartaraf qilish.
+2
+Jami
+30
+Mashg‘ulotlar shakli: III-semestr amaliy mashg‘ulot (A)
+
+	•	
+Tarmoq qurilmalari va ularning vazifalari. Tarmoq adapterlari, takrorlagich, ko‘prik, konsentrator.
+2
+	•	
+Tarmoq topologiyalarini o’rganish.
+2
+	•	
+Tarmoq emulyatorlari va ulardan foydalanish.
+2
+	•	
+Berilganlarni kodlash usullari.
+2
+	•	
+Lokal tarmoq texnologiyalari: Ethernet, Fast Ethernet. Tarmoq snifferlari yordamida paketlarni tahlil qilish.
+2
+	•	
+Simsiz axborot uzatish texnologiyalari.  Wi-Fi tarmog‘ini sozlash.
+2
+	•	
+IP-manzillar. Sinfli manzillar. Maskalar yordamida manzillash. IP manzillardan tejamkor foydalanish.
+2
+	•	
+Marshrutizatorlarni boshqarish. 
+2
+	•	
+Soketlar yordamida tarmoq dasturini yaratish.
+2
+	•	
+Windows Server operatsion tizimini o‘rnatish va boshlang‘ich sozlash.
+2
+	•	
+Windows Server operatsion tizimida tarmoq xizmatlarini o‘rnatish va sozlash (DHCP, DNS).
+2
+	•	
+Windows operatsion tizimida foydalanuvchilar va ularning vakolatlarini boshqarish.
+2
+	•	
+Tarmoq umumiy resurslarni yaratish va ulardan foydalanish. 
+2
+	•	
+Windows operatsion tizimida brandmauerni sozlash. VPN xizmatidan foydalanish.
+2
+	•	
+Tarmoq nosozliklarini aniqlash, operatsion tizim utilitalaridan foydalanish.
+2
+Jami
+30
+
+
+Mustaqil ta’lim (MT)
+Ma’ruza va amaliy mashg‘ulotlar mavzularini o‘zlashtirish
+60
+Mustaqil ish va uyga vazifalarni bajarish
+60
+Jami
+120
+Asosiy va qoʻshimcha oʻquv adabiyotlar hamda axborot manbaalari
+
+Asosiy adabiyotlar
+1.
+Таненбаум Э., Фимстер Н., Уэзеролл Д. Компьютерные сети. 6-е изд. — СПб.: Питер, 2023. — 992 с.: ил.
+2.
+Куроуз Дж., Росс К. Компьютерные сети: Нисходящий подход / Джеймс Куроуз, Кит Росс. - 6-е изд. - М.: Изд. "Э", 2016. - 912 с.
+3
+Олифер В., Олифер Н. Компьютерные сети. Принципы, технологии, протоколы: Учебник  для  вузов. 5-е изд. 992 с.
+4
+Pulatov S. I. Kompyuter tarmoqlari. Darslik. – T.: Ma’rifat, 2024, 268 b.
+Qo‘shimcha adabiyotlar
+	•	
+Dordal P. L. An Introduction to Computer Networks. Release 2.0.6. Loyola University Chicago, 2021, 935p.
+	•	
+Miryusupov Z. Z., Djumanov J. X. Kompyuter tarmoqlari. (O‘quv qo‘llanma) T.: Aloqachi, 2020, 144 b.
+	•	
+Северанс Ч. Р. Как работают компьютерные сети и интернет / пер. с англ. П. М. Бомбаковой – М.: ДМК Пресс, 2022. – 116 с.: ил.
+	•	
+Волчок В. А., Олизарович Е. В. Локальные вычислительные сети : пособие / В.А. Волчок, Е.В. Олизарович – Гродно : ГрГУ, 2013. – 41 с.
+
+Internet saytlar
+	•	
+www.aifu.uz  – Aniq va ijyimoiy fanlar universiteti rasmiy web-sayti
+	•	
+https://www.cisco.com/site/us/en/learn/training-certifications/training/netacad/index.html- Axborot ta’lim portali
+	•	
+www.lex.uz   – Asosiy qonun-qoidalar rasmiy web-sayti
+
+
+Talabalar bilimini baholash
+Ushbu fan (modul) bo‘yicha talabalar bilimini baholash semestr davomida o‘quv materiallarini (testlar va yozma ishlar) bajarishga asoslanadi. Dars davomida talabalar 100 ballik tizimda baholanadi. Shundan, talabaning dars mashg‘ulotlaridagi ishtiroki, mustaqil ishlar va joriy natijalar uchun 30 ball, oraliq nazorat uchun 30 ball, yakuniy nazorat uchun 40 ball beriladi. Yakuniy nazorat yozma va og‘zaki shaklda amalga oshiriladi. Joriy, oraliq va nazorat vazifalari quyidagicha taqsimlanadi:
+TALABALAR BILIMINI BAHOLASH TARTIBI
+Reytingni baholash turlari
+Maks. ball
+Bajariladigan topshiriqlar
+Topshiriqlarni bajarilish muddati*
+joriy nazorat, shundan
+30 
+O‘quv jarayonining jadvali bo‘yicha
+
+Dars mashg‘ulotlaridagi ishtiroki
+10
+talabaning dars jadvaliga muvoffiq maʼruza, seminar, amaliy mashgʼulot, laboratoriya mashgʼulotlarida ishtirok etishi. Talabalarning dars mashgʼulotlariga ishtirok etishlari majburiy hisoblanadi va talablarning dars mashgʼulotlariga ishtiroki ragʼbatlantiriladi
+Fanning dars jadvalidagi auditoriya vaqtiga mos holda 
+Amaliy mashg‘ulotlardagi faolligi
+
+10
+fanning xususiyatidan kelib chiqqan holda, seminar, laboratoriya va amaliy mashgʼulotlarda ogʼzaki soʼrov, test oʼtkazish, suhbat, nazorat ishi, kollokvium, keys stadi, kazus yoki fabula vaziyatli topshiriqlar, loyiha, kurs ishi, uy vazifalarini bajarishi
+Fanning dars jadvalidagi auditoriya vaqtiga mos holda
+Mustaqil ta’lim, shundan
+10
+talabalar mustaqil ishlari platforma orqali test va har bir mavzu bo‘yicha alohida topshiriqlar shaklida tashkil etiladi
+Fanga ajratilgan auditoriya soatlari tugaguniga qadar
+Oraliq nazorat
+30
+Yozma 
+Akademik o‘quv yili grafigi bo‘yicha
+Yakuniy nazorat
+40
+Yozma 
+Akademik o‘quv yili grafigi bo‘yicha
+Jami
+100
+
+
+
+Talabaning semestr davomida fan bo‘yicha to‘plagan umumiy bali har bir nazorat turidan belgilangan qoidalarga muvofiq quyidagi formula orqali hisoblanadi:
+YaB=JN+ON+YaN
+bu yerda: JN – joriy nazorat; ON – oraliq nazorat; YaN – yakuniy nazorat.
+Eslatma: dars mashgʼultotlaridagi ishtiroki, joriy nazorat (30 ball) va oraliq nazoratlar uchun ajratilgan ballarning (30 ball) har biridan kamida 60 foizini toʼplay olmagan talabaning yakuniy nazoratga kirishiga ruxsat berilmaydi. Shuningdek, yakuniy nazorat uchun ajratilgan jami 40 ballning kamida 60 foizini to‘play olmagan talaba akademik qarzdor hisoblanadi.
+
+Fan oʻqituvchisi toʻgʻrisida ma’lumot
+
+Muallif (lar):
+Akbarov Baxriddin, katta o’qituvchi
+E-mail:
+bahriddin.akbarov@gmail.com  
+Telefon raqami
+(97) 372-33-73
+Tashkilot:
+Aniq va ijtimoiy fanlar universiteti, “Aniq fanlar” kafedrasi
+Taqrizchilar:
+B. Hayitqulov  O‘zMU, “Dasturiy injiniring va sun’iy intellekt” kafedrasi dotsenti, f-m.f. PhD.
+Sh. Sapayev – AIFU, “Aniq fanlar” kafedrasi, katta o’qituvchi
+
+Mazkur Sillabus “Aniq fanlar” kafedrasining 2025-yil ___- _________dagi ____-sonli yigʻilish bayoni bilan ma’qullangan.
+
+Mazkur Sillabus Aniq va ijtimoiy fanlar universiteti Kengashining 
+2025 yil __- _________dagi ___-sonli yigʻilish bayoni bilan tasdiqlangan.
+
+
+
+Oʻquv-uslubiy bo‘lim boshligʻi					Sh.Prenov
+
+
+Kafedra mudiri							K.Raximov
+
+Tuzuvchi								B.Akbarov
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

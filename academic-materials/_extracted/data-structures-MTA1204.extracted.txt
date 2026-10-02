@@ -1,0 +1,262 @@
+
+
+
+O‘ZBEKISTON RESPUBLIKASI 
+OLIY TA’LIM, FAN VA INNOVATSIYALAR VAZIRLIGI
+
+ANIQ VA IJTIMOIY FANLAR UNIVERSITETI
+
+
+
+“TASDIQLAYMAN”
+O‘quv va ilmiy ishlar bo‘yicha
+prorektor _______ K.A.Shakarov
+_______________________ 
+2026 yil “___” _________
+
+
+
+MA’LUMOTLAR TUZILMASI VA ALGORITMLAR
+FANINING O‘QUV DASTURI
+
+Bilim sohasi:
+600 000 – Axborot-kommunikatsiya texnologiyalari
+Ta’lim sohasi:
+610 000 – Axborot-kommunikatiya texnologiyalari
+Ta’lim yo‘nalishlari:
+60610600 – Dasturiy injiniring
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Toshkent-2026
+
+Mazkur o‘quv dasturi Aniq va ijtimoiy fanlar universiteti Kengashining 2026-yil ___- avgustdagi ___-sonli yig‘ilish bayoni bilan ma’qullangan.
+
+Mazkur o‘quv dasturi Aniq va ijtimoiy fanlar universiteti “Aniq fanlar” kafedrasi tomonidan taqdim etilgan (kafedraning 2026-yil __avgustdagi ___-sonli yig‘ilish bayoni).
+
+
+Tuzuvchi:
+B. Akbarov – Aniq va ijtimoiy fanlar universiteti “Aniq fanlar” kafedrasi dotsenti v.b.
+A. Zoxidov - Aniq va ijtimoiy fanlar universiteti, “Aniq fanlar” kafedrasi katta o‘qituvchisi.
+
+Taqrizchilar:
+N.A.Ignatev – Mirzo Ulug‘bek nomidagi O‘zbekiston Milliy universiteti “Dasturiy injiniring va sun’iy intellekt” kafedrasi professori, fizika-matematika fanlari doktori.
+Sh.F.Madraximov – Mirzo Ulug‘bek nomidagi O‘zbekiston Milliy universiteti “Dasturiy injiniring va sun’iy intellekt” kafedrasi professori, texnika fanlari doktori.
+
+1.
+   Fan ma’lumotlari
+Fan/modul kodi
+MTA1204
+O‘quv yili
+2026-2027
+Semestr
+2-semestr
+Kreditlar 
+3
+Fan/modul turi
+Majburiy
+Ta’lim tili 
+O‘zbek
+O‘quv rejadagi tartib raqami
+60610600 – 1.13
+Haftadagi dars soatlari 
+2
+Fanning nomi
+Ma‘lumotlar tuzilmasi va algoritmlar
+Jami yuklama (soat)
+Auditoriya mashg‘ulotlari jami – 30 soat, shundan:
+Mustaqil ta’lim (soat)
+Kurs ishi
+Ma’ruzaSeminar90141660–
+2.
+Fanning mazmuni
+Fanni o‘qitishdan maqsad –talabalarni ma’lumotlar tuzilmasi va algoritmlar (BS) bilan tanishtirish, amaliy masalalarni yechishda, dasturiy maxsulotlar yaratishda ularni qo‘llagan holda optimal yechimni topishni o‘rgatish. Ularda mantiqiy va algoritmik mushohada qilish qobiliyatini shakllantirish.
+Fanning vazifasi – masalalarni yechishda zarur bo‘ladigan mustaqil fikrlash qobiliyatini shakllantirish, yechimni dasturlashtirishda foydalanish mumkin bo‘lgan asosiy ma’lumotlar tuzilmalari va algoritmlardan foydalanishni o‘rgatishdan iborat.
+
+
+3.
+Fanni oʻzlashtirish uchun zarur boshlangʻich bilimlar
+1.
+(MAN1123424) Matematik analiz
+2.
+(ALG112318) Algebra
+
+4.
+Ta’lim natijalari (TN)
+
+Kasbiy kompetensiyalar:
+TN1
+Algoritm tushinchasi, stek, dek, ro‘yxat, massiv, navbat kabi chiziqli va daraxt, graf kabi nochiqizli berilganlar tuzilmasi, berilganlarning kompyuter xotirasida saqlanishi, algoritmlarni tahlil qilishi va murakkabligini baholashi kerak.
+TN2
+saralash, qidiruv, satr, daraxt algoritmlari, graflar, xeshlash usullari haqida tasavvurga ega boʻlishi kerak.
+
+Koʻnikmalar:
+TN3
+Ilmiy faoliyatda kurs bo‘yicha olingan bilimlarini qo‘llay olish imkoniga ega bo‘ladi
+TN4
+Berilganlarning abstrakt turini (BAT) yarata olishi kerak.
+TN5
+Ular ustida bajariladigan turli xil amallarni tanlangan dasturlash tilida amalga oshira olishi kerak
+TN6
+Amaliy masalalarni BAT larini qo‘llagan holda ular ustuda algoritmlarnii yaratish yoki mavjudlari ichidan eng optimalini tanlashni bilishi va ulardan foydalana olishi kerak.
+TN7
+Ilmiy-tadqiqot ishlarini bajarishda faol ishtirok etadi
+
+5.
+Fan mazmuni va mashg‘ulotlar shakli: 
+Soat
+
+Ma’ruza (M)
+14
+M1
+Algoritm va uning ta’riflari. Algoritmning intuitiv, formal va kibernetik ta’riflari, hossalari hamda ularning turlari. Tyuring mashinasi va tezisi.
+2
+M2
+Algoritmlarning murakkablik tushunchasi. Algoritmlarning murakkab ligini hisoblash va murakkablik sinflari.  Rekursiv hisoblash algoritmlari. Izlash algoritmlari. Binar va interpolyatsion izlash algoritmlari hamda ularning murakkabligi.
+2
+M3
+Fibonachchi izlash algoritmi va uning murakkabligi. Xeshlash orqali izlash. Saralash algoritmlari. Ichki va tashqi saralash algoritmlari hamda ularning murakkabliklari.
+2
+M4
+Piramidal va Shell saralash algoritmlari va ularning murakkabliklari. Pufaksimon va Xoar saralash algoritmlari hamda ularning murakkabliklari.
+2
+M5
+Bouz-Nelson  va Parallel saralash algoritmlari tasnifi. Juft-toq saralash algoritmi. Betcher algoritmlari. Berilganlarning dinamik strukturalari. Navbat, stek, dek va ularni massivlar hamda ko‘rsatgichlar vositasida yaratish. 
+2
+M6
+Ro‘yxatlar. Bir bog‘lamli, ikki bog‘lamli va chiziqsiz bog‘langan ro‘yxatlar. Graflar. Graf elementlari, turlari va uning EHMda tasvirlanishi. Deykstr va Floyd algoritmlari.
+2
+M7
+Daraxtlar-berilganlarning strukturasi sifatida. Yo‘naltirilgan, tartiblangan va binar daraxtlar. Muvozanatlashtirilgan daraxtlar. Daraxt va binar daraxt yordamida saralash.
+2
+
+Amaliy (A)
+16
+A1
+Algoritm va uning ta’riflari. Algoritmning intuitiv, formal va kibernetik ta’riflari, hossalari hamda ularning turlari. Tyuring mashinasi va tezisi.
+2
+A2
+Algoritmlarning murakkablik tushunchasi. Algoritmlarning murakkab ligini hisoblash va murakkablik sinflari.  Rekursiv hisoblash algoritmlari.
+2
+A3
+Izlash algoritmlari. Binar va interpolyatsion izlash algoritmlari hamda ularning murakkabligi. Fibonachchi izlash algoritmi va uning murakkabligi. Xeshlash orqali izlash.
+2
+A4
+Saralash algoritmlari. Ichki va tashqi saralash algoritmlari hamda ularning murakkabliklari. Piramidal va Shell saralash algoritmlari va ularning murakkabliklari.
+2
+A5
+Pufaksimon va Xoar saralash algoritmlari hamda ularning murakkabliklari. Bouz-Nelson  va Parallel saralash algoritmlari tasnifi. Juft-toq saralash algoritmi. Betcher algoritmlari.
+2
+A6
+Berilganlarning dinamik strukturalari. Navbat, stek, dek va ularni massivlar hamda ko‘rsatgichlar vositasida yaratish. Ro‘yxatlar. Bir bog‘lamli, ikki bog‘lamli va chiziqsiz bog‘langan ro‘yxatlar.
+2
+A7
+Graflarda optimallashtirish masalalari. Deykstr va Floyd algoritmlari. 
+2
+A8
+Daraxtlar-berilganlarning strukturasi sifatida. Yo‘naltirilgan, tartiblangan va binar daraxtlar. Fenevik daraxti. Kesmalar daraxti. Muvozanatlashtirilgan daraxtlar. Daraxt va binar daraxt yordamida saralash.
+2
+
+6.
+Mustaqil ta’lim topshiriqlari* 
+60
+MT1
+Ma’ruza va amaliy mashg‘ulotlar mavzularini o‘zlashtirish
+30
+MT2
+Mustaqil ish va uyga vazifalarni bajarish
+30
+*Izoh: Fan (modul) yuzasidan talabalar bajaradigan mustaqil ish topshiriqlari variativ tavsifga ega bo‘lishi lozim. Mustaqil ish topshiriqlarining 1/3 qismi kichik guruhlarda hamkorlikda ishlash (kooperativlik)ga mo ‘Ijallangan bo ‘lishi kerak.
+
+7.
+Ta’lim texnologiyalari va metodlari
+ma’ruzalar; 
+ amaliy, laboratoriya ishlami bajarish va xulosalash; 
+interfaol keys-stadilar;
+ blits-so‘rov;
+ gumhlarda ishlash;
+ taqdimotlar qilish; 
+jamoa bo‘lib ishlash va himoya qilish uchun loyihalar.__
+
+8.
+Talabalar tomonidan kreditlarni olish uchun talablar
+Fanga oid nazariy va uslubiy tushunchalarni to‘la o‘zlashtirish, tahlil natijalarini to‘ri aks ettira olish, o‘rganilayotgan jarayonlar haqida mustaqil mushohada yuritish va nazorat uchun berilgan vazifa va topshiriqlarni bajarish, yakuniy nazorat bo‘yicha yozma ishni topshirish. 
+
+9.
+Talabala bilimini baholash mezoni
+      a) 90-100 ball (5 baho) olish uchun talabaning bilim darajasi quyidagilarga javob berishi lozim:
+fanning mohiyati va mazmunini to‘liq yorita olsa;
+ fandagi mavzularni bayon qilishda ilmiylik va mantiqiylik saqlanib, ilmiy xatolik va chalkashliklarga yo‘l qo‘ymasa;
+ fan bo‘yicha mavzu materiallarining nazariy yoki amaliy ahamiyati haqida aniq tasavvurga ega bo‘lsa; 
+ fan doirasida mustaqil erkin fikrlash qobiliyatini namoyon eta olsa; 
+ berilgan savollarga aniq va lo‘nda javob bera olsa; 
+ konspektga puxta tayyorlangan bo‘lsa; 
+ mustaqil topshiriqlarni to‘liq va aniq bajargan bo‘lsa; 
+ barcha amaliy ko‘nikma va malakalami o‘zlashtirgan bo‘Isa; 
+ nazariy bilimlarni turli vaziyatda qo‘llash olish; 
+tizimli yondashish, uzviylikka amal qilish.____
+
+     b) 80-89 ball (4 baho) olish uchun talabaning bilim darajasi quyidagilarga javob berishi lozim:
+fanning mohiyati va mazmunini tushungan, fandagi mavzularni bayon qilishda ilmiy va mantiqiy chalkashliklarga yo‘l qo‘ymasa; 
+ fanning mazmunini amaliy ahamiyatini tushungan bo‘lsa; 
+ fan bo‘yicha berilgan vazifa va topshiriqlarni o‘quv dasturi doirasida bajarsa; 
+fan bo‘yicha berilgan savollarga to‘g‘ri javob bera olsa; 
+ fan bo‘yicha konspektini puxta shakllantirgan bo‘lsa; 
+ fan bo‘yicha mustaqil topshiriqlarni to‘liq bajargan bo‘lsa; 
+ barcha amaliy ko‘nikma va malakalarni o‘zlashtirishga harakat qilgan bo‘lsa; 
+barcha amaliy ko‘nikma va malakalarni o‘zlashtirishga harakat qilgan bo‘lsa.
+
+      d) 60-79 ball (3 baho) olish uchun talabaning bilim darajasi quyidagilarga javob berishi lozim:
+fan haqida umumiy tushunchaga ega bo‘lsa; 
+ fandagi mavzularni tor doirada yoritib, bayon qilishda ayrim chalkashliklarga yo‘l qo‘yilsa; 
+ fan bo‘yicha mustaqil topshiriqlarni to‘liq bajargan bo‘lsa; 
+bayon qilish ravon bo‘lmasa;
+fan bo‘yicha savollarga mujmal va chalkash javoblar olinsa; 
+fan bo‘yicha matn puxta shakllantirilmagan bo‘lsa._
+     e) quyidagi hollarda talabaning bilim darajasi qoniqarsiz 0-59 ball (2 baho) bilan baholanishi mumkin:
+fan bo‘yicha mashg‘ulotlarga tayyorgarlik ko‘rilmagan bo‘lsa; 
+ fan bo‘yicha mashg‘ulotlarga doir hech qanday tasavvurga ega bo‘lmasa; 
+fan bo‘yicha mustaqil topshiriqlami to‘liq bajarmagan bo‘lsa; 
+fan bo‘yicha matnlami boshqalardan kо‘chirib olganligi sezilib tursa; 
+ fan bo‘yicha matnda jiddiy xato va chalkashliklarga yo‘l qo‘yilgan bo‘lsa; 
+ fanga doir berilgan savollarga javob olinmasa; fanni bilmasa.
+
+
+10. Foydalanilgan adabiyotlar
+Asosiy adabiyotlar
+1.
+Gaynazarov S.M. Saidov D.Y. Algoritmlar va berilganlar tuzilmasi, O‘quv qo‘llanma, Toshkent, 2022, 250 bet.
+2.
+M. O‘. Ashurov, SH.A. Sattorova, SH.U.Usmonqulov Algoritmlar, Toshkent- 2018
+Qoʻshimcha adabiyotlar
+3.
+M. A. Weiss, Data Structures & Algorithm Analysis in C++, 4th edition, 2014.
+4.
+Aho A.V., Hopkroft J.E., Ullman J.Е. / Ахо А., Хопкрофт Дж., Ульман Дж. - Data Structures and Algorithms / Структуры данных и алгоритмы, 2003.
+5.
+Bucknall J. / Бакнелл Дж. The Tomes of DelphiTM Algorithms and Data Structures / Фундаментальные алгоритмы и структуры данных в Delphiтм, 2003.
+Axborot manbalari
+5.HYPERLINK "http://www.aifu.uz"www.aifu.uz – Aniq va ijtimoiy fanlar universiteti rasmiy web-sayti
+6.HYPERLINK "http://www.edu.uz"www.edu.uz  – O‘zbekiston respublikasi oliy ta’lim, fan va innovatsiyalar vazirligi rasmiy web-sayti
+7.HYPERLINK "http://www.unilibrary.uz"www.unilibrary.uz – Yagona elektron kutubxona tizimi web-sayti
+8.HYPERLINK "https://n.ziyouz.com/kutubxona/category/145-matematika"https://n.ziyouz.com/kutubxona/category/145-matematika  – milliy elektron kutubxona web-saytining matematikaga oid elektron kitoblar sahifasi
+9.HYPERLINK "https://www.natlib.uz/"https://www.natlib.uz/ – O‘zbekiston  milliy kutubxonasi rasmiy web-sayti
+
+
+
+
+
+
+

@@ -1,0 +1,13 @@
+package uz.aifu.lms.coding.domain;
+
+public enum Verdict {
+    ACCEPTED,
+    PARTIAL,
+    WRONG_ANSWER,
+    COMPILATION_ERROR,
+    RUNTIME_ERROR,
+    TIME_LIMIT_EXCEEDED,
+    MEMORY_LIMIT_EXCEEDED,
+    OUTPUT_LIMIT_EXCEEDED,
+    INTERNAL_ERROR
+}

@@ -1,0 +1,126 @@
+# AIFU Learning Platform — base configuration.
+# Secrets NEVER live here. Every sensitive value comes from an environment variable.
+spring:
+  application:
+    name: aifu-lms-api
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:aifu_lms}
+    username: ${DB_USERNAME:aifu_app}
+    password: ${DB_PASSWORD:}
+    hikari:
+      pool-name: aifu-pool
+      maximum-pool-size: ${DB_POOL_MAX:15}
+      minimum-idle: 3
+      connection-timeout: 10000
+      max-lifetime: 1800000
+  jpa:
+    # ADR-009: Flyway owns the schema. Hibernate only validates and refuses to boot on drift.
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc.batch_size: 50
+        order_inserts: true
+        order_updates: true
+        query.in_clause_parameter_padding: true
+        # Turn the "pagination over a fetched collection" mistake into a hard error
+        query.fail_on_pagination_over_collection_fetch: true
+        default_batch_fetch_size: 25
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    clean-disabled: true
+    validate-on-migrate: true
+    baseline-on-migrate: false
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+    deserialization:
+      fail-on-unknown-properties: true
+  servlet:
+    multipart:
+      max-file-size: ${STORAGE_MAX_UPLOAD_BYTES:52428800}
+      max-request-size: ${STORAGE_MAX_UPLOAD_BYTES:52428800}
+  threads:
+    virtual:
+      enabled: true
+  cache:
+    type: caffeine
+    caffeine:
+      spec: maximumSize=1000,expireAfterWrite=10m
+
+server:
+  port: ${SERVER_PORT:8080}
+  error:
+    include-stacktrace: never
+    include-message: never
+  max-http-request-header-size: 16KB
+  tomcat:
+    max-swallow-size: 2MB
+    max-http-form-post-size: 2MB
+  shutdown: graceful
+  forward-headers-strategy: framework
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: ${MANAGEMENT_ENDPOINTS:health,info,metrics,prometheus}
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+  health:
+    livenessstate.enabled: true
+    readinessstate.enabled: true
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+    version: openapi_3_1
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: alpha
+    tags-sorter: alpha
+
+# ---------------------------------------------------------------- application settings
+aifu:
+  api:
+    base-path: /api/v1
+    max-page-size: 100
+    default-page-size: 20
+  i18n:
+    default-locale: uz
+    supported-locales: uz,ru,en
+  jwt:
+    secret: ${JWT_SECRET:}            # validated at startup; boot fails if weak/missing
+    issuer: ${JWT_ISSUER:aifu-lms}
+    access-token-ttl: ${JWT_ACCESS_TTL:PT15M}
+    refresh-token-ttl: ${JWT_REFRESH_TTL:P30D}
+  security:
+    cors-allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+    max-failed-login-attempts: ${AUTH_MAX_FAILED_ATTEMPTS:5}
+    lockout-duration: ${AUTH_LOCKOUT_DURATION:PT15M}
+    auth-rate-limit-per-minute: ${AUTH_RATE_LIMIT_PER_MINUTE:10}
+  storage:
+    provider: ${STORAGE_PROVIDER:local}
+    local-root: ${STORAGE_LOCAL_ROOT:./storage-local}
+    max-upload-bytes: ${STORAGE_MAX_UPLOAD_BYTES:52428800}
+    endpoint: ${STORAGE_ENDPOINT:}
+    bucket: ${STORAGE_BUCKET:aifu-lms}
+    access-key: ${STORAGE_ACCESS_KEY:}
+    secret-key: ${STORAGE_SECRET_KEY:}
+    region: ${STORAGE_REGION:us-east-1}
+    allowed-content-types: image/png,image/jpeg,image/gif,image/webp,video/mp4,application/pdf,text/plain,application/zip
+  execution:
+    # The API only ENQUEUES. It never runs code and never calls the sandbox. (ADR-006)
+    max-source-bytes: ${EXECUTION_MAX_SOURCE_BYTES:131072}
+    max-output-bytes: ${EXECUTION_MAX_OUTPUT_BYTES:65536}
+    ceiling-cpu-time-limit-ms: ${EXECUTION_DEFAULT_CPU_TIME_LIMIT_MS:5000}
+    ceiling-wall-time-limit-ms: ${EXECUTION_DEFAULT_WALL_TIME_LIMIT_MS:10000}
+    ceiling-memory-limit-kb: ${EXECUTION_DEFAULT_MEMORY_LIMIT_KB:262144}
+    max-concurrent-submissions-per-student: 3
+    submission-rate-limit-per-minute: 10
