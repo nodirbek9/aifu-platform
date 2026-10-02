@@ -165,6 +165,39 @@ class AuthenticationIT extends AbstractIntegrationTest {
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
     }
 
+    /**
+     * A request that security rejects is still traceable: the body names the same id as the {@code
+     * X-Request-Id} header. (It used to say "null": the request-id filter ran after the security
+     * chain.)
+     */
+    @Test
+    void protectedEndpoint_withoutToken_isRejected_withItsRequestId() {
+        ResponseEntity<String> response = rest.getForEntity(url("/api/v1/auth/me"), String.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+        String requestId = response.getHeaders().getFirst("X-Request-Id");
+        assertThat(requestId).isNotBlank();
+        assertThat(response.getBody())
+                .contains("\"code\":\"AUTH_TOKEN_MISSING\"")
+                .contains("\"requestId\":\"" + requestId + "\"");
+    }
+
+    /** An id with characters that are stripped must not break the request. */
+    @Test
+    void requestId_withUnsafeCharacters_isSanitized_notAnError() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.set("X-Request-Id", "abc$%^&*()");
+        ResponseEntity<String> response =
+                rest.exchange(
+                        url("/api/v1/auth/me"),
+                        HttpMethod.GET,
+                        new HttpEntity<>(headers),
+                        String.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+        assertThat(response.getHeaders().getFirst("X-Request-Id")).isEqualTo("abc");
+    }
+
     @Test
     void protectedEndpoint_withExpiredToken_isRejected() {
         User user = fixtures.activeUser(RoleCode.STUDENT);

@@ -104,7 +104,10 @@ aifu:
     cors-allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
     max-failed-login-attempts: ${AUTH_MAX_FAILED_ATTEMPTS:5}
     lockout-duration: ${AUTH_LOCKOUT_DURATION:PT15M}
-    auth-rate-limit-per-minute: ${AUTH_RATE_LIMIT_PER_MINUTE:10}
+    # Per client address. A whole campus shares one address (NAT), and every page load refreshes
+    # a token: a lecture hall signing in at once must fit. Brute force against one account is
+    # stopped by the per-account lockout above, not by this.
+    auth-rate-limit-per-minute: ${AUTH_RATE_LIMIT_PER_MINUTE:300}
   storage:
     provider: ${STORAGE_PROVIDER:local}
     local-root: ${STORAGE_LOCAL_ROOT:./storage-local}

@@ -21,6 +21,10 @@ import uz.aifu.lms.common.config.SecurityProperties;
  * Per-IP token bucket on the authentication endpoints — the brute-force control that complements
  * per-account lockout (ADR-003). Without it, an attacker simply spreads attempts across accounts.
  *
+ * <p>The limit must leave room for a campus: every student of a lecture hall reaches the API from
+ * the same address (NAT) and signs in within the same minute, and every page load of the web app
+ * refreshes a token. Hence a default in the hundreds, not the tens.
+ *
  * <p>In-process by design: we run a single API instance (ADR-002). If the API is ever scaled
  * horizontally this must move to a shared store, because N instances would multiply the limit by N.
  * That is recorded in {@code docs/security/README.md}.
