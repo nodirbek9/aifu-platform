@@ -1,7 +1,9 @@
 package uz.aifu.lms.scheduling.app;
 
+import java.time.Clock;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.time.temporal.TemporalAdjusters;
 import uz.aifu.lms.scheduling.domain.WeekParity;
@@ -13,7 +15,14 @@ import uz.aifu.lms.scheduling.domain.WeekParity;
  */
 public final class WeekCalendar {
 
+    /** AIFU is in Uzbekistan; "today" for a timetable is the campus date, not the server's. */
+    public static final ZoneId CAMPUS_ZONE = ZoneId.of("Asia/Tashkent");
+
     private WeekCalendar() {}
+
+    public static LocalDate today(Clock clock) {
+        return LocalDate.now(clock.withZone(CAMPUS_ZONE));
+    }
 
     public static LocalDate mondayOf(LocalDate date) {
         return date.with(TemporalAdjusters.previousOrSame(DayOfWeek.MONDAY));

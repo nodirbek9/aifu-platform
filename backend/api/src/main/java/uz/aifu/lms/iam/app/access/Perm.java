@@ -79,6 +79,10 @@ public final class Perm {
     public static final String TIMETABLE_READ = "TIMETABLE_READ";
     public static final String TIMETABLE_MANAGE = "TIMETABLE_MANAGE";
 
+    // attendance
+    public static final String ATTENDANCE_MANAGE = "ATTENDANCE_MANAGE";
+    public static final String ATTENDANCE_SELF_READ = "ATTENDANCE_SELF_READ";
+
     /** Convenience for {@code @PreAuthorize}. */
     public static final String HAS_AUDIT_READ = "hasAuthority('AUDIT_READ')";
 }

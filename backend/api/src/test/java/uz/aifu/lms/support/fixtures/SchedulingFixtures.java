@@ -35,6 +35,7 @@ import uz.aifu.lms.iam.persistence.StudentProfileRepository;
 public class SchedulingFixtures {
 
     private static final AtomicInteger NEXT_YEAR = new AtomicInteger(2040);
+    private static final AtomicInteger NEXT_PAST_YEAR = new AtomicInteger(1990);
 
     private final AcademicYearRepository academicYears;
     private final TermRepository terms;
@@ -64,7 +65,16 @@ public class SchedulingFixtures {
     /** A term from 1 September to 15 January of a year no other test uses; first week is ODD. */
     @Transactional
     public Term term() {
-        int year = NEXT_YEAR.getAndIncrement();
+        return term(NEXT_YEAR.getAndIncrement());
+    }
+
+    /** The same, long ago: its classes have already taken place (attendance can be marked). */
+    @Transactional
+    public Term pastTerm() {
+        return term(NEXT_PAST_YEAR.getAndIncrement());
+    }
+
+    private Term term(int year) {
         String suffix = unique(8);
         AcademicYear academicYear =
                 academicYears.save(

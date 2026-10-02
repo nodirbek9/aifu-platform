@@ -3,17 +3,14 @@ package uz.aifu.lms.scheduling.api;
 import jakarta.servlet.http.HttpServletRequest;
 import java.time.Clock;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import org.springframework.stereotype.Component;
 import uz.aifu.lms.common.i18n.LocaleCode;
 import uz.aifu.lms.common.i18n.LocaleResolver;
+import uz.aifu.lms.scheduling.app.WeekCalendar;
 
 /** Request helpers shared by the scheduling controllers: locale, client IP, the campus "today". */
 @Component
 class SchedulingWeb {
-
-    /** AIFU is in Uzbekistan; "today" for a timetable is the campus date, not the server's. */
-    static final ZoneId CAMPUS_ZONE = ZoneId.of("Asia/Tashkent");
 
     private final LocaleResolver localeResolver;
     private final Clock clock;
@@ -28,7 +25,7 @@ class SchedulingWeb {
     }
 
     LocalDate today() {
-        return LocalDate.now(clock.withZone(CAMPUS_ZONE));
+        return WeekCalendar.today(clock);
     }
 
     LocalDate dateOrToday(LocalDate date) {

@@ -349,6 +349,46 @@ public class TimetableQueryService {
         return result;
     }
 
+    /**
+     * The class of a timetable entry on one date, as it is actually held: a moved class is found on
+     * its new date. Empty when the entry has no class that day or its timetable was never published
+     * (a draft is not something anyone attends).
+     */
+    @Transactional(readOnly = true)
+    public Optional<Occurrence> occurrenceOf(UUID entryId, LocalDate date) {
+        Optional<TimetableEntry> entry = entries.findDetailedById(entryId);
+        if (entry.isEmpty() || entry.get().getTimetable().getPublishedAt() == null) {
+            return Optional.empty();
+        }
+        Timetable timetable = entry.get().getTimetable();
+        Term term = calendar.requireTerm(timetable.getTermId());
+        return occurrences(timetable, term, date, date).stream()
+                .filter(o -> o.entry().getId().equals(entryId))
+                .min(Comparator.comparing((Occurrence o) -> !o.held()));
+    }
+
+    /**
+     * Every class of a course over its term, from the published timetable; optionally only those of
+     * one group. Empty when the term has no published timetable.
+     */
+    @Transactional(readOnly = true)
+    public List<Occurrence> occurrencesOfCourse(UUID courseId, UUID groupId) {
+        CourseLabel label = courses.labels(List.of(courseId), LocaleCode.DEFAULT).get(courseId);
+        if (label == null) {
+            return List.of();
+        }
+        Optional<Timetable> published =
+                timetables.findByTermIdAndStatus(label.termId(), TimetableStatus.PUBLISHED);
+        if (published.isEmpty()) {
+            return List.of();
+        }
+        Term term = calendar.requireTerm(label.termId());
+        return occurrences(published.get(), term, term.getStartsOn(), term.getEndsOn()).stream()
+                .filter(o -> o.entry().getCourseId().equals(courseId))
+                .filter(o -> occurrenceMatches(o, Filter.group(groupId)))
+                .toList();
+    }
+
     private static Occurrence occurrence(
             TimetableEntry entry,
             LocalDate date,
@@ -468,7 +508,8 @@ public class TimetableQueryService {
         return group && teacher && room;
     }
 
-    List<ClassView> toClassViews(List<Occurrence> found, LocaleCode locale) {
+    @Transactional(readOnly = true)
+    public List<ClassView> toClassViews(List<Occurrence> found, LocaleCode locale) {
         Map<UUID, CourseLabel> labels =
                 courses.labels(
                         found.stream()

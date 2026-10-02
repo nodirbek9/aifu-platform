@@ -1,5 +1,6 @@
 package uz.aifu.lms.curriculum.persistence;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -39,6 +40,17 @@ public interface LessonRepository extends JpaRepository<Lesson, UUID> {
     /** Denominator for course-level progress roll-up (progress module, Phase 6). */
     long countByModule_Course_IdAndRequiredTrueAndStatusAndDeletedAtIsNull(
             UUID courseId, PublicationStatus status);
+
+    /** Every lesson of a course in teaching order (module, then lesson position). */
+    @Query(
+            "select l from Lesson l join fetch l.module m where m.course.id = :courseId"
+                    + " and l.deletedAt is null and m.deletedAt is null"
+                    + " order by m.position, l.position")
+    List<Lesson> findAllOfCourse(@Param("courseId") UUID courseId);
+
+    @Query(
+            "select l from Lesson l join fetch l.module m where l.id in :ids and l.deletedAt is null")
+    List<Lesson> findAllWithModuleByIdIn(@Param("ids") Collection<UUID> ids);
 
     /** Backs {@code CurriculumLocatorAdapter.courseIdOfLesson} — the {@code AccessGuard} port. */
     @Query("select l.module.course.id from Lesson l where l.id = :id and l.deletedAt is null")

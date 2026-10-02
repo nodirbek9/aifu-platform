@@ -90,6 +90,7 @@ public enum AuditAction {
     TIMETABLE_ENTRY_CHANGED,
     TIMETABLE_CONFLICT_OVERRIDDEN,
     TIMETABLE_EXCEPTION_ADDED,
+    ATTENDANCE_MARKED,
 
     // --- Admin / system ---
     ADMIN_ACTION,
