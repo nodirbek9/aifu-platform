@@ -28,7 +28,8 @@ this repository on purpose: design it yourself, from the brief.
 2. `docs/04-DESIGN-BRIEF.md` — how it must look, feel and move. The source of truth for design.
 3. `docs/03-API-GUIDE.md` — how to call the backend, and which endpoints each screen uses.
 4. `docs/api/ENDPOINTS.md` — every endpoint in one line; `docs/api/openapi.json` — the contract.
-5. `docs/05-FRONTEND-PROMPTS.md` — the build phases F0–F6. You are given one phase at a time.
+5. `docs/05-FRONTEND-PROMPTS.md` — the build phases F0–F6. You take them one at a time, in
+   order, as §8 says.
 
 Project skills in `.qoder/skills/` carry the detailed rules (`aifu-design-system`, `aifu-api`,
 `aifu-screen-done`, plus Tailwind, GSAP, typography, motion and type-safety skills). Load the
@@ -132,3 +133,49 @@ accounts are in `docs/03-API-GUIDE.md` §9.
 - End each phase with a short report: spec IDs done, what was verified and how, what is not done,
   entries added to `BACKEND-REQUESTS.md`, and design decisions added to `DESIGN-DECISIONS.md`.
 - If the spec, the brief and the API disagree, stop and ask; do not pick silently.
+- Talk to the owner in Uzbek (Latin script). Code, comments, commit messages and files stay in
+  English.
+
+## 8. Phase protocol — how the owner drives the work
+
+The owner does not paste a prompt for each phase. He starts the work once and afterwards writes
+only "davom et" (continue). You keep track of where the work stands.
+
+**`frontend/PROGRESS.md` is the single record of progress.** Create it at the start of F0 and
+keep it current: one row per phase (F0, F1, F2, F3, F4a, F4b, F5a, F5b, F6) with its status —
+`not started`, `in progress`, `waiting for design approval` (F0 only), `reported`, `accepted` —
+and, under the table, for the phase in progress: the plan, the screens finished so far, and what
+comes next. Update it after every finished screen, so that a new session with an empty memory
+can resume from the file alone.
+
+**When the owner writes "davom et", "keyingi qadam", "keyingi bosqichga o't", "continue",
+"next", "дальше" or anything that means the same, and gives no other task:**
+
+1. Read this file and `frontend/PROGRESS.md`. If the progress file does not exist, the work is at
+   the start of F0.
+2. Check the backend: `http://localhost:8080/actuator/health` must say `UP`. If it does not,
+   tell the owner to run `docker compose up -d` in the repository root, and stop.
+3. Then, by the status of the current phase:
+   - `in progress` → resume exactly where the progress file says.
+   - `waiting for design approval` → the message is the approval. Continue F0 with step 2.
+   - `reported` → the message accepts the phase. Mark it `accepted`, take the next phase of the
+     table, open `docs/05-FRONTEND-PROMPTS.md`, read the prompt block of that phase and carry it
+     out in full, exactly as if the owner had pasted it.
+   - every phase `accepted` → say that the build is complete and list what is still open
+     (`BACKEND-REQUESTS.md`, known issues).
+4. Never skip a phase and never run two phases in one go: finish, verify, report, stop.
+
+**When the owner writes anything else** — a problem he saw, a wish, a question — deal with that
+first (reproduce, fix, verify, report) and stay in the current phase. It is not an acceptance.
+
+**The only planned stop inside a phase** is step 1 of F0, where the owner approves
+`frontend/DESIGN-DECISIONS.md`. In every other phase write your plan into `PROGRESS.md` and
+build without waiting. Stop and ask only when the spec, the brief and the API disagree, or when
+you would have to break a rule of §3 to go on.
+
+**A phase is `reported` only when** the gates of §6 pass and the `aifu-screen-done` procedure was
+carried out for its screens. If something could not be finished, the report says so and the
+status stays `in progress`.
+
+**End every report** with one line for the owner, in Uzbek: what to open and look at
+(address, account), and that "davom et" starts the next phase, naming it.

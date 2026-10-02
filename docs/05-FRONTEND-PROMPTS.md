@@ -15,15 +15,33 @@ session. Give them in order; do not start a phase before the previous one is acc
 | F5b | Admin: timetable builder | A-02 | Yes |
 | F6 | Polish, motion, accessibility, e2e, packaging | all + §9 demo | Yes — acceptance |
 
-How to run a phase:
+## How to run
+
+The phases below are not pasted one by one. The agent is started once and then driven with
+"davom et" (continue); it follows the phase protocol of `AGENTS.md` §8 and keeps its place in
+`frontend/PROGRESS.md`.
 
 1. Start the backend: `docker compose up -d` in the repository root; wait until
    `http://localhost:8080/actuator/health` says `UP`.
-2. Open a **new** agent session (a fresh context per phase), paste the phase prompt.
-3. Let the agent present its plan first. Read it, correct it, then let it build.
-4. When it reports, open `http://localhost:5173`, sign in with the demo accounts
-   (`docs/03-API-GUIDE.md` §9) and check the screens yourself on a desktop and a phone width.
-5. Problems → the fix prompt (end of this file). Accepted → next phase.
+2. Open the repository root (`aifu-platform`) in the agent's IDE and give it the start prompt:
+
+```
+Read AGENTS.md and follow it exactly, including §8 (phase protocol). Then start phase F0: open
+docs/05-FRONTEND-PROMPTS.md, read the F0 prompt block and carry it out. From now on, whenever I
+write "davom et", go on as AGENTS.md §8 says. Talk to me in Uzbek.
+```
+
+3. In F0 the agent stops once, after writing `frontend/DESIGN-DECISIONS.md`. Read it; "davom et"
+   approves it.
+4. When a phase is reported, open `http://localhost:5173`, sign in with the demo accounts
+   (`docs/03-API-GUIDE.md` §9) and look at the screens on a desktop and a phone width.
+5. Satisfied → "davom et" starts the next phase. Not satisfied → describe the problem in your own
+   words (or use the helper prompts at the end of this file); the agent fixes it and stays in
+   the same phase.
+6. A new session at any time is fine: write "davom et" and the agent resumes from
+   `frontend/PROGRESS.md`.
+
+The phase blocks below are what the agent reads and carries out.
 
 ---
 
@@ -43,12 +61,13 @@ from the default shadcn look.
 
 PHASE F0 — foundation. Spec: G-01 … G-09.
 
-Step 1 — plan, then wait for my approval. Write frontend/DESIGN-DECISIONS.md with: the concept
+Step 1 — design, then wait for my approval. Create frontend/PROGRESS.md (AGENTS.md §8) and write
+frontend/DESIGN-DECISIONS.md with: the concept
 in five sentences; the font pairing (and the result of the glyph test from the brief §5); the
 full token set (colour steps for light and dark with contrast ratios, six session-type colours,
 verdict colours, type scale, spacing, radii, shadows, durations, easings); the app shell layout
-at 390 / 768 / 1440; how the shield motif is used; the login page composition. Show me this file
-and stop.
+at 390 / 768 / 1440; how the shield motif is used; the login page composition. Summarise it for
+me, set the phase to "waiting for design approval" and stop.
 
 Step 2 — after approval, build:
 1. Scaffold frontend/ with the stack of AGENTS.md §4 and the structure of §5. Scripts: dev,
@@ -83,7 +102,7 @@ outside t(); every component from tokens only.
 
 Finish with the aifu-screen-done procedure for: login, change password, the shell in each role,
 /dev/ui, and each system page — screenshots at 390 / 768 / 1440, light and dark, uz / ru / en.
-Look at them and fix what is not at the level of the brief. Then give me the phase report.
+Look at them and fix what is not at the level of the brief. Then give me the phase report and set the phase to "reported".
 ```
 
 **Owner's check for F0:** the login page and `/dev/ui`. If they do not look like a serious
@@ -101,8 +120,8 @@ aifu-screen-done, ui-typography, ui-motion, css-animations, gsap-react.
 
 PHASE F1 — the student's core. Demo account: student3 (group BK-DI26/1, course Dasturlash).
 
-Plan first (spec IDs → endpoints → components → states → layouts at 390 / 768 / 1440), show it
-to me, then build:
+Plan first (spec IDs → endpoints → components → states → layouts at 390 / 768 / 1440), write
+the plan into frontend/PROGRESS.md, then build without waiting:
 
 1. S-01 Dashboard: today's classes (GET /timetable/today) with the current or next class marked;
    continue learning; the next five open deadlines; recent grades; unread notifications. Four
@@ -145,7 +164,7 @@ PHASE F2 — the code editor and the quiz. Demo account: student3. The task "Kab
 (DAS-S1-A3) has a hint, a deadline and earlier submissions; "Tub sonni aniqlash" has three hints;
 every task has starter code in Python, Java and C++.
 
-Plan first, show it to me, then build:
+Plan first, write the plan into frontend/PROGRESS.md, then build without waiting:
 
 1. shared/editor: a CodeMirror 6 wrapper — python / java / cpp, syntax highlighting, auto-indent,
    bracket matching, line numbers, tab = 4 spaces, font size control, themes matching the app's
@@ -196,7 +215,7 @@ Load the skills aifu-design-system, aifu-api, aifu-screen-done, ui-motion, css-a
 
 PHASE F3 — the rest of the student's side.
 
-Plan first, show it to me, then build:
+Plan first, write the plan into frontend/PROGRESS.md, then build without waiting:
 
 1. S-02 My timetable — people open it every day; make it beautiful and exact (brief §9).
    Build the week grid as a shared feature component: the teacher's timetable and the admin's
@@ -231,7 +250,7 @@ Load the skills aifu-design-system, aifu-api, aifu-screen-done, ui-interactions,
 PHASE F4a — the teacher in the classroom. Demo account: n.ayitbayev (five practical classes a
 week; Dasturlash on Fridays has attendance history and a lesson plan on the first practical).
 
-Plan first, show it to me, then build:
+Plan first, write the plan into frontend/PROGRESS.md, then build without waiting:
 
 1. T-01 Teacher dashboard: today's classes with "start class", submissions waiting for review,
    at-risk students, deadlines closing this week, quick links to the courses.
@@ -266,7 +285,7 @@ aifu-screen-done, compound-components, type-safety.
 
 PHASE F4b — the teacher's tools. Demo accounts: n.ayitbayev, b.akbarov.
 
-Plan first, show it to me, then build:
+Plan first, write the plan into frontend/PROGRESS.md, then build without waiting:
 
 1. T-04 Curriculum tree: modules → lessons; create, rename, reorder by drag (and by keyboard),
    publish / unpublish, soft delete; the backend's hour-budget warnings shown.
@@ -305,7 +324,8 @@ aifu-screen-done, compound-components, type-safety.
 
 PHASE F5a — the administrator's records. Demo account: admin.
 
-Plan first, show it to me, then build one consistent list → detail → form pattern and apply it:
+Plan first, write the plan into frontend/PROGRESS.md, then build without waiting — one consistent
+list → detail → form pattern, applied to:
 
 1. A-03 Reference data: groups (roster, archive), rooms, the bell schedule (pair slots),
    holidays, first-week parity of a term.
@@ -341,7 +361,7 @@ explicit request. Demo account: admin; the term 2026/2027-1 has a published time
 
 Plan first — this screen deserves a careful one: the state model (selected timetable, view,
 filter, parity toggle, drag state, pending check), the keyboard model, the layout at 1440 and at
-390 — show it to me, then build:
+390 — write it into frontend/PROGRESS.md, then build without waiting:
 
 1. A-02.1 Term and timetable selection; DRAFT / PUBLISHED / ARCHIVED unmistakable; create a
    draft, copy from another timetable (copyFromId), rename, publish, archive.
