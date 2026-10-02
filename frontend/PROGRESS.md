@@ -7,7 +7,7 @@ The single record of progress (AGENTS.md §8). A new session resumes from this f
 | F0 | Foundation: design system, shell, auth | **reported** 2026-10-02 (the owner asked to go on to F1 without waiting) |
 | F1 | Student: dashboard, courses, lesson | **reported** 2026-10-02 |
 | F2 | Student: practice task, quiz, work list | **reported** 2026-10-02 |
-| F3 | Student: timetable, grades, attendance, the rest | not started |
+| F3 | Student: timetable, grades, attendance, the rest | **reported** 2026-10-02 |
 | F4a | Teacher: timetable, class session, journal | not started |
 | F4b | Teacher: authoring, review, gradebook, analytics | not started |
 | F5a | Admin: reference data, users, structure, audit | not started |
@@ -191,6 +191,82 @@ Not verified / not done:
 Demo data: the quiz flows delete student3's attempts at `DAS-Q-M2` before each test; the e2e
 global setup also clears student3's lesson progress and submissions to DAS-S1-A8.
 
-## F3 — Student: timetable, grades, attendance, the rest (next)
+## F3 — report
+
+Spec IDs done: S-02.1 – S-02.5 (my timetable), S-08 (grades), S-09 (notifications, search,
+profile), S-10 (my attendance); S-01.1 (the next class on an empty day) and announcements.
+
+Built:
+- S-02 My timetable (`/student/timetable`, `?date=` keeps the week): the week as a grid of days
+  × pairs with the bell times, class cards tinted by session type with room and teacher, today's
+  column tinted, the "now" line across the current pair; week switch (previous / next / this
+  week), the dates, the week number and toq / juft as a chip — all from the server; holidays,
+  cancelled classes and both slots of a moved class (struck through with the reason; the new
+  slot marked); a legend of the session types of the week. Phone: a day strip and the day's
+  list. The class sheet: time, pair, room, teacher, group, what changed and where the class
+  went or came from, the topic with "open the lesson", and the course.
+  `WeekView` and `shared/ui/ScheduleGrid` are built to be reused by the teacher's timetable and
+  the admin's builder.
+- S-08 Grades (`/student/grades`, and the Grades tab of a course): per course the running total
+  out of 100, the admission to the final as a clear statement, the JN / ON / YaN scheme with
+  its parts — earned / maximum, a bar, the pass mark and whether it is reached — the grades
+  that count, and the history of changes (a corrected mark stays, struck through). The final
+  grade is shown only once every component is graded.
+- S-10 My attendance (`/student/attendance`): per course the percentage, held / present / late /
+  excused / absent, every class with its date, pair, topic and mark; "missed only" filter kept
+  in the address.
+- S-09 Notifications: the bell (unread count, the newest six, "mark all read", a link to all)
+  and the page `/notifications` (all / unread, pages, mark all read). Each notification says
+  what happened and to what — the announcement's title, the course, the dates of a moved class,
+  the new total — and opens it; opening marks it read.
+- S-09 Search: the command palette (Ctrl+K; a search button on a phone) asks the server as the
+  word is typed and lists my courses and lessons under the commands.
+- S-09 Profile (`/profile`): name, roles, login, group, student number, email; phone (editable);
+  language and theme; change password (the same form as the forced change).
+- Announcements: `/announcements`, a tab on the course page, and the newest two on the
+  dashboard.
+- Dashboard: an empty day names the next class; recent grades name the graded work.
+
+Backend changed for this phase (by Claude; `docs/03-API-GUIDE.md` §4, §6, §8):
+- Grades: `GET /enrollments/{id}/grades` now carries the scheme with earned points and gates,
+  and the history. The final score calculator took the *last* entry of a component when there
+  were several (five graded tasks → the fifth alone); it now weighs them by their maximums.
+- Search matched whole words only ("dastur" found nothing) and only in the reader's language;
+  it searched all published courses, including those the student cannot open, and no lessons.
+  It now matches prefixes in every language, covers lessons, and is limited to the caller's
+  own courses (an administrator sees everything).
+- Notifications: a typed `context` in the contract; the grade notification carries its course.
+- `GET /timetable/next`.
+- Demo data (seed `V910`): the Dasturlash course got the JN / ON / YaN scheme; student3 got
+  grades (one corrected) and notifications.
+
+Verified (run, not assumed):
+- `npm run lint`, `typecheck`, `test` (93 tests), `i18n:check` (527 keys × 3), `build`.
+- `npm run e2e`: 72 passed (36 flows × desktop and phone). New: the weeks named in the phase
+  prompt — 19 October (moved lecture, with its sheet), 12–16 October (cancelled practical, odd
+  week), 1 October (holiday), and xolmatov.u's odd / even subgroups; grades by scheme with
+  admission and history, also on the course page; attendance with the missed filter;
+  notifications (unread count, opening one from the page and one from the bell, mark all
+  read); search by a typed prefix leading to a lesson; announcements in three places; the
+  profile saving a phone number; the next class on an empty day.
+- Backend: `./mvnw clean verify -Pit -Dsandbox.smoke=true`.
+- Screenshots of every new screen at 1440 and 390, light and dark, and at 768 in light; the
+  timetable also with the "now" line (the clock set to a Friday morning) — looked at.
+
+Not verified / not done:
+- Changing the password from the profile: the form is the one the forced change uses (covered
+  by unit-level review only); running it would change the demo account's password for everyone.
+- Tablet width (768): the timetable and the dashboard were looked at (long subject names now
+  break inside a class card); the other F3 screens were captured, not reviewed one by one.
+- A week with a class on Sunday, a class outside the bell schedule, a `REPLACED` class (other
+  room or teacher): handled in code and unit tests, no demo data has them.
+- Notifications of the types the backend does not send yet (deadline reminder, quiz graded,
+  account status): they show their type's text and link where a target is known.
+- Notification and search hits of a teacher or an administrator lead nowhere yet: their pages
+  arrive in F4 / F5 (`notificationPath`, `searchHitPath`).
+- The print stylesheet of the timetable belongs to T-02 (F4a).
+- Search does not look inside lesson text, only titles and summaries.
+
+## F4a — Teacher: timetable, class session, journal (next)
 
 Not started. The prompt is in `docs/05-FRONTEND-PROMPTS.md`.

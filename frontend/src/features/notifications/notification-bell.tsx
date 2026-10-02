@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import { Bell } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router'
 import { toApiProblem } from '@/shared/api/errors'
-import { useLocale } from '@/shared/i18n/use-locale'
 import { cn } from '@/shared/lib/cn'
-import { formatRelativeTime } from '@/shared/lib/dates'
-import { Button } from '@/shared/ui/button'
+import { Button, button } from '@/shared/ui/button'
 import { IconButton } from '@/shared/ui/icon-button'
 import { Popover, PopoverContent, PopoverTrigger } from '@/shared/ui/popover'
 import { Skeleton } from '@/shared/ui/skeleton'
+import { NotificationRow } from './notification-row'
 import { useMarkAllReadMutation, useRecentNotificationsQuery, useUnreadCountQuery } from './queries'
 
 const MAX_BADGE = 99
@@ -16,7 +16,6 @@ const MAX_BADGE = 99
 /** The bell of the top bar: unread count (polled) and the newest notifications in a popover. */
 export function NotificationBell() {
   const { t } = useTranslation()
-  const locale = useLocale()
   const [open, setOpen] = useState(false)
   const unread = useUnreadCountQuery()
   const recent = useRecentNotificationsQuery(open)
@@ -43,7 +42,7 @@ export function NotificationBell() {
           )}
         </IconButton>
       </PopoverTrigger>
-      <PopoverContent className="w-[min(22rem,calc(100vw-2rem))] p-0">
+      <PopoverContent className="w-[min(24rem,calc(100vw-2rem))] p-0">
         <div className="border-border flex items-center justify-between gap-3 border-b px-4 py-3">
           <h2 className="font-display text-body text-text font-semibold">{t('common.notifications')}</h2>
           {count > 0 && (
@@ -91,26 +90,30 @@ export function NotificationBell() {
         {recent.isSuccess && recent.data.length > 0 && (
           <ul className="max-h-96 overflow-y-auto py-1">
             {recent.data.map((item) => (
-              <li key={item.id} className="flex items-start gap-3 px-4 py-2.5">
-                <span
-                  aria-hidden
-                  className={cn(
-                    'mt-1.5 size-2 shrink-0 rounded-full',
-                    item.read ? 'bg-transparent' : 'bg-accent',
-                  )}
+              <li key={item.id}>
+                <NotificationRow
+                  item={item}
+                  dense
+                  onOpened={() => {
+                    setOpen(false)
+                  }}
                 />
-                <div className="grid min-w-0 gap-0.5">
-                  <p className={cn('text-small text-text', !item.read && 'font-medium')}>
-                    {t(`notification.type.${item.type}`)}
-                  </p>
-                  <p className="text-caption text-text-muted tracking-normal">
-                    {formatRelativeTime(item.createdAt, locale)}
-                  </p>
-                </div>
               </li>
             ))}
           </ul>
         )}
+
+        <div className="border-border border-t px-4 py-2">
+          <Link
+            to="/notifications"
+            onClick={() => {
+              setOpen(false)
+            }}
+            className={button({ variant: 'link', size: 'sm', class: 'h-auto px-0' })}
+          >
+            {t('notification.all')}
+          </Link>
+        </div>
       </PopoverContent>
     </Popover>
   )

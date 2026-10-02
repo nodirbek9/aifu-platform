@@ -1676,7 +1676,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** The caller's own current published grade entries + derived final score */
+        /** My grades in one course: the assessment scheme with earned points, the entries that count, the history, and the derived final score */
         get: operations["myGrades"];
         put?: never;
         post?: never;
@@ -2064,8 +2064,8 @@ export interface paths {
             cookie?: never;
         };
         /**
-         * Search subjects and courses
-         * @description Ranked by relevance; only PUBLISHED subjects/courses can ever appear.
+         * Search my courses and their lessons
+         * @description Each word typed is matched as a prefix, in every language the text exists in; the reader's language ranks first. A student finds the courses they are enrolled in and the published lessons of those courses; a teacher those they teach; an administrator everything, and the subject catalogue as well.
          */
         get: operations["search_1"];
         put?: never;
@@ -3462,6 +3462,26 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/timetable/next": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * My next class that will actually be held
+         * @description The first class after now (campus time) that is not cancelled, moved away or on a holiday, looking four weeks ahead. 204 when there is none.
+         */
+        get: operations["next"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/timetable/pair-slots": {
         parameters: {
             query?: never;
@@ -3994,6 +4014,24 @@ export interface components {
             title?: string;
             titleIsFallback?: boolean;
         };
+        /** @description One component of the course's assessment scheme with what the student has earned in it. A component with children earns the sum of its children */
+        ComponentGradeView: {
+            blocksFinal?: boolean;
+            code?: string;
+            earned?: number;
+            /** @description Whether the earned share reaches minPassPercent; null when there is no pass mark or nothing is graded yet */
+            gatePassed?: boolean;
+            /** @description Something in the component (or in one of its children) is graded */
+            graded?: boolean;
+            /** Format: uuid */
+            id?: string;
+            /** @enum {string} */
+            kind?: "CONTINUOUS" | "MIDTERM" | "FINAL" | "ATTENDANCE" | "INDEPENDENT_WORK" | "PRACTICAL_ACTIVITY" | "PROJECT" | "COURSE_WORK";
+            maxPoints?: number;
+            minPassPercent?: number;
+            /** Format: uuid */
+            parentComponentId?: string;
+        };
         /** @description Why a class cannot be placed: who or what is already busy, and with what. */
         ConflictView: {
             courseTitle?: string;
@@ -4436,17 +4474,25 @@ export interface components {
             /** @enum {string} */
             toStatus?: "PENDING" | "ACTIVE" | "SUSPENDED" | "COMPLETED" | "FAILED" | "WITHDRAWN";
         };
-        /** @description One enrollment's current published grade entries + derived final score */
+        /** @description A student's grades in one course: the assessment scheme with earned points, the entries that count now, the history, and the derived final score */
         EnrollmentGradeSummary: {
             academicDebt?: boolean;
             admittedToFinal?: boolean;
+            /** @description Every top-level component is graded: the final score and its grade are the result of the course. Until then they are a running total */
+            complete?: boolean;
+            components?: components["schemas"]["ComponentGradeView"][];
+            /** Format: uuid */
+            courseId?: string;
             /** Format: uuid */
             enrollmentId?: string;
+            /** @description The entries that count now, newest first */
             entries?: components["schemas"]["GradeEntryView"][];
             /** Format: date-time */
             finalGradeAt?: string;
             finalGradeSymbol?: string;
             finalScore?: number;
+            /** @description Every entry there ever was, newest first: grades are append-only, a corrected (REVISED) or VOIDED grade stays here */
+            history?: components["schemas"]["GradeEntryView"][];
         };
         /** @description Enrollment summary for roster/list views */
         EnrollmentSummary: {
@@ -4614,6 +4660,8 @@ export interface components {
             activityId?: string;
             /** Format: uuid */
             assessmentComponentId?: string;
+            /** @description The code of the component the entry counts towards (student view only) */
+            componentCode?: string;
             /** Format: date-time */
             evaluatedAt?: string;
             /** Format: uuid */
@@ -4634,6 +4682,8 @@ export interface components {
             status?: "DRAFT" | "PUBLISHED" | "REVISED" | "VOIDED";
             /** Format: uuid */
             supersedesId?: string;
+            /** @description The graded work's title in the reader's language, when the entry came from an activity (student view only) */
+            title?: string;
             voidReason?: string;
         };
         /** @description Enroll every student of a group into a course (product spec A-06). */
@@ -5104,14 +5154,50 @@ export interface components {
             status?: "PRESENT" | "ABSENT" | "LATE" | "EXCUSED";
             topic?: string;
         };
+        /** @description What a notification is about: the ids to open it by and the words to show. Which fields are present depends on the type — ENROLLMENT_CREATED: courseId, enrollmentId. ANNOUNCEMENT: announcementId, title, and courseId or groupId. GRADE_PUBLISHED: courseId, enrollmentId, finalScore, finalGradeSymbol. TEACHER_FEEDBACK: courseId, targetType, targetId, and codingTaskId or quizId. TIMETABLE_CHANGED: courseId, entryId, kind, date, pairNo, and newDate, newPairNo, newRoom, reason when they apply */
+        NotificationContext: {
+            /** Format: uuid */
+            announcementId?: string;
+            /** Format: uuid */
+            codingTaskId?: string;
+            /** Format: uuid */
+            courseId?: string;
+            /** Format: date */
+            date?: string;
+            /** Format: uuid */
+            enrollmentId?: string;
+            /** Format: uuid */
+            entryId?: string;
+            finalGradeSymbol?: string;
+            finalScore?: string;
+            /** Format: uuid */
+            groupId?: string;
+            kind?: string;
+            /** Format: date */
+            newDate?: string;
+            /** Format: int32 */
+            newPairNo?: number;
+            newRoom?: string;
+            /** Format: int32 */
+            pairNo?: number;
+            /** Format: uuid */
+            quizId?: string;
+            reason?: string;
+            /** Format: uuid */
+            targetId?: string;
+            targetType?: string;
+            title?: string;
+        };
         /** @description One in-app notification */
         NotificationView: {
             /** @enum {string} */
             channel?: "IN_APP" | "EMAIL" | "PUSH";
+            context?: components["schemas"]["NotificationContext"];
             /** Format: date-time */
             createdAt?: string;
             /** Format: uuid */
             id?: string;
+            /** @description The raw payload; prefer `context`, which is the same, typed */
             payloadJson?: string;
             /** Format: date-time */
             readAt?: string;
@@ -6127,11 +6213,17 @@ export interface components {
         };
         /** @description One ranked search hit */
         SearchResultView: {
+            /**
+             * Format: uuid
+             * @description The course a hit is opened in: the course itself, the course of a lesson; absent for a subject
+             */
+            courseId?: string;
             /** Format: uuid */
             entityId?: string;
             /** Format: double */
             rank?: number;
-            resultType?: string;
+            /** @enum {string} */
+            resultType?: "SUBJECT" | "COURSE" | "LESSON";
             snippet?: string;
             title?: string;
         };
@@ -10734,8 +10826,12 @@ export interface operations {
     };
     myGrades: {
         parameters: {
-            query?: never;
-            header?: never;
+            query?: {
+                locale?: string;
+            };
+            header?: {
+                "Accept-Language"?: string;
+            };
             path: {
                 id: string;
             };
@@ -15145,6 +15241,38 @@ export interface operations {
                 };
                 content: {
                     "*/*": components["schemas"]["WeekView"];
+                };
+            };
+            /** @description Any failure (4xx, 5xx): the error envelope */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    next: {
+        parameters: {
+            query?: {
+                as?: string;
+                locale?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["ClassView"];
                 };
             };
             /** @description Any failure (4xx, 5xx): the error envelope */

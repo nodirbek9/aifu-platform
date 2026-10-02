@@ -13,7 +13,12 @@ const studentRoutes: RouteObject[] = [
       Component: (await import('@/features/dashboard/student-dashboard-page')).StudentDashboardPage,
     }),
   },
-  { path: 'timetable', element: <LaterPhasePage section="timetable" /> },
+  {
+    path: 'timetable',
+    lazy: async () => ({
+      Component: (await import('@/features/timetable/student-timetable-page')).StudentTimetablePage,
+    }),
+  },
   {
     path: 'courses',
     lazy: async () => ({ Component: (await import('@/features/courses/courses-page')).CoursesPage }),
@@ -26,8 +31,36 @@ const studentRoutes: RouteObject[] = [
     path: 'assignments',
     lazy: async () => ({ Component: (await import('@/features/courses/assignments-page')).AssignmentsPage }),
   },
-  { path: 'grades', element: <LaterPhasePage section="grades" /> },
-  { path: 'attendance', element: <LaterPhasePage section="attendance" /> },
+  {
+    path: 'grades',
+    lazy: async () => ({ Component: (await import('@/features/grades/grades-page')).GradesPage }),
+  },
+  {
+    path: 'attendance',
+    lazy: async () => ({
+      Component: (await import('@/features/attendance/attendance-page')).AttendancePage,
+    }),
+  },
+]
+
+/** Pages of every signed-in person, whatever their role. */
+const commonRoutes: RouteObject[] = [
+  {
+    path: '/notifications',
+    lazy: async () => ({
+      Component: (await import('@/features/notifications/notifications-page')).NotificationsPage,
+    }),
+  },
+  {
+    path: '/announcements',
+    lazy: async () => ({
+      Component: (await import('@/features/announcements/announcements-page')).AnnouncementsPage,
+    }),
+  },
+  {
+    path: '/profile',
+    lazy: async () => ({ Component: (await import('@/features/profile/profile-page')).ProfilePage }),
+  },
 ]
 
 /** Pages that take the whole screen: the app shell steps aside for the work (brief §7). */
@@ -92,6 +125,7 @@ export const router = createBrowserRouter([
             element: <ShellRoute />,
             children: [
               { path: '/', element: <RoleHomeRedirect /> },
+              ...commonRoutes,
               { path: '/student', element: <RequireRole role="STUDENT" />, children: studentRoutes },
               { path: '/teacher', element: <RequireRole role="TEACHER" />, children: teacherRoutes },
               { path: '/admin', element: <RequireRole role="ADMIN" />, children: adminRoutes },

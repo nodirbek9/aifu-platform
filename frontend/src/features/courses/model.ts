@@ -218,18 +218,22 @@ export type GradeEntry = {
   maxScore: number
   publishedAt: string
   source: NonNullable<Schemas['GradeEntryView']['source']>
+  /** The graded work's title, when the grade came from one. */
+  title?: string
 }
 
 export function narrowGrade(raw: Schemas['GradeEntryView']): GradeEntry | null {
   if (raw.status !== 'PUBLISHED' && raw.status !== 'REVISED') return null
   if (raw.id === undefined || raw.score === undefined || raw.publishedAt === undefined) return null
-  return {
+  const grade: GradeEntry = {
     id: raw.id,
     score: raw.score,
     maxScore: raw.maxScore ?? 0,
     publishedAt: raw.publishedAt,
     source: raw.source ?? 'MANUAL',
   }
+  if (raw.title !== undefined && raw.title !== '') grade.title = raw.title
+  return grade
 }
 
 export type Subject = {

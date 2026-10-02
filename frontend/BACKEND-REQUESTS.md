@@ -12,7 +12,10 @@ Proposal: <METHOD /path — request → response>
 Meanwhile: <what the screen shows>
 ```
 
-## 2026-10-02 — Notifications (S-09), the bell of the top bar
+## 2026-10-02 — Notifications (S-09), the bell of the top bar — ANSWERED in F3
+
+Answer: `NotificationView.context`, typed (see the API guide §6). The course title is looked up
+by `context.courseId`.
 
 Needs: a readable line per notification — what happened and to what ("Grade published:
 Dasturlash, JN-1"), and where to go on click.
@@ -41,7 +44,9 @@ address (`/student/courses/:courseId/lessons/:lessonId`).
 Proposal: add `courseId` to `LessonDetail`.
 Meanwhile: lesson links always carry the course id.
 
-## 2026-10-02 — Dashboard on a day without classes (S-01.1)
+## 2026-10-02 — Dashboard on a day without classes (S-01.1) — ANSWERED in F3
+
+Answer: `GET /timetable/next`.
 
 Needs: the date of the next class when today has none.
 Today: `GET /timetable/today` returns only today; the next class needs week-by-week calls.

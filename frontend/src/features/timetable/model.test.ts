@@ -1,5 +1,15 @@
 import { describe, expect, it } from 'vitest'
-import { classMoment, currentOrNext, isHeld, type ClassItem } from './model'
+import {
+  classKey,
+  classMoment,
+  currentOrNext,
+  isHeld,
+  narrowWeek,
+  nowMark,
+  shownDays,
+  slotOf,
+  type ClassItem,
+} from './model'
 
 function lesson(startsAt: string, endsAt: string, status: ClassItem['status'] = 'SCHEDULED'): ClassItem {
   return {
@@ -58,5 +68,97 @@ describe('the class to point at', () => {
     expect(isHeld('HOLIDAY')).toBe(false)
     expect(isHeld('MOVED_OUT')).toBe(false)
     expect(isHeld('REPLACED')).toBe(true)
+  })
+})
+
+describe('a week as the grid shows it', () => {
+  const slots = [
+    { pairNo: 1, startsAt: '08:30:00', endsAt: '09:50:00' },
+    { pairNo: 2, startsAt: '10:00:00', endsAt: '11:20:00' },
+  ]
+  const week = narrowWeek({
+    weekStart: '2026-09-28',
+    weekEnd: '2026-10-04',
+    weekNumber: 5,
+    parity: 'ODD',
+    slots: [...slots].reverse(),
+    days: [
+      { date: '2026-10-04', classes: [] },
+      {
+        date: '2026-10-02',
+        classes: [
+          {
+            entryId: 'a',
+            date: '2026-10-02',
+            startsAt: '08:30:00',
+            endsAt: '09:50:00',
+            sessionType: 'PRACTICAL',
+            pairNo: 1,
+          },
+        ],
+      },
+      { date: '2026-10-01', holiday: 'Bayram', classes: [] },
+    ],
+  })
+
+  it('orders days and pairs, and takes the parity from the server', () => {
+    expect(week.days.map((day) => day.date)).toEqual(['2026-10-01', '2026-10-02', '2026-10-04'])
+    expect(week.slots.map((slot) => slot.pairNo)).toEqual([1, 2])
+    expect(week.parity).toBe('ODD')
+    expect(narrowWeek({ parity: 'EVERY' }).parity).toBeUndefined()
+  })
+
+  it('leaves Sunday out unless a class falls on it', () => {
+    expect(shownDays(week).map((day) => day.date)).toEqual(['2026-10-01', '2026-10-02'])
+    const withSunday = narrowWeek({
+      days: [
+        {
+          date: '2026-10-04',
+          classes: [
+            {
+              entryId: 'b',
+              date: '2026-10-04',
+              startsAt: '08:30:00',
+              endsAt: '09:50:00',
+              sessionType: 'LECTURE',
+            },
+          ],
+        },
+      ],
+    })
+    expect(shownDays(withSunday)).toHaveLength(1)
+  })
+
+  it('finds the pair of a class by its number, else by its time', () => {
+    expect(slotOf({ pairNo: 2, startsAt: '10:00:00' }, slots)?.pairNo).toBe(2)
+    expect(slotOf({ startsAt: '10:00:00' }, slots)?.pairNo).toBe(2)
+    expect(slotOf({ startsAt: '09:00:00' }, slots)?.pairNo).toBe(1)
+  })
+
+  it('draws the "now" line in the pair going on, at the height the clock is at', () => {
+    expect(nowMark(week, { date: '2026-10-02', time: '09:10:00' })).toEqual({
+      date: '2026-10-02',
+      pairNo: 1,
+      progress: 0.5,
+    })
+  })
+
+  it('puts the line at the top of the next pair during a break', () => {
+    expect(nowMark(week, { date: '2026-10-02', time: '09:55:00' })).toEqual({
+      date: '2026-10-02',
+      pairNo: 2,
+      progress: 0,
+    })
+  })
+
+  it('draws no line before the first bell, after the last, or in another week', () => {
+    expect(nowMark(week, { date: '2026-10-02', time: '07:00:00' })).toBeUndefined()
+    expect(nowMark(week, { date: '2026-10-02', time: '18:00:00' })).toBeUndefined()
+    expect(nowMark(week, { date: '2026-10-09', time: '09:10:00' })).toBeUndefined()
+  })
+
+  it('tells the old slot of a moved class from its new one', () => {
+    const moved = lesson('08:30:00', '09:50:00', 'MOVED_OUT')
+    expect(classKey(moved)).not.toBe(classKey({ ...moved, status: 'MOVED_IN', date: '2026-10-03' }))
   })
 })

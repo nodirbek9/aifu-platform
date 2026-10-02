@@ -34,7 +34,9 @@ src/app/shell/               app-shell, rail (≥768), top-bar, tab-bar (phone),
 src/app/system-pages.tsx     splash, 404, no access, route error, offline banner
 src/app/later-phase-page.tsx placeholder of a section that a later phase builds
 src/app/dev-ui-page.tsx      /dev/ui — the design-system catalogue (development builds only)
-src/features/<area>/         pages, components, queries.ts (hooks), model.ts (narrowed types)
+src/features/<area>/         pages, components, queries.ts (hooks), model.ts (narrowed types):
+                             auth, dashboard, courses, lesson, coding, quiz, timetable, grades,
+                             attendance, notifications, announcements, search, profile
 src/shared/api/              schema.d.ts (generated), client.ts (api, unwrap), session.ts, errors.ts
 src/shared/ui/               design-system components; tokens.css is the only place with hex values
 src/shared/i18n/             uz.json, ru.json, en.json, index.ts, use-locale.ts
@@ -75,6 +77,17 @@ e2e/                         support.ts (signIn, texts), *.spec.ts; shots.spec.t
   them through `useAnswerSaver` (one request at a time per question, newest value wins); the
   clock is `remainingSeconds(attempt, now)` on the server's time. A review is "open" when the
   server sent `isCorrect` — never decide it from the policy in the browser.
+- **The week grid** is `features/timetable/week-view.tsx` (`WeekView`): the grid from tablet width
+  up, a day strip with the day's list on a phone, and the class sheet. It takes `audience`
+  (`student` shows the teacher, `teacher` the groups), the addresses of a lesson and a course, and
+  optional `actions` for the sheet — the teacher's timetable and the admin's builder reuse it.
+  The table itself is `shared/ui/schedule-grid.tsx`. Parity, week numbers, holidays and moved
+  classes are the server's: nothing of that is computed here.
+- **Pages for every role** (`/notifications`, `/announcements`, `/profile`) are `commonRoutes` in
+  the router; the shell shows the navigation of the active role around them.
+- **Search** is the command palette: `CommandPalette` takes a `search` prop with the server's
+  hits; `searchHitPath(hit, role)` and `notificationPath(item, role)` give an address only where
+  the role has a page — add the teacher's and the admin's addresses there in F4 / F5.
 - **Dates.** Always through `shared/lib/dates.ts`: campus time zone, and Uzbek written by hand
   (browsers print "M10" for October in Uzbek). Never `toLocaleString` in a component.
 - **Untyped JSON** (`payload`, `settings` of a lesson block) is read with `readString` and

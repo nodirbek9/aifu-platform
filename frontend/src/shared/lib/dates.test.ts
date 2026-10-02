@@ -6,6 +6,10 @@ import {
   formatLongDay,
   formatRelativeTime,
   formatTimeOfDay,
+  formatDateRange,
+  formatWeekdayShort,
+  shiftDate,
+  weekdayOf,
 } from './dates'
 
 describe('campus time', () => {
@@ -44,6 +48,34 @@ describe('Uzbek dates are written by hand (browsers lack the data)', () => {
     expect(formatRelativeTime('2026-10-01T11:00:00Z', 'uz', now)).toBe('kecha')
     expect(formatRelativeTime('2026-10-05T12:00:00Z', 'uz', now)).toBe('3 kun keyin')
     expect(formatRelativeTime('2026-09-01T11:00:00Z', 'uz', now)).toBe('1-sen 2026')
+  })
+})
+
+describe('campus dates as the calendar has them', () => {
+  it('moves by whole days across months and years', () => {
+    expect(shiftDate('2026-10-19', 7)).toBe('2026-10-26')
+    expect(shiftDate('2026-10-01', -7)).toBe('2026-09-24')
+    expect(shiftDate('2026-12-28', 7)).toBe('2027-01-04')
+  })
+
+  it('knows the weekday: Monday is 1, Sunday is 7', () => {
+    expect(weekdayOf('2026-10-19')).toBe(1)
+    expect(weekdayOf('2026-10-25')).toBe(7)
+  })
+
+  it('names the columns of a week', () => {
+    expect(formatWeekdayShort('2026-10-19', 'uz')).toBe('Dush')
+    expect(formatWeekdayShort('2026-10-24', 'uz')).toBe('Shan')
+    expect(formatWeekdayShort('2026-10-19', 'en')).toBe('Mon')
+    expect(formatWeekdayShort('2026-10-19', 'ru')).toBe('Пн')
+  })
+
+  it('writes the dates of a week, within a month and across two', () => {
+    expect(formatDateRange('2026-10-19', '2026-10-25', 'uz')).toBe('19–25 oktabr')
+    expect(formatDateRange('2026-09-28', '2026-10-04', 'uz')).toBe('28 sentabr – 4 oktabr')
+    expect(formatDateRange('2026-10-19', '2026-10-25', 'ru')).toBe('19–25 октября')
+    expect(formatDateRange('2026-10-19', '2026-10-25', 'en')).toBe('October 19–25')
+    expect(formatDateRange('2026-09-28', '2026-10-04', 'en')).toBe('September 28 – October 4')
   })
 })
 

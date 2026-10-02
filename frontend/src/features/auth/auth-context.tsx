@@ -27,6 +27,8 @@ type AuthContextValue = {
   activeRole: Role | null
   setActiveRole: (role: Role) => void
   changeLocale: (locale: Locale) => void
+  /** Saves my phone number; the user of the session is replaced by the server's answer. */
+  updatePhone: (phone: string) => Promise<void>
   clearExpiredNotice: () => void
 }
 
@@ -163,6 +165,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [state],
   )
 
+  const updatePhone = useCallback(async (phone: string) => {
+    const user = narrowUser(await unwrap(api.PATCH('/api/v1/auth/me', { body: { phone } })))
+    setState({ status: 'authenticated', user })
+  }, [])
+
   const clearExpiredNotice = useCallback(() => {
     setState((current) => (current.status === 'anonymous' ? { status: 'anonymous' } : current))
   }, [])
@@ -177,6 +184,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       activeRole,
       setActiveRole,
       changeLocale,
+      updatePhone,
       clearExpiredNotice,
     }),
     [
@@ -188,6 +196,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       activeRole,
       setActiveRole,
       changeLocale,
+      updatePhone,
       clearExpiredNotice,
     ],
   )

@@ -7,6 +7,7 @@ import type { CurrentUser, Role } from '@/features/auth/model'
 import { NotificationBell } from '@/features/notifications/notification-bell'
 import { useLocale } from '@/shared/i18n/use-locale'
 import { cn } from '@/shared/lib/cn'
+import { IconButton } from '@/shared/ui/icon-button'
 import { LocaleControl } from '@/shared/ui/locale-control'
 import { ShieldEmblem } from '@/shared/ui/shield'
 import { ThemeSwitch } from '@/shared/ui/theme-switch'
@@ -60,6 +61,9 @@ export function TopBar({ user, role, onOpenPalette }: TopBarProps) {
         </button>
       </div>
 
+      <IconButton aria-label={t('common.search')} className="md:hidden" onClick={onOpenPalette}>
+        <Search aria-hidden className="size-5" />
+      </IconButton>
       <LocaleControl value={locale} onChange={changeLocale} />
 
       <ThemeSwitch value={theme} onChange={setTheme} className="hidden md:inline-flex" />

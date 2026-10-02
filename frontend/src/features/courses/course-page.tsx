@@ -1,9 +1,12 @@
-import { ArrowRight, Award, ClipboardList } from 'lucide-react'
+import { ArrowRight, ClipboardList } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link, useParams, useSearchParams } from 'react-router'
+import { AnnouncementList } from '@/features/announcements/announcement-list'
+import { useCourseAnnouncementsQuery } from '@/features/announcements/queries'
+import { CourseGradebook } from '@/features/grades/course-gradebook'
+import { useGradebookQuery } from '@/features/grades/queries'
 import { toApiProblem } from '@/shared/api/errors'
 import { useLocale } from '@/shared/i18n/use-locale'
-import { formatDate } from '@/shared/lib/dates'
 import { Breadcrumb } from '@/shared/ui/breadcrumb'
 import { button } from '@/shared/ui/button'
 import { EmptyState } from '@/shared/ui/empty-state'
@@ -16,15 +19,9 @@ import { ActivityRow } from './activity-row'
 import { CoursePlanList } from './course-plan-list'
 import { CourseSyllabus } from './course-syllabus'
 import { planPercent, type Course, type CoursePlan } from './model'
-import {
-  useActivitiesQuery,
-  useCoursePlanQuery,
-  useCourseQuery,
-  useEnrollmentsQuery,
-  useGradesQuery,
-} from './queries'
+import { useActivitiesQuery, useCoursePlanQuery, useCourseQuery, useEnrollmentsQuery } from './queries'
 
-const TABS = ['plan', 'syllabus', 'work', 'grades'] as const
+const TABS = ['plan', 'syllabus', 'work', 'grades', 'announcements'] as const
 type TabKey = (typeof TABS)[number]
 
 function isTab(value: string | null): value is TabKey {
@@ -72,6 +69,7 @@ export function CoursePage() {
           <TabsTrigger value="syllabus">{t('courses.tabSyllabus')}</TabsTrigger>
           <TabsTrigger value="work">{t('courses.tabWork')}</TabsTrigger>
           <TabsTrigger value="grades">{t('courses.tabGrades')}</TabsTrigger>
+          <TabsTrigger value="announcements">{t('announcements.title')}</TabsTrigger>
         </TabsList>
 
         <TabsContent value="plan" className="pt-6">
@@ -94,6 +92,9 @@ export function CoursePage() {
         </TabsContent>
         <TabsContent value="grades" className="pt-6">
           <CourseGrades courseId={courseId} />
+        </TabsContent>
+        <TabsContent value="announcements" className="max-w-lesson pt-6">
+          <CourseAnnouncements courseId={courseId} />
         </TabsContent>
       </Tabs>
     </div>
@@ -203,48 +204,29 @@ function CourseWork({ courseId }: { courseId: string }) {
 }
 
 function CourseGrades({ courseId }: { courseId: string }) {
-  const { t } = useTranslation()
   const locale = useLocale()
   const enrollments = useEnrollmentsQuery()
   const enrollment = enrollments.data?.find((item) => item.courseId === courseId)
-  const grades = useGradesQuery(enrollment)
+  const book = useGradebookQuery(enrollment?.id, locale)
 
-  if (enrollments.isPending || (enrollment !== undefined && grades.isPending))
-    return <SkeletonText lines={4} />
-  if (enrollments.isError || grades.isError) {
+  if (enrollments.isPending || (enrollment !== undefined && book.isPending)) return <SkeletonText lines={4} />
+  if (enrollments.isError || book.isError) {
     return (
       <ErrorState
-        problem={toApiProblem(enrollments.error ?? grades.error)}
+        problem={toApiProblem(enrollments.error ?? book.error)}
         onRetry={() => {
           void enrollments.refetch()
-          void grades.refetch()
+          void book.refetch()
         }}
       />
     )
   }
-  if (grades.data === undefined || grades.data.length === 0) {
-    return (
-      <EmptyState
-        icon={<Award aria-hidden className="size-7" />}
-        title={t('dashboard.gradesEmptyTitle')}
-        body={t('dashboard.gradesEmptyBody')}
-      />
-    )
-  }
-  return (
-    <ul className="divide-border border-border bg-surface-raised divide-y rounded-lg border px-5">
-      {grades.data.map((grade) => (
-        <li key={grade.id} className="flex items-center justify-between gap-4 py-3">
-          <div className="grid gap-0.5">
-            <span className="text-body text-text font-medium">{t(`gradeSource.${grade.source}`)}</span>
-            <span className="text-small text-text-muted">{formatDate(grade.publishedAt, locale)}</span>
-          </div>
-          <span className="font-display text-title text-text font-semibold tabular-nums">
-            {grade.score}
-            <span className="text-small text-text-muted font-sans font-normal"> / {grade.maxScore}</span>
-          </span>
-        </li>
-      ))}
-    </ul>
-  )
+  if (book.data === undefined) return null
+  return <CourseGradebook book={book.data} />
+}
+
+function CourseAnnouncements({ courseId }: { courseId: string }) {
+  const locale = useLocale()
+  const announcements = useCourseAnnouncementsQuery(courseId, locale)
+  return <AnnouncementList announcements={announcements} />
 }

@@ -1,6 +1,8 @@
 import { Award, CalendarCheck2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
+import { AnnouncementList } from '@/features/announcements/announcement-list'
+import { useMyAnnouncementsQuery } from '@/features/announcements/queries'
 import { ActivityRow } from '@/features/courses/activity-row'
 import type { Enrollment } from '@/features/courses/model'
 import { useActivitiesQuery, useRecentGrades } from '@/features/courses/queries'
@@ -118,8 +120,9 @@ export function RecentGradesBlock({ enrollments }: { enrollments: readonly Enrol
             {recent.grades.map((grade) => (
               <li key={grade.id} className="flex items-center justify-between gap-4 py-3">
                 <div className="grid min-w-0 gap-0.5">
-                  <span className="text-body text-text font-medium">{grade.subjectCode}</span>
+                  <span className="text-body text-text font-medium">{grade.title ?? grade.subjectCode}</span>
                   <span className="text-small text-text-muted">
+                    {grade.title !== undefined && `${grade.subjectCode} · `}
                     {t(`gradeSource.${grade.source}`)} · {formatDate(grade.publishedAt, locale)}
                   </span>
                 </div>
@@ -134,6 +137,30 @@ export function RecentGradesBlock({ enrollments }: { enrollments: readonly Enrol
             ))}
           </ul>
         )}
+      </CardContent>
+    </Card>
+  )
+}
+
+/** The newest announcements of my courses and my group; the rest is one click away. */
+export function AnnouncementsBlock() {
+  const { t } = useTranslation()
+  const locale = useLocale()
+  const announcements = useMyAnnouncementsQuery(locale)
+  // nothing announced: the block would be an empty frame under the rest of the day
+  if (announcements.isSuccess && announcements.data.length === 0) return null
+  return (
+    <Card>
+      <CardHeader
+        title={t('announcements.title')}
+        action={
+          <Link to="/announcements" className={button({ variant: 'link', size: 'sm', class: 'h-auto px-0' })}>
+            {t('announcements.all')}
+          </Link>
+        }
+      />
+      <CardContent>
+        <AnnouncementList announcements={announcements} withAudience limit={2} />
       </CardContent>
     </Card>
   )

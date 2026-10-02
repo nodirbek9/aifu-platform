@@ -9,7 +9,7 @@ test.describe('the student learns (S-01, S-03, S-04)', () => {
     await signIn(page, 'student3')
 
     await expect(page.getByRole('heading', { level: 1, name: 'Dev Student Three' })).toBeVisible()
-    await expect(page.getByText('BK-DI26/1')).toBeVisible()
+    await expect(page.getByText('BK-DI26/1 · DEV-S-003')).toBeVisible()
     for (const title of [
       uz.dashboard.todayTitle,
       uz.dashboard.continueTitle,

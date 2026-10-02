@@ -16,6 +16,7 @@ export type CurrentUser = {
   username: string
   fullName: string
   email?: string
+  phone?: string
   roles: readonly Role[]
   permissions: readonly string[]
   preferredLocale: Locale | null
@@ -38,6 +39,7 @@ export function narrowUser(raw: CurrentUserResponse): CurrentUser {
     mustChangePassword: raw.mustChangePassword === true,
   }
   if (typeof raw.email === 'string') user.email = raw.email
+  if (typeof raw.phone === 'string' && raw.phone !== '') user.phone = raw.phone
   if (typeof raw.groupCode === 'string') user.groupCode = raw.groupCode
   if (typeof raw.studentNumber === 'string') user.studentNumber = raw.studentNumber
   return user

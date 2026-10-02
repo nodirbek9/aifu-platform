@@ -7,7 +7,7 @@ import { formatLongDay, useCampusNow } from '@/shared/lib/dates'
 import { ErrorState } from '@/shared/ui/error-state'
 import { ContinueBlock } from './continue-block'
 import { TodayBlock } from './today-block'
-import { DeadlinesBlock, RecentGradesBlock } from './work-blocks'
+import { AnnouncementsBlock, DeadlinesBlock, RecentGradesBlock } from './work-blocks'
 
 /**
  * S-01 — what the student sees first. The day is the hero: today's classes; beside it, where
@@ -57,6 +57,9 @@ export function StudentDashboardPage() {
         </section>
         <section aria-label={t('dashboard.gradesTitle')} className="lg:col-span-5">
           {!enrollments.isError && <RecentGradesBlock enrollments={enrollments.data} />}
+        </section>
+        <section aria-label={t('announcements.title')} className="lg:col-span-12">
+          <AnnouncementsBlock />
         </section>
       </div>
     </div>

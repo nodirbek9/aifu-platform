@@ -126,8 +126,7 @@ export function formatDateTime(iso: string, locale: Locale): string {
 
 /** "Friday, 2 October" for a campus date given as YYYY-MM-DD. */
 export function formatLongDay(date: string, locale: Locale): string {
-  // Noon UTC is the same calendar day in Tashkent (UTC+5), whatever the browser's zone.
-  const instant = new Date(`${date}T12:00:00Z`)
+  const instant = noonOf(date)
   if (locale === 'uz') {
     const { day, month, weekday } = campusParts(instant)
     return `${UZ_WEEKDAYS[weekday] ?? ''}, ${day}-${uzMonth(month, false)}`
@@ -138,6 +137,53 @@ export function formatLongDay(date: string, locale: Locale): string {
     month: 'long',
     timeZone: CAMPUS_TIME_ZONE,
   }).format(instant)
+}
+
+const UZ_WEEKDAYS_SHORT = ['Yak', 'Dush', 'Sesh', 'Chor', 'Pay', 'Jum', 'Shan'] as const
+
+/** Noon UTC of a campus date: the same calendar day in Tashkent (UTC+5), whatever the browser's zone. */
+function noonOf(date: string): Date {
+  return new Date(`${date}T12:00:00Z`)
+}
+
+/** A campus date (YYYY-MM-DD) moved by whole days on the calendar. */
+export function shiftDate(date: string, days: number): string {
+  const moved = noonOf(date)
+  moved.setUTCDate(moved.getUTCDate() + days)
+  return moved.toISOString().slice(0, 10)
+}
+
+/** ISO weekday of a campus date: 1 Monday … 7 Sunday. */
+export function weekdayOf(date: string): number {
+  return noonOf(date).getUTCDay() || 7
+}
+
+/** "Du" / "Пн" / "Mon" — the head of a timetable column. */
+export function formatWeekdayShort(date: string, locale: Locale): string {
+  if (locale === 'uz') return UZ_WEEKDAYS_SHORT[noonOf(date).getUTCDay()] ?? ''
+  const name = new Intl.DateTimeFormat(locale, { weekday: 'short', timeZone: 'UTC' }).format(noonOf(date))
+  return name.charAt(0).toUpperCase() + name.slice(1)
+}
+
+/** "19–25 oktabr" within one month, "28 sentabr – 4 oktabr" across two: the dates of a week. */
+export function formatDateRange(start: string, end: string, locale: Locale): string {
+  const from = noonOf(start)
+  const to = noonOf(end)
+  const sameMonth = from.getUTCMonth() === to.getUTCMonth() && from.getUTCFullYear() === to.getUTCFullYear()
+  const monthOf = (instant: Date): string =>
+    locale === 'uz'
+      ? (UZ_MONTHS[instant.getUTCMonth()] ?? '')
+      : (new Intl.DateTimeFormat(locale, { day: 'numeric', month: 'long', timeZone: 'UTC' })
+          .formatToParts(instant)
+          .find((part) => part.type === 'month')?.value ?? '')
+  if (locale === 'en') {
+    return sameMonth
+      ? `${monthOf(from)} ${from.getUTCDate()}–${to.getUTCDate()}`
+      : `${monthOf(from)} ${from.getUTCDate()} – ${monthOf(to)} ${to.getUTCDate()}`
+  }
+  return sameMonth
+    ? `${from.getUTCDate()}–${to.getUTCDate()} ${monthOf(to)}`
+    : `${from.getUTCDate()} ${monthOf(from)} – ${to.getUTCDate()} ${monthOf(to)}`
 }
 
 /** "08:30:00" → "08:30". */

@@ -61,3 +61,15 @@ export function resetDemoStudent(username: string): void {
     where coding_task_id = (select id from coding_tasks where code = 'DAS-S1-A8')
       and enrollment_id in (${enrollmentsOf(username)});`)
 }
+
+/**
+ * Puts the student's notifications back to how the seed left them — the timetable changes, the
+ * grade and the group's announcement unread — and clears the phone number a flow may have saved.
+ */
+export function resetNotificationsAndPhone(username: string): void {
+  runSql(`
+    update notifications set status = 'SENT', read_at = null
+    where recipient_user_id = (select id from users where username = '${username}')
+      and (type in ('TIMETABLE_CHANGED', 'GRADE_PUBLISHED') or payload ? 'groupId');
+    update users set phone = null where username = '${username}';`)
+}

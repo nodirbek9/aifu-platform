@@ -125,6 +125,19 @@
       "DEADLINE_REMINDER": "A deadline is approaching",
       "ACCOUNT_STATUS_CHANGED": "Account status changed",
       "TIMETABLE_CHANGED": "The timetable changed"
+    },
+    "all": "All notifications",
+    "unread": "unread",
+    "unreadCount": "Unread: {{count}}",
+    "show": "Show",
+    "onlyUnread": "Unread",
+    "noneUnread": "No unread notifications",
+    "showAll": "Show all",
+    "totalNow": "total {{score}} points",
+    "timetable": {
+      "CANCELLED": "A class is cancelled",
+      "MOVED": "A class is moved",
+      "REPLACED": "A class has changed: room or teacher"
     }
   },
   "dashboard": {
@@ -150,7 +163,8 @@
     "gradesTitle": "Recent grades",
     "gradesEmptyTitle": "No grades published yet",
     "gradesEmptyBody": "A grade appears here as soon as it is published.",
-    "allGrades": "All grades"
+    "allGrades": "All grades",
+    "nextClass": "Next class: {{day}}, {{time}} — {{title}}"
   },
   "classStatus": {
     "SCHEDULED": "As scheduled",
@@ -447,6 +461,108 @@
     "rightPairs": "The right pairs",
     "explanation": "Explanation",
     "toQuizPage": "To the quiz page"
+  },
+  "timetable": {
+    "previousWeek": "Previous week",
+    "nextWeek": "Next week",
+    "thisWeek": "This week",
+    "weekNumber": "Week {{number}}",
+    "parity": {
+      "ODD": "Odd week",
+      "EVEN": "Even week"
+    },
+    "pair": "Pair {{number}}",
+    "pairColumn": "Pair",
+    "gridLabel": "Timetable, {{range}}",
+    "days": "Days of the week",
+    "legend": "Session types",
+    "subgroup": "subgroup {{name}}",
+    "holiday": "Holiday",
+    "noClassesDay": "No classes on this day",
+    "emptyWeek": "There are no classes this week.",
+    "noTimetableTitle": "No timetable is published for this week",
+    "noTimetableBody": "Once the academic office publishes the timetable, it appears here.",
+    "time": "Time",
+    "room": "Room",
+    "groups": "Groups",
+    "topic": "Topic",
+    "topicNone": "No topic has been set for this class yet.",
+    "openLesson": "Open the lesson",
+    "movedTo": "New time: {{slot}}",
+    "movedFrom": "Was at: {{slot}}"
+  },
+  "attendance": {
+    "show": "Show",
+    "missed": "Missed",
+    "held": "Held",
+    "percent": "Attendance: {{percent}}%",
+    "status": {
+      "PRESENT": "Present",
+      "LATE": "Late",
+      "EXCUSED": "Excused",
+      "ABSENT": "Absent"
+    },
+    "noneMissed": "No missed classes.",
+    "noneHeld": "Attendance has not been marked in this course yet.",
+    "emptyTitle": "Attendance has not been marked yet",
+    "emptyBody": "Once a teacher marks attendance in a class, it appears here."
+  },
+  "grades": {
+    "runningTotal": "Running total",
+    "finalScore": "Final score",
+    "finalGrade": "Final grade",
+    "finalPending": "The final grade is given once every assessment is graded.",
+    "symbol": {
+      "5": "excellent",
+      "4": "good",
+      "3": "satisfactory",
+      "2": "unsatisfactory"
+    },
+    "admission": {
+      "granted": "Admitted to the final exam",
+      "denied": "Not admitted to the final exam: a pass mark is not reached",
+      "pending": "Admission to the final exam is decided once continuous and midterm assessment are graded"
+    },
+    "academicDebt": "Academic debt: the final exam is below its pass mark",
+    "earned": "Points earned",
+    "share": "Share",
+    "noGate": "No pass mark",
+    "gatePassed": "passed",
+    "gateFailed": "not passed",
+    "entriesTitle": "Grades",
+    "historyTitle": "History of changes",
+    "revision": "revision {{number}}",
+    "status": {
+      "PUBLISHED": "In force",
+      "REVISED": "Replaced",
+      "VOIDED": "Voided"
+    }
+  },
+  "announcements": {
+    "title": "Announcements",
+    "all": "All announcements",
+    "emptyTitle": "No announcements yet",
+    "emptyBody": "When a teacher or the academic office announces something, it appears here."
+  },
+  "search": {
+    "results": "Search results",
+    "type": {
+      "COURSE": "Course",
+      "LESSON": "Lesson",
+      "SUBJECT": "Subject"
+    }
+  },
+  "profile": {
+    "group": "Group",
+    "studentNumber": "Student number",
+    "email": "Email",
+    "phone": "Phone",
+    "save": "Save",
+    "phoneSaved": "The phone number is saved",
+    "appearance": "Appearance",
+    "languageHint": "The interface language is saved to your account.",
+    "themeHint": "The theme is remembered on this device.",
+    "passwordHint": "After a password change you will need to sign in again on every device."
   },
   "errors": {
     "NETWORK_ERROR": "Network error — check your internet connection",

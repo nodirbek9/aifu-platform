@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type ReactNode } from 'react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
-import { Search } from 'lucide-react'
+import { Loader2, Search } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { cn } from '@/shared/lib/cn'
 
@@ -8,20 +8,29 @@ export type CommandItem = {
   id: string
   label: string
   hint?: string
-  group?: string
   icon?: ReactNode
   keywords?: string
   onSelect: () => void
+}
+
+/** A search done elsewhere (the server) for what is typed; its results follow the commands. */
+export type CommandSearch = {
+  /** The heading above the results. */
+  label: string
+  items: readonly CommandItem[]
+  loading: boolean
+  onQueryChange: (query: string) => void
 }
 
 export type CommandPaletteProps = {
   open: boolean
   onOpenChange: (open: boolean) => void
   items: readonly CommandItem[]
+  search?: CommandSearch
 }
 
-/** Ctrl+K palette: one input, a filtered list, arrows + Enter. Global search lands in F3. */
-export function CommandPalette({ open, onOpenChange, items }: CommandPaletteProps) {
+/** Ctrl+K palette: one input, the commands filtered as you type, then what the search found. */
+export function CommandPalette({ open, onOpenChange, items, search }: CommandPaletteProps) {
   const { t } = useTranslation()
 
   useEffect(() => {
@@ -55,6 +64,7 @@ export function CommandPalette({ open, onOpenChange, items }: CommandPaletteProp
           </DialogPrimitive.Description>
           <CommandList
             items={items}
+            search={search}
             onSelect={(item) => {
               onOpenChange(false)
               item.onSelect()
@@ -68,30 +78,64 @@ export function CommandPalette({ open, onOpenChange, items }: CommandPaletteProp
 
 type CommandListProps = {
   items: readonly CommandItem[]
+  search: CommandSearch | undefined
   onSelect: (item: CommandItem) => void
 }
 
 /** Mounted only while the palette is open, so the query and the cursor start fresh every time. */
-function CommandList({ items, onSelect }: CommandListProps) {
+function CommandList({ items, search, onSelect }: CommandListProps) {
   const { t } = useTranslation()
   const [query, setQuery] = useState('')
   const [activeIndex, setActiveIndex] = useState(0)
   const listId = 'command-list'
 
-  const filtered = useMemo(() => {
+  const commands = useMemo(() => {
     const normalized = query.trim().toLowerCase()
     if (normalized === '') return items
     return items.filter((item) =>
       `${item.label} ${item.hint ?? ''} ${item.keywords ?? ''}`.toLowerCase().includes(normalized),
     )
   }, [items, query])
+  const found = query.trim() === '' ? [] : (search?.items ?? [])
+  const all = [...commands, ...found]
+  const activeItem = all[Math.min(activeIndex, all.length - 1)]
+  const searching = search?.loading === true && query.trim() !== ''
 
-  const activeItem = filtered[activeIndex]
+  const option = (item: CommandItem, index: number) => (
+    <div
+      key={item.id}
+      id={`${listId}-${item.id}`}
+      role="option"
+      aria-selected={item === activeItem}
+      onMouseEnter={() => {
+        setActiveIndex(index)
+      }}
+      onClick={() => {
+        onSelect(item)
+      }}
+      className={cn(
+        'text-small text-text flex cursor-pointer items-center gap-2.5 rounded-sm px-3 py-2.5',
+        item === activeItem && 'bg-surface-sunken',
+      )}
+    >
+      {item.icon !== undefined && <span className="text-text-muted shrink-0">{item.icon}</span>}
+      <span className="min-w-0 flex-1">{item.label}</span>
+      {item.hint !== undefined && (
+        <span className="text-caption text-text-muted max-w-2/5 shrink-0 truncate tracking-normal">
+          {item.hint}
+        </span>
+      )}
+    </div>
+  )
 
   return (
     <>
       <div className="border-border flex items-center gap-2.5 border-b px-4">
-        <Search aria-hidden className="text-text-muted size-4 shrink-0" />
+        {searching ? (
+          <Loader2 aria-hidden className="text-text-muted size-4 shrink-0 animate-spin" />
+        ) : (
+          <Search aria-hidden className="text-text-muted size-4 shrink-0" />
+        )}
         <input
           role="combobox"
           aria-expanded="true"
@@ -101,11 +145,12 @@ function CommandList({ items, onSelect }: CommandListProps) {
           onChange={(event) => {
             setQuery(event.target.value)
             setActiveIndex(0)
+            search?.onQueryChange(event.target.value)
           }}
           onKeyDown={(event) => {
             if (event.key === 'ArrowDown') {
               event.preventDefault()
-              setActiveIndex((index) => Math.min(index + 1, filtered.length - 1))
+              setActiveIndex((index) => Math.min(index + 1, all.length - 1))
             } else if (event.key === 'ArrowUp') {
               event.preventDefault()
               setActiveIndex((index) => Math.max(index - 1, 0))
@@ -122,31 +167,19 @@ function CommandList({ items, onSelect }: CommandListProps) {
         </kbd>
       </div>
       <div role="listbox" id={listId} className="max-h-80 overflow-y-auto p-1.5">
-        {filtered.length === 0 && (
+        {all.length === 0 && !searching && (
           <p className="text-small text-text-muted px-3 py-8 text-center">{t('common.commandEmpty')}</p>
         )}
-        {filtered.map((item, index) => (
-          <div
-            key={item.id}
-            id={`${listId}-${item.id}`}
-            role="option"
-            aria-selected={index === activeIndex}
-            onMouseEnter={() => {
-              setActiveIndex(index)
-            }}
-            onClick={() => {
-              onSelect(item)
-            }}
-            className={cn(
-              'text-small flex cursor-pointer items-center gap-2.5 rounded-sm px-3 py-2.5',
-              index === activeIndex ? 'bg-surface-sunken text-text' : 'text-text',
-            )}
+        {commands.map((item, index) => option(item, index))}
+        {found.length > 0 && search !== undefined && (
+          <p
+            role="presentation"
+            className="text-caption tracking-caption text-text-muted px-3 pt-3 pb-1 font-medium uppercase"
           >
-            {item.icon !== undefined && <span className="text-text-muted">{item.icon}</span>}
-            <span className="flex-1">{item.label}</span>
-            {item.hint !== undefined && <span className="text-caption text-text-muted">{item.hint}</span>}
-          </div>
-        ))}
+            {search.label}
+          </p>
+        )}
+        {found.map((item, index) => option(item, commands.length + index))}
       </div>
     </>
   )

@@ -1,4 +1,4 @@
-import { LogOut, MonitorSmartphone, Repeat } from 'lucide-react'
+import { LogOut, Megaphone, MonitorSmartphone, Repeat, UserRound } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
 import { useTheme, THEMES } from '@/app/theme'
@@ -100,6 +100,23 @@ export function ProfileMenu({ user, role }: ProfileMenuProps) {
           ))}
         </DropdownMenuGroup>
 
+        <DropdownMenuSeparator />
+        <DropdownMenuItem
+          onSelect={() => {
+            void navigate('/profile')
+          }}
+        >
+          <UserRound aria-hidden className="text-text-muted size-4" />
+          {t('common.profile')}
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          onSelect={() => {
+            void navigate('/announcements')
+          }}
+        >
+          <Megaphone aria-hidden className="text-text-muted size-4" />
+          {t('announcements.title')}
+        </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem
           onSelect={() => {

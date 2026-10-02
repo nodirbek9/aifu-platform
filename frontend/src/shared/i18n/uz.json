@@ -125,6 +125,19 @@
       "DEADLINE_REMINDER": "Topshirish muddati yaqinlashmoqda",
       "ACCOUNT_STATUS_CHANGED": "Hisob holati oʻzgardi",
       "TIMETABLE_CHANGED": "Dars jadvali oʻzgardi"
+    },
+    "all": "Barcha bildirishnomalar",
+    "unread": "oʻqilmagan",
+    "unreadCount": "Oʻqilmagan: {{count}} ta",
+    "show": "Koʻrsatish",
+    "onlyUnread": "Oʻqilmaganlar",
+    "noneUnread": "Oʻqilmagan bildirishnomalar yoʻq",
+    "showAll": "Barchasini koʻrsatish",
+    "totalNow": "jami {{score}} ball",
+    "timetable": {
+      "CANCELLED": "Dars bekor qilindi",
+      "MOVED": "Dars boshqa vaqtga koʻchirildi",
+      "REPLACED": "Darsda oʻzgarish: xona yoki oʻqituvchi"
     }
   },
   "dashboard": {
@@ -150,7 +163,8 @@
     "gradesTitle": "Soʻnggi baholar",
     "gradesEmptyTitle": "Hali baholar eʼlon qilinmagan",
     "gradesEmptyBody": "Baho eʼlon qilinishi bilan shu yerda koʻrinadi.",
-    "allGrades": "Barcha baholar"
+    "allGrades": "Barcha baholar",
+    "nextClass": "Keyingi dars: {{day}}, {{time}} — {{title}}"
   },
   "classStatus": {
     "SCHEDULED": "Jadval boʻyicha",
@@ -447,6 +461,108 @@
     "rightPairs": "Toʻgʻri juftliklar",
     "explanation": "Izoh",
     "toQuizPage": "Test sahifasiga"
+  },
+  "timetable": {
+    "previousWeek": "Oldingi hafta",
+    "nextWeek": "Keyingi hafta",
+    "thisWeek": "Shu hafta",
+    "weekNumber": "{{number}}-hafta",
+    "parity": {
+      "ODD": "Toq hafta",
+      "EVEN": "Juft hafta"
+    },
+    "pair": "{{number}}-juftlik",
+    "pairColumn": "Juftlik",
+    "gridLabel": "Dars jadvali, {{range}}",
+    "days": "Hafta kunlari",
+    "legend": "Mashgʻulot turlari",
+    "subgroup": "{{name}} guruhcha",
+    "holiday": "Dam olish kuni",
+    "noClassesDay": "Bu kuni dars yoʻq",
+    "emptyWeek": "Bu haftada darslar yoʻq.",
+    "noTimetableTitle": "Bu hafta uchun jadval eʼlon qilinmagan",
+    "noTimetableBody": "Jadvalni oʻquv boʻlimi eʼlon qilgach, u shu yerda paydo boʻladi.",
+    "time": "Vaqt",
+    "room": "Xona",
+    "groups": "Guruhlar",
+    "topic": "Mavzu",
+    "topicNone": "Bu dars uchun mavzu hali belgilanmagan.",
+    "openLesson": "Darsni ochish",
+    "movedTo": "Yangi vaqti: {{slot}}",
+    "movedFrom": "Avvalgi vaqti: {{slot}}"
+  },
+  "attendance": {
+    "show": "Koʻrsatish",
+    "missed": "Qoldirilganlar",
+    "held": "Oʻtilgan",
+    "percent": "Davomat: {{percent}}%",
+    "status": {
+      "PRESENT": "Qatnashgan",
+      "LATE": "Kechikkan",
+      "EXCUSED": "Sababli",
+      "ABSENT": "Sababsiz"
+    },
+    "noneMissed": "Qoldirilgan darslar yoʻq.",
+    "noneHeld": "Bu kursda davomat hali belgilanmagan.",
+    "emptyTitle": "Davomat hali belgilanmagan",
+    "emptyBody": "Oʻqituvchi darsda davomatni belgilagach, u shu yerda koʻrinadi."
+  },
+  "grades": {
+    "runningTotal": "Joriy ball",
+    "finalScore": "Yakuniy ball",
+    "finalGrade": "Yakuniy baho",
+    "finalPending": "Yakuniy baho barcha nazoratlar baholangach chiqariladi.",
+    "symbol": {
+      "5": "aʼlo",
+      "4": "yaxshi",
+      "3": "qoniqarli",
+      "2": "qoniqarsiz"
+    },
+    "admission": {
+      "granted": "Yakuniy nazoratga ruxsat berilgan",
+      "denied": "Yakuniy nazoratga ruxsat yoʻq: oʻtish chegarasiga yetilmagan",
+      "pending": "Yakuniy nazoratga ruxsat JN va ON baholangach aniqlanadi"
+    },
+    "academicDebt": "Akademik qarzdorlik: yakuniy nazorat oʻtish chegarasidan past",
+    "earned": "Toʻplangan ball",
+    "share": "Ulush",
+    "noGate": "Oʻtish chegarasi yoʻq",
+    "gatePassed": "oʻtdi",
+    "gateFailed": "oʻtmadi",
+    "entriesTitle": "Baholar",
+    "historyTitle": "Oʻzgarishlar tarixi",
+    "revision": "{{number}}-tahrir",
+    "status": {
+      "PUBLISHED": "Amalda",
+      "REVISED": "Almashtirilgan",
+      "VOIDED": "Bekor qilingan"
+    }
+  },
+  "announcements": {
+    "title": "Eʼlonlar",
+    "all": "Barcha eʼlonlar",
+    "emptyTitle": "Hozircha eʼlonlar yoʻq",
+    "emptyBody": "Oʻqituvchi yoki oʻquv boʻlimi eʼlon berganda shu yerda koʻrinadi."
+  },
+  "search": {
+    "results": "Qidiruv natijalari",
+    "type": {
+      "COURSE": "Kurs",
+      "LESSON": "Dars",
+      "SUBJECT": "Fan"
+    }
+  },
+  "profile": {
+    "group": "Guruh",
+    "studentNumber": "Talaba raqami",
+    "email": "Elektron pochta",
+    "phone": "Telefon",
+    "save": "Saqlash",
+    "phoneSaved": "Telefon raqami saqlandi",
+    "appearance": "Koʻrinish",
+    "languageHint": "Interfeys tili akkauntingizga saqlanadi.",
+    "themeHint": "Mavzu shu qurilmada eslab qolinadi.",
+    "passwordHint": "Parol almashtirilgach, barcha qurilmalarda qayta kirish kerak boʻladi."
   },
   "errors": {
     "NETWORK_ERROR": "Tarmoq xatosi — internet aloqasini tekshiring",
