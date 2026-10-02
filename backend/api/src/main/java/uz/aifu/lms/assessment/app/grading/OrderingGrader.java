@@ -3,21 +3,23 @@ package uz.aifu.lms.assessment.app.grading;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.util.Map;
-import java.util.Objects;
+import java.util.Comparator;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
-import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import org.springframework.stereotype.Component;
 import uz.aifu.lms.assessment.domain.AnswerOption;
 import uz.aifu.lms.assessment.domain.QuestionType;
 import uz.aifu.lms.assessment.domain.QuizAttemptSelectedOption;
 
 /**
- * {@code ORDERING}: the correct sequence is each {@link AnswerOption#getPosition()} (ascending);
- * the student's proposed sequence is {@link QuizAttemptSelectedOption#getOrdinal()}. All-or-nothing
- * by default; {@code settings.partialCredit=true} scores the fraction of options placed at their
- * correct position instead.
+ * {@code ORDERING}: the correct sequence is the options by {@link AnswerOption#getPosition()}
+ * (ascending); the student's proposed sequence is the options by {@link
+ * QuizAttemptSelectedOption#getOrdinal()}. The two sequences are compared place by place, so the
+ * numbers themselves do not matter — a student's client never learns the stored positions.
+ * All-or-nothing by default; {@code settings.partialCredit=true} scores the fraction of options
+ * standing in their correct place instead.
  */
 @Component
 public class OrderingGrader implements QuestionGrader {
@@ -40,27 +42,25 @@ public class OrderingGrader implements QuestionGrader {
         if (options.isEmpty()) {
             return new GradeResult(BigDecimal.ZERO, false);
         }
-        Map<UUID, Integer> correctPositionById =
+        List<UUID> correctOrder =
                 options.stream()
-                        .collect(Collectors.toMap(AnswerOption::getId, AnswerOption::getPosition));
-        Map<UUID, Integer> submittedOrdinalById =
+                        .sorted(Comparator.comparingInt(AnswerOption::getPosition))
+                        .map(AnswerOption::getId)
+                        .toList();
+        List<UUID> submittedOrder =
                 context.selectedOptions().stream()
                         .filter(s -> s.getOrdinal() != null)
-                        .collect(
-                                Collectors.toMap(
-                                        s -> s.getOption().getId(),
-                                        QuizAttemptSelectedOption::getOrdinal));
-        if (submittedOrdinalById.size() != options.size()) {
+                        .sorted(Comparator.comparingInt(QuizAttemptSelectedOption::getOrdinal))
+                        .map(s -> s.getOption().getId())
+                        .distinct()
+                        .toList();
+        if (submittedOrder.size() != correctOrder.size()) {
             return new GradeResult(BigDecimal.ZERO, false);
         }
 
         long correctCount =
-                options.stream()
-                        .filter(
-                                o ->
-                                        Objects.equals(
-                                                submittedOrdinalById.get(o.getId()),
-                                                correctPositionById.get(o.getId())))
+                IntStream.range(0, correctOrder.size())
+                        .filter(i -> correctOrder.get(i).equals(submittedOrder.get(i)))
                         .count();
         boolean allCorrect = correctCount == options.size();
 

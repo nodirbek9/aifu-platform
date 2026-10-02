@@ -98,6 +98,14 @@ class AssessmentIT extends AbstractIntegrationTest {
         assertThat(graded.percent()).isEqualByComparingTo(new BigDecimal("100.00"));
         assertThat(graded.passed()).isTrue();
         assertThat(graded.questions().get(0).isCorrect()).isTrue();
+        // the review is open (IMMEDIATELY): each option says whether it is the right one
+        assertThat(graded.questions().get(0).options())
+                .filteredOn(option -> option.id().equals(correct.id()))
+                .singleElement()
+                .satisfies(option -> assertThat(option.correct()).isTrue());
+        assertThat(graded.questions().get(0).options())
+                .filteredOn(option -> !option.id().equals(correct.id()))
+                .allSatisfy(option -> assertThat(option.correct()).isFalse());
     }
 
     @Test
@@ -349,7 +357,84 @@ class AssessmentIT extends AbstractIntegrationTest {
     }
 
     @Test
-    void expiredAttempt_cannotBeSubmitted() throws Exception {
+    void timeUp_handsTheAttemptIn_andGradesWhatWasSaved() throws Exception {
+        User admin = userFixtures.activeUser(RoleCode.ADMIN);
+        String adminToken = login(admin);
+        Course course = enrollmentFixtures.publishedCourse(150);
+        QuizDetail quiz = createQuiz(adminToken, course.getId(), RevealPolicy.IMMEDIATELY, null);
+        updateQuizTimeLimit(adminToken, quiz.id(), 2);
+        QuestionDetail answered =
+                createQuestion(adminToken, quiz.id(), QuestionType.TRUE_FALSE, "1");
+        AnswerOptionView right = addOption(adminToken, answered.id(), true, null);
+        addOption(adminToken, answered.id(), false, null);
+        QuestionDetail unanswered =
+                createQuestion(adminToken, quiz.id(), QuestionType.TRUE_FALSE, "1");
+        AnswerOptionView late = addOption(adminToken, unanswered.id(), true, null);
+        addOption(adminToken, unanswered.id(), false, null);
+
+        User student = userFixtures.activeUser(RoleCode.STUDENT);
+        enrollmentService.enroll(
+                course.getId(), student.getId(), EnrollmentSource.ADMIN, admin.getId(), null);
+        String studentToken = login(student);
+        publishQuiz(adminToken, quiz.id());
+        AttemptDetail attempt = startAttempt(studentToken, quiz.id());
+        answer(
+                studentToken,
+                attempt.id(),
+                answered.id(),
+                new RecordAnswerRequest(
+                        null, null, List.of(new SelectedOptionInput(right.id(), null))));
+
+        Thread.sleep(2500);
+
+        // coming back after the time: the attempt is graded on the one saved answer
+        ResponseEntity<AttemptDetail> reread =
+                rest.exchange(
+                        url("/api/v1/attempts/" + attempt.id()),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(studentToken)),
+                        AttemptDetail.class);
+        assertThat(reread.getStatusCode()).isEqualTo(HttpStatus.OK);
+        AttemptDetail closed = reread.getBody();
+        assertThat(closed.status()).isEqualTo(AttemptStatus.GRADED);
+        assertThat(closed.score()).isEqualByComparingTo(new BigDecimal("1"));
+        assertThat(closed.maxScore()).isEqualByComparingTo(new BigDecimal("2"));
+        assertThat(closed.percent()).isEqualByComparingTo(new BigDecimal("50.00"));
+        assertThat(closed.passed()).isFalse();
+        assertThat(closed.submittedAt()).isEqualTo(closed.expiresAt());
+
+        // an answer after the time is refused, and says why
+        ResponseEntity<ApiError> tooLate =
+                rest.exchange(
+                        url(
+                                "/api/v1/attempts/"
+                                        + attempt.id()
+                                        + "/questions/"
+                                        + unanswered.id()
+                                        + "/answer"),
+                        HttpMethod.POST,
+                        new HttpEntity<>(
+                                new RecordAnswerRequest(
+                                        null,
+                                        null,
+                                        List.of(new SelectedOptionInput(late.id(), null))),
+                                bearer(studentToken)),
+                        ApiError.class);
+        assertThat(tooLate.getStatusCode()).isEqualTo(HttpStatus.UNPROCESSABLE_ENTITY);
+        assertThat(tooLate.getBody().code()).isEqualTo("ATTEMPT_EXPIRED");
+
+        // the page's own submit at zero arrives late: it gets the same result, not an error
+        AttemptDetail lateSubmit = submit(studentToken, attempt.id(), null);
+        assertThat(lateSubmit.status()).isEqualTo(AttemptStatus.GRADED);
+        assertThat(lateSubmit.score()).isEqualByComparingTo(new BigDecimal("1"));
+
+        // and the next attempt can be started
+        AttemptDetail next = startAttempt(studentToken, quiz.id());
+        assertThat(next.attemptNumber()).isEqualTo(2);
+    }
+
+    @Test
+    void timeUp_withoutComingBack_nextStartClosesTheOldAttempt() throws Exception {
         User admin = userFixtures.activeUser(RoleCode.ADMIN);
         String adminToken = login(admin);
         Course course = enrollmentFixtures.publishedCourse(150);
@@ -357,8 +442,48 @@ class AssessmentIT extends AbstractIntegrationTest {
         updateQuizTimeLimit(adminToken, quiz.id(), 1);
         QuestionDetail question =
                 createQuestion(adminToken, quiz.id(), QuestionType.TRUE_FALSE, "1");
-        addOption(adminToken, question.id(), true, null);
+        AnswerOptionView right = addOption(adminToken, question.id(), true, null);
         addOption(adminToken, question.id(), false, null);
+
+        User student = userFixtures.activeUser(RoleCode.STUDENT);
+        enrollmentService.enroll(
+                course.getId(), student.getId(), EnrollmentSource.ADMIN, admin.getId(), null);
+        String studentToken = login(student);
+        publishQuiz(adminToken, quiz.id());
+        AttemptDetail first = startAttempt(studentToken, quiz.id());
+        answer(
+                studentToken,
+                first.id(),
+                question.id(),
+                new RecordAnswerRequest(
+                        null, null, List.of(new SelectedOptionInput(right.id(), null))));
+
+        Thread.sleep(1500);
+
+        AttemptDetail second = startAttempt(studentToken, quiz.id());
+        assertThat(second.attemptNumber()).isEqualTo(2);
+
+        ResponseEntity<AttemptDetail> firstNow =
+                rest.exchange(
+                        url("/api/v1/attempts/" + first.id()),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(studentToken)),
+                        AttemptDetail.class);
+        assertThat(firstNow.getBody().status()).isEqualTo(AttemptStatus.GRADED);
+        assertThat(firstNow.getBody().score()).isEqualByComparingTo(new BigDecimal("1"));
+    }
+
+    @Test
+    void orderingOptions_areServedMixedButTheSameOnEveryRead_andGradedByOrder() throws Exception {
+        User admin = userFixtures.activeUser(RoleCode.ADMIN);
+        String adminToken = login(admin);
+        Course course = enrollmentFixtures.publishedCourse(150);
+        QuizDetail quiz = createQuiz(adminToken, course.getId(), RevealPolicy.IMMEDIATELY, null);
+        QuestionDetail ordering = createQuestion(adminToken, quiz.id(), QuestionType.ORDERING, "1");
+        List<UUID> rightOrder = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            rightOrder.add(addOption(adminToken, ordering.id(), false, null).id());
+        }
 
         User student = userFixtures.activeUser(RoleCode.STUDENT);
         enrollmentService.enroll(
@@ -367,16 +492,40 @@ class AssessmentIT extends AbstractIntegrationTest {
         publishQuiz(adminToken, quiz.id());
         AttemptDetail attempt = startAttempt(studentToken, quiz.id());
 
-        Thread.sleep(1500);
+        List<UUID> served = attempt.questions().get(0).options().stream().map(o -> o.id()).toList();
+        assertThat(served).containsExactlyInAnyOrderElementsOf(rightOrder);
+        // nothing about the right order is told while the attempt is open
+        assertThat(attempt.questions().get(0).options())
+                .allSatisfy(option -> assertThat(option.correctPosition()).isNull());
 
-        ResponseEntity<ApiError> response =
+        ResponseEntity<AttemptDetail> reread =
                 rest.exchange(
-                        url("/api/v1/attempts/" + attempt.id() + "/submit"),
-                        HttpMethod.POST,
+                        url("/api/v1/attempts/" + attempt.id()),
+                        HttpMethod.GET,
                         new HttpEntity<>(bearer(studentToken)),
-                        ApiError.class);
-        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CONFLICT);
-        assertThat(response.getBody().code()).isEqualTo("ATTEMPT_ALREADY_SUBMITTED");
+                        AttemptDetail.class);
+        assertThat(reread.getBody().questions().get(0).options().stream().map(o -> o.id()).toList())
+                .containsExactlyElementsOf(served);
+
+        // the student's order is told by ordinals that only need to ascend
+        List<SelectedOptionInput> proposed = new ArrayList<>();
+        for (int i = 0; i < rightOrder.size(); i++) {
+            proposed.add(new SelectedOptionInput(rightOrder.get(i), 10 + i * 5));
+        }
+        answer(
+                studentToken,
+                attempt.id(),
+                ordering.id(),
+                new RecordAnswerRequest(null, null, proposed));
+        AttemptDetail graded = submit(studentToken, attempt.id(), null);
+
+        assertThat(graded.score()).isEqualByComparingTo(new BigDecimal("1"));
+        // the review tells each option's place in the right order
+        assertThat(graded.questions().get(0).options())
+                .allSatisfy(
+                        option ->
+                                assertThat(option.correctPosition())
+                                        .isEqualTo(rightOrder.indexOf(option.id())));
     }
 
     @Test
@@ -407,7 +556,9 @@ class AssessmentIT extends AbstractIntegrationTest {
 
         assertThat(graded.questions().get(0).isCorrect()).isNull();
         assertThat(graded.questions().get(0).pointsAwarded()).isNull();
-        // the served option list never carries isCorrect regardless of reveal policy
+        assertThat(graded.questions().get(0).options())
+                .allSatisfy(option -> assertThat(option.correct()).isNull());
+        // the teacher's own view of the question does carry the key
         ResponseEntity<QuestionDetail> teacherView =
                 rest.exchange(
                         url("/api/v1/teacher/questions/" + question.id()),

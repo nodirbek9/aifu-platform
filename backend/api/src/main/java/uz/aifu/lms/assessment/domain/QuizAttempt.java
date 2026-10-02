@@ -116,10 +116,22 @@ public class QuizAttempt {
         return status == AttemptStatus.IN_PROGRESS && expiresAt != null && now.isAfter(expiresAt);
     }
 
-    public void expire(Instant now) {
-        requireStatus(AttemptStatus.IN_PROGRESS, AttemptStatus.EXPIRED);
-        this.status = AttemptStatus.EXPIRED;
-        this.submittedAt = now;
+    /**
+     * The time ran out: the attempt is handed in as it stands, dated at the moment the time ended.
+     * What the student had saved is then graded like any other submission — running out of time
+     * costs the unanswered questions, not the answered ones.
+     */
+    public void submitAtDeadline() {
+        requireStatus(AttemptStatus.IN_PROGRESS, AttemptStatus.SUBMITTED);
+        this.status = AttemptStatus.SUBMITTED;
+        this.submittedAt = Guards.required(expiresAt, "expiresAt");
+    }
+
+    /** True when the clock handed this attempt in, not the student. */
+    public boolean wasClosedByTime() {
+        return status != AttemptStatus.IN_PROGRESS
+                && expiresAt != null
+                && expiresAt.equals(submittedAt);
     }
 
     public void abandon() {

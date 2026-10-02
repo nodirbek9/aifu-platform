@@ -23,8 +23,24 @@ public final class AttemptDtos {
 
     @Schema(
             description =
-                    "One selectable option as served to the student — never carries isCorrect")
-    public record ServedOptionView(UUID id, String text) {}
+                    "One option as served to the student. What gives the answer away — correct,"
+                            + " correctPosition, pairKey — is present only once the quiz's reveal"
+                            + " policy opens the review of this attempt")
+    public record ServedOptionView(
+            UUID id,
+            String text,
+            @Schema(description = "Choice questions, in a review: whether this option is right")
+                    Boolean correct,
+            @Schema(
+                            description =
+                                    "Ordering questions, in a review: the option's place in the"
+                                            + " right order, from 0")
+                    Integer correctPosition,
+            @Schema(
+                            description =
+                                    "Matching questions, in a review: options with the same key"
+                                            + " belong together")
+                    String pairKey) {}
 
     @Schema(description = "One served question, with the student's own recorded response")
     public record ServedQuestionView(
@@ -40,7 +56,12 @@ public final class AttemptDtos {
             List<UUID> selectedOptionIds,
             BigDecimal pointsAwarded,
             Boolean isCorrect,
-            String explanation) {}
+            String explanation,
+            @Schema(
+                            description =
+                                    "Short-answer and numeric questions, in a review: an accepted"
+                                            + " answer")
+                    String correctAnswer) {}
 
     @Schema(description = "The caller's own attempt, with served questions and their own responses")
     public record AttemptDetail(
@@ -56,6 +77,12 @@ public final class AttemptDtos {
             Instant expiresAt,
             Instant submittedAt,
             Instant gradedAt,
+            @Schema(
+                            description =
+                                    "The server's clock when this answer was written. A countdown"
+                                            + " to expiresAt is measured from here, not from the"
+                                            + " clock of the student's computer")
+                    Instant serverTime,
             List<ServedQuestionView> questions) {}
 
     @Schema(description = "Attempt summary for list views")

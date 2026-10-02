@@ -1,5 +1,6 @@
 package uz.aifu.lms.iam.persistence;
 
+import java.time.Instant;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -8,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import uz.aifu.lms.iam.domain.User;
@@ -26,6 +28,19 @@ public interface UserRepository extends JpaRepository<User, UUID> {
 
     @EntityGraph(attributePaths = {"roles", "roles.permissions"})
     Optional<User> findWithAuthoritiesById(UUID id);
+
+    /**
+     * Notes a successful sign-in on the user's row with one statement. Deliberately not a change of
+     * the loaded entity: that would write the whole row under its version, and two sign-ins of one
+     * account at the same instant (a phone and a laptop, a shared classroom account) would then
+     * fail each other — one with a stale version, or both in a deadlock with the audit and
+     * refresh-token rows they insert. This touches three columns, none of them a key, and waits its
+     * turn.
+     */
+    @Modifying
+    @Query(
+            "update User u set u.failedLoginAttempts = 0, u.lockedUntil = null, u.lastLoginAt = :now where u.id = :id")
+    void noteSuccessfulLogin(@Param("id") UUID id, @Param("now") Instant now);
 
     boolean existsByEmailIgnoreCase(String email);
 

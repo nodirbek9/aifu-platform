@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 import java.util.UUID;
 import java.util.function.Supplier;
@@ -26,6 +27,7 @@ import uz.aifu.lms.assessment.app.grading.GradingContext;
 import uz.aifu.lms.assessment.app.grading.QuestionGraderRegistry;
 import uz.aifu.lms.assessment.domain.AnswerOption;
 import uz.aifu.lms.assessment.domain.AttemptStatus;
+import uz.aifu.lms.assessment.domain.MatchMode;
 import uz.aifu.lms.assessment.domain.Question;
 import uz.aifu.lms.assessment.domain.QuestionAnswerKey;
 import uz.aifu.lms.assessment.domain.Quiz;
@@ -52,12 +54,14 @@ import uz.aifu.lms.enrollment.domain.Enrollment;
  * student-facing method is "the caller's own enrollment" (ADR-004 Layers 3/4) — no {@code
  * AccessGuard} needed here, same reasoning as {@code progress}'s student endpoints (ADR-012).
  *
- * <p>Expiry is lazy, not a background sweeper: every interaction with an {@code IN_PROGRESS}
- * attempt first checks {@link QuizAttempt#isExpired}; a stale attempt is transitioned to {@code
- * EXPIRED} in its own committed transaction ({@link #expireIfNeeded}) before the calling method
- * re-reads it and reacts — mutating-then-throwing in the same transaction would roll the expire
- * transition back along with the error, which is not the intended effect (CLAUDE.md §3: no extra
- * scheduler infrastructure without a real need this simple check already covers).
+ * <p>Running out of time hands the attempt in: what the student saved is graded as if they had
+ * pressed submit at the last second ({@link #closeByTime}). This is lazy, not a background sweeper:
+ * every interaction with an {@code IN_PROGRESS} attempt — reading it, listing attempts, answering,
+ * submitting, starting the next one — first checks {@link QuizAttempt#isExpired} and closes a stale
+ * attempt in its own committed transaction ({@link #closeIfTimeIsUp}) before the calling method
+ * re-reads it and reacts; mutating-then-throwing in the same transaction would roll the close back
+ * along with the error (CLAUDE.md §3: no extra scheduler infrastructure without a real need this
+ * simple check already covers).
  */
 @Service
 public class AttemptService {
@@ -126,7 +130,10 @@ public class AttemptService {
                 .ifPresent(
                         open -> {
                             if (open.isExpired(now)) {
-                                open.expire(now);
+                                closeByTime(open, now);
+                                // the open-attempt unique index must see the old row closed
+                                // before the new one is inserted
+                                attempts.saveAndFlush(open);
                             } else {
                                 throw Exceptions.conflict(
                                         ErrorCode.ATTEMPT_ALREADY_OPEN,
@@ -204,13 +211,13 @@ public class AttemptService {
     // ---------------------------------------------------------------- answer
 
     /**
-     * Deliberately not {@code @Transactional} itself: {@link #expireIfNeeded} must commit in its
-     * own transaction before {@link #doRecordAnswer} re-reads the (possibly now {@code EXPIRED})
-     * attempt — see the class javadoc.
+     * Deliberately not {@code @Transactional} itself: {@link #closeIfTimeIsUp} must commit in its
+     * own transaction before {@link #doRecordAnswer} re-reads the (possibly now closed) attempt —
+     * see the class javadoc.
      */
     public QuizAttemptQuestion recordAnswer(
             UUID attemptId, UUID questionId, UUID studentUserId, RecordAnswerRequest request) {
-        self.expireIfNeeded(attemptId, clock.instant());
+        self.closeIfTimeIsUp(attemptId, clock.instant());
         return self.doRecordAnswer(attemptId, questionId, studentUserId, request);
     }
 
@@ -256,7 +263,7 @@ public class AttemptService {
     public QuizAttempt submit(UUID attemptId, UUID studentUserId, String idempotencyKey) {
         return retrying(
                 () -> {
-                    self.expireIfNeeded(attemptId, clock.instant());
+                    self.closeIfTimeIsUp(attemptId, clock.instant());
                     return self.doSubmit(attemptId, studentUserId, idempotencyKey);
                 });
     }
@@ -270,7 +277,9 @@ public class AttemptService {
                             && idempotencyKey.equals(attempt.getIdempotencyKey())
                             && (attempt.getStatus() == AttemptStatus.SUBMITTED
                                     || attempt.getStatus() == AttemptStatus.GRADED);
-            if (replay) {
+            // a submit that arrives just after the time ran out is not an error: the clock has
+            // already handed the attempt in, and the student gets that result
+            if (replay || attempt.wasClosedByTime()) {
                 return attempt;
             }
             throw Exceptions.conflict(
@@ -328,11 +337,28 @@ public class AttemptService {
     // ---------------------------------------------------------------- expiry
 
     @Transactional
-    public void expireIfNeeded(UUID attemptId, Instant now) {
-        attempts.findById(attemptId).filter(a -> a.isExpired(now)).ifPresent(a -> a.expire(now));
+    public void closeIfTimeIsUp(UUID attemptId, Instant now) {
+        attempts.findById(attemptId)
+                .filter(a -> a.isExpired(now))
+                .ifPresent(a -> closeByTime(a, now));
+    }
+
+    /** The clock hands the attempt in; what was saved is graded like any submission. */
+    private void closeByTime(QuizAttempt attempt, Instant now) {
+        attempt.submitAtDeadline();
+        gradeInternal(attempt, now);
     }
 
     // ---------------------------------------------------------------- read
+
+    /**
+     * The caller's attempt as it stands now: one whose time has run out comes back graded, so a
+     * student who returns after the limit sees a result, not a clock stuck at zero.
+     */
+    public AttemptView requireCurrent(UUID attemptId, UUID studentUserId) {
+        self.closeIfTimeIsUp(attemptId, clock.instant());
+        return self.require(attemptId, studentUserId);
+    }
 
     @Transactional(readOnly = true)
     public AttemptView require(UUID attemptId, UUID studentUserId) {
@@ -354,16 +380,37 @@ public class AttemptService {
                 .orElseThrow(() -> Exceptions.notFound("QuizAttempt", attemptId));
     }
 
-    @Transactional(readOnly = true)
+    @Transactional
     public Page<QuizAttempt> listOwn(UUID quizId, UUID studentUserId, Pageable pageable) {
         Enrollment enrollment =
                 enrollments.requireLatestEnrollment(resolveCourseId(quizId), studentUserId);
+        Instant now = clock.instant();
+        attempts.findFirstByQuiz_IdAndEnrollment_IdAndStatus(
+                        quizId, enrollment.getId(), AttemptStatus.IN_PROGRESS)
+                .filter(open -> open.isExpired(now))
+                .ifPresent(
+                        open -> {
+                            closeByTime(open, now);
+                            attempts.flush();
+                        });
         return attempts.findByEnrollment_IdAndQuiz_IdOrderByAttemptNumberDesc(
                 enrollment.getId(), quizId, pageable);
     }
 
-    @Transactional(readOnly = true)
+    /**
+     * The roster a teacher sees. Attempts left open past their time by students who never came back
+     * are closed and graded here, so the roster and the gradebook do not wait for them.
+     */
+    @Transactional
     public Page<QuizAttempt> listForQuiz(UUID quizId, Pageable pageable) {
+        Instant now = clock.instant();
+        List<QuizAttempt> stale =
+                attempts.findByQuiz_IdAndStatusAndExpiresAtBefore(
+                        quizId, AttemptStatus.IN_PROGRESS, now);
+        if (!stale.isEmpty()) {
+            stale.forEach(attempt -> closeByTime(attempt, now));
+            attempts.flush();
+        }
         return attempts.findByQuiz_Id(quizId, pageable);
     }
 
@@ -381,6 +428,18 @@ public class AttemptService {
     @Transactional(readOnly = true)
     public List<QuizAttemptSelectedOption> selectedOptionsFor(UUID attemptQuestionId) {
         return selectedOptions.findByAttemptQuestion_IdOrderByOrdinal(attemptQuestionId);
+    }
+
+    /**
+     * The answer a review may show for a typed question: the first accepted value that is a plain
+     * value. A pattern is how the checker reads an answer, not something to show a student.
+     */
+    @Transactional(readOnly = true)
+    public Optional<String> expectedAnswerFor(UUID questionId) {
+        return answerKeys.findByQuestion_Id(questionId).stream()
+                .filter(key -> key.getMatchMode() != MatchMode.REGEX)
+                .map(QuestionAnswerKey::getExpectedValue)
+                .findFirst();
     }
 
     // ---------------------------------------------------------------- helpers
@@ -401,6 +460,10 @@ public class AttemptService {
 
     private void requireInProgress(QuizAttempt attempt) {
         if (attempt.getStatus() != AttemptStatus.IN_PROGRESS) {
+            if (attempt.wasClosedByTime()) {
+                throw Exceptions.rule(
+                        ErrorCode.ATTEMPT_EXPIRED, "The time for this attempt is over");
+            }
             throw Exceptions.conflict(
                     ErrorCode.ATTEMPT_ALREADY_SUBMITTED, "This attempt has already been submitted");
         }

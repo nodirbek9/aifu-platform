@@ -114,6 +114,21 @@ docker compose up -d --build
   and `POST /attempts/{id}/submit`, so a double click or a retry never submits twice.
 - **Limits.** Source code ≤ 128 KB, run input ≤ 64 KB, at most 2 runs and 3 submissions in
   flight per user, 30 runs and 10 submissions per minute.
+- **A quiz's clock is the server's.** `AttemptDetail` carries `expiresAt` and `serverTime`; count
+  down from the difference, never from the computer's own clock. When the time is over the server
+  hands the attempt in by itself and grades what was saved (`status` `GRADED`, `submittedAt` equal
+  to `expiresAt`): reading the attempt, listing attempts or starting the next one all see it
+  closed. A submit that arrives late gets that result (200); an answer that arrives late gets
+  422 `ATTEMPT_EXPIRED`.
+- **Quiz answers.** Choice questions send `selectedOptions: [{optionId}]`. Ordering sends every
+  option with an `ordinal` that rises in the student's order (0, 1, 2 …). Matching sends both
+  options of a pair with the same `ordinal`. Short answer sends `responseText` (trim it: the
+  checker does not), numeric sends `responseNumber`. Options arrive already mixed, in an order
+  that is stable for the attempt.
+- **Quiz review.** What gives the answer away — `isCorrect`, `pointsAwarded`, `explanation`,
+  `correctAnswer` on a question; `correct`, `correctPosition`, `pairKey` on an option — is
+  present only when the quiz's `revealPolicy` opens the review of that attempt. Their absence is
+  the signal: show the score and say when the review opens.
 
 ## 5. Lesson content blocks
 
@@ -247,6 +262,11 @@ time and verdict for them. `maxAttempts` of the task limits submissions (422
   opened by URL: the lesson page should show the "locked" state itself.
 - Hint `penaltyPercent` is stored but not applied to scores; do not show it to students.
 - Notifications are in-app only (no email, no push).
+- An activity's `dueAt` and `availableFrom` are shown but not enforced: a quiz can be started and
+  a solution submitted after the deadline. Show the deadline as passed; do not block in the UI.
+- A quiz attempt left open by a student who never returns is closed (and graded) the next time
+  anyone reads it — the student, or the teacher opening the quiz's attempt list. There is no
+  background sweeper.
 
 A screen that needs something the API lacks is a backend task: write it down in
 `frontend/BACKEND-REQUESTS.md` with the screen, the missing data and the proposed endpoint, and

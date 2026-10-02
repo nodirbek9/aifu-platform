@@ -7,9 +7,15 @@ import io.jsonwebtoken.security.Keys;
 import java.nio.charset.StandardCharsets;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 import javax.crypto.SecretKey;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,6 +64,37 @@ class AuthenticationIT extends AbstractIntegrationTest {
         assertThat(body.accessToken()).isNotBlank();
         assertThat(body.refreshToken()).isNotBlank();
         assertThat(body.tokenType()).isEqualTo("Bearer");
+    }
+
+    @Test
+    void login_sameAccountAtTheSameInstant_everySignInSucceeds() throws Exception {
+        User user = fixtures.activeUser(RoleCode.STUDENT);
+        int signIns = 6;
+        ExecutorService pool = Executors.newFixedThreadPool(signIns);
+        CountDownLatch together = new CountDownLatch(1);
+        try {
+            List<Future<ResponseEntity<TokenResponse>>> answers = new ArrayList<>();
+            for (int i = 0; i < signIns; i++) {
+                answers.add(
+                        pool.submit(
+                                () -> {
+                                    together.await();
+                                    return rest.postForEntity(
+                                            url("/api/v1/auth/login"),
+                                            new LoginRequest(
+                                                    user.getUsername(), UserFixtures.RAW_PASSWORD),
+                                            TokenResponse.class);
+                                }));
+            }
+            together.countDown();
+            for (Future<ResponseEntity<TokenResponse>> answer : answers) {
+                ResponseEntity<TokenResponse> response = answer.get(30, TimeUnit.SECONDS);
+                assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+                assertThat(response.getBody().accessToken()).isNotBlank();
+            }
+        } finally {
+            pool.shutdownNow();
+        }
     }
 
     @Test

@@ -5,8 +5,11 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import java.time.Clock;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import java.util.UUID;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -35,6 +38,7 @@ import uz.aifu.lms.assessment.domain.AnswerOptionTranslation;
 import uz.aifu.lms.assessment.domain.AttemptStatus;
 import uz.aifu.lms.assessment.domain.Question;
 import uz.aifu.lms.assessment.domain.QuestionTranslation;
+import uz.aifu.lms.assessment.domain.QuestionType;
 import uz.aifu.lms.assessment.domain.Quiz;
 import uz.aifu.lms.assessment.domain.QuizAttempt;
 import uz.aifu.lms.assessment.domain.QuizAttemptQuestion;
@@ -97,7 +101,9 @@ public class QuizAttemptController {
                 attempts.recordAnswer(attemptId, questionId, currentUser.require().id(), request);
         String defaultLocale =
                 attemptQuestion.getAttempt().getQuiz().getCourse().getInstructionLanguage().code();
-        return toServedQuestionView(attemptQuestion, false, defaultLocale, defaultLocale);
+        boolean shuffleOptions = attemptQuestion.getAttempt().getQuiz().isShuffleOptions();
+        return toServedQuestionView(
+                attemptQuestion, false, shuffleOptions, defaultLocale, defaultLocale);
     }
 
     @PostMapping("/api/v1/attempts/{attemptId}/submit")
@@ -120,7 +126,7 @@ public class QuizAttemptController {
             @PathVariable UUID attemptId,
             @RequestParam(required = false) String locale,
             @RequestHeader(value = "Accept-Language", required = false) String acceptLanguage) {
-        AttemptView view = attempts.require(attemptId, currentUser.require().id());
+        AttemptView view = attempts.requireCurrent(attemptId, currentUser.require().id());
         return toDetail(view, QuizController.resolveLocale(locale, acceptLanguage));
     }
 
@@ -147,7 +153,11 @@ public class QuizAttemptController {
                         .map(
                                 aq ->
                                         toServedQuestionView(
-                                                aq, revealed, resolvedLocale, defaultLocale))
+                                                aq,
+                                                revealed,
+                                                quiz.isShuffleOptions(),
+                                                resolvedLocale,
+                                                defaultLocale))
                         .toList();
         return new AttemptDetail(
                 attempt.getId(),
@@ -162,6 +172,7 @@ public class QuizAttemptController {
                 attempt.getExpiresAt(),
                 attempt.getSubmittedAt(),
                 attempt.getGradedAt(),
+                clock.instant(),
                 questionViews);
     }
 
@@ -190,10 +201,13 @@ public class QuizAttemptController {
     private ServedQuestionView toServedQuestionView(
             QuizAttemptQuestion attemptQuestion,
             boolean revealed,
+            boolean shuffleOptions,
             String resolvedLocale,
             String defaultLocale) {
         Question question = attemptQuestion.getQuestion();
-        List<AnswerOption> options = attempts.optionsFor(question.getId());
+        QuestionType type = question.getQuestionType();
+        List<AnswerOption> inStoredOrder = attempts.optionsFor(question.getId());
+        List<AnswerOption> options = inServedOrder(attemptQuestion, inStoredOrder, shuffleOptions);
         Map<UUID, List<AnswerOptionTranslation>> optionTranslations =
                 questions.listOptionTranslationsForOptions(
                         options.stream().map(AnswerOption::getId).toList());
@@ -211,8 +225,20 @@ public class QuizAttemptController {
                                                         optionTranslations.getOrDefault(
                                                                 o.getId(), List.of()),
                                                         resolvedLocale,
-                                                        defaultLocale)))
+                                                        defaultLocale),
+                                                revealed && isChoice(type) ? o.isCorrect() : null,
+                                                revealed && type == QuestionType.ORDERING
+                                                        ? inStoredOrder.indexOf(o)
+                                                        : null,
+                                                revealed && type == QuestionType.MATCHING
+                                                        ? o.getMatchKey()
+                                                        : null))
                         .toList();
+        boolean typed = type == QuestionType.SHORT_ANSWER || type == QuestionType.NUMERIC;
+        String correctAnswer =
+                revealed && typed
+                        ? attempts.expectedAnswerFor(question.getId()).orElse(null)
+                        : null;
         List<UUID> selectedIds =
                 attempts.selectedOptionsFor(attemptQuestion.getId()).stream()
                         .map(s -> s.getOption().getId())
@@ -231,7 +257,37 @@ public class QuizAttemptController {
                 selectedIds,
                 revealed ? attemptQuestion.getPointsAwarded() : null,
                 revealed ? attemptQuestion.getCorrect() : null,
-                revealed ? resolved[2] : null);
+                revealed ? resolved[2] : null,
+                correctAnswer);
+    }
+
+    private static boolean isChoice(QuestionType type) {
+        return type == QuestionType.SINGLE_CHOICE
+                || type == QuestionType.MULTIPLE_CHOICE
+                || type == QuestionType.TRUE_FALSE;
+    }
+
+    /**
+     * The options in the order this student sees them. The order is fixed for the attempt (seeded
+     * by the served question), so an attempt that is resumed looks the same. Ordering and matching
+     * questions are always mixed: their stored order is the answer.
+     */
+    private static List<AnswerOption> inServedOrder(
+            QuizAttemptQuestion attemptQuestion, List<AnswerOption> options, boolean shuffle) {
+        boolean mixed =
+                switch (attemptQuestion.getQuestion().getQuestionType()) {
+                    case ORDERING, MATCHING -> true;
+                    case SINGLE_CHOICE, MULTIPLE_CHOICE -> shuffle;
+                    default -> false;
+                };
+        if (!mixed) {
+            return options;
+        }
+        List<AnswerOption> served = new ArrayList<>(options);
+        UUID seed = attemptQuestion.getId();
+        Collections.shuffle(
+                served, new Random(seed.getMostSignificantBits() ^ seed.getLeastSignificantBits()));
+        return served;
     }
 
     private static String[] resolveQuestion(

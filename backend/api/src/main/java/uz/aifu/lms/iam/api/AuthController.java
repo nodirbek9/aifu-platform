@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,6 +40,8 @@ import uz.aifu.lms.iam.app.auth.AuthenticationService.AuthTokens;
 @Tag(name = "Authentication", description = "Login, token refresh, logout, password change")
 public class AuthController {
 
+    private static final int MAX_LOGIN_ATTEMPTS = 5;
+
     private final AuthenticationService authentication;
     private final CurrentUserProvider currentUser;
 
@@ -70,13 +73,23 @@ public class AuthController {
         @ApiResponse(responseCode = "429", description = "RATE_LIMIT_EXCEEDED")
     })
     public TokenResponse login(@Valid @RequestBody LoginRequest request, HttpServletRequest http) {
-        AuthTokens tokens =
-                authentication.login(
-                        request.identifier(),
-                        request.password(),
-                        http.getHeader(HttpHeaders.USER_AGENT),
-                        clientIp(http));
-        return toResponse(tokens);
+        String userAgent = http.getHeader(HttpHeaders.USER_AGENT);
+        String ip = clientIp(http);
+        // Sign-ins of one account at the same instant — a phone and a laptop, a shared account
+        // in a classroom — write to the same rows. Should the database still make one of them
+        // give way (a lock it could not get, a row that changed under it), that sign-in has done
+        // nothing wrong: it is simply run again.
+        for (int attempt = 1; ; attempt++) {
+            try {
+                return toResponse(
+                        authentication.login(
+                                request.identifier(), request.password(), userAgent, ip));
+            } catch (ConcurrencyFailureException e) {
+                if (attempt >= MAX_LOGIN_ATTEMPTS) {
+                    throw e;
+                }
+            }
+        }
     }
 
     @PostMapping("/refresh")

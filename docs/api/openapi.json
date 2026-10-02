@@ -389,6 +389,11 @@
           "score" : {
             "type" : "number"
           },
+          "serverTime" : {
+            "description" : "The server's clock when this answer was written. A countdown to expiresAt is measured from here, not from the clock of the student's computer",
+            "format" : "date-time",
+            "type" : "string"
+          },
           "startedAt" : {
             "format" : "date-time",
             "type" : "string"
@@ -5320,10 +5325,23 @@
         }
       },
       "ServedOptionView" : {
-        "description" : "One selectable option as served to the student — never carries isCorrect",
+        "description" : "One option as served to the student. What gives the answer away — correct, correctPosition, pairKey — is present only once the quiz's reveal policy opens the review of this attempt",
         "properties" : {
+          "correct" : {
+            "description" : "Choice questions, in a review: whether this option is right",
+            "type" : "boolean"
+          },
+          "correctPosition" : {
+            "description" : "Ordering questions, in a review: the option's place in the right order, from 0",
+            "format" : "int32",
+            "type" : "integer"
+          },
           "id" : {
             "format" : "uuid",
+            "type" : "string"
+          },
+          "pairKey" : {
+            "description" : "Matching questions, in a review: options with the same key belong together",
             "type" : "string"
           },
           "text" : {
@@ -5334,6 +5352,10 @@
       "ServedQuestionView" : {
         "description" : "One served question, with the student's own recorded response",
         "properties" : {
+          "correctAnswer" : {
+            "description" : "Short-answer and numeric questions, in a review: an accepted answer",
+            "type" : "string"
+          },
           "explanation" : {
             "type" : "string"
           },

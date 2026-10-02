@@ -1,5 +1,7 @@
 package uz.aifu.lms.assessment.persistence;
 
+import java.time.Instant;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.domain.Page;
@@ -34,6 +36,10 @@ public interface QuizAttemptRepository extends JpaRepository<QuizAttempt, UUID> 
     @EntityGraph(attributePaths = "quiz")
     Page<QuizAttempt> findByEnrollment_IdAndQuiz_IdOrderByAttemptNumberDesc(
             UUID enrollmentId, UUID quizId, Pageable pageable);
+
+    /** Attempts of one quiz still open although their time has run out. */
+    List<QuizAttempt> findByQuiz_IdAndStatusAndExpiresAtBefore(
+            UUID quizId, AttemptStatus status, Instant moment);
 
     /** Backs the teacher-facing attempt roster for one quiz. */
     @EntityGraph(attributePaths = {"enrollment", "enrollment.student"})

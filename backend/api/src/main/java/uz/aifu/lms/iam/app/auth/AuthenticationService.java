@@ -142,8 +142,7 @@ public class AuthenticationService {
             throw invalidCredentials();
         }
 
-        user.registerSuccessfulLogin(now);
-        userRepository.save(user);
+        userRepository.noteSuccessfulLogin(user.getId(), now);
         auditService.record(
                 AuditAction.LOGIN_SUCCESS,
                 user.getId(),
