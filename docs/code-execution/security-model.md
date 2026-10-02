@@ -51,8 +51,11 @@ These would not have been caught without actually running the engine:
    docker daemon over `/var/run/docker.sock`. A path written to the worker's own filesystem (e.g. a
    Java temp file) is invisible to the daemon that launches the sandbox as a *sibling* container —
    `-v <workerLocalPath>:/workspace` silently mounted an empty/nonexistent directory. Fixed by
-   never bind-mounting source at all: it is base64-encoded and passed as an `-e AIFU_SRC=...`
-   environment variable, decoded by a fixed shell script inside the sandbox.
+   never bind-mounting source at all. Since October 2026 the source travels on the container's
+   standard input, ahead of the program's own input: a fixed shell script inside the sandbox takes
+   exactly the source's byte count off stdin (`head -c N`) and the program inherits the rest.
+   (The first fix passed it base64-encoded in an `-e AIFU_SRC=...` variable; the operating system
+   caps one argument at 128 KB, so sources above about 96 KB could not be run at all.)
 2. **`go build` needs a writable, exec-permitted scratch directory it doesn't get by default.**
    `$GOCACHE` and `$TMPDIR` (Go's own build-cache and working-directory settings) default under
    `$HOME`/`os.TempDir()`, which resolves to `/` (read-only root) or the 16MB `noexec` `/tmp`

@@ -153,6 +153,40 @@ class CodeRunIT extends AbstractIntegrationTest {
                 .isZero();
     }
 
+    /**
+     * When the platform fails to run the code, the cause is about our infrastructure — an exception
+     * text from the worker or the sandbox. The author learns that it failed, not how.
+     */
+    @Test
+    void failedRun_saysThePlatformFailed_withoutTheInternalCause() {
+        World w = new World();
+        UUID runId =
+                post(
+                                w.studentToken,
+                                "/api/v1/runs",
+                                new RunRequest(null, "python", "print(1)", null, null),
+                                RunView.class)
+                        .getBody()
+                        .id();
+        jdbc.update(
+                "update code_runs set status = 'FAILED', verdict = 'INTERNAL_ERROR',"
+                        + " internal_error = ?, completed_at = ? where id = ?",
+                "IllegalStateException: Sandbox internal error: IOException: Cannot run program"
+                        + " \"docker\"",
+                Timestamp.from(Instant.now()),
+                runId);
+
+        RunView failed = get(w.studentToken, "/api/v1/runs/" + runId, RunView.class).getBody();
+
+        assertThat(failed.status()).isEqualTo(CodeRunStatus.FAILED);
+        assertThat(failed.verdict()).isEqualTo(CodeRunVerdict.INTERNAL_ERROR);
+        assertThat(failed.error())
+                .isNotBlank()
+                .doesNotContain("Exception")
+                .doesNotContain("docker")
+                .doesNotContain("Sandbox");
+    }
+
     @Test
     void runExamples_showsEachExampleTest_andNeverTheDataOfAHiddenOne() {
         World w = new World();

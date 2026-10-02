@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Base64;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -29,9 +28,14 @@ import uz.aifu.lms.worker.config.SandboxProperties;
  * the HOST's docker daemon over a mounted socket ("docker-outside-of-docker") — a path written to
  * THIS container's filesystem (e.g. a Java temp file) is invisible to the daemon launching the
  * sandbox as a sibling container, since bind-mount sources are resolved by the daemon, not by this
- * process. Source is instead base64-encoded and passed as an environment variable, decoded by a
- * fixed, adapter-authored shell script inside the sandbox — never interpolated as a shell string,
- * and never a code path the student's own content can influence syntactically.
+ * process. Source instead travels on the container's standard input, ahead of the program's own
+ * input: a fixed, adapter-authored shell script inside the sandbox takes exactly the source's byte
+ * count off stdin into the source file, and the program inherits the rest. The source is never
+ * interpolated into a shell string, so nothing a student writes can influence the script.
+ *
+ * <p>It is deliberately not an argument or an environment variable of {@code docker run}: the
+ * operating system caps a single one at 128 KB, which a base64-encoded source reaches at about 96
+ * KB — below the platform's own source limit ({@code aifu.execution.max-source-bytes}).
  */
 public class DockerRunSandboxEngine implements SandboxEngine {
 
@@ -65,11 +69,16 @@ public class DockerRunSandboxEngine implements SandboxEngine {
 
         String containerName = "aifu-sandbox-" + UUID.randomUUID();
         try {
-            List<String> command = buildDockerCommand(containerName, spec, request);
+            byte[] source = request.sourceCode().getBytes(StandardCharsets.UTF_8);
+            List<String> command = buildDockerCommand(containerName, spec, request, source.length);
             ProcessBuilder pb = new ProcessBuilder(command).redirectErrorStream(false);
             Process process = pb.start();
 
-            writeStdinThenClose(process, request.stdin());
+            // Fed from its own thread: a program that never reads its input must still run into
+            // the wall-clock limit below, not leave this thread blocked on a full pipe.
+            Thread.ofVirtual()
+                    .name("sandbox-stdin-" + containerName)
+                    .start(() -> writeStdinThenClose(process, source, request.stdin()));
 
             long start = System.nanoTime();
             boolean finished =
@@ -111,12 +120,12 @@ public class DockerRunSandboxEngine implements SandboxEngine {
     }
 
     private List<String> buildDockerCommand(
-            String containerName, DockerLanguageSpec spec, SandboxRunRequest request) {
+            String containerName,
+            DockerLanguageSpec spec,
+            SandboxRunRequest request,
+            int sourceBytes) {
         long memoryBytes = request.memoryLimitKb() * 1024L;
         int cpuSeconds = Math.max(1, (request.cpuTimeLimitMs() + 999) / 1000);
-        String sourceB64 =
-                Base64.getEncoder()
-                        .encodeToString(request.sourceCode().getBytes(StandardCharsets.UTF_8));
 
         List<String> cmd = new ArrayList<>();
         cmd.add("docker");
@@ -157,20 +166,23 @@ public class DockerRunSandboxEngine implements SandboxEngine {
             cmd.add("-e");
             cmd.add("GOMAXPROCS=1");
         }
-        cmd.add("-e");
-        cmd.add("AIFU_SRC=" + sourceB64);
         cmd.add(spec.image());
         cmd.add("sh");
         cmd.add("-c");
-        cmd.add(shellScript(spec, request, cpuSeconds));
+        cmd.add(shellScript(spec, request, cpuSeconds, sourceBytes));
         return cmd;
     }
 
-    private String shellScript(DockerLanguageSpec spec, SandboxRunRequest request, int cpuSeconds) {
+    private String shellScript(
+            DockerLanguageSpec spec, SandboxRunRequest request, int cpuSeconds, int sourceBytes) {
         String sourcePath = "/tmp/work/" + request.sourceFilename();
         String runCmd = spec.runCommand().formatted(request.sourceFilename());
         StringBuilder script = new StringBuilder();
-        script.append("mkdir -p /tmp/work && echo \"$AIFU_SRC\" | base64 -d > ")
+        // `head -c N` takes exactly N bytes and no more, so the program's input, which follows
+        // the source on the same stream, is still there for the program.
+        script.append("mkdir -p /tmp/work && head -c ")
+                .append(sourceBytes)
+                .append(" > ")
                 .append(sourcePath)
                 .append(" && cd /tmp/work; ");
         // `ulimit -t <cpuSeconds>` bounds the SUBMITTED PROGRAM's own CPU time
@@ -191,8 +203,10 @@ public class DockerRunSandboxEngine implements SandboxEngine {
         return script.toString();
     }
 
-    private static void writeStdinThenClose(Process process, String stdin) {
+    /** Writes the source, then the program's input, and closes the stream (end of input). */
+    private static void writeStdinThenClose(Process process, byte[] source, String stdin) {
         try (OutputStream out = process.getOutputStream()) {
+            out.write(source);
             if (stdin != null && !stdin.isEmpty()) {
                 out.write(stdin.getBytes(StandardCharsets.UTF_8));
             }

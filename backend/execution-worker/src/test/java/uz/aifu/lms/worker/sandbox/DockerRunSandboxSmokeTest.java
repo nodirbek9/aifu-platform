@@ -1,7 +1,10 @@
 package uz.aifu.lms.worker.sandbox;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertTimeoutPreemptively;
 
+import java.nio.charset.StandardCharsets;
+import java.time.Duration;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
 import uz.aifu.lms.worker.config.SandboxProperties;
@@ -95,6 +98,54 @@ class DockerRunSandboxSmokeTest {
         assertThat(result.internalError()).isNull();
         assertThat(result.compileSuccess()).isTrue();
         assertThat(result.exitCode()).isNotEqualTo(0);
+    }
+
+    /**
+     * The platform accepts sources up to 128 KB. One this large cannot be handed to {@code docker
+     * run} as an argument or an environment variable (the OS caps each at 128 KB, base64 included),
+     * so it travels on stdin ahead of the program's input. The comment is not ASCII on purpose: the
+     * split between source and input is counted in bytes, not characters.
+     */
+    @Test
+    void python_sourceAtTheSizeLimit_runs_andStillGetsItsInput() {
+        String program = "a, b = map(int, input().split())\nprint(a + b)\n";
+        String filler = "# oʻzgaruvchi — переменная — " + "x".repeat(60) + "\n";
+        StringBuilder source = new StringBuilder(program);
+        while (bytes(source) + bytes(filler) <= 128 * 1024) {
+            source.append(filler);
+        }
+        assertThat(bytes(source)).isGreaterThan(127 * 1024);
+
+        assertSum(run("python", "main.py", false, source.toString()));
+    }
+
+    /** Input is fed from its own thread, so a program that ignores it cannot stall the worker. */
+    @Test
+    void python_thatNeverReadsALargeInput_isStoppedByTheWallClock() {
+        SandboxRunRequest deaf =
+                new SandboxRunRequest(
+                        "while True:\n    pass\n",
+                        "python",
+                        "unused",
+                        false,
+                        "main.py",
+                        "7\n".repeat(512 * 1024),
+                        1000,
+                        3000,
+                        262144,
+                        65536);
+
+        SandboxRunResult result =
+                assertTimeoutPreemptively(Duration.ofSeconds(60), () -> engine.run(deaf));
+
+        assertThat(result.internalError()).isNull();
+        assertThat(result.timedOut() || (result.exitCode() != null && result.exitCode() != 0))
+                .as("exit code %s, timed out %s", result.exitCode(), result.timedOut())
+                .isTrue();
+    }
+
+    private static int bytes(CharSequence text) {
+        return text.toString().getBytes(StandardCharsets.UTF_8).length;
     }
 
     private SandboxRunResult run(String language, String filename, boolean compile, String source) {

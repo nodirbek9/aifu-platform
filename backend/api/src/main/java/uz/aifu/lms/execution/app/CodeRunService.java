@@ -311,6 +311,14 @@ public class CodeRunService {
                 .toList();
     }
 
+    /**
+     * What a caller is told when the platform itself failed to run the code. The cause — an
+     * exception text from the worker or the sandbox — stays in {@code code_runs.internal_error} and
+     * in the worker's log: it describes our infrastructure, not the caller's program.
+     */
+    static final String PLATFORM_FAILURE =
+            "The platform could not run this code. Try again in a moment.";
+
     private static RunView toView(
             CodeRun run, List<CodeRunTestResult> results, Map<UUID, CodingTaskTestCase> testCases) {
         return new RunView(
@@ -328,7 +336,7 @@ public class CodeRunService {
                 run.getMemoryKb(),
                 run.getTestsPassed(),
                 run.getTestsTotal(),
-                run.getStatus() == CodeRunStatus.FAILED ? run.getInternalError() : null,
+                run.getStatus() == CodeRunStatus.FAILED ? PLATFORM_FAILURE : null,
                 run.getCreatedAt(),
                 run.getCompletedAt(),
                 results.stream()
