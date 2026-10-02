@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.security.CurrentUserProvider;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.CheckResult;
@@ -85,6 +86,7 @@ public class AdminTimetableController {
         return queries.toTimetableView(queries.requireTimetable(id));
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/timetables")
     @Operation(summary = "Create a draft timetable for a term, optionally as a copy of another one")
     public ResponseEntity<TimetableView> create(
@@ -114,6 +116,7 @@ public class AdminTimetableController {
         return queries.toTimetableView(timetables.archive(id));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/timetables/{id}")
     @Operation(summary = "Delete a draft timetable")
     public ResponseEntity<Void> delete(@PathVariable UUID id) {
@@ -153,6 +156,7 @@ public class AdminTimetableController {
         return timetables.check(id, request, editedEntryId, web.locale(locale, http));
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/timetables/{id}/entries")
     @Operation(
             summary = "Add a class",
@@ -189,6 +193,7 @@ public class AdminTimetableController {
                 web.locale(locale, http));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/timetable-entries/{entryId}")
     @Operation(summary = "Remove a class from the timetable")
     public ResponseEntity<Void> deleteEntry(@PathVariable UUID entryId, HttpServletRequest http) {
@@ -205,6 +210,7 @@ public class AdminTimetableController {
         return queries.listExceptions(entryId);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/timetable-entries/{entryId}/exceptions")
     @Operation(
             summary = "Cancel, move or replace one occurrence of a class",
@@ -224,6 +230,7 @@ public class AdminTimetableController {
                                 web.locale(locale, http)));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/timetable-exceptions/{exceptionId}")
     @Operation(summary = "Undo a one-off change")
     public ResponseEntity<Void> removeException(@PathVariable UUID exceptionId) {
@@ -286,6 +293,7 @@ public class AdminTimetableController {
         return Map.of("written", load.upsert(termId, request.items()));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/teaching-load/{itemId}")
     @Operation(summary = "Delete a load line")
     public ResponseEntity<Void> deleteLoad(@PathVariable UUID itemId) {

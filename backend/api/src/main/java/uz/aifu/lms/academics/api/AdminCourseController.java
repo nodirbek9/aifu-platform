@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.UUID;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.academics.api.dto.CourseDtos.AssignTeacherRequest;
 import uz.aifu.lms.academics.api.dto.CourseDtos.CourseDetail;
@@ -96,6 +98,7 @@ public class AdminCourseController {
         return CourseMapper.toDetail(courses.require(id), courses);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     @PreAuthorize("hasAuthority('COURSE_MANAGE')")
     @Operation(summary = "Create one delivery of a subject in a term")
@@ -165,6 +168,7 @@ public class AdminCourseController {
         return CourseMapper.toDetail(course, courses);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('COURSE_MANAGE')")
     @Operation(summary = "Soft-delete a course. Admin only.")
@@ -197,6 +201,7 @@ public class AdminCourseController {
         return CourseMapper.toDetail(courses.require(id), courses);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}/teachers/{teacherUserId}")
     @PreAuthorize("hasAuthority('COURSE_TEACHER_MANAGE')")
     @Operation(summary = "Remove a teacher from the course. Admin only.")

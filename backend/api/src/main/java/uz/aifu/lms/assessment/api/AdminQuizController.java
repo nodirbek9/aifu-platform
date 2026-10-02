@@ -9,6 +9,7 @@ import java.net.URI;
 import java.util.UUID;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.assessment.api.dto.QuizDtos.ChangeQuizStatusRequest;
 import uz.aifu.lms.assessment.api.dto.QuizDtos.CreateQuizRequest;
@@ -67,6 +69,7 @@ public class AdminQuizController {
                 page, q -> QuizMapper.toDetail(q, quizzes.listTranslations(q.getId()), "uz"));
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/courses/{courseId}/quizzes")
     @PreAuthorize("hasAuthority('QUIZ_MANAGE')")
     @Operation(summary = "Create a quiz")
@@ -142,6 +145,7 @@ public class AdminQuizController {
         return QuizMapper.toDetail(quiz, quizzes.listTranslations(id), locale);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/quizzes/{id}")
     @PreAuthorize("hasAuthority('QUIZ_MANAGE')")
     @Operation(

@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.UUID;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,6 +21,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.api.PageableSupport;
@@ -85,6 +87,7 @@ public class AdminContentBlockController {
                                 objectMapper));
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/lessons/{lessonId}/blocks")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Create a content block within a lesson")
@@ -105,6 +108,7 @@ public class AdminContentBlockController {
                                 objectMapper));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/api/v1/teacher/lessons/{lessonId}/blocks/reorder")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Reorder a lesson's content blocks")
@@ -156,6 +160,7 @@ public class AdminContentBlockController {
                 blocks.require(id), translations, locale, LocaleCode.DEFAULT.code(), objectMapper);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/blocks/{id}")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Soft-delete a content block")

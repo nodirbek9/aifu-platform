@@ -31,6 +31,9 @@ docker compose up -d --build
 - **A `null` field is left out of the response.** Treat a missing property as `null`. The contract
   marks nothing as required, so generated types make every property optional: narrow them at the
   edge (a `zod` schema or a small mapper per feature), not all over the components.
+- **Success codes** are the ones the contract lists: `200`, `201` for a create, `202` for a
+  queued run, `204` with no body for deletes and some updates. Treat any 2xx as success and do
+  not parse a body after `204`.
 - Ids are UUID strings. Instants are ISO-8601 in UTC (`2026-10-02T08:37:31Z`); dates are
   `YYYY-MM-DD`; a time of day is `HH:mm:ss`. Show times in the campus zone, **Asia/Tashkent**.
 - **Locale.** Send `?locale=uz|ru|en` (or `Accept-Language`) on every read of translated content.

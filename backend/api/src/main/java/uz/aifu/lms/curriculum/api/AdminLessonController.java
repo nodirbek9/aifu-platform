@@ -10,6 +10,7 @@ import java.net.URI;
 import java.util.UUID;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.api.PageableSupport;
@@ -80,6 +82,7 @@ public class AdminLessonController {
                                 l, lessons, blocks, LocaleCode.DEFAULT.code(), objectMapper));
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/modules/{moduleId}/lessons")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Create a lesson within a module")
@@ -96,6 +99,7 @@ public class AdminLessonController {
                                 created, lessons, blocks, LocaleCode.DEFAULT.code(), objectMapper));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/api/v1/teacher/modules/{moduleId}/lessons/reorder")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Reorder a module's lessons")
@@ -166,6 +170,7 @@ public class AdminLessonController {
                 lessons.require(id), lessons, blocks, LocaleCode.DEFAULT.code(), objectMapper);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PostMapping("/api/v1/teacher/lessons/{id}/outcomes/{outcomeId}")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Link a learning outcome this lesson advances")
@@ -176,6 +181,7 @@ public class AdminLessonController {
         return ResponseEntity.noContent().build();
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/lessons/{id}/outcomes/{outcomeId}")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Unlink a learning outcome")
@@ -186,6 +192,7 @@ public class AdminLessonController {
         return ResponseEntity.noContent().build();
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PostMapping("/api/v1/teacher/lessons/{id}/prerequisites/{requiredLessonId}")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Add a lesson prerequisite")
@@ -196,6 +203,7 @@ public class AdminLessonController {
         return ResponseEntity.noContent().build();
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/lessons/{id}/prerequisites/{requiredLessonId}")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Remove a lesson prerequisite")
@@ -207,6 +215,7 @@ public class AdminLessonController {
         return ResponseEntity.noContent().build();
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/lessons/{id}")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Soft-delete a lesson")

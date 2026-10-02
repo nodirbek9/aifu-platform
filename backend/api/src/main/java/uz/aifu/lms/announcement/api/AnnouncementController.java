@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.announcement.api.dto.AnnouncementDtos.AnnouncementView;
 import uz.aifu.lms.announcement.api.dto.AnnouncementDtos.CreateAnnouncementRequest;
@@ -44,6 +45,7 @@ public class AnnouncementController {
         this.localeResolver = localeResolver;
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/announcements")
     @PreAuthorize("hasAuthority('ANNOUNCEMENT_WRITE')")
     @Operation(
@@ -59,6 +61,7 @@ public class AnnouncementController {
                 .body(announcements.post(request, locale(locale, http)));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/announcements/{id}")
     @PreAuthorize("hasAuthority('ANNOUNCEMENT_WRITE')")
     @Operation(summary = "Delete an announcement (its author, or the study office)")

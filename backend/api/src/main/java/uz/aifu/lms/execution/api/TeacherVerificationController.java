@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.security.CurrentUserProvider;
 import uz.aifu.lms.execution.api.dto.RunDtos.VerificationView;
@@ -41,6 +42,7 @@ public class TeacherVerificationController {
         this.currentUser = currentUser;
     }
 
+    @ResponseStatus(HttpStatus.ACCEPTED)
     @PostMapping
     @Operation(
             summary = "Run every reference solution against all tests",

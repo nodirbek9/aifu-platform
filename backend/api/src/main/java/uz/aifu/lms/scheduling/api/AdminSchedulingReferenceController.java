@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.academics.app.AcademicCalendarService;
 import uz.aifu.lms.academics.domain.Term;
@@ -54,6 +55,7 @@ public class AdminSchedulingReferenceController {
         return reference.listRooms();
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/rooms")
     @Operation(summary = "Create a room")
     public ResponseEntity<RoomView> createRoom(@Valid @RequestBody RoomRequest request) {
@@ -66,6 +68,7 @@ public class AdminSchedulingReferenceController {
         return reference.updateRoom(id, request);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/rooms/{id}")
     @Operation(summary = "Delete a room no class uses")
     public ResponseEntity<Void> deleteRoom(@PathVariable UUID id) {
@@ -80,6 +83,7 @@ public class AdminSchedulingReferenceController {
         return reference.listPairSlots();
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/pair-slots")
     @Operation(summary = "Add a pair to the bell schedule")
     public ResponseEntity<PairSlotView> createPairSlot(
@@ -94,6 +98,7 @@ public class AdminSchedulingReferenceController {
         return reference.updatePairSlot(id, request);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/pair-slots/{id}")
     @Operation(summary = "Delete a pair no class uses")
     public ResponseEntity<Void> deletePairSlot(@PathVariable UUID id) {
@@ -108,12 +113,14 @@ public class AdminSchedulingReferenceController {
         return reference.listHolidays();
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/holidays")
     @Operation(summary = "Mark a date as a holiday: classes on it are shown as not held")
     public ResponseEntity<HolidayView> createHoliday(@Valid @RequestBody HolidayRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED).body(reference.createHoliday(request));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/holidays/{id}")
     @Operation(summary = "Remove a holiday")
     public ResponseEntity<Void> deleteHoliday(@PathVariable UUID id) {

@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.List;
 import java.util.UUID;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.security.CurrentUserProvider;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.GroupRequest;
@@ -41,6 +43,7 @@ public class AdminGroupController {
         this.currentUser = currentUser;
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     @Operation(summary = "Create a group")
     public ResponseEntity<GroupView> create(@Valid @RequestBody GroupRequest request) {
@@ -61,6 +64,7 @@ public class AdminGroupController {
         return reference.setGroupArchived(id, value);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete an empty, unused group")
     public ResponseEntity<Void> delete(@PathVariable UUID id) {
@@ -78,6 +82,7 @@ public class AdminGroupController {
                 id, request.userIds(), currentUser.require().id(), SchedulingWeb.clientIp(http));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}/students/{userId}")
     @Operation(summary = "Remove a student from this group")
     public ResponseEntity<Void> removeStudent(

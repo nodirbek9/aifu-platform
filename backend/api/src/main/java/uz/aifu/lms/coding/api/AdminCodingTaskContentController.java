@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import java.util.List;
 import java.util.UUID;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.coding.api.dto.CodingTaskDtos.CreateHintRequest;
 import uz.aifu.lms.coding.api.dto.CodingTaskDtos.CreateTestCaseRequest;
@@ -73,6 +75,7 @@ public class AdminCodingTaskContentController {
                 .toList();
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/coding-tasks/{id}/languages/{languageCode}")
     @PreAuthorize("hasAuthority('CODING_TASK_MANAGE')")
     @Operation(summary = "Attach an enabled language to a coding task")
@@ -89,7 +92,7 @@ public class AdminCodingTaskContentController {
                         request,
                         currentUser.require().id(),
                         http.getRemoteAddr());
-        return ResponseEntity.status(201)
+        return ResponseEntity.status(HttpStatus.CREATED)
                 .body(AdminCodingTaskContentController.toLanguageTeacherView(saved));
     }
 
@@ -114,6 +117,7 @@ public class AdminCodingTaskContentController {
                 .orElseThrow(() -> Exceptions.notFound("CodingTaskLanguage", taskLanguageId));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/coding-task-languages/{taskLanguageId}")
     @PreAuthorize("hasAuthority('CODING_TASK_MANAGE')")
     @Operation(summary = "Detach a language from a coding task")
@@ -136,6 +140,7 @@ public class AdminCodingTaskContentController {
                 .toList();
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/coding-tasks/{id}/hints")
     @PreAuthorize("hasAuthority('CODING_TASK_MANAGE')")
     @Operation(summary = "Add a hint to a coding task")
@@ -146,9 +151,10 @@ public class AdminCodingTaskContentController {
         requireEditable(id);
         CodingTaskHint saved =
                 content.addHint(id, request, currentUser.require().id(), http.getRemoteAddr());
-        return ResponseEntity.status(201).body(toHintView(saved, List.of()));
+        return ResponseEntity.status(HttpStatus.CREATED).body(toHintView(saved, List.of()));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/coding-task-hints/{hintId}")
     @PreAuthorize("hasAuthority('CODING_TASK_MANAGE')")
     @Operation(summary = "Remove a hint")
@@ -186,6 +192,7 @@ public class AdminCodingTaskContentController {
                 .toList();
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/coding-tasks/{id}/test-cases")
     @PreAuthorize("hasAuthority('CODING_TASK_MANAGE')")
     @Operation(summary = "Add a test case to a coding task")
@@ -196,7 +203,7 @@ public class AdminCodingTaskContentController {
         requireEditable(id);
         CodingTaskTestCase saved =
                 content.addTestCase(id, request, currentUser.require().id(), http.getRemoteAddr());
-        return ResponseEntity.status(201)
+        return ResponseEntity.status(HttpStatus.CREATED)
                 .body(AdminCodingTaskContentController.toTestCaseView(saved));
     }
 
@@ -214,6 +221,7 @@ public class AdminCodingTaskContentController {
         return AdminCodingTaskContentController.toTestCaseView(updated);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/coding-task-test-cases/{testCaseId}")
     @PreAuthorize("hasAuthority('CODING_TASK_MANAGE')")
     @Operation(summary = "Remove a test case")

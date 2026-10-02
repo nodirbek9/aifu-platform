@@ -9,6 +9,7 @@ import java.net.URI;
 import java.util.UUID;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.api.PageableSupport;
@@ -69,6 +71,7 @@ public class AdminModuleController {
         return PageResponse.of(page, m -> ModuleMapper.toDetail(m, modules));
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/courses/{courseId}/modules")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Create a module within a course")
@@ -83,6 +86,7 @@ public class AdminModuleController {
                 .body(ModuleMapper.toDetail(created, modules));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/api/v1/teacher/courses/{courseId}/modules/reorder")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Reorder a course's modules")
@@ -152,6 +156,7 @@ public class AdminModuleController {
         return ModuleMapper.toDetail(modules.require(id), modules);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/modules/{id}")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
     @Operation(summary = "Soft-delete a module")

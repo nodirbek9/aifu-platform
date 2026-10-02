@@ -12,6 +12,7 @@ import java.util.UUID;
 import java.util.stream.Collectors;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.coding.api.dto.CodingTaskDtos.ChangeCodingTaskStatusRequest;
 import uz.aifu.lms.coding.api.dto.CodingTaskDtos.CodingTaskDetail;
@@ -78,6 +80,7 @@ public class AdminCodingTaskController {
         return PageResponse.of(page, this::toDetail);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/courses/{courseId}/coding-tasks")
     @PreAuthorize("hasAuthority('CODING_TASK_MANAGE')")
     @Operation(summary = "Create a coding task")
@@ -148,6 +151,7 @@ public class AdminCodingTaskController {
         return toDetail(codingTasks.require(id));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/coding-tasks/{id}")
     @PreAuthorize("hasAuthority('CODING_TASK_MANAGE')")
     @Operation(

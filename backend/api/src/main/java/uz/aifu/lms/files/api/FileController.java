@@ -7,6 +7,7 @@ import java.net.URI;
 import java.util.UUID;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -16,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.error.Exceptions;
 import uz.aifu.lms.common.security.AuthenticatedUser;
@@ -46,6 +48,7 @@ public class FileController {
         this.currentUser = currentUser;
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(value = "/api/v1/files", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @PreAuthorize("hasAuthority('FILE_UPLOAD')")
     @Operation(summary = "Upload a file", description = "Visibility defaults to AUTHORIZED.")
@@ -81,6 +84,7 @@ public class FileController {
                 .body(content);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/files/{id}")
     @PreAuthorize("hasAuthority('FILE_MANAGE')")
     @Operation(summary = "Soft-delete a file's metadata (the underlying object is left in place)")

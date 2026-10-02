@@ -10,12 +10,14 @@ import java.util.List;
 import java.util.UUID;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.api.PageableSupport;
@@ -84,6 +86,7 @@ public class AdminGradeController {
         return GradeMapper.toSummary(enrollment, entries);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/enrollments/{id}/grades")
     @PreAuthorize("hasAuthority('GRADE_WRITE')")
     @Operation(summary = "Record or override a manual grade for one assessment component")
@@ -110,6 +113,7 @@ public class AdminGradeController {
                 .body(GradeMapper.toView(entry));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PostMapping("/api/v1/teacher/grades/{id}/void")
     @PreAuthorize("hasAuthority('GRADE_WRITE')")
     @Operation(summary = "Void a published grade entry (append-only — never deleted, ADR-011)")

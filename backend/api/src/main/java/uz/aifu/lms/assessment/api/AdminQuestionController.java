@@ -12,6 +12,7 @@ import java.util.Map;
 import java.util.UUID;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.assessment.api.dto.QuestionDtos.AnswerKeyView;
 import uz.aifu.lms.assessment.api.dto.QuestionDtos.AnswerOptionView;
@@ -78,6 +80,7 @@ public class AdminQuestionController {
         return PageResponse.of(page, this::toDetail);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/quizzes/{quizId}/questions")
     @PreAuthorize("hasAuthority('QUIZ_MANAGE')")
     @Operation(summary = "Add a question to a quiz")
@@ -93,6 +96,7 @@ public class AdminQuestionController {
                 .body(toDetail(created));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/api/v1/teacher/quizzes/{quizId}/questions/reorder")
     @PreAuthorize("hasAuthority('QUIZ_MANAGE')")
     @Operation(summary = "Reorder a quiz's questions")
@@ -132,6 +136,7 @@ public class AdminQuestionController {
         return toDetail(updated);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/questions/{id}")
     @PreAuthorize("hasAuthority('QUIZ_MANAGE')")
     @Operation(summary = "Delete a question (blocked if any attempt already answered it)")
@@ -157,6 +162,7 @@ public class AdminQuestionController {
 
     // ---------------------------------------------------------------- answer options
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/questions/{id}/options")
     @PreAuthorize("hasAuthority('QUIZ_MANAGE')")
     @Operation(summary = "Add an answer option")
@@ -187,6 +193,7 @@ public class AdminQuestionController {
         return toOptionView(option, List.of());
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/api/v1/teacher/questions/{id}/options/reorder")
     @PreAuthorize("hasAuthority('QUIZ_MANAGE')")
     @Operation(summary = "Reorder a question's answer options")
@@ -200,6 +207,7 @@ public class AdminQuestionController {
         return ResponseEntity.noContent().build();
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/options/{optionId}")
     @PreAuthorize("hasAuthority('QUIZ_MANAGE')")
     @Operation(summary = "Remove an answer option")
@@ -232,6 +240,7 @@ public class AdminQuestionController {
 
     // ---------------------------------------------------------------- answer keys
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/teacher/questions/{id}/answer-keys")
     @PreAuthorize("hasAuthority('QUIZ_MANAGE')")
     @Operation(summary = "Add an answer key (SHORT_ANSWER/NUMERIC)")
@@ -243,7 +252,7 @@ public class AdminQuestionController {
         var key =
                 questions.addAnswerKey(
                         id, request, currentUser.require().id(), http.getRemoteAddr());
-        return ResponseEntity.status(201)
+        return ResponseEntity.status(HttpStatus.CREATED)
                 .body(
                         new AnswerKeyView(
                                 key.getId(),
@@ -253,6 +262,7 @@ public class AdminQuestionController {
                                 key.getLocale()));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/api/v1/teacher/answer-keys/{keyId}")
     @PreAuthorize("hasAuthority('QUIZ_MANAGE')")
     @Operation(summary = "Remove an answer key")

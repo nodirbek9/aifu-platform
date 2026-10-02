@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.security.CurrentUserProvider;
 import uz.aifu.lms.execution.api.dto.RunDtos.RunRequest;
@@ -38,6 +39,7 @@ public class CodeRunController {
         this.currentUser = currentUser;
     }
 
+    @ResponseStatus(HttpStatus.ACCEPTED)
     @PostMapping
     @Operation(
             summary = "Queue a run",

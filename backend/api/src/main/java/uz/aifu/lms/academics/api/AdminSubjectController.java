@@ -8,6 +8,7 @@ import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.UUID;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.academics.api.dto.SubjectDtos.AddLearningOutcomeRequest;
 import uz.aifu.lms.academics.api.dto.SubjectDtos.AddPrerequisiteRequest;
@@ -82,6 +84,7 @@ public class AdminSubjectController {
         return SubjectMapper.toDetail(subjects.require(id), subjects);
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     @PreAuthorize("hasAuthority('SUBJECT_MANAGE')")
     @Operation(summary = "Create a subject")
@@ -124,6 +127,7 @@ public class AdminSubjectController {
         return SubjectMapper.toDetail(subject, subjects);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}")
     @PreAuthorize("hasAuthority('SUBJECT_MANAGE')")
     @Operation(summary = "Soft-delete a subject")
@@ -155,6 +159,7 @@ public class AdminSubjectController {
         return SubjectMapper.toDetail(subjects.require(id), subjects);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @DeleteMapping("/{id}/prerequisites/{prerequisiteId}")
     @PreAuthorize("hasAuthority('SUBJECT_MANAGE')")
     @Operation(summary = "Remove a prerequisite")
@@ -175,6 +180,7 @@ public class AdminSubjectController {
         return SubjectMapper.toDetail(subjects.require(id), subjects);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/learning-outcomes/{outcomeId}/translations/{locale}")
     @PreAuthorize("hasAuthority('SUBJECT_MANAGE')")
     @Operation(summary = "Upsert one locale's statement for a learning outcome")

@@ -8,12 +8,14 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.security.AuthenticatedUser;
 import uz.aifu.lms.common.security.CurrentUserProvider;
@@ -94,6 +96,7 @@ public class AuthController {
         return toResponse(tokens);
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PostMapping("/logout")
     @Operation(
             summary = "Log out of this session",
@@ -110,6 +113,7 @@ public class AuthController {
         return ResponseEntity.noContent().build();
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PostMapping("/logout-all")
     @Operation(
             summary = "Log out everywhere",
@@ -123,6 +127,7 @@ public class AuthController {
         return ResponseEntity.noContent().build();
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PutMapping("/password")
     @Operation(
             summary = "Change own password",

@@ -74,7 +74,8 @@ Rules:
 - **Contrast.** Text ≥ 4.5 : 1, large text and UI parts ≥ 3 : 1, in both themes. Pure
   `#FF0158` on white is 3.9 : 1: fine for fills and large type, not for body text or for white
   text on a magenta button. Derive a darker magenta step for those (about `#D8004B`, 5.2 : 1)
-  and a lighter one for the dark theme. Check every pair; do not trust the eye.
+  and a lighter one for the dark theme. Magenta on navy is 3.5 : 1 — shapes and large type only,
+  never small text. Navy on white is 13.5 : 1. Check every pair; do not trust the eye.
 - **Neutrals are cool and slightly navy-tinted**, not pure grey. Light theme surfaces are warm-
   white paper, not `#FFFFFF` everywhere; the dark theme is deep navy-black built from the brand
   navy, not neutral `#111`.

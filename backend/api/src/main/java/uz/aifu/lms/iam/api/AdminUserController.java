@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,6 +22,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.api.PageableSupport;
@@ -110,6 +112,7 @@ public class AdminUserController {
         return toDetail(users.require(id));
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     @PreAuthorize("hasAuthority('USER_MANAGE')")
     @Operation(
@@ -170,6 +173,7 @@ public class AdminUserController {
                 users.setRoles(id, request.roles(), currentUser.require().id(), clientIp(http)));
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PostMapping("/{id}/reset-password")
     @PreAuthorize("hasAuthority('USER_MANAGE')")
     @Operation(
@@ -184,6 +188,7 @@ public class AdminUserController {
         return ResponseEntity.noContent().build();
     }
 
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @PostMapping("/{id}/unlock")
     @PreAuthorize("hasAuthority('USER_MANAGE')")
     @Operation(

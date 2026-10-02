@@ -8,6 +8,7 @@ import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.coding.app.SubmissionService;
 import uz.aifu.lms.coding.domain.Submission;
@@ -61,6 +63,7 @@ public class SubmissionController {
         this.currentUser = currentUser;
     }
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/api/v1/submissions")
     @PreAuthorize("hasAuthority('SUBMISSION_CREATE')")
     @Operation(summary = "Submit a solution for grading. Idempotency-Key honoured (CLAUDE.md §9).")
@@ -76,7 +79,7 @@ public class SubmissionController {
                         request.sourceCode(),
                         idempotencyKey,
                         request.activityId());
-        return ResponseEntity.status(201).body(toDetail(submission, true));
+        return ResponseEntity.status(HttpStatus.CREATED).body(toDetail(submission, true));
     }
 
     @GetMapping("/api/v1/submissions/{id}")

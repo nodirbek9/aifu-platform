@@ -8,7 +8,7 @@ structure. Interface and content in Uzbek, Russian and English.
 
 | Part | State |
 |---|---|
-| Backend (`backend/`) | Built and tested: 250 API operations, 317 automated tests |
+| Backend (`backend/`) | Built and tested: 250 API operations, 320 automated tests |
 | Frontend (`frontend/`) | Not started. Built next, phase by phase, from `docs/05-FRONTEND-PROMPTS.md` |
 | Lesson content | Short lessons in Uzbek for five subjects; 53 coding tasks with solutions in three languages. Full three-language content is the next content phase |
 
