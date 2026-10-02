@@ -34,7 +34,14 @@ record DockerLanguageSpec(String image, String compileCommand, String runCommand
                                             + " -J-Xmx160m -encoding UTF-8 -d /build /tmp/work/%s",
                                     "java -XX:+UseSerialGC -XX:ActiveProcessorCount=1"
                                             + " -XX:TieredStopAtLevel=1 -XX:-UsePerfData -Xmx128m"
-                                            + " -Xss16m -Dfile.encoding=UTF-8 -cp /build Main"));
+                                            + " -Xss16m -Dfile.encoding=UTF-8 -cp /build Main"),
+                    // The binary goes to /build like Go's: /tmp is noexec. -pipe keeps g++ from
+                    // writing temporaries into the small /tmp.
+                    "cpp",
+                            new DockerLanguageSpec(
+                                    "gcc:13",
+                                    "g++ -std=c++17 -O2 -pipe -o /build/main /tmp/work/%s",
+                                    "/build/main"));
 
     static DockerLanguageSpec forLanguage(String code) {
         DockerLanguageSpec spec = SPECS.get(code);

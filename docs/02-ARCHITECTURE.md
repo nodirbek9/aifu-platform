@@ -93,8 +93,9 @@ flowchart TB
   enrollment --> groups
 ```
 
-### 4.1 Groups (B1)
-Today a group is only a text column `student_profiles.group_code`. It becomes an entity.
+### 4.1 Groups (B1) — built
+A group used to be only a text column `student_profiles.group_code`. It is now an entity; the
+column references `student_groups.code`, and an unknown code creates the group.
 
 ```mermaid
 erDiagram
@@ -115,7 +116,7 @@ erDiagram
 Migration backfills groups from existing `group_code` values. New: `POST /admin/enrollments/by-group`
 (enroll every active student of a group into a course).
 
-### 4.2 Scheduling (B2) — timetable
+### 4.2 Scheduling (B2) — timetable — built
 
 ```mermaid
 erDiagram
@@ -183,30 +184,41 @@ erDiagram
 `pair_slot_id`, their parities overlap (`EVERY` overlaps everything; `ODD` and `EVEN` do not overlap
 each other), their date ranges overlap, and they share the teacher, the room, or a group (same
 subgroup, or either has none). The service checks before every insert/update and returns
-`409 TIMETABLE_CONFLICT` with the clashing entries. A database exclusion or unique index backs
-the teacher and room cases so two concurrent admins cannot both win. Capacity and room-type
-mismatches are warnings (`details.warnings`), overridable with `force=true` + reason (audited).
+`409 TIMETABLE_CONFLICT` with the clashing entries in `details.conflicts`. Every write first
+takes a row lock on the timetable, so two concurrent admins cannot both pass the check. Capacity,
+room-type, inactive-room, teacher-not-assigned and other-term mismatches are warnings
+(`details.warnings`): they also answer 409 until the request repeats with `force=true` and a
+`forceReason` (audited).
 
 **Week parity.** `terms` gets `first_week_parity` (ODD by default); the week number is counted
 from the term's first Monday. The API returns for any date: week number, parity, and the
 occurrences of that week with exceptions and holidays already applied — the frontend never
 computes parity itself.
 
-Endpoints (all under `/api/v1`):
+Endpoints (all under `/api/v1`) — **built and tested (V019, `SchedulingIT`)**:
 
 | Method and path | Who | Purpose |
 |---|---|---|
-| `GET/POST/PATCH/DELETE /admin/groups…`, `/admin/rooms…`, `/admin/pair-slots…`, `/admin/holidays…` | ADMIN | Reference data |
-| `GET/POST /admin/timetables`, `POST /admin/timetables/{id}/publish`, `POST /admin/timetables/{id}/copy` | ADMIN | Timetable lifecycle |
+| `POST /admin/groups`, `PUT/DELETE /admin/groups/{id}`, `PUT /admin/groups/{id}/archived?value=` | ADMIN | Groups |
+| `POST /admin/groups/{id}/students`, `DELETE /admin/groups/{id}/students/{userId}` | ADMIN | Roster |
+| `GET /groups`, `GET /groups/{id}`, `GET /groups/{id}/students` | ADMIN, TEACHER | Read groups and rosters |
+| `GET/POST /admin/rooms`, `PUT/DELETE /admin/rooms/{id}` (same for `/admin/pair-slots`), `GET/POST /admin/holidays`, `DELETE /admin/holidays/{id}` | ADMIN | Reference data |
+| `PUT /admin/terms/{termId}/first-week-parity` | ADMIN | Whether week 1 is ODD or EVEN |
+| `GET/POST /admin/timetables`, `GET/DELETE /admin/timetables/{id}`, `PUT …/name`, `POST …/publish`, `POST …/archive` | ADMIN | Lifecycle; `copyFromId` in the create body copies a timetable |
 | `GET /admin/timetables/{id}/entries?groupId=&teacherId=&roomId=` | ADMIN | Builder grid by view |
-| `POST /admin/timetables/{id}/entries`, `PATCH/DELETE /admin/timetable-entries/{id}` | ADMIN | Add / move / delete; 409 with conflicts |
-| `POST /admin/timetables/{id}/entries/check` | ADMIN | Dry-run conflict check (for drag preview) |
-| `POST /admin/timetable-entries/{id}/exceptions` | ADMIN | Cancel / move / replace on a date |
-| `GET /admin/timetables/{id}/load?groupId=|teacherId=` | ADMIN | Planned vs scheduled hours |
-| `POST /admin/teaching-load/import` (xlsx), `GET /admin/teaching-load` | ADMIN | Yuklama |
-| `GET /timetable/me?week=YYYY-MM-DD` | STUDENT, TEACHER | My week (by my group / by me as teacher) |
-| `GET /timetable/today` | STUDENT, TEACHER | Dashboard block |
-| `GET /timetable/groups/{id}?week=`, `/timetable/teachers/{id}?week=`, `/timetable/rooms/{id}?week=` | by permission | Any published week |
+| `POST /admin/timetables/{id}/entries`, `PUT/DELETE /admin/timetable-entries/{id}` | ADMIN | Add / edit or move / delete; 409 with conflicts or warnings |
+| `POST /admin/timetables/{id}/entries/check?editedEntryId=` | ADMIN | Dry run for the drag preview |
+| `GET/POST /admin/timetable-entries/{id}/exceptions`, `DELETE /admin/timetable-exceptions/{id}` | ADMIN | Cancel / move / replace on a date; notifies teacher and students |
+| `GET /admin/timetables/{id}/week?date=&groupId=…` | ADMIN | Preview a concrete week of a draft |
+| `GET /admin/timetables/{id}/load?groupId=|teacherId=` | ADMIN | Planned vs scheduled hours (a pair = 2 hours) |
+| `GET/PUT /admin/teaching-load?termId=`, `DELETE /admin/teaching-load/{id}` | ADMIN | Yuklama lines; the client parses the Excel sheet and PUTs the rows |
+| `GET /timetable/me?date=&as=student|teacher` | STUDENT, TEACHER | My week (by my group / by me as teacher) |
+| `GET /timetable/today` | STUDENT, TEACHER | Dashboard block (campus date, Asia/Tashkent) |
+| `GET /timetable/week?date=&groupId=|teacherId=|roomId=` | any signed-in user | Any published week |
+| `GET /timetable/pair-slots`, `GET /timetable/rooms` | any signed-in user | Bell schedule, rooms |
+
+Class statuses in a week: `SCHEDULED`, `CANCELLED`, `MOVED_OUT` (original slot of a moved class),
+`MOVED_IN` (its new slot), `REPLACED` (other teacher or room), `HOLIDAY`.
 
 ### 4.3 Attendance and class sessions (B3)
 `class_sessions` (entry + date, linked `lesson_id`, teacher notes) is created on first open of
@@ -216,7 +228,8 @@ EXCUSED, note). Endpoints: `GET/PUT /teacher/class-sessions/{entryId}/{date}`,
 `GET /attendance/me?courseId=`.
 
 ### 4.4 Coding: three languages and "Run" (B4)
-- Migration: enable `cpp`; keep `python`, `java` enabled; leave `go` enabled but unused.
+- Migration V020 enables `cpp` and the docker-run sandbox has a `gcc:13` spec — **done**. `go`
+  stays an enabled row but unused.
 - `POST /runs {taskId?, language, source, stdin?, mode: CUSTOM | EXAMPLES}` → 202; `GET /runs/{id}`.
   Same queue and sandbox as submissions, lower priority, rate-limited per student, results kept
   24 h, never graded, never touches hidden tests.

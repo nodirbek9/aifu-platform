@@ -1,12 +1,16 @@
-# CLAUDE.md — AIFU Learning Platform (backend)
+# CLAUDE.md — AIFU Learning Platform
 
 Read this file first. It is the contract for working in this repository.
 Everything else is discoverable from here. Do not duplicate docs into this file.
 
 ## 1. What this is
 
-Backend for the **AIFU Learning Platform** — a multi-subject university LMS for
-Aniq va Ijtimoiy Fanlar Universiteti (AIFU). Backend only. No frontend code here, ever.
+The **AIFU Learning Platform** — a multi-subject university LMS for Aniq va Ijtimoiy Fanlar
+Universiteti (AIFU). This repository holds the backend (`backend/`, the rules below) and, from v3,
+the new frontend in `frontend/` (its own rules: `frontend/AGENTS.md`).
+
+**What the product must do is in `docs/01-PRODUCT-SPEC.md`; how it is built and what is still to
+build is in `docs/02-ARCHITECTURE.md`. Read both before adding a feature.**
 
 Initial scale: ~200 students, ~15 teachers, 15+ subjects, 3 content languages (uz/ru/en).
 Design target: grow 10-50x without a rewrite. Not designed for millions of users.
@@ -32,6 +36,7 @@ Inside `api`, one Java package per domain module under `uz.aifu.lms.<module>`:
 common   iam        academics   curriculum  enrollment
 progress assessment coding      execution   grading
 files    notification analytics audit       search
+scheduling  (student groups, rooms, bell schedule, timetable, teaching load — V019)
 ```
 
 Each module has the same four layers. Depend inward only:
@@ -197,8 +202,10 @@ a schema redesign.** Full model: `docs/domain/domain-model.md`.
 - Adding a new module and forgetting `ArchitectureBoundaryTest`'s module registry.
 - Writing an integration test without `@Tag("it")` ⇒ it runs in the fast unit profile and fails.
 - Assuming locale `uz` has a Postgres FTS dictionary. It does not; `simple` + `unaccent` is used.
-- Assuming "Programming" means Python/Go. The **supplied syllabus `DAS1110` is C++**. The platform
-  executes Python and Go per product requirement. See `docs/academic-analysis/PENDING-INPUTS.md` §2.
+- The teaching languages are **Python, Java and C++** (V018, V020; product spec S-05). Go is
+  still an enabled row from the first brief, but no task carries a Go solution.
+- Timetable writes go through `TimetableService`, which locks the timetable row before the
+  conflict check. Never insert a `timetable_entries` row any other way.
 
 ## 13. Where to look
 
