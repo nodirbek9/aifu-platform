@@ -70,7 +70,8 @@ class ArchitectureBoundaryTest {
                     "analytics",
                     "search",
                     "scheduling",
-                    "attendance");
+                    "attendance",
+                    "announcement");
 
     /**
      * Allowed-dependency graph, transcribed from the "Module map" diagram in {@code
@@ -91,7 +92,14 @@ class ArchitectureBoundaryTest {
                     Map.entry("execution", Set.of("coding", "enrollment", "iam")),
                     Map.entry(
                             "progress",
-                            Set.of("enrollment", "curriculum", "assessment", "coding", "iam")),
+                            // academics: course labels for the cross-course work list
+                            Set.of(
+                                    "enrollment",
+                                    "curriculum",
+                                    "assessment",
+                                    "coding",
+                                    "academics",
+                                    "iam")),
                     Map.entry(
                             "grading",
                             Set.of(
@@ -108,7 +116,10 @@ class ArchitectureBoundaryTest {
                     Map.entry("scheduling", Set.of("academics", "iam")),
                     Map.entry(
                             "attendance",
-                            Set.of("scheduling", "academics", "curriculum", "enrollment", "iam")));
+                            Set.of("scheduling", "academics", "curriculum", "enrollment", "iam")),
+                    Map.entry(
+                            "announcement",
+                            Set.of("scheduling", "academics", "enrollment", "iam")));
 
     private static JavaClasses classes;
 

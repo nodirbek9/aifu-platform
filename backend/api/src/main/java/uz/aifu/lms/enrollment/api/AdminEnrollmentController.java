@@ -37,11 +37,13 @@ import uz.aifu.lms.enrollment.api.dto.EnrollmentDtos.CreateEnrollmentRequest;
 import uz.aifu.lms.enrollment.api.dto.EnrollmentDtos.CsvImportRowView;
 import uz.aifu.lms.enrollment.api.dto.EnrollmentDtos.EnrollmentDetail;
 import uz.aifu.lms.enrollment.api.dto.EnrollmentDtos.EnrollmentSummary;
+import uz.aifu.lms.enrollment.api.dto.EnrollmentDtos.GroupEnrollRequest;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.Enrollment;
 import uz.aifu.lms.enrollment.domain.EnrollmentSource;
 import uz.aifu.lms.enrollment.domain.EnrollmentStatus;
 import uz.aifu.lms.iam.app.access.AccessGuard;
+import uz.aifu.lms.iam.app.user.StudentDirectory;
 
 /**
  * Enrollment administration. {@code ENROLLMENT_MANAGE}/{@code ENROLLMENT_READ} are ADMIN-only today
@@ -60,16 +62,19 @@ public class AdminEnrollmentController {
     private final AccessGuard accessGuard;
     private final PageableSupport pageableSupport;
     private final CurrentUserProvider currentUser;
+    private final StudentDirectory students;
 
     public AdminEnrollmentController(
             EnrollmentService enrollments,
             AccessGuard accessGuard,
             PageableSupport pageableSupport,
-            CurrentUserProvider currentUser) {
+            CurrentUserProvider currentUser,
+            StudentDirectory students) {
         this.enrollments = enrollments;
         this.accessGuard = accessGuard;
         this.pageableSupport = pageableSupport;
         this.currentUser = currentUser;
+        this.students = students;
     }
 
     @GetMapping
@@ -123,6 +128,43 @@ public class AdminEnrollmentController {
                 .bulkEnroll(
                         request.courseId(),
                         request.studentUserIds(),
+                        request.source(),
+                        currentUser.require().id(),
+                        clientIp(http))
+                .stream()
+                .map(
+                        o ->
+                                new BulkEnrollResultView(
+                                        o.studentUserId(),
+                                        o.success(),
+                                        o.enrollmentId(),
+                                        o.errorCode(),
+                                        o.errorMessage()))
+                .toList();
+    }
+
+    @PostMapping("/by-group")
+    @PreAuthorize("hasAuthority('ENROLLMENT_MANAGE')")
+    @Operation(
+            summary = "Enroll every student of a group into a course",
+            description =
+                    "Each student's outcome is reported independently, as in /bulk; a student who"
+                            + " is already enrolled is a failed row with ENROLLMENT_DUPLICATE, not a"
+                            + " request-level error. An empty group answers an empty list.")
+    public List<BulkEnrollResultView> enrollGroup(
+            @Valid @RequestBody GroupEnrollRequest request, HttpServletRequest http) {
+        accessGuard.requireCourseEditor(request.courseId());
+        List<UUID> studentIds =
+                students.studentsOfGroup(request.groupCode().trim()).stream()
+                        .map(StudentDirectory.StudentRef::userId)
+                        .toList();
+        if (studentIds.isEmpty()) {
+            return List.of();
+        }
+        return enrollments
+                .bulkEnroll(
+                        request.courseId(),
+                        studentIds,
                         request.source(),
                         currentUser.require().id(),
                         clientIp(http))

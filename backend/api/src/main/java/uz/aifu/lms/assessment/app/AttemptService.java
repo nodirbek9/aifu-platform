@@ -167,7 +167,7 @@ public class AttemptService {
 
     private Activity resolveActivity(UUID activityId, UUID quizId) {
         if (activityId == null) {
-            return null;
+            return activities.findSolePublishedFor(ActivityType.QUIZ, quizId).orElse(null);
         }
         Activity activity = activities.require(activityId);
         if (activity.getActivityType() != ActivityType.QUIZ

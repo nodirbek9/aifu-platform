@@ -40,6 +40,7 @@ import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.LoadRow;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.PairSlotView;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.RoomRequest;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.RoomView;
+import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.TimetableDirectory;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.TimetableView;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.WeekView;
 import uz.aifu.lms.scheduling.app.WeekCalendar;
@@ -428,6 +429,20 @@ class SchedulingIT extends AbstractIntegrationTest {
         // nothing is visible before publishing
         assertThat(classes(week(login(student), "/api/v1/timetable/me?date=" + w.week1))).isEmpty();
         w.publish();
+
+        // whose week can be looked up: the groups and teachers that have classes
+        TimetableDirectory directory =
+                get(
+                                login(outsider),
+                                "/api/v1/timetable/directory?date=" + w.week1,
+                                TimetableDirectory.class)
+                        .getBody();
+        assertThat(directory.groups())
+                .extracting(g -> g.code())
+                .contains(w.group.code(), w.otherGroup.code());
+        assertThat(directory.teachers())
+                .extracting(t -> t.id())
+                .contains(w.teacher.getId(), w.otherTeacher.getId());
 
         WeekView oddWeek = week(login(student), "/api/v1/timetable/me?date=" + w.week1.plusDays(3));
         assertThat(oddWeek.weekStart()).isEqualTo(w.week1);

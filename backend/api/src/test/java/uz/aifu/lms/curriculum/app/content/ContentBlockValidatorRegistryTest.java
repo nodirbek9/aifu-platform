@@ -57,6 +57,7 @@ class ContentBlockValidatorRegistryTest {
                 new FileBackedBlockValidator(sanitizer),
                 new LinkBlockValidator(sanitizer),
                 new EmbedBlockValidator(sanitizer),
+                new LessonPlanBlockValidator(sanitizer),
                 new ReferenceBlockValidator());
     }
 }

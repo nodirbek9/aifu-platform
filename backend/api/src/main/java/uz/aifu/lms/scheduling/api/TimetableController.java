@@ -20,6 +20,7 @@ import uz.aifu.lms.common.security.CurrentUserProvider;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.DayView;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.PairSlotView;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.RoomView;
+import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.TimetableDirectory;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.WeekView;
 import uz.aifu.lms.scheduling.app.SchedulingReferenceService;
 import uz.aifu.lms.scheduling.app.TimetableQueryService;
@@ -109,6 +110,16 @@ public class TimetableController {
                 web.dateOrToday(date),
                 new Filter(groupId, teacherId, roomId),
                 web.locale(locale, http));
+    }
+
+    @GetMapping("/directory")
+    @Operation(
+            summary = "Groups and teachers that have classes, to look up anybody's week",
+            description = "From the timetable published for the term containing the date.")
+    public TimetableDirectory directory(
+            @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+                    LocalDate date) {
+        return queries.directory(web.dateOrToday(date));
     }
 
     @GetMapping("/pair-slots")

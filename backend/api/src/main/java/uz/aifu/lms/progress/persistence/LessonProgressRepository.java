@@ -1,5 +1,6 @@
 package uz.aifu.lms.progress.persistence;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,6 +13,9 @@ import uz.aifu.lms.progress.domain.ProgressStatus;
 public interface LessonProgressRepository extends JpaRepository<LessonProgress, UUID> {
 
     Optional<LessonProgress> findByEnrollment_IdAndLesson_Id(UUID enrollmentId, UUID lessonId);
+
+    /** Everything one student has opened in a course: a few dozen rows at most. */
+    List<LessonProgress> findByEnrollment_Id(UUID enrollmentId);
 
     /**
      * The numerator for {@code ModuleProgress.completionPercent}: navigates this entity's own

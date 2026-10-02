@@ -8,6 +8,7 @@ import uz.aifu.lms.curriculum.api.dto.LessonDtos.LessonSummary;
 import uz.aifu.lms.curriculum.api.dto.LessonDtos.LessonTranslationView;
 import uz.aifu.lms.curriculum.app.ContentBlockService;
 import uz.aifu.lms.curriculum.app.LessonService;
+import uz.aifu.lms.curriculum.domain.BlockVisibility;
 import uz.aifu.lms.curriculum.domain.ContentBlock;
 import uz.aifu.lms.curriculum.domain.ContentBlockTranslation;
 import uz.aifu.lms.curriculum.domain.Lesson;
@@ -62,12 +63,28 @@ final class LessonMapper {
                 title.fallback());
     }
 
+    /** The lesson as its editors see it: every block, including the teacher-only ones. */
     static LessonDetail toDetail(
             Lesson lesson,
             LessonService lessons,
             ContentBlockService blocks,
             String resolvedLocale,
             ObjectMapper objectMapper) {
+        return toDetail(lesson, lessons, blocks, resolvedLocale, objectMapper, true);
+    }
+
+    /**
+     * @param forEditors {@code false} for the student-facing rendering, which leaves out every
+     *     {@code TEACHER_ONLY} block (lesson plans, teacher notes); {@code true} leaves out the
+     *     {@code STUDENT_ONLY} ones instead, which an editor still gets through the block list
+     */
+    static LessonDetail toDetail(
+            Lesson lesson,
+            LessonService lessons,
+            ContentBlockService blocks,
+            String resolvedLocale,
+            ObjectMapper objectMapper,
+            boolean forEditors) {
         List<LessonTranslationView> translationViews =
                 lessons.listTranslations(lesson.getId()).stream()
                         .map(
@@ -84,7 +101,14 @@ final class LessonMapper {
                         .map(p -> p.getRequiredLesson().getId())
                         .toList();
         String defaultLocale = lesson.getModule().getCourse().getInstructionLanguage().code();
-        List<ContentBlock> blockEntities = blocks.listByLesson(lesson.getId());
+        List<ContentBlock> blockEntities =
+                blocks.listByLesson(lesson.getId()).stream()
+                        .filter(
+                                b ->
+                                        forEditors
+                                                || b.getVisibility()
+                                                        != BlockVisibility.TEACHER_ONLY)
+                        .toList();
         Map<java.util.UUID, List<ContentBlockTranslation>> blockTranslations =
                 blocks.listTranslationsForBlocks(
                         blockEntities.stream().map(ContentBlock::getId).toList());

@@ -1,6 +1,7 @@
 package uz.aifu.lms.enrollment.api.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.NotNull;
 import java.math.BigDecimal;
@@ -25,6 +26,12 @@ public final class EnrollmentDtos {
                     "Enroll a batch of students; each student's outcome is reported independently.")
     public record BulkEnrollRequest(
             @NotNull UUID courseId, @NotEmpty List<UUID> studentUserIds, EnrollmentSource source) {}
+
+    @Schema(description = "Enroll every student of a group into a course (product spec A-06).")
+    public record GroupEnrollRequest(
+            @NotNull UUID courseId,
+            @Schema(example = "BK-DI26/1") @NotBlank String groupCode,
+            EnrollmentSource source) {}
 
     public record BulkEnrollResultView(
             UUID studentUserId,

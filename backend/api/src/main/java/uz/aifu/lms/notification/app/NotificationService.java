@@ -121,6 +121,14 @@ public class NotificationService {
                 recipientUserId, NotificationStatus.SENT);
     }
 
+    /**
+     * @return how many notifications were unread until now
+     */
+    @Transactional
+    public int markAllRead(UUID callerId) {
+        return notifications.markAllRead(callerId, clock.instant());
+    }
+
     @Transactional
     public Notification markRead(UUID id, UUID callerId) {
         Notification entry =

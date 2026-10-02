@@ -80,5 +80,14 @@ public final class AuthDtos {
             Set<String> roles,
             Set<String> permissions,
             boolean mustChangePassword,
-            Instant lastLoginAt) {}
+            Instant lastLoginAt,
+            String phone,
+            @Schema(description = "Set for a student") String studentNumber,
+            @Schema(description = "The student's group, e.g. BK-DI26/1; null when not in a group")
+                    String groupCode) {}
+
+    @Schema(description = "What a user may change about their own account.")
+    public record UpdateMyProfileRequest(
+            @Schema(allowableValues = {"uz", "ru", "en"}) String preferredLocale,
+            @Size(max = 32) String phone) {}
 }

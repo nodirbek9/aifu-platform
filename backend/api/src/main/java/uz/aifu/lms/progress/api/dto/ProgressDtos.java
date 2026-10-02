@@ -7,6 +7,8 @@ import java.math.BigDecimal;
 import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
+import uz.aifu.lms.academics.domain.SessionType;
+import uz.aifu.lms.curriculum.domain.ActivityType;
 import uz.aifu.lms.progress.domain.ProgressStatus;
 
 public final class ProgressDtos {
@@ -54,6 +56,68 @@ public final class ProgressDtos {
             Instant lastAccessedAt,
             Instant completedAt,
             List<ModuleProgressView> modules) {}
+
+    // ------------------------------------------------------------------ course plan (spec S-03.2)
+
+    public record PlanLesson(
+            UUID id,
+            String code,
+            String title,
+            SessionType sessionType,
+            BigDecimal allocatedHours,
+            Integer estimatedMinutes,
+            boolean required,
+            @Schema(description = "null for a viewer who is not a student of the course")
+                    ProgressStatus status,
+            @Schema(description = "true while a lesson this one requires is not completed")
+                    boolean locked,
+            List<UUID> prerequisiteLessonIds,
+            @Schema(description = "Quizzes and tasks attached to the lesson") int activitiesTotal,
+            int activitiesCompleted) {}
+
+    public record PlanModule(UUID id, String code, String title, List<PlanLesson> lessons) {}
+
+    @Schema(
+            description =
+                    "A course's published modules and lessons with the caller's status on each, in"
+                            + " one call. continueLessonId is the first lesson that is neither done"
+                            + " nor locked.")
+    public record CoursePlanView(
+            UUID courseId,
+            UUID enrollmentId,
+            int lessonsTotal,
+            int lessonsCompleted,
+            UUID continueLessonId,
+            @Schema(description = "The lesson the student opened most recently") UUID lastLessonId,
+            List<PlanModule> modules) {}
+
+    // ------------------------------------------------------------------ my work (spec S-07,
+    // S-01.3)
+
+    @Schema(
+            description =
+                    "A quiz, coding task or other activity of one of the caller's courses, with the"
+                            + " caller's state on it.")
+    public record MyActivityView(
+            UUID activityId,
+            UUID courseId,
+            String subjectCode,
+            String courseTitle,
+            UUID lessonId,
+            ActivityType type,
+            @Schema(description = "The quiz or coding task to open; null for other types")
+                    UUID referenceId,
+            String title,
+            Instant availableFrom,
+            Instant dueAt,
+            boolean graded,
+            BigDecimal maxPoints,
+            Integer attemptLimit,
+            int attemptsUsed,
+            BigDecimal bestScore,
+            @Schema(allowableValues = {"UPCOMING", "TODO", "IN_PROGRESS", "COMPLETED", "OVERDUE"})
+                    String state,
+            Instant completedAt) {}
 
     @Schema(description = "One student's course-level progress, for a teacher's roster view")
     public record StudentCourseProgressSummary(

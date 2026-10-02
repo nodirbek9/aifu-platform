@@ -99,7 +99,9 @@ public class LessonController {
         accessGuard.requireLessonViewer(lessonId);
         Lesson lesson = lessons.requirePublished(lessonId);
         String resolvedLocale = resolveLocale(locale, acceptLanguage);
-        return LessonMapper.toDetail(lesson, lessons, blocks, resolvedLocale, objectMapper);
+        // The student-facing rendering, also used for a teacher's preview and for the projector:
+        // teacher-only blocks (lesson plans, notes) are never part of it.
+        return LessonMapper.toDetail(lesson, lessons, blocks, resolvedLocale, objectMapper, false);
     }
 
     private static String resolveLocale(String explicit, String acceptLanguage) {

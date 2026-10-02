@@ -1,6 +1,8 @@
 package uz.aifu.lms.iam.app.org;
 
+import java.util.List;
 import java.util.UUID;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import uz.aifu.lms.common.error.Exceptions;
@@ -37,5 +39,17 @@ public class OrgReferenceDataService {
         return programmes
                 .findById(id)
                 .orElseThrow(() -> Exceptions.notFound("AcademicProgramme", id));
+    }
+
+    /** Departments by name, for pickers. */
+    @Transactional(readOnly = true)
+    public List<Department> listDepartments() {
+        return departments.findAll(Sort.by("name"));
+    }
+
+    /** Academic programmes (yoʻnalishlar) by code, for pickers. */
+    @Transactional(readOnly = true)
+    public List<AcademicProgramme> listProgrammes() {
+        return programmes.findAll(Sort.by("code"));
     }
 }

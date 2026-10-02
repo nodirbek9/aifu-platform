@@ -1,5 +1,7 @@
 package uz.aifu.lms.progress.persistence;
 
+import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,6 +14,8 @@ public interface ActivityProgressRepository extends JpaRepository<ActivityProgre
 
     Optional<ActivityProgress> findByEnrollment_IdAndActivity_Id(
             UUID enrollmentId, UUID activityId);
+
+    List<ActivityProgress> findByEnrollment_IdIn(Collection<UUID> enrollmentIds);
 
     /**
      * The numerator for {@code CourseProgress.activitiesCompleted}. Always zero until {@code

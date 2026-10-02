@@ -1,5 +1,6 @@
 package uz.aifu.lms.curriculum.persistence;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -11,6 +12,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import uz.aifu.lms.common.domain.PublicationStatus;
 import uz.aifu.lms.curriculum.domain.Activity;
+import uz.aifu.lms.curriculum.domain.ActivityType;
 
 public interface ActivityRepository extends JpaRepository<Activity, UUID> {
 
@@ -26,6 +28,12 @@ public interface ActivityRepository extends JpaRepository<Activity, UUID> {
 
     @EntityGraph(attributePaths = {"course", "module", "lesson", "assessmentComponent"})
     Page<Activity> findByCourse_Id(UUID courseId, Pageable pageable);
+
+    List<Activity> findByActivityTypeAndReferenceIdAndStatus(
+            ActivityType activityType, UUID referenceId, PublicationStatus status);
+
+    List<Activity> findByCourse_IdInAndStatusOrderByPosition(
+            Collection<UUID> courseIds, PublicationStatus status);
 
     long countByModule_Id(UUID moduleId);
 

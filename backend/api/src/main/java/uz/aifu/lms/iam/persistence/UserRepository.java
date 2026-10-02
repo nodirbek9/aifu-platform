@@ -45,6 +45,7 @@ public interface UserRepository extends JpaRepository<User, UUID> {
             """
             select u from User u
             where (:status is null or u.status = :status)
+              and (:role is null or exists (select 1 from u.roles r where r.code = :role))
               and (:pattern is null
                    or lower(u.fullName) like :pattern
                    or lower(u.email) like :pattern
@@ -53,6 +54,7 @@ public interface UserRepository extends JpaRepository<User, UUID> {
     Page<User> search(
             @Param("pattern") String pattern,
             @Param("status") UserStatus status,
+            @Param("role") String role,
             Pageable pageable);
 
     /**

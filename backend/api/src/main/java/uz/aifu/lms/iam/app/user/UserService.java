@@ -91,13 +91,22 @@ public class UserService {
 
     @Transactional(readOnly = true)
     public Page<User> search(String query, UserStatus status, Pageable pageable) {
+        return search(query, status, null, pageable);
+    }
+
+    /**
+     * @param role only accounts holding this role (e.g. TEACHER, to pick a class's teacher)
+     */
+    @Transactional(readOnly = true)
+    public Page<User> search(String query, UserStatus status, String role, Pageable pageable) {
         // Pre-formatted here, not via JPQL concat(): a null :pattern bound through concat() left
         // Hibernate to guess the parameter's JDBC type, and it guessed bytea against Postgres
         // ("function lower(bytea) does not exist") — passing the finished LIKE pattern (or null)
         // gives the parameter one unambiguous use, which resolves correctly.
         String normalized = (query == null || query.isBlank()) ? null : query.trim();
         String pattern = normalized == null ? null : "%" + normalized.toLowerCase() + "%";
-        return users.search(pattern, status, pageable);
+        String roleCode = (role == null || role.isBlank()) ? null : role.trim().toUpperCase();
+        return users.search(pattern, status, roleCode, pageable);
     }
 
     /**

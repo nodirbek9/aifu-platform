@@ -1,11 +1,13 @@
 package uz.aifu.lms.iam.api;
 
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import java.net.URI;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import org.springframework.data.domain.Pageable;
@@ -25,6 +27,8 @@ import uz.aifu.lms.common.api.PageableSupport;
 import uz.aifu.lms.common.security.CurrentUserProvider;
 import uz.aifu.lms.iam.api.dto.UserDtos.ChangeStatusRequest;
 import uz.aifu.lms.iam.api.dto.UserDtos.CreateUserRequest;
+import uz.aifu.lms.iam.api.dto.UserDtos.ImportStudentResult;
+import uz.aifu.lms.iam.api.dto.UserDtos.ImportStudentsRequest;
 import uz.aifu.lms.iam.api.dto.UserDtos.ResetPasswordRequest;
 import uz.aifu.lms.iam.api.dto.UserDtos.SetRolesRequest;
 import uz.aifu.lms.iam.api.dto.UserDtos.StudentProfileView;
@@ -32,6 +36,7 @@ import uz.aifu.lms.iam.api.dto.UserDtos.TeacherProfileView;
 import uz.aifu.lms.iam.api.dto.UserDtos.UpdateUserRequest;
 import uz.aifu.lms.iam.api.dto.UserDtos.UserDetail;
 import uz.aifu.lms.iam.api.dto.UserDtos.UserSummary;
+import uz.aifu.lms.iam.app.user.StudentImportService;
 import uz.aifu.lms.iam.app.user.UserService;
 import uz.aifu.lms.iam.domain.StudentProfile;
 import uz.aifu.lms.iam.domain.TeacherProfile;
@@ -54,24 +59,44 @@ public class AdminUserController {
     private final UserService users;
     private final PageableSupport pageableSupport;
     private final CurrentUserProvider currentUser;
+    private final StudentImportService studentImport;
 
     public AdminUserController(
-            UserService users, PageableSupport pageableSupport, CurrentUserProvider currentUser) {
+            UserService users,
+            PageableSupport pageableSupport,
+            CurrentUserProvider currentUser,
+            StudentImportService studentImport) {
         this.users = users;
         this.pageableSupport = pageableSupport;
         this.currentUser = currentUser;
+        this.studentImport = studentImport;
+    }
+
+    @PostMapping("/import")
+    @PreAuthorize("hasAuthority('USER_MANAGE')")
+    @Operation(
+            summary = "Import students with their groups",
+            description =
+                    "Row by row: a new student number creates an account (STUDENT role, must change"
+                            + " the password at first login); a known one is moved to the row's group."
+                            + " Send dryRun=true first to show the administrator what will happen.")
+    public List<ImportStudentResult> importStudents(
+            @Valid @RequestBody ImportStudentsRequest request, HttpServletRequest http) {
+        return studentImport.importStudents(request, currentUser.require().id(), clientIp(http));
     }
 
     @GetMapping
     @PreAuthorize("hasAuthority('USER_READ')")
     @Operation(
             summary = "Search accounts",
-            description = "Paginated, filterable by free-text query and status.")
+            description = "Paginated, filterable by free-text query, status and role.")
     public PageResponse<UserSummary> search(
             @RequestParam(required = false) String query,
             @RequestParam(required = false) UserStatus status,
+            @Parameter(description = "STUDENT, TEACHER or ADMIN") @RequestParam(required = false)
+                    String role,
             Pageable pageable) {
-        var page = users.search(query, status, pageableSupport.sanitize(pageable));
+        var page = users.search(query, status, role, pageableSupport.sanitize(pageable));
         var rolesByUserId =
                 users.rolesByUserIds(page.getContent().stream().map(User::getId).toList());
         return PageResponse.of(

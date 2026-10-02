@@ -4,6 +4,7 @@ import java.time.Clock;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -28,6 +29,7 @@ import uz.aifu.lms.curriculum.app.activity.ActivityTypeHandler;
 import uz.aifu.lms.curriculum.app.activity.ActivityTypeHandlerRegistry;
 import uz.aifu.lms.curriculum.domain.Activity;
 import uz.aifu.lms.curriculum.domain.ActivityTranslation;
+import uz.aifu.lms.curriculum.domain.ActivityType;
 import uz.aifu.lms.curriculum.domain.ActivityVariant;
 import uz.aifu.lms.curriculum.domain.CourseModule;
 import uz.aifu.lms.curriculum.domain.Lesson;
@@ -108,6 +110,28 @@ public class ActivityService {
         return activities
                 .findWithDetailsById(id)
                 .orElseThrow(() -> Exceptions.notFound("Activity", id));
+    }
+
+    /**
+     * The published activity a quiz or coding task belongs to, when there is exactly one. Lets a
+     * submission made from a lesson page count towards the activity (progress, grade) even though
+     * the client did not name it. With none, or several, nothing is guessed.
+     */
+    @Transactional(readOnly = true)
+    public Optional<Activity> findSolePublishedFor(ActivityType type, UUID referenceId) {
+        List<Activity> found =
+                activities.findByActivityTypeAndReferenceIdAndStatus(
+                        type, referenceId, PublicationStatus.PUBLISHED);
+        return found.size() == 1 ? Optional.of(found.get(0)) : Optional.empty();
+    }
+
+    /** Every published activity of the given courses, for a student's "my work" list. */
+    @Transactional(readOnly = true)
+    public List<Activity> listPublishedByCourses(Collection<UUID> courseIds) {
+        return courseIds.isEmpty()
+                ? List.of()
+                : activities.findByCourse_IdInAndStatusOrderByPosition(
+                        courseIds, PublicationStatus.PUBLISHED);
     }
 
     @Transactional(readOnly = true)

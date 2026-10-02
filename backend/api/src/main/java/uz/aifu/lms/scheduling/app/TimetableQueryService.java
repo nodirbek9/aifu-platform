@@ -31,6 +31,8 @@ import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.ExceptionView;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.GroupRef;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.LoadRow;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.PairSlotView;
+import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.TeacherRef;
+import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.TimetableDirectory;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.TimetableView;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.WarningView;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.WeekView;
@@ -426,6 +428,37 @@ public class TimetableQueryService {
             }
         }
         return week(date, filter, locale, candidates.isEmpty() ? null : candidates.get(0), null);
+    }
+
+    /**
+     * Whose week can be looked up: the groups and teachers with classes in the timetable published
+     * for the term containing {@code date}. Empty outside a term or before publishing.
+     */
+    @Transactional(readOnly = true)
+    public TimetableDirectory directory(LocalDate date) {
+        for (Term term : calendar.findTermsContaining(date)) {
+            Optional<Timetable> published =
+                    timetables.findByTermIdAndStatus(term.getId(), TimetableStatus.PUBLISHED);
+            if (published.isPresent()) {
+                List<TimetableEntry> all = entries.findAllOf(published.get().getId());
+                Map<UUID, String> groupCodes = new HashMap<>();
+                Set<UUID> teacherIds = new HashSet<>();
+                for (TimetableEntry entry : all) {
+                    entry.getGroups().forEach(g -> groupCodes.put(g.getId(), g.getCode()));
+                    teacherIds.add(entry.getTeacherUserId());
+                }
+                return new TimetableDirectory(
+                        groupCodes.entrySet().stream()
+                                .map(e -> new GroupRef(e.getKey(), e.getValue()))
+                                .sorted(Comparator.comparing(GroupRef::code))
+                                .toList(),
+                        people.fullNames(teacherIds).entrySet().stream()
+                                .map(e -> new TeacherRef(e.getKey(), e.getValue()))
+                                .sorted(Comparator.comparing(TeacherRef::fullName))
+                                .toList());
+            }
+        }
+        return new TimetableDirectory(List.of(), List.of());
     }
 
     /** The same week view over any timetable (the admin previews a draft). */

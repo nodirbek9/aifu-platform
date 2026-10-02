@@ -66,6 +66,14 @@ public class MyNotificationsController {
         return toView(notifications.markRead(id, currentUser.require().id()));
     }
 
+    @PostMapping("/api/v1/notifications/me/read-all")
+    @PreAuthorize("hasAuthority('NOTIFICATION_SELF_READ')")
+    @Operation(summary = "Mark every unread notification of mine as read")
+    public UnreadCountView markAllRead() {
+        notifications.markAllRead(currentUser.require().id());
+        return new UnreadCountView(0);
+    }
+
     private static NotificationView toView(Notification n) {
         return new NotificationView(
                 n.getId(),

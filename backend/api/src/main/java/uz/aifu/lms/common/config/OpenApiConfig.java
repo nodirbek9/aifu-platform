@@ -5,10 +5,17 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Contact;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
+import io.swagger.v3.oas.models.media.ArraySchema;
+import io.swagger.v3.oas.models.media.IntegerSchema;
+import io.swagger.v3.oas.models.media.StringSchema;
+import io.swagger.v3.oas.models.parameters.QueryParameter;
 import io.swagger.v3.oas.models.security.SecurityRequirement;
 import io.swagger.v3.oas.models.security.SecurityScheme;
 import io.swagger.v3.oas.models.servers.Server;
+import java.time.LocalTime;
 import java.util.List;
+import org.springdoc.core.customizers.GlobalOperationCustomizer;
+import org.springdoc.core.utils.SpringDocUtils;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,6 +24,13 @@ import org.springframework.context.annotation.Configuration;
 public class OpenApiConfig {
 
     public static final String BEARER_SCHEME = "bearerAuth";
+
+    static {
+        // A time of day travels as the string "08:30:00", not as an {hour, minute, ...} object.
+        SpringDocUtils.getConfig()
+                .replaceWithSchema(
+                        LocalTime.class, new StringSchema().format("time").example("08:30:00"));
+    }
 
     @Bean
     public OpenAPI aifuOpenApi() {
@@ -42,9 +56,13 @@ public class OpenApiConfig {
                                         report `resolvedLocale` / `availableLocales` / `fallback` so the UI can
                                         flag untranslated content.
 
-                                        **Async execution** — `POST /api/v1/submissions` returns `202` with a
-                                        submission id; poll `GET /api/v1/submissions/{id}` until
-                                        `status = COMPLETED`.
+                                        **Async execution** — `POST /api/v1/submissions` (graded) and
+                                        `POST /api/v1/runs` (not graded) only queue the work; poll
+                                        `GET /api/v1/submissions/{id}` or `GET /api/v1/runs/{id}` until
+                                        `status` is `COMPLETED` or `FAILED`.
+
+                                        **Pagination** — list endpoints take `page` (from 0), `size` and
+                                        `sort=property,asc|desc`, and answer a `PageResponse…` envelope.
                                         """)
                                 .contact(new Contact().name("AIFU Platform Team"))
                                 .license(new License().name("Proprietary — AIFU")))
@@ -67,5 +85,39 @@ public class OpenApiConfig {
                                                 .description(
                                                         "Access token from /api/v1/auth/login")))
                 .addSecurityItem(new SecurityRequirement().addList(BEARER_SCHEME));
+    }
+
+    /**
+     * Documents a Spring {@code Pageable} argument as what a client actually sends: the three query
+     * parameters {@code page}, {@code size} and {@code sort}. Left alone, springdoc describes one
+     * object-valued parameter called "pageable", and a generated client would send exactly that.
+     */
+    @Bean
+    public GlobalOperationCustomizer pageableAsQueryParameters() {
+        return (operation, handlerMethod) -> {
+            if (operation.getParameters() == null
+                    || !operation.getParameters().removeIf(p -> "pageable".equals(p.getName()))) {
+                return operation;
+            }
+            operation.addParametersItem(
+                    new QueryParameter()
+                            .name("page")
+                            .description("Zero-based page index")
+                            .required(false)
+                            .schema(new IntegerSchema()._default(0)));
+            operation.addParametersItem(
+                    new QueryParameter()
+                            .name("size")
+                            .description("Page size; capped by the server")
+                            .required(false)
+                            .schema(new IntegerSchema()._default(20)));
+            operation.addParametersItem(
+                    new QueryParameter()
+                            .name("sort")
+                            .description("property,asc or property,desc; may be repeated")
+                            .required(false)
+                            .schema(new ArraySchema().items(new StringSchema())));
+            return operation;
+        };
     }
 }

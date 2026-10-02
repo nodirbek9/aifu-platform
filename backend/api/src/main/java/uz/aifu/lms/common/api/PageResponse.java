@@ -9,7 +9,7 @@ import org.springframework.data.domain.Page;
  * The pagination envelope for every list endpoint. Deliberately NOT Spring's {@code Page}, whose
  * JSON shape is unstable across versions and leaks {@code Pageable} internals.
  */
-@Schema(name = "PageResponse", description = "Paginated collection envelope")
+@Schema(description = "Paginated collection envelope")
 public record PageResponse<T>(
         List<T> content,
         @Schema(example = "0") int page,

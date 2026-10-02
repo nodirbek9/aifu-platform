@@ -38,7 +38,14 @@ import uz.aifu.lms.coding.domain.TestCaseVisibility;
 import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.domain.PublicationStatus;
 import uz.aifu.lms.common.error.ApiError;
+import uz.aifu.lms.curriculum.api.dto.ActivityDtos.ActivityDetail;
+import uz.aifu.lms.curriculum.api.dto.ActivityDtos.ChangeActivityStatusRequest;
+import uz.aifu.lms.curriculum.api.dto.ActivityDtos.CreateActivityRequest;
+import uz.aifu.lms.curriculum.api.dto.ActivityDtos.UpdateActivityRequest;
+import uz.aifu.lms.curriculum.api.dto.ActivityDtos.UpsertActivityTranslationRequest;
+import uz.aifu.lms.curriculum.domain.ActivityType;
 import uz.aifu.lms.curriculum.domain.Difficulty;
+import uz.aifu.lms.curriculum.domain.Lesson;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.EnrollmentSource;
 import uz.aifu.lms.execution.api.dto.RunDtos.RunRequest;
@@ -61,6 +68,7 @@ import uz.aifu.lms.iam.domain.User;
 import uz.aifu.lms.notification.api.dto.NotificationDtos.NotificationView;
 import uz.aifu.lms.notification.domain.NotificationType;
 import uz.aifu.lms.support.AbstractIntegrationTest;
+import uz.aifu.lms.support.fixtures.CurriculumFixtures;
 import uz.aifu.lms.support.fixtures.EnrollmentFixtures;
 import uz.aifu.lms.support.fixtures.UserFixtures;
 
@@ -76,6 +84,7 @@ class CodeRunIT extends AbstractIntegrationTest {
 
     @Autowired private UserFixtures userFixtures;
     @Autowired private EnrollmentFixtures enrollmentFixtures;
+    @Autowired private CurriculumFixtures curriculumFixtures;
     @Autowired private EnrollmentService enrollmentService;
     @Autowired private JdbcTemplate jdbc;
     @LocalServerPort private int port;
@@ -415,6 +424,60 @@ class CodeRunIT extends AbstractIntegrationTest {
                 .hasSize(1)
                 .first()
                 .satisfies(n -> assertThat(n.payloadJson()).contains(w.task.id().toString()));
+    }
+
+    // ------------------------------------------------------------------ activity binding
+
+    @Test
+    void submission_withoutAnActivityId_countsForTheOneActivityOfItsTask() {
+        World w = new World();
+        Lesson lesson = curriculumFixtures.publishedLesson(w.course);
+        UUID activityId =
+                post(
+                                w.adminToken,
+                                "/api/v1/teacher/courses/" + w.course.getId() + "/activities",
+                                new CreateActivityRequest(
+                                        null,
+                                        lesson.getId(),
+                                        ActivityType.CODING_TASK,
+                                        false,
+                                        null,
+                                        null),
+                                ActivityDetail.class)
+                        .getBody()
+                        .id();
+        String activity = "/api/v1/teacher/activities/" + activityId;
+        exchange(
+                w.adminToken,
+                HttpMethod.PATCH,
+                activity,
+                new UpdateActivityRequest(w.task.id(), null, null, null, null, null, null));
+        exchange(
+                w.adminToken,
+                HttpMethod.PUT,
+                activity + "/translations/uz",
+                new UpsertActivityTranslationRequest("Amaliy topshiriq", null));
+        exchange(
+                w.adminToken,
+                HttpMethod.PUT,
+                activity + "/status",
+                new ChangeActivityStatusRequest(PublicationStatus.PUBLISHED));
+
+        // the task page submits with the task id only, as from a lesson's practice block
+        SubmissionDetail submission =
+                post(
+                                w.studentToken,
+                                "/api/v1/submissions",
+                                new CreateSubmissionRequest(
+                                        w.task.id(), "python", "print(6)", null),
+                                SubmissionDetail.class)
+                        .getBody();
+        assertThat(
+                        jdbc.queryForObject(
+                                "select activity_id from submissions where id = ?",
+                                UUID.class,
+                                submission.id()))
+                .isEqualTo(activityId);
     }
 
     // ------------------------------------------------------------------ fixtures

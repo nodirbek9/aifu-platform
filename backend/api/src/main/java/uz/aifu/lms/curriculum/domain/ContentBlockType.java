@@ -21,5 +21,12 @@ public enum ContentBlockType {
     EMBED,
     QUIZ_REF,
     CODING_TASK_REF,
-    ACTIVITY_REF
+    ACTIVITY_REF,
+    /** The teacher's plan of the class (V024). Always {@code TEACHER_ONLY}. */
+    LESSON_PLAN;
+
+    /** Whether a block of this type may ever be shown to a student. */
+    public boolean teacherOnly() {
+        return this == LESSON_PLAN;
+    }
 }

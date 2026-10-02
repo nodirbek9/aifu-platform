@@ -226,6 +226,11 @@ public final class SchedulingDtos {
             List<PairSlotView> slots,
             List<DayView> days) {}
 
+    public record TeacherRef(UUID id, String fullName) {}
+
+    @Schema(description = "The groups and teachers that have classes in the published timetable.")
+    public record TimetableDirectory(List<GroupRef> groups, List<TeacherRef> teachers) {}
+
     public record DayView(LocalDate date, int dayOfWeek, String holiday, List<ClassView> classes) {}
 
     public record ClassView(

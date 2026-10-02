@@ -23,8 +23,10 @@ import uz.aifu.lms.curriculum.api.dto.ContentBlockDtos.UpdateContentBlockRequest
 import uz.aifu.lms.curriculum.api.dto.ContentBlockDtos.UpsertContentBlockTranslationRequest;
 import uz.aifu.lms.curriculum.app.content.ContentBlockPayloadValidator;
 import uz.aifu.lms.curriculum.app.content.ContentBlockValidatorRegistry;
+import uz.aifu.lms.curriculum.domain.BlockVisibility;
 import uz.aifu.lms.curriculum.domain.ContentBlock;
 import uz.aifu.lms.curriculum.domain.ContentBlockTranslation;
+import uz.aifu.lms.curriculum.domain.ContentBlockType;
 import uz.aifu.lms.curriculum.domain.Lesson;
 import uz.aifu.lms.curriculum.persistence.ContentBlockRepository;
 import uz.aifu.lms.curriculum.persistence.ContentBlockTranslationRepository;
@@ -100,7 +102,7 @@ public class ContentBlockService {
                 writeJson(validatedSettings),
                 request.fileId(),
                 request.isRequired(),
-                request.visibility());
+                visibilityFor(request.blockType(), request.visibility()));
         ContentBlock saved = blocks.save(block);
         audit.record(
                 AuditAction.CONTENT_BLOCK_CHANGED,
@@ -126,9 +128,14 @@ public class ContentBlockService {
                 writeJson(validatedSettings),
                 request.fileId(),
                 request.isRequired(),
-                request.visibility());
+                visibilityFor(block.getBlockType(), request.visibility()));
         audit.record(AuditAction.CONTENT_BLOCK_CHANGED, actorId, "content_block", id, ip, null);
         return block;
+    }
+
+    /** A teacher-only block type stays teacher-only whatever the request says. */
+    private static BlockVisibility visibilityFor(ContentBlockType type, BlockVisibility requested) {
+        return type.teacherOnly() ? BlockVisibility.TEACHER_ONLY : requested;
     }
 
     /** See {@link ModuleService#reorder} — identical deferred-constraint technique. */
