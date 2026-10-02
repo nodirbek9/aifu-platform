@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97 97">
+  <g transform="translate(8.5 0)">
+    <path d="M2 2h76v55a38 38 0 0 1-76 0z" fill="#fff" stroke="#fff" stroke-width="3"/>
+    <path d="M2 2h76v41H2z" fill="#002E60"/>
+    <path d="M2 43h76v14a38 38 0 0 1-76 0z" fill="#FF0158"/>
+    <g fill="#fff" text-anchor="middle" font-family="Georgia, serif" font-weight="700" font-size="42">
+      <text x="40" y="37.2" textLength="52.8" lengthAdjust="spacingAndGlyphs">AI</text>
+      <text x="40" y="76" textLength="52.8" lengthAdjust="spacingAndGlyphs">FU</text>
+    </g>
+  </g>
+</svg>

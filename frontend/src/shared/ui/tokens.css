@@ -1,0 +1,239 @@
+/*
+ * AIFU design tokens — the single source of visual truth (frontend/DESIGN-DECISIONS.md).
+ * Components use only these semantic tokens; light/dark flips by re-pointing the
+ * variables under .dark. No hex values and no dark: colour variants in components.
+ */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  /* Surfaces and ink */
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+
+  /* Brand and actions */
+  --color-brand-navy: #002e60;
+  --color-brand-magenta: #ff0158;
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-text: var(--accent-text);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-focus-ring: var(--focus-ring);
+
+  /* Status (status only, never decoration) */
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-info: var(--info);
+  --color-info-soft: var(--info-soft);
+
+  /* Session types — tint (cell background) and strong (bar, text) */
+  --color-session-lecture-tint: var(--session-lecture-tint);
+  --color-session-lecture-strong: var(--session-lecture-strong);
+  --color-session-seminar-tint: var(--session-seminar-tint);
+  --color-session-seminar-strong: var(--session-seminar-strong);
+  --color-session-practical-tint: var(--session-practical-tint);
+  --color-session-practical-strong: var(--session-practical-strong);
+  --color-session-laboratory-tint: var(--session-laboratory-tint);
+  --color-session-laboratory-strong: var(--session-laboratory-strong);
+  --color-session-independent-tint: var(--session-independent-tint);
+  --color-session-independent-strong: var(--session-independent-strong);
+  --color-session-coursework-tint: var(--session-coursework-tint);
+  --color-session-coursework-strong: var(--session-coursework-strong);
+
+  /* Typography roles */
+  --font-display: 'Bitter Variable', 'Literata Variable', Georgia, serif;
+  --font-reading: 'Literata Variable', Georgia, serif;
+  --font-sans: 'Onest Variable', 'Segoe UI', system-ui, sans-serif;
+  --font-mono: 'Source Code Pro Variable', Consolas, ui-monospace, monospace;
+
+  /* Type scale (8 steps) */
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1rem;
+  --text-caption--letter-spacing: 0.06em;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.25rem;
+  --text-body: 1rem;
+  --text-body--line-height: 1.5rem;
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.875rem;
+  --text-title: 1.375rem;
+  --text-title--line-height: 1.75rem;
+  --text-title--letter-spacing: -0.01em;
+  --text-display-lg: 1.75rem;
+  --text-display-lg--line-height: 2.125rem;
+  --text-display-lg--letter-spacing: -0.015em;
+  --text-display-xl: 2.25rem;
+  --text-display-xl--line-height: 2.5rem;
+  --text-display-xl--letter-spacing: -0.02em;
+  --text-display-2xl: 2.75rem;
+  --text-display-2xl--line-height: 3rem;
+  --text-display-2xl--letter-spacing: -0.02em;
+
+  --tracking-caption: 0.06em;
+
+  /* Shape */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.75rem;
+
+  /* Depth — floating things only, navy-tinted */
+  --shadow-menu: var(--shadow-menu-value);
+  --shadow-dialog: var(--shadow-dialog-value);
+  --shadow-drag: var(--shadow-drag-value);
+
+  /* Motion */
+  --duration-fast: 120ms;
+  --duration-normal: 200ms;
+  --duration-slow: 320ms;
+  --duration-slower: 600ms;
+  --ease-standard: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-emphasized: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Layout */
+  --container-app: 80rem;
+  --container-lesson: 42.5rem;
+
+  /* Named entrances (state changes only; exits stay a plain fade) */
+  --animate-menu-in: menu-in 160ms var(--ease-standard);
+  --animate-overlay-in: overlay-in 200ms ease-out;
+  --animate-dialog-in: dialog-in 200ms var(--ease-emphasized);
+  --animate-toast-in: toast-in 200ms var(--ease-emphasized);
+  --animate-sheet-in: sheet-in 240ms var(--ease-emphasized);
+
+  @keyframes menu-in {
+    from {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+  }
+  @keyframes overlay-in {
+    from {
+      opacity: 0;
+    }
+  }
+  @keyframes dialog-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px) scale(0.98);
+    }
+  }
+  @keyframes toast-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+  }
+  @keyframes sheet-in {
+    from {
+      transform: translateX(100%);
+    }
+  }
+}
+
+@layer base {
+  :root {
+    --surface: #fbfaf7;
+    --surface-raised: #ffffff;
+    --surface-sunken: #f4f2ec;
+    --text: #0f1e33;
+    --text-muted: #47586e;
+    --border: #e0e3e9;
+    --border-strong: #b9c2d0;
+
+    --primary: #002e60;
+    --primary-hover: #0b3d77;
+    --primary-foreground: #ffffff;
+    --accent: #ff0158;
+    --accent-strong: #d8004b;
+    --accent-text: #c40045;
+    --accent-soft: #ffe4ee;
+    --accent-foreground: #ffffff;
+    --focus-ring: #d8004b;
+
+    --success: #0e7a4a;
+    --success-soft: #e3f4eb;
+    --warning: #9a5b00;
+    --warning-soft: #fbf0dc;
+    --danger: #b42318;
+    --danger-soft: #fbe7e4;
+    --info: #1a5fad;
+    --info-soft: #e5eef9;
+
+    --session-lecture-tint: #e7f0fa;
+    --session-lecture-strong: #00689f;
+    --session-seminar-tint: #e4f3ef;
+    --session-seminar-strong: #00755a;
+    --session-practical-tint: #fbf0da;
+    --session-practical-strong: #8a5a00;
+    --session-laboratory-tint: #fbe9e0;
+    --session-laboratory-strong: #a84300;
+    --session-independent-tint: #e9f5fb;
+    --session-independent-strong: #386f8f;
+    --session-coursework-tint: #f9e9f1;
+    --session-coursework-strong: #8f4a77;
+
+    --shadow-menu-value: 0 4px 16px -2px rgb(7 18 36 / 0.12), 0 2px 6px rgb(7 18 36 / 0.08);
+    --shadow-dialog-value: 0 16px 48px -12px rgb(7 18 36 / 0.25);
+    --shadow-drag-value: 0 12px 32px -8px rgb(7 18 36 / 0.3);
+  }
+
+  .dark {
+    --surface: #081120;
+    --surface-raised: #0e1b30;
+    --surface-sunken: #040a14;
+    --text: #e9eef6;
+    --text-muted: #9aa9c0;
+    --border: #1c2c46;
+    --border-strong: #33486b;
+
+    --primary: #6b9bd8;
+    --primary-hover: #8fb4e4;
+    --primary-foreground: #081120;
+    --accent: #ff0158;
+    --accent-strong: #d8004b;
+    --accent-text: #ff5c93;
+    --accent-soft: #3a1020;
+    --accent-foreground: #ffffff;
+    --focus-ring: #ff5c93;
+
+    --success: #3fbf7f;
+    --success-soft: #0e3036;
+    --warning: #e5a13d;
+    --warning-soft: #302e2c;
+    --danger: #f26d7d;
+    --danger-soft: #3c232f;
+    --info: #6ea8e8;
+    --info-soft: #112d51;
+
+    --session-lecture-tint: #0b2e4d;
+    --session-lecture-strong: #7fb8ea;
+    --session-seminar-tint: #0b383f;
+    --session-seminar-strong: #4fcea5;
+    --session-practical-tint: #3e3825;
+    --session-practical-strong: #f0be62;
+    --session-laboratory-tint: #3e2b24;
+    --session-laboratory-strong: #f09468;
+    --session-independent-tint: #1c3a55;
+    --session-independent-strong: #8fcdee;
+    --session-coursework-tint: #38304a;
+    --session-coursework-strong: #dca3c4;
+
+    --shadow-menu-value: 0 4px 16px -2px rgb(0 0 0 / 0.5), 0 2px 6px rgb(0 0 0 / 0.4);
+    --shadow-dialog-value: 0 16px 48px -12px rgb(0 0 0 / 0.6);
+    --shadow-drag-value: 0 12px 32px -8px rgb(0 0 0 / 0.65);
+  }
+}
