@@ -6,7 +6,7 @@ The single record of progress (AGENTS.md §8). A new session resumes from this f
 |---|---|---|
 | F0 | Foundation: design system, shell, auth | **reported** 2026-10-02 (the owner asked to go on to F1 without waiting) |
 | F1 | Student: dashboard, courses, lesson | **reported** 2026-10-02 |
-| F2 | Student: practice task, quiz, work list | not started |
+| F2 | Student: practice task, quiz, work list | **in progress** — the task, "Try it" and the work list are done; the quiz (S-06) is next |
 | F3 | Student: timetable, grades, attendance, the rest | not started |
 | F4a | Teacher: timetable, class session, journal | not started |
 | F4b | Teacher: authoring, review, gradebook, analytics | not started |
@@ -97,7 +97,40 @@ Backend requests added: none that block; three conveniences are listed in BACKEN
 Demo data: the e2e global setup clears student3's lesson progress before each run (the API does
 not let a student un-complete a lesson).
 
-## F2 — Student: practice task, quiz, work list (next)
+## F2 — Student: practice task, quiz, work list (in progress)
 
-Spec: S-05, S-04.4, S-06, S-07. The task and quiz routes exist as placeholders
-(`/student/courses/:courseId/tasks/:taskId`, `…/quizzes/:quizId`).
+Done and verified:
+- `shared/editor`: CodeMirror 6 for Python, Java and C++ — highlighting from the design tokens
+  (follows light / dark by itself), auto-indent, bracket matching, line numbers, four-space tab,
+  font size, read-only mode. A separate chunk (607 kB), loaded only where code is shown.
+- S-05 practice task (`/student/courses/:courseId/tasks/:taskId`, a focus page):
+  statement, input / output, constraints, limits, examples with copy, hints opened one at a
+  time (S-05.1); language tabs with each language's starter code, a draft per task and language
+  that survives reload and language switch, reset with confirmation (S-05.2); font size, full
+  screen, Ctrl+Enter / Ctrl+Shift+Enter shown on the buttons (S-05.3); Run with custom input
+  (S-05.4); Run examples with input / expected / actual for a failed one (S-05.5); Submit with
+  an idempotency key, live queued → running status, the verdict reveal (tests tick in, then the
+  verdict and the score), hidden tests shown without data (S-05.6); history, opening an attempt
+  read-only and restoring it into the editor, attempts left and the deadline (S-05.7); the
+  teacher's feedback under a submission (S-05.8). Resizable panes on desktop; Task / Code /
+  Result tabs with pinned actions on a phone.
+- S-04.4 "Try it": a lesson example opens in a runner in place; lesson code is now highlighted.
+- S-07 Assignments: one list across courses, filters by course, type and state kept in the
+  address, sorted by deadline.
+- Gates: lint, typecheck, unit tests, i18n (341 keys × 3), build. `npm run e2e`: 46 passed
+  (23 flows × desktop and phone), with code really running in the sandbox: a correct Python
+  solution run, checked on the examples, submitted and accepted; a wrong answer; a Java
+  compilation error; a hint; "Try it" in a lesson; the work list filters.
+- Screenshots of the task page (light, dark, phone tabs), the runner and the work list — looked at.
+
+Not done yet:
+- **S-06 Quiz** — the whole screen (start, questions with navigator, timer, autosave, resume,
+  result and review). The route `/student/courses/:courseId/quizzes/:quizId` is still a
+  placeholder. This is what remains of F2.
+- A solution in Java and in C++ submitted through the UI (acceptance step 4): only Python is
+  submitted by the flow; Java is exercised by a run (compile error). The backend proved all
+  three end to end; the UI path is the same code.
+- The 429 (rate limit) and 422 (attempt limit) messages: built, not provoked in a flow.
+- The verdict reveal was seen running in the flow, not reviewed frame by frame.
+
+Demo data: the e2e global setup also clears student3's submissions to DAS-S1-A8 before a run.

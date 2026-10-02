@@ -186,6 +186,14 @@
     --session-coursework-tint: #f9e9f1;
     --session-coursework-strong: #8f4a77;
 
+    /* Code: the editor and every code listing */
+    --syntax-comment: #5f6f84;
+    --syntax-keyword: #1a5fad;
+    --syntax-string: #0e7a4a;
+    --syntax-number: #9a5b00;
+    --syntax-function: #6b3fa0;
+    --syntax-type: #00689f;
+
     --shadow-menu-value: 0 4px 16px -2px rgb(7 18 36 / 0.12), 0 2px 6px rgb(7 18 36 / 0.08);
     --shadow-dialog-value: 0 16px 48px -12px rgb(7 18 36 / 0.25);
     --shadow-drag-value: 0 12px 32px -8px rgb(7 18 36 / 0.3);
@@ -231,6 +239,13 @@
     --session-independent-strong: #8fcdee;
     --session-coursework-tint: #38304a;
     --session-coursework-strong: #dca3c4;
+
+    --syntax-comment: #8494ad;
+    --syntax-keyword: #6ea8e8;
+    --syntax-string: #3fbf7f;
+    --syntax-number: #e5a13d;
+    --syntax-function: #c4a1f0;
+    --syntax-type: #7fb8ea;
 
     --shadow-menu-value: 0 4px 16px -2px rgb(0 0 0 / 0.5), 0 2px 6px rgb(0 0 0 / 0.4);
     --shadow-dialog-value: 0 16px 48px -12px rgb(0 0 0 / 0.6);

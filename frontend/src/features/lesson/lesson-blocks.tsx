@@ -1,7 +1,8 @@
-import { useState } from 'react'
-import { Download, ExternalLink, FileText, Maximize2 } from 'lucide-react'
+import { lazy, Suspense, useState } from 'react'
+import { Download, ExternalLink, FileText, Maximize2, Play } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { toApiProblem } from '@/shared/api/errors'
+import { CODE_LANGUAGE_KEY, isEditorLanguage, languageName } from '@/shared/editor/languages'
 import { cn } from '@/shared/lib/cn'
 import { useObjectUrl } from '@/shared/lib/use-object-url'
 import { useSharedPreference } from '@/shared/lib/use-shared-preference'
@@ -14,12 +15,9 @@ import { Skeleton } from '@/shared/ui/skeleton'
 import { headingPrefix, type CodeExample, type LessonBlock, type MediaKind } from './model'
 import { useFileBlobQuery } from './queries'
 
-const CODE_LANGUAGE_KEY = 'aifu-code-language'
-const LANGUAGE_NAME: Record<string, string> = { python: 'Python', java: 'Java', cpp: 'C++' }
-
-function languageName(code: string): string {
-  return LANGUAGE_NAME[code] ?? code
-}
+// The editor is heavy: a lesson downloads it only when it has code to show.
+const HighlightedCode = lazy(() => import('@/shared/editor/highlighted-code'))
+const CodeRunner = lazy(async () => ({ default: (await import('@/features/coding/code-runner')).CodeRunner }))
 
 /** Renders the blocks of a lesson in order. References to practice are shown by the page, at the end. */
 export function LessonBlocks({ blocks }: { blocks: readonly LessonBlock[] }) {
@@ -107,8 +105,18 @@ function Caption({ children }: { children: string }) {
 function CodeExamples({ examples }: { examples: readonly CodeExample[] }) {
   const { t } = useTranslation()
   const [preferred, setPreferred] = useSharedPreference(CODE_LANGUAGE_KEY)
+  const [trying, setTrying] = useState(false)
   const shown = examples.find((example) => example.language === preferred) ?? examples[0]
   if (shown === undefined) return null
+  const runnable = isEditorLanguage(shown.language) ? shown.language : undefined
+  const plain = (
+    <CodeBlock
+      code={shown.code}
+      language={languageName(shown.language)}
+      copyLabel={t('lesson.copy')}
+      copiedLabel={t('lesson.copied')}
+    />
+  )
 
   return (
     <figure className="grid gap-3">
@@ -124,6 +132,7 @@ function CodeExamples({ examples }: { examples: readonly CodeExample[] }) {
                 aria-selected={selected}
                 onClick={() => {
                   setPreferred(example.language)
+                  setTrying(false)
                 }}
                 className={cn(
                   'text-small rounded-sm px-3 py-1.5 font-medium',
@@ -138,12 +147,53 @@ function CodeExamples({ examples }: { examples: readonly CodeExample[] }) {
           })}
         </div>
       )}
-      <CodeBlock
-        code={shown.code}
-        language={languageName(shown.language)}
-        copyLabel={t('lesson.copy')}
-        copiedLabel={t('lesson.copied')}
-      />
+      {runnable === undefined ? (
+        plain
+      ) : trying ? (
+        <Suspense fallback={plain}>
+          <CodeRunner
+            initialCode={shown.code}
+            language={runnable}
+            onClose={() => {
+              setTrying(false)
+            }}
+          />
+        </Suspense>
+      ) : (
+        <CodeBlock
+          code={shown.code}
+          language={languageName(shown.language)}
+          copyLabel={t('lesson.copy')}
+          copiedLabel={t('lesson.copied')}
+          action={
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => {
+                setTrying(true)
+              }}
+            >
+              <Play aria-hidden className="size-4" />
+              {t('lesson.tryIt')}
+            </Button>
+          }
+          body={
+            <Suspense
+              fallback={
+                <pre className="text-small text-text overflow-x-auto p-3.5 font-mono leading-6">
+                  {shown.code}
+                </pre>
+              }
+            >
+              <HighlightedCode
+                code={shown.code}
+                language={runnable}
+                aria-label={languageName(shown.language)}
+              />
+            </Suspense>
+          }
+        />
+      )}
       {shown.explanation !== undefined && (
         <figcaption>
           <RichText html={shown.explanation} className="text-body text-text-muted" />

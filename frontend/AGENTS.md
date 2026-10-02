@@ -64,8 +64,13 @@ e2e/                         support.ts (signIn, texts), *.spec.ts; shots.spec.t
 - **What a feature exposes.** Another feature may import a feature's `model.ts`, `queries.ts` and
   a component meant for reuse (`courses/activity-row.tsx`); pages and their parts stay private.
   The dashboard and the lesson page compose `courses` and `timetable` this way.
-- **Focus pages** (the lesson; later the task and presentation mode) are routes outside
+- **Focus pages** (the lesson, the practice task; later presentation mode) are routes outside
   `ShellRoute`, with their own slim header — see `studentFocusRoutes` in `router.tsx`.
+- **The code editor** (`shared/editor/code-editor.tsx`) is heavy: import it with `lazy()`. What
+  is light — the language list and names — is in `shared/editor/languages.ts`. Its colours are
+  the `--syntax-*` tokens.
+- **Runs and submissions** are followed with `useRunQuery` / `useSubmissionQuery`
+  (`features/coding/queries.ts`): they poll by `pollInterval` and stop when the job is finished.
 - **Dates.** Always through `shared/lib/dates.ts`: campus time zone, and Uzbek written by hand
   (browsers print "M10" for October in Uzbek). Never `toLocaleString` in a component.
 - **Untyped JSON** (`payload`, `settings` of a lesson block) is read with `readString` and

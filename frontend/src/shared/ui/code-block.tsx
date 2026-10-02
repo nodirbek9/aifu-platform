@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type ReactNode } from 'react'
 import { Check, Copy } from 'lucide-react'
 import { cn } from '@/shared/lib/cn'
 
@@ -8,10 +8,22 @@ export type CodeBlockProps = {
   copyLabel: string
   copiedLabel: string
   className?: string
+  /** Replaces the plain listing (a highlighted one); the plain one is the fallback while it loads. */
+  body?: ReactNode
+  /** A control shown in the header before "copy" (the lesson's "Try it"). */
+  action?: ReactNode
 }
 
 /** Read-only code with line numbers and copy. The editable CodeMirror editor is F2. */
-export function CodeBlock({ code, language, copyLabel, copiedLabel, className }: CodeBlockProps) {
+export function CodeBlock({
+  code,
+  language,
+  copyLabel,
+  copiedLabel,
+  className,
+  body,
+  action,
+}: CodeBlockProps) {
   const [copied, setCopied] = useState(false)
   const lines = code.replace(/\n$/, '').split('\n')
 
@@ -33,46 +45,51 @@ export function CodeBlock({ code, language, copyLabel, copiedLabel, className }:
         <span className="text-caption tracking-caption text-text-muted font-medium uppercase">
           {language ?? 'code'}
         </span>
-        <button
-          type="button"
-          onClick={() => {
-            void copy()
-          }}
-          aria-label={copied ? copiedLabel : copyLabel}
-          className={cn(
-            'text-text-muted relative flex size-8 items-center justify-center rounded-sm',
-            'duration-fast hover:bg-surface-raised hover:text-text transition-[background-color,color]',
-            'focus-visible:outline-focus-ring focus-visible:outline-2',
-          )}
-        >
-          <Copy
-            aria-hidden
+        <div className="flex items-center gap-1">
+          {action}
+          <button
+            type="button"
+            onClick={() => {
+              void copy()
+            }}
+            aria-label={copied ? copiedLabel : copyLabel}
             className={cn(
-              'duration-normal absolute size-4 transition-[opacity,scale]',
-              copied ? 'scale-50 opacity-0' : 'scale-100 opacity-100',
+              'text-text-muted relative flex size-8 items-center justify-center rounded-sm',
+              'duration-fast hover:bg-surface-raised hover:text-text transition-[background-color,color]',
+              'focus-visible:outline-focus-ring focus-visible:outline-2',
             )}
-          />
-          <Check
-            aria-hidden
-            className={cn(
-              'text-success duration-normal absolute size-4 transition-[opacity,scale]',
-              copied ? 'scale-100 opacity-100' : 'scale-50 opacity-0',
-            )}
-          />
-        </button>
+          >
+            <Copy
+              aria-hidden
+              className={cn(
+                'duration-normal absolute size-4 transition-[opacity,scale]',
+                copied ? 'scale-50 opacity-0' : 'scale-100 opacity-100',
+              )}
+            />
+            <Check
+              aria-hidden
+              className={cn(
+                'text-success duration-normal absolute size-4 transition-[opacity,scale]',
+                copied ? 'scale-100 opacity-100' : 'scale-50 opacity-0',
+              )}
+            />
+          </button>
+        </div>
       </div>
-      <pre className="text-small text-text overflow-x-auto p-3.5 font-mono leading-6">
-        <code>
-          {lines.map((line, index) => (
-            <span key={index} className="grid grid-cols-[2.5rem_1fr]">
-              <span aria-hidden className="text-text-muted/60 pr-3 text-right select-none">
-                {index + 1}
+      {body ?? (
+        <pre className="text-small text-text overflow-x-auto p-3.5 font-mono leading-6">
+          <code>
+            {lines.map((line, index) => (
+              <span key={index} className="grid grid-cols-[2.5rem_1fr]">
+                <span aria-hidden className="text-text-muted/60 pr-3 text-right select-none">
+                  {index + 1}
+                </span>
+                <span>{line === '' ? ' ' : line}</span>
               </span>
-              <span>{line === '' ? ' ' : line}</span>
-            </span>
-          ))}
-        </code>
-      </pre>
+            ))}
+          </code>
+        </pre>
+      )}
     </div>
   )
 }

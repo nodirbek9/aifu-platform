@@ -22,10 +22,12 @@ const studentRoutes: RouteObject[] = [
     path: 'courses/:courseId',
     lazy: async () => ({ Component: (await import('@/features/courses/course-page')).CoursePage }),
   },
-  // The practice task and the quiz are built in phase F2.
-  { path: 'courses/:courseId/tasks/:taskId', element: <LaterPhasePage section="assignments" /> },
+  // The quiz is the remaining part of phase F2.
   { path: 'courses/:courseId/quizzes/:quizId', element: <LaterPhasePage section="assignments" /> },
-  { path: 'assignments', element: <LaterPhasePage section="assignments" /> },
+  {
+    path: 'assignments',
+    lazy: async () => ({ Component: (await import('@/features/courses/assignments-page')).AssignmentsPage }),
+  },
   { path: 'grades', element: <LaterPhasePage section="grades" /> },
   { path: 'attendance', element: <LaterPhasePage section="attendance" /> },
 ]
@@ -35,6 +37,10 @@ const studentFocusRoutes: RouteObject[] = [
   {
     path: 'courses/:courseId/lessons/:lessonId',
     lazy: async () => ({ Component: (await import('@/features/lesson/lesson-page')).LessonPage }),
+  },
+  {
+    path: 'courses/:courseId/tasks/:taskId',
+    lazy: async () => ({ Component: (await import('@/features/coding/task-page')).TaskPage }),
   },
 ]
 
