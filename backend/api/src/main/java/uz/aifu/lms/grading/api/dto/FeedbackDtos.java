@@ -20,6 +20,15 @@ public final class FeedbackDtos {
     public record UpdateFeedbackRequest(
             FeedbackVisibility visibility, @NotBlank String bodyMarkdown) {}
 
+    /** Feedback as its student reads it: the author by name, never an INTERNAL note. */
+    public record MyFeedbackView(
+            UUID id,
+            String authorName,
+            String bodyMarkdown,
+            String bodySanitizedHtml,
+            Instant createdAt,
+            Instant updatedAt) {}
+
     public record FeedbackView(
             UUID id,
             FeedbackTargetType targetType,

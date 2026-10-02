@@ -54,6 +54,7 @@ public final class Perm {
     public static final String SUBMISSION_CREATE = "SUBMISSION_CREATE";
     public static final String SUBMISSION_SELF_READ = "SUBMISSION_SELF_READ";
     public static final String SUBMISSION_REVIEW = "SUBMISSION_REVIEW";
+    public static final String CODE_RUN = "CODE_RUN";
 
     // grading
     public static final String GRADE_SELF_READ = "GRADE_SELF_READ";

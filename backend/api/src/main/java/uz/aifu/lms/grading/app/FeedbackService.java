@@ -1,15 +1,18 @@
 package uz.aifu.lms.grading.app;
 
 import java.time.Clock;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import uz.aifu.lms.audit.app.AuditService;
 import uz.aifu.lms.audit.domain.AuditAction;
 import uz.aifu.lms.common.content.ContentSanitizer;
 import uz.aifu.lms.common.error.Exceptions;
+import uz.aifu.lms.common.events.NotificationRequestedEvent;
 import uz.aifu.lms.grading.domain.Feedback;
 import uz.aifu.lms.grading.domain.FeedbackTargetType;
 import uz.aifu.lms.grading.domain.FeedbackVisibility;
@@ -26,16 +29,19 @@ public class FeedbackService {
     private final FeedbackRepository feedback;
     private final ContentSanitizer sanitizer;
     private final AuditService audit;
+    private final ApplicationEventPublisher events;
     private final Clock clock;
 
     public FeedbackService(
             FeedbackRepository feedback,
             ContentSanitizer sanitizer,
             AuditService audit,
+            ApplicationEventPublisher events,
             Clock clock) {
         this.feedback = feedback;
         this.sanitizer = sanitizer;
         this.audit = audit;
+        this.events = events;
         this.clock = clock;
     }
 
@@ -59,6 +65,60 @@ public class FeedbackService {
 
     @Transactional
     public Feedback create(
+            FeedbackTargetType targetType,
+            UUID targetId,
+            UUID authorUserId,
+            FeedbackVisibility visibility,
+            String bodyMarkdown,
+            UUID actorId,
+            String ip) {
+        return create(
+                targetType,
+                targetId,
+                authorUserId,
+                visibility,
+                bodyMarkdown,
+                actorId,
+                ip,
+                null,
+                Map.of());
+    }
+
+    /**
+     * Writes feedback and, when the student can read it, notifies them.
+     *
+     * @param studentUserId whose work this is; {@code null} when there is nobody to notify
+     * @param linkContext ids the client needs to open the work (course, task or quiz)
+     */
+    @Transactional
+    public Feedback create(
+            FeedbackTargetType targetType,
+            UUID targetId,
+            UUID authorUserId,
+            FeedbackVisibility visibility,
+            String bodyMarkdown,
+            UUID actorId,
+            String ip,
+            UUID studentUserId,
+            Map<String, Object> linkContext) {
+        Feedback saved =
+                save(targetType, targetId, authorUserId, visibility, bodyMarkdown, actorId, ip);
+        if (studentUserId != null && saved.getVisibility() == FeedbackVisibility.STUDENT_VISIBLE) {
+            Map<String, Object> payload = new LinkedHashMap<>(linkContext);
+            payload.put("targetType", targetType.name());
+            payload.put("targetId", targetId.toString());
+            events.publishEvent(
+                    new NotificationRequestedEvent(
+                            studentUserId,
+                            "TEACHER_FEEDBACK",
+                            payload,
+                            "feedback:" + saved.getId(),
+                            clock.instant()));
+        }
+        return saved;
+    }
+
+    private Feedback save(
             FeedbackTargetType targetType,
             UUID targetId,
             UUID authorUserId,

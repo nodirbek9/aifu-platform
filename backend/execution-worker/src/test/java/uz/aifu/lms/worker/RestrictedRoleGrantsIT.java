@@ -170,6 +170,41 @@ class RestrictedRoleGrantsIT {
         }
     }
 
+    @Test
+    void ungradedRuns_canBeClaimedAndAnswered_butNeverCreatedDeletedOrRewritten() {
+        assertThat(hasTablePrivilege("code_runs", "SELECT")).isTrue();
+        for (String column :
+                new String[] {
+                    "status",
+                    "attempt_count",
+                    "lease_expires_at",
+                    "verdict",
+                    "stdout",
+                    "stderr",
+                    "compile_output",
+                    "completed_at"
+                }) {
+            assertThat(hasColumnPrivilege("code_runs", column, "UPDATE"))
+                    .as("UPDATE on code_runs.%s", column)
+                    .isTrue();
+        }
+        for (String column :
+                new String[] {
+                    "user_id", "coding_task_id", "language_code", "mode", "source_code", "stdin"
+                }) {
+            assertThat(hasColumnPrivilege("code_runs", column, "UPDATE"))
+                    .as("UPDATE on code_runs.%s must be DENIED", column)
+                    .isFalse();
+        }
+        assertThat(hasTablePrivilege("code_runs", "INSERT")).isFalse();
+        assertThat(hasTablePrivilege("code_runs", "DELETE")).isFalse();
+        for (String priv : new String[] {"SELECT", "INSERT", "DELETE"}) {
+            assertThat(hasTablePrivilege("code_run_test_results", priv)).isTrue();
+        }
+        // Which hints a student opened is none of the worker's business.
+        assertThat(hasTablePrivilege("coding_task_hint_reveals", "SELECT")).isFalse();
+    }
+
     private boolean hasTablePrivilege(String table, String privilege) {
         return Boolean.TRUE.equals(
                 jdbc.queryForObject(

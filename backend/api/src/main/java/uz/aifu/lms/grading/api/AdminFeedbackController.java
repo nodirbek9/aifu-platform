@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import java.net.URI;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -104,6 +105,7 @@ public class AdminFeedbackController {
             @Valid @RequestBody CreateFeedbackRequest request, HttpServletRequest http) {
         requireCourseEditorOfTarget(request.targetType(), request.targetId());
         UUID actorId = currentUser.require().id();
+        Recipient recipient = recipientOf(request.targetType(), request.targetId());
         Feedback saved =
                 feedback.create(
                         request.targetType(),
@@ -112,7 +114,9 @@ public class AdminFeedbackController {
                         request.visibility(),
                         request.bodyMarkdown(),
                         actorId,
-                        http.getRemoteAddr());
+                        http.getRemoteAddr(),
+                        recipient.studentUserId(),
+                        recipient.linkContext());
         return ResponseEntity.created(URI.create("/api/v1/teacher/feedback/" + saved.getId()))
                 .body(FeedbackMapper.toView(saved));
     }
@@ -163,5 +167,34 @@ public class AdminFeedbackController {
                     case ENROLLMENT -> enrollments.require(targetId).getCourse().getId();
                 };
         accessGuard.requireCourseEditor(courseId);
+    }
+
+    /** Whom to tell about new feedback, with the ids a client needs to open the work. */
+    private record Recipient(UUID studentUserId, Map<String, Object> linkContext) {}
+
+    private Recipient recipientOf(FeedbackTargetType targetType, UUID targetId) {
+        return switch (targetType) {
+            case SUBMISSION -> {
+                Submission submission = submissions.require(targetId);
+                yield new Recipient(
+                        submission.getEnrollment().getStudent().getId(),
+                        Map.of(
+                                "courseId",
+                                submission.getCodingTask().getCourse().getId().toString(),
+                                "codingTaskId",
+                                submission.getCodingTask().getId().toString()));
+            }
+            case QUIZ_ATTEMPT -> {
+                QuizAttempt attempt = attempts.requireForReview(targetId);
+                yield new Recipient(
+                        attempt.getEnrollment().getStudent().getId(),
+                        Map.of(
+                                "courseId",
+                                attempt.getQuiz().getCourse().getId().toString(),
+                                "quizId",
+                                attempt.getQuiz().getId().toString()));
+            }
+            default -> new Recipient(null, Map.of());
+        };
     }
 }

@@ -84,6 +84,12 @@ public final class CodingTaskDtos {
 
     public record HintView(UUID id, int position, BigDecimal penaltyPercent, String body) {}
 
+    @Schema(description = "A hint as a student sees it: body is null until the hint is opened")
+    public record StudentHintView(UUID id, int position, boolean revealed, String body) {}
+
+    public record ProgrammingLanguageView(
+            String code, String displayName, String versionLabel, String sourceFilename) {}
+
     @Schema(description = "Teacher view of one test case — includes expectedStdout even if hidden")
     public record TestCaseView(
             UUID id,

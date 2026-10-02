@@ -62,7 +62,7 @@ public class SubmissionDataRepository {
         }
     }
 
-    private CodingTaskRecord loadTask(UUID codingTaskId) {
+    public CodingTaskRecord loadTask(UUID codingTaskId) {
         return jdbc.queryForObject(
                 """
                 SELECT id, scoring_strategy, max_points, cpu_time_limit_ms, wall_time_limit_ms,
@@ -80,7 +80,7 @@ public class SubmissionDataRepository {
                 codingTaskId);
     }
 
-    private LanguageRecord loadLanguage(String code) {
+    public LanguageRecord loadLanguage(String code) {
         return jdbc.queryForObject(
                 "SELECT code, executor_key, compile_required, source_filename FROM programming_languages WHERE code = ?",
                 (rs, rowNum) ->
@@ -92,12 +92,25 @@ public class SubmissionDataRepository {
                 code);
     }
 
-    private List<TestCaseRecord> loadTestCases(UUID codingTaskId) {
+    public List<TestCaseRecord> loadTestCases(UUID codingTaskId) {
+        return loadTestCases(codingTaskId, false);
+    }
+
+    /**
+     * The example test cases only: the ones a student can already read on the task page. "Run
+     * examples" must never touch a hidden test.
+     */
+    public List<TestCaseRecord> loadExampleTestCases(UUID codingTaskId) {
+        return loadTestCases(codingTaskId, true);
+    }
+
+    private List<TestCaseRecord> loadTestCases(UUID codingTaskId, boolean examplesOnly) {
         return jdbc.query(
                 """
                 SELECT id, position, stdin, expected_stdout, comparison_mode, numeric_tolerance,
                     weight, cpu_time_limit_ms
-                FROM coding_task_test_cases WHERE coding_task_id = ? ORDER BY position
+                FROM coding_task_test_cases
+                WHERE coding_task_id = ? AND (is_example OR NOT ?) ORDER BY position
                 """,
                 (rs, rowNum) ->
                         new TestCaseRecord(
@@ -109,6 +122,7 @@ public class SubmissionDataRepository {
                                 (BigDecimal) rs.getObject("numeric_tolerance"),
                                 rs.getBigDecimal("weight"),
                                 (Integer) rs.getObject("cpu_time_limit_ms")),
-                codingTaskId);
+                codingTaskId,
+                examplesOnly);
     }
 }

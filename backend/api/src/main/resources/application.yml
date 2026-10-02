@@ -124,3 +124,10 @@ aifu:
     ceiling-memory-limit-kb: ${EXECUTION_DEFAULT_MEMORY_LIMIT_KB:262144}
     max-concurrent-submissions-per-student: 3
     submission-rate-limit-per-minute: 10
+    # Ungraded runs ("Run", "Run examples"): cheaper than a submission, so a looser limit.
+    max-concurrent-runs-per-user: 2
+    run-rate-limit-per-minute: 30
+    max-stdin-bytes: 65536
+    run-retention: PT24H            # a run is scratch work; it is deleted after this
+    verify-run-retention: P30D      # a teacher's "verify solutions" result is kept longer
+    run-give-up-after: PT10M        # a run nobody picked up is failed, so the browser stops polling

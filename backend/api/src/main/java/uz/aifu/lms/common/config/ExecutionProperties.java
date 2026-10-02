@@ -1,6 +1,8 @@
 package uz.aifu.lms.common.config;
 
 import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import java.time.Duration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.validation.annotation.Validated;
 
@@ -20,7 +22,13 @@ public record ExecutionProperties(
         @Min(100) int ceilingWallTimeLimitMs,
         @Min(16384) int ceilingMemoryLimitKb,
         @Min(1) int maxConcurrentSubmissionsPerStudent,
-        @Min(1) int submissionRateLimitPerMinute) {
+        @Min(1) int submissionRateLimitPerMinute,
+        @Min(1) int maxConcurrentRunsPerUser,
+        @Min(1) int runRateLimitPerMinute,
+        @Min(1024) int maxStdinBytes,
+        @NotNull Duration runRetention,
+        @NotNull Duration verifyRunRetention,
+        @NotNull Duration runGiveUpAfter) {
 
     public int clampCpuTimeMs(Integer requested) {
         return requested == null
