@@ -22,3 +22,29 @@ Proposal: add to `NotificationView` the fields `title`, `body` (already localize
 `locale` parameter) and a typed `target {kind, id, courseId?}`; or document the keys of
 `payloadJson` per type in the contract.
 Meanwhile: the bell shows a text per notification type and the time; rows do not link anywhere.
+
+## 2026-10-02 — Courses list and dashboard (S-01, S-03.1) — convenience, not blocking
+
+Needs: the course title, the lead teacher and the lesson counts with each enrollment.
+Today: `GET /enrollments/me` gives ids and the subject code only, so each course costs two more
+calls (`GET /courses/{id}`, `GET /courses/{id}/plan/me`), and finding the course to continue
+costs one `progress/me` call per enrollment.
+Proposal: add `courseTitle` (by `locale`), `leadTeacherName`, `lessonsTotal`, `lessonsCompleted`,
+`continueLessonId`, `lastAccessedAt` to `EnrollmentSummary` for the caller's own enrollments.
+Meanwhile: the screens make the extra calls; each card loads on its own.
+
+## 2026-10-02 — Lesson page (S-04) — convenience, not blocking
+
+Needs: the course of a lesson, to open a lesson by its id alone.
+Today: `LessonDetail` has `moduleId` but no `courseId`; the frontend keeps the course in the
+address (`/student/courses/:courseId/lessons/:lessonId`).
+Proposal: add `courseId` to `LessonDetail`.
+Meanwhile: lesson links always carry the course id.
+
+## 2026-10-02 — Dashboard on a day without classes (S-01.1)
+
+Needs: the date of the next class when today has none.
+Today: `GET /timetable/today` returns only today; the next class needs week-by-week calls.
+Proposal: add `nextClass` (a `ClassView`) to the answer of `GET /timetable/today`.
+Meanwhile: the empty day links to the timetable page.
+

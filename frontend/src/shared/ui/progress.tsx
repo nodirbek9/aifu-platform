@@ -7,9 +7,11 @@ export type ProgressBarProps = {
   max?: number
   label?: string
   className?: string
+  /** The fill, when it is not the primary colour (a session-type colour in an hour budget). */
+  barClassName?: string
 }
 
-export function ProgressBar({ value, max = 100, label, className }: ProgressBarProps) {
+export function ProgressBar({ value, max = 100, label, className, barClassName }: ProgressBarProps) {
   const percent = Math.min(100, Math.max(0, (value / max) * 100))
   return (
     <div className={cn('flex items-center gap-3', className)}>
@@ -20,7 +22,10 @@ export function ProgressBar({ value, max = 100, label, className }: ProgressBarP
         className="bg-surface-sunken relative h-1.5 flex-1 overflow-hidden rounded-full"
       >
         <ProgressPrimitive.Indicator
-          className="bg-primary duration-slow ease-emphasized h-full rounded-full transition-[width]"
+          className={cn(
+            'bg-primary duration-slow ease-emphasized h-full rounded-full transition-[width]',
+            barClassName,
+          )}
           style={{ width: `${percent}%` }}
         />
       </ProgressPrimitive.Root>

@@ -1,3 +1,5 @@
+import { mkdirSync } from 'node:fs'
+import path from 'node:path'
 import { expect, type APIRequestContext, type Page, type TestInfo } from '@playwright/test'
 import en from '../src/shared/i18n/en.json' with { type: 'json' }
 import ru from '../src/shared/i18n/ru.json' with { type: 'json' }
@@ -52,4 +54,18 @@ export async function signIn(page: Page, username: string): Promise<void> {
 /** Opens the profile menu of the top bar. */
 export async function openProfileMenu(page: Page): Promise<void> {
   await page.getByRole('button', { name: new RegExp(`^${uz.common.profile}`) }).click()
+}
+
+/**
+ * Saves a full-page review screenshot to e2e/__screenshots__/<phase>/<name>.png once the page
+ * has settled: no request in flight, no skeleton left, fonts loaded, entrance animations over.
+ */
+export async function shot(page: Page, phase: string, name: string): Promise<void> {
+  const directory = path.join(import.meta.dirname, '__screenshots__', phase)
+  mkdirSync(directory, { recursive: true })
+  await page.waitForLoadState('networkidle')
+  await expect(page.locator('.animate-pulse')).toHaveCount(0)
+  await page.evaluate(() => document.fonts.ready)
+  await page.waitForTimeout(700)
+  await page.screenshot({ path: path.join(directory, `${name}.png`), fullPage: true })
 }

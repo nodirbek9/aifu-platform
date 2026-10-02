@@ -1,14 +1,12 @@
-import { mkdirSync } from 'node:fs'
-import path from 'node:path'
 import { test, type Page } from '@playwright/test'
-import { resetLocale, signIn, texts, type Locale } from './support'
+import { resetLocale, shot as save, signIn, texts, type Locale } from './support'
 
 /**
  * Review screenshots (`npm run shots`), not assertions: every F0 screen at this project's
  * width, in both themes and three languages, saved under e2e/__screenshots__/f0/.
  * They are looked at by a person (or an agent) against docs/04-DESIGN-BRIEF.md.
  */
-const OUT = path.join(import.meta.dirname, '__screenshots__', 'f0')
+const shot = (page: Page, project: string, name: string) => save(page, 'f0', `${name}.${project}`)
 const THEMES = ['light', 'dark'] as const
 const LOCALES: readonly Locale[] = ['uz', 'ru', 'en']
 
@@ -20,14 +18,6 @@ async function prefer(page: Page, theme: (typeof THEMES)[number], locale: Locale
     },
     [theme, locale] as const,
   )
-}
-
-async function shot(page: Page, project: string, name: string): Promise<void> {
-  mkdirSync(OUT, { recursive: true })
-  // let fonts and the entrance animation settle
-  await page.evaluate(() => document.fonts.ready)
-  await page.waitForTimeout(1600)
-  await page.screenshot({ path: path.join(OUT, `${name}.${project}.png`), fullPage: true })
 }
 
 test.describe('@shots F0', () => {

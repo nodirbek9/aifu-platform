@@ -5,7 +5,7 @@ The single record of progress (AGENTS.md §8). A new session resumes from this f
 | Phase | What | Status |
 |---|---|---|
 | F0 | Foundation: design system, shell, auth | **reported** 2026-10-02 (the owner asked to go on to F1 without waiting) |
-| F1 | Student: dashboard, courses, lesson | **in progress** |
+| F1 | Student: dashboard, courses, lesson | **reported** 2026-10-02 |
 | F2 | Student: practice task, quiz, work list | not started |
 | F3 | Student: timetable, grades, attendance, the rest | not started |
 | F4a | Teacher: timetable, class session, journal | not started |
@@ -59,7 +59,45 @@ per address (a campus shares one address), `requestId: "null"` on 401 / 403, a 5
 `X-Request-Id` with stripped characters.
 Design decisions recorded: DESIGN-DECISIONS.md §10.
 
-## F1 — Student: dashboard, courses, lesson (in progress)
+## F1 — report
 
-Spec: S-01, S-03, S-04 (S-04.4 "Try it" belongs to F2). Demo account: student3.
-Plan and state of the work are kept below as the phase goes on.
+Spec IDs done:
+- S-01 dashboard: today's classes with the current / next one marked (S-01.1), continue learning
+  (S-01.2), the next five deadlines with overdue in red (S-01.3), recent grades (S-01.4), the
+  name and group as the headline, four blocks that load and fail independently (S-01.5).
+- S-03 courses: the list with code, teacher, term, progress and next lesson (S-03.1); the course
+  page with Plan / Syllabus / Work / Grades, the tab in the address (S-03.2); "Continue" (S-03.3).
+- S-04 lesson: reading column, table of contents with scroll-spy (rail on desktop, drawer on a
+  phone), reading progress line, previous / next (S-04.1); every block type of the API guide §5
+  (S-04.3); "Mark as done" saved on the server and shown in the plan (S-04.5); language switch
+  that keeps the text and the position, with a fallback note (S-04.6); the locked state.
+
+Verified (run, not assumed):
+- lint, typecheck, 39 unit tests, i18n (257 keys × 3), build — pass.
+- `npm run e2e`: 36 passed (18 flows × desktop and phone) against the real backend, including:
+  dashboard blocks filled with real data; courses → course → syllabus → work, tab kept on
+  reload; continue → lesson → mark as done → the plan shows it; language switch on the lesson;
+  a lesson that does not exist.
+- Screenshots of the dashboard, courses, course (plan, syllabus, work) and two lessons at 1440
+  and 390, light and dark, plus Russian — looked at.
+
+Not verified / not done:
+- S-01.1 "next class date" on a day without classes: the block links to the timetable instead;
+  the date comes with the week view in F3.
+- S-04.2 syntax highlighting of code examples and S-04.4 "Try it": with the code editor, in F2.
+- S-04.2 self-check "click to reveal": the content has no such structure yet (the questions are
+  a callout); to be settled with the content format.
+- IMAGE / VIDEO / AUDIO / FILE / EMBED blocks are built from the contract but the demo database
+  has none (one DIAGRAM), so they were not seen with real data. Tablet width was not reviewed.
+- The locked-lesson state was not seen: no lesson of the demo data has prerequisites.
+
+Found and fixed: Chromium has no Uzbek calendar data (October printed as "M10") — Uzbek dates
+are now written by hand in `shared/lib/dates.ts`.
+Backend requests added: none that block; three conveniences are listed in BACKEND-REQUESTS.md.
+Demo data: the e2e global setup clears student3's lesson progress before each run (the API does
+not let a student un-complete a lesson).
+
+## F2 — Student: practice task, quiz, work list (next)
+
+Spec: S-05, S-04.4, S-06, S-07. The task and quiz routes exist as placeholders
+(`/student/courses/:courseId/tasks/:taskId`, `…/quizzes/:quizId`).

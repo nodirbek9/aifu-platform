@@ -5,16 +5,9 @@ import { useTheme } from '@/app/theme'
 import { useAuth } from '@/features/auth/auth-context'
 import type { CurrentUser, Role } from '@/features/auth/model'
 import { NotificationBell } from '@/features/notifications/notification-bell'
-import { SUPPORTED_LOCALES } from '@/shared/i18n'
 import { useLocale } from '@/shared/i18n/use-locale'
 import { cn } from '@/shared/lib/cn'
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/shared/ui/dropdown-menu'
-import { LanguageSwitch } from '@/shared/ui/language-switch'
+import { LocaleControl } from '@/shared/ui/locale-control'
 import { ShieldEmblem } from '@/shared/ui/shield'
 import { ThemeSwitch } from '@/shared/ui/theme-switch'
 import { activeNavItem } from './nav'
@@ -67,36 +60,7 @@ export function TopBar({ user, role, onOpenPalette }: TopBarProps) {
         </button>
       </div>
 
-      <LanguageSwitch value={locale} onChange={changeLocale} className="hidden md:inline-flex" />
-
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
-          <button
-            type="button"
-            aria-label={`${t('common.language')}: ${locale.toUpperCase()}`}
-            className={cn(
-              'text-small text-text-muted flex h-11 min-w-11 items-center justify-center rounded-sm px-2 font-semibold md:hidden',
-              'duration-fast ease-standard hover:bg-surface-sunken hover:text-text transition-[background-color,color]',
-              'focus-visible:outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-2',
-            )}
-          >
-            {locale.toUpperCase()}
-          </button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="min-w-28">
-          {SUPPORTED_LOCALES.map((option) => (
-            <DropdownMenuItem
-              key={option}
-              onSelect={() => {
-                changeLocale(option)
-              }}
-            >
-              {option.toUpperCase()}
-              {option === locale && <span aria-hidden className="bg-primary ml-auto size-1.5 rounded-full" />}
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <LocaleControl value={locale} onChange={changeLocale} />
 
       <ThemeSwitch value={theme} onChange={setTheme} className="hidden md:inline-flex" />
       <NotificationBell />

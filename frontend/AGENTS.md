@@ -61,6 +61,15 @@ e2e/                         support.ts (signIn, texts), *.spec.ts; shots.spec.t
   command palette, phone title all read it). `RequireRole` shows "no access" for a role the user
   lacks and switches the active role for one they hold.
 - **Navigation after login** is decided by `PublicOnly`, not by the login form.
+- **What a feature exposes.** Another feature may import a feature's `model.ts`, `queries.ts` and
+  a component meant for reuse (`courses/activity-row.tsx`); pages and their parts stay private.
+  The dashboard and the lesson page compose `courses` and `timetable` this way.
+- **Focus pages** (the lesson; later the task and presentation mode) are routes outside
+  `ShellRoute`, with their own slim header — see `studentFocusRoutes` in `router.tsx`.
+- **Dates.** Always through `shared/lib/dates.ts`: campus time zone, and Uzbek written by hand
+  (browsers print "M10" for October in Uzbek). Never `toLocaleString` in a component.
+- **Untyped JSON** (`payload`, `settings` of a lesson block) is read with `readString` and
+  narrowed into a discriminated union in the feature's `model.ts` — see `lesson/model.ts`.
 - **State.** Server data only in TanStack Query. Browser preferences in `localStorage` under
   `aifu-*` keys (`aifu-theme`, `aifu-locale`, `aifu-active-role`, `aifu-rail-expanded`,
   `aifu-refresh-token`).
@@ -71,6 +80,7 @@ e2e/                         support.ts (signIn, texts), *.spec.ts; shots.spec.t
 - **E2E.** Real backend, no interception. `signIn(page, account)` first resets the account's
   saved language to Uzbek through the API. Tests run serially (one worker): the refresh token is
   single use. A wrong-password test uses an account that does not exist, so nobody gets locked.
+  `e2e/global-setup.ts` clears the demo student's lesson progress in the dev database before a run.
 
 ## Decisions made while building (beyond DESIGN-DECISIONS.md)
 

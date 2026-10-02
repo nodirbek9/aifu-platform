@@ -8,7 +8,7 @@ test.describe('signing in (G-08, G-09)', () => {
     await signIn(page, 'student3')
 
     await expect(page).toHaveURL(/\/student$/)
-    await expect(page.getByRole('heading', { level: 1, name: uz.nav.home })).toBeVisible()
+    await expect(page.getByRole('heading', { level: 1, name: 'Dev Student Three' })).toBeVisible()
     const navigation = page.getByRole('navigation', { name: uz.common.mainNavigation })
     await expect(navigation.getByRole('link', { name: uz.nav.courses })).toBeVisible()
     await expect(navigation.getByRole('link', { name: uz.nav.adminUsers })).toHaveCount(0)
@@ -141,7 +141,7 @@ test.describe('language and theme (G-01, G-05)', () => {
     } else {
       await page.getByRole('radio', { name: 'RU' }).click()
     }
-    await expect(page.getByRole('heading', { level: 1, name: ru.nav.home })).toBeVisible()
+    await expect(page.getByRole('heading', { level: 3, name: ru.dashboard.todayTitle })).toBeVisible()
 
     // a fresh browser has no local choice: the language comes from the account
     await expect
