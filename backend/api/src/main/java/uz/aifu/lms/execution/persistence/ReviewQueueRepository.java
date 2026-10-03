@@ -1,12 +1,12 @@
 package uz.aifu.lms.execution.persistence;
 
-import java.math.BigDecimal;
-import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
+import uz.aifu.lms.execution.domain.ReviewQueueEntry;
+import uz.aifu.lms.execution.domain.ReviewQueueFilter;
 
 /**
  * The submissions of a course as a teacher reviews them: across every coding task of the course,
@@ -16,29 +16,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class ReviewQueueRepository {
-
-    public record Item(
-            UUID submissionId,
-            UUID codingTaskId,
-            String taskTitle,
-            UUID studentUserId,
-            String studentFullName,
-            String groupCode,
-            int attemptNumber,
-            String languageCode,
-            String status,
-            String verdict,
-            BigDecimal score,
-            BigDecimal maxScore,
-            Instant submittedAt,
-            boolean hasFeedback) {}
-
-    public record Filter(
-            UUID taskId,
-            String verdict,
-            String groupCode,
-            boolean needsFeedback,
-            boolean latestOnly) {}
 
     private static final String FROM =
             """
@@ -83,7 +60,8 @@ public class ReviewQueueRepository {
         this.jdbc = jdbc;
     }
 
-    public List<Item> find(UUID courseId, Filter filter, String locale, int limit, long offset) {
+    public List<ReviewQueueEntry> find(
+            UUID courseId, ReviewQueueFilter filter, String locale, int limit, long offset) {
         return jdbc.query(
                 SELECT,
                 params(courseId, filter)
@@ -91,7 +69,7 @@ public class ReviewQueueRepository {
                         .addValue("limit", limit)
                         .addValue("offset", offset),
                 (rs, rowNum) ->
-                        new Item(
+                        new ReviewQueueEntry(
                                 rs.getObject("id", UUID.class),
                                 rs.getObject("coding_task_id", UUID.class),
                                 rs.getString("task_title"),
@@ -110,12 +88,12 @@ public class ReviewQueueRepository {
                                 rs.getBoolean("has_feedback")));
     }
 
-    public long count(UUID courseId, Filter filter) {
+    public long count(UUID courseId, ReviewQueueFilter filter) {
         Long total = jdbc.queryForObject(COUNT, params(courseId, filter), Long.class);
         return total == null ? 0 : total;
     }
 
-    private static MapSqlParameterSource params(UUID courseId, Filter filter) {
+    private static MapSqlParameterSource params(UUID courseId, ReviewQueueFilter filter) {
         return new MapSqlParameterSource()
                 .addValue("courseId", courseId)
                 .addValue("taskId", filter.taskId())

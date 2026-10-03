@@ -4180,6 +4180,8 @@ export interface components {
         /** @description One student's row of a course gradebook */
         CourseGradebookRow: {
             grades?: components["schemas"]["EnrollmentGradeSummary"];
+            /** @description The student's group, when they have one */
+            groupCode?: string;
             studentFullName?: string;
             /** Format: uuid */
             studentUserId?: string;

@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.i18n.LocaleResolver;
-import uz.aifu.lms.execution.persistence.ReviewQueueRepository;
-import uz.aifu.lms.execution.persistence.ReviewQueueRepository.Filter;
+import uz.aifu.lms.execution.app.ReviewQueueService;
+import uz.aifu.lms.execution.domain.ReviewQueueFilter;
 import uz.aifu.lms.iam.app.access.AccessGuard;
 
 @RestController
@@ -45,12 +45,12 @@ public class TeacherReviewQueueController {
             Instant submittedAt,
             boolean hasFeedback) {}
 
-    private final ReviewQueueRepository queue;
+    private final ReviewQueueService queue;
     private final AccessGuard accessGuard;
     private final LocaleResolver localeResolver;
 
     public TeacherReviewQueueController(
-            ReviewQueueRepository queue, AccessGuard accessGuard, LocaleResolver localeResolver) {
+            ReviewQueueService queue, AccessGuard accessGuard, LocaleResolver localeResolver) {
         this.queue = queue;
         this.accessGuard = accessGuard;
         this.localeResolver = localeResolver;
@@ -78,23 +78,23 @@ public class TeacherReviewQueueController {
         accessGuard.requireCourseEditor(courseId);
         int safePage = Math.max(page, 0);
         int safeSize = Math.min(Math.max(size, 1), MAX_PAGE_SIZE);
-        Filter filter =
-                new Filter(
+        ReviewQueueFilter filter =
+                new ReviewQueueFilter(
                         taskId,
                         blankToNull(verdict),
                         blankToNull(groupCode),
                         needsFeedback,
                         latestOnly);
-        long total = queue.count(courseId, filter);
+        ReviewQueueService.Page found =
+                queue.find(
+                        courseId,
+                        filter,
+                        localeResolver.preferred(locale, http, null, null).code(),
+                        safeSize,
+                        safePage);
+        long total = found.total();
         List<ReviewQueueItem> content =
-                queue
-                        .find(
-                                courseId,
-                                filter,
-                                localeResolver.preferred(locale, http, null, null).code(),
-                                safeSize,
-                                (long) safePage * safeSize)
-                        .stream()
+                found.content().stream()
                         .map(
                                 i ->
                                         new ReviewQueueItem(

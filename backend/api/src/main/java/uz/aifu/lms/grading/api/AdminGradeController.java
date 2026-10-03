@@ -37,6 +37,7 @@ import uz.aifu.lms.grading.api.dto.GradeDtos.VoidGradeRequest;
 import uz.aifu.lms.grading.app.GradeEntryService;
 import uz.aifu.lms.grading.domain.GradeEntry;
 import uz.aifu.lms.iam.app.access.AccessGuard;
+import uz.aifu.lms.iam.app.user.StudentDirectory;
 
 /**
  * A teacher's gradebook for one course: manual entry/override, void, and the current roster. {@code
@@ -56,18 +57,21 @@ public class AdminGradeController {
     private final AccessGuard accessGuard;
     private final PageableSupport pageableSupport;
     private final CurrentUserProvider currentUser;
+    private final StudentDirectory studentDirectory;
 
     public AdminGradeController(
             GradeEntryService grades,
             EnrollmentService enrollments,
             AccessGuard accessGuard,
             PageableSupport pageableSupport,
-            CurrentUserProvider currentUser) {
+            CurrentUserProvider currentUser,
+            StudentDirectory studentDirectory) {
         this.grades = grades;
         this.enrollments = enrollments;
         this.accessGuard = accessGuard;
         this.pageableSupport = pageableSupport;
         this.currentUser = currentUser;
+        this.studentDirectory = studentDirectory;
     }
 
     @GetMapping("/api/v1/teacher/courses/{courseId}/grades")
@@ -108,6 +112,9 @@ public class AdminGradeController {
                                 new CourseGradebookRow(
                                         e.getStudent().getId(),
                                         e.getStudent().getFullName(),
+                                        studentDirectory
+                                                .groupCodeOf(e.getStudent().getId())
+                                                .orElse(null),
                                         GradeMapper.toSummary(
                                                 grades.gradebookFor(e.getId(), code))))
                 .toList();

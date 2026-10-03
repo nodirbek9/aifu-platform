@@ -1315,6 +1315,10 @@
           "grades" : {
             "$ref" : "#/components/schemas/EnrollmentGradeSummary"
           },
+          "groupCode" : {
+            "description" : "The student's group, when they have one",
+            "type" : "string"
+          },
           "studentFullName" : {
             "type" : "string"
           },

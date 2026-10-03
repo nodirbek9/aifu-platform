@@ -108,7 +108,10 @@ public final class GradeDtos {
 
     @Schema(description = "One student's row of a course gradebook")
     public record CourseGradebookRow(
-            UUID studentUserId, String studentFullName, EnrollmentGradeSummary grades) {}
+            UUID studentUserId,
+            String studentFullName,
+            @Schema(description = "The student's group, when they have one") String groupCode,
+            EnrollmentGradeSummary grades) {}
 
     @Schema(description = "One student's grade summary, for a teacher's course roster")
     public record StudentGradeSummary(
