@@ -133,3 +133,17 @@ export function clearAdminLeftovers(): void {
     delete from rooms where number like 'E2E%';
     delete from holidays where name like 'E2E %';`)
 }
+
+/**
+ * Undoes the builder flow: its draft timetables go, its groups and room go, and the demo
+ * timetable the flow's publishing archived is published again (one published timetable per term).
+ */
+export function restoreDemoTimetable(): void {
+  runSql(`
+    delete from timetables where name like 'E2E%';
+    delete from student_groups where code like 'E2E-T%';
+    delete from rooms where number like 'E2E-T%';
+    update timetables set status = 'PUBLISHED'
+    where name = '2026/2027, 1-semestr'
+      and not exists (select 1 from timetables other where other.status = 'PUBLISHED' and other.term_id = timetables.term_id);`)
+}

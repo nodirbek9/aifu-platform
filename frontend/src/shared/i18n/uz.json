@@ -85,10 +85,6 @@
     "passwordTooShort": "Parol kamida 10 ta belgidan iborat boʻlishi kerak",
     "passwordTooLong": "Parol 72 ta belgidan oshmasligi kerak"
   },
-  "home": {
-    "laterPhaseTitle": "Bu boʻlim keyingi bosqichda quriladi",
-    "laterPhaseBody": "Hozircha navigatsiyadagi boshqa boʻlimlardan foydalaning."
-  },
   "system": {
     "notFoundTitle": "Sahifa topilmadi",
     "notFoundBody": "Bunday manzil mavjud emas yoki koʻchirilgan.",
@@ -1477,6 +1473,116 @@
     },
     "importPassword": "Yangi talabalar uchun boshlangʻich parol (kamida 8 belgi; birinchi kirishda almashtiriladi)",
     "hoursOf": "{{kind}}: soat"
+  },
+  "builder": {
+    "addChange": "Oʻzgarishni qoʻshish",
+    "addClass": "Dars qoʻshish",
+    "addHere": "{{day}}, {{pair}}-juftlikka dars qoʻshish",
+    "byGroup": "Guruh",
+    "byRoom": "Xona",
+    "byTeacher": "Oʻqituvchi",
+    "changeKind": "Oʻzgarish",
+    "checking": "Tekshirilmoqda…",
+    "context": "Darsni katakka sudrang yoki bosing. Server har bir oʻzgarishni toʻqnashuvlarga tekshiradi.",
+    "copyFrom": "Nusxa olish",
+    "copyName": "{{name}} (qoralama)",
+    "copyToDraft": "Qoralama nusxa",
+    "courseFirst": "Avval kursni tanlang",
+    "day": "Kun",
+    "deleteChange": "Oʻzgarishni oʻchirish",
+    "deleteClass": "Darsni oʻchirish",
+    "draggableClass": "sudraladigan dars",
+    "editClass": "Dars",
+    "empty": "Boʻsh jadval",
+    "fits": "Toʻqnashuv yoʻq — saqlash mumkin",
+    "freeDay": "Dars yoʻq",
+    "groups": "Guruhlar",
+    "hoursOf": "{{scheduled}} / {{planned}} soat",
+    "load": "Yuklama",
+    "loadBody": "Rejadagi va jadvaldagi soatlar",
+    "loadNotForRooms": "Yuklama guruh yoki oʻqituvchi uchun koʻrsatiladi.",
+    "moved": "«{{title}}» koʻchirildi",
+    "newDate": "Yangi sana",
+    "newDraft": "Yangi qoralama",
+    "newDraftBody": "Qoralamani hech kim koʻrmaydi, uni eʼlon qilmaguningizcha.",
+    "noLoadLines": "Bu yerga yuklama kiritilmagan.",
+    "noRoom": "Xonasiz",
+    "noTimetable": "Jadval yoʻq",
+    "noTimetableBody": "Semestr uchun yangi qoralama yarating.",
+    "note": "Izoh",
+    "onDate": "Qaysi sana",
+    "oneOff": "Bir martalik oʻzgarishlar",
+    "overrideReason": "Ogohlantirishga qaramay saqlash sababi",
+    "pair": "Juftlik",
+    "panelBody": "Server toʻqnashuvlarni saqlashdan oldin tekshiradi.",
+    "publishedReadOnly": "Eʼlon qilingan jadval faqat koʻrish uchun. Oʻzgartirish uchun qoralama nusxa oling.",
+    "refused": "Bu katakka qoʻyib boʻlmaydi",
+    "refusedBecause": "{{what}}: {{other}}",
+    "saveAnyway": "Baribir saqlash",
+    "subgroup": "Kichik guruh",
+    "timetable": "Jadval",
+    "undoAdd": "Qoʻshishni bekor qilish",
+    "undoDelete": "Oʻchirishni bekor qilish",
+    "undoEdit": "Oʻzgarishni bekor qilish",
+    "undoMove": "Koʻchirishni bekor qilish",
+    "undoReason": "Bekor qilish",
+    "undone": "Bekor qilindi",
+    "unscheduledHours": "Jadvalga qoʻyilmagan: {{hours}} soat",
+    "validFrom": "Qachondan",
+    "validTo": "Qachongacha",
+    "view": "Koʻrinish",
+    "weekOf": "Hafta (istalgan kuni)",
+    "weekPreview": "Hafta koʻrinishi",
+    "weekPreviewBody": "Aniq hafta: bayramlar va bir martalik oʻzgarishlar bilan.",
+    "weeks": "Haftalar",
+    "parity": {
+      "EVERY": "Har hafta",
+      "ODD": "Toq",
+      "EVEN": "Juft"
+    },
+    "days": {
+      "1": "Dushanba",
+      "2": "Seshanba",
+      "3": "Chorshanba",
+      "4": "Payshanba",
+      "5": "Juma",
+      "6": "Shanba"
+    },
+    "conflict": {
+      "TEACHER": "Oʻqituvchi band",
+      "ROOM": "Xona band",
+      "GROUP": "Guruh band"
+    },
+    "warning": {
+      "ROOM_CAPACITY": "Xona guruh uchun kichik",
+      "ROOM_TYPE": "Xona turi bu mashgʻulotga mos emas",
+      "ROOM_INACTIVE": "Xona faol emas",
+      "TEACHER_NOT_ASSIGNED": "Oʻqituvchi bu kursga biriktirilmagan",
+      "COURSE_OTHER_TERM": "Kurs boshqa semestrga tegishli"
+    },
+    "status": {
+      "DRAFT": "Qoralama",
+      "PUBLISHED": "Eʼlon qilingan",
+      "ARCHIVED": "Arxivda"
+    },
+    "which": {
+      "group": "Qaysi guruh",
+      "teacher": "Qaysi oʻqituvchi",
+      "room": "Qaysi xona"
+    },
+    "kind": {
+      "CANCELLED": "Bekor qilinadi",
+      "MOVED": "Koʻchiriladi",
+      "REPLACED": "Xona almashadi"
+    },
+    "confirm": {
+      "publishTitle": "«{{name}}» eʼlon qilinsinmi?",
+      "publishBody": "Talabalar va oʻqituvchilar endi shu jadvalni koʻradi ({{count}} dars). Shu semestrning avvalgi jadvali arxivga oʻtadi.",
+      "archiveTitle": "«{{name}}» arxivlansinmi?",
+      "archiveBody": "Arxivdagi jadval hech kimga koʻrinmaydi va oʻzgartirilmaydi.",
+      "deleteTitle": "«{{name}}» oʻchirilsinmi?",
+      "deleteBody": "Qoralama va undagi {{count}} dars oʻchiriladi."
+    }
   },
   "errors": {
     "NETWORK_ERROR": "Tarmoq xatosi — internet aloqasini tekshiring",

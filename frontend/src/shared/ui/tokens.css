@@ -113,6 +113,8 @@
   --animate-dialog-in: dialog-in 200ms var(--ease-emphasized);
   --animate-toast-in: toast-in 200ms var(--ease-emphasized);
   --animate-sheet-in: sheet-in 240ms var(--ease-emphasized);
+  /* A refused drop: the card shakes once and stays where it was */
+  --animate-shake: shake 360ms var(--ease-standard);
 
   @keyframes menu-in {
     from {
@@ -140,6 +142,16 @@
   @keyframes sheet-in {
     from {
       transform: translateX(100%);
+    }
+  }
+  @keyframes shake {
+    20%,
+    60% {
+      transform: translateX(-4px);
+    }
+    40%,
+    80% {
+      transform: translateX(4px);
     }
   }
 }

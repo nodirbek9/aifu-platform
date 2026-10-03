@@ -41,7 +41,15 @@ export function Select({
           {label}
         </label>
       )}
-      <SelectPrimitive.Root value={value} onValueChange={onValueChange} disabled={disabled}>
+      <SelectPrimitive.Root
+        value={value}
+        // Radix reports "" when its hidden native select is reset (its options were not there
+        // yet): that is never a choice the user made, and it would erase the real value
+        onValueChange={(next) => {
+          if (next !== '') onValueChange?.(next)
+        }}
+        disabled={disabled}
+      >
         <SelectPrimitive.Trigger
           id={selectId}
           aria-invalid={error !== undefined || undefined}

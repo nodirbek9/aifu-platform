@@ -2,7 +2,6 @@ import { createBrowserRouter, type RouteObject } from 'react-router'
 import { ChangePasswordPage } from '@/features/auth/change-password-page'
 import { LoginPage } from '@/features/auth/login-page'
 import { PublicOnly, RequireAuth, RequireRole, RoleHomeRedirect, ShellRoute } from './guards'
-import { LaterPhasePage } from './later-phase-page'
 import { NotFoundPage, RouteErrorPage } from './system-pages'
 
 // Pages are separate chunks: a role downloads only its own screens, when it opens them.
@@ -161,7 +160,10 @@ const adminRoutes: RouteObject[] = [
       Component: (await import('@/features/admin/admin-dashboard-page')).AdminDashboardPage,
     }),
   },
-  { path: 'timetable', element: <LaterPhasePage section="adminTimetable" /> },
+  {
+    path: 'timetable',
+    lazy: async () => ({ Component: (await import('@/features/builder/builder-page')).BuilderPage }),
+  },
   {
     path: 'users',
     lazy: async () => ({ Component: (await import('@/features/admin/users-page')).UsersPage }),

@@ -11,7 +11,7 @@ The single record of progress (AGENTS.md §8). A new session resumes from this f
 | F4a | Teacher: timetable, class session, journal | **reported** 2026-10-03 |
 | F4b | Teacher: authoring, review, gradebook, analytics | **reported** 2026-10-03 |
 | F5a | Admin: reference data, users, structure, audit | **reported** 2026-10-03 |
-| F5b | Admin: timetable builder | not started |
+| F5b | Admin: timetable builder | **reported** 2026-10-03 |
 | F6 | Polish, motion, accessibility, e2e, packaging | not started |
 
 Who built what: F0 step 1 and the first half of step 2 (scaffold, API layer, tokens, i18n,
@@ -437,4 +437,56 @@ Not verified / not done:
 - The e2e suite runs against the Vite dev server, which now and then reloads a page while it
   optimises a newly loaded module: one flow in a long run may time out on the sign-in form and
   pass on its own. F6 runs the flows against the production build.
+
+## F5b — report
+
+Spec IDs done: A-02.1 – A-02.8.
+
+Plan as built (`features/builder`): the state lives in the address — `tt` (timetable), `view`
+(group / teacher / room), `id` (which one), `parity` — so a link opens the same grid; the panel,
+the drag and the last undo are local. Keyboard model: a class card is a button (Enter opens it);
+Space lifts it, the arrows move it cell by cell (to the nearest cell in that direction, measured
+from the cell it is over), Space drops it, Escape puts it back. 1440: the grid (days × pairs)
+with the load panel beside it, the class panel as a side sheet. 390: a list of the days with an
+edit sheet (read-mostly, as the brief asks).
+
+Built:
+- A-02.1 Timetables: choose one (draft / published / archived beyond doubt: a badge and, when
+  published, a read-only notice), a new draft (empty or a copy of another), a draft copy of the
+  published one, rename, publish (confirm, says the term's previous one is archived), archive,
+  delete a draft.
+- A-02.2 One grid seen by group, teacher or room; every / odd / even week.
+- A-02.3 / A-02.4 The class panel: course of the term, kind of class (those with hours in the
+  course), teacher (from the course's teachers), one or more groups, room (type and capacity
+  shown), day, pair, weeks, dates, subgroup, note. While it is filled in, the server's check
+  answers: a clash names the other class (teacher / room / group busy, with its course, teacher,
+  groups, room, day and pair) and blocks saving; a warning (room too small, wrong room type…)
+  can be overridden with a typed reason.
+- A-02.5 Drag and drop (dnd-kit): the class lifts, the cell under it turns green / amber / red as
+  the check answers, a refused drop shakes the card once and says why (toast and live region), a
+  drop onto a warning opens the panel for the reason; the last change (add, edit, move, delete)
+  can be undone.
+- A-02.6 The load panel: per course and kind of class, planned against scheduled hours.
+- A-02.7 One-off changes of a class for a date (cancel, move to a date and pair, another room)
+  with a reason; listed and deletable; a week preview of any date as students and teachers see it.
+- A-02.8 Print (only the grid and its title) and Excel of the grid on screen.
+- Fixed on the way: the shared `Select` passed on an empty value Radix reports when its options
+  arrive late — a dialog could send an empty id (the new draft did). Read-only class cards no
+  longer carry dnd-kit's aria-disabled.
+
+Verified (run, not assumed):
+- `npm run lint`, `typecheck`, `test`, `i18n:check`.
+- **Acceptance step 1** (`e2e/admin-builder.spec.ts`, desktop): two groups and a computer room;
+  the bell schedule is there; a new empty draft; group A gets Dasturlash on Monday, pair 1;
+  group B at the same time with the same teacher is refused with the clash named and saving
+  blocked, pair 2 fits; group A's class moved by keyboard onto pair 2 is refused (the teacher is
+  busy), moved to Tuesday it goes and the move is undone; the draft is published. The demo
+  timetable is restored afterwards. On a phone the week reads as a list of days and fits 390 px.
+- Screenshots by group, teacher and room, and the class panel, at 1440 and 390 — looked at.
+
+Not verified / not done:
+- A one-off "replace the teacher" is not offered (the API takes a new teacher; the panel offers
+  a new room); cancelling and moving are.
+- Export is Excel only; PDF is the browser's print to PDF of the print stylesheet.
+- The load panel shows over-scheduled lines (36 of 30 h) without a separate warning.
 

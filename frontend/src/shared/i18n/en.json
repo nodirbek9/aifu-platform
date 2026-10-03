@@ -85,10 +85,6 @@
     "passwordTooShort": "The password must be at least 10 characters long",
     "passwordTooLong": "The password must not exceed 72 characters"
   },
-  "home": {
-    "laterPhaseTitle": "This section is built in a later phase",
-    "laterPhaseBody": "For now, use the other sections in the navigation."
-  },
   "system": {
     "notFoundTitle": "Page not found",
     "notFoundBody": "This address does not exist or the page was moved.",
@@ -1477,6 +1473,116 @@
     },
     "importPassword": "Initial password for new students (at least 8 characters; changed at first sign-in)",
     "hoursOf": "{{kind}}: hours"
+  },
+  "builder": {
+    "addChange": "Add the change",
+    "addClass": "Add a class",
+    "addHere": "Add a class on {{day}}, pair {{pair}}",
+    "byGroup": "Group",
+    "byRoom": "Room",
+    "byTeacher": "Teacher",
+    "changeKind": "Change",
+    "checking": "Checking…",
+    "context": "Drag a class to a cell or click a cell. The server checks every change for clashes.",
+    "copyFrom": "Copy from",
+    "copyName": "{{name}} (draft)",
+    "copyToDraft": "Draft copy",
+    "courseFirst": "Choose the course first",
+    "day": "Day",
+    "deleteChange": "Delete the change",
+    "deleteClass": "Delete the class",
+    "draggableClass": "draggable class",
+    "editClass": "Class",
+    "empty": "An empty timetable",
+    "fits": "No clash — ready to save",
+    "freeDay": "No classes",
+    "groups": "Groups",
+    "hoursOf": "{{scheduled}} / {{planned}} h",
+    "load": "Load",
+    "loadBody": "Planned against scheduled hours",
+    "loadNotForRooms": "The load is shown for a group or a teacher.",
+    "moved": "“{{title}}” moved",
+    "newDate": "New date",
+    "newDraft": "New draft",
+    "newDraftBody": "Nobody sees a draft until you publish it.",
+    "noLoadLines": "No load entered here.",
+    "noRoom": "No room",
+    "noTimetable": "No timetable",
+    "noTimetableBody": "Create a draft for a term.",
+    "note": "Note",
+    "onDate": "On",
+    "oneOff": "One-off changes",
+    "overrideReason": "Why save despite the warning",
+    "pair": "Pair",
+    "panelBody": "The server checks for clashes before saving.",
+    "publishedReadOnly": "A published timetable is read-only. Make a draft copy to change it.",
+    "refused": "Cannot go there",
+    "refusedBecause": "{{what}}: {{other}}",
+    "saveAnyway": "Save anyway",
+    "subgroup": "Subgroup",
+    "timetable": "Timetable",
+    "undoAdd": "Undo the addition",
+    "undoDelete": "Undo the deletion",
+    "undoEdit": "Undo the change",
+    "undoMove": "Undo the move",
+    "undoReason": "Undo",
+    "undone": "Undone",
+    "unscheduledHours": "Not scheduled: {{hours}} h",
+    "validFrom": "From",
+    "validTo": "Until",
+    "view": "View",
+    "weekOf": "Week of",
+    "weekPreview": "Week preview",
+    "weekPreviewBody": "A concrete week, with holidays and one-off changes.",
+    "weeks": "Weeks",
+    "parity": {
+      "EVERY": "Every week",
+      "ODD": "Odd",
+      "EVEN": "Even"
+    },
+    "days": {
+      "1": "Monday",
+      "2": "Tuesday",
+      "3": "Wednesday",
+      "4": "Thursday",
+      "5": "Friday",
+      "6": "Saturday"
+    },
+    "conflict": {
+      "TEACHER": "Teacher busy",
+      "ROOM": "Room taken",
+      "GROUP": "Group busy"
+    },
+    "warning": {
+      "ROOM_CAPACITY": "The room is too small for the group",
+      "ROOM_TYPE": "The room type does not fit the class",
+      "ROOM_INACTIVE": "The room is inactive",
+      "TEACHER_NOT_ASSIGNED": "The teacher is not assigned to the course",
+      "COURSE_OTHER_TERM": "The course belongs to another term"
+    },
+    "status": {
+      "DRAFT": "Draft",
+      "PUBLISHED": "Published",
+      "ARCHIVED": "Archived"
+    },
+    "which": {
+      "group": "Which group",
+      "teacher": "Which teacher",
+      "room": "Which room"
+    },
+    "kind": {
+      "CANCELLED": "Cancelled",
+      "MOVED": "Moved",
+      "REPLACED": "Another room"
+    },
+    "confirm": {
+      "publishTitle": "Publish “{{name}}”?",
+      "publishBody": "Students and teachers will see this timetable ({{count}} classes). The term's previous one is archived.",
+      "archiveTitle": "Archive “{{name}}”?",
+      "archiveBody": "An archived timetable is shown to nobody and cannot change.",
+      "deleteTitle": "Delete “{{name}}”?",
+      "deleteBody": "The draft and its {{count}} classes are deleted."
+    }
   },
   "errors": {
     "NETWORK_ERROR": "Network error — check your internet connection",
