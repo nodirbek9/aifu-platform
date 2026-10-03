@@ -69,3 +69,14 @@ export async function shot(page: Page, phase: string, name: string): Promise<voi
   await page.waitForTimeout(700)
   await page.screenshot({ path: path.join(directory, `${name}.png`), fullPage: true })
 }
+
+/**
+ * Nothing is wider than the screen. On an emulated phone the layout viewport grows with the
+ * content, so the page is measured against the device width, not `innerWidth`.
+ */
+export async function expectFitsScreen(page: Page): Promise<void> {
+  const screenWidth = page.viewportSize()?.width ?? 390
+  await expect
+    .poll(() => page.evaluate(() => document.documentElement.scrollWidth), { message: page.url() })
+    .toBeLessThanOrEqual(screenWidth + 1)
+}

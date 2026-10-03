@@ -38,17 +38,17 @@ export function TeacherDashboardPage() {
   if (state.status !== 'authenticated') return null
 
   return (
-    <div className="grid gap-8">
+    <div className="grid grid-cols-1 gap-8">
       <header className="grid gap-1.5">
         <p className="text-caption text-text-muted font-medium uppercase">
           {formatLongDay(now.date, locale)}
         </p>
-        <h1 className="font-display text-display-lg text-text md:text-display-xl font-semibold">
+        <h1 className="font-display text-display-lg text-text md:text-display-xl font-semibold wrap-anywhere">
           {state.user.fullName}
         </h1>
       </header>
 
-      <div className="grid items-start gap-6 lg:grid-cols-12">
+      <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12">
         <section aria-label={t('dashboard.todayTitle')} className="lg:col-span-7">
           <TodayClasses />
         </section>
@@ -109,7 +109,7 @@ export function TeacherDashboardPage() {
             </CardContent>
           </Card>
         </section>
-        <div className="grid content-start gap-6 lg:col-span-5">
+        <div className="grid min-w-0 grid-cols-1 content-start gap-6 lg:col-span-5">
           <section aria-label={t('review.waitingTitle')}>
             <Card>
               <CardHeader title={t('review.waitingTitle')} description={t('review.waitingBody')} />

@@ -8,6 +8,8 @@ const DASTURLASH = '2eec7704-6e25-4adb-966e-b54de91a9b69'
 /** DAS-S1-A8 "Koʻpaytirish jadvali": the task the reviewed student submits to. */
 const TASK = '400e43c8-8d16-41b6-8fe8-5bf6af264f04'
 const TASK_CODE = 'DAS-S1-A8'
+/** A1, the first practical: every kind of block, the lesson plan among them. */
+const LESSON = 'ec38dba3-8d16-4e24-9bb2-5eb8fd329ab4'
 const REVIEWED = 'student4'
 const REVIEWED_NAME = 'Dev Student Four'
 const SOLUTION = `n = int(input())
@@ -57,9 +59,11 @@ async function submitAsStudent(request: APIRequestContext): Promise<string> {
 }
 
 async function expectNoSidewaysScroll(page: Page): Promise<void> {
+  // on an emulated phone the layout viewport grows with the content: compare with the screen
+  const screenWidth = page.viewportSize()?.width ?? 390
   await expect
-    .poll(() => page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1))
-    .toBe(true)
+    .poll(() => page.evaluate(() => document.documentElement.scrollWidth))
+    .toBeLessThanOrEqual(screenWidth + 1)
 }
 
 test.describe('the teacher writes the course (spec T-04 … T-06)', () => {
@@ -344,14 +348,17 @@ test.describe('the teacher tools on a phone', () => {
     test.skip(!isPhone(testInfo), 'the layout check is for the phone')
     test.setTimeout(120_000)
     await signInAsTeacher(page)
-    for (const tab of ['content', 'practice', 'review', 'grades']) {
+    for (const tab of ['content', 'practice', 'review', 'grades', 'analytics']) {
       await page.goto(`/teacher/courses/${DASTURLASH}?tab=${tab}`)
       await expect(page.getByRole('tabpanel')).toBeVisible()
       await page.waitForLoadState('networkidle')
       await expectNoSidewaysScroll(page)
     }
-    await page.goto(`/teacher/coding-tasks/${TASK}/edit`)
-    await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
-    await expectNoSidewaysScroll(page)
+    for (const editor of [`/teacher/coding-tasks/${TASK}/edit`, `/teacher/lessons/${LESSON}/edit`]) {
+      await page.goto(editor)
+      await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
+      await page.waitForLoadState('networkidle')
+      await expectNoSidewaysScroll(page)
+    }
   })
 })

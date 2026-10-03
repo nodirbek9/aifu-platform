@@ -51,9 +51,9 @@ function titleOf(item: Titled | undefined, locale: string): string {
  */
 export function CourseAnalytics({ courseId }: { courseId: string }) {
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-1 gap-6">
       <CompletionFunnel courseId={courseId} />
-      <div className="grid items-start gap-6 xl:grid-cols-2">
+      <div className="grid grid-cols-1 items-start gap-6 xl:grid-cols-2">
         <LessonEngagement courseId={courseId} />
         <TaskStatistics courseId={courseId} />
       </div>
@@ -92,7 +92,7 @@ function CompletionFunnel({ courseId }: { courseId: string }) {
   const completed = data.completedTotal ?? 0
   return (
     <Card className="min-w-0">
-      <CardContent className="grid gap-6 pt-5">
+      <CardContent className="grid grid-cols-1 gap-6 pt-5">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           <Stat label={t('analytics.enrolled')} value={enrolled} />
           <Stat label={t('analytics.started')} value={started} />
@@ -257,7 +257,7 @@ function QuizAnalysis({ courseId }: { courseId: string }) {
 
   return (
     <Card className="min-w-0">
-      <CardContent className="grid gap-6 pt-5">
+      <CardContent className="grid grid-cols-1 gap-6 pt-5">
         {attempted.length === 0 ? (
           <EmptyState title={t('analytics.quizzes')} body={t('analytics.noData')} />
         ) : (
@@ -279,7 +279,7 @@ function QuizAnalysis({ courseId }: { courseId: string }) {
                 tone: toneFor(row.avgPercent ?? 0),
               }))}
             />
-            <div className="grid gap-3">
+            <div className="grid grid-cols-1 gap-3">
               <Select
                 className="w-80 max-w-full"
                 label={t('analytics.itemAnalysisOf')}
@@ -331,8 +331,8 @@ function AtRiskList({ courseId }: { courseId: string }) {
   const name = (id: string) => roster.data?.find((row) => row.studentId === id)?.fullName ?? '—'
   return (
     <Card className="min-w-0">
-      <CardContent className="grid gap-3 pt-5">
-        <div className="grid gap-0.5">
+      <CardContent className="grid grid-cols-1 gap-3 pt-5">
+        <div className="grid grid-cols-1 gap-0.5">
           <h3 className="font-display text-title text-text font-semibold">{t('analytics.atRisk')}</h3>
           <p className="text-small text-text-muted">
             {t('analytics.atRiskSummary', { count: atRisk.data.length })}

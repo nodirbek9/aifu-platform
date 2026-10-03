@@ -94,9 +94,9 @@ export function AddBlockDialog({ lessonId, open, onOpenChange, refChoices, onAdd
       <DialogContent className="max-w-2xl">
         <DialogTitle>{t('authoring.addBlock')}</DialogTitle>
         <DialogDescription>{t('authoring.addBlockBody')}</DialogDescription>
-        <div className="grid max-h-[60vh] gap-4 overflow-y-auto">
+        <div className="grid max-h-[60vh] grid-cols-1 gap-4 overflow-y-auto">
           {BLOCK_GROUPS.map((group) => (
-            <fieldset key={group.key} className="grid gap-2">
+            <fieldset key={group.key} className="grid grid-cols-1 gap-2">
               <legend className="text-caption text-text-muted mb-1 font-medium uppercase">
                 {t(`authoring.blockGroup.${group.key}`)}
               </legend>
@@ -131,7 +131,7 @@ export function AddBlockDialog({ lessonId, open, onOpenChange, refChoices, onAdd
           />
         )}
         {type === 'EMBED' && (
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <Select
               label={t('authoring.provider')}
               value={provider}
@@ -160,7 +160,7 @@ export function AddBlockDialog({ lessonId, open, onOpenChange, refChoices, onAdd
           />
         )}
         {type !== undefined && isFileBlock(type) && (
-          <label className="grid gap-1.5">
+          <label className="grid grid-cols-1 gap-1.5">
             <span className="text-small text-text font-medium">{t('authoring.file')}</span>
             <input
               type="file"

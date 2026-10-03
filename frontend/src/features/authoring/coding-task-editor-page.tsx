@@ -117,7 +117,7 @@ function TaskEditor({ task, onReload }: { task: CodingTaskRaw; onReload: () => v
   const published = task.status === 'PUBLISHED'
 
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-1 gap-6">
       <Breadcrumb
         items={[
           { label: t('nav.teacherClasses'), to: '/teacher/courses' },
@@ -126,7 +126,7 @@ function TaskEditor({ task, onReload }: { task: CodingTaskRaw; onReload: () => v
         ]}
       />
       <header className="flex flex-wrap items-start justify-between gap-3">
-        <div className="grid gap-1">
+        <div className="grid grid-cols-1 gap-1">
           <h1 className="font-display text-display-lg text-text font-semibold">{title}</h1>
           <p className="text-small text-text-muted flex flex-wrap items-center gap-2">
             {task.code}
@@ -220,7 +220,7 @@ function StatementEditor({
         title={t('authoring.taskStatement')}
         action={<SaveStatus state={autosave.state} onReload={onReload} />}
       />
-      <CardContent className="grid gap-4">
+      <CardContent className="grid grid-cols-1 gap-4">
         <LocaleTabs
           value={locale}
           onValueChange={(next) => {
@@ -267,7 +267,7 @@ function StatementFields({
     onChange(next)
   }
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-1 gap-4">
       <Input
         label={t('authoring.taskTitle')}
         value={texts.title}
@@ -322,7 +322,7 @@ function LanguagesEditor({ task }: { task: CodingTaskRaw }) {
   const attached = task.languages?.find((item) => item.code === language)
 
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-1 gap-4">
       <div role="group" aria-label={t('authoring.programmingLanguage')} className="flex flex-wrap gap-2">
         {EDITOR_LANGUAGES.map((code) => {
           const has = task.languages?.some((item) => item.code === code) === true
@@ -429,9 +429,9 @@ function LanguageCode({
           </div>
         }
       />
-      <CardContent className="grid gap-4 xl:grid-cols-2">
+      <CardContent className="grid grid-cols-1 gap-4 xl:grid-cols-2">
         {(['starterCode', 'solutionCode'] as const).map((key) => (
-          <div key={key} className="grid gap-1.5">
+          <div key={key} className="grid grid-cols-1 gap-1.5">
             <span className="text-small text-text font-medium">{t(`authoring.${key}`)}</span>
             <p className="text-caption text-text-muted tracking-normal">{t(`authoring.${key}Hint`)}</p>
             <Suspense fallback={<Skeleton className="h-72" />}>
@@ -475,7 +475,7 @@ function TestsEditor({ task, onReload }: { task: CodingTaskRaw; onReload: () => 
   const tests = (task.testCases ?? []).slice().sort((a, b) => (a.position ?? 0) - (b.position ?? 0))
   const weighted = task.scoringStrategy === 'PER_TEST_WEIGHTED'
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-1 gap-4">
       <p className="text-small text-text-muted max-w-prose">{t('authoring.testsHint')}</p>
       {tests.length === 0 && <EmptyState title={t('authoring.noTests')} body={t('authoring.noTestsBody')} />}
       {tests.map((test, index) => (
@@ -550,7 +550,10 @@ function TestCaseCard({
       : t('authoring.testNumber', { number: index + 1 })
 
   return (
-    <article aria-label={label} className="border-border bg-surface-raised grid gap-3 rounded-lg border p-4">
+    <article
+      aria-label={label}
+      className="border-border bg-surface-raised grid grid-cols-1 gap-3 rounded-lg border p-4"
+    >
       <header className="flex flex-wrap items-center gap-2">
         <h3 className="text-body text-text font-semibold">{label}</h3>
         <Badge tone={fields.visibility === 'VISIBLE' ? 'info' : 'neutral'}>
@@ -569,7 +572,7 @@ function TestCaseCard({
           </IconButton>
         </span>
       </header>
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
         <Textarea
           label={t('authoring.stdin')}
           value={fields.stdin ?? ''}
@@ -589,7 +592,7 @@ function TestCaseCard({
           }}
         />
       </div>
-      <div className="grid items-end gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-1 items-end gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <Input
           label={t('authoring.testName')}
           value={fields.name ?? ''}
@@ -618,7 +621,7 @@ function TestCaseCard({
             }}
           />
         )}
-        <div className="grid gap-2 pb-1">
+        <div className="grid grid-cols-1 gap-2 pb-1">
           <Checkbox
             label={t('authoring.example')}
             checked={fields.isExample === true}
@@ -686,7 +689,7 @@ function SettingsEditor({ task, onReload }: { task: CodingTaskRaw; onReload: () 
         title={t('authoring.taskSettings')}
         action={<SaveStatus state={autosave.state} onReload={onReload} />}
       />
-      <CardContent className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
         <Select
           label={t('authoring.difficulty')}
           value={settings.difficulty ?? 'EASY'}
@@ -773,7 +776,7 @@ function HintsEditor({ task, required }: { task: CodingTaskRaw; required: readon
   const [penalty, setPenalty] = useState('10')
   const hints = (task.hints ?? []).slice().sort((a, b) => (a.position ?? 0) - (b.position ?? 0))
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-1 gap-4">
       <p className="text-small text-text-muted max-w-prose">{t('authoring.hintsHint')}</p>
       {hints.map((hint, index) => (
         <HintCard key={hint.id} taskId={task.id ?? ''} hint={hint} index={index} required={required} />
@@ -782,7 +785,7 @@ function HintsEditor({ task, required }: { task: CodingTaskRaw; required: readon
         <CardHeader title={t('authoring.newHint')} />
         <CardContent>
           <form
-            className="grid gap-3"
+            className="grid grid-cols-1 gap-3"
             onSubmit={(event) => {
               event.preventDefault()
               if (body.trim() === '') return
@@ -851,7 +854,7 @@ function HintCard({
   )
   const bodyIn = (l: Locale) => hint.translations?.find((item) => item.locale === l)?.body
   return (
-    <article className="border-border bg-surface-raised grid gap-3 rounded-lg border p-4">
+    <article className="border-border bg-surface-raised grid grid-cols-1 gap-3 rounded-lg border p-4">
       <header className="flex flex-wrap items-center gap-2">
         <h3 className="text-body text-text font-semibold">
           {t('authoring.hintNumber', { number: index + 1 })}
@@ -916,7 +919,7 @@ function VerificationPanel({ task }: { task: CodingTaskRaw }) {
   const missing = verification.data?.languagesWithoutSolution ?? []
 
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-1 gap-4">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-small text-text-muted max-w-prose">{t('authoring.verifyHint')}</p>
         <Button
@@ -959,7 +962,7 @@ function VerificationPanel({ task }: { task: CodingTaskRaw }) {
           {t('authoring.withoutSolution', { languages: missing.map(languageName).join(', ') })}
         </p>
       )}
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         {runs.map((run) => (
           <Card key={run.id}>
             <CardHeader
@@ -978,7 +981,7 @@ function VerificationPanel({ task }: { task: CodingTaskRaw }) {
                 )
               }
             />
-            <CardContent className="grid gap-2">
+            <CardContent className="grid grid-cols-1 gap-2">
               {run.compileOutput !== undefined && run.compileOutput !== '' && (
                 <pre className="bg-surface-sunken text-caption text-danger max-h-40 overflow-auto rounded-sm p-2 font-mono">
                   {run.compileOutput}
@@ -989,7 +992,7 @@ function VerificationPanel({ task }: { task: CodingTaskRaw }) {
                   {t('authoring.testsPassed', { passed: run.testsPassed ?? 0, total: run.testsTotal })}
                 </p>
               )}
-              <ul className="grid gap-1">
+              <ul className="grid grid-cols-1 gap-1">
                 {(run.tests ?? []).map((test) => (
                   <li key={test.testCaseId ?? test.position} className="text-small flex items-center gap-2">
                     {test.passed === true ? (

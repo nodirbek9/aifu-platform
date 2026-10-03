@@ -111,7 +111,7 @@ export function CurriculumTree({ courseId }: { courseId: string }) {
   }
 
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-1 gap-6">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-small text-text-muted max-w-prose">{t('authoring.treeHint')}</p>
         <Button
@@ -126,7 +126,7 @@ export function CurriculumTree({ courseId }: { courseId: string }) {
 
       {budget.length > 0 && (
         <Callout variant="WARNING" title={t('authoring.budgetTitle')}>
-          <ul className="grid gap-1">
+          <ul className="grid grid-cols-1 gap-1">
             {budget.map((line) => (
               <li key={line.sessionType}>
                 {t('authoring.budgetLine', {
@@ -151,7 +151,7 @@ export function CurriculumTree({ courseId }: { courseId: string }) {
         <EmptyState title={t('authoring.noModules')} body={t('authoring.noModulesBody')} />
       )}
 
-      <ol className="grid gap-4">
+      <ol className="grid grid-cols-1 gap-4">
         {modules.map((module, index) => (
           <li
             key={module.id}
@@ -256,7 +256,7 @@ function ModuleCard({
   return (
     <section
       aria-labelledby={`module-${module.id}`}
-      className="border-border bg-surface-raised grid rounded-lg border"
+      className="border-border bg-surface-raised grid grid-cols-1 rounded-lg border"
     >
       <header className="border-border flex flex-wrap items-center gap-2 border-b px-3 py-3 sm:px-4">
         <button
@@ -272,11 +272,11 @@ function ModuleCard({
           }}
           aria-label={t('authoring.dragModule', { title })}
           aria-describedby="reorder-hint"
-          className="text-text-muted hover:text-text focus-visible:outline-focus-ring grid size-8 cursor-grab place-items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2"
+          className="text-text-muted hover:text-text focus-visible:outline-focus-ring grid size-8 cursor-grab grid-cols-1 place-items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2"
         >
           <GripVertical aria-hidden className="size-4" />
         </button>
-        <div className="grid min-w-0 flex-1 gap-0.5">
+        <div className="grid min-w-0 flex-1 grid-cols-1 gap-0.5">
           <h3 id={`module-${module.id}`} className="font-display text-h3 text-text truncate font-semibold">
             {title}
           </h3>
@@ -367,7 +367,7 @@ function ModuleCard({
         </p>
       )}
 
-      <ol className="divide-border grid divide-y">
+      <ol className="divide-border grid grid-cols-1 divide-y">
         {module.lessons.map((lesson, lessonIndex) => (
           <li
             key={lesson.id}
@@ -406,7 +406,7 @@ function ModuleCard({
               }}
               aria-label={t('authoring.dragLesson', { title: titleOf(lesson, locale) })}
               aria-describedby="reorder-hint"
-              className="text-text-muted hover:text-text focus-visible:outline-focus-ring grid size-8 cursor-grab place-items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2"
+              className="text-text-muted hover:text-text focus-visible:outline-focus-ring grid size-8 cursor-grab grid-cols-1 place-items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2"
             >
               <GripVertical aria-hidden className="size-4" />
             </button>
@@ -569,7 +569,7 @@ function NewModuleDialog({
         <DialogTitle>{t('authoring.newModule')}</DialogTitle>
         <DialogDescription>{t('authoring.newModuleBody')}</DialogDescription>
         <form
-          className="grid gap-4"
+          className="grid grid-cols-1 gap-4"
           onSubmit={(event) => {
             event.preventDefault()
             if (title.trim() === '') return
@@ -640,7 +640,7 @@ function RenameModuleDialog({
         <DialogTitle>{t('authoring.renameModule')}</DialogTitle>
         <DialogDescription>{t('authoring.renameModuleBody')}</DialogDescription>
         <form
-          className="grid gap-4"
+          className="grid grid-cols-1 gap-4"
           onSubmit={(event) => {
             event.preventDefault()
             setError(undefined)
@@ -723,7 +723,7 @@ function NewLessonDialog({
         <DialogTitle>{t('authoring.newLesson')}</DialogTitle>
         <DialogDescription>{t('authoring.newLessonBody')}</DialogDescription>
         <form
-          className="grid gap-4"
+          className="grid grid-cols-1 gap-4"
           onSubmit={(event) => {
             event.preventDefault()
             if (title.trim() === '') return
@@ -757,7 +757,7 @@ function NewLessonDialog({
               setTitle(event.target.value)
             }}
           />
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             <Select
               label={t('authoring.sessionType')}
               value={sessionType}

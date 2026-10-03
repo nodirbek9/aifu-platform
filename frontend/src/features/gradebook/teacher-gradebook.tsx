@@ -105,7 +105,7 @@ export function TeacherGradebook({ courseId, courseTitle }: { courseId: string; 
   }
 
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-1 gap-4">
       <div className="flex flex-wrap items-end justify-between gap-3">
         <div className="flex flex-wrap items-end gap-3">
           <Select
@@ -294,7 +294,7 @@ function GradeCell({
     score !== '' && Number.isFinite(scoreValue) && maxValue > 0 && scoreValue >= 0 && scoreValue <= maxValue
 
   const line = (entry: GradeLine, canVoid: boolean) => (
-    <li key={entry.id} className="border-border grid gap-1 rounded-md border px-3 py-2">
+    <li key={entry.id} className="border-border grid grid-cols-1 gap-1 rounded-md border px-3 py-2">
       <div className="flex flex-wrap items-center gap-2">
         <span className="text-body text-text font-semibold tabular-nums">
           {formatScore(entry.score)} / {formatScore(entry.maxScore)}
@@ -329,7 +329,7 @@ function GradeCell({
       )}
       {voiding === entry.id && (
         <form
-          className="grid gap-2 pt-1"
+          className="grid grid-cols-1 gap-2 pt-1"
           onSubmit={(event) => {
             event.preventDefault()
             if (reason.trim() === '') return
@@ -390,9 +390,9 @@ function GradeCell({
             : t('gradebook.notGraded')}
         </SheetDescription>
       </SheetHeader>
-      <SheetBody className="grid content-start gap-6">
+      <SheetBody className="grid grid-cols-1 content-start gap-6">
         <form
-          className="grid gap-3"
+          className="grid grid-cols-1 gap-3"
           onSubmit={(event) => {
             event.preventDefault()
             if (!valid) return
@@ -446,21 +446,21 @@ function GradeCell({
           </Button>
         </form>
 
-        <section className="grid gap-2">
+        <section className="grid grid-cols-1 gap-2">
           <h3 className="font-display text-h3 text-text font-semibold">{t('grades.entriesTitle')}</h3>
           {current.length === 0 ? (
             <p className="text-small text-text-muted">{t('gradebook.noEntries')}</p>
           ) : (
-            <ul className="grid gap-2">{current.map((entry) => line(entry, true))}</ul>
+            <ul className="grid grid-cols-1 gap-2">{current.map((entry) => line(entry, true))}</ul>
           )}
         </section>
         {history.length > 0 && (
-          <section className="grid gap-2">
+          <section className="grid grid-cols-1 gap-2">
             <h3 className="font-display text-h3 text-text flex items-center gap-2 font-semibold">
               <History aria-hidden className="size-4" />
               {t('grades.historyTitle')}
             </h3>
-            <ul className="grid gap-2">{history.map((entry) => line(entry, false))}</ul>
+            <ul className="grid grid-cols-1 gap-2">{history.map((entry) => line(entry, false))}</ul>
           </section>
         )}
       </SheetBody>

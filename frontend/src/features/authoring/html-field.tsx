@@ -58,7 +58,7 @@ export function HtmlField({ label, value, onChange, rows = 8, hint }: HtmlFieldP
   }
 
   return (
-    <div className="grid gap-1.5">
+    <div className="grid grid-cols-1 gap-1.5">
       <label htmlFor={id} className="text-small text-text font-medium">
         {label}
       </label>
@@ -77,7 +77,7 @@ export function HtmlField({ label, value, onChange, rows = 8, hint }: HtmlFieldP
             onClick={() => {
               wrap(item)
             }}
-            className="text-text-muted hover:bg-surface-raised hover:text-text focus-visible:outline-focus-ring grid size-8 place-items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2"
+            className="text-text-muted hover:bg-surface-raised hover:text-text focus-visible:outline-focus-ring grid size-8 grid-cols-1 place-items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2"
           >
             <item.Icon aria-hidden className="size-4" />
           </button>

@@ -43,7 +43,7 @@ export function PracticeList({ courseId }: { courseId: string }) {
   const [creating, setCreating] = useState<'task' | 'quiz'>()
 
   return (
-    <div className="grid items-start gap-6 lg:grid-cols-2">
+    <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
       <Card>
         <CardHeader
           title={t('authoring.codingTasks')}
@@ -72,7 +72,7 @@ export function PracticeList({ courseId }: { courseId: string }) {
           {tasks.isSuccess && tasks.data.length === 0 && (
             <EmptyState icon={<Code2 aria-hidden className="size-6" />} title={t('authoring.noTasks')} />
           )}
-          <ul className="divide-border grid divide-y">
+          <ul className="divide-border grid grid-cols-1 divide-y">
             {tasks.data?.map((task) => (
               <li key={task.id} className="flex flex-wrap items-center gap-2 py-2.5">
                 <Link
@@ -124,7 +124,7 @@ export function PracticeList({ courseId }: { courseId: string }) {
               title={t('authoring.noQuizzes')}
             />
           )}
-          <ul className="divide-border grid divide-y">
+          <ul className="divide-border grid grid-cols-1 divide-y">
             {quizzes.data?.map((quiz) => (
               <li key={quiz.id} className="flex flex-wrap items-center gap-2 py-2.5">
                 <Link
@@ -188,7 +188,7 @@ function NewPracticeDialog({
         <DialogTitle>{kind === 'quiz' ? t('authoring.newQuiz') : t('authoring.newTask')}</DialogTitle>
         <DialogDescription>{t('authoring.newPracticeBody')}</DialogDescription>
         <form
-          className="grid gap-4"
+          className="grid grid-cols-1 gap-4"
           onSubmit={(event) => {
             event.preventDefault()
             if (!ready) return

@@ -138,7 +138,7 @@ function LessonEditor({ lesson, courseId, revision, onReload }: LessonEditorProp
   }
 
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-1 gap-6">
       <Breadcrumb
         items={[
           { label: t('nav.teacherClasses'), to: '/teacher/courses' },
@@ -147,7 +147,7 @@ function LessonEditor({ lesson, courseId, revision, onReload }: LessonEditorProp
         ]}
       />
       <header className="flex flex-wrap items-start justify-between gap-3">
-        <div className="grid gap-1">
+        <div className="grid grid-cols-1 gap-1">
           <h1 className="font-display text-display-lg text-text font-semibold">{title}</h1>
           <p className="text-small text-text-muted flex flex-wrap items-center gap-2">
             {lesson.code}
@@ -194,7 +194,7 @@ function LessonEditor({ lesson, courseId, revision, onReload }: LessonEditorProp
         {t('authoring.reorderHint')}
       </p>
 
-      <div className="grid items-start gap-6 lg:grid-cols-12">
+      <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12">
         <div className={showPreview ? 'hidden lg:col-span-7 lg:grid lg:gap-4' : 'grid gap-4 lg:col-span-7'}>
           <LessonDetailsCard lesson={lesson} required={required} onReload={onReload} />
           {lesson.blocks.length === 0 && (
@@ -268,7 +268,7 @@ function LessonEditor({ lesson, courseId, revision, onReload }: LessonEditorProp
               options={SUPPORTED_LOCALES.map((l) => ({ value: l, label: l.toUpperCase() }))}
             />
           </div>
-          <div className="border-border bg-surface grid gap-5 rounded-lg border p-5">
+          <div className="border-border bg-surface grid grid-cols-1 gap-5 rounded-lg border p-5">
             <h3 className="font-display text-h2 text-text font-semibold">{preview.title}</h3>
             {preview.hasFallback && <FallbackMark />}
             {preview.blocks.length === 0 ? (
@@ -335,7 +335,7 @@ function LessonDetailsCard({
         title={t('authoring.lessonDetails')}
         action={<SaveStatus state={failed ?? busy ?? { kind: 'saved' }} onReload={onReload} />}
       />
-      <CardContent className="grid gap-4">
+      <CardContent className="grid grid-cols-1 gap-4">
         <LocaleTabs
           value={locale}
           onValueChange={(next) => {
@@ -353,7 +353,7 @@ function LessonDetailsCard({
             if (text.title.trim() !== '') textSave.change({ locale, ...text })
           }}
         />
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
           <Select
             label={t('authoring.sessionType')}
             value={fields.sessionType}
@@ -401,7 +401,7 @@ function LessonTextFields({
   const [title, setTitle] = useState(initial.title)
   const [summary, setSummary] = useState(initial.summary ?? '')
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-1 gap-4">
       <Input
         label={t('authoring.lessonTitle')}
         value={title}

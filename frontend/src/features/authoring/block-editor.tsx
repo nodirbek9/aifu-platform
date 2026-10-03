@@ -105,7 +105,7 @@ export function BlockEditor({
           }}
           aria-label={t('authoring.dragBlock', { position: index + 1 })}
           aria-describedby="reorder-hint"
-          className="text-text-muted hover:text-text focus-visible:outline-focus-ring grid size-8 cursor-grab place-items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2"
+          className="text-text-muted hover:text-text focus-visible:outline-focus-ring grid size-8 cursor-grab grid-cols-1 place-items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2"
         >
           <GripVertical aria-hidden className="size-4" />
         </button>
@@ -153,7 +153,7 @@ export function BlockEditor({
         </span>
       </header>
 
-      <div className="grid gap-4 p-3 sm:p-4">
+      <div className="grid grid-cols-1 gap-4 p-3 sm:p-4">
         <BlockSettings
           key={`settings-${revision}`}
           lessonId={lessonId}
@@ -162,7 +162,7 @@ export function BlockEditor({
           onReload={onReload}
         />
         {translatable && (
-          <div className="grid gap-3">
+          <div className="grid grid-cols-1 gap-3">
             <div className="flex flex-wrap items-center justify-between gap-2">
               <LocaleTabs
                 value={locale}
@@ -275,7 +275,7 @@ function BlockSettings({
         )
       case 'EMBED':
         return (
-          <div className="grid gap-3 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             <Select
               label={t('authoring.provider')}
               value={readString(settings, 'provider') ?? 'YOUTUBE'}
@@ -316,7 +316,7 @@ function BlockSettings({
   })()
 
   return (
-    <div className="grid gap-3">
+    <div className="grid grid-cols-1 gap-3">
       <div className="flex flex-wrap items-end gap-3">
         {block.type !== 'LESSON_PLAN' && (
           <Select
@@ -347,7 +347,7 @@ function FileField({ lessonId, block }: { lessonId: string; block: EditorBlock }
   const [name, setName] = useState<string>()
   const failure = upload.error ?? save.error
   return (
-    <div className="grid gap-1.5">
+    <div className="grid grid-cols-1 gap-1.5">
       <span className="text-small text-text font-medium">{t('authoring.file')}</span>
       <div className="flex flex-wrap items-center gap-3">
         <label className="border-border-strong bg-surface-raised text-small text-text hover:bg-surface-sunken focus-within:outline-focus-ring inline-flex h-9 cursor-pointer items-center gap-2 rounded-md border px-3 font-medium focus-within:outline-2">
@@ -421,8 +421,8 @@ function PayloadForm({ type, settings, initial, onChange }: PayloadFormProps) {
     case 'CODE_EXAMPLE': {
       const language = readString(settings, 'language') ?? 'python'
       return (
-        <div className="grid gap-3">
-          <div className="grid gap-1.5">
+        <div className="grid grid-cols-1 gap-3">
+          <div className="grid grid-cols-1 gap-1.5">
             <span className="text-small text-text font-medium">{t('authoring.code')}</span>
             <Suspense fallback={<Skeleton className="h-48" />}>
               <CodeEditor
@@ -464,7 +464,7 @@ function PayloadForm({ type, settings, initial, onChange }: PayloadFormProps) {
       )
     case 'LINK':
       return (
-        <div className="grid gap-3">
+        <div className="grid grid-cols-1 gap-3">
           <Input
             label={t('authoring.linkLabel')}
             value={text('label')}
@@ -510,7 +510,7 @@ function LessonPlanForm({
   const total = steps.reduce((sum, step) => sum + step.minutes, 0)
 
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-1 gap-4">
       <HtmlField
         label={t('teaching.planObjectives')}
         value={text('objectives')}
@@ -519,7 +519,7 @@ function LessonPlanForm({
           onChange({ objectives })
         }}
       />
-      <fieldset className="grid gap-2">
+      <fieldset className="grid grid-cols-1 gap-2">
         <legend className="text-small text-text mb-1 font-medium">
           {t('teaching.planTimeline')} · {t('authoring.minutesTotal', { count: total })}
         </legend>

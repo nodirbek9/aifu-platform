@@ -1,7 +1,15 @@
 import * as TabsPrimitive from '@radix-ui/react-tabs'
 import { cn } from '@/shared/lib/cn'
 
-export const Tabs = TabsPrimitive.Root
+export type TabsProps = TabsPrimitive.TabsProps
+
+/**
+ * The root never grows past its parent: a long row of tabs scrolls inside its list instead of
+ * widening a grid cell (and with it the whole page on a phone).
+ */
+export function Tabs({ className, ...props }: TabsProps) {
+  return <TabsPrimitive.Root className={cn('min-w-0', className)} {...props} />
+}
 
 export type TabsListProps = TabsPrimitive.TabsListProps
 

@@ -71,7 +71,7 @@ export function SubmissionReviewPage() {
   const language = detail.languageCode ?? 'python'
 
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-1 gap-6">
       <Breadcrumb
         items={[
           { label: t('nav.teacherClasses'), to: '/teacher/courses' },
@@ -79,7 +79,7 @@ export function SubmissionReviewPage() {
           { label: t('review.submissionOf', { name: student?.fullName ?? '' }) },
         ]}
       />
-      <header className="grid gap-2">
+      <header className="grid grid-cols-1 gap-2">
         <h1 className="font-display text-display-lg text-text font-semibold">
           {student?.fullName ?? t('review.submission')}
         </h1>
@@ -106,8 +106,8 @@ export function SubmissionReviewPage() {
         </p>
       </header>
 
-      <div className="grid items-start gap-6 xl:grid-cols-12">
-        <div className="grid min-w-0 gap-6 xl:col-span-7">
+      <div className="grid grid-cols-1 items-start gap-6 xl:grid-cols-12">
+        <div className="grid min-w-0 grid-cols-1 gap-6 xl:col-span-7">
           <Card>
             <CardHeader title={t('review.code')} />
             <CardContent>
@@ -124,7 +124,7 @@ export function SubmissionReviewPage() {
           </Card>
           <TestResults submission={detail} />
         </div>
-        <div className="grid gap-6 xl:col-span-5">
+        <div className="grid grid-cols-1 gap-6 xl:col-span-5">
           <FeedbackPanel submissionId={submissionId} />
           {courseId !== undefined && student !== undefined && (
             <GradeForm
@@ -157,7 +157,7 @@ function TestResults({ submission }: { submission: TeacherSubmission }) {
               })
         }
       />
-      <CardContent className="grid gap-3">
+      <CardContent className="grid grid-cols-1 gap-3">
         {submission.compileOutput !== undefined && submission.compileOutput !== '' && (
           <pre className="bg-surface-sunken text-small text-danger max-h-60 overflow-auto rounded-md p-3 font-mono">
             {submission.compileOutput}
@@ -188,7 +188,7 @@ function TestResults({ submission }: { submission: TeacherSubmission }) {
                 <span className="text-caption text-text-muted ml-auto tabular-nums">{test.timeMs} ms</span>
               )}
             </summary>
-            <div className="grid gap-2 px-3 pb-3 md:grid-cols-3">
+            <div className="grid grid-cols-1 gap-2 px-3 pb-3 md:grid-cols-3">
               {(
                 [
                   ['stdin', test.stdin],
@@ -196,7 +196,7 @@ function TestResults({ submission }: { submission: TeacherSubmission }) {
                   ['actualStdout', test.actualStdout],
                 ] as const
               ).map(([key, value]) => (
-                <div key={key} className="grid min-w-0 gap-1">
+                <div key={key} className="grid min-w-0 grid-cols-1 gap-1">
                   <span className="text-caption text-text-muted font-medium uppercase">
                     {t(`review.${key}`)}
                   </span>
@@ -230,10 +230,10 @@ function FeedbackPanel({ submissionId }: { submissionId: string }) {
   return (
     <Card>
       <CardHeader title={t('review.feedback')} />
-      <CardContent className="grid gap-4">
+      <CardContent className="grid grid-cols-1 gap-4">
         {feedback.isPending && <Skeleton className="h-16" />}
         {feedback.data?.map((item) => (
-          <article key={item.id} className="border-border grid gap-1 rounded-md border px-3 py-2">
+          <article key={item.id} className="border-border grid grid-cols-1 gap-1 rounded-md border px-3 py-2">
             <p className="text-caption text-text-muted flex items-center gap-2 tracking-normal">
               {item.createdAt !== undefined && formatDateTime(item.createdAt, locale)}
               <Badge tone={item.visibility === 'INTERNAL' ? 'neutral' : 'info'}>
@@ -244,7 +244,7 @@ function FeedbackPanel({ submissionId }: { submissionId: string }) {
           </article>
         ))}
         <form
-          className="grid gap-3"
+          className="grid grid-cols-1 gap-3"
           onSubmit={(event) => {
             event.preventDefault()
             if (body.trim() === '') return
@@ -326,7 +326,7 @@ function GradeForm({ courseId, enrollmentId, components, suggestion, suggestionM
       <CardHeader title={t('review.gradeTitle')} description={t('review.gradeHint')} />
       <CardContent>
         <form
-          className="grid gap-3"
+          className="grid grid-cols-1 gap-3"
           onSubmit={(event) => {
             event.preventDefault()
             if (!valid) return

@@ -48,7 +48,7 @@ export function ReviewQueue({ courseId }: { courseId: string }) {
   const choose = (value: string) => (value === 'all' ? undefined : value)
 
   return (
-    <div className="grid gap-4">
+    <div className="grid grid-cols-1 gap-4">
       <div className="flex flex-wrap items-end gap-3">
         <Select
           className="w-64"
@@ -89,7 +89,7 @@ export function ReviewQueue({ courseId }: { courseId: string }) {
             ...groups.map((code) => ({ value: code, label: code })),
           ]}
         />
-        <div className="grid gap-2 pb-1">
+        <div className="grid grid-cols-1 gap-2 pb-1">
           <Switch
             label={t('review.needsFeedback')}
             checked={filter.needsFeedback}

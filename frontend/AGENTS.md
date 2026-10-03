@@ -89,6 +89,11 @@ e2e/                         support.ts (signIn, texts), *.spec.ts; shots.spec.t
 - **Editors** are `features/authoring`: `use-autosave.ts` saves after a pause and in order (put
   the language in the saved value — a save may run after the tab changed); `SaveStatus` shows it;
   `LocaleTabs` marks missing translations. The student renderer (`LessonBlocks`) is the preview.
+- **Grids shrink**: a `grid` without a column template sizes its track to the widest content
+  (a truncated title, a table) and widens the page on a phone. Write `grid grid-cols-1 …`;
+  `Tabs` already carries `min-w-0`. `e2e/layout.spec.ts` sweeps every screen at 390 px with
+  `expectFitsScreen` (it measures against the device width: on an emulated phone `innerWidth`
+  grows with the content and proves nothing).
 - **Charts**: `shared/ui/bar-chart.tsx` — always with a summary sentence and its table.
 - **Excel**: `downloadXlsx(name, sheets)` from `shared/lib/xlsx.ts`; the first row is the header.
 - **Pages for every role** (`/notifications`, `/announcements`, `/profile`) are `commonRoutes` in

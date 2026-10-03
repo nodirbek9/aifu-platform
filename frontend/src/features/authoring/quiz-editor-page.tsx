@@ -113,7 +113,7 @@ function QuizEditor({ quiz, onReload }: { quiz: QuizRaw; onReload: () => void })
   const points = list.reduce((sum, question) => sum + (question.points ?? 0), 0)
 
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-1 gap-6">
       <Breadcrumb
         items={[
           { label: t('nav.teacherClasses'), to: '/teacher/courses' },
@@ -122,7 +122,7 @@ function QuizEditor({ quiz, onReload }: { quiz: QuizRaw; onReload: () => void })
         ]}
       />
       <header className="flex flex-wrap items-start justify-between gap-3">
-        <div className="grid gap-1">
+        <div className="grid grid-cols-1 gap-1">
           <h1 className="font-display text-display-lg text-text font-semibold">{title}</h1>
           <p className="text-small text-text-muted flex flex-wrap items-center gap-2">
             {quiz.code}
@@ -147,12 +147,12 @@ function QuizEditor({ quiz, onReload }: { quiz: QuizRaw; onReload: () => void })
         </p>
       )}
 
-      <div className="grid items-start gap-6 xl:grid-cols-12">
-        <div className="grid gap-4 xl:col-span-4">
+      <div className="grid grid-cols-1 items-start gap-6 xl:grid-cols-12">
+        <div className="grid grid-cols-1 gap-4 xl:col-span-4">
           <QuizTextsCard quiz={quiz} required={required} onReload={onReload} />
           <QuizSettingsCard quiz={quiz} onReload={onReload} />
         </div>
-        <section aria-labelledby="questions-title" className="grid gap-4 xl:col-span-8">
+        <section aria-labelledby="questions-title" className="grid grid-cols-1 gap-4 xl:col-span-8">
           <h2 id="questions-title" className="font-display text-h2 text-text font-semibold">
             {t('authoring.questions')}
           </h2>
@@ -234,7 +234,7 @@ function QuizTextsCard({
         title={t('authoring.quizTexts')}
         action={<SaveStatus state={autosave.state} onReload={onReload} />}
       />
-      <CardContent className="grid gap-4">
+      <CardContent className="grid grid-cols-1 gap-4">
         <LocaleTabs
           value={locale}
           onValueChange={(next) => {
@@ -265,7 +265,7 @@ function QuizTextFields({ initial, onChange }: { initial: QuizTexts; onChange: (
     onChange(next)
   }
   return (
-    <div className="grid gap-3">
+    <div className="grid grid-cols-1 gap-3">
       <Input
         label={t('authoring.quizTitle')}
         value={texts.title}
@@ -321,7 +321,7 @@ function QuizSettingsCard({ quiz, onReload }: { quiz: QuizRaw; onReload: () => v
         title={t('authoring.quizSettings')}
         action={<SaveStatus state={autosave.state} onReload={onReload} />}
       />
-      <CardContent className="grid gap-4 sm:grid-cols-2 xl:grid-cols-1">
+      <CardContent className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-1">
         <Input
           label={t('authoring.timeLimitMinutes')}
           type="number"
@@ -367,7 +367,7 @@ function QuizSettingsCard({ quiz, onReload }: { quiz: QuizRaw; onReload: () => v
           }}
           options={REVEAL.map((value) => ({ value, label: t(`authoring.reveal.${value}`) }))}
         />
-        <div className="grid gap-3">
+        <div className="grid grid-cols-1 gap-3">
           <Switch
             label={t('authoring.shuffleQuestions')}
             checked={settings.shuffleQuestions === true}
@@ -402,7 +402,7 @@ function NewQuestionForm({ quizId, onDone }: { quizId: string; onDone: () => voi
       <CardHeader title={t('authoring.newQuestion')} />
       <CardContent>
         <form
-          className="grid gap-3"
+          className="grid grid-cols-1 gap-3"
           onSubmit={(event) => {
             event.preventDefault()
             if (prompt.trim() === '') return
@@ -504,7 +504,10 @@ function QuestionCard({ quizId, question, index, count, required, onMove }: Ques
   const label = t('authoring.questionNumber', { number: index + 1 })
 
   return (
-    <article aria-label={label} className="border-border bg-surface-raised grid gap-4 rounded-lg border p-4">
+    <article
+      aria-label={label}
+      className="border-border bg-surface-raised grid grid-cols-1 gap-4 rounded-lg border p-4"
+    >
       <header className="flex flex-wrap items-center gap-2">
         <h3 className="text-body text-text font-semibold">{label}</h3>
         <Badge tone="info">{t(`authoring.questionTypes.${type}`)}</Badge>
@@ -611,7 +614,7 @@ function QuestionTextFields({
     onChange(next)
   }
   return (
-    <div className="grid gap-3">
+    <div className="grid grid-cols-1 gap-3">
       <Textarea
         label={t('authoring.prompt')}
         value={texts.prompt}
@@ -620,7 +623,7 @@ function QuestionTextFields({
           set('prompt', event.target.value)
         }}
       />
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
         <Textarea
           label={t('authoring.hint')}
           value={texts.hint}
@@ -694,7 +697,7 @@ function OptionList({
   const questionId = question.id ?? ''
 
   return (
-    <fieldset className="grid gap-2">
+    <fieldset className="grid grid-cols-1 gap-2">
       <legend className="text-small text-text mb-1 font-medium">
         {ordering
           ? t('authoring.orderHint')
@@ -830,12 +833,12 @@ function MatchingPairs({
   const questionId = question.id ?? ''
 
   return (
-    <fieldset className="grid gap-2">
+    <fieldset className="grid grid-cols-1 gap-2">
       <legend className="text-small text-text mb-1 font-medium">{t('authoring.matchingHint')}</legend>
       {keys.map((key, index) => {
         const pair = options.filter((option) => option.matchKey === key)
         return (
-          <div key={key} className="grid grid-cols-[1fr_1fr_auto] items-center gap-2">
+          <div key={key} className="flex items-center gap-2">
             {pair.slice(0, 2).map((option, side) => (
               <OptionText
                 key={`${option.id}-${locale}`}
@@ -895,11 +898,11 @@ function AnswerKeys({
   const questionId = question.id ?? ''
 
   return (
-    <fieldset className="grid gap-2">
+    <fieldset className="grid grid-cols-1 gap-2">
       <legend className="text-small text-text mb-1 font-medium">
         {numeric ? t('authoring.numericHint') : t('authoring.shortAnswerHint')}
       </legend>
-      <ul className="grid gap-1">
+      <ul className="grid grid-cols-1 gap-1">
         {keys.map((key) => (
           <li key={key.id} className="border-border flex items-center gap-2 rounded-md border px-3 py-1.5">
             <code className="text-small text-text font-mono">{key.expectedValue}</code>
