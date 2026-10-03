@@ -262,6 +262,13 @@
           },
           "text" : {
             "type" : "string"
+          },
+          "translations" : {
+            "description" : "Every language the option exists in, for the editor",
+            "items" : {
+              "$ref" : "#/components/schemas/OptionTranslationView"
+            },
+            "type" : "array"
           }
         }
       },
@@ -502,6 +509,16 @@
           },
           "requestId" : {
             "type" : "string"
+          }
+        }
+      },
+      "BlockTranslationView" : {
+        "properties" : {
+          "locale" : {
+            "type" : "string"
+          },
+          "payload" : {
+            "$ref" : "#/components/schemas/JsonNode"
           }
         }
       },
@@ -871,6 +888,13 @@
           "titleIsFallback" : {
             "type" : "boolean"
           },
+          "translations" : {
+            "description" : "Every language the texts exist in, for the editor",
+            "items" : {
+              "$ref" : "#/components/schemas/CodingTaskTranslationView"
+            },
+            "type" : "array"
+          },
           "wallTimeLimitMs" : {
             "format" : "int32",
             "type" : "integer"
@@ -1006,6 +1030,29 @@
           }
         }
       },
+      "CodingTaskTranslationView" : {
+        "description" : "One language of a coding task's texts, as the editor shows it",
+        "properties" : {
+          "constraintsText" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "explanation" : {
+            "type" : "string"
+          },
+          "instructions" : {
+            "type" : "string"
+          },
+          "locale" : {
+            "type" : "string"
+          },
+          "title" : {
+            "type" : "string"
+          }
+        }
+      },
       "ComponentGradeView" : {
         "description" : "One component of the course's assessment scheme with what the student has earned in it. A component with children earns the sum of its children",
         "properties" : {
@@ -1119,6 +1166,13 @@
           },
           "settings" : {
             "$ref" : "#/components/schemas/JsonNode"
+          },
+          "translations" : {
+            "description" : "Editors only: every language the payload exists in. Absent in the student-facing rendering",
+            "items" : {
+              "$ref" : "#/components/schemas/BlockTranslationView"
+            },
+            "type" : "array"
           },
           "visibility" : {
             "enum" : [ "ALL", "STUDENT_ONLY", "TEACHER_ONLY" ],
@@ -1252,6 +1306,21 @@
           },
           "weeklyContactHours" : {
             "type" : "number"
+          }
+        }
+      },
+      "CourseGradebookRow" : {
+        "description" : "One student's row of a course gradebook",
+        "properties" : {
+          "grades" : {
+            "$ref" : "#/components/schemas/EnrollmentGradeSummary"
+          },
+          "studentFullName" : {
+            "type" : "string"
+          },
+          "studentUserId" : {
+            "format" : "uuid",
+            "type" : "string"
           }
         }
       },
@@ -2676,7 +2745,18 @@
           }
         }
       },
+      "HintTranslationView" : {
+        "properties" : {
+          "body" : {
+            "type" : "string"
+          },
+          "locale" : {
+            "type" : "string"
+          }
+        }
+      },
       "HintView" : {
+        "description" : "A hint, teacher view: body in the reader's language and every translation",
         "properties" : {
           "body" : {
             "type" : "string"
@@ -2691,6 +2771,12 @@
           "position" : {
             "format" : "int32",
             "type" : "integer"
+          },
+          "translations" : {
+            "items" : {
+              "$ref" : "#/components/schemas/HintTranslationView"
+            },
+            "type" : "array"
           }
         }
       },
@@ -3702,6 +3788,19 @@
           }
         }
       },
+      "OptionTranslationView" : {
+        "properties" : {
+          "feedback" : {
+            "type" : "string"
+          },
+          "locale" : {
+            "type" : "string"
+          },
+          "text" : {
+            "type" : "string"
+          }
+        }
+      },
       "OutcomeTranslationView" : {
         "properties" : {
           "locale" : {
@@ -4341,6 +4440,43 @@
           }
         }
       },
+      "PageResponseReviewQueueItem" : {
+        "description" : "Paginated collection envelope",
+        "properties" : {
+          "content" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ReviewQueueItem"
+            },
+            "type" : "array"
+          },
+          "hasNext" : {
+            "type" : "boolean"
+          },
+          "hasPrevious" : {
+            "type" : "boolean"
+          },
+          "page" : {
+            "example" : 0,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "size" : {
+            "example" : 20,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "totalElements" : {
+            "example" : 137,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalPages" : {
+            "example" : 7,
+            "format" : "int32",
+            "type" : "integer"
+          }
+        }
+      },
       "PageResponseStudentAtRiskSummary" : {
         "description" : "Paginated collection envelope",
         "properties" : {
@@ -4899,6 +5035,13 @@
           },
           "settings" : {
             "$ref" : "#/components/schemas/JsonNode"
+          },
+          "translations" : {
+            "description" : "Every language the texts exist in, for the editor",
+            "items" : {
+              "$ref" : "#/components/schemas/QuestionTranslationView"
+            },
+            "type" : "array"
           }
         }
       },
@@ -4919,6 +5062,22 @@
           "responses" : {
             "format" : "int64",
             "type" : "integer"
+          }
+        }
+      },
+      "QuestionTranslationView" : {
+        "properties" : {
+          "explanation" : {
+            "type" : "string"
+          },
+          "hint" : {
+            "type" : "string"
+          },
+          "locale" : {
+            "type" : "string"
+          },
+          "prompt" : {
+            "type" : "string"
           }
         }
       },
@@ -4983,6 +5142,13 @@
           },
           "titleIsFallback" : {
             "type" : "boolean"
+          },
+          "translations" : {
+            "description" : "Every language the texts exist in, for the editor",
+            "items" : {
+              "$ref" : "#/components/schemas/QuizTranslationView"
+            },
+            "type" : "array"
           }
         }
       },
@@ -5050,6 +5216,22 @@
           },
           "titleIsFallback" : {
             "type" : "boolean"
+          }
+        }
+      },
+      "QuizTranslationView" : {
+        "properties" : {
+          "description" : {
+            "type" : "string"
+          },
+          "instructions" : {
+            "type" : "string"
+          },
+          "locale" : {
+            "type" : "string"
+          },
+          "title" : {
+            "type" : "string"
           }
         }
       },
@@ -5181,6 +5363,59 @@
           }
         },
         "required" : [ "newPassword" ]
+      },
+      "ReviewQueueItem" : {
+        "description" : "One submission waiting in (or already through) a teacher's review",
+        "properties" : {
+          "attemptNumber" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "codingTaskId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "groupCode" : {
+            "type" : "string"
+          },
+          "hasFeedback" : {
+            "type" : "boolean"
+          },
+          "languageCode" : {
+            "type" : "string"
+          },
+          "maxScore" : {
+            "type" : "number"
+          },
+          "score" : {
+            "type" : "number"
+          },
+          "status" : {
+            "type" : "string"
+          },
+          "studentFullName" : {
+            "type" : "string"
+          },
+          "studentUserId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "submissionId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "submittedAt" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "taskTitle" : {
+            "description" : "In the requested language, else Uzbek, else the task code",
+            "type" : "string"
+          },
+          "verdict" : {
+            "type" : "string"
+          }
+        }
       },
       "RoleView" : {
         "description" : "One role and the permission codes it grants",
@@ -10335,7 +10570,7 @@
     },
     "/api/v1/admin/timetables" : {
       "get" : {
-        "operationId" : "list_14",
+        "operationId" : "list_15",
         "parameters" : [ {
           "in" : "query",
           "name" : "termId",
@@ -12431,7 +12666,7 @@
     },
     "/api/v1/courses/{courseId}/coding-tasks" : {
       "get" : {
-        "operationId" : "list_13",
+        "operationId" : "list_14",
         "parameters" : [ {
           "in" : "path",
           "name" : "courseId",
@@ -12581,7 +12816,7 @@
     },
     "/api/v1/courses/{courseId}/modules" : {
       "get" : {
-        "operationId" : "list_12",
+        "operationId" : "list_13",
         "parameters" : [ {
           "in" : "path",
           "name" : "courseId",
@@ -12758,7 +12993,7 @@
     },
     "/api/v1/courses/{courseId}/quizzes" : {
       "get" : {
-        "operationId" : "list_11",
+        "operationId" : "list_12",
         "parameters" : [ {
           "in" : "path",
           "name" : "courseId",
@@ -13294,7 +13529,7 @@
     },
     "/api/v1/groups" : {
       "get" : {
-        "operationId" : "list_10",
+        "operationId" : "list_11",
         "responses" : {
           "200" : {
             "content" : {
@@ -13522,7 +13757,7 @@
     },
     "/api/v1/modules/{moduleId}/lessons" : {
       "get" : {
-        "operationId" : "list_9",
+        "operationId" : "list_10",
         "parameters" : [ {
           "in" : "path",
           "name" : "moduleId",
@@ -15348,7 +15583,7 @@
     },
     "/api/v1/teacher/coding-tasks/{codingTaskId}/submissions" : {
       "get" : {
-        "operationId" : "list_8",
+        "operationId" : "list_9",
         "parameters" : [ {
           "in" : "path",
           "name" : "codingTaskId",
@@ -16133,7 +16368,7 @@
     },
     "/api/v1/teacher/courses/{courseId}/activities" : {
       "get" : {
-        "operationId" : "list_7",
+        "operationId" : "list_8",
         "parameters" : [ {
           "in" : "path",
           "name" : "courseId",
@@ -16631,7 +16866,7 @@
     },
     "/api/v1/teacher/courses/{courseId}/coding-tasks" : {
       "get" : {
-        "operationId" : "list_6",
+        "operationId" : "list_7",
         "parameters" : [ {
           "in" : "path",
           "name" : "courseId",
@@ -16750,6 +16985,58 @@
         "tags" : [ "Teacher: coding tasks" ]
       }
     },
+    "/api/v1/teacher/courses/{courseId}/gradebook" : {
+      "get" : {
+        "description" : "One row per enrolled student (at most 500), each with the full grade summary the single-student endpoint returns: earned per component, the final score, its grade, admission, debt, current entries and history.",
+        "operationId" : "gradebook",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "courseId",
+          "required" : true,
+          "schema" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "locale",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "items" : {
+                    "$ref" : "#/components/schemas/CourseGradebookRow"
+                  },
+                  "type" : "array"
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description" : "Any failure (4xx, 5xx): the error envelope"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "summary" : "The gradebook of a course: every student with every component, alphabetical",
+        "tags" : [ "Teacher: grades" ]
+      }
+    },
     "/api/v1/teacher/courses/{courseId}/grades" : {
       "get" : {
         "operationId" : "roster_2",
@@ -16824,7 +17111,7 @@
     },
     "/api/v1/teacher/courses/{courseId}/modules" : {
       "get" : {
-        "operationId" : "list_5",
+        "operationId" : "list_6",
         "parameters" : [ {
           "in" : "path",
           "name" : "courseId",
@@ -17061,7 +17348,7 @@
     },
     "/api/v1/teacher/courses/{courseId}/quizzes" : {
       "get" : {
-        "operationId" : "list_4",
+        "operationId" : "list_5",
         "parameters" : [ {
           "in" : "path",
           "name" : "courseId",
@@ -17258,6 +17545,111 @@
         } ],
         "summary" : "List the roster of a course the caller teaches (or any course, for an admin)",
         "tags" : [ "Teacher: course roster" ]
+      }
+    },
+    "/api/v1/teacher/courses/{courseId}/submissions" : {
+      "get" : {
+        "description" : "Filters: one task, one verdict, one group, only those without feedback, only each student's latest attempt per task.",
+        "operationId" : "list_4",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "courseId",
+          "required" : true,
+          "schema" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "taskId",
+          "required" : false,
+          "schema" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "verdict",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "groupCode",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "needsFeedback",
+          "required" : false,
+          "schema" : {
+            "default" : false,
+            "type" : "boolean"
+          }
+        }, {
+          "in" : "query",
+          "name" : "latestOnly",
+          "required" : false,
+          "schema" : {
+            "default" : false,
+            "type" : "boolean"
+          }
+        }, {
+          "in" : "query",
+          "name" : "page",
+          "required" : false,
+          "schema" : {
+            "default" : 0,
+            "format" : "int32",
+            "type" : "integer"
+          }
+        }, {
+          "in" : "query",
+          "name" : "size",
+          "required" : false,
+          "schema" : {
+            "default" : 20,
+            "format" : "int32",
+            "type" : "integer"
+          }
+        }, {
+          "in" : "query",
+          "name" : "locale",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageResponseReviewQueueItem"
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description" : "Any failure (4xx, 5xx): the error envelope"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "summary" : "The review queue of a course: submissions to every coding task, newest first",
+        "tags" : [ "Teacher: submissions" ]
       }
     },
     "/api/v1/teacher/courses/{id}" : {

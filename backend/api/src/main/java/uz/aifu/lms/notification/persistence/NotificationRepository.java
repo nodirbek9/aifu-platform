@@ -29,6 +29,11 @@ public interface NotificationRepository extends JpaRepository<Notification, UUID
                     + " and n.status = uz.aifu.lms.notification.domain.NotificationStatus.SENT")
     int markAllRead(@Param("recipient") UUID recipientUserId, @Param("now") Instant now);
 
+    /** Withdraws every notification about one thing, whoever it went to. */
+    @Modifying
+    @Query("delete from Notification n where n.dedupeKey = :dedupeKey")
+    int deleteByDedupeKey(@Param("dedupeKey") String dedupeKey);
+
     /** Ownership-safe read — a notification id alone is never enough to read someone else's row. */
     Optional<Notification> findByIdAndRecipientUserId(UUID id, UUID recipientUserId);
 }

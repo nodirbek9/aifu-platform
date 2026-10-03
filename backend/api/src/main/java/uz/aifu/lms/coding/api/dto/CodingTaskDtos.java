@@ -82,7 +82,26 @@ public final class CodingTaskDtos {
             String solutionCode,
             UUID taskLanguageId) {}
 
-    public record HintView(UUID id, int position, BigDecimal penaltyPercent, String body) {}
+    @Schema(
+            description =
+                    "A hint, teacher view: body in the reader's language and every translation")
+    public record HintView(
+            UUID id,
+            int position,
+            BigDecimal penaltyPercent,
+            String body,
+            List<HintTranslationView> translations) {}
+
+    public record HintTranslationView(String locale, String body) {}
+
+    @Schema(description = "One language of a coding task's texts, as the editor shows it")
+    public record CodingTaskTranslationView(
+            String locale,
+            String title,
+            String description,
+            String instructions,
+            String constraintsText,
+            String explanation) {}
 
     @Schema(description = "A hint as a student sees it: body is null until the hint is opened")
     public record StudentHintView(UUID id, int position, boolean revealed, String body) {}
@@ -139,7 +158,9 @@ public final class CodingTaskDtos {
             boolean titleIsFallback,
             List<LanguageTeacherView> languages,
             List<HintView> hints,
-            List<TestCaseView> testCases) {}
+            List<TestCaseView> testCases,
+            @Schema(description = "Every language the texts exist in, for the editor")
+                    List<CodingTaskTranslationView> translations) {}
 
     @Schema(
             description =

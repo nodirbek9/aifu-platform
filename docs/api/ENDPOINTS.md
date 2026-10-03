@@ -493,6 +493,7 @@ Manual entry, override, and the course grade roster
 
 | Method | Path | What it does | Query | Body | Returns |
 |---|---|---|---|---|---|
+| GET | `/teacher/courses/{courseId}/gradebook` | The gradebook of a course: every student with every component, alphabetical | locale? |  | 200 CourseGradebookRow[] |
 | GET | `/teacher/courses/{courseId}/grades` | Current grade summary for every enrolled student in this course | page?, size?, sort? |  | 200 PageResponseStudentGradeSummary |
 | GET | `/teacher/enrollments/{id}/grades` | One student's full current grade summary, teacher view |  |  | 200 EnrollmentGradeSummary |
 | POST | `/teacher/enrollments/{id}/grades` | Record or override a manual grade for one assessment component |  | RecordManualGradeRequest | 201 GradeEntryView |
@@ -583,6 +584,7 @@ A teacher's own coding task's submission roster
 |---|---|---|---|---|---|
 | GET | `/teacher/coding-tasks/{codingTaskId}/submissions` | List every submission to a coding task the caller teaches (or any task, for an admin) | page?, size?, sort? |  | 200 PageResponseStudentSubmissionSummary |
 | GET | `/teacher/coding-tasks/{codingTaskId}/submissions/{id}` | Get one submission with full per-test results, including hidden test output |  |  | 200 SubmissionDetail |
+| GET | `/teacher/courses/{courseId}/submissions` | The review queue of a course: submissions to every coding task, newest first | taskId?, verdict?, groupCode?, needsFeedback?, latestOnly?, page?, size?, locale? |  | 200 PageResponseReviewQueueItem |
 
 ## Teacher: verify coding task solutions
 

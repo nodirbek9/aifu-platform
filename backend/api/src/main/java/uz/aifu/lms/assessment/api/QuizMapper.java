@@ -3,6 +3,7 @@ package uz.aifu.lms.assessment.api;
 import java.util.List;
 import uz.aifu.lms.assessment.api.dto.QuizDtos.QuizDetail;
 import uz.aifu.lms.assessment.api.dto.QuizDtos.QuizSummary;
+import uz.aifu.lms.assessment.api.dto.QuizDtos.QuizTranslationView;
 import uz.aifu.lms.assessment.domain.Quiz;
 import uz.aifu.lms.assessment.domain.QuizTranslation;
 
@@ -95,6 +96,15 @@ final class QuizMapper {
                 t.title(),
                 t.description(),
                 t.instructions(),
-                t.fallback());
+                t.fallback(),
+                translations.stream()
+                        .map(
+                                tr ->
+                                        new QuizTranslationView(
+                                                tr.getLocale(),
+                                                tr.getTitle(),
+                                                tr.getDescription(),
+                                                tr.getInstructions()))
+                        .toList());
     }
 }

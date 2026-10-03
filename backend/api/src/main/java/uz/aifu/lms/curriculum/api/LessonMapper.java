@@ -122,7 +122,8 @@ final class LessonMapper {
                                                         b.getId(), List.of()),
                                                 resolvedLocale,
                                                 defaultLocale,
-                                                objectMapper))
+                                                objectMapper,
+                                                forEditors))
                         .toList();
         return new LessonDetail(
                 lesson.getId(),

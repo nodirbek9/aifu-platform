@@ -246,7 +246,12 @@ public class AdminCodingTaskContentController {
                         .findFirst()
                         .map(CodingTaskHintTranslation::getBody)
                         .orElse(null);
-        return new HintView(hint.getId(), hint.getPosition(), hint.getPenaltyPercent(), body);
+        return new HintView(
+                hint.getId(),
+                hint.getPosition(),
+                hint.getPenaltyPercent(),
+                body,
+                CodingTaskMapper.hintTranslations(translations));
     }
 
     private static LanguageTeacherView toLanguageTeacherView(CodingTaskLanguage entry) {

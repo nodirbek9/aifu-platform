@@ -106,6 +106,10 @@ public final class GradeDtos {
                                             + " stays here")
                     List<GradeEntryView> history) {}
 
+    @Schema(description = "One student's row of a course gradebook")
+    public record CourseGradebookRow(
+            UUID studentUserId, String studentFullName, EnrollmentGradeSummary grades) {}
+
     @Schema(description = "One student's grade summary, for a teacher's course roster")
     public record StudentGradeSummary(
             UUID enrollmentId,

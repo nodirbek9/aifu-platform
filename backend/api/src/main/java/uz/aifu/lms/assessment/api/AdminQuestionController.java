@@ -309,6 +309,7 @@ public class AdminQuestionController {
                 option.isCorrect(),
                 option.getMatchKey(),
                 match[0],
-                match[1]);
+                match[1],
+                QuestionMapper.optionTranslations(translations));
     }
 }

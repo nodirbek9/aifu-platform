@@ -870,7 +870,7 @@ export interface paths {
             cookie?: never;
         };
         /** Timetables, newest first; optionally of one term */
-        get: operations["list_14"];
+        get: operations["list_15"];
         put?: never;
         /** Create a draft timetable for a term, optionally as a copy of another one */
         post: operations["create_10"];
@@ -1521,7 +1521,7 @@ export interface paths {
             cookie?: never;
         };
         /** List a course's published coding tasks */
-        get: operations["list_13"];
+        get: operations["list_14"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1555,7 +1555,7 @@ export interface paths {
             cookie?: never;
         };
         /** List a course's published modules, in order */
-        get: operations["list_12"];
+        get: operations["list_13"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1609,7 +1609,7 @@ export interface paths {
             cookie?: never;
         };
         /** List a course's published quizzes */
-        get: operations["list_11"];
+        get: operations["list_12"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1769,7 +1769,7 @@ export interface paths {
             cookie?: never;
         };
         /** All groups with their student counts */
-        get: operations["list_10"];
+        get: operations["list_11"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1857,7 +1857,7 @@ export interface paths {
             cookie?: never;
         };
         /** List a module's published lessons, in order */
-        get: operations["list_9"];
+        get: operations["list_10"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2427,7 +2427,7 @@ export interface paths {
             cookie?: never;
         };
         /** List every submission to a coding task the caller teaches (or any task, for an admin) */
-        get: operations["list_8"];
+        get: operations["list_9"];
         put?: never;
         post?: never;
         delete?: never;
@@ -2622,7 +2622,7 @@ export interface paths {
             cookie?: never;
         };
         /** List a course's activities, any status */
-        get: operations["list_7"];
+        get: operations["list_8"];
         put?: never;
         /** Create an activity, placed under a module or a lesson */
         post: operations["create_7"];
@@ -2762,10 +2762,30 @@ export interface paths {
             cookie?: never;
         };
         /** List all of a course's coding tasks, any status */
-        get: operations["list_6"];
+        get: operations["list_7"];
         put?: never;
         /** Create a coding task */
         post: operations["create_6"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/teacher/courses/{courseId}/gradebook": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * The gradebook of a course: every student with every component, alphabetical
+         * @description One row per enrolled student (at most 500), each with the full grade summary the single-student endpoint returns: earned per component, the final score, its grade, admission, debt, current entries and history.
+         */
+        get: operations["gradebook"];
+        put?: never;
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -2797,7 +2817,7 @@ export interface paths {
             cookie?: never;
         };
         /** List a course's modules, any status */
-        get: operations["list_5"];
+        get: operations["list_6"];
         put?: never;
         /** Create a module within a course */
         post: operations["create_5"];
@@ -2849,7 +2869,7 @@ export interface paths {
             cookie?: never;
         };
         /** List all of a course's quizzes, any status */
-        get: operations["list_4"];
+        get: operations["list_5"];
         put?: never;
         /** Create a quiz */
         post: operations["create_4"];
@@ -2868,6 +2888,26 @@ export interface paths {
         };
         /** List the roster of a course the caller teaches (or any course, for an admin) */
         get: operations["roster"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/teacher/courses/{courseId}/submissions": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * The review queue of a course: submissions to every coding task, newest first
+         * @description Filters: one task, one verdict, one group, only those without feedback, only each student's latest attempt per task.
+         */
+        get: operations["list_4"];
         put?: never;
         post?: never;
         delete?: never;
@@ -3668,6 +3708,8 @@ export interface components {
             /** Format: int32 */
             position?: number;
             text?: string;
+            /** @description Every language the option exists in, for the editor */
+            translations?: components["schemas"]["OptionTranslationView"][];
         };
         /** @description Uniform error response returned by every endpoint */
         ApiError: {
@@ -3791,6 +3833,10 @@ export interface components {
             /** @enum {string} */
             outcome?: "SUCCESS" | "FAILURE" | "DENIED";
             requestId?: string;
+        };
+        BlockTranslationView: {
+            locale?: string;
+            payload?: components["schemas"]["JsonNode"];
         };
         /** @description Enroll a batch of students; each student's outcome is reported independently. */
         BulkEnrollRequest: {
@@ -3956,6 +4002,8 @@ export interface components {
             testCases?: components["schemas"]["TestCaseView"][];
             title?: string;
             titleIsFallback?: boolean;
+            /** @description Every language the texts exist in, for the editor */
+            translations?: components["schemas"]["CodingTaskTranslationView"][];
             /** Format: int32 */
             wallTimeLimitMs?: number;
         };
@@ -4014,6 +4062,15 @@ export interface components {
             title?: string;
             titleIsFallback?: boolean;
         };
+        /** @description One language of a coding task's texts, as the editor shows it */
+        CodingTaskTranslationView: {
+            constraintsText?: string;
+            description?: string;
+            explanation?: string;
+            instructions?: string;
+            locale?: string;
+            title?: string;
+        };
         /** @description One component of the course's assessment scheme with what the student has earned in it. A component with children earns the sum of its children */
         ComponentGradeView: {
             blocksFinal?: boolean;
@@ -4064,6 +4121,8 @@ export interface components {
             position?: number;
             required?: boolean;
             settings?: components["schemas"]["JsonNode"];
+            /** @description Editors only: every language the payload exists in. Absent in the student-facing rendering */
+            translations?: components["schemas"]["BlockTranslationView"][];
             /** @enum {string} */
             visibility?: "ALL" | "STUDENT_ONLY" | "TEACHER_ONLY";
         };
@@ -4117,6 +4176,13 @@ export interface components {
             totalHours?: number;
             translations?: components["schemas"]["CourseTranslationView"][];
             weeklyContactHours?: number;
+        };
+        /** @description One student's row of a course gradebook */
+        CourseGradebookRow: {
+            grades?: components["schemas"]["EnrollmentGradeSummary"];
+            studentFullName?: string;
+            /** Format: uuid */
+            studentUserId?: string;
         };
         /** @description A course's published modules and lessons with the caller's status on each, in one call. continueLessonId is the first lesson that is neither done nor locked. */
         CoursePlanView: {
@@ -4751,6 +4817,11 @@ export interface components {
             studentCount?: number;
             studyForm?: string;
         };
+        HintTranslationView: {
+            body?: string;
+            locale?: string;
+        };
+        /** @description A hint, teacher view: body in the reader's language and every translation */
         HintView: {
             body?: string;
             /** Format: uuid */
@@ -4758,6 +4829,7 @@ export interface components {
             penaltyPercent?: number;
             /** Format: int32 */
             position?: number;
+            translations?: components["schemas"]["HintTranslationView"][];
         };
         HolidayRequest: {
             /** Format: date */
@@ -5208,6 +5280,11 @@ export interface components {
             /** @enum {string} */
             type?: "ENROLLMENT_CREATED" | "LESSON_COMPLETED" | "QUIZ_GRADED" | "SUBMISSION_GRADED" | "TEACHER_FEEDBACK" | "ANNOUNCEMENT" | "GRADE_PUBLISHED" | "DEADLINE_REMINDER" | "ACCOUNT_STATUS_CHANGED" | "TIMETABLE_CHANGED";
         };
+        OptionTranslationView: {
+            feedback?: string;
+            locale?: string;
+            text?: string;
+        };
         OutcomeTranslationView: {
             locale?: string;
             statement?: string;
@@ -5655,6 +5732,32 @@ export interface components {
             totalPages?: number;
         };
         /** @description Paginated collection envelope */
+        PageResponseReviewQueueItem: {
+            content?: components["schemas"]["ReviewQueueItem"][];
+            hasNext?: boolean;
+            hasPrevious?: boolean;
+            /**
+             * Format: int32
+             * @example 0
+             */
+            page?: number;
+            /**
+             * Format: int32
+             * @example 20
+             */
+            size?: number;
+            /**
+             * Format: int64
+             * @example 137
+             */
+            totalElements?: number;
+            /**
+             * Format: int32
+             * @example 7
+             */
+            totalPages?: number;
+        };
+        /** @description Paginated collection envelope */
         PageResponseStudentAtRiskSummary: {
             content?: components["schemas"]["StudentAtRiskSummary"][];
             hasNext?: boolean;
@@ -5986,6 +6089,8 @@ export interface components {
             /** Format: uuid */
             quizId?: string;
             settings?: components["schemas"]["JsonNode"];
+            /** @description Every language the texts exist in, for the editor */
+            translations?: components["schemas"]["QuestionTranslationView"][];
         };
         /** @description Item analysis for one question */
         QuestionDifficultySummary: {
@@ -5996,6 +6101,12 @@ export interface components {
             questionId?: string;
             /** Format: int64 */
             responses?: number;
+        };
+        QuestionTranslationView: {
+            explanation?: string;
+            hint?: string;
+            locale?: string;
+            prompt?: string;
         };
         /** @description Full quiz detail, teacher/admin view (includes questions) */
         QuizDetail: {
@@ -6024,6 +6135,8 @@ export interface components {
             timeLimitSeconds?: number;
             title?: string;
             titleIsFallback?: boolean;
+            /** @description Every language the texts exist in, for the editor */
+            translations?: components["schemas"]["QuizTranslationView"][];
         };
         /** @description Quiz-level performance summary */
         QuizPerformanceSummary: {
@@ -6055,6 +6168,12 @@ export interface components {
             status?: "DRAFT" | "PUBLISHED" | "ARCHIVED";
             title?: string;
             titleIsFallback?: boolean;
+        };
+        QuizTranslationView: {
+            description?: string;
+            instructions?: string;
+            locale?: string;
+            title?: string;
         };
         RecordAnswerRequest: {
             responseNumber?: number;
@@ -6098,6 +6217,29 @@ export interface components {
         /** @description Administrative password reset. Forces a change at next login. */
         ResetPasswordRequest: {
             newPassword: string;
+        };
+        /** @description One submission waiting in (or already through) a teacher's review */
+        ReviewQueueItem: {
+            /** Format: int32 */
+            attemptNumber?: number;
+            /** Format: uuid */
+            codingTaskId?: string;
+            groupCode?: string;
+            hasFeedback?: boolean;
+            languageCode?: string;
+            maxScore?: number;
+            score?: number;
+            status?: string;
+            studentFullName?: string;
+            /** Format: uuid */
+            studentUserId?: string;
+            /** Format: uuid */
+            submissionId?: string;
+            /** Format: date-time */
+            submittedAt?: string;
+            /** @description In the requested language, else Uzbek, else the task code */
+            taskTitle?: string;
+            verdict?: string;
         };
         /** @description One role and the permission codes it grants */
         RoleView: {
@@ -9142,7 +9284,7 @@ export interface operations {
             };
         };
     };
-    list_14: {
+    list_15: {
         parameters: {
             query?: {
                 termId?: string;
@@ -10495,7 +10637,7 @@ export interface operations {
             };
         };
     };
-    list_13: {
+    list_14: {
         parameters: {
             query?: {
                 /** @description Response locale; falls back per ADR-005 */
@@ -10573,7 +10715,7 @@ export interface operations {
             };
         };
     };
-    list_12: {
+    list_13: {
         parameters: {
             query?: {
                 /** @description Response locale; falls back per ADR-005 */
@@ -10679,7 +10821,7 @@ export interface operations {
             };
         };
     };
-    list_11: {
+    list_12: {
         parameters: {
             query?: {
                 /** @description Response locale; falls back per ADR-005 */
@@ -11020,7 +11162,7 @@ export interface operations {
             };
         };
     };
-    list_10: {
+    list_11: {
         parameters: {
             query?: never;
             header?: never;
@@ -11182,7 +11324,7 @@ export interface operations {
             };
         };
     };
-    list_9: {
+    list_10: {
         parameters: {
             query?: {
                 /** @description Response locale; falls back per ADR-005 */
@@ -12415,7 +12557,7 @@ export interface operations {
             };
         };
     };
-    list_8: {
+    list_9: {
         parameters: {
             query?: {
                 /** @description Zero-based page index */
@@ -12948,7 +13090,7 @@ export interface operations {
             };
         };
     };
-    list_7: {
+    list_8: {
         parameters: {
             query?: {
                 /** @description Zero-based page index */
@@ -13253,7 +13395,7 @@ export interface operations {
             };
         };
     };
-    list_6: {
+    list_7: {
         parameters: {
             query?: {
                 /** @description Zero-based page index */
@@ -13326,6 +13468,39 @@ export interface operations {
             };
         };
     };
+    gradebook: {
+        parameters: {
+            query?: {
+                locale?: string;
+            };
+            header?: never;
+            path: {
+                courseId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["CourseGradebookRow"][];
+                };
+            };
+            /** @description Any failure (4xx, 5xx): the error envelope */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
     roster_2: {
         parameters: {
             query?: {
@@ -13364,7 +13539,7 @@ export interface operations {
             };
         };
     };
-    list_5: {
+    list_6: {
         parameters: {
             query?: {
                 /** @description Zero-based page index */
@@ -13508,7 +13683,7 @@ export interface operations {
             };
         };
     };
-    list_4: {
+    list_5: {
         parameters: {
             query?: {
                 /** @description Zero-based page index */
@@ -13607,6 +13782,46 @@ export interface operations {
                 };
                 content: {
                     "*/*": components["schemas"]["PageResponseEnrollmentSummary"];
+                };
+            };
+            /** @description Any failure (4xx, 5xx): the error envelope */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    list_4: {
+        parameters: {
+            query?: {
+                taskId?: string;
+                verdict?: string;
+                groupCode?: string;
+                needsFeedback?: boolean;
+                latestOnly?: boolean;
+                page?: number;
+                size?: number;
+                locale?: string;
+            };
+            header?: never;
+            path: {
+                courseId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["PageResponseReviewQueueItem"];
                 };
             };
             /** @description Any failure (4xx, 5xx): the error envelope */

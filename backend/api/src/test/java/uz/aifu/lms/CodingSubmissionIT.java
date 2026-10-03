@@ -2,6 +2,7 @@ package uz.aifu.lms;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -247,6 +248,94 @@ class CodingSubmissionIT extends AbstractIntegrationTest {
                         ApiError.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNPROCESSABLE_ENTITY);
         assertThat(response.getBody().code()).isEqualTo("LANGUAGE_NOT_ENABLED");
+    }
+
+    @Test
+    void reviewQueue_listsTheCoursesSubmissions_withItsFilters() throws Exception {
+        User admin = userFixtures.activeUser(RoleCode.ADMIN);
+        String adminToken = login(admin);
+        Course course = enrollmentFixtures.publishedCourse(150);
+        CodingTaskDetail task = createPublishedTask(adminToken, course.getId(), 10);
+        UUID hiddenCase =
+                task.testCases().stream()
+                        .filter(t -> t.visibility() == TestCaseVisibility.HIDDEN)
+                        .findFirst()
+                        .orElseThrow()
+                        .id();
+        // the editor gets every language of the texts
+        assertThat(task.translations())
+                .singleElement()
+                .satisfies(t -> assertThat(t.title()).isEqualTo("Test task"));
+        User student = userFixtures.activeUser(RoleCode.STUDENT);
+        enrollmentService.enroll(
+                course.getId(), student.getId(), EnrollmentSource.ADMIN, admin.getId(), null);
+        String studentToken = login(student);
+
+        SubmissionDetail first =
+                submit(studentToken, task.id(), "python", "print(1)", "q-" + UUID.randomUUID());
+        SubmissionDetail second =
+                submit(studentToken, task.id(), "python", "print(0)", "q-" + UUID.randomUUID());
+        insertGradedResult(second.id(), hiddenCase);
+
+        String base = "/api/v1/teacher/courses/" + course.getId() + "/submissions";
+        JsonNode all = queue(adminToken, base);
+        assertThat(all.get("totalElements").asInt()).isEqualTo(2);
+        JsonNode newest = all.get("content").get(0);
+        assertThat(newest.get("studentFullName").asText()).isEqualTo(student.getFullName());
+        assertThat(newest.get("taskTitle").asText()).isEqualTo("Test task");
+        assertThat(newest.get("hasFeedback").asBoolean()).isFalse();
+
+        JsonNode latest = queue(adminToken, base + "?latestOnly=true");
+        assertThat(latest.get("totalElements").asInt()).isEqualTo(1);
+        assertThat(latest.get("content").get(0).get("submissionId").asText())
+                .isEqualTo(second.id().toString());
+        assertThat(queue(adminToken, base + "?verdict=ACCEPTED").get("totalElements").asInt())
+                .isEqualTo(1);
+
+        jdbc.update(
+                """
+                INSERT INTO feedback (id, target_type, target_id, author_user_id, visibility,
+                                      body_markdown, created_at, updated_at)
+                VALUES (?, 'SUBMISSION', ?, ?, 'STUDENT_VISIBLE', 'Yaxshi', now(), now())
+                """,
+                UUID.randomUUID(),
+                first.id(),
+                admin.getId());
+        JsonNode waiting = queue(adminToken, base + "?needsFeedback=true");
+        assertThat(waiting.get("totalElements").asInt()).isEqualTo(1);
+        assertThat(waiting.get("content").get(0).get("submissionId").asText())
+                .isEqualTo(second.id().toString());
+
+        // a student, or a teacher of another course, is refused
+        assertThat(
+                        rest.exchange(
+                                        url(base),
+                                        HttpMethod.GET,
+                                        new HttpEntity<>(bearer(studentToken)),
+                                        String.class)
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.FORBIDDEN);
+        assertThat(
+                        rest.exchange(
+                                        url(base),
+                                        HttpMethod.GET,
+                                        new HttpEntity<>(
+                                                bearer(
+                                                        login(
+                                                                userFixtures.activeUser(
+                                                                        RoleCode.TEACHER)))),
+                                        String.class)
+                                .getStatusCode()
+                                .is4xxClientError())
+                .isTrue();
+    }
+
+    private JsonNode queue(String token, String path) throws Exception {
+        ResponseEntity<String> response =
+                rest.exchange(
+                        url(path), HttpMethod.GET, new HttpEntity<>(bearer(token)), String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        return objectMapper.readTree(response.getBody());
     }
 
     // ---------------------------------------------------------------- fixture + result simulation

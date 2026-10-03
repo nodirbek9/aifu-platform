@@ -6,6 +6,8 @@ import java.util.UUID;
 import uz.aifu.lms.coding.api.dto.CodingTaskDtos.CodingTaskDetail;
 import uz.aifu.lms.coding.api.dto.CodingTaskDtos.CodingTaskStudentDetail;
 import uz.aifu.lms.coding.api.dto.CodingTaskDtos.CodingTaskSummary;
+import uz.aifu.lms.coding.api.dto.CodingTaskDtos.CodingTaskTranslationView;
+import uz.aifu.lms.coding.api.dto.CodingTaskDtos.HintTranslationView;
 import uz.aifu.lms.coding.api.dto.CodingTaskDtos.HintView;
 import uz.aifu.lms.coding.api.dto.CodingTaskDtos.LanguageTeacherView;
 import uz.aifu.lms.coding.api.dto.CodingTaskDtos.LanguageView;
@@ -124,7 +126,18 @@ final class CodingTaskMapper {
                                                 hintTranslations.getOrDefault(h.getId(), List.of()),
                                                 resolvedLocale))
                         .toList(),
-                testCases.stream().map(CodingTaskMapper::toTestCaseView).toList());
+                testCases.stream().map(CodingTaskMapper::toTestCaseView).toList(),
+                translations.stream()
+                        .map(
+                                tr ->
+                                        new CodingTaskTranslationView(
+                                                tr.getLocale(),
+                                                tr.getTitle(),
+                                                tr.getDescription(),
+                                                tr.getInstructions(),
+                                                tr.getConstraintsText(),
+                                                tr.getExplanation()))
+                        .toList());
     }
 
     static CodingTaskStudentDetail toStudentDetail(
@@ -195,7 +208,19 @@ final class CodingTaskMapper {
                         .or(() -> translations.stream().findFirst())
                         .map(CodingTaskHintTranslation::getBody)
                         .orElse(null);
-        return new HintView(hint.getId(), hint.getPosition(), hint.getPenaltyPercent(), body);
+        return new HintView(
+                hint.getId(),
+                hint.getPosition(),
+                hint.getPenaltyPercent(),
+                body,
+                hintTranslations(translations));
+    }
+
+    static List<HintTranslationView> hintTranslations(
+            List<CodingTaskHintTranslation> translations) {
+        return translations.stream()
+                .map(tr -> new HintTranslationView(tr.getLocale(), tr.getBody()))
+                .toList();
     }
 
     private static TestCaseView toTestCaseView(CodingTaskTestCase testCase) {

@@ -438,6 +438,9 @@ class PlatformAdditionsIT extends AbstractIntegrationTest {
                                 .getStatusCode())
                 .isEqualTo(HttpStatus.NO_CONTENT);
         assertThat(titles(login(inCourse))).isEmpty();
+        // and the notification about it is withdrawn: it would lead nowhere
+        assertThat(get(login(inCourse), "/api/v1/notifications/me", String.class).getBody())
+                .doesNotContain(posted.getBody().id().toString());
     }
 
     // ------------------------------------------------------------------ admin tools

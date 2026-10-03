@@ -84,7 +84,8 @@ public class AdminContentBlockController {
                                 translations.getOrDefault(b.getId(), List.of()),
                                 LocaleCode.DEFAULT.code(),
                                 LocaleCode.DEFAULT.code(),
-                                objectMapper));
+                                objectMapper,
+                                true));
     }
 
     @ResponseStatus(HttpStatus.CREATED)
@@ -105,7 +106,8 @@ public class AdminContentBlockController {
                                 List.of(),
                                 LocaleCode.DEFAULT.code(),
                                 LocaleCode.DEFAULT.code(),
-                                objectMapper));
+                                objectMapper,
+                                true));
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -139,7 +141,8 @@ public class AdminContentBlockController {
                 translations,
                 LocaleCode.DEFAULT.code(),
                 LocaleCode.DEFAULT.code(),
-                objectMapper);
+                objectMapper,
+                true);
     }
 
     @PutMapping("/api/v1/teacher/blocks/{id}/translations/{locale}")
@@ -157,7 +160,12 @@ public class AdminContentBlockController {
         blocks.upsertTranslation(id, locale, request, currentUser.require().id(), clientIp(http));
         var translations = blocks.listTranslations(id);
         return ContentBlockMapper.toView(
-                blocks.require(id), translations, locale, LocaleCode.DEFAULT.code(), objectMapper);
+                blocks.require(id),
+                translations,
+                locale,
+                LocaleCode.DEFAULT.code(),
+                objectMapper,
+                true);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)

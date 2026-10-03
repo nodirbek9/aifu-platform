@@ -6,8 +6,10 @@ import java.util.List;
 import java.util.Map;
 import uz.aifu.lms.assessment.api.dto.QuestionDtos.AnswerKeyView;
 import uz.aifu.lms.assessment.api.dto.QuestionDtos.AnswerOptionView;
+import uz.aifu.lms.assessment.api.dto.QuestionDtos.OptionTranslationView;
 import uz.aifu.lms.assessment.api.dto.QuestionDtos.QuestionDetail;
 import uz.aifu.lms.assessment.api.dto.QuestionDtos.QuestionSummary;
+import uz.aifu.lms.assessment.api.dto.QuestionDtos.QuestionTranslationView;
 import uz.aifu.lms.assessment.domain.AnswerOption;
 import uz.aifu.lms.assessment.domain.AnswerOptionTranslation;
 import uz.aifu.lms.assessment.domain.Question;
@@ -83,7 +85,10 @@ final class QuestionMapper {
                                             o.isCorrect(),
                                             o.getMatchKey(),
                                             t[0],
-                                            t[1]);
+                                            t[1],
+                                            optionTranslations(
+                                                    optionTranslationsById.getOrDefault(
+                                                            o.getId(), List.of())));
                                 })
                         .toList();
         List<AnswerKeyView> keyViews =
@@ -116,7 +121,26 @@ final class QuestionMapper {
                 p.explanation(),
                 p.hint(),
                 optionViews,
-                keyViews);
+                keyViews,
+                translations.stream()
+                        .map(
+                                tr ->
+                                        new QuestionTranslationView(
+                                                tr.getLocale(),
+                                                tr.getPrompt(),
+                                                tr.getHint(),
+                                                tr.getExplanation()))
+                        .toList());
+    }
+
+    static List<OptionTranslationView> optionTranslations(
+            List<AnswerOptionTranslation> translations) {
+        return translations.stream()
+                .map(
+                        tr ->
+                                new OptionTranslationView(
+                                        tr.getLocale(), tr.getText(), tr.getFeedback()))
+                .toList();
     }
 
     private static String[] resolveOptionText(

@@ -9,7 +9,9 @@ import java.net.URI;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.api.PageResponse;
@@ -25,6 +28,7 @@ import uz.aifu.lms.common.i18n.LocaleCode;
 import uz.aifu.lms.common.security.CurrentUserProvider;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.Enrollment;
+import uz.aifu.lms.grading.api.dto.GradeDtos.CourseGradebookRow;
 import uz.aifu.lms.grading.api.dto.GradeDtos.EnrollmentGradeSummary;
 import uz.aifu.lms.grading.api.dto.GradeDtos.GradeEntryView;
 import uz.aifu.lms.grading.api.dto.GradeDtos.RecordManualGradeRequest;
@@ -44,6 +48,8 @@ import uz.aifu.lms.iam.app.access.AccessGuard;
 @Tag(name = "Teacher: grades", description = "Manual entry, override, and the course grade roster")
 @SecurityRequirement(name = "bearerAuth")
 public class AdminGradeController {
+
+    private static final int GRADEBOOK_LIMIT = 500;
 
     private final GradeEntryService grades;
     private final EnrollmentService enrollments;
@@ -75,6 +81,36 @@ public class AdminGradeController {
         Page<Enrollment> page =
                 enrollments.listByCourse(courseId, List.of(), pageableSupport.sanitize(pageable));
         return PageResponse.of(page, GradeMapper::toStudentSummary);
+    }
+
+    @GetMapping("/api/v1/teacher/courses/{courseId}/gradebook")
+    @PreAuthorize("hasAuthority('GRADE_READ')")
+    @Operation(
+            summary = "The gradebook of a course: every student with every component, alphabetical",
+            description =
+                    "One row per enrolled student (at most "
+                            + GRADEBOOK_LIMIT
+                            + "), each with the full grade summary the single-student endpoint"
+                            + " returns: earned per component, the final score, its grade,"
+                            + " admission, debt, current entries and history.")
+    public List<CourseGradebookRow> gradebook(
+            @PathVariable UUID courseId, @RequestParam(required = false) String locale) {
+        accessGuard.requireCourseEditor(courseId);
+        String code = LocaleCode.find(locale).orElse(LocaleCode.DEFAULT).code();
+        return enrollments
+                .listByCourse(
+                        courseId,
+                        List.of(),
+                        PageRequest.of(0, GRADEBOOK_LIMIT, Sort.by("student.fullName")))
+                .stream()
+                .map(
+                        e ->
+                                new CourseGradebookRow(
+                                        e.getStudent().getId(),
+                                        e.getStudent().getFullName(),
+                                        GradeMapper.toSummary(
+                                                grades.gradebookFor(e.getId(), code))))
+                .toList();
     }
 
     @GetMapping("/api/v1/teacher/enrollments/{id}/grades")

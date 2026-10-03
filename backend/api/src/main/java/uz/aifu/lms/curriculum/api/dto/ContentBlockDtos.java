@@ -46,5 +46,12 @@ public final class ContentBlockDtos {
             JsonNode settings,
             UUID fileId,
             JsonNode payload,
-            boolean payloadIsFallback) {}
+            boolean payloadIsFallback,
+            @Schema(
+                            description =
+                                    "Editors only: every language the payload exists in. Absent in"
+                                            + " the student-facing rendering")
+                    List<BlockTranslationView> translations) {}
+
+    public record BlockTranslationView(String locale, JsonNode payload) {}
 }

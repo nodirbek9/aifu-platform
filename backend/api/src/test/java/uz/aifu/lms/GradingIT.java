@@ -36,6 +36,7 @@ import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.EnrollmentSource;
 import uz.aifu.lms.grading.api.dto.FeedbackDtos.CreateFeedbackRequest;
 import uz.aifu.lms.grading.api.dto.FeedbackDtos.FeedbackView;
+import uz.aifu.lms.grading.api.dto.GradeDtos.CourseGradebookRow;
 import uz.aifu.lms.grading.api.dto.GradeDtos.EnrollmentGradeSummary;
 import uz.aifu.lms.grading.api.dto.GradeDtos.GradeEntryView;
 import uz.aifu.lms.grading.api.dto.GradeDtos.RecordManualGradeRequest;
@@ -159,6 +160,30 @@ class GradingIT extends AbstractIntegrationTest {
                 .extracting(GradeEntryView::id)
                 .containsExactly(second.id(), first.id());
         assertThat(afterSecond.history().get(1).status()).isEqualTo(GradeEntryStatus.REVISED);
+
+        // the course gradebook: one row per student with the same summary
+        CourseGradebookRow[] book =
+                rest.exchange(
+                                url("/api/v1/teacher/courses/" + course.getId() + "/gradebook"),
+                                HttpMethod.GET,
+                                new HttpEntity<>(bearer(adminToken)),
+                                CourseGradebookRow[].class)
+                        .getBody();
+        assertThat(book).hasSize(1);
+        assertThat(book[0].studentUserId()).isEqualTo(student.getId());
+        assertThat(book[0].grades().finalScore()).isEqualByComparingTo("85.00");
+        assertThat(book[0].grades().components().get(0).earned()).isEqualByComparingTo("85");
+        assertThat(
+                        rest.exchange(
+                                        url(
+                                                "/api/v1/teacher/courses/"
+                                                        + course.getId()
+                                                        + "/gradebook"),
+                                        HttpMethod.GET,
+                                        new HttpEntity<>(bearer(studentToken)),
+                                        String.class)
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.FORBIDDEN);
 
         voidGrade(adminToken, second.id(), "Data entry error");
         EnrollmentGradeSummary afterVoid = myGrades(studentToken, enrollment.getId());

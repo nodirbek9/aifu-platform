@@ -3,6 +3,7 @@ package uz.aifu.lms.curriculum.api;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
+import uz.aifu.lms.curriculum.api.dto.ContentBlockDtos.BlockTranslationView;
 import uz.aifu.lms.curriculum.api.dto.ContentBlockDtos.ContentBlockView;
 import uz.aifu.lms.curriculum.domain.ContentBlock;
 import uz.aifu.lms.curriculum.domain.ContentBlockTranslation;
@@ -18,6 +19,20 @@ final class ContentBlockMapper {
             String resolvedLocale,
             String defaultLocale,
             ObjectMapper objectMapper) {
+        return toView(block, translations, resolvedLocale, defaultLocale, objectMapper, false);
+    }
+
+    /**
+     * @param forEditors include every translation of the payload (the editor's language tabs); the
+     *     student-facing rendering carries only the payload in the reader's language
+     */
+    static ContentBlockView toView(
+            ContentBlock block,
+            List<ContentBlockTranslation> translations,
+            String resolvedLocale,
+            String defaultLocale,
+            ObjectMapper objectMapper,
+            boolean forEditors) {
         ModuleMapper.TitleResolution payloadResolution =
                 translations.stream()
                         .filter(t -> t.getLocale().equals(resolvedLocale))
@@ -52,7 +67,16 @@ final class ContentBlockMapper {
                 settings,
                 block.getFileId(),
                 payload,
-                payloadResolution.fallback());
+                payloadResolution.fallback(),
+                forEditors
+                        ? translations.stream()
+                                .map(
+                                        t ->
+                                                new BlockTranslationView(
+                                                        t.getLocale(),
+                                                        readJson(t.getPayload(), objectMapper)))
+                                .toList()
+                        : null);
     }
 
     private static JsonNode readJson(String json, ObjectMapper objectMapper) {

@@ -19,6 +19,7 @@ import org.springframework.transaction.event.TransactionPhase;
 import org.springframework.transaction.event.TransactionalEventListener;
 import uz.aifu.lms.common.error.Exceptions;
 import uz.aifu.lms.common.events.NotificationRequestedEvent;
+import uz.aifu.lms.common.events.NotificationsWithdrawnEvent;
 import uz.aifu.lms.notification.domain.Notification;
 import uz.aifu.lms.notification.domain.NotificationChannel;
 import uz.aifu.lms.notification.domain.NotificationStatus;
@@ -71,6 +72,21 @@ public class NotificationService {
                 event.payload(),
                 event.dedupeKey(),
                 event.occurredAt());
+    }
+
+    /**
+     * The thing the notifications were about is gone: they are withdrawn after the deleting
+     * transaction commits, in a transaction of their own (the same reasoning as {@link
+     * #onNotificationRequested}).
+     */
+    @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
+    public void onNotificationsWithdrawn(NotificationsWithdrawnEvent event) {
+        self.withdraw(event.dedupeKey());
+    }
+
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void withdraw(String dedupeKey) {
+        notifications.deleteByDedupeKey(dedupeKey);
     }
 
     /**

@@ -51,7 +51,14 @@ public final class QuestionDtos {
             boolean isCorrect,
             String matchKey,
             String text,
-            String feedback) {}
+            String feedback,
+            @Schema(description = "Every language the option exists in, for the editor")
+                    List<OptionTranslationView> translations) {}
+
+    public record OptionTranslationView(String locale, String text, String feedback) {}
+
+    public record QuestionTranslationView(
+            String locale, String prompt, String hint, String explanation) {}
 
     @Schema(description = "Teacher view of one answer key")
     public record AnswerKeyView(
@@ -86,5 +93,7 @@ public final class QuestionDtos {
             String explanation,
             String hint,
             List<AnswerOptionView> options,
-            List<AnswerKeyView> answerKeys) {}
+            List<AnswerKeyView> answerKeys,
+            @Schema(description = "Every language the texts exist in, for the editor")
+                    List<QuestionTranslationView> translations) {}
 }

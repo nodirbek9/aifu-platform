@@ -7,6 +7,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.util.List;
 import java.util.UUID;
 import uz.aifu.lms.assessment.domain.RevealPolicy;
 import uz.aifu.lms.common.domain.PublicationStatus;
@@ -62,5 +63,10 @@ public final class QuizDtos {
             String title,
             String description,
             String instructions,
-            boolean titleIsFallback) {}
+            boolean titleIsFallback,
+            @Schema(description = "Every language the texts exist in, for the editor")
+                    List<QuizTranslationView> translations) {}
+
+    public record QuizTranslationView(
+            String locale, String title, String description, String instructions) {}
 }

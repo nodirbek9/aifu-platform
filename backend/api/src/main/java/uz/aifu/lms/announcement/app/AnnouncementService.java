@@ -23,6 +23,7 @@ import uz.aifu.lms.announcement.persistence.AnnouncementRepository;
 import uz.aifu.lms.common.content.ContentSanitizer;
 import uz.aifu.lms.common.error.Exceptions;
 import uz.aifu.lms.common.events.NotificationRequestedEvent;
+import uz.aifu.lms.common.events.NotificationsWithdrawnEvent;
 import uz.aifu.lms.common.i18n.LocaleCode;
 import uz.aifu.lms.common.security.AuthenticatedUser;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
@@ -183,6 +184,8 @@ public class AnnouncementService {
             throw Exceptions.notFound("Announcement", id);
         }
         announcements.delete(announcement);
+        events.publishEvent(
+                new NotificationsWithdrawnEvent("announcement:" + announcement.getId()));
     }
 
     /**
