@@ -86,6 +86,10 @@ e2e/                         support.ts (signIn, texts), *.spec.ts; shots.spec.t
 - **The teacher's side** is `features/teaching`: `queries.ts` has every classroom call;
   `TeacherCoursePage` takes `extraSections` so later phases add tabs without touching it
   (`teacher-course-route.tsx` is where they are listed). Presentation mode is a focus page.
+- **Editors** are `features/authoring`: `use-autosave.ts` saves after a pause and in order (put
+  the language in the saved value — a save may run after the tab changed); `SaveStatus` shows it;
+  `LocaleTabs` marks missing translations. The student renderer (`LessonBlocks`) is the preview.
+- **Charts**: `shared/ui/bar-chart.tsx` — always with a summary sentence and its table.
 - **Excel**: `downloadXlsx(name, sheets)` from `shared/lib/xlsx.ts`; the first row is the header.
 - **Pages for every role** (`/notifications`, `/announcements`, `/profile`) are `commonRoutes` in
   the router; the shell shows the navigation of the active role around them.

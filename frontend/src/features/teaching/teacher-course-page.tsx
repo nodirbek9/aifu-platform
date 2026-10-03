@@ -76,6 +76,7 @@ export function TeacherCoursePage({ extraSections = [] }: TeacherCoursePageProps
         context={[course.subjectCode, course.cohortCode, course.termName].filter(Boolean).join(' · ')}
       />
       <Tabs
+        className="min-w-0"
         value={tab}
         onValueChange={(value) => {
           setSearch(value === 'plan' ? {} : { tab: value }, { replace: true })

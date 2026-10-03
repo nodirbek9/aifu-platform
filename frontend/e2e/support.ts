@@ -9,7 +9,7 @@ export const texts = { uz, ru, en }
 export type Locale = keyof typeof texts
 
 /** The password of every demo account (docs/03-API-GUIDE.md §9); never written into the code. */
-function demoPassword(): string {
+export function demoPassword(): string {
   const password = process.env.E2E_DEMO_PASSWORD
   if (password === undefined || password === '') {
     throw new Error('Set E2E_DEMO_PASSWORD to the demo password of docs/03-API-GUIDE.md §9')

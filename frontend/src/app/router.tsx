@@ -118,6 +118,30 @@ const teacherRoutes: RouteObject[] = [
     path: 'groups',
     lazy: async () => ({ Component: (await import('@/features/teaching/groups-page')).GroupsPage }),
   },
+  {
+    path: 'lessons/:lessonId/edit',
+    lazy: async () => ({
+      Component: (await import('@/features/authoring/lesson-editor-page')).LessonEditorPage,
+    }),
+  },
+  {
+    path: 'coding-tasks/:taskId/edit',
+    lazy: async () => ({
+      Component: (await import('@/features/authoring/coding-task-editor-page')).CodingTaskEditorPage,
+    }),
+  },
+  {
+    path: 'quizzes/:quizId/edit',
+    lazy: async () => ({
+      Component: (await import('@/features/authoring/quiz-editor-page')).QuizEditorPage,
+    }),
+  },
+  {
+    path: 'coding-tasks/:taskId/submissions/:submissionId',
+    lazy: async () => ({
+      Component: (await import('@/features/review/submission-review-page')).SubmissionReviewPage,
+    }),
+  },
 ]
 
 /** The lesson on the projector: nothing of the app around it. */

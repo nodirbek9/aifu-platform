@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import { CalendarDays, ChevronRight, Play, TriangleAlert } from 'lucide-react'
+import { CalendarDays, ChevronRight, MessageSquareText, Play, TriangleAlert } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import { useAuth } from '@/features/auth/auth-context'
+import { useWaitingCountQuery } from '@/features/review/queries'
 import { ClassRow } from '@/features/timetable/class-row'
 import { classKey, currentOrNext, isHeld } from '@/features/timetable/model'
 import { useNextClassQuery, useTodayQuery } from '@/features/timetable/queries'
@@ -108,18 +109,32 @@ export function TeacherDashboardPage() {
             </CardContent>
           </Card>
         </section>
-        <section aria-label={t('teaching.deadlinesTitle')} className="lg:col-span-5">
-          <Card>
-            <CardHeader title={t('teaching.deadlinesTitle')} />
-            <CardContent className="grid gap-1">
-              {courses.isPending && <Skeleton className="h-24" />}
-              {courses.data?.map((course) => (
-                <DeadlinesOfCourse key={course.id} course={course} />
-              ))}
-              <p className="text-small text-text-muted hidden only:block">{t('teaching.noDeadlines')}</p>
-            </CardContent>
-          </Card>
-        </section>
+        <div className="grid content-start gap-6 lg:col-span-5">
+          <section aria-label={t('review.waitingTitle')}>
+            <Card>
+              <CardHeader title={t('review.waitingTitle')} description={t('review.waitingBody')} />
+              <CardContent className="grid gap-1">
+                {courses.isPending && <Skeleton className="h-16" />}
+                {courses.data?.map((course) => (
+                  <WaitingOfCourse key={course.id} course={course} />
+                ))}
+                <p className="text-small text-text-muted hidden only:block">{t('review.nothingWaiting')}</p>
+              </CardContent>
+            </Card>
+          </section>
+          <section aria-label={t('teaching.deadlinesTitle')}>
+            <Card>
+              <CardHeader title={t('teaching.deadlinesTitle')} />
+              <CardContent className="grid gap-1">
+                {courses.isPending && <Skeleton className="h-24" />}
+                {courses.data?.map((course) => (
+                  <DeadlinesOfCourse key={course.id} course={course} />
+                ))}
+                <p className="text-small text-text-muted hidden only:block">{t('teaching.noDeadlines')}</p>
+              </CardContent>
+            </Card>
+          </section>
+        </div>
       </div>
     </div>
   )
@@ -202,6 +217,26 @@ function TodayClasses() {
         )}
       </CardContent>
     </Card>
+  )
+}
+
+/** The submissions of a course still waiting for the teacher's word: one line, into the queue. */
+function WaitingOfCourse({ course }: { course: TeacherCourse }) {
+  const { t } = useTranslation()
+  const waiting = useWaitingCountQuery(course.id)
+  if (!waiting.isSuccess || waiting.data === 0) return null
+  return (
+    <Link
+      to={`/teacher/courses/${course.id}?tab=review`}
+      className="hover:bg-surface-sunken focus-visible:outline-focus-ring flex items-center gap-3 rounded-md px-2 py-2 focus-visible:outline-2"
+    >
+      <MessageSquareText aria-hidden className="text-info size-4 shrink-0" />
+      <span className="text-body text-text min-w-0 flex-1 truncate">{course.title}</span>
+      <span className="text-small text-text font-semibold tabular-nums">
+        {t('review.waitingCount', { count: waiting.data })}
+      </span>
+      <ChevronRight aria-hidden className="text-text-muted size-4" />
+    </Link>
   )
 }
 

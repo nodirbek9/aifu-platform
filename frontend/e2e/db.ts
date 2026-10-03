@@ -89,3 +89,38 @@ export function clearClassSession(entryId: string, date: string): void {
       (select id from class_sessions where entry_id = '${entryId}' and on_date = '${date}');
     delete from class_sessions where entry_id = '${entryId}' and on_date = '${date}';`)
 }
+
+/**
+ * Removes what the authoring flows created in a course: modules, coding tasks and quizzes whose
+ * code starts with the E2E marker the flows give their titles.
+ */
+export function clearAuthoringLeftovers(): void {
+  runSql(`
+    delete from course_modules where code like 'M-E2E-%';
+    delete from coding_tasks where code like 'T-E2E-%';
+    delete from quizzes where code like 'Q-E2E-%';`)
+}
+
+/**
+ * Takes a student of the review flow back to no work and no grades in the course: their
+ * submissions to the task, the feedback on them, their grade entries.
+ */
+export function resetReviewedStudent(username: string, taskCode: string): void {
+  runSql(`
+    delete from feedback where target_type = 'SUBMISSION' and target_id in (
+      select s.id from submissions s where s.enrollment_id in (${enrollmentsOf(username)}));
+    delete from submissions
+    where coding_task_id = (select id from coding_tasks where code = '${taskCode}')
+      and enrollment_id in (${enrollmentsOf(username)});
+    -- grades are append-only (ADR-011): only a test reset of the development database may
+    -- remove them, with the guard trigger switched off for this one session
+    set session_replication_role = replica;
+    delete from grade_entries where enrollment_id in (${enrollmentsOf(username)});
+    set session_replication_role = origin;
+    update enrollments set final_score = null, final_grade_symbol = null, admitted_to_final = null,
+                           academic_debt = false, final_grade_at = null
+    where id in (${enrollmentsOf(username)});
+    delete from notifications
+    where recipient_user_id = (select id from users where username = '${username}')
+      and type = 'GRADE_PUBLISHED';`)
+}

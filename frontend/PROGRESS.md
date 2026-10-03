@@ -9,7 +9,7 @@ The single record of progress (AGENTS.md §8). A new session resumes from this f
 | F2 | Student: practice task, quiz, work list | **reported** 2026-10-02 |
 | F3 | Student: timetable, grades, attendance, the rest | **reported** 2026-10-02 |
 | F4a | Teacher: timetable, class session, journal | **reported** 2026-10-03 |
-| F4b | Teacher: authoring, review, gradebook, analytics | not started |
+| F4b | Teacher: authoring, review, gradebook, analytics | **reported** 2026-10-03 |
 | F5a | Admin: reference data, users, structure, audit | not started |
 | F5b | Admin: timetable builder | not started |
 | F6 | Polish, motion, accessibility, e2e, packaging | not started |
@@ -315,6 +315,71 @@ Not verified / not done:
 - "Submissions waiting for review" on the dashboard (T-01) arrives with the review queue of F4b.
 - The class page of a class taught by someone else (a lecture in the plan) is not linked.
 
-## F4b — Teacher: authoring, review, gradebook, analytics (next)
+## F4b — report
 
-Not started. The prompt is in `docs/05-FRONTEND-PROMPTS.md`.
+Spec IDs done: T-01 (submissions waiting for review), T-04.1, T-04.2, T-05, T-06, T-07, T-08, T-09.
+
+Plan as built: the course page gets five more tabs — Content, Practice, Review, Grades,
+Analytics (`teacher-course-route.tsx`); the editors are pages of their own.
+
+Built:
+- `features/authoring` — T-04.1 curriculum tree (`?tab=content`): modules and lessons in order;
+  create, rename (every language), reorder by drag or Alt+↑/↓ on the handle (optimistic, with an
+  announcement for screen readers), publish / back to draft, delete with confirmation; the hours
+  of the lessons set against the syllabus' hour plan per kind of class (a warning lists every
+  kind that differs). T-04.2 lesson editor (`/teacher/lessons/:id/edit`): the lesson's titles per
+  language, kind, hours, reading time; blocks of every type — text, callout, code example (the
+  code editor), table, case, image / diagram / video / audio / file (upload through POST /files),
+  YouTube / Vimeo, link, references to a quiz / task / assignment of the course, and the
+  teacher-only lesson plan (objectives, a timed list of steps, materials, questions, homework);
+  UZ / RU / EN tabs on every block with a dot where a language is missing (amber where the course
+  requires it); add / reorder / delete; beside it the lesson exactly as the student renderer
+  shows it, in any language, with the fallback mark. Everything saves itself after a pause; the
+  state is always shown; a 409 says "changed elsewhere" with a reload button.
+- T-05 coding task editor (`/teacher/coding-tasks/:id/edit`): statement per language, starter
+  code and reference solution per language (Python, Java, C++) side by side, tests (input,
+  expected output, example / hidden, comparison, weight), limits and scoring, hints with their
+  penalty per language, and "Verify solutions" (POST, then polled) with the result per language
+  and per test. T-06 quiz editor (`/teacher/quizzes/:id/edit`): texts per language, settings
+  (time, attempts, pass mark, reveal policy, shuffling), questions of all seven types — options
+  with the right one(s) marked, true / false made for you, ordering in the right order, matching
+  as pairs, short answers and numbers as answer keys — reorder, delete; publishing shows the
+  server's reason when it is refused. The Practice tab lists both and creates new ones.
+- `features/review` — T-07: the course's queue (task, verdict, group, "without feedback", "latest
+  attempt") and a submission page: the code read-only, every test with input / expected / output
+  (hidden ones too), the feedback so far and a form (student-visible or internal), and a grade
+  for a component of the gradebook, suggested from the automatic score. T-01: the dashboard counts
+  the submissions waiting per course.
+- `features/gradebook` — T-08: students × the components of the scheme, final score with its
+  grade, admission and debt from the server; filter by group; arrows move between cells, Enter
+  opens one: record a grade, void one with a reason, the history of the component (nothing is
+  erased); Excel export.
+- `features/analytics` — T-09: the completion funnel, lesson completion, coding-task acceptance,
+  quiz results with an item analysis of the chosen quiz, the students falling behind. Each chart
+  (`shared/ui/bar-chart.tsx`, token colours) has a one-sentence summary and a table, which
+  assistive technology always reads and anyone can switch to.
+- Backend changes it needed (with tests): editor views carry every translation (tasks, hints,
+  quizzes, questions, options, blocks); `GET /teacher/courses/{id}/submissions` (the queue);
+  `GET /teacher/courses/{id}/gradebook` (with the group); deleting an announcement withdraws its
+  notifications; an unknown path answers 404 instead of 500.
+
+Verified (run, not assumed):
+- `npm run lint`, `typecheck`, `test`, `i18n:check`, `build`; the full `npm run e2e`.
+- New flows (`e2e/teacher-authoring.spec.ts`): a module and a lesson created, a block written in
+  Uzbek and Russian and seen in the preview in both, a block moved by keyboard, publish and back,
+  lesson and module deleted; a coding task with a statement, a Python solution and a test passes
+  the verification in the real sandbox; a quiz refused while empty (the reason shown), then a
+  question with options, the right one marked, published and back; **acceptance step 6** — a
+  student's submission reviewed, commented and graded, and the student sees the comment on the
+  submission and the grade in Grades; the gradebook moved through by keyboard, a grade voided with
+  a reason and kept in the history, exported; the analytics with their tables; every tool fits a
+  phone screen.
+- Screenshots of the F4b screens at 1440 and 390, light and dark — looked at.
+
+Not verified / not done:
+- Rich text is edited as HTML with a formatting toolbar and a live preview, not a WYSIWYG editor.
+- Quiz deadlines live on the course's assignments (activities), not on the quiz; the quiz editor
+  has no deadline field.
+- Lesson prerequisites and learning-outcome links have API endpoints but no editor yet.
+- The hour-budget check is made in the browser from the syllabus plan and the lessons' hours; the
+  server only reconciles the plan with the course total when the course is published.
