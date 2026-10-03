@@ -124,3 +124,12 @@ export function resetReviewedStudent(username: string, taskCode: string): void {
     where recipient_user_id = (select id from users where username = '${username}')
       and type = 'GRADE_PUBLISHED';`)
 }
+
+/** Removes what the admin flows created: E2E groups, rooms, holidays and imported students. */
+export function clearAdminLeftovers(): void {
+  runSql(`
+    delete from users where username like 'e2e.%';
+    delete from student_groups where code like 'E2E-%';
+    delete from rooms where number like 'E2E%';
+    delete from holidays where name like 'E2E %';`)
+}

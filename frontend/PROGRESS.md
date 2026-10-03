@@ -10,7 +10,7 @@ The single record of progress (AGENTS.md §8). A new session resumes from this f
 | F3 | Student: timetable, grades, attendance, the rest | **reported** 2026-10-02 |
 | F4a | Teacher: timetable, class session, journal | **reported** 2026-10-03 |
 | F4b | Teacher: authoring, review, gradebook, analytics | **reported** 2026-10-03 |
-| F5a | Admin: reference data, users, structure, audit | not started |
+| F5a | Admin: reference data, users, structure, audit | **reported** 2026-10-03 |
 | F5b | Admin: timetable builder | not started |
 | F6 | Polish, motion, accessibility, e2e, packaging | not started |
 
@@ -383,3 +383,58 @@ Not verified / not done:
 - Lesson prerequisites and learning-outcome links have API endpoints but no editor yet.
 - The hour-budget check is made in the browser from the syllabus plan and the lessons' hours; the
   server only reconciles the plan with the course total when the course is published.
+
+## F5a — report
+
+Spec IDs done: A-01, A-03, A-04, A-05, A-06, A-07.
+
+Plan as built: one list → detail → form pattern (`features/admin`): lists keep search, filters
+and page in the address; forms open in a dialog or on a detail page; anything destructive asks
+first and says what it touches.
+
+Built:
+- A-03 Reference data (`/admin/reference`, a tab each): groups (search, archived shown on
+  demand, create / edit with programme, year, study form, language, planned size and curator; a
+  side sheet with the roster — add students by search, remove — archive / restore, delete);
+  rooms (building, number, capacity, type, active); the bell schedule (edit a pair's times, add the
+  next pair 10 minutes after the last, delete); holidays; academic years and their terms (make a
+  year current, add terms) with the first week of each term set odd or even.
+- A-05 Users (`/admin/users`): search, role and status filters, paging; a new user (a student
+  with number and group); a user page — details, roles, status with a reason, unlock, a new
+  password. Import (`/admin/users/import`): an .xlsx or .csv read in the browser
+  (`shared/lib/spreadsheet-read.ts`, no library; columns found by any of their spellings in three
+  languages), a downloadable template, a dry run whose outcome is shown row by row, then the
+  import.
+- A-06 Structure (`/admin/structure`): subjects (create; a subject page with its texts per
+  language, prerequisites, learning outcomes, publish / archive) and courses (create from subject
+  and term; a course page with texts per language, status, teachers and their role, the hour
+  plan per kind of class with the check against the total, the assessment scheme with its parts,
+  required languages, and enrollment — one student by search or a whole group at once).
+- A-04 Teaching load (`/admin/load`): lines per term with planned, scheduled and remaining hours;
+  a line by hand; the department's sheet imported (subject code, group, hours per kind, teacher —
+  unmatched rows listed with the reason); a view per teacher.
+- A-07 Audit (`/admin/audit`): action, entity and date filters in the address; the roles with
+  their permissions.
+- A-01 Dashboard (`/admin`): students, teachers, groups, active courses; today's classes of the
+  published timetable; unscheduled load and classes saved over a warning; recent events without
+  the sign-in noise.
+- Shared: `PageHeader` actions wrap on a phone; `Tabs` never widen their parent.
+
+Verified (run, not assumed):
+- `npm run lint`, `typecheck`, `test` (the reader also against a workbook written by openpyxl),
+  `i18n:check`, `build`.
+- Flows (`e2e/admin-records.spec.ts`): a group, a room and a holiday are created (a holiday on a
+  date that already has one is refused and the reason shown); three students imported from a
+  file — the dry run saves nothing, the import creates them in their group; every admin screen
+  fits a 390 px phone.
+- Screenshots of the F5a screens at 1440 and 390 — looked at; the scheme now lists each part
+  under its own component.
+
+Not verified / not done:
+- Enrollment by CSV upload (`/admin/enrollments/import`) has no screen; by group and by search do.
+- A group's students are found by search; the bulk assignment is the import (a known student
+  number with another group moves the student).
+- The e2e suite runs against the Vite dev server, which now and then reloads a page while it
+  optimises a newly loaded module: one flow in a long run may time out on the sign-in form and
+  pass on its own. F6 runs the flows against the production build.
+

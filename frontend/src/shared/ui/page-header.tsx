@@ -16,7 +16,7 @@ export function PageHeader({ title, context, action, className }: PageHeaderProp
         <h1 className="font-display text-display-lg text-text font-semibold">{title}</h1>
         {context !== undefined && <p className="text-small text-text-muted">{context}</p>}
       </div>
-      {action !== undefined && <div className="shrink-0">{action}</div>}
+      {action !== undefined && <div className="max-w-full min-w-0">{action}</div>}
     </header>
   )
 }

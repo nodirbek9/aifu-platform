@@ -1,4 +1,5 @@
 // @vitest-environment node
+import { readFileSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
 import { parseCsv, readXlsx, recordsOf } from './spreadsheet-read'
 import { buildXlsx, crc32 } from './xlsx'
@@ -116,5 +117,13 @@ describe('reading spreadsheets', () => {
       },
     )
     expect(records).toEqual([{ fullName: 'Ali Valiyev', group: 'BK-DI26/1', number: '26001', email: '' }])
+  })
+
+  it('reads a workbook written by another program (openpyxl: compressed, shared strings, a formula)', async () => {
+    const bytes = new Uint8Array(readFileSync(new URL('./__fixtures__/openpyxl.xlsx', import.meta.url)))
+    const rows = await readXlsx(bytes)
+    expect(rows[0]).toEqual(['F.I.Sh', 'Talaba raqami', 'Guruh', 'Qabul yili'])
+    expect(rows[1]?.slice(0, 4)).toEqual(['Oʻrinboyev Gʻayrat', '2600101', 'BK-DI26/1', '2026'])
+    expect(rows).toHaveLength(3)
   })
 })

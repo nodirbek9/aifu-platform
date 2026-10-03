@@ -155,13 +155,49 @@ const teacherFocusRoutes: RouteObject[] = [
 ]
 
 const adminRoutes: RouteObject[] = [
-  { index: true, element: <LaterPhasePage section="home" /> },
+  {
+    index: true,
+    lazy: async () => ({
+      Component: (await import('@/features/admin/admin-dashboard-page')).AdminDashboardPage,
+    }),
+  },
   { path: 'timetable', element: <LaterPhasePage section="adminTimetable" /> },
-  { path: 'users', element: <LaterPhasePage section="adminUsers" /> },
-  { path: 'structure', element: <LaterPhasePage section="adminStructure" /> },
-  { path: 'reference', element: <LaterPhasePage section="adminReference" /> },
-  { path: 'load', element: <LaterPhasePage section="adminLoad" /> },
-  { path: 'audit', element: <LaterPhasePage section="adminAudit" /> },
+  {
+    path: 'users',
+    lazy: async () => ({ Component: (await import('@/features/admin/users-page')).UsersPage }),
+  },
+  {
+    path: 'users/import',
+    lazy: async () => ({ Component: (await import('@/features/admin/import-page')).ImportPage }),
+  },
+  {
+    path: 'users/:userId',
+    lazy: async () => ({ Component: (await import('@/features/admin/user-page')).UserPage }),
+  },
+  {
+    path: 'structure',
+    lazy: async () => ({ Component: (await import('@/features/admin/structure-page')).StructurePage }),
+  },
+  {
+    path: 'structure/subjects/:subjectId',
+    lazy: async () => ({ Component: (await import('@/features/admin/subject-page')).SubjectPage }),
+  },
+  {
+    path: 'structure/courses/:courseId',
+    lazy: async () => ({ Component: (await import('@/features/admin/course-admin-page')).CourseAdminPage }),
+  },
+  {
+    path: 'reference',
+    lazy: async () => ({ Component: (await import('@/features/admin/reference-page')).ReferencePage }),
+  },
+  {
+    path: 'load',
+    lazy: async () => ({ Component: (await import('@/features/admin/load-page')).LoadPage }),
+  },
+  {
+    path: 'audit',
+    lazy: async () => ({ Component: (await import('@/features/admin/audit-page')).AuditPage }),
+  },
 ]
 
 // The design-system catalogue exists in development builds only.
