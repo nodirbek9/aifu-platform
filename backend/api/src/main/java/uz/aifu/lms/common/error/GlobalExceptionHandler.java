@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.servlet.NoHandlerFoundException;
+import org.springframework.web.servlet.resource.NoResourceFoundException;
 
 /**
  * The ONE place HTTP error responses are produced. Do not add a second
@@ -135,7 +136,7 @@ public class GlobalExceptionHandler {
                 request);
     }
 
-    @ExceptionHandler({NoHandlerFoundException.class})
+    @ExceptionHandler({NoHandlerFoundException.class, NoResourceFoundException.class})
     public ResponseEntity<ApiError> handleNoHandler(Exception ex, HttpServletRequest request) {
         return respond(ErrorCode.RESOURCE_NOT_FOUND, "Endpoint not found", Map.of(), request);
     }

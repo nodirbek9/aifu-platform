@@ -6,9 +6,17 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.context.ApplicationContext;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import uz.aifu.lms.iam.api.dto.AuthDtos.LoginRequest;
+import uz.aifu.lms.iam.api.dto.AuthDtos.TokenResponse;
+import uz.aifu.lms.iam.domain.RoleCode;
+import uz.aifu.lms.iam.domain.User;
 import uz.aifu.lms.support.AbstractIntegrationTest;
+import uz.aifu.lms.support.fixtures.UserFixtures;
 
 /**
  * Phase 1 acceptance criteria (docs/planning/phase-plan.md): the app boots, all 15 Flyway
@@ -18,6 +26,7 @@ import uz.aifu.lms.support.AbstractIntegrationTest;
 class ApplicationContextLoadIT extends AbstractIntegrationTest {
 
     @Autowired private ApplicationContext context;
+    @Autowired private UserFixtures userFixtures;
 
     @LocalServerPort private int port;
 
@@ -59,5 +68,37 @@ class ApplicationContextLoadIT extends AbstractIntegrationTest {
         assertThat(response.getHeaders().getContentType()).isNotNull();
         assertThat(response.getHeaders().getContentType().toString()).contains("application/json");
         assertThat(response.getBody()).contains("\"code\":\"AUTH_TOKEN_MISSING\"");
+    }
+
+    @Test
+    void unknownPath_signedIn_isA404ApiError_notAServerError() {
+        String token = login(userFixtures.activeUser(RoleCode.STUDENT));
+        ResponseEntity<String> response =
+                rest.exchange(
+                        url("/api/v1/this-does-not-exist"),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(token)),
+                        String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+        assertThat(response.getBody()).contains("\"code\":\"RESOURCE_NOT_FOUND\"");
+    }
+
+    private String login(User user) {
+        return rest.postForEntity(
+                        url("/api/v1/auth/login"),
+                        new LoginRequest(user.getUsername(), UserFixtures.RAW_PASSWORD),
+                        TokenResponse.class)
+                .getBody()
+                .accessToken();
+    }
+
+    private HttpHeaders bearer(String token) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(token);
+        return headers;
+    }
+
+    private String url(String path) {
+        return "http://localhost:" + port + path;
     }
 }
