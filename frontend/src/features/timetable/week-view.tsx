@@ -183,7 +183,7 @@ function ClassCard({
         'relative grid w-full gap-0.5 overflow-hidden rounded-sm py-1.5 pr-2 pl-3 text-left',
         'duration-fast ease-standard hover:shadow-menu transition-[box-shadow,opacity]',
         'focus-visible:outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-1',
-        held ? sessionTint[item.sessionType] : 'bg-surface-sunken opacity-80',
+        held ? sessionTint[item.sessionType] : 'bg-surface-sunken',
       )}
     >
       <span aria-hidden className={cn('absolute inset-y-0 left-0 w-1', sessionBar[item.sessionType])} />
@@ -242,9 +242,7 @@ function DayList({ days, today, audience, onOpen }: PartProps & { today: string 
               'aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-primary-foreground',
             )}
           >
-            <span className="text-caption tracking-normal opacity-80">
-              {formatWeekdayShort(item.date, locale)}
-            </span>
+            <span className="text-caption tracking-normal">{formatWeekdayShort(item.date, locale)}</span>
             <span className="font-display text-body font-semibold tabular-nums">
               {Number(item.date.slice(8))}
             </span>

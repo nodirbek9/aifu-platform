@@ -6,19 +6,21 @@ export type ProgressBarProps = {
   value: number
   max?: number
   label?: string
+  /** What the bar measures, for a screen reader, when no visible label says it. */
+  name?: string
   className?: string
   /** The fill, when it is not the primary colour (a session-type colour in an hour budget). */
   barClassName?: string
 }
 
-export function ProgressBar({ value, max = 100, label, className, barClassName }: ProgressBarProps) {
+export function ProgressBar({ value, max = 100, label, name, className, barClassName }: ProgressBarProps) {
   const percent = Math.min(100, Math.max(0, (value / max) * 100))
   return (
     <div className={cn('flex items-center gap-3', className)}>
       <ProgressPrimitive.Root
         value={value}
         max={max}
-        aria-label={label}
+        aria-label={label ?? name}
         className="bg-surface-sunken relative h-1.5 flex-1 overflow-hidden rounded-full"
       >
         <ProgressPrimitive.Indicator

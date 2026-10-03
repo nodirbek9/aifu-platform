@@ -13,10 +13,23 @@ export default defineConfig({
   },
   server: {
     port: 5173,
+    proxy: { '/api': { target: 'http://localhost:8080', changeOrigin: true } },
+  },
+  // the production build, served with the same proxy: what the end-to-end flows run against
+  preview: {
+    port: 4173,
+    strictPort: true,
     proxy: {
       '/api': {
         target: 'http://localhost:8080',
         changeOrigin: true,
+        // the page and /api are one origin here, as behind nginx: the browser's Origin header
+        // would make the API treat a same-origin call as a cross-origin one
+        configure: (proxy) => {
+          proxy.on('proxyReq', (request) => {
+            request.removeHeader('origin')
+          })
+        },
       },
     },
   },

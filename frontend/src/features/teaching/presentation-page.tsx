@@ -162,7 +162,13 @@ export function PresentationPage() {
           <ChevronRight aria-hidden className="size-6" />
         </IconButton>
       </footer>
-      <ProgressBar value={index + 1} max={total} className="px-4 pb-3" barClassName="bg-accent" />
+      <ProgressBar
+        value={index + 1}
+        max={total}
+        name={`${index + 1} / ${total}`}
+        className="px-4 pb-3"
+        barClassName="bg-accent"
+      />
     </div>
   )
 }

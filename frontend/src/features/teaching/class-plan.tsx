@@ -68,7 +68,10 @@ export function ClassPlan({ courseId }: { courseId: string }) {
           {plan.data.map((row) => {
             const held = isHeld(row.info.status)
             return (
-              <TableRow key={`${row.info.entryId}:${row.info.date}`} className={cn(!held && 'opacity-60')}>
+              <TableRow
+                key={`${row.info.entryId}:${row.info.date}`}
+                className={cn(!held && 'bg-surface-sunken')}
+              >
                 <TableCell className="text-text-muted tabular-nums">{row.weekNumber ?? '—'}</TableCell>
                 <TableCell className="whitespace-nowrap">
                   <span className="grid">

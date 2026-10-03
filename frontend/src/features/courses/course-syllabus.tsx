@@ -77,6 +77,7 @@ export function CourseSyllabus({ course }: { course: Course }) {
                 <ProgressBar
                   value={allocation.hours}
                   max={Math.max(totalHours, 1)}
+                  name={t(`sessionType.${allocation.sessionType}`)}
                   barClassName={sessionBar[allocation.sessionType]}
                 />
               </li>

@@ -199,10 +199,10 @@
     --session-coursework-strong: #8f4a77;
 
     /* Code: the editor and every code listing */
-    --syntax-comment: #5f6f84;
+    --syntax-comment: #4a586c;
     --syntax-keyword: #1a5fad;
-    --syntax-string: #0e7a4a;
-    --syntax-number: #9a5b00;
+    --syntax-string: #0b6a40;
+    --syntax-number: #865000;
     --syntax-function: #6b3fa0;
     --syntax-type: #00689f;
 
@@ -252,7 +252,7 @@
     --session-coursework-tint: #38304a;
     --session-coursework-strong: #dca3c4;
 
-    --syntax-comment: #8494ad;
+    --syntax-comment: #97a6bd;
     --syntax-keyword: #6ea8e8;
     --syntax-string: #3fbf7f;
     --syntax-number: #e5a13d;

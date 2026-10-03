@@ -276,9 +276,7 @@ function Workspace({ task }: { task: Task }) {
       <Button variant="accent" size="sm" disabled={!canSubmit} loading={submit.isPending} onClick={send}>
         <Send aria-hidden className="size-4" />
         {t('task.submit')}
-        <kbd className="text-caption hidden font-sans tracking-normal opacity-80 lg:inline">
-          Ctrl+Shift+Enter
-        </kbd>
+        <kbd className="text-caption hidden font-sans tracking-normal lg:inline">Ctrl+Shift+Enter</kbd>
       </Button>
     </div>
   )

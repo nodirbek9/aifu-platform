@@ -17,7 +17,7 @@ export default defineConfig({
   expect: { timeout: 10_000 },
   reporter: [['list']],
   use: {
-    baseURL: 'http://localhost:5173',
+    baseURL: 'http://localhost:4173',
     // A browser set to Uzbek: the app starts in Uzbek, as it does for most of its users.
     locale: 'uz-UZ',
     trace: 'retain-on-failure',
@@ -45,8 +45,10 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:5173',
+    // the production build, not the dev server: no on-the-fly module optimisation reloading a
+    // page in the middle of a flow, and the code that ships is the code that is tested
+    command: 'npm run build && npm run preview',
+    url: 'http://localhost:4173',
     reuseExistingServer: true,
     timeout: 120_000,
   },

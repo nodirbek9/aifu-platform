@@ -74,7 +74,7 @@ export function ClassRow({ item, now, marked = false, audience = 'student', onOp
     </>
   )
 
-  const rowClass = cn('flex gap-4 py-3 text-left', held && moment === 'past' && 'opacity-60')
+  const rowClass = cn('flex gap-4 py-3 text-left')
   if (onOpen === undefined) return <li className={rowClass}>{body}</li>
   return (
     <li className="-mx-2">

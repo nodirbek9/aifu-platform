@@ -184,6 +184,7 @@ function ComponentRow({ component }: { component: ComponentGrade }) {
           <ProgressBar
             value={component.earned}
             max={component.maxPoints}
+            name={component.code}
             barClassName={component.gatePassed === false ? 'bg-danger' : undefined}
           />
         )}

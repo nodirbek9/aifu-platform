@@ -1,6 +1,4 @@
 import { createBrowserRouter, type RouteObject } from 'react-router'
-import { ChangePasswordPage } from '@/features/auth/change-password-page'
-import { LoginPage } from '@/features/auth/login-page'
 import { PublicOnly, RequireAuth, RequireRole, RoleHomeRedirect, ShellRoute } from './guards'
 import { NotFoundPage, RouteErrorPage } from './system-pages'
 
@@ -218,13 +216,24 @@ export const router = createBrowserRouter([
     children: [
       {
         element: <PublicOnly />,
-        children: [{ path: '/login', element: <LoginPage /> }],
+        // the sign-in page brings the form library and GSAP: a signed-in visit never loads them
+        children: [
+          {
+            path: '/login',
+            lazy: async () => ({ Component: (await import('@/features/auth/login-page')).LoginPage }),
+          },
+        ],
       },
       ...devRoutes,
       {
         element: <RequireAuth />,
         children: [
-          { path: '/change-password', element: <ChangePasswordPage /> },
+          {
+            path: '/change-password',
+            lazy: async () => ({
+              Component: (await import('@/features/auth/change-password-page')).ChangePasswordPage,
+            }),
+          },
           { path: '/student', element: <RequireRole role="STUDENT" />, children: studentFocusRoutes },
           { path: '/teacher', element: <RequireRole role="TEACHER" />, children: teacherFocusRoutes },
           {

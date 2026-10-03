@@ -61,7 +61,7 @@ export function Select({
             'focus-visible:border-primary-hover focus-visible:outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-0',
             'disabled:bg-surface-sunken disabled:cursor-not-allowed disabled:opacity-70',
             'aria-invalid:border-danger',
-            'data-[placeholder]:text-text-muted/70',
+            'data-[placeholder]:text-text-muted',
           )}
         >
           <span className="min-w-0 flex-1 truncate text-left">

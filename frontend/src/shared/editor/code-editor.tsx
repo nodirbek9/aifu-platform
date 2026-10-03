@@ -163,6 +163,10 @@ export function CodeEditor({
       }),
     })
     viewRef.current = view
+    // a long line scrolls sideways: the scroller must take the keyboard focus to be scrolled
+    // without a mouse (and a read-only view has no other focusable part)
+    view.scrollDOM.tabIndex = 0
+    view.scrollDOM.setAttribute('aria-label', ariaLabel)
     return () => {
       view.destroy()
       viewRef.current = null
