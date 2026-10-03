@@ -8,7 +8,7 @@ The single record of progress (AGENTS.md §8). A new session resumes from this f
 | F1 | Student: dashboard, courses, lesson | **reported** 2026-10-02 |
 | F2 | Student: practice task, quiz, work list | **reported** 2026-10-02 |
 | F3 | Student: timetable, grades, attendance, the rest | **reported** 2026-10-02 |
-| F4a | Teacher: timetable, class session, journal | not started |
+| F4a | Teacher: timetable, class session, journal | **reported** 2026-10-03 |
 | F4b | Teacher: authoring, review, gradebook, analytics | not started |
 | F5a | Admin: reference data, users, structure, audit | not started |
 | F5b | Admin: timetable builder | not started |
@@ -267,6 +267,54 @@ Not verified / not done:
 - The print stylesheet of the timetable belongs to T-02 (F4a).
 - Search does not look inside lesson text, only titles and summaries.
 
-## F4a — Teacher: timetable, class session, journal (next)
+## F4a — report
+
+Spec IDs done: T-01, T-02, T-03.1 – T-03.5, T-04.3, T-10, T-11.
+
+Built (`features/teaching`):
+- T-01 Teacher dashboard (`/teacher`): today's classes with "Start class", the next class on an
+  empty day, the courses, the students falling behind per course (names from the roster),
+  the work that closes this week.
+- T-02 My timetable (`/teacher/timetable`): the shared week grid with groups and rooms, the
+  pairs and hours of the week, toq / juft; a class card opens its class page; a print button
+  and a print stylesheet (A4 landscape, no navigation).
+- T-03 Class page (`/teacher/classes/:entryId/:date`): header (subject, type, date, time, room,
+  groups, what changed); attendance as a fast list — four states per student, "All present",
+  each tap shown at once and saved in order (a failure undoes the tap and says so), counts that
+  follow; the topic: the suggested next lesson linked in one tap, any lesson of the course from
+  a list, or a free-text topic; private notes saved as typed; the teacher-only lesson plan
+  (objectives, timing, materials, questions, homework).
+- T-03.3 Presentation mode (`/teacher/lessons/:lessonId/present`, a focus page): dark, very
+  large (zoom 1.25–2.25), one section per screen, arrows / Page Up / Down / Space / Home / End,
+  F for full screen, Escape to leave, on-screen arrows and a progress bar.
+- T-04.3 Calendar-thematic plan (a tab of the course page): every class of the term with its
+  week, date, type, group and topic; cancelled and moved classes marked; a row of my own
+  classes opens its class page where the topic is set.
+- T-10 Attendance journal (`/teacher/journal` and a tab of the course): students × the classes
+  whose attendance was taken, sticky header and first column, totals in %, below 75 % in red,
+  filter by group and period, export to Excel. Groups (`/teacher/groups`): the roster of each
+  group, exportable to Excel. The course's students tab: completion and failed attempts.
+- T-11 Announcements (a tab of the course): post to the course or to a group, the list, delete
+  with confirmation.
+- `shared/lib/xlsx.ts`: a small .xlsx writer (no library); the downloaded journal was opened
+  with openpyxl to confirm it is a valid workbook. `shared/ui/stage.tsx`: magnified content.
+- Fixed on the way: a select with a long value widened its whole column (on a phone the page
+  overflowed); it now truncates.
+
+Verified (run, not assumed):
+- `npm run lint`, `typecheck`, `test`, `i18n:check`, `build`; `npm run e2e` (the full suite).
+- New flows (desktop and phone): the week with its hours → a class from its card → all present,
+  one absent → link the suggested lesson, a note → reload keeps everything → presentation mode
+  moves by keyboard and button and Escape returns → the journal shows the absence; the journal
+  downloads as .xlsx; an announcement is posted and deleted.
+- Screenshots of every F4a screen at 1440 and 390, light and dark — looked at.
+
+Not verified / not done:
+- Printing was not sent to a printer; the print stylesheet hides the navigation and sets A4
+  landscape.
+- "Submissions waiting for review" on the dashboard (T-01) arrives with the review queue of F4b.
+- The class page of a class taught by someone else (a lecture in the plan) is not linked.
+
+## F4b — Teacher: authoring, review, gradebook, analytics (next)
 
 Not started. The prompt is in `docs/05-FRONTEND-PROMPTS.md`.

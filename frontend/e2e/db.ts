@@ -64,12 +64,28 @@ export function resetDemoStudent(username: string): void {
 
 /**
  * Puts the student's notifications back to how the seed left them — the timetable changes, the
- * grade and the group's announcement unread — and clears the phone number a flow may have saved.
+ * grade and the group's announcement unread — clears the phone number a flow may have saved, and
+ * drops notifications of announcements that no longer exist.
  */
 export function resetNotificationsAndPhone(username: string): void {
   runSql(`
     update notifications set status = 'SENT', read_at = null
     where recipient_user_id = (select id from users where username = '${username}')
       and (type in ('TIMETABLE_CHANGED', 'GRADE_PUBLISHED') or payload ? 'groupId');
-    update users set phone = null where username = '${username}';`)
+    update users set phone = null where username = '${username}';
+    -- announcements a teacher flow posted and took back leave their notification behind
+    delete from notifications
+    where recipient_user_id = (select id from users where username = '${username}')
+      and type = 'ANNOUNCEMENT'
+      and not exists (select 1 from announcements a where a.id::text = payload ->> 'announcementId');`)
+}
+
+/** Removes a class's attendance, lesson, topic and notes: the class as if never opened. */
+export function clearClassSession(entryId: string, date: string): void {
+  runSql(`
+    delete from attendance_records where session_id in
+      (select id from class_sessions where entry_id = '${entryId}' and on_date = '${date}');
+    delete from class_session_groups where session_id in
+      (select id from class_sessions where entry_id = '${entryId}' and on_date = '${date}');
+    delete from class_sessions where entry_id = '${entryId}' and on_date = '${date}';`)
 }

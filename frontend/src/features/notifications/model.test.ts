@@ -18,7 +18,10 @@ describe('where a notification leads', () => {
 
   it("feedback opens the work it is about: the task, the quiz, else the course's work", () => {
     expect(
-      notificationPath({ type: 'TEACHER_FEEDBACK', context: { courseId: 'c', codingTaskId: 't' } }, 'STUDENT'),
+      notificationPath(
+        { type: 'TEACHER_FEEDBACK', context: { courseId: 'c', codingTaskId: 't' } },
+        'STUDENT',
+      ),
     ).toBe('/student/courses/c/tasks/t')
     expect(
       notificationPath({ type: 'TEACHER_FEEDBACK', context: { courseId: 'c', quizId: 'q' } }, 'STUDENT'),

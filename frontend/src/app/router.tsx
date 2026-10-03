@@ -80,11 +80,54 @@ const studentFocusRoutes: RouteObject[] = [
 ]
 
 const teacherRoutes: RouteObject[] = [
-  { index: true, element: <LaterPhasePage section="home" /> },
-  { path: 'timetable', element: <LaterPhasePage section="timetable" /> },
-  { path: 'courses', element: <LaterPhasePage section="teacherClasses" /> },
-  { path: 'journal', element: <LaterPhasePage section="teacherJournal" /> },
-  { path: 'groups', element: <LaterPhasePage section="groups" /> },
+  {
+    index: true,
+    lazy: async () => ({
+      Component: (await import('@/features/teaching/teacher-dashboard-page')).TeacherDashboardPage,
+    }),
+  },
+  {
+    path: 'timetable',
+    lazy: async () => ({
+      Component: (await import('@/features/teaching/teacher-timetable-page')).TeacherTimetablePage,
+    }),
+  },
+  {
+    path: 'courses',
+    lazy: async () => ({
+      Component: (await import('@/features/teaching/teacher-courses-page')).TeacherCoursesPage,
+    }),
+  },
+  {
+    path: 'courses/:courseId',
+    lazy: async () => ({
+      Component: (await import('@/features/teaching/teacher-course-route')).TeacherCourseRoute,
+    }),
+  },
+  {
+    path: 'classes/:entryId/:date',
+    lazy: async () => ({
+      Component: (await import('@/features/teaching/class-session-page')).ClassSessionPage,
+    }),
+  },
+  {
+    path: 'journal',
+    lazy: async () => ({ Component: (await import('@/features/teaching/journal-page')).JournalPage }),
+  },
+  {
+    path: 'groups',
+    lazy: async () => ({ Component: (await import('@/features/teaching/groups-page')).GroupsPage }),
+  },
+]
+
+/** The lesson on the projector: nothing of the app around it. */
+const teacherFocusRoutes: RouteObject[] = [
+  {
+    path: 'lessons/:lessonId/present',
+    lazy: async () => ({
+      Component: (await import('@/features/teaching/presentation-page')).PresentationPage,
+    }),
+  },
 ]
 
 const adminRoutes: RouteObject[] = [
@@ -121,6 +164,7 @@ export const router = createBrowserRouter([
         children: [
           { path: '/change-password', element: <ChangePasswordPage /> },
           { path: '/student', element: <RequireRole role="STUDENT" />, children: studentFocusRoutes },
+          { path: '/teacher', element: <RequireRole role="TEACHER" />, children: teacherFocusRoutes },
           {
             element: <ShellRoute />,
             children: [

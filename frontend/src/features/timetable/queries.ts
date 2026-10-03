@@ -10,31 +10,32 @@ type ClassView = components['schemas']['ClassView']
 export type TimetableSide = 'student' | 'teacher'
 
 export const timetableKeys = {
-  today: ['timetable', 'today'] as const,
-  next: ['timetable', 'next'] as const,
+  today: (side: TimetableSide) => ['timetable', 'today', side] as const,
+  next: (side: TimetableSide) => ['timetable', 'next', side] as const,
   week: (side: TimetableSide, date: string | undefined, locale: Locale) =>
     ['timetable', 'week', side, date ?? 'current', locale] as const,
   topic: (entryId: string, date: string, locale: Locale) => ['class-topic', entryId, date, locale] as const,
 }
 
-/** Today's classes of the signed-in student (by group), on the campus calendar. */
-export function useTodayQuery() {
+/** Today's classes on the campus calendar: a student's by group, a teacher's own. */
+export function useTodayQuery(side: TimetableSide = 'student') {
   return useQuery({
-    queryKey: timetableKeys.today,
-    queryFn: async () => narrowDay(await unwrap(api.GET('/api/v1/timetable/today'))),
+    queryKey: timetableKeys.today(side),
+    queryFn: async () =>
+      narrowDay(await unwrap(api.GET('/api/v1/timetable/today', { params: { query: { as: side } } }))),
     // a class may be cancelled or moved during the day
     refetchInterval: 5 * 60_000,
   })
 }
 
 /** My next class that will really be held, looking four weeks ahead; `null` when there is none. */
-export function useNextClassQuery() {
+export function useNextClassQuery(side: TimetableSide = 'student') {
   return useQuery({
-    queryKey: timetableKeys.next,
+    queryKey: timetableKeys.next(side),
     queryFn: async () => {
       // 204, and so nothing to read, when no class is ahead
       const next: ClassView | undefined = await unwrap(
-        api.GET('/api/v1/timetable/next', { params: { query: { as: 'student' } } }),
+        api.GET('/api/v1/timetable/next', { params: { query: { as: side } } }),
       )
       return next === undefined ? null : narrowClass(next)
     },

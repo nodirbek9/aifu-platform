@@ -53,6 +53,10 @@ export function useSearchQuery(text: string, locale: Locale) {
  * then are not offered rather than leading nowhere.
  */
 export function searchHitPath(hit: SearchHit, role: Role): string | null {
+  if (role === 'TEACHER' && hit.courseId !== undefined) {
+    if (hit.type === 'COURSE') return `/teacher/courses/${hit.courseId}`
+    if (hit.type === 'LESSON') return `/teacher/lessons/${hit.id}/present`
+  }
   if (role !== 'STUDENT' || hit.courseId === undefined) return null
   if (hit.type === 'COURSE') return `/student/courses/${hit.courseId}`
   if (hit.type === 'LESSON') return `/student/courses/${hit.courseId}/lessons/${hit.id}`

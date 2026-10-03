@@ -33,6 +33,7 @@ export function TabBar({ role }: { role: Role }) {
 
   return (
     <nav
+      data-print-hidden
       aria-label={t('common.mainNavigation')}
       className="border-border bg-surface-raised pb-safe fixed inset-x-0 bottom-0 z-20 border-t md:hidden"
     >

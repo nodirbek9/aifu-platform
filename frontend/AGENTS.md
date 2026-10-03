@@ -83,6 +83,10 @@ e2e/                         support.ts (signIn, texts), *.spec.ts; shots.spec.t
   optional `actions` for the sheet — the teacher's timetable and the admin's builder reuse it.
   The table itself is `shared/ui/schedule-grid.tsx`. Parity, week numbers, holidays and moved
   classes are the server's: nothing of that is computed here.
+- **The teacher's side** is `features/teaching`: `queries.ts` has every classroom call;
+  `TeacherCoursePage` takes `extraSections` so later phases add tabs without touching it
+  (`teacher-course-route.tsx` is where they are listed). Presentation mode is a focus page.
+- **Excel**: `downloadXlsx(name, sheets)` from `shared/lib/xlsx.ts`; the first row is the header.
 - **Pages for every role** (`/notifications`, `/announcements`, `/profile`) are `commonRoutes` in
   the router; the shell shows the navigation of the active role around them.
 - **Search** is the command palette: `CommandPalette` takes a `search` prop with the server's

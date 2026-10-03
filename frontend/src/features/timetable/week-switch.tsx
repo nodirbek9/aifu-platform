@@ -25,7 +25,7 @@ export function WeekSwitch({ week, isCurrent, onPrevious, onNext, onToday }: Wee
   const locale = useLocale()
   return (
     <div className="flex flex-wrap items-center gap-x-4 gap-y-3">
-      <div className="flex items-center gap-1">
+      <div data-print-hidden className="flex items-center gap-1">
         <IconButton variant="outline" aria-label={t('timetable.previousWeek')} onClick={onPrevious}>
           <ChevronLeft aria-hidden className="size-5" />
         </IconButton>

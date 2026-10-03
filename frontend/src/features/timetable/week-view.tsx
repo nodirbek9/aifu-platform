@@ -28,13 +28,15 @@ type WeekViewProps = {
   courseHref: (courseId: string) => string
   /** Extra actions of the class sheet (the teacher's "start class"). */
   actions?: (item: ClassItem) => ReactNode
+  /** Opens a class somewhere else instead of the sheet (a teacher goes to the class page). */
+  onOpen?: (item: ClassItem) => void
 }
 
 /**
  * A week of classes: the grid of days × pairs from tablet width up, a day strip with the day's
  * list on a phone. Used by the student's and the teacher's timetable alike.
  */
-export function WeekView({ week, audience, lessonHref, courseHref, actions }: WeekViewProps) {
+export function WeekView({ week, audience, lessonHref, courseHref, actions, onOpen }: WeekViewProps) {
   const isWide = useMediaQuery('(min-width: 48rem)')
   const [opened, setOpened] = useState<ClassItem>()
   const now = useCampusNow()
@@ -55,9 +57,15 @@ export function WeekView({ week, audience, lessonHref, courseHref, actions }: We
   return (
     <>
       {isWide ? (
-        <WeekGrid week={week} days={days} audience={audience} onOpen={setOpened} />
+        <WeekGrid week={week} days={days} audience={audience} onOpen={onOpen ?? setOpened} />
       ) : (
-        <DayList key={week.weekStart} days={days} today={now.date} audience={audience} onOpen={setOpened} />
+        <DayList
+          key={week.weekStart}
+          days={days}
+          today={now.date}
+          audience={audience}
+          onOpen={onOpen ?? setOpened}
+        />
       )}
       <ClassSheet
         item={opened}

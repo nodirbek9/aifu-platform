@@ -56,7 +56,9 @@ describe('what the server sends, narrowed', () => {
     finalScore: 48,
     finalGradeSymbol: '2',
     complete: false,
-    components: [{ id: 'jn', code: 'JN', kind: 'CONTINUOUS' as const, maxPoints: 30, earned: 24, graded: true }],
+    components: [
+      { id: 'jn', code: 'JN', kind: 'CONTINUOUS' as const, maxPoints: 30, earned: 24, graded: true },
+    ],
     entries: [{ id: 'g2', score: 8, maxScore: 10, status: 'PUBLISHED' as const, revision: 2 }],
     history: [
       { id: 'g2', score: 8, maxScore: 10, status: 'PUBLISHED' as const, revision: 2 },

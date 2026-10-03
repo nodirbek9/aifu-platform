@@ -16,6 +16,7 @@ export type ClassItem = {
   subjectCode?: string
   sessionType: SessionType
   teacherName?: string
+  teacherId?: string
   roomLabel?: string
   groups: string[]
   subgroup?: string
@@ -47,6 +48,7 @@ export function narrowClass(raw: Schemas['ClassView']): ClassItem | null {
   if (raw.courseId !== undefined) item.courseId = raw.courseId
   if (raw.subjectCode !== undefined) item.subjectCode = raw.subjectCode
   if (raw.teacherName !== undefined) item.teacherName = raw.teacherName
+  if (raw.teacherUserId !== undefined) item.teacherId = raw.teacherUserId
   if (raw.roomLabel !== undefined) item.roomLabel = raw.roomLabel
   if (raw.subgroup !== undefined) item.subgroup = raw.subgroup
   if (raw.changeReason !== undefined) item.changeReason = raw.changeReason

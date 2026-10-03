@@ -32,6 +32,7 @@ export function Rail({ role, roles, expanded, onToggle }: RailProps) {
   const { t } = useTranslation()
   return (
     <aside
+      data-print-hidden
       data-expanded={expanded}
       className={cn(
         'border-border bg-surface-raised sticky top-0 hidden h-dvh shrink-0 flex-col border-r md:flex',

@@ -47,7 +47,7 @@ export function Select({
           aria-invalid={error !== undefined || undefined}
           aria-describedby={error !== undefined ? errorId : undefined}
           className={cn(
-            'border-border-strong bg-surface-raised text-body text-text flex h-11 w-full items-center justify-between gap-2 rounded-sm border px-3',
+            'border-border-strong bg-surface-raised text-body text-text flex h-11 w-full min-w-0 items-center justify-between gap-2 rounded-sm border px-3',
             'duration-fast ease-standard transition-[border-color,box-shadow]',
             'hover:border-text-muted/50',
             'focus-visible:border-primary-hover focus-visible:outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-0',
@@ -56,8 +56,10 @@ export function Select({
             'data-[placeholder]:text-text-muted/70',
           )}
         >
-          <SelectPrimitive.Value placeholder={placeholder} />
-          <SelectPrimitive.Icon>
+          <span className="min-w-0 flex-1 truncate text-left">
+            <SelectPrimitive.Value placeholder={placeholder} />
+          </span>
+          <SelectPrimitive.Icon className="shrink-0">
             <ChevronDown aria-hidden className="text-text-muted size-4" />
           </SelectPrimitive.Icon>
         </SelectPrimitive.Trigger>
