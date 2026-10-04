@@ -1,0 +1,16 @@
+[
+  { "runs": [
+    { "input": "5\n", "output": "120 5\n" },
+    { "input": "12\n", "output": "479001600 3\n" },
+    { "input": "0\n", "output": "1 0\n" }
+  ] },
+  { "runs": [
+    { "input": "3\n", "output": "A -> C\nA -> B\nC -> B\nA -> C\nB -> A\nB -> C\nA -> C\n" },
+    { "input": "1\n", "output": "A -> C\n" }
+  ] },
+  { "runs": [
+    { "input": "13\n", "output": "1101\n" },
+    { "input": "6\n", "output": "110\n" },
+    { "input": "1\n", "output": "1\n" }
+  ] }
+]
