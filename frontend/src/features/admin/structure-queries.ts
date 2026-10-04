@@ -13,6 +13,7 @@ export type SessionType = Schemas['SetSessionAllocationRequest']['sessionType']
 export type ComponentInput = Schemas['CreateAssessmentComponentRequest']
 export type EnrollmentSummary = Schemas['EnrollmentSummary']
 export type EnrollResult = Schemas['BulkEnrollResultView']
+export type CsvImportRow = Schemas['CsvImportRowView']
 
 export const structureKeys = {
   subjects: ['admin', 'subjects'] as const,
@@ -287,6 +288,21 @@ export function useEnrollStudents(courseId: string) {
       api.POST('/api/v1/admin/enrollments/bulk', { body: { courseId, studentUserIds, source: 'ADMIN' } }),
     ),
   )
+}
+
+/** Enrols the students of a registrar CSV export: one student number per line. */
+export function useImportEnrollments(courseId: string) {
+  return useRefreshingMutation([structureKeys.enrollments(courseId)], (file: File) => {
+    const form = new FormData()
+    form.append('file', file)
+    return unwrap(
+      api.POST('/api/v1/admin/enrollments/import', {
+        params: { query: { courseId, source: 'ADMIN' } },
+        body: { file: '' },
+        bodySerializer: () => form,
+      }),
+    )
+  })
 }
 
 export function useEnrollGroup(courseId: string) {

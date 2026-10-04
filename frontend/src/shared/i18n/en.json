@@ -1474,7 +1474,11 @@
       "CONFIGURATION_CHANGED": "Configuration changed"
     },
     "importPassword": "Initial password for new students (at least 8 characters; changed at first sign-in)",
-    "hoursOf": "{{kind}}: hours"
+    "hoursOf": "{{kind}}: hours",
+    "csvImport": "Enrol from a CSV file",
+    "csvImporting": "Uploading…",
+    "csvImportHint": "A registrar export: one student number per line (an optional header: student_number). Each line is checked on its own.",
+    "csvFailures": "Lines not enrolled"
   },
   "builder": {
     "addChange": "Add the change",

@@ -56,6 +56,27 @@ test.describe('the administrator keeps the records (spec A-03, A-05)', () => {
     await expect(page.getByText('E2E Vatan himoyachilari kuni')).toBeVisible()
   })
 
+  test('a registrar CSV enrols by student number, and says which lines it could not', async ({
+    page,
+  }, testInfo) => {
+    test.skip(isPhone(testInfo), 'the import is done on the desktop')
+    await signIn(page, 'admin')
+    await page.goto('/admin/structure/courses/2eec7704-6e25-4adb-966e-b54de91a9b69')
+    // both demo students are already enrolled and the third number belongs to nobody: nothing changes
+    const csv = ['student_number', 'DEV-S-003', 'DEV-S-004', 'NOBODY-0000'].join('\n')
+    await page.locator('input[type=file][accept*=csv]').setInputFiles({
+      name: 'registrator.csv',
+      mimeType: 'text/csv',
+      buffer: Buffer.from(csv, 'utf8'),
+    })
+    await expect(
+      page.getByRole('status').filter({ hasText: label(uz.admin.enrollOutcome, { done: 0, failed: 3 }) }),
+    ).toBeVisible()
+    const failures = page.getByRole('list', { name: uz.admin.csvFailures })
+    await expect(failures.getByRole('listitem')).toHaveCount(3)
+    await expect(failures).toContainText('NOBODY-0000')
+  })
+
   test('three students are imported from a file, checked first without saving', async ({
     page,
   }, testInfo) => {

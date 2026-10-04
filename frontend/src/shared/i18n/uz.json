@@ -1474,7 +1474,11 @@
       "CONFIGURATION_CHANGED": "Sozlama oʻzgardi"
     },
     "importPassword": "Yangi talabalar uchun boshlangʻich parol (kamida 8 belgi; birinchi kirishda almashtiriladi)",
-    "hoursOf": "{{kind}}: soat"
+    "hoursOf": "{{kind}}: soat",
+    "csvImport": "CSV fayldan yozish",
+    "csvImporting": "Yuklanmoqda…",
+    "csvImportHint": "Registrator eksporti: har qatorda bitta talaba raqami (ixtiyoriy sarlavha: student_number). Har bir qator alohida tekshiriladi.",
+    "csvFailures": "Yozilmagan qatorlar"
   },
   "builder": {
     "addChange": "Oʻzgarishni qoʻshish",

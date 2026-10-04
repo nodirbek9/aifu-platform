@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Plus, Trash2, UserPlus, Users } from 'lucide-react'
+import { FileUp, Plus, Trash2, UserPlus, Users } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router'
 import { LocaleTabs } from '@/features/authoring/locale-tabs'
@@ -31,11 +31,13 @@ import {
   useCourseStatus,
   useEnrollGroup,
   useEnrollStudents,
+  useImportEnrollments,
   useRemoveTeacher,
   useSaveCourseText,
   useSetAllocation,
   useSetRequiredLocales,
   type CourseDetail,
+  type CsvImportRow,
   type EnrollResult,
 } from './structure-queries'
 import { useTeachersQuery, useUsersQuery } from './users-queries'
@@ -564,8 +566,10 @@ function Enrollments({ courseId }: { courseId: string }) {
   const [group, setGroup] = useState<string>()
   const [find, setFind] = useState('')
   const found = useUsersQuery({ query: find, role: 'STUDENT', page: 0 }, find.trim().length >= 2)
-  const [outcome, setOutcome] = useState<EnrollResult[]>()
-  const summary = (rows: EnrollResult[]) => {
+  const importCsv = useImportEnrollments(courseId)
+  const [outcome, setOutcome] = useState<(EnrollResult | CsvImportRow)[]>()
+  const [csvFailures, setCsvFailures] = useState<CsvImportRow[]>([])
+  const summary = (rows: (EnrollResult | CsvImportRow)[]) => {
     const done = rows.filter((row) => row.success === true).length
     return t('admin.enrollOutcome', { done, failed: rows.length - done })
   }
@@ -590,7 +594,13 @@ function Enrollments({ courseId }: { courseId: string }) {
               disabled={group === undefined}
               loading={byGroup.isPending}
               onClick={() => {
-                if (group !== undefined) byGroup.mutate(group, { onSuccess: setOutcome })
+                if (group !== undefined)
+                  byGroup.mutate(group, {
+                    onSuccess: (rows) => {
+                      setOutcome(rows)
+                      setCsvFailures([])
+                    },
+                  })
               }}
             >
               <Users aria-hidden className="size-4" />
@@ -617,7 +627,12 @@ function Enrollments({ courseId }: { courseId: string }) {
                       size="sm"
                       variant="ghost"
                       onClick={() => {
-                        students.mutate([user.id ?? ''], { onSuccess: setOutcome })
+                        students.mutate([user.id ?? ''], {
+                          onSuccess: (rows) => {
+                            setOutcome(rows)
+                            setCsvFailures([])
+                          },
+                        })
                       }}
                     >
                       <UserPlus aria-hidden className="size-4" />
@@ -628,12 +643,50 @@ function Enrollments({ courseId }: { courseId: string }) {
             </ul>
           </div>
         </div>
+        <div className="grid grid-cols-1 gap-1">
+          <label className="inline-flex w-fit">
+            <input
+              type="file"
+              accept=".csv,text/csv,text/plain"
+              className="peer sr-only"
+              onChange={(event) => {
+                const file = event.target.files?.[0]
+                event.target.value = ''
+                if (file === undefined) return
+                importCsv.mutate(file, {
+                  onSuccess: (rows) => {
+                    setOutcome(rows)
+                    setCsvFailures(rows.filter((row) => row.success !== true))
+                  },
+                })
+              }}
+            />
+            <span className="border-border text-small text-text hover:bg-surface-sunken peer-focus-visible:outline-focus-ring inline-flex cursor-pointer items-center gap-2 rounded-md border px-3 py-2 font-medium peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2">
+              <FileUp aria-hidden className="size-4" />
+              {importCsv.isPending ? t('admin.csvImporting') : t('admin.csvImport')}
+            </span>
+          </label>
+          <p className="text-caption text-text-muted tracking-normal">{t('admin.csvImportHint')}</p>
+        </div>
         {outcome !== undefined && (
           <p role="status" className="text-small text-text">
             {summary(outcome)}
           </p>
         )}
-        <Problem error={byGroup.error ?? students.error} />
+        {csvFailures.length > 0 && (
+          <ul className="text-small grid grid-cols-1 gap-1" aria-label={t('admin.csvFailures')}>
+            {csvFailures.map((row, index) => (
+              <li key={`${row.identifier ?? ''}-${String(index)}`} className="text-danger">
+                <span className="font-medium">{row.identifier}</span>
+                {' — '}
+                {row.errorCode !== undefined
+                  ? t(`errors.${row.errorCode}`, { defaultValue: row.errorMessage ?? '' })
+                  : row.errorMessage}
+              </li>
+            ))}
+          </ul>
+        )}
+        <Problem error={byGroup.error ?? students.error ?? importCsv.error} />
         <div className="overflow-x-auto">
           <Table>
             <TableHead>
