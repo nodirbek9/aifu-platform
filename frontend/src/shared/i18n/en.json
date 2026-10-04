@@ -1590,7 +1590,10 @@
       "deleteBody": "The draft and its {{count}} classes are deleted."
     },
     "overScheduledLines": "Lines scheduled over the plan: {{lines}} — remove the extra classes or check the load",
-    "overScheduledBy": "{{hours}} h over the plan"
+    "overScheduledBy": "{{hours}} h over the plan",
+    "replacementTeacher": "Replacement teacher",
+    "sameTeacher": "The same teacher",
+    "sameRoom": "The same room"
   },
   "errors": {
     "NETWORK_ERROR": "Network error — check your internet connection",

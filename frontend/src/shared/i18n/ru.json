@@ -1590,7 +1590,10 @@
       "deleteBody": "Черновик и его занятия ({{count}}) будут удалены."
     },
     "overScheduledLines": "Строк сверх плана: {{lines}} — уберите лишние занятия или проверьте нагрузку",
-    "overScheduledBy": "Сверх плана на {{hours}} ч"
+    "overScheduledBy": "Сверх плана на {{hours}} ч",
+    "replacementTeacher": "Замещающий преподаватель",
+    "sameTeacher": "Тот же преподаватель",
+    "sameRoom": "Та же аудитория"
   },
   "errors": {
     "NETWORK_ERROR": "Ошибка сети — проверьте подключение к интернету",

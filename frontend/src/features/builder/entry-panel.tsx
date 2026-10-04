@@ -4,6 +4,7 @@ import { AlertTriangle, CheckCircle2, OctagonX, Trash2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useAllGroupsQuery, usePairSlotsQuery, useRoomsQuery } from '@/features/admin/reference-queries'
 import { useAdminCourseQuery, useCoursesQuery } from '@/features/admin/structure-queries'
+import { useTeachersQuery } from '@/features/admin/users-queries'
 import { toApiProblem } from '@/shared/api/errors'
 import { useLocale } from '@/shared/i18n/use-locale'
 import { formatDate } from '@/shared/lib/dates'
@@ -419,11 +420,13 @@ function OneOffChanges({ entryId }: { entryId: string }) {
   const remove = useDeleteException(entryId)
   const slots = usePairSlotsQuery()
   const rooms = useRoomsQuery()
+  const teachers = useTeachersQuery()
   const [kind, setKind] = useState<(typeof KINDS)[number]>('CANCELLED')
   const [onDate, setOnDate] = useState('')
   const [newDate, setNewDate] = useState('')
   const [newSlot, setNewSlot] = useState<string>()
   const [newRoom, setNewRoom] = useState<string>()
+  const [newTeacher, setNewTeacher] = useState<string>()
   const [reason, setReason] = useState('')
   return (
     <section className="border-border grid grid-cols-1 gap-3 border-t pt-4">
@@ -494,13 +497,25 @@ function OneOffChanges({ entryId }: { entryId: string }) {
           </>
         )}
         {kind === 'REPLACED' && (
-          <Select
-            label={t('admin.room')}
-            value={newRoom}
-            placeholder={t('authoring.choose')}
-            onValueChange={setNewRoom}
-            options={(rooms.data ?? []).map((room) => ({ value: room.id ?? '', label: room.label ?? '' }))}
-          />
+          <>
+            <Select
+              label={t('builder.replacementTeacher')}
+              value={newTeacher}
+              placeholder={t('builder.sameTeacher')}
+              onValueChange={setNewTeacher}
+              options={(teachers.data ?? []).map((teacher) => ({
+                value: teacher.id ?? '',
+                label: teacher.fullName ?? '',
+              }))}
+            />
+            <Select
+              label={t('admin.room')}
+              value={newRoom}
+              placeholder={t('builder.sameRoom')}
+              onValueChange={setNewRoom}
+              options={(rooms.data ?? []).map((room) => ({ value: room.id ?? '', label: room.label ?? '' }))}
+            />
+          </>
         )}
         <Input
           className="sm:col-span-2"
@@ -522,7 +537,8 @@ function OneOffChanges({ entryId }: { entryId: string }) {
         disabled={
           onDate === '' ||
           reason.trim() === '' ||
-          (kind === 'MOVED' && (newDate === '' || newSlot === undefined))
+          (kind === 'MOVED' && (newDate === '' || newSlot === undefined)) ||
+          (kind === 'REPLACED' && newTeacher === undefined && newRoom === undefined)
         }
         loading={add.isPending}
         onClick={() => {
@@ -533,11 +549,14 @@ function OneOffChanges({ entryId }: { entryId: string }) {
               reason: reason.trim(),
               ...(kind === 'MOVED' && { newDate, ...(newSlot !== undefined && { newPairSlotId: newSlot }) }),
               ...(kind === 'REPLACED' && newRoom !== undefined && { newRoomId: newRoom }),
+              ...(kind === 'REPLACED' && newTeacher !== undefined && { newTeacherUserId: newTeacher }),
             },
             {
               onSuccess: () => {
                 setReason('')
                 setOnDate('')
+                setNewTeacher(undefined)
+                setNewRoom(undefined)
               },
             },
           )

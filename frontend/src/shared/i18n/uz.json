@@ -1590,7 +1590,10 @@
       "deleteBody": "Qoralama va undagi {{count}} dars oʻchiriladi."
     },
     "overScheduledLines": "Rejadan ortiq qoʻyilgan qatorlar: {{lines}} — ortiqcha darslarni olib tashlang yoki yuklamani tekshiring",
-    "overScheduledBy": "Rejadan {{hours}} soat ortiq"
+    "overScheduledBy": "Rejadan {{hours}} soat ortiq",
+    "replacementTeacher": "Oʻrnini bosuvchi oʻqituvchi",
+    "sameTeacher": "Oʻsha oʻqituvchi",
+    "sameRoom": "Oʻsha xona"
   },
   "errors": {
     "NETWORK_ERROR": "Tarmoq xatosi — internet aloqasini tekshiring",
