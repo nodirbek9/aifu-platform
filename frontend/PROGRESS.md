@@ -313,7 +313,7 @@ Not verified / not done:
 - Printing was not sent to a printer; the print stylesheet hides the navigation and sets A4
   landscape.
 - "Submissions waiting for review" on the dashboard (T-01) arrives with the review queue of F4b.
-- The class page of a class taught by someone else (a lecture in the plan) is not linked.
+- The class page of a class taught by someone else (a lecture in the plan): linked since 2026-10-04 (any teacher of the course may open it, as the API allows).
 
 ## F4b — report
 

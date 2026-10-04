@@ -1,7 +1,6 @@
 import { CalendarRange, Check, ChevronRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
-import { useAuth } from '@/features/auth/auth-context'
 import { isHeld } from '@/features/timetable/model'
 import { toApiProblem } from '@/shared/api/errors'
 import { useLocale } from '@/shared/i18n/use-locale'
@@ -16,14 +15,13 @@ import { useClassPlanQuery } from './queries'
 
 /**
  * T-04.3 — the calendar-thematic plan: every class of the term by date, with the topic it has
- * or still needs. A row opens its class page, where the topic is set.
+ * or still needs. Every held class opens its class page, where the topic is set: the course's
+ * teachers work together, so a seminar teacher can see and fill in the lecture's page too.
  */
 export function ClassPlan({ courseId }: { courseId: string }) {
   const { t } = useTranslation()
   const locale = useLocale()
   const plan = useClassPlanQuery(courseId, locale)
-  const { state } = useAuth()
-  const me = state.status === 'authenticated' ? state.user.id : undefined
 
   if (plan.isPending) return <Skeleton className="h-96" />
   if (plan.isError) {
@@ -106,7 +104,7 @@ export function ClassPlan({ courseId }: { courseId: string }) {
                   )}
                 </TableCell>
                 <TableCell>
-                  {held && row.info.teacherId === me && (
+                  {held && (
                     <Link
                       to={`/teacher/classes/${row.info.entryId}/${row.info.date}`}
                       aria-label={t('teaching.openClass', { date: formatLongDay(row.info.date, locale) })}
