@@ -43,6 +43,7 @@ export type HourBudgetLine = { sessionType: SessionType; planned: number; inLess
 
 export type AuthoringCourse = {
   id: string
+  subjectId?: string
   requiredLocales: Locale[]
   allocations: { sessionType: SessionType; hours: number }[]
   components: { id: string; code: string; maxPoints: number; parentId?: string }[]
@@ -53,6 +54,7 @@ export function narrowAuthoringCourse(raw: Schemas['CourseDetail']): AuthoringCo
   const required = (raw.requiredLocales ?? []).filter(isLocale)
   return {
     id: raw.id,
+    ...(raw.subjectId !== undefined && { subjectId: raw.subjectId }),
     requiredLocales: required.length > 0 ? required : [DEFAULT_LOCALE],
     allocations: (raw.sessionAllocations ?? []).flatMap((row) =>
       row.sessionType === undefined ? [] : [{ sessionType: row.sessionType, hours: row.allocatedHours ?? 0 }],
@@ -155,6 +157,10 @@ export type EditorLesson = {
   estimatedMinutes?: number
   texts: Texts<{ title: string; summary?: string }>
   blocks: EditorBlock[]
+  /** Lessons of the course to be done before this one */
+  prerequisites: string[]
+  /** Learning outcomes of the subject this lesson serves */
+  outcomes: string[]
 }
 
 export function narrowEditorLesson(raw: Schemas['LessonDetail']): EditorLesson | null {
@@ -177,6 +183,8 @@ export function narrowEditorLesson(raw: Schemas['LessonDetail']): EditorLesson |
       .map(narrowBlock)
       .filter((block) => block !== null)
       .sort((a, b) => a.position - b.position),
+    prerequisites: raw.prerequisiteLessonIds ?? [],
+    outcomes: raw.learningOutcomeIds ?? [],
   }
 }
 

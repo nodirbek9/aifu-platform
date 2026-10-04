@@ -510,10 +510,10 @@
     "finalGrade": "Yakuniy baho",
     "finalPending": "Yakuniy baho barcha nazoratlar baholangach chiqariladi.",
     "symbol": {
-      "5": "aʼlo",
-      "4": "yaxshi",
+      "2": "qoniqarsiz",
       "3": "qoniqarli",
-      "2": "qoniqarsiz"
+      "4": "yaxshi",
+      "5": "aʼlo"
     },
     "admission": {
       "granted": "Yakuniy nazoratga ruxsat berilgan",
@@ -966,7 +966,17 @@
       "REGEX": "Muntazam ifoda",
       "NUMERIC_TOLERANCE": "Son, xatolik bilan"
     },
-    "descriptionRequired": "Shart har bir tilda majburiy: usiz bu til saqlanmaydi."
+    "descriptionRequired": "Shart har bir tilda majburiy: usiz bu til saqlanmaydi.",
+    "linksTitle": "Bogʻlanishlar",
+    "linksBody": "Bu darsdan oldin oʻtilishi kerak boʻlgan darslar va dars xizmat qiladigan oʻquv natijalari. Talaba oldingi darslarni tugatmaguncha bu dars unga yopiq turadi.",
+    "prerequisites": "Oldin oʻtiladigan darslar",
+    "noPrerequisites": "Oldingi darslar belgilanmagan.",
+    "addPrerequisite": "Oldin oʻtiladigan dars qoʻshish",
+    "outcomes": "Oʻquv natijalari",
+    "noOutcomes": "Oʻquv natijalari bogʻlanmagan.",
+    "subjectHasNoOutcomes": "Fanda hali oʻquv natijalari yoʻq — ularni administrator fan sahifasida qoʻshadi.",
+    "addOutcome": "Oʻquv natijasini bogʻlash",
+    "removeLink": "Olib tashlash: {{name}}"
   },
   "review": {
     "tab": "Tekshiruv",

@@ -313,6 +313,31 @@ export function useSaveLessonFields(lessonId: string) {
   })
 }
 
+/** Links or unlinks a lesson required before this one, or a learning outcome the lesson serves. */
+export function useLessonLink(lessonId: string, kind: 'prerequisites' | 'outcomes') {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: async ({ targetId, linked }: { targetId: string; linked: boolean }) => {
+      if (kind === 'prerequisites') {
+        const options = { params: { path: { id: lessonId, requiredLessonId: targetId } } }
+        await unwrap(
+          linked
+            ? api.POST('/api/v1/teacher/lessons/{id}/prerequisites/{requiredLessonId}', options)
+            : api.DELETE('/api/v1/teacher/lessons/{id}/prerequisites/{requiredLessonId}', options),
+        )
+      } else {
+        const options = { params: { path: { id: lessonId, outcomeId: targetId } } }
+        await unwrap(
+          linked
+            ? api.POST('/api/v1/teacher/lessons/{id}/outcomes/{outcomeId}', options)
+            : api.DELETE('/api/v1/teacher/lessons/{id}/outcomes/{outcomeId}', options),
+        )
+      }
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: authoringKeys.lesson(lessonId) }),
+  })
+}
+
 export function useSaveLessonText(lessonId: string) {
   const cache = useLessonCache(lessonId)
   return useMutation({

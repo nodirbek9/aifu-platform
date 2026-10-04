@@ -510,10 +510,10 @@
     "finalGrade": "Final grade",
     "finalPending": "The final grade is given once every assessment is graded.",
     "symbol": {
-      "5": "excellent",
-      "4": "good",
+      "2": "unsatisfactory",
       "3": "satisfactory",
-      "2": "unsatisfactory"
+      "4": "good",
+      "5": "excellent"
     },
     "admission": {
       "granted": "Admitted to the final exam",
@@ -966,7 +966,17 @@
       "REGEX": "Regular expression",
       "NUMERIC_TOLERANCE": "Number within a tolerance"
     },
-    "descriptionRequired": "The statement is required in every language: without it the language is not saved."
+    "descriptionRequired": "The statement is required in every language: without it the language is not saved.",
+    "linksTitle": "Links",
+    "linksBody": "The lessons to be done before this one, and the learning outcomes the lesson serves. Until a student finishes the earlier lessons, this one stays locked for them.",
+    "prerequisites": "Done before this lesson",
+    "noPrerequisites": "No earlier lessons set.",
+    "addPrerequisite": "Add a lesson to be done first",
+    "outcomes": "Learning outcomes",
+    "noOutcomes": "No learning outcomes linked.",
+    "subjectHasNoOutcomes": "The subject has no learning outcomes yet — an administrator adds them on the subject page.",
+    "addOutcome": "Link a learning outcome",
+    "removeLink": "Remove: {{name}}"
   },
   "review": {
     "tab": "Review",

@@ -26,6 +26,7 @@ import { SaveStatus } from './save-status'
 import { useAutosave } from './use-autosave'
 import { BlockEditor, type RefChoice } from './block-editor'
 import { StatusBadge } from './curriculum-tree'
+import { LessonLinksCard } from './lesson-links-card'
 import { LocaleTabs } from './locale-tabs'
 import { publishError } from './publish-error'
 import { movedTo, previewLesson, textIn, titleOf, type BlockType, type EditorLesson } from './model'
@@ -197,6 +198,7 @@ function LessonEditor({ lesson, courseId, revision, onReload }: LessonEditorProp
       <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12">
         <div className={showPreview ? 'hidden lg:col-span-7 lg:grid lg:gap-4' : 'grid gap-4 lg:col-span-7'}>
           <LessonDetailsCard lesson={lesson} required={required} onReload={onReload} />
+          <LessonLinksCard lesson={lesson} courseId={courseId} />
           {lesson.blocks.length === 0 && (
             <EmptyState title={t('authoring.noBlocks')} body={t('authoring.noBlocksBody')} />
           )}

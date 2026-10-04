@@ -210,6 +210,38 @@ test.describe('the teacher writes the course (spec T-04 … T-06)', () => {
     await expect(page.getByText(uz.authoring.verifyPassed)).toBeVisible({ timeout: 90_000 })
   })
 
+  test('a lesson gets a lesson to be done first and a learning outcome, then both are removed', async ({
+    page,
+  }, testInfo) => {
+    test.skip(isPhone(testInfo), 'the editor is used on the desktop')
+    await signInAsTeacher(page)
+    await page.goto(`/teacher/lessons/${LESSON}/edit`)
+    await expect(page.getByText(uz.authoring.noPrerequisites)).toBeVisible()
+
+    await page.getByRole('combobox', { name: uz.authoring.addPrerequisite }).click()
+    await page.getByRole('option', { name: /^M1 · / }).click()
+    const remove = page.getByRole('button', { name: /^Olib tashlash: M1 · / })
+    await expect(remove).toBeVisible()
+
+    await page.getByRole('combobox', { name: uz.authoring.addOutcome }).click()
+    const outcome = page.getByRole('option').first()
+    const outcomeLabel = (await outcome.textContent()) ?? ''
+    await outcome.click()
+    const removeOutcome = page.getByRole('button', { name: `Olib tashlash: ${outcomeLabel}` })
+    await expect(removeOutcome).toBeVisible()
+
+    // the links are the server's: a reload keeps them
+    await page.reload()
+    await expect(remove).toBeVisible()
+    await expect(removeOutcome).toBeVisible()
+
+    // A1 must stay open for the other flows: both links go again
+    await remove.click()
+    await expect(page.getByText(uz.authoring.noPrerequisites)).toBeVisible()
+    await removeOutcome.click()
+    await expect(page.getByText(uz.authoring.noOutcomes)).toBeVisible()
+  })
+
   test('a quiz gets a question with options, the right one marked, and is published', async ({
     page,
   }, testInfo) => {
