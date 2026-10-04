@@ -1,0 +1,3 @@
+[
+  { "runs": [{ "input": "3\n1 2 3\n2 5 4\n3 4 9\n", "output": "15\nyes\n" }, { "input": "2\n1 2\n3 4\n", "output": "5\nno\n" }, { "input": "1\n-7\n", "output": "-7\nyes\n" }] }
+]
