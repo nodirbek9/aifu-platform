@@ -13,6 +13,24 @@ const RAW_KEY =
 
 const LANGUAGE = { ru: 'RU', en: 'EN' } as const
 
+/** What the Programming course says in each language: the content is translated, not a fallback. */
+const CONTENT = {
+  ru: {
+    lesson: 'Основные понятия программирования',
+    section: 'Алгоритм',
+    comment: '# Читаем два числа (каждое на отдельной строке)',
+    task: 'Таблица умножения (вложенный цикл)',
+    quiz: 'Основы программирования: повторительный тест',
+  },
+  en: {
+    lesson: 'Basic concepts of programming',
+    section: 'Algorithm',
+    comment: '# Read two numbers (each on its own line)',
+    task: 'A multiplication table (a nested loop)',
+    quiz: 'Programming basics: a review quiz',
+  },
+} as const
+
 async function switchTo(page: Page, locale: keyof typeof LANGUAGE, testInfo: TestInfo): Promise<void> {
   if (isPhone(testInfo)) {
     // on a phone the language switch is in the profile page
@@ -65,6 +83,22 @@ for (const locale of ['ru', 'en'] as const) {
         ],
         testInfo,
       )
+    })
+
+    test(`the course reads in ${locale}: the lesson, its code, the task and the quiz`, async ({
+      page,
+    }, testInfo) => {
+      await signIn(page, 'student3')
+      await switchTo(page, locale, testInfo)
+      const expected = CONTENT[locale]
+      await page.goto(`/student/courses/${DASTURLASH}/lessons/${FIRST_LECTURE}`)
+      await expect(page.getByRole('heading', { level: 1, name: expected.lesson })).toBeVisible()
+      await expect(page.getByRole('heading', { level: 2, name: expected.section, exact: true })).toBeVisible()
+      await expect(page.getByText(expected.comment).first()).toBeAttached()
+      await page.goto(`/student/courses/${DASTURLASH}/tasks/${TASK}`)
+      await expect(page.getByRole('heading', { level: 1, name: expected.task })).toBeVisible()
+      await page.goto(`/student/courses/${DASTURLASH}/quizzes/${quizIdByCode('DAS-Q-M2')}`)
+      await expect(page.getByRole('heading', { level: 1, name: expected.quiz })).toBeVisible()
     })
 
     test(`the teacher (${locale})`, async ({ page }, testInfo) => {
