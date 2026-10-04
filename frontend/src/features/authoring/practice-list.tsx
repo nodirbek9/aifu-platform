@@ -13,6 +13,7 @@ import { ErrorState } from '@/shared/ui/error-state'
 import { Input } from '@/shared/ui/input'
 import { Skeleton } from '@/shared/ui/skeleton'
 import { Textarea } from '@/shared/ui/textarea'
+import { CourseWorkCard } from './course-work-card'
 import { StatusBadge } from './curriculum-tree'
 import { useCourseQuizzesQuery, useCreateQuiz } from './quiz-queries'
 import { useCourseTasksQuery, useCreateTask } from './task-queries'
@@ -144,6 +145,8 @@ export function PracticeList({ courseId }: { courseId: string }) {
           </ul>
         </CardContent>
       </Card>
+
+      <CourseWorkCard courseId={courseId} />
 
       <NewPracticeDialog
         courseId={courseId}

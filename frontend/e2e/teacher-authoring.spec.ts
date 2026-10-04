@@ -1,6 +1,6 @@
 import { randomUUID } from 'node:crypto'
 import { expect, test, type APIRequestContext, type Page } from '@playwright/test'
-import { clearAuthoringLeftovers, resetReviewedStudent } from './db'
+import { clearAuthoringLeftovers, clearDeadline, resetReviewedStudent } from './db'
 import { demoPassword, isPhone, signIn, texts } from './support'
 
 const { uz } = texts
@@ -240,6 +240,24 @@ test.describe('the teacher writes the course (spec T-04 … T-06)', () => {
     await expect(page.getByText(uz.authoring.noPrerequisites)).toBeVisible()
     await removeOutcome.click()
     await expect(page.getByText(uz.authoring.noOutcomes)).toBeVisible()
+  })
+
+  test('a task given as course work gets a deadline the students will see', async ({ page }, testInfo) => {
+    test.skip(isPhone(testInfo), 'the course work is managed on the desktop')
+    try {
+      await signInAsTeacher(page)
+      await page.goto(`/teacher/courses/${DASTURLASH}?tab=practice`)
+      const work = page.getByRole('list', { name: uz.authoring.courseWork })
+      const row = work.getByRole('listitem').filter({ hasText: 'Yigʻindisi k ga teng juftliklar' })
+      await expect(row).toContainText(uz.authoring.noDeadline)
+      await row.getByLabel(uz.authoring.deadline).fill('2026-12-20T18:00')
+      await row.getByRole('button', { name: uz.authoring.saveDeadline }).click()
+      await expect(row).toContainText('Muddat:')
+      await page.reload()
+      await expect(row).not.toContainText(uz.authoring.noDeadline)
+    } finally {
+      clearDeadline('DAS-S1-MT6')
+    }
   })
 
   test('a quiz gets a question with options, the right one marked, and is published', async ({

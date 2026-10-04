@@ -976,7 +976,26 @@
     "noOutcomes": "Oʻquv natijalari bogʻlanmagan.",
     "subjectHasNoOutcomes": "Fanda hali oʻquv natijalari yoʻq — ularni administrator fan sahifasida qoʻshadi.",
     "addOutcome": "Oʻquv natijasini bogʻlash",
-    "removeLink": "Olib tashlash: {{name}}"
+    "removeLink": "Olib tashlash: {{name}}",
+    "courseWork": "Kurs ishlari va muddatlar",
+    "courseWorkBody": "Qaysi topshiriq va testlar talabalarga kurs ishi sifatida berilgan va qachongacha. Muddatdan keyin topshirilgan ish qabul qilinadi va tekshiruv navbatida „Kech“ deb belgilanadi.",
+    "noCourseWork": "Hali kurs ishi berilmagan",
+    "workType": {
+      "CODING_TASK": "Dasturlash topshirigʻi",
+      "QUIZ": "Test"
+    },
+    "noDeadline": "Muddatsiz",
+    "dueOn": "Muddat: {{date}}",
+    "deadline": "Muddat",
+    "saveDeadline": "Muddatni saqlash",
+    "newCourseWork": "Yangi kurs ishi",
+    "workTypeLabel": "Turi",
+    "whichTask": "Qaysi topshiriq",
+    "whichQuiz": "Qaysi test",
+    "inModule": "Qaysi modulda",
+    "gradeComponent": "Baholash qismi",
+    "notGraded": "Baholanmaydi",
+    "giveAsCourseWork": "Kurs ishi sifatida berish"
   },
   "review": {
     "tab": "Tekshiruv",

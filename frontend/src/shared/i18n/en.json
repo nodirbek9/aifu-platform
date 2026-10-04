@@ -976,7 +976,26 @@
     "noOutcomes": "No learning outcomes linked.",
     "subjectHasNoOutcomes": "The subject has no learning outcomes yet — an administrator adds them on the subject page.",
     "addOutcome": "Link a learning outcome",
-    "removeLink": "Remove: {{name}}"
+    "removeLink": "Remove: {{name}}",
+    "courseWork": "Course work and deadlines",
+    "courseWorkBody": "Which coding tasks and quizzes the students get as work of the course, and by when. Work handed in after the deadline is accepted and marked \"Late\" in the review queue.",
+    "noCourseWork": "No course work given yet",
+    "workType": {
+      "CODING_TASK": "Coding task",
+      "QUIZ": "Quiz"
+    },
+    "noDeadline": "No deadline",
+    "dueOn": "Due {{date}}",
+    "deadline": "Deadline",
+    "saveDeadline": "Save the deadline",
+    "newCourseWork": "New course work",
+    "workTypeLabel": "Kind",
+    "whichTask": "Which task",
+    "whichQuiz": "Which quiz",
+    "inModule": "In which module",
+    "gradeComponent": "Grade component",
+    "notGraded": "Not graded",
+    "giveAsCourseWork": "Give as course work"
   },
   "review": {
     "tab": "Review",

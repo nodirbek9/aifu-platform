@@ -147,3 +147,10 @@ export function restoreDemoTimetable(): void {
     where name = '2026/2027, 1-semestr'
       and not exists (select 1 from timetables other where other.status = 'PUBLISHED' and other.term_id = timetables.term_id);`)
 }
+
+/** The course work flow sets a deadline on MT6's activity; it had none. */
+export function clearDeadline(taskCode: string): void {
+  runSql(`
+    update activities set due_at = null
+    where reference_id = (select id from coding_tasks where code = '${taskCode}');`)
+}
