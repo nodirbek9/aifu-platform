@@ -1,0 +1,11 @@
+[
+  { "runs": [
+    { "input": "5\n78 92 65 88 70\n", "output": "Sum: 393\nAverage: 78.60\nHighest: 92 position: 2\nAbove average: 2\n" },
+    { "input": "3\n-5 -2 -9\n", "output": "Sum: -16\nAverage: -5.33\nHighest: -2 position: 2\nAbove average: 2\n" }
+  ] },
+  { "runs": [
+    { "input": "5\n1 2 3 4 5\n", "output": "5 4 3 2 1\n" },
+    { "input": "4\n1 2 3 4\n", "output": "4 3 2 1\n" },
+    { "input": "1\n7\n", "output": "7\n" }
+  ] }
+]
