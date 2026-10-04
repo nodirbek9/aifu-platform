@@ -4,6 +4,6 @@
     { "input": "5\nq0 1 1 R q0\nq0 + 1 R q1\nq1 1 1 R q1\nq1 _ _ L q2\nq2 1 _ N stop\nq0\n111+11\n", "output": "11111\n8\n" },
     { "input": "5\nq0 1 1 R q0\nq0 + 1 R q1\nq1 1 1 R q1\nq1 _ _ L q2\nq2 1 _ N stop\nq0\n1+1\n", "output": "11\n5\n" },
     { "input": "3\nq0 1 1 R q0\nq0 _ _ L q1\nq1 1 1 R q0\nq0\n11\n", "output": "did not halt\n" },
-    { "input": "3\nq0 1 0 L q0\nq0 0 1 N stop\nq0 _ 1 N stop\nq0\n1\n", "output": "1\n1\n" }
+    { "input": "3\nq0 1 0 L q0\nq0 0 1 N stop\nq0 _ 1 N stop\nq0\n1\n", "output": "10\n2\n" }
   ] }
 ]
