@@ -43,7 +43,11 @@ public class TeacherReviewQueueController {
             BigDecimal score,
             BigDecimal maxScore,
             Instant submittedAt,
-            boolean hasFeedback) {}
+            boolean hasFeedback,
+            @Schema(description = "The deadline of the activity the work answers, if it has one")
+                    Instant dueAt,
+            @Schema(description = "Submitted after the deadline: accepted, marked for the teacher")
+                    boolean late) {}
 
     private final ReviewQueueService queue;
     private final AccessGuard accessGuard;
@@ -111,7 +115,9 @@ public class TeacherReviewQueueController {
                                                 i.score(),
                                                 i.maxScore(),
                                                 i.submittedAt(),
-                                                i.hasFeedback()))
+                                                i.hasFeedback(),
+                                                i.dueAt(),
+                                                i.late()))
                         .toList();
         int totalPages = (int) ((total + safeSize - 1) / safeSize);
         return new PageResponse<>(

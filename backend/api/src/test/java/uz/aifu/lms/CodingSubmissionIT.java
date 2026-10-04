@@ -284,6 +284,28 @@ class CodingSubmissionIT extends AbstractIntegrationTest {
         assertThat(newest.get("studentFullName").asText()).isEqualTo(student.getFullName());
         assertThat(newest.get("taskTitle").asText()).isEqualTo("Test task");
         assertThat(newest.get("hasFeedback").asBoolean()).isFalse();
+        // no activity sets a deadline yet: nothing is late
+        assertThat(newest.get("late").asBoolean()).isFalse();
+        assertThat(newest.hasNonNull("dueAt")).isFalse();
+
+        // the course sets the task with a deadline that has passed: the work is marked, not refused
+        UUID module = UUID.randomUUID();
+        jdbc.update(
+                "INSERT INTO course_modules (id, course_id, position) VALUES (?, ?, 900)",
+                module,
+                course.getId());
+        jdbc.update(
+                """
+                INSERT INTO activities (course_id, module_id, activity_type, reference_id,
+                                        is_graded, due_at, status)
+                VALUES (?, ?, 'CODING_TASK', ?, false, now() - interval '1 day', 'PUBLISHED')
+                """,
+                course.getId(),
+                module,
+                task.id());
+        JsonNode late = queue(adminToken, base).get("content").get(0);
+        assertThat(late.get("late").asBoolean()).isTrue();
+        assertThat(late.hasNonNull("dueAt")).isTrue();
 
         JsonNode latest = queue(adminToken, base + "?latestOnly=true");
         assertThat(latest.get("totalElements").asInt()).isEqualTo(1);

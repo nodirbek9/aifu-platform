@@ -1014,7 +1014,9 @@
     "waitingTitle": "Tekshiruv kutayotgan yechimlar",
     "waitingBody": "Har bir talabaning oxirgi yechimi, izoh yozilmaganlari.",
     "waitingCount": "{{count}} ta",
-    "nothingWaiting": "Hozircha kutayotgan yechim yoʻq."
+    "nothingWaiting": "Hozircha kutayotgan yechim yoʻq.",
+    "late": "Kech",
+    "lateTitle": "Muddat tugagandan keyin topshirilgan: {{due}}"
   },
   "gradebook": {
     "title": "Baholar",

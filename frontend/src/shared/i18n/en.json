@@ -1014,7 +1014,9 @@
     "waitingTitle": "Submissions waiting for review",
     "waitingBody": "Each student's latest submission that has no feedback yet.",
     "waitingCount": "{{count}}",
-    "nothingWaiting": "Nothing is waiting for review."
+    "nothingWaiting": "Nothing is waiting for review.",
+    "late": "Late",
+    "lateTitle": "Submitted after the deadline: {{due}}"
   },
   "gradebook": {
     "title": "Grades",

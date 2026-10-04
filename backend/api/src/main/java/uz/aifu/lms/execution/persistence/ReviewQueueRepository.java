@@ -1,5 +1,6 @@
 package uz.aifu.lms.execution.persistence;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -44,7 +45,12 @@ public class ReviewQueueRepository {
                    u.id as student_id, u.full_name, p.group_code, s.attempt_number, s.language_code,
                    s.status, s.verdict, s.score, s.max_score, s.submitted_at,
                    exists (select 1 from feedback f
-                           where f.target_type = 'SUBMISSION' and f.target_id = s.id) as has_feedback
+                           where f.target_type = 'SUBMISSION' and f.target_id = s.id) as has_feedback,
+                   coalesce(
+                       (select a.due_at from activities a where a.id = s.activity_id),
+                       (select min(a2.due_at) from activities a2
+                        where a2.reference_id = ct.id and a2.activity_type = 'CODING_TASK'
+                          and a2.course_id = ct.course_id)) as due_at
             """
                     + FROM
                     + """
@@ -85,7 +91,25 @@ public class ReviewQueueRepository {
                                 rs.getTimestamp("submitted_at") == null
                                         ? null
                                         : rs.getTimestamp("submitted_at").toInstant(),
-                                rs.getBoolean("has_feedback")));
+                                rs.getBoolean("has_feedback"),
+                                dueAt(rs),
+                                isLate(rs)));
+    }
+
+    /**
+     * The deadline the submission answers: the activity it was made for, else the earliest activity
+     * of the course that sets the task. Late work is accepted (the owner's decision: the teacher
+     * decides), it is only marked.
+     */
+    private static Instant dueAt(java.sql.ResultSet rs) throws java.sql.SQLException {
+        java.sql.Timestamp due = rs.getTimestamp("due_at");
+        return due == null ? null : due.toInstant();
+    }
+
+    private static boolean isLate(java.sql.ResultSet rs) throws java.sql.SQLException {
+        Instant due = dueAt(rs);
+        java.sql.Timestamp submitted = rs.getTimestamp("submitted_at");
+        return due != null && submitted != null && submitted.toInstant().isAfter(due);
     }
 
     public long count(UUID courseId, ReviewQueueFilter filter) {

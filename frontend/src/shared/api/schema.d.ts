@@ -6226,9 +6226,16 @@ export interface components {
             attemptNumber?: number;
             /** Format: uuid */
             codingTaskId?: string;
+            /**
+             * Format: date-time
+             * @description The deadline of the activity the work answers, if it has one
+             */
+            dueAt?: string;
             groupCode?: string;
             hasFeedback?: boolean;
             languageCode?: string;
+            /** @description Submitted after the deadline: accepted, marked for the teacher */
+            late?: boolean;
             maxScore?: number;
             score?: number;
             status?: string;

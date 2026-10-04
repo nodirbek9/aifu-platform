@@ -7,7 +7,7 @@ import { useCourseGradebookQuery } from '@/features/gradebook/queries'
 import { toApiProblem } from '@/shared/api/errors'
 import { languageName } from '@/shared/editor/languages'
 import { useLocale } from '@/shared/i18n/use-locale'
-import { formatRelativeTime } from '@/shared/lib/dates'
+import { formatDateTime, formatRelativeTime } from '@/shared/lib/dates'
 import { Badge, VerdictBadge, VERDICTS, type Verdict } from '@/shared/ui/badge'
 import { EmptyState } from '@/shared/ui/empty-state'
 import { ErrorState } from '@/shared/ui/error-state'
@@ -176,6 +176,17 @@ export function ReviewQueue({ courseId }: { courseId: string }) {
                     </TableCell>
                     <TableCell className="whitespace-nowrap">
                       {item.submittedAt === undefined ? '' : formatRelativeTime(item.submittedAt, locale)}
+                      {item.late === true && (
+                        <Badge
+                          tone="warning"
+                          className="ml-2"
+                          title={t('review.lateTitle', {
+                            due: item.dueAt === undefined ? '' : formatDateTime(item.dueAt, locale),
+                          })}
+                        >
+                          {t('review.late')}
+                        </Badge>
+                      )}
                     </TableCell>
                     <TableCell>
                       {item.hasFeedback === true ? (

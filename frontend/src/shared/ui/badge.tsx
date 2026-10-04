@@ -38,12 +38,18 @@ export const badge = tv({
 export type BadgeProps = VariantProps<typeof badge> & {
   children: ReactNode
   className?: string
+  /** A longer explanation, shown on hover */
+  title?: string
 }
 
 type BadgeTone = NonNullable<VariantProps<typeof badge>['tone']>
 
-export function Badge({ tone, children, className }: BadgeProps) {
-  return <span className={badge({ tone, class: className })}>{children}</span>
+export function Badge({ tone, children, className, title }: BadgeProps) {
+  return (
+    <span className={badge({ tone, class: className })} title={title}>
+      {children}
+    </span>
+  )
 }
 
 export const SESSION_TYPES = [

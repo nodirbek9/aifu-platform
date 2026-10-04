@@ -19,4 +19,6 @@ public record ReviewQueueEntry(
         BigDecimal score,
         BigDecimal maxScore,
         Instant submittedAt,
-        boolean hasFeedback) {}
+        boolean hasFeedback,
+        Instant dueAt,
+        boolean late) {}

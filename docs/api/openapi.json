@@ -5379,6 +5379,11 @@
             "format" : "uuid",
             "type" : "string"
           },
+          "dueAt" : {
+            "description" : "The deadline of the activity the work answers, if it has one",
+            "format" : "date-time",
+            "type" : "string"
+          },
           "groupCode" : {
             "type" : "string"
           },
@@ -5387,6 +5392,10 @@
           },
           "languageCode" : {
             "type" : "string"
+          },
+          "late" : {
+            "description" : "Submitted after the deadline: accepted, marked for the teacher",
+            "type" : "boolean"
           },
           "maxScore" : {
             "type" : "number"

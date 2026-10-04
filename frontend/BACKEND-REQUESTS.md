@@ -59,8 +59,10 @@ Meanwhile: the empty day links to the timetable page.
 - **What happens:** an activity's `dueAt` / `availableFrom` are returned and shown, but
   `POST /quizzes/{id}/attempts` and `POST /submissions` accept work after the deadline (the
   error code `ACTIVITY_NOT_AVAILABLE` exists and is never raised).
-- **Needs a decision from the owner, not only code:** block late work, or accept it and mark it
-  late for the teacher. Until then the UI shows the deadline as passed and does not block.
+- **Decided by the owner (2026-10-04): not blocked.** Late work is accepted and marked for the
+  teacher. APPLIED: the review queue item carries `dueAt` and `late` (the deadline of the
+  activity the submission was made for, else the earliest activity of the course that sets the
+  task), and the queue shows a "Late" badge with the deadline on hover.
 
 
 ## 2026-10-04 — Packaging (F6): the frontend as a compose service — APPLIED 2026-10-04 (owner approved)
