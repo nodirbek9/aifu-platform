@@ -1,0 +1,101 @@
+{
+  "modules": {
+    "M-ALGORITHMS": {
+      "title": "Algoritmlar va ularning murakkabligi"
+    },
+    "M-SEARCH-SORT": {
+      "title": "Izlash va saralash algoritmlari"
+    },
+    "M-STRUCTURES": {
+      "title": "Dinamik tuzilmalar, graflar va daraxtlar"
+    },
+    "M-INDEPENDENT": {
+      "title": "Mustaqil ta'lim topshiriqlari"
+    }
+  },
+  "codingTasks": {
+    "MTA-A1": {
+      "title": "Evklid algoritmi va qadamlar soni",
+      "description": "<p>Evklid algoritmi bilan EKUB ni toping va algoritm necha marta “qoldiqli boʻlish” qadamini bajarganini sanang. Bu algoritmning <em>natijadorlik</em> va <em>cheklilik</em> xossalarini kuzatish imkonini beradi.</p>",
+      "instructions": "Kirish: a b. Chiqish: bitta satrda EKUB va qadamlar soni (b ≠ 0 boʻlgan har bir aylanish bitta qadam).",
+      "constraintsText": "1 ≤ a, b ≤ 10^9.",
+      "hints": []
+    },
+    "MTA-A2": {
+      "title": "Fibonachchi sonlari: xotirali rekursiya",
+      "description": "<p>Oddiy rekursiya F(n) = F(n−1) + F(n−2) eksponensial vaqt oladi, chunki bir xil qiymatlar qayta-qayta hisoblanadi. Hisoblangan qiymatlarni saqlab (memoizatsiya) murakkablikni O(n) ga tushiring.</p>",
+      "instructions": "Kirish: n. Chiqish: F(n), bunda F(0) = 0, F(1) = 1.",
+      "constraintsText": "0 ≤ n ≤ 90 (natija long turiga sigʻadi).",
+      "hints": []
+    },
+    "MTA-A3": {
+      "title": "Saralangan massivda qiymat necha marta uchraydi",
+      "description": "<p>Saralangan massivda x ning birinchi va oxirgi oʻrnini binar qidiruv bilan toping (pastki va yuqori chegara). Ular farqi — x ning uchrashlar soni. Har bir soʻrov O(log n).</p>",
+      "instructions": "Kirish: n; n ta son (kamaymaydigan tartibda); q; q ta soʻrov. Chiqish: har bir soʻrov uchun alohida satrda uchrashlar soni.",
+      "constraintsText": "1 ≤ n, q ≤ 10^5.",
+      "hints": []
+    },
+    "MTA-A4": {
+      "title": "Piramidal saralash (heapsort)",
+      "description": "<p>Massivni piramida (maks-uyum) koʻrinishiga keltiring, soʻng eng katta elementni oxiriga oʻtkazib, piramidani qayta tiklang. Murakkablik O(n log n), qoʻshimcha xotira O(1). Tayyor saralash funksiyasidan foydalanmasdan yozing.</p>",
+      "instructions": "Kirish: n; n ta butun son. Chiqish: oʻsish tartibida saralangan sonlar.",
+      "constraintsText": "1 ≤ n ≤ 10^5.",
+      "hints": []
+    },
+    "MTA-A5": {
+      "title": "Pufaksimon saralashdagi almashtirishlar soni",
+      "description": "<p>Pufaksimon saralash qoʻshni elementlar notoʻgʻri tartibda boʻlsa ularni almashtiradi. Almashtirishlar soni massivdagi <strong>inversiyalar</strong> (i &lt; j va aᵢ &gt; aⱼ juftliklar) soniga teng. Shuni hisoblang.</p>",
+      "instructions": "Kirish: n; n ta son. Chiqish: almashtirishlar soni.",
+      "constraintsText": "1 ≤ n ≤ 2000.",
+      "hints": []
+    },
+    "MTA-A6": {
+      "title": "Qavslar muvozanati (stek)",
+      "description": "<p>Satr faqat <code>( ) [ ] { }</code> qavslaridan iborat. Stek yordamida qavslar toʻgʻri ochilib-yopilganini tekshiring: ochuvchi qavs stekka qoʻyiladi, yopuvchi qavs stek tepasidagi bilan mos kelishi kerak.</p>",
+      "instructions": "Kirish: bitta satr. Chiqish: Muvozanatli yoki Muvozanatsiz.",
+      "constraintsText": "Satr uzunligi 1 dan 10^5 gacha.",
+      "hints": []
+    },
+    "MTA-A7": {
+      "title": "Deykstra algoritmi: eng qisqa masofalar",
+      "description": "<p>Yoʻnaltirilmagan, manfiy boʻlmagan vaznli grafda s uchdan barcha uchlarga eng qisqa masofani Deykstra algoritmi bilan toping. Ustuvor navbat (heap) bilan murakkablik O((n + m) log n).</p>",
+      "instructions": "Kirish: n m; m ta satrda u v w (qirra va vazni); s. Chiqish: bitta satrda 1..n uchlargacha masofalar; yetib boʻlmasa -1.",
+      "constraintsText": "1 ≤ n ≤ 10^4, 0 ≤ m ≤ 5·10^4, 0 ≤ w ≤ 10^6.",
+      "hints": []
+    },
+    "MTA-A8": {
+      "title": "Fenvik daraxti: yigʻindi soʻrovlari",
+      "description": "<p>Massivda ikki xil amalni tez bajaring: elementga qiymat qoʻshish va [l, r] oraliq yigʻindisini topish. Fenvik (binar indeksli) daraxti har ikkalasini O(log n) da bajaradi; oddiy sikl esa soʻrov boshiga O(n) oladi.</p>",
+      "instructions": "Kirish: n; n ta son; q; q ta satrda add i x yoki sum l r (indekslar 1 dan). Chiqish: har bir sum soʻrovi uchun alohida satrda natija.",
+      "constraintsText": "1 ≤ n, q ≤ 10^5, |qiymatlar| ≤ 10^9.",
+      "hints": []
+    }
+  },
+  "quizzes": {},
+  "activities": {
+    "CODING_TASK:MTA-A8": {
+      "title": "Fenvik daraxti: yigʻindi soʻrovlari"
+    },
+    "CODING_TASK:MTA-A7": {
+      "title": "Deykstra algoritmi: eng qisqa masofalar"
+    },
+    "CODING_TASK:MTA-A6": {
+      "title": "Qavslar muvozanati (stek)"
+    },
+    "CODING_TASK:MTA-A5": {
+      "title": "Pufaksimon saralashdagi almashtirishlar soni"
+    },
+    "CODING_TASK:MTA-A4": {
+      "title": "Piramidal saralash (heapsort)"
+    },
+    "CODING_TASK:MTA-A3": {
+      "title": "Saralangan massivda qiymat necha marta uchraydi"
+    },
+    "CODING_TASK:MTA-A2": {
+      "title": "Fibonachchi sonlari: xotirali rekursiya"
+    },
+    "CODING_TASK:MTA-A1": {
+      "title": "Evklid algoritmi va qadamlar soni"
+    }
+  }
+}
