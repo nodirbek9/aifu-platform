@@ -1,0 +1,7 @@
+[
+  { "runs": [
+    { "input": "4 2\n3 0 5 1\n", "output": "round 1: S1=2 S3=2 S4=1\nround 2: S1=1 S3=2\nround 3: S3=1\ntotal rounds: 3\n" },
+    { "input": "3 5\n0 0 0\n", "output": "total rounds: 0\n" },
+    { "input": "2 1\n2 2\n", "output": "round 1: S1=1 S2=1\nround 2: S1=1 S2=1\ntotal rounds: 2\n" }
+  ] }
+]
