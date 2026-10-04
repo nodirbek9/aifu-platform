@@ -1,0 +1,5 @@
+[
+  { "runs": [{ "input": "7\n38 27 43 3 9 82 10\n", "output": "3 9 10 27 38 43 82\n13\n" }, { "input": "8\n8 7 6 5 4 3 2 1\n", "output": "1 2 3 4 5 6 7 8\n12\n" }, { "input": "1\n5\n", "output": "5\n0\n" }] },
+  { "runs": [{ "input": "8\n19 21 19 20 22 19 21 18\n", "output": "18 19 19 19 20 21 21 22\n19 3\n" }, { "input": "4\n30 20 30 20\n", "output": "20 20 30 30\n20 2\n" }] },
+  { "runs": [{ "input": "6\nAziz 102 85\nMalika 101 92\nBekzod 102 92\nDilnoza 101 85\nAnvar 102 85\nSardor 101 70\n", "output": "101 Malika 92\n101 Dilnoza 85\n101 Sardor 70\n102 Bekzod 92\n102 Aziz 85\n102 Anvar 85\n" }] }
+]
