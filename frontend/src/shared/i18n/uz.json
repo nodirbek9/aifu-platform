@@ -995,7 +995,10 @@
     "inModule": "Qaysi modulda",
     "gradeComponent": "Baholash qismi",
     "notGraded": "Baholanmaydi",
-    "giveAsCourseWork": "Kurs ishi sifatida berish"
+    "giveAsCourseWork": "Kurs ishi sifatida berish",
+    "editMode": "Tahrirlash usuli",
+    "modeVisual": "Koʻrinishda",
+    "htmlOnly": "Bu matnda koʻrinish muharriri saqlay olmaydigan elementlar bor (masalan, oʻz-oʻzini tekshirish javoblari), shuning uchun u HTML koʻrinishida tahrirlanadi."
   },
   "review": {
     "tab": "Tekshiruv",

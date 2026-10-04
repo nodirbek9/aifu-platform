@@ -995,7 +995,10 @@
     "inModule": "In which module",
     "gradeComponent": "Grade component",
     "notGraded": "Not graded",
-    "giveAsCourseWork": "Give as course work"
+    "giveAsCourseWork": "Give as course work",
+    "editMode": "Editing mode",
+    "modeVisual": "Visual",
+    "htmlOnly": "This text has elements the visual editor would not keep (self-check answers, for example), so it is edited as HTML."
   },
   "review": {
     "tab": "Review",

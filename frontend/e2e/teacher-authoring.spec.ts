@@ -110,7 +110,12 @@ test.describe('the teacher writes the course (spec T-04 … T-06)', () => {
     const text = page.getByRole('article', {
       name: label(uz.authoring.blockLabel, { position: 1, type: uz.authoring.blockType.TEXT }),
     })
-    await text.getByLabel(uz.authoring.content).fill('<h2>Kirish</h2><p>Salom, dunyo</p>')
+    // typed in the visual editor: a heading from the toolbar, then a paragraph
+    await text.getByRole('textbox', { name: uz.authoring.content }).click()
+    await text.getByRole('button', { name: uz.authoring.format.h2, exact: true }).click()
+    await page.keyboard.type('Kirish')
+    await page.keyboard.press('Enter')
+    await page.keyboard.type('Salom, dunyo')
     await expect(text.getByText(uz.quiz.saved, { exact: true })).toBeVisible({ timeout: 10_000 })
     const preview = page.getByRole('complementary', { name: uz.authoring.preview })
     await expect(preview.getByText('Salom, dunyo')).toBeVisible()
@@ -118,6 +123,7 @@ test.describe('the teacher writes the course (spec T-04 … T-06)', () => {
     // the Russian text of the same block: missing until written, then shown in the Russian preview
     await expect(text.getByRole('button', { name: /^ru/ })).toContainText(uz.authoring.translationMissing)
     await text.getByRole('button', { name: /^ru/ }).click()
+    await text.getByRole('radio', { name: 'HTML' }).click()
     await text.getByLabel(uz.authoring.content).fill('<p>Привет, мир</p>')
     await expect(text.getByText(uz.quiz.saved, { exact: true })).toBeVisible({ timeout: 10_000 })
     await preview.getByRole('radio', { name: 'RU' }).click()
@@ -144,6 +150,7 @@ test.describe('the teacher writes the course (spec T-04 … T-06)', () => {
     const reloaded = page.getByRole('article', {
       name: label(uz.authoring.blockLabel, { position: 2, type: uz.authoring.blockType.TEXT }),
     })
+    await reloaded.getByRole('radio', { name: 'HTML' }).click()
     await expect(reloaded.getByLabel(uz.authoring.content)).toHaveValue('<h2>Kirish</h2><p>Salom, dunyo</p>')
 
     // published and taken back
@@ -184,6 +191,7 @@ test.describe('the teacher writes the course (spec T-04 … T-06)', () => {
     await page.getByRole('dialog').getByRole('button', { name: uz.authoring.create }).click()
     await expect(page).toHaveURL(/\/teacher\/coding-tasks\/[\w-]+\/edit$/)
 
+    await page.getByRole('radio', { name: 'HTML' }).first().click()
     await page
       .getByLabel(uz.authoring.taskDescription)
       .fill('<p>Ikki butun sonning yigʻindisini chiqaring.</p>')

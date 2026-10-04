@@ -53,11 +53,10 @@ refused drop shakes once), the reading progress line, press feedback. All of it 
 
 ## 6. Open
 
-- The rich-text fields of the editors are HTML with a toolbar and a live preview, not a WYSIWYG
-  editor: fine for the platform's teachers today, the first thing to improve for others.
-- The gradebook's sticky first column has a slightly different surface from its row in dark
-  theme.
-- The load panel of the builder shows over-scheduled lines (36 of 30 h) without a warning.
+- Resolved 2026-10-04: the rich-text fields have a visual editor (TipTap, loaded only in the editors)
+  beside the HTML mode; text with elements it would drop (self-check answers) stays HTML.
+- Resolved 2026-10-04: the gradebook grid has one raised surface, the sticky column included.
+- Resolved 2026-10-04: over-scheduled load lines are red, with a warning above the list.
 - On a slow mobile network the first paint waits for the app's JavaScript (Lighthouse mobile
   performance about 70 on the sign-in page, 97 on desktop): a server-rendered sign-in page would
   be the next step.

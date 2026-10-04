@@ -1,8 +1,12 @@
-import { useId, useRef } from 'react'
+import { Suspense, lazy, useId, useRef, useState } from 'react'
 import { Bold, Code, Heading2, Heading3, Italic, List, ListOrdered, Pilcrow, Table } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { cn } from '@/shared/lib/cn'
 import { input } from '@/shared/ui/input'
+import { SegmentedControl } from '@/shared/ui/segmented-control'
+import { Skeleton } from '@/shared/ui/skeleton'
+
+const VisualEditor = lazy(() => import('./visual-editor'))
 
 type Wrap = { key: string; Icon: typeof Bold; before: string; after: string; block?: boolean }
 
@@ -24,6 +28,42 @@ const WRAPS: readonly Wrap[] = [
   },
 ]
 
+/** The elements the visual editor keeps; anything else would be dropped by it, so HTML stays. */
+const VISUAL_TAGS = new Set([
+  'p',
+  'h2',
+  'h3',
+  'strong',
+  'b',
+  'em',
+  'i',
+  'code',
+  'pre',
+  'ul',
+  'ol',
+  'li',
+  'a',
+  'br',
+  'hr',
+  'blockquote',
+  's',
+  'table',
+  'thead',
+  'tbody',
+  'tr',
+  'th',
+  'td',
+  'colgroup',
+  'col',
+])
+
+function fitsVisualEditor(html: string): boolean {
+  for (const match of html.matchAll(/<\s*([a-zA-Z][a-zA-Z0-9]*)/g)) {
+    if (!VISUAL_TAGS.has((match[1] ?? '').toLowerCase())) return false
+  }
+  return true
+}
+
 type HtmlFieldProps = {
   label: string
   value: string
@@ -33,14 +73,18 @@ type HtmlFieldProps = {
 }
 
 /**
- * Rich text as the server stores it (sanitized HTML), typed with a toolbar that wraps the
- * selection: paragraph, headings, bold, italic, code, lists, a table. The preview beside the
- * editor shows the result as the student sees it.
+ * Rich text as the server stores it (sanitized HTML). Typed either as the student will see it
+ * (the visual editor, loaded on demand) or as HTML with a toolbar that wraps the selection. Text
+ * with elements the visual editor would drop (a self-check's answers) opens as HTML.
  */
 export function HtmlField({ label, value, onChange, rows = 8, hint }: HtmlFieldProps) {
   const { t } = useTranslation()
   const id = useId()
+  const labelId = `${id}-label`
   const area = useRef<HTMLTextAreaElement>(null)
+  const visualPossible = fitsVisualEditor(value)
+  const [mode, setMode] = useState<'visual' | 'html'>(visualPossible ? 'visual' : 'html')
+  const shown = visualPossible ? mode : 'html'
 
   const wrap = (item: Wrap) => {
     const element = area.current
@@ -59,41 +103,67 @@ export function HtmlField({ label, value, onChange, rows = 8, hint }: HtmlFieldP
 
   return (
     <div className="grid grid-cols-1 gap-1.5">
-      <label htmlFor={id} className="text-small text-text font-medium">
-        {label}
-      </label>
-      <div
-        role="toolbar"
-        aria-label={t('authoring.formatting')}
-        aria-controls={id}
-        className="border-border bg-surface-sunken flex flex-wrap gap-0.5 rounded-t-md border border-b-0 p-1"
-      >
-        {WRAPS.map((item) => (
-          <button
-            key={item.key}
-            type="button"
-            title={t(`authoring.format.${item.key}`)}
-            aria-label={t(`authoring.format.${item.key}`)}
-            onClick={() => {
-              wrap(item)
-            }}
-            className="text-text-muted hover:bg-surface-raised hover:text-text focus-visible:outline-focus-ring grid size-8 grid-cols-1 place-items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2"
-          >
-            <item.Icon aria-hidden className="size-4" />
-          </button>
-        ))}
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <label id={labelId} htmlFor={id} className="text-small text-text font-medium">
+          {label}
+        </label>
+        <SegmentedControl
+          size="sm"
+          aria-label={t('authoring.editMode')}
+          value={shown}
+          onValueChange={(value) => {
+            if (value === 'visual' && visualPossible) setMode('visual')
+            if (value === 'html') setMode('html')
+          }}
+          options={[
+            { value: 'visual', label: t('authoring.modeVisual'), disabled: !visualPossible },
+            { value: 'html', label: 'HTML' },
+          ]}
+        />
       </div>
-      <textarea
-        ref={area}
-        id={id}
-        rows={rows}
-        value={value}
-        spellCheck
-        onChange={(event) => {
-          onChange(event.target.value)
-        }}
-        className={cn(input({}), 'text-small h-auto min-h-32 rounded-t-none py-2 font-mono')}
-      />
+      {shown === 'visual' ? (
+        <Suspense fallback={<Skeleton className="h-48" />}>
+          <VisualEditor id={id} labelledBy={labelId} value={value} onChange={onChange} />
+        </Suspense>
+      ) : (
+        <>
+          <div
+            role="toolbar"
+            aria-label={t('authoring.formatting')}
+            aria-controls={id}
+            className="border-border bg-surface-sunken flex flex-wrap gap-0.5 rounded-t-md border border-b-0 p-1"
+          >
+            {WRAPS.map((item) => (
+              <button
+                key={item.key}
+                type="button"
+                title={t(`authoring.format.${item.key}`)}
+                aria-label={t(`authoring.format.${item.key}`)}
+                onClick={() => {
+                  wrap(item)
+                }}
+                className="text-text-muted hover:bg-surface-raised hover:text-text focus-visible:outline-focus-ring grid size-8 grid-cols-1 place-items-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2"
+              >
+                <item.Icon aria-hidden className="size-4" />
+              </button>
+            ))}
+          </div>
+          <textarea
+            ref={area}
+            id={id}
+            rows={rows}
+            value={value}
+            spellCheck
+            onChange={(event) => {
+              onChange(event.target.value)
+            }}
+            className={cn(input({}), 'text-small h-auto min-h-32 rounded-t-none py-2 font-mono')}
+          />
+        </>
+      )}
+      {!visualPossible && (
+        <p className="text-caption text-text-muted tracking-normal">{t('authoring.htmlOnly')}</p>
+      )}
       {hint !== undefined && <p className="text-caption text-text-muted tracking-normal">{hint}</p>}
     </div>
   )

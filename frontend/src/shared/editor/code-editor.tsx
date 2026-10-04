@@ -45,7 +45,7 @@ const chrome = EditorView.theme({
   '.cm-content': { caretColor: 'var(--text)', padding: '12px 0' },
   '.cm-cursor, .cm-dropCursor': { borderLeftColor: 'var(--text)' },
   '.cm-gutters': { backgroundColor: 'transparent', color: 'var(--text-muted)', border: 'none' },
-  '.cm-lineNumbers .cm-gutterElement': { padding: '0 12px 0 16px', opacity: '0.7' },
+  '.cm-lineNumbers .cm-gutterElement': { padding: '0 12px 0 16px' },
   '.cm-activeLine': { backgroundColor: 'color-mix(in srgb, var(--text) 5%, transparent)' },
   '.cm-activeLineGutter': { backgroundColor: 'transparent', color: 'var(--text)', opacity: '1' },
   '&.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground, .cm-selectionBackground, ::selection':
