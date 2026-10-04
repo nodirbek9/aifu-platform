@@ -5,6 +5,7 @@
 // A lesson folder may hold examples.json: one entry per code example (a run of ``` fences), in
 // the order they appear, each with the runs to check:
 //   [{ "runs": [{ "input": "5\n", "output": "78.54\n" }] }, { "skip": "reads a file" }]
+// Where the languages print differently, "output" is {"python": …, "java": …, "cpp": …}.
 // Every language of the example (python, java, cpp) runs in the same images the sandbox uses and
 // must print exactly the expected output. The code runs from en.md; the code of uz.md and ru.md must
 // be the same apart from comments and string literals, which is checked too.
@@ -103,8 +104,10 @@ function checkLesson(dir) {
       return
     }
     for (const [lang, code] of Object.entries(group)) {
-      for (const { input, output } of entry.runs) {
-        const actual = run(lang, code, input).replace(/\r\n/g, '\n')
+      for (const run_ of entry.runs) {
+        // the output is one string, or one per language where the languages print differently
+        const output = typeof run_.output === 'string' ? run_.output : run_.output[lang]
+        const actual = run(lang, code, run_.input).replace(/\r\n/g, '\n')
         const ok = actual === output
         if (!ok) failures++
         console.log(`${name} #${index + 1} ${lang.padEnd(6)} ${ok ? 'ok' : `FAIL\n  expected ${JSON.stringify(output)}\n  actual   ${JSON.stringify(actual)}`}`)

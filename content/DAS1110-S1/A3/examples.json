@@ -1,0 +1,8 @@
+[
+  { "runs": [
+    { "input": "2024\n", "output": { "python": "True\n", "java": "true\n", "cpp": "true\n" } },
+    { "input": "1900\n", "output": { "python": "False\n", "java": "false\n", "cpp": "false\n" } },
+    { "input": "2000\n", "output": { "python": "True\n", "java": "true\n", "cpp": "true\n" } }
+  ] },
+  { "runs": [{ "input": "3 4 5\n", "output": "6.00\n" }, { "input": "2 3 4\n", "output": "2.90\n" }] }
+]

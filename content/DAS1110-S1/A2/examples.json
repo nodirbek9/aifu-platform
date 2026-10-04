@@ -1,0 +1,4 @@
+[
+  { "runs": [{ "input": "3725\n", "output": "01:02:05\n" }, { "input": "86399\n", "output": "23:59:59\n" }] },
+  { "runs": [{ "input": "4 5 5\n", "output": "4.67\n" }, { "input": "3 3 3\n", "output": "3.00\n" }] }
+]
