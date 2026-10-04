@@ -1,0 +1,9 @@
+[
+  { "runs": [{ "input": "", "output": "" }] },
+  { "runs": [{ "input": "4 9 2 9 7\nolma nok uzum anor uzum\n", "output": "9 2\nuzum 2\n" }] },
+  { "runs": [{ "input": "bir ikki uch\n10 20 30 40\n", "output": "uch ikki bir\n40 30 20 10\n" }] },
+  { "runs": [{ "input": "3.5 -1.25 2.0 10.75\n4\nMalika 88\nAziz 92\nBekzod 88\nDilnoza 95\n", "output": {
+    "python": "-1.25 2.0 3.5 10.75\nDilnoza 95\nAziz 92\nBekzod 88\nMalika 88\n",
+    "java": "-1.25 2.0 3.5 10.75\nDilnoza 95\nAziz 92\nBekzod 88\nMalika 88\n",
+    "cpp": "-1.25 2 3.5 10.75\nDilnoza 95\nAziz 92\nBekzod 88\nMalika 88\n" } }] }
+]
