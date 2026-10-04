@@ -1,0 +1,5 @@
+[
+  { "runs": [{ "input": "11\n10 22 35 40 45 50 80 82 85 90 100\n85\n", "output": "9 4\n" }, { "input": "11\n10 22 35 40 45 50 80 82 85 90 100\n45\n", "output": "5 1\n" }, { "input": "11\n10 22 35 40 45 50 80 82 85 90 100\n23\n", "output": "-1 4\n" }, { "input": "11\n10 22 35 40 45 50 80 82 85 90 100\n100\n", "output": "11 4\n" }, { "input": "1\n5\n5\n", "output": "1 1\n" }] },
+  { "runs": [{ "input": "olma nok uzum anor shaftoli gilos olcha behi\nanor banan behi\n", "output": "0 1 1 2 1 2 1\nanor found 1\nbanan absent 1\nbehi found 2\n" }] },
+  { "runs": [{ "input": "3\n4 1 5 9 14\n3 2 3 10\n5 0 6 7 8 20\n", "output": "0 1 2 3 5 6 7 8 9 10 14 20\n" }, { "input": "2\n0\n2 4 4\n", "output": "4 4\n" }] }
+]
