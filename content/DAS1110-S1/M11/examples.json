@@ -1,0 +1,13 @@
+[
+  { "runs": [
+    { "input": "A man, a plan, a canal: Panama\n", "output": "yes\n" },
+    { "input": "Salom\n", "output": "no\n" }
+  ] },
+  { "runs": [
+    { "input": "  dasturlash   tili  PYTHON va java \n", "output": "5\ndasturlash\nDasturlash Tili Python Va Java\n" }
+  ] },
+  { "runs": [
+    { "input": "Java va Python, Python va C++\nPython\nGo\n", "output": "2\nJava va Go, Go va C++\n" },
+    { "input": "banana\na\naa\n", "output": "3\nbaanaanaa\n" }
+  ] }
+]
