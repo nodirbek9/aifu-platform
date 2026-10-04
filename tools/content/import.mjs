@@ -75,6 +75,14 @@ export function parseLesson(text, file) {
     const line = lines[i]
     const fence = /^```\s*([\w+]+)\s*$/.exec(line)
     const directive = /^:::(\w+)\s*(.*)$/.exec(line)
+    if (fence && fence[1].toLowerCase() === 'text') {
+      // pseudocode stays in the prose as a plain preformatted block, not a runnable example
+      let end = i + 1
+      while (end < lines.length && !/^```\s*$/.test(lines[end])) end += 1
+      prose.push(...lines.slice(i, end + 1))
+      i = end
+      continue
+    }
     if (fence) {
       flush()
       const language = CODE_LANGUAGES[fence[1].toLowerCase()]

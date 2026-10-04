@@ -76,6 +76,11 @@ print("Salom")
 ...
 ```
 
+```text              pseudocode or a sample of output: shown as is, not a runnable example
+agar ball >= 56:
+    oʻtdi
+```
+
 :::note              a callout: note | tip | warning | danger
 Text in Markdown.
 :::

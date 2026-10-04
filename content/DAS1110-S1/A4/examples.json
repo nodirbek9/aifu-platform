@@ -1,0 +1,18 @@
+[
+  { "runs": [
+    { "input": "7 12 9\n", "output": "12\n" },
+    { "input": "4 4 4\n", "output": "4\n" },
+    { "input": "-5 -2 -9\n", "output": "-2\n" }
+  ] },
+  { "runs": [
+    { "input": "1 2 5\n", "output": "does not exist\n" },
+    { "input": "5 5 5\n", "output": "equilateral\n" },
+    { "input": "5 5 8\n", "output": "isosceles\n" },
+    { "input": "3 4 5\n", "output": "scalene\n" }
+  ] },
+  { "runs": [
+    { "input": "-3 4\n", "output": "2\n" },
+    { "input": "5 -1\n", "output": "4\n" },
+    { "input": "0 7\n", "output": "on an axis\n" }
+  ] }
+]
