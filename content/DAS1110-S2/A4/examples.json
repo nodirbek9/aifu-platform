@@ -1,0 +1,5 @@
+[
+  { "runs": [{ "input": "10\n", "output": "55\n" }, { "input": "90\n", "output": "2880067194370816120\n" }, { "input": "0\n", "output": "0\n" }] },
+  { "runs": [{ "input": "3\n", "output": "000\n001\n010\n100\n101\n5\n" }, { "input": "1\n", "output": "0\n1\n2\n" }] },
+  { "runs": [{ "input": "5\n3 8 -1 6 2\n", "output": "18\n8\n2 6 -1 8 3\n" }, { "input": "1\n-4\n", "output": "-4\n-4\n-4\n" }] }
+]
