@@ -1,0 +1,11 @@
+[
+  { "runs": [
+    { "input": "5\n", "output": "5! = 120\n" },
+    { "input": "0\n", "output": "0! = 1\n" },
+    { "input": "20\n", "output": "20! = 2432902008176640000\n" }
+  ] },
+  { "runs": [
+    { "input": "2026\n", "output": "Sum: 10\nDigits: 4\n" },
+    { "input": "7\n", "output": "Sum: 7\nDigits: 1\n" }
+  ] }
+]
