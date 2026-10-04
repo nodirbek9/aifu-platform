@@ -1,0 +1,314 @@
+{
+  "modules": {
+    "M-BASICS": {
+      "title": "Dasturlash asoslari"
+    },
+    "M-CONTROL-FLOW": {
+      "title": "Tarmoqlanuvchi va takrorlanuvchi jarayonlar"
+    },
+    "M-ARRAYS": {
+      "title": "Massivlar"
+    },
+    "M-FUNCTIONS": {
+      "title": "Funksiyalar va rekursiya"
+    },
+    "M-MEMORY-STRINGS": {
+      "title": "Dinamik xotira, satrlar va fayllar"
+    },
+    "M-INDEPENDENT": {
+      "title": "Mustaqil taʼlim topshiriqlari"
+    }
+  },
+  "codingTasks": {
+    "DEV-TASK-SUM": {
+      "title": "Massiv elementlari yigʻindisi",
+      "description": "Standart kirishdan n ta butun son oʻqib, ularning yigʻindisini chiqaruvchi dastur yozing.",
+      "instructions": "Birinchi satrda n soni, ikkinchi satrda boʻsh joy bilan ajratilgan n ta butun son beriladi. Yigʻindini bitta satrda chiqaring.",
+      "constraintsText": "1 <= n <= 1000, har bir son -10^6 dan 10^6 gacha.",
+      "hints": []
+    },
+    "DAS-S1-A1": {
+      "title": "Birinchi dastur: salomlashish",
+      "description": "<p>Foydalanuvchi ismini oʻqib, unga salom beruvchi dastur yozing.</p>",
+      "instructions": "Kirish: bitta satrda ism (boʻsh joy boʻlishi mumkin). Chiqish: Salom, <ism>!",
+      "constraintsText": "Ism uzunligi 1 dan 100 gacha.",
+      "hints": []
+    },
+    "DAS-S1-A2": {
+      "title": "Arifmetik amallar",
+      "description": "<p>Ikkita butun son uchun yigʻindi, ayirma, koʻpaytma, butun boʻlinma va qoldiqni hisoblang.</p>",
+      "instructions": "Kirish: bitta satrda a va b. Chiqish: beshta satrda a+b, a-b, a*b, a div b, a mod b.",
+      "constraintsText": "0 ≤ a ≤ 10^9, 1 ≤ b ≤ 10^9. Koʻpaytma 32 bitga sigʻmasligi mumkin: Java’da long ishlating.",
+      "hints": []
+    },
+    "DAS-S1-A3": {
+      "title": "Kabisa yili",
+      "description": "<p>Yil kabisami yoki yoʻqligini mantiqiy amallar yordamida aniqlang. Yil 4 ga boʻlinsa kabisa, lekin 100 ga boʻlinib 400 ga boʻlinmasa, kabisa emas.</p>",
+      "instructions": "Kirish: yil. Chiqish: Kabisa yoki Kabisa emas.",
+      "constraintsText": "1 ≤ yil ≤ 10000.",
+      "hints": [
+        "100 ga boʻlinadigan yil faqat 400 ga ham boʻlinsagina kabisa boʻladi: 1900 — kabisa emas, 2000 — kabisa."
+      ]
+    },
+    "DAS-S1-A4": {
+      "title": "Kvadrat tenglamaning ildizlari soni",
+      "description": "<p>ax² + bx + c = 0 tenglamaning nechta haqiqiy ildizi borligini shartli operator bilan aniqlang.</p>",
+      "instructions": "Kirish: a b c butun sonlar (a ≠ 0). Chiqish: 0, 1 yoki 2.",
+      "constraintsText": "|a|, |b|, |c| ≤ 10^6. Diskriminantni long turida hisoblang.",
+      "hints": []
+    },
+    "DAS-S1-A5": {
+      "title": "Hafta kuni (tanlash operatori)",
+      "description": "<p>1 dan 7 gacha raqam boʻyicha hafta kunining nomini chiqaring. Pythonda <code>match</code>, Java’da <code>switch</code> operatoridan foydalaning.</p>",
+      "instructions": "Kirish: butun son n. Chiqish: kun nomi (Dushanba … Yakshanba) yoki Xato.",
+      "constraintsText": "-100 ≤ n ≤ 100.",
+      "hints": []
+    },
+    "DAS-S1-A6": {
+      "title": "Faktorial (parametrli sikl)",
+      "description": "<p>n! = 1·2·…·n ni <code>for</code> sikli bilan hisoblang. 0! = 1.</p>",
+      "instructions": "Kirish: n. Chiqish: n!.",
+      "constraintsText": "0 ≤ n ≤ 20 (natija long turiga sigʻadi).",
+      "hints": [
+        "0! = 1. Natijani saqlaydigan oʻzgaruvchini 1 dan boshlang.",
+        "Sikl 2 dan n gacha yuradi va har qadamda natijani i ga koʻpaytiradi. 20! oddiy int ga sigʻmaydi — 64 bitli tur kerak."
+      ]
+    },
+    "DAS-S1-A7": {
+      "title": "Tub sonni aniqlash",
+      "description": "<p>Son tub ekanligini <code>while</code> sikli bilan tekshiring: 2 dan √n gacha boʻluvchi izlang.</p>",
+      "instructions": "Kirish: n. Chiqish: Tub yoki Tub emas.",
+      "constraintsText": "1 ≤ n ≤ 10^9. 1 tub emas.",
+      "hints": [
+        "1 tub son emas. Bu holatni alohida tekshiring.",
+        "Boʻluvchini n gacha emas, faqat d * d <= n boʻlguncha izlash yetarli.",
+        "Birinchi boʻluvchi topilishi bilan siklni toʻxtating — qolganini tekshirish shart emas."
+      ]
+    },
+    "DAS-S1-A8": {
+      "title": "Koʻpaytirish jadvali (ichma-ich sikl)",
+      "description": "<p>n × n koʻpaytirish jadvalini ichma-ich joylashgan sikllar bilan chiqaring.</p>",
+      "instructions": "Kirish: n. Chiqish: n ta satr; i-satrda i·1, i·2, …, i·n sonlari bitta boʻsh joy bilan ajratilgan.",
+      "constraintsText": "1 ≤ n ≤ 9.",
+      "hints": []
+    },
+    "DAS-S1-A9B": {
+      "title": "Massivda chiziqli qidiruv",
+      "description": "<p>Massivda x qiymatining birinchi uchrashgan oʻrnini (1 dan boshlab) toping. Topilmasa -1 chiqaring.</p>",
+      "instructions": "Kirish: n; n ta butun son; x. Chiqish: indeks yoki -1.",
+      "constraintsText": "1 ≤ n ≤ 1000, qiymatlar |a| ≤ 10^9.",
+      "hints": []
+    },
+    "DAS-S1-MT1": {
+      "title": "Boʻlakli funksiya",
+      "description": "<p>y = x² (x &lt; 0 boʻlsa), y = 2x + 1 (0 ≤ x ≤ 10 boʻlsa), y = x − 10 (x &gt; 10 boʻlsa) funksiyani hisoblang.</p>",
+      "instructions": "Kirish: butun x. Chiqish: y.",
+      "constraintsText": "|x| ≤ 10^6.",
+      "hints": []
+    },
+    "DAS-S1-MT2": {
+      "title": "Garmonik qator yigʻindisi",
+      "description": "<p>S = 1 + 1/2 + 1/3 + … + 1/n yigʻindini hisoblang va 4 ta kasr xonasi bilan chiqaring.</p>",
+      "instructions": "Kirish: n. Chiqish: S, nuqtadan keyin 4 ta raqam.",
+      "constraintsText": "1 ≤ n ≤ 10^6. Java’da String.format(Locale.US, \"%.4f\", s) ishlating.",
+      "hints": []
+    },
+    "DAS-S1-MT3": {
+      "title": "Massivni teskari tartibda chiqarish",
+      "description": "<p>Massiv elementlarini teskari tartibda chiqaring.</p>",
+      "instructions": "Kirish: n; n ta butun son. Chiqish: elementlar teskari tartibda, boʻsh joy bilan.",
+      "constraintsText": "1 ≤ n ≤ 10^4.",
+      "hints": []
+    },
+    "DAS-S1-MT4": {
+      "title": "Matritsa diagonallari",
+      "description": "<p>n × n matritsaning bosh va yordamchi diagonallari elementlari yigʻindisini toping.</p>",
+      "instructions": "Kirish: n; soʻng n ta satrda n tadan butun son. Chiqish: bitta satrda ikki son — bosh diagonal va yordamchi diagonal yigʻindisi.",
+      "constraintsText": "1 ≤ n ≤ 100, |a| ≤ 10^6.",
+      "hints": []
+    },
+    "DAS-S1-MT5": {
+      "title": "Vektorlarning skalyar koʻpaytmasi",
+      "description": "<p>Ikki n oʻlchamli vektorning skalyar koʻpaytmasini hisoblang: a₁b₁ + a₂b₂ + … + aₙbₙ.</p>",
+      "instructions": "Kirish: n; a vektor (n ta son); b vektor (n ta son). Chiqish: skalyar koʻpaytma.",
+      "constraintsText": "1 ≤ n ≤ 10^4, |aᵢ|, |bᵢ| ≤ 10^4.",
+      "hints": []
+    },
+    "DAS-S1-MT6": {
+      "title": "Yigʻindisi k ga teng juftliklar",
+      "description": "<p>Massivda i &lt; j va aᵢ + aⱼ = k shartni qanoatlantiruvchi juftliklar sonini ichma-ich sikllar bilan toping.</p>",
+      "instructions": "Kirish: n va k; n ta butun son. Chiqish: juftliklar soni.",
+      "constraintsText": "1 ≤ n ≤ 1000.",
+      "hints": []
+    }
+  },
+  "quizzes": {
+    "DAS-Q-M2": {
+      "title": "Dasturlash asoslari: takrorlash testi",
+      "description": "Dastlabki ikki maʼruza boʻyicha qisqa test: algoritm, oʻzgaruvchilar, maʼlumot turlari va amallar.",
+      "instructions": "Testda 7 ta savol bor, ularning turi har xil: variant tanlash, son yoki soʻz kiritish, tartiblash va juftlash. Har bir savolni diqqat bilan oʻqing.",
+      "questions": [
+        {
+          "prompt": "Algoritm nima?",
+          "explanation": "Algoritm — masalani yechishga olib boradigan aniq va chekli qadamlar ketma-ketligi. U biror dasturlash tiliga bogʻliq emas.",
+          "options": [
+            {
+              "text": "Masalani yechish uchun aniq qadamlar ketma-ketligi"
+            },
+            {
+              "text": "Dasturlash tilining bir turi"
+            },
+            {
+              "text": "Kompyuterning hisoblash qurilmasi"
+            },
+            {
+              "text": "Dastur kodi saqlanadigan fayl"
+            }
+          ]
+        },
+        {
+          "prompt": "Quyidagi qiymatlarning qaysilari butun son turiga (int) mansub?",
+          "explanation": "42 va −7 — butun sonlar. 3.14 — haqiqiy son (float), qoʻshtirnoq ichidagi \"25\" esa satr (str).",
+          "options": [
+            {
+              "text": "42"
+            },
+            {
+              "text": "−7"
+            },
+            {
+              "text": "3.14"
+            },
+            {
+              "text": "\"25\""
+            }
+          ]
+        },
+        {
+          "prompt": "Oʻzgaruvchi nomi raqam bilan boshlanishi mumkin.",
+          "explanation": "Python, Java va C++ tillarida oʻzgaruvchi nomi harf yoki ostki chiziq bilan boshlanadi; raqam faqat keyingi oʻrinlarda keladi.",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        },
+        {
+          "prompt": "17 % 5 ifodasining qiymati nechaga teng? (% — boʻlishdagi qoldiq amali)",
+          "explanation": "17 = 5 · 3 + 2, demak qoldiq 2 ga teng.",
+          "options": []
+        },
+        {
+          "prompt": "Python tilida ekranga matn chiqaradigan funksiyaning nomini yozing.",
+          "explanation": "print() funksiyasi oʻziga berilgan qiymatlarni ekranga chiqaradi.",
+          "options": []
+        },
+        {
+          "prompt": "Dastur yaratish bosqichlarini toʻgʻri tartibda joylashtiring.",
+          "explanation": "Avval masala tahlil qilinadi, soʻng algoritm tuziladi, kod yoziladi va oxirida dastur testlanadi.",
+          "options": [
+            {
+              "text": "Masalani tahlil qilish"
+            },
+            {
+              "text": "Algoritm tuzish"
+            },
+            {
+              "text": "Kodni yozish"
+            },
+            {
+              "text": "Testlash va xatolarni tuzatish"
+            }
+          ]
+        },
+        {
+          "prompt": "Har bir qiymatni uning maʼlumot turi bilan juftlang.",
+          "explanation": "42 — butun son, 3.14 — haqiqiy son, \"salom\" — satr, True — mantiqiy qiymat.",
+          "options": [
+            {
+              "text": "42"
+            },
+            {
+              "text": "butun son (int)"
+            },
+            {
+              "text": "3.14"
+            },
+            {
+              "text": "haqiqiy son (float)"
+            },
+            {
+              "text": "\"salom\""
+            },
+            {
+              "text": "satr (str)"
+            },
+            {
+              "text": "True"
+            },
+            {
+              "text": "mantiqiy qiymat (bool)"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "activities": {
+    "CODING_TASK:DAS-S1-MT6": {
+      "title": "Yigʻindisi k ga teng juftliklar"
+    },
+    "CODING_TASK:DAS-S1-A3": {
+      "title": "Kabisa yili"
+    },
+    "CODING_TASK:DAS-S1-A2": {
+      "title": "Arifmetik amallar"
+    },
+    "CODING_TASK:DAS-S1-A1": {
+      "title": "Birinchi dastur: salomlashish"
+    },
+    "CODING_TASK:DAS-S1-A8": {
+      "title": "Koʻpaytirish jadvali (ichma-ich sikl)"
+    },
+    "CODING_TASK:DAS-S1-A7": {
+      "title": "Tub sonni aniqlash"
+    },
+    "CODING_TASK:DAS-S1-A6": {
+      "title": "Faktorial (parametrli sikl)"
+    },
+    "CODING_TASK:DAS-S1-A5": {
+      "title": "Hafta kuni (tanlash operatori)"
+    },
+    "CODING_TASK:DAS-S1-A4": {
+      "title": "Kvadrat tenglamaning ildizlari soni"
+    },
+    "QUIZ:DAS-Q-M2": {
+      "title": "Dasturlash asoslari: takrorlash testi"
+    },
+    "CODING_TASK:DEV-TASK-SUM": {
+      "title": "Amaliy topshiriq: massiv yigʻindisi",
+      "instructions": "Yechimni Python, Java yoki C++ tilida topshiring."
+    },
+    "CODING_TASK:DAS-S1-MT1": {
+      "title": "Boʻlakli funksiya"
+    },
+    "CODING_TASK:DAS-S1-MT2": {
+      "title": "Garmonik qator yigʻindisi"
+    },
+    "CODING_TASK:DAS-S1-MT3": {
+      "title": "Massivni teskari tartibda chiqarish"
+    },
+    "CODING_TASK:DAS-S1-MT4": {
+      "title": "Matritsa diagonallari"
+    },
+    "CODING_TASK:DAS-S1-MT5": {
+      "title": "Vektorlarning skalyar koʻpaytmasi"
+    },
+    "CODING_TASK:DAS-S1-A9B": {
+      "title": "Massivda chiziqli qidiruv"
+    }
+  }
+}

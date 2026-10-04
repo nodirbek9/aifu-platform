@@ -132,3 +132,20 @@ safe to re-import after an edit.
   `node run-examples.mjs ../../content/DAS1110-S1 [--lesson M5]` runs the Python, Java and C++
   versions in the sandbox's own images (Docker) and compares.
 - A teacher of the subject reads the Uzbek file; the other languages follow it.
+
+## 7. Practice texts in three languages
+
+The texts of a course's practice — module titles, coding tasks and their hints, quizzes with
+their questions and options, course activities — live next to `course.json` as
+`practice.uz.json`, `practice.ru.json` and `practice.en.json`, keyed by stable codes (module, task
+and quiz codes; question, option and hint positions).
+
+```bash
+node practice.mjs export ../../content/DAS1110-S1          # practice.uz.json from the platform
+node practice.mjs import ../../content/DAS1110-S1 --dry-run
+node practice.mjs import ../../content/DAS1110-S1          # writes the three languages
+```
+
+The Russian and English files must have the shape of the Uzbek one (the same keys and the same
+number of questions, options and hints). Output that the tests compare literally (`Kabisa`,
+`Tub emas`, `Salom, …!`) stays as it is in every language; the statement explains it.

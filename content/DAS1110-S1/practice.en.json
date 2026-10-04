@@ -1,0 +1,314 @@
+{
+  "modules": {
+    "M-BASICS": {
+      "title": "Programming basics"
+    },
+    "M-CONTROL-FLOW": {
+      "title": "Branching and repetitive processes"
+    },
+    "M-ARRAYS": {
+      "title": "Arrays"
+    },
+    "M-FUNCTIONS": {
+      "title": "Functions and recursion"
+    },
+    "M-MEMORY-STRINGS": {
+      "title": "Dynamic memory, strings and files"
+    },
+    "M-INDEPENDENT": {
+      "title": "Independent study tasks"
+    }
+  },
+  "codingTasks": {
+    "DEV-TASK-SUM": {
+      "title": "The sum of an array's elements",
+      "description": "Write a program that reads n integers from standard input and prints their sum.",
+      "instructions": "The first line holds n, the second n integers separated by spaces. Print the sum on one line.",
+      "constraintsText": "1 <= n <= 1000, each number from -10^6 to 10^6.",
+      "hints": []
+    },
+    "DAS-S1-A1": {
+      "title": "A first program: a greeting",
+      "description": "<p>Write a program that reads the user's name and greets them.</p>",
+      "instructions": "Input: a name on one line (it may contain spaces). Output: Salom, <name>! (the greeting is in Uzbek — that is how the tests check it).",
+      "constraintsText": "The name is 1 to 100 characters long.",
+      "hints": []
+    },
+    "DAS-S1-A2": {
+      "title": "Arithmetic operations",
+      "description": "<p>For two integers, compute the sum, the difference, the product, the integer quotient and the remainder.</p>",
+      "instructions": "Input: a and b on one line. Output: on five lines a+b, a-b, a*b, a div b, a mod b.",
+      "constraintsText": "0 ≤ a ≤ 10^9, 1 ≤ b ≤ 10^9. The product may not fit in 32 bits: use long in Java.",
+      "hints": []
+    },
+    "DAS-S1-A3": {
+      "title": "A leap year",
+      "description": "<p>Decide with logical operations whether a year is a leap year. A year divisible by 4 is a leap year, but one divisible by 100 and not by 400 is not.</p>",
+      "instructions": "Input: a year. Output: Kabisa (a leap year) or Kabisa emas (not a leap year) — the answer is in Uzbek, as the tests check it.",
+      "constraintsText": "1 ≤ year ≤ 10000.",
+      "hints": [
+        "A year divisible by 100 is a leap year only if it is also divisible by 400: 1900 is not a leap year, 2000 is."
+      ]
+    },
+    "DAS-S1-A4": {
+      "title": "The number of roots of a quadratic equation",
+      "description": "<p>Use a conditional statement to decide how many real roots the equation ax² + bx + c = 0 has.</p>",
+      "instructions": "Input: the integers a b c (a ≠ 0). Output: 0, 1 or 2.",
+      "constraintsText": "|a|, |b|, |c| ≤ 10^6. Compute the discriminant as a long.",
+      "hints": []
+    },
+    "DAS-S1-A5": {
+      "title": "The day of the week (the selection statement)",
+      "description": "<p>Print the name of the day of the week for a number from 1 to 7. Use the <code>match</code> statement in Python and <code>switch</code> in Java.</p>",
+      "instructions": "Input: an integer n. Output: the day's name in Uzbek (Dushanba, Seshanba, Chorshanba, Payshanba, Juma, Shanba, Yakshanba), or Xato for a wrong number — that is how the tests check the answer.",
+      "constraintsText": "-100 ≤ n ≤ 100.",
+      "hints": []
+    },
+    "DAS-S1-A6": {
+      "title": "The factorial (a counted loop)",
+      "description": "<p>Compute n! = 1·2·…·n with a <code>for</code> loop. 0! = 1.</p>",
+      "instructions": "Input: n. Output: n!.",
+      "constraintsText": "0 ≤ n ≤ 20 (the result fits in a long).",
+      "hints": [
+        "0! = 1. Start the variable that holds the result at 1.",
+        "The loop goes from 2 to n and multiplies the result by i at each step. 20! does not fit in a plain int — a 64-bit type is needed."
+      ]
+    },
+    "DAS-S1-A7": {
+      "title": "Testing for a prime",
+      "description": "<p>Check with a <code>while</code> loop whether a number is prime: look for a divisor from 2 up to √n.</p>",
+      "instructions": "Input: n. Output: Tub (prime) or Tub emas (not prime) — the answer is in Uzbek, as the tests check it.",
+      "constraintsText": "1 ≤ n ≤ 10^9. 1 is not prime.",
+      "hints": [
+        "1 is not a prime number. Check this case separately.",
+        "It is enough to look for a divisor not up to n but only while d * d <= n.",
+        "Stop the loop as soon as the first divisor is found — there is no need to check the rest."
+      ]
+    },
+    "DAS-S1-A8": {
+      "title": "A multiplication table (a nested loop)",
+      "description": "<p>Print the n × n multiplication table with nested loops.</p>",
+      "instructions": "Input: n. Output: n lines; line i holds the numbers i·1, i·2, …, i·n separated by one space.",
+      "constraintsText": "1 ≤ n ≤ 9.",
+      "hints": []
+    },
+    "DAS-S1-A9B": {
+      "title": "Linear search in an array",
+      "description": "<p>Find the position (from 1) where the value x first appears in an array. If it is not there, print -1.</p>",
+      "instructions": "Input: n; n integers; x. Output: the position or -1.",
+      "constraintsText": "1 ≤ n ≤ 1000, values |a| ≤ 10^9.",
+      "hints": []
+    },
+    "DAS-S1-MT1": {
+      "title": "A piecewise function",
+      "description": "<p>Compute the function y = x² (for x &lt; 0), y = 2x + 1 (for 0 ≤ x ≤ 10), y = x − 10 (for x &gt; 10).</p>",
+      "instructions": "Input: an integer x. Output: y.",
+      "constraintsText": "|x| ≤ 10^6.",
+      "hints": []
+    },
+    "DAS-S1-MT2": {
+      "title": "The sum of the harmonic series",
+      "description": "<p>Compute the sum S = 1 + 1/2 + 1/3 + … + 1/n and print it with 4 decimal places.</p>",
+      "instructions": "Input: n. Output: S, 4 digits after the point.",
+      "constraintsText": "1 ≤ n ≤ 10^6. In Java use String.format(Locale.US, \"%.4f\", s).",
+      "hints": []
+    },
+    "DAS-S1-MT3": {
+      "title": "Printing an array in reverse order",
+      "description": "<p>Print the elements of an array in reverse order.</p>",
+      "instructions": "Input: n; n integers. Output: the elements in reverse order, separated by spaces.",
+      "constraintsText": "1 ≤ n ≤ 10^4.",
+      "hints": []
+    },
+    "DAS-S1-MT4": {
+      "title": "The diagonals of a matrix",
+      "description": "<p>Find the sums of the elements on the main and secondary diagonals of an n × n matrix.</p>",
+      "instructions": "Input: n; then n lines of n integers. Output: two numbers on one line — the sum of the main diagonal and the sum of the secondary diagonal.",
+      "constraintsText": "1 ≤ n ≤ 100, |a| ≤ 10^6.",
+      "hints": []
+    },
+    "DAS-S1-MT5": {
+      "title": "The dot product of vectors",
+      "description": "<p>Compute the dot product of two n-dimensional vectors: a₁b₁ + a₂b₂ + … + aₙbₙ.</p>",
+      "instructions": "Input: n; the vector a (n numbers); the vector b (n numbers). Output: the dot product.",
+      "constraintsText": "1 ≤ n ≤ 10^4, |aᵢ|, |bᵢ| ≤ 10^4.",
+      "hints": []
+    },
+    "DAS-S1-MT6": {
+      "title": "Pairs with sum k",
+      "description": "<p>Use nested loops to find the number of pairs with i &lt; j and aᵢ + aⱼ = k.</p>",
+      "instructions": "Input: n and k; n integers. Output: the number of pairs.",
+      "constraintsText": "1 ≤ n ≤ 1000.",
+      "hints": []
+    }
+  },
+  "quizzes": {
+    "DAS-Q-M2": {
+      "title": "Programming basics: a review quiz",
+      "description": "A short quiz on the first two lectures: algorithms, variables, data types and operations.",
+      "instructions": "The quiz has 7 questions of different kinds: choosing an option, entering a number or a word, ordering and matching. Read every question carefully.",
+      "questions": [
+        {
+          "prompt": "What is an algorithm?",
+          "explanation": "An algorithm is a precise, finite sequence of steps that leads to the solution of a problem. It does not depend on any programming language.",
+          "options": [
+            {
+              "text": "A precise sequence of steps for solving a problem"
+            },
+            {
+              "text": "A kind of programming language"
+            },
+            {
+              "text": "The computing device of a computer"
+            },
+            {
+              "text": "The file in which a program's code is kept"
+            }
+          ]
+        },
+        {
+          "prompt": "Which of these values belong to the integer type (int)?",
+          "explanation": "42 and −7 are integers. 3.14 is a floating-point number (float), and \"25\" in quotes is a string (str).",
+          "options": [
+            {
+              "text": "42"
+            },
+            {
+              "text": "−7"
+            },
+            {
+              "text": "3.14"
+            },
+            {
+              "text": "\"25\""
+            }
+          ]
+        },
+        {
+          "prompt": "A variable name may start with a digit.",
+          "explanation": "In Python, Java and C++ a variable name starts with a letter or an underscore; a digit may only come later.",
+          "options": [
+            {
+              "text": "True"
+            },
+            {
+              "text": "False"
+            }
+          ]
+        },
+        {
+          "prompt": "What is the value of the expression 17 % 5? (% is the remainder of division)",
+          "explanation": "17 = 5 · 3 + 2, so the remainder is 2.",
+          "options": []
+        },
+        {
+          "prompt": "Write the name of the Python function that prints text on the screen.",
+          "explanation": "The print() function prints the values given to it on the screen.",
+          "options": []
+        },
+        {
+          "prompt": "Put the stages of creating a program in the right order.",
+          "explanation": "First the problem is analysed, then the algorithm is designed, the code is written, and finally the program is tested.",
+          "options": [
+            {
+              "text": "Analysing the problem"
+            },
+            {
+              "text": "Designing the algorithm"
+            },
+            {
+              "text": "Writing the code"
+            },
+            {
+              "text": "Testing and fixing bugs"
+            }
+          ]
+        },
+        {
+          "prompt": "Match each value with its data type.",
+          "explanation": "42 is an integer, 3.14 a floating-point number, \"salom\" a string, True a boolean value.",
+          "options": [
+            {
+              "text": "42"
+            },
+            {
+              "text": "integer (int)"
+            },
+            {
+              "text": "3.14"
+            },
+            {
+              "text": "floating-point number (float)"
+            },
+            {
+              "text": "\"salom\""
+            },
+            {
+              "text": "string (str)"
+            },
+            {
+              "text": "True"
+            },
+            {
+              "text": "boolean value (bool)"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "activities": {
+    "CODING_TASK:DAS-S1-MT6": {
+      "title": "Pairs with sum k"
+    },
+    "CODING_TASK:DAS-S1-A3": {
+      "title": "A leap year"
+    },
+    "CODING_TASK:DAS-S1-A2": {
+      "title": "Arithmetic operations"
+    },
+    "CODING_TASK:DAS-S1-A1": {
+      "title": "A first program: a greeting"
+    },
+    "CODING_TASK:DAS-S1-A8": {
+      "title": "A multiplication table (a nested loop)"
+    },
+    "CODING_TASK:DAS-S1-A7": {
+      "title": "Testing for a prime"
+    },
+    "CODING_TASK:DAS-S1-A6": {
+      "title": "The factorial (a counted loop)"
+    },
+    "CODING_TASK:DAS-S1-A5": {
+      "title": "The day of the week (the selection statement)"
+    },
+    "CODING_TASK:DAS-S1-A4": {
+      "title": "The number of roots of a quadratic equation"
+    },
+    "QUIZ:DAS-Q-M2": {
+      "title": "Programming basics: a review quiz"
+    },
+    "CODING_TASK:DEV-TASK-SUM": {
+      "title": "Practice task: the sum of an array",
+      "instructions": "Submit a solution in Python, Java or C++."
+    },
+    "CODING_TASK:DAS-S1-MT1": {
+      "title": "A piecewise function"
+    },
+    "CODING_TASK:DAS-S1-MT2": {
+      "title": "The sum of the harmonic series"
+    },
+    "CODING_TASK:DAS-S1-MT3": {
+      "title": "Printing an array in reverse order"
+    },
+    "CODING_TASK:DAS-S1-MT4": {
+      "title": "The diagonals of a matrix"
+    },
+    "CODING_TASK:DAS-S1-MT5": {
+      "title": "The dot product of vectors"
+    },
+    "CODING_TASK:DAS-S1-A9B": {
+      "title": "Linear search in an array"
+    }
+  }
+}
