@@ -30,6 +30,7 @@ import uz.aifu.lms.curriculum.api.dto.ActivityDtos.UpdateActivityRequest;
 import uz.aifu.lms.curriculum.api.dto.ActivityDtos.UpsertActivityTranslationRequest;
 import uz.aifu.lms.curriculum.api.dto.ContentBlockDtos.ContentBlockView;
 import uz.aifu.lms.curriculum.api.dto.ContentBlockDtos.CreateContentBlockRequest;
+import uz.aifu.lms.curriculum.api.dto.ContentBlockDtos.ReorderContentBlocksRequest;
 import uz.aifu.lms.curriculum.api.dto.ContentBlockDtos.UpsertContentBlockTranslationRequest;
 import uz.aifu.lms.curriculum.api.dto.LessonDtos.LessonDetail;
 import uz.aifu.lms.curriculum.domain.ActivityType;
@@ -91,6 +92,47 @@ class PlatformAdditionsIT extends AbstractIntegrationTest {
                     course.getId(), user.getId(), EnrollmentSource.ADMIN, admin.getId(), null);
             return user;
         }
+    }
+
+    // ------------------------------------------------------------------ block positions
+
+    @Test
+    void aBlockAddedOrReorderedAfterADeletion_takesAFreePosition() throws Exception {
+        World w = new World();
+        Lesson lesson = curriculumFixtures.publishedLesson(w.course);
+        String blocks = "/api/v1/teacher/lessons/" + lesson.getId() + "/blocks";
+        String text = "{\"html\":\"<p>x</p>\"}";
+        ContentBlockView first = addBlock(w.adminToken, blocks, ContentBlockType.TEXT, null, text);
+        ContentBlockView second = addBlock(w.adminToken, blocks, ContentBlockType.TEXT, null, text);
+        ContentBlockView third = addBlock(w.adminToken, blocks, ContentBlockType.TEXT, null, text);
+
+        // the middle one goes: the next block must not reuse the last live position
+        assertThat(
+                        rest.exchange(
+                                        url("/api/v1/teacher/blocks/" + second.id()),
+                                        HttpMethod.DELETE,
+                                        new HttpEntity<>(bearer(w.adminToken)),
+                                        Void.class)
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.NO_CONTENT);
+        ContentBlockView fourth = addBlock(w.adminToken, blocks, ContentBlockType.TEXT, null, text);
+        assertThat(fourth.position()).isGreaterThan(third.position());
+
+        // and the live blocks reorder freely over the deleted block's old position
+        assertThat(
+                        rest.exchange(
+                                        url(blocks + "/reorder"),
+                                        HttpMethod.PUT,
+                                        new HttpEntity<>(
+                                                new ReorderContentBlocksRequest(
+                                                        java.util.List.of(
+                                                                fourth.id(),
+                                                                third.id(),
+                                                                first.id())),
+                                                bearer(w.adminToken)),
+                                        Void.class)
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.NO_CONTENT);
     }
 
     // ------------------------------------------------------------------ lesson visibility

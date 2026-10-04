@@ -70,6 +70,12 @@ export function RichText({ html, className, headingIdPrefix }: RichTextProps) {
         '[&_td]:border-border [&_td]:border [&_td]:px-3 [&_td]:py-2',
         '[&_img]:my-5 [&_img]:rounded-lg',
         '[&_hr]:border-border [&_hr]:my-8',
+        // a self-check question: the answer opens under it
+        '[&_details]:border-border [&_details]:bg-surface-raised [&_details]:my-3 [&_details]:rounded-md [&_details]:border [&_details]:px-4 [&_details]:py-3',
+        '[&_summary]:text-text [&_summary]:cursor-pointer [&_summary]:font-sans [&_summary]:font-medium',
+        '[&_details[open]>summary]:mb-2',
+        // a wide table scrolls inside itself on a phone instead of widening the page
+        'max-sm:[&_table]:block max-sm:[&_table]:overflow-x-auto',
         className,
       )}
       // Sanitized twice: by the server on write, and by sanitizeHtml above.

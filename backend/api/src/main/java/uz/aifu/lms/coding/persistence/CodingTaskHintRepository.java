@@ -21,4 +21,12 @@ public interface CodingTaskHintRepository extends JpaRepository<CodingTaskHint, 
      */
     @Query("select h.codingTask.id from CodingTaskHint h where h.id = :id")
     Optional<UUID> findCodingTaskIdById(@Param("id") UUID id);
+
+    /**
+     * The position after the last item: positions may have gaps (a deleted item, a reorder), so
+     * counting the items would hand out a position already taken.
+     */
+    @Query(
+            "select coalesce(max(x.position), -1) + 1 from CodingTaskHint x where x.codingTask.id = :parentId")
+    int nextPosition(@Param("parentId") UUID parentId);
 }

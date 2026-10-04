@@ -88,7 +88,7 @@ public class QuestionService {
     @Transactional
     public Question create(UUID quizId, CreateQuestionRequest request, UUID actorId, String ip) {
         Quiz quiz = quizzes.require(quizId);
-        int position = (int) questions.countByQuiz_Id(quizId);
+        int position = questions.nextPosition(quizId);
         Question question = new Question(quiz, position, request.questionType(), request.points());
         Question saved = questions.save(question);
         recomputeQuizMaxPoints(quiz);
@@ -228,7 +228,7 @@ public class QuestionService {
     public AnswerOption addOption(
             UUID questionId, CreateAnswerOptionRequest request, UUID actorId, String ip) {
         Question question = require(questionId);
-        int position = (int) options.countByQuestion_Id(questionId);
+        int position = options.nextPosition(questionId);
         AnswerOption option =
                 new AnswerOption(question, position, request.isCorrect(), request.matchKey());
         AnswerOption saved = options.save(option);

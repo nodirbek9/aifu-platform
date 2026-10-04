@@ -141,7 +141,7 @@ public class LessonService {
     @Transactional
     public Lesson create(UUID moduleId, CreateLessonRequest request, UUID actorId, String ip) {
         CourseModule module = modules.require(moduleId);
-        int position = (int) lessons.countByModule_IdAndDeletedAtIsNull(moduleId);
+        int position = lessons.nextPosition(moduleId);
         Lesson lesson = new Lesson(module, position, request.code(), request.sessionType());
         Lesson saved = lessons.save(lesson);
         audit.record(

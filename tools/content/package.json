@@ -1,0 +1,12 @@
+{
+  "name": "aifu-content-import",
+  "private": true,
+  "type": "module",
+  "description": "Imports the lessons of content/ into the platform through its API (docs/06-CONTENT-GUIDE.md)",
+  "scripts": {
+    "check": "node import.mjs ../../content --all --dry-run"
+  },
+  "dependencies": {
+    "marked": "18.0.14"
+  }
+}

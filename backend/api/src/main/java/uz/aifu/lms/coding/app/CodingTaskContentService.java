@@ -175,7 +175,7 @@ public class CodingTaskContentService {
     public CodingTaskHint addHint(
             UUID codingTaskId, CreateHintRequest request, UUID actorId, String ip) {
         CodingTask task = codingTasks.require(codingTaskId);
-        int position = (int) hints.countByCodingTask_Id(codingTaskId);
+        int position = hints.nextPosition(codingTaskId);
         CodingTaskHint saved =
                 hints.save(new CodingTaskHint(task, position, request.penaltyPercent()));
         audit.record(
@@ -261,7 +261,7 @@ public class CodingTaskContentService {
     public CodingTaskTestCase addTestCase(
             UUID codingTaskId, CreateTestCaseRequest request, UUID actorId, String ip) {
         CodingTask task = codingTasks.require(codingTaskId);
-        int position = (int) testCases.countByCodingTask_Id(codingTaskId);
+        int position = testCases.nextPosition(codingTaskId);
         CodingTaskTestCase saved =
                 testCases.save(
                         new CodingTaskTestCase(

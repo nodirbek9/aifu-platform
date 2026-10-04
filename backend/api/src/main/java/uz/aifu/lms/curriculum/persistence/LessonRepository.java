@@ -55,4 +55,12 @@ public interface LessonRepository extends JpaRepository<Lesson, UUID> {
     /** Backs {@code CurriculumLocatorAdapter.courseIdOfLesson} — the {@code AccessGuard} port. */
     @Query("select l.module.course.id from Lesson l where l.id = :id and l.deletedAt is null")
     Optional<UUID> findCourseIdById(@Param("id") UUID id);
+
+    /**
+     * The position after the last live item: positions may have gaps (a deleted item, a reorder),
+     * so counting the items would hand out a position already taken.
+     */
+    @Query(
+            "select coalesce(max(x.position), -1) + 1 from Lesson x where x.module.id = :parentId and x.deletedAt is null")
+    int nextPosition(@Param("parentId") UUID parentId);
 }

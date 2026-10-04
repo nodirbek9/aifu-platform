@@ -6,6 +6,8 @@ import java.util.UUID;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import uz.aifu.lms.curriculum.domain.ContentBlock;
 
 public interface ContentBlockRepository extends JpaRepository<ContentBlock, UUID> {
@@ -23,4 +25,12 @@ public interface ContentBlockRepository extends JpaRepository<ContentBlock, UUID
     Page<ContentBlock> findByLesson_IdAndDeletedAtIsNull(UUID lessonId, Pageable pageable);
 
     long countByLesson_IdAndDeletedAtIsNull(UUID lessonId);
+
+    /**
+     * The position after the last live item: positions may have gaps (a deleted item, a reorder),
+     * so counting the items would hand out a position already taken.
+     */
+    @Query(
+            "select coalesce(max(x.position), -1) + 1 from ContentBlock x where x.lesson.id = :parentId and x.deletedAt is null")
+    int nextPosition(@Param("parentId") UUID parentId);
 }

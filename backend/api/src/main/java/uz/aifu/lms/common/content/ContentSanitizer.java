@@ -70,7 +70,10 @@ public class ContentSanitizer {
                             "hr",
                             "span",
                             "sub",
-                            "sup")
+                            "sup",
+                            // a self-check question whose answer opens on demand (spec S-04)
+                            "details",
+                            "summary")
                     .allowUrlProtocols("http", "https", "mailto")
                     .allowElements("a")
                     .allowAttributes("href", "title")

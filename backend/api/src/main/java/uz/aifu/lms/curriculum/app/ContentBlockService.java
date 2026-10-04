@@ -96,7 +96,7 @@ public class ContentBlockService {
         if (validator.requiresFile() && request.fileId() == null) {
             throw Exceptions.validation(request.blockType() + " blocks require a fileId");
         }
-        int position = (int) blocks.countByLesson_IdAndDeletedAtIsNull(lessonId);
+        int position = blocks.nextPosition(lessonId);
         ContentBlock block = new ContentBlock(lesson, position, request.blockType());
         block.updateSettings(
                 writeJson(validatedSettings),

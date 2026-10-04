@@ -100,7 +100,7 @@ public class ModuleService {
     public CourseModule create(
             UUID courseId, CreateModuleRequest request, UUID actorId, String ip) {
         Course course = courses.require(courseId);
-        int position = (int) modules.countByCourse_IdAndDeletedAtIsNull(courseId);
+        int position = modules.nextPosition(courseId);
         CourseModule module =
                 new CourseModule(course, position, request.code(), request.groupingSource());
         CourseModule saved = modules.save(module);

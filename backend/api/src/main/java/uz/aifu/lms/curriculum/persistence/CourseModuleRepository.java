@@ -47,4 +47,12 @@ public interface CourseModuleRepository extends JpaRepository<CourseModule, UUID
     /** Backs {@code CurriculumLocatorAdapter.courseIdOfModule} — the {@code AccessGuard} port. */
     @Query("select m.course.id from CourseModule m where m.id = :id and m.deletedAt is null")
     Optional<UUID> findCourseIdById(@Param("id") UUID id);
+
+    /**
+     * The position after the last live item: positions may have gaps (a deleted item, a reorder),
+     * so counting the items would hand out a position already taken.
+     */
+    @Query(
+            "select coalesce(max(x.position), -1) + 1 from CourseModule x where x.course.id = :parentId and x.deletedAt is null")
+    int nextPosition(@Param("parentId") UUID parentId);
 }

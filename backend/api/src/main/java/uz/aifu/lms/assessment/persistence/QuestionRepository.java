@@ -7,6 +7,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import uz.aifu.lms.assessment.domain.Question;
 
 public interface QuestionRepository extends JpaRepository<Question, UUID> {
@@ -26,4 +28,11 @@ public interface QuestionRepository extends JpaRepository<Question, UUID> {
     Page<Question> findByQuiz_Id(UUID quizId, Pageable pageable);
 
     long countByQuiz_Id(UUID quizId);
+
+    /**
+     * The position after the last item: positions may have gaps (a deleted item, a reorder), so
+     * counting the items would hand out a position already taken.
+     */
+    @Query("select coalesce(max(x.position), -1) + 1 from Question x where x.quiz.id = :parentId")
+    int nextPosition(@Param("parentId") UUID parentId);
 }
