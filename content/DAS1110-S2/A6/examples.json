@@ -1,0 +1,5 @@
+[
+  { "runs": [{ "input": "Salom, Dunyo! 2024\n", "output": "sALOM, dUNYO! 2024\n" }] },
+  { "runs": [{ "input": "-4071\n", "output": "-4071 12\n" }, { "input": "12a5\n", "output": "Error\n" }, { "input": "-\n", "output": "Error\n" }, { "input": "999999999999999999\n", "output": "999999999999999999 162\n" }] },
+  { "runs": [{ "input": "Banan va Ananas!\n", "output": "a 6 ******\nb 1 *\nn 4 ****\ns 1 *\nv 1 *\n" }] }
+]
