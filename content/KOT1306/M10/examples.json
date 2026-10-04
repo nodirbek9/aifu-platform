@@ -1,0 +1,9 @@
+[
+  { "runs": [
+    { "input": "1000 5000\nC 100\nS 1460\nS 540\n", "output": "C->S SYN seq=1000\nS->C SYN+ACK seq=5000 ack=1001\nC->S ACK seq=1001 ack=5001\nC->S seq=1001 ack=5001 len=100\nS->C ACK seq=5001 ack=1101\nS->C seq=5001 ack=1101 len=1460\nC->S ACK seq=1101 ack=6461\nS->C seq=6461 ack=1101 len=540\nC->S ACK seq=1101 ack=7001\n" },
+    { "input": "0 0\n", "output": "C->S SYN seq=0\nS->C SYN+ACK seq=0 ack=1\nC->S ACK seq=1 ack=1\n" }
+  ] },
+  { "runs": [
+    { "input": "65535 50 100\n1048576 50 100\n65535 1 1000\n", "output": "10.49 Mbit/s BDP=625000\n100.00 Mbit/s BDP=625000\n524.28 Mbit/s BDP=125000\n" }
+  ] }
+]
