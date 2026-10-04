@@ -1,0 +1,784 @@
+{
+  "modules": {
+    "M-FOUNDATION": {
+      "title": "Tarmoq asoslari va arxitekturasi"
+    },
+    "M-LAN": {
+      "title": "Lokal tarmoq texnologiyalari"
+    },
+    "M-TCPIP": {
+      "title": "TCP/IP, manzillash va marshrutlash"
+    },
+    "M-SERVICES": {
+      "title": "Amaliy xizmatlar va server tizimlari"
+    },
+    "M-OPERATIONS": {
+      "title": "Tarmoq xavfsizligi va nosozliklarni bartaraf etish"
+    },
+    "M-INDEPENDENT": {
+      "title": "Mustaqil ta'lim topshiriqlari"
+    }
+  },
+  "codingTasks": {
+    "KOT-A4": {
+      "title": "Raqamli kodlash: NRZ, NRZI va Manchester",
+      "description": "<p>Bitlar ketma-ketligini liniya signaliga aylantiring. Signal darajalari <code>+</code> (yuqori) va <code>-</code> (past) bilan belgilanadi.</p><ul><li><strong>NRZ</strong> (NRZ-L): 1 → <code>+</code>, 0 → <code>-</code>.</li><li><strong>NRZI</strong>: boshlangʻich daraja <code>-</code>; 1 kelganda daraja almashadi, 0 da saqlanadi.</li><li><strong>MANCHESTER</strong> (IEEE 802.3 kelishuvi): har bir bit ikki yarim davr; 0 → <code>+-</code> (yuqoridan pastga), 1 → <code>-+</code> (pastdan yuqoriga).</li></ul>",
+      "instructions": "Kirish: sxema nomi va bitlar satri (boʻshliq bilan). Chiqish: signal satri.",
+      "constraintsText": "Bitlar soni 1–1000.",
+      "hints": []
+    },
+    "KOT-A7": {
+      "title": "IPv4 quyi tarmoq kalkulyatori",
+      "description": "<p>CIDR koʻrinishidagi manzil (masalan, <code>192.168.10.77/26</code>) boʻyicha tarmoq manzili, maska, keng tarqatish (broadcast) manzili, birinchi va oxirgi xost hamda xostlar sonini hisoblang.</p><p>Tarmoq = IP AND maska; broadcast = tarmoq OR (NOT maska); xostlar soni = 2^(32 − prefiks) − 2.</p>",
+      "instructions": "Kirish: IP/prefiks. Chiqish (6 satr): Tarmoq, Maska, Broadcast, Birinchi xost, Oxirgi xost, Xostlar soni — namunadagi formatda.",
+      "constraintsText": "1 ≤ prefiks ≤ 30.",
+      "hints": []
+    },
+    "KOT-A8": {
+      "title": "Marshrutlash jadvali: eng uzun prefiks boʻyicha tanlash",
+      "description": "<p>Marshrutizator paketni yuborishda manzilga mos keladigan marshrutlar orasidan <strong>eng uzun prefiksli</strong> (eng aniq) marshrutni tanlaydi. <code>0.0.0.0/0</code> — standart marshrut (default route). Mos marshrut boʻlmasa paket tashlab yuboriladi.</p>",
+      "instructions": "Kirish: n; n ta satrda tarmoq/prefiks keyingi_sakrash; q; q ta manzil. Chiqish: har bir manzil uchun keyingi sakrash nomi yoki DROP.",
+      "constraintsText": "1 ≤ n, q ≤ 1000.",
+      "hints": []
+    },
+    "KOT-A9": {
+      "title": "HTTP soʻrovini tahlil qilish",
+      "description": "<p>Soket orqali qabul qilingan xom HTTP soʻrovini tahlil qiluvchi server qismini yozing. Birinchi satr — <em>soʻrov satri</em>: metod, yoʻl (soʻrov parametrlari bilan) va versiya. Keyin boʻsh satrgacha <em>sarlavhalar</em> keladi (<code>Nom: qiymat</code>; sarlavha nomlari katta-kichik harfga sezgir emas).</p>",
+      "instructions": "Kirish: HTTP soʻrov matni. Chiqish (6 satr): Metod, Yo'l, So'rov (parametrlar yoki -), Versiya, Host (yoki -), Sarlavhalar (soni).",
+      "constraintsText": "Sarlavhalar soni 0–50.",
+      "hints": []
+    },
+    "KOT-A14": {
+      "title": "Brandmauer qoidalarini tekshirish",
+      "description": "<p>Brandmauer (firewall) paketni qoidalar roʻyxati boʻyicha yuqoridan pastga tekshiradi va <strong>birinchi mos kelgan</strong> qoidani qoʻllaydi. Hech biri mos kelmasa — standart siyosat: taqiqlash.</p><p>Qoida: <code>AMAL protokol port manba_tarmogʻi</code>; protokol <code>tcp</code>, <code>udp</code> yoki <code>any</code>; port raqam yoki <code>*</code> (istalgan); manba CIDR koʻrinishida.</p>",
+      "instructions": "Kirish: n; n ta qoida; m; m ta paket (protokol port manba_ip). Chiqish: har bir paket uchun ALLOW k yoki DENY k (k — qoida raqami, 1 dan) yoki DENY default.",
+      "constraintsText": "1 ≤ n, m ≤ 500.",
+      "hints": []
+    }
+  },
+  "quizzes": {
+    "KOT-Q-A1": {
+      "title": "Tarmoq qurilmalari",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Kadrni faqat MAC manzili boʻyicha kerakli portga yuboruvchi qurilma?",
+          "options": [
+            {
+              "text": "Konsentrator (hub)"
+            },
+            {
+              "text": "Kommutator (switch)"
+            },
+            {
+              "text": "Takrorlagich (repeater)"
+            },
+            {
+              "text": "Modem"
+            }
+          ]
+        },
+        {
+          "prompt": "Signalni kuchaytirib, masofani oshiradigan, lekin kadrlarni tahlil qilmaydigan qurilma?",
+          "options": [
+            {
+              "text": "Takrorlagich"
+            },
+            {
+              "text": "Marshrutizator"
+            },
+            {
+              "text": "Koʻprik"
+            },
+            {
+              "text": "Brandmauer"
+            }
+          ]
+        },
+        {
+          "prompt": "Turli tarmoqlar orasida IP manzil boʻyicha paketlarni yoʻnaltiruvchi qurilma?",
+          "options": [
+            {
+              "text": "Hub"
+            },
+            {
+              "text": "Switch"
+            },
+            {
+              "text": "Router"
+            },
+            {
+              "text": "Tarmoq adapteri"
+            }
+          ]
+        },
+        {
+          "prompt": "Konsentrator (hub) qabul qilgan signalni barcha portlarga tarqatadi.",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        },
+        {
+          "prompt": "Koʻprik (bridge) OSI modelining qaysi pogʻonasida ishlaydi?",
+          "options": [
+            {
+              "text": "Fizik"
+            },
+            {
+              "text": "Kanal"
+            },
+            {
+              "text": "Tarmoq"
+            },
+            {
+              "text": "Transport"
+            }
+          ]
+        }
+      ]
+    },
+    "KOT-Q-A2": {
+      "title": "Tarmoq topologiyalari",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Barcha qurilmalar bitta markaziy qurilmaga ulangan topologiya?",
+          "options": [
+            {
+              "text": "Shina"
+            },
+            {
+              "text": "Yulduz"
+            },
+            {
+              "text": "Halqa"
+            },
+            {
+              "text": "Toʻliq bogʻlangan"
+            }
+          ]
+        },
+        {
+          "prompt": "Yulduz topologiyasining asosiy kamchiligi?",
+          "options": [
+            {
+              "text": "Markaziy qurilma ishdan chiqsa, butun tarmoq ishlamaydi"
+            },
+            {
+              "text": "Kabel juda kam ketadi"
+            },
+            {
+              "text": "Qurilma qoʻshish qiyin"
+            },
+            {
+              "text": "Kolliziyalar boʻlmaydi"
+            }
+          ]
+        },
+        {
+          "prompt": "6 ta tugunli toʻliq bogʻlangan (mesh) tarmoqda nechta aloqa liniyasi bor?",
+          "explanation": "n(n − 1)/2 = 6·5/2 = 15.",
+          "options": []
+        },
+        {
+          "prompt": "Token Ring texnologiyasi qaysi mantiqiy topologiyaga asoslangan?",
+          "options": [
+            {
+              "text": "Shina"
+            },
+            {
+              "text": "Halqa"
+            },
+            {
+              "text": "Yulduz"
+            },
+            {
+              "text": "Daraxt"
+            }
+          ]
+        }
+      ]
+    },
+    "KOT-Q-A3": {
+      "title": "Tarmoq emulyatorlari",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Qaysilari tarmoqni modellashtirish yoki emulyatsiya vositalari?",
+          "explanation": "Wireshark — trafik analizatori, u tarmoqni modellashtirmaydi.",
+          "options": [
+            {
+              "text": "Cisco Packet Tracer"
+            },
+            {
+              "text": "GNS3"
+            },
+            {
+              "text": "Wireshark"
+            },
+            {
+              "text": "EVE-NG"
+            }
+          ]
+        },
+        {
+          "prompt": "Emulyatorda real qurilmalar sotib olmasdan tarmoq sxemasini sinab koʻrish mumkin.",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        },
+        {
+          "prompt": "Packet Tracer’da ikki kompyuter orasidagi aloqani tekshirish uchun odatda qaysi buyruq ishlatiladi?",
+          "options": [
+            {
+              "text": "ping"
+            },
+            {
+              "text": "format"
+            },
+            {
+              "text": "mkdir"
+            },
+            {
+              "text": "chmod"
+            }
+          ]
+        }
+      ]
+    },
+    "KOT-Q-A5": {
+      "title": "Ethernet va paketlarni tahlil qilish",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "MAC manzil necha bitdan iborat?",
+          "options": []
+        },
+        {
+          "prompt": "Ethernet kadrida xatolarni aniqlash uchun qaysi maydon ishlatiladi?",
+          "options": [
+            {
+              "text": "FCS (CRC)"
+            },
+            {
+              "text": "TTL"
+            },
+            {
+              "text": "Port"
+            },
+            {
+              "text": "Checksum IP"
+            }
+          ]
+        },
+        {
+          "prompt": "Fast Ethernet standart tezligi?",
+          "options": [
+            {
+              "text": "10 Mbit/s"
+            },
+            {
+              "text": "100 Mbit/s"
+            },
+            {
+              "text": "1 Gbit/s"
+            },
+            {
+              "text": "10 Gbit/s"
+            }
+          ]
+        },
+        {
+          "prompt": "FF:FF:FF:FF:FF:FF manzili nimani anglatadi?",
+          "options": [
+            {
+              "text": "Keng tarqatish (broadcast)"
+            },
+            {
+              "text": "Standart shlyuz"
+            },
+            {
+              "text": "Loopback"
+            },
+            {
+              "text": "Multicast guruhi"
+            }
+          ]
+        },
+        {
+          "prompt": "Ethernet klassik (hub asosidagi) tarmoqlarda kirish usuli CSMA/CD dir.",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        }
+      ]
+    },
+    "KOT-Q-A6": {
+      "title": "Simsiz tarmoqlar va Wi-Fi",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Wi-Fi tarmoqlari qaysi IEEE standartlar oilasiga asoslangan?",
+          "options": [
+            {
+              "text": "802.3"
+            },
+            {
+              "text": "802.11"
+            },
+            {
+              "text": "802.15"
+            },
+            {
+              "text": "802.5"
+            }
+          ]
+        },
+        {
+          "prompt": "Uy Wi-Fi routeri uchun hozirgi tavsiya etiladigan himoya protokoli?",
+          "options": [
+            {
+              "text": "WEP"
+            },
+            {
+              "text": "WPA"
+            },
+            {
+              "text": "WPA2/WPA3"
+            },
+            {
+              "text": "Ochiq tarmoq"
+            }
+          ]
+        },
+        {
+          "prompt": "SSID nima?",
+          "options": [
+            {
+              "text": "Simsiz tarmoq nomi"
+            },
+            {
+              "text": "Shifrlash kaliti"
+            },
+            {
+              "text": "MAC manzil"
+            },
+            {
+              "text": "Kanal raqami"
+            }
+          ]
+        },
+        {
+          "prompt": "Wi-Fi qaysi chastota diapazonlarida ishlaydi?",
+          "options": [
+            {
+              "text": "2,4 GGs"
+            },
+            {
+              "text": "5 GGs"
+            },
+            {
+              "text": "6 GGs (Wi-Fi 6E)"
+            },
+            {
+              "text": "900 MGs (GSM)"
+            }
+          ]
+        }
+      ]
+    },
+    "KOT-Q-A10": {
+      "title": "Server operatsion tizimini oʻrnatish",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Serverga odatda qanday IP manzil beriladi?",
+          "explanation": "Mijozlar serverni doimiy manzil boʻyicha topishi uchun unga statik manzil beriladi.",
+          "options": [
+            {
+              "text": "Statik"
+            },
+            {
+              "text": "DHCP orqali har safar yangi"
+            },
+            {
+              "text": "Faqat IPv6 link-local"
+            },
+            {
+              "text": "Hech qanday"
+            }
+          ]
+        },
+        {
+          "prompt": "Server Core oʻrnatish varianti grafik interfeyssiz boʻlib, kamroq resurs sarflaydi.",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        },
+        {
+          "prompt": "Windows Server’da rollar va komponentlarni qoʻshish uchun asosiy vosita?",
+          "options": [
+            {
+              "text": "Server Manager"
+            },
+            {
+              "text": "Paint"
+            },
+            {
+              "text": "Task Scheduler"
+            },
+            {
+              "text": "Notepad"
+            }
+          ]
+        }
+      ]
+    },
+    "KOT-Q-A11": {
+      "title": "DHCP va DNS xizmatlari",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "DHCP jarayoni bosqichlarining toʻgʻri tartibi?",
+          "options": [
+            {
+              "text": "Discover → Offer → Request → Acknowledge"
+            },
+            {
+              "text": "Request → Offer → Discover → Acknowledge"
+            },
+            {
+              "text": "Offer → Discover → Acknowledge → Request"
+            },
+            {
+              "text": "Discover → Request → Offer → Acknowledge"
+            }
+          ]
+        },
+        {
+          "prompt": "Domen nomini IPv4 manzilga bogʻlovchi DNS yozuvi?",
+          "options": [
+            {
+              "text": "A"
+            },
+            {
+              "text": "MX"
+            },
+            {
+              "text": "CNAME"
+            },
+            {
+              "text": "PTR"
+            }
+          ]
+        },
+        {
+          "prompt": "Pochta serverini koʻrsatuvchi DNS yozuvi?",
+          "options": [
+            {
+              "text": "A"
+            },
+            {
+              "text": "MX"
+            },
+            {
+              "text": "NS"
+            },
+            {
+              "text": "TXT"
+            }
+          ]
+        },
+        {
+          "prompt": "DNS soʻrovlari odatda qaysi portdan foydalanadi?",
+          "options": [
+            {
+              "text": "53"
+            },
+            {
+              "text": "67"
+            },
+            {
+              "text": "80"
+            },
+            {
+              "text": "443"
+            }
+          ]
+        },
+        {
+          "prompt": "DHCP mijozga IP manzildan tashqari standart shlyuz va DNS server manzilini ham berishi mumkin.",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        }
+      ]
+    },
+    "KOT-Q-A12": {
+      "title": "Foydalanuvchilar va vakolatlar",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Vakolatlarni har bir foydalanuvchiga emas, guruhlarga berish nima uchun qulay?",
+          "options": [
+            {
+              "text": "Boshqarish osonlashadi va xatolar kamayadi"
+            },
+            {
+              "text": "Parollar kerak boʻlmaydi"
+            },
+            {
+              "text": "Tarmoq tezlashadi"
+            },
+            {
+              "text": "Disk joyi tejaladi"
+            }
+          ]
+        },
+        {
+          "prompt": "Kundalik ish uchun administrator hisobidan foydalanish xavfsizlik nuqtai nazaridan tavsiya etiladi.",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        },
+        {
+          "prompt": "Windows’da lokal foydalanuvchi va guruhlarni boshqarish konsoli?",
+          "options": [
+            {
+              "text": "lusrmgr.msc"
+            },
+            {
+              "text": "regedit"
+            },
+            {
+              "text": "calc"
+            },
+            {
+              "text": "mspaint"
+            }
+          ]
+        }
+      ]
+    },
+    "KOT-Q-A13": {
+      "title": "Umumiy tarmoq resurslari",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Windows’da umumiy papkaga tarmoq orqali murojaat qilish koʻrinishi?",
+          "options": [
+            {
+              "text": "\\\\server\\papka"
+            },
+            {
+              "text": "http:/papka"
+            },
+            {
+              "text": "C:papka"
+            },
+            {
+              "text": "ftp:papka"
+            }
+          ]
+        },
+        {
+          "prompt": "Windows fayl almashish protokoli?",
+          "options": [
+            {
+              "text": "SMB"
+            },
+            {
+              "text": "SMTP"
+            },
+            {
+              "text": "SNMP"
+            },
+            {
+              "text": "SSH"
+            }
+          ]
+        },
+        {
+          "prompt": "Umumiy papkada amal qiluvchi huquq — share va NTFS huquqlaridan eng cheklovchisi.",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        }
+      ]
+    },
+    "KOT-Q-A15": {
+      "title": "Tarmoq nosozliklarini aniqlash",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Paket manzilga qaysi marshrutizatorlar orqali borishini koʻrsatuvchi Windows utilitasi?",
+          "options": [
+            {
+              "text": "tracert"
+            },
+            {
+              "text": "ipconfig"
+            },
+            {
+              "text": "netstat"
+            },
+            {
+              "text": "hostname"
+            }
+          ]
+        },
+        {
+          "prompt": "Kompyuterning IP manzili, maskasi va shlyuzini koʻrsatuvchi Windows buyrugʻi?",
+          "options": [
+            {
+              "text": "ipconfig"
+            },
+            {
+              "text": "ping"
+            },
+            {
+              "text": "nslookup"
+            },
+            {
+              "text": "arp -d"
+            }
+          ]
+        },
+        {
+          "prompt": "Kompyuter 169.254.x.x manzil olgan. Ehtimoliy sabab?",
+          "explanation": "169.254.0.0/16 — APIPA (link-local) manzillar; DHCP javob bermaganda OT ularni oʻzi tayinlaydi.",
+          "options": [
+            {
+              "text": "DHCP serverga ulanib boʻlmadi"
+            },
+            {
+              "text": "DNS ishlamayapti"
+            },
+            {
+              "text": "Brauzer eskirgan"
+            },
+            {
+              "text": "Disk toʻlgan"
+            }
+          ]
+        },
+        {
+          "prompt": "IP manzil boʻyicha ping ishlaydi, lekin domen nomi boʻyicha ishlamaydi. Qaysi xizmat muammoli?",
+          "options": [
+            {
+              "text": "DNS"
+            },
+            {
+              "text": "DHCP"
+            },
+            {
+              "text": "ARP"
+            },
+            {
+              "text": "Ethernet"
+            }
+          ]
+        },
+        {
+          "prompt": "Nosozlikni qidirishda OSI modeli boʻyicha pastdan yuqoriga borish nimadan boshlanadi?",
+          "options": [
+            {
+              "text": "Kabel va ulanishni tekshirishdan"
+            },
+            {
+              "text": "Brauzerni qayta oʻrnatishdan"
+            },
+            {
+              "text": "DNS keshini tozalashdan"
+            },
+            {
+              "text": "Serverni qayta yuklashdan"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "activities": {
+    "QUIZ:KOT-Q-A15": {
+      "title": "Tarmoq nosozliklarini aniqlash"
+    },
+    "CODING_TASK:KOT-A14": {
+      "title": "Brandmauer qoidalarini tekshirish"
+    },
+    "QUIZ:KOT-Q-A13": {
+      "title": "Umumiy tarmoq resurslari"
+    },
+    "QUIZ:KOT-Q-A12": {
+      "title": "Foydalanuvchilar va vakolatlar"
+    },
+    "QUIZ:KOT-Q-A11": {
+      "title": "DHCP va DNS xizmatlari"
+    },
+    "QUIZ:KOT-Q-A10": {
+      "title": "Server operatsion tizimini oʻrnatish"
+    },
+    "CODING_TASK:KOT-A9": {
+      "title": "HTTP soʻrovini tahlil qilish"
+    },
+    "CODING_TASK:KOT-A8": {
+      "title": "Marshrutlash jadvali: eng uzun prefiks boʻyicha tanlash"
+    },
+    "CODING_TASK:KOT-A7": {
+      "title": "IPv4 quyi tarmoq kalkulyatori"
+    },
+    "QUIZ:KOT-Q-A6": {
+      "title": "Simsiz tarmoqlar va Wi-Fi"
+    },
+    "QUIZ:KOT-Q-A5": {
+      "title": "Ethernet va paketlarni tahlil qilish"
+    },
+    "CODING_TASK:KOT-A4": {
+      "title": "Raqamli kodlash: NRZ, NRZI va Manchester"
+    },
+    "QUIZ:KOT-Q-A3": {
+      "title": "Tarmoq emulyatorlari"
+    },
+    "QUIZ:KOT-Q-A2": {
+      "title": "Tarmoq topologiyalari"
+    },
+    "QUIZ:KOT-Q-A1": {
+      "title": "Tarmoq qurilmalari"
+    }
+  }
+}
