@@ -1,0 +1,3 @@
+[
+  { "runs": [{ "input": "8\nqosh Sarob 2\nber Sarob\nber Sarob\nber Sarob\nholat Sarob\nqaytar Sarob\nqaytar Alpomish\nholat Alpomish\n", "output": "issued\nissued\nunavailable\nSarob: 0/2\nreturned\nerror\nAlpomish: 0/0\n" }, { "input": "4\nqosh A 1\nqosh A 2\nber A\nholat A\n", "output": "issued\nA: 2/3\n" }] }
+]
