@@ -1,0 +1,10 @@
+[
+  { "runs": [
+    { "input": "4 7\n1 AA BB\n2 BB AA\n3 CC FF\n1 AA CC\n4 DD BB\n1 EE AA\n3 BB CC\n", "output": "1: flood 2 3 4\n2: forward 1\n3: flood 1 2 4\n4: forward 3\n5: forward 2\n6: filter\n7: filter\ntable:\nAA 1\nBB 3\nCC 3\nDD 4\nEE 1\n" },
+    { "input": "2 2\n1 X1 X2\n2 X2 X1\n", "output": "1: flood 2\n2: forward 1\ntable:\nX1 1\nX2 2\n" }
+  ] },
+  { "runs": [
+    { "input": "3\nhub 5\nswitch 8\nhost\n", "output": "collision domains: 11\nbroadcast domains: 3\n" },
+    { "input": "2\nswitch 24\nswitch 24\n", "output": "collision domains: 50\nbroadcast domains: 2\n" }
+  ] }
+]
