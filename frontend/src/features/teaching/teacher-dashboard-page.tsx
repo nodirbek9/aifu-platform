@@ -8,6 +8,8 @@ import { ClassRow } from '@/features/timetable/class-row'
 import { classKey, currentOrNext, isHeld } from '@/features/timetable/model'
 import { useNextClassQuery, useTodayQuery } from '@/features/timetable/queries'
 import { toApiProblem } from '@/shared/api/errors'
+import { cn } from '@/shared/lib/cn'
+import { riseIn, useFirstVisit } from '@/shared/lib/use-first-visit'
 import { useLocale } from '@/shared/i18n/use-locale'
 import { formatDateTime, formatLongDay, formatTimeOfDay, useCampusNow } from '@/shared/lib/dates'
 import { button } from '@/shared/ui/button'
@@ -31,6 +33,7 @@ const WEEK_MS = 7 * 24 * 60 * 60 * 1000
  */
 export function TeacherDashboardPage() {
   const { t } = useTranslation()
+  const entering = useFirstVisit('dashboard-teacher')
   const locale = useLocale()
   const { state } = useAuth()
   const now = useCampusNow()
@@ -49,10 +52,10 @@ export function TeacherDashboardPage() {
       </header>
 
       <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-12">
-        <section aria-label={t('dashboard.todayTitle')} className="lg:col-span-7">
+        <section aria-label={t('dashboard.todayTitle')} className={cn('lg:col-span-7', riseIn(entering, 0))}>
           <TodayClasses />
         </section>
-        <section aria-label={t('teaching.coursesTitle')} className="lg:col-span-5">
+        <section aria-label={t('teaching.coursesTitle')} className={cn('lg:col-span-5', riseIn(entering, 1))}>
           <Card>
             <CardHeader
               title={t('teaching.coursesTitle')}
@@ -98,7 +101,7 @@ export function TeacherDashboardPage() {
             </CardContent>
           </Card>
         </section>
-        <section aria-label={t('teaching.atRiskTitle')} className="lg:col-span-7">
+        <section aria-label={t('teaching.atRiskTitle')} className={cn('lg:col-span-7', riseIn(entering, 2))}>
           <Card>
             <CardHeader title={t('teaching.atRiskTitle')} description={t('teaching.atRiskBody')} />
             <CardContent className="grid gap-4">

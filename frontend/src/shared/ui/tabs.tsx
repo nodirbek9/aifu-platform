@@ -16,7 +16,8 @@ export type TabsListProps = TabsPrimitive.TabsListProps
 export function TabsList({ className, ...props }: TabsListProps) {
   return (
     <TabsPrimitive.List
-      className={cn('border-border flex items-center gap-1 border-b', className)}
+      // more tabs than the screen is wide scroll sideways inside the list, never the page
+      className={cn('border-border flex items-center gap-1 overflow-x-auto border-b', className)}
       {...props}
     />
   )

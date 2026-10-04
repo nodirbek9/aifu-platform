@@ -12,7 +12,7 @@ The single record of progress (AGENTS.md §8). A new session resumes from this f
 | F4b | Teacher: authoring, review, gradebook, analytics | **reported** 2026-10-03 |
 | F5a | Admin: reference data, users, structure, audit | **reported** 2026-10-03 |
 | F5b | Admin: timetable builder | **reported** 2026-10-03 |
-| F6 | Polish, motion, accessibility, e2e, packaging | not started |
+| F6 | Polish, motion, accessibility, e2e, packaging | **reported** 2026-10-04 |
 
 Who built what: F0 step 1 and the first half of step 2 (scaffold, API layer, tokens, i18n,
 `shared/ui`, auth pages) by Kimi K3; from the entry point on (router, guards, shell, system
@@ -489,4 +489,43 @@ Not verified / not done:
   a new room); cancelling and moving are.
 - Export is Excel only; PDF is the browser's print to PDF of the print stylesheet.
 - The load panel shows over-scheduled lines (36 of 30 h) without a separate warning.
+
+## F6 — report
+
+1. Design pass: `DESIGN-REVIEW.md` — ranked findings, what was fixed, what is open. The biggest:
+   pages wider than a phone (now swept on every screen), contrast, unnamed controls.
+2. Motion: the eight moments of the brief §8 (the dashboard entrance is new); all off under
+   reduced motion.
+3. Accessibility: axe (WCAG 2.1 AA) on every route of every role, light and dark — **no
+   violations** (`e2e/a11y.spec.ts`). Keyboard paths are in the flows: attendance, presentation
+   mode, the gradebook grid, the curriculum tree's reordering, the timetable builder's drag.
+4. Performance: every page a lazy chunk; the code editor, charts' data, Excel, GSAP, the form
+   library, the sign-in page and the Russian and English catalogues out of the initial bundle —
+   it fell from 627 kB to 435 kB (134 kB gzipped: React, the router, the query client, the
+   shell, Uzbek). Lighthouse on the sign-in page (production build): desktop performance 97
+   (FCP 0.8 s, LCP 1.1 s, TBT 30 ms, CLS 0); mobile (slow 4G, 4× CPU) performance about 70,
+   accessibility 100, best practices 100, SEO 91. The dashboard and the lesson page load no
+   layout shift (CLS 0 measured in the browser); they were not put through Lighthouse, which
+   cannot sign in.
+5. Resilience (`e2e/resilience.spec.ts`, all pass): the API down — an error with retry, the
+   retry brings the page back; a slow network — skeletons, then the page; the session expiring
+   in the middle of a form — the token is renewed and the save goes through; two tabs renewing
+   the session at the same moment — both stay signed in (Web Locks); a reload while a solution
+   is in flight — it is neither lost nor doubled.
+6. Acceptance: the six steps of the spec §9 run as flows against the real backend
+   (`admin-builder` step 1, `teacher-classroom` step 2, `student-learning` step 3,
+   `student-coding` step 4, `student-quiz` step 5, `teacher-authoring` step 6) on the desktop
+   and, where the step is meant for it, the phone; in Uzbek. Russian and English: every screen
+   of every role is opened on desktop and phone with no untranslated text and nothing wider than
+   the screen (`e2e/locales.spec.ts`); the step-by-step flows themselves were not repeated in
+   those languages.
+7. Packaging: `Dockerfile` (Node build → `nginx-unprivileged`), `nginx.conf` (SPA fallback,
+   `/api` to the api service with the same-origin `Origin` dropped, year-long cache for hashed
+   assets, `no-cache` for `index.html`, CSP without inline scripts and other security headers,
+   55 MB uploads, `/healthz`); built and run against the compose API. The compose service is
+   proposed in `BACKEND-REQUESTS.md`, not added.
+8. `README.md`: run, test, build, ship; the structure; the decisions.
+
+The flows now run against the production build (`vite preview`), which removed the dev
+server's occasional mid-flow reloads.
 

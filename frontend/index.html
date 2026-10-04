@@ -6,21 +6,7 @@
     <meta name="description" content="Aniq va Ijtimoiy Fanlar Universiteti — o'quv platformasi" />
     <link rel="icon" type="image/svg+xml" href="/shield.svg" />
     <title>AIFU — o'quv platformasi</title>
-    <script>
-      // Set the theme class before first paint so there is no flash.
-      ;(function () {
-        try {
-          var stored = localStorage.getItem('aifu-theme')
-          var dark =
-            stored === 'dark' ||
-            ((stored === null || stored === 'system') &&
-              window.matchMedia('(prefers-color-scheme: dark)').matches)
-          if (dark) document.documentElement.classList.add('dark')
-        } catch (e) {
-          /* localStorage unavailable — default theme applies */
-        }
-      })()
-    </script>
+    <script src="/theme-init.js"></script>
   </head>
   <body>
     <div id="root"></div>

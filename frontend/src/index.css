@@ -58,11 +58,26 @@
     *::before,
     *::after {
       animation-duration: 0.01ms !important;
+      animation-delay: 0ms !important;
       animation-iteration-count: 1 !important;
       scroll-behavior: auto !important;
       transition-duration: 0.01ms !important;
     }
   }
+}
+
+/* The first visit of a dashboard: its blocks rise in turn, once (design brief §8, moment 2). */
+@utility rise-step-1 {
+  animation-delay: 60ms;
+}
+@utility rise-step-2 {
+  animation-delay: 120ms;
+}
+@utility rise-step-3 {
+  animation-delay: 180ms;
+}
+@utility rise-step-4 {
+  animation-delay: 240ms;
 }
 
 /* Room for the home indicator of a phone under the bottom tab bar. */

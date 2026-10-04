@@ -12,6 +12,8 @@ export default tseslint.config(
       'playwright-report',
       'test-results',
       'e2e/__screenshots__',
+      // plain scripts served as they are (the pre-paint theme script is ES5 on purpose)
+      'public',
       'src/shared/api/schema.d.ts',
     ],
   },

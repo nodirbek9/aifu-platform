@@ -1,8 +1,6 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import uz from './uz.json'
-import ru from './ru.json'
-import en from './en.json'
 
 export const SUPPORTED_LOCALES = ['uz', 'ru', 'en'] as const
 export type Locale = (typeof SUPPORTED_LOCALES)[number]
@@ -34,10 +32,25 @@ export function detectInitialLocale(): Locale {
   return DEFAULT_LOCALE
 }
 
+/**
+ * Uzbek is in the main bundle (every text falls back to it); Russian and English are chunks of
+ * their own, fetched the first time they are needed.
+ */
+const loaders: Record<Exclude<Locale, 'uz'>, () => Promise<{ default: Record<string, unknown> }>> = {
+  ru: () => import('./ru.json'),
+  en: () => import('./en.json'),
+}
+
+async function ensureLoaded(locale: Locale): Promise<void> {
+  if (locale === 'uz' || i18n.hasResourceBundle(locale, 'translation')) return
+  const catalogue = await loaders[locale]()
+  i18n.addResourceBundle(locale, 'translation', catalogue.default, true, true)
+}
+
 /** Applies the locale everywhere: i18next, storage, the <html lang> attribute. */
 export function applyLocale(locale: Locale): void {
   if (i18n.language !== locale) {
-    void i18n.changeLanguage(locale)
+    void ensureLoaded(locale).then(() => i18n.changeLanguage(locale))
   }
   try {
     localStorage.setItem(LOCALE_STORAGE_KEY, locale)
@@ -48,15 +61,21 @@ export function applyLocale(locale: Locale): void {
 }
 
 void i18n.use(initReactI18next).init({
-  resources: {
-    uz: { translation: uz },
-    ru: { translation: ru },
-    en: { translation: en },
-  },
-  lng: detectInitialLocale(),
+  resources: { uz: { translation: uz } },
+  lng: DEFAULT_LOCALE,
   fallbackLng: DEFAULT_LOCALE,
   interpolation: { escapeValue: false },
   returnNull: false,
 })
+
+const initialLocale = detectInitialLocale()
+
+/** Resolves when the first language to show is loaded: the app renders after it. */
+export const i18nReady: Promise<void> = ensureLoaded(initialLocale)
+  .then(() => i18n.changeLanguage(initialLocale))
+  .then(
+    () => undefined,
+    () => undefined,
+  )
 
 export { i18n }

@@ -16,12 +16,15 @@ export type CardHeaderProps = {
 
 export function CardHeader({ title, description, action, className }: CardHeaderProps) {
   return (
-    <div className={cn('flex items-start justify-between gap-4 px-5 pt-4 pb-3', className)}>
-      <div className="grid gap-0.5">
+    <div
+      className={cn('flex flex-wrap items-start justify-between gap-x-4 gap-y-2 px-5 pt-4 pb-3', className)}
+    >
+      <div className="grid min-w-0 gap-0.5">
         <h3 className="font-display text-title text-text font-semibold">{title}</h3>
         {description !== undefined && <p className="text-small text-text-muted">{description}</p>}
       </div>
-      {action !== undefined && <div className="shrink-0">{action}</div>}
+      {/* a long label (Russian runs long) wraps the action under the title rather than widening the card */}
+      {action !== undefined && <div className="max-w-full min-w-0">{action}</div>}
     </div>
   )
 }

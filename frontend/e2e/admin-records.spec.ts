@@ -17,6 +17,10 @@ test.describe('the administrator keeps the records (spec A-03, A-05)', () => {
   test.beforeAll(() => {
     clearAdminLeftovers()
   })
+  // the imported students join a real group: other flows count its members
+  test.afterAll(() => {
+    clearAdminLeftovers()
+  })
 
   test('a group, a room and a holiday are created', async ({ page }, testInfo) => {
     test.skip(isPhone(testInfo), 'the records are entered on the desktop')

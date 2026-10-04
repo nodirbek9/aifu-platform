@@ -115,6 +115,8 @@
   --animate-sheet-in: sheet-in 240ms var(--ease-emphasized);
   /* A refused drop: the card shakes once and stays where it was */
   --animate-shake: shake 360ms var(--ease-standard);
+  /* A dashboard block on the first visit of a session (both: hidden until its turn) */
+  --animate-rise-in: rise-in 320ms var(--ease-emphasized) both;
 
   @keyframes menu-in {
     from {
@@ -142,6 +144,12 @@
   @keyframes sheet-in {
     from {
       transform: translateX(100%);
+    }
+  }
+  @keyframes rise-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
     }
   }
   @keyframes shake {

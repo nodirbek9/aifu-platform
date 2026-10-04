@@ -62,3 +62,36 @@ Meanwhile: the empty day links to the timetable page.
 - **Needs a decision from the owner, not only code:** block late work, or accept it and mark it
   late for the teacher. Until then the UI shows the deadline as passed and does not block.
 
+
+## 2026-10-04 — Packaging (F6): the frontend as a compose service — PROPOSAL
+
+Needs: the frontend served next to the API, one origin, so the browser never makes a
+cross-origin call.
+Today: `docker-compose.yml` runs Postgres, the API and the execution worker; the frontend runs
+only from `npm run dev` / `vite preview`.
+Proposal: add this service (the image is `frontend/Dockerfile`, its server `frontend/nginx.conf`;
+both are tested: the image answers the SPA, its headers and `/api` through the compose network):
+
+```yaml
+  frontend:
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:3000:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    networks: [aifu-net]
+```
+
+With it, `CORS_ALLOWED_ORIGINS` is no longer needed for the browser (nginx drops the `Origin`
+header of the same-origin `/api` calls); keep it for `npm run dev`. In production, TLS and
+`Strict-Transport-Security` belong to the university's front proxy in front of port 3000.
+Meanwhile: run `npm run dev` (or `docker build -t aifu-frontend frontend` and
+`docker run --network aifu-platform_aifu-net -p 127.0.0.1:3000:8080 aifu-frontend`).

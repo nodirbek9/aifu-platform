@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next'
 import { useAuth } from '@/features/auth/auth-context'
 import { useEnrollmentsQuery } from '@/features/courses/queries'
 import { toApiProblem } from '@/shared/api/errors'
+import { cn } from '@/shared/lib/cn'
+import { riseIn, useFirstVisit } from '@/shared/lib/use-first-visit'
 import { useLocale } from '@/shared/i18n/use-locale'
 import { formatLongDay, useCampusNow } from '@/shared/lib/dates'
 import { ErrorState } from '@/shared/ui/error-state'
@@ -15,6 +17,7 @@ import { AnnouncementsBlock, DeadlinesBlock, RecentGradesBlock } from './work-bl
  */
 export function StudentDashboardPage() {
   const { t } = useTranslation()
+  const entering = useFirstVisit('dashboard-student')
   const locale = useLocale()
   const { state } = useAuth()
   const now = useCampusNow()
@@ -37,10 +40,13 @@ export function StudentDashboardPage() {
       </header>
 
       <div className="grid items-start gap-6 lg:grid-cols-12">
-        <section aria-label={t('dashboard.todayTitle')} className="lg:col-span-7">
+        <section aria-label={t('dashboard.todayTitle')} className={cn('lg:col-span-7', riseIn(entering, 0))}>
           <TodayBlock />
         </section>
-        <section aria-label={t('dashboard.continueTitle')} className="lg:col-span-5">
+        <section
+          aria-label={t('dashboard.continueTitle')}
+          className={cn('lg:col-span-5', riseIn(entering, 1))}
+        >
           {enrollments.isError ? (
             <ErrorState
               problem={toApiProblem(enrollments.error)}
@@ -52,13 +58,16 @@ export function StudentDashboardPage() {
             <ContinueBlock enrollments={enrollments.data} />
           )}
         </section>
-        <section aria-label={t('dashboard.deadlinesTitle')} className="lg:col-span-7">
+        <section
+          aria-label={t('dashboard.deadlinesTitle')}
+          className={cn('lg:col-span-7', riseIn(entering, 2))}
+        >
           <DeadlinesBlock />
         </section>
-        <section aria-label={t('dashboard.gradesTitle')} className="lg:col-span-5">
+        <section aria-label={t('dashboard.gradesTitle')} className={cn('lg:col-span-5', riseIn(entering, 3))}>
           {!enrollments.isError && <RecentGradesBlock enrollments={enrollments.data} />}
         </section>
-        <section aria-label={t('announcements.title')} className="lg:col-span-12">
+        <section aria-label={t('announcements.title')} className={cn('lg:col-span-12', riseIn(entering, 4))}>
           <AnnouncementsBlock />
         </section>
       </div>
