@@ -1,0 +1,134 @@
+{
+  "modules": {
+    "M-SORTING": { "title": "Sorting algorithms" },
+    "M-OOP": { "title": "Object-oriented programming" },
+    "M-TEMPLATES": { "title": "Templates and containers" },
+    "M-TOOLING": { "title": "The programming environment and components" },
+    "M-INDEPENDENT": { "title": "Independent study tasks" }
+  },
+  "codingTasks": {
+    "DAS-S2-A1": {
+      "title": "Sorting the rows of a matrix",
+      "description": "<p>Sort every row of an n × m matrix in ascending order.</p>",
+      "instructions": "Input: n m; then n lines of m integers. Output: the sorted matrix, one row per line, separated by single spaces.",
+      "constraintsText": "1 ≤ n, m ≤ 100.",
+      "hints": []
+    },
+    "DAS-S2-A2": {
+      "title": "Binary search",
+      "description": "<p>In an array sorted in ascending order without repeats, find the position of every query with binary search.</p>",
+      "instructions": "Input: n; n numbers; q; then q queries x. Output: for every query, on its own line, the index (from 1) or -1.",
+      "constraintsText": "1 ≤ n ≤ 10^5, 1 ≤ q ≤ 10^5. Linear search exceeds the time limit.",
+      "hints": []
+    },
+    "DAS-S2-A3": {
+      "title": "GCD and LCM functions",
+      "description": "<p>Write two functions: <code>gcd(a, b)</code> with Euclid's algorithm and <code>lcm(a, b) = a / gcd(a, b) · b</code>. The main program uses them.</p>",
+      "instructions": "Input: a b. Output: the GCD and the LCM on one line.",
+      "constraintsText": "1 ≤ a, b ≤ 10^9 (the LCM fits in a long).",
+      "hints": []
+    },
+    "DAS-S2-A4": {
+      "title": "Fast exponentiation by recursion",
+      "description": "<p>Compute aⁿ mod m with a recursive function: if n is even, aⁿ = (a^(n/2))², if odd, aⁿ = a · aⁿ⁻¹. This takes O(log n) steps.</p>",
+      "instructions": "Input: a n m. Output: aⁿ mod m.",
+      "constraintsText": "1 ≤ a ≤ 10^9, 0 ≤ n ≤ 10^18, 1 ≤ m ≤ 10^9.",
+      "hints": []
+    },
+    "DAS-S2-A5": {
+      "title": "Elements above the average (a dynamic array)",
+      "description": "<p>Create an array whose size is known only at run time (a Python list, <code>new long[n]</code> or an <code>ArrayList</code> in Java) and print the elements greater than the arithmetic mean in input order.</p>",
+      "instructions": "Input: n; n integers. Output: the elements strictly greater than the mean, separated by spaces; if there are none, -.",
+      "constraintsText": "1 ≤ n ≤ 10^5. To avoid fractions, check the condition aᵢ · n &gt; sum.",
+      "hints": []
+    },
+    "DAS-S2-A6": {
+      "title": "ASCII codes of characters",
+      "description": "<p>Print the ASCII code of every character of a line (a space is a character too: 32).</p>",
+      "instructions": "Input: one line (ASCII characters only). Output: the codes separated by spaces.",
+      "constraintsText": "The line is 1 to 200 characters long.",
+      "hints": []
+    },
+    "DAS-S2-A7": {
+      "title": "A palindrome string",
+      "description": "<p>Decide whether a line is a palindrome: only letters and digits count, and case is ignored.</p>",
+      "instructions": "Input: one line (ASCII). Output: Palindrom or Palindrom emas (\"not a palindrome\"; the answers are in Uzbek — that is how the tests check them).",
+      "constraintsText": "The line is 1 to 1000 characters long.",
+      "hints": []
+    },
+    "DAS-S2-A8": {
+      "title": "Text statistics (working with a stream)",
+      "description": "<p>Read standard input to its end, like a file, and count the lines, words and characters (line-end characters are not counted).</p>",
+      "instructions": "Input: one or more lines of text. Output: three numbers on one line — lines, words, characters.",
+      "constraintsText": "The text is up to 100 KB.",
+      "hints": []
+    },
+    "DAS-S2-MT1": {
+      "title": "The maximum of an array and its position (a function parameter)",
+      "description": "<p>Write a function that takes an array as a parameter and returns the largest element and its first position.</p>",
+      "instructions": "Input: n; n numbers. Output: the maximum and its position (from 1).",
+      "constraintsText": "1 ≤ n ≤ 10^5.",
+      "hints": []
+    },
+    "DAS-S2-MT2": {
+      "title": "Multiplying matrices",
+      "description": "<p>Write a function that takes matrices A (n × m) and B (m × p) and returns C = A · B.</p>",
+      "instructions": "Input: n m p; the n rows of A; the m rows of B. Output: the n rows of C.",
+      "constraintsText": "1 ≤ n, m, p ≤ 50, |aᵢⱼ|, |bᵢⱼ| ≤ 1000.",
+      "hints": []
+    },
+    "DAS-S2-MT3": {
+      "title": "Merging two sorted arrays",
+      "description": "<p>Merge two arrays sorted in ascending order into one sorted array. Do not use a ready sort function: the two-pointer method runs in O(n + m).</p>",
+      "instructions": "Input: n; the array a; m; the array b. Output: the merged array.",
+      "constraintsText": "1 ≤ n, m ≤ 10^5.",
+      "hints": []
+    },
+    "DAS-S2-MT4": {
+      "title": "The Towers of Hanoi (recursion)",
+      "description": "<p>Move n disks from peg 1 to peg 3: one disk at a time, and a larger disk never goes on a smaller one. Recursion: n−1 disks to the spare peg, the largest to the target, then the n−1 disks on top of it.</p>",
+      "instructions": "Input: n. Output: the number of moves on the first line, then every move on its own line: from where to where.",
+      "constraintsText": "1 ≤ n ≤ 10.",
+      "hints": []
+    },
+    "DAS-S2-MT5": {
+      "title": "The Ackermann function (nested recursion)",
+      "description": "<p>A(0, n) = n + 1; A(m, 0) = A(m − 1, 1); A(m, n) = A(m − 1, A(m, n − 1)). A call inside a call — the classic example of nested recursion.</p>",
+      "instructions": "Input: m n. Output: A(m, n).",
+      "constraintsText": "0 ≤ m ≤ 3, 0 ≤ n ≤ 5. In Python set sys.setrecursionlimit(10000).",
+      "hints": []
+    },
+    "DAS-S2-MT6": {
+      "title": "Capitalising words",
+      "description": "<p>Start every word of a line with a capital letter and make the remaining letters lowercase. Leave a single space between words.</p>",
+      "instructions": "Input: one line (ASCII letters and spaces). Output: the formatted line.",
+      "constraintsText": "The line is 1 to 1000 characters long, with at least one word.",
+      "hints": []
+    },
+    "DAS-S2-MT7": {
+      "title": "A bank account class",
+      "description": "<p>Create a <code>BankAccount</code> class: the balance field is private and is managed through the <code>deposit</code>, <code>withdraw</code> and <code>balance</code> methods. A withdrawal is refused if there are not enough funds.</p>",
+      "instructions": "Input: n; then n commands: deposit X, withdraw X or balance. Output: the current balance for every balance command; for a refused withdrawal, Mablag yetarli emas (\"insufficient funds\"; the message is in Uzbek — that is how the tests check it).",
+      "constraintsText": "1 ≤ n ≤ 1000, 1 ≤ X ≤ 10^9. The starting balance is 0.",
+      "hints": []
+    }
+  },
+  "quizzes": {},
+  "activities": {
+    "CODING_TASK:DAS-S2-A1": { "title": "Sorting the rows of a matrix" },
+    "CODING_TASK:DAS-S2-A2": { "title": "Binary search" },
+    "CODING_TASK:DAS-S2-A3": { "title": "GCD and LCM functions" },
+    "CODING_TASK:DAS-S2-A4": { "title": "Fast exponentiation by recursion" },
+    "CODING_TASK:DAS-S2-A5": { "title": "Elements above the average (a dynamic array)" },
+    "CODING_TASK:DAS-S2-A6": { "title": "ASCII codes of characters" },
+    "CODING_TASK:DAS-S2-A7": { "title": "A palindrome string" },
+    "CODING_TASK:DAS-S2-A8": { "title": "Text statistics (working with a stream)" },
+    "CODING_TASK:DAS-S2-MT1": { "title": "The maximum of an array and its position (a function parameter)" },
+    "CODING_TASK:DAS-S2-MT2": { "title": "Multiplying matrices" },
+    "CODING_TASK:DAS-S2-MT3": { "title": "Merging two sorted arrays" },
+    "CODING_TASK:DAS-S2-MT4": { "title": "The Towers of Hanoi (recursion)" },
+    "CODING_TASK:DAS-S2-MT5": { "title": "The Ackermann function (nested recursion)" },
+    "CODING_TASK:DAS-S2-MT6": { "title": "Capitalising words" },
+    "CODING_TASK:DAS-S2-MT7": { "title": "A bank account class" }
+  }
+}
