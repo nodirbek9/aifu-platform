@@ -1,0 +1,12 @@
+[
+  { "runs": [
+    { "input": "150\n-3\n42\n", "output": "Out of range\nOut of range\nAccepted: 42\n" },
+    { "input": "1\n", "output": "Accepted: 1\n" }
+  ] },
+  { "runs": [
+    { "input": "4\n", "output": "*\n**\n***\n****\n" }
+  ] },
+  { "runs": [
+    { "input": "20\n", "output": "3 4 5\n5 12 13\n6 8 10\n8 15 17\n9 12 15\n12 16 20\n" }
+  ] }
+]
