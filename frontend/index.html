@@ -7,9 +7,32 @@
     <link rel="icon" type="image/svg+xml" href="/shield.svg" />
     <title>AIFU — o'quv platformasi</title>
     <script src="/theme-init.js"></script>
+    <style>
+      /* What a slow phone shows while the app's JavaScript arrives: the sign-in page's own frame
+         (the brand band on a phone, the brand pane on a desktop). React replaces it. */
+      .boot { min-height: 100dvh; display: grid; align-content: start; background: #fbfaf7 }
+      html.dark .boot { background: #081120 }
+      .boot-band { display: flex; align-items: center; gap: 12px; padding: 16px; background: #002e60;
+        border-bottom: 4px solid #ff0158 }
+      .boot-name { font: 600 20px/1.2 system-ui, sans-serif; color: #fff }
+      .boot-pane { display: none }
+      @media (min-width: 1024px) {
+        .boot { grid-template-columns: 45fr 55fr; align-content: stretch }
+        .boot-band { display: none }
+        .boot-pane { display: block; background: #002e60; border-bottom: 8px solid #ff0158 }
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="boot" aria-hidden="true">
+        <div class="boot-pane"></div>
+        <div class="boot-band">
+          <img src="/shield.svg" width="40" height="48" alt="" />
+          <span class="boot-name">AIFU</span>
+        </div>
+      </div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

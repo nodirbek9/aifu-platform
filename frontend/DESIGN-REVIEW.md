@@ -57,6 +57,8 @@ refused drop shakes once), the reading progress line, press feedback. All of it 
   beside the HTML mode; text with elements it would drop (self-check answers) stays HTML.
 - Resolved 2026-10-04: the gradebook grid has one raised surface, the sticky column included.
 - Resolved 2026-10-04: over-scheduled load lines are red, with a warning above the list.
-- On a slow mobile network the first paint waits for the app's JavaScript (Lighthouse mobile
-  performance about 70 on the sign-in page, 97 on desktop): a server-rendered sign-in page would
-  be the next step.
+- Improved 2026-10-04: the sign-in frame is painted from index.html before the JavaScript, the
+  sign-in form has no schema library, the campus photograph and the entrance animation are
+  desktop-only — Lighthouse mobile 66–70 → 73–76 (FCP 4.1 → 3.4 s, TBT 300 → 100–170 ms;
+  accessibility and best practices 100). What remains is the React runtime itself on a slow
+  network: a server-rendered sign-in page would be the next step.

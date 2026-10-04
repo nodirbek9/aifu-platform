@@ -1,7 +1,5 @@
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { useTranslation } from 'react-i18next'
 import { useLocation } from 'react-router'
 import { Eye, EyeOff } from 'lucide-react'
@@ -25,17 +23,15 @@ export function LoginPage() {
   const notice =
     state.reason === 'expired' ? 'expired' : state.passwordChanged === true ? 'passwordChanged' : null
 
-  const schema = z.object({
-    identifier: z.string().min(1, t('auth.fieldRequired')),
-    password: z.string().min(1, t('auth.fieldRequired')),
-  })
-  type LoginForm = z.infer<typeof schema>
+  // the sign-in page is the first thing a phone loads: plain required checks, no schema library
+  type LoginForm = { identifier: string; password: string }
+  const required = { validate: (value: string) => value !== '' || t('auth.fieldRequired') }
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<LoginForm>({ resolver: zodResolver(schema) })
+  } = useForm<LoginForm>()
 
   const onSubmit = handleSubmit(async (values) => {
     setFormError(null)
@@ -80,7 +76,7 @@ export function LoginPage() {
             autoComplete="username"
             autoFocus
             error={errors.identifier?.message}
-            {...register('identifier')}
+            {...register('identifier', required)}
           />
           <Input
             label={t('auth.password')}
@@ -102,7 +98,7 @@ export function LoginPage() {
                 )}
               </IconButton>
             }
-            {...register('password')}
+            {...register('password', required)}
           />
 
           {formError !== null && (

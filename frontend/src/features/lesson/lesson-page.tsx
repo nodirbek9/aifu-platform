@@ -148,7 +148,7 @@ export function LessonPage() {
 
 function LessonSkeleton() {
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-1 gap-6">
       <Skeleton className="h-4 w-40" />
       <Skeleton className="h-10 w-4/5" />
       <SkeletonText lines={5} />
@@ -226,7 +226,7 @@ function LessonBody({ courseId, lesson, planLesson, previous, next }: LessonBody
   }, [status, lesson.id, mutate])
 
   return (
-    <article className="grid gap-10">
+    <article className="grid grid-cols-1 gap-10">
       <header className="grid gap-4">
         <div className="text-small text-text-muted flex flex-wrap items-center gap-x-4 gap-y-2">
           <SessionTypeBadge type={lesson.sessionType} label={t(`sessionType.${lesson.sessionType}`)} />

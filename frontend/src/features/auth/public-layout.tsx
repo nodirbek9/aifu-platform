@@ -31,6 +31,8 @@ export function PublicLayout({ children }: PublicLayoutProps) {
   useGSAP(
     () => {
       if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+      // on a phone the brand pane is hidden and the form should be readable at once
+      if (!window.matchMedia('(min-width: 1024px)').matches) return
       gsap
         .timeline({ defaults: { ease: 'power3.out' } })
         .from('[data-animate="photo"]', { yPercent: -6, opacity: 0, duration: 0.7 })
@@ -46,7 +48,15 @@ export function PublicLayout({ children }: PublicLayoutProps) {
     <div ref={rootRef} className="grid min-h-dvh lg:grid-cols-[45fr_55fr]">
       <aside className="bg-brand-navy relative hidden flex-col overflow-hidden lg:flex">
         <div data-animate="photo" className="relative h-[54%] shrink-0 overflow-hidden rounded-b-full">
-          <img src={campusPhoto} alt="" className="size-full object-cover grayscale" />
+          {/* the pane is hidden on a phone: the photograph is fetched only where it is shown */}
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={campusPhoto} />
+            <img
+              src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+              alt=""
+              className="size-full object-cover grayscale"
+            />
+          </picture>
           {/* duotone: the darks of the photograph become navy, the lights stay light */}
           <div className="bg-brand-navy absolute inset-0 mix-blend-screen" />
           <div className="from-brand-navy/10 to-brand-navy/55 absolute inset-0 bg-linear-to-b" />

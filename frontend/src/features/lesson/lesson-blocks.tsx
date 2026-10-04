@@ -22,7 +22,7 @@ const CodeRunner = lazy(async () => ({ default: (await import('@/features/coding
 /** Renders the blocks of a lesson in order. References to practice are shown by the page, at the end. */
 export function LessonBlocks({ blocks }: { blocks: readonly LessonBlock[] }) {
   return (
-    <div className="grid gap-7">
+    <div className="grid grid-cols-1 gap-7">
       {blocks.map((block) => (
         <Block key={block.id} block={block} />
       ))}
@@ -78,7 +78,7 @@ function Block({ block }: { block: LessonBlock }) {
       )
     case 'embed':
       return (
-        <figure className="grid gap-2">
+        <figure className="grid grid-cols-1 gap-2">
           <div className="border-border aspect-video overflow-hidden rounded-lg border">
             <iframe
               src={block.src}
@@ -119,7 +119,7 @@ function CodeExamples({ examples }: { examples: readonly CodeExample[] }) {
   )
 
   return (
-    <figure className="grid gap-3">
+    <figure className="grid grid-cols-1 gap-3">
       {examples.length > 1 && (
         <div role="tablist" aria-label={t('lesson.codeLanguage')} className="flex gap-1">
           {examples.map((example) => {
@@ -259,7 +259,7 @@ function MediaBlock({ media, fileId, caption }: MediaBlockProps) {
   }
   if (media === 'AUDIO') {
     return (
-      <figure className="grid gap-2">
+      <figure className="grid grid-cols-1 gap-2">
         <audio controls src={url} className="w-full" />
         {caption !== undefined && <Caption>{caption}</Caption>}
       </figure>
@@ -267,7 +267,7 @@ function MediaBlock({ media, fileId, caption }: MediaBlockProps) {
   }
   if (media === 'VIDEO') {
     return (
-      <figure className="grid gap-2">
+      <figure className="grid grid-cols-1 gap-2">
         <video controls src={url} className="border-border w-full rounded-lg border" />
         {caption !== undefined && <Caption>{caption}</Caption>}
       </figure>
@@ -275,7 +275,7 @@ function MediaBlock({ media, fileId, caption }: MediaBlockProps) {
   }
   // IMAGE and DIAGRAM: shown in the column, enlarged on click.
   return (
-    <figure className="grid gap-2">
+    <figure className="grid grid-cols-1 gap-2">
       <button
         type="button"
         onClick={() => {
