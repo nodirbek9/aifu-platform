@@ -1,0 +1,101 @@
+{
+  "modules": {
+    "M-ALGORITHMS": {
+      "title": "Algorithms and their complexity"
+    },
+    "M-SEARCH-SORT": {
+      "title": "Search and sorting algorithms"
+    },
+    "M-STRUCTURES": {
+      "title": "Dynamic structures, graphs and trees"
+    },
+    "M-INDEPENDENT": {
+      "title": "Independent study tasks"
+    }
+  },
+  "codingTasks": {
+    "MTA-A1": {
+      "title": "Euclid's algorithm and its number of steps",
+      "description": "<p>Find the GCD with Euclid's algorithm and count how many \"division with remainder\" steps the algorithm made. This lets you observe the algorithm's <em>effectiveness</em> and <em>finiteness</em> properties.</p>",
+      "instructions": "Input: a b. Output: the GCD and the number of steps on one line (every pass with b ≠ 0 is one step).",
+      "constraintsText": "1 ≤ a, b ≤ 10^9.",
+      "hints": []
+    },
+    "MTA-A2": {
+      "title": "Fibonacci numbers: recursion with memory",
+      "description": "<p>Plain recursion F(n) = F(n−1) + F(n−2) takes exponential time because the same values are computed again and again. Store the computed values (memoization) to bring the complexity down to O(n).</p>",
+      "instructions": "Input: n. Output: F(n), where F(0) = 0, F(1) = 1.",
+      "constraintsText": "0 ≤ n ≤ 90 (the result fits in a long).",
+      "hints": []
+    },
+    "MTA-A3": {
+      "title": "How many times a value occurs in a sorted array",
+      "description": "<p>In a sorted array find the first and last positions of x with binary search (the lower and upper bounds). Their difference is the number of occurrences of x. Every query is O(log n).</p>",
+      "instructions": "Input: n; n numbers (in non-decreasing order); q; q queries. Output: for every query, on its own line, the number of occurrences.",
+      "constraintsText": "1 ≤ n, q ≤ 10^5.",
+      "hints": []
+    },
+    "MTA-A4": {
+      "title": "Heap sort (heapsort)",
+      "description": "<p>Turn the array into a heap (a max-heap), then move the largest element to the end and restore the heap. The complexity is O(n log n), extra memory O(1). Write it without a ready sort function.</p>",
+      "instructions": "Input: n; n integers. Output: the numbers sorted in ascending order.",
+      "constraintsText": "1 ≤ n ≤ 10^5.",
+      "hints": []
+    },
+    "MTA-A5": {
+      "title": "The number of swaps in bubble sort",
+      "description": "<p>Bubble sort swaps neighbouring elements that are in the wrong order. The number of swaps equals the number of <strong>inversions</strong> in the array (pairs i &lt; j with aᵢ &gt; aⱼ). Compute it.</p>",
+      "instructions": "Input: n; n numbers. Output: the number of swaps.",
+      "constraintsText": "1 ≤ n ≤ 2000.",
+      "hints": []
+    },
+    "MTA-A6": {
+      "title": "Balanced brackets (a stack)",
+      "description": "<p>A line consists only of the brackets <code>( ) [ ] { }</code>. Check with a stack that the brackets open and close correctly: an opening bracket is pushed onto the stack, and a closing bracket must match the one on top of the stack.</p>",
+      "instructions": "Input: one line. Output: Muvozanatli (balanced) or Muvozanatsiz (not balanced) — the answers are in Uzbek, that is how the tests check them.",
+      "constraintsText": "The line is 1 to 10^5 characters long.",
+      "hints": []
+    },
+    "MTA-A7": {
+      "title": "Dijkstra's algorithm: shortest distances",
+      "description": "<p>In an undirected graph with non-negative weights find the shortest distance from vertex s to all vertices with Dijkstra's algorithm. With a priority queue (a heap) the complexity is O((n + m) log n).</p>",
+      "instructions": "Input: n m; m lines u v w (an edge and its weight); s. Output: on one line the distances to vertices 1..n; -1 if unreachable.",
+      "constraintsText": "1 ≤ n ≤ 10^4, 0 ≤ m ≤ 5·10^4, 0 ≤ w ≤ 10^6.",
+      "hints": []
+    },
+    "MTA-A8": {
+      "title": "The Fenwick tree: sum queries",
+      "description": "<p>Do two kinds of operations on an array quickly: adding a value to an element and finding the sum of the range [l, r]. A Fenwick (binary indexed) tree does both in O(log n); a plain loop takes O(n) per query.</p>",
+      "instructions": "Input: n; n numbers; q; q lines add i x or sum l r (indices from 1). Output: the result of every sum query on its own line.",
+      "constraintsText": "1 ≤ n, q ≤ 10^5, |values| ≤ 10^9.",
+      "hints": []
+    }
+  },
+  "quizzes": {},
+  "activities": {
+    "CODING_TASK:MTA-A8": {
+      "title": "The Fenwick tree: sum queries"
+    },
+    "CODING_TASK:MTA-A7": {
+      "title": "Dijkstra's algorithm: shortest distances"
+    },
+    "CODING_TASK:MTA-A6": {
+      "title": "Balanced brackets (a stack)"
+    },
+    "CODING_TASK:MTA-A5": {
+      "title": "The number of swaps in bubble sort"
+    },
+    "CODING_TASK:MTA-A4": {
+      "title": "Heap sort (heapsort)"
+    },
+    "CODING_TASK:MTA-A3": {
+      "title": "How many times a value occurs in a sorted array"
+    },
+    "CODING_TASK:MTA-A2": {
+      "title": "Fibonacci numbers: recursion with memory"
+    },
+    "CODING_TASK:MTA-A1": {
+      "title": "Euclid's algorithm and its number of steps"
+    }
+  }
+}
