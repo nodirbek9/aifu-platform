@@ -1,0 +1,5 @@
+[
+  { "runs": [{ "input": "4\n  Aziz.Karimov@AIFU.uz\nmalika@@mail.uz\n@aifu.uz\nbekzod@localhost\n", "output": "aziz.karimov aifu.uz\nError\nError\nError\n" }, { "input": "1\nali@.uz\n", "output": "Error\n" }] },
+  { "runs": [{ "input": "aaabccddddddddddddx\n", "output": "a3b1c2d12x1\nyes\n" }, { "input": "abc\n", "output": "a1b1c1\nyes\n" }] },
+  { "runs": [{ "input": "16\nDasturlash har kuni ozgina mashq qilishni talab qiladi\n", "output": "|Dasturlash har  |\n|kuni ozgina     |\n|mashq qilishni  |\n|talab qiladi    |\n" }] }
+]
