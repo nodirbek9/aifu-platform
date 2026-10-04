@@ -1,0 +1,11 @@
+[
+  { "runs": [
+    { "input": "ff ff ff ff ff ff 3c 52 82 1a 9f 07 08 06\n00 01 08 00 06 04 00 01 3c 52 82 1a 9f 07\nc0 a8 01 0a 00 00 00 00 00 00 c0 a8 01 01\n", "output": "destination: FF:FF:FF:FF:FF:FF\nsource: 3C:52:82:1A:9F:07\nEtherType: 0x0806 (ARP)\npayload: 28 bytes\n" },
+    { "input": "00 1a 2b 3c 4d 5e 3c 52 82 1a 9f 07 81 00 00 0a 08 00\n45 00 00 14 00 01 00 00 40 06 00 00 c0 a8 01 0a 08 08 08 08\n", "output": "destination: 00:1A:2B:3C:4D:5E\nsource: 3C:52:82:1A:9F:07\nVLAN: 10\nEtherType: 0x0800 (IPv4)\npayload: 20 bytes\n" },
+    { "input": "33 33 00 00 00 01 02 42 ac 11 00 02 88 cc 01 02\n", "output": "destination: 33:33:00:00:00:01\nsource: 02:42:AC:11:00:02\nEtherType: 0x88CC (unknown)\npayload: 2 bytes\n" }
+  ] },
+  { "runs": [
+    { "input": "6\n192.168.1.10 142.250.74.46 TCP 1500\n142.250.74.46 192.168.1.10 TCP 1500\n192.168.1.10 8.8.8.8 DNS 80\n8.8.8.8 192.168.1.10 DNS 120\n192.168.1.10 192.168.1.255 UDP 300\n192.168.1.20 192.168.1.10 TCP 500\n", "output": "TCP 3 3500 87.5%\nUDP 1 300 7.5%\nDNS 2 200 5.0%\ntop sender: 192.168.1.10 1880\n" },
+    { "input": "2\n10.0.0.2 10.0.0.1 UDP 100\n10.0.0.1 10.0.0.2 ARP 100\n", "output": "ARP 1 100 50.0%\nUDP 1 100 50.0%\ntop sender: 10.0.0.1 100\n" }
+  ] }
+]
