@@ -1,0 +1,8 @@
+[
+  { "runs": [
+    { "input": "5\n4 5 3 5 4\n", "output": "Count: 5, sum: 21, average: 4.20\n" }
+  ] },
+  { "runs": [
+    { "input": "4\nAziz,78\nDilnoza,92\nBekzod,45\nMalika,56\n", "output": "Aziz\nDilnoza\nMalika\nTotal: 3\n" }
+  ] }
+]
