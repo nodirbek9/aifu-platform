@@ -1,0 +1,5 @@
+[
+  { "runs": [{ "input": "8\n5 1 4 2 8 3 7 6\n", "output": "1 2 3 4 5 6 7 8\n6\n" }, { "input": "8\n8 7 6 5 4 3 2 1\n", "output": "1 2 3 4 5 6 7 8\n8\n" }, { "input": "3\n1 2 3\n", "output": "1 2 3\n2\n" }] },
+  { "runs": [{ "input": "3\n5 1 4 2 8 3 7 6\n", "output": "19\n1 2 3 4 5 6 7 8\n" }, { "input": "2\n4 3 2 1\n", "output": "5\n1 2 3 4\n" }, { "input": "4\n16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1\n", "output": "63\n1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16\n" }] },
+  { "runs": [{ "input": "3 11\nqosh 5\nqosh 7\nqosh 9\nqosh 1\nol\nqosh 1\nol\nol\nol\nol\nhajm\n", "output": "full\n5\n7\n9\n1\nempty\n0\n" }] }
+]
