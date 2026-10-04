@@ -1,0 +1,5 @@
+[
+  { "runs": [{ "input": "foiz 15\n3\n100000 250000 40000\n", "output": "85000\n212500\n34000\n" }, { "input": "qatiy 50000\n2\n40000 90000\n", "output": "0\n40000\n" }, { "input": "yoq\n1\n777\n", "output": "777\n" }] },
+  { "runs": [{ "input": "6\nbos Aziz\nbos Malika\nholat\nbos Aziz\nbos Bekzod\nholat\n", "output": "Aziz: Save\nMalika: Save\n2\nAziz: Save\nBekzod: Save\nBe careful!\n4\n" }] },
+  { "runs": [{ "input": "4\nbelgi Royxat\nmaydon Ism 10\nmaydon Parol 8\ntugma Yuborish\n", "output": "+-------------------+\n| Royxat            |\n| Ism: [__________] |\n| Parol: [________] |\n| < Yuborish >      |\n+-------------------+\n" }] }
+]
