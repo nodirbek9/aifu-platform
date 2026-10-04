@@ -1584,7 +1584,9 @@
       "archiveBody": "An archived timetable is shown to nobody and cannot change.",
       "deleteTitle": "Delete “{{name}}”?",
       "deleteBody": "The draft and its {{count}} classes are deleted."
-    }
+    },
+    "overScheduledLines": "Lines scheduled over the plan: {{lines}} — remove the extra classes or check the load",
+    "overScheduledBy": "{{hours}} h over the plan"
   },
   "errors": {
     "NETWORK_ERROR": "Network error — check your internet connection",

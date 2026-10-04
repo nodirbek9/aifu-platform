@@ -1584,7 +1584,9 @@
       "archiveBody": "Arxivdagi jadval hech kimga koʻrinmaydi va oʻzgartirilmaydi.",
       "deleteTitle": "«{{name}}» oʻchirilsinmi?",
       "deleteBody": "Qoralama va undagi {{count}} dars oʻchiriladi."
-    }
+    },
+    "overScheduledLines": "Rejadan ortiq qoʻyilgan qatorlar: {{lines}} — ortiqcha darslarni olib tashlang yoki yuklamani tekshiring",
+    "overScheduledBy": "Rejadan {{hours}} soat ortiq"
   },
   "errors": {
     "NETWORK_ERROR": "Tarmoq xatosi — internet aloqasini tekshiring",

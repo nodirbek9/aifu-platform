@@ -129,7 +129,7 @@ export function TeacherGradebook({ courseId, courseTitle }: { courseId: string; 
       {rows.length === 0 ? (
         <EmptyState title={t('gradebook.empty')} body={t('gradebook.emptyBody')} />
       ) : (
-        <div className="border-border max-h-[70vh] overflow-auto rounded-lg border">
+        <div className="border-border bg-surface-raised max-h-[70vh] overflow-auto rounded-lg border">
           <table
             ref={grid}
             className="text-small w-full border-separate border-spacing-0"
