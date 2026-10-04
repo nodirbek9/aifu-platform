@@ -1,0 +1,11 @@
+[
+  { "runs": [{ "input": "4\nyulduz 30\nhalqa 30\ntoliq 30\ntoliq 300\n", "output": "yulduz 30\nhalqa 30\ntoliq 435\ntoliq 44850\n" }, { "input": "2\nshina 12\ndaraxt 12\n", "output": "shina 1\ndaraxt 11\n" }] },
+  { "runs": [
+    { "input": "5 4\n1 2\n1 3\n1 4\n1 5\n", "output": "yulduz\n" },
+    { "input": "4 4\n1 2\n2 3\n3 4\n4 1\n", "output": "halqa\n" },
+    { "input": "4 3\n1 2\n2 3\n3 4\n", "output": "chiziq\n" },
+    { "input": "4 6\n1 2\n1 3\n1 4\n2 3\n2 4\n3 4\n", "output": "toliq\n" },
+    { "input": "5 5\n1 2\n2 3\n3 1\n3 4\n4 5\n", "output": "aralash\n" },
+    { "input": "6 6\n1 2\n2 3\n3 1\n4 5\n5 6\n6 4\n", "output": "aralash\n" }
+  ] }
+]
