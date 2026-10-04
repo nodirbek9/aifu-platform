@@ -1,0 +1,4 @@
+[
+  { "runs": [{ "input": "7\n4\n", "output": "Perimeter: 22\nArea: 28\n" }] },
+  { "runs": [{ "input": "5\n9\n", "output": "a = 9 b = 5\n" }] }
+]

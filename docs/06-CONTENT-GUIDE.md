@@ -13,6 +13,7 @@ content/
     course.json               which course: {"subjectCode": "DAS1110", "termName": "1-semestr"}
     M1/                       one folder per lesson, named by the lesson's code
       uz.md  ru.md  en.md     the same lesson in each language
+      examples.json           the input and expected output of each code example (§6)
 ```
 
 The three files of a lesson have **the same skeleton**: the same blocks in the same order. The
@@ -45,8 +46,8 @@ The order is fixed; every lesson follows it, so a student always knows where the
 Practice (the coding task, the quiz, an assignment) is not written here: those blocks already
 belong to the lesson and the importer keeps them, after the content.
 
-Length: a lecture 1 500–2 500 words, a practical lesson 1 000–1 800 (it leans on worked
-examples), an independent-study topic 800–1 200 plus the task statement. Level: first-year
+Length (prose, without the code): a lecture 1 000–2 000 words, a practical lesson 800–1 500 (it
+leans on worked examples), an independent-study topic 600–1 200 including the task statement. Level: first-year
 students, no prior programming assumed in the first module.
 
 ## 3. Language
@@ -121,6 +122,8 @@ safe to re-import after an edit.
 ## 6. Review before import
 
 - `node import.mjs <course> --dry-run` passes (the skeletons agree, the Markdown is valid).
-- Every code example runs and prints what the text says it prints (the examples are short
-  enough to check in the platform's own runner: the "Try it" button of the lesson).
+- Every code example runs and prints what the text says it prints. `examples.json` lists, for
+  each example in order, the inputs and the exact expected output (or `{"skip": "why"}`);
+  `node run-examples.mjs ../../content/DAS1110-S1 [--lesson M5]` runs the Python, Java and C++
+  versions in the sandbox's own images (Docker) and compares.
 - A teacher of the subject reads the Uzbek file; the other languages follow it.
