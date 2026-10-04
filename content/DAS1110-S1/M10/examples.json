@@ -1,0 +1,13 @@
+[
+  { "runs": [
+    { "input": "3\nSalom, Dunyo!\n", "output": "Vdorp, Gxqbr!\n" },
+    { "input": "23\nVdorp, Gxqbr!\n", "output": "Salom, Dunyo!\n" }
+  ] },
+  { "runs": [
+    { "input": "Room 214, AIFU-2026\n", "output": "8 7 2 2\n" }
+  ] },
+  { "runs": [
+    { "input": "Oʻzbekiston\n", "output": "Characters: 11 bytes: 12\n" },
+    { "input": "Salom\n", "output": "Characters: 5 bytes: 5\n" }
+  ] }
+]
