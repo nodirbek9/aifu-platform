@@ -1,0 +1,10 @@
+[
+  { "runs": [
+    { "input": "4\n1460\n100\n1000000\n1\n", "output": "1460 1 1518 96.18\n100 1 158 63.29\n1000000 685 1039730 96.18\n1 1 59 1.69\n" },
+    { "input": "2\n2920\n2921\n", "output": "2920 2 3036 96.18\n2921 3 3095 94.38\n" }
+  ] },
+  { "runs": [
+    { "input": "Salom\n", "output": "-> 7 Application: H7|Salom\n-> 6 Presentation: H6|H7|Salom\n-> 5 Session: H5|H6|H7|Salom\n-> 4 Transport: H4|H5|H6|H7|Salom\n-> 3 Network: H3|H4|H5|H6|H7|Salom\n-> 2 Data Link: H2|H3|H4|H5|H6|H7|Salom|T2\n-> 1 Physical: 208 bit\n<- 2 Data Link: H3|H4|H5|H6|H7|Salom\n<- 3 Network: H4|H5|H6|H7|Salom\n<- 4 Transport: H5|H6|H7|Salom\n<- 5 Session: H6|H7|Salom\n<- 6 Presentation: H7|Salom\n<- 7 Application: Salom\n" },
+    { "input": "GET /index.html\n", "output": "-> 7 Application: H7|GET /index.html\n-> 6 Presentation: H6|H7|GET /index.html\n-> 5 Session: H5|H6|H7|GET /index.html\n-> 4 Transport: H4|H5|H6|H7|GET /index.html\n-> 3 Network: H3|H4|H5|H6|H7|GET /index.html\n-> 2 Data Link: H2|H3|H4|H5|H6|H7|GET /index.html|T2\n-> 1 Physical: 288 bit\n<- 2 Data Link: H3|H4|H5|H6|H7|GET /index.html\n<- 3 Network: H4|H5|H6|H7|GET /index.html\n<- 4 Transport: H5|H6|H7|GET /index.html\n<- 5 Session: H6|H7|GET /index.html\n<- 6 Presentation: H7|GET /index.html\n<- 7 Application: GET /index.html\n" }
+  ] }
+]
