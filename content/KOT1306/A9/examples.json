@@ -1,0 +1,10 @@
+[
+  { "runs": [
+    { "input": "http://aifu.uz/news?id=5\nhttps://example.com:8443/api/v1/users#top\nftp://files.aifu.uz\naifu.uz/index.html\n", "output": "http aifu.uz 80 /news id=5\nhttps example.com 8443 /api/v1/users -\nftp files.aifu.uz 21 / -\naifu.uz/index.html invalid\n" },
+    { "input": "ws://chat.local:9000/room?u=1&v=2\nhttp:///x\n", "output": "ws chat.local 9000 /room u=1&v=2\nhttp:///x invalid\n" }
+  ] },
+  { "runs": [
+    { "input": "5:Salo\nm3:Hey16:Kompyuter\n_tarmoq2:o\n", "output": "message: Salom\nmessage: Hey\nmessage: Kompyuter_tarmoq\nleft over: 3 bytes\n" },
+    { "input": "1\n0:2:ab\n", "output": "message: \nmessage: ab\nleft over: 0 bytes\n" }
+  ] }
+]
