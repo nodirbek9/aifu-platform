@@ -1,0 +1,10 @@
+[
+  { "runs": [
+    { "input": "oqituvchi@aifu.uz\n2\ntalaba@aifu.uz\nguruh\nDars jadvali\nErtangi dars 9:00 da.\n.NET 8 SDK ni yuklab oling.\n", "output": "S: 220 mail.aifu.uz ESMTP\nC: HELO client.aifu.uz\nS: 250 mail.aifu.uz\nC: MAIL FROM:<oqituvchi@aifu.uz>\nS: 250 OK\nC: RCPT TO:<talaba@aifu.uz>\nS: 250 OK\nC: RCPT TO:<guruh>\nS: 550 No such user\nC: DATA\nS: 354 End data with <CR><LF>.<CR><LF>\nC: Subject: Dars jadvali\nC:\nC: Ertangi dars 9:00 da.\nC: ..NET 8 SDK ni yuklab oling.\nC: .\nS: 250 OK: queued\nC: QUIT\nS: 221 Bye\n" },
+    { "input": "a@b.uz\n1\nhech kim\nMavzu\nMatn\n", "output": "S: 220 mail.aifu.uz ESMTP\nC: HELO client.aifu.uz\nS: 250 mail.aifu.uz\nC: MAIL FROM:<a@b.uz>\nS: 250 OK\nC: RCPT TO:<hech kim>\nS: 550 No such user\nC: QUIT\nS: 221 Bye\n" }
+  ] },
+  { "runs": [
+    { "input": "Salom\nMa\ntalaba:Parol123\n", "output": "U2Fsb20=\nTWE=\ndGFsYWJhOlBhcm9sMTIz\n" },
+    { "input": "M\nhello world\n", "output": "TQ==\naGVsbG8gd29ybGQ=\n" }
+  ] }
+]
