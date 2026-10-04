@@ -1,0 +1,10 @@
+[
+  { "runs": [
+    { "input": "0\n", "output": "0\n" },
+    { "input": "100\n", "output": "45000\n" },
+    { "input": "101\n", "output": "45900\n" },
+    { "input": "150\n", "output": "90000\n" },
+    { "input": "300\n", "output": "225000\n" },
+    { "input": "350\n", "output": "292500\n" }
+  ] }
+]
