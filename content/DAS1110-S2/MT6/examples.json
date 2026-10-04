@@ -1,0 +1,3 @@
+[
+  { "runs": [{ "input": "bugun   havo  juda yaxshi\n", "output": "yaxshi juda havo bugun\nyaxshi\n" }, { "input": "  salom dunyo \n", "output": "dunyo salom\nsalom\n" }, { "input": "yolgiz\n", "output": "yolgiz\nyolgiz\n" }] }
+]
