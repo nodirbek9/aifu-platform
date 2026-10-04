@@ -1,0 +1,5 @@
+[
+  { "runs": [{ "input": "4\n25\n-300\n-40\n37\n", "output": "77.0\nError\n-40.0\n98.6\n" }] },
+  { "runs": [{ "input": "3\nxodim Aziz 5000000\nmenejer Malika 8000000 25\nxodim Bekzod 4500000\n", "output": "Aziz 5000000\nMalika 10000000\nBekzod 4500000\n19500000\n" }] },
+  { "runs": [{ "input": "3\ndoira 2\ntortburchak 3 4\nuchburchak 6 5\n", "output": "doira 12.57\ntortburchak 12.00\nuchburchak 15.00\nuchburchak\n" }, { "input": "2\ntortburchak 2 2\ndoira 1\n", "output": "tortburchak 4.00\ndoira 3.14\ntortburchak\n" }] }
+]
