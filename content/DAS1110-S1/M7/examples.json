@@ -1,0 +1,10 @@
+[
+  { "runs": [
+    { "input": "30\n", "output": "2 3 5 7 11 13 17 19 23 29\n" },
+    { "input": "2\n", "output": "2\n" }
+  ] },
+  { "runs": [
+    { "input": "12 18\n", "output": "GCD: 6\nLCM: 36\n" },
+    { "input": "1000000 999999\n", "output": "GCD: 1\nLCM: 999999000000\n" }
+  ] }
+]
