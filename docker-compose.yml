@@ -116,6 +116,24 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks: [aifu-net]
 
+  # The web app: nginx serves the built frontend and proxies /api to the api service on this
+  # network, so the browser talks to one origin (frontend/nginx.conf). Open http://localhost:3000
+  frontend:
+    build:
+      context: ./frontend
+    restart: unless-stopped
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:3000:8080"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/healthz"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+    networks: [aifu-net]
+
 volumes:
   postgres-data:
   api-storage:

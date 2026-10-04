@@ -63,7 +63,7 @@ Meanwhile: the empty day links to the timetable page.
   late for the teacher. Until then the UI shows the deadline as passed and does not block.
 
 
-## 2026-10-04 — Packaging (F6): the frontend as a compose service — PROPOSAL
+## 2026-10-04 — Packaging (F6): the frontend as a compose service — APPLIED 2026-10-04 (owner approved)
 
 Needs: the frontend served next to the API, one origin, so the browser never makes a
 cross-origin call.
