@@ -1,0 +1,9 @@
+[
+  { "runs": [
+    { "input": "3c:52:82:1a:9f:07\n01-00-5E-00-00-FB\nffff.ffff.ffff\n02:42:ac:11:00:02\n12:34:56\n", "output": "3C:52:82:1A:9F:07 OUI 3C:52:82 unicast global\n01:00:5E:00:00:FB OUI 01:00:5E multicast global\nFF:FF:FF:FF:FF:FF broadcast\n02:42:AC:11:00:02 OUI 02:42:AC unicast local\n12:34:56 invalid\n" },
+    { "input": "33-33-00-00-00-01\nzz:00:00:00:00:00\n", "output": "33:33:00:00:00:01 OUI 33:33:00 multicast local\nzz:00:00:00:00:00 invalid\n" }
+  ] },
+  { "runs": [
+    { "input": "100 46\n100 1500\n1000 10\n10000 9000\n", "output": "64 84 148809 54.76\n1518 1538 8127 97.53\n64 84 1488095 119.05\n9018 9038 138304 9957.96\n" }
+  ] }
+]
