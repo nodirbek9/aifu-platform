@@ -1,0 +1,11 @@
+[
+  { "runs": [
+    { "input": "45 00 00 3c 1c 46 40 00 40 06 b1 e6 ac 10 0a 63 ac 10 0a 0c\n", "output": "version: 4 header: 20 bytes\ntotal length: 60\nTTL: 64\nprotocol: 6 (TCP)\nsource: 172.16.10.99\ndestination: 172.16.10.12\nchecksum: 0xB1E6 valid\n" },
+    { "input": "45 00 00 3c 1c 46 40 00 3f 06 b1 e6 ac 10 0a 63 ac 10 0a 0c\n", "output": "version: 4 header: 20 bytes\ntotal length: 60\nTTL: 63\nprotocol: 6 (TCP)\nsource: 172.16.10.99\ndestination: 172.16.10.12\nchecksum: 0xB1E6 wrong, correct 0xB2E6\n" }
+  ] },
+  { "runs": [
+    { "input": "4000 1500\n", "output": "1 len=1500 offset=0 MF=1\n2 len=1500 offset=185 MF=1\n3 len=1060 offset=370 MF=0\n" },
+    { "input": "1000 576\n", "output": "1 len=572 offset=0 MF=1\n2 len=468 offset=69 MF=0\n" },
+    { "input": "100 1500\n", "output": "1 len=120 offset=0 MF=0\n" }
+  ] }
+]
