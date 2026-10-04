@@ -1,0 +1,5 @@
+[
+  { "runs": [{ "input": "4\ndaftar 5000 120\nruchka 2000 300\nkitob 45000 10\nsumka 150000 5\n", "output": "2400000\nsumka\n" }, { "input": "2\ndaftar 5000 120\nruchka 2000 300\n", "output": "1200000\ndaftar\n" }] },
+  { "runs": [{ "input": "4 15\nAziz 52\nMalika 91\nBekzod 40\nDilnoza 95\n", "output": "Aziz 67\nMalika 91\nBekzod 55\nDilnoza 95\n3\n" }, { "input": "1 70\nAli 50\n", "output": "Ali 100\n1\n" }] },
+  { "runs": [{ "input": "5\n1999 Sarob\n1926 Kecha\n1999 Alpomish\n2005 Dunyo\n1926 Mehrob\n", "output": "1926 Kecha\n1926 Mehrob\n1999 Alpomish\n1999 Sarob\n2005 Dunyo\n" }] }
+]
