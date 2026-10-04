@@ -1,0 +1,5 @@
+[
+  { "runs": [{ "input": "12 7\n-3\n40 5 9\n", "output": "6 70 40\n" }, { "input": "", "output": "0 0 -\n" }] },
+  { "runs": [{ "input": "2026-03-01 INFO server started\n2026-03-01 ERROR cannot connect to the database\n2026-03-02 WARN disk 85% full\n2026-03-02 ERROR file not found: report.pdf\n2026-03-03 INFO backup ready\n", "output": "2\n2026-03-01 cannot connect to the database\n2026-03-02 file not found: report.pdf\n" }] },
+  { "runs": [{ "input": "a\n\nb\nc\nd\ne\nf\ng\nh\ni\nj\nlast\n", "output": " 1| a\n 2| \n 3| b\n 4| c\n 5| d\n 6| e\n 7| f\n 8| g\n 9| h\n10| i\n11| j\n12| last\n" }] }
+]
