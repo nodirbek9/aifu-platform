@@ -1,0 +1,174 @@
+{
+  "modules": {
+    "M-SORTING": {
+      "title": "Saralash algoritmlari"
+    },
+    "M-OOP": {
+      "title": "Obyektga yo'naltirilgan dasturlash"
+    },
+    "M-TEMPLATES": {
+      "title": "Shablonlar va konteynerlar"
+    },
+    "M-TOOLING": {
+      "title": "Dasturlash muhiti va komponentalar"
+    },
+    "M-INDEPENDENT": {
+      "title": "Mustaqil ta'lim topshiriqlari"
+    }
+  },
+  "codingTasks": {
+    "DAS-S2-A1": {
+      "title": "Matritsa satrlarini saralash",
+      "description": "<p>n × m matritsaning har bir satrini oʻsish tartibida saralang.</p>",
+      "instructions": "Kirish: n m; soʻng n ta satrda m tadan butun son. Chiqish: saralangan matritsa, har satr bitta boʻsh joy bilan.",
+      "constraintsText": "1 ≤ n, m ≤ 100.",
+      "hints": []
+    },
+    "DAS-S2-A2": {
+      "title": "Binar qidiruv",
+      "description": "<p>Oʻsish tartibida saralangan, takrorlanmaydigan massivda har bir soʻrov uchun binar qidiruv bilan oʻrin toping.</p>",
+      "instructions": "Kirish: n; n ta son; q; soʻng q ta soʻrov x. Chiqish: har bir soʻrov uchun alohida satrda indeks (1 dan) yoki -1.",
+      "constraintsText": "1 ≤ n ≤ 10^5, 1 ≤ q ≤ 10^5. Chiziqli qidiruv vaqt limitidan oshadi.",
+      "hints": []
+    },
+    "DAS-S2-A3": {
+      "title": "EKUB va EKUK funksiyalari",
+      "description": "<p>Ikkita funksiya yozing: <code>gcd(a, b)</code> Evklid algoritmi bilan va <code>lcm(a, b) = a / gcd(a, b) · b</code>. Asosiy dastur ulardan foydalanadi.</p>",
+      "instructions": "Kirish: a b. Chiqish: bitta satrda EKUB va EKUK.",
+      "constraintsText": "1 ≤ a, b ≤ 10^9 (EKUK long turiga sigʻadi).",
+      "hints": []
+    },
+    "DAS-S2-A4": {
+      "title": "Rekursiv tez darajaga koʻtarish",
+      "description": "<p>aⁿ mod m ni rekursiv funksiya bilan hisoblang: n juft boʻlsa aⁿ = (a^(n/2))², toq boʻlsa aⁿ = a · aⁿ⁻¹. Bu O(log n) qadam talab qiladi.</p>",
+      "instructions": "Kirish: a n m. Chiqish: aⁿ mod m.",
+      "constraintsText": "1 ≤ a ≤ 10^9, 0 ≤ n ≤ 10^18, 1 ≤ m ≤ 10^9.",
+      "hints": []
+    },
+    "DAS-S2-A5": {
+      "title": "Oʻrtachadan katta elementlar (dinamik massiv)",
+      "description": "<p>Oʻlchami ishga tushganda maʼlum boʻladigan massiv (Python roʻyxati, Java’da <code>new long[n]</code> yoki <code>ArrayList</code>) yarating va oʻrta arifmetikdan katta elementlarni kiritilgan tartibda chiqaring.</p>",
+      "instructions": "Kirish: n; n ta butun son. Chiqish: oʻrtachadan qatʼiy katta elementlar boʻsh joy bilan; bunday element boʻlmasa -.",
+      "constraintsText": "1 ≤ n ≤ 10^5. Kasr sonlardan qochish uchun aᵢ · n &gt; yigʻindi shartini tekshiring.",
+      "hints": []
+    },
+    "DAS-S2-A6": {
+      "title": "Belgilarning ASCII kodlari",
+      "description": "<p>Satrdagi har bir belgining ASCII kodini chiqaring (boʻsh joy ham belgi: 32).</p>",
+      "instructions": "Kirish: bitta satr (faqat ASCII belgilar). Chiqish: kodlar boʻsh joy bilan.",
+      "constraintsText": "Satr uzunligi 1 dan 200 gacha.",
+      "hints": []
+    },
+    "DAS-S2-A7": {
+      "title": "Palindrom satr",
+      "description": "<p>Satr palindrommi yoki yoʻqligini aniqlang: faqat harf va raqamlar hisobga olinadi, katta-kichik harf farqlanmaydi.</p>",
+      "instructions": "Kirish: bitta satr (ASCII). Chiqish: Palindrom yoki Palindrom emas.",
+      "constraintsText": "Satr uzunligi 1 dan 1000 gacha.",
+      "hints": []
+    },
+    "DAS-S2-A8": {
+      "title": "Matn statistikasi (oqim bilan ishlash)",
+      "description": "<p>Standart kirish oqimini fayl kabi oxirigacha oʻqing va satrlar, soʻzlar hamda belgilar sonini hisoblang (satr oxiri belgilari hisobga olinmaydi).</p>",
+      "instructions": "Kirish: bir yoki bir nechta satr matn. Chiqish: bitta satrda uchta son — satrlar, soʻzlar, belgilar.",
+      "constraintsText": "Matn hajmi 100 KB gacha.",
+      "hints": []
+    },
+    "DAS-S2-MT1": {
+      "title": "Massivning maksimumi va oʻrni (funksiya parametri)",
+      "description": "<p>Massivni parametr sifatida qabul qilib, eng katta element va uning birinchi oʻrnini qaytaruvchi funksiya yozing.</p>",
+      "instructions": "Kirish: n; n ta son. Chiqish: maksimum va uning oʻrni (1 dan).",
+      "constraintsText": "1 ≤ n ≤ 10^5.",
+      "hints": []
+    },
+    "DAS-S2-MT2": {
+      "title": "Matritsalarni koʻpaytirish",
+      "description": "<p>A (n × m) va B (m × p) matritsalarni qabul qilib, C = A · B ni qaytaruvchi funksiya yozing.</p>",
+      "instructions": "Kirish: n m p; A ning n ta satri; B ning m ta satri. Chiqish: C ning n ta satri.",
+      "constraintsText": "1 ≤ n, m, p ≤ 50, |aᵢⱼ|, |bᵢⱼ| ≤ 1000.",
+      "hints": []
+    },
+    "DAS-S2-MT3": {
+      "title": "Ikki saralangan massivni birlashtirish",
+      "description": "<p>Ikkita oʻsish tartibidagi massivni bitta saralangan massivga birlashtiring (merge). Tayyor saralash funksiyasidan foydalanmang: ikki koʻrsatkichli usul O(n + m) ishlaydi.</p>",
+      "instructions": "Kirish: n; a massiv; m; b massiv. Chiqish: birlashtirilgan massiv.",
+      "constraintsText": "1 ≤ n, m ≤ 10^5.",
+      "hints": []
+    },
+    "DAS-S2-MT4": {
+      "title": "Xanoy minoralari (rekursiya)",
+      "description": "<p>n ta diskni 1-qoziqdan 3-qoziqqa oʻtkazing: bir martada bitta disk, katta disk kichigining ustiga qoʻyilmaydi. Rekursiya: n−1 diskni yordamchi qoziqqa, eng kattasini maqsadga, soʻng n−1 diskni uning ustiga.</p>",
+      "instructions": "Kirish: n. Chiqish: birinchi satrda harakatlar soni, soʻng har bir harakat alohida satrda: qayerdan qayerga.",
+      "constraintsText": "1 ≤ n ≤ 10.",
+      "hints": []
+    },
+    "DAS-S2-MT5": {
+      "title": "Akkerman funksiyasi (ichma-ich rekursiya)",
+      "description": "<p>A(0, n) = n + 1; A(m, 0) = A(m − 1, 1); A(m, n) = A(m − 1, A(m, n − 1)). Chaqiruv ichida yana chaqiruv — ichma-ich rekursiyaning klassik misoli.</p>",
+      "instructions": "Kirish: m n. Chiqish: A(m, n).",
+      "constraintsText": "0 ≤ m ≤ 3, 0 ≤ n ≤ 5. Pythonda sys.setrecursionlimit(10000) qoʻying.",
+      "hints": []
+    },
+    "DAS-S2-MT6": {
+      "title": "Soʻzlarni bosh harf bilan yozish",
+      "description": "<p>Satrdagi har bir soʻzni bosh harf bilan boshlang, qolgan harflarni kichik qiling. Soʻzlar orasidagi ortiqcha boʻsh joylarni bitta qilib qoldiring.</p>",
+      "instructions": "Kirish: bitta satr (ASCII harflar va boʻsh joylar). Chiqish: formatlangan satr.",
+      "constraintsText": "Satr uzunligi 1 dan 1000 gacha, kamida bitta soʻz bor.",
+      "hints": []
+    },
+    "DAS-S2-MT7": {
+      "title": "Bank hisobi sinfi",
+      "description": "<p><code>BankAccount</code> sinfini yarating: balans maydoni yopiq (private), <code>deposit</code>, <code>withdraw</code> va <code>balance</code> metodlari orqali boshqariladi. Mablagʻ yetarli boʻlmasa, yechish rad etiladi.</p>",
+      "instructions": "Kirish: n; soʻng n ta buyruq: deposit X, withdraw X yoki balance. Chiqish: har bir balance buyrugʻi uchun joriy balans; rad etilgan yechish uchun Mablag yetarli emas.",
+      "constraintsText": "1 ≤ n ≤ 1000, 1 ≤ X ≤ 10^9. Boshlangʻich balans 0.",
+      "hints": []
+    }
+  },
+  "quizzes": {},
+  "activities": {
+    "CODING_TASK:DAS-S2-A2": {
+      "title": "Binar qidiruv"
+    },
+    "CODING_TASK:DAS-S2-A1": {
+      "title": "Matritsa satrlarini saralash"
+    },
+    "CODING_TASK:DAS-S2-A4": {
+      "title": "Rekursiv tez darajaga koʻtarish"
+    },
+    "CODING_TASK:DAS-S2-A3": {
+      "title": "EKUB va EKUK funksiyalari"
+    },
+    "CODING_TASK:DAS-S2-A5": {
+      "title": "Oʻrtachadan katta elementlar (dinamik massiv)"
+    },
+    "CODING_TASK:DAS-S2-A8": {
+      "title": "Matn statistikasi (oqim bilan ishlash)"
+    },
+    "CODING_TASK:DAS-S2-A7": {
+      "title": "Palindrom satr"
+    },
+    "CODING_TASK:DAS-S2-A6": {
+      "title": "Belgilarning ASCII kodlari"
+    },
+    "CODING_TASK:DAS-S2-MT1": {
+      "title": "Massivning maksimumi va oʻrni (funksiya parametri)"
+    },
+    "CODING_TASK:DAS-S2-MT2": {
+      "title": "Matritsalarni koʻpaytirish"
+    },
+    "CODING_TASK:DAS-S2-MT3": {
+      "title": "Ikki saralangan massivni birlashtirish"
+    },
+    "CODING_TASK:DAS-S2-MT4": {
+      "title": "Xanoy minoralari (rekursiya)"
+    },
+    "CODING_TASK:DAS-S2-MT5": {
+      "title": "Akkerman funksiyasi (ichma-ich rekursiya)"
+    },
+    "CODING_TASK:DAS-S2-MT6": {
+      "title": "Soʻzlarni bosh harf bilan yozish"
+    },
+    "CODING_TASK:DAS-S2-MT7": {
+      "title": "Bank hisobi sinfi"
+    }
+  }
+}
