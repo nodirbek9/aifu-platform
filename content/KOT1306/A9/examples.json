@@ -5,6 +5,6 @@
   ] },
   { "runs": [
     { "input": "5:Salo\nm3:Hey16:Kompyuter\n_tarmoq2:o\n", "output": "message: Salom\nmessage: Hey\nmessage: Kompyuter_tarmoq\nleft over: 3 bytes\n" },
-    { "input": "1\n0:2:ab\n", "output": "message: \nmessage: ab\nleft over: 0 bytes\n" }
+    { "input": "0:\n2:ab\n", "output": "message: \nmessage: ab\nleft over: 0 bytes\n" }
   ] }
 ]
