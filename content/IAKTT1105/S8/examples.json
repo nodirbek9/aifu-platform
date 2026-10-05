@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "150 200 201 350 0\n", "output": "150 kWh: 90000 soums\n200 kWh: 120000 soums\n201 kWh: 121000 soums\n350 kWh: 270000 soums\n0 kWh: 0 soums\n" }
+  ] }
+]
