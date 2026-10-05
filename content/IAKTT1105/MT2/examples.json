@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "42 38 45 51 47 55 60 58 49 44 53 62\n3 2 4 5 4 6 7 6 5 3 5 8\n", "output": "Months: 12\nMean: 50.33\nMedian: 50.00\nStandard deviation: 7.51\nCoefficient of variation: 14.92%\nMin: 38, max: 62\nCorrelation with advertising: 0.98\n" }
+  ] }
+]
