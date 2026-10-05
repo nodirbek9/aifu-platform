@@ -1,0 +1,9 @@
+[
+  { "runs": [
+    { "input": "  Proto  Local Address          Foreign Address        State\n  TCP    0.0.0.0:135            0.0.0.0:0              LISTENING\n  TCP    0.0.0.0:445            0.0.0.0:0              LISTENING\n  TCP    0.0.0.0:3389           0.0.0.0:0              LISTENING\n  TCP    192.168.1.10:51000     142.250.74.46:443      ESTABLISHED\n  TCP    192.168.1.10:51002     142.250.74.46:443      ESTABLISHED\n  TCP    192.168.1.10:51005     95.46.98.10:443        ESTABLISHED\n  TCP    192.168.1.10:50990     95.46.98.10:443        TIME_WAIT\n  TCP    192.168.1.10:51010     185.74.5.10:80         SYN_SENT\n  UDP    0.0.0.0:5353           *:*\n", "output": "LISTENING: 135 445 3389\nESTABLISHED: 3\nSYN_SENT: 1\nTIME_WAIT: 1\nbusiest server: 142.250.74.46 (2)\n" },
+    { "input": "  TCP    0.0.0.0:80             0.0.0.0:0              LISTENING\n  TCP    0.0.0.0:80             0.0.0.0:0              LISTENING\n", "output": "LISTENING: 80\n" }
+  ] },
+  { "runs": [
+    { "input": "1 1 1 2 192.168.1.1\n2 8 9 8 10.10.0.1\n3 * * * -\n4 12 11 13 195.158.1.1\n5 60 * 62 72.14.215.1\n6 61 60 59 8.8.8.8\n", "output": "1 192.168.1.1: 1.3 ms\n2 10.10.0.1: 8.3 ms\n3 -: no reply\n4 195.158.1.1: 12.0 ms\n5 72.14.215.1: 61.0 ms\n6 8.8.8.8: 60.0 ms\nlargest increase at hop 5 (+49.0 ms)\n" }
+  ] }
+]
