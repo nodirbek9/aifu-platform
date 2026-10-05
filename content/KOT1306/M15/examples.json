@@ -1,0 +1,10 @@
+[
+  { "runs": [
+    { "input": "12\n15\n*\n11\n30\n", "output": "packets: 5 sent, 4 received, 20.0% lost\nRTT: min 11, avg 17.0, max 30 ms\njitter: 8.7 ms\n" },
+    { "input": "*\n*\n", "output": "packets: 2 sent, 0 received, 100.0% lost\nRTT: no reply\n" },
+    { "input": "7\n", "output": "packets: 1 sent, 1 received, 0.0% lost\nRTT: min 7, avg 7.0, max 7 ms\njitter: 0.0 ms\n" }
+  ] },
+  { "runs": [
+    { "input": "ok ok ok fail ok\nok fail fail fail fail\nok ok ok ok ok\nfail fail fail fail fail\nok ok ok ok fail\n", "output": "1: layer 7: DNS is not working (nslookup, DNS server address)\n2: layer 3: no address from DHCP (ipconfig /renew)\n3: network OK\n4: layer 1: check the cable or Wi-Fi connection\n5: layer 3: provider or routing problem (tracert)\n" }
+  ] }
+]
