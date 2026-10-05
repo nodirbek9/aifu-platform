@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "Aliyev 720 8000000 3000000\nKarimova 650 6000000 3500000\nTursunov 580 10000000 2000000\nRahimov 540 4000000 2500000\nUsmonova 600 7000000 3500000\nNazarov 610 0 1000000\n", "output": "Aliyev: approve\nKarimova: offer a smaller amount\nTursunov: review with a guarantor\nRahimov: reject\nUsmonova: approve\nNazarov: error — invalid income\n" }
+  ] }
+]
