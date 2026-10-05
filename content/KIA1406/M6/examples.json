@@ -1,0 +1,8 @@
+[
+  { "runs": [
+    { "input": "ACE1\nSALOM DUNYO\n", "output": "keystream: 87 35 44 e2 ec 23 b9 c7 a8 11 4a\nciphertext: d4 74 08 ad a1 03 fd 92 e6 48 05\ndecrypted: SALOM DUNYO\n" }
+  ] },
+  { "runs": [
+    { "input": "5C\n37\nAAAABBBB\n", "output": "ECB: e8 e8 e8 e8 f0 f0 f0 f0\nCBC: 51 62 fb 37 49 ba 25 d9\n" }
+  ] }
+]
