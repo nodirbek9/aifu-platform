@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "reg ali 7f3a Qwerty2026\nreg vali 91c4 Qwerty2026\nlogin ali Qwerty2026\nlogin vali qwerty2026\n", "output": "ali: stored, salt 7f3a, hash c3fe1ad8\nvali: stored, salt 91c4, hash 70db8b04\nali: access granted\nvali: wrong password\n" }
+  ] }
+]
