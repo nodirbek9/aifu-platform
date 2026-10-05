@@ -1,0 +1,10 @@
+[
+  {
+    "runs": [
+      {
+        "input": "5\nallow Everyone R\nallow Buxgalteriya RW\nallow Administrators RWXD\ndeny Stajyorlar WD\nallow ali X\nali Buxgalteriya\nvali Buxgalteriya,Stajyorlar\nolim Administrators\nsardor Stajyorlar\nkamol Users\n",
+        "output": "ali: RWX\nvali: R (deny: W)\nolim: RWXD\nsardor: R\nkamol: R\n"
+      }
+    ]
+  }
+]
