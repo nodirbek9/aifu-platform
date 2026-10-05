@@ -1,0 +1,6 @@
+[
+  { "runs": [
+    { "input": "Paxta 20t Fermer->Zavod\nIp 15t Zavod->Fabrika\nMato 9000m Fabrika->Eksport\n", "output": "block 1: Paxta 20t Fermer->Zavod | previous 00000000 | hash 174beafb\nblock 2: Ip 15t Zavod->Fabrika | previous 174beafb | hash a6917dc3\nblock 3: Mato 9000m Fabrika->Eksport | previous a6917dc3 | hash d839ca87\n" },
+    { "input": "Paxta 25t Fermer->Zavod\nIp 15t Zavod->Fabrika\nMato 9000m Fabrika->Eksport\n", "output": "block 1: Paxta 25t Fermer->Zavod | previous 00000000 | hash 1483cdfe\nblock 2: Ip 15t Zavod->Fabrika | previous 1483cdfe | hash 2e0c2669\nblock 3: Mato 9000m Fabrika->Eksport | previous 2e0c2669 | hash f6e44f26\n" }
+  ] }
+]
