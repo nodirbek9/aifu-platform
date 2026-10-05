@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "subscription 50000 70 5 140000\nmarketplace 20000 15 10 25000\nshop 80000 30 8 150000\nads 10000 40 25 20000\n", "output": "subscription: LTV 700000, CAC 140000, LTV/CAC 5.0, payback 4 months, healthy\nmarketplace: LTV 30000, CAC 25000, LTV/CAC 1.2, payback 9 months, caution\nshop: LTV 300000, CAC 150000, LTV/CAC 2.0, payback 7 months, caution\nads: LTV 16000, CAC 20000, LTV/CAC 0.8, payback 5 months, loss-making\n" }
+  ] }
+]
