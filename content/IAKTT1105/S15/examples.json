@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "Aliyev 5000000\nKarimova 7350000\nTursunov 12400000\n", "output": "Aliyev: gross 5000000, PIT 600000, net 4400000, social tax 600000\nKarimova: gross 7350000, PIT 882000, net 6468000, social tax 882000\nTursunov: gross 12400000, PIT 1488000, net 10912000, social tax 1488000\nTotal: gross 24750000, PIT 2970000, net 21780000, social tax 2970000\n" }
+  ] }
+]
