@@ -65,12 +65,12 @@ import sys
 
 def eng_yaxshi(qadrlar):
     # tushum maksimal; teng boʻlsa — yuqoriroq narx
-    narx, tushum = 0, 0
+    narx, eng_tushum = 0, 0
     for p in sorted(set(qadrlar)):
         t = p * sum(1 for q in qadrlar if q >= p)
-        if t >= tushum:
-            narx, tushum = p, t
-    return narx, tushum
+        if t >= eng_tushum:
+            narx, eng_tushum = p, t
+    return narx, eng_tushum
 
 a, b = [], []
 for satr in sys.stdin.read().split("\n"):
@@ -98,13 +98,13 @@ import java.util.TreeSet;
 public class Main {
     static long[] engYaxshi(List<Long> qadrlar) {
         // tushum maksimal; teng boʻlsa — yuqoriroq narx
-        long narx = 0, tushum = 0;
+        long narx = 0, engTushum = 0;
         for (long p : new TreeSet<>(qadrlar)) {
             long soni = 0;
             for (long q : qadrlar) if (q >= p) soni++;
-            if (p * soni >= tushum) { narx = p; tushum = p * soni; }
+            if (p * soni >= engTushum) { narx = p; engTushum = p * soni; }
         }
-        return new long[]{narx, tushum};
+        return new long[]{narx, engTushum};
     }
 
     public static void main(String[] args) {
@@ -136,13 +136,13 @@ using namespace std;
 
 pair<long long, long long> engYaxshi(const vector<long long>& qadrlar) {
     // tushum maksimal; teng boʻlsa — yuqoriroq narx
-    long long narx = 0, tushum = 0;
+    long long narx = 0, engTushum = 0;
     for (long long p : set<long long>(qadrlar.begin(), qadrlar.end())) {
         long long soni = 0;
         for (long long q : qadrlar) if (q >= p) soni++;
-        if (p * soni >= tushum) { narx = p; tushum = p * soni; }
+        if (p * soni >= engTushum) { narx = p; engTushum = p * soni; }
     }
-    return {narx, tushum};
+    return {narx, engTushum};
 }
 
 int main() {
