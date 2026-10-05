@@ -1,0 +1,6 @@
+[
+  { "runs": [
+    { "input": "60000000 8000000 3000000 5\n", "output": "year 1: server 68000000, cloud 36000000\nyear 2: server 76000000, cloud 72000000\nyear 3: server 84000000, cloud 108000000\nyear 4: server 92000000, cloud 144000000\nyear 5: server 100000000, cloud 180000000\npayback year: 3\n" },
+    { "input": "60000000 8000000 1500000 5\n", "output": "year 1: server 68000000, cloud 18000000\nyear 2: server 76000000, cloud 36000000\nyear 3: server 84000000, cloud 54000000\nyear 4: server 92000000, cloud 72000000\nyear 5: server 100000000, cloud 90000000\nthe server does not pay off\n" }
+  ] }
+]
