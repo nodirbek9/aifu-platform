@@ -1,0 +1,9 @@
+[
+  { "runs": [
+    { "input": "ali qwerty123 x7Kp\nvali qwerty123 Qm2z\nsardor Tosh2024! b9Lr\n", "output": "ali: plain=cffd7677 salted=bcb1b0b1 slow=7e749555\nvali: plain=cffd7677 salted=26151749 slow=9151da10\nsardor: plain=9c1e624e salted=da7e098f slow=feab59f8\n" }
+  ] },
+  { "runs": [
+    { "input": "Ali->Vali:5\nVali->Sardor:2\nSardor->Ali:1\nAli->Olim:3\nOlim->Vali:4\n", "output": "L0: 47af2243 bfba4043 c18587fe fd725d1a c1e3e7a7\nL1: 338b6726 5b128ae6 b54962fd\nL2: 2514cf2e 22ad2995\nL3: 43d5aefb\nroot = 43d5aefb\n" },
+    { "input": "Ali->Vali:5\nVali->Sardor:2\nSardor->Ali:1\nAli->Olim:8\nOlim->Vali:4\n", "output": "L0: 47af2243 bfba4043 c18587fe f4724eef c1e3e7a7\nL1: 338b6726 1f581bad b54962fd\nL2: e91b25a2 22ad2995\nL3: cebf2f88\nroot = cebf2f88\n" }
+  ] }
+]
