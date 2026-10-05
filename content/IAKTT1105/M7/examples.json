@@ -1,0 +1,10 @@
+[
+  {
+    "runs": [
+      {
+        "input": "4\n1 Aziza Toshkent\n2 Bekzod Samarqand\n3 Dilnoza Toshkent\n4 Javlon Buxoro\n6\n101 1 450000\n102 2 1200000\n103 1 300000\n104 3 800000\n105 2 250000\n106 1 150000\n",
+        "output": "Bekzod (Samarqand): 2 orders, 1450000\nAziza (Toshkent): 3 orders, 900000\nDilnoza (Toshkent): 1 orders, 800000\nJavlon (Buxoro): no orders\n"
+      }
+    ]
+  }
+]
