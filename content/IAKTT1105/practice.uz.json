@@ -1,0 +1,539 @@
+{
+  "modules": {
+    "M-FOUNDATION": {
+      "title": "Kirish va axborot texnologiyalari infratuzilmasi"
+    },
+    "M-TOOLS": {
+      "title": "Iqtisodiyotda dasturiy vositalar"
+    },
+    "M-DATA-NETWORKS": {
+      "title": "Tarmoq texnologiyalari va ma'lumotlar bazalari"
+    },
+    "M-SYSTEMS": {
+      "title": "Axborot tizimlari va elektron hukumat"
+    },
+    "M-EMERGING": {
+      "title": "Bulutli texnologiyalar, blokcheyn va elektron biznes"
+    },
+    "M-SECURITY": {
+      "title": "Axborot xavfsizligi va kasbiy axborot komplekslari"
+    },
+    "M-INDEPENDENT": {
+      "title": "Mustaqil ta'lim topshiriqlari"
+    }
+  },
+  "codingTasks": {
+    "IAKTT-S8": {
+      "title": "Tarmoqlanuvchi algoritm: xarid chegirmasi",
+      "description": "<p>Doʻkon xarid summasiga qarab chegirma beradi (oʻquv misoli uchun tanlangan qoidalar):</p><ul><li>1 000 000 soʻm va undan koʻp — 10 %;</li><li>500 000 soʻm va undan koʻp — 5 %;</li><li>qolgan holatlarda — chegirma yoʻq.</li></ul><p>Avval blok-sxemasini chizing (shart bloki — romb), soʻng dasturini yozing. Chegirma butun soʻmgacha pastga yaxlitlanadi.</p>",
+      "instructions": "Kirish: n; n ta xarid summasi. Chiqish: har bir xarid uchun chegirma va toʻlanadigan summa.",
+      "constraintsText": "1 ≤ n ≤ 100; 0 ≤ summa ≤ 10^12.",
+      "hints": []
+    },
+    "IAKTT-S15": {
+      "title": "Takrorlanuvchi algoritm: omonat foizlarini hisoblash",
+      "description": "<p>Omonatga yillik <em>r</em> % foiz qoʻshiladi. <strong>Murakkab foizda</strong> har yil foiz joriy balansga hisoblanadi va qoʻshiladi; <strong>oddiy foizda</strong> esa har yil faqat boshlangʻich summaga hisoblanadi. Har yilgi foiz butun soʻmgacha pastga yaxlitlanadi.</p><p>Bu hisob-kitob modeli oʻquv misoli; haqiqiy bank shartlari (kapitallashtirish davri, soliq) shartnomada belgilanadi.</p>",
+      "instructions": "Kirish: summa foiz yillar. Chiqish: har bir yil uchun “yil balans” (murakkab foiz), oxirgi satrda Oddiy: yakuniy_summa.",
+      "constraintsText": "1 ≤ summa ≤ 10^10; 0 ≤ foiz ≤ 100; 1 ≤ yillar ≤ 30.",
+      "hints": []
+    }
+  },
+  "quizzes": {
+    "DEV-QUIZ-DB": {
+      "title": "Ma'lumotlar bazalari asoslari (demo test)",
+      "description": "Rivojlanish uchun namuna test. Akademik talab emas.",
+      "instructions": "Har bir savolga bitta yoki bir nechta to'g'ri javobni tanlang.",
+      "questions": [
+        {
+          "prompt": "SQL tilida jadvaldan ma'lumot olish uchun qaysi operator ishlatiladi?",
+          "explanation": "SELECT operatori tanlash uchun ishlatiladi.",
+          "options": [
+            {
+              "text": "SELECT"
+            },
+            {
+              "text": "UPDATE"
+            },
+            {
+              "text": "DELETE"
+            },
+            {
+              "text": "CREATE"
+            }
+          ]
+        },
+        {
+          "prompt": "Big Data ning \"3V\" xususiyatlari qaysilar?",
+          "explanation": "Volume, Velocity, Variety.",
+          "options": [
+            {
+              "text": "Volume (hajm)"
+            },
+            {
+              "text": "Velocity (tezlik)"
+            },
+            {
+              "text": "Variety (xilma-xillik)"
+            },
+            {
+              "text": "Validity (haqiqiylik)"
+            }
+          ]
+        },
+        {
+          "prompt": "Relatsion modelda jadvalning satri nima deb ataladi? Nechta asosiy kalit (primary key) bir jadvalda bo'lishi mumkin?",
+          "explanation": "Bir jadvalda faqat bitta asosiy kalit bo'ladi.",
+          "options": []
+        }
+      ]
+    },
+    "IAKTT-Q-S3": {
+      "title": "Operatsion tizimlar",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Qaysi operatsion tizim ochiq manba kodli yadroga asoslangan?",
+          "options": [
+            {
+              "text": "Linux"
+            },
+            {
+              "text": "Microsoft Windows"
+            },
+            {
+              "text": "Apple macOS"
+            },
+            {
+              "text": "MS-DOS"
+            }
+          ]
+        },
+        {
+          "prompt": "Operatsion tizimning asosiy vazifasi nima?",
+          "options": [
+            {
+              "text": "Apparat resurslarini boshqarish va dasturlarga xizmat koʻrsatish"
+            },
+            {
+              "text": "Faqat matn terish"
+            },
+            {
+              "text": "Faqat Internetga ulanish"
+            },
+            {
+              "text": "Faqat rasm chizish"
+            }
+          ]
+        },
+        {
+          "prompt": "Qaysilari operatsion tizimlar?",
+          "options": [
+            {
+              "text": "Windows"
+            },
+            {
+              "text": "Linux"
+            },
+            {
+              "text": "macOS"
+            },
+            {
+              "text": "Microsoft Excel"
+            }
+          ]
+        },
+        {
+          "prompt": "Fayl tizimi maʼlumotlarning diskda qanday saqlanishi va nomlanishini belgilaydi.",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        }
+      ]
+    },
+    "IAKTT-Q-S4": {
+      "title": "Microsoft Excel: formulalar va tahlil",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "A1:A10 kataklaridagi sonlar yigʻindisini hisoblovchi formula?",
+          "options": [
+            {
+              "text": "=SUM(A1:A10)"
+            },
+            {
+              "text": "=ADD(A1:A10)"
+            },
+            {
+              "text": "=A1+A10"
+            },
+            {
+              "text": "=TOTAL(A1;A10)"
+            }
+          ]
+        },
+        {
+          "prompt": "Formulani nusxalaganda oʻzgarmaydigan (absolyut) murojaat qaysi?",
+          "options": [
+            {
+              "text": "$B$2"
+            },
+            {
+              "text": "B2"
+            },
+            {
+              "text": "B$"
+            },
+            {
+              "text": "#B2"
+            }
+          ]
+        },
+        {
+          "prompt": "Katta jadvalni guruhlab, yigʻindilar va oʻrtachalarni tez hisoblash vositasi?",
+          "options": [
+            {
+              "text": "Yigʻma jadval (PivotTable)"
+            },
+            {
+              "text": "Imlo tekshiruvi"
+            },
+            {
+              "text": "Sahifa chegarasi"
+            },
+            {
+              "text": "Shrift oʻlchami"
+            }
+          ]
+        },
+        {
+          "prompt": "A1 = 12, A2 = 8, A3 = 10 boʻlsa, =AVERAGE(A1:A3) natijasi?",
+          "options": []
+        },
+        {
+          "prompt": "Shartga qarab ikki xil qiymat qaytaruvchi funksiya?",
+          "options": [
+            {
+              "text": "IF"
+            },
+            {
+              "text": "SUM"
+            },
+            {
+              "text": "COUNT"
+            },
+            {
+              "text": "ROUND"
+            }
+          ]
+        }
+      ]
+    },
+    "IAKTT-Q-S7": {
+      "title": "Katta maʼlumotlar (Big Data)",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Big Data ning asosiy xususiyatlari (“V” lar) qaysilar?",
+          "options": [
+            {
+              "text": "Hajm (Volume)"
+            },
+            {
+              "text": "Tezlik (Velocity)"
+            },
+            {
+              "text": "Xilma-xillik (Variety)"
+            },
+            {
+              "text": "Arzonlik (Value for free)"
+            }
+          ]
+        },
+        {
+          "prompt": "Katta hajmdagi maʼlumotlarni koʻp kompyuterlarda taqsimlab qayta ishlash uchun yaratilgan freymvork?",
+          "options": [
+            {
+              "text": "Apache Hadoop"
+            },
+            {
+              "text": "Microsoft Paint"
+            },
+            {
+              "text": "Notepad"
+            },
+            {
+              "text": "WinRAR"
+            }
+          ]
+        },
+        {
+          "prompt": "Tuzilmalanmagan maʼlumotlarga matnlar, rasmlar va videolar kiradi.",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        },
+        {
+          "prompt": "Iqtisodiyotda Big Data qoʻllanilishiga misol?",
+          "options": [
+            {
+              "text": "Xaridorlar xatti-harakatini tahlil qilib, talabni prognoz qilish"
+            },
+            {
+              "text": "Hujjatni chop etish"
+            },
+            {
+              "text": "Kompyuterni oʻchirish"
+            },
+            {
+              "text": "Parolni almashtirish"
+            }
+          ]
+        }
+      ]
+    },
+    "IAKTT-Q-S11": {
+      "title": "Bulutli texnologiyalar",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Tayyor dasturni brauzer orqali obuna asosida ishlatish qaysi xizmat modeli?",
+          "options": [
+            {
+              "text": "SaaS"
+            },
+            {
+              "text": "IaaS"
+            },
+            {
+              "text": "PaaS"
+            },
+            {
+              "text": "LAN"
+            }
+          ]
+        },
+        {
+          "prompt": "Virtual serverlar va xotirani ijaraga olish qaysi model?",
+          "options": [
+            {
+              "text": "IaaS"
+            },
+            {
+              "text": "SaaS"
+            },
+            {
+              "text": "E-mail"
+            },
+            {
+              "text": "ERP"
+            }
+          ]
+        },
+        {
+          "prompt": "Bulutli texnologiyalarning afzalliklari:",
+          "options": [
+            {
+              "text": "Resurslarni tez kengaytirish"
+            },
+            {
+              "text": "Foydalanganingizcha toʻlash"
+            },
+            {
+              "text": "Istalgan joydan kirish"
+            },
+            {
+              "text": "Internetsiz doim ishlash"
+            }
+          ]
+        },
+        {
+          "prompt": "Xususiy bulut faqat bitta tashkilot uchun ajratilgan infratuzilma.",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        }
+      ]
+    },
+    "IAKTT-Q-S12": {
+      "title": "Blokcheyn texnologiyasi",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Blokcheynda har bir blok oldingi blok bilan qanday bogʻlanadi?",
+          "options": [
+            {
+              "text": "Oldingi blokning xesh-qiymati orqali"
+            },
+            {
+              "text": "Elektron pochta orqali"
+            },
+            {
+              "text": "Fayl nomi orqali"
+            },
+            {
+              "text": "Hech qanday bogʻlanmaydi"
+            }
+          ]
+        },
+        {
+          "prompt": "Blokcheyn reyestri koʻplab ishtirokchilarda nusxada saqlanadi (taqsimlangan reyestr).",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        },
+        {
+          "prompt": "Shartlar bajarilganda avtomatik ishga tushadigan blokcheyndagi dastur?",
+          "options": [
+            {
+              "text": "Aqlli shartnoma (smart contract)"
+            },
+            {
+              "text": "Makros"
+            },
+            {
+              "text": "Antivirus"
+            },
+            {
+              "text": "Brauzer kengaytmasi"
+            }
+          ]
+        },
+        {
+          "prompt": "Blokcheyn qoʻllanilishi mumkin boʻlgan sohalar:",
+          "options": [
+            {
+              "text": "Taʼminot zanjirida tovar kelib chiqishini kuzatish"
+            },
+            {
+              "text": "Raqamli aktivlar va toʻlovlar"
+            },
+            {
+              "text": "Hujjatlar haqiqiyligini tasdiqlash"
+            },
+            {
+              "text": "Monitor yorqinligini sozlash"
+            }
+          ]
+        }
+      ]
+    },
+    "IAKTT-Q-S14": {
+      "title": "Kriptografik himoya usullari",
+      "instructions": "Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "questions": [
+        {
+          "prompt": "Shifrlash va deshifrlash uchun bitta kalit ishlatiladigan usul?",
+          "options": [
+            {
+              "text": "Simmetrik shifrlash"
+            },
+            {
+              "text": "Asimmetrik shifrlash"
+            },
+            {
+              "text": "Xeshlash"
+            },
+            {
+              "text": "Arxivlash"
+            }
+          ]
+        },
+        {
+          "prompt": "Elektron raqamli imzo nimani tasdiqlaydi?",
+          "options": [
+            {
+              "text": "Hujjat muallifi va hujjat oʻzgartirilmaganini"
+            },
+            {
+              "text": "Hujjat hajmini"
+            },
+            {
+              "text": "Hujjat rangini"
+            },
+            {
+              "text": "Internet tezligini"
+            }
+          ]
+        },
+        {
+          "prompt": "HTTPS protokoli brauzer va sayt orasidagi maʼlumotlarni shifrlaydi.",
+          "options": [
+            {
+              "text": "Toʻgʻri"
+            },
+            {
+              "text": "Notoʻgʻri"
+            }
+          ]
+        },
+        {
+          "prompt": "Ochiq kalitli kriptografiyada xabarni kimning kaliti bilan shifrlash kerak, shunda uni faqat qabul qiluvchi ocha olsin?",
+          "options": [
+            {
+              "text": "Qabul qiluvchining ochiq kaliti"
+            },
+            {
+              "text": "Joʻnatuvchining ochiq kaliti"
+            },
+            {
+              "text": "Qabul qiluvchining yopiq kaliti"
+            },
+            {
+              "text": "Kalit kerak emas"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "activities": {
+    "QUIZ:DEV-QUIZ-DB": {
+      "title": "Mini-test: ma'lumotlar bazalari",
+      "instructions": "Testni 10 daqiqada yakunlang."
+    },
+    "QUIZ:IAKTT-Q-S3": {
+      "title": "Operatsion tizimlar"
+    },
+    "QUIZ:IAKTT-Q-S4": {
+      "title": "Microsoft Excel: formulalar va tahlil"
+    },
+    "QUIZ:IAKTT-Q-S7": {
+      "title": "Katta maʼlumotlar (Big Data)"
+    },
+    "CODING_TASK:IAKTT-S8": {
+      "title": "Tarmoqlanuvchi algoritm: xarid chegirmasi"
+    },
+    "QUIZ:IAKTT-Q-S11": {
+      "title": "Bulutli texnologiyalar"
+    },
+    "QUIZ:IAKTT-Q-S12": {
+      "title": "Blokcheyn texnologiyasi"
+    },
+    "QUIZ:IAKTT-Q-S14": {
+      "title": "Kriptografik himoya usullari"
+    },
+    "CODING_TASK:IAKTT-S15": {
+      "title": "Takrorlanuvchi algoritm: omonat foizlarini hisoblash"
+    }
+  }
+}
