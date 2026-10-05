@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "1200 1850 2300 3100 4500 5200 6800 7400 8900 9600 10500 12000 13700 15000 18200\n1200 9600 18200 5000\n", "output": "1200: position 1, linear 1, binary 4 comparisons\n9600: position 10, linear 10, binary 3 comparisons\n18200: position 15, linear 15, binary 4 comparisons\n5000: not found, linear 15, binary 4 comparisons\n" }
+  ] }
+]
