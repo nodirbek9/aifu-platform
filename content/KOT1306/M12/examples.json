@@ -1,0 +1,9 @@
+[
+  { "runs": [
+    { "input": "www.aifu.uz\naifu.uz.\nmail..aifu.uz\nmy_site.uz\n", "output": "www.aifu.uz 03 77 77 77 04 61 69 66 75 02 75 7a 00 (13)\naifu.uz. 04 61 69 66 75 02 75 7a 00 (9)\nmail..aifu.uz invalid\nmy_site.uz invalid\n" },
+    { "input": "mail.uz\n", "output": "mail.uz 04 6d 61 69 6c 02 75 7a 00 (9)\n" }
+  ] },
+  { "runs": [
+    { "input": "6\naifu.uz A 185.74.5.10\nwww.aifu.uz CNAME aifu.uz\nlms.aifu.uz CNAME cdn.aifu.uz\ncdn.aifu.uz A 185.74.5.20\nx.aifu.uz CNAME y.aifu.uz\ny.aifu.uz CNAME x.aifu.uz\n4\nwww.aifu.uz\nlms.aifu.uz\neski.aifu.uz\nx.aifu.uz\n", "output": "www.aifu.uz -> aifu.uz = 185.74.5.10\nlms.aifu.uz -> cdn.aifu.uz = 185.74.5.20\neski.aifu.uz NXDOMAIN\nx.aifu.uz -> y.aifu.uz -> x.aifu.uz ... loop\n" }
+  ] }
+]
