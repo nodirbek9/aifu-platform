@@ -1,0 +1,318 @@
+{
+  "modules": {
+    "M-FOUNDATION": { "title": "Introduction and information technology infrastructure" },
+    "M-TOOLS": { "title": "Software tools in the economy" },
+    "M-DATA-NETWORKS": { "title": "Network technologies and databases" },
+    "M-SYSTEMS": { "title": "Information systems and e-government" },
+    "M-EMERGING": { "title": "Cloud technologies, blockchain and e-business" },
+    "M-SECURITY": { "title": "Information security and professional information complexes" },
+    "M-INDEPENDENT": { "title": "Independent study assignments" }
+  },
+  "codingTasks": {
+    "IAKTT-S8": {
+      "title": "Branching algorithm: a purchase discount",
+      "description": "<p>A shop gives a discount depending on the purchase amount (rules chosen for a teaching example):</p><ul><li>1,000,000 soums or more — 10 %;</li><li>500,000 soums or more — 5 %;</li><li>otherwise — no discount.</li></ul><p>First draw the flowchart (the condition block is a diamond), then write the program. The discount is rounded down to whole soums.</p>",
+      "instructions": "Input: n; n purchase amounts. Output: for each purchase, the discount and the amount to pay.",
+      "constraintsText": "1 ≤ n ≤ 100; 0 ≤ amount ≤ 10^12.",
+      "hints": []
+    },
+    "IAKTT-S15": {
+      "title": "Iterative algorithm: calculating deposit interest",
+      "description": "<p>An annual interest of <em>r</em> % is added to a deposit. With <strong>compound interest</strong>, each year the interest is calculated on the current balance and added to it; with <strong>simple interest</strong>, each year it is calculated only on the initial amount. Each year's interest is rounded down to whole soums.</p><p>This calculation model is a teaching example; real bank terms (the capitalization period, tax) are set in the contract.</p>",
+      "instructions": "Input: amount rate years. Output: for each year a line “year balance” (compound interest); on the last line Oddiy: final_amount (simple interest; print the word Oddiy exactly as shown).",
+      "constraintsText": "1 ≤ amount ≤ 10^10; 0 ≤ rate ≤ 100; 1 ≤ years ≤ 30.",
+      "hints": []
+    }
+  },
+  "quizzes": {
+    "DEV-QUIZ-DB": {
+      "title": "Database basics (demo quiz)",
+      "description": "A sample quiz for development. Not an academic requirement.",
+      "instructions": "Choose one or more correct answers for each question.",
+      "questions": [
+        {
+          "prompt": "Which SQL statement is used to retrieve data from a table?",
+          "explanation": "The SELECT statement is used for selection.",
+          "options": [
+            { "text": "SELECT" },
+            { "text": "UPDATE" },
+            { "text": "DELETE" },
+            { "text": "CREATE" }
+          ]
+        },
+        {
+          "prompt": "What are the \"3V\" characteristics of Big Data?",
+          "explanation": "Volume, Velocity, Variety.",
+          "options": [
+            { "text": "Volume" },
+            { "text": "Velocity" },
+            { "text": "Variety" },
+            { "text": "Validity" }
+          ]
+        },
+        {
+          "prompt": "What is a row of a table called in the relational model? How many primary keys can a table have?",
+          "explanation": "A table has only one primary key.",
+          "options": []
+        }
+      ]
+    },
+    "IAKTT-Q-S3": {
+      "title": "Operating systems",
+      "instructions": "Read each question carefully. In questions with several answers, select all the correct options.",
+      "questions": [
+        {
+          "prompt": "Which operating system is based on an open-source kernel?",
+          "options": [
+            { "text": "Linux" },
+            { "text": "Microsoft Windows" },
+            { "text": "Apple macOS" },
+            { "text": "MS-DOS" }
+          ]
+        },
+        {
+          "prompt": "What is the main task of an operating system?",
+          "options": [
+            { "text": "Managing hardware resources and serving programs" },
+            { "text": "Only typing text" },
+            { "text": "Only connecting to the Internet" },
+            { "text": "Only drawing pictures" }
+          ]
+        },
+        {
+          "prompt": "Which of these are operating systems?",
+          "options": [
+            { "text": "Windows" },
+            { "text": "Linux" },
+            { "text": "macOS" },
+            { "text": "Microsoft Excel" }
+          ]
+        },
+        {
+          "prompt": "A file system determines how data is stored and named on a disk.",
+          "options": [
+            { "text": "True" },
+            { "text": "False" }
+          ]
+        }
+      ]
+    },
+    "IAKTT-Q-S4": {
+      "title": "Microsoft Excel: formulas and analysis",
+      "instructions": "Read each question carefully. In questions with several answers, select all the correct options.",
+      "questions": [
+        {
+          "prompt": "Which formula calculates the sum of the numbers in cells A1:A10?",
+          "options": [
+            { "text": "=SUM(A1:A10)" },
+            { "text": "=ADD(A1:A10)" },
+            { "text": "=A1+A10" },
+            { "text": "=TOTAL(A1;A10)" }
+          ]
+        },
+        {
+          "prompt": "Which reference does not change when a formula is copied (absolute)?",
+          "options": [
+            { "text": "$B$2" },
+            { "text": "B2" },
+            { "text": "B$" },
+            { "text": "#B2" }
+          ]
+        },
+        {
+          "prompt": "Which tool groups a large table and quickly calculates totals and averages?",
+          "options": [
+            { "text": "PivotTable" },
+            { "text": "Spell check" },
+            { "text": "Page border" },
+            { "text": "Font size" }
+          ]
+        },
+        {
+          "prompt": "If A1 = 12, A2 = 8, A3 = 10, what is the result of =AVERAGE(A1:A3)?",
+          "options": []
+        },
+        {
+          "prompt": "Which function returns one of two values depending on a condition?",
+          "options": [
+            { "text": "IF" },
+            { "text": "SUM" },
+            { "text": "COUNT" },
+            { "text": "ROUND" }
+          ]
+        }
+      ]
+    },
+    "IAKTT-Q-S7": {
+      "title": "Big Data",
+      "instructions": "Read each question carefully. In questions with several answers, select all the correct options.",
+      "questions": [
+        {
+          "prompt": "What are the main characteristics (the “V”s) of Big Data?",
+          "options": [
+            { "text": "Volume" },
+            { "text": "Velocity" },
+            { "text": "Variety" },
+            { "text": "Value for free" }
+          ]
+        },
+        {
+          "prompt": "Which framework was created to process large volumes of data distributed across many computers?",
+          "options": [
+            { "text": "Apache Hadoop" },
+            { "text": "Microsoft Paint" },
+            { "text": "Notepad" },
+            { "text": "WinRAR" }
+          ]
+        },
+        {
+          "prompt": "Unstructured data includes texts, images and videos.",
+          "options": [
+            { "text": "True" },
+            { "text": "False" }
+          ]
+        },
+        {
+          "prompt": "An example of using Big Data in the economy?",
+          "options": [
+            { "text": "Analysing customer behaviour to forecast demand" },
+            { "text": "Printing a document" },
+            { "text": "Switching off a computer" },
+            { "text": "Changing a password" }
+          ]
+        }
+      ]
+    },
+    "IAKTT-Q-S11": {
+      "title": "Cloud technologies",
+      "instructions": "Read each question carefully. In questions with several answers, select all the correct options.",
+      "questions": [
+        {
+          "prompt": "Which service model means using a ready-made program through the browser on a subscription basis?",
+          "options": [
+            { "text": "SaaS" },
+            { "text": "IaaS" },
+            { "text": "PaaS" },
+            { "text": "LAN" }
+          ]
+        },
+        {
+          "prompt": "Which model means renting virtual servers and storage?",
+          "options": [
+            { "text": "IaaS" },
+            { "text": "SaaS" },
+            { "text": "E-mail" },
+            { "text": "ERP" }
+          ]
+        },
+        {
+          "prompt": "Advantages of cloud technologies:",
+          "options": [
+            { "text": "Scaling resources quickly" },
+            { "text": "Paying as you use" },
+            { "text": "Access from anywhere" },
+            { "text": "Always working without the Internet" }
+          ]
+        },
+        {
+          "prompt": "A private cloud is infrastructure dedicated to a single organization.",
+          "options": [
+            { "text": "True" },
+            { "text": "False" }
+          ]
+        }
+      ]
+    },
+    "IAKTT-Q-S12": {
+      "title": "Blockchain technology",
+      "instructions": "Read each question carefully. In questions with several answers, select all the correct options.",
+      "questions": [
+        {
+          "prompt": "How is each block in a blockchain linked to the previous block?",
+          "options": [
+            { "text": "Through the hash value of the previous block" },
+            { "text": "By email" },
+            { "text": "Through the file name" },
+            { "text": "It is not linked at all" }
+          ]
+        },
+        {
+          "prompt": "A blockchain ledger is stored in copies by many participants (a distributed ledger).",
+          "options": [
+            { "text": "True" },
+            { "text": "False" }
+          ]
+        },
+        {
+          "prompt": "What is a program on a blockchain that runs automatically when conditions are met?",
+          "options": [
+            { "text": "A smart contract" },
+            { "text": "A macro" },
+            { "text": "An antivirus" },
+            { "text": "A browser extension" }
+          ]
+        },
+        {
+          "prompt": "Areas where blockchain can be applied:",
+          "options": [
+            { "text": "Tracking the origin of goods in a supply chain" },
+            { "text": "Digital assets and payments" },
+            { "text": "Verifying the authenticity of documents" },
+            { "text": "Adjusting monitor brightness" }
+          ]
+        }
+      ]
+    },
+    "IAKTT-Q-S14": {
+      "title": "Cryptographic protection methods",
+      "instructions": "Read each question carefully. In questions with several answers, select all the correct options.",
+      "questions": [
+        {
+          "prompt": "Which method uses one key for both encryption and decryption?",
+          "options": [
+            { "text": "Symmetric encryption" },
+            { "text": "Asymmetric encryption" },
+            { "text": "Hashing" },
+            { "text": "Archiving" }
+          ]
+        },
+        {
+          "prompt": "What does an electronic digital signature confirm?",
+          "options": [
+            { "text": "The author of the document and that the document has not been altered" },
+            { "text": "The size of the document" },
+            { "text": "The colour of the document" },
+            { "text": "The Internet speed" }
+          ]
+        },
+        {
+          "prompt": "The HTTPS protocol encrypts data between the browser and the website.",
+          "options": [
+            { "text": "True" },
+            { "text": "False" }
+          ]
+        },
+        {
+          "prompt": "In public-key cryptography, whose key should a message be encrypted with so that only the recipient can open it?",
+          "options": [
+            { "text": "The recipient's public key" },
+            { "text": "The sender's public key" },
+            { "text": "The recipient's private key" },
+            { "text": "No key is needed" }
+          ]
+        }
+      ]
+    }
+  },
+  "activities": {
+    "QUIZ:DEV-QUIZ-DB": { "title": "Mini-quiz: databases", "instructions": "Complete the quiz in 10 minutes." },
+    "QUIZ:IAKTT-Q-S3": { "title": "Operating systems" },
+    "QUIZ:IAKTT-Q-S4": { "title": "Microsoft Excel: formulas and analysis" },
+    "QUIZ:IAKTT-Q-S7": { "title": "Big Data" },
+    "CODING_TASK:IAKTT-S8": { "title": "Branching algorithm: a purchase discount" },
+    "QUIZ:IAKTT-Q-S11": { "title": "Cloud technologies" },
+    "QUIZ:IAKTT-Q-S12": { "title": "Blockchain technology" },
+    "QUIZ:IAKTT-Q-S14": { "title": "Cryptographic protection methods" },
+    "CODING_TASK:IAKTT-S15": { "title": "Iterative algorithm: calculating deposit interest" }
+  }
+}
