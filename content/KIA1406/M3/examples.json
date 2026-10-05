@@ -1,0 +1,6 @@
+[
+  { "runs": [
+    { "input": "203.0.113.9\n7\n10:15:02 firewall port scan from 203.0.113.9\n10:20:40 web failed login admin from 203.0.113.9\n10:21:05 web successful login admin from 203.0.113.9\n10:05:00 ad user ali logged on\n10:22:30 db admin exported 5000 records\n10:20:41 web failed login admin from 203.0.113.9\n10:30:00 firewall large outbound transfer to 203.0.113.9\n", "output": "  10:05:00 [ad] user ali logged on\n* 10:15:02 [firewall] port scan from 203.0.113.9\n* 10:20:40 [web] failed login admin from 203.0.113.9\n* 10:20:41 [web] failed login admin from 203.0.113.9\n* 10:21:05 [web] successful login admin from 203.0.113.9\n  10:22:30 [db] admin exported 5000 records\n* 10:30:00 [firewall] large outbound transfer to 203.0.113.9\nevents: 5, first 10:15:02, last 10:30:00\n" },
+    { "input": "eve\n2\n09:00:00 b second same time\n09:00:00 a first same time\n", "output": "  09:00:00 [b] second same time\n  09:00:00 [a] first same time\nevents: 0\n" }
+  ] }
+]
