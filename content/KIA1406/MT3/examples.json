@@ -1,0 +1,10 @@
+[
+  { "runs": [
+    { "input": "3\nSALOM DUNYO\n", "output": "GIMHC NMRUA\n" },
+    { "input": "3\nGIMHC NMRUA\n", "output": "SALOM DUNYO\n" },
+    { "input": "5\nATTACKATDAWNWEATHERREPORTCLEAR\n", "output": "NAQBKGTKVCRUOSJDPSKKFMMZIZMBKU\n" }
+  ] },
+  { "runs": [
+    { "input": "NAQBKGTKVCRUOSJDPSKKFMMZIZMBKU\nWEATHERREPORT\n", "output": "possible: 0 1 5 6 8 9 10 11 12 13 14 15 16 17\n14 / 18\n" }
+  ] }
+]
