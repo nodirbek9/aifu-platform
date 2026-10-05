@@ -1,0 +1,8 @@
+[
+  { "runs": [
+    { "input": "8\nFishing 4 3\nShifrlovchi 3 5\nNoutbuk 3 2\nDDoS 2 4\nInsayder 2 5\nYongin 1 5\nOddiy_parol 4 3\nKamera 1 1\n", "output": "  | 1 2 3 4 5\n5 | . . . . .\n4 | . . 2 . .\n3 | . 1 . . 1\n2 | . . . 1 1\n1 | 1 . . . 1\ntotal: 8\n" }
+  ] },
+  { "runs": [
+    { "input": "4\nFishing 4 3 2 3\nShifrlovchi 3 5 3 2\nDDoS 2 4 3 4\nKamera 1 1 1 1\n", "output": "Fishing: 12 -> 6 decreased\nShifrlovchi: 15 -> 6 decreased\nDDoS: 8 -> 12 increased\nKamera: 1 -> 1 unchanged\ntotal: 36 -> 25\n" }
+  ] }
+]
