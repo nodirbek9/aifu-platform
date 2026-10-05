@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "3 120 135 128 140 118 980 125 132 130 415 127 138\n", "output": "6: 980 SUSPICIOUS (average 128.2)\n10: 415 SUSPICIOUS (average 128.5)\nchecked: 12, suspicious: 2\n" }
+  ] }
+]
