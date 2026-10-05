@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "Instagram 12000 240 36000000 6000000\nTelegram 8000 200 26000000 3000000\nGoogle 15000 180 31500000 9000000\n", "output": "Instagram: conversion 2.00%, average order 150000, CAC 25000, ROAS 6.00\nTelegram: conversion 2.50%, average order 130000, CAC 15000, ROAS 8.67\nGoogle: conversion 1.20%, average order 175000, CAC 50000, ROAS 3.50\n" }
+  ] }
+]
