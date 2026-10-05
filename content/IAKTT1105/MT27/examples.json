@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "120000 Instagram>Google>Direct\n90000 Telegram>Direct\n60000 Google\n150000 Instagram>Telegram>Google>Direct\n", "output": "Direct: last click 360000, linear 122500\nGoogle: last click 60000, linear 137500\nInstagram: last click 0, linear 77500\nTelegram: last click 0, linear 82500\n" }
+  ] }
+]
