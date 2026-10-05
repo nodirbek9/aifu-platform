@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "0.10 0.10 0.10 0.10 0.10 0.10 0.10 0.10 0.10 0.10\n1.00\n", "output": "double: sum == 1.00 -> no\ntiyin (integer): sum == 100 -> yes\n" }
+  ] }
+]
