@@ -1,0 +1,6 @@
+[
+  { "runs": [
+    { "input": "2\nTalabalar ali vali\nOqituvchilar nodir\n2\nEveryone Read\nOqituvchilar Full\n3\nTalabalar Change\nOqituvchilar Change\nAdministrators Full\n3\nali\nnodir\nmehmon\n", "output": "ali: network Read, local Change\nnodir: network Change, local Change\nmehmon: network None, local None\n" },
+    { "input": "1\nAdmins boss\n1\nEveryone Full\n1\nAdmins Full\n1\nboss\n", "output": "boss: network Full, local Full\n" }
+  ] }
+]
