@@ -1,0 +1,18 @@
+[
+  {
+    "runs": [
+      {
+        "input": "5\nallow tcp 10.0.0.0/8 22\ndeny tcp any 22\nallow tcp any 443\nallow udp 192.168.1.0/24 53\ndeny any 203.0.113.0/24 any\ntcp 10.1.2.3 22\ntcp 8.8.8.8 22\ntcp 8.8.8.8 443\ntcp 203.0.113.9 443\nudp 192.168.1.77 53\nudp 192.168.2.77 53\ntcp 10.0.0.5 3389\n",
+        "output": "tcp 10.1.2.3 -> 22: allow (#1)\ntcp 8.8.8.8 -> 22: deny (#2)\ntcp 8.8.8.8 -> 443: allow (#3)\ntcp 203.0.113.9 -> 443: allow (#3)\nudp 192.168.1.77 -> 53: allow (#4)\nudp 192.168.2.77 -> 53: deny (default)\ntcp 10.0.0.5 -> 3389: deny (default)\n"
+      }
+    ]
+  },
+  {
+    "runs": [
+      {
+        "input": "Mijoz kartasi 4111111111111111 tolov uchun\nBuyurtma raqami 1234567812345678\nKarta: 5500-0000-0000-0004 muddati 12/27\nTelefon 998901234567 va karta 4000056655665556\n",
+        "output": "Mijoz kartasi ************1111 tolov uchun\nBuyurtma raqami 1234567812345678\nKarta: ************0004 muddati 12/27\nTelefon 998901234567 va karta ************5556\nfound: 3\n"
+      }
+    ]
+  }
+]
