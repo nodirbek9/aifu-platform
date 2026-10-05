@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "Ali 120 30\nVali 30 120\nSardor 90 90\nKamola 60 50\n", "output": "Product A: price 90, revenue 180\nProduct B: price 90, revenue 180\nSeparate sales: 360\nBundle: price 150, revenue 450\nRecommendation: bundle\n" }
+  ] }
+]
