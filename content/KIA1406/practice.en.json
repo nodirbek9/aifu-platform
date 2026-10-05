@@ -1,0 +1,173 @@
+{
+  "modules": {
+    "M-FOUNDATION": { "title": "Cybersecurity foundations, risks and policy" },
+    "M-CRYPTO": { "title": "Cryptography" },
+    "M-ACCESS": { "title": "Authentication, access control and physical security" },
+    "M-NETWORK": { "title": "Network, cloud and IoT security" },
+    "M-INDEPENDENT": { "title": "Independent study assignments" }
+  },
+  "codingTasks": {
+    "KIA-A2": {
+      "title": "Risk matrix: assessing and ranking risks",
+      "description": "<p>Each risk has a <strong>likelihood</strong> (1–5) and an <strong>impact</strong> (1–5). Risk level = likelihood × impact. Determine the category using the 5×5 teaching scale below and print the risks in decreasing order of level (on a tie — in input order).</p><ul><li>1–4: <code>Past</code> (low)</li><li>5–9: <code>O'rta</code> (medium)</li><li>10–16: <code>Yuqori</code> (high)</li><li>17–25: <code>Kritik</code> (critical)</li></ul><p>Print the category words exactly as shown in <code>code</code>. The scale is chosen for a teaching example; organizations set their own thresholds in their risk policy.</p>",
+      "instructions": "Input: n; n lines with name likelihood impact (the name has no spaces). Output: on each line name level category.",
+      "constraintsText": "1 ≤ n ≤ 100.",
+      "hints": []
+    },
+    "KIA-A5C": {
+      "title": "Caesar cipher",
+      "description": "<p>In the Caesar cipher every Latin letter is shifted <em>k</em> positions in the alphabet (A follows Z). Letter case is preserved, other characters do not change. A negative <em>k</em> means decryption.</p>",
+      "instructions": "Input: line 1 k; line 2 the text. Output: the encrypted text.",
+      "constraintsText": "−1000 ≤ k ≤ 1000; the text consists of ASCII characters only.",
+      "hints": []
+    },
+    "KIA-A5V": {
+      "title": "Vigenère cipher",
+      "description": "<p>The Vigenère cipher is a polyalphabetic substitution: each letter of the text is shifted by the value of the next key letter (A = 0, B = 1, …). The key index advances only on letters; spaces and punctuation do not change.</p>",
+      "instructions": "Input: line 1 E (encrypt) or D (decrypt); line 2 the key (letters only); line 3 the text. Output: the result.",
+      "constraintsText": "Key length 1–50; the text is ASCII.",
+      "hints": []
+    },
+    "KIA-A7": {
+      "title": "RSA: key generation, encryption and decryption",
+      "description": "<p>Small primes p and q and the public exponent e are given. Carry out the RSA steps:</p><ol><li>n = p·q, φ(n) = (p − 1)(q − 1);</li><li>the private exponent d = e⁻¹ mod φ(n) (the extended Euclidean algorithm);</li><li>the ciphertext c = mᵉ mod n;</li><li>check: c^d mod n = m.</li></ol><p>In real RSA p and q have hundreds of digits and padding (for example OAEP) is applied; here only the mathematical idea is studied.</p>",
+      "instructions": "Input: p q e m. Output: on one line n φ d c decrypted_m.",
+      "constraintsText": "p, q < 10^6 prime; gcd(e, φ) = 1; 0 ≤ m < n.",
+      "hints": []
+    },
+    "KIA-A8": {
+      "title": "Checking integrity with SHA-256",
+      "description": "<p>A hash function produces a fixed-length “fingerprint” from data of any length. Even if one character changes, the SHA-256 value becomes completely different (the avalanche effect). Compute the SHA-256 of a message and compare it with the given value.</p>",
+      "instructions": "Input: line 1 the message (UTF-8); line 2 the expected hash (hex). Output: line 1 the computed hash (lowercase hex); line 2 Yaxlit (intact) or Buzilgan (corrupted) — print these words exactly.",
+      "constraintsText": "Message length 1–1000 characters.",
+      "hints": []
+    },
+    "KIA-A10": {
+      "title": "Password policy: rating password strength",
+      "description": "<p>Write a program that checks a password policy. 1 point for each criterion: length ≥ 8; length ≥ 12; a lowercase letter; an uppercase letter; a digit; a special character (a character that is neither a letter nor a digit). If the password is on the list of common passwords (<code>password, 123456, 12345678, qwerty, admin, parol</code>, case-insensitive) — the score is 0.</p><ul><li>0–2: <code>Zaif</code> (weak)</li><li>3–4: <code>O'rtacha</code> (medium)</li><li>5–6: <code>Kuchli</code> (strong)</li></ul><p>Print the level words exactly as shown in <code>code</code>.</p>",
+      "instructions": "Input: n; n passwords (each on its own line, without spaces). Output: the score and level for each password.",
+      "constraintsText": "1 ≤ n ≤ 100, the password is ASCII.",
+      "hints": []
+    },
+    "KIA-A11": {
+      "title": "Linux permissions: from rwx to octal",
+      "description": "<p>The <code>ls -l</code> command shows file permissions like <code>-rwxr-xr--</code>: the first character is the file type, then three characters each for the owner, the group and others. Each triple becomes an octal digit: r = 4, w = 2, x = 1. For example, <code>rwxr-xr--</code> → <code>754</code> (<code>chmod 754 file</code>).</p>",
+      "instructions": "Input: n; n lines with a 10-character permission string. Output: for each, the octal code and the file type — fayl (file), katalog (directory) or havola (link); print these words exactly.",
+      "constraintsText": "File type character: - (fayl), d (katalog), l (havola).",
+      "hints": []
+    }
+  },
+  "quizzes": {
+    "KIA-Q-A1": {
+      "title": "Information security concepts",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "Which property of the CIA triad means that data is open only to authorized persons?", "options": [ { "text": "Confidentiality" }, { "text": "Integrity" }, { "text": "Availability" }, { "text": "Accountability" } ] },
+        { "prompt": "The amount in a bank account was changed without authorization. Which property was violated?", "options": [ { "text": "Confidentiality" }, { "text": "Integrity" }, { "text": "Availability" }, { "text": "Anonymity" } ] },
+        { "prompt": "Against which property is a DoS attack primarily directed?", "options": [ { "text": "Integrity" }, { "text": "Confidentiality" }, { "text": "Availability" }, { "text": "Authenticity" } ] },
+        { "prompt": "An unpatched program in a system is…", "explanation": "A vulnerability is a weakness a threat can exploit. Risk is the combination of the likelihood and the consequences of a threat exploiting a vulnerability.", "options": [ { "text": "A threat" }, { "text": "A vulnerability" }, { "text": "A risk" }, { "text": "A control" } ] },
+        { "prompt": "Which of the following are controls (protective measures)?", "options": [ { "text": "A firewall" }, { "text": "Backups" }, { "text": "A phishing email" }, { "text": "Staff training" } ] }
+      ]
+    },
+    "KIA-Q-A3": {
+      "title": "Cybercrime and legal foundations",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "An employee of an organization abuses their authority to steal data. What type of threat is this?", "options": [ { "text": "External threat" }, { "text": "Insider threat" }, { "text": "Natural threat" }, { "text": "Technical failure" } ] },
+        { "prompt": "In digital forensics, what is usually used to show that evidence has not changed?", "options": [ { "text": "Compressing the file" }, { "text": "Recording the hash value of the evidence copy" }, { "text": "Encrypting the file" }, { "text": "Renaming the file" } ] },
+        { "prompt": "The chain of custody documents by whom and when the evidence was handled.", "options": [ { "text": "True" }, { "text": "False" } ] },
+        { "prompt": "What is sending an email meant to trick a victim into giving away a password called?", "options": [ { "text": "Phishing" }, { "text": "Brute force" }, { "text": "Sniffing" }, { "text": "DoS" } ] },
+        { "prompt": "Cyberethics studies only actions prohibited by law.", "explanation": "Ethics is broader than law: it also considers actions that are legal but morally wrong.", "options": [ { "text": "True" }, { "text": "False" } ] }
+      ]
+    },
+    "KIA-Q-A4": {
+      "title": "Security policy",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "Which document is at the highest, most general level of the hierarchy of security documents?", "options": [ { "text": "Security policy" }, { "text": "Standard" }, { "text": "Procedure (instruction)" }, { "text": "Configuration file" } ] },
+        { "prompt": "“An employee is given only the rights needed to do their job” — which principle is this?", "options": [ { "text": "Least privilege" }, { "text": "Defense in depth" }, { "text": "Security through obscurity" }, { "text": "Open design" } ] },
+        { "prompt": "What does a password policy usually include?", "options": [ { "text": "Minimum length" }, { "text": "Complexity requirements" }, { "text": "A procedure for telling the password to a colleague" }, { "text": "Lockout after failed attempts" } ] },
+        { "prompt": "An acceptable use policy (AUP) defines how employees may use the organization's resources.", "options": [ { "text": "True" }, { "text": "False" } ] }
+      ]
+    },
+    "KIA-Q-A6": {
+      "title": "Symmetric encryption and AES",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "What is the main feature of symmetric encryption?", "options": [ { "text": "The same key is used for encryption and decryption" }, { "text": "Two different keys are used" }, { "text": "No key is used at all" }, { "text": "Only a hash is computed" } ] },
+        { "prompt": "What is the AES block length in bits?", "explanation": "The AES block length is always 128 bits; the key length can be 128, 192 or 256 bits.", "options": [ { "text": "64" }, { "text": "128" }, { "text": "192" }, { "text": "256" } ] },
+        { "prompt": "Which key lengths does AES support?", "options": [ { "text": "56 bits" }, { "text": "128 bits" }, { "text": "192 bits" }, { "text": "256 bits" } ] },
+        { "prompt": "What type of cipher is the A5/1 algorithm?", "options": [ { "text": "Block" }, { "text": "Stream" }, { "text": "Public-key" }, { "text": "Hash function" } ] },
+        { "prompt": "In ECB mode identical plaintext blocks give identical ciphertext blocks, so it is not recommended.", "options": [ { "text": "True" }, { "text": "False" } ] }
+      ]
+    },
+    "KIA-Q-A9": {
+      "title": "SSL/TLS and certificates",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "The browser checks who signed a site's certificate. Who is that?", "options": [ { "text": "A certification authority (CA)" }, { "text": "The Internet provider" }, { "text": "A DNS server" }, { "text": "The user themselves" } ] },
+        { "prompt": "Which TCP port does HTTPS use by default?", "options": [ { "text": "80" }, { "text": "21" }, { "text": "443" }, { "text": "25" } ] },
+        { "prompt": "What information does an X.509 certificate contain?", "explanation": "The private key is never included in a certificate — only its owner keeps it.", "options": [ { "text": "The owner's name (subject)" }, { "text": "The public key" }, { "text": "The validity period" }, { "text": "The private key" } ] },
+        { "prompt": "A browser considers an expired certificate trustworthy.", "options": [ { "text": "True" }, { "text": "False" } ] }
+      ]
+    },
+    "KIA-Q-A12": {
+      "title": "Physical security",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "Which of these are physical security controls?", "options": [ { "text": "Access cards" }, { "text": "Video surveillance" }, { "text": "Antivirus" }, { "text": "A server room lock" } ] },
+        { "prompt": "What is it called when an unauthorized person follows an employee through a door?", "options": [ { "text": "Tailgating" }, { "text": "Phishing" }, { "text": "Spoofing" }, { "text": "Sniffing" } ] },
+        { "prompt": "What is the most reliable way to destroy confidential data on an old hard disk?", "options": [ { "text": "Moving the files to the recycle bin" }, { "text": "Formatting the disk" }, { "text": "Physically destroying the disk or special overwriting" }, { "text": "Installing the disk in another computer" } ] },
+        { "prompt": "Fire and flood are man-made (human-caused) threats.", "options": [ { "text": "True" }, { "text": "False" } ] }
+      ]
+    },
+    "KIA-Q-A13": {
+      "title": "Monitoring network traffic",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "Which display filter shows only HTTP traffic in Wireshark?", "options": [ { "text": "http" }, { "text": "port = web" }, { "text": "show http" }, { "text": "tcp.http" } ] },
+        { "prompt": "What is switching a network card into a mode that accepts all frames called?", "options": [ { "text": "Promiscuous mode" }, { "text": "Safe mode" }, { "text": "Duplex mode" }, { "text": "Bridge mode" } ] },
+        { "prompt": "Why can a password sent over HTTP be seen in a sniffer?", "options": [ { "text": "HTTP traffic is not encrypted" }, { "text": "The password is hashed" }, { "text": "TLS was used" }, { "text": "The password is sent via DNS" } ] },
+        { "prompt": "Network traffic should be analyzed only on an authorized network, your own, or a training network.", "options": [ { "text": "True" }, { "text": "False" } ] }
+      ]
+    },
+    "KIA-Q-A14": {
+      "title": "VPN",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "What is the main purpose of a VPN?", "options": [ { "text": "Creating an encrypted tunnel over an open network" }, { "text": "Increasing Internet speed" }, { "text": "Removing viruses" }, { "text": "Assigning IP addresses" } ] },
+        { "prompt": "Which of these are VPN protocols?", "options": [ { "text": "IPSec" }, { "text": "WireGuard" }, { "text": "OpenVPN" }, { "text": "SMTP" } ] },
+        { "prompt": "When a VPN is connected, the user is fully protected from malicious sites.", "explanation": "A VPN encrypts traffic but does not protect against malware or phishing sites.", "options": [ { "text": "True" }, { "text": "False" } ] },
+        { "prompt": "At which OSI layer does IPSec work?", "options": [ { "text": "Data link" }, { "text": "Network" }, { "text": "Transport" }, { "text": "Application" } ] }
+      ]
+    },
+    "KIA-Q-A15": {
+      "title": "IoT security",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "One of the most common weaknesses of IoT devices?", "options": [ { "text": "Factory (default) passwords are not changed" }, { "text": "A very powerful processor" }, { "text": "A lot of memory" }, { "text": "Open source code" } ] },
+        { "prompt": "Which malware organized large DDoS attacks in 2016 with a botnet of IoT devices?", "options": [ { "text": "Mirai" }, { "text": "WannaCry" }, { "text": "Stuxnet" }, { "text": "Zeus" } ] },
+        { "prompt": "Measures for protecting an IoT device:", "options": [ { "text": "Keeping the firmware updated" }, { "text": "Changing the default password" }, { "text": "Placing the device in a separate network segment" }, { "text": "Opening all ports to the Internet" } ] },
+        { "prompt": "In a cloud service, only the provider is responsible for data security.", "explanation": "The shared responsibility model: the provider protects the infrastructure, while the customer protects their own data, access rights and settings.", "options": [ { "text": "True" }, { "text": "False" } ] }
+      ]
+    }
+  },
+  "activities": {
+    "QUIZ:KIA-Q-A1": { "title": "Information security concepts" },
+    "QUIZ:KIA-Q-A14": { "title": "VPN" },
+    "QUIZ:KIA-Q-A13": { "title": "Monitoring network traffic" },
+    "QUIZ:KIA-Q-A12": { "title": "Physical security" },
+    "CODING_TASK:KIA-A11": { "title": "Linux permissions: from rwx to octal" },
+    "CODING_TASK:KIA-A10": { "title": "Password policy: rating password strength" },
+    "QUIZ:KIA-Q-A9": { "title": "SSL/TLS and certificates" },
+    "CODING_TASK:KIA-A8": { "title": "Checking integrity with SHA-256" },
+    "CODING_TASK:KIA-A7": { "title": "RSA: key generation, encryption and decryption" },
+    "QUIZ:KIA-Q-A6": { "title": "Symmetric encryption and AES" },
+    "QUIZ:KIA-Q-A15": { "title": "IoT security" },
+    "CODING_TASK:KIA-A5C": { "title": "Caesar cipher" },
+    "QUIZ:KIA-Q-A4": { "title": "Security policy" },
+    "QUIZ:KIA-Q-A3": { "title": "Cybercrime and legal foundations" },
+    "CODING_TASK:KIA-A2": { "title": "Risk matrix: assessing and ranking risks" },
+    "CODING_TASK:KIA-A5V": { "title": "Vigenère cipher" }
+  }
+}
