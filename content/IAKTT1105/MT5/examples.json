@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "report.pdf 25 100\nvideo.mp4 1500 100\nvideo.mp4 1500 20\nbackup.zip 50000 100\nbackup.zip 50000 1000\n", "output": "report.pdf, 25 MB, 100 Mbit/s: theoretical 0:00:02, in practice 0:00:03\nvideo.mp4, 1500 MB, 100 Mbit/s: theoretical 0:02:00, in practice 0:02:30\nvideo.mp4, 1500 MB, 20 Mbit/s: theoretical 0:10:00, in practice 0:12:30\nbackup.zip, 50000 MB, 100 Mbit/s: theoretical 1:06:40, in practice 1:23:20\nbackup.zip, 50000 MB, 1000 Mbit/s: theoretical 0:06:40, in practice 0:08:20\n" }
+  ] }
+]
