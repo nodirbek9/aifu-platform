@@ -1,0 +1,6 @@
+[
+  { "runs": [
+    { "input": "sale ESF-101 25000000 accepted\nsale ESF-102 18000000 accepted\nsale ESF-103 7000000 rejected\npurchase ESF-201 12000000 accepted\npurchase ESF-202 9500000 pending\npurchase ESF-203 6000000 accepted\n", "output": "ESF-103: not counted (rejected)\nESF-202: not counted (pending)\nOutput VAT: 5160000\nInput VAT (creditable): 2160000\nVAT payable: 3000000\n" },
+    { "input": "sale ESF-301 5000000 accepted\npurchase ESF-401 9000000 accepted\n", "output": "Output VAT: 600000\nInput VAT (creditable): 1080000\nExcess VAT (carried forward): 480000\n" }
+  ] }
+]
