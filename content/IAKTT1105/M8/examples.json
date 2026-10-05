@@ -1,0 +1,8 @@
+[
+  { "runs": [
+    { "input": "12000000 50000 30000\n5000000 15000 15000\n9100000 40000 25000\n", "output": "break-even point: 600 units, revenue 30000000\nloss not covered: price too low\nbreak-even point: 607 units, revenue 24280000\n" }
+  ] },
+  { "runs": [
+    { "input": "6 120 135 98 160 142 110\n", "output": "total: 765\naverage: 127.5\nbest month: 4 (160)\nmonths above average: 3\n" }
+  ] }
+]
