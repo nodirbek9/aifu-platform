@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "10 9 9 10 8 7 6 10 9 3 8 9 10 5 7 9 8 4 6 0\n1200 840\n", "output": "Responses: 20\nPromoters: 9, passives: 5, detractors: 6\nNPS: 15.0\nAverage rating: 7.35\nCompletion rate: 70.0%\n" }
+  ] }
+]
