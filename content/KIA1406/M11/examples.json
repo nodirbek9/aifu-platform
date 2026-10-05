@@ -1,0 +1,8 @@
+[
+  { "runs": [
+    { "input": "3\nali S\nvali C\nolim TS\n4\nelon U\nhisobot C\nreja S\nkod TS\nvali read reja\nali read hisobot\nali write hisobot\nvali write reja\nolim read kod\nolim write elon\n", "output": "vali read reja: deny (no read up)\nali read hisobot: allow\nali write hisobot: deny (no write down)\nvali write reja: allow\nolim read kod: allow\nolim write elon: deny (no write down)\n" }
+  ] },
+  { "runs": [
+    { "input": "4\ntalaba baho.korish jadval.korish\noqituvchi baho.korish baho.qoyish jadval.korish\ndekan hisobot.korish baho.korish\nadmin foydalanuvchi.yaratish\n4\nali talaba\nvali oqituvchi\nsardor oqituvchi dekan\nolim admin\nali baho.qoyish\nvali baho.qoyish\nsardor hisobot.korish\nolim baho.korish\nali jadval.korish\nkamol baho.korish\n", "output": "ali baho.qoyish: deny\nvali baho.qoyish: allow (oqituvchi)\nsardor hisobot.korish: allow (dekan)\nolim baho.korish: deny\nali jadval.korish: allow (talaba)\nkamol baho.korish: deny (user not found)\n" }
+  ] }
+]
