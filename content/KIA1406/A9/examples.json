@@ -1,0 +1,8 @@
+[
+  { "runs": [
+    { "input": "my.gov.uz 2026-03-01 2027-03-01 2026-10-05\nbank.uz 2025-10-20 2026-10-20 2026-10-05\nold.uz 2024-01-01 2026-09-25 2026-10-05\nnew.uz 2026-11-01 2027-11-01 2026-10-05\nleap.uz 2024-01-15 2024-03-01 2024-02-28\n", "output": "my.gov.uz: valid, 147 days left\nbank.uz: renew: 15 days left\nold.uz: expired (10 days ago)\nnew.uz: not yet valid\nleap.uz: renew: 2 days left\n" }
+  ] },
+  { "runs": [
+    { "input": "example.uz *.example.uz mail.test.uz\nexample.uz\nwww.example.uz\nWWW.Example.UZ\na.b.example.uz\ntest.uz\nmail.test.uz\nexample.uz.evil.com\n", "output": "example.uz -> match (example.uz)\nwww.example.uz -> match (*.example.uz)\nWWW.Example.UZ -> match (*.example.uz)\na.b.example.uz -> no match\ntest.uz -> no match\nmail.test.uz -> match (mail.test.uz)\nexample.uz.evil.com -> no match\n" }
+  ] }
+]
