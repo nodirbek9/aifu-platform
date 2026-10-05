@@ -1,0 +1,8 @@
+[
+  { "runs": [
+    { "input": "salom\nSalom\nsalom!\nparol123\n", "output": "6883e297 salom\n10b9bd37 Salom (diff: 16 bit)\n3d9de482 salom! (diff: 15 bit)\n1e16e5c5 parol123 (diff: 12 bit)\n" }
+  ] },
+  { "runs": [
+    { "input": "32 10000\n32 100000\n64 100000000\n128 1000000000000\n", "output": "32 bit, 10000 items: P = 1.16e-02, 50% at ~7.72e+04 items\n32 bit, 100000 items: P = 6.88e-01, 50% at ~7.72e+04 items\n64 bit, 100000000 items: P = 2.71e-04, 50% at ~5.06e+09 items\n128 bit, 1000000000000 items: P = 1.47e-15, 50% at ~2.17e+19 items\n" }
+  ] }
+]
