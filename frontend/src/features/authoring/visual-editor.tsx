@@ -92,7 +92,11 @@ export default function VisualEditor({ value, onChange, labelledBy, id }: Visual
   const { t } = useTranslation()
   const editor = useEditor({
     extensions: [
-      StarterKit.configure({ heading: { levels: [2, 3] }, link: { openOnClick: false }, trailingNode: false }),
+      StarterKit.configure({
+        heading: { levels: [2, 3] },
+        link: { openOnClick: false },
+        trailingNode: false,
+      }),
       TableKit.configure({ table: { resizable: false } }),
     ],
     content: value,
@@ -120,7 +124,8 @@ export default function VisualEditor({ value, onChange, labelledBy, id }: Visual
 
   // the text changed from outside (another language, a reload): the editor shows it
   useEffect(() => {
-    if (editor.isFocused) return
+    // a destroyed editor (replaced by TipTap on remount) has no schema left to read
+    if (editor.isDestroyed || editor.isFocused) return
     const shown = htmlOf(editor)
     if (shown !== value) editor.commands.setContent(value, { emitUpdate: false })
   }, [editor, value])

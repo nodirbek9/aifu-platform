@@ -1,5 +1,5 @@
 import { expect, test, type Page, type TestInfo } from '@playwright/test'
-import { quizIdByCode } from './db'
+import { clearQuizAttempts, databaseAvailable, quizIdByCode } from './db'
 import { isPhone, signIn } from './support'
 
 const DASTURLASH = '2eec7704-6e25-4adb-966e-b54de91a9b69'
@@ -97,6 +97,8 @@ for (const locale of ['ru', 'en'] as const) {
       await expect(page.getByText(expected.comment).first()).toBeAttached()
       await page.goto(`/student/courses/${DASTURLASH}/tasks/${TASK}`)
       await expect(page.getByRole('heading', { level: 1, name: expected.task })).toBeVisible()
+      // an attempt left open by an earlier test would show the questions instead of the start screen
+      if (databaseAvailable) clearQuizAttempts('student3', 'DAS-Q-M2')
       await page.goto(`/student/courses/${DASTURLASH}/quizzes/${quizIdByCode('DAS-Q-M2')}`)
       await expect(page.getByRole('heading', { level: 1, name: expected.quiz })).toBeVisible()
     })

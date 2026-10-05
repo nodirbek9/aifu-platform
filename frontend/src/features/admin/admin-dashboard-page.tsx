@@ -131,9 +131,7 @@ export function AdminDashboardPage() {
               )}
             <ul className="divide-border grid grid-cols-1 divide-y">
               {today.data?.classes.map((item) => (
-                <li key={classKey(item)}>
-                  <ClassRow item={item} now={now} audience="teacher" />
-                </li>
+                <ClassRow key={classKey(item)} item={item} now={now} audience="teacher" />
               ))}
             </ul>
           </CardContent>

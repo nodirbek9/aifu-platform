@@ -137,11 +137,12 @@ test.describe('"Try it" in a lesson (S-04.4)', () => {
     await page.goto(`/student/courses/${DASTURLASH}/lessons/${FIRST_LECTURE}`)
 
     await page.getByRole('button', { name: uz.lesson.tryIt }).first().click()
-    await page.getByLabel(uz.task.customInput).fill('1\n2\n3\n')
+    // the first example of DAS1110 M1 reads two numbers and prints their sum (content/DAS1110-S1/M1)
+    await page.getByLabel(uz.task.customInput).fill('12\n30\n')
     await page.getByRole('button', { name: uz.task.run, exact: true }).click()
 
     await expect(page.getByText(uz.verdict.OK, { exact: true })).toBeVisible(RESULT)
-    await expect(page.locator('pre', { hasText: '6' }).first()).toBeVisible()
+    await expect(page.locator('pre', { hasText: '42' }).first()).toBeVisible()
     await expect(page).toHaveURL(/\/lessons\//)
   })
 })

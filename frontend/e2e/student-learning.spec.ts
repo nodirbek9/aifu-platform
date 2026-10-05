@@ -66,6 +66,15 @@ test.describe('the student learns (S-01, S-03, S-04)', () => {
   test('switching the language keeps the lesson on screen and marks untranslated text', async ({
     page,
   }, testInfo) => {
+    // the course content now exists in three languages; serve this lesson as Uzbek-only so that
+    // the fallback path stays covered
+    await page.route(/\/api\/v1\/lessons\/[0-9a-f-]{36}(\?.*)?$/, async (route) => {
+      const response = await route.fetch()
+      const body = (await response.json()) as { translations?: { locale?: string }[] }
+      if (body.translations !== undefined)
+        body.translations = body.translations.filter((t) => t.locale === 'uz')
+      await route.fulfill({ response, json: body })
+    })
     await signIn(page, 'student3')
     await page.goto(`/student/courses/${DASTURLASH}`)
     await page.getByRole('link', { name: /Dasturlashning asosiy tushunchalari/ }).click()
