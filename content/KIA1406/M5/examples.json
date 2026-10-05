@@ -1,0 +1,9 @@
+[
+  { "runs": [
+    { "input": "MEET ME AT THE OLD BRIDGE AFTER THE EVENING PRAYER AND BRING THE LETTER\n", "output": "letters: 58\nE 13 22.4%\nT 8 13.8%\nR 6 10.3%\nA 4 6.9%\nN 4 6.9%\n" },
+    { "input": "abc, ABA!\n", "output": "letters: 6\nA 3 50.0%\nB 2 33.3%\nC 1 16.7%\n" }
+  ] },
+  { "runs": [
+    { "input": "40 1000000000\n56 1000000000\n128 1000000000000\n", "output": "40 bit: 1.10e+12 keys, average 1.74e-05 years\n56 bit: 7.21e+16 keys, average 1.14e+00 years\n128 bit: 3.40e+38 keys, average 5.39e+18 years\n" }
+  ] }
+]
