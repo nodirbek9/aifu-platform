@@ -1,0 +1,10 @@
+{
+  "title": "Fundamentals of Cybersecurity",
+  "shortTitle": "Cybersecurity",
+  "aim": "The aim of the course is to build students' knowledge, skills and competence in solving problems of ensuring the cybersecurity of information systems and information resources in their professional work.",
+  "objectives": "The objective of the course is to introduce students to the basic concepts of cybersecurity and to teach the foundations of cryptography, access control, effective methods and tools for ensuring network, cloud computing, Internet and computer security, and for countering threats to information security.",
+  "outcomes": {
+    "TN1": "Cybersecurity concepts: confidentiality, integrity, availability (CIA), threat, vulnerability, risk, security controls. Risk management: risk level and frequency, the risk matrix, the stages of the process. Foundations of cryptography: symmetric and public-key encryption, hashes and MACs, electronic digital signatures, cryptographic protocols. Identification and authentication: password systems, multi-factor authentication, biometric approaches; access control models. Physical security: natural and man-made threats, access control, methods of securely destroying information.",
+    "TN2": "Risk analysis: identifying assets, mapping threats and vulnerabilities, building a risk matrix and setting priorities. Working with cryptographic tools: encrypting files and disks, creating and storing keys, signing and verifying messages, checking a certificate chain. Network security practice: monitoring and analysing traffic, writing firewall rules, connecting a VPN. Backup and recovery: choosing a backup strategy, testing the recovery process; setting up a minimal procedure for collecting, storing and auditing logs."
+  }
+}

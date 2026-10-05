@@ -1,0 +1,10 @@
+{
+  "title": "Kompyuter tarmoqlari",
+  "shortTitle": "Kompyuter tarmoqlari",
+  "aim": "Fanni o'qitishdan maqsad – tarmoqlar va axborotni uzatish tizimlarining arxitekturasi va elementlarini; tarmoqlarni va axborot uzatish tizimlarini tashkillanish tamoyillari va ishlashini; lokal va global kompyuter tarmoqlari va axborot uzatish tizimlarining texnik va dasturiy komponentalari strukturasi va bajaradigan vazifasini; axborot uzatish tizimlarida berilganlarni uzatish texnologiyasini; kompyuter tarmoqlari protokollarini; axborot xavfsizligi talablariga muvofiq tarmoqlardan va axborot tizimlaridan foydalanishning xususiyatlarini o'rganish bo'yicha bilim va ko'nikmasini hosil qilishdan iborat.",
+  "objectives": "Fanning vazifasi – talabalarda zamonaviy axborot muhitida tarmoqlarning va axborotni uzatish tizimlarining ahamiyati va imkoniyatini tushunishini shakllantirish, o'z kasbiy sohasida zamonaviy tarmoqlardan va axborot uzatish tizimlaridan foydalanishni o'rgatishdan iborat.",
+  "outcomes": {
+    "TN1": "Kompyuter tarmoqlarini tashkil qilish va uning faoliyati tamoyillari, lokal tarmoqlarda qurilmalarni o'zaro bog'lanishini tashkil qilish, lokal tarmoqlarning tayanch topologiyalari, zamonaviy, keng tarqalgan protokollar, tarmoq manzili va marshrutlash asoslari, marshrutlash algoritmlari haqida bilim va tasavvurga ega bo'lishi.",
+    "TN2": "Lokal tarmoq yaratish, kerakli qurilmalar tanlash, tarmoqni sozlash, tarmoqda ishlash, unda umumiy resurslarni yaratish va ulardan foydalanish ko'nikmalariga ega bo'lishi; OSI etalon modeli va uning pog'onalarga bo'linishi, tarmoqlarning lokal, mintaqaviy va global turlari, TCP/IP lokal tarmoq ishini diagnostika qilish vositalari, kamchiliklarni bartaraf qilish usullari bo'yicha malakalarga ega bo'lishi kerak."
+  }
+}

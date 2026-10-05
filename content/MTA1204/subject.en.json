@@ -1,0 +1,15 @@
+{
+  "title": "Data Structures and Algorithms",
+  "shortTitle": "Data structures",
+  "aim": "The aim of the course is to introduce students to data structures and algorithms and to teach them to find the optimal solution by applying them when solving practical problems and creating software products, developing their capacity for logical and algorithmic reasoning.",
+  "objectives": "The objective of the course is to develop the capacity for independent thinking needed to solve problems and to teach the use of the main data structures and algorithms that can be used when programming a solution.",
+  "outcomes": {
+    "TN1": "Know the concept of an algorithm, linear data structures such as the stack, deque, list, array and queue and non-linear ones such as trees and graphs, how data is stored in computer memory, and be able to analyse algorithms and estimate their complexity.",
+    "TN2": "Have an understanding of sorting, searching, string and tree algorithms, graphs and hashing methods.",
+    "TN3": "Be able to apply the knowledge gained in the course in scientific work.",
+    "TN4": "Be able to create an abstract data type (ADT).",
+    "TN5": "Be able to implement various operations on them in the chosen programming language.",
+    "TN6": "Know how to create algorithms on ADTs when solving practical problems, or to choose the optimal one among existing algorithms, and be able to use them.",
+    "TN7": "Take an active part in research work."
+  }
+}

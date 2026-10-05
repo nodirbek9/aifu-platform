@@ -149,3 +149,19 @@ node practice.mjs import ../../content/DAS1110-S1          # writes the three la
 The Russian and English files must have the shape of the Uzbek one (the same keys and the same
 number of questions, options and hints). Output that the tests compare literally (`Kabisa`,
 `Tub emas`, `Salom, …!`) stays as it is in every language; the statement explains it.
+
+## 8. Subject texts in three languages
+
+The subject's own copy — title, short title, aim ("Fan maqsadi"), objectives ("Fanning
+vazifasi") and the learning outcomes (TN1, TN2, …) — lives next to `course.json` as
+`subject.uz.json`, `subject.ru.json` and `subject.en.json`; learning outcomes are keyed by their
+codes. A subject taught in several terms keeps these files in one course folder only (DAS1110
+keeps them in `DAS1110-S1`).
+
+```bash
+node subject.mjs export ../../content/KIA1406             # subject.uz.json from the platform
+node subject.mjs import ../../content/KIA1406 --dry-run
+node subject.mjs import ../../content/KIA1406             # writes the three languages
+```
+
+The Russian and English files must list the same outcome codes as the Uzbek one.

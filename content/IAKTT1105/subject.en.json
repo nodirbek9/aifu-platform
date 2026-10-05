@@ -1,0 +1,11 @@
+{
+  "title": "Information and Communication Technologies and Systems in Economics",
+  "shortTitle": "ICT and systems",
+  "aim": "The aim of the course is for students to master the theoretical and practical foundations of the course and to gain theoretical, methodological and applied knowledge of the trends in processing and organizing the statistical data of various sectors and branches of the economy.",
+  "objectives": "The objective of the course is for students to have an understanding of the classification of information systems in various sectors of the economy and the information technologies used in them, the development trends of digital and information technologies, their directions of development and their characteristics.",
+  "outcomes": {
+    "TN1": "Have an understanding of the classification of information systems in various sectors of the economy and the information technologies used in them, the development trends and directions of digital and information technologies and their characteristics.",
+    "TN2": "Be able to use the functional capabilities of local area networks and the Internet.",
+    "TN3": "Know modern application software and be able to use it. Have an understanding of processing and organizing the statistical data of various sectors and branches of the economy."
+  }
+}

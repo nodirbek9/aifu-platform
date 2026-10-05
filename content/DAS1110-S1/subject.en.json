@@ -1,0 +1,17 @@
+{
+  "title": "Programming",
+  "shortTitle": "Programming",
+  "aim": "The aim of the course is to teach students the fundamental concepts of programming languages and methods of algorithm design, solving applied problems from various fields and logical thinking, and to develop the skills of creating applications in different programming environments and putting them into practice. It also introduces the principles of object-oriented programming and the advanced features of programming languages.",
+  "objectives": "The objective of the course is for students learning programming to embrace technological innovation, build theoretical knowledge and practical skills, solve technical problems with modern programming languages and apply these methods in their professional work.",
+  "outcomes": {
+    "TN1": "Know information, the ways it is stored, processed and transmitted, the mathematical and software support of computing systems and the features of their use in science, industry and education.",
+    "TN2": "Have an understanding of computer software, the types of programs and their features.",
+    "TN3": "Have the skills of using high-level programming languages, software and programming technologies.",
+    "TN4": "Have theoretical knowledge of designing algorithms for solving problems of applied and computational mathematics.",
+    "TN5": "Know the basic concepts, definitions and theorems of vector analysis, field theory and the theory of functions of a complex variable.",
+    "TN6": "While studying the course, have an understanding of the relevant processes and at the same time be able to think logically and draw correct conclusions.",
+    "TN7": "Learn the concepts of object-oriented programming — encapsulation, inheritance, polymorphism — and have the skills to solve practical problems with them.",
+    "TN8": "Have the skills of designing an algorithm for an applied problem, building its mathematical (computer) model and creating its software, building linear lists, aggregating data in structures and working with pointers.",
+    "TN9": "Be able to apply the acquired knowledge and skills independently and creatively in analysing and solving problems in their own specialty."
+  }
+}

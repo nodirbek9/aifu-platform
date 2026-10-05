@@ -1,0 +1,10 @@
+{
+  "title": "Kiberxavfsizlik asoslari",
+  "shortTitle": "Kiberxavfsizlik",
+  "aim": "Fanni o'qitishdan maqsad — talabalar kasbiy faoliyatida axborot tizimlari va axborot resurslarining kiberxavfsizligini ta'minlash bo'yicha masalalarni yechishda bilim, ko'nikma va malaka shakllantirishdan iborat.",
+  "objectives": "Fanning vazifasi — talabalarni kiberxavfsizlikning asosiy tushunchalari bilan tanishtirish, kriptografiya asoslari, foydalanishni nazoratlash, tarmoq, bulutli hisoblash, internet va kompyuter xavfsizligini ta'minlashning hamda axborot xavfsizligiga tahdidlar va ularga qarshi kurashishni samarali usul va vositalarini o'rgatishdan iborat.",
+  "outcomes": {
+    "TN1": "Kiberxavfsizlik konsepsiyalari: konfidensiallik, yaxlitlik, foydalanish mumkinligi (CIA), tahdid, zaiflik, risk, xavfsizlik nazoratlari. Risklarni boshqarish: risk darajasi va chastotasi, risk matritsasi, jarayon bosqichlari. Kriptografiya asoslari: simmetrik va ochiq kalitli shifrlash, xesh va MAC, elektron raqamli imzo, kriptografik protokollar. Identifikatsiya va autentifikatsiya: parol tizimlari, ko'p omilli autentifikatsiya, biometrik yondashuvlar; foydalanishni boshqarish modellari. Fizik xavfsizlik: tabiiy va sun'iy tahdidlar, kirishni nazorat qilish, axborotni xavfsiz yo'q qilish usullari.",
+    "TN2": "Risk tahlili: aktivlarni aniqlash, tahdid va zaifliklarni xaritalash, risk matritsasini tuzish va ustuvorliklarni belgilash. Kriptovositalar bilan ishlash: fayl va diskni shifrlash, kalitlar yaratish va saqlash, xabarni imzolash va verifikatsiya, sertifikat zanjirini tekshirish. Tarmoq xavfsizligi amaliyoti: trafikni kuzatish va tahlil qilish, firewall qoidalarini yozish, VPN ulash. Zaxira va tiklash: zaxira strategiyasini tanlash, tiklash jarayonini sinovdan o'tkazish; loglarni to'plash, saqlash va auditi uchun minimal tartib yaratish."
+  }
+}

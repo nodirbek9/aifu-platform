@@ -1,0 +1,15 @@
+{
+  "title": "Ma'lumotlar tuzilmasi va algoritmlar",
+  "shortTitle": "Ma'lumotlar tuzilmasi",
+  "aim": "Fanni o'qitishdan maqsad – talabalarni ma'lumotlar tuzilmasi va algoritmlar bilan tanishtirish, amaliy masalalarni yechishda, dasturiy maxsulotlar yaratishda ularni qo'llagan holda optimal yechimni topishni o'rgatish. Ularda mantiqiy va algoritmik mushohada qilish qobiliyatini shakllantirish.",
+  "objectives": "Fanning vazifasi – masalalarni yechishda zarur bo'ladigan mustaqil fikrlash qobiliyatini shakllantirish, yechimni dasturlashtirishda foydalanish mumkin bo'lgan asosiy ma'lumotlar tuzilmalari va algoritmlardan foydalanishni o'rgatishdan iborat.",
+  "outcomes": {
+    "TN1": "Algoritm tushinchasi, stek, dek, ro'yxat, massiv, navbat kabi chiziqli va daraxt, graf kabi nochiziqli berilganlar tuzilmasi, berilganlarning kompyuter xotirasida saqlanishi, algoritmlarni tahlil qilishi va murakkabligini baholashi kerak.",
+    "TN2": "Saralash, qidiruv, satr, daraxt algoritmlari, graflar, xeshlash usullari haqida tasavvurga ega bo'lishi kerak.",
+    "TN3": "Ilmiy faoliyatda kurs bo'yicha olingan bilimlarini qo'llay olish imkoniga ega bo'ladi.",
+    "TN4": "Berilganlarning abstrakt turini (BAT) yarata olishi kerak.",
+    "TN5": "Ular ustida bajariladigan turli xil amallarni tanlangan dasturlash tilida amalga oshira olishi kerak.",
+    "TN6": "Amaliy masalalarni BAT larini qo'llagan holda ular ustida algoritmlarni yaratish yoki mavjudlari ichidan eng optimalini tanlashni bilishi va ulardan foydalana olishi kerak.",
+    "TN7": "Ilmiy-tadqiqot ishlarini bajarishda faol ishtirok etadi."
+  }
+}

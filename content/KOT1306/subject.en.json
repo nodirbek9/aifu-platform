@@ -1,0 +1,10 @@
+{
+  "title": "Computer Networks",
+  "shortTitle": "Computer networks",
+  "aim": "The aim of the course is to build knowledge and skills in studying the architecture and elements of networks and data transmission systems; the principles of organization and operation of networks and data transmission systems; the structure and functions of the hardware and software components of local and global computer networks and data transmission systems; data transmission technology in data transmission systems; computer network protocols; and the features of using networks and information systems in accordance with information security requirements.",
+  "objectives": "The objective of the course is to develop students' understanding of the importance and capabilities of networks and data transmission systems in the modern information environment and to teach them to use modern networks and data transmission systems in their professional field.",
+  "outcomes": {
+    "TN1": "Have knowledge and an understanding of the principles of organizing computer networks and how they operate, organizing the interconnection of devices in local networks, the basic topologies of local networks, modern widely used protocols, the basics of network addressing and routing, and routing algorithms.",
+    "TN2": "Have the skills of creating a local network, choosing the necessary devices, configuring the network, working on the network, creating shared resources and using them; have competence in the OSI reference model and its division into layers, local, regional and global types of networks, tools for diagnosing the operation of a TCP/IP local network and methods of eliminating faults."
+  }
+}
