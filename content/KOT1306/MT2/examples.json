@@ -1,0 +1,6 @@
+[
+  { "runs": [
+    { "input": "6\nPC01 192.168.50.101 00:1A:2B:00:00:01\nPC02 192.168.50.102 00:1a:2b:00:00:02\nPRN1 192.168.50.150 00:1A:2B:00:00:50\nPC03 192.168.50.102 00:1A:2B:00:00:03\nVM-A 192.168.50.120 08:00:27:AA:BB:CC\nVM-B 192.168.50.121 08:00:27:aa:bb:cc\n", "output": "IP conflict: 192.168.50.102 -> PC02, PC03\nduplicate MAC: 08:00:27:AA:BB:CC -> VM-A, VM-B\n" },
+    { "input": "2\nA 10.0.0.1 aa:aa:aa:aa:aa:aa\nB 10.0.0.2 bb:bb:bb:bb:bb:bb\n", "output": "no conflicts\n" }
+  ] }
+]
