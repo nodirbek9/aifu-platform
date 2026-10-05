@@ -1,0 +1,8 @@
+[
+  { "runs": [
+    { "input": "08:00 22.5 45\n10:00 26.0 38\n12:00 28.4 30\n14:00 33.1 25\n16:00 24.0 15\n18:00 21.5 85\n", "output": "08:00 22.5C 45%: OK\n10:00 26.0C 38%: OK\n12:00 28.4C 30%: WARNING (temperature)\n14:00 33.1C 25%: CRITICAL (temperature)\n16:00 24.0C 15%: WARNING (low humidity - static electricity)\n18:00 21.5C 85%: WARNING (high humidity - condensation)\ncritical: 1, warnings: 3\n" }
+  ] },
+  { "runs": [
+    { "input": "disk1 HDD 2000 150 ichki\ndisk2 HDD 1000 120 tashqi\nssd1 SSD 512 2000 ichki\nssd2 SSD 1000 3000 utilizatsiya\nhujjat PAPER 0 0 utilizatsiya\ndisk3 HDD 500 120 ichki\n", "output": "disk1 (HDD, ichki): Clear - overwrite once, ~3.7 h\ndisk2 (HDD, tashqi): Purge - degausser or ATA Secure Erase\nssd1 (SSD, ichki): Purge - cryptographic erase\nssd2 (SSD, utilizatsiya): Destroy - shredding or melting\nhujjat (PAPER, utilizatsiya): Destroy - cross-cut shredding (P-4 or higher)\ndisk3 (HDD, ichki): Clear - overwrite once, ~1.2 h\n" }
+  ] }
+]
