@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "camera-01 camera 2.1.0 2.4.1 yes 23,80,554\nthermostat thermostat 5.0.2 5.0.2 no 443\nrouter-gw router 1.9 2.0 no 22,443\nlock-door lock 3.3 3.3 no -\ntv-lobby tv 7.2 7.2 yes 80\n", "output": "camera-01: score 14, high risk: change the password, update the firmware, disable telnet, switch to HTTPS\nthermostat: score 0, low risk: no action needed\nrouter-gw: score 3, medium risk: update the firmware\nlock-door: score 0, low risk: no action needed\ntv-lobby: score 7, high risk: change the password, switch to HTTPS\n" }
+  ] }
+]
