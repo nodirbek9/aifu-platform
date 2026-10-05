@@ -1,0 +1,8 @@
+[
+  { "runs": [
+    { "input": "00 01 53 c9 ff 10\n", "output": "00 -> inv=00 S=63\n01 -> inv=01 S=7c\n53 -> inv=ca S=ed\nc9 -> inv=27 S=dd\nff -> inv=1c S=16\n10 -> inv=74 S=ca\n" }
+  ] },
+  { "runs": [
+    { "input": "db 13 53 45\nf2 0a 22 5c\n01 01 01 01\nc6 c6 c6 c6\nd4 d4 d4 d5\n2d 26 31 4c\n", "output": "db 13 53 45 -> 8e 4d a1 bc\nf2 0a 22 5c -> 9f dc 58 9d\n01 01 01 01 -> 01 01 01 01\nc6 c6 c6 c6 -> c6 c6 c6 c6\nd4 d4 d4 d5 -> d5 d5 d7 d6\n2d 26 31 4c -> 4d 7e bd f8\n" }
+  ] }
+]
