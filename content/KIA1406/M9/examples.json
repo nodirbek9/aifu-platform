@@ -1,0 +1,9 @@
+[
+  { "runs": [
+    { "input": "16\nAli->Vali:5\nVali->Sardor:2\nSardor->Ali:1\n", "output": "#1 prev=00000000 nonce=64572 hash=00001674 Ali->Vali:5\n#2 prev=00001674 nonce=2317 hash=000048c2 Vali->Sardor:2\n#3 prev=000048c2 nonce=143961 hash=0000d51e Sardor->Ali:1\n" },
+    { "input": "16\nAli->Vali:9\nVali->Sardor:2\nSardor->Ali:1\n", "output": "#1 prev=00000000 nonce=31445 hash=00008283 Ali->Vali:9\n#2 prev=00008283 nonce=12125 hash=00003031 Vali->Sardor:2\n#3 prev=00003031 nonce=17797 hash=00005e59 Sardor->Ali:1\n" }
+  ] },
+  { "runs": [
+    { "input": "TLS_AES_128_GCM_SHA256\nTLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\nTLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256\nTLS_RSA_WITH_AES_128_CBC_SHA\nTLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA\nTLS_RSA_WITH_RC4_128_MD5\n", "output": "TLS_AES_128_GCM_SHA256: kx=(EC)DHE auth=cert cipher=AES_128_GCM hash=SHA256 pfs=+ -> strong\nTLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384: kx=ECDHE auth=RSA cipher=AES_256_GCM hash=SHA384 pfs=+ -> strong\nTLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256: kx=ECDHE auth=ECDSA cipher=CHACHA20_POLY1305 hash=SHA256 pfs=+ -> strong\nTLS_RSA_WITH_AES_128_CBC_SHA: kx=RSA auth=RSA cipher=AES_128_CBC hash=SHA pfs=- -> legacy\nTLS_DHE_RSA_WITH_3DES_EDE_CBC_SHA: kx=DHE auth=RSA cipher=3DES_EDE_CBC hash=SHA pfs=+ -> weak\nTLS_RSA_WITH_RC4_128_MD5: kx=RSA auth=RSA cipher=RC4_128 hash=MD5 pfs=- -> weak\n" }
+  ] }
+]
