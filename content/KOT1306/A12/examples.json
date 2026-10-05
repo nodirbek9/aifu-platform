@@ -1,0 +1,6 @@
+[
+  { "runs": [
+    { "input": "3\nTalabalar ali vali sami\nOqituvchilar nodir\nLaborantlar sami\n5\nEveryone Allow R\nTalabalar Allow W\nLaborantlar Deny D\nOqituvchilar Allow RWD\nvali Deny W\n6\nali W\nvali W\nsami D\nali D\nnodir D\nmehmon R\n", "output": "ali W: allowed\nvali W: denied (Deny)\nsami D: denied (Deny)\nali D: denied (not granted)\nnodir D: allowed\nmehmon R: allowed\n" },
+    { "input": "1\nA x\n1\nEveryone Deny R\n2\nx R\nx W\n", "output": "x R: denied (Deny)\nx W: denied (not granted)\n" }
+  ] }
+]
