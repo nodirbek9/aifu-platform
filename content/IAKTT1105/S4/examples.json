@@ -1,0 +1,10 @@
+[
+  {
+    "runs": [
+      {
+        "input": "Toshkent choy 1200000\nSamarqand choy 800000\nToshkent qahva 900000\nBuxoro shakar 450000\nSamarqand qahva 650000\nToshkent shakar 300000\nBuxoro choy 500000\n",
+        "output": "Buxoro: 950000 (2 rows, 19.8%)\nSamarqand: 1450000 (2 rows, 30.2%)\nToshkent: 2400000 (3 rows, 50.0%)\nTotal: 4800000\n"
+      }
+    ]
+  }
+]
