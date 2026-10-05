@@ -1,0 +1,166 @@
+{
+  "modules": {
+    "M-FOUNDATION": { "title": "Network fundamentals and architecture" },
+    "M-LAN": { "title": "Local network technologies" },
+    "M-TCPIP": { "title": "TCP/IP, addressing and routing" },
+    "M-SERVICES": { "title": "Application services and server systems" },
+    "M-OPERATIONS": { "title": "Network security and troubleshooting" },
+    "M-INDEPENDENT": { "title": "Independent study tasks" }
+  },
+  "codingTasks": {
+    "KOT-A4": {
+      "title": "Digital encoding: NRZ, NRZI and Manchester",
+      "description": "<p>Turn a sequence of bits into a line signal. Signal levels are written as <code>+</code> (high) and <code>-</code> (low).</p><ul><li><strong>NRZ</strong> (NRZ-L): 1 → <code>+</code>, 0 → <code>-</code>.</li><li><strong>NRZI</strong>: the starting level is <code>-</code>; on a 1 the level flips, on a 0 it stays.</li><li><strong>MANCHESTER</strong> (the IEEE 802.3 convention): each bit has two half-periods; 0 → <code>+-</code> (high to low), 1 → <code>-+</code> (low to high).</li></ul>",
+      "instructions": "Input: the scheme name and the bit string (separated by a space). Output: the signal string.",
+      "constraintsText": "Number of bits: 1–1000.",
+      "hints": []
+    },
+    "KOT-A7": {
+      "title": "IPv4 subnet calculator",
+      "description": "<p>For an address in CIDR form (for example, <code>192.168.10.77/26</code>) calculate the network address, the mask, the broadcast address, the first and last host and the number of hosts.</p><p>Network = IP AND mask; broadcast = network OR (NOT mask); number of hosts = 2^(32 − prefix) − 2.</p>",
+      "instructions": "Input: IP/prefix. Output (6 lines): Network, Mask, Broadcast, First host, Last host, Number of hosts — in the format of the sample. The line labels are checked literally and stay in Uzbek as in the sample (Tarmoq, Maska, Broadcast, Birinchi xost, Oxirgi xost, Xostlar soni).",
+      "constraintsText": "1 ≤ prefix ≤ 30.",
+      "hints": []
+    },
+    "KOT-A8": {
+      "title": "Routing table: longest-prefix match",
+      "description": "<p>When forwarding a packet, a router chooses among the routes matching the address the one with the <strong>longest prefix</strong> (the most specific). <code>0.0.0.0/0</code> is the default route. If no route matches, the packet is dropped.</p>",
+      "instructions": "Input: n; n lines of network/prefix next_hop; q; q addresses. Output: for each address, the name of the next hop or DROP.",
+      "constraintsText": "1 ≤ n, q ≤ 1000.",
+      "hints": []
+    },
+    "KOT-A9": {
+      "title": "Parsing an HTTP request",
+      "description": "<p>Write the part of a server that parses a raw HTTP request received through a socket. The first line is the <em>request line</em>: the method, the path (with query parameters) and the version. Then come the <em>headers</em> up to an empty line (<code>Name: value</code>; header names are case-insensitive).</p>",
+      "instructions": "Input: the text of the HTTP request. Output (6 lines): Method, Path, Query (the parameters or -), Version, Host (or -), Headers (their number). The line labels are checked literally and stay in Uzbek as in the sample (Metod, Yo'l, So'rov, Versiya, Host, Sarlavhalar).",
+      "constraintsText": "Number of headers: 0–50.",
+      "hints": []
+    },
+    "KOT-A14": {
+      "title": "Checking firewall rules",
+      "description": "<p>A firewall checks a packet against the rule list from top to bottom and applies the <strong>first matching</strong> rule. If none matches — the default policy: deny.</p><p>A rule: <code>ACTION protocol port source_network</code>; the protocol is <code>tcp</code>, <code>udp</code> or <code>any</code>; the port is a number or <code>*</code> (any); the source is in CIDR form.</p>",
+      "instructions": "Input: n; n rules; m; m packets (protocol port source_ip). Output: for each packet ALLOW k or DENY k (k is the rule number, from 1) or DENY default.",
+      "constraintsText": "1 ≤ n, m ≤ 500.",
+      "hints": []
+    }
+  },
+  "quizzes": {
+    "KOT-Q-A1": {
+      "title": "Network devices",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "Which device sends a frame only to the needed port, based on the MAC address?", "options": [{ "text": "Hub" }, { "text": "Switch" }, { "text": "Repeater" }, { "text": "Modem" }] },
+        { "prompt": "Which device amplifies a signal to extend the distance but does not analyse frames?", "options": [{ "text": "Repeater" }, { "text": "Router" }, { "text": "Bridge" }, { "text": "Firewall" }] },
+        { "prompt": "Which device forwards packets between different networks by IP address?", "options": [{ "text": "Hub" }, { "text": "Switch" }, { "text": "Router" }, { "text": "Network adapter" }] },
+        { "prompt": "A hub sends the signal it receives out of all ports.", "options": [{ "text": "True" }, { "text": "False" }] },
+        { "prompt": "At which OSI layer does a bridge work?", "options": [{ "text": "Physical" }, { "text": "Data link" }, { "text": "Network" }, { "text": "Transport" }] }
+      ]
+    },
+    "KOT-Q-A2": {
+      "title": "Network topologies",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "In which topology are all devices connected to one central device?", "options": [{ "text": "Bus" }, { "text": "Star" }, { "text": "Ring" }, { "text": "Full mesh" }] },
+        { "prompt": "What is the main drawback of the star topology?", "options": [{ "text": "If the central device fails, the whole network stops working" }, { "text": "Very little cable is used" }, { "text": "Adding a device is hard" }, { "text": "There are no collisions" }] },
+        { "prompt": "How many links does a full mesh network of 6 nodes have?", "explanation": "n(n − 1)/2 = 6·5/2 = 15.", "options": [] },
+        { "prompt": "Which logical topology is Token Ring based on?", "options": [{ "text": "Bus" }, { "text": "Ring" }, { "text": "Star" }, { "text": "Tree" }] }
+      ]
+    },
+    "KOT-Q-A3": {
+      "title": "Network emulators",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "Which of these are network simulation or emulation tools?", "explanation": "Wireshark is a traffic analyser; it does not model a network.", "options": [{ "text": "Cisco Packet Tracer" }, { "text": "GNS3" }, { "text": "Wireshark" }, { "text": "EVE-NG" }] },
+        { "prompt": "In an emulator you can try out a network design without buying real devices.", "options": [{ "text": "True" }, { "text": "False" }] },
+        { "prompt": "Which command is usually used in Packet Tracer to check connectivity between two computers?", "options": [{ "text": "ping" }, { "text": "format" }, { "text": "mkdir" }, { "text": "chmod" }] }
+      ]
+    },
+    "KOT-Q-A5": {
+      "title": "Ethernet and packet analysis",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "How many bits does a MAC address have?", "options": [] },
+        { "prompt": "Which field of an Ethernet frame is used to detect errors?", "options": [{ "text": "FCS (CRC)" }, { "text": "TTL" }, { "text": "Port" }, { "text": "IP checksum" }] },
+        { "prompt": "What is the standard speed of Fast Ethernet?", "options": [{ "text": "10 Mbit/s" }, { "text": "100 Mbit/s" }, { "text": "1 Gbit/s" }, { "text": "10 Gbit/s" }] },
+        { "prompt": "What does the address FF:FF:FF:FF:FF:FF mean?", "options": [{ "text": "Broadcast" }, { "text": "Default gateway" }, { "text": "Loopback" }, { "text": "A multicast group" }] },
+        { "prompt": "In classic (hub-based) Ethernet networks the access method is CSMA/CD.", "options": [{ "text": "True" }, { "text": "False" }] }
+      ]
+    },
+    "KOT-Q-A6": {
+      "title": "Wireless networks and Wi-Fi",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "Which family of IEEE standards are Wi-Fi networks based on?", "options": [{ "text": "802.3" }, { "text": "802.11" }, { "text": "802.15" }, { "text": "802.5" }] },
+        { "prompt": "Which security protocol is recommended today for a home Wi-Fi router?", "options": [{ "text": "WEP" }, { "text": "WPA" }, { "text": "WPA2/WPA3" }, { "text": "An open network" }] },
+        { "prompt": "What is an SSID?", "options": [{ "text": "The wireless network name" }, { "text": "The encryption key" }, { "text": "A MAC address" }, { "text": "The channel number" }] },
+        { "prompt": "In which frequency bands does Wi-Fi work?", "options": [{ "text": "2.4 GHz" }, { "text": "5 GHz" }, { "text": "6 GHz (Wi-Fi 6E)" }, { "text": "900 MHz (GSM)" }] }
+      ]
+    },
+    "KOT-Q-A10": {
+      "title": "Installing a server operating system",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "What kind of IP address is a server usually given?", "explanation": "A server is given a static address so that clients can find it at a permanent address.", "options": [{ "text": "Static" }, { "text": "A new one from DHCP each time" }, { "text": "Only an IPv6 link-local one" }, { "text": "None" }] },
+        { "prompt": "The Server Core installation option has no graphical interface and uses fewer resources.", "options": [{ "text": "True" }, { "text": "False" }] },
+        { "prompt": "What is the main tool for adding roles and features in Windows Server?", "options": [{ "text": "Server Manager" }, { "text": "Paint" }, { "text": "Task Scheduler" }, { "text": "Notepad" }] }
+      ]
+    },
+    "KOT-Q-A11": {
+      "title": "DHCP and DNS services",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "What is the correct order of the DHCP process steps?", "options": [{ "text": "Discover → Offer → Request → Acknowledge" }, { "text": "Request → Offer → Discover → Acknowledge" }, { "text": "Offer → Discover → Acknowledge → Request" }, { "text": "Discover → Request → Offer → Acknowledge" }] },
+        { "prompt": "Which DNS record maps a domain name to an IPv4 address?", "options": [{ "text": "A" }, { "text": "MX" }, { "text": "CNAME" }, { "text": "PTR" }] },
+        { "prompt": "Which DNS record points to the mail server?", "options": [{ "text": "A" }, { "text": "MX" }, { "text": "NS" }, { "text": "TXT" }] },
+        { "prompt": "Which port do DNS queries usually use?", "options": [{ "text": "53" }, { "text": "67" }, { "text": "80" }, { "text": "443" }] },
+        { "prompt": "Besides an IP address, DHCP can also give a client the default gateway and the DNS server address.", "options": [{ "text": "True" }, { "text": "False" }] }
+      ]
+    },
+    "KOT-Q-A12": {
+      "title": "Users and permissions",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "Why is it convenient to grant permissions to groups rather than to each user?", "options": [{ "text": "Management becomes easier and mistakes fewer" }, { "text": "Passwords are not needed" }, { "text": "The network gets faster" }, { "text": "Disk space is saved" }] },
+        { "prompt": "Using the administrator account for everyday work is recommended from a security point of view.", "options": [{ "text": "True" }, { "text": "False" }] },
+        { "prompt": "Which console manages local users and groups in Windows?", "options": [{ "text": "lusrmgr.msc" }, { "text": "regedit" }, { "text": "calc" }, { "text": "mspaint" }] }
+      ]
+    },
+    "KOT-Q-A13": {
+      "title": "Shared network resources",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "What form is used in Windows to reach a shared folder over the network?", "options": [{ "text": "\\\\server\\papka" }, { "text": "http:/papka" }, { "text": "C:papka" }, { "text": "ftp:papka" }] },
+        { "prompt": "Which is the Windows file-sharing protocol?", "options": [{ "text": "SMB" }, { "text": "SMTP" }, { "text": "SNMP" }, { "text": "SSH" }] },
+        { "prompt": "The right that applies to a shared folder is the most restrictive of the share and NTFS permissions.", "options": [{ "text": "True" }, { "text": "False" }] }
+      ]
+    },
+    "KOT-Q-A15": {
+      "title": "Finding network faults",
+      "instructions": "Read each question carefully. In multiple-answer questions, select all correct options.",
+      "questions": [
+        { "prompt": "Which Windows utility shows the routers a packet passes through to its destination?", "options": [{ "text": "tracert" }, { "text": "ipconfig" }, { "text": "netstat" }, { "text": "hostname" }] },
+        { "prompt": "Which Windows command shows a computer's IP address, mask and gateway?", "options": [{ "text": "ipconfig" }, { "text": "ping" }, { "text": "nslookup" }, { "text": "arp -d" }] },
+        { "prompt": "A computer got a 169.254.x.x address. What is the likely cause?", "explanation": "169.254.0.0/16 are APIPA (link-local) addresses; the OS assigns them itself when DHCP does not answer.", "options": [{ "text": "The DHCP server could not be reached" }, { "text": "DNS is not working" }, { "text": "The browser is out of date" }, { "text": "The disk is full" }] },
+        { "prompt": "Ping by IP address works, but by domain name it does not. Which service is at fault?", "options": [{ "text": "DNS" }, { "text": "DHCP" }, { "text": "ARP" }, { "text": "Ethernet" }] },
+        { "prompt": "When troubleshooting bottom-up along the OSI model, where do you start?", "options": [{ "text": "Checking the cable and the connection" }, { "text": "Reinstalling the browser" }, { "text": "Clearing the DNS cache" }, { "text": "Rebooting the server" }] }
+      ]
+    }
+  },
+  "activities": {
+    "QUIZ:KOT-Q-A15": { "title": "Finding network faults" },
+    "CODING_TASK:KOT-A14": { "title": "Checking firewall rules" },
+    "QUIZ:KOT-Q-A13": { "title": "Shared network resources" },
+    "QUIZ:KOT-Q-A12": { "title": "Users and permissions" },
+    "QUIZ:KOT-Q-A11": { "title": "DHCP and DNS services" },
+    "QUIZ:KOT-Q-A10": { "title": "Installing a server operating system" },
+    "CODING_TASK:KOT-A9": { "title": "Parsing an HTTP request" },
+    "CODING_TASK:KOT-A8": { "title": "Routing table: longest-prefix match" },
+    "CODING_TASK:KOT-A7": { "title": "IPv4 subnet calculator" },
+    "QUIZ:KOT-Q-A6": { "title": "Wireless networks and Wi-Fi" },
+    "QUIZ:KOT-Q-A5": { "title": "Ethernet and packet analysis" },
+    "CODING_TASK:KOT-A4": { "title": "Digital encoding: NRZ, NRZI and Manchester" },
+    "QUIZ:KOT-Q-A3": { "title": "Network emulators" },
+    "QUIZ:KOT-Q-A2": { "title": "Network topologies" },
+    "QUIZ:KOT-Q-A1": { "title": "Network devices" }
+  }
+}
