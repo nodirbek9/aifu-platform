@@ -1,0 +1,6 @@
+[
+  { "runs": [
+    { "input": "Ali->Vali 500\nVali->Sardor 200\nSardor->Kamola 150\nKamola->Ali 50\n", "output": "Merkle root: b9802d65\ndifficulty 1: nonce 210, hash 0b3c9c4a, attempts 211\ndifficulty 2: nonce 231, hash 00380dcb, attempts 232\ndifficulty 3: nonce 4394, hash 0005b4b7, attempts 4395\n" },
+    { "input": "Ali->Vali 900\nVali->Sardor 200\nSardor->Kamola 150\nKamola->Ali 50\n", "output": "Merkle root: 2b924064\ndifficulty 1: nonce 48, hash 002aa1ee, attempts 49\ndifficulty 2: nonce 48, hash 002aa1ee, attempts 49\ndifficulty 3: nonce 8385, hash 0004f5a8, attempts 8386\n" }
+  ] }
+]
