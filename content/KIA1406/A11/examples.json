@@ -1,0 +1,8 @@
+[
+  { "runs": [
+    { "input": "022 002 077 027 000\n", "output": "umask 022: file 644, directory 755\numask 002: file 664, directory 775\numask 077: file 600, directory 700\numask 027: file 640, directory 750\numask 000: file 666, directory 777\n" }
+  ] },
+  { "runs": [
+    { "input": "3\nhisobot.txt ali dev 640\nskript.sh vali dev 750\ng.txt ali dev 074\n4\nali dev\nvali dev,docker\nolim users\nroot root\nvali r hisobot.txt\nvali w hisobot.txt\nolim r hisobot.txt\nvali x skript.sh\nolim x skript.sh\nali r g.txt\nvali r g.txt\nolim r g.txt\nroot w hisobot.txt\nroot x hisobot.txt\n", "output": "vali r hisobot.txt: allow (group)\nvali w hisobot.txt: deny (group)\nolim r hisobot.txt: deny (others)\nvali x skript.sh: allow (owner)\nolim x skript.sh: deny (others)\nali r g.txt: deny (owner)\nvali r g.txt: allow (group)\nolim r g.txt: allow (others)\nroot w hisobot.txt: allow (root)\nroot x hisobot.txt: deny (root)\n" }
+  ] }
+]
