@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "Toshkent 120\nSamarqand 80\nToshkent 50\nBuxoro 40\nSamarqand 70\nToshkent 30\nBuxoro 60\nAndijon 90\nToshkent 100\n", "output": "Node 1: Samarqand=80, Toshkent=170\nNode 2: Buxoro=40, Samarqand=70, Toshkent=30\nNode 3: Andijon=90, Buxoro=60, Toshkent=100\nTotal Andijon: 90\nTotal Buxoro: 100\nTotal Samarqand: 150\nTotal Toshkent: 300\n" }
+  ] }
+]
