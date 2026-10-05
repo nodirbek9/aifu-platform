@@ -1,0 +1,6 @@
+[
+  { "runs": [
+    { "input": "3\nbuxgalter finance_read,finance_write\noqituvchi grades_read,grades_write,lms\ntalaba lms,grades_read\n4\ndilnoza buxgalter finance_read,finance_write\nbobur oqituvchi grades_read,grades_write,lms,finance_read\naziz talaba lms,grades_read,grades_write\nsardor oqituvchi lms\n", "output": "dilnoza: compliant\nbobur: excess finance_read\naziz: excess grades_write\nsardor: missing grades_read,grades_write\n" },
+    { "input": "1\nr a,b\n1\nu r c\n", "output": "u: excess c; missing a,b\n" }
+  ] }
+]
