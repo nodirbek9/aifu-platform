@@ -1,0 +1,5 @@
+[
+  { "runs": [
+    { "input": "test-server 120\nreport-server 400\ncrm-server 500\nweb-server 730\n", "output": "Break-even point (hours): 434\ntest-server: 120 h, on-demand 180000, reserved 650000 -> on-demand\nreport-server: 400 h, on-demand 600000, reserved 650000 -> on-demand\ncrm-server: 500 h, on-demand 750000, reserved 650000 -> reserved\nweb-server: 730 h, on-demand 1095000, reserved 650000 -> reserved\n" }
+  ] }
+]
