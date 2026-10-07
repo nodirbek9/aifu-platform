@@ -65,7 +65,7 @@ har bir s uchun: s.yuza()     → har biri oʻz formulasi bilan
 Tillardagi farq:
 
 - **Python va Java**da barcha metodlar sukut boʻyicha polimorf. Java'da `@Override` izohi xatoni ushlaydi: metod nomi notoʻgʻri yozilsa, kompilyator ogohlantiradi.
-- **C++**da metod ota sinfda `virtual` deb eʼlon qilinishi, obyektlar esa **koʻrsatkich** yoki **havola** orqali ishlatilishi kerak. Aks holda har doim ota versiyasi chaqiriladi. Vorisda `override` yozish tavsiya etiladi.
+- **C++ da** metod ota sinfda `virtual` deb eʼlon qilinishi, obyektlar esa **koʻrsatkich** yoki **havola** orqali ishlatilishi kerak. Aks holda har doim ota versiyasi chaqiriladi. Vorisda `override` yozish tavsiya etiladi.
 
 **Abstrakt sinf** — oʻzidan obyekt yaratib boʻlmaydigan, faqat vorislar uchun shablon boʻlgan sinf. Uning abstrakt metodlari tanasiz boʻladi va har bir voris ularni albatta aniqlashi kerak: Java'da `abstract`, C++'da `virtual double yuza() const = 0;` (sof virtual metod), Python'da `abc` modulidagi `@abstractmethod`.
 

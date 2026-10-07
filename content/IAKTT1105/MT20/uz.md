@@ -5,7 +5,7 @@ summary: Mustaqil ish — "hammasi xizmat sifatida" (XaaS) — IaaS, PaaS, SaaS 
 
 ## Mustaqil ishning maqsadi
 
-M11 da bulutning NIST boʻyicha xususiyatlari, uchta asosiy xizmat modeli (IaaS, PaaS, SaaS) va joylashtirish modellari bilan tanishdik. Bu mustaqil ishda bulut xizmatlarining **toʻliq "menyusi"**ni, ularning ostidagi texnologiyalarni va **narx modellarini** chuqurroq koʻrib chiqamiz — iqtisodchi uchun aynan narx modeli tanlovi katta tejash beradi.
+M11 da bulutning NIST boʻyicha xususiyatlari, uchta asosiy xizmat modeli (IaaS, PaaS, SaaS) va joylashtirish modellari bilan tanishdik. Bu mustaqil ishda bulut xizmatlarining **toʻliq „menyusi“ni**, ularning ostidagi texnologiyalarni va **narx modellarini** chuqurroq koʻrib chiqamiz — iqtisodchi uchun aynan narx modeli tanlovi katta tejash beradi.
 
 :::note
 **Bu mustaqil ishdan soʻng siz:**
