@@ -99,6 +99,16 @@ public final class AttendanceDtos {
 
     // ------------------------------------------------------------------ journal
 
+    @Schema(description = "A group I teach, with my courses that meet it (the journal's choices).")
+    public record JournalGroupChoice(
+            UUID groupId, String groupCode, List<JournalCourseRef> courses) {}
+
+    public record JournalCourseRef(UUID courseId, String subjectCode, String title) {}
+
+    @Schema(
+            description =
+                    "A class held in the period. sessionId is null until something is saved for"
+                            + " the class; attendanceTaken says whether its attendance was marked.")
     public record JournalSession(
             UUID sessionId,
             UUID entryId,
@@ -108,7 +118,8 @@ public final class AttendanceDtos {
             String subgroup,
             List<GroupRef> groups,
             String lessonTitle,
-            String topic) {}
+            String topic,
+            boolean attendanceTaken) {}
 
     public record JournalRow(
             UUID userId,
@@ -119,7 +130,7 @@ public final class AttendanceDtos {
                     Map<UUID, AttendanceStatus> marks,
             Totals totals) {}
 
-    @Schema(description = "Students x class dates for one course (spec T-10).")
+    @Schema(description = "Students x the classes held in a period, for one course (spec T-10).")
     public record JournalView(
             UUID courseId,
             String subjectCode,

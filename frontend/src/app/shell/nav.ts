@@ -8,6 +8,7 @@ import {
   GraduationCap,
   House,
   Layers,
+  Megaphone,
   ScrollText,
   Table2,
   UserCheck,
@@ -27,6 +28,7 @@ export type NavKey =
   | 'teacherClasses'
   | 'teacherJournal'
   | 'groups'
+  | 'announcements'
   | 'adminTimetable'
   | 'adminUsers'
   | 'adminStructure'
@@ -52,6 +54,7 @@ const NAV: Record<Role, readonly NavItem[]> = {
     { key: 'assignments', to: '/student/assignments', icon: ClipboardList, primary: true },
     { key: 'grades', to: '/student/grades', icon: GraduationCap },
     { key: 'attendance', to: '/student/attendance', icon: UserCheck },
+    { key: 'announcements', to: '/announcements', icon: Megaphone },
   ],
   TEACHER: [
     { key: 'home', to: '/teacher', icon: House, end: true, primary: true },
@@ -59,6 +62,7 @@ const NAV: Record<Role, readonly NavItem[]> = {
     { key: 'teacherClasses', to: '/teacher/courses', icon: BookOpen, primary: true },
     { key: 'teacherJournal', to: '/teacher/journal', icon: ClipboardCheck, primary: true },
     { key: 'groups', to: '/teacher/groups', icon: UsersRound },
+    { key: 'announcements', to: '/announcements', icon: Megaphone },
   ],
   ADMIN: [
     { key: 'home', to: '/admin', icon: House, end: true, primary: true },
@@ -67,6 +71,7 @@ const NAV: Record<Role, readonly NavItem[]> = {
     { key: 'adminStructure', to: '/admin/structure', icon: Layers, primary: true },
     { key: 'adminReference', to: '/admin/reference', icon: Database },
     { key: 'adminLoad', to: '/admin/load', icon: Table2 },
+    { key: 'announcements', to: '/announcements', icon: Megaphone },
     { key: 'adminAudit', to: '/admin/audit', icon: ScrollText },
   ],
 }

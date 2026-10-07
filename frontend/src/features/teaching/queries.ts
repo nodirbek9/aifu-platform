@@ -3,6 +3,7 @@ import { api, unwrap } from '@/shared/api/client'
 import type { Locale } from '@/shared/i18n'
 import { useLocale } from '@/shared/i18n/use-locale'
 import { pickTranslation } from '@/shared/lib/translations'
+import type { Audience } from '@/features/announcements/queries'
 import {
   lessonPlanOf,
   lessonTitle,
@@ -204,7 +205,44 @@ export function useClassPlanQuery(courseId: string, locale: Locale) {
 
 export type JournalFilter = { groupId?: string; from?: string; to?: string }
 
-/** The attendance journal: students × the classes whose attendance was taken. */
+/** A group I teach and my courses that meet it: what the journal is opened by. */
+export type JournalChoice = {
+  groupId: string
+  groupCode: string
+  courses: { id: string; title: string; subjectCode?: string }[]
+}
+
+export function useJournalChoicesQuery() {
+  const locale = useLocale()
+  return useQuery({
+    queryKey: ['teacher', 'journal-choices', locale],
+    queryFn: async () =>
+      (await unwrap(api.GET('/api/v1/teacher/journal/groups', { params: { query: { locale } } }))).flatMap(
+        (row): JournalChoice[] =>
+          row.groupId === undefined || row.groupCode === undefined
+            ? []
+            : [
+                {
+                  groupId: row.groupId,
+                  groupCode: row.groupCode,
+                  courses: (row.courses ?? []).flatMap((course) =>
+                    course.courseId === undefined
+                      ? []
+                      : [
+                          {
+                            id: course.courseId,
+                            title: course.title ?? course.subjectCode ?? '',
+                            ...(course.subjectCode !== undefined && { subjectCode: course.subjectCode }),
+                          },
+                        ],
+                  ),
+                },
+              ],
+      ),
+  })
+}
+
+/** The attendance journal: the group's students × every class held in the period. */
 export function useJournalQuery(courseId: string | undefined, filter: JournalFilter, locale: Locale) {
   return useQuery({
     queryKey: [...teachingKeys.journal(courseId ?? ''), filter, locale],
@@ -352,7 +390,13 @@ export function useGroupStudentsQuery(groupId: string | undefined) {
   })
 }
 
-export type NewAnnouncement = { courseId?: string; groupId?: string; title: string; body: string }
+export type NewAnnouncement = {
+  audience?: Audience
+  courseId?: string
+  groupId?: string
+  title: string
+  body: string
+}
 
 export function usePostAnnouncement() {
   const queryClient = useQueryClient()

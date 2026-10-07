@@ -54,7 +54,7 @@ test.describe('resilience', () => {
     })
     await page.getByLabel(uz.profile.phone).fill('+998 90 111 22 33')
     await page.getByRole('button', { name: uz.profile.save, exact: true }).click()
-    await expect(page.getByText(uz.profile.phoneSaved)).toBeVisible()
+    await expect(page.getByText(uz.profile.phoneSaved, { exact: true })).toBeVisible()
     expect(refused).toBe(true)
     await expect(page).toHaveURL(/\/profile$/)
     resetNotificationsAndPhone('student3')

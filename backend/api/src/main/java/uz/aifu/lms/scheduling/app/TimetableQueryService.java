@@ -369,6 +369,31 @@ public class TimetableQueryService {
                 .min(Comparator.comparing((Occurrence o) -> !o.held()));
     }
 
+    /** For each course, the groups it has classes with in its term's published timetable. */
+    @Transactional(readOnly = true)
+    public Map<UUID, Set<StudentGroup>> groupsOfCourses(java.util.Collection<UUID> courseIds) {
+        Map<UUID, Set<StudentGroup>> found = new HashMap<>();
+        Set<UUID> terms =
+                courses.labels(courseIds, LocaleCode.DEFAULT).values().stream()
+                        .map(CourseLabel::termId)
+                        .collect(Collectors.toSet());
+        for (UUID termId : terms) {
+            timetables
+                    .findByTermIdAndStatus(termId, TimetableStatus.PUBLISHED)
+                    .ifPresent(
+                            published -> {
+                                for (TimetableEntry entry : entries.findAllOf(published.getId())) {
+                                    if (courseIds.contains(entry.getCourseId())) {
+                                        found.computeIfAbsent(
+                                                        entry.getCourseId(), key -> new HashSet<>())
+                                                .addAll(entry.getGroups());
+                                    }
+                                }
+                            });
+        }
+        return found;
+    }
+
     /**
      * Every class of a course over its term, from the published timetable; optionally only those of
      * one group. Empty when the term has no published timetable.

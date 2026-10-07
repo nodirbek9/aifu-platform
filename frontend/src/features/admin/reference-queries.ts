@@ -137,7 +137,8 @@ export function usePairSlotsQuery() {
 
 export function useSavePairSlot() {
   return useRefreshingMutation(
-    [referenceKeys.slots],
+    // every timetable names its pairs from the bell schedule
+    [referenceKeys.slots, ['timetable']],
     ({ id, input }: { id?: string; input: PairSlotInput }) =>
       id === undefined
         ? unwrap(api.POST('/api/v1/admin/pair-slots', { body: input }))
@@ -146,7 +147,7 @@ export function useSavePairSlot() {
 }
 
 export function useDeletePairSlot() {
-  return useRefreshingMutation([referenceKeys.slots], (id: string) =>
+  return useRefreshingMutation([referenceKeys.slots, ['timetable']], (id: string) =>
     unwrap(api.DELETE('/api/v1/admin/pair-slots/{id}', { params: { path: { id } } })),
   )
 }

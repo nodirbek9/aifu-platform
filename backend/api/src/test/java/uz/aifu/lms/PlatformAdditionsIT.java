@@ -20,6 +20,7 @@ import org.springframework.http.ResponseEntity;
 import uz.aifu.lms.academics.domain.Course;
 import uz.aifu.lms.announcement.api.dto.AnnouncementDtos.AnnouncementView;
 import uz.aifu.lms.announcement.api.dto.AnnouncementDtos.CreateAnnouncementRequest;
+import uz.aifu.lms.announcement.domain.AnnouncementAudience;
 import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.domain.PublicationStatus;
 import uz.aifu.lms.common.error.ApiError;
@@ -348,6 +349,78 @@ class PlatformAdditionsIT extends AbstractIntegrationTest {
     // ------------------------------------------------------------------ announcements
 
     @Test
+    void wideAnnouncements_reachEveryStudentOrTeacher_andOnlyTheStudyOfficeWritesThem() {
+        World w = new World();
+        User student = schedulingFixtures.student(null);
+        User teacherUser = userFixtures.activeUser(RoleCode.TEACHER);
+        String teacher = login(teacherUser);
+        String title = "Imtihonlar haftasi " + SchedulingFixtures.unique(6);
+
+        // a teacher may not write to the whole university; a wide one names no course
+        assertThat(
+                        post(
+                                        teacher,
+                                        "/api/v1/teacher/announcements",
+                                        new CreateAnnouncementRequest(
+                                                null,
+                                                null,
+                                                title,
+                                                "<p>x</p>",
+                                                AnnouncementAudience.EVERYONE),
+                                        ApiError.class)
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.FORBIDDEN);
+        assertThat(
+                        post(
+                                        w.adminToken,
+                                        "/api/v1/teacher/announcements",
+                                        new CreateAnnouncementRequest(
+                                                w.course.getId(),
+                                                null,
+                                                title,
+                                                "<p>x</p>",
+                                                AnnouncementAudience.STUDENTS),
+                                        ApiError.class)
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.BAD_REQUEST);
+
+        AnnouncementView posted =
+                post(
+                                w.adminToken,
+                                "/api/v1/teacher/announcements",
+                                new CreateAnnouncementRequest(
+                                        null,
+                                        null,
+                                        title,
+                                        "<p>Imtihonlar 20-dekabrdan boshlanadi.</p>",
+                                        AnnouncementAudience.STUDENTS),
+                                AnnouncementView.class)
+                        .getBody();
+        assertThat(posted.audience()).isEqualTo(AnnouncementAudience.STUDENTS);
+        assertThat(titles(login(student))).contains(title);
+        assertThat(
+                        get(
+                                        login(student),
+                                        "/api/v1/notifications/me/unread-count",
+                                        UnreadCountView.class)
+                                .getBody()
+                                .count())
+                .isGreaterThanOrEqualTo(1);
+        assertThat(titles(teacher)).doesNotContain(title);
+
+        // taken back, so that no other test's student sees it
+        assertThat(
+                        rest.exchange(
+                                        url("/api/v1/teacher/announcements/" + posted.id()),
+                                        HttpMethod.DELETE,
+                                        new HttpEntity<>(bearer(w.adminToken)),
+                                        Void.class)
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.NO_CONTENT);
+        assertThat(titles(login(student))).doesNotContain(title);
+    }
+
+    @Test
     void announcements_reachTheCourseOrTheGroup_andNotifyTheirStudents() {
         World w = new World();
         GroupView group =
@@ -362,6 +435,7 @@ class PlatformAdditionsIT extends AbstractIntegrationTest {
                                         null,
                                         "uz",
                                         20,
+                                        null,
                                         null),
                                 GroupView.class)
                         .getBody();

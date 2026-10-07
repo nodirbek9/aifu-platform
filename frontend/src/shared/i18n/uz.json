@@ -56,7 +56,8 @@
     "adminStructure": "Oʻquv tuzilmasi",
     "adminReference": "Maʼlumotnomalar",
     "adminLoad": "Yuklama",
-    "adminAudit": "Audit"
+    "adminAudit": "Audit",
+    "announcements": "Eʼlonlar"
   },
   "auth": {
     "signInTitle": "Kirish",
@@ -487,7 +488,17 @@
     "topicNone": "Bu dars uchun mavzu hali belgilanmagan.",
     "openLesson": "Darsni ochish",
     "movedTo": "Yangi vaqti: {{slot}}",
-    "movedFrom": "Avvalgi vaqti: {{slot}}"
+    "movedFrom": "Avvalgi vaqti: {{slot}}",
+    "shift": {
+      "MORNING": "Ertalabki smena",
+      "AFTERNOON": "Tushdan keyingi smena",
+      "EVENING": "Kechki smena"
+    },
+    "shiftShort": {
+      "MORNING": "Ertalab",
+      "AFTERNOON": "Tushdan keyin",
+      "EVENING": "Kechqurun"
+    }
   },
   "attendance": {
     "show": "Koʻrsatish",
@@ -540,7 +551,15 @@
     "title": "Eʼlonlar",
     "all": "Barcha eʼlonlar",
     "emptyTitle": "Hozircha eʼlonlar yoʻq",
-    "emptyBody": "Oʻqituvchi yoki oʻquv boʻlimi eʼlon berganda shu yerda koʻrinadi."
+    "emptyBody": "Oʻqituvchi yoki oʻquv boʻlimi eʼlon berganda shu yerda koʻrinadi.",
+    "composeBody": "Qabul qiluvchilarning har biriga bildirishnoma boradi.",
+    "audience": {
+      "EVERYONE": "Hammaga",
+      "STUDENTS": "Barcha talabalarga",
+      "TEACHERS": "Barcha oʻqituvchilarga",
+      "COURSE": "Kurs talabalariga",
+      "GROUP": "Guruhga"
+    }
   },
   "search": {
     "results": "Qidiruv natijalari",
@@ -611,8 +630,8 @@
     "to": "Gacha",
     "exportExcel": "Excelga yuklab olish",
     "unmarked": "belgilanmagan",
-    "journalEmptyTitle": "Davomat hali olinmagan",
-    "journalEmptyBody": "Darsda davomat belgilangach, u jurnalda paydo boʻladi.",
+    "journalEmptyTitle": "Guruhda talaba yoʻq",
+    "journalEmptyBody": "Guruhga talabalar qoʻshilgach, ular jurnalda chiqadi.",
     "journalLegend": "K — keldi, Kch — kechikdi, Y — yoʻq (sababsiz), S — sababli. 75% dan pastlari qizil bilan.",
     "planEmptyTitle": "Bu kurs uchun jadvalda darslar yoʻq",
     "planEmptyBody": "Dars jadvali eʼlon qilingach, semestrning barcha darslari shu yerda chiqadi.",
@@ -648,11 +667,16 @@
     "findStudent": "Talabani qidirish",
     "completionColumn": "Oʻzlashtirish",
     "failedAttempts": "Muvaffaqiyatsiz urinishlar",
-    "course": "Kurs",
     "noGroups": "Guruhlar yoʻq",
     "curator": "Kurator: {{name}}",
     "studentsCount": "{{count}} talaba",
-    "courseYear": "{{year}}-kurs"
+    "courseYear": "{{year}}-kurs",
+    "journalBody": "Guruhni, fanni va davrni tanlang: guruhning barcha talabalari familiya boʻyicha, shu davrda oʻtilgan har bir dars bilan.",
+    "subject": "Fan",
+    "journalNoClasses": "Bu davrda bu guruh bilan dars oʻtilmagan — talabalar roʻyxati quyida.",
+    "notTakenYet": "Davomat hali belgilanmagan",
+    "journalNoGroupsTitle": "Sizda hali guruh yoʻq",
+    "journalNoGroupsBody": "Dars jadvalida sizning darslaringiz paydo boʻlgach, guruhlar shu yerda chiqadi."
   },
   "chart": {
     "showChart": "Diagramma",
@@ -1138,7 +1162,6 @@
     "actions": "Amallar",
     "active": "Faol",
     "addComponent": "Nazorat turini qoʻshish",
-    "addPair": "Juftlik qoʻshish",
     "addStudents": "Talaba qoʻshish",
     "addTerm": "Semestr qoʻshish",
     "admissionYear": "Qabul yili",
@@ -1151,7 +1174,7 @@
     "archive": "Arxivlash",
     "assign": "Biriktirish",
     "auditLog": "Audit jurnali",
-    "bellsBody": "Har bir juftlikning boshlanish va tugash vaqti. Odatda 80 daqiqa, oraliq 10 daqiqa.",
+    "bellsBody": "Har bir smenaning juftliklari: 80 daqiqa. Ertalabki smenada tanaffus 15 daqiqa, tushdan keyingi va kechki smenada 10 daqiqa.",
     "blocksFinal": "Yakuniyga ruxsatni belgilaydi",
     "building": "Bino",
     "capacity": "Sigʻimi",
@@ -1511,7 +1534,9 @@
     "csvImport": "CSV fayldan yozish",
     "csvImporting": "Yuklanmoqda…",
     "csvImportHint": "Registrator eksporti: har qatorda bitta talaba raqami (ixtiyoriy sarlavha: student_number). Har bir qator alohida tekshiriladi.",
-    "csvFailures": "Yozilmagan qatorlar"
+    "csvFailures": "Yozilmagan qatorlar",
+    "shift": "Smena",
+    "addPairTo": "{{shift}}ga juftlik qoʻshish"
   },
   "builder": {
     "addChange": "Oʻzgarishni qoʻshish",
@@ -1597,7 +1622,8 @@
       "ROOM_TYPE": "Xona turi bu mashgʻulotga mos emas",
       "ROOM_INACTIVE": "Xona faol emas",
       "TEACHER_NOT_ASSIGNED": "Oʻqituvchi bu kursga biriktirilmagan",
-      "COURSE_OTHER_TERM": "Kurs boshqa semestrga tegishli"
+      "COURSE_OTHER_TERM": "Kurs boshqa semestrga tegishli",
+      "SHIFT_MISMATCH": "Bu juftlik guruhning smenasiga tegishli emas"
     },
     "status": {
       "DRAFT": "Qoralama",

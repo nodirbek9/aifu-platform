@@ -56,7 +56,8 @@
     "adminStructure": "Academic structure",
     "adminReference": "Reference data",
     "adminLoad": "Teaching load",
-    "adminAudit": "Audit log"
+    "adminAudit": "Audit log",
+    "announcements": "Announcements"
   },
   "auth": {
     "signInTitle": "Sign in",
@@ -487,7 +488,17 @@
     "topicNone": "No topic has been set for this class yet.",
     "openLesson": "Open the lesson",
     "movedTo": "New time: {{slot}}",
-    "movedFrom": "Was at: {{slot}}"
+    "movedFrom": "Was at: {{slot}}",
+    "shift": {
+      "MORNING": "Morning shift",
+      "AFTERNOON": "Afternoon shift",
+      "EVENING": "Evening shift"
+    },
+    "shiftShort": {
+      "MORNING": "Morning",
+      "AFTERNOON": "Afternoon",
+      "EVENING": "Evening"
+    }
   },
   "attendance": {
     "show": "Show",
@@ -540,7 +551,15 @@
     "title": "Announcements",
     "all": "All announcements",
     "emptyTitle": "No announcements yet",
-    "emptyBody": "When a teacher or the academic office announces something, it appears here."
+    "emptyBody": "When a teacher or the academic office announces something, it appears here.",
+    "composeBody": "Every recipient gets a notification.",
+    "audience": {
+      "EVERYONE": "Everyone",
+      "STUDENTS": "All students",
+      "TEACHERS": "All teachers",
+      "COURSE": "The students of a course",
+      "GROUP": "A group"
+    }
   },
   "search": {
     "results": "Search results",
@@ -611,8 +630,8 @@
     "to": "To",
     "exportExcel": "Download as Excel",
     "unmarked": "not marked",
-    "journalEmptyTitle": "No attendance has been taken yet",
-    "journalEmptyBody": "Once attendance is marked in a class, it appears in the journal.",
+    "journalEmptyTitle": "The group has no students",
+    "journalEmptyBody": "Once students are added to the group, they appear in the journal.",
     "journalLegend": "P — present, L — late, A — absent, E — excused. Below 75% in red.",
     "planEmptyTitle": "The timetable has no classes of this course",
     "planEmptyBody": "Once the timetable is published, every class of the term appears here.",
@@ -648,11 +667,16 @@
     "findStudent": "Find a student",
     "completionColumn": "Covered",
     "failedAttempts": "Failed attempts",
-    "course": "Course",
     "noGroups": "No groups",
     "curator": "Curator: {{name}}",
     "studentsCount": "{{count}} students",
-    "courseYear": "Year {{year}}"
+    "courseYear": "Year {{year}}",
+    "journalBody": "Choose a group, a subject and a period: every student of the group by surname, with every class held in that period.",
+    "subject": "Subject",
+    "journalNoClasses": "No classes with this group in this period — the students are listed below.",
+    "notTakenYet": "Attendance not taken yet",
+    "journalNoGroupsTitle": "You have no groups yet",
+    "journalNoGroupsBody": "Once your classes are in the timetable, their groups appear here."
   },
   "chart": {
     "showChart": "Chart",
@@ -1138,7 +1162,6 @@
     "actions": "Actions",
     "active": "Active",
     "addComponent": "Add a component",
-    "addPair": "Add a pair",
     "addStudents": "Add students",
     "addTerm": "Add a term",
     "admissionYear": "Admission year",
@@ -1151,7 +1174,7 @@
     "archive": "Archive",
     "assign": "Assign",
     "auditLog": "Audit log",
-    "bellsBody": "When each pair starts and ends. Usually 80 minutes with a 10-minute break.",
+    "bellsBody": "The pairs of each shift: 80 minutes each. Breaks are 15 minutes in the morning shift and 10 minutes in the afternoon and evening shifts.",
     "blocksFinal": "Gates the final",
     "building": "Building",
     "capacity": "Capacity",
@@ -1511,7 +1534,9 @@
     "csvImport": "Enrol from a CSV file",
     "csvImporting": "Uploading…",
     "csvImportHint": "A registrar export: one student number per line (an optional header: student_number). Each line is checked on its own.",
-    "csvFailures": "Lines not enrolled"
+    "csvFailures": "Lines not enrolled",
+    "shift": "Shift",
+    "addPairTo": "Add a pair to the {{shift}}"
   },
   "builder": {
     "addChange": "Add the change",
@@ -1597,7 +1622,8 @@
       "ROOM_TYPE": "The room type does not fit the class",
       "ROOM_INACTIVE": "The room is inactive",
       "TEACHER_NOT_ASSIGNED": "The teacher is not assigned to the course",
-      "COURSE_OTHER_TERM": "The course belongs to another term"
+      "COURSE_OTHER_TERM": "The course belongs to another term",
+      "SHIFT_MISMATCH": "This pair is not in the group’s shift"
     },
     "status": {
       "DRAFT": "Draft",

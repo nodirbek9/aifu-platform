@@ -1,6 +1,7 @@
 package uz.aifu.lms.scheduling.app;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -13,10 +14,11 @@ import uz.aifu.lms.scheduling.domain.WeekParity;
  * Decides whether two recurring classes clash. Pure logic, no persistence: the service maps entries
  * to {@link Slot}s and holds the timetable lock around "check then write".
  *
- * <p>Two classes clash when they sit in the same weekday and pair, can meet in the same week
- * (parity) and on a common date (validity ranges), and share a teacher, a room, or a group. Two
- * different subgroups of one group ("A" and "B" of a split lab) do not clash with each other; a
- * whole-group class clashes with any subgroup of that group.
+ * <p>Two classes clash when they sit in the same weekday at overlapping times (pairs of different
+ * shifts never share a row, so the times decide, not the pair), can meet in the same week (parity)
+ * and on a common date (validity ranges), and share a teacher, a room, or a group. Two different
+ * subgroups of one group ("A" and "B" of a split lab) do not clash with each other; a whole-group
+ * class clashes with any subgroup of that group.
  */
 public final class TimetableConflictDetector {
 
@@ -30,10 +32,17 @@ public final class TimetableConflictDetector {
             Set<UUID> groupIds,
             String subgroup,
             int dayOfWeek,
-            UUID pairSlotId,
+            PairTime pair,
             WeekParity parity,
             LocalDate validFrom,
             LocalDate validTo) {}
+
+    /** When a pair is held; a pair ending at 13:30 and one starting at 13:30 do not overlap. */
+    public record PairTime(LocalTime startsAt, LocalTime endsAt) {
+        boolean overlaps(PairTime other) {
+            return startsAt.isBefore(other.endsAt) && other.startsAt.isBefore(endsAt);
+        }
+    }
 
     public enum Kind {
         TEACHER,
@@ -67,7 +76,7 @@ public final class TimetableConflictDetector {
 
     private static boolean sameTime(Slot a, Slot b) {
         return a.dayOfWeek() == b.dayOfWeek()
-                && a.pairSlotId().equals(b.pairSlotId())
+                && a.pair().overlaps(b.pair())
                 && a.parity().overlaps(b.parity())
                 && rangesOverlap(a.validFrom(), a.validTo(), b.validFrom(), b.validTo());
     }

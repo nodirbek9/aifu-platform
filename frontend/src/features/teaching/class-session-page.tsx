@@ -3,6 +3,7 @@ import { BookOpen, Check, CheckCheck, Loader2, MapPin, MonitorPlay, UsersRound }
 import { useTranslation } from 'react-i18next'
 import { Link, useParams } from 'react-router'
 import { isHeld } from '@/features/timetable/model'
+import { usePairName } from '@/features/timetable/use-pair-name'
 import { toApiProblem } from '@/shared/api/errors'
 import { useLocale } from '@/shared/i18n/use-locale'
 import { cn } from '@/shared/lib/cn'
@@ -39,6 +40,7 @@ import {
  */
 export function ClassSessionPage() {
   const { t } = useTranslation()
+  const pairName = usePairName()
   const locale = useLocale()
   const { entryId = '', date = '' } = useParams()
   const session = useClassSessionQuery(entryId, date, locale)
@@ -84,7 +86,7 @@ export function ClassSessionPage() {
           <span className="tabular-nums">
             {formatLongDay(info.date, locale)}, {formatTimeOfDay(info.startsAt)}–
             {formatTimeOfDay(info.endsAt)}
-            {info.pairNo !== undefined && ` · ${t('timetable.pair', { number: info.pairNo })}`}
+            {info.pairNo !== undefined && ` · ${pairName(info.pairNo)}`}
           </span>
           {info.roomLabel !== undefined && (
             <span className="inline-flex items-center gap-1.5">

@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import java.time.Instant;
 import java.util.UUID;
+import uz.aifu.lms.announcement.domain.AnnouncementAudience;
 
 /** Request and response shapes of announcements. */
 public final class AnnouncementDtos {
@@ -22,10 +23,23 @@ public final class AnnouncementDtos {
             @Schema(description = "Rich text (HTML); sanitized on write")
                     @NotBlank
                     @Size(max = 20000)
-                    String body) {}
+                    String body,
+            @Schema(
+                            description =
+                                    "Who it is for. COURSE needs courseId, GROUP needs groupId;"
+                                            + " EVERYONE, STUDENTS and TEACHERS (the study office"
+                                            + " only) need neither. Left out, it follows from"
+                                            + " courseId / groupId.")
+                    AnnouncementAudience audience) {
+
+        public CreateAnnouncementRequest(UUID courseId, UUID groupId, String title, String body) {
+            this(courseId, groupId, title, body, null);
+        }
+    }
 
     public record AnnouncementView(
             UUID id,
+            AnnouncementAudience audience,
             UUID courseId,
             String subjectCode,
             String courseTitle,

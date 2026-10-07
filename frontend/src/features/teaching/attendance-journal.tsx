@@ -15,6 +15,7 @@ import { Select } from '@/shared/ui/select'
 import { Skeleton } from '@/shared/ui/skeleton'
 import type { AttendanceStatus, Journal } from './model'
 import { useGroupsQuery, useJournalQuery, type JournalFilter } from './queries'
+import { usePairName } from '@/features/timetable/use-pair-name'
 
 const markTone = {
   PRESENT: 'text-success',
@@ -36,17 +37,22 @@ function withValue(
 type AttendanceJournalProps = {
   courseId: string
   courseTitle: string
+  /** Set by the journal page, which chooses the group itself; the course page lets one pick. */
+  groupId?: string
 }
 
 /**
- * T-10 — the attendance journal of a course: students down, the classes whose attendance was
- * taken across, totals and percentage at the end; filter by group and period; export to Excel.
+ * T-10 — the attendance journal of a course: the group's students down, by surname; every class
+ * held in the period across, marked or not yet; totals and percentage at the end; filter by group
+ * and period; export to Excel.
  */
-export function AttendanceJournal({ courseId, courseTitle }: AttendanceJournalProps) {
+export function AttendanceJournal({ courseId, courseTitle, groupId }: AttendanceJournalProps) {
   const { t } = useTranslation()
   const locale = useLocale()
   const groups = useGroupsQuery()
-  const [filter, setFilter] = useState<JournalFilter>({})
+  const pairName = usePairName()
+  const [own, setFilter] = useState<JournalFilter>({})
+  const filter = groupId === undefined ? own : { ...own, groupId }
   const journal = useJournalQuery(courseId, filter, locale)
 
   const exportXlsx = (data: Journal) => {
@@ -54,7 +60,7 @@ export function AttendanceJournal({ courseId, courseTitle }: AttendanceJournalPr
       t('teaching.student'),
       t('profile.group'),
       ...data.sessions.map(
-        (session) => `${session.date}${session.pairNo === undefined ? '' : ` #${session.pairNo}`}`,
+        (session) => `${session.date}${session.pairNo === undefined ? '' : ` ${pairName(session.pairNo)}`}`,
       ),
       t('attendance.status.PRESENT'),
       t('attendance.status.LATE'),
@@ -66,7 +72,7 @@ export function AttendanceJournal({ courseId, courseTitle }: AttendanceJournalPr
       student.fullName,
       student.groupCode ?? '',
       ...data.sessions.map((session) => {
-        const mark = student.marks[session.id]
+        const mark = session.sessionId === undefined ? undefined : student.marks[session.sessionId]
         return mark === undefined ? '' : t(`teaching.markShort.${mark}`)
       }),
       student.totals.present,
@@ -83,18 +89,20 @@ export function AttendanceJournal({ courseId, courseTitle }: AttendanceJournalPr
   return (
     <div className="grid gap-4">
       <div className="flex flex-wrap items-end gap-3">
-        <Select
-          className="w-48"
-          label={t('profile.group')}
-          value={filter.groupId ?? 'all'}
-          onValueChange={(value) => {
-            setFilter((current) => withValue(current, 'groupId', value === 'all' ? undefined : value))
-          }}
-          options={[
-            { value: 'all', label: t('assignments.all') },
-            ...(groups.data ?? []).map((group) => ({ value: group.id, label: group.code })),
-          ]}
-        />
+        {groupId === undefined && (
+          <Select
+            className="w-48"
+            label={t('profile.group')}
+            value={filter.groupId ?? 'all'}
+            onValueChange={(value) => {
+              setFilter((current) => withValue(current, 'groupId', value === 'all' ? undefined : value))
+            }}
+            options={[
+              { value: 'all', label: t('assignments.all') },
+              ...(groups.data ?? []).map((group) => ({ value: group.id, label: group.code })),
+            ]}
+          />
+        )}
         <DatePicker
           label={t('teaching.from')}
           value={filter.from ?? ''}
@@ -112,7 +120,7 @@ export function AttendanceJournal({ courseId, courseTitle }: AttendanceJournalPr
           }}
         />
         <div className="flex-1" />
-        {journal.isSuccess && journal.data.sessions.length > 0 && (
+        {journal.isSuccess && journal.data.students.length > 0 && (
           <Button
             variant="outline"
             onClick={() => {
@@ -134,14 +142,17 @@ export function AttendanceJournal({ courseId, courseTitle }: AttendanceJournalPr
           }}
         />
       )}
-      {journal.isSuccess && journal.data.sessions.length === 0 && (
+      {journal.isSuccess && journal.data.students.length === 0 && (
         <EmptyState
           icon={<UserCheck aria-hidden className="size-7" />}
           title={t('teaching.journalEmptyTitle')}
           body={t('teaching.journalEmptyBody')}
         />
       )}
-      {journal.isSuccess && journal.data.sessions.length > 0 && (
+      {journal.isSuccess && journal.data.students.length > 0 && journal.data.sessions.length === 0 && (
+        <p className="text-small text-text-muted">{t('teaching.journalNoClasses')}</p>
+      )}
+      {journal.isSuccess && journal.data.students.length > 0 && (
         <div className="border-border bg-surface-raised max-h-160 overflow-auto rounded-lg border">
           <table className="text-small w-max min-w-full border-separate border-spacing-0">
             <thead className="bg-surface-sunken sticky top-0 z-20">
@@ -156,8 +167,11 @@ export function AttendanceJournal({ courseId, courseTitle }: AttendanceJournalPr
                   <th
                     key={session.id}
                     scope="col"
-                    title={session.title}
-                    className="border-border border-b px-1 py-2 text-center font-normal"
+                    title={session.taken ? session.title : t('teaching.notTakenYet')}
+                    className={cn(
+                      'border-border border-b px-1 py-2 text-center font-normal',
+                      !session.taken && 'italic',
+                    )}
                   >
                     {session.entryId === undefined ? (
                       <SessionHead date={session.date} pairNo={session.pairNo} />
@@ -194,7 +208,8 @@ export function AttendanceJournal({ courseId, courseTitle }: AttendanceJournalPr
                     )}
                   </th>
                   {journal.data.sessions.map((session) => {
-                    const mark = student.marks[session.id]
+                    const mark =
+                      session.sessionId === undefined ? undefined : student.marks[session.sessionId]
                     return (
                       <td key={session.id} className="border-border border-b px-1 py-2 text-center">
                         {mark === undefined ? (
@@ -233,6 +248,7 @@ export function AttendanceJournal({ courseId, courseTitle }: AttendanceJournalPr
 
 function SessionHead({ date, pairNo }: { date: string; pairNo: number | undefined }) {
   const locale = useLocale()
+  const pairName = usePairName()
   return (
     <span className="grid leading-tight tabular-nums">
       <span className="text-caption text-text-muted tracking-normal">{formatWeekdayShort(date, locale)}</span>
@@ -240,7 +256,7 @@ function SessionHead({ date, pairNo }: { date: string; pairNo: number | undefine
         {formatDate(`${date}T12:00:00Z`, locale).replace(/ \d{4}$/, '')}
       </span>
       {pairNo !== undefined && (
-        <span className="text-caption text-text-muted tracking-normal">#{pairNo}</span>
+        <span className="text-caption text-text-muted tracking-normal">{pairName(pairNo)}</span>
       )}
     </span>
   )

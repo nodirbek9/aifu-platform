@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.AttendanceRequest;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.ClassSessionView;
+import uz.aifu.lms.attendance.api.dto.AttendanceDtos.JournalGroupChoice;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.JournalView;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.PlannedClassView;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.SessionDetailsRequest;
@@ -107,8 +108,20 @@ public class TeacherClassSessionController {
         return classSessions.plan(courseId, groupId, web.locale(locale, http));
     }
 
+    @GetMapping("/journal/groups")
+    @Operation(
+            summary = "The groups I teach, each with my courses that meet it",
+            description = "From the published timetables; what the journal is opened by.")
+    public List<JournalGroupChoice> journalChoices(
+            @RequestParam(required = false) String locale, HttpServletRequest http) {
+        return journal.choices(web.locale(locale, http));
+    }
+
     @GetMapping("/courses/{courseId}/attendance")
-    @Operation(summary = "Attendance journal: students x classes whose attendance was taken")
+    @Operation(
+            summary =
+                    "Attendance journal: the group's students by surname x every class held in"
+                            + " the period, with the marks where attendance was taken")
     public JournalView journal(
             @PathVariable UUID courseId,
             @RequestParam(required = false) UUID groupId,

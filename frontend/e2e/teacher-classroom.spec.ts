@@ -95,6 +95,23 @@ test.describe('the teacher in the classroom (spec §9, step 2)', () => {
     ).toBeVisible()
   })
 
+  test('the journal opens by group: every student by surname, every class held so far', async ({ page }) => {
+    await signInAsTeacher(page)
+    await page.goto('/teacher/journal')
+    await page.getByRole('combobox', { name: uz.profile.group }).click()
+    await page.getByRole('option', { name: 'BK-DI26/1' }).click()
+    await expect(page.getByRole('combobox', { name: uz.teaching.subject })).toContainText('Dasturlash')
+
+    const table = page.getByRole('table')
+    // the whole group is listed, also those never marked, in the order of their surnames
+    const names = await table.getByRole('rowheader').allInnerTexts()
+    expect(names.length).toBe(13)
+    const surnames = names.map((name) => name.split(String.fromCharCode(10))[0] ?? '')
+    expect(surnames).toEqual([...surnames].sort((a, b) => a.localeCompare(b, 'uz')))
+    // every class held so far is a column, the one with attendance and the ones still without it
+    await expect(table.getByRole('columnheader')).not.toHaveCount(2)
+  })
+
   test('the journal downloads as an Excel file', async ({ page }) => {
     await signInAsTeacher(page)
     await page.goto(`/teacher/courses/${DASTURLASH}?tab=journal`)

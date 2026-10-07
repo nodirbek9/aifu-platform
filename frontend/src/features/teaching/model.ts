@@ -144,7 +144,12 @@ export function narrowPlannedClass(raw: Schemas['PlannedClassView']): PlannedCla
 }
 
 export type JournalSession = {
+  /** The column's key: its session once there is one, else the class (entry, date, pair). */
   id: string
+  /** Marks are kept by session; a class nothing was saved for has none. */
+  sessionId?: string
+  /** Whether attendance was marked in the class. */
+  taken: boolean
   entryId?: string
   date: string
   pairNo?: number
@@ -169,12 +174,15 @@ export function narrowJournal(raw: Schemas['JournalView']): Journal {
   return {
     sessions: (raw.sessions ?? [])
       .flatMap((session) => {
-        if (session.sessionId === undefined || session.date === undefined) return []
+        if (session.date === undefined) return []
+        if (session.sessionId === undefined && session.entryId === undefined) return []
         const narrowed: JournalSession = {
-          id: session.sessionId,
+          id: session.sessionId ?? `${session.entryId ?? ''}:${session.date}:${session.pairNo ?? 0}`,
+          taken: session.attendanceTaken === true,
           date: session.date,
           groups: (session.groups ?? []).flatMap((group) => (group.code === undefined ? [] : [group.code])),
         }
+        if (session.sessionId !== undefined) narrowed.sessionId = session.sessionId
         if (session.entryId !== undefined) narrowed.entryId = session.entryId
         if (session.pairNo !== undefined) narrowed.pairNo = session.pairNo
         if (session.sessionType !== undefined) narrowed.sessionType = session.sessionType

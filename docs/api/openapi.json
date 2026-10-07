@@ -174,6 +174,10 @@
       },
       "AnnouncementView" : {
         "properties" : {
+          "audience" : {
+            "enum" : [ "COURSE", "GROUP", "EVERYONE", "STUDENTS", "TEACHERS" ],
+            "type" : "string"
+          },
           "authorName" : {
             "type" : "string"
           },
@@ -1519,6 +1523,11 @@
       "CreateAnnouncementRequest" : {
         "description" : "Post an announcement to the students of a course OR of a group (exactly one of courseId and groupId).",
         "properties" : {
+          "audience" : {
+            "description" : "Who it is for. COURSE needs courseId, GROUP needs groupId; EVERYONE, STUDENTS and TEACHERS (the study office only) need neither. Left out, it follows from courseId / groupId.",
+            "enum" : [ "COURSE", "GROUP", "EVERYONE", "STUDENTS", "TEACHERS" ],
+            "type" : "string"
+          },
           "body" : {
             "description" : "Rich text (HTML); sanitized on write",
             "maxLength" : 20000,
@@ -2665,6 +2674,11 @@
             "format" : "uuid",
             "type" : "string"
           },
+          "shift" : {
+            "description" : "The shift the group studies in; MORNING when left out",
+            "enum" : [ "MORNING", "AFTERNOON", "EVENING" ],
+            "type" : "string"
+          },
           "studyForm" : {
             "enum" : [ "FULL_TIME", "PART_TIME", "EVENING", "DISTANCE" ],
             "type" : "string"
@@ -2734,6 +2748,10 @@
           },
           "programmeId" : {
             "format" : "uuid",
+            "type" : "string"
+          },
+          "shift" : {
+            "enum" : [ "MORNING", "AFTERNOON", "EVENING" ],
             "type" : "string"
           },
           "status" : {
@@ -2916,6 +2934,38 @@
         },
         "required" : [ "rows" ]
       },
+      "JournalCourseRef" : {
+        "properties" : {
+          "courseId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "subjectCode" : {
+            "type" : "string"
+          },
+          "title" : {
+            "type" : "string"
+          }
+        }
+      },
+      "JournalGroupChoice" : {
+        "description" : "A group I teach, with my courses that meet it (the journal's choices).",
+        "properties" : {
+          "courses" : {
+            "items" : {
+              "$ref" : "#/components/schemas/JournalCourseRef"
+            },
+            "type" : "array"
+          },
+          "groupCode" : {
+            "type" : "string"
+          },
+          "groupId" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        }
+      },
       "JournalRow" : {
         "properties" : {
           "fullName" : {
@@ -2945,7 +2995,11 @@
         }
       },
       "JournalSession" : {
+        "description" : "A class held in the period. sessionId is null until something is saved for the class; attendanceTaken says whether its attendance was marked.",
         "properties" : {
+          "attendanceTaken" : {
+            "type" : "boolean"
+          },
           "date" : {
             "format" : "date",
             "type" : "string"
@@ -2984,7 +3038,7 @@
         }
       },
       "JournalView" : {
-        "description" : "Students x class dates for one course (spec T-10).",
+        "description" : "Students x the classes held in a period, for one course (spec T-10).",
         "properties" : {
           "courseId" : {
             "format" : "uuid",
@@ -4778,27 +4832,33 @@
         }
       },
       "PairSlotRequest" : {
+        "description" : "A pair of the bell schedule: its shift, its number in the shift, its time.",
         "properties" : {
           "endsAt" : {
-            "example" : "09:50",
+            "example" : "10:20",
             "format" : "time",
             "type" : "string"
           },
-          "pairNo" : {
+          "shift" : {
+            "enum" : [ "MORNING", "AFTERNOON", "EVENING" ],
+            "type" : "string"
+          },
+          "shiftPairNo" : {
             "format" : "int32",
-            "maximum" : 12,
+            "maximum" : 6,
             "minimum" : 1,
             "type" : "integer"
           },
           "startsAt" : {
-            "example" : "08:30",
+            "example" : "09:00",
             "format" : "time",
             "type" : "string"
           }
         },
-        "required" : [ "endsAt", "startsAt" ]
+        "required" : [ "endsAt", "shift", "startsAt" ]
       },
       "PairSlotView" : {
+        "description" : "pairNo is the pair's place in the whole day (a stable reference); shiftPairNo is the number people use (\"1-para\" of its shift).",
         "properties" : {
           "endsAt" : {
             "example" : "08:30:00",
@@ -4810,6 +4870,14 @@
             "type" : "string"
           },
           "pairNo" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "shift" : {
+            "enum" : [ "MORNING", "AFTERNOON", "EVENING" ],
+            "type" : "string"
+          },
+          "shiftPairNo" : {
             "format" : "int32",
             "type" : "integer"
           },
@@ -7355,7 +7423,7 @@
       "WarningView" : {
         "properties" : {
           "code" : {
-            "enum" : [ "ROOM_CAPACITY", "ROOM_TYPE", "ROOM_INACTIVE", "TEACHER_NOT_ASSIGNED", "COURSE_OTHER_TERM" ],
+            "enum" : [ "ROOM_CAPACITY", "ROOM_TYPE", "ROOM_INACTIVE", "TEACHER_NOT_ASSIGNED", "COURSE_OTHER_TERM", "SHIFT_MISMATCH" ],
             "type" : "string"
           },
           "message" : {
@@ -16834,7 +16902,7 @@
         "security" : [ {
           "bearerAuth" : [ ]
         } ],
-        "summary" : "Attendance journal: students x classes whose attendance was taken",
+        "summary" : "Attendance journal: the group's students by surname x every class held in the period, with the marks where attendance was taken",
         "tags" : [ "Teacher: class sessions and attendance" ]
       }
     },
@@ -18002,6 +18070,50 @@
         } ],
         "summary" : "Void a published grade entry (append-only — never deleted, ADR-011)",
         "tags" : [ "Teacher: grades" ]
+      }
+    },
+    "/api/v1/teacher/journal/groups" : {
+      "get" : {
+        "description" : "From the published timetables; what the journal is opened by.",
+        "operationId" : "journalChoices",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "locale",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "items" : {
+                    "$ref" : "#/components/schemas/JournalGroupChoice"
+                  },
+                  "type" : "array"
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description" : "Any failure (4xx, 5xx): the error envelope"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "summary" : "The groups I teach, each with my courses that meet it",
+        "tags" : [ "Teacher: class sessions and attendance" ]
       }
     },
     "/api/v1/teacher/lessons/{id}" : {

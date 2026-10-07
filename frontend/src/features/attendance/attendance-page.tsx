@@ -15,6 +15,7 @@ import { SegmentedControl } from '@/shared/ui/segmented-control'
 import { Skeleton } from '@/shared/ui/skeleton'
 import { isMissed, type AttendanceRecord, type AttendanceStatus, type CourseAttendance } from './model'
 import { useMyAttendanceQuery } from './queries'
+import { usePairName } from '@/features/timetable/use-pair-name'
 
 const statusTone = {
   PRESENT: 'success',
@@ -145,16 +146,14 @@ function CourseBlock({ course, missedOnly }: { course: CourseAttendance; missedO
 function RecordRow({ record }: { record: AttendanceRecord }) {
   const { t } = useTranslation()
   const locale = useLocale()
+  const pairName = usePairName()
   return (
     <li className="flex flex-wrap items-start gap-x-4 gap-y-1 py-3">
       <div className="grid min-w-0 flex-1 gap-1">
         <p className="text-small text-text font-medium">
           {formatLongDay(record.date, locale)}
           {record.pairNo !== undefined && (
-            <span className="text-text-muted font-normal">
-              {' '}
-              · {t('timetable.pair', { number: record.pairNo })}
-            </span>
+            <span className="text-text-muted font-normal"> · {pairName(record.pairNo)}</span>
           )}
         </p>
         {record.topic !== undefined && <p className="text-small text-text-muted">{record.topic}</p>}

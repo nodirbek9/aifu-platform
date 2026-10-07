@@ -86,6 +86,14 @@ public interface UserRepository extends JpaRepository<User, UUID> {
             """)
     boolean hasRole(@Param("userId") UUID userId, @Param("roleCode") String roleCode);
 
+    @Query(
+            """
+            select distinct u.id from User u join u.roles r
+            where r.code = :roleCode and u.status = :status
+            """)
+    List<UUID> findIdsByRoleAndStatus(
+            @Param("roleCode") String roleCode, @Param("status") UserStatus status);
+
     interface UserRoleCodeProjection {
         UUID getUserId();
 

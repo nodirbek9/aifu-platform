@@ -12,6 +12,7 @@ import uz.aifu.lms.common.error.Exceptions;
 import uz.aifu.lms.iam.domain.RoleCode;
 import uz.aifu.lms.iam.domain.StudentProfile;
 import uz.aifu.lms.iam.domain.User;
+import uz.aifu.lms.iam.domain.UserStatus;
 import uz.aifu.lms.iam.persistence.StudentProfileRepository;
 import uz.aifu.lms.iam.persistence.UserRepository;
 
@@ -32,6 +33,14 @@ public class StudentDirectory {
     public StudentDirectory(StudentProfileRepository studentProfiles, UserRepository users) {
         this.studentProfiles = studentProfiles;
         this.users = users;
+    }
+
+    /**
+     * The active accounts holding a role ("STUDENT", "TEACHER", ...): who a wide message reaches.
+     */
+    @Transactional(readOnly = true)
+    public List<UUID> activeUserIdsWithRole(String roleCode) {
+        return users.findIdsByRoleAndStatus(roleCode, UserStatus.ACTIVE);
     }
 
     @Transactional(readOnly = true)

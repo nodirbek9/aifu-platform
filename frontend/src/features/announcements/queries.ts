@@ -5,8 +5,25 @@ import type { Locale } from '@/shared/i18n'
 
 type Schemas = components['schemas']
 
+export type Audience = NonNullable<Schemas['AnnouncementView']['audience']>
+
+/** Paragraphs typed as plain text become the HTML the server stores (and sanitizes). */
+export function toHtml(text: string): string {
+  const escape = (value: string) =>
+    value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+  return text
+    .split(/\n{2,}/)
+    .map((paragraph) => paragraph.trim())
+    .filter((paragraph) => paragraph !== '')
+    .map((paragraph) => `<p>${escape(paragraph).replace(/\n/g, '<br>')}</p>`)
+    .join('')
+}
+
 export type Announcement = {
   id: string
+  audience?: Audience
+  /** The reader may take it back: its author, or the study office. */
+  mine: boolean
   title: string
   /** Sanitized HTML. */
   body: string
@@ -20,7 +37,14 @@ export type Announcement = {
 
 function narrow(raw: Schemas['AnnouncementView']): Announcement | null {
   if (raw.id === undefined || raw.title === undefined || raw.createdAt === undefined) return null
-  const item: Announcement = { id: raw.id, title: raw.title, body: raw.body ?? '', createdAt: raw.createdAt }
+  const item: Announcement = {
+    id: raw.id,
+    title: raw.title,
+    body: raw.body ?? '',
+    createdAt: raw.createdAt,
+    mine: raw.mine === true,
+  }
+  if (raw.audience !== undefined) item.audience = raw.audience
   if (raw.authorName !== undefined) item.author = raw.authorName
   if (raw.courseId !== undefined) item.courseId = raw.courseId
   if (raw.courseTitle !== undefined) item.courseTitle = raw.courseTitle

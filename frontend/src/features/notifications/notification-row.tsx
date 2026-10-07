@@ -17,6 +17,7 @@ import { cn } from '@/shared/lib/cn'
 import { formatLongDay, formatRelativeTime } from '@/shared/lib/dates'
 import { notificationPath, type NotificationItem, type NotificationType } from './model'
 import { useMarkReadMutation } from './queries'
+import { usePairName } from '@/features/timetable/use-pair-name'
 
 const ICONS: Partial<Record<NotificationType, LucideIcon>> = {
   ANNOUNCEMENT: Megaphone,
@@ -42,6 +43,7 @@ type NotificationRowProps = {
  */
 export function NotificationRow({ item, onOpened, dense = false }: NotificationRowProps) {
   const { t } = useTranslation()
+  const pairName = usePairName()
   const locale = useLocale()
   const navigate = useNavigate()
   const { activeRole } = useAuth()
@@ -70,13 +72,13 @@ export function NotificationRow({ item, onOpened, dense = false }: NotificationR
   if (item.type === 'TIMETABLE_CHANGED' && context.date !== undefined) {
     const from = [
       formatLongDay(context.date, locale),
-      ...(context.pairNo !== undefined ? [t('timetable.pair', { number: context.pairNo })] : []),
+      ...(context.pairNo !== undefined ? [pairName(context.pairNo)] : []),
     ].join(', ')
     details.push(from)
     if (context.newDate !== undefined) {
       const moved = [
         formatLongDay(context.newDate, locale),
-        ...(context.newPairNo !== undefined ? [t('timetable.pair', { number: context.newPairNo })] : []),
+        ...(context.newPairNo !== undefined ? [pairName(context.newPairNo)] : []),
         ...(context.newRoom !== undefined ? [context.newRoom] : []),
       ].join(', ')
       details.push(`→ ${moved}`)

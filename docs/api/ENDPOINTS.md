@@ -403,8 +403,9 @@ Class page, lesson of the class, attendance, journal, thematic plan
 | GET | `/teacher/class-sessions/{entryId}/{date}` | The class page: class details, linked lesson, notes, roster with marks | locale? |  | 200 ClassSessionView |
 | PUT | `/teacher/class-sessions/{entryId}/{date}` | Link the lesson taught, set a free-text topic and private notes | locale? | SessionDetailsRequest | 200 ClassSessionView |
 | PUT | `/teacher/class-sessions/{entryId}/{date}/attendance` | Mark attendance | locale? | AttendanceRequest | 200 ClassSessionView |
-| GET | `/teacher/courses/{courseId}/attendance` | Attendance journal: students x classes whose attendance was taken | groupId?, from?, to?, locale? |  | 200 JournalView |
+| GET | `/teacher/courses/{courseId}/attendance` | Attendance journal: the group's students by surname x every class held in the period, with the marks where attendance was taken | groupId?, from?, to?, locale? |  | 200 JournalView |
 | GET | `/teacher/courses/{courseId}/class-plan` | Calendar-thematic plan: every class of the term with its topic | groupId?, locale? |  | 200 PlannedClassView[] |
+| GET | `/teacher/journal/groups` | The groups I teach, each with my courses that meet it | locale? |  | 200 JournalGroupChoice[] |
 
 ## Teacher: coding task content
 

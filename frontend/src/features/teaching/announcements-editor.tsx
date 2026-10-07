@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Send, Trash2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { useCourseAnnouncementsQuery } from '@/features/announcements/queries'
+import { toHtml, useCourseAnnouncementsQuery } from '@/features/announcements/queries'
 import { toApiProblem } from '@/shared/api/errors'
 import { useLocale } from '@/shared/i18n/use-locale'
 import { formatRelativeTime } from '@/shared/lib/dates'
@@ -25,18 +25,6 @@ import { Skeleton } from '@/shared/ui/skeleton'
 import { Textarea } from '@/shared/ui/textarea'
 import { useToast } from '@/shared/ui/toast'
 import { useDeleteAnnouncement, useGroupsQuery, usePostAnnouncement } from './queries'
-
-/** Paragraphs typed as plain text become the HTML the server stores (and sanitizes). */
-function toHtml(text: string): string {
-  const escape = (value: string) =>
-    value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
-  return text
-    .split(/\n{2,}/)
-    .map((paragraph) => paragraph.trim())
-    .filter((paragraph) => paragraph !== '')
-    .map((paragraph) => `<p>${escape(paragraph).replace(/\n/g, '<br>')}</p>`)
-    .join('')
-}
 
 /**
  * T-11 — announcements of a course: write one to the whole course or to one of its groups;

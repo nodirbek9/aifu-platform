@@ -173,7 +173,15 @@ class DemoWalkthroughIT {
 
         String courseId = friday.get("courseId").asText();
         JsonNode journal = get(teacher, "/api/v1/teacher/courses/" + courseId + "/attendance");
-        assertThat(journal.get("sessions")).hasSize(4);
+        // every class held so far is a column; the four with attendance carry the marks
+        int taken = 0;
+        for (JsonNode column : journal.get("sessions")) {
+            if (column.get("attendanceTaken").asBoolean()) {
+                taken++;
+            }
+        }
+        assertThat(taken).isEqualTo(4);
+        assertThat(journal.get("sessions").size()).isGreaterThan(4);
         assertThat(journal.get("students").size()).isGreaterThanOrEqualTo(12);
 
         // the thematic plan knows the cancelled class

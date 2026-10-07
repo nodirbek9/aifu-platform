@@ -1,9 +1,11 @@
 package uz.aifu.lms.attendance.app;
 
+import java.time.Clock;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,6 +17,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import uz.aifu.lms.academics.app.CourseDirectory;
 import uz.aifu.lms.academics.app.CourseDirectory.CourseLabel;
+import uz.aifu.lms.academics.domain.SessionType;
+import uz.aifu.lms.attendance.api.dto.AttendanceDtos.JournalCourseRef;
+import uz.aifu.lms.attendance.api.dto.AttendanceDtos.JournalGroupChoice;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.JournalRow;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.JournalSession;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.JournalView;
@@ -33,10 +38,14 @@ import uz.aifu.lms.iam.app.user.StudentDirectory;
 import uz.aifu.lms.iam.app.user.StudentDirectory.StudentRef;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.GroupRef;
 import uz.aifu.lms.scheduling.app.SchedulingReferenceService;
+import uz.aifu.lms.scheduling.app.TimetableQueryService;
+import uz.aifu.lms.scheduling.app.TimetableQueryService.Occurrence;
+import uz.aifu.lms.scheduling.domain.StudentGroup;
+import uz.aifu.lms.scheduling.domain.TimetableEntry;
 
 /**
  * Read side of attendance: the teacher's journal of a course (students x class dates, spec T-10)
- * and a student's own record (S-10). Only classes whose attendance was actually taken appear.
+ * and a student's own record (S-10).
  */
 @Service
 public class AttendanceJournalService {
@@ -48,6 +57,8 @@ public class AttendanceJournalService {
     private final CourseDirectory courses;
     private final LessonDirectory lessons;
     private final AccessGuard access;
+    private final TimetableQueryService timetable;
+    private final Clock clock;
 
     public AttendanceJournalService(
             ClassSessionRepository sessions,
@@ -56,7 +67,9 @@ public class AttendanceJournalService {
             StudentDirectory students,
             CourseDirectory courses,
             LessonDirectory lessons,
-            AccessGuard access) {
+            AccessGuard access,
+            TimetableQueryService timetable,
+            Clock clock) {
         this.sessions = sessions;
         this.records = records;
         this.groups = groups;
@@ -64,22 +77,54 @@ public class AttendanceJournalService {
         this.courses = courses;
         this.lessons = lessons;
         this.access = access;
+        this.timetable = timetable;
+        this.clock = clock;
     }
 
     /**
-     * The journal of a course, optionally of one group and a date range. Rows are the current
-     * students of the groups involved, plus anyone marked earlier who has since left.
+     * The journal of a course for one group (or every group of the course) and a period: every
+     * student of the group by surname, and every class held in the period by the published
+     * timetable, with the marks where attendance was taken. A class whose attendance was taken but
+     * that the timetable no longer has stays in the journal. Without an end date the period ends
+     * today.
      */
     @Transactional(readOnly = true)
     public JournalView journal(
             UUID courseId, UUID groupId, LocalDate from, LocalDate to, LocaleCode locale) {
         access.requireCourseEditor(courseId);
+        LocalDate until = to != null ? to : LocalDate.now(clock);
+        List<ClassSession> all = sessions.findAllOfCourse(courseId);
+        Map<String, ClassSession> byKey = new HashMap<>();
+        for (ClassSession session : all) {
+            byKey.putIfAbsent(ClassSessionService.key(session), session);
+        }
+
+        List<Column> columns = new ArrayList<>();
+        Set<UUID> covered = new HashSet<>();
+        for (Occurrence occurrence : timetable.occurrencesOfCourse(courseId, groupId)) {
+            if (!HELD.contains(occurrence.status()) || outside(occurrence.date(), from, until)) {
+                continue;
+            }
+            ClassSession session = byKey.get(ClassSessionService.key(occurrence));
+            if (session != null) {
+                covered.add(session.getId());
+            }
+            columns.add(Column.of(occurrence, session));
+        }
+        for (ClassSession session : all) {
+            if (session.getAttendanceMarkedAt() == null
+                    || covered.contains(session.getId())
+                    || (groupId != null && !session.getGroupIds().contains(groupId))
+                    || outside(session.getOnDate(), from, until)) {
+                continue;
+            }
+            columns.add(Column.of(session));
+        }
+        columns.sort(Comparator.comparing(Column::date).thenComparingInt(Column::pairNo));
         List<ClassSession> taken =
-                sessions.findAllOfCourse(courseId).stream()
-                        .filter(s -> s.getAttendanceMarkedAt() != null)
-                        .filter(s -> groupId == null || s.getGroupIds().contains(groupId))
-                        .filter(s -> from == null || !s.getOnDate().isBefore(from))
-                        .filter(s -> to == null || !s.getOnDate().isAfter(to))
+                columns.stream()
+                        .map(Column::session)
+                        .filter(s -> s != null && s.getAttendanceMarkedAt() != null)
                         .toList();
 
         // Every group of the classes shown is named in the header; the rows are the students of
@@ -88,8 +133,8 @@ public class AttendanceJournalService {
         if (groupId != null) {
             allCodes.put(groupId, groups.requireGroup(groupId).getCode());
         }
-        for (ClassSession session : taken) {
-            for (UUID id : session.getGroupIds()) {
+        for (Column column : columns) {
+            for (UUID id : column.groupIds()) {
                 allCodes.computeIfAbsent(id, key -> groups.requireGroup(key).getCode());
             }
         }
@@ -109,27 +154,27 @@ public class AttendanceJournalService {
         }
 
         List<JournalRow> rows = new ArrayList<>();
-        Set<UUID> listed = new java.util.HashSet<>();
-        rosterCodes.forEach(
-                code ->
-                        students.studentsOfGroup(code).stream()
-                                .sorted(Comparator.comparing(StudentRef::fullName))
-                                .forEach(
-                                        student -> {
-                                            if (listed.add(student.userId())) {
-                                                rows.add(
-                                                        row(
-                                                                student.userId(),
-                                                                student.fullName(),
-                                                                student.studentNumber(),
-                                                                code,
-                                                                taken,
-                                                                marksByStudent));
-                                            }
-                                        }));
+        Set<UUID> listed = new HashSet<>();
+        for (String code : rosterCodes) {
+            students.studentsOfGroup(code).stream()
+                    .sorted(Comparator.comparing(StudentRef::fullName, BY_NAME))
+                    .forEach(
+                            student -> {
+                                if (listed.add(student.userId())) {
+                                    rows.add(
+                                            row(
+                                                    student.userId(),
+                                                    student.fullName(),
+                                                    student.studentNumber(),
+                                                    code,
+                                                    taken,
+                                                    marksByStudent));
+                                }
+                            });
+        }
         // Someone marked earlier who has since left stays visible. With a group filter, students of
         // a shared class's other groups are not such leavers: they belong to another journal.
-        Set<UUID> elsewhere = new java.util.HashSet<>();
+        Set<UUID> elsewhere = new HashSet<>();
         if (groupId != null) {
             allCodes.forEach(
                     (id, code) -> {
@@ -143,28 +188,43 @@ public class AttendanceJournalService {
                         .filter(id -> !listed.contains(id) && !elsewhere.contains(id))
                         .toList();
         Map<UUID, String> departedNames = students.fullNames(departed);
-        for (UUID id : departed) {
-            rows.add(row(id, departedNames.get(id), null, null, taken, marksByStudent));
-        }
+        departed.stream()
+                .sorted(Comparator.comparing(id -> departedNames.getOrDefault(id, ""), BY_NAME))
+                .forEach(
+                        id ->
+                                rows.add(
+                                        row(
+                                                id,
+                                                departedNames.get(id),
+                                                null,
+                                                null,
+                                                taken,
+                                                marksByStudent)));
 
-        Map<UUID, LessonLabel> lessonLabels = lessonLabels(taken, locale);
+        Map<UUID, LessonLabel> lessonLabels =
+                lessons.labels(
+                        columns.stream()
+                                .map(Column::lessonId)
+                                .filter(Objects::nonNull)
+                                .collect(Collectors.toSet()),
+                        locale);
         CourseLabel course = courses.labels(List.of(courseId), locale).get(courseId);
         return new JournalView(
                 courseId,
                 course == null ? null : course.subjectCode(),
                 course == null ? null : course.title(),
                 groupId,
-                taken.stream()
+                columns.stream()
                         .map(
-                                s ->
+                                c ->
                                         new JournalSession(
-                                                s.getId(),
-                                                s.getEntryId(),
-                                                s.getOnDate(),
-                                                s.getPairNo(),
-                                                s.getSessionType(),
-                                                s.getSubgroup().isEmpty() ? null : s.getSubgroup(),
-                                                s.getGroupIds().stream()
+                                                c.session() == null ? null : c.session().getId(),
+                                                c.entryId(),
+                                                c.date(),
+                                                c.pairNo(),
+                                                c.sessionType(),
+                                                c.subgroup(),
+                                                c.groupIds().stream()
                                                         .map(
                                                                 id ->
                                                                         new GroupRef(
@@ -174,10 +234,124 @@ public class AttendanceJournalService {
                                                                 Comparator.comparing(
                                                                         GroupRef::code))
                                                         .toList(),
-                                                title(lessonLabels, s),
-                                                s.getTopic()))
+                                                c.lessonId() == null
+                                                        ? null
+                                                        : labelTitle(lessonLabels, c.lessonId()),
+                                                c.session() == null ? null : c.session().getTopic(),
+                                                c.session() != null
+                                                        && c.session().getAttendanceMarkedAt()
+                                                                != null))
                         .toList(),
                 rows);
+    }
+
+    /**
+     * The groups the caller teaches, each with the caller's courses that have classes with it in
+     * the published timetable, groups and courses in name order: what the journal is opened by.
+     */
+    @Transactional(readOnly = true)
+    public List<JournalGroupChoice> choices(LocaleCode locale) {
+        Set<UUID> mine = courses.courseIdsOfTeacher(access.caller().id());
+        if (mine.isEmpty()) {
+            return List.of();
+        }
+        Map<UUID, CourseLabel> labels = courses.labels(mine, locale);
+        Map<UUID, StudentGroup> byId = new HashMap<>();
+        Map<UUID, List<JournalCourseRef>> coursesByGroup = new HashMap<>();
+        timetable
+                .groupsOfCourses(mine)
+                .forEach(
+                        (courseId, found) -> {
+                            CourseLabel label = labels.get(courseId);
+                            for (StudentGroup group : found) {
+                                byId.putIfAbsent(group.getId(), group);
+                                coursesByGroup
+                                        .computeIfAbsent(group.getId(), key -> new ArrayList<>())
+                                        .add(
+                                                new JournalCourseRef(
+                                                        courseId,
+                                                        label == null ? null : label.subjectCode(),
+                                                        label == null ? null : label.title()));
+                            }
+                        });
+        return byId.values().stream()
+                .sorted(Comparator.comparing(StudentGroup::getCode))
+                .map(
+                        g ->
+                                new JournalGroupChoice(
+                                        g.getId(),
+                                        g.getCode(),
+                                        coursesByGroup.get(g.getId()).stream()
+                                                .sorted(
+                                                        Comparator.comparing(
+                                                                c ->
+                                                                        c.title() == null
+                                                                                ? ""
+                                                                                : c.title()))
+                                                .toList()))
+                .toList();
+    }
+
+    /** Held: not cancelled, not on a holiday, not the old place of a moved class. */
+    private static final Set<String> HELD =
+            Set.of(
+                    TimetableQueryService.SCHEDULED,
+                    TimetableQueryService.REPLACED,
+                    TimetableQueryService.MOVED_IN);
+
+    /** Surname first, as the names are written; letters compared the Uzbek way, case aside. */
+    private static final Comparator<String> BY_NAME =
+            Comparator.nullsLast(
+                    java.text.Collator.getInstance(java.util.Locale.forLanguageTag("uz"))::compare);
+
+    private static boolean outside(LocalDate date, LocalDate from, LocalDate until) {
+        return (from != null && date.isBefore(from)) || date.isAfter(until);
+    }
+
+    /**
+     * One column of the journal: a class held in the period, with its session once there is one.
+     */
+    private record Column(
+            ClassSession session,
+            UUID entryId,
+            LocalDate date,
+            int pairNo,
+            SessionType sessionType,
+            String subgroup,
+            Set<UUID> groupIds,
+            UUID lessonId) {
+
+        static Column of(Occurrence occurrence, ClassSession session) {
+            TimetableEntry entry = occurrence.entry();
+            return new Column(
+                    session,
+                    entry.getId(),
+                    occurrence.date(),
+                    occurrence.slot().getPairNo(),
+                    entry.getSessionType(),
+                    entry.getSubgroup() == null || entry.getSubgroup().isBlank()
+                            ? null
+                            : entry.getSubgroup(),
+                    entry.getGroups().stream().map(StudentGroup::getId).collect(Collectors.toSet()),
+                    session == null ? null : session.getLessonId());
+        }
+
+        static Column of(ClassSession session) {
+            return new Column(
+                    session,
+                    session.getEntryId(),
+                    session.getOnDate(),
+                    session.getPairNo(),
+                    session.getSessionType(),
+                    session.getSubgroup().isEmpty() ? null : session.getSubgroup(),
+                    session.getGroupIds(),
+                    session.getLessonId());
+        }
+    }
+
+    private static String labelTitle(Map<UUID, LessonLabel> labels, UUID lessonId) {
+        LessonLabel label = labels.get(lessonId);
+        return label == null ? null : label.title();
     }
 
     private static JournalRow row(

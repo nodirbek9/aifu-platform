@@ -1,8 +1,14 @@
 import { useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
 import { AlertTriangle, CheckCircle2, OctagonX, Trash2 } from 'lucide-react'
+import type { TFunction } from 'i18next'
 import { useTranslation } from 'react-i18next'
-import { useAllGroupsQuery, usePairSlotsQuery, useRoomsQuery } from '@/features/admin/reference-queries'
+import {
+  useAllGroupsQuery,
+  usePairSlotsQuery,
+  useRoomsQuery,
+  type PairSlot,
+} from '@/features/admin/reference-queries'
 import { useAdminCourseQuery, useCoursesQuery } from '@/features/admin/structure-queries'
 import { useTeachersQuery } from '@/features/admin/users-queries'
 import { toApiProblem } from '@/shared/api/errors'
@@ -28,8 +34,18 @@ import {
   type EntryRequest,
   type Timetable,
 } from './queries'
+import { usePairName } from '@/features/timetable/use-pair-name'
 
 /** The request without one optional field: an emptied input means "not set". */
+/** "Tushdan keyin · 1-juftlik · 13:30–14:50": a pair as the administrator picks it. */
+function slotLabel(slot: PairSlot, t: TFunction): string {
+  return [
+    t(`timetable.shiftShort.${slot.shift ?? 'MORNING'}`),
+    t('admin.pairNo', { number: slot.shiftPairNo ?? 0 }),
+    `${(slot.startsAt ?? '').slice(0, 5)}–${(slot.endsAt ?? '').slice(0, 5)}`,
+  ].join(' · ')
+}
+
 function without(request: EntryRequest, key: 'roomId' | 'validFrom' | 'validTo'): EntryRequest {
   const copy = { ...request }
   copy[key] = undefined
@@ -51,6 +67,7 @@ type EntryPanelProps = {
 /** "Teacher busy: DAS1110 Dasturlash — Akbarov B., BK-DI26/1, B-301, Monday, pair 2". */
 export function ClashList({ clash }: { clash: Clash }) {
   const { t } = useTranslation()
+  const pairName = usePairName()
   if (clash.conflicts.length === 0 && clash.warnings.length === 0) return null
   return (
     <div className="grid grid-cols-1 gap-2">
@@ -69,7 +86,7 @@ export function ClashList({ clash }: { clash: Clash }) {
               conflict.groupCodes?.join(', '),
               conflict.roomLabel,
               conflict.dayOfWeek === undefined ? undefined : t(`builder.days.${conflict.dayOfWeek}`),
-              conflict.pairNo === undefined ? undefined : t('admin.pairNo', { number: conflict.pairNo }),
+              conflict.pairNo === undefined ? undefined : pairName(conflict.pairNo),
             ]
               .filter((part) => part !== undefined && part !== '')
               .join(' · ')}
@@ -264,11 +281,8 @@ export function EntryPanel({ timetable, entry, start, editable, onDone }: EntryP
             }}
             options={(slots.data ?? [])
               .slice()
-              .sort((a, b) => (a.pairNo ?? 0) - (b.pairNo ?? 0))
-              .map((slot) => ({
-                value: slot.id ?? '',
-                label: `${t('admin.pairNo', { number: slot.pairNo ?? 0 })} · ${(slot.startsAt ?? '').slice(0, 5)}–${(slot.endsAt ?? '').slice(0, 5)}`,
-              }))}
+              .sort((a, b) => (a.startsAt ?? '').localeCompare(b.startsAt ?? ''))
+              .map((slot) => ({ value: slot.id ?? '', label: slotLabel(slot, t) }))}
           />
           <Select
             label={t('admin.room')}
@@ -414,6 +428,7 @@ const KINDS = ['CANCELLED', 'MOVED', 'REPLACED'] as const
 /** A-02.7 — a class cancelled, moved or given another teacher or room on one date, with a reason. */
 function OneOffChanges({ entryId }: { entryId: string }) {
   const { t } = useTranslation()
+  const pairName = usePairName()
   const locale = useLocale()
   const changes = useExceptionsQuery(entryId)
   const add = useAddException(entryId, locale)
@@ -438,7 +453,7 @@ function OneOffChanges({ entryId }: { entryId: string }) {
               {change.onDate === undefined ? '' : formatDate(change.onDate, locale)} ·{' '}
               {t(`builder.kind.${change.kind ?? 'CANCELLED'}`)}
               {change.newDate !== undefined && ` → ${formatDate(change.newDate, locale)}`}
-              {change.newPairNo !== undefined && `, ${t('admin.pairNo', { number: change.newPairNo })}`}
+              {change.newPairNo !== undefined && `, ${pairName(change.newPairNo)}`}
               {change.newRoomLabel !== undefined && `, ${change.newRoomLabel}`}
               {change.newTeacherName !== undefined && `, ${change.newTeacherName}`}
               {change.reason !== undefined && change.reason !== '' && (
@@ -491,7 +506,7 @@ function OneOffChanges({ entryId }: { entryId: string }) {
               onValueChange={setNewSlot}
               options={(slots.data ?? []).map((slot) => ({
                 value: slot.id ?? '',
-                label: t('admin.pairNo', { number: slot.pairNo ?? 0 }),
+                label: slotLabel(slot, t),
               }))}
             />
           </>

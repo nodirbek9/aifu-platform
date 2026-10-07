@@ -19,6 +19,7 @@ import uz.aifu.lms.academics.domain.Term;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.AttendanceRequest;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.ClassSessionView;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.ClassTopicView;
+import uz.aifu.lms.attendance.api.dto.AttendanceDtos.JournalGroupChoice;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.JournalView;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.MarkRequest;
 import uz.aifu.lms.attendance.api.dto.AttendanceDtos.MyCourseAttendance;
@@ -100,6 +101,7 @@ class AttendanceIT extends AbstractIntegrationTest {
                                             null,
                                             "uz",
                                             20,
+                                            null,
                                             null),
                                     GroupView.class)
                             .getBody();
@@ -274,7 +276,8 @@ class AttendanceIT extends AbstractIntegrationTest {
                         ApiError.class);
         assertThat(refused.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
 
-        // the journal: one class, three students
+        // the journal: every Monday of the term held so far, the one marked carrying its lesson;
+        // the other classes are there too, waiting for their attendance; all three students
         JournalView journal =
                 get(
                                 w.teacherToken,
@@ -284,9 +287,53 @@ class AttendanceIT extends AbstractIntegrationTest {
                                         + w.group.id(),
                                 JournalView.class)
                         .getBody();
-        assertThat(journal.sessions()).hasSize(1);
-        assertThat(journal.sessions().get(0).lessonTitle()).isEqualTo("Fixture lesson");
+        assertThat(journal.sessions()).hasSizeGreaterThan(1);
+        assertThat(journal.sessions().get(0).date()).isEqualTo(w.monday);
+        assertThat(journal.sessions())
+                .filteredOn(s -> s.attendanceTaken())
+                .singleElement()
+                .satisfies(
+                        s -> {
+                            assertThat(s.sessionId()).isEqualTo(described.sessionId());
+                            assertThat(s.lessonTitle()).isEqualTo("Fixture lesson");
+                        });
+        assertThat(journal.sessions().subList(1, journal.sessions().size()))
+                .allSatisfy(s -> assertThat(s.sessionId()).isNull());
         assertThat(journal.students()).hasSize(3);
+
+        // a period without any class still lists the group's students
+        JournalView empty =
+                get(
+                                w.teacherToken,
+                                "/api/v1/teacher/courses/"
+                                        + w.course.getId()
+                                        + "/attendance?groupId="
+                                        + w.group.id()
+                                        + "&from="
+                                        + w.monday.plusDays(1)
+                                        + "&to="
+                                        + w.monday.plusDays(2),
+                                JournalView.class)
+                        .getBody();
+        assertThat(empty.sessions()).isEmpty();
+        assertThat(empty.students()).hasSize(3);
+
+        // the journal is opened by group: the teacher's groups, each with the course it meets
+        List<JournalGroupChoice> choices =
+                rest.exchange(
+                                url("/api/v1/teacher/journal/groups"),
+                                HttpMethod.GET,
+                                new HttpEntity<>(bearer(w.teacherToken)),
+                                new ParameterizedTypeReference<List<JournalGroupChoice>>() {})
+                        .getBody();
+        assertThat(choices)
+                .filteredOn(c -> c.groupId().equals(w.group.id()))
+                .singleElement()
+                .satisfies(
+                        c ->
+                                assertThat(c.courses())
+                                        .extracting(course -> course.courseId())
+                                        .containsExactly(w.course.getId()));
         assertThat(
                         journal.students().stream()
                                 .filter(r -> r.userId().equals(w.bek.getId()))

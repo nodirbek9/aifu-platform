@@ -39,6 +39,10 @@ public class StudentGroup extends VersionedEntity {
     private UUID curatorUserId;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "shift", nullable = false)
+    private Shift shift = Shift.MORNING;
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
     private GroupStatus status = GroupStatus.ACTIVE;
 
@@ -56,7 +60,8 @@ public class StudentGroup extends VersionedEntity {
             String studyForm,
             String instructionLanguage,
             Integer plannedSize,
-            UUID curatorUserId) {
+            UUID curatorUserId,
+            Shift shift) {
         this.code = Guards.requiredText(code, "code").trim();
         this.programmeId = programmeId;
         this.courseYear = courseYear;
@@ -69,6 +74,9 @@ public class StudentGroup extends VersionedEntity {
         }
         this.plannedSize = plannedSize;
         this.curatorUserId = curatorUserId;
+        if (shift != null) {
+            this.shift = shift;
+        }
     }
 
     public void archive() {
@@ -109,6 +117,10 @@ public class StudentGroup extends VersionedEntity {
 
     public UUID getCuratorUserId() {
         return curatorUserId;
+    }
+
+    public Shift getShift() {
+        return shift;
     }
 
     public GroupStatus getStatus() {

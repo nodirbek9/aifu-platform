@@ -16,6 +16,7 @@ import uz.aifu.lms.academics.domain.SessionType;
 import uz.aifu.lms.scheduling.domain.ExceptionKind;
 import uz.aifu.lms.scheduling.domain.GroupStatus;
 import uz.aifu.lms.scheduling.domain.RoomType;
+import uz.aifu.lms.scheduling.domain.Shift;
 import uz.aifu.lms.scheduling.domain.TimetableStatus;
 import uz.aifu.lms.scheduling.domain.WeekParity;
 
@@ -35,7 +36,9 @@ public final class SchedulingDtos {
                     String studyForm,
             @Schema(example = "uz") String instructionLanguage,
             @Min(0) Integer plannedSize,
-            UUID curatorUserId) {}
+            UUID curatorUserId,
+            @Schema(description = "The shift the group studies in; MORNING when left out")
+                    Shift shift) {}
 
     public record GroupView(
             UUID id,
@@ -49,7 +52,8 @@ public final class SchedulingDtos {
             long studentCount,
             UUID curatorUserId,
             String curatorName,
-            GroupStatus status) {}
+            GroupStatus status,
+            Shift shift) {}
 
     public record GroupRef(UUID id, String code) {}
 
@@ -79,12 +83,26 @@ public final class SchedulingDtos {
             RoomType roomType,
             boolean active) {}
 
+    @Schema(
+            description =
+                    "A pair of the bell schedule: its shift, its number in the shift, its time.")
     public record PairSlotRequest(
-            @Min(1) @Max(12) int pairNo,
-            @Schema(example = "08:30") @NotNull LocalTime startsAt,
-            @Schema(example = "09:50") @NotNull LocalTime endsAt) {}
+            @NotNull Shift shift,
+            @Min(1) @Max(6) int shiftPairNo,
+            @Schema(example = "09:00") @NotNull LocalTime startsAt,
+            @Schema(example = "10:20") @NotNull LocalTime endsAt) {}
 
-    public record PairSlotView(UUID id, int pairNo, LocalTime startsAt, LocalTime endsAt) {}
+    @Schema(
+            description =
+                    "pairNo is the pair's place in the whole day (a stable reference);"
+                            + " shiftPairNo is the number people use (\"1-para\" of its shift).")
+    public record PairSlotView(
+            UUID id,
+            int pairNo,
+            Shift shift,
+            int shiftPairNo,
+            LocalTime startsAt,
+            LocalTime endsAt) {}
 
     public record HolidayRequest(@NotNull LocalDate date, @NotBlank @Size(max = 120) String name) {}
 
@@ -180,7 +198,8 @@ public final class SchedulingDtos {
                                 "ROOM_TYPE",
                                 "ROOM_INACTIVE",
                                 "TEACHER_NOT_ASSIGNED",
-                                "COURSE_OTHER_TERM"
+                                "COURSE_OTHER_TERM",
+                                "SHIFT_MISMATCH"
                             })
                     String code,
             String message) {}

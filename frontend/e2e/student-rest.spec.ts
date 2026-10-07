@@ -36,7 +36,7 @@ test.describe('my timetable (S-02)', () => {
       .click()
     const sheet = page.getByRole('dialog')
     await expect(sheet.getByText('A-204')).toBeVisible()
-    await expect(sheet.getByText(/Avvalgi vaqti: Dush, 08:30/)).toBeVisible()
+    await expect(sheet.getByText(/Avvalgi vaqti: Dush, 09:00/)).toBeVisible()
     await expect(sheet.getByText("Ma'ruza zalida tadbir o'tkaziladi")).toBeVisible()
     await page.keyboard.press('Escape')
 

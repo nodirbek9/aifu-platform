@@ -7,6 +7,7 @@ import {
   narrowWeek,
   nowMark,
   shownDays,
+  shownSlots,
   slotOf,
   type ClassItem,
 } from './model'
@@ -73,8 +74,8 @@ describe('the class to point at', () => {
 
 describe('a week as the grid shows it', () => {
   const slots = [
-    { pairNo: 1, startsAt: '08:30:00', endsAt: '09:50:00' },
-    { pairNo: 2, startsAt: '10:00:00', endsAt: '11:20:00' },
+    { pairNo: 1, shift: 'MORNING' as const, shiftPairNo: 1, startsAt: '08:30:00', endsAt: '09:50:00' },
+    { pairNo: 2, shift: 'MORNING' as const, shiftPairNo: 2, startsAt: '10:00:00', endsAt: '11:20:00' },
   ]
   const week = narrowWeek({
     weekStart: '2026-09-28',
@@ -160,5 +161,34 @@ describe('a week as the grid shows it', () => {
   it('tells the old slot of a moved class from its new one', () => {
     const moved = lesson('08:30:00', '09:50:00', 'MOVED_OUT')
     expect(classKey(moved)).not.toBe(classKey({ ...moved, status: 'MOVED_IN', date: '2026-10-03' }))
+  })
+})
+
+describe('the shifts a week shows', () => {
+  const slots = [
+    { pairNo: 1, shift: 'MORNING' as const, shiftPairNo: 1, startsAt: '09:00:00', endsAt: '10:20:00' },
+    { pairNo: 4, shift: 'AFTERNOON' as const, shiftPairNo: 1, startsAt: '13:30:00', endsAt: '14:50:00' },
+    { pairNo: 7, shift: 'EVENING' as const, shiftPairNo: 1, startsAt: '18:00:00', endsAt: '19:20:00' },
+  ]
+  const at = (pairNo: number, startsAt: string) =>
+    narrowWeek({
+      slots,
+      days: [
+        {
+          date: '2026-10-05',
+          classes: [
+            { entryId: 'a', date: '2026-10-05', pairNo, startsAt, endsAt: startsAt, sessionType: 'LECTURE' },
+          ],
+        },
+      ],
+    })
+
+  it('an evening group sees the evening pairs, numbered within the shift', () => {
+    const shown = shownSlots(at(7, '18:00:00'))
+    expect(shown.map((slot) => `${slot.shift} ${slot.shiftPairNo}`)).toEqual(['EVENING 1'])
+  })
+
+  it('a week without classes shows the whole day', () => {
+    expect(shownSlots(narrowWeek({ slots, days: [] }))).toHaveLength(3)
   })
 })

@@ -73,7 +73,43 @@ export function narrowDay(raw: Schemas['DayView']): Day {
   return day
 }
 
-export type PairSlot = { pairNo: number; startsAt: string; endsAt: string }
+export const SHIFTS = ['MORNING', 'AFTERNOON', 'EVENING'] as const
+export type Shift = (typeof SHIFTS)[number]
+
+export function isShift(value: string | undefined): value is Shift {
+  return value !== undefined && (SHIFTS as readonly string[]).includes(value)
+}
+
+/**
+ * A pair of the bell schedule. `pairNo` is its place in the whole day and what classes point at;
+ * `shiftPairNo` is the number people use ("1-juftlik" of the afternoon shift starts at 13:30).
+ */
+export type PairSlot = {
+  pairNo: number
+  shift: Shift
+  shiftPairNo: number
+  startsAt: string
+  endsAt: string
+}
+
+/** The bell schedule in the order of the day. */
+export function narrowSlots(raw: readonly Schemas['PairSlotView'][]): PairSlot[] {
+  return raw
+    .flatMap((slot) =>
+      slot.pairNo === undefined || slot.startsAt === undefined || slot.endsAt === undefined
+        ? []
+        : [
+            {
+              pairNo: slot.pairNo,
+              shift: isShift(slot.shift) ? slot.shift : 'MORNING',
+              shiftPairNo: slot.shiftPairNo ?? slot.pairNo,
+              startsAt: slot.startsAt,
+              endsAt: slot.endsAt,
+            },
+          ],
+    )
+    .sort((a, b) => a.startsAt.localeCompare(b.startsAt))
+}
 
 export type Week = {
   /** Monday and Sunday of the week, as campus dates. */
@@ -91,13 +127,7 @@ export function narrowWeek(raw: Schemas['WeekView']): Week {
   const week: Week = {
     weekStart: raw.weekStart ?? '',
     weekEnd: raw.weekEnd ?? '',
-    slots: (raw.slots ?? [])
-      .flatMap((slot) =>
-        slot.pairNo === undefined || slot.startsAt === undefined || slot.endsAt === undefined
-          ? []
-          : [{ pairNo: slot.pairNo, startsAt: slot.startsAt, endsAt: slot.endsAt }],
-      )
-      .sort((a, b) => a.pairNo - b.pairNo),
+    slots: narrowSlots(raw.slots ?? []),
     days: (raw.days ?? []).map(narrowDay).sort((a, b) => a.date.localeCompare(b.date)),
   }
   if (raw.weekNumber !== undefined) week.weekNumber = raw.weekNumber
@@ -109,6 +139,21 @@ export function narrowWeek(raw: Schemas['WeekView']): Week {
 /** Monday to Saturday; Sunday only in a week that has a class on it. */
 export function shownDays(week: Pick<Week, 'days'>): Day[] {
   return week.days.filter((day) => weekdayOf(day.date) !== 7 || day.classes.length > 0)
+}
+
+/**
+ * The rows a week shows: the pairs of every shift that has a class in it, so a morning group sees
+ * the morning pairs and a teacher of two shifts sees both. An empty week shows the whole day.
+ */
+export function shownSlots(week: Pick<Week, 'days' | 'slots'>): PairSlot[] {
+  const used = new Set<Shift>()
+  for (const day of week.days) {
+    for (const item of day.classes) {
+      const slot = slotOf(item, week.slots)
+      if (slot !== undefined) used.add(slot.shift)
+    }
+  }
+  return used.size === 0 ? week.slots : week.slots.filter((slot) => used.has(slot.shift))
 }
 
 /** The pair a class sits in: by its number, else by its start time. */

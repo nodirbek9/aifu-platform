@@ -300,7 +300,7 @@ public class ClassSessionService {
         return entry.getGroups().stream().map(StudentGroup::getId).toList();
     }
 
-    private static String key(Occurrence occurrence) {
+    static String key(Occurrence occurrence) {
         TimetableEntry entry = occurrence.entry();
         return key(
                 entry.getCourseId(),
@@ -310,7 +310,7 @@ public class ClassSessionService {
                 ClassSession.subgroupKey(entry.getSubgroup()));
     }
 
-    private static String key(ClassSession session) {
+    static String key(ClassSession session) {
         return key(
                 session.getCourseId(),
                 session.getOnDate(),

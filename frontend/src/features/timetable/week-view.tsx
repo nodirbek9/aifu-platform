@@ -14,6 +14,7 @@ import {
   currentOrNext,
   isHeld,
   nowMark,
+  shownSlots,
   shownDays,
   slotOf,
   type ClassItem,
@@ -91,7 +92,9 @@ function WeekGrid({ week, days, audience, onOpen }: PartProps & { week: Week }) 
   const { t } = useTranslation()
   const locale = useLocale()
   const now = useCampusNow()
-  const mark = nowMark(week, now)
+  const slots = shownSlots(week)
+  const mark = nowMark({ days: week.days, slots }, now)
+  const shifts = new Set(slots.map((slot) => slot.shift)).size
 
   return (
     <ScheduleGrid
@@ -127,12 +130,18 @@ function WeekGrid({ week, days, audience, onOpen }: PartProps & { week: Week }) 
           </div>
         ),
       }))}
-      rows={week.slots.map((slot) => ({
+      rows={slots.map((slot) => ({
         key: String(slot.pairNo),
         header: (
           <div className="grid tabular-nums">
-            <span className="font-display text-title text-text font-semibold">{slot.pairNo}</span>
-            <span className="sr-only">{t('timetable.pair', { number: slot.pairNo })}</span>
+            {/* two shifts on one grid: the first pair of each says which shift it opens */}
+            {shifts > 1 && slot.shiftPairNo === 1 && (
+              <span className="text-caption tracking-caption text-accent-text font-medium uppercase">
+                {t(`timetable.shiftShort.${slot.shift}`)}
+              </span>
+            )}
+            <span className="font-display text-title text-text font-semibold">{slot.shiftPairNo}</span>
+            <span className="sr-only">{t('timetable.pair', { number: slot.shiftPairNo })}</span>
             <span className="text-caption text-text-muted tracking-normal">
               {formatTimeOfDay(slot.startsAt)}
             </span>

@@ -59,7 +59,11 @@ test.describe('the administrator builds a week (spec §9, step 1)', () => {
 
     await signIn(page, 'admin')
     await page.goto('/admin/reference?tab=bells')
-    await expect(page.getByText(label(uz.admin.pairNo, { number: 1 }))).toBeVisible()
+    // each shift has its own first pair
+    for (const shift of ['MORNING', 'AFTERNOON', 'EVENING'] as const) {
+      await expect(page.getByRole('heading', { name: uz.timetable.shift[shift] })).toBeVisible()
+    }
+    await expect(page.getByText(label(uz.admin.pairNo, { number: 1 }))).toHaveCount(3)
 
     // a new, empty draft for the term
     await page.goto('/admin/timetable')
@@ -90,7 +94,11 @@ test.describe('the administrator builds a week (spec §9, step 1)', () => {
     await expect(sheet.getByRole('alert').filter({ hasText: uz.builder.conflict.TEACHER })).toBeVisible()
     await expect(sheet.getByRole('button', { name: uz.authoring.save })).toBeDisabled()
     // the next pair is free
-    await choose(page, uz.builder.pair, new RegExp(`^${label(uz.admin.pairNo, { number: 2 })}`))
+    await choose(
+      page,
+      uz.builder.pair,
+      new RegExp(`^${uz.timetable.shiftShort.MORNING} · ${label(uz.admin.pairNo, { number: 2 })}`),
+    )
     await expect(sheet.getByText(uz.builder.fits)).toBeVisible()
     await sheet.getByRole('button', { name: uz.authoring.save }).click()
     await expect(page.getByRole('button', { name: /^DAS1110, Dasturlash/ })).toHaveCount(1)

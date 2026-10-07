@@ -37,6 +37,7 @@ import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.ExceptionRequest;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.ExceptionView;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.WarningView;
 import uz.aifu.lms.scheduling.app.TimetableConflictDetector.Conflict;
+import uz.aifu.lms.scheduling.app.TimetableConflictDetector.PairTime;
 import uz.aifu.lms.scheduling.app.TimetableConflictDetector.Slot;
 import uz.aifu.lms.scheduling.app.TimetableQueryService.Occurrence;
 import uz.aifu.lms.scheduling.domain.ExceptionKind;
@@ -327,7 +328,7 @@ public class TimetableService {
                                 .collect(Collectors.toSet()),
                         blankToNull(request.subgroup()),
                         request.dayOfWeek(),
-                        request.pairSlotId(),
+                        pairTime(resolved.slot()),
                         request.weekParity() == null ? WeekParity.EVERY : request.weekParity(),
                         request.validFrom(),
                         request.validTo());
@@ -343,10 +344,14 @@ public class TimetableService {
                 e.getGroups().stream().map(StudentGroup::getId).collect(Collectors.toSet()),
                 e.getSubgroup(),
                 e.getDayOfWeek(),
-                e.getPairSlot().getId(),
+                pairTime(e.getPairSlot()),
                 e.getWeekParity(),
                 e.getValidFrom(),
                 e.getValidTo());
+    }
+
+    private static PairTime pairTime(PairSlot slot) {
+        return new PairTime(slot.getStartsAt(), slot.getEndsAt());
     }
 
     private List<ConflictView> conflictViews(
@@ -437,6 +442,21 @@ public class TimetableService {
             warnings.add(
                     new WarningView(
                             "TEACHER_NOT_ASSIGNED", "This teacher is not assigned to the course"));
+        }
+        PairSlot pair = resolved.slot();
+        for (StudentGroup g : resolved.groups()) {
+            if (g.getShift() != pair.getShift()) {
+                warnings.add(
+                        new WarningView(
+                                "SHIFT_MISMATCH",
+                                "Group "
+                                        + g.getCode()
+                                        + " studies in the "
+                                        + g.getShift().name().toLowerCase(java.util.Locale.ROOT)
+                                        + " shift; this pair belongs to the "
+                                        + pair.getShift().name().toLowerCase(java.util.Locale.ROOT)
+                                        + " shift"));
+            }
         }
         if (!timetable.getTermId().equals(resolved.course().termId())) {
             warnings.add(

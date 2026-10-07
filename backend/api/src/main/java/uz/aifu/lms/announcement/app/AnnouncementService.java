@@ -1,6 +1,7 @@
 package uz.aifu.lms.announcement.app;
 
 import java.time.Clock;
+import java.util.EnumSet;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,7 @@ import uz.aifu.lms.academics.app.CourseDirectory.CourseLabel;
 import uz.aifu.lms.announcement.api.dto.AnnouncementDtos.AnnouncementView;
 import uz.aifu.lms.announcement.api.dto.AnnouncementDtos.CreateAnnouncementRequest;
 import uz.aifu.lms.announcement.domain.Announcement;
+import uz.aifu.lms.announcement.domain.AnnouncementAudience;
 import uz.aifu.lms.announcement.persistence.AnnouncementRepository;
 import uz.aifu.lms.common.content.ContentSanitizer;
 import uz.aifu.lms.common.error.Exceptions;
@@ -79,12 +81,24 @@ public class AnnouncementService {
 
     @Transactional
     public AnnouncementView post(CreateAnnouncementRequest request, LocaleCode locale) {
-        if ((request.courseId() == null) == (request.groupId() == null)) {
-            throw Exceptions.validation("Give exactly one of courseId and groupId");
-        }
+        AnnouncementAudience audience = audienceOf(request);
         AuthenticatedUser author = accessGuard.caller();
         Set<UUID> recipients = new HashSet<>();
-        if (request.courseId() != null) {
+        if (audience.isWide()) {
+            if (!author.has(Perm.GROUP_MANAGE)) {
+                throw Exceptions.forbidden(
+                        "Only the study office writes to the whole university at once");
+            }
+            if (audience != AnnouncementAudience.TEACHERS) {
+                recipients.addAll(people.activeUserIdsWithRole("STUDENT"));
+            }
+            if (audience != AnnouncementAudience.STUDENTS) {
+                recipients.addAll(people.activeUserIdsWithRole("TEACHER"));
+            }
+            if (audience == AnnouncementAudience.EVERYONE) {
+                recipients.addAll(people.activeUserIdsWithRole("ADMIN"));
+            }
+        } else if (request.courseId() != null) {
             accessGuard.requireCourseEditor(request.courseId());
             enrollments
                     .listByCourse(
@@ -104,27 +118,36 @@ public class AnnouncementService {
         Announcement saved =
                 announcements.save(
                         new Announcement(
+                                audience,
                                 request.courseId(),
                                 request.groupId(),
                                 author.id(),
                                 request.title(),
                                 sanitizer.sanitizeRichText(request.body())));
         Map<String, Object> payload =
-                request.courseId() != null
+                audience.isWide()
                         ? Map.of(
                                 "announcementId",
                                 saved.getId().toString(),
                                 "title",
                                 saved.getTitle(),
-                                "courseId",
-                                request.courseId().toString())
-                        : Map.of(
-                                "announcementId",
-                                saved.getId().toString(),
-                                "title",
-                                saved.getTitle(),
-                                "groupId",
-                                request.groupId().toString());
+                                "audience",
+                                audience.name())
+                        : request.courseId() != null
+                                ? Map.of(
+                                        "announcementId",
+                                        saved.getId().toString(),
+                                        "title",
+                                        saved.getTitle(),
+                                        "courseId",
+                                        request.courseId().toString())
+                                : Map.of(
+                                        "announcementId",
+                                        saved.getId().toString(),
+                                        "title",
+                                        saved.getTitle(),
+                                        "groupId",
+                                        request.groupId().toString());
         for (UUID recipient : recipients) {
             events.publishEvent(
                     new NotificationRequestedEvent(
@@ -159,7 +182,16 @@ public class AnnouncementService {
             Set<UUID> groupIds = new HashSet<>();
             groups.groupIdOfStudent(user.id()).ifPresent(groupIds::add);
             groupIds.add(NOTHING);
-            page = announcements.findVisible(courseIds, groupIds, user.id(), unsorted(pageable));
+            Set<AnnouncementAudience> wide = EnumSet.of(AnnouncementAudience.EVERYONE);
+            if (user.isStudent()) {
+                wide.add(AnnouncementAudience.STUDENTS);
+            }
+            if (user.isTeacher()) {
+                wide.add(AnnouncementAudience.TEACHERS);
+            }
+            page =
+                    announcements.findVisible(
+                            courseIds, groupIds, wide, user.id(), unsorted(pageable));
         }
         return toPage(page, user, locale);
     }
@@ -171,6 +203,32 @@ public class AnnouncementService {
         Page<Announcement> page =
                 announcements.findByCourseIdOrderByCreatedAtDesc(courseId, unsorted(pageable));
         return toPage(page, accessGuard.caller(), locale);
+    }
+
+    /** The audience asked for, or the one courseId / groupId imply; exactly what it needs. */
+    private static AnnouncementAudience audienceOf(CreateAnnouncementRequest request) {
+        AnnouncementAudience audience = request.audience();
+        if (audience == null) {
+            if ((request.courseId() == null) == (request.groupId() == null)) {
+                throw Exceptions.validation("Give exactly one of courseId and groupId");
+            }
+            return request.courseId() != null
+                    ? AnnouncementAudience.COURSE
+                    : AnnouncementAudience.GROUP;
+        }
+        boolean fits =
+                switch (audience) {
+                    case COURSE -> request.courseId() != null && request.groupId() == null;
+                    case GROUP -> request.groupId() != null && request.courseId() == null;
+                    case EVERYONE, STUDENTS, TEACHERS ->
+                            request.courseId() == null && request.groupId() == null;
+                };
+        if (!fits) {
+            throw Exceptions.validation(
+                    "A course announcement names its course, a group one its group, a wide one"
+                            + " neither");
+        }
+        return audience;
     }
 
     /** Its author may delete an announcement, and so may whoever manages groups. */
@@ -240,6 +298,7 @@ public class AnnouncementService {
                                             : courseLabels.get(a.getCourseId());
                             return new AnnouncementView(
                                     a.getId(),
+                                    a.getAudience(),
                                     a.getCourseId(),
                                     course == null ? null : course.subjectCode(),
                                     course == null ? null : course.title(),

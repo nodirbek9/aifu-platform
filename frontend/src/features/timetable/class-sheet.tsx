@@ -11,6 +11,7 @@ import { Sheet, SheetBody, SheetContent, SheetDescription, SheetHeader, SheetTit
 import { SkeletonText } from '@/shared/ui/skeleton'
 import { isHeld, type ClassItem } from './model'
 import { useClassTopicQuery } from './queries'
+import { usePairName } from './use-pair-name'
 
 type ClassSheetProps = {
   /** The class shown; `undefined` closes the sheet. */
@@ -54,6 +55,7 @@ type ClassDetailsProps = Omit<ClassSheetProps, 'item' | 'onClose'> & { item: Cla
 
 function ClassDetails({ item, twin, lessonHref, courseHref, actions }: ClassDetailsProps) {
   const { t } = useTranslation()
+  const pairName = usePairName()
   const locale = useLocale()
   const topic = useClassTopicQuery(item.entryId, item.date, locale)
   const held = isHeld(item.status)
@@ -97,9 +99,7 @@ function ClassDetails({ item, twin, lessonHref, courseHref, actions }: ClassDeta
             <span className="tabular-nums">
               {formatTimeOfDay(item.startsAt)}–{formatTimeOfDay(item.endsAt)}
             </span>
-            {item.pairNo !== undefined && (
-              <span className="text-text-muted"> · {t('timetable.pair', { number: item.pairNo })}</span>
-            )}
+            {item.pairNo !== undefined && <span className="text-text-muted"> · {pairName(item.pairNo)}</span>}
           </Fact>
           {item.roomLabel !== undefined && (
             <Fact icon={<MapPin aria-hidden className="size-5" />} label={t('timetable.room')}>

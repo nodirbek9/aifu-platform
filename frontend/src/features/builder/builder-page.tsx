@@ -124,7 +124,21 @@ export function BuilderPage() {
   }
 
   const visible = (entries.data ?? []).filter((entry) => visibleIn(entry, parity))
-  const orderedSlots = (slots.data ?? []).slice().sort((a, b) => (a.pairNo ?? 0) - (b.pairNo ?? 0))
+  const daySlots = (slots.data ?? [])
+    .slice()
+    .sort((a, b) => (a.startsAt ?? '').localeCompare(b.startsAt ?? ''))
+  // a group sees its own shift, and any other shift it already has classes in; a teacher or a
+  // room is free all day
+  const groupShift =
+    scope?.kind === 'group' ? groups.data?.find((group) => group.id === scope.id)?.shift : undefined
+  const usedShifts = new Set(
+    visible.map((entry) => daySlots.find((slot) => slot.id === entry.pairSlotId)?.shift),
+  )
+  const orderedSlots =
+    groupShift === undefined
+      ? daySlots
+      : daySlots.filter((slot) => slot.shift === groupShift || usedShifts.has(slot.shift))
+  const shownShifts = new Set(orderedSlots.map((slot) => slot.shift)).size
   const inCell = (day: number, pairSlotId: string) =>
     visible.filter((entry) => entry.dayOfWeek === day && entry.pairSlotId === pairSlotId)
   const startFor = (day: number, pairSlotId: string): Editing['start'] => ({
@@ -232,7 +246,7 @@ export function BuilderPage() {
   const exportExcel = () => {
     const header = ['', ...DAYS.map((day) => t(`builder.days.${day}`))]
     const rows = orderedSlots.map((slot) => [
-      `${t('admin.pairNo', { number: slot.pairNo ?? 0 })} ${(slot.startsAt ?? '').slice(0, 5)}–${(slot.endsAt ?? '').slice(0, 5)}`,
+      `${t('admin.pairNo', { number: slot.shiftPairNo ?? 0 })} ${(slot.startsAt ?? '').slice(0, 5)}–${(slot.endsAt ?? '').slice(0, 5)}`,
       ...DAYS.map((day) =>
         inCell(day, slot.id ?? '')
           .map((entry) =>
@@ -426,7 +440,12 @@ export function BuilderPage() {
                       key: slot.id ?? '',
                       header: (
                         <span className="text-caption text-text-muted grid grid-cols-1 tabular-nums">
-                          <span className="text-text font-semibold">{slot.pairNo}</span>
+                          {shownShifts > 1 && slot.shiftPairNo === 1 && (
+                            <span className="text-accent-text font-medium uppercase">
+                              {t(`timetable.shiftShort.${slot.shift ?? 'MORNING'}`)}
+                            </span>
+                          )}
+                          <span className="text-text font-semibold">{slot.shiftPairNo}</span>
                           {(slot.startsAt ?? '').slice(0, 5)}
                           <br />
                           {(slot.endsAt ?? '').slice(0, 5)}
@@ -445,7 +464,7 @@ export function BuilderPage() {
                           shakingId={shakingId}
                           addLabel={t('builder.addHere', {
                             day: t(`builder.days.${day}`),
-                            pair: orderedSlots.find((slot) => slot.id === row.key)?.pairNo ?? '',
+                            pair: orderedSlots.find((slot) => slot.id === row.key)?.shiftPairNo ?? '',
                           })}
                           onOpen={(entry) => {
                             setEditing({ entry })

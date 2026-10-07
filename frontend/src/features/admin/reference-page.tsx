@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Archive, ArchiveRestore, Pencil, Plus, Trash2, UserMinus, UserPlus } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useSearchParams } from 'react-router'
+import { SHIFTS, isShift, type Shift } from '@/features/timetable/model'
 import { ConfirmDialog } from '@/features/authoring/confirm-dialog'
 import { toApiProblem } from '@/shared/api/errors'
 import { useLocale } from '@/shared/i18n/use-locale'
@@ -195,6 +196,7 @@ function GroupsTab() {
               <TableRow>
                 <TableHeaderCell>{t('admin.groupCode')}</TableHeaderCell>
                 <TableHeaderCell numeric>{t('admin.courseYear')}</TableHeaderCell>
+                <TableHeaderCell>{t('admin.shift')}</TableHeaderCell>
                 <TableHeaderCell numeric>{t('admin.students')}</TableHeaderCell>
                 <TableHeaderCell>{t('admin.curator')}</TableHeaderCell>
                 <TableHeaderCell>{t('admin.status')}</TableHeaderCell>
@@ -215,6 +217,7 @@ function GroupsTab() {
                     </button>
                   </TableCell>
                   <TableCell numeric>{group.courseYear ?? '—'}</TableCell>
+                  <TableCell>{t(`timetable.shiftShort.${group.shift ?? 'MORNING'}`)}</TableCell>
                   <TableCell numeric>
                     {group.studentCount ?? 0}
                     {group.plannedSize !== undefined && ` / ${group.plannedSize}`}
@@ -277,6 +280,7 @@ function GroupDialog({ group, onClose }: { group: Group | undefined; onClose: ()
     instructionLanguage: group?.instructionLanguage ?? 'uz',
     plannedSize: group?.plannedSize === undefined ? '' : String(group.plannedSize),
     curatorUserId: group?.curatorUserId ?? '',
+    shift: group?.shift ?? 'MORNING',
   })
   const set = (key: keyof typeof form, value: string) => {
     setForm({ ...form, [key]: value })
@@ -309,6 +313,7 @@ function GroupDialog({ group, onClose }: { group: Group | undefined; onClose: ()
               instructionLanguage: form.instructionLanguage,
               ...(whole(form.plannedSize) !== undefined && { plannedSize: whole(form.plannedSize) }),
               ...(form.curatorUserId !== '' && { curatorUserId: form.curatorUserId }),
+              ...(isShift(form.shift) && { shift: form.shift }),
             }
             save.mutate({ ...(group?.id !== undefined && { id: group.id }), input }, { onSuccess: onClose })
           }}
@@ -361,6 +366,14 @@ function GroupDialog({ group, onClose }: { group: Group | undefined; onClose: ()
                 set('studyForm', value)
               }}
               options={STUDY_FORMS.map((item) => ({ value: item, label: t(`admin.studyForms.${item}`) }))}
+            />
+            <Select
+              label={t('admin.shift')}
+              value={form.shift}
+              onValueChange={(value) => {
+                set('shift', value)
+              }}
+              options={SHIFTS.map((item) => ({ value: item, label: t(`timetable.shift.${item}`) }))}
             />
             <Select
               label={t('admin.instructionLanguage')}
@@ -758,34 +771,62 @@ function RoomDialog({ room, onClose }: { room: Room | undefined; onClose: () => 
 
 // ------------------------------------------------------------------ the bells
 
+/** Where a shift's first pair starts, and its break between pairs (AIFU's rules). */
+const SHIFT_START: Record<Shift, string> = { MORNING: '09:00', AFTERNOON: '13:30', EVENING: '18:00' }
+const SHIFT_BREAK: Record<Shift, number> = { MORNING: 15, AFTERNOON: 10, EVENING: 10 }
+
 function BellsTab() {
   const { t } = useTranslation()
   const slots = usePairSlotsQuery()
-  const save = useSavePairSlot()
   if (!slots.isSuccess) return <Loading query={slots} />
-  const rows = slots.data.slice().sort((a, b) => (a.pairNo ?? 0) - (b.pairNo ?? 0))
-  const last = rows[rows.length - 1]
   return (
-    <Card className="max-w-2xl">
-      <CardHeader title={t('admin.reference.bells')} description={t('admin.bellsBody')} />
+    <div className="grid max-w-2xl grid-cols-1 gap-6">
+      <p className="text-small text-text-muted">{t('admin.bellsBody')}</p>
+      {SHIFTS.map((shift) => (
+        <ShiftBells
+          key={shift}
+          shift={shift}
+          slots={slots.data
+            .filter((slot) => (isShift(slot.shift) ? slot.shift : 'MORNING') === shift)
+            .sort((a, b) => (a.shiftPairNo ?? 0) - (b.shiftPairNo ?? 0))}
+        />
+      ))}
+    </div>
+  )
+}
+
+function ShiftBells({ shift, slots }: { shift: Shift; slots: PairSlot[] }) {
+  const { t } = useTranslation()
+  const save = useSavePairSlot()
+  const last = slots[slots.length - 1]
+  const shiftName = t(`timetable.shift.${shift}`)
+  return (
+    <Card>
+      <CardHeader title={shiftName} />
       <CardContent className="grid grid-cols-1 gap-3">
-        {rows.map((slot) => (
+        {slots.map((slot) => (
           <SlotRow key={slot.id} slot={slot} />
         ))}
         <Button
           variant="outline"
-          className="justify-self-start"
+          className="h-auto min-h-10 max-w-full justify-self-start py-2 text-left whitespace-normal"
           loading={save.isPending}
           onClick={() => {
-            // the next pair starts ten minutes after the last one ends and lasts 80 minutes
-            const startsAt = addMinutes(last?.endsAt ?? '08:20', last === undefined ? 0 : 10)
+            // the next pair starts a break after the last one ends and lasts 80 minutes
+            const startsAt =
+              last === undefined ? SHIFT_START[shift] : addMinutes(last.endsAt ?? '', SHIFT_BREAK[shift])
             save.mutate({
-              input: { pairNo: (last?.pairNo ?? 0) + 1, startsAt, endsAt: addMinutes(startsAt, 80) },
+              input: {
+                shift,
+                shiftPairNo: (last?.shiftPairNo ?? 0) + 1,
+                startsAt,
+                endsAt: addMinutes(startsAt, 80),
+              },
             })
           }}
         >
           <Plus aria-hidden className="size-4" />
-          {t('admin.addPair')}
+          {t('admin.addPairTo', { shift: shiftName })}
         </Button>
         <Problem error={save.error} />
       </CardContent>
@@ -808,12 +849,13 @@ function SlotRow({ slot }: { slot: PairSlot }) {
   const dirty = startsAt !== (slot.startsAt ?? '').slice(0, 5) || endsAt !== (slot.endsAt ?? '').slice(0, 5)
   return (
     <div className="grid grid-cols-1 gap-1">
-      <div className="flex flex-wrap items-end gap-3">
-        <span className="text-body text-text w-20 pb-2 font-semibold">
-          {t('admin.pairNo', { number: slot.pairNo ?? 0 })}
+      {/* on a phone the name sits above, the two times side by side */}
+      <div className="grid grid-cols-[1fr_1fr_auto] items-end gap-x-3 gap-y-1 sm:flex sm:flex-wrap">
+        <span className="text-body text-text col-span-3 font-semibold sm:w-20 sm:pb-2">
+          {t('admin.pairNo', { number: slot.shiftPairNo ?? 0 })}
         </span>
         <Input
-          className="w-32"
+          className="sm:w-32"
           label={t('admin.startsAt')}
           type="time"
           value={startsAt}
@@ -822,7 +864,7 @@ function SlotRow({ slot }: { slot: PairSlot }) {
           }}
         />
         <Input
-          className="w-32"
+          className="sm:w-32"
           label={t('admin.endsAt')}
           type="time"
           value={endsAt}
@@ -836,7 +878,15 @@ function SlotRow({ slot }: { slot: PairSlot }) {
             className="mb-1"
             loading={save.isPending}
             onClick={() => {
-              save.mutate({ id: slot.id ?? '', input: { pairNo: slot.pairNo ?? 0, startsAt, endsAt } })
+              save.mutate({
+                id: slot.id ?? '',
+                input: {
+                  shift: isShift(slot.shift) ? slot.shift : 'MORNING',
+                  shiftPairNo: slot.shiftPairNo ?? 1,
+                  startsAt,
+                  endsAt,
+                },
+              })
             }}
           >
             {t('authoring.save')}
@@ -844,7 +894,7 @@ function SlotRow({ slot }: { slot: PairSlot }) {
         )}
         <IconButton
           className="mb-1"
-          aria-label={t('admin.deletePair', { number: slot.pairNo ?? 0 })}
+          aria-label={t('admin.deletePair', { number: slot.shiftPairNo ?? 0 })}
           onClick={() => {
             remove.mutate(slot.id ?? '')
           }}

@@ -2724,7 +2724,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Attendance journal: students x classes whose attendance was taken */
+        /** Attendance journal: the group's students by surname x every class held in the period, with the marks where attendance was taken */
         get: operations["journal"];
         put?: never;
         post?: never;
@@ -2997,6 +2997,26 @@ export interface paths {
         put?: never;
         /** Void a published grade entry (append-only — never deleted, ADR-011) */
         post: operations["voidEntry"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/teacher/journal/groups": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * The groups I teach, each with my courses that meet it
+         * @description From the published timetables; what the journal is opened by.
+         */
+        get: operations["journalChoices"];
+        put?: never;
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -3669,6 +3689,8 @@ export interface components {
             requirementType?: "REQUIRED" | "RECOMMENDED";
         };
         AnnouncementView: {
+            /** @enum {string} */
+            audience?: "COURSE" | "GROUP" | "EVERYONE" | "STUDENTS" | "TEACHERS";
             authorName?: string;
             /** Format: uuid */
             authorUserId?: string;
@@ -4276,6 +4298,11 @@ export interface components {
         };
         /** @description Post an announcement to the students of a course OR of a group (exactly one of courseId and groupId). */
         CreateAnnouncementRequest: {
+            /**
+             * @description Who it is for. COURSE needs courseId, GROUP needs groupId; EVERYONE, STUDENTS and TEACHERS (the study office only) need neither. Left out, it follows from courseId / groupId.
+             * @enum {string}
+             */
+            audience?: "COURSE" | "GROUP" | "EVERYONE" | "STUDENTS" | "TEACHERS";
             /** @description Rich text (HTML); sanitized on write */
             body: string;
             /** Format: uuid */
@@ -4784,6 +4811,11 @@ export interface components {
             plannedSize?: number;
             /** Format: uuid */
             programmeId?: string;
+            /**
+             * @description The shift the group studies in; MORNING when left out
+             * @enum {string}
+             */
+            shift?: "MORNING" | "AFTERNOON" | "EVENING";
             /** @enum {string} */
             studyForm?: "FULL_TIME" | "PART_TIME" | "EVENING" | "DISTANCE";
         };
@@ -4813,6 +4845,8 @@ export interface components {
             plannedSize?: number;
             /** Format: uuid */
             programmeId?: string;
+            /** @enum {string} */
+            shift?: "MORNING" | "AFTERNOON" | "EVENING";
             /** @enum {string} */
             status?: "ACTIVE" | "ARCHIVED";
             /** Format: int64 */
@@ -4892,6 +4926,19 @@ export interface components {
             preferredLocale?: "uz" | "ru" | "en";
             rows: components["schemas"]["ImportStudentRow"][];
         };
+        JournalCourseRef: {
+            /** Format: uuid */
+            courseId?: string;
+            subjectCode?: string;
+            title?: string;
+        };
+        /** @description A group I teach, with my courses that meet it (the journal's choices). */
+        JournalGroupChoice: {
+            courses?: components["schemas"]["JournalCourseRef"][];
+            groupCode?: string;
+            /** Format: uuid */
+            groupId?: string;
+        };
         JournalRow: {
             fullName?: string;
             groupCode?: string;
@@ -4904,7 +4951,9 @@ export interface components {
             /** Format: uuid */
             userId?: string;
         };
+        /** @description A class held in the period. sessionId is null until something is saved for the class; attendanceTaken says whether its attendance was marked. */
         JournalSession: {
+            attendanceTaken?: boolean;
             /** Format: date */
             date?: string;
             /** Format: uuid */
@@ -4920,7 +4969,7 @@ export interface components {
             subgroup?: string;
             topic?: string;
         };
-        /** @description Students x class dates for one course (spec T-10). */
+        /** @description Students x the classes held in a period, for one course (spec T-10). */
         JournalView: {
             /** Format: uuid */
             courseId?: string;
@@ -5967,20 +6016,24 @@ export interface components {
              */
             totalPages?: number;
         };
+        /** @description A pair of the bell schedule: its shift, its number in the shift, its time. */
         PairSlotRequest: {
             /**
              * Format: time
-             * @example 09:50
+             * @example 10:20
              */
             endsAt: string;
+            /** @enum {string} */
+            shift: "MORNING" | "AFTERNOON" | "EVENING";
             /** Format: int32 */
-            pairNo?: number;
+            shiftPairNo?: number;
             /**
              * Format: time
-             * @example 08:30
+             * @example 09:00
              */
             startsAt: string;
         };
+        /** @description pairNo is the pair's place in the whole day (a stable reference); shiftPairNo is the number people use ("1-para" of its shift). */
         PairSlotView: {
             /**
              * Format: time
@@ -5991,6 +6044,10 @@ export interface components {
             id?: string;
             /** Format: int32 */
             pairNo?: number;
+            /** @enum {string} */
+            shift?: "MORNING" | "AFTERNOON" | "EVENING";
+            /** Format: int32 */
+            shiftPairNo?: number;
             /**
              * Format: time
              * @example 08:30:00
@@ -7079,7 +7136,7 @@ export interface components {
         };
         WarningView: {
             /** @enum {string} */
-            code?: "ROOM_CAPACITY" | "ROOM_TYPE" | "ROOM_INACTIVE" | "TEACHER_NOT_ASSIGNED" | "COURSE_OTHER_TERM";
+            code?: "ROOM_CAPACITY" | "ROOM_TYPE" | "ROOM_INACTIVE" | "TEACHER_NOT_ASSIGNED" | "COURSE_OTHER_TERM" | "SHIFT_MISMATCH";
             message?: string;
         };
         /** @description A concrete week of the published timetable, with one-off changes applied. */
@@ -14065,6 +14122,37 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content?: never;
+            };
+            /** @description Any failure (4xx, 5xx): the error envelope */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    journalChoices: {
+        parameters: {
+            query?: {
+                locale?: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["JournalGroupChoice"][];
+                };
             };
             /** @description Any failure (4xx, 5xx): the error envelope */
             default: {

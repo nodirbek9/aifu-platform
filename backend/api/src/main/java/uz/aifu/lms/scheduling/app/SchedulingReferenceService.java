@@ -191,7 +191,8 @@ public class SchedulingReferenceService {
                 request.studyForm(),
                 request.instructionLanguage(),
                 request.plannedSize(),
-                request.curatorUserId());
+                request.curatorUserId(),
+                request.shift());
     }
 
     private List<GroupView> toGroupViews(List<StudentGroup> found) {
@@ -220,7 +221,8 @@ public class SchedulingReferenceService {
                                         g.getCuratorUserId() == null
                                                 ? null
                                                 : curators.get(g.getCuratorUserId()),
-                                        g.getStatus()))
+                                        g.getStatus(),
+                                        g.getShift()))
                 .toList();
     }
 
@@ -303,7 +305,9 @@ public class SchedulingReferenceService {
 
     @Transactional(readOnly = true)
     public List<PairSlotView> listPairSlots() {
+        // in the order of the day: a pair added later gets the next pairNo wherever it sits
         return pairSlots.findAllByOrderByPairNo().stream()
+                .sorted(java.util.Comparator.comparing(PairSlot::getStartsAt))
                 .map(SchedulingReferenceService::toSlotView)
                 .toList();
     }
@@ -315,23 +319,34 @@ public class SchedulingReferenceService {
 
     @Transactional
     public PairSlotView createPairSlot(PairSlotRequest request) {
-        if (pairSlots.existsByPairNo(request.pairNo())) {
+        if (pairSlots.existsByShiftAndShiftPairNo(request.shift(), request.shiftPairNo())) {
             throw Exceptions.conflict(
-                    ErrorCode.RESOURCE_ALREADY_EXISTS, "This pair number already exists");
+                    ErrorCode.RESOURCE_ALREADY_EXISTS,
+                    "This pair number already exists in the shift");
         }
         return toSlotView(
                 pairSlots.save(
-                        new PairSlot(request.pairNo(), request.startsAt(), request.endsAt())));
+                        new PairSlot(
+                                pairSlots.maxPairNo() + 1,
+                                request.shift(),
+                                request.shiftPairNo(),
+                                request.startsAt(),
+                                request.endsAt())));
     }
 
     @Transactional
     public PairSlotView updatePairSlot(UUID id, PairSlotRequest request) {
         PairSlot slot = requirePairSlot(id);
-        if (slot.getPairNo() != request.pairNo() && pairSlots.existsByPairNo(request.pairNo())) {
+        boolean renumbered =
+                slot.getShift() != request.shift()
+                        || slot.getShiftPairNo() != request.shiftPairNo();
+        if (renumbered
+                && pairSlots.existsByShiftAndShiftPairNo(request.shift(), request.shiftPairNo())) {
             throw Exceptions.conflict(
-                    ErrorCode.RESOURCE_ALREADY_EXISTS, "This pair number already exists");
+                    ErrorCode.RESOURCE_ALREADY_EXISTS,
+                    "This pair number already exists in the shift");
         }
-        slot.update(request.pairNo(), request.startsAt(), request.endsAt());
+        slot.update(request.shift(), request.shiftPairNo(), request.startsAt(), request.endsAt());
         return toSlotView(slot);
     }
 
@@ -348,7 +363,12 @@ public class SchedulingReferenceService {
 
     static PairSlotView toSlotView(PairSlot slot) {
         return new PairSlotView(
-                slot.getId(), slot.getPairNo(), slot.getStartsAt(), slot.getEndsAt());
+                slot.getId(),
+                slot.getPairNo(),
+                slot.getShift(),
+                slot.getShiftPairNo(),
+                slot.getStartsAt(),
+                slot.getEndsAt());
     }
 
     // ------------------------------------------------------------------ holidays

@@ -46,6 +46,7 @@ import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.WeekView;
 import uz.aifu.lms.scheduling.app.WeekCalendar;
 import uz.aifu.lms.scheduling.domain.ExceptionKind;
 import uz.aifu.lms.scheduling.domain.RoomType;
+import uz.aifu.lms.scheduling.domain.Shift;
 import uz.aifu.lms.scheduling.domain.TimetableStatus;
 import uz.aifu.lms.scheduling.domain.WeekParity;
 import uz.aifu.lms.support.AbstractIntegrationTest;
@@ -166,7 +167,7 @@ class SchedulingIT extends AbstractIntegrationTest {
                         admin,
                         "/api/v1/admin/groups",
                         new GroupRequest(
-                                code.toLowerCase(), null, null, null, null, null, null, null),
+                                code.toLowerCase(), null, null, null, null, null, null, null, null),
                         ApiError.class);
         assertThat(duplicate.getStatusCode()).isEqualTo(HttpStatus.CONFLICT);
 
@@ -214,6 +215,7 @@ class SchedulingIT extends AbstractIntegrationTest {
                                         "/api/v1/admin/groups",
                                         new GroupRequest(
                                                 "X-" + SchedulingFixtures.unique(6),
+                                                null,
                                                 null,
                                                 null,
                                                 null,
@@ -403,6 +405,80 @@ class SchedulingIT extends AbstractIntegrationTest {
                                 true));
         assertThat(forced.getStatusCode()).isEqualTo(HttpStatus.CREATED);
         assertThat(forced.getBody().warnings()).hasSize(2);
+    }
+
+    @Test
+    @SuppressWarnings("unchecked")
+    void shifts_theBellScheduleHasThreeShifts_andAGroupIsWarnedOutsideItsOwn() {
+        World w = new World();
+        // the AIFU schedule: 80-minute pairs, morning 09:00 with 15-minute breaks, afternoon 13:30
+        // and evening 18:00 (two pairs) with 10-minute breaks
+        assertThat(w.slots)
+                .extracting(
+                        s ->
+                                s.shift()
+                                        + " "
+                                        + s.shiftPairNo()
+                                        + " "
+                                        + s.startsAt()
+                                        + "-"
+                                        + s.endsAt())
+                .startsWith(
+                        "MORNING 1 09:00-10:20",
+                        "MORNING 2 10:35-11:55",
+                        "MORNING 3 12:10-13:30",
+                        "AFTERNOON 1 13:30-14:50",
+                        "AFTERNOON 2 15:00-16:20",
+                        "AFTERNOON 3 16:30-17:50",
+                        "EVENING 1 18:00-19:20",
+                        "EVENING 2 19:30-20:50");
+
+        GroupView evening =
+                createGroup(w.admin, "EV-" + SchedulingFixtures.unique(8), 20, Shift.EVENING);
+        assertThat(evening.shift()).isEqualTo(Shift.EVENING);
+        int morningFirst = indexOf(w.slots, Shift.MORNING, 1);
+        int eveningFirst = indexOf(w.slots, Shift.EVENING, 1);
+
+        ResponseEntity<ApiError> refused =
+                w.addRefused(
+                        w.entry(
+                                w.course,
+                                w.teacher,
+                                w.room,
+                                evening,
+                                MONDAY,
+                                morningFirst,
+                                WeekParity.EVERY,
+                                null,
+                                null));
+        assertThat(refused.getStatusCode()).isEqualTo(HttpStatus.CONFLICT);
+        assertThat((List<Map<String, Object>>) refused.getBody().details().get("warnings"))
+                .extracting(x -> x.get("code"))
+                .containsExactly("SHIFT_MISMATCH");
+
+        assertThat(
+                        w.add(
+                                        w.entry(
+                                                w.course,
+                                                w.teacher,
+                                                w.room,
+                                                evening,
+                                                MONDAY,
+                                                eveningFirst,
+                                                WeekParity.EVERY,
+                                                null,
+                                                null))
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.CREATED);
+    }
+
+    private static int indexOf(List<PairSlotView> slots, Shift shift, int shiftPairNo) {
+        for (int i = 0; i < slots.size(); i++) {
+            if (slots.get(i).shift() == shift && slots.get(i).shiftPairNo() == shiftPairNo) {
+                return i;
+            }
+        }
+        throw new AssertionError("no " + shift + " pair " + shiftPairNo);
     }
 
     // ------------------------------------------------------------------ what people see
@@ -701,11 +777,15 @@ class SchedulingIT extends AbstractIntegrationTest {
     // ------------------------------------------------------------------ helpers
 
     private GroupView createGroup(String admin, String code, int plannedSize) {
+        return createGroup(admin, code, plannedSize, null);
+    }
+
+    private GroupView createGroup(String admin, String code, int plannedSize, Shift shift) {
         ResponseEntity<GroupView> response =
                 post(
                         admin,
                         "/api/v1/admin/groups",
-                        new GroupRequest(code, null, 1, null, null, "uz", plannedSize, null),
+                        new GroupRequest(code, null, 1, null, null, "uz", plannedSize, null, shift),
                         GroupView.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
         return response.getBody();
