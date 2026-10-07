@@ -18,10 +18,12 @@ export function RequireAuth() {
   if (state.status === 'unknown') return <AppSplash />
   if (state.status === 'anonymous') {
     const loginState: LoginLocationState = {}
-    if (state.reason !== 'signedOut') {
+    if (state.reason !== 'signedOut' && state.reason !== 'passwordChanged') {
       loginState.from = { pathname: location.pathname, search: location.search }
     }
     if (state.reason === 'expired') loginState.reason = 'expired'
+    // the guard may redirect before the form does: the note must survive either way
+    if (state.reason === 'passwordChanged') loginState.passwordChanged = true
     return <Navigate to="/login" replace state={loginState} />
   }
   if (state.user.mustChangePassword && location.pathname !== '/change-password') {

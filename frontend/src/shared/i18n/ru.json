@@ -287,6 +287,7 @@
     "inputOutput": "Ввод и вывод",
     "constraints": "Ограничения",
     "examples": "Примеры",
+    "exampleNumber": "Пример {{number}}",
     "input": "Ввод",
     "expectedOutput": "Ожидаемый вывод",
     "actualOutput": "Вывод программы",

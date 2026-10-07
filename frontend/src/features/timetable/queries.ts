@@ -2,6 +2,7 @@ import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import { api, unwrap } from '@/shared/api/client'
 import type { components } from '@/shared/api/schema'
 import type { Locale } from '@/shared/i18n'
+import { useLocale } from '@/shared/i18n/use-locale'
 import { narrowClass, narrowDay, narrowWeek } from './model'
 
 type ClassView = components['schemas']['ClassView']
@@ -30,12 +31,13 @@ export function useTodayQuery(side: TimetableSide = 'student') {
 
 /** My next class that will really be held, looking four weeks ahead; `null` when there is none. */
 export function useNextClassQuery(side: TimetableSide = 'student') {
+  const locale = useLocale()
   return useQuery({
-    queryKey: timetableKeys.next(side),
+    queryKey: [...timetableKeys.next(side), locale],
     queryFn: async () => {
       // 204, and so nothing to read, when no class is ahead
       const next: ClassView | undefined = await unwrap(
-        api.GET('/api/v1/timetable/next', { params: { query: { as: side } } }),
+        api.GET('/api/v1/timetable/next', { params: { query: { as: side, locale } } }),
       )
       return next === undefined ? null : narrowClass(next)
     },

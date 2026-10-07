@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import uz.aifu.lms.common.api.PageResponse;
@@ -115,11 +116,14 @@ public class AdminLessonController {
 
     @GetMapping("/api/v1/teacher/lessons/{id}")
     @PreAuthorize("hasAuthority('COURSE_CONTENT_WRITE')")
-    @Operation(summary = "Get one lesson, any status, with its content blocks")
-    public LessonDetail get(@PathVariable UUID id) {
+    @Operation(
+            summary =
+                    "Get one lesson, any status, with its content blocks; block content in"
+                            + " `locale` (default uz)")
+    public LessonDetail get(@PathVariable UUID id, @RequestParam(required = false) String locale) {
         accessGuard.requireLessonEditor(id);
-        return LessonMapper.toDetail(
-                lessons.require(id), lessons, blocks, LocaleCode.DEFAULT.code(), objectMapper);
+        String resolved = LocaleCode.find(locale).orElse(LocaleCode.DEFAULT).code();
+        return LessonMapper.toDetail(lessons.require(id), lessons, blocks, resolved, objectMapper);
     }
 
     @PatchMapping("/api/v1/teacher/lessons/{id}")

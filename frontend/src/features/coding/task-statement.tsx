@@ -10,7 +10,7 @@ import { Button } from '@/shared/ui/button'
 import { FallbackMark } from '@/shared/ui/fallback-mark'
 import { RichText } from '@/shared/ui/rich-text'
 import { SkeletonText } from '@/shared/ui/skeleton'
-import type { ExampleTest, Hint, Task } from './model'
+import { numberedTest, type ExampleTest, type Hint, type Task } from './model'
 import { useHintsQuery, useRevealHint } from './queries'
 
 type TaskStatementProps = {
@@ -111,10 +111,11 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 function Example({ example }: { example: ExampleTest }) {
   const { t } = useTranslation()
+  const number = numberedTest(example.name)
   return (
     <div className="border-border overflow-hidden rounded-lg border">
       <p className="border-border bg-surface-sunken text-caption text-text-muted border-b px-3.5 py-1.5 font-medium uppercase">
-        {example.name}
+        {number === null ? example.name : t('task.exampleNumber', { number })}
       </p>
       <div className="divide-border grid divide-y sm:grid-cols-2 sm:divide-x sm:divide-y-0">
         <Sample label={t('task.input')} text={example.stdin} />

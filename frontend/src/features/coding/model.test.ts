@@ -4,6 +4,7 @@ import {
   isFinished,
   narrowRun,
   narrowSubmission,
+  numberedTest,
   pollInterval,
   readDraft,
   writeDraft,
@@ -89,5 +90,19 @@ describe('what the server sends, narrowed', () => {
       testResults: [{ testCaseId: 'a', passed: false, verdict: 'SOMETHING_NEW' }],
     })
     expect(submission.tests[0]?.verdict).toBeUndefined()
+  })
+})
+
+describe('test names', () => {
+  it('a numbered label is read as its number, so it can be said in any language', () => {
+    expect(numberedTest('Namuna 2')).toBe(2)
+    expect(numberedTest('Test 13')).toBe(13)
+    expect(numberedTest(' Пример 1 ')).toBe(1)
+  })
+
+  it('a name a teacher wrote is kept', () => {
+    expect(numberedTest('Manfiy sonlar')).toBeNull()
+    expect(numberedTest('Test of big values')).toBeNull()
+    expect(numberedTest(undefined)).toBeNull()
   })
 })

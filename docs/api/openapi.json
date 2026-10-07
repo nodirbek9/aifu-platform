@@ -7846,6 +7846,13 @@
             "type" : "string"
           }
         }, {
+          "in" : "query",
+          "name" : "locale",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
           "description" : "Zero-based page index",
           "in" : "query",
           "name" : "page",
@@ -9638,6 +9645,13 @@
           "required" : false,
           "schema" : {
             "format" : "uuid",
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "locale",
+          "required" : false,
+          "schema" : {
             "type" : "string"
           }
         }, {
@@ -16319,6 +16333,13 @@
       "get" : {
         "operationId" : "myCourses",
         "parameters" : [ {
+          "in" : "query",
+          "name" : "locale",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
           "description" : "Zero-based page index",
           "in" : "query",
           "name" : "page",
@@ -18026,6 +18047,13 @@
             "format" : "uuid",
             "type" : "string"
           }
+        }, {
+          "in" : "query",
+          "name" : "locale",
+          "required" : false,
+          "schema" : {
+            "type" : "string"
+          }
         } ],
         "responses" : {
           "200" : {
@@ -18052,7 +18080,7 @@
         "security" : [ {
           "bearerAuth" : [ ]
         } ],
-        "summary" : "Get one lesson, any status, with its content blocks",
+        "summary" : "Get one lesson, any status, with its content blocks; block content in `locale` (default uz)",
         "tags" : [ "Teacher: lessons" ]
       },
       "patch" : {

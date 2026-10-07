@@ -3,12 +3,14 @@ import { CheckCircle2, Send, XCircle } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useParams, useSearchParams } from 'react-router'
 import { useTaskQuery } from '@/features/authoring/task-queries'
+import { numberedTest } from '@/features/coding/model'
 import { formatScore } from '@/features/grades/model'
 import { useCourseGradebookQuery, useRecordGrade } from '@/features/gradebook/queries'
 import { useTeacherCoursesQuery } from '@/features/teaching/queries'
 import { toApiProblem } from '@/shared/api/errors'
 import { isEditorLanguage, languageName } from '@/shared/editor/languages'
 import { useLocale } from '@/shared/i18n/use-locale'
+import { pickTranslation } from '@/shared/lib/translations'
 import { formatDateTime } from '@/shared/lib/dates'
 import { Badge, VerdictBadge, VERDICTS, type Verdict } from '@/shared/ui/badge'
 import { Breadcrumb } from '@/shared/ui/breadcrumb'
@@ -84,7 +86,7 @@ export function SubmissionReviewPage() {
           {student?.fullName ?? t('review.submission')}
         </h1>
         <p className="text-small text-text-muted flex flex-wrap items-center gap-2">
-          <span>{task.data.title}</span>
+          <span>{pickTranslation(task.data.translations, locale)?.value.title ?? task.data.title}</span>
           <span>·</span>
           <span>{languageName(language)}</span>
           <span>·</span>
@@ -176,9 +178,11 @@ function TestResults({ submission }: { submission: TeacherSubmission }) {
                 <XCircle aria-label={t('authoring.failed')} className="text-danger size-4" />
               )}
               <span className="text-text font-medium">
-                {test.name !== undefined && test.name !== ''
+                {test.name !== undefined && test.name !== '' && numberedTest(test.name) === null
                   ? test.name
-                  : t('authoring.testNumber', { number: index + 1 })}
+                  : t(test.isExample === true ? 'task.exampleNumber' : 'authoring.testNumber', {
+                      number: numberedTest(test.name) ?? index + 1,
+                    })}
               </span>
               {test.isExample === true && <Badge tone="accent">{t('authoring.example')}</Badge>}
               {test.passed !== true && test.verdict !== undefined && (

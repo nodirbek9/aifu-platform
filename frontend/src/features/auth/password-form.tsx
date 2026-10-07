@@ -62,7 +62,7 @@ export function PasswordForm({ autoFocus = false, prominent = false }: PasswordF
         }),
       )
       // The server revoked every refresh token: sign in again with the new password.
-      forgetSession()
+      forgetSession('passwordChanged')
       void navigate('/login', { replace: true, state: { passwordChanged: true } })
     } catch (error) {
       const problem = toApiProblem(error)

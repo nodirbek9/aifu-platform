@@ -13,6 +13,7 @@ import {
 } from '@/shared/editor/languages'
 import type { Locale } from '@/shared/i18n'
 import { useLocale } from '@/shared/i18n/use-locale'
+import { pickTranslation } from '@/shared/lib/translations'
 import { cn } from '@/shared/lib/cn'
 import { Badge, VerdictBadge, VERDICTS, type Verdict } from '@/shared/ui/badge'
 import { Breadcrumb } from '@/shared/ui/breadcrumb'
@@ -112,7 +113,8 @@ function TaskEditor({ task, onReload }: { task: CodingTaskRaw; onReload: () => v
   const course = useAuthoringCourseQuery(courseId)
   const status = useTaskStatus(task.id ?? '')
   const courseTitle = courses.data?.find((item) => item.id === courseId)?.title ?? ''
-  const title = task.title ?? task.code ?? ''
+  const locale = useLocale()
+  const title = pickTranslation(task.translations, locale)?.value.title ?? task.title ?? task.code ?? ''
   const required = course.data?.requiredLocales ?? ['uz']
   const published = task.status === 'PUBLISHED'
 

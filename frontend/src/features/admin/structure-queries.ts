@@ -2,6 +2,7 @@ import { keepPreviousData, useQuery } from '@tanstack/react-query'
 import type { components } from '@/shared/api/schema'
 import { api, unwrap } from '@/shared/api/client'
 import type { Locale } from '@/shared/i18n'
+import { useLocale } from '@/shared/i18n/use-locale'
 import { useRefreshingMutation } from './reference-queries'
 
 type Schemas = components['schemas']
@@ -26,8 +27,9 @@ export const structureKeys = {
 export type ListFilter = { query: string; status?: string; page: number }
 
 export function useSubjectsQuery(filter: ListFilter) {
+  const locale = useLocale()
   return useQuery({
-    queryKey: [...structureKeys.subjects, filter],
+    queryKey: [...structureKeys.subjects, filter, locale],
     queryFn: () =>
       unwrap(
         api.GET('/api/v1/admin/subjects', {
@@ -40,6 +42,7 @@ export function useSubjectsQuery(filter: ListFilter) {
               page: filter.page,
               size: 25,
               sort: ['code,asc'],
+              locale,
             },
           },
         }),
@@ -50,12 +53,15 @@ export function useSubjectsQuery(filter: ListFilter) {
 
 /** Every subject (up to a hundred), for choosing one: a prerequisite, a new course. */
 export function useAllSubjectsQuery() {
+  const locale = useLocale()
   return useQuery({
-    queryKey: [...structureKeys.subjects, 'all'],
+    queryKey: [...structureKeys.subjects, 'all', locale],
     queryFn: async () =>
       (
         await unwrap(
-          api.GET('/api/v1/admin/subjects', { params: { query: { size: 100, sort: ['code,asc'] } } }),
+          api.GET('/api/v1/admin/subjects', {
+            params: { query: { size: 100, sort: ['code,asc'], locale } },
+          }),
         )
       ).content ?? [],
   })
@@ -152,8 +158,9 @@ export function useAddOutcome(id: string) {
 // ------------------------------------------------------------------ courses
 
 export function useCoursesQuery(filter: ListFilter & { termId?: string; size?: number }) {
+  const locale = useLocale()
   return useQuery({
-    queryKey: [...structureKeys.courses, filter],
+    queryKey: [...structureKeys.courses, filter, locale],
     queryFn: () =>
       unwrap(
         api.GET('/api/v1/admin/courses', {
@@ -169,6 +176,7 @@ export function useCoursesQuery(filter: ListFilter & { termId?: string; size?: n
               ...(filter.termId !== undefined && { termId: filter.termId }),
               page: filter.page,
               size: filter.size ?? 25,
+              locale,
             },
           },
         }),

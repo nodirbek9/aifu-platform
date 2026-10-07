@@ -129,7 +129,9 @@ function narrowBlock(raw: Schemas['ContentBlockView']): Narrowed | null {
           : raw.blockType === 'CODING_TASK_REF'
             ? 'CODING_TASK'
             : 'ACTIVITY'
-      return { ...base, kind: 'ref', ref, refId }
+      // a reference has no text of its own: the server's fallback flag on its empty payload says
+      // nothing about the language the student reads (the item carries its own)
+      return { ...base, fallback: false, kind: 'ref', ref, refId }
     }
     case 'LESSON_PLAN':
       // Teachers only; the student endpoint never sends it.

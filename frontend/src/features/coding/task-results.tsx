@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { CheckCircle2, EyeOff, History, Loader2, MessageSquareText, RotateCcw, XCircle } from 'lucide-react'
+import type { TFunction } from 'i18next'
 import { useTranslation } from 'react-i18next'
 import { toApiProblem } from '@/shared/api/errors'
 import { languageName } from '@/shared/editor/languages'
@@ -12,7 +13,14 @@ import { PendingBadge, VerdictBadge } from '@/shared/ui/badge'
 import { Button } from '@/shared/ui/button'
 import { RichText } from '@/shared/ui/rich-text'
 import { SkeletonText } from '@/shared/ui/skeleton'
-import { isFinished, type Run, type Submission, type SubmissionSummary, type TestOutcome } from './model'
+import {
+  isFinished,
+  numberedTest,
+  type Run,
+  type Submission,
+  type SubmissionSummary,
+  type TestOutcome,
+} from './model'
 import { useFeedbackQuery } from './queries'
 
 gsap.registerPlugin(useGSAP)
@@ -124,6 +132,13 @@ export function ExamplesRunResult({ run, onRetry }: RunResultProps) {
   )
 }
 
+/** A numbered test in the reader's language: an example is the one whose data is shown. */
+function testLabel(test: TestOutcome, t: TFunction): string {
+  const number = numberedTest(test.name)
+  if (number === null) return test.name
+  return t(test.detail === undefined ? 'authoring.testNumber' : 'task.exampleNumber', { number })
+}
+
 function TestList({ tests, animate = false }: { tests: readonly TestOutcome[]; animate?: boolean }) {
   const { t } = useTranslation()
   if (tests.length === 0) return null
@@ -141,7 +156,7 @@ function TestList({ tests, animate = false }: { tests: readonly TestOutcome[]; a
             ) : (
               <XCircle aria-hidden className="text-danger size-5 shrink-0" />
             )}
-            <span className="text-small text-text font-medium">{test.name}</span>
+            <span className="text-small text-text font-medium">{testLabel(test, t)}</span>
             <span className="sr-only">{test.passed ? t('task.testPassed') : t('task.testFailed')}</span>
             {!test.passed && test.verdict !== undefined && (
               <VerdictBadge verdict={test.verdict} label={t(`verdict.${test.verdict}`)} />

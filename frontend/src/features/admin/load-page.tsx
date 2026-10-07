@@ -209,7 +209,7 @@ function LoadLine({ row, onDelete }: { row: LoadRow; onDelete: () => void }) {
         {row.courseTitle}
         <span className="text-caption text-text-muted block font-mono">{row.subjectCode}</span>
       </TableCell>
-      <TableCell>{row.groupCode}</TableCell>
+      <TableCell className="whitespace-nowrap">{row.groupCode}</TableCell>
       <TableCell>{t(`sessionType.${row.sessionType ?? 'LECTURE'}`)}</TableCell>
       <TableCell>{row.teacherName ?? '—'}</TableCell>
       <TableCell numeric>{row.plannedHours}</TableCell>

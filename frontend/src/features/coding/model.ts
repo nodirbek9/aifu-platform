@@ -94,6 +94,18 @@ function isVerdict(value: string | undefined): value is Verdict {
   return value !== undefined && (VERDICTS as readonly string[]).includes(value)
 }
 
+const NUMBERED_TEST = /^(?:namuna|misol|example|пример|test|тест)\s+(\d+)$/i
+
+/**
+ * The number of a test whose name is only a numbered label ("Namuna 2", "Test 3", as the content
+ * importer names them), so the screen can say it in the reader's language; `null` for a name a
+ * teacher wrote.
+ */
+export function numberedTest(name: string | undefined): number | null {
+  const match = NUMBERED_TEST.exec(name?.trim() ?? '')
+  return match?.[1] === undefined ? null : Number(match[1])
+}
+
 /** One test of a run or a submission. A hidden test carries no input and no output. */
 export type TestOutcome = {
   key: string

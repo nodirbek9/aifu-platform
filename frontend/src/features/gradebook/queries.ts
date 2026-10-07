@@ -34,6 +34,8 @@ export function useCourseGradebookQuery(courseId: string, locale: Locale) {
         ]
       })
     },
+    // the submission page knows the course only once its task has loaded
+    enabled: courseId !== '',
   })
 }
 

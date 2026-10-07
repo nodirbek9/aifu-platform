@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test'
-import { isPhone, openProfileMenu, signIn, submitLogin, texts } from './support'
+import { clearAdminLeftovers, databaseAvailable } from './db'
+import { demoPassword, isPhone, openProfileMenu, signIn, submitLogin, texts } from './support'
 
 const { uz, ru, en } = texts
 
@@ -55,6 +56,47 @@ test.describe('signing in (G-08, G-09)', () => {
     await page.getByRole('button', { name: uz.auth.signIn, exact: true }).click()
 
     await expect(page.getByText(uz.auth.fieldRequired)).toHaveCount(2)
+  })
+
+  test('a first sign-in changes the password, then signs in again with the new one', async ({
+    page,
+  }, testInfo) => {
+    // an account the administrator created with a password to be changed at the first sign-in
+    const username = `e2e.first.${testInfo.project.name}`
+    const initial = 'Start!Pass2026'
+    const changed = 'Fresh!Pass2026'
+    if (databaseAvailable) clearAdminLeftovers()
+    const login = await page.request.post('/api/v1/auth/login', {
+      data: { identifier: 'admin', password: demoPassword() },
+    })
+    const { accessToken } = (await login.json()) as { accessToken: string }
+    const created = await page.request.post('/api/v1/admin/users', {
+      headers: { Authorization: `Bearer ${accessToken}` },
+      data: {
+        username,
+        fullName: 'E2E First Sign-in',
+        email: `${username}@dev.aifu.local`,
+        roles: ['TEACHER'],
+        initialPassword: initial,
+        mustChangePassword: true,
+      },
+    })
+    expect(created.ok(), 'the account is created').toBe(true)
+
+    await submitLogin(page, username, initial)
+    await expect(page).toHaveURL(/\/change-password$/)
+    await page.getByLabel(uz.auth.currentPassword).fill(initial)
+    await page.getByLabel(uz.auth.newPassword, { exact: true }).fill(changed)
+    await page.getByLabel(uz.auth.confirmPassword).fill(changed)
+    await page.getByRole('button', { name: uz.auth.changePassword }).click()
+
+    // every session was closed: back at the sign-in, told why
+    await expect(page).toHaveURL(/\/login$/)
+    await expect(page.getByText(uz.auth.passwordChangedTitle)).toBeVisible()
+    await submitLogin(page, username, changed)
+    await expect(page).toHaveURL(/\/teacher$/)
+
+    if (databaseAvailable) clearAdminLeftovers()
   })
 })
 

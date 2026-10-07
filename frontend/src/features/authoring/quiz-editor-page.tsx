@@ -7,6 +7,7 @@ import { useTeacherCoursesQuery } from '@/features/teaching/queries'
 import { toApiProblem } from '@/shared/api/errors'
 import type { Locale } from '@/shared/i18n'
 import { useLocale } from '@/shared/i18n/use-locale'
+import { pickTranslation } from '@/shared/lib/translations'
 import { Badge } from '@/shared/ui/badge'
 import { Breadcrumb } from '@/shared/ui/breadcrumb'
 import { Button } from '@/shared/ui/button'
@@ -97,6 +98,7 @@ export function QuizEditorPage() {
 
 function QuizEditor({ quiz, onReload }: { quiz: QuizRaw; onReload: () => void }) {
   const { t } = useTranslation()
+  const locale = useLocale()
   const quizId = quiz.id ?? ''
   const courseId = quiz.courseId ?? ''
   const courses = useTeacherCoursesQuery()
@@ -107,7 +109,7 @@ function QuizEditor({ quiz, onReload }: { quiz: QuizRaw; onReload: () => void })
   const [adding, setAdding] = useState(false)
   const required = course.data?.requiredLocales ?? ['uz']
   const published = quiz.status === 'PUBLISHED'
-  const title = quiz.title ?? quiz.code ?? ''
+  const title = pickTranslation(quiz.translations, locale)?.value.title ?? quiz.title ?? quiz.code ?? ''
   const courseTitle = courses.data?.find((item) => item.id === courseId)?.title ?? ''
   const list = questions.data ?? []
   const points = list.reduce((sum, question) => sum + (question.points ?? 0), 0)

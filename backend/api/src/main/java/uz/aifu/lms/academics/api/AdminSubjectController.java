@@ -36,6 +36,7 @@ import uz.aifu.lms.academics.domain.Subject;
 import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.api.PageableSupport;
 import uz.aifu.lms.common.domain.PublicationStatus;
+import uz.aifu.lms.common.i18n.LocaleResolver;
 import uz.aifu.lms.common.security.CurrentUserProvider;
 
 /**
@@ -52,14 +53,17 @@ public class AdminSubjectController {
     private final SubjectService subjects;
     private final PageableSupport pageableSupport;
     private final CurrentUserProvider currentUser;
+    private final LocaleResolver localeResolver;
 
     public AdminSubjectController(
             SubjectService subjects,
             PageableSupport pageableSupport,
-            CurrentUserProvider currentUser) {
+            CurrentUserProvider currentUser,
+            LocaleResolver localeResolver) {
         this.subjects = subjects;
         this.pageableSupport = pageableSupport;
         this.currentUser = currentUser;
+        this.localeResolver = localeResolver;
     }
 
     @GetMapping
@@ -69,12 +73,22 @@ public class AdminSubjectController {
             @RequestParam(required = false) String query,
             @RequestParam(required = false) PublicationStatus status,
             @RequestParam(required = false) UUID departmentId,
-            Pageable pageable) {
+            @RequestParam(required = false) String locale,
+            Pageable pageable,
+            HttpServletRequest http) {
+        String resolvedLocale = localeResolver.preferred(locale, http, null, null).code();
         var page =
                 subjects.search(
-                        query, status, departmentId, "uz", pageableSupport.sanitize(pageable));
+                        query,
+                        status,
+                        departmentId,
+                        resolvedLocale,
+                        pageableSupport.sanitize(pageable));
         return PageResponse.of(
-                page, s -> SubjectMapper.toSummary(s, subjects.listTranslations(s.getId()), "uz"));
+                page,
+                s ->
+                        SubjectMapper.toSummary(
+                                s, subjects.listTranslations(s.getId()), resolvedLocale));
     }
 
     @GetMapping("/{id}")

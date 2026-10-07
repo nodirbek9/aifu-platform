@@ -3010,7 +3010,7 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** Get one lesson, any status, with its content blocks */
+        /** Get one lesson, any status, with its content blocks; block content in `locale` (default uz) */
         get: operations["get_3"];
         put?: never;
         post?: never;
@@ -7351,6 +7351,7 @@ export interface operations {
                 status?: "DRAFT" | "PUBLISHED" | "ARCHIVED" | "CLOSED";
                 subjectId?: string;
                 termId?: string;
+                locale?: string;
                 /** @description Zero-based page index */
                 page?: number;
                 /** @description Page size; capped by the server */
@@ -8629,6 +8630,7 @@ export interface operations {
                 query?: string;
                 status?: "DRAFT" | "PUBLISHED" | "ARCHIVED";
                 departmentId?: string;
+                locale?: string;
                 /** @description Zero-based page index */
                 page?: number;
                 /** @description Page size; capped by the server */
@@ -13066,6 +13068,7 @@ export interface operations {
     myCourses: {
         parameters: {
             query?: {
+                locale?: string;
                 /** @description Zero-based page index */
                 page?: number;
                 /** @description Page size; capped by the server */
@@ -14076,7 +14079,9 @@ export interface operations {
     };
     get_3: {
         parameters: {
-            query?: never;
+            query?: {
+                locale?: string;
+            };
             header?: never;
             path: {
                 id: string;

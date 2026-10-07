@@ -13,7 +13,7 @@ import { defaultRole, isRole, narrowUser, type CurrentUser, type Role } from './
 
 export type AuthState =
   | { status: 'unknown' }
-  | { status: 'anonymous'; reason?: 'expired' | 'signedOut' }
+  | { status: 'anonymous'; reason?: 'expired' | 'signedOut' | 'passwordChanged' }
   | { status: 'authenticated'; user: CurrentUser }
 
 type AuthContextValue = {
@@ -23,7 +23,7 @@ type AuthContextValue = {
   signOut: () => Promise<void>
   signOutAll: () => Promise<void>
   /** Drops the session on this device only — after the server revoked it (password change). */
-  forgetSession: () => void
+  forgetSession: (reason?: 'signedOut' | 'passwordChanged') => void
   activeRole: Role | null
   setActiveRole: (role: Role) => void
   changeLocale: (locale: Locale) => void
@@ -113,7 +113,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     [pickRole],
   )
 
-  const localSignOut = useCallback(() => {
+  const localSignOut = useCallback((reason: 'signedOut' | 'passwordChanged' = 'signedOut') => {
     clearSession()
     queryClient.clear()
     setActiveRoleState(null)
@@ -122,7 +122,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch {
       /* ignore */
     }
-    setState({ status: 'anonymous', reason: 'signedOut' })
+    setState({ status: 'anonymous', reason })
   }, [])
 
   const signOut = useCallback(async () => {

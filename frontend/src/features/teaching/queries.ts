@@ -1,6 +1,7 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { api, unwrap } from '@/shared/api/client'
 import type { Locale } from '@/shared/i18n'
+import { useLocale } from '@/shared/i18n/use-locale'
 import { pickTranslation } from '@/shared/lib/translations'
 import {
   lessonPlanOf,
@@ -30,11 +31,12 @@ export const teachingKeys = {
 
 /** The courses I teach. */
 export function useTeacherCoursesQuery() {
+  const locale = useLocale()
   return useQuery({
-    queryKey: teachingKeys.courses,
+    queryKey: [...teachingKeys.courses, locale],
     queryFn: async () => {
       const page = await unwrap(
-        api.GET('/api/v1/teacher/courses', { params: { query: { page: 0, size: 100 } } }),
+        api.GET('/api/v1/teacher/courses', { params: { query: { page: 0, size: 100, locale } } }),
       )
       return (page.content ?? []).map(narrowTeacherCourse).filter((course) => course !== null)
     },
@@ -170,11 +172,16 @@ export function useCourseLessonsQuery(courseId: string, locale: Locale, enabled 
 
 /** The teacher-only plan of a lesson (its LESSON_PLAN blocks); `null` when it has none. */
 export function useLessonPlanQuery(lessonId: string | undefined) {
+  const locale = useLocale()
   return useQuery({
-    queryKey: teachingKeys.lessonPlan(lessonId ?? ''),
+    queryKey: [...teachingKeys.lessonPlan(lessonId ?? ''), locale],
     queryFn: async () =>
       lessonPlanOf(
-        await unwrap(api.GET('/api/v1/teacher/lessons/{id}', { params: { path: { id: lessonId ?? '' } } })),
+        await unwrap(
+          api.GET('/api/v1/teacher/lessons/{id}', {
+            params: { path: { id: lessonId ?? '' }, query: { locale } },
+          }),
+        ),
       ),
     enabled: lessonId !== undefined,
   })

@@ -32,7 +32,7 @@ Course delivery administration
 
 | Method | Path | What it does | Query | Body | Returns |
 |---|---|---|---|---|---|
-| GET | `/admin/courses` | Search the full course catalogue, any status. Admin only. | query?, status?, subjectId?, termId?, page?, size?, sort? |  | 200 PageResponseCourseSummary |
+| GET | `/admin/courses` | Search the full course catalogue, any status. Admin only. | query?, status?, subjectId?, termId?, locale?, page?, size?, sort? |  | 200 PageResponseCourseSummary |
 | POST | `/admin/courses` | Create one delivery of a subject in a term |  | CreateCourseRequest | 201 CourseDetail |
 | GET | `/admin/courses/{id}` | Get one course, any status. Caller must be admin or an assigned teacher. |  |  | 200 CourseDetail |
 | PATCH | `/admin/courses/{id}` | Update delivery details (cohort, contact hours, mode, form, programme) |  | UpdateCourseDeliveryRequest | 200 CourseDetail |
@@ -88,7 +88,7 @@ Subject catalogue administration
 
 | Method | Path | What it does | Query | Body | Returns |
 |---|---|---|---|---|---|
-| GET | `/admin/subjects` | Search the full subject catalogue, any status | query?, status?, departmentId?, page?, size?, sort? |  | 200 PageResponseSubjectSummary |
+| GET | `/admin/subjects` | Search the full subject catalogue, any status | query?, status?, departmentId?, locale?, page?, size?, sort? |  | 200 PageResponseSubjectSummary |
 | POST | `/admin/subjects` | Create a subject |  | CreateSubjectRequest | 201 SubjectDetail |
 | GET | `/admin/subjects/{id}` | Get one subject, any status |  |  | 200 SubjectDetail |
 | PATCH | `/admin/subjects/{id}` | Update catalogue fields |  | UpdateSubjectRequest | 200 SubjectDetail |
@@ -474,7 +474,7 @@ The caller's own assigned courses
 
 | Method | Path | What it does | Query | Body | Returns |
 |---|---|---|---|---|---|
-| GET | `/teacher/courses` | List courses the caller teaches, any status | page?, size?, sort? |  | 200 PageResponseCourseSummary |
+| GET | `/teacher/courses` | List courses the caller teaches, any status | locale?, page?, size?, sort? |  | 200 PageResponseCourseSummary |
 | GET | `/teacher/courses/{id}` | Get one of the caller's courses in full detail |  |  | 200 CourseDetail |
 
 ## Teacher: feedback
@@ -505,7 +505,7 @@ Lesson administration
 
 | Method | Path | What it does | Query | Body | Returns |
 |---|---|---|---|---|---|
-| GET | `/teacher/lessons/{id}` | Get one lesson, any status, with its content blocks |  |  | 200 LessonDetail |
+| GET | `/teacher/lessons/{id}` | Get one lesson, any status, with its content blocks; block content in `locale` (default uz) | locale? |  | 200 LessonDetail |
 | PATCH | `/teacher/lessons/{id}` | Update lesson fields |  | UpdateLessonRequest | 200 LessonDetail |
 | DELETE | `/teacher/lessons/{id}` | Soft-delete a lesson |  |  | 204 |
 | POST | `/teacher/lessons/{id}/outcomes/{outcomeId}` | Link a learning outcome this lesson advances |  |  | 204 |
