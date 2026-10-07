@@ -5,13 +5,13 @@ import { AlertTriangle, Info, Lightbulb, OctagonAlert } from 'lucide-react'
 import { cn } from '@/shared/lib/cn'
 
 export const callout = tv({
-  base: 'flex gap-3 rounded-md border border-border border-l-4 bg-surface-raised px-4 py-3',
+  base: 'flex gap-3 rounded-md border border-border border-l-4 px-4 py-3',
   variants: {
     variant: {
-      INFO: 'border-l-info',
-      TIP: 'border-l-success',
-      WARNING: 'border-l-warning',
-      DANGER: 'border-l-danger',
+      INFO: 'border-l-info bg-callout-info-surface',
+      TIP: 'border-l-success bg-callout-tip-surface',
+      WARNING: 'border-l-warning bg-callout-warning-surface',
+      DANGER: 'border-l-danger bg-callout-danger-surface',
     },
   },
   defaultVariants: { variant: 'INFO' },

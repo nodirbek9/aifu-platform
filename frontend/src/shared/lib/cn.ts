@@ -10,7 +10,20 @@ export const twMergeConfig = {
   extend: {
     classGroups: {
       'font-size': [
-        { text: ['caption', 'small', 'body', 'lead', 'title', 'display-lg', 'display-xl', 'display-2xl'] },
+        {
+          text: [
+            'caption',
+            'small',
+            'body',
+            'reading',
+            'lead',
+            'title',
+            'display-md',
+            'display-lg',
+            'display-xl',
+            'display-2xl',
+          ],
+        },
       ],
       shadow: [{ shadow: ['menu', 'dialog', 'drag'] }],
     },

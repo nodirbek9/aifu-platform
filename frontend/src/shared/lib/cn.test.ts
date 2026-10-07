@@ -10,6 +10,8 @@ describe('class merging knows the design tokens', () => {
 
   it('still lets a later type-scale class replace an earlier one', () => {
     expect(cn('text-body', 'text-small')).toBe('text-small')
+    expect(cn('text-body', 'text-reading')).toBe('text-reading')
+    expect(cn('text-display-lg', 'text-display-md')).toBe('text-display-md')
   })
 
   it('still lets a later colour replace an earlier one', () => {

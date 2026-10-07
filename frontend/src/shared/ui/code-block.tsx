@@ -40,7 +40,7 @@ export function CodeBlock({
   }
 
   return (
-    <div className={cn('border-border bg-surface-sunken overflow-hidden rounded-lg border', className)}>
+    <div className={cn('border-border bg-code-surface overflow-hidden rounded-lg border', className)}>
       <div className="border-border flex items-center justify-between border-b px-3.5 py-1.5">
         <span className="text-caption tracking-caption text-text-muted font-medium uppercase">
           {language ?? 'code'}

@@ -11,6 +11,13 @@
   --color-surface: var(--surface);
   --color-surface-raised: var(--surface-raised);
   --color-surface-sunken: var(--surface-sunken);
+  --color-reading-surface: var(--reading-surface);
+  --color-reading-text: var(--reading-text);
+  --color-code-surface: var(--code-surface);
+  --color-callout-info-surface: var(--callout-info-surface);
+  --color-callout-tip-surface: var(--callout-tip-surface);
+  --color-callout-warning-surface: var(--callout-warning-surface);
+  --color-callout-danger-surface: var(--callout-danger-surface);
   --color-text: var(--text);
   --color-text-muted: var(--text-muted);
   --color-border: var(--border);
@@ -55,11 +62,11 @@
 
   /* Typography roles */
   --font-display: 'Bitter Variable', 'Literata Variable', Georgia, serif;
-  --font-reading: 'Literata Variable', Georgia, serif;
+  --font-reading: 'Onest Variable', system-ui, sans-serif;
   --font-sans: 'Onest Variable', 'Segoe UI', system-ui, sans-serif;
   --font-mono: 'Source Code Pro Variable', Consolas, ui-monospace, monospace;
 
-  /* Type scale (8 steps) */
+  /* Type scale */
   --text-caption: 0.75rem;
   --text-caption--line-height: 1rem;
   --text-caption--letter-spacing: 0.06em;
@@ -67,11 +74,16 @@
   --text-small--line-height: 1.25rem;
   --text-body: 1rem;
   --text-body--line-height: 1.5rem;
+  --text-reading: 1.0625rem;
+  --text-reading--line-height: 1.75rem;
   --text-lead: 1.125rem;
   --text-lead--line-height: 1.875rem;
   --text-title: 1.375rem;
   --text-title--line-height: 1.75rem;
   --text-title--letter-spacing: -0.01em;
+  --text-display-md: 1.5rem;
+  --text-display-md--line-height: 1.875rem;
+  --text-display-md--letter-spacing: -0.01em;
   --text-display-lg: 1.75rem;
   --text-display-lg--line-height: 2.125rem;
   --text-display-lg--letter-spacing: -0.015em;
@@ -169,6 +181,13 @@
     --surface: #fbfaf7;
     --surface-raised: #ffffff;
     --surface-sunken: #f4f2ec;
+    --reading-surface: #fbfaf7;
+    --reading-text: #1f2937;
+    --code-surface: #f8fafc;
+    --callout-info-surface: color-mix(in srgb, var(--info) 8%, var(--surface-raised));
+    --callout-tip-surface: color-mix(in srgb, var(--success) 8%, var(--surface-raised));
+    --callout-warning-surface: color-mix(in srgb, var(--warning) 8%, var(--surface-raised));
+    --callout-danger-surface: color-mix(in srgb, var(--danger) 8%, var(--surface-raised));
     --text: #0f1e33;
     --text-muted: #47586e;
     --border: #e0e3e9;
@@ -223,6 +242,13 @@
     --surface: #081120;
     --surface-raised: #0e1b30;
     --surface-sunken: #040a14;
+    --reading-surface: #081120;
+    --reading-text: #e5e7eb;
+    --code-surface: #0d1117;
+    --callout-info-surface: color-mix(in srgb, var(--info) 10%, var(--surface-raised));
+    --callout-tip-surface: color-mix(in srgb, var(--success) 10%, var(--surface-raised));
+    --callout-warning-surface: color-mix(in srgb, var(--warning) 10%, var(--surface-raised));
+    --callout-danger-surface: color-mix(in srgb, var(--danger) 10%, var(--surface-raised));
     --text: #e9eef6;
     --text-muted: #9aa9c0;
     --border: #1c2c46;

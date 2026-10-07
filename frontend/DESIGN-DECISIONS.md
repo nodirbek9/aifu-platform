@@ -316,3 +316,14 @@ pane split. Everything else follows the brief.*
   the real text colour next to it (white button labels turned dark). `cn()` and `tv()` are now
   the project's own (`src/shared/lib`), configured with the type scale and the shadow tokens.
 - **Password rule** on the change-password form follows the server: 10 to 72 characters.
+
+---
+
+## 11. Phase 4 — Lesson mode design decisions
+
+- **Theme & palette isolation.** The lesson page uses dedicated tokens `--color-reading-surface` (`#FBFAF7` light / `#081120` dark) and `--color-reading-text` (`#1F2937` light / `#E5E7EB` dark, WCAG contrast > 7:1). The root element uses `bg-reading-surface text-reading-text`, avoiding any hardcoded or accidental navy (`bg-primary`) inheritance in light theme.
+- **Reading typography.** `--font-reading` is set to the sans stack (`'Onest Variable', system-ui, sans-serif`), with `--text-reading` (1.0625rem / 1.75 line-height) and `max-w-lesson` at 42.5rem. Heading hierarchy is calibrated to `text-display-md` on mobile and `text-display-lg` on desktop, with `scroll-mt-24` clearance under the sticky header.
+- **Callout tints.** Soft callout backgrounds are tinted at ~8-10% alpha of semantic status colors over `var(--surface-raised)` (`--color-callout-*-surface`), paired with strong 4px left borders and icons.
+- **Code listings.** Code blocks (`code-block.tsx` and inline code) use `--color-code-surface` (`#F8FAFC` light / `#0D1117` dark) with a subtle 1px border and `radius-lg`. Inline code uses a rounded pill style (`rounded-full px-2 py-0.5`).
+- **Safe-area & bottom bar padding.** Lesson article incorporates `pb-[calc(theme(spacing.24)+env(safe-area-inset-bottom))]` to ensure full visibility above mobile tab bars and home indicators.
+

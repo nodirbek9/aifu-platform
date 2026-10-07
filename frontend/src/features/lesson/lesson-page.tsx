@@ -65,8 +65,8 @@ export function LessonPage() {
   }, [lessonId])
 
   return (
-    <div className="bg-surface min-h-dvh">
-      <header className="bg-surface sticky top-0 z-20">
+    <div className="bg-reading-surface text-reading-text min-h-dvh">
+      <header className="bg-reading-surface border-border/60 sticky top-0 z-20 border-b">
         <div className="flex h-14 items-center gap-1 px-2 md:gap-2 md:px-6">
           <Link
             to={`/student/courses/${courseId}`}
@@ -173,7 +173,7 @@ function LockedLesson({
     <section className="grid justify-items-start gap-5 py-6">
       <Lock aria-hidden className="text-text-muted size-9" />
       <div className="grid gap-2">
-        <h1 className="font-display text-display-lg text-text font-semibold">{t('lesson.lockedTitle')}</h1>
+        <h1 className="font-display text-display-md md:text-display-lg text-text font-semibold">{t('lesson.lockedTitle')}</h1>
         <p className="font-reading text-lead text-text-muted">{lesson.title}</p>
       </div>
       {prerequisites.length > 0 && (
@@ -226,7 +226,7 @@ function LessonBody({ courseId, lesson, planLesson, previous, next }: LessonBody
   }, [status, lesson.id, mutate])
 
   return (
-    <article className="grid grid-cols-1 gap-10">
+    <article className="pb-[calc(theme(spacing.24)+env(safe-area-inset-bottom))] grid grid-cols-1 gap-10">
       <header className="grid gap-4">
         <div className="text-small text-text-muted flex flex-wrap items-center gap-x-4 gap-y-2">
           <SessionTypeBadge type={lesson.sessionType} label={t(`sessionType.${lesson.sessionType}`)} />
@@ -237,7 +237,7 @@ function LessonBody({ courseId, lesson, planLesson, previous, next }: LessonBody
             {t('lesson.readingTime', { minutes: lesson.readingMinutes })}
           </span>
         </div>
-        <h1 className="font-display text-display-lg text-text md:text-display-xl font-semibold">
+        <h1 className="font-display text-display-md md:text-display-lg text-text font-semibold">
           {lesson.title}
         </h1>
         {lesson.hasFallback && <FallbackMark />}
