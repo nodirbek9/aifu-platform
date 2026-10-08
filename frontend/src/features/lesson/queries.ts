@@ -2,11 +2,16 @@ import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tansta
 import { courseKeys } from '@/features/courses/queries'
 import { api, unwrap } from '@/shared/api/client'
 import type { Locale } from '@/shared/i18n'
-import { narrowLesson } from './model'
+import { narrowLesson, narrowLessonPath } from './model'
+
+export const lessonKeys = {
+  detail: (lessonId: string, locale: Locale) => ['lesson', lessonId, locale] as const,
+  path: (lessonId: string) => ['lesson-path', lessonId] as const,
+}
 
 export function useLessonQuery(lessonId: string, locale: Locale) {
   return useQuery({
-    queryKey: ['lesson', lessonId, locale],
+    queryKey: lessonKeys.detail(lessonId, locale),
     queryFn: async () =>
       narrowLesson(
         await unwrap(
@@ -17,6 +22,43 @@ export function useLessonQuery(lessonId: string, locale: Locale) {
     // Switching the language keeps the text on screen (and the reading position) until the
     // other language arrives (spec S-04.6).
     placeholderData: keepPreviousData,
+  })
+}
+
+export function useLessonPathQuery(lessonId: string, options?: { enabled?: boolean }) {
+  return useQuery({
+    queryKey: lessonKeys.path(lessonId),
+    queryFn: async () =>
+      narrowLessonPath(
+        await unwrap(api.GET('/api/v1/lessons/{lessonId}/path', { params: { path: { lessonId } } })),
+      ),
+    enabled: options?.enabled ?? true,
+  })
+}
+
+export type ReadingBeatPayload = {
+  maxBlockPosition: number
+  atEnd: boolean
+}
+
+export function useRecordReadingBeat(courseId: string, lessonId: string) {
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: async (payload: ReadingBeatPayload) =>
+      narrowLessonPath(
+        await unwrap(
+          api.POST('/api/v1/lessons/{lessonId}/reading', {
+            params: { path: { lessonId } },
+            body: payload,
+          }),
+        ),
+      ),
+    onSuccess: async () => {
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: lessonKeys.path(lessonId) }),
+        queryClient.invalidateQueries({ queryKey: courseKeys.planOfCourse(courseId) }),
+      ])
+    },
   })
 }
 

@@ -87,6 +87,44 @@ export function narrowCourse(raw: Schemas['CourseDetail'], locale: Locale): Cour
 }
 
 export type LessonStatus = 'NOT_STARTED' | 'IN_PROGRESS' | 'COMPLETED'
+import type { LessonSteps } from '@/shared/ui/step-dots'
+export type { StepStatus, LessonSteps } from '@/shared/ui/step-dots'
+
+export type LockReason = 'PREVIOUS_LESSON_INCOMPLETE' | 'MIDTERM_REQUIRED'
+
+export function narrowLessonSteps(
+  raw: Schemas['LessonStepsView'] | Schemas['LessonSteps'] | undefined,
+): LessonSteps {
+  return {
+    lecture: raw?.lecture ?? 'NONE',
+    test: raw?.test ?? 'NONE',
+    practice: raw?.practice ?? 'NONE',
+  }
+}
+
+export type MidtermStanding = {
+  activityId?: string
+  quizId?: string
+  opensAt?: string
+  afterLessonId?: string
+  passed: boolean
+  attemptsUsed: number
+  attemptsAllowed?: number
+}
+
+export function narrowMidterm(raw: Schemas['MidtermView'] | undefined): MidtermStanding | undefined {
+  if (!raw) return undefined
+  const midterm: MidtermStanding = {
+    passed: raw.passed === true,
+    attemptsUsed: raw.attemptsUsed ?? 0,
+  }
+  if (raw.activityId !== undefined) midterm.activityId = raw.activityId
+  if (raw.quizId !== undefined) midterm.quizId = raw.quizId
+  if (raw.opensAt !== undefined) midterm.opensAt = raw.opensAt
+  if (raw.afterLessonId !== undefined) midterm.afterLessonId = raw.afterLessonId
+  if (raw.attemptsAllowed !== undefined) midterm.attemptsAllowed = raw.attemptsAllowed
+  return midterm
+}
 
 export type PlanLesson = {
   id: string
@@ -96,6 +134,9 @@ export type PlanLesson = {
   hours?: number
   status: LessonStatus
   locked: boolean
+  lockReason?: LockReason
+  waived: boolean
+  steps: LessonSteps
   prerequisiteLessonIds: string[]
   activitiesTotal: number
   activitiesCompleted: number
@@ -110,6 +151,8 @@ export type CoursePlan = {
   lessonsCompleted: number
   continueLessonId?: string
   modules: PlanModule[]
+  pathEnabled: boolean
+  midterm?: MidtermStanding
 }
 
 function narrowPlanLesson(raw: Schemas['PlanLesson']): PlanLesson | null {
@@ -120,12 +163,17 @@ function narrowPlanLesson(raw: Schemas['PlanLesson']): PlanLesson | null {
     sessionType: raw.sessionType,
     status: raw.status ?? 'NOT_STARTED',
     locked: raw.locked === true,
+    waived: raw.waived === true,
+    steps: narrowLessonSteps(raw.steps),
     prerequisiteLessonIds: raw.prerequisiteLessonIds ?? [],
     activitiesTotal: raw.activitiesTotal ?? 0,
     activitiesCompleted: raw.activitiesCompleted ?? 0,
   }
   if (raw.code !== undefined) lesson.code = raw.code
   if (raw.allocatedHours !== undefined) lesson.hours = raw.allocatedHours
+  if (raw.lockReason === 'PREVIOUS_LESSON_INCOMPLETE' || raw.lockReason === 'MIDTERM_REQUIRED') {
+    lesson.lockReason = raw.lockReason
+  }
   return lesson
 }
 
@@ -138,6 +186,7 @@ export function narrowPlan(raw: Schemas['CoursePlanView']): CoursePlan {
     enrollmentId: raw.enrollmentId,
     lessonsTotal: raw.lessonsTotal ?? 0,
     lessonsCompleted: raw.lessonsCompleted ?? 0,
+    pathEnabled: raw.pathEnabled === true,
     modules: (raw.modules ?? []).flatMap((module) =>
       module.id === undefined
         ? []
@@ -151,6 +200,7 @@ export function narrowPlan(raw: Schemas['CoursePlanView']): CoursePlan {
     ),
   }
   if (raw.continueLessonId !== undefined) plan.continueLessonId = raw.continueLessonId
+  if (raw.midterm !== undefined) plan.midterm = narrowMidterm(raw.midterm)
   return plan
 }
 

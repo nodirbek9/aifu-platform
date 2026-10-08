@@ -529,3 +529,26 @@ Not verified / not done:
 The flows now run against the production build (`vite preview`), which removed the dev
 server's occasional mid-flow reloads.
 
+## Phase 5 — Learning Path UI (F1–F4)
+
+Completed steps F1–F4 of Phase 5 (Learning Path) per `docs/PLAN.md` §3 and `ADR-015`:
+
+- **F1 Model & narrowing**:
+  - `features/courses/model.ts`: extended `PlanLesson` (`steps: LessonSteps`, `lockReason?: LockReason`, `waived: boolean`), `CoursePlan` (`pathEnabled: boolean`, `midterm?: MidtermStanding`), narrowing functions `narrowLessonSteps`, `narrowMidterm`, `narrowPlanLesson`, `narrowPlan`.
+  - `features/lesson/model.ts`: defined `LessonPath` (`lessonId`, `pathEnabled`, `steps`, `readingSeconds`, `requiredReadingSeconds`, `maxBlockPosition`, `reachedEnd`, `nextAction`), `narrowLessonPath` with safe defaults; preserved `position` on blocks in `narrowBlock` and `groupCode`.
+  - Unit tests in `features/courses/model.test.ts` and `features/lesson/model.test.ts`.
+- **F2 StepDots & Plan List**:
+  - `shared/ui/step-dots.tsx`: 3-circle component (lecture, test, practice) with DONE (success fill + check icon), TODO (outline), NONE (dashed muted); accessible `role="group"` with tooltips and aria-labels in uz/ru/en. Exported from `shared/ui/index.ts`.
+  - `features/courses/course-plan-list.tsx`: renders `StepDots` for each lesson row when `pathEnabled: true`, displays lock reasons (`PREVIOUS_LESSON_INCOMPLETE`, `MIDTERM_REQUIRED`), displays waived badges (`Ozod etilgan`), prevents navigation on locked lessons, and renders `MidtermCard` (opensAt, attempts, passed status, start midterm link).
+- **F3 Server Lock Gate**:
+  - Intercepted 422 `LESSON_PREREQUISITE_NOT_MET` in `features/lesson/lesson-page.tsx`, extracting `reason`, `blockingLessonId`, and `midtermActivityId` to render `LockedLesson` without fetching/rendering lesson content or skeletons.
+  - Linked actions to blocking lesson or midterm activity, plus return link to course.
+  - Added student activity route `/student/courses/:courseId/activities/:activityId` in `app/router.tsx`.
+- **F4 Reading Heartbeat & Steps UI**:
+  - `features/lesson/use-reading-heartbeat.ts`: 15 s periodic heartbeat respecting ADR-015 anti-cheat rules (only when `pathEnabled`, `!lectureDone`, tab visible, user active in last 120 s via pointer/keyboard/scroll), tracking `maxBlockPosition` and `atEnd` via sentinel `IntersectionObserver`, flushing immediately on `visibilitychange` to hidden.
+  - `features/lesson/use-reading-heartbeat.test.ts`: unit tests using fake timers verifying all guard conditions, inactivity timeout, and visibility flushing.
+  - `features/lesson/lesson-blocks.tsx`: rendered `data-block-position={block.position}` on block wrappers and added lesson-end sentinel element.
+  - `features/lesson/lesson-page.tsx`: header displays `StepDots` and reading time progress ring/count; footer replaces "Mark done" button with steps status panel and nextAction prompt (`KEEP_READING`, `TAKE_TEST`, `PRACTICE`, `ALL_DONE`) when `pathEnabled: true`.
+  - Localization in `uz.json`, `ru.json`, and `en.json` with identical keys and zero ASCII apostrophes for Uzbek Latin script.
+
+

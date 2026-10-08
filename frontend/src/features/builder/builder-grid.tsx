@@ -34,7 +34,9 @@ export function EntryFace({ entry, lifted = false }: { entry: Entry; lifted?: bo
       <span aria-hidden className={cn('absolute inset-y-0 left-0 w-1', sessionBar[type])} />
       <span className="text-text line-clamp-2 min-w-0 font-semibold break-words">{parsedTitle.subject}</span>
       {parsedTitle.termSuffix !== undefined && (
-        <span className="text-text-muted line-clamp-1 min-w-0 font-normal break-words">{parsedTitle.termSuffix}</span>
+        <span className="text-text-muted line-clamp-1 min-w-0 font-normal break-words">
+          {parsedTitle.termSuffix}
+        </span>
       )}
       <span className="text-text-muted truncate">
         {[entry.teacherName, entry.roomLabel].filter(Boolean).join(' · ')}

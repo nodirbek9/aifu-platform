@@ -16,7 +16,7 @@ import { useAuth } from '@/features/auth/auth-context'
 import { ActivityRow } from '@/features/courses/activity-row'
 import { flattenPlan, type PlanLesson } from '@/features/courses/model'
 import { useActivitiesQuery, useCoursePlanQuery, useCourseQuery } from '@/features/courses/queries'
-import { toApiProblem } from '@/shared/api/errors'
+import { toApiProblem, type ApiProblem } from '@/shared/api/errors'
 import { useLocale } from '@/shared/i18n/use-locale'
 import { cn } from '@/shared/lib/cn'
 import { SessionTypeBadge } from '@/shared/ui/badge'
@@ -29,11 +29,32 @@ import { LocaleControl } from '@/shared/ui/locale-control'
 import { ReadingProgress } from '@/shared/ui/reading-progress'
 import { Sheet, SheetBody, SheetContent, SheetHeader, SheetTitle } from '@/shared/ui/sheet'
 import { Skeleton, SkeletonText } from '@/shared/ui/skeleton'
+import { StepDots } from '@/shared/ui/step-dots'
 import { useToast } from '@/shared/ui/toast'
 import { LessonBlocks } from './lesson-blocks'
 import { LessonToc } from './lesson-toc'
-import { lessonOutline, type Lesson, type LessonBlock } from './model'
-import { useLessonQuery, useRecordLessonProgress } from './queries'
+import { lessonOutline, nextActionOf, type Lesson, type LessonBlock, type LessonPath } from './model'
+import { useLessonPathQuery, useLessonQuery, useRecordLessonProgress } from './queries'
+import { useReadingHeartbeat } from './use-reading-heartbeat'
+
+type LockedLessonDetails = {
+  reason?: 'PREVIOUS_LESSON_INCOMPLETE' | 'MIDTERM_REQUIRED'
+  blockingLessonId?: string
+  midtermActivityId?: string
+}
+
+function extractLockDetails(problem: ApiProblem | undefined): LockedLessonDetails | undefined {
+  if (problem?.code !== 'LESSON_PREREQUISITE_NOT_MET') return undefined
+  const details = problem.details
+  const rawReason = typeof details?.reason === 'string' ? details.reason : undefined
+  const reason =
+    rawReason === 'PREVIOUS_LESSON_INCOMPLETE' || rawReason === 'MIDTERM_REQUIRED' ? rawReason : undefined
+  const blockingLessonId =
+    typeof details?.blockingLessonId === 'string' ? details.blockingLessonId : undefined
+  const midtermActivityId =
+    typeof details?.midtermActivityId === 'string' ? details.midtermActivityId : undefined
+  return { reason, blockingLessonId, midtermActivityId }
+}
 
 /**
  * S-04 — the lesson, the core of the product: a chapter to read. The app shell steps aside;
@@ -50,6 +71,13 @@ export function LessonPage() {
   const course = useCourseQuery(courseId, locale)
   const [tocOpen, setTocOpen] = useState(false)
 
+  const apiProblem = lesson.isError ? toApiProblem(lesson.error) : undefined
+  const isServerLocked = apiProblem?.code === 'LESSON_PREREQUISITE_NOT_MET'
+  const lockDetails = isServerLocked ? extractLockDetails(apiProblem) : undefined
+
+  const pathQuery = useLessonPathQuery(lessonId, { enabled: !isServerLocked })
+  const pathEnabled = pathQuery.data?.pathEnabled ?? plan.data?.pathEnabled ?? false
+
   const order = useMemo(() => (plan.data === undefined ? [] : flattenPlan(plan.data)), [plan.data])
   const index = order.findIndex((item) => item.id === lessonId)
   const planLesson = index === -1 ? undefined : order[index]
@@ -57,7 +85,14 @@ export function LessonPage() {
     () => (lesson.data === undefined ? [] : lessonOutline(lesson.data.blocks)),
     [lesson.data],
   )
-  const locked = planLesson?.locked === true
+  const locked = isServerLocked || (!pathEnabled && planLesson?.locked === true)
+  const prerequisites = useMemo(
+    () =>
+      planLesson === undefined
+        ? []
+        : order.filter((item) => planLesson.prerequisiteLessonIds.includes(item.id)),
+    [order, planLesson],
+  )
 
   // a new lesson starts at its top
   useEffect(() => {
@@ -80,6 +115,19 @@ export function LessonPage() {
             <span className="truncate">{course.data?.title ?? t('lesson.back')}</span>
           </Link>
           <div className="flex-1" />
+          {pathEnabled && !locked && pathQuery.data && (
+            <div className="mr-2 flex items-center gap-3">
+              <StepDots steps={pathQuery.data.steps} size="sm" />
+              <span className="text-small text-text-muted hidden tabular-nums sm:inline-block">
+                {t('lesson.readingProgress', {
+                  current: Math.floor(pathQuery.data.activeReadingSeconds / 60),
+                  total: Math.ceil(
+                    (pathQuery.data.requiredReadingSeconds || (lesson.data?.readingMinutes ?? 1) * 60) / 60,
+                  ),
+                })}
+              </span>
+            </div>
+          )}
           <LocaleControl value={locale} onChange={changeLocale} />
           {headings.length > 0 && !locked && (
             <IconButton
@@ -98,23 +146,33 @@ export function LessonPage() {
 
       <div className="max-w-app mx-auto flex gap-12 px-4 py-8 md:px-6 md:py-12 lg:px-12">
         <main className="max-w-lesson mx-auto w-full min-w-0">
-          {lesson.isPending && <LessonSkeleton />}
-          {lesson.isError && (
+          {isServerLocked && (
+            <LockedLesson
+              courseId={courseId}
+              title={planLesson?.title}
+              lockDetails={lockDetails}
+              prerequisites={prerequisites}
+            />
+          )}
+          {lesson.isPending && !isServerLocked && <LessonSkeleton />}
+          {lesson.isError && !isServerLocked && (
             <ErrorState
-              problem={toApiProblem(lesson.error)}
+              problem={apiProblem}
               onRetry={() => {
                 void lesson.refetch()
               }}
             />
           )}
-          {lesson.isSuccess && locked && planLesson !== undefined && (
-            <LockedLesson courseId={courseId} lesson={planLesson} order={order} />
+          {lesson.isSuccess && locked && !isServerLocked && planLesson !== undefined && (
+            <LockedLesson courseId={courseId} title={planLesson.title} prerequisites={prerequisites} />
           )}
           {lesson.isSuccess && !locked && (
             <LessonBody
               courseId={courseId}
               lesson={lesson.data}
               planLesson={planLesson}
+              lessonPath={pathQuery.data}
+              pathEnabled={pathEnabled}
               previous={index > 0 ? order[index - 1] : undefined}
               next={index !== -1 ? order[index + 1] : undefined}
             />
@@ -158,44 +216,78 @@ function LessonSkeleton() {
   )
 }
 
-function LockedLesson({
-  courseId,
-  lesson,
-  order,
-}: {
+type LockedLessonProps = {
   courseId: string
-  lesson: PlanLesson
-  order: PlanLesson[]
-}) {
+  title?: string
+  lockDetails?: LockedLessonDetails
+  prerequisites?: PlanLesson[]
+}
+
+function LockedLesson({ courseId, title, lockDetails, prerequisites = [] }: LockedLessonProps) {
   const { t } = useTranslation()
-  const prerequisites = order.filter((item) => lesson.prerequisiteLessonIds.includes(item.id))
+
+  const isPreviousIncomplete = lockDetails?.reason === 'PREVIOUS_LESSON_INCOMPLETE'
+  const isMidtermRequired = lockDetails?.reason === 'MIDTERM_REQUIRED'
+
+  const headingText = isPreviousIncomplete
+    ? t('lesson.lockedPreviousTitle')
+    : isMidtermRequired
+      ? t('lesson.lockedMidtermTitle')
+      : t('lesson.lockedTitle')
+
+  const bodyText = isPreviousIncomplete
+    ? t('lesson.lockedPreviousBody')
+    : isMidtermRequired
+      ? t('lesson.lockedMidtermBody')
+      : t('lesson.lockedBody')
+
   return (
     <section className="grid justify-items-start gap-5 py-6">
       <Lock aria-hidden className="text-text-muted size-9" />
       <div className="grid gap-2">
-        <h1 className="font-display text-display-md md:text-display-lg text-text font-semibold">{t('lesson.lockedTitle')}</h1>
-        <p className="font-reading text-lead text-text-muted">{lesson.title}</p>
+        <h1 className="font-display text-display-md md:text-display-lg text-text font-semibold">
+          {headingText}
+        </h1>
+        {title && <p className="font-reading text-lead text-text-muted">{title}</p>}
+        <p className="text-body text-text">{bodyText}</p>
       </div>
-      {prerequisites.length > 0 && (
-        <div className="grid gap-2">
-          <p className="text-body text-text">{t('lesson.lockedBody')}</p>
-          <ul className="grid gap-1">
-            {prerequisites.map((item) => (
-              <li key={item.id}>
-                <Link
-                  to={`/student/courses/${courseId}/lessons/${item.id}`}
-                  className={button({ variant: 'link', class: 'h-auto px-0 whitespace-normal' })}
-                >
-                  {item.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+
+      {prerequisites.length > 0 && !isPreviousIncomplete && !isMidtermRequired && (
+        <ul className="grid gap-1">
+          {prerequisites.map((item) => (
+            <li key={item.id}>
+              <Link
+                to={`/student/courses/${courseId}/lessons/${item.id}`}
+                className={button({ variant: 'link', class: 'h-auto px-0 whitespace-normal' })}
+              >
+                {item.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
       )}
-      <Link to={`/student/courses/${courseId}`} className={button({ variant: 'outline' })}>
-        {t('lesson.back')}
-      </Link>
+
+      <div className="flex flex-wrap items-center gap-3 pt-2">
+        {lockDetails?.blockingLessonId && (
+          <Link
+            to={`/student/courses/${courseId}/lessons/${lockDetails.blockingLessonId}`}
+            className={button({ variant: 'primary' })}
+          >
+            {t('lesson.goToBlockingLesson')}
+          </Link>
+        )}
+        {lockDetails?.midtermActivityId && (
+          <Link
+            to={`/student/courses/${courseId}/activities/${lockDetails.midtermActivityId}`}
+            className={button({ variant: 'primary' })}
+          >
+            {t('lesson.goToMidterm')}
+          </Link>
+        )}
+        <Link to={`/student/courses/${courseId}`} className={button({ variant: 'outline' })}>
+          {t('lesson.back')}
+        </Link>
+      </div>
     </section>
   )
 }
@@ -204,16 +296,36 @@ type LessonBodyProps = {
   courseId: string
   lesson: Lesson
   planLesson: PlanLesson | undefined
+  lessonPath: LessonPath | undefined
+  pathEnabled: boolean
   previous: PlanLesson | undefined
   next: PlanLesson | undefined
 }
 
-function LessonBody({ courseId, lesson, planLesson, previous, next }: LessonBodyProps) {
+function LessonBody({
+  courseId,
+  lesson,
+  planLesson,
+  lessonPath,
+  pathEnabled,
+  previous,
+  next,
+}: LessonBodyProps) {
   const { t } = useTranslation()
   const { toast } = useToast()
   const record = useRecordLessonProgress(courseId, lesson.id)
   const status = planLesson?.status
   const done = status === 'COMPLETED'
+  const sentinelRef = useRef<HTMLDivElement>(null)
+  const nextAction = lessonPath ? nextActionOf(lessonPath.steps) : undefined
+
+  useReadingHeartbeat({
+    courseId,
+    lessonId: lesson.id,
+    pathEnabled,
+    lectureDone: lessonPath?.steps.lecture === 'DONE',
+    sentinelRef,
+  })
 
   // Opening a lesson for the first time starts it. Once per lesson, whatever re-renders.
   const startedRef = useRef<string | null>(null)
@@ -226,7 +338,7 @@ function LessonBody({ courseId, lesson, planLesson, previous, next }: LessonBody
   }, [status, lesson.id, mutate])
 
   return (
-    <article className="pb-[calc(theme(spacing.24)+env(safe-area-inset-bottom))] grid grid-cols-1 gap-10">
+    <article className="grid grid-cols-1 gap-10 pb-[calc(theme(spacing.24)+env(safe-area-inset-bottom))]">
       <header className="grid gap-4">
         <div className="text-small text-text-muted flex flex-wrap items-center gap-x-4 gap-y-2">
           <SessionTypeBadge type={lesson.sessionType} label={t(`sessionType.${lesson.sessionType}`)} />
@@ -246,42 +358,96 @@ function LessonBody({ courseId, lesson, planLesson, previous, next }: LessonBody
       {lesson.blocks.every((block) => block.kind === 'ref') ? (
         <EmptyState title={t('lesson.emptyTitle')} body={t('lesson.emptyBody')} />
       ) : (
-        <LessonBlocks blocks={lesson.blocks} />
+        <LessonBlocks blocks={lesson.blocks} sentinelRef={sentinelRef} />
       )}
 
-      <Practice courseId={courseId} lessonId={lesson.id} blocks={lesson.blocks} />
+      <div id="practice-section">
+        <Practice courseId={courseId} lessonId={lesson.id} blocks={lesson.blocks} />
+      </div>
 
       <footer className="border-border grid gap-8 border-t pt-8">
-        <div className="flex flex-wrap items-center gap-4">
-          {done ? (
-            <p className="text-body text-success inline-flex items-center gap-2 font-medium">
-              <CheckCircle2 aria-hidden className="size-5" />
-              {t('lesson.done')}
-            </p>
-          ) : (
-            <Button
-              variant="accent"
-              loading={record.isPending && record.variables === 'COMPLETED'}
-              onClick={() => {
-                record.mutate('COMPLETED', {
-                  onError: (error) => {
-                    const problem = toApiProblem(error)
-                    toast({
-                      tone: 'danger',
-                      title: t(`errors.${problem.code}`),
-                      ...(problem.requestId !== undefined && {
-                        body: `${t('common.requestId')}: ${problem.requestId}`,
-                      }),
-                    })
-                  },
-                })
-              }}
-            >
-              <CheckCircle2 aria-hidden className="size-5" />
-              {t('lesson.markDone')}
-            </Button>
-          )}
-        </div>
+        {pathEnabled ? (
+          <div className="border-border bg-surface-raised grid gap-4 rounded-lg border p-5">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <p className="text-body text-text font-semibold">{t('lesson.stepsTitle')}</p>
+                {lessonPath && <StepDots steps={lessonPath.steps} />}
+              </div>
+            </div>
+
+            {nextAction === 'KEEP_READING' && (
+              <div className="bg-surface-sunken text-small text-text-muted flex items-center gap-3 rounded-md p-3">
+                <Clock aria-hidden className="size-4 shrink-0" />
+                <span>{t('lesson.nextActionKeepReading')}</span>
+              </div>
+            )}
+
+            {nextAction === 'TAKE_TEST' && (
+              <div className="bg-accent-soft text-accent-text flex flex-wrap items-center justify-between gap-3 rounded-md p-3">
+                <span className="text-small font-medium">{t('lesson.nextActionTakeTestPrompt')}</span>
+                <Link
+                  to={`/student/courses/${courseId}?tab=work`}
+                  className={button({ variant: 'accent', size: 'sm' })}
+                >
+                  {t('lesson.nextActionTakeTest')}
+                </Link>
+              </div>
+            )}
+
+            {nextAction === 'PRACTICE' && (
+              <div className="bg-accent-soft text-accent-text flex flex-wrap items-center justify-between gap-3 rounded-md p-3">
+                <span className="text-small font-medium">{t('lesson.nextActionPracticePrompt')}</span>
+                <button
+                  type="button"
+                  onClick={() => {
+                    document.getElementById('practice-section')?.scrollIntoView({ behavior: 'smooth' })
+                  }}
+                  className={button({ variant: 'accent', size: 'sm' })}
+                >
+                  {t('lesson.nextActionPractice')}
+                </button>
+              </div>
+            )}
+
+            {nextAction === 'ALL_DONE' && (
+              <div className="bg-success-soft text-success text-small flex items-center gap-3 rounded-md p-3 font-medium">
+                <CheckCircle2 aria-hidden className="size-5 shrink-0" />
+                <span>{t('lesson.nextActionAllDone')}</span>
+              </div>
+            )}
+          </div>
+        ) : (
+          <div className="flex flex-wrap items-center gap-4">
+            {done ? (
+              <p className="text-body text-success inline-flex items-center gap-2 font-medium">
+                <CheckCircle2 aria-hidden className="size-5" />
+                {t('lesson.done')}
+              </p>
+            ) : (
+              <Button
+                variant="accent"
+                loading={record.isPending && record.variables === 'COMPLETED'}
+                onClick={() => {
+                  record.mutate('COMPLETED', {
+                    onError: (error) => {
+                      const problem = toApiProblem(error)
+                      toast({
+                        tone: 'danger',
+                        title: t(`errors.${problem.code}`),
+                        ...(problem.requestId !== undefined && {
+                          body: `${t('common.requestId')}: ${problem.requestId}`,
+                        }),
+                      })
+                    },
+                  })
+                }}
+              >
+                <CheckCircle2 aria-hidden className="size-5" />
+                {t('lesson.markDone')}
+              </Button>
+            )}
+          </div>
+        )}
 
         <nav aria-label={t('lesson.neighbours')} className="grid gap-3 sm:grid-cols-2">
           {previous !== undefined && !previous.locked ? (

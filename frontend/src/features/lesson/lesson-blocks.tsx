@@ -20,12 +20,21 @@ const HighlightedCode = lazy(() => import('@/shared/editor/highlighted-code'))
 const CodeRunner = lazy(async () => ({ default: (await import('@/features/coding/code-runner')).CodeRunner }))
 
 /** Renders the blocks of a lesson in order. References to practice are shown by the page, at the end. */
-export function LessonBlocks({ blocks }: { blocks: readonly LessonBlock[] }) {
+export function LessonBlocks({
+  blocks,
+  sentinelRef,
+}: {
+  blocks: readonly LessonBlock[]
+  sentinelRef?: React.Ref<HTMLDivElement>
+}) {
   return (
     <div className="grid grid-cols-1 gap-7">
       {blocks.map((block) => (
-        <Block key={block.id} block={block} />
+        <div key={block.id} data-block-position={block.position}>
+          <Block block={block} />
+        </div>
       ))}
+      <div ref={sentinelRef} data-sentinel="lesson-end" className="h-px w-full" />
     </div>
   )
 }

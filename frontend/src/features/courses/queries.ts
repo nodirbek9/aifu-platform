@@ -134,7 +134,11 @@ export function useGradesQuery(enrollment: Enrollment | undefined, locale?: Loca
 }
 
 /** The newest published grades across all of the student's courses. */
-export function useRecentGrades(enrollments: readonly Enrollment[] | undefined, limit: number, locale?: Locale) {
+export function useRecentGrades(
+  enrollments: readonly Enrollment[] | undefined,
+  limit: number,
+  locale?: Locale,
+) {
   return useQueries({
     queries: (enrollments ?? []).map((enrollment) => gradesQuery(enrollment, locale)),
     combine: (results) => ({

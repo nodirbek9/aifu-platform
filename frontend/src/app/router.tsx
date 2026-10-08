@@ -74,6 +74,10 @@ const studentFocusRoutes: RouteObject[] = [
     path: 'courses/:courseId/quizzes/:quizId',
     lazy: async () => ({ Component: (await import('@/features/quiz/quiz-page')).QuizPage }),
   },
+  {
+    path: 'courses/:courseId/activities/:activityId',
+    lazy: async () => ({ Component: (await import('@/features/quiz/quiz-page')).QuizPage }),
+  },
 ]
 
 const teacherRoutes: RouteObject[] = [

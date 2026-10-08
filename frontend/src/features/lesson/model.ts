@@ -3,6 +3,7 @@ import type { Locale } from '@/shared/i18n'
 import { pickTranslation, readString } from '@/shared/lib/translations'
 import type { SessionType } from '@/shared/ui/badge'
 import { addHeadingIds, sanitizeHtml, type Heading } from '@/shared/ui/rich-text'
+import { narrowLessonSteps, type LessonSteps, type LockReason } from '@/features/courses/model'
 
 type Schemas = components['schemas']
 
@@ -10,7 +11,7 @@ export type CalloutVariant = 'INFO' | 'TIP' | 'WARNING' | 'DANGER'
 export type MediaKind = 'IMAGE' | 'DIAGRAM' | 'VIDEO' | 'AUDIO' | 'FILE'
 export type RefKind = 'QUIZ' | 'CODING_TASK' | 'ACTIVITY'
 
-type BlockBase = { id: string; fallback: boolean }
+type BlockBase = { id: string; fallback: boolean; position?: number }
 
 export type CodeExample = BlockBase & { language: string; code: string; explanation?: string }
 
@@ -23,6 +24,20 @@ export type LessonBlock =
   | (BlockBase & { kind: 'link'; url: string; label: string; note?: string })
   | (BlockBase & { kind: 'embed'; src: string; caption?: string })
   | (BlockBase & { kind: 'ref'; ref: RefKind; refId: string })
+
+export type NextAction = 'KEEP_READING' | 'TAKE_TEST' | 'PRACTICE' | 'ALL_DONE'
+
+export type LessonPath = {
+  pathEnabled: boolean
+  open: boolean
+  steps: LessonSteps
+  activeReadingSeconds: number
+  requiredReadingSeconds: number
+  reachedEnd: boolean
+  testActivityId?: string
+  practiceActivityId?: string
+  lockReason?: LockReason
+}
 
 export type Lesson = {
   id: string
@@ -65,7 +80,11 @@ type Narrowed =
 
 function narrowBlock(raw: Schemas['ContentBlockView']): Narrowed | null {
   if (raw.id === undefined || raw.blockType === undefined) return null
-  const base: BlockBase = { id: raw.id, fallback: raw.payloadIsFallback === true }
+  const base: BlockBase = {
+    id: raw.id,
+    fallback: raw.payloadIsFallback === true,
+    ...(raw.position !== undefined ? { position: raw.position } : {}),
+  }
   const { payload, settings } = raw
   switch (raw.blockType) {
     case 'TEXT':
@@ -155,7 +174,13 @@ function groupCode(blocks: readonly Narrowed[]): LessonBlock[] {
       previous.examples.push(block.example)
       previous.fallback = previous.fallback || block.fallback
     } else {
-      grouped.push({ id: block.id, fallback: block.fallback, kind: 'code', examples: [block.example] })
+      grouped.push({
+        id: block.id,
+        fallback: block.fallback,
+        ...(block.position !== undefined ? { position: block.position } : {}),
+        kind: 'code',
+        examples: [block.example],
+      })
     }
   }
   return grouped
@@ -214,4 +239,27 @@ export function lessonOutline(blocks: readonly LessonBlock[]): Heading[] {
   return blocks.flatMap((block) =>
     block.kind === 'text' ? addHeadingIds(sanitizeHtml(block.html), headingPrefix(block.id)).headings : [],
   )
+}
+
+export function narrowLessonPath(raw: Schemas['LessonPathView'] | undefined | null): LessonPath {
+  const path: LessonPath = {
+    pathEnabled: raw?.pathEnabled === true,
+    open: raw?.open !== false,
+    steps: narrowLessonSteps(raw?.steps),
+    activeReadingSeconds: raw?.activeReadingSeconds ?? 0,
+    requiredReadingSeconds: raw?.requiredReadingSeconds ?? 0,
+    reachedEnd: raw?.reachedEnd === true,
+  }
+  if (raw?.testActivityId !== undefined) path.testActivityId = raw.testActivityId
+  if (raw?.practiceActivityId !== undefined) path.practiceActivityId = raw.practiceActivityId
+  if (raw?.lockReason !== undefined) path.lockReason = raw.lockReason
+  return path
+}
+
+/** What the student does next in a lesson: the first step that is still to do. */
+export function nextActionOf(steps: LessonSteps): NextAction {
+  if (steps.lecture === 'TODO') return 'KEEP_READING'
+  if (steps.test === 'TODO') return 'TAKE_TEST'
+  if (steps.practice === 'TODO') return 'PRACTICE'
+  return 'ALL_DONE'
 }
