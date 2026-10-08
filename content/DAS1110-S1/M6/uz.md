@@ -1,6 +1,6 @@
 ---
 title: Koʻp oʻlchovli massivlar
-summary: Ikki oʻlchovli massiv (matritsa), satr va ustun, a[i][j], uni yaratish, toʻldirish va chiqarish, satr va ustun yigʻindilari, diagonallar, transponirlash; Python'dagi nusxa tuzogʻi.
+summary: Ikki oʻlchovli massiv (matritsa), satr va ustun, a[i][j], uni yaratish, toʻldirish va chiqarish, satr va ustun yigʻindilari, diagonallar, transponirlash; Pythonʼdagi nusxa tuzogʻi.
 ---
 
 ## Nima uchun bu mavzu muhim?
@@ -15,7 +15,7 @@ Jadval koʻrinishidagi maʼlumot dasturda **ikki oʻlchovli massiv** — **matri
 - ikki oʻlchovli massivning tuzilishini (satr, ustun, `a[i][j]`) tushuntira olasiz;
 - Python, Java va C++'da *n* × *m* matritsa yaratib, uni toʻldirib, jadval koʻrinishida chiqara olasiz;
 - satr va ustunlar yigʻindisini, bosh va yordamchi diagonal yigʻindisini hisoblay olasiz;
-- matritsani transponirlay olasiz va Python'dagi „bir xil satr“ tuzogʻidan qochasiz.
+- matritsani transponirlay olasiz va Pythonʼdagi „bir xil satr“ tuzogʻidan qochasiz.
 :::
 
 ## Ikki oʻlchovli massiv
@@ -52,7 +52,7 @@ Xotirada matritsa satrma-satr joylashadi: avval 0-satrning barcha elementlari, k
 
 C++'da klassik statik matritsa ham bor: `int a[10][10];` — oʻlchami oldindan belgilanadi.
 
-### Python'dagi tuzoq
+### Pythonʼdagi tuzoq
 
 `a = [[0] * m] * n` — **notoʻgʻri**! Bu *n* ta alohida satr emas, **bitta** satrga *n* ta havola yaratadi. `a[0][0] = 5` deb yozsangiz, barcha satrlarning birinchi elementi 5 boʻladi. Toʻgʻri usul — har bir satrni alohida yaratish: `[[0] * m for _ in range(n)]`.
 
@@ -290,7 +290,7 @@ Transponirlangan matritsa alohida saqlanmadi — uni chiqarish uchun indekslarni
 :::warning
 **Koʻp uchraydigan xatolar**
 
-- **Python'da `[[0] * m] * n`.** Barcha satrlar bitta obyekt: bitta elementni oʻzgartirish butun ustunni oʻzgartiradi.
+- **Pythonʼda `[[0] * m] * n`.** Barcha satrlar bitta obyekt: bitta elementni oʻzgartirish butun ustunni oʻzgartiradi.
 - **Indekslarni almashtirib yuborish.** `a[j][i]` va `a[i][j]` — turli elementlar; *n* ≠ *m* boʻlsa, chegaradan chiqish.
 - **Satr va ustun sonini chalkashtirish.** Ustunlar soni — `len(a[0])` / `a[0].length`, `len(a)` emas.
 - **Yordamchi diagonalda `a[i][n - i]`.** Toʻgʻrisi `a[i][n - 1 - i]`; aks holda *i* = 0 da chegaradan chiqiladi.
@@ -308,7 +308,7 @@ Matritsa masalasini yechishdan oldin 3 × 3 misolni qogʻozga indekslari bilan y
 - Matritsa ichma-ich sikl bilan aylanib chiqiladi; satr yigʻindisida tashqi sikl satr, ustun yigʻindisida — ustun.
 - Bosh diagonal: *i* = *j*; yordamchi: *i* + *j* = *n* − 1; diagonal uchun bitta sikl yetarli.
 - Transponirlash: `t[i][j] = a[j][i]`.
-- Python'da `[[0] * m] * n` ishlatmang — satrlar bitta obyekt boʻlib qoladi.
+- Pythonʼda `[[0] * m] * n` ishlatmang — satrlar bitta obyekt boʻlib qoladi.
 
 ## Oʻzingizni tekshiring
 
@@ -317,7 +317,7 @@ Q: 4 × 5 matritsada nechta element bor va oxirgi elementning indekslari qanday?
 A: 20 ta; oxirgi element — `a[3][4]`.
 Q: 5 × 5 matritsada `a[1][3]` qaysi diagonalda yotadi?
 A: Yordamchi diagonalda: 1 + 3 = 4 = *n* − 1.
-Q: Python'da `a = [[0] * 3] * 2; a[0][1] = 7; print(a)` nima chiqaradi?
+Q: Pythonʼda `a = [[0] * 3] * 2; a[0][1] = 7; print(a)` nima chiqaradi?
 A: `[[0, 7, 0], [0, 7, 0]]`: ikkala satr ham bitta roʻyxatga havola.
 Q: 2 × 3 matritsa transponirlansa, qanday oʻlchamli boʻladi?
 A: 3 × 2.

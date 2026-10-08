@@ -1,6 +1,6 @@
 ---
 title: Dinamik xotira bilan ishlash
-summary: Stek va uyum (heap), manzil va koʻrsatkich, & va * amallari, havola, new va delete, dinamik massiv, xotira sizib chiqishi; Java va Python'da avtomatik xotira boshqaruvi (axlat yigʻuvchi).
+summary: Stek va uyum (heap), manzil va koʻrsatkich, & va * amallari, havola, new va delete, dinamik massiv, xotira sizib chiqishi; Java va Pythonʼda avtomatik xotira boshqaruvi (axlat yigʻuvchi).
 ---
 
 ## Nima uchun bu mavzu muhim?
@@ -16,7 +16,7 @@ Dastur yozilayotganda guruhda nechta talaba boʻlishi, foydalanuvchi nechta rasm
 - C++'da koʻrsatkich eʼlon qilib, `&` va `*` amallaridan foydalana olasiz;
 - `new` / `delete` bilan dinamik massiv yaratib, uni toʻgʻri boʻshata olasiz;
 - xotira sizib chiqishi va osilib qolgan koʻrsatkich xatolarini taniy olasiz;
-- Java va Python'da xotira qanday avtomatik boshqarilishini tushuntira olasiz.
+- Java va Pythonʼda xotira qanday avtomatik boshqarilishini tushuntira olasiz.
 :::
 
 ## Stek va uyum
@@ -26,7 +26,7 @@ Dastur xotirasining ikki asosiy qismi:
 | | Stek (stack) | Uyum (heap) |
 |---|---|---|
 | Nima saqlanadi | lokal oʻzgaruvchilar, parametrlar, chaqiruv freymlari | dinamik ajratilgan maʼlumot |
-| Kim boshqaradi | avtomatik: funksiya tugaganda boʻshaydi | C++'da dasturchi (`new` / `delete`); Java, Python'da axlat yigʻuvchi |
+| Kim boshqaradi | avtomatik: funksiya tugaganda boʻshaydi | C++'da dasturchi (`new` / `delete`); Java, Pythonʼda axlat yigʻuvchi |
 | Hajmi | kichik (odatda 1–8 MB) | katta (operativ xotira hajmicha) |
 | Tezligi | juda tez | sekinroq |
 | Oʻlcham qachon maʼlum | kompilyatsiyada | dastur ishlayotganda |
@@ -74,12 +74,12 @@ Shuning uchun zamonaviy C++'da qoʻlda `new` / `delete` oʻrniga koʻpincha `vec
 
 ## Java va Python: axlat yigʻuvchi
 
-Java va Python'da dasturchi xotirani qoʻlda boʻshatmaydi:
+Java va Pythonʼda dasturchi xotirani qoʻlda boʻshatmaydi:
 
 - **Java**: `new int[n]` obyektni uyumda yaratadi; oʻzgaruvchi obyektga **havola** saqlaydi. Obyektga birorta ham havola qolmasa, **axlat yigʻuvchi (garbage collector)** uni avtomatik oʻchiradi.
 - **Python**: barcha qiymatlar — uyumdagi obyektlar, oʻzgaruvchilar — ularga havolalar. Havolalar soni nolga tushganda obyekt oʻchiriladi.
 
-Bu sizib chiqish va osilib qolgan koʻrsatkich xatolarining aksariyatini yoʻqotadi. Evaziga dasturchi xotira qachon boʻshashini aniq boshqarmaydi va axlat yigʻuvchi biroz vaqt va xotira oladi. Java va Python'da koʻrsatkich arifmetikasi yoʻq: manzil bilan toʻgʻridan-toʻgʻri ishlab boʻlmaydi.
+Bu sizib chiqish va osilib qolgan koʻrsatkich xatolarining aksariyatini yoʻqotadi. Evaziga dasturchi xotira qachon boʻshashini aniq boshqarmaydi va axlat yigʻuvchi biroz vaqt va xotira oladi. Java va Pythonʼda koʻrsatkich arifmetikasi yoʻq: manzil bilan toʻgʻridan-toʻgʻri ishlab boʻlmaydi.
 
 ## Ishlangan misol 1: qiymatlarni funksiya orqali almashtirish
 
@@ -138,7 +138,7 @@ Kirish `3 8` boʻlsa, uchala dastur ham `8 3` chiqaradi.
 
 - **C++**: `almashtir(&x, &y)` *x* va *y* ning manzillarini uzatadi. Funksiya ichida `*a` — bu *x* ning oʻzi, shuning uchun almashtirish asl oʻzgaruvchilarda boʻladi. Havola bilan ham yozish mumkin: `void almashtir(int& a, int& b)` va chaqiruv `almashtir(x, y)`.
 - **Java**: `int` qiymat boʻyicha uzatiladi, shuning uchun ikki sonni massivga solib, massivga havolani uzatamiz.
-- **Python**: funksiya yangi qiymatlarni qaytaradi; Python'da sonlarni joyida oʻzgartirib boʻlmaydi.
+- **Python**: funksiya yangi qiymatlarni qaytaradi; Pythonʼda sonlarni joyida oʻzgartirib boʻlmaydi.
 
 ## Ishlangan misol 2: dinamik massiv
 
@@ -341,7 +341,7 @@ Nima uchun ikki baravar? Har safar bittaga kattalashtirilsa, har bir qoʻshishda
 - **`delete` dan keyin koʻrsatkichni ishlatish.** Boʻshatilgan xotira endi sizniki emas; koʻrsatkichga `nullptr` bering.
 - **Funksiyadan lokal oʻzgaruvchining manzilini qaytarish.** Funksiya tugaganda lokal oʻzgaruvchi stekdan yoʻqoladi — koʻrsatkich osilib qoladi.
 - **Initsializatsiyalanmagan koʻrsatkich.** `int* p; *p = 5;` — tasodifiy manzilga yozish.
-- **Java'da massivni nusxalash deb `b = a` yozish.** Bu nusxa emas, ikkinchi havola: `b[0] = 1` *a* ni ham oʻzgartiradi.
+- **Javaʼda massivni nusxalash deb `b = a` yozish.** Bu nusxa emas, ikkinchi havola: `b[0] = 1` *a* ni ham oʻzgartiradi.
 :::
 
 :::tip
@@ -354,7 +354,7 @@ C++'da `new` yozgan zahotiyoq tegishli `delete` ni qayerda yozishingizni hal qil
 - Koʻrsatkich manzil saqlaydi: `&x` — manzil, `*p` — manzildagi qiymat; havola — oʻzgaruvchining ikkinchi nomi.
 - C++'da `new` / `new[]` uyumdan xotira oladi, `delete` / `delete[]` qaytaradi; har biriga juft boʻlishi shart.
 - Sizib chiqish, osilib qolgan koʻrsatkich va ikki marta boʻshatish — dinamik xotiraning asosiy xatolari.
-- Java va Python'da xotirani axlat yigʻuvchi qaytaradi; oʻzgaruvchilar obyektlarga havola saqlaydi.
+- Java va Pythonʼda xotirani axlat yigʻuvchi qaytaradi; oʻzgaruvchilar obyektlarga havola saqlaydi.
 - Oʻsuvchi massiv toʻlganda ikki baravar kattalashtiriladi — `vector` va Python roʻyxati shunday ishlaydi.
 
 ## Oʻzingizni tekshiring
@@ -366,7 +366,7 @@ Q: `int* a = new int[100];` bilan ajratilgan xotira qanday boʻshatiladi?
 A: `delete[] a;`.
 Q: Xotira sizib chiqishi nima?
 A: Ajratilgan dinamik xotira boʻshatilmay qolishi: dastur ishlagan sari egallagan xotirasi oshib boradi.
-Q: Java'da nima uchun `delete` yoʻq?
+Q: Javaʼda nima uchun `delete` yoʻq?
 A: Hech qanday havola qolmagan obyektlarni axlat yigʻuvchi avtomatik oʻchiradi.
 Q: 3-misolda 9 ta son kiritilsa (0 dan oldin), oxirgi sigʻim qancha boʻladi?
 A: 16: 2 → 4 → 8 → 16 (9-son kelganda 8 ta joy toʻla).

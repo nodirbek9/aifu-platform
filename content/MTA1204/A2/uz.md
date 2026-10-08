@@ -275,7 +275,7 @@ int main() {
 - **Hisoblagichni notoʻgʻri joyga qoʻyish.** Hisoblagich aynan sanalayotgan amal (ichki sikl tanasi, funksiya kirishi) yonida turishi kerak.
 - **Bitta oʻlchov bilan xulosa chiqarish.** Murakkablik — oʻsish tezligi; kamida ikki xil *n* bilan solishtiring.
 - **Chuqurlik va chaqiruvlar sonini aralashtirish.** 15 ta chaqiruv 4 qavat chuqurlikda boʻlishi mumkin — ular turli resurslarni oʻlchaydi.
-- **C++/Java'da baholash tartibiga tayanish.** `cout << fib(n) << chaqiruvlar` da qaysi qism avval hisoblanishi C++17 dan oldin kafolatlanmagan; natijani oldin oʻzgaruvchiga oling.
+- **C++/Javaʼda baholash tartibiga tayanish.** `cout << fib(n) << chaqiruvlar` da qaysi qism avval hisoblanishi C++17 dan oldin kafolatlanmagan; natijani oldin oʻzgaruvchiga oling.
 :::
 
 :::tip

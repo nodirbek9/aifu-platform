@@ -1,6 +1,6 @@
 ---
 title: Dinamik xotira bilan ishlash. Koʻrsatkichlar. Dinamik bir va koʻp oʻlchamli massivlar
-summary: Koʻrsatkich arifmetikasi, dinamik bir oʻlchamli massiv, new/delete bilan dinamik matritsa, har xil uzunlikdagi satrli („tishli“) massiv, matritsani bir oʻlchamli xotirada saqlash; Java va Python'dagi mosliklari.
+summary: Koʻrsatkich arifmetikasi, dinamik bir oʻlchamli massiv, new/delete bilan dinamik matritsa, har xil uzunlikdagi satrli („tishli“) massiv, matritsani bir oʻlchamli xotirada saqlash; Java va Pythonʼdagi mosliklari.
 ---
 
 ## Nima uchun bu mavzu muhim?
@@ -16,7 +16,7 @@ Bu amaliy mashgʻulotda dinamik massivlarning uch xil koʻrinishini mashq qilami
 - C++'da dinamik matritsani `new` bilan yaratib, `delete[]` bilan toʻgʻri boʻshata olasiz;
 - satrlari har xil uzunlikdagi („tishli“) massiv yarata olasiz;
 - matritsani bir oʻlchamli massivda `i * m + j` indeksi bilan saqlay olasiz;
-- Java va Python'da xuddi shu tuzilmalarni qura olasiz.
+- Java va Pythonʼda xuddi shu tuzilmalarni qura olasiz.
 :::
 
 ## Koʻrsatkich arifmetikasi
@@ -31,7 +31,7 @@ C++'da massiv nomi uning birinchi elementiga koʻrsatkichdek ishlaydi. Koʻrsatk
 | `p++` | keyingi elementga oʻtish |
 | `q - p` | ikki koʻrsatkich orasidagi elementlar soni |
 
-`p + i` da kompilyator `i * sizeof(int)` baytni avtomatik hisoblaydi. Java va Python'da koʻrsatkich arifmetikasi yoʻq — u yerda faqat indeks ishlatiladi va chegaradan chiqish darhol xatoga olib keladi.
+`p + i` da kompilyator `i * sizeof(int)` baytni avtomatik hisoblaydi. Java va Pythonʼda koʻrsatkich arifmetikasi yoʻq — u yerda faqat indeks ishlatiladi va chegaradan chiqish darhol xatoga olib keladi.
 
 ## Dinamik matritsa
 
@@ -268,7 +268,7 @@ int main() {
 1 4 6 4 1
 ```
 
-Har bir satr aynan kerakli uzunlikda yaratildi: *n* = 30 uchun 465 ta element, toʻrtburchak 30 × 30 matritsa esa 900 ta joy olardi. Java'da `new long[n][]` — ikkinchi oʻlcham koʻrsatilmagan, satrlar keyin alohida yaratiladi. Satr chetidagi `[i][0] = [i][i] = 1` birinchi satrda (*i* = 0) bitta elementga ikki marta yozadi — bu xato emas. Qiymatlar tez oʻsadi (30-satrda 77 558 760 gacha, 35-satrda esa `int` chegarasidan oshadi), shuning uchun `long` tanlangan.
+Har bir satr aynan kerakli uzunlikda yaratildi: *n* = 30 uchun 465 ta element, toʻrtburchak 30 × 30 matritsa esa 900 ta joy olardi. Javaʼda `new long[n][]` — ikkinchi oʻlcham koʻrsatilmagan, satrlar keyin alohida yaratiladi. Satr chetidagi `[i][0] = [i][i] = 1` birinchi satrda (*i* = 0) bitta elementga ikki marta yozadi — bu xato emas. Qiymatlar tez oʻsadi (30-satrda 77 558 760 gacha, 35-satrda esa `int` chegarasidan oshadi), shuning uchun `long` tanlangan.
 
 ## Ishlangan misol 3: matritsani bir oʻlchamli massivda burish
 
@@ -382,7 +382,7 @@ C++'da `new`/`delete` bilan ishlaganda har bir `new` yozilishi bilan darhol unga
 - C++'da dinamik matritsa: koʻrsatkichlar massivi + har bir satr; boʻshatish teskari tartibda.
 - Satrlar alohida yaratilsa, ular har xil uzunlikda boʻlishi mumkin — tishli massiv xotirani tejaydi.
 - Matritsani bir oʻlchamli massivda `i * m + j` oʻrinda saqlash — bitta ajratish, tezroq murojaat.
-- Java va Python'da xotira avtomatik boʻshatiladi; C++'da amalda `vector` afzal.
+- Java va Pythonʼda xotira avtomatik boʻshatiladi; C++'da amalda `vector` afzal.
 
 ## Oʻzingizni tekshiring
 
@@ -391,7 +391,7 @@ Q: `int* p = a;` boʻlsa, `*(p + 3)` nimaga teng?
 A: `a[3]` ga — massivning toʻrtinchi elementiga.
 Q: C++'da `new int*[n]` va har bir satr uchun `new int[m]` bilan yaratilgan matritsa qanday boʻshatiladi?
 A: Avval har bir `a[i]` uchun `delete[] a[i]`, soʻng `delete[] a`.
-Q: Java'da `new int[5][]` nima yaratadi?
+Q: Javaʼda `new int[5][]` nima yaratadi?
 A: 5 ta satr havolasi (`null`) bor massivni; har bir satr keyin `new int[...]` bilan alohida yaratiladi.
 Q: 4 × 6 matritsa bir oʻlchamli massivda saqlansa, `[2][3]` element qaysi indeksda turadi?
 A: 2 · 6 + 3 = 15-indeksda.

@@ -31,16 +31,16 @@ Kompyuter xotirasi cheklangan, shuning uchun har bir tur qiymat uchun belgilanga
 | `char` | C++: 1 bayt, Java: 2 bayt | bitta belgi |
 | `bool` / `boolean` | odatda 1 bayt | `true` yoki `false` |
 
-Python'da `int` chegarasiz: son qanchalik katta boʻlsa, shuncha joy oladi. `float` esa C++ va Java'dagi `double` bilan bir xil.
+Pythonʼda `int` chegarasiz: son qanchalik katta boʻlsa, shuncha joy oladi. `float` esa C++ va Javaʼdagi `double` bilan bir xil.
 
-**Toʻlib ketish (overflow)** — natija tur chegarasidan chiqib ketishi. C++ va Java'da `int` oʻzgaruvchida 2 147 483 647 + 1 hech qanday xatosiz −2 147 483 648 ga aylanadi. Shuning uchun katta sonlar (aholi soni, millisekundlar, faktoriallar) uchun `long long` (C++) yoki `long` (Java) tanlanadi.
+**Toʻlib ketish (overflow)** — natija tur chegarasidan chiqib ketishi. C++ va Javaʼda `int` oʻzgaruvchida 2 147 483 647 + 1 hech qanday xatosiz −2 147 483 648 ga aylanadi. Shuning uchun katta sonlar (aholi soni, millisekundlar, faktoriallar) uchun `long long` (C++) yoki `long` (Java) tanlanadi.
 
 ## Turlarni oʻzgartirish
 
 Ifodada turli turdagi qiymatlar uchrasa, til ularni bir turga keltiradi.
 
 - **Oshkormas (implicit) oʻzgartirish** — kichik turdan kattasiga avtomatik: `int` va `double` qoʻshilsa, natija `double`. Masalan, `7 / 2.0` = 3.5.
-- **Oshkor (explicit) oʻzgartirish** — dasturchi buyrugʻi bilan: C++ va Java'da `(double) a`, C++'da yana `static_cast<double>(a)`; Python'da `float(a)`, `int(x)`.
+- **Oshkor (explicit) oʻzgartirish** — dasturchi buyrugʻi bilan: C++ va Javaʼda `(double) a`, C++'da yana `static_cast<double>(a)`; Pythonʼda `float(a)`, `int(x)`.
 
 | Ifoda | Python | Java / C++ |
 |---|---|---|
@@ -80,7 +80,7 @@ C++'da `setprecision` va `setw` uchun `#include <iomanip>` kerak.
 | `x++` / `++x` (Java, C++) | `x = x + 1` |
 | `x--` / `--x` (Java, C++) | `x = x - 1` |
 
-Python'da `++` va `--` yoʻq: `x += 1` deb yoziladi.
+Pythonʼda `++` va `--` yoʻq: `x += 1` deb yoziladi.
 
 ## Ishlangan misol 1: soniyalarni soat formatiga oʻtkazish
 
@@ -186,7 +186,7 @@ int main() {
 
 Kirish `4 5 5` boʻlsa:
 
-1. Uch son oʻqiladi; Python'da `input().split()` qatorni `["4", "5", "5"]` roʻyxatiga ajratadi, `map(int, ...)` har birini songa aylantiradi.
+1. Uch son oʻqiladi; Pythonʼda `input().split()` qatorni `["4", "5", "5"]` roʻyxatiga ajratadi, `map(int, ...)` har birini songa aylantiradi.
 2. Yigʻindi 14. Java va C++'da `14 / 3` = 4 boʻlardi — shuning uchun yigʻindi avval `double` ga oʻtkaziladi: 14.0 / 3 = 4.666…
 3. Ikki xonagacha yaxlitlab chiqariladi: `4.67`.
 
@@ -195,7 +195,7 @@ Kirish `4 5 5` boʻlsa:
 
 - **`(double) (a + b + c / 3)`** — qavs notoʻgʻri joyda: avval `c / 3` butun boʻlinadi. Oʻzgartirish boʻlishdan *oldin* bajarilishi kerak.
 - **`int` da katta son.** 50 000 · 50 000 = 2,5 mlrd `int` ga sigʻmaydi, natija manfiy chiqadi. `long long` yoki `long` ishlating.
-- **Python'da `input().split()` ni songa aylantirmaslik.** `"4" + "5"` = `"45"`.
+- **Pythonʼda `input().split()` ni songa aylantirmaslik.** `"4" + "5"` = `"45"`.
 - **`setfill('0')` dan keyin nolni qaytarmaslik.** C++'da `setfill` keyingi barcha chiqarishlarga taʼsir qiladi; `setw` esa faqat bitta keyingi qiymatga.
 :::
 
@@ -205,20 +205,20 @@ Natijani chiqarishdan oldin „bu qiymat qaysi turda?“ deb soʻrang. Agar ifod
 
 ## Xulosa
 
-- Har bir turning oʻlchami va chegarasi bor; `int` ≈ ±2,1 mlrd, kattaroq sonlar uchun `long long` / `long`. Python'ning `int` i chegarasiz.
+- Har bir turning oʻlchami va chegarasi bor; `int` ≈ ±2,1 mlrd, kattaroq sonlar uchun `long long` / `long`. Pythonʼning `int` i chegarasiz.
 - Butun sonlarni boʻlish kasrni tashlaydi; kasr kerak boʻlsa, `double` ga oʻtkazing.
-- Python'da bir qatordagi qiymatlar `map(int, input().split())` bilan oʻqiladi; C++ va Java'da `cin >>` va `nextInt()` probellarni oʻzi oʻtkazib yuboradi.
+- Pythonʼda bir qatordagi qiymatlar `map(int, input().split())` bilan oʻqiladi; C++ va Javaʼda `cin >>` va `nextInt()` probellarni oʻzi oʻtkazib yuboradi.
 - Formatlash: `.2f` — ikki kasr xona, `02d` — ikki xonali, oldidan nol.
 - `x += 5` — `x = x + 5` ning qisqa yozuvi; Java va C++'da `x++` ham bor.
 
 ## Oʻzingizni tekshiring
 
 :::check
-Q: Java'da `int x = 2147483647; x++;` dan keyin *x* nimaga teng?
+Q: Javaʼda `int x = 2147483647; x++;` dan keyin *x* nimaga teng?
 A: −2147483648: `int` toʻlib ketadi va eng kichik qiymatga oʻtadi.
 Q: C++'da `(double) 7 / 2` va `(double) (7 / 2)` qanday farq qiladi?
 A: Birinchisi 3.5 (avval 7 `double` ga oʻtadi), ikkinchisi 3.0 (avval butun boʻlish 3 beradi, keyin u `double` ga oʻtadi).
-Q: Python'da `1 2 3` qatoridan uchta sonni qanday oʻqiysiz?
+Q: Pythonʼda `1 2 3` qatoridan uchta sonni qanday oʻqiysiz?
 A: `a, b, c = map(int, input().split())`.
 Q: `n = 200` boʻlsa, `n // 60` va `n % 60` nimaga teng?
 A: 3 va 20: 200 soniya — 3 daqiqa 20 soniya.

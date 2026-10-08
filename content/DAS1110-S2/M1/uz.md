@@ -356,14 +356,14 @@ Malika 88
 Dilnoza 75
 ```
 
-Python'da kalit — juftlik `(-ball, ism)`: minus belgisi ball tartibini teskari qiladi, ism esa oddiy tartibda qoladi. Java'da `Comparator` zanjiri, C++'da solishtirish funksiyasi xuddi shu qoidani bildiradi: „*x* *y* dan oldin turadimi?“. Bu standart funksiyalar *O*(*n* log *n*) da ishlaydi.
+Pythonʼda kalit — juftlik `(-ball, ism)`: minus belgisi ball tartibini teskari qiladi, ism esa oddiy tartibda qoladi. Javaʼda `Comparator` zanjiri, C++'da solishtirish funksiyasi xuddi shu qoidani bildiradi: „*x* *y* dan oldin turadimi?“. Bu standart funksiyalar *O*(*n* log *n*) da ishlaydi.
 
 :::warning
 **Koʻp uchraydigan xatolar**
 
 - **Katta maʼlumotda *O*(*n*²) saralash.** 100 000 element uchun pufakchali saralash vaqt chegarasidan oshadi; standart `sort` ishlating.
 - **C++ solishtirish funksiyasida `<=`.** Solishtirish „qatʼiy kichik“ boʻlishi kerak; `<=` aniqlanmagan xatti-harakatga olib keladi.
-- **Python'da `sorted(a)` natijasini saqlamaslik.** `sorted` yangi roʻyxat qaytaradi; `a.sort()` esa joyida saralaydi va `None` qaytaradi.
+- **Pythonʼda `sorted(a)` natijasini saqlamaslik.** `sorted` yangi roʻyxat qaytaradi; `a.sort()` esa joyida saralaydi va `None` qaytaradi.
 - **Barqarorlikka tayanish.** C++'dagi `sort` barqaror emas; tartib muhim boʻlsa — `stable_sort` yoki toʻliq kalit.
 :::
 
@@ -390,7 +390,7 @@ Q: Qaysi holda qoʻyib saralash juda tez ishlaydi?
 A: Massiv deyarli saralangan boʻlsa: har bir element oʻz joyiga yaqin, siljitishlar kam — taxminan *n* qadam.
 Q: Barqaror saralash nima?
 A: Kalitlari teng elementlarning dastlabki oʻzaro tartibini saqlaydigan saralash.
-Q: Python'da roʻyxatni ball boʻyicha kamayish, ism boʻyicha oʻsish tartibida qanday saralaysiz?
+Q: Pythonʼda roʻyxatni ball boʻyicha kamayish, ism boʻyicha oʻsish tartibida qanday saralaysiz?
 A: `a.sort(key=lambda t: (-t.ball, t.ism))` (yoki juftliklar uchun `(-t[1], t[0])`).
 :::
 

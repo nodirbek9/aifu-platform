@@ -7,7 +7,7 @@ summary: Fayl tushunchasi, matnli va ikkilik fayllar, faylni ochish rejimlari (o
 
 Shu paytgacha dasturlarimiz maʼlumotni klaviaturadan oldi va ekranga chiqardi. Dastur tugashi bilan hamma narsa yoʻqoldi: kiritilgan ballar, hisoblangan natijalar. Haqiqiy dasturlar esa maʼlumotni **saqlaydi**: jurnal ertaga ham ochiladi, hisobot faylga yoziladi, sozlamalar keyingi ishga tushirishda oʻqiladi.
 
-Maʼlumotni uzoq muddat saqlashning eng oddiy usuli — **fayl**. Ma'lumotlar bazalari, Excel jadvallari, rasmlar, dastur kodining oʻzi — hammasi oxir-oqibat fayllarda. Bu darsda faylga yozish, fayldan oʻqish va eng koʻp ishlatiladigan matnli format — CSV bilan ishlashni oʻrganamiz.
+Maʼlumotni uzoq muddat saqlashning eng oddiy usuli — **fayl**. Maʼlumotlar bazalari, Excel jadvallari, rasmlar, dastur kodining oʻzi — hammasi oxir-oqibat fayllarda. Bu darsda faylga yozish, fayldan oʻqish va eng koʻp ishlatiladigan matnli format — CSV bilan ishlashni oʻrganamiz.
 
 :::note
 **Bu darsdan soʻng siz:**
@@ -72,7 +72,7 @@ Fayl yoʻqligini tekshirmasdan oʻqish dasturning jim xatoga yoki qulashga olib 
 
 ## Fayl yoʻli
 
-`"baholar.txt"` — **nisbiy yoʻl**: fayl dastur ishga tushirilgan joriy papkada qidiriladi. `"C:/AIFU/baholar.txt"` yoki `"/home/talaba/baholar.txt"` — **toʻliq yoʻl**. Windows'da teskari chiziq satr ichida ikkilanadi (`"C:\\AIFU\\baholar.txt"`) yoki oddiy `/` ishlatiladi.
+`"baholar.txt"` — **nisbiy yoʻl**: fayl dastur ishga tushirilgan joriy papkada qidiriladi. `"C:/AIFU/baholar.txt"` yoki `"/home/talaba/baholar.txt"` — **toʻliq yoʻl**. Windowsʼda teskari chiziq satr ichida ikkilanadi (`"C:\\AIFU\\baholar.txt"`) yoki oddiy `/` ishlatiladi.
 
 ## Ishlangan misol 1: sonlarni faylga yozish va qayta oʻqish
 
@@ -172,7 +172,7 @@ Kirish `5` va `4 5 3 5 4` boʻlsa, `baholar.txt` quyidagicha boʻladi:
 Dastur uni oʻqib, chiqaradi: `Soni: 5, yigʻindi: 21, oʻrtacha: 4.20`.
 
 1. Yozish uchun ochilgan fayl `with` / try-with-resources / `{ }` bloki tugaganda yopiladi — oʻqishdan oldin barcha maʼlumot diskda.
-2. Python va Java'da fayl qatorma-qator oʻqiladi va har bir qator songa aylantiriladi (`int(qator)` qator oxiridagi `\n` ni oʻzi eʼtiborsiz qoldiradi; Java'da `trim()`).
+2. Python va Javaʼda fayl qatorma-qator oʻqiladi va har bir qator songa aylantiriladi (`int(qator)` qator oxiridagi `\n` ni oʻzi eʼtiborsiz qoldiradi; Javaʼda `trim()`).
 3. C++'da `f >> b` probel va yangi qatorlarni oʻtkazib, keyingi sonni oʻqiydi; fayl tugaganda shart yolgʻon boʻladi.
 
 ## Ishlangan misol 2: CSV fayl
@@ -293,7 +293,7 @@ Malika
 Jami: 3
 ```
 
-Har bir qator vergul boʻyicha ikki maydonga ajratiladi: Python va Java'da `split(",")`, C++'da `getline(ss, ism, ',')` — uchinchi argument ajratuvchi belgini bildiradi. `stoi` (C++) va `Integer.parseInt` (Java) satrni songa aylantiradi. Bekzod (45) roʻyxatga kirmadi; Malika (56) — chegarada, `>=` tufayli kirdi.
+Har bir qator vergul boʻyicha ikki maydonga ajratiladi: Python va Javaʼda `split(",")`, C++'da `getline(ss, ism, ',')` — uchinchi argument ajratuvchi belgini bildiradi. `stoi` (C++) va `Integer.parseInt` (Java) satrni songa aylantiradi. Bekzod (45) roʻyxatga kirmadi; Malika (56) — chegarada, `>=` tufayli kirdi.
 
 :::warning
 **Koʻp uchraydigan xatolar**
@@ -301,8 +301,8 @@ Har bir qator vergul boʻyicha ikki maydonga ajratiladi: Python va Java'da `spli
 - **`"w"` rejimida mavjud faylni ochish.** Fayl darhol tozalanadi; qoʻshish uchun `"a"` (Java: `new FileWriter(nom, true)`, C++: `ofstream f(nom, ios::app)`).
 - **Faylni yopmaslik.** Oxirgi yozuvlar diskka tushmasligi mumkin; `with` / try-with-resources ishlating.
 - **Fayl ochilganini tekshirmaslik (C++).** Fayl yoʻq boʻlsa, `ifstream` jim turadi, oʻqish hech narsa bermaydi.
-- **Qator oxiridagi `\n` ni unutish.** Python'da `qator.strip()`, aks holda solishtirish va `split` kutilmagan natija beradi.
-- **Kodlashni koʻrsatmaslik.** Python'da `encoding="utf-8"` siz Windows'da oʻzbekcha harflar buziladi.
+- **Qator oxiridagi `\n` ni unutish.** Pythonʼda `qator.strip()`, aks holda solishtirish va `split` kutilmagan natija beradi.
+- **Kodlashni koʻrsatmaslik.** Pythonʼda `encoding="utf-8"` siz Windowsʼda oʻzbekcha harflar buziladi.
 - **CSV maydonida vergul.** `"Aliyev, Aziz",78` kabi maydon oddiy `split(",")` bilan notoʻgʻri ajraladi; bunday hollarda maxsus kutubxona (`csv` moduli) ishlating.
 :::
 
@@ -316,7 +316,7 @@ Faylni yozish va oʻqishni ikki alohida funksiyaga ajrating: `saqla(royxat, nom)
 - Ish tartibi: ochish (rejim bilan) → oʻqish/yozish → yopish.
 - Rejimlar: oʻqish `r`, yozish `w` (faylni tozalaydi), qoʻshish `a`.
 - Python `with`, Java try-with-resources, C++ obyekt bloki faylni avtomatik yopadi.
-- Fayl xatolari: Python va Java'da istisnolar, C++'da `if (!f)` tekshiruvi.
+- Fayl xatolari: Python va Javaʼda istisnolar, C++'da `if (!f)` tekshiruvi.
 - CSV — vergul bilan ajratilgan maydonli qatorlar; `split(",")` yoki `getline(ss, x, ',')` bilan ajratiladi.
 
 ## Oʻzingizni tekshiring
@@ -324,13 +324,13 @@ Faylni yozish va oʻqishni ikki alohida funksiyaga ajrating: `saqla(royxat, nom)
 :::check
 Q: Matnli va ikkilik fayl oʻrtasidagi farq nima?
 A: Matnli fayl belgilar va qatorlardan iborat, uni matn muharririda oʻqish mumkin; ikkilik fayl ixtiyoriy baytlardan iborat va maxsus dastur bilan ochiladi.
-Q: Python'da `open("x.txt", "w")` mavjud faylni ochsa, uning eski mazmuni nima boʻladi?
+Q: Pythonʼda `open("x.txt", "w")` mavjud faylni ochsa, uning eski mazmuni nima boʻladi?
 A: Oʻchib ketadi: `"w"` rejimi faylni tozalab ochadi. Oxiriga qoʻshish uchun `"a"`.
 Q: Nima uchun faylni yopish kerak?
 A: Yozilgan maʼlumot buferda turadi va yopilganda diskka toʻliq yoziladi; yopilmasa, oxirgi yozuvlar yoʻqolishi mumkin. Ochiq fayllar soni ham cheklangan.
 Q: C++'da fayl ochilmaganini qanday bilasiz?
 A: `ifstream f("a.txt"); if (!f) { ... }` yoki `f.is_open()` bilan.
-Q: `Aziz,78` qatoridan Java'da ism va ballni qanday olasiz?
+Q: `Aziz,78` qatoridan Javaʼda ism va ballni qanday olasiz?
 A: `String[] m = qator.split(",");` — `m[0]` ism, `Integer.parseInt(m[1])` ball.
 :::
 

@@ -33,11 +33,11 @@ Bu mashgʻulotda uch tilning satr funksiyalari jadvalini toʻldiramiz va ularni 
 | boʻlish | `s.split(ajratgich)` | `s.split(regex)` | `istringstream` yoki `find` + `substr` |
 | birlashtirish | `ajratgich.join(roʻyxat)` | `String.join(ajratgich, roʻyxat)` | sikl bilan `+=` |
 
-C++'da `substr` ning ikkinchi argumenti — **uzunlik**, Python va Java'da esa **oxirgi indeks** (unga kirmaydi). Bu farq koʻp xatoga sabab boʻladi.
+C++'da `substr` ning ikkinchi argumenti — **uzunlik**, Python va Javaʼda esa **oxirgi indeks** (unga kirmaydi). Bu farq koʻp xatoga sabab boʻladi.
 
 ## Satrni samarali yigʻish
 
-Java va Python'da satr **oʻzgarmas**: `s = s + c` har safar yangi satr yaratib, eskisini nusxalaydi. Sikl ichida *n* marta qoʻshish *O*(*n*²) vaqt oladi. Toʻgʻri usul:
+Java va Pythonʼda satr **oʻzgarmas**: `s = s + c` har safar yangi satr yaratib, eskisini nusxalaydi. Sikl ichida *n* marta qoʻshish *O*(*n*²) vaqt oladi. Toʻgʻri usul:
 
 | Til | Samarali yigʻish |
 |---|---|
@@ -148,7 +148,7 @@ Xato
 Xato
 ```
 
-Har bir shart alohida, oddiy funksiya bilan tekshirildi: `strip`, `lower`, `count`, `split`, `startswith`. Java'da „aynan bitta `@`“ sharti `indexOf` va `lastIndexOf` bir xil joyni koʻrsatishi bilan tekshiriladi. C++'da `getline` dan oldin `n` dan keyin qolgan satr oxiri oʻqib tashlanadi — aks holda birinchi manzil boʻsh satr boʻlib qoladi. Haqiqiy tizimlarda manzil qoidalari ancha murakkab, lekin tahlil tamoyili xuddi shunday.
+Har bir shart alohida, oddiy funksiya bilan tekshirildi: `strip`, `lower`, `count`, `split`, `startswith`. Javaʼda „aynan bitta `@`“ sharti `indexOf` va `lastIndexOf` bir xil joyni koʻrsatishi bilan tekshiriladi. C++'da `getline` dan oldin `n` dan keyin qolgan satr oxiri oʻqib tashlanadi — aks holda birinchi manzil boʻsh satr boʻlib qoladi. Haqiqiy tizimlarda manzil qoidalari ancha murakkab, lekin tahlil tamoyili xuddi shunday.
 
 ## Ishlangan misol 2: satrni siqish (RLE)
 
@@ -380,7 +380,7 @@ Har bir soʻz uchun „qoʻshilsa, qator uzunligi qancha boʻladi?“ (`kerak`) 
 **Koʻp uchraydigan xatolar**
 
 - **C++ `substr` ning ikkinchi argumentini indeks deb olish.** `s.substr(i, j)` — *i* dan boshlab *j* ta belgi, *j*-indeksgacha emas.
-- **`find` natijasini notoʻgʻri tekshirish.** C++'da topilmasa `string::npos` qaytadi, `-1` yoki `0` emas; Python'da `find` topilmasa `-1`, `index` esa xato beradi.
+- **`find` natijasini notoʻgʻri tekshirish.** C++'da topilmasa `string::npos` qaytadi, `-1` yoki `0` emas; Pythonʼda `find` topilmasa `-1`, `index` esa xato beradi.
 - **`cin >>` dan keyin `getline`.** Satr oxiri qolib ketadi va `getline` boʻsh satr oʻqiydi; oraliqda bitta `getline` bilan uni oʻqib tashlang.
 - **Sikl ichida satrni `+` bilan yigʻish (Java, Python).** *O*(*n*²); `StringBuilder` yoki `join` ishlating.
 :::
@@ -393,22 +393,22 @@ Satr masalasini yechishdan oldin chekka holatlar roʻyxatini tuzing: boʻsh satr
 
 - Satr funksiyalari uch tilda deyarli bir xil vazifalarni bajaradi, lekin nomlari va chekka holatlardagi xatti-harakati farq qiladi.
 - C++ `substr(i, uzunlik)`, Python `s[i:j]` va Java `substring(i, j)` — oxirgi indeks.
-- Java va Python'da satrni sikl ichida `StringBuilder` yoki `join` bilan yigʻing.
+- Java va Pythonʼda satrni sikl ichida `StringBuilder` yoki `join` bilan yigʻing.
 - Satr masalasini kichik funksiyalarga (tozalash, tekshirish, ajratish, yigʻish) boʻlish uni soddalashtiradi.
 - `cin >>` dan keyin `getline` ishlatishda qolgan satr oxirini unutmang.
 
 ## Oʻzingizni tekshiring
 
 :::check
-Q: Python'da `"  salom  ".strip()` nima qaytaradi?
+Q: Pythonʼda `"  salom  ".strip()` nima qaytaradi?
 A: `"salom"` — boshidagi va oxiridagi boʻsh joylar olib tashlanadi.
 Q: C++'da `string("dasturlash").substr(3, 4)` nima qaytaradi?
 A: `"turl"` — 3-indeksdan boshlab 4 ta belgi.
-Q: Java'da `"a@b@c".indexOf('@') != "a@b@c".lastIndexOf('@')` nimani bildiradi?
+Q: Javaʼda `"a@b@c".indexOf('@') != "a@b@c".lastIndexOf('@')` nimani bildiradi?
 A: Satrda `@` kamida ikki marta uchraydi.
 Q: `aabbbc` satri RLE bilan qanday siqiladi?
 A: `a2b3c1`.
-Q: Nima uchun Java'da sikl ichida `s = s + c` sekin?
+Q: Nima uchun Javaʼda sikl ichida `s = s + c` sekin?
 A: Satr oʻzgarmas: har bir qoʻshish yangi satr yaratib, eskisini nusxalaydi — jami *O*(*n*²).
 :::
 

@@ -272,7 +272,7 @@ xato
 Alpomish: 0/0
 ```
 
-`Kutubxona` kitob nusxalarini oʻzi sanamaydi — u faqat kerakli `Kitob` ni topadi va uning metodini chaqiradi. `Kitob` esa xabar chiqarmaydi, faqat `true`/`false` qaytaradi: matnni asosiy dastur tanlaydi. Shu tufayli `Kitob` ni boshqa dasturda (masalan, grafik interfeysda) oʻzgartirmasdan ishlatish mumkin. Java'dagi `computeIfAbsent(nom, Kitob::new)` — „kitob boʻlmasa, yangisini yarat“ ning qisqa yozuvi.
+`Kutubxona` kitob nusxalarini oʻzi sanamaydi — u faqat kerakli `Kitob` ni topadi va uning metodini chaqiradi. `Kitob` esa xabar chiqarmaydi, faqat `true`/`false` qaytaradi: matnni asosiy dastur tanlaydi. Shu tufayli `Kitob` ni boshqa dasturda (masalan, grafik interfeysda) oʻzgartirmasdan ishlatish mumkin. Javaʼdagi `computeIfAbsent(nom, Kitob::new)` — „kitob boʻlmasa, yangisini yarat“ ning qisqa yozuvi.
 
 ## Mustaqil ish topshirigʻi
 

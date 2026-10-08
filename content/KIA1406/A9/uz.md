@@ -24,7 +24,7 @@ Brauzerdagi qulf belgisi ortida M8 va M9 da oʻrganilgan butun mexanizm turadi: 
 |---|---|
 | **Issued To** (Subject, CN) | sayt nomi yoki tashkilot |
 | **Subject Alternative Name** | sertifikat amal qiladigan barcha domenlar, jumladan `*.` bilan boshlanadigan wildcard nomlar |
-| **Issued By** (Issuer) | beruvchi CA (masalan, Let's Encrypt, DigiCert, GlobalSign) |
+| **Issued By** (Issuer) | beruvchi CA (masalan, Letʼs Encrypt, DigiCert, GlobalSign) |
 | **Validity** | Not Before va Not After sanalari |
 | **Public Key** | algoritm va uzunlik (RSA 2048, ECDSA P-256) |
 | **Fingerprint** (SHA-256) | sertifikatning noyob barmoq izi |
@@ -35,7 +35,7 @@ Brauzerdagi qulf belgisi ortida M8 va M9 da oʻrganilgan butun mexanizm turadi: 
 
 | Tur | Nima tekshiriladi | Qayerda |
 |---|---|---|
-| **DV** (Domain Validation) | faqat domen egaligi (avtomatik, daqiqalarda) | bloglar, koʻp saytlar; Let's Encrypt bepul beradi |
+| **DV** (Domain Validation) | faqat domen egaligi (avtomatik, daqiqalarda) | bloglar, koʻp saytlar; Letʼs Encrypt bepul beradi |
 | **OV** (Organization Validation) | domen + tashkilot hujjatlari | kompaniya saytlari |
 | **EV** (Extended Validation) | chuqur yuridik tekshiruv | ilgari banklar; brauzerlar endi alohida yashil belgi koʻrsatmaydi |
 
@@ -59,7 +59,7 @@ Haqiqiy saytda bunday xabar chiqsa — bu "oʻrtadagi odam" hujumi, notoʻgʻri 
 
 ## Ishlangan misol 1: sertifikat muddatini kuzatish
 
-Muddati oʻtgan sertifikat — eng koʻp uchraydigan va eng "uyatli" nosozlik: sayt bir kechada ishlamay qoladi. Sertifikatlar muddati qisqarib bormoqda: Let's Encrypt — 90 kun, CA/Browser Forum qarori boʻyicha umumiy maksimal muddat 2026-yil martdan 200 kun, 2029-yilga kelib 47 kun. Shuning uchun monitoring avtomatlashtiriladi. Har bir satrda domen, Not Before, Not After va bugungi sana (YYYY-MM-DD). Holatni chiqaring: hali kuchga kirmagan, muddati tugagan, 30 kundan kam qolgan (yangilash kerak) yoki amal qiladi.
+Muddati oʻtgan sertifikat — eng koʻp uchraydigan va eng "uyatli" nosozlik: sayt bir kechada ishlamay qoladi. Sertifikatlar muddati qisqarib bormoqda: Letʼs Encrypt — 90 kun, CA/Browser Forum qarori boʻyicha umumiy maksimal muddat 2026-yil martdan 200 kun, 2029-yilga kelib 47 kun. Shuning uchun monitoring avtomatlashtiriladi. Har bir satrda domen, Not Before, Not After va bugungi sana (YYYY-MM-DD). Holatni chiqaring: hali kuchga kirmagan, muddati tugagan, 30 kundan kam qolgan (yangilash kerak) yoki amal qiladi.
 
 ```python
 import sys
@@ -172,7 +172,7 @@ new.uz: hali kuchga kirmagan
 leap.uz: yangilang: 2 kun qoldi
 ```
 
-Sanalarni kunlar soniga aylantirish oylar uzunligi va kabisa yillarini toʻgʻri hisobga oladi: 2024-02-28 dan 2024-03-01 gacha 2 kun (29-fevral bor). Brauzer ham aynan shunday solishtiradi — shuning uchun kompyuter sanasi notoʻgʻri boʻlsa, barcha saytlar "muddati oʻtgan" boʻlib koʻrinadi. Amalda monitoring tizimlari (masalan, certbot va Let's Encrypt) sertifikatni muddati tugashidan 30 kun oldin avtomatik yangilaydi.
+Sanalarni kunlar soniga aylantirish oylar uzunligi va kabisa yillarini toʻgʻri hisobga oladi: 2024-02-28 dan 2024-03-01 gacha 2 kun (29-fevral bor). Brauzer ham aynan shunday solishtiradi — shuning uchun kompyuter sanasi notoʻgʻri boʻlsa, barcha saytlar "muddati oʻtgan" boʻlib koʻrinadi. Amalda monitoring tizimlari (masalan, certbot va Letʼs Encrypt) sertifikatni muddati tugashidan 30 kun oldin avtomatik yangilaydi.
 
 ## Ishlangan misol 2: domen nomi va SAN mosligi
 

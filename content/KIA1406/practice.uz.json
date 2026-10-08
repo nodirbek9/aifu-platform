@@ -13,13 +13,13 @@
       "title": "Tarmoq, bulut va IoT xavfsizligi"
     },
     "M-INDEPENDENT": {
-      "title": "Mustaqil ta'lim topshiriqlari"
+      "title": "Mustaqil taʼlim topshiriqlari"
     }
   },
   "codingTasks": {
     "KIA-A2": {
       "title": "Risk matritsasi: risklarni baholash va tartiblash",
-      "description": "<p>Har bir risk uchun <strong>ehtimollik</strong> (1–5) va <strong>taʼsir</strong> (1–5) berilgan. Risk darajasi = ehtimollik × taʼsir. Quyidagi 5×5 oʻquv shkalasi boʻyicha toifani aniqlang va risklarni darajasi boʻyicha kamayish tartibida chiqaring (teng boʻlsa — kiritilgan tartibda).</p><ul><li>1–4: <code>Past</code></li><li>5–9: <code>O'rta</code></li><li>10–16: <code>Yuqori</code></li><li>17–25: <code>Kritik</code></li></ul><p>Shkala oʻquv misoli uchun tanlangan; tashkilotlar oʻz chegaralarini risk siyosatida belgilaydi.</p>",
+      "description": "<p>Har bir risk uchun <strong>ehtimollik</strong> (1–5) va <strong>taʼsir</strong> (1–5) berilgan. Risk darajasi = ehtimollik × taʼsir. Quyidagi 5×5 oʻquv shkalasi boʻyicha toifani aniqlang va risklarni darajasi boʻyicha kamayish tartibida chiqaring (teng boʻlsa — kiritilgan tartibda).</p><ul><li>1–4: <code>Past</code></li><li>5–9: <code>Oʻrta</code></li><li>10–16: <code>Yuqori</code></li><li>17–25: <code>Kritik</code></li></ul><p>Shkala oʻquv misoli uchun tanlangan; tashkilotlar oʻz chegaralarini risk siyosatida belgilaydi.</p>",
       "instructions": "Kirish: n; n ta satrda nom ehtimollik taʼsir (nom boʻshliqsiz). Chiqish: har bir satrda nom daraja toifa.",
       "constraintsText": "1 ≤ n ≤ 100.",
       "hints": []
@@ -54,7 +54,7 @@
     },
     "KIA-A10": {
       "title": "Parol siyosati: parol kuchini baholash",
-      "description": "<p>Parol siyosatini tekshiruvchi dastur yozing. Har bir mezon uchun 1 ball: uzunlik ≥ 8; uzunlik ≥ 12; kichik harf; katta harf; raqam; maxsus belgi (harf va raqam boʻlmagan belgi). Agar parol keng tarqalgan parollar roʻyxatida boʻlsa (<code>password, 123456, 12345678, qwerty, admin, parol</code>, katta-kichik harf farqsiz) — ball 0.</p><ul><li>0–2: <code>Zaif</code></li><li>3–4: <code>O'rtacha</code></li><li>5–6: <code>Kuchli</code></li></ul>",
+      "description": "<p>Parol siyosatini tekshiruvchi dastur yozing. Har bir mezon uchun 1 ball: uzunlik ≥ 8; uzunlik ≥ 12; kichik harf; katta harf; raqam; maxsus belgi (harf va raqam boʻlmagan belgi). Agar parol keng tarqalgan parollar roʻyxatida boʻlsa (<code>password, 123456, 12345678, qwerty, admin, parol</code>, katta-kichik harf farqsiz) — ball 0.</p><ul><li>0–2: <code>Zaif</code></li><li>3–4: <code>Oʻrtacha</code></li><li>5–6: <code>Kuchli</code></li></ul>",
       "instructions": "Kirish: n; n ta parol (har biri alohida satrda, boʻshliqsiz). Chiqish: har bir parol uchun ball va daraja.",
       "constraintsText": "1 ≤ n ≤ 100, parol ASCII.",
       "hints": []

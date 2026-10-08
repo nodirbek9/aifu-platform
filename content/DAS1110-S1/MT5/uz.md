@@ -12,7 +12,7 @@ Matematikadagi **vektor** — tartiblangan sonlar toʻplami: tekislikdagi nuqta 
 
 - *n* oʻlchamli vektorni massivda saqlay olasiz;
 - vektorlar yigʻindisi, songa koʻpaytirish, uzunlik va masofani hisoblay olasiz;
-- C++'da `vector`, Java'da massiv, Python'da roʻyxat bilan dinamik oʻlchamli vektor yarata olasiz;
+- C++'da `vector`, Javaʼda massiv, Pythonʼda roʻyxat bilan dinamik oʻlchamli vektor yarata olasiz;
 - natijani formula boʻyicha qoʻlda hisoblab, dasturni tekshira olasiz.
 :::
 

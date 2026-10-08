@@ -50,11 +50,11 @@ Grafik interfeys komponentlari (tugma, matn maydoni, belgi) uch xil aʼzoga ega:
 | Python Tkinter | `Button(oyna, text="Saqlash", command=saqlash)` |
 | C++ Qt | `connect(tugma, &QPushButton::clicked, this, &Oyna::saqlash);` |
 
-Callbacklarni saqlash uchun tillarda funksiya qiymat sifatida ishlatiladi: Java'da lambda va funksional interfeys (`Runnable`, `Consumer<T>`), C++'da `std::function`, Python'da oddiy funksiya yoki `lambda`.
+Callbacklarni saqlash uchun tillarda funksiya qiymat sifatida ishlatiladi: Javaʼda lambda va funksional interfeys (`Runnable`, `Consumer<T>`), C++'da `std::function`, Pythonʼda oddiy funksiya yoki `lambda`.
 
 ## Grafik interfeys namunasi
 
-Masalan, Python Tkinter'da bitta oyna, matn maydoni va tugmadan iborat dastur shunday yoziladi (grafik muhit kerak boʻlgani uchun avtomatik tekshiruvda ishga tushirilmaydi):
+Masalan, Python Tkinterʼda bitta oyna, matn maydoni va tugmadan iborat dastur shunday yoziladi (grafik muhit kerak boʻlgani uchun avtomatik tekshiruvda ishga tushirilmaydi):
 
 ```text
 import tkinter as tk
@@ -407,7 +407,7 @@ Ehtiyot boʻling!
 4
 ```
 
-`Tugma` oʻzi hech narsa hisoblamaydi va chiqarmaydi — u faqat „meni bosishdi“ deb ulangan funksiyalarni chaqiradi. Yangi xatti-harakat kerak boʻlsa, tugma sinfi oʻzgarmaydi, faqat yangi tinglovchi ulanadi. C++'da `[&]` — lambda tashqi oʻzgaruvchilarni (`soni`, `tugma`) havola orqali ushlaydi; Java'da lambda faqat sinf maydonini (`static int soni`) oʻzgartira oladi, lokal oʻzgaruvchini emas.
+`Tugma` oʻzi hech narsa hisoblamaydi va chiqarmaydi — u faqat „meni bosishdi“ deb ulangan funksiyalarni chaqiradi. Yangi xatti-harakat kerak boʻlsa, tugma sinfi oʻzgarmaydi, faqat yangi tinglovchi ulanadi. C++'da `[&]` — lambda tashqi oʻzgaruvchilarni (`soni`, `tugma`) havola orqali ushlaydi; Javaʼda lambda faqat sinf maydonini (`static int soni`) oʻzgartira oladi, lokal oʻzgaruvchini emas.
 
 ## Ishlangan misol 3: kompozitsiya — oddiy forma
 
@@ -630,7 +630,7 @@ Chiqish:
 
 - **Komponentning ichki tuzilishiga bogʻlanish.** Boshqa komponent maydonlariga toʻgʻridan-toʻgʻri murojaat qilish uni almashtirishni imkonsiz qiladi; faqat interfeys metodlaridan foydalaning.
 - **Hodisa ichida uzoq ish.** Grafik ilovada callback ichidagi uzoq hisob butun oynani „muzlatadi“: hodisalar sikli kutib qoladi.
-- **Callbackni chaqirish oʻrniga uzatish.** Tkinter'da `command=saqlash()` funksiyani darhol chaqiradi va natijasini (`None`) ulaydi; `command=saqlash` yozing.
+- **Callbackni chaqirish oʻrniga uzatish.** Tkinterʼda `command=saqlash()` funksiyani darhol chaqiradi va natijasini (`None`) ulaydi; `command=saqlash` yozing.
 - **Hamma narsani merosxoʻrlik bilan qilish.** „Tugma — bu oyna“ emas; oynada tugma *bor* — kompozitsiya ishlating.
 :::
 
@@ -663,10 +663,10 @@ A: Kompozitsiya — „…da … bor“ munosabati: obyekt boshqa obyektlarni o�
 
 :::link https://docs.python.org/3/library/tkinter.html
 Python: tkinter
-Python'ning standart grafik interfeys kutubxonasi — komponentlar, hodisalar va joylashtirish (ingliz tilida).
+Pythonʼning standart grafik interfeys kutubxonasi — komponentlar, hodisalar va joylashtirish (ingliz tilida).
 :::
 
 :::link https://learn.microsoft.com/en-us/dotnet/desktop/winforms/controls/
 Windows Forms: boshqaruv elementlari
-Visual Studio'dagi komponentlar, ularning xususiyatlari va hodisalari (ingliz tilida).
+Visual Studioʻdagi komponentlar, ularning xususiyatlari va hodisalari (ingliz tilida).
 :::

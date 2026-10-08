@@ -36,7 +36,7 @@ Kirish huquqlari (Java va C++):
 | Modifikator | Kim koʻradi |
 |---|---|
 | `private` | faqat sinfning oʻzi |
-| `protected` | sinf va uning vorislari (Java'da yana shu paket) |
+| `protected` | sinf va uning vorislari (Javaʼda yana shu paket) |
 | `public` | hamma |
 
 ## Merosxoʻrlik
@@ -64,10 +64,10 @@ har bir s uchun: s.yuza()     → har biri oʻz formulasi bilan
 
 Tillardagi farq:
 
-- **Python va Java**da barcha metodlar sukut boʻyicha polimorf. Java'da `@Override` izohi xatoni ushlaydi: metod nomi notoʻgʻri yozilsa, kompilyator ogohlantiradi.
+- **Python va Java**da barcha metodlar sukut boʻyicha polimorf. Javaʼda `@Override` izohi xatoni ushlaydi: metod nomi notoʻgʻri yozilsa, kompilyator ogohlantiradi.
 - **C++ da** metod ota sinfda `virtual` deb eʼlon qilinishi, obyektlar esa **koʻrsatkich** yoki **havola** orqali ishlatilishi kerak. Aks holda har doim ota versiyasi chaqiriladi. Vorisda `override` yozish tavsiya etiladi.
 
-**Abstrakt sinf** — oʻzidan obyekt yaratib boʻlmaydigan, faqat vorislar uchun shablon boʻlgan sinf. Uning abstrakt metodlari tanasiz boʻladi va har bir voris ularni albatta aniqlashi kerak: Java'da `abstract`, C++'da `virtual double yuza() const = 0;` (sof virtual metod), Python'da `abc` modulidagi `@abstractmethod`.
+**Abstrakt sinf** — oʻzidan obyekt yaratib boʻlmaydigan, faqat vorislar uchun shablon boʻlgan sinf. Uning abstrakt metodlari tanasiz boʻladi va har bir voris ularni albatta aniqlashi kerak: Javaʼda `abstract`, C++'da `virtual double yuza() const = 0;` (sof virtual metod), Pythonʼda `abc` modulidagi `@abstractmethod`.
 
 ## Ishlangan misol 1: harorat sinfi (inkapsulyatsiya)
 
@@ -581,7 +581,7 @@ Asosiy sikl faqat `Shakl` haqida biladi: unda `if (tur == "doira")` kabi tekshir
 **Koʻp uchraydigan xatolar**
 
 - **Setterda tekshiruv yoʻq.** `setBall(int b) { ball = b; }` — maydonni ochiq qoldirish bilan bir xil; inkapsulyatsiyaning maʼnosi tekshiruvda.
-- **Java'da `super(...)` ni birinchi qatorga yozmaslik.** Ota konstruktori voris konstruktorining birinchi buyrugʻi boʻlishi shart.
+- **Javaʼda `super(...)` ni birinchi qatorga yozmaslik.** Ota konstruktori voris konstruktorining birinchi buyrugʻi boʻlishi shart.
 - **C++'da `virtual` siz qayta aniqlash.** Koʻrsatkich orqali chaqirilganda ota versiyasi ishlaydi; `virtual` va `override` yozing.
 - **C++'da voris obyektni ota turidagi qiymatga nusxalash.** `Xodim x = menejer;` mukofot qismini „kesib tashlaydi“ (slicing); koʻrsatkich yoki havoladan foydalaning.
 - **Merosxoʻrlikni „…dir“ boʻlmagan joyda qoʻllash.** Mashina dvigatelga ega, lekin u dvigatel *emas* — bunda dvigatel maydon boʻladi, ota sinf emas.
@@ -605,7 +605,7 @@ Yangi sinf ota sinfdan meros olishi kerakmi, degan savolga „X — bu Y mi?“ 
 Q: Inkapsulyatsiya obyektni nimadan himoya qiladi?
 A: Notoʻgʻri holatdan: maydonlar faqat tekshiruv bajaradigan metodlar orqali oʻzgaradi.
 Q: `protected` maydonni kim koʻradi?
-A: Sinfning oʻzi va uning vorislari (Java'da shu paketdagi sinflar ham).
+A: Sinfning oʻzi va uning vorislari (Javaʼda shu paketdagi sinflar ham).
 Q: Voris obyekt yaratilganda qaysi konstruktor birinchi ishlaydi?
 A: Ota sinf konstruktori, keyin voris konstruktori.
 Q: C++'da ota sinfdagi metod `virtual` boʻlmasa, `Xodim* x = new Menejer(...); x->oylik()` qaysi versiyani chaqiradi?

@@ -42,7 +42,7 @@ Bir nechta qiymatning eng kattasini topishning ishonchli usuli — **„hozirgac
 
 Bu usul har qancha qiymat uchun ishlaydi va keyinchalik sikl bilan birga qoʻllanadi. Taqqoslash uchun, „har bir son qolganlaridan katta ekanini tekshirish“ (`a >= b and a >= c`) usuli uch son uchun ishlaydi, lekin sonlar koʻpaysa, shartlar keskin uzayadi.
 
-Standart funksiyalar ham bor: Python'da `max(a, b, c)`, Java'da `Math.max(a, b)`, C++'da `max({a, b, c})`. Amaliy mashgʻulotda algoritmni tushunish uchun avval qoʻlda yozamiz.
+Standart funksiyalar ham bor: Pythonʼda `max(a, b, c)`, Javaʼda `Math.max(a, b)`, C++'da `max({a, b, c})`. Amaliy mashgʻulotda algoritmni tushunish uchun avval qoʻlda yozamiz.
 
 ## Andoza: kiritishni tekshirish
 

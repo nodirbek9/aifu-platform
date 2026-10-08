@@ -62,7 +62,7 @@ Yuqori chegara uchun faqat shart `a[orta] <= x` ga oʻzgaradi.
 | Java | sikl yoki `list.indexOf(x)` | `Arrays.binarySearch(a, x)` — indeks yoki manfiy son |
 | C++ | `find(a.begin(), a.end(), x)` | `lower_bound`, `upper_bound`, `binary_search` (`<algorithm>`) |
 
-Pythonda `bisect_left` — quyi chegara, `bisect_right` — yuqori chegara. Java'ning `Arrays.binarySearch` takroriy elementlardan **qaysi biri** topilishini kafolatlamaydi, shuning uchun chegaralar kerak boʻlsa, ularni oʻzingiz yozasiz.
+Pythonda `bisect_left` — quyi chegara, `bisect_right` — yuqori chegara. Javaʼning `Arrays.binarySearch` takroriy elementlardan **qaysi biri** topilishini kafolatlamaydi, shuning uchun chegaralar kerak boʻlsa, ularni oʻzingiz yozasiz.
 
 ## Elementlar ustida amallar
 

@@ -220,6 +220,25 @@ export type GradeEntry = {
   source: NonNullable<Schemas['GradeEntryView']['source']>
   /** The graded work's title, when the grade came from one. */
   title?: string
+  /** The code of the scheme component the grade counts towards (JN, ON, YaN, …). */
+  componentCode?: string
+}
+
+export type ComponentKindName =
+  'CONTINUOUS' | 'MIDTERM' | 'FINAL' | 'ATTENDANCE' | 'INDEPENDENT_WORK' | 'PRACTICAL_ACTIVITY'
+
+const COMPONENT_KIND_BY_CODE: Record<string, ComponentKindName> = {
+  JN: 'CONTINUOUS',
+  ON: 'MIDTERM',
+  YaN: 'FINAL',
+  JN_ATTENDANCE: 'ATTENDANCE',
+  JN_INDEPENDENT: 'INDEPENDENT_WORK',
+  JN_PRACTICAL: 'PRACTICAL_ACTIVITY',
+}
+
+/** What a scheme component is, for a grade that names no work (a teacher's own grade). */
+export function componentKindOf(code: string | undefined): ComponentKindName | undefined {
+  return code === undefined ? undefined : COMPONENT_KIND_BY_CODE[code]
 }
 
 export function narrowGrade(raw: Schemas['GradeEntryView']): GradeEntry | null {
@@ -233,6 +252,7 @@ export function narrowGrade(raw: Schemas['GradeEntryView']): GradeEntry | null {
     source: raw.source ?? 'MANUAL',
   }
   if (raw.title !== undefined && raw.title !== '') grade.title = raw.title
+  if (raw.componentCode !== undefined) grade.componentCode = raw.componentCode
   return grade
 }
 

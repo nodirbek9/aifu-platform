@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import { AnnouncementList } from '@/features/announcements/announcement-list'
 import { useMyAnnouncementsQuery } from '@/features/announcements/queries'
 import { ActivityRow } from '@/features/courses/activity-row'
-import type { Enrollment } from '@/features/courses/model'
+import { componentKindOf, type Enrollment, type GradeEntry } from '@/features/courses/model'
 import { useActivitiesQuery, useRecentGrades } from '@/features/courses/queries'
 import { toApiProblem } from '@/shared/api/errors'
 import { useLocale } from '@/shared/i18n/use-locale'
@@ -87,7 +87,7 @@ export function DeadlinesBlock() {
 export function RecentGradesBlock({ enrollments }: { enrollments: readonly Enrollment[] | undefined }) {
   const { t } = useTranslation()
   const locale = useLocale()
-  const recent = useRecentGrades(enrollments, SHOWN)
+  const recent = useRecentGrades(enrollments, SHOWN, locale)
 
   return (
     <Card>
@@ -120,10 +120,11 @@ export function RecentGradesBlock({ enrollments }: { enrollments: readonly Enrol
             {recent.grades.map((grade) => (
               <li key={grade.id} className="flex items-center justify-between gap-4 py-3">
                 <div className="grid min-w-0 gap-0.5">
-                  <span className="text-body text-text font-medium">{grade.title ?? grade.subjectCode}</span>
-                  <span className="text-small text-text-muted">
-                    {grade.title !== undefined && `${grade.subjectCode} · `}
-                    {t(`gradeSource.${grade.source}`)} · {formatDate(grade.publishedAt, locale)}
+                  <span className="text-body text-text truncate font-medium">
+                    <GradeHeading grade={grade} />
+                  </span>
+                  <span className="text-small text-text-muted truncate">
+                    {`${grade.subjectCode} · ${t(`gradeSource.${grade.source}`)} · ${formatDate(grade.publishedAt, locale)}`}
                   </span>
                 </div>
                 <span className="font-display text-title text-text font-semibold tabular-nums">
@@ -164,4 +165,12 @@ export function AnnouncementsBlock() {
       </CardContent>
     </Card>
   )
+}
+
+/** The graded work's name; for a grade that names no work, what the grade counts towards. */
+function GradeHeading({ grade }: { grade: GradeEntry & { subjectCode: string } }) {
+  const { t } = useTranslation()
+  if (grade.title !== undefined) return <>{grade.title}</>
+  const kind = componentKindOf(grade.componentCode)
+  return <>{kind === undefined ? grade.subjectCode : t(`assessmentKind.${kind}`)}</>
 }

@@ -7,7 +7,7 @@
       "title": "Iqtisodiyotda dasturiy vositalar"
     },
     "M-DATA-NETWORKS": {
-      "title": "Tarmoq texnologiyalari va ma'lumotlar bazalari"
+      "title": "Tarmoq texnologiyalari va maʼlumotlar bazalari"
     },
     "M-SYSTEMS": {
       "title": "Axborot tizimlari va elektron hukumat"
@@ -19,7 +19,7 @@
       "title": "Axborot xavfsizligi va kasbiy axborot komplekslari"
     },
     "M-INDEPENDENT": {
-      "title": "Mustaqil ta'lim topshiriqlari"
+      "title": "Mustaqil taʼlim topshiriqlari"
     }
   },
   "codingTasks": {
@@ -40,12 +40,12 @@
   },
   "quizzes": {
     "DEV-QUIZ-DB": {
-      "title": "Ma'lumotlar bazalari asoslari (demo test)",
+      "title": "Maʼlumotlar bazalari asoslari (demo test)",
       "description": "Rivojlanish uchun namuna test. Akademik talab emas.",
-      "instructions": "Har bir savolga bitta yoki bir nechta to'g'ri javobni tanlang.",
+      "instructions": "Har bir savolga bitta yoki bir nechta toʻgʻri javobni tanlang.",
       "questions": [
         {
-          "prompt": "SQL tilida jadvaldan ma'lumot olish uchun qaysi operator ishlatiladi?",
+          "prompt": "SQL tilida jadvaldan maʼlumot olish uchun qaysi operator ishlatiladi?",
           "explanation": "SELECT operatori tanlash uchun ishlatiladi.",
           "options": [
             {
@@ -81,8 +81,8 @@
           ]
         },
         {
-          "prompt": "Relatsion modelda jadvalning satri nima deb ataladi? Nechta asosiy kalit (primary key) bir jadvalda bo'lishi mumkin?",
-          "explanation": "Bir jadvalda faqat bitta asosiy kalit bo'ladi.",
+          "prompt": "Relatsion modelda jadvalning satri nima deb ataladi? Nechta asosiy kalit (primary key) bir jadvalda boʻlishi mumkin?",
+          "explanation": "Bir jadvalda faqat bitta asosiy kalit boʻladi.",
           "options": []
         }
       ]
@@ -508,7 +508,7 @@
   },
   "activities": {
     "QUIZ:DEV-QUIZ-DB": {
-      "title": "Mini-test: ma'lumotlar bazalari",
+      "title": "Mini-test: maʼlumotlar bazalari",
       "instructions": "Testni 10 daqiqada yakunlang."
     },
     "QUIZ:IAKTT-Q-S3": {

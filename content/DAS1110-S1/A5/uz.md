@@ -24,7 +24,7 @@ Bundan tashqari, „ikkitadan biri“ tanlovini bitta ifodada yozadigan qisqa vo
 
 | Qism | Vazifasi |
 |---|---|
-| `switch (ifoda)` | qaysi qiymat tekshiriladi (butun son, belgi; Java'da satr ham) |
+| `switch (ifoda)` | qaysi qiymat tekshiriladi (butun son, belgi; Javaʼda satr ham) |
 | `case 1:` | „agar qiymat 1 boʻlsa, shu yerdan boshla“ |
 | `break;` | `switch` dan chiqish |
 | `default:` | hech bir `case` mos kelmasa (ixtiyoriy, lekin tavsiya etiladi) |
@@ -38,7 +38,7 @@ case 7:
     break
 ```
 
-C++'da `switch` faqat butun son va belgi turlari bilan ishlaydi; Java'da satr (`String`) bilan ham. Java 14 dan boshlab qisqa yozuv bor: `case 1 -> ...;` — unda tushib ketish yoʻq va `break` kerak emas.
+C++'da `switch` faqat butun son va belgi turlari bilan ishlaydi; Javaʼda satr (`String`) bilan ham. Java 14 dan boshlab qisqa yozuv bor: `case 1 -> ...;` — unda tushib ketish yoʻq va `break` kerak emas.
 
 ## match operatori (Python)
 
@@ -51,7 +51,7 @@ Python 3.10 dan boshlab `match` operatori bor:
 | `case 6 \| 7:` | 6 yoki 7 boʻlsa |
 | `case _:` | boshqa barcha holatlar (`default` ning oʻrni) |
 
-Python'da tushib ketish yoʻq: faqat mos kelgan `case` bajariladi, `break` kerak emas. Python 3.10 dan eski versiyalarda xuddi shu masala `if-elif` bilan yoziladi.
+Pythonʼda tushib ketish yoʻq: faqat mos kelgan `case` bajariladi, `break` kerak emas. Python 3.10 dan eski versiyalarda xuddi shu masala `if-elif` bilan yoziladi.
 
 ## Ternar operator
 
@@ -229,7 +229,7 @@ Tahlil:
 | `5 / 0` | `/`, *b* = 0 | `Xato: nolga boʻlish` |
 | `5 % 2` | `default` | `Xato: nomaʼlum amal` |
 
-`switch` ichida `if` boʻlishi mumkin — tuzilmalar bir-birining ichiga joylashadi. Java'da belgi `in.next().charAt(0)` bilan oʻqiladi: `next()` keyingi soʻzni beradi, `charAt(0)` uning birinchi belgisini.
+`switch` ichida `if` boʻlishi mumkin — tuzilmalar bir-birining ichiga joylashadi. Javaʼda belgi `in.next().charAt(0)` bilan oʻqiladi: `next()` keyingi soʻzni beradi, `charAt(0)` uning birinchi belgisini.
 
 ## Ishlangan misol 3: ternar operator
 
@@ -275,7 +275,7 @@ int main() {
 }
 ```
 
-Kirish `-7` boʻlsa: `-7 % 2` Python'da 1, Java va C++'da −1 — ikkalasi ham 0 emas, shuning uchun `toq`; `-7 >= 0` yolgʻon, modul `7`. Chiqadi: `toq 7`. Toq sonni `n % 2 == 1` bilan tekshirish manfiy sonlarda Java va C++'da xato beradi — `n % 2 != 0` yoki `== 0` bilan tekshiring.
+Kirish `-7` boʻlsa: `-7 % 2` Pythonʼda 1, Java va C++'da −1 — ikkalasi ham 0 emas, shuning uchun `toq`; `-7 >= 0` yolgʻon, modul `7`. Chiqadi: `toq 7`. Toq sonni `n % 2 == 1` bilan tekshirish manfiy sonlarda Java va C++'da xato beradi — `n % 2 != 0` yoki `== 0` bilan tekshiring.
 
 :::warning
 **Koʻp uchraydigan xatolar**
@@ -294,7 +294,7 @@ Har bir `case` ni `break` bilan tugatishni odat qiling; agar tushib ketish atayl
 ## Xulosa
 
 - `switch` (Java, C++) va `match` (Python) bitta qiymatni bir nechta aniq oʻzgarmas bilan solishtiradi.
-- Java va C++'da `break` boʻlmasa, bajarilish keyingi `case` ga tushib ketadi; Python'da tushib ketish yoʻq.
+- Java va C++'da `break` boʻlmasa, bajarilish keyingi `case` ga tushib ketadi; Pythonʼda tushib ketish yoʻq.
 - `default` / `case _` — boshqa barcha holatlar uchun.
 - Ternar operator `shart ? a : b` (Python: `a if shart else b`) — qiymat qaytaruvchi qisqa tanlov.
 - Oraliqlar va murakkab shartlar uchun `if`, aniq qiymatlar uchun `switch`, ikki qiymatdan biri uchun ternar operator.
@@ -302,15 +302,15 @@ Har bir `case` ni `break` bilan tugatishni odat qiling; agar tushib ketish atayl
 ## Oʻzingizni tekshiring
 
 :::check
-Q: Java'da `switch` da `case 2:` dagi `break` tushib qolgan boʻlsa va qiymat 2 boʻlsa, nima boʻladi?
+Q: Javaʼda `switch` da `case 2:` dagi `break` tushib qolgan boʻlsa va qiymat 2 boʻlsa, nima boʻladi?
 A: `case 2` amali bajariladi, keyin `case 3` ning (va keyingilarning) amali ham — birinchi `break` gacha yoki `switch` oxirigacha.
-Q: Python'da `default` ning vazifasini qaysi yozuv bajaradi?
+Q: Pythonʼda `default` ning vazifasini qaysi yozuv bajaradi?
 A: `case _:`.
 Q: `ball >= 86` kabi oraliqni `switch` bilan tekshirish mumkinmi?
 A: Klassik `switch` da yoʻq: `case` da faqat aniq oʻzgarmas qiymat boʻladi. Oraliqlar uchun `if-else if` ishlatiladi.
-Q: `mx = a > b ? a : b;` ni Python'da qanday yozasiz?
+Q: `mx = a > b ? a : b;` ni Pythonʼda qanday yozasiz?
 A: `mx = a if a > b else b`.
-Q: Nima uchun Java'da toq sonni `n % 2 == 1` bilan tekshirish xavfli?
+Q: Nima uchun Javaʼda toq sonni `n % 2 == 1` bilan tekshirish xavfli?
 A: Manfiy toq sonlar uchun `n % 2` −1 ga teng, shart yolgʻon boʻlib chiqadi. `n % 2 != 0` bilan tekshirish kerak.
 :::
 

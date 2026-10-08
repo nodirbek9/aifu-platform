@@ -24,6 +24,27 @@ export type ClassItem = {
   changeReason?: string
 }
 
+export type ParsedCourseTitle = {
+  subject: string
+  termSuffix?: string
+}
+
+/**
+ * Splits a course title if it ends with a parenthesized term suffix, e.g.
+ * 'Dasturlash (2026/2027, 1-semestr)' -> { subject: 'Dasturlash', termSuffix: '(2026/2027, 1-semestr)' }.
+ * This allows showing the subject name on the first line and the term suffix as a smaller muted second line.
+ */
+export function splitCourseTitle(title: string): ParsedCourseTitle {
+  const match = /^(.*?)\s*(\([^)]*\d{4}\/\d{4}[^)]*\))$/.exec(title)
+  if (match?.[1] && match[2]) {
+    return {
+      subject: match[1].trim(),
+      termSuffix: match[2].trim(),
+    }
+  }
+  return { subject: title }
+}
+
 export function narrowClass(raw: Schemas['ClassView']): ClassItem | null {
   if (
     raw.entryId === undefined ||

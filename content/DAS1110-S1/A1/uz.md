@@ -51,7 +51,7 @@ C++ dasturi kompilyatsiya qilinayotganda uch bosqichdan oʻtadi:
 2. **Kompilyatsiya** — matnni obyekt fayliga (mashina kodiga) oʻgiradi; sintaksis xatolari shu yerda topiladi.
 3. **Bogʻlash (linking)** — obyekt fayllarini va kutubxonalarni bitta bajariladigan faylga birlashtiradi.
 
-Java'da fayl nomi `public` klass nomi bilan bir xil boʻlishi shart: `public class Main` faqat `Main.java` faylida turadi.
+Javaʼda fayl nomi `public` klass nomi bilan bir xil boʻlishi shart: `public class Main` faqat `Main.java` faylida turadi.
 
 ## Kompilyator xabarlarini oʻqish
 
@@ -83,7 +83,7 @@ Dasturdagi har bir nom biror narsani bildiradi. Nima bildirishiga qarab nomlar t
 
 Uslublar nomlari: `snake_case` (pastki chiziq bilan), `camelCase` (keyingi soʻzlar katta harf bilan), `PascalCase` (birinchi harf ham katta), `UPPER_CASE` (hammasi katta). Kompilyator uslubni tekshirmaydi, lekin jamoada hamma bir xil yozadi — bu kodni oʻqishni osonlashtiradi.
 
-**Oʻzgaruvchi (variable)** qiymati dastur davomida oʻzgarishi mumkin. **Oʻzgarmas (constant)** qiymati bir marta beriladi: C++'da `const`, Java'da `final` bilan; Python'da esa faqat kelishuv boʻyicha (katta harfli nom).
+**Oʻzgaruvchi (variable)** qiymati dastur davomida oʻzgarishi mumkin. **Oʻzgarmas (constant)** qiymati bir marta beriladi: C++'da `const`, Javaʼda `final` bilan; Pythonʼda esa faqat kelishuv boʻyicha (katta harfli nom).
 
 ## Ishlangan misol 1: toʻgʻri toʻrtburchak
 
@@ -205,7 +205,7 @@ Kirish `5` va `9` boʻlsa, qiymatlar qadamma-qadam shunday oʻzgaradi:
 | `a = b` | 9 | 9 | 5 |
 | `b = temp` | 9 | 5 | 5 |
 
-Natija: `a = 9 b = 5`. Agar `a = b; b = a;` deb yozsak, ikkalasi ham 9 boʻlib qoladi: *a* ning eski qiymati yoʻqoladi. Python'da qisqa yozuv ham bor: `a, b = b, a`.
+Natija: `a = 9 b = 5`. Agar `a = b; b = a;` deb yozsak, ikkalasi ham 9 boʻlib qoladi: *a* ning eski qiymati yoʻqoladi. Pythonʼda qisqa yozuv ham bor: `a, b = b, a`.
 
 :::warning
 **Koʻp uchraydigan xatolar**
@@ -222,7 +222,7 @@ C++ dasturini `g++ -Wall -Wextra` bilan kompilyatsiya qiling: kompilyator koʻpr
 
 ## Xulosa
 
-- C++ uchun GCC, Clang va MSVC kompilyatorlari bor; Java `javac` bilan bayt-kodga kompilyatsiya qilinib, JVM'da ishlaydi; Python dasturini CPython interpretatori bajaradi.
+- C++ uchun GCC, Clang va MSVC kompilyatorlari bor; Java `javac` bilan bayt-kodga kompilyatsiya qilinib, JVMʼda ishlaydi; Python dasturini CPython interpretatori bajaradi.
 - C++ kompilyatsiyasi: preprotsessor → kompilyatsiya → bogʻlash.
 - Kompilyator xabarida fayl, qator va tavsif bor; birinchi xatodan boshlang, ogohlantirishlarni ham oʻqing.
 - Nomlar turiga qarab turlicha yoziladi: `snake_case`, `camelCase`, `PascalCase`, `UPPER_CASE`.
@@ -231,13 +231,13 @@ C++ dasturini `g++ -Wall -Wextra` bilan kompilyatsiya qiling: kompilyator koʻpr
 ## Oʻzingizni tekshiring
 
 :::check
-Q: GCC, javac va CPython'ning asosiy farqi nimada?
+Q: GCC, javac va CPythonʼning asosiy farqi nimada?
 A: GCC C++ dasturini mashina kodiga kompilyatsiya qiladi, javac Java dasturini JVM bajaradigan bayt-kodga oʻgiradi, CPython esa Python dasturini interpretatsiya qiladi.
 Q: C++ kompilyatsiyasining qaysi bosqichida `#include <iostream>` bajariladi?
 A: Preprotsessor bosqichida: fayl matni dasturga qoʻshiladi.
 Q: `main.cpp:12:5: error: 'cout' was not declared in this scope` xabari nimani bildiradi?
 A: `main.cpp` faylining 12-qatori, 5-ustunida `cout` nomi tanilmadi: `#include <iostream>` yoki `using namespace std;` (yoki `std::cout`) tushib qolgan.
-Q: Java'da oʻzgarmas va klass nomlari qanday yoziladi?
+Q: Javaʼda oʻzgarmas va klass nomlari qanday yoziladi?
 A: Oʻzgarmas — `UPPER_CASE` (`MAX_BALL`), klass — `PascalCase` (`Talaba`).
 Q: `a = b; b = a;` nima uchun qiymatlarni almashtirmaydi?
 A: Birinchi qatordan keyin *a* ning eski qiymati yoʻqoladi, ikkala oʻzgaruvchida *b* ning qiymati qoladi.

@@ -20,7 +20,8 @@ export const courseKeys = {
   progress: (courseId: string) => ['course-progress', courseId] as const,
   activities: (courseId?: string) =>
     courseId === undefined ? (['activities', 'me'] as const) : (['activities', 'me', courseId] as const),
-  grades: (enrollmentId: string) => ['grades', enrollmentId] as const,
+  grades: (enrollmentId: string, locale?: Locale) =>
+    locale === undefined ? (['grades', enrollmentId] as const) : (['grades', enrollmentId, locale] as const),
   subject: (subjectId: string, locale: Locale) => ['subject', subjectId, locale] as const,
 }
 
@@ -108,12 +109,14 @@ export function useActivitiesQuery(locale: Locale, courseId?: string) {
   })
 }
 
-function gradesQuery(enrollment: Enrollment) {
+function gradesQuery(enrollment: Enrollment, locale?: Locale) {
   return queryOptions({
-    queryKey: courseKeys.grades(enrollment.id),
+    queryKey: courseKeys.grades(enrollment.id, locale),
     queryFn: async () => {
       const view = await unwrap(
-        api.GET('/api/v1/enrollments/{id}/grades', { params: { path: { id: enrollment.id } } }),
+        api.GET('/api/v1/enrollments/{id}/grades', {
+          params: { path: { id: enrollment.id }, query: locale !== undefined ? { locale } : undefined },
+        }),
       )
       return (view.entries ?? [])
         .map(narrowGrade)
@@ -123,17 +126,17 @@ function gradesQuery(enrollment: Enrollment) {
   })
 }
 
-export function useGradesQuery(enrollment: Enrollment | undefined) {
+export function useGradesQuery(enrollment: Enrollment | undefined, locale?: Locale) {
   return useQuery({
-    ...gradesQuery(enrollment ?? { id: '', courseId: '', subjectCode: '' }),
+    ...gradesQuery(enrollment ?? { id: '', courseId: '', subjectCode: '' }, locale),
     enabled: enrollment !== undefined,
   })
 }
 
 /** The newest published grades across all of the student's courses. */
-export function useRecentGrades(enrollments: readonly Enrollment[] | undefined, limit: number) {
+export function useRecentGrades(enrollments: readonly Enrollment[] | undefined, limit: number, locale?: Locale) {
   return useQueries({
-    queries: (enrollments ?? []).map(gradesQuery),
+    queries: (enrollments ?? []).map((enrollment) => gradesQuery(enrollment, locale)),
     combine: (results) => ({
       pending: enrollments === undefined || results.some((result) => result.isPending),
       error: results.find((result) => result.isError)?.error,

@@ -51,7 +51,7 @@ Kompilyator yoki interpretator dastur matnini avval **leksemalarga (tokens)** �
 | `oʻrtacha` | tavsiya etilmaydi | `ʻ` belgisi koʻp tillarda ruxsat etilmaydi |
 | `for` | yoʻq | kalit soʻz |
 
-**Yaxshi nom** — maʼnosini aytib turadigan nom: `x` emas, `talabalar_soni`; `a1` emas, `oylik_maosh`. Python'da soʻzlar pastki chiziq bilan ajratiladi (`oylik_maosh`), Java va C++'da koʻpincha „tuya“ uslubi ishlatiladi (`oylikMaosh`).
+**Yaxshi nom** — maʼnosini aytib turadigan nom: `x` emas, `talabalar_soni`; `a1` emas, `oylik_maosh`. Pythonʼda soʻzlar pastki chiziq bilan ajratiladi (`oylik_maosh`), Java va C++'da koʻpincha „tuya“ uslubi ishlatiladi (`oylikMaosh`).
 
 ## Kalit soʻzlar
 
@@ -152,7 +152,7 @@ int main() {
 
 Kirish `5` boʻlsa, uchala dastur ham `78.54` chiqaradi:
 
-1. `PI` — oʻzgarmas nom; Java'da `final`, C++'da `const` uning qiymati oʻzgarmasligini kafolatlaydi. Python'da oʻzgarmaslik kelishuv boʻyicha — nom katta harflarda yoziladi.
+1. `PI` — oʻzgarmas nom; Javaʼda `final`, C++'da `const` uning qiymati oʻzgarmasligini kafolatlaydi. Pythonʼda oʻzgarmaslik kelishuv boʻyicha — nom katta harflarda yoziladi.
 2. Radius haqiqiy son sifatida oʻqiladi: `float(...)`, `nextDouble()`, `cin >> r`.
 3. `PI * r * r` ifodasi hisoblanib, *s* ga yoziladi: 3.14159 · 25 = 78.53975.
 4. Natija ikki kasr xonagacha yaxlitlanib chiqariladi.
@@ -183,7 +183,7 @@ Nom tanlashda „bu nomni boshqa odam oʻqisa, izohsiz tushunadimi?“ deb oʻzi
 :::check
 Q: `2guruh`, `guruh_2`, `class`, `_soni` — qaysilari toʻgʻri identifikator?
 A: `guruh_2` va `_soni`. `2guruh` raqam bilan boshlanadi, `class` esa Java va C++'da kalit soʻz.
-Q: Java'da `int a = 7, b = 2; System.out.println(a / b);` nima chiqaradi?
+Q: Javaʼda `int a = 7, b = 2; System.out.println(a / b);` nima chiqaradi?
 A: `3`. Ikkala son ham butun, shuning uchun boʻlish butun qismini qaytaradi.
 Q: Statik va dinamik turlashgan til oʻrtasidagi farq nima?
 A: Statik turlashgan tilda (Java, C++) oʻzgaruvchining turi eʼlon qilinganda yoziladi va oʻzgarmaydi. Dinamik turlashgan tilda (Python) tur qiymatdan aniqlanadi va oʻzgaruvchiga keyin boshqa turdagi qiymat berilishi mumkin.

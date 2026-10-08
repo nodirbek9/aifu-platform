@@ -1,17 +1,17 @@
 {
   "title": "Dasturlash",
   "shortTitle": "Dasturlash",
-  "aim": "Fanni o'qitishdan maqsad – talabalarga dasturlash tillarining fundamental tushunchalari va algoritmlash usullarini, turli sohaga tegishli amaliy masalalarni yechishni, mantiqiy fikrlashni o'rgatish, turli xil dasturlash muhitlarida ilovalar yaratish va ularni amaliyotga tatbiq etish ko'nikmalarini hosil qilishdan iborat. Shuningdek, obyektga yo'naltirilgan dasturlash tamoyillari va dasturlash tillarining takomillashgan imkoniyatlari bilan tanishtirish.",
-  "objectives": "Fanning vazifasi – dasturlashni o'rganayotgan talabalar uchun texnologik innovatsiyalarni qabul qilish, nazariy bilimlar va amaliy ko'nikmalarni shakllantirish, texnik bilimlarga oid masalalarni zamonaviy dasturlash tillari yordamida hal etish va ularning usullarini kasbiy faoliyatga qo'llay olishga erishishdan iborat.",
+  "aim": "Fanni oʻqitishdan maqsad – talabalarga dasturlash tillarining fundamental tushunchalari va algoritmlash usullarini, turli sohaga tegishli amaliy masalalarni yechishni, mantiqiy fikrlashni oʻrgatish, turli xil dasturlash muhitlarida ilovalar yaratish va ularni amaliyotga tatbiq etish koʻnikmalarini hosil qilishdan iborat. Shuningdek, obyektga yoʻnaltirilgan dasturlash tamoyillari va dasturlash tillarining takomillashgan imkoniyatlari bilan tanishtirish.",
+  "objectives": "Fanning vazifasi – dasturlashni oʻrganayotgan talabalar uchun texnologik innovatsiyalarni qabul qilish, nazariy bilimlar va amaliy koʻnikmalarni shakllantirish, texnik bilimlarga oid masalalarni zamonaviy dasturlash tillari yordamida hal etish va ularning usullarini kasbiy faoliyatga qoʻllay olishga erishishdan iborat.",
   "outcomes": {
-    "TN1": "Axborot, uni saqlash usullari, qayta ishlash va uzatish, hisoblash tizimlarining matematik va dasturiy ta'minoti, ularni fan sohalarida, ishlab chiqarish va ta'limda qo'llash xususiyatlari bo'lishi kerak.",
-    "TN2": "Kompyuterni dasturiy ta'minoti, dastur turlari va xususiyatlari haqida tasavvurga ega bo'lishi kerak.",
-    "TN3": "Yuqori darajadagi dasturlash tillarini, dasturiy ta'minotni, dasturlash texnologiyalaridan foydalanish ko'nikmalariga ega bo'lishi kerak.",
-    "TN4": "Tatbiqiy va hisoblash matematikasi masalalarini yechish algoritmlarini tuzish bo'yicha nazariy bilimlarga ega bo'lishi kerak.",
-    "TN5": "Vektor analiz, maydon nazariyasi va kompleks o'zgaruvchili funksiyalar nazariyasining asosiy tushunchalari, ta'rif va teoremalari haqida bilimga ega bo'lishi kerak.",
-    "TN6": "Fanni o'rganishda talabalar tegishli jarayonlar haqida tasavvurga ega bo'lishlari, ayni paytda ularni mantiqiy fikrlash va to'g'ri xulosalar chiqara olishi kerak.",
-    "TN7": "Obyektga yo'naltirilgan dasturlash konsepsiyalari, inkapsulyatsiya, vorislik, polimorfizm qoidalarini o'rganish va amaliy masalalarni ular yordamida yechish ko'nikmalariga ega bo'lishi kerak.",
-    "TN8": "Tatbiqiy masalalarni yechish algoritmini tuzish, matematik (kompyuter) modelini qurish va uning dasturiy ta'minotini yaratish, chiziqli ro'yxatlar hosil qilish, strukturada berilganlarni jamlash va ko'rsatkichlar bilan ishlash ko'nikmasiga ega bo'lishi kerak.",
-    "TN9": "Olingan bilim va ko'nikmalarni o'z mutaxassisligi doirasidagi muammolarni tahlil qilish va ularga yechim topishda mustaqil va ijodiy qo'llay olishi kerak."
+    "TN1": "Axborot, uni saqlash usullari, qayta ishlash va uzatish, hisoblash tizimlarining matematik va dasturiy taʼminoti, ularni fan sohalarida, ishlab chiqarish va taʼlimda qoʻllash xususiyatlari boʻlishi kerak.",
+    "TN2": "Kompyuterni dasturiy taʼminoti, dastur turlari va xususiyatlari haqida tasavvurga ega boʻlishi kerak.",
+    "TN3": "Yuqori darajadagi dasturlash tillarini, dasturiy taʼminotni, dasturlash texnologiyalaridan foydalanish koʻnikmalariga ega boʻlishi kerak.",
+    "TN4": "Tatbiqiy va hisoblash matematikasi masalalarini yechish algoritmlarini tuzish boʻyicha nazariy bilimlarga ega boʻlishi kerak.",
+    "TN5": "Vektor analiz, maydon nazariyasi va kompleks oʻzgaruvchili funksiyalar nazariyasining asosiy tushunchalari, taʼrif va teoremalari haqida bilimga ega boʻlishi kerak.",
+    "TN6": "Fanni oʻrganishda talabalar tegishli jarayonlar haqida tasavvurga ega boʻlishlari, ayni paytda ularni mantiqiy fikrlash va toʻgʻri xulosalar chiqara olishi kerak.",
+    "TN7": "Obyektga yoʻnaltirilgan dasturlash konsepsiyalari, inkapsulyatsiya, vorislik, polimorfizm qoidalarini oʻrganish va amaliy masalalarni ular yordamida yechish koʻnikmalariga ega boʻlishi kerak.",
+    "TN8": "Tatbiqiy masalalarni yechish algoritmini tuzish, matematik (kompyuter) modelini qurish va uning dasturiy taʼminotini yaratish, chiziqli roʻyxatlar hosil qilish, strukturada berilganlarni jamlash va koʻrsatkichlar bilan ishlash koʻnikmasiga ega boʻlishi kerak.",
+    "TN9": "Olingan bilim va koʻnikmalarni oʻz mutaxassisligi doirasidagi muammolarni tahlil qilish va ularga yechim topishda mustaqil va ijodiy qoʻllay olishi kerak."
   }
 }

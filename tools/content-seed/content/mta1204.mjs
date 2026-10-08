@@ -13,11 +13,11 @@ const tasks = [
     instructions: 'Kirish: a b. Chiqish: bitta satrda EKUB va qadamlar soni (b ≠ 0 boʻlgan har bir aylanish bitta qadam).',
     constraints: '1 ≤ a, b ≤ 10^9.',
     python: {
-      starter: 'a, b = map(int, input().split())\nsteps = 0\n# TODO: while b != 0 sikli\n',
+      starter: 'a, b = map(int, input().split())\nsteps = 0\n# ...\n',
       solution: 'a, b = map(int, input().split())\nsteps = 0\nwhile b != 0:\n    a, b = b, a % b\n    steps += 1\nprint(a, steps)\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), b = in.nextLong();\n        int steps = 0;\n        // TODO: while (b != 0) sikli\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), b = in.nextLong();\n        int steps = 0;\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), b = in.nextLong();\n        int steps = 0;\n        while (b != 0) {\n            long t = a % b;\n            a = b;\n            b = t;\n            steps++;\n        }\n        System.out.println(a + " " + steps);\n    }'),
     },
     tests: [['48 18', '6 3'], ['7 13', '1 4'], ['10 10', '10 1'], ['1 1000000000', '1 2'], ['832040 514229', '1 28']],
@@ -29,11 +29,11 @@ const tasks = [
     instructions: 'Kirish: n. Chiqish: F(n), bunda F(0) = 0, F(1) = 1.',
     constraints: '0 ≤ n ≤ 90 (natija long turiga sigʻadi).',
     python: {
-      starter: 'from functools import lru_cache\n\n\n@lru_cache(maxsize=None)\ndef fib(n):\n    # TODO\n    pass\n\n\nprint(fib(int(input())))\n',
+      starter: 'from functools import lru_cache\n\n\n@lru_cache(maxsize=None)\ndef fib(n):\n    # ...\n    pass\n\n\nprint(fib(int(input())))\n',
       solution: 'from functools import lru_cache\n\n\n@lru_cache(maxsize=None)\ndef fib(n):\n    if n < 2:\n        return n\n    return fib(n - 1) + fib(n - 2)\n\n\nprint(fib(int(input())))\n',
     },
     java: {
-      starter: J('    static long[] memo = new long[91];\n\n    static long fib(int n) {\n        // TODO: memo[n] ni ishlating\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(fib(new Scanner(System.in).nextInt()));\n    }'),
+      starter: J('    static long[] memo = new long[91];\n\n    static long fib(int n) {\n        // ...\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        System.out.println(fib(new Scanner(System.in).nextInt()));\n    }'),
       solution: J('    static long[] memo = new long[91];\n\n    static long fib(int n) {\n        if (n < 2) return n;\n        if (memo[n] != 0) return memo[n];\n        return memo[n] = fib(n - 1) + fib(n - 2);\n    }\n\n    public static void main(String[] args) {\n        System.out.println(fib(new Scanner(System.in).nextInt()));\n    }'),
     },
     tests: [['10', '55'], ['0', '0'], ['1', '1'], ['50', '12586269025'], ['90', '2880067194370816120']],
@@ -46,11 +46,11 @@ const tasks = [
     constraints: '1 ≤ n, q ≤ 10^5.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'import sys\nfrom bisect import bisect_left, bisect_right\n\ndata = sys.stdin.read().split()\n# TODO\n',
+      starter: 'import sys\nfrom bisect import bisect_left, bisect_right\n\ndata = sys.stdin.read().split()\n# ...\n',
       solution: 'import sys\nfrom bisect import bisect_left, bisect_right\n\ndata = sys.stdin.read().split()\nn = int(data[0])\na = list(map(int, data[1:1 + n]))\nq = int(data[1 + n])\nout = []\nfor x in map(int, data[2 + n:2 + n + q]):\n    out.append(str(bisect_right(a, x) - bisect_left(a, x)))\nprint("\\n".join(out))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        // TODO: pastki chegara (lower bound) va yuqori chegara (upper bound)\n    }', IO),
+      starter: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        // ...\n    }', IO),
       solution: J('    static int lowerBound(long[] a, long x) {\n        int lo = 0, hi = a.length;\n        while (lo < hi) {\n            int mid = (lo + hi) >>> 1;\n            if (a[mid] < x) lo = mid + 1; else hi = mid;\n        }\n        return lo;\n    }\n\n    public static void main(String[] args) throws IOException {\n        StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));\n        st.nextToken();\n        int n = (int) st.nval;\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) { st.nextToken(); a[i] = (long) st.nval; }\n        st.nextToken();\n        int q = (int) st.nval;\n        StringBuilder out = new StringBuilder();\n        for (int k = 0; k < q; k++) {\n            st.nextToken();\n            long x = (long) st.nval;\n            out.append(lowerBound(a, x + 1) - lowerBound(a, x)).append(\'\\n\');\n        }\n        System.out.print(out);\n    }', IO),
     },
     tests: [['7\n1 2 2 2 5 7 7\n3\n2\n7\n4', '3\n2\n0'], ['1\n5\n2\n5\n6', '1\n0'], ['5\n-3 -3 -3 -3 -3\n2\n-3\n0', '5\n0']],
@@ -63,11 +63,11 @@ const tasks = [
     constraints: '1 ≤ n ≤ 10^5.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'def sift_down(a, i, n):\n    # TODO\n    pass\n\n\ndef heap_sort(a):\n    # TODO\n    pass\n\n\ninput()\na = list(map(int, input().split()))\nheap_sort(a)\nprint(" ".join(map(str, a)))\n',
+      starter: 'def sift_down(a, i, n):\n    # ...\n    pass\n\n\ndef heap_sort(a):\n    # ...\n    pass\n\n\ninput()\na = list(map(int, input().split()))\nheap_sort(a)\nprint(" ".join(map(str, a)))\n',
       solution: 'def sift_down(a, i, n):\n    while True:\n        big = i\n        l, r = 2 * i + 1, 2 * i + 2\n        if l < n and a[l] > a[big]:\n            big = l\n        if r < n and a[r] > a[big]:\n            big = r\n        if big == i:\n            return\n        a[i], a[big] = a[big], a[i]\n        i = big\n\n\ndef heap_sort(a):\n    n = len(a)\n    for i in range(n // 2 - 1, -1, -1):\n        sift_down(a, i, n)\n    for end in range(n - 1, 0, -1):\n        a[0], a[end] = a[end], a[0]\n        sift_down(a, 0, end)\n\n\ninput()\na = list(map(int, input().split()))\nheap_sort(a)\nprint(" ".join(map(str, a)))\n',
     },
     java: {
-      starter: J('    static void siftDown(long[] a, int i, int n) {\n        // TODO\n    }\n\n    static void heapSort(long[] a) {\n        // TODO\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = Long.parseLong(st.nextToken());\n        heapSort(a);\n        // TODO: chiqaring\n    }', IO),
+      starter: J('    static void siftDown(long[] a, int i, int n) {\n        // ...\n    }\n\n    static void heapSort(long[] a) {\n        // ...\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = Long.parseLong(st.nextToken());\n        heapSort(a);\n        // ...\n    }', IO),
       solution: J('    static void siftDown(long[] a, int i, int n) {\n        while (true) {\n            int big = i, l = 2 * i + 1, r = 2 * i + 2;\n            if (l < n && a[l] > a[big]) big = l;\n            if (r < n && a[r] > a[big]) big = r;\n            if (big == i) return;\n            long t = a[i]; a[i] = a[big]; a[big] = t;\n            i = big;\n        }\n    }\n\n    static void heapSort(long[] a) {\n        int n = a.length;\n        for (int i = n / 2 - 1; i >= 0; i--) siftDown(a, i, n);\n        for (int end = n - 1; end > 0; end--) {\n            long t = a[0]; a[0] = a[end]; a[end] = t;\n            siftDown(a, 0, end);\n        }\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(br.readLine().trim());\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = Long.parseLong(st.nextToken());\n        heapSort(a);\n        StringBuilder out = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) out.append(\' \');\n            out.append(a[i]);\n        }\n        System.out.println(out);\n    }', IO),
     },
     tests: [['6\n5 1 4 2 8 0', '0 1 2 4 5 8'], ['1\n3', '3'], ['5\n-1 -1 3 -7 2', '-7 -1 -1 2 3']],
@@ -79,11 +79,11 @@ const tasks = [
     instructions: 'Kirish: n; n ta son. Chiqish: almashtirishlar soni.',
     constraints: '1 ≤ n ≤ 2000.',
     python: {
-      starter: 'n = int(input())\na = list(map(int, input().split()))\nswaps = 0\n# TODO: pufaksimon saralashni bajarib, almashtirishlarni sanang\nprint(swaps)\n',
+      starter: 'n = int(input())\na = list(map(int, input().split()))\nswaps = 0\n# ...\nprint(swaps)\n',
       solution: 'n = int(input())\na = list(map(int, input().split()))\nswaps = 0\nfor i in range(n):\n    for j in range(n - 1 - i):\n        if a[j] > a[j + 1]:\n            a[j], a[j + 1] = a[j + 1], a[j]\n            swaps += 1\nprint(swaps)\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        long swaps = 0;\n        // TODO: pufaksimon saralashni bajarib, almashtirishlarni sanang\n        System.out.println(swaps);\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        long swaps = 0;\n        // ...\n        System.out.println(swaps);\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        long swaps = 0;\n        for (int i = 0; i < n; i++)\n            for (int j = 0; j < n - 1 - i; j++)\n                if (a[j] > a[j + 1]) { long t = a[j]; a[j] = a[j + 1]; a[j + 1] = t; swaps++; }\n        System.out.println(swaps);\n    }'),
     },
     tests: [['4\n4 3 2 1', '6'], ['5\n1 2 3 4 5', '0'], ['5\n2 4 1 3 5', '3'], ['3\n1 1 1', '0']],
@@ -95,11 +95,11 @@ const tasks = [
     instructions: 'Kirish: bitta satr. Chiqish: Muvozanatli yoki Muvozanatsiz.',
     constraints: 'Satr uzunligi 1 dan 10^5 gacha.',
     python: {
-      starter: 's = input().strip()\nstack = []\n# TODO\n',
+      starter: 's = input().strip()\nstack = []\n# ...\n',
       solution: 's = input().strip()\npairs = {")": "(", "]": "[", "}": "{"}\nstack = []\nok = True\nfor ch in s:\n    if ch in "([{":\n        stack.append(ch)\n    elif not stack or stack.pop() != pairs[ch]:\n        ok = False\n        break\nprint("Muvozanatli" if ok and not stack else "Muvozanatsiz")\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine().trim();\n        Deque<Character> stack = new ArrayDeque<>();\n        // TODO\n    }'),
+      starter: J('    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine().trim();\n        Deque<Character> stack = new ArrayDeque<>();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine().trim();\n        Deque<Character> stack = new ArrayDeque<>();\n        boolean ok = true;\n        for (char ch : s.toCharArray()) {\n            if (ch == \'(\' || ch == \'[\' || ch == \'{\') stack.push(ch);\n            else {\n                char open = ch == \')\' ? \'(\' : ch == \']\' ? \'[\' : \'{\';\n                if (stack.isEmpty() || stack.pop() != open) { ok = false; break; }\n            }\n        }\n        System.out.println(ok && stack.isEmpty() ? "Muvozanatli" : "Muvozanatsiz");\n    }'),
     },
     tests: [['([]{})', 'Muvozanatli'], ['([)]', 'Muvozanatsiz'], ['((', 'Muvozanatsiz'], ['{[()()]}', 'Muvozanatli'], [')(', 'Muvozanatsiz']],
@@ -112,11 +112,11 @@ const tasks = [
     constraints: '1 ≤ n ≤ 10^4, 0 ≤ m ≤ 5·10^4, 0 ≤ w ≤ 10^6.',
     difficulty: 'HARD',
     python: {
-      starter: 'import heapq\nimport sys\n\ndata = sys.stdin.read().split()\n# TODO: qoʻshnilik roʻyxati va heapq bilan Deykstra\n',
+      starter: 'import heapq\nimport sys\n\ndata = sys.stdin.read().split()\n# ...\n',
       solution: 'import heapq\nimport sys\n\ndata = sys.stdin.read().split()\nn, m = int(data[0]), int(data[1])\nadj = [[] for _ in range(n + 1)]\npos = 2\nfor _ in range(m):\n    u, v, w = int(data[pos]), int(data[pos + 1]), int(data[pos + 2])\n    pos += 3\n    adj[u].append((v, w))\n    adj[v].append((u, w))\ns = int(data[pos])\nINF = float("inf")\ndist = [INF] * (n + 1)\ndist[s] = 0\npq = [(0, s)]\nwhile pq:\n    d, u = heapq.heappop(pq)\n    if d > dist[u]:\n        continue\n    for v, w in adj[u]:\n        if d + w < dist[v]:\n            dist[v] = d + w\n            heapq.heappush(pq, (dist[v], v))\nprint(" ".join(str(d) if d != INF else "-1" for d in dist[1:]))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) throws IOException {\n        StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));\n        // TODO: qoʻshnilik roʻyxati va PriorityQueue bilan Deykstra\n    }', IO),
+      starter: J('    public static void main(String[] args) throws IOException {\n        StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));\n        // ...\n    }', IO),
       solution: J('    public static void main(String[] args) throws IOException {\n        StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));\n        st.nextToken(); int n = (int) st.nval;\n        st.nextToken(); int m = (int) st.nval;\n        List<List<long[]>> adj = new ArrayList<>();\n        for (int i = 0; i <= n; i++) adj.add(new ArrayList<>());\n        for (int i = 0; i < m; i++) {\n            st.nextToken(); int u = (int) st.nval;\n            st.nextToken(); int v = (int) st.nval;\n            st.nextToken(); long w = (long) st.nval;\n            adj.get(u).add(new long[] {v, w});\n            adj.get(v).add(new long[] {u, w});\n        }\n        st.nextToken(); int s = (int) st.nval;\n        long[] dist = new long[n + 1];\n        Arrays.fill(dist, Long.MAX_VALUE);\n        dist[s] = 0;\n        PriorityQueue<long[]> pq = new PriorityQueue<>(Comparator.comparingLong(x -> x[0]));\n        pq.add(new long[] {0, s});\n        while (!pq.isEmpty()) {\n            long[] top = pq.poll();\n            int u = (int) top[1];\n            if (top[0] > dist[u]) continue;\n            for (long[] e : adj.get(u)) {\n                int v = (int) e[0];\n                if (top[0] + e[1] < dist[v]) {\n                    dist[v] = top[0] + e[1];\n                    pq.add(new long[] {dist[v], v});\n                }\n            }\n        }\n        StringBuilder out = new StringBuilder();\n        for (int i = 1; i <= n; i++) {\n            if (i > 1) out.append(\' \');\n            out.append(dist[i] == Long.MAX_VALUE ? -1 : dist[i]);\n        }\n        System.out.println(out);\n    }', IO),
     },
     tests: [
@@ -133,11 +133,11 @@ const tasks = [
     constraints: '1 ≤ n, q ≤ 10^5, |qiymatlar| ≤ 10^9.',
     difficulty: 'HARD',
     python: {
-      starter: 'import sys\n\n\nclass Fenwick:\n    def __init__(self, n):\n        self.t = [0] * (n + 1)\n\n    def add(self, i, x):\n        # TODO: i += i & -i\n        pass\n\n    def prefix(self, i):\n        # TODO: i -= i & -i\n        pass\n\n\ndata = sys.stdin.read().split()\n# TODO\n',
+      starter: 'import sys\n\n\nclass Fenwick:\n    def __init__(self, n):\n        self.t = [0] * (n + 1)\n\n    def add(self, i, x):\n        # ...\n        pass\n\n    def prefix(self, i):\n        # ...\n        pass\n\n\ndata = sys.stdin.read().split()\n# ...\n',
       solution: 'import sys\n\n\nclass Fenwick:\n    def __init__(self, n):\n        self.n = n\n        self.t = [0] * (n + 1)\n\n    def add(self, i, x):\n        while i <= self.n:\n            self.t[i] += x\n            i += i & -i\n\n    def prefix(self, i):\n        s = 0\n        while i > 0:\n            s += self.t[i]\n            i -= i & -i\n        return s\n\n\ndata = sys.stdin.read().split()\nn = int(data[0])\nfw = Fenwick(n)\nfor i in range(n):\n    fw.add(i + 1, int(data[1 + i]))\nq = int(data[1 + n])\npos = 2 + n\nout = []\nfor _ in range(q):\n    op, a, b = data[pos], int(data[pos + 1]), int(data[pos + 2])\n    pos += 3\n    if op == "add":\n        fw.add(a, b)\n    else:\n        out.append(str(fw.prefix(b) - fw.prefix(a - 1)))\nprint("\\n".join(out))\n',
     },
     java: {
-      starter: J('    static long[] t;\n    static int n;\n\n    static void add(int i, long x) {\n        // TODO: i += i & -i\n    }\n\n    static long prefix(int i) {\n        // TODO: i -= i & -i\n        return 0;\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        // TODO\n    }', IO),
+      starter: J('    static long[] t;\n    static int n;\n\n    static void add(int i, long x) {\n        // ...\n    }\n\n    static long prefix(int i) {\n        // ...\n        return 0;\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        // ...\n    }', IO),
       solution: J('    static long[] t;\n    static int n;\n\n    static void add(int i, long x) {\n        for (; i <= n; i += i & -i) t[i] += x;\n    }\n\n    static long prefix(int i) {\n        long s = 0;\n        for (; i > 0; i -= i & -i) s += t[i];\n        return s;\n    }\n\n    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        n = Integer.parseInt(br.readLine().trim());\n        t = new long[n + 1];\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        for (int i = 1; i <= n; i++) add(i, Long.parseLong(st.nextToken()));\n        int q = Integer.parseInt(br.readLine().trim());\n        StringBuilder out = new StringBuilder();\n        for (int k = 0; k < q; k++) {\n            st = new StringTokenizer(br.readLine());\n            String op = st.nextToken();\n            int a = Integer.parseInt(st.nextToken());\n            long b = Long.parseLong(st.nextToken());\n            if (op.equals("add")) add(a, b);\n            else out.append(prefix((int) b) - prefix(a - 1)).append(\'\\n\');\n        }\n        System.out.print(out);\n    }', IO),
     },
     tests: [

@@ -1,6 +1,6 @@
 ---
 title: Takrorlanuvchi jarayonlar. Soʻng shartli takrorlash operatori. Ichma-ich takrorlanish
-summary: do-while sikli va uning Python'dagi oʻrnini bosuvchi while True + break; kiritishni tekshirish; ichma-ich sikllar, tashqi va ichki hisoblagich, ichki sikldagi break.
+summary: do-while sikli va uning Pythonʼdagi oʻrnini bosuvchi while True + break; kiritishni tekshirish; ichma-ich sikllar, tashqi va ichki hisoblagich, ichki sikldagi break.
 ---
 
 ## Nima uchun bu mavzu muhim?
@@ -12,7 +12,7 @@ Dars jadvali esa haftaning har bir kuni uchun, har bir kunning har bir parasi uc
 :::note
 **Bu mashgʻulotdan soʻng siz:**
 
-- `do-while` siklini Java va C++'da, uning oʻrnini bosuvchi `while True` + `break` ni Python'da yoza olasiz;
+- `do-while` siklini Java va C++'da, uning oʻrnini bosuvchi `while True` + `break` ni Pythonʼda yoza olasiz;
 - foydalanuvchi toʻgʻri qiymat kiritguncha soʻrovni takrorlay olasiz;
 - ichma-ich sikllar bilan jadval va shakllar chiqara olasiz;
 - ichma-ich sikl necha marta bajarilishini hisoblay olasiz va ichki sikldagi `break` ning taʼsirini tushuntira olasiz.
@@ -27,7 +27,7 @@ Dars jadvali esa haftaning har bir kuni uchun, har bir kunning har bir parasi uc
 | Java, C++ | `do { tana } while (shart);` |
 | Python | `while True:` → tana → `if not shart: break` |
 
-Python'da `do-while` yoʻq. Uning oʻrniga **cheksiz sikl va undan chiqish** andozasi ishlatiladi: `while True:` ichida tana, oxirida shart yolgʻon boʻlsa `break`.
+Pythonʼda `do-while` yoʻq. Uning oʻrniga **cheksiz sikl va undan chiqish** andozasi ishlatiladi: `while True:` ichida tana, oxirida shart yolgʻon boʻlsa `break`.
 
 `while` va `do-while` farqi faqat birinchi tekshiruvda: `while` tanani bir marta ham bajarmasligi mumkin, `do-while` esa kamida bir marta bajaradi. Shuning uchun `do-while` „avval qil, keyin tekshir“ masalalarida tabiiy: kiritishni tekshirish, menyu, „yana oʻynaysizmi?“.
 
@@ -164,7 +164,7 @@ Kirish `4` boʻlsa, chiqadi:
 ****
 ```
 
-Tashqi sikl qatorlarni, ichki sikl qatordagi belgilarni sanaydi. Yangi qator ichki sikldan **keyin**, lekin tashqi siklning ichida chiqariladi. Ichki tana 1 + 2 + 3 + 4 = 10 marta bajariladi. (Python'da qisqasi bor: `print("*" * i)` — lekin bu yerda ichma-ich siklni mashq qilyapmiz.)
+Tashqi sikl qatorlarni, ichki sikl qatordagi belgilarni sanaydi. Yangi qator ichki sikldan **keyin**, lekin tashqi siklning ichida chiqariladi. Ichki tana 1 + 2 + 3 + 4 = 10 marta bajariladi. (Pythonʼda qisqasi bor: `print("*" * i)` — lekin bu yerda ichma-ich siklni mashq qilyapmiz.)
 
 ## Ishlangan misol 3: Pifagor uchliklari
 
@@ -240,7 +240,7 @@ Ichki sikllar *a* + 1 va *b* + 1 dan boshlanadi — shunda har bir uchlik bir ma
 - **Yangi qatorni notoʻgʻri joyda chiqarish.** Ichki sikl ichida — har belgi alohida qatorda; tashqi sikldan keyin — hammasi bitta qatorda.
 - **`break` tashqi siklni ham toʻxtatadi deb oʻylash.** U faqat ichki siklni tugatadi; tashqisidan chiqish uchun bayroq kerak.
 - **`do-while` oxirida `;` ni unutish** (Java, C++) — kompilyatsiya xatosi.
-- **Python'da `while True:` dan chiqishni unutish** — cheksiz sikl.
+- **Pythonʼda `while True:` dan chiqishni unutish** — cheksiz sikl.
 :::
 
 :::tip
@@ -249,7 +249,7 @@ Ichma-ich siklni yozishdan oldin kichik *n* uchun natijani qogʻozga chizing va 
 
 ## Xulosa
 
-- `do-while` tanani kamida bir marta bajaradi; Python'da uning oʻrniga `while True:` va `break`.
+- `do-while` tanani kamida bir marta bajaradi; Pythonʼda uning oʻrniga `while True:` va `break`.
 - Kiritishni tekshirish — soʻng shartli siklning tipik qoʻllanishi.
 - Tashqi siklning har iteratsiyasida ichki sikl toʻliq bajariladi; jami *n* · *m* marta.
 - Ichki sikl chegarasi tashqi hisoblagichga bogʻliq boʻlishi mumkin (uchburchak shakllar).
@@ -260,7 +260,7 @@ Ichma-ich siklni yozishdan oldin kichik *n* uchun natijani qogʻozga chizing va 
 :::check
 Q: `do { … } while (false);` sikli necha marta bajariladi?
 A: Bir marta: tana shart tekshirilishidan oldin bajariladi.
-Q: Python'da `do-while` ni qanday yozasiz?
+Q: Pythonʼda `do-while` ni qanday yozasiz?
 A: `while True:` ichida tana, oxirida `if not shart: break`.
 Q: `for i in range(5): for j in range(3): print(i, j)` necha qator chiqaradi?
 A: 15: tashqi sikl 5 marta, har birida ichki sikl 3 marta.

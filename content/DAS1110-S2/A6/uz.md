@@ -37,7 +37,7 @@ Muhim xossalar:
 - harfning alifbodagi oʻrni: `c - 'a'` (masalan, `'d' - 'a'` = 3);
 - katta va kichik harf kodi **32** ga farq qiladi: `'a' - 'A'` = 32.
 
-128 dan katta kodli belgilar (oʻzbekcha `ʻ`, kirill harflari, `€`) ASCII'ga kirmaydi — ular Unicode'da boʻlib, UTF-8 da bir nechta bayt bilan yoziladi. Shuning uchun bu mashgʻulotdagi usullar faqat ASCII harflar uchun toʻgʻri.
+128 dan katta kodli belgilar (oʻzbekcha `ʻ`, kirill harflari, `€`) ASCIIʼga kirmaydi — ular Unicodeʼda boʻlib, UTF-8 da bir nechta bayt bilan yoziladi. Shuning uchun bu mashgʻulotdagi usullar faqat ASCII harflar uchun toʻgʻri.
 
 ## Belgi va kod orasida oʻtish
 
@@ -48,7 +48,7 @@ Muhim xossalar:
 | raqam qiymati | `ord(c) - ord('0')` | `c - '0'` | `c - '0'` |
 | harf ekanini tekshirish | `'a' <= c <= 'z'` | `c >= 'a' && c <= 'z'` | `c >= 'a' && c <= 'z'` |
 
-Java va C++'da `char` — butun son turi, shuning uchun `c - '0'` toʻgʻridan-toʻgʻri ishlaydi. Pythonda belgi — uzunligi 1 boʻlgan satr, son emas: arifmetika uchun `ord` va `chr` shart. Java'da `char + int` natijasi `int` boʻladi — belgi kerak boʻlsa, `(char)` bilan qaytariladi.
+Java va C++'da `char` — butun son turi, shuning uchun `c - '0'` toʻgʻridan-toʻgʻri ishlaydi. Pythonda belgi — uzunligi 1 boʻlgan satr, son emas: arifmetika uchun `ord` va `chr` shart. Javaʼda `char + int` natijasi `int` boʻladi — belgi kerak boʻlsa, `(char)` bilan qaytariladi.
 
 ## Ishlangan misol 1: registrni almashtirish
 
@@ -100,7 +100,7 @@ int main() {
 }
 ```
 
-`Salom, Dunyo! 2024` kiritilsa, chiqish: `sALOM, dUNYO! 2024`. Python'da `97` va `122` oʻrniga `ord('a')` va `ord('z')` yozish ham mumkin — kodni yod olish shart emas. C++'da satr belgilari toʻgʻridan-toʻgʻri oʻzgartiriladi; Java va Python'da satr oʻzgarmas, shuning uchun yangi satr yigʻiladi.
+`Salom, Dunyo! 2024` kiritilsa, chiqish: `sALOM, dUNYO! 2024`. Pythonʼda `97` va `122` oʻrniga `ord('a')` va `ord('z')` yozish ham mumkin — kodni yod olish shart emas. C++'da satr belgilari toʻgʻridan-toʻgʻri oʻzgartiriladi; Java va Pythonʼda satr oʻzgarmas, shuning uchun yangi satr yigʻiladi.
 
 ## Ishlangan misol 2: raqamlar satrini songa aylantirish
 
@@ -263,12 +263,12 @@ s 1 *
 v 1 *
 ```
 
-Lugʻat (`dict`, `Map`) oʻrniga 26 elementli massiv ishlatildi: harf kodi `c - 'a'` toʻgʻridan-toʻgʻri indeks boʻladi va harflar avtomatik alifbo tartibida chiqadi. Java'da `(char) ('a' + i)` muhim: `'a' + i` — `int`, qavssiz son chiqar edi. Bu usul kriptografiyada (Sezar shifrini buzish), matn tahlilida va arxivlashda keng qoʻllanadi.
+Lugʻat (`dict`, `Map`) oʻrniga 26 elementli massiv ishlatildi: harf kodi `c - 'a'` toʻgʻridan-toʻgʻri indeks boʻladi va harflar avtomatik alifbo tartibida chiqadi. Javaʼda `(char) ('a' + i)` muhim: `'a' + i` — `int`, qavssiz son chiqar edi. Bu usul kriptografiyada (Sezar shifrini buzish), matn tahlilida va arxivlashda keng qoʻllanadi.
 
 :::warning
 **Koʻp uchraydigan xatolar**
 
-- **Java'da `char + int` ni belgi deb oʻylash.** `'a' + 1` — 98 soni; belgi uchun `(char) ('a' + 1)`.
+- **Javaʼda `char + int` ni belgi deb oʻylash.** `'a' + 1` — 98 soni; belgi uchun `(char) ('a' + 1)`.
 - **Pythonda belgidan son ayirish.** `c - '0'` xato beradi; `ord(c) - ord('0')` yozing.
 - **Raqam belgisini sonning oʻzi deb olish.** `'7'` ning kodi 55, qiymati esa 7; `c - '0'` ni unutmang.
 - **ASCII usulini oʻzbekcha harflarga qoʻllash.** `ʻ`, `ш` kabi belgilar 127 dan katta; `c - 'a'` ular uchun massiv chegarasidan chiqadi — avval `'a' <= c <= 'z'` ni tekshiring.
@@ -280,7 +280,7 @@ Kodlarni yod olish shart emas: `'A'`, `'a'`, `'0'` kabi belgi literallarini yozi
 
 ## Xulosa
 
-- ASCII'da raqamlar (48–57), katta harflar (65–90) va kichik harflar (97–122) ketma-ket joylashgan.
+- ASCIIʼda raqamlar (48–57), katta harflar (65–90) va kichik harflar (97–122) ketma-ket joylashgan.
 - Belgi → kod: `ord` / `(int)`; kod → belgi: `chr` / `(char)`.
 - Raqam qiymati `c - '0'`, harf tartibi `c - 'a'`, registr farqi 32.
 - Raqamlar satri songa Horner sxemasi bilan aylantiriladi: `son = son * 10 + raqam`.
@@ -293,7 +293,7 @@ Q: `'5' - '0'` nimaga teng?
 A: 5 ga: `'5'` ning kodi 53, `'0'` niki 48.
 Q: `'G'` ni kichik harfga kod orqali qanday aylantirish mumkin?
 A: Kodiga 32 qoʻshib: `(char) ('G' + 32)` = `'g'`.
-Q: Java'da `System.out.println('a' + 1);` nima chiqaradi?
+Q: Javaʼda `System.out.println('a' + 1);` nima chiqaradi?
 A: 98 — `char` va `int` yigʻindisi `int`.
 Q: `"305"` satri Horner sxemasi bilan qanday qadamlarda songa aylanadi?
 A: 0 → 3 → 30 → 305.

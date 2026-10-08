@@ -14,11 +14,11 @@ const tasks = [
     instructions: 'Kirish: n; n ta satrda nom ehtimollik taʼsir (nom boʻshliqsiz). Chiqish: har bir satrda nom daraja toifa.',
     constraints: '1 ≤ n ≤ 100.',
     python: {
-      starter: 'n = int(input())\nrisks = []\nfor _ in range(n):\n    name, p, i = input().split()\n    # TODO\n',
+      starter: 'n = int(input())\nrisks = []\nfor _ in range(n):\n    name, p, i = input().split()\n    # ...\n',
       solution: 'def level(score):\n    if score <= 4:\n        return "Past"\n    if score <= 9:\n        return "O\'rta"\n    if score <= 16:\n        return "Yuqori"\n    return "Kritik"\n\n\nn = int(input())\nrisks = []\nfor _ in range(n):\n    name, p, i = input().split()\n    risks.append((name, int(p) * int(i)))\nfor name, score in sorted(risks, key=lambda r: -r[1]):\n    print(name, score, level(score))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        // TODO: nom, ehtimollik, taʼsir; barqaror saralash\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        // ...\n    }'),
       solution: J('    static String level(int s) {\n        if (s <= 4) return "Past";\n        if (s <= 9) return "O\'rta";\n        if (s <= 16) return "Yuqori";\n        return "Kritik";\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        List<String> names = new ArrayList<>();\n        List<Integer> scores = new ArrayList<>();\n        for (int k = 0; k < n; k++) {\n            names.add(in.next());\n            scores.add(in.nextInt() * in.nextInt());\n        }\n        Integer[] order = new Integer[n];\n        for (int k = 0; k < n; k++) order[k] = k;\n        Arrays.sort(order, (a, b) -> scores.get(b) - scores.get(a)); // barqaror\n        for (int k : order) System.out.println(names.get(k) + " " + scores.get(k) + " " + level(scores.get(k)));\n    }'),
     },
     tests: [
@@ -34,11 +34,11 @@ const tasks = [
     instructions: 'Kirish: 1-satr k; 2-satr matn. Chiqish: shifrlangan matn.',
     constraints: '−1000 ≤ k ≤ 1000; matn faqat ASCII belgilaridan iborat.',
     python: {
-      starter: 'k = int(input())\ntext = input()\n# TODO: har bir harfni k ga suring\n',
+      starter: 'k = int(input())\ntext = input()\n# ...\n',
       solution: 'k = int(input())\ntext = input()\nout = []\nfor ch in text:\n    if "a" <= ch <= "z":\n        out.append(chr((ord(ch) - 97 + k) % 26 + 97))\n    elif "A" <= ch <= "Z":\n        out.append(chr((ord(ch) - 65 + k) % 26 + 65))\n    else:\n        out.append(ch)\nprint("".join(out))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int k = Integer.parseInt(br.readLine().trim());\n        String text = br.readLine();\n        // TODO: Math.floorMod manfiy siljishni toʻgʻri hisoblaydi\n    }', IO),
+      starter: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int k = Integer.parseInt(br.readLine().trim());\n        String text = br.readLine();\n        // ...\n    }', IO),
       solution: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        int k = Integer.parseInt(br.readLine().trim());\n        String text = br.readLine();\n        StringBuilder out = new StringBuilder();\n        for (char ch : text.toCharArray()) {\n            if (ch >= \'a\' && ch <= \'z\') out.append((char) (\'a\' + Math.floorMod(ch - \'a\' + k, 26)));\n            else if (ch >= \'A\' && ch <= \'Z\') out.append((char) (\'A\' + Math.floorMod(ch - \'A\' + k, 26)));\n            else out.append(ch);\n        }\n        System.out.println(out);\n    }', IO),
     },
     tests: [['3\nHello, World!', 'Khoor, Zruog!'], ['-3\nKhoor, Zruog!', 'Hello, World!'], ['29\nxyz', 'abc'], ['13\nAIFU 2026', 'NVSH 2026'], ['-1000\nabc', 'opq']],
@@ -51,11 +51,11 @@ const tasks = [
     constraints: 'Kalit uzunligi 1–50; matn ASCII.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'mode = input().strip()\nkey = input().strip().upper()\ntext = input()\n# TODO\n',
+      starter: 'mode = input().strip()\nkey = input().strip().upper()\ntext = input()\n# ...\n',
       solution: 'mode = input().strip()\nkey = input().strip().upper()\ntext = input()\nsign = 1 if mode == "E" else -1\nout = []\nj = 0\nfor ch in text:\n    if ch.isascii() and ch.isalpha():\n        base = 65 if ch.isupper() else 97\n        shift = sign * (ord(key[j % len(key)]) - 65)\n        out.append(chr((ord(ch) - base + shift) % 26 + base))\n        j += 1\n    else:\n        out.append(ch)\nprint("".join(out))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String mode = br.readLine().trim();\n        String key = br.readLine().trim().toUpperCase();\n        String text = br.readLine();\n        // TODO\n    }', IO),
+      starter: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String mode = br.readLine().trim();\n        String key = br.readLine().trim().toUpperCase();\n        String text = br.readLine();\n        // ...\n    }', IO),
       solution: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String mode = br.readLine().trim();\n        String key = br.readLine().trim().toUpperCase();\n        String text = br.readLine();\n        int sign = mode.equals("E") ? 1 : -1;\n        StringBuilder out = new StringBuilder();\n        int j = 0;\n        for (char ch : text.toCharArray()) {\n            boolean upper = ch >= \'A\' && ch <= \'Z\', lower = ch >= \'a\' && ch <= \'z\';\n            if (upper || lower) {\n                char base = upper ? \'A\' : \'a\';\n                int shift = sign * (key.charAt(j % key.length()) - \'A\');\n                out.append((char) (base + Math.floorMod(ch - base + shift, 26)));\n                j++;\n            } else out.append(ch);\n        }\n        System.out.println(out);\n    }', IO),
     },
     tests: [
@@ -74,11 +74,11 @@ const tasks = [
     constraints: 'p, q < 10^6 tub; gcd(e, φ) = 1; 0 ≤ m < n.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'p, q, e, m = map(int, input().split())\n# TODO: n, phi, d = pow(e, -1, phi), c = pow(m, e, n)\n',
+      starter: 'p, q, e, m = map(int, input().split())\n# ...\n',
       solution: 'p, q, e, m = map(int, input().split())\nn = p * q\nphi = (p - 1) * (q - 1)\nd = pow(e, -1, phi)\nc = pow(m, e, n)\nprint(n, phi, d, c, pow(c, d, n))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        BigInteger p = in.nextBigInteger(), q = in.nextBigInteger(), e = in.nextBigInteger(), m = in.nextBigInteger();\n        // TODO: modInverse va modPow\n    }', 'import java.math.BigInteger;\nimport java.util.*;'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        BigInteger p = in.nextBigInteger(), q = in.nextBigInteger(), e = in.nextBigInteger(), m = in.nextBigInteger();\n        // ...\n    }', 'import java.math.BigInteger;\nimport java.util.*;'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        BigInteger p = in.nextBigInteger(), q = in.nextBigInteger(), e = in.nextBigInteger(), m = in.nextBigInteger();\n        BigInteger n = p.multiply(q);\n        BigInteger phi = p.subtract(BigInteger.ONE).multiply(q.subtract(BigInteger.ONE));\n        BigInteger d = e.modInverse(phi);\n        BigInteger c = m.modPow(e, n);\n        System.out.println(n + " " + phi + " " + d + " " + c + " " + c.modPow(d, n));\n    }', 'import java.math.BigInteger;\nimport java.util.*;'),
     },
     tests: [
@@ -95,11 +95,11 @@ const tasks = [
     instructions: 'Kirish: 1-satr xabar (UTF-8); 2-satr kutilgan xesh (hex). Chiqish: 1-satr hisoblangan xesh (kichik harfli hex); 2-satr Yaxlit yoki Buzilgan.',
     constraints: 'Xabar uzunligi 1–1000 belgi.',
     python: {
-      starter: 'import hashlib\n\nmessage = input()\nexpected = input().strip().lower()\n# TODO: hashlib.sha256(...).hexdigest()\n',
+      starter: 'import hashlib\n\nmessage = input()\nexpected = input().strip().lower()\n# ...\n',
       solution: 'import hashlib\n\nmessage = input()\nexpected = input().strip().lower()\ndigest = hashlib.sha256(message.encode("utf-8")).hexdigest()\nprint(digest)\nprint("Yaxlit" if digest == expected else "Buzilgan")\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));\n        String message = br.readLine();\n        String expected = br.readLine().trim().toLowerCase();\n        // TODO: MessageDigest.getInstance("SHA-256"), HexFormat.of().formatHex(...)\n    }', 'import java.io.*;\nimport java.nio.charset.StandardCharsets;\nimport java.security.MessageDigest;\nimport java.util.*;'),
+      starter: J('    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));\n        String message = br.readLine();\n        String expected = br.readLine().trim().toLowerCase();\n        // ...\n    }', 'import java.io.*;\nimport java.nio.charset.StandardCharsets;\nimport java.security.MessageDigest;\nimport java.util.*;'),
       solution: J('    public static void main(String[] args) throws Exception {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in, StandardCharsets.UTF_8));\n        String message = br.readLine();\n        String expected = br.readLine().trim().toLowerCase();\n        byte[] hash = MessageDigest.getInstance("SHA-256").digest(message.getBytes(StandardCharsets.UTF_8));\n        String digest = HexFormat.of().formatHex(hash);\n        System.out.println(digest);\n        System.out.println(digest.equals(expected) ? "Yaxlit" : "Buzilgan");\n    }', 'import java.io.*;\nimport java.nio.charset.StandardCharsets;\nimport java.security.MessageDigest;\nimport java.util.*;'),
     },
     tests: [
@@ -115,11 +115,11 @@ const tasks = [
     instructions: 'Kirish: n; n ta parol (har biri alohida satrda, boʻshliqsiz). Chiqish: har bir parol uchun ball va daraja.',
     constraints: '1 ≤ n ≤ 100, parol ASCII.',
     python: {
-      starter: 'COMMON = {"password", "123456", "12345678", "qwerty", "admin", "parol"}\n\nfor _ in range(int(input())):\n    pw = input().strip()\n    # TODO\n',
+      starter: 'COMMON = {"password", "123456", "12345678", "qwerty", "admin", "parol"}\n\nfor _ in range(int(input())):\n    pw = input().strip()\n    # ...\n',
       solution: 'COMMON = {"password", "123456", "12345678", "qwerty", "admin", "parol"}\n\n\ndef score(pw):\n    if pw.lower() in COMMON:\n        return 0\n    checks = [\n        len(pw) >= 8,\n        len(pw) >= 12,\n        any(c.islower() for c in pw),\n        any(c.isupper() for c in pw),\n        any(c.isdigit() for c in pw),\n        any(not c.isalnum() for c in pw),\n    ]\n    return sum(checks)\n\n\nfor _ in range(int(input())):\n    s = score(input().strip())\n    print(s, "Zaif" if s <= 2 else "O\'rtacha" if s <= 4 else "Kuchli")\n',
     },
     java: {
-      starter: J('    static final Set<String> COMMON = Set.of("password", "123456", "12345678", "qwerty", "admin", "parol");\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        // TODO\n    }'),
+      starter: J('    static final Set<String> COMMON = Set.of("password", "123456", "12345678", "qwerty", "admin", "parol");\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        // ...\n    }'),
       solution: J('    static final Set<String> COMMON = Set.of("password", "123456", "12345678", "qwerty", "admin", "parol");\n\n    static int score(String pw) {\n        if (COMMON.contains(pw.toLowerCase())) return 0;\n        boolean lower = false, upper = false, digit = false, special = false;\n        for (char c : pw.toCharArray()) {\n            if (Character.isLowerCase(c)) lower = true;\n            else if (Character.isUpperCase(c)) upper = true;\n            else if (Character.isDigit(c)) digit = true;\n            else special = true;\n        }\n        int s = 0;\n        for (boolean b : new boolean[] {pw.length() >= 8, pw.length() >= 12, lower, upper, digit, special}) if (b) s++;\n        return s;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int k = 0; k < n; k++) {\n            int s = score(in.next());\n            System.out.println(s + " " + (s <= 2 ? "Zaif" : s <= 4 ? "O\'rtacha" : "Kuchli"));\n        }\n    }'),
     },
     tests: [
@@ -135,11 +135,11 @@ const tasks = [
     instructions: 'Kirish: n; n ta satrda 10 belgili huquq satri. Chiqish: har biri uchun sakkizlik kod va fayl turi (fayl, katalog yoki havola).',
     constraints: 'Fayl turi belgisi: - (fayl), d (katalog), l (havola).',
     python: {
-      starter: 'for _ in range(int(input())):\n    s = input().strip()\n    # TODO\n',
+      starter: 'for _ in range(int(input())):\n    s = input().strip()\n    # ...\n',
       solution: 'KIND = {"-": "fayl", "d": "katalog", "l": "havola"}\nVALUE = {"r": 4, "w": 2, "x": 1}\n\nfor _ in range(int(input())):\n    s = input().strip()\n    digits = ""\n    for g in range(3):\n        triple = s[1 + 3 * g:4 + 3 * g]\n        digits += str(sum(VALUE.get(c, 0) for c in triple))\n    print(digits, KIND[s[0]])\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        // TODO\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int k = 0; k < n; k++) {\n            String s = in.next();\n            StringBuilder digits = new StringBuilder();\n            for (int g = 0; g < 3; g++) {\n                int v = 0;\n                for (char c : s.substring(1 + 3 * g, 4 + 3 * g).toCharArray())\n                    v += c == \'r\' ? 4 : c == \'w\' ? 2 : c == \'x\' ? 1 : 0;\n                digits.append(v);\n            }\n            String kind = s.charAt(0) == \'d\' ? "katalog" : s.charAt(0) == \'l\' ? "havola" : "fayl";\n            System.out.println(digits + " " + kind);\n        }\n    }'),
     },
     tests: [

@@ -35,7 +35,7 @@ Eng sodda tarmoqlanish — **`if` (agar)**: shart rost boʻlsa, blok bajariladi;
 | Python | `if shart:` va keyingi qatorlar **chekinish** (4 probel) bilan |
 | Java, C++ | `if (shart) { ... }` — shart qavsda, blok jingalak qavsda |
 
-Python'da blok chekinish bilan belgilanadi: bir xil chekinishli qatorlar bitta blok. Java va C++'da blok `{` va `}` orasidagi kod; chekinish faqat oʻqish uchun, lekin uni ham toʻgʻri qoʻyish kerak.
+Pythonʼda blok chekinish bilan belgilanadi: bir xil chekinishli qatorlar bitta blok. Java va C++'da blok `{` va `}` orasidagi kod; chekinish faqat oʻqish uchun, lekin uni ham toʻgʻri qoʻyish kerak.
 
 ## if-else: ikki yoʻl
 
@@ -45,9 +45,9 @@ Masalan, „son juftmi yoki toqmi“: `if x % 2 == 0` — juft, `else` — toq.
 
 ## else-if zanjiri: koʻp yoʻl
 
-Yoʻllar ikkitadan koʻp boʻlsa, shartlar zanjirga ulanadi: Python'da `elif`, Java va C++'da `else if`. Shartlar **yuqoridan pastga** tekshiriladi; birinchi rost shartning bloki bajariladi va qolganlari tekshirilmaydi. Hech biri rost boʻlmasa, oxirgi `else` bajariladi (agar u boʻlsa).
+Yoʻllar ikkitadan koʻp boʻlsa, shartlar zanjirga ulanadi: Pythonʼda `elif`, Java va C++'da `else if`. Shartlar **yuqoridan pastga** tekshiriladi; birinchi rost shartning bloki bajariladi va qolganlari tekshirilmaydi. Hech biri rost boʻlmasa, oxirgi `else` bajariladi (agar u boʻlsa).
 
-Shu sababli shartlarning **tartibi** muhim. AIFU'da 100 ballik tizimdan 5 ballik bahoga oʻtkazish:
+Shu sababli shartlarning **tartibi** muhim. AIFUʼda 100 ballik tizimdan 5 ballik bahoga oʻtkazish:
 
 | Ball | Baho |
 |---|---|
@@ -229,7 +229,7 @@ Java va C++'da `2.0 * a` deb yozilgan: `2 * a` boʻlsa, `-b / (2 * a)` butun bo�
 
 - **Shartdan keyin nuqtali vergul (Java, C++).** `if (x > 0);` — shart boʻsh operatorni boshqaradi, keyingi blok har doim bajariladi.
 - **Jingalak qavslarsiz bir nechta qator.** `if (x > 0) a = 1; b = 2;` — `b = 2` shartga bogʻliq emas. Har doim `{ }` qoʻying.
-- **Python'da chekinishni aralashtirish.** Tab va probellar aralashsa, `IndentationError` chiqadi.
+- **Pythonʼda chekinishni aralashtirish.** Tab va probellar aralashsa, `IndentationError` chiqadi.
 - **Shartlar tartibi notoʻgʻri.** `if ball >= 56` birinchi tursa, 95 ball ham „3“ oladi.
 - **`else` ga shart yozish.** `else (x < 0)` — xato; shart kerak boʻlsa, `else if` / `elif`.
 :::
@@ -243,7 +243,7 @@ Har bir tarmoq uchun kamida bitta test oʻylab toping va chegaraviy qiymatlarni 
 - Tarmoqlanuvchi algoritmda shartga qarab turli yoʻl tanlanadi; blok-sxemada shart — romb.
 - `if` — bitta yoʻl, `if-else` — ikkitadan biri, `else-if` / `elif` zanjiri — koʻp yoʻldan biri.
 - Zanjirda shartlar yuqoridan pastga tekshiriladi va birinchi rost shart bajariladi; tartib muhim.
-- Python'da blok chekinish bilan, Java va C++'da `{ }` bilan belgilanadi.
+- Pythonʼda blok chekinish bilan, Java va C++'da `{ }` bilan belgilanadi.
 - Ichma-ich shartlarni koʻpincha `and` / `&&` bilan soddalashtirish mumkin.
 - Har bir tarmoq va har bir chegaraviy qiymat testlanishi kerak.
 
@@ -254,7 +254,7 @@ Q: Chiziqli va tarmoqlanuvchi algoritmning farqi nimada?
 A: Chiziqli algoritmda barcha qadamlar har doim bir xil tartibda bajariladi; tarmoqlanuvchi algoritmda shartga qarab turli qadamlar tanlanadi.
 Q: Baholash dasturida birinchi shart `ball >= 56` boʻlsa, 95 ball uchun natija qanday boʻladi va nima uchun?
 A: 3: zanjirda birinchi rost shart bajariladi, 95 >= 56 rost, qolgan shartlar tekshirilmaydi.
-Q: Java'da `if (x > 5); { System.out.println("katta"); }` nima qiladi?
+Q: Javaʼda `if (x > 5); { System.out.println("katta"); }` nima qiladi?
 A: *x* qanday boʻlishidan qatʼi nazar „katta“ chiqaradi: nuqtali vergul boʻsh operator, blok shartga bogʻliq emas.
 Q: `if a > 0:` ichida `if b > 0:` ni bitta shart bilan qanday yozasiz?
 A: `if a > 0 and b > 0:` (Java/C++: `if (a > 0 && b > 0)`).
@@ -269,5 +269,5 @@ Rasmiy qoʻllanmadagi `if`, `elif`, `else` boʻlimi.
 
 :::link https://docs.oracle.com/javase/tutorial/java/nutsandbolts/if.html
 Oracle Java Tutorial: if-then va if-then-else
-Java'da shart operatorlari haqida rasmiy qoʻllanma.
+Javaʼda shart operatorlari haqida rasmiy qoʻllanma.
 :::

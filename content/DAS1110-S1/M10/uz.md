@@ -42,7 +42,7 @@ Muhim xususiyatlar: harflar va raqamlar **ketma-ket** joylashgan; kichik harf ko
 | Raqam belgisini songa | `ord(c) - ord('0')` | `c - '0'` | `c - '0'` |
 | Keyingi harf | `chr(ord(c) + 1)` | `(char) (c + 1)` | `(char) (c + 1)` |
 
-Java va C++'da `char` — butun son turi, unga sonni qoʻshish mumkin. Python'da alohida belgi turi yoʻq: belgi — uzunligi 1 boʻlgan satr, shuning uchun `ord` va `chr` kerak.
+Java va C++'da `char` — butun son turi, unga sonni qoʻshish mumkin. Pythonʼda alohida belgi turi yoʻq: belgi — uzunligi 1 boʻlgan satr, shuning uchun `ord` va `chr` kerak.
 
 ## C uslubidagi satr
 
@@ -68,7 +68,7 @@ C-satrlar bilan ishlash xavfli va noqulay (`=` bilan nusxalab boʻlmaydi, `==` m
 | Java | `in.nextLine()` |
 | C++ | `getline(cin, s)` |
 
-Tuzoq: avval son (`cin >> k` yoki `nextInt()`), keyin qator oʻqilsa, sondan keyingi `'\n'` kiritish oqimida qoladi va `getline` / `nextLine` boʻsh qator qaytaradi. Yechim: C++'da `getline` dan oldin `cin.ignore()`, Java'da sonni ham `nextLine()` bilan oʻqib, `Integer.parseInt` qilish.
+Tuzoq: avval son (`cin >> k` yoki `nextInt()`), keyin qator oʻqilsa, sondan keyingi `'\n'` kiritish oqimida qoladi va `getline` / `nextLine` boʻsh qator qaytaradi. Yechim: C++'da `getline` dan oldin `cin.ignore()`, Javaʼda sonni ham `nextLine()` bilan oʻqib, `Integer.parseInt` qilish.
 
 ## Unicode va UTF-8
 
@@ -84,7 +84,7 @@ Unicode raqamni xotirada saqlash usuli — **kodlash**:
 
 UTF-8'da oʻzbek harfi `oʻ` ikki belgidan iborat: `o` (1 bayt) va `ʻ` (U+02BB, 2 bayt). Shuning uchun „Oʻzbekiston“ 11 belgi, lekin UTF-8'da 12 bayt.
 
-**Kengaytirilgan belgilar**: C++'da `char` 1 bayt va bitta Unicode belgini sigʻdira olmaydi. Buning uchun `wchar_t` (keng belgi; Windows'da 2 bayt, Linux'da 4 bayt), `wstring`, shuningdek `char16_t` va `char32_t` turlari bor. Amalda koʻpincha UTF-8 baytlari `string` da saqlanadi va belgilar kerak boʻlganda alohida sanaladi.
+**Kengaytirilgan belgilar**: C++'da `char` 1 bayt va bitta Unicode belgini sigʻdira olmaydi. Buning uchun `wchar_t` (keng belgi; Windowsʼda 2 bayt, Linuxʼda 4 bayt), `wstring`, shuningdek `char16_t` va `char32_t` turlari bor. Amalda koʻpincha UTF-8 baytlari `string` da saqlanadi va belgilar kerak boʻlganda alohida sanaladi.
 
 | Til | „Oʻzbekiston“ uzunligi | Nimani sanaydi |
 |---|---|---|
@@ -242,7 +242,7 @@ int main() {
 
 Kirish `Room 214, AIFU-2026` boʻlsa: harflar R, o, o, m, A, I, F, U — 8; raqamlar 2, 1, 4, 2, 0, 2, 6 — 7; probellar — 2; boshqalar `,` va `-` — 2. Chiqadi: `8 7 2 2`.
 
-Belgilar oraliq bilan tekshirildi — bu ASCII'da harflar ketma-ket boʻlgani uchun ishlaydi. Standart funksiyalar ham bor: Python `c.isalpha()`, `c.isdigit()`; Java `Character.isLetter(c)`; C++ `isalpha(c)`, `isdigit(c)` (`<cctype>`). Ular oʻzbekcha va boshqa harflarni turlicha baholashi mumkin, shuning uchun bu misolda oraliqlar ishlatildi.
+Belgilar oraliq bilan tekshirildi — bu ASCIIʼda harflar ketma-ket boʻlgani uchun ishlaydi. Standart funksiyalar ham bor: Python `c.isalpha()`, `c.isdigit()`; Java `Character.isLetter(c)`; C++ `isalpha(c)`, `isdigit(c)` (`<cctype>`). Ular oʻzbekcha va boshqa harflarni turlicha baholashi mumkin, shuning uchun bu misolda oraliqlar ishlatildi.
 
 ## Ishlangan misol 3: belgilar va baytlar
 
@@ -309,13 +309,13 @@ UTF-8'da har bir belgi bir „boshlovchi“ va 0–3 ta „davom“ baytidan ibo
 :::
 
 :::tip
-Matn bilan ishlaydigan dasturni albatta oʻzbekcha (`oʻ`, `gʻ`), ruscha va kulgichli matn bilan sinang. ASCII'da ishlagan kod boshqa yozuvda kutilmaganda buzilishi mumkin.
+Matn bilan ishlaydigan dasturni albatta oʻzbekcha (`oʻ`, `gʻ`), ruscha va kulgichli matn bilan sinang. ASCIIʼda ishlagan kod boshqa yozuvda kutilmaganda buzilishi mumkin.
 :::
 
 ## Xulosa
 
-- Belgi xotirada son — kod sifatida saqlanadi; ASCII'da `'0'` = 48, `'A'` = 65, `'a'` = 97, harflar ketma-ket.
-- Java va C++'da `char` — butun son, Python'da `ord` / `chr` ishlatiladi.
+- Belgi xotirada son — kod sifatida saqlanadi; ASCIIʼda `'0'` = 48, `'A'` = 65, `'a'` = 97, harflar ketma-ket.
+- Java va C++'da `char` — butun son, Pythonʼda `ord` / `chr` ishlatiladi.
 - C-satr — `'\0'` bilan tugaydigan `char` massivi; uzunligi `strlen` bilan sanaladi.
 - Butun qator `input()`, `nextLine()`, `getline()` bilan oʻqiladi; sondan keyin qolgan `'\n'` ga eʼtibor bering.
 - Unicode har bir belgiga raqam beradi, UTF-8 uni 1–4 baytda saqlaydi; oʻzbekcha `ʻ` — 2 bayt.

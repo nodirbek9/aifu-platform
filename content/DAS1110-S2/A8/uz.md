@@ -33,7 +33,7 @@ Buyruq qatorida standart oqimlarni faylga **yoʻnaltirish** mumkin: `dastur < ki
 
 ## Oqimni oxirigacha oʻqish
 
-Koʻp masalalarda maʼlumot soni oldindan aytilmaydi: „fayl tugaguncha oʻqing“. Oqim tugashi **EOF** (end of file) deyiladi. Klaviaturadan EOF Windows'da Ctrl+Z va Enter, Linux/macOS'da Ctrl+D bilan beriladi.
+Koʻp masalalarda maʼlumot soni oldindan aytilmaydi: „fayl tugaguncha oʻqing“. Oqim tugashi **EOF** (end of file) deyiladi. Klaviaturadan EOF Windowsʼda Ctrl+Z va Enter, Linux/macOSʼda Ctrl+D bilan beriladi.
 
 | Til | Qatorma-qator EOF gacha | Soʻzma-soʻz (sonma-son) EOF gacha |
 |---|---|---|
@@ -41,7 +41,7 @@ Koʻp masalalarda maʼlumot soni oldindan aytilmaydi: „fayl tugaguncha oʻqing
 | Java | `while ((satr = oquvchi.readLine()) != null)` | `while (in.hasNext())` (`Scanner`) |
 | C++ | `while (getline(cin, satr))` | `while (cin >> x)` |
 
-C++'da `cin >> x` ifodasi oʻqish muvaffaqiyatli boʻlsa `true`, EOF yoki xato boʻlsa `false` beradi — shuning uchun u toʻgʻridan-toʻgʻri `while` shartiga yoziladi. Python'da `sys.stdin` dan oʻqilgan har bir qator oxirida `\n` qoladi — u `rstrip("\n")` bilan olib tashlanadi.
+C++'da `cin >> x` ifodasi oʻqish muvaffaqiyatli boʻlsa `true`, EOF yoki xato boʻlsa `false` beradi — shuning uchun u toʻgʻridan-toʻgʻri `while` shartiga yoziladi. Pythonʼda `sys.stdin` dan oʻqilgan har bir qator oxirida `\n` qoladi — u `rstrip("\n")` bilan olib tashlanadi.
 
 ## Buferlash va faylni yopish
 
@@ -220,7 +220,7 @@ Chiqish:
 2026-03-02 fayl topilmadi: hisobot.pdf
 ```
 
-Qator `maxsplit=2` (Java'da `split(..., 3)`) bilan faqat **uch** qismga boʻlinadi — xabar ichidagi boʻsh joylar saqlanib qoladi. C++'da `oqim >> ws` boʻsh joylarni oʻtkazib yuboradi, keyingi `getline` esa qatorning qolgan qismini oladi. Uchala tilda ham yozish oqimi **alohida blokda** ochilgan: blok tugashi bilan fayl yopiladi va keyingi oʻqish toʻliq maʼlumotni koʻradi.
+Qator `maxsplit=2` (Javaʼda `split(..., 3)`) bilan faqat **uch** qismga boʻlinadi — xabar ichidagi boʻsh joylar saqlanib qoladi. C++'da `oqim >> ws` boʻsh joylarni oʻtkazib yuboradi, keyingi `getline` esa qatorning qolgan qismini oladi. Uchala tilda ham yozish oqimi **alohida blokda** ochilgan: blok tugashi bilan fayl yopiladi va keyingi oʻqish toʻliq maʼlumotni koʻradi.
 
 ## Ishlangan misol 3: qatorlarni raqamlash
 
@@ -304,15 +304,15 @@ int main() {
 12| oxirgi qator
 ```
 
-Raqam kengligi faqat barcha qatorlar oʻqilgandan keyin maʼlum boʻladi, shuning uchun bu yerda qatorlar avval xotiraga yigʻiladi. Ustunlarni tekislash: Python'da `f"{i:>{en}}"` — kenglik ham oʻzgaruvchidan, Java'da formatlash satri `"%2d| %s%n"` dastur ichida yigʻiladi, C++'da `setw(en)` — faqat **keyingi** chiqariladigan qiymat uchun amal qiladi. Java'da `printf` dagi `%n` platformaga mos satr oxirini yozadi; avtomatik tekshiruv Linux'da ishlagani uchun bu `\n` boʻladi.
+Raqam kengligi faqat barcha qatorlar oʻqilgandan keyin maʼlum boʻladi, shuning uchun bu yerda qatorlar avval xotiraga yigʻiladi. Ustunlarni tekislash: Pythonʼda `f"{i:>{en}}"` — kenglik ham oʻzgaruvchidan, Javaʼda formatlash satri `"%2d| %s%n"` dastur ichida yigʻiladi, C++'da `setw(en)` — faqat **keyingi** chiqariladigan qiymat uchun amal qiladi. Javaʼda `printf` dagi `%n` platformaga mos satr oxirini yozadi; avtomatik tekshiruv Linuxʼda ishlagani uchun bu `\n` boʻladi.
 
 :::warning
 **Koʻp uchraydigan xatolar**
 
 - **Yozilgan faylni yopmasdan oʻqish.** Bufer hali diskka yozilmagan boʻlishi mumkin va fayl boʻsh yoki chala koʻrinadi; yozishni `with`/`try`/blok bilan yoping.
 - **C++'da `while (!cin.eof())`.** Oxirgi oʻqish muvaffaqiyatsiz boʻlganini kech sezadi va oxirgi qiymat ikki marta ishlanadi; `while (cin >> x)` yozing.
-- **Python'da `\n` ni olib tashlamaslik.** `sys.stdin` va fayldan oʻqilgan qatorlar `\n` bilan tugaydi; `print` qoʻshimcha boʻsh qator chiqaradi.
-- **Kodlashni koʻrsatmaslik.** Windows'da sukut boʻyicha kodlash boshqa boʻlishi mumkin va oʻzbekcha harflar buziladi; `encoding="utf-8"`, `"UTF-8"` ni aniq yozing.
+- **Pythonʼda `\n` ni olib tashlamaslik.** `sys.stdin` va fayldan oʻqilgan qatorlar `\n` bilan tugaydi; `print` qoʻshimcha boʻsh qator chiqaradi.
+- **Kodlashni koʻrsatmaslik.** Windowsʼda sukut boʻyicha kodlash boshqa boʻlishi mumkin va oʻzbekcha harflar buziladi; `encoding="utf-8"`, `"UTF-8"` ni aniq yozing.
 :::
 
 :::tip
@@ -331,14 +331,14 @@ Dasturni tekshirishda kirishni har safar qoʻlda terish oʻrniga uni faylga saql
 
 :::check
 Q: EOF nima va klaviaturadan qanday beriladi?
-A: Oqim tugaganini bildiruvchi holat; Windows'da Ctrl+Z va Enter, Linux/macOS'da Ctrl+D.
+A: Oqim tugaganini bildiruvchi holat; Windowsʼda Ctrl+Z va Enter, Linux/macOSʼda Ctrl+D.
 Q: C++'da `while (cin >> x)` qachon toʻxtaydi?
 A: Oqim tugaganda yoki son boʻlmagan maʼlumot uchraganda — oʻqish muvaffaqiyatsiz boʻlganda.
 Q: Nima uchun faylga yozgandan keyin uni yopish kerak?
 A: Maʼlumot buferda turgan boʻlishi mumkin; yopilganda bufer diskka yoziladi va fayl tizimga qaytariladi.
 Q: `dastur < a.txt > b.txt` buyrugʻi nima qiladi?
 A: Dasturning standart kirishini `a.txt` dan, standart chiqishini `b.txt` ga yoʻnaltiradi.
-Q: Python'da `"2026-03-01 ERROR fayl topilmadi".split(maxsplit=2)` nima qaytaradi?
+Q: Pythonʼda `"2026-03-01 ERROR fayl topilmadi".split(maxsplit=2)` nima qaytaradi?
 A: `["2026-03-01", "ERROR", "fayl topilmadi"]` — faqat birinchi ikki boʻsh joyda boʻlinadi.
 :::
 

@@ -17,11 +17,11 @@ const tasks = [
     instructions: 'Kirish: sxema nomi va bitlar satri (boʻshliq bilan). Chiqish: signal satri.',
     constraints: 'Bitlar soni 1–1000.',
     python: {
-      starter: 'scheme, bits = input().split()\n# TODO\n',
+      starter: 'scheme, bits = input().split()\n# ...\n',
       solution: 'scheme, bits = input().split()\nout = []\nif scheme == "NRZ":\n    out = ["+" if b == "1" else "-" for b in bits]\nelif scheme == "NRZI":\n    level = "-"\n    for b in bits:\n        if b == "1":\n            level = "+" if level == "-" else "-"\n        out.append(level)\nelse:\n    out = ["-+" if b == "1" else "+-" for b in bits]\nprint("".join(out))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String scheme = in.next(), bits = in.next();\n        // TODO\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String scheme = in.next(), bits = in.next();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String scheme = in.next(), bits = in.next();\n        StringBuilder out = new StringBuilder();\n        char level = \'-\';\n        for (char b : bits.toCharArray()) {\n            switch (scheme) {\n                case "NRZ" -> out.append(b == \'1\' ? \'+\' : \'-\');\n                case "NRZI" -> {\n                    if (b == \'1\') level = level == \'-\' ? \'+\' : \'-\';\n                    out.append(level);\n                }\n                default -> out.append(b == \'1\' ? "-+" : "+-");\n            }\n        }\n        System.out.println(out);\n    }'),
     },
     tests: [['NRZ 1011', '+-++'], ['NRZI 1011', '++-+'], ['MANCHESTER 10', '-++-'], ['MANCHESTER 1100', '-+-++-+-'], ['NRZI 0000', '----']],
@@ -34,11 +34,11 @@ const tasks = [
     constraints: '1 ≤ prefiks ≤ 30.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'cidr = input().strip()\n# TODO: ip va prefiksni ajrating, bit amallari bilan hisoblang\n',
+      starter: 'cidr = input().strip()\n# ...\n',
       solution: 'def to_int(s):\n    a, b, c, d = map(int, s.split("."))\n    return (a << 24) | (b << 16) | (c << 8) | d\n\n\ndef to_str(v):\n    return ".".join(str((v >> s) & 255) for s in (24, 16, 8, 0))\n\n\naddr, prefix = input().strip().split("/")\nprefix = int(prefix)\nmask = (0xFFFFFFFF << (32 - prefix)) & 0xFFFFFFFF\nnet = to_int(addr) & mask\nbroadcast = net | (~mask & 0xFFFFFFFF)\nprint("Tarmoq:", to_str(net))\nprint("Maska:", to_str(mask))\nprint("Broadcast:", to_str(broadcast))\nprint("Birinchi xost:", to_str(net + 1))\nprint("Oxirgi xost:", to_str(broadcast - 1))\nprint("Xostlar soni:", 2 ** (32 - prefix) - 2)\n',
     },
     java: {
-      starter: J(IP_JAVA + '\n    public static void main(String[] args) {\n        String[] parts = new Scanner(System.in).next().split("/");\n        // TODO\n    }'),
+      starter: J(IP_JAVA + '\n    public static void main(String[] args) {\n        String[] parts = new Scanner(System.in).next().split("/");\n        // ...\n    }'),
       solution: J(IP_JAVA + '\n    public static void main(String[] args) {\n        String[] parts = new Scanner(System.in).next().split("/");\n        int prefix = Integer.parseInt(parts[1]);\n        long m = mask(prefix);\n        long net = ip(parts[0]) & m;\n        long bc = net | (~m & 0xFFFFFFFFL);\n        System.out.println("Tarmoq: " + str(net));\n        System.out.println("Maska: " + str(m));\n        System.out.println("Broadcast: " + str(bc));\n        System.out.println("Birinchi xost: " + str(net + 1));\n        System.out.println("Oxirgi xost: " + str(bc - 1));\n        System.out.println("Xostlar soni: " + ((1L << (32 - prefix)) - 2));\n    }'),
     },
     tests: [
@@ -57,11 +57,11 @@ const tasks = [
     constraints: '1 ≤ n, q ≤ 1000.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'import sys\n\nlines = sys.stdin.read().split("\\n")\n# TODO\n',
+      starter: 'import sys\n\nlines = sys.stdin.read().split("\\n")\n# ...\n',
       solution: 'import sys\n\n\ndef to_int(s):\n    a, b, c, d = map(int, s.split("."))\n    return (a << 24) | (b << 16) | (c << 8) | d\n\n\ndata = sys.stdin.read().split()\nn = int(data[0])\nroutes = []\npos = 1\nfor _ in range(n):\n    net, length = data[pos].split("/")\n    length = int(length)\n    mask = (0xFFFFFFFF << (32 - length)) & 0xFFFFFFFF if length else 0\n    routes.append((to_int(net) & mask, mask, length, data[pos + 1]))\n    pos += 2\nq = int(data[pos])\nfor addr in data[pos + 1:pos + 1 + q]:\n    v = to_int(addr)\n    best = None\n    for net, mask, length, hop in routes:\n        if v & mask == net and (best is None or length > best[0]):\n            best = (length, hop)\n    print(best[1] if best else "DROP")\n',
     },
     java: {
-      starter: J(IP_JAVA + '\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        // TODO\n    }'),
+      starter: J(IP_JAVA + '\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        // ...\n    }'),
       solution: J(IP_JAVA + '\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] nets = new long[n], masks = new long[n];\n        int[] lens = new int[n];\n        String[] hops = new String[n];\n        for (int i = 0; i < n; i++) {\n            String[] p = in.next().split("/");\n            lens[i] = Integer.parseInt(p[1]);\n            masks[i] = mask(lens[i]);\n            nets[i] = ip(p[0]) & masks[i];\n            hops[i] = in.next();\n        }\n        int q = in.nextInt();\n        for (int k = 0; k < q; k++) {\n            long v = ip(in.next());\n            int best = -1;\n            for (int i = 0; i < n; i++)\n                if ((v & masks[i]) == nets[i] && (best < 0 || lens[i] > lens[best])) best = i;\n            System.out.println(best < 0 ? "DROP" : hops[best]);\n        }\n    }'),
     },
     tests: [
@@ -77,11 +77,11 @@ const tasks = [
     instructions: 'Kirish: HTTP soʻrov matni. Chiqish (6 satr): Metod, Yo\'l, So\'rov (parametrlar yoki -), Versiya, Host (yoki -), Sarlavhalar (soni).',
     constraints: 'Sarlavhalar soni 0–50.',
     python: {
-      starter: 'import sys\n\nlines = sys.stdin.read().splitlines()\nmethod, target, version = lines[0].split()\n# TODO\n',
+      starter: 'import sys\n\nlines = sys.stdin.read().splitlines()\nmethod, target, version = lines[0].split()\n# ...\n',
       solution: 'import sys\n\nlines = sys.stdin.read().splitlines()\nmethod, target, version = lines[0].split()\npath, _, query = target.partition("?")\nheaders = {}\nfor line in lines[1:]:\n    if not line.strip():\n        break\n    name, _, value = line.partition(":")\n    headers[name.strip().lower()] = value.strip()\nprint("Metod:", method)\nprint("Yo\'l:", path)\nprint("So\'rov:", query or "-")\nprint("Versiya:", version)\nprint("Host:", headers.get("host", "-"))\nprint("Sarlavhalar:", len(headers))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] requestLine = br.readLine().trim().split(" ");\n        // TODO\n    }', IO),
+      starter: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] requestLine = br.readLine().trim().split(" ");\n        // ...\n    }', IO),
       solution: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String[] requestLine = br.readLine().trim().split(" ");\n        String target = requestLine[1];\n        int qm = target.indexOf(\'?\');\n        String path = qm < 0 ? target : target.substring(0, qm);\n        String query = qm < 0 || qm == target.length() - 1 ? "-" : target.substring(qm + 1);\n        Map<String, String> headers = new LinkedHashMap<>();\n        String line;\n        while ((line = br.readLine()) != null && !line.isBlank()) {\n            int colon = line.indexOf(\':\');\n            headers.put(line.substring(0, colon).trim().toLowerCase(), line.substring(colon + 1).trim());\n        }\n        System.out.println("Metod: " + requestLine[0]);\n        System.out.println("Yo\'l: " + path);\n        System.out.println("So\'rov: " + query);\n        System.out.println("Versiya: " + requestLine[2]);\n        System.out.println("Host: " + headers.getOrDefault("host", "-"));\n        System.out.println("Sarlavhalar: " + headers.size());\n    }', IO),
     },
     tests: [
@@ -98,11 +98,11 @@ const tasks = [
     constraints: '1 ≤ n, m ≤ 500.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'import sys\n\ndata = sys.stdin.read().split()\n# TODO\n',
+      starter: 'import sys\n\ndata = sys.stdin.read().split()\n# ...\n',
       solution: 'import sys\n\n\ndef to_int(s):\n    a, b, c, d = map(int, s.split("."))\n    return (a << 24) | (b << 16) | (c << 8) | d\n\n\ndef in_cidr(addr, cidr):\n    net, length = cidr.split("/")\n    length = int(length)\n    mask = (0xFFFFFFFF << (32 - length)) & 0xFFFFFFFF if length else 0\n    return to_int(addr) & mask == to_int(net) & mask\n\n\ndata = sys.stdin.read().split()\nn = int(data[0])\nrules = [data[1 + 4 * i:5 + 4 * i] for i in range(n)]\npos = 1 + 4 * n\nm = int(data[pos])\nfor k in range(m):\n    proto, port, src = data[pos + 1 + 3 * k:pos + 4 + 3 * k]\n    verdict = "DENY default"\n    for i, (action, r_proto, r_port, r_src) in enumerate(rules, 1):\n        if r_proto in ("any", proto) and r_port in ("*", port) and in_cidr(src, r_src):\n            verdict = f"{action} {i}"\n            break\n    print(verdict)\n',
     },
     java: {
-      starter: J(IP_JAVA + '\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        // TODO\n    }'),
+      starter: J(IP_JAVA + '\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        // ...\n    }'),
       solution: J(IP_JAVA + '\n    static boolean inCidr(String addr, String cidr) {\n        String[] p = cidr.split("/");\n        long m = mask(Integer.parseInt(p[1]));\n        return (ip(addr) & m) == (ip(p[0]) & m);\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        String[][] rules = new String[n][];\n        for (int i = 0; i < n; i++) rules[i] = new String[] {in.next(), in.next(), in.next(), in.next()};\n        int m = in.nextInt();\n        for (int k = 0; k < m; k++) {\n            String proto = in.next(), port = in.next(), src = in.next();\n            String verdict = "DENY default";\n            for (int i = 0; i < n; i++) {\n                String[] r = rules[i];\n                if ((r[1].equals("any") || r[1].equals(proto)) && (r[2].equals("*") || r[2].equals(port)) && inCidr(src, r[3])) {\n                    verdict = r[0] + " " + (i + 1);\n                    break;\n                }\n            }\n            System.out.println(verdict);\n        }\n    }'),
     },
     tests: [

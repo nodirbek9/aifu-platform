@@ -15,7 +15,7 @@ Bu amaliy mashgʻulotda funksiyalarni **loyihalash** koʻnikmasini mashq qilamiz
 - funksiya tavsifini (nomi, parametrlari, qaytaradigan turi) aniq yoza olasiz;
 - qiymat qaytaruvchi funksiya va protseduradan oʻrinli foydalana olasiz;
 - funksiyadan bir nechta natijani uch tilda qaytara olasiz;
-- Java va C++'da funksiyalarni qayta yuklay olasiz, Python'da esa standart parametrlar bilan shunga erishasiz;
+- Java va C++'da funksiyalarni qayta yuklay olasiz, Pythonʼda esa standart parametrlar bilan shunga erishasiz;
 - masalani bir-birini chaqiradigan kichik funksiyalarga boʻla olasiz.
 :::
 
@@ -36,7 +36,7 @@ Yaxshi funksiya **bitta ishni** bajaradi va nomi shu ishni aytadi: `ortacha`, `t
 | | Qiymat qaytaruvchi funksiya | Protsedura |
 |---|---|---|
 | Vazifasi | hisoblaydi va natijani **qaytaradi** | amal **bajaradi** (chiqaradi, massivni oʻzgartiradi) |
-| Qaytaradigan turi | `int`, `double`, `bool`, ... | `void` (Java, C++); Python'da `None` |
+| Qaytaradigan turi | `int`, `double`, `bool`, ... | `void` (Java, C++); Pythonʼda `None` |
 | Chaqiruv | ifoda ichida: `y = kvadrat(x) + 1` | alohida buyruq: `chiqar(a)` |
 
 Qoida: hisoblovchi funksiya **chiqarmasin**, chiqaruvchi protsedura **hisoblamasin**. Shunda hisoblovchi funksiyani boshqa joyda ham ishlatish va testlash mumkin.
@@ -70,7 +70,7 @@ yuza(a, b, c)    → uchburchak (Geron formulasi)
 
 ## Ishlangan misol 1: qayta yuklangan yuza funksiyasi
 
-Birinchi satrda *n*, keyingi *n* satrda bitta, ikkita yoki uchta musbat son: doira radiusi, toʻgʻri toʻrtburchak tomonlari yoki uchburchak tomonlari. Har bir satr uchun yuzani ikki kasr xona bilan chiqaring. Java va C++'da uchta bir xil nomli `yuza` funksiyasi, Python'da standart parametrli bitta funksiya.
+Birinchi satrda *n*, keyingi *n* satrda bitta, ikkita yoki uchta musbat son: doira radiusi, toʻgʻri toʻrtburchak tomonlari yoki uchburchak tomonlari. Har bir satr uchun yuzani ikki kasr xona bilan chiqaring. Java va C++'da uchta bir xil nomli `yuza` funksiyasi, Pythonʼda standart parametrli bitta funksiya.
 
 ```python
 from math import pi, sqrt
@@ -176,7 +176,7 @@ Chiqish:
 6.00
 ```
 
-Har bir satrdagi sonlar soni oldindan nomaʼlum, shuning uchun satr butunligicha oʻqilib, keyin boʻlinadi (Java'da `split`, C++'da `istringstream`). Python'da `yuza(*sonlar)` roʻyxatni alohida argumentlarga yoyadi: `yuza(*[3.0, 4.0])` — bu `yuza(3.0, 4.0)`.
+Har bir satrdagi sonlar soni oldindan nomaʼlum, shuning uchun satr butunligicha oʻqilib, keyin boʻlinadi (Javaʼda `split`, C++'da `istringstream`). Pythonʼda `yuza(*sonlar)` roʻyxatni alohida argumentlarga yoyadi: `yuza(*[3.0, 4.0])` — bu `yuza(3.0, 4.0)`.
 
 ## Ishlangan misol 2: bir nechta natija qaytarish
 
@@ -252,7 +252,7 @@ int main() {
 }
 ```
 
-`5` va `4 -2 9 7 1` kiritilsa, chiqish: `-2 9 3.80`. Uchala tilda ham funksiya **hisoblaydi**, chiqarishni esa asosiy dastur bajaradi. C++'da `const vector<int>& a` — massiv nusxalanmaydi va funksiya uni oʻzgartira olmaydi; `int& kichik` esa aksincha, chaqiruvchining oʻzgaruvchisiga yozadi. Java'dagi `(double) yigindi` — butun boʻlishdan qochish uchun turni oʻzgartirish.
+`5` va `4 -2 9 7 1` kiritilsa, chiqish: `-2 9 3.80`. Uchala tilda ham funksiya **hisoblaydi**, chiqarishni esa asosiy dastur bajaradi. C++'da `const vector<int>& a` — massiv nusxalanmaydi va funksiya uni oʻzgartira olmaydi; `int& kichik` esa aksincha, chaqiruvchining oʻzgaruvchisiga yozadi. Javaʼdagi `(double) yigindi` — butun boʻlishdan qochish uchun turni oʻzgartirish.
 
 ## Ishlangan misol 3: masalani funksiyalarga boʻlish
 
@@ -361,9 +361,9 @@ int main() {
 **Koʻp uchraydigan xatolar**
 
 - **Hisoblovchi funksiya ichida chiqarish.** `def ortacha(a): print(...)` — natijani boshqa hisobda ishlatib boʻlmaydi; `return` qiling.
-- **Python'da qayta yuklashga urinish.** Ikkinchi `def yuza(a, b)` birinchi `def yuza(r)` ni oʻchiradi; standart parametrlardan foydalaning.
+- **Pythonʼda qayta yuklashga urinish.** Ikkinchi `def yuza(a, b)` birinchi `def yuza(r)` ni oʻchiradi; standart parametrlardan foydalaning.
 - **C++'da `&` siz „natija“ parametr.** `void f(int kichik)` nusxani oʻzgartiradi, chaqiruvchining oʻzgaruvchisi oʻzgarmaydi.
-- **Python'da oʻzgaruvchan standart qiymat.** `def f(a, royxat=[])` — roʻyxat barcha chaqiruvlar uchun bitta boʻlib qoladi; `None` ishlatib, ichida yangi roʻyxat yarating.
+- **Pythonʼda oʻzgaruvchan standart qiymat.** `def f(a, royxat=[])` — roʻyxat barcha chaqiruvlar uchun bitta boʻlib qoladi; `None` ishlatib, ichida yangi roʻyxat yarating.
 :::
 
 :::tip
@@ -375,7 +375,7 @@ Funksiyani yozishdan oldin uning tavsifini va 2–3 ta chaqiruv misolini (kirish
 - Funksiya tavsifi — nomi, parametrlari va qaytaradigan turi; yaxshi funksiya bitta ishni bajaradi.
 - Qiymat qaytaruvchi funksiya hisoblaydi, protsedura (`void`) amal bajaradi; hisob va chiqarishni ajrating.
 - Bir nechta natija: Python — kortej, Java — `record`, C++ — havola parametrlar yoki `pair`/`struct`.
-- Java va C++ funksiyalarni parametrlar soni va turi boʻyicha qayta yuklaydi; Python'da standart parametrlar ishlatiladi.
+- Java va C++ funksiyalarni parametrlar soni va turi boʻyicha qayta yuklaydi; Pythonʼda standart parametrlar ishlatiladi.
 - Katta masala bir-birini chaqiradigan kichik funksiyalarga boʻlinadi.
 
 ## Oʻzingizni tekshiring
@@ -385,11 +385,11 @@ Q: Funksiya tavsifiga nimalar kiradi?
 A: Nomi, parametrlari (va ularning turlari) hamda qaytaradigan qiymat turi.
 Q: `void` funksiya bilan qiymat qaytaruvchi funksiya chaqiruvining farqi nimada?
 A: Qiymat qaytaruvchi funksiya ifoda ichida ishlatiladi (`y = f(x) + 1`), `void` funksiya esa alohida buyruq sifatida chaqiriladi.
-Q: Java'da `int f(int x)` va `double f(int x)` ni birga eʼlon qilish mumkinmi?
+Q: Javaʼda `int f(int x)` va `double f(int x)` ni birga eʼlon qilish mumkinmi?
 A: Yoʻq: parametrlar bir xil, faqat qaytaradigan tur bilan farq qiluvchi funksiyalar qayta yuklanmaydi.
 Q: C++'da `void f(int& x) { x = 5; }` chaqirilgandan keyin chaqiruvchining oʻzgaruvchisi nimaga teng?
 A: 5 ga — `x` havola, u chaqiruvchining oʻzgaruvchisining oʻzi.
-Q: Python'da funksiyadan ikkita qiymatni qanday qaytarish mumkin?
+Q: Pythonʼda funksiyadan ikkita qiymatni qanday qaytarish mumkin?
 A: Kortej sifatida: `return a, b`, chaqiruvda `x, y = f()`.
 :::
 

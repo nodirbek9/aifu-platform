@@ -134,7 +134,7 @@ int main() {
 }
 ```
 
-`6`, `5 2 8 1 9 3` va soʻrovlar `1 3`, `2 5`, `4 4`, `1 6` uchun chiqish: `15`, `20`, `1`, `28`. `p[0] = 0` tufayli `l = 1` holati alohida tekshirilmaydi. Soʻrovlar koʻp boʻlganda kiritish-chiqarish ham muhim: Python'da butun kirish bir marta oʻqiladi, Java'da `BufferedReader`, C++'da `sync_with_stdio(false)` ishlatiladi.
+`6`, `5 2 8 1 9 3` va soʻrovlar `1 3`, `2 5`, `4 4`, `1 6` uchun chiqish: `15`, `20`, `1`, `28`. `p[0] = 0` tufayli `l = 1` holati alohida tekshirilmaydi. Soʻrovlar koʻp boʻlganda kiritish-chiqarish ham muhim: Pythonʼda butun kirish bir marta oʻqiladi, Javaʼda `BufferedReader`, C++'da `sync_with_stdio(false)` ishlatiladi.
 
 ## Ishlangan misol 2: kesmalar daraxti — oraliq minimumi
 

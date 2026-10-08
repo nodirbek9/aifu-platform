@@ -16,7 +16,7 @@ using namespace std;
 int main() {
     string name;
     getline(cin, name);
-    // TODO: salomlashuv matnini chiqaring
+    // ...
     return 0;
 }
 `,
@@ -42,7 +42,7 @@ using namespace std;
 int main() {
     long long a, b;
     cin >> a >> b;
-    // TODO: beshta natijani chiqaring
+    // ...
     return 0;
 }
 `,
@@ -68,7 +68,7 @@ using namespace std;
 int main() {
     int y;
     cin >> y;
-    // TODO: mantiqiy ifoda bilan tekshiring
+    // ...
     return 0;
 }
 `,
@@ -92,7 +92,7 @@ int main() {
     long long a, b, c;
     cin >> a >> b >> c;
     long long d = b * b - 4 * a * c;
-    // TODO: d ning ishorasiga qarab javob bering
+    // ...
     return 0;
 }
 `,
@@ -119,7 +119,7 @@ int main() {
     cin >> n;
     switch (n) {
         case 1: cout << "Dushanba" << endl; break;
-        // TODO: qolgan kunlar
+        // ...
         default: cout << "Xato" << endl;
     }
     return 0;
@@ -153,7 +153,7 @@ int main() {
     int n;
     cin >> n;
     long long f = 1;
-    // TODO: sikl yordamida f ni hisoblang
+    // ...
     cout << f << endl;
     return 0;
 }
@@ -179,7 +179,7 @@ int main() {
     long long n;
     cin >> n;
     long long d = 2;
-    // TODO: d * d <= n boʻlguncha boʻluvchi izlang
+    // ...
     return 0;
 }
 `,
@@ -207,7 +207,7 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    // TODO: tashqi sikl satrlar, ichki sikl ustunlar uchun
+    // ...
     return 0;
 }
 `,
@@ -235,7 +235,7 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    // TODO: n ta sonni oʻqing, yigʻindini hisoblang va chiqaring
+    // ...
     return 0;
 }
 `,
@@ -268,7 +268,7 @@ int main() {
     for (auto &v : a) cin >> v;
     long long x;
     cin >> x;
-    // TODO: birinchi uchrashgan oʻrinni toping
+    // ...
     return 0;
 }
 `,
@@ -302,7 +302,7 @@ using namespace std;
 int main() {
     long long x;
     cin >> x;
-    // TODO: uchta holatni ajrating
+    // ...
     return 0;
 }
 `,
@@ -330,7 +330,7 @@ int main() {
     int n;
     cin >> n;
     double s = 0;
-    // TODO: sikl bilan yigʻing
+    // ...
     cout << fixed << setprecision(4) << s << endl;
     return 0;
 }
@@ -359,7 +359,7 @@ int main() {
     cin >> n;
     vector<long long> a(n);
     for (auto &v : a) cin >> v;
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -392,7 +392,7 @@ int main() {
     vector<vector<long long>> m(n, vector<long long>(n));
     for (auto &row : m)
         for (auto &v : row) cin >> v;
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -427,7 +427,7 @@ int main() {
     vector<long long> a(n), b(n);
     for (auto &v : a) cin >> v;
     for (auto &v : b) cin >> v;
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -459,7 +459,7 @@ int main() {
     cin >> n >> k;
     vector<long long> a(n);
     for (auto &v : a) cin >> v;
-    // TODO: ichma-ich sikl
+    // ...
     return 0;
 }
 `,
@@ -496,7 +496,7 @@ int main() {
     vector<vector<long long>> a(n, vector<long long>(m));
     for (auto &row : a)
         for (auto &v : row) cin >> v;
-    // TODO: har bir satrni saralang va chiqaring
+    // ...
     return 0;
 }
 `,
@@ -530,7 +530,7 @@ using namespace std;
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    // TODO: n, massiv, q va soʻrovlarni oʻqing; har biriga binar qidiruv
+    // ...
     return 0;
 }
 `,
@@ -571,12 +571,12 @@ int main() {
 using namespace std;
 
 long long gcd(long long a, long long b) {
-    // TODO: Evklid algoritmi
+    // ...
     return 0;
 }
 
 long long lcm(long long a, long long b) {
-    // TODO
+    // ...
     return 0;
 }
 
@@ -616,7 +616,7 @@ int main() {
 using namespace std;
 
 long long power(long long a, long long n, long long m) {
-    // TODO: rekursiv tez darajaga koʻtarish
+    // ...
     return 0;
 }
 
@@ -654,9 +654,9 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    vector<long long> a(n); // oʻlchami ishga tushganda maʼlum boʻladigan massiv
+    vector<long long> a(n);
     for (auto &v : a) cin >> v;
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -695,7 +695,7 @@ using namespace std;
 int main() {
     string s;
     getline(cin, s);
-    // TODO: (int) belgi ASCII kodni beradi
+    // ...
     return 0;
 }
 `,
@@ -724,7 +724,7 @@ using namespace std;
 int main() {
     string s;
     getline(cin, s);
-    // TODO: harf va raqamlarni ajrating, kichik harfga oʻtkazing, teskarisi bilan solishtiring
+    // ...
     return 0;
 }
 `,
@@ -752,8 +752,6 @@ int main() {
 #include <string>
 using namespace std;
 
-// Satrdagi belgilar soni. UTF-8 da bitta harf bir necha bayt boʻlishi mumkin (masalan, ʻ),
-// shuning uchun davom baytlari (10xxxxxx) sanalmaydi.
 long long length(const string &line) {
     long long count = 0;
     for (unsigned char ch : line)
@@ -763,7 +761,7 @@ long long length(const string &line) {
 
 int main() {
     string line;
-    // TODO: while (getline(cin, line)) { ... }
+    // ...
     return 0;
 }
 `,
@@ -802,7 +800,7 @@ int main() {
 using namespace std;
 
 int findMax(const vector<long long> &a) {
-    // TODO: eng katta elementning indeksini qaytaring
+    // ...
     return 0;
 }
 
@@ -846,7 +844,7 @@ using namespace std;
 typedef vector<vector<long long>> Matrix;
 
 Matrix multiply(const Matrix &a, const Matrix &b) {
-    // TODO
+    // ...
     return Matrix();
 }
 
@@ -858,7 +856,7 @@ int main() {
         for (auto &v : row) cin >> v;
     for (auto &row : b)
         for (auto &v : row) cin >> v;
-    // TODO: multiply natijasini chiqaring
+    // ...
     return 0;
 }
 `,
@@ -909,7 +907,7 @@ int main() {
     cin >> m;
     vector<long long> b(m);
     for (auto &v : b) cin >> v;
-    // TODO: ikki koʻrsatkich i va j bilan birlashtiring
+    // ...
     return 0;
 }
 `,
@@ -945,7 +943,7 @@ int main() {
 using namespace std;
 
 void hanoi(int n, int src, int dst, int via, vector<pair<int, int>> &moves) {
-    // TODO: rekursiya
+    // ...
 }
 
 int main() {
@@ -986,7 +984,7 @@ int main() {
 using namespace std;
 
 long long ack(long long m, long long n) {
-    // TODO
+    // ...
     return 0;
 }
 
@@ -1026,7 +1024,7 @@ int main() {
     getline(cin, s);
     istringstream in(s);
     string word;
-    // TODO: while (in >> word) — har bir soʻzni formatlang
+    // ...
     return 0;
 }
 `,
@@ -1064,7 +1062,7 @@ private:
     long long balance_ = 0;
 
 public:
-    // TODO: deposit, withdraw va balance metodlari
+    // ...
 };
 
 int main() {
@@ -1074,7 +1072,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         string command;
         cin >> command;
-        // TODO: buyruqni bajaring (deposit va withdraw dan keyin summa keladi)
+        // ...
     }
     return 0;
 }
@@ -1132,7 +1130,7 @@ int main() {
     long long a, b;
     cin >> a >> b;
     int steps = 0;
-    // TODO: while (b != 0) sikli
+    // ...
     return 0;
 }
 `,
@@ -1161,7 +1159,7 @@ using namespace std;
 long long memo[91];
 
 long long fib(int n) {
-    // TODO: memo[n] ni ishlating
+    // ...
     return 0;
 }
 
@@ -1199,7 +1197,7 @@ using namespace std;
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    // TODO: pastki chegara (lower bound) va yuqori chegara (upper bound)
+    // ...
     return 0;
 }
 `,
@@ -1242,11 +1240,11 @@ int main() {
 using namespace std;
 
 void siftDown(vector<long long> &a, int i, int n) {
-    // TODO
+    // ...
 }
 
 void heapSort(vector<long long> &a) {
-    // TODO
+    // ...
 }
 
 int main() {
@@ -1255,7 +1253,7 @@ int main() {
     vector<long long> a(n);
     for (auto &v : a) cin >> v;
     heapSort(a);
-    // TODO: chiqaring
+    // ...
     return 0;
 }
 `,
@@ -1311,7 +1309,7 @@ int main() {
     vector<long long> a(n);
     for (auto &v : a) cin >> v;
     long long swaps = 0;
-    // TODO: pufaksimon saralashni bajarib, almashtirishlarni sanang
+    // ...
     cout << swaps << endl;
     return 0;
 }
@@ -1348,7 +1346,7 @@ int main() {
     string s;
     cin >> s;
     stack<char> st;
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -1391,7 +1389,7 @@ using namespace std;
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    // TODO: qoʻshnilik roʻyxati va priority_queue bilan Deykstra
+    // ...
     return 0;
 }
 `,
@@ -1455,18 +1453,18 @@ int n;
 vector<long long> t;
 
 void add(int i, long long x) {
-    // TODO: i += i & -i
+    // ...
 }
 
 long long prefix(int i) {
-    // TODO: i -= i & -i
+    // ...
     return 0;
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -1524,7 +1522,7 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    // TODO: nom, ehtimollik, taʼsir; barqaror saralash (stable_sort)
+    // ...
     return 0;
 }
 `,
@@ -1563,7 +1561,7 @@ int main() {
 #include <string>
 using namespace std;
 
-// Manfiy sonlar uchun ham 0..25 oraligʻidagi qoldiq
+// ...
 int floorMod(int x, int m) {
     return ((x % m) + m) % m;
 }
@@ -1573,7 +1571,7 @@ int main() {
     getline(cin, line);
     int k = stoi(line);
     getline(cin, text);
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -1624,7 +1622,7 @@ int main() {
     mode = trim(mode);
     key = trim(key);
     for (char &ch : key) ch = (char) toupper((unsigned char) ch);
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -1673,25 +1671,25 @@ using namespace std;
 
 typedef long long ll;
 
-// (a * b) mod m — koʻpaytma 64 bitga sigʻmasligi mumkin, shuning uchun 128 bitli tur
+// ...
 ll mulmod(ll a, ll b, ll m) {
     return (ll) ((__int128) a * b % m);
 }
 
 ll modPow(ll base, ll exp, ll m) {
-    // TODO: tez darajaga koʻtarish (mulmod bilan)
+    // ...
     return 0;
 }
 
 ll modInverse(ll e, ll phi) {
-    // TODO: kengaytirilgan Evklid algoritmi
+    // ...
     return 0;
 }
 
 int main() {
     ll p, q, e, m;
     cin >> p >> q >> e >> m;
-    // TODO: n, phi, d, c va deshifrlangan xabarni chiqaring
+    // ...
     return 0;
 }
 `,
@@ -1753,7 +1751,7 @@ int main() {
 #include <vector>
 using namespace std;
 
-// C++ standart kutubxonasida SHA-256 yoʻq, shuning uchun algoritm (FIPS 180-4) shu yerda berilgan.
+// ...
 static const uint32_t K[64] = {
     0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
     0xd807aa98, 0x12835b01, 0x243185be, 0x550c7dc3, 0x72be5d74, 0x80deb1fe, 0x9bdc06a7, 0xc19bf174,
@@ -1768,7 +1766,7 @@ static uint32_t rotr(uint32_t x, int n) {
     return (x >> n) | (x << (32 - n));
 }
 
-// Xabarning SHA-256 xesh qiymati: 64 ta oʻn oltilik raqam
+// ...
 string sha256(const string &message) {
     uint32_t h[8] = {0x6a09e667, 0xbb67ae85, 0x3c6ef372, 0xa54ff53a,
                      0x510e527f, 0x9b05688c, 0x1f83d9ab, 0x5be0cd19};
@@ -1824,7 +1822,7 @@ int main() {
     string message, expected;
     getline(cin, message);
     getline(cin, expected);
-    // TODO: expected ni tozalang (boʻsh joylar, kichik harf), sha256(message) bilan solishtiring
+    // ...
     return 0;
 }
 `,
@@ -1930,7 +1928,7 @@ const set<string> COMMON = {"password", "123456", "12345678", "qwerty", "admin",
 int main() {
     int n;
     cin >> n;
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -1984,7 +1982,7 @@ using namespace std;
 int main() {
     int n;
     cin >> n;
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -2024,7 +2022,7 @@ using namespace std;
 int main() {
     string scheme, bits;
     cin >> scheme >> bits;
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -2060,7 +2058,7 @@ int main() {
 #include <string>
 using namespace std;
 
-// "192.168.10.77" -> 32 bitli son
+// ...
 uint32_t ip(const string &s) {
     istringstream in(s);
     string part;
@@ -2084,7 +2082,7 @@ int main() {
     size_t slash = cidr.find('/');
     string address = cidr.substr(0, slash);
     int prefix = atoi(cidr.substr(slash + 1).c_str());
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -2156,7 +2154,7 @@ uint32_t mask(int len) {
 int main() {
     int n;
     cin >> n;
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -2229,7 +2227,7 @@ int main() {
     istringstream requestLine(trim(line));
     string method, target, version;
     requestLine >> method >> target >> version;
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -2303,7 +2301,7 @@ struct Rule {
 int main() {
     int n;
     cin >> n;
-    // TODO
+    // ...
     return 0;
 }
 `,
@@ -2373,7 +2371,7 @@ int main() {
     for (int i = 0; i < n; i++) {
         long long amount;
         cin >> amount;
-        // TODO: if / else if / else
+        // ...
     }
     return 0;
 }
@@ -2406,7 +2404,7 @@ int main() {
     int rate, years;
     cin >> principal >> rate >> years;
     long long balance = principal;
-    // TODO: for sikli
+    // ...
     return 0;
 }
 `,

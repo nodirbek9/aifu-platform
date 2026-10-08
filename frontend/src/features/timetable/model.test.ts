@@ -9,6 +9,7 @@ import {
   shownDays,
   shownSlots,
   slotOf,
+  splitCourseTitle,
   type ClassItem,
 } from './model'
 
@@ -190,5 +191,27 @@ describe('the shifts a week shows', () => {
 
   it('a week without classes shows the whole day', () => {
     expect(shownSlots(narrowWeek({ slots, days: [] }))).toHaveLength(3)
+  })
+})
+
+describe('splitCourseTitle', () => {
+  it('splits course title and term suffix when present', () => {
+    expect(splitCourseTitle('Dasturlash (2026/2027, 1-semestr)')).toEqual({
+      subject: 'Dasturlash',
+      termSuffix: '(2026/2027, 1-semestr)',
+    })
+    expect(splitCourseTitle('Kiberxavfsizlik asoslari (2025/2026, 2-semestr)')).toEqual({
+      subject: 'Kiberxavfsizlik asoslari',
+      termSuffix: '(2025/2026, 2-semestr)',
+    })
+  })
+
+  it('keeps subject name intact when no term suffix is present', () => {
+    expect(splitCourseTitle('Dasturlash')).toEqual({
+      subject: 'Dasturlash',
+    })
+    expect(splitCourseTitle('Algoritmlar (Kirish)')).toEqual({
+      subject: 'Algoritmlar (Kirish)',
+    })
   })
 })

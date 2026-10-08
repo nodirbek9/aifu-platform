@@ -22,7 +22,7 @@ Natija oʻlchami nomaʼlum boʻlganda ikki yoʻl bor:
 
 | Usul | Gʻoyasi | Qachon |
 |---|---|---|
-| **Ikki oʻtish** | 1-oʻtish: nechta element kerakligini sanash; ajratish; 2-oʻtish: toʻldirish | oddiy massiv (`new int[k]`, `new int[k]` Java'da) |
+| **Ikki oʻtish** | 1-oʻtish: nechta element kerakligini sanash; ajratish; 2-oʻtish: toʻldirish | oddiy massiv (`new int[k]`, `new int[k]` Javaʼda) |
 | **Oʻsuvchi massiv** | boʻsh massivdan boshlab, har bir elementni oxiriga qoʻshish | `list`, `ArrayList`, `vector` |
 
 | Til | Dinamik massiv yaratish | Boʻshatish | Funksiyadan qaytarish |
@@ -163,7 +163,7 @@ Algoritmni ikkita kichik massivda qogʻozda bajaring: `1 4 9` va `2 3 10`. Har b
 - Natija oʻlchami nomaʼlum boʻlsa: ikki oʻtish (sanash → ajratish → toʻldirish) yoki oʻsuvchi massiv.
 - C++'da `new[]` bilan ajratilgan xotira `delete[]` bilan boʻshatiladi; funksiya qaytargan massivni chaqiruvchi boʻshatadi.
 - Koʻrsatkich bilan aylanish: `p != a + n`, `*p` — joriy element, `++p` — keyingisi.
-- Java va Python'da massiv uzunligi uning oʻzida saqlanadi, C++ koʻrsatkichida esa — yoʻq, u alohida qaytariladi.
+- Java va Pythonʼda massiv uzunligi uning oʻzida saqlanadi, C++ koʻrsatkichida esa — yoʻq, u alohida qaytariladi.
 
 ## Oʻzingizni tekshiring
 

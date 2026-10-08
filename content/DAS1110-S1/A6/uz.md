@@ -91,7 +91,7 @@ Kirish `7` boʻlsa, sikl 10 marta ishlaydi va chiqaradi:
 7 x 10 = 70
 ```
 
-Takrorlar soni (10) oldindan maʼlum — `for` tabiiy tanlov. Python'da `range(1, 11)` — 11 kirmaydi, shuning uchun 10 ta qiymat.
+Takrorlar soni (10) oldindan maʼlum — `for` tabiiy tanlov. Pythonʼda `range(1, 11)` — 11 kirmaydi, shuning uchun 10 ta qiymat.
 
 ## Ishlangan misol 2: Evklid algoritmi (EKUB)
 

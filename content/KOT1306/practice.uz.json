@@ -44,7 +44,7 @@
     "KOT-A9": {
       "title": "HTTP soʻrovini tahlil qilish",
       "description": "<p>Soket orqali qabul qilingan xom HTTP soʻrovini tahlil qiluvchi server qismini yozing. Birinchi satr — <em>soʻrov satri</em>: metod, yoʻl (soʻrov parametrlari bilan) va versiya. Keyin boʻsh satrgacha <em>sarlavhalar</em> keladi (<code>Nom: qiymat</code>; sarlavha nomlari katta-kichik harfga sezgir emas).</p>",
-      "instructions": "Kirish: HTTP soʻrov matni. Chiqish (6 satr): Metod, Yo'l, So'rov (parametrlar yoki -), Versiya, Host (yoki -), Sarlavhalar (soni).",
+      "instructions": "Kirish: HTTP soʻrov matni. Chiqish (6 satr): Metod, Yoʻl, Soʻrov (parametrlar yoki -), Versiya, Host (yoki -), Sarlavhalar (soni).",
       "constraintsText": "Sarlavhalar soni 0–50.",
       "hints": []
     },

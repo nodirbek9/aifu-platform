@@ -43,7 +43,7 @@ Toʻgʻri konteynerni tanlash dasturni oʻnlab marta tezlashtirishi mumkin: 10�
 
 „Oʻrtacha“ — koʻp hollarda shunday; roʻyxatga qoʻshishda vaqti-vaqti bilan xotira kengaytiriladi va bitta qoʻshish uzoqroq davom etadi.
 
-**Xeshli** konteyner (`HashSet`, `unordered_map`, Python `dict`/`set`) elementning **xesh** qiymati boʻyicha uning joyini darhol topadi — juda tez, lekin elementlar tartibsiz. **Tartiblangan** konteyner (`TreeMap`, C++ `map`/`set`) elementlarni muvozanatlangan daraxtda saqlaydi — biroz sekinroq, lekin aylanib chiqqanda kalitlar saralangan tartibda keladi. Python'da `dict` kalitlarni **qoʻshilgan tartibda** saqlaydi; saralangan tartib kerak boʻlsa, `sorted(d)` ishlatiladi.
+**Xeshli** konteyner (`HashSet`, `unordered_map`, Python `dict`/`set`) elementning **xesh** qiymati boʻyicha uning joyini darhol topadi — juda tez, lekin elementlar tartibsiz. **Tartiblangan** konteyner (`TreeMap`, C++ `map`/`set`) elementlarni muvozanatlangan daraxtda saqlaydi — biroz sekinroq, lekin aylanib chiqqanda kalitlar saralangan tartibda keladi. Pythonʼda `dict` kalitlarni **qoʻshilgan tartibda** saqlaydi; saralangan tartib kerak boʻlsa, `sorted(d)` ishlatiladi.
 
 ## Lugʻat bilan ishlash
 
@@ -61,7 +61,7 @@ C++'da `m[k]` faqat **oʻqish** uchun ishlatilsa ham, yoʻq kalitni yaratib qoʻ
 
 Konteyner elementlarini aylanib chiqish uchun hamma tillarda „har bir element uchun“ sikli ishlaydi: `for x in s`, `for (int x : s)`, `for (int x : s)`. Uning ortida **iterator** — konteynerdagi joriy oʻrinni koʻrsatuvchi obyekt turadi. C++'da iteratorlar ochiq ishlatiladi: `s.begin()` — birinchi element, `s.end()` — oxirgidan keyingi oʻrin; `sort(v.begin(), v.end())` va `find` kabi algoritmlar aynan iteratorlar bilan ishlaydi.
 
-Konteyner ustida aylanayotib undan element oʻchirish xavfli: Java'da `ConcurrentModificationException`, C++'da aniqlanmagan xatti-harakat, Python'da `RuntimeError` (lugʻat uchun) yoki elementlarni oʻtkazib yuborish.
+Konteyner ustida aylanayotib undan element oʻchirish xavfli: Javaʼda `ConcurrentModificationException`, C++'da aniqlanmagan xatti-harakat, Pythonʼda `RuntimeError` (lugʻat uchun) yoki elementlarni oʻtkazib yuborish.
 
 ## Ishlangan misol 1: soʻzlar chastotasi (lugʻat)
 
@@ -128,7 +128,7 @@ ikki 2
 uch 1
 ```
 
-Java'da `TreeMap`, C++'da `map` — tartiblangan lugʻatlar, shuning uchun aylanib chiqqanda kalitlar oʻzi saralangan keladi. Python'da `dict` qoʻshilgan tartibni saqlaydi, shuning uchun `sorted` qoʻshildi. C++'dagi `auto& [kalit, soni]` — juftlikni ikki oʻzgaruvchiga ajratish (C++17).
+Javaʼda `TreeMap`, C++'da `map` — tartiblangan lugʻatlar, shuning uchun aylanib chiqqanda kalitlar oʻzi saralangan keladi. Pythonʼda `dict` qoʻshilgan tartibni saqlaydi, shuning uchun `sorted` qoʻshildi. C++'dagi `auto& [kalit, soni]` — juftlikni ikki oʻzgaruvchiga ajratish (C++17).
 
 ## Ishlangan misol 2: toʻplamlar — umumiy elementlar
 
@@ -228,7 +228,7 @@ Chiqish:
 7
 ```
 
-Turli sonlar: 1, 2, 3, 5, 7, 8, 9 — jami 7 ta. Toʻplamga takror qoʻshilmaydi, shuning uchun „turli elementlar soni“ — shunchaki toʻplam oʻlchami. Python'da `&` va `|` — kesishma va birlashma amallari; Java'da `retainAll` va `addAll`. Massiv bilan bu masala ichma-ich sikl talab qilib, *O*(*n* · *m*) vaqt olardi, toʻplam bilan esa deyarli chiziqli.
+Turli sonlar: 1, 2, 3, 5, 7, 8, 9 — jami 7 ta. Toʻplamga takror qoʻshilmaydi, shuning uchun „turli elementlar soni“ — shunchaki toʻplam oʻlchami. Pythonʼda `&` va `|` — kesishma va birlashma amallari; Javaʼda `retainAll` va `addAll`. Massiv bilan bu masala ichma-ich sikl talab qilib, *O*(*n* · *m*) vaqt olardi, toʻplam bilan esa deyarli chiziqli.
 
 ## Ishlangan misol 3: navbat — sanoq oʻyini
 
@@ -303,7 +303,7 @@ int main() {
 - **Roʻyxatda „bormi?“ savolini koʻp marta berish.** `if x in royxat` sikl ichida *O*(*n*²) ga olib keladi; toʻplam ishlating.
 - **C++'da `m[k]` bilan tekshirish.** Yoʻq kalit yaratilib qoladi va lugʻat oʻsadi; `count` yoki `find` ishlating.
 - **Xeshli konteynerdan tartib kutish.** `HashMap`, `unordered_map` elementlarni tasodifiy tartibda beradi; tartib kerak boʻlsa — `TreeMap`, `map` yoki saralash.
-- **Python'da navbat uchun `list.pop(0)`.** Har bir olish *O*(*n*); `deque.popleft()` ishlating.
+- **Pythonʼda navbat uchun `list.pop(0)`.** Har bir olish *O*(*n*); `deque.popleft()` ishlating.
 :::
 
 :::tip
@@ -327,7 +327,7 @@ Q: `HashMap` va `TreeMap` ning asosiy farqi nimada?
 A: `HashMap` tezroq (*O*(1)), lekin tartibsiz; `TreeMap` *O*(log *n*), lekin kalitlarni saralangan tartibda saqlaydi.
 Q: C++'da `if (m["olma"] > 0)` qanday yashirin taʼsirga ega?
 A: Agar „olma“ kaliti boʻlmasa, u 0 qiymat bilan yaratiladi va lugʻatga qoʻshiladi.
-Q: Nima uchun Python'da navbat uchun `deque` ishlatiladi?
+Q: Nima uchun Pythonʼda navbat uchun `deque` ishlatiladi?
 A: `deque.popleft()` *O*(1), `list.pop(0)` esa *O*(*n*) — qolgan elementlar suriladi.
 Q: Satrdagi turli soʻzlar sonini qanday topish mumkin?
 A: Soʻzlarni toʻplamga qoʻshib, toʻplam oʻlchamini olish: `len(set(matn.split()))`.

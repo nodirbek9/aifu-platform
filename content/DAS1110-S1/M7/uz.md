@@ -29,9 +29,9 @@ Dekanat dasturida talabaning oʻrtacha bali besh joyda hisoblanadi: reytingda, s
 | Natija qaytarish | `return x * x` | `return x * x;` | `return x * x;` |
 | Chaqirish | `y = kvadrat(5)` | `int y = kvadrat(5);` | `int y = kvadrat(5);` |
 
-Java va C++'da funksiya sarlavhasida **qaytariladigan tur** (`int`) va har bir parametrning turi yoziladi. Python'da turlar yozilmaydi (xohlasa, izoh sifatida: `def kvadrat(x: int) -> int:`).
+Java va C++'da funksiya sarlavhasida **qaytariladigan tur** (`int`) va har bir parametrning turi yoziladi. Pythonʼda turlar yozilmaydi (xohlasa, izoh sifatida: `def kvadrat(x: int) -> int:`).
 
-Java'da funksiya (metod) albatta klass ichida turadi; `main` dan chaqiriladigan oddiy funksiyalar `static` deb yoziladi.
+Javaʼda funksiya (metod) albatta klass ichida turadi; `main` dan chaqiriladigan oddiy funksiyalar `static` deb yoziladi.
 
 ## Parametr va argument
 
@@ -55,7 +55,7 @@ Yaxshi odat: hisoblovchi funksiya natijani **qaytarsin**, chiqarmasin. Shunda un
 
 ## Qiymat boʻyicha uzatish
 
-Java, C++ va Python'da oddiy turlar (son, mantiqiy qiymat) funksiyaga **qiymat boʻyicha (by value)** uzatiladi: parametr argumentning **nusxasini** oladi. Funksiya ichida parametrni oʻzgartirish chaqiruvchidagi oʻzgaruvchiga taʼsir qilmaydi.
+Java, C++ va Pythonʼda oddiy turlar (son, mantiqiy qiymat) funksiyaga **qiymat boʻyicha (by value)** uzatiladi: parametr argumentning **nusxasini** oladi. Funksiya ichida parametrni oʻzgartirish chaqiruvchidagi oʻzgaruvchiga taʼsir qilmaydi.
 
 Massivlar boshqacha:
 
@@ -85,7 +85,7 @@ int main() { ... tubmi(7) ... }
 bool tubmi(int n) { ... } // taʼrif
 ```
 
-Python va Java'da bu muammo yoʻq: Python funksiyani chaqiruv paytida qidiradi, Java esa butun klassni oldindan koʻradi.
+Python va Javaʼda bu muammo yoʻq: Python funksiyani chaqiruv paytida qidiradi, Java esa butun klassni oldindan koʻradi.
 
 ## Ishlangan misol 1: tub sonlar roʻyxati
 
@@ -267,10 +267,10 @@ Eʼtibor bering:
 **Koʻp uchraydigan xatolar**
 
 - **`return` oʻrniga `print`.** Funksiya natijani chiqaradi, lekin qaytarmaydi: `y = f(5)` da *y* — `None` (Python) yoki kompilyatsiya xatosi (Java, C++).
-- **Barcha yoʻllarda `return` yoʻq.** Java'da `missing return statement` xatosi; C++'da xato yoʻq, lekin natija aniqlanmagan.
+- **Barcha yoʻllarda `return` yoʻq.** Javaʼda `missing return statement` xatosi; C++'da xato yoʻq, lekin natija aniqlanmagan.
 - **Parametrni oʻzgartirib, chaqiruvchida natija kutish.** Oddiy turlar nusxa boʻyicha uzatiladi; natijani `return` bilan qaytaring.
 - **C++'da prototipsiz chaqiruv.** Funksiya `main` dan keyin yozilgan boʻlsa: `'tubmi' was not declared in this scope`.
-- **Java'da `static` ni unutish.** `main` dan `non-static method cannot be referenced from a static context` xatosi.
+- **Javaʼda `static` ni unutish.** `main` dan `non-static method cannot be referenced from a static context` xatosi.
 :::
 
 :::tip
@@ -281,8 +281,8 @@ Funksiyaga nom berishda feʼl yoki savol ishlating: `hisobla_ortacha`, `tubmi`, 
 
 - Funksiya — nomlangan, qayta ishlatiladigan kod boʻlagi: parametrlarni oladi, `return` bilan natija qaytaradi.
 - Parametr — eʼlondagi nom, argument — chaqiruvdagi qiymat; ular tartib boʻyicha mos keladi.
-- `return` natijani qaytaradi va funksiyani tugatadi; natija qaytarmaydigan funksiya — `void` (Python'da `return` siz).
-- Oddiy turlar qiymat boʻyicha uzatiladi; Python va Java'da massiv havola orqali, C++'da `vector` nusxalanadi (havola uchun `&`).
+- `return` natijani qaytaradi va funksiyani tugatadi; natija qaytarmaydigan funksiya — `void` (Pythonʼda `return` siz).
+- Oddiy turlar qiymat boʻyicha uzatiladi; Python va Javaʼda massiv havola orqali, C++'da `vector` nusxalanadi (havola uchun `&`).
 - Lokal oʻzgaruvchilar faqat funksiya ichida yashaydi; global oʻzgaruvchilardan qoching.
 - C++'da funksiya chaqiruvdan oldin eʼlon qilinishi (yoki prototipi yozilishi) kerak.
 
@@ -291,7 +291,7 @@ Funksiyaga nom berishda feʼl yoki savol ishlating: `hisobla_ortacha`, `tubmi`, 
 :::check
 Q: `def f(a, b): return a - b` va `f(10, 3)` chaqiruvida parametrlar va argumentlar qaysilar?
 A: Parametrlar — *a* va *b*; argumentlar — 10 va 3. Natija 7.
-Q: Python'da `def f(x): x = x + 1` va `n = 5; f(n); print(n)` nima chiqaradi?
+Q: Pythonʼda `def f(x): x = x + 1` va `n = 5; f(n); print(n)` nima chiqaradi?
 A: 5: *x* — *n* ning nusxasi (aniqrogʻi, yangi qiymat faqat lokal *x* ga beriladi).
 Q: C++'da `void tozala(vector<int> a) { a[0] = 0; }` chaqirilgandan keyin asl vektorning birinchi elementi oʻzgaradimi?
 A: Yoʻq: vektor nusxalanadi. Oʻzgarishi uchun parametr `vector<int>& a` boʻlishi kerak.

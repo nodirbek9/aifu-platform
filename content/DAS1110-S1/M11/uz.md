@@ -7,7 +7,7 @@ summary: C++ string, Java String va Python str: uzunlik, birlashtirish, qism sat
 
 Ism-familiyani tekshirish, parol qoidalari, e-pochta manzilidagi `@` ni topish, CSV fayldan ustunlarni ajratish, matndagi soʻzlarni sanash, qidiruv tizimi — dasturlarning katta qismi matn bilan ishlaydi. M10 darsida koʻrilgan C-satr bilan bularni qilish qiyin va xavfli: uzunlikni qoʻlda kuzatish, `'\0'` haqida oʻylash, chegaradan chiqishdan qoʻrqish kerak.
 
-Zamonaviy tillarda buning uchun **satr klassi** bor: C++'da `string`, Java'da `String`, Python'da `str`. Ular uzunlikni oʻzi biladi, xotirani oʻzi boshqaradi va qidirish, kesish, almashtirish kabi tayyor amallarga ega.
+Zamonaviy tillarda buning uchun **satr klassi** bor: C++'da `string`, Javaʼda `String`, Pythonʼda `str`. Ular uzunlikni oʻzi biladi, xotirani oʻzi boshqaradi va qidirish, kesish, almashtirish kabi tayyor amallarga ega.
 
 :::note
 **Bu darsdan soʻng siz:**
@@ -16,7 +16,7 @@ Zamonaviy tillarda buning uchun **satr klassi** bor: C++'da `string`, Java'da `S
 - qism satr ajrata, satr ichida qidira va almashtira olasiz;
 - satrlarni solishtira olasiz va katta-kichik harfga oʻtkaza olasiz;
 - matnni soʻzlarga ajratib, ular bilan ishlay olasiz;
-- Java va Python'da satr nima uchun oʻzgarmasligini va koʻp birlashtirishda `StringBuilder` / `join` nima uchun kerakligini tushuntira olasiz.
+- Java va Pythonʼda satr nima uchun oʻzgarmasligini va koʻp birlashtirishda `StringBuilder` / `join` nima uchun kerakligini tushuntira olasiz.
 :::
 
 ## Asosiy amallar
@@ -36,17 +36,17 @@ Zamonaviy tillarda buning uchun **satr klassi** bor: C++'da `string`, Java'da `S
 
 Eʼtibor bering: qism satrda Python va Java **oxirgi indeksni** oladi (u kirmaydi), C++ esa **uzunlikni**: `substr(2, 3)` — 2-indeksdan boshlab 3 ta belgi.
 
-Python'da kesish (`slice`) kuchli vosita: `s[:3]` — dastlabki 3 belgi, `s[-3:]` — oxirgi 3 belgi, `s[::-1]` — teskari satr.
+Pythonʼda kesish (`slice`) kuchli vosita: `s[:3]` — dastlabki 3 belgi, `s[-3:]` — oxirgi 3 belgi, `s[::-1]` — teskari satr.
 
-## Java'da satrlarni solishtirish
+## Javaʼda satrlarni solishtirish
 
-Java'da `==` satrlarning **mazmunini** emas, **havolalarini** solishtiradi: ikki xil obyektdagi bir xil matn uchun `==` yolgʻon boʻlishi mumkin. Mazmunni solishtirish uchun har doim `s.equals(t)` (katta-kichik harfni hisobga olmasdan — `s.equalsIgnoreCase(t)`) ishlating. Bu Java'dagi eng mashhur xatolardan biri.
+Javaʼda `==` satrlarning **mazmunini** emas, **havolalarini** solishtiradi: ikki xil obyektdagi bir xil matn uchun `==` yolgʻon boʻlishi mumkin. Mazmunni solishtirish uchun har doim `s.equals(t)` (katta-kichik harfni hisobga olmasdan — `s.equalsIgnoreCase(t)`) ishlating. Bu Javaʼdagi eng mashhur xatolardan biri.
 
-C++ va Python'da `==` mazmunni solishtiradi.
+C++ va Pythonʼda `==` mazmunni solishtiradi.
 
 ## Oʻzgarmas satrlar
 
-Java va Python'da satr **oʻzgarmas (immutable)**: yaratilgandan keyin uning belgilarini oʻzgartirib boʻlmaydi. `s.upper()`, `s.replace(...)` asl satrni oʻzgartirmaydi — **yangi** satr qaytaradi. `s[0] = 'X'` Python'da xato beradi.
+Java va Pythonʼda satr **oʻzgarmas (immutable)**: yaratilgandan keyin uning belgilarini oʻzgartirib boʻlmaydi. `s.upper()`, `s.replace(...)` asl satrni oʻzgartirmaydi — **yangi** satr qaytaradi. `s[0] = 'X'` Pythonʼda xato beradi.
 
 Shuning uchun siklda `s = s + x` ni koʻp marta bajarish sekin: har safar yangi satr yaratilib, eskisi nusxalanadi. Yechim:
 
@@ -68,7 +68,7 @@ Matnni probellar boʻyicha soʻzlarga ajratish:
 | Java | `String[] w = s.trim().split("\\s+");` — muntazam ifoda: bir yoki bir nechta probel |
 | C++ | `istringstream ss(s);` va `while (ss >> w)` — `<sstream>` |
 
-Java'da boʻsh qatorni `split` qilish bitta boʻsh elementli massiv beradi — buni alohida tekshiring.
+Javaʼda boʻsh qatorni `split` qilish bitta boʻsh elementli massiv beradi — buni alohida tekshiring.
 
 ## Ishlangan misol 1: palindrom
 
@@ -130,7 +130,7 @@ int main() {
 
 Kirish `A man, a plan, a canal: Panama` boʻlsa: harflar `amanaplanacanalpanama` — teskarisi ham shunday. Chiqadi: `ha`. Kirish `Salom` boʻlsa: `salom` ≠ `molas`, chiqadi `yoʻq`.
 
-Java'da `sb.reverse()` `StringBuilder` ning oʻzini teskari aylantiradi, shuning uchun `harflar` undan **oldin** olingan. C++'da `string teskari(harflar.rbegin(), harflar.rend())` — oxiridan boshiga oʻqib yangi satr yaratadi. Solishtirish Java'da `equals` bilan.
+Javaʼda `sb.reverse()` `StringBuilder` ning oʻzini teskari aylantiradi, shuning uchun `harflar` undan **oldin** olingan. C++'da `string teskari(harflar.rbegin(), harflar.rend())` — oxiridan boshiga oʻqib yangi satr yaratadi. Solishtirish Javaʼda `equals` bilan.
 
 ## Ishlangan misol 2: soʻzlar statistikasi
 
@@ -300,14 +300,14 @@ Go
 
 Chiqadi: `2` va `Java va Go, Go va C++`.
 
-Java versiyasida qidiruv `indexOf(eski, boshlash)` bilan davom etadi: har topilgandan keyin qidiruv topilgan qism tugagan joydan boshlanadi. C++ versiyasi topilgan joyni darhol `replace` qiladi va qidiruvni **yangi** qism satrdan keyin davom ettiradi — aks holda, masalan, „a“ ni „aa“ ga almashtirishda cheksiz siklga tushish mumkin. Python'da `count` va `replace` tayyor.
+Java versiyasida qidiruv `indexOf(eski, boshlash)` bilan davom etadi: har topilgandan keyin qidiruv topilgan qism tugagan joydan boshlanadi. C++ versiyasi topilgan joyni darhol `replace` qiladi va qidiruvni **yangi** qism satrdan keyin davom ettiradi — aks holda, masalan, „a“ ni „aa“ ga almashtirishda cheksiz siklga tushish mumkin. Pythonʼda `count` va `replace` tayyor.
 
 :::warning
 **Koʻp uchraydigan xatolar**
 
-- **Java'da satrlarni `==` bilan solishtirish.** Mazmun uchun `equals`.
-- **`substr` va `substring` ni chalkashtirish.** C++'da ikkinchi argument — uzunlik, Java'da — oxirgi indeks.
-- **Natijani saqlamaslik.** Python va Java'da `s.upper()` yangi satr qaytaradi; `s = s.upper()` deb yozish kerak.
+- **Javaʼda satrlarni `==` bilan solishtirish.** Mazmun uchun `equals`.
+- **`substr` va `substring` ni chalkashtirish.** C++'da ikkinchi argument — uzunlik, Javaʼda — oxirgi indeks.
+- **Natijani saqlamaslik.** Python va Javaʼda `s.upper()` yangi satr qaytaradi; `s = s.upper()` deb yozish kerak.
 - **C++'da `find` natijasini `-1` bilan solishtirish.** Toʻgʻrisi — `string::npos`.
 - **Siklda `s = s + x` (Java).** Katta matnda juda sekin; `StringBuilder` ishlating.
 - **Boʻsh satrda `w[0]`.** Boʻsh satrning 0-belgisi yoʻq; oldin uzunlikni tekshiring.
@@ -322,22 +322,22 @@ Satr bilan ishlaydigan har bir funksiyani chekka holatlarda sinang: boʻsh satr,
 - `string` (C++), `String` (Java), `str` (Python) uzunlikni va xotirani oʻzi boshqaradi.
 - Asosiy amallar: uzunlik, belgi, birlashtirish, qism satr, qidirish, almashtirish, solishtirish.
 - Qism satr: Python va Java — oxirgi indeks, C++ — uzunlik; topilmasa: −1 yoki `string::npos`.
-- Java'da mazmun `equals` bilan solishtiriladi.
+- Javaʼda mazmun `equals` bilan solishtiriladi.
 - Java va Python satrlari oʻzgarmas: metodlar yangi satr qaytaradi; koʻp birlashtirish — `StringBuilder` / `join`.
 - Soʻzlarga ajratish: `split()`, `split("\\s+")`, `istringstream`.
 
 ## Oʻzingizni tekshiring
 
 :::check
-Q: `s = "Dasturlash"` boʻlsa, Python'da `s[3:7]` va C++'da `s.substr(3, 4)` nimani beradi?
+Q: `s = "Dasturlash"` boʻlsa, Pythonʼda `s[3:7]` va C++'da `s.substr(3, 4)` nimani beradi?
 A: Ikkalasi ham `turl`: 3-indeksdan 4 ta belgi.
-Q: Java'da `new String("ab") == "ab"` nimaga teng va nima uchun?
+Q: Javaʼda `new String("ab") == "ab"` nimaga teng va nima uchun?
 A: `false`: `==` havolalarni solishtiradi, bular ikki xil obyekt. `"ab".equals(new String("ab"))` esa `true`.
-Q: Python'da `s = "salom"; s.upper(); print(s)` nima chiqaradi?
+Q: Pythonʼda `s = "salom"; s.upper(); print(s)` nima chiqaradi?
 A: `salom`: satr oʻzgarmas, `upper()` yangi satr qaytaradi, lekin u saqlanmadi.
-Q: Nima uchun Java'da siklda `s = s + x` oʻrniga `StringBuilder` tavsiya etiladi?
+Q: Nima uchun Javaʼda siklda `s = s + x` oʻrniga `StringBuilder` tavsiya etiladi?
 A: Har bir `+` yangi satr yaratib, eskisini toʻliq nusxalaydi; *n* marta birlashtirish ~*n*² ish talab qiladi. `StringBuilder` esa bitta oʻzgaruvchan bufer bilan ishlaydi.
-Q: `"  bir  ikki "` Python'da `split()` bilan nechta soʻzga ajraladi?
+Q: `"  bir  ikki "` Pythonʼda `split()` bilan nechta soʻzga ajraladi?
 A: 2 ta: `["bir", "ikki"]`.
 :::
 

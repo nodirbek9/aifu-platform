@@ -32,7 +32,7 @@ Pufaksimon saralashda katta element bitta oʻtishda oxirigacha „uchib“ borad
 | Oʻrtacha vaqt | *O*(*n* log *n*) | *O*(*n*) (*n* + *n*/2 + *n*/4 + … ≈ 2*n*) |
 | Eng yomon | *O*(*n*²) | *O*(*n*²) |
 
-C++ `nth_element`, Python'da `heapq.nsmallest` va statistikada medianani tez hisoblash shu gʻoyaga asoslangan.
+C++ `nth_element`, Pythonʼda `heapq.nsmallest` va statistikada medianani tez hisoblash shu gʻoyaga asoslangan.
 
 ## 0-1 prinsipi
 
@@ -398,13 +398,13 @@ Ikkinchi tarmoqda `0101` kirishi `0011` boʻlishi kerak edi, lekin oʻrtadagi ik
 **Koʻp uchraydigan xatolar**
 
 - **Pufaksimon saralashda oxirgi saralangan qismni qayta tekshirish.** *k*-oʻtishdan keyin oxirgi *k* element joyida; ichki sikl `n − otish` gacha boradi.
-- **Quickselect'da ikkala qismga ham davom etish.** Bu tez saralashga aylanadi va *O*(*n* log *n*) boʻladi; faqat *k* tushgan qism.
-- **Quickselect'da 1 dan va 0 dan sanashni aralashtirish.** Kirishdagi *k* ni darhol `k − 1` ga aylantiring.
+- **Quickselectʼda ikkala qismga ham davom etish.** Bu tez saralashga aylanadi va *O*(*n* log *n*) boʻladi; faqat *k* tushgan qism.
+- **Quickselectʼda 1 dan va 0 dan sanashni aralashtirish.** Kirishdagi *k* ni darhol `k − 1` ga aylantiring.
 - **Tarmoqni faqat bir nechta tasodifiy kirishda tekshirish.** Xato kamdan-kam kirishda chiqishi mumkin; 0-1 prinsipi toʻliq tekshiruv beradi.
 :::
 
 :::tip
-Quickselect'ni tekshirishda natijani oddiy saralash bilan solishtiring: `sorted(a)[k − 1]`. Bir nechta tasodifiy massivda ikkalasi bir xil javob bersa, algoritm toʻgʻri ishlaydi.
+Quickselectʼni tekshirishda natijani oddiy saralash bilan solishtiring: `sorted(a)[k − 1]`. Bir nechta tasodifiy massivda ikkalasi bir xil javob bersa, algoritm toʻgʻri ishlaydi.
 :::
 
 ## Xulosa

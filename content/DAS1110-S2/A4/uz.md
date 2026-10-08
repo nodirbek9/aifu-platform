@@ -136,7 +136,7 @@ int main() {
 }
 ```
 
-`10` kiritilsa — `55`, `90` kiritilsa — `2880067194370816120` (bu `long` ga sigʻadi, *F*(93) esa sigʻmaydi). Java'da `memo[n] != 0` sharti ishlaydi, chunki *n* ≥ 2 uchun *F*(*n*) hech qachon 0 emas; C++'da „hisoblanmagan“ belgisi sifatida `-1` olingan. Memoizatsiyasiz *n* = 90 hisoblanib boʻlmasdi.
+`10` kiritilsa — `55`, `90` kiritilsa — `2880067194370816120` (bu `long` ga sigʻadi, *F*(93) esa sigʻmaydi). Javaʼda `memo[n] != 0` sharti ishlaydi, chunki *n* ≥ 2 uchun *F*(*n*) hech qachon 0 emas; C++'da „hisoblanmagan“ belgisi sifatida `-1` olingan. Memoizatsiyasiz *n* = 90 hisoblanib boʻlmasdi.
 
 ## Ishlangan misol 2: qaytish usuli — ketma-ket birlarsiz satrlar
 
@@ -356,7 +356,7 @@ int main() {
 }
 ```
 
-`5` va `3 8 -1 6 2` kiritilsa, chiqish: `18`, `8` va `2 6 -1 8 3`. Kutubxonadagi funksiyalar hech narsa oʻqimaydi va chiqarmaydi — shuning uchun ularni istalgan dasturda qayta ishlatish mumkin. C++'da `massivlar::yigindi` — nomlar fazosi orqali murojaat; Java'da `Massivlar.yigindi` — sinf nomi orqali, xuddi `Math.max` kabi. Har bir rekursiv chaqiruv stekda joy egallaydi, shuning uchun bunday funksiyalar bir necha ming elementgacha xavfsiz; juda katta massivlar uchun sikl afzal.
+`5` va `3 8 -1 6 2` kiritilsa, chiqish: `18`, `8` va `2 6 -1 8 3`. Kutubxonadagi funksiyalar hech narsa oʻqimaydi va chiqarmaydi — shuning uchun ularni istalgan dasturda qayta ishlatish mumkin. C++'da `massivlar::yigindi` — nomlar fazosi orqali murojaat; Javaʼda `Massivlar.yigindi` — sinf nomi orqali, xuddi `Math.max` kabi. Har bir rekursiv chaqiruv stekda joy egallaydi, shuning uchun bunday funksiyalar bir necha ming elementgacha xavfsiz; juda katta massivlar uchun sikl afzal.
 
 :::warning
 **Koʻp uchraydigan xatolar**
@@ -364,7 +364,7 @@ int main() {
 - **Bazaviy holatni unutish yoki notoʻgʻri yozish.** Rekursiya toʻxtamaydi va stek toʻlib ketadi (`RecursionError`, `StackOverflowError`).
 - **Memo jadvalini funksiya ichida yaratish.** Har bir chaqiruvda yangi jadval paydo boʻladi va hech narsa eslab qolinmaydi; jadval funksiyadan tashqarida boʻlishi kerak.
 - **Qaytish usulida tanlovni bekor qilmaslik.** Umumiy holat (masalan, C++'dagi `joriy`) keyingi tarmoqqa „ifloslangan“ holda oʻtadi.
-- **Python'da `import` qilinadigan faylga sinov kodi yozish.** Modul ulanganda bu kod ham bajariladi; uni `if __name__ == "__main__":` ichiga oling.
+- **Pythonʼda `import` qilinadigan faylga sinov kodi yozish.** Modul ulanganda bu kod ham bajariladi; uni `if __name__ == "__main__":` ichiga oling.
 :::
 
 :::tip

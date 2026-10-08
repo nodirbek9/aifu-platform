@@ -46,7 +46,7 @@ Sikllarning uch turi bor:
 | Python | `for i in range(1, n + 1):` |
 | Java, C++ | `for (int i = 1; i <= n; i++) { ... }` |
 
-Python'da `range(boshlanish, tugash, qadam)` — `tugash` **kirmaydi**: `range(1, 5)` → 1, 2, 3, 4. `range(5)` → 0, 1, 2, 3, 4. Teskari tartib: `range(10, 0, -1)` → 10, 9, …, 1.
+Pythonʼda `range(boshlanish, tugash, qadam)` — `tugash` **kirmaydi**: `range(1, 5)` → 1, 2, 3, 4. `range(5)` → 0, 1, 2, 3, 4. Teskari tartib: `range(10, 0, -1)` → 10, 9, …, 1.
 
 Java va C++'da `for` qavsida uch qism bor: `int i = 1` (bir marta, boshida), `i <= n` (har iteratsiyadan oldin), `i++` (har iteratsiyadan keyin).
 
@@ -63,7 +63,7 @@ Sikl tanasida shartga taʼsir qiluvchi oʻzgaruvchi albatta oʻzgarishi kerak, a
 
 ## Soʻng shartli sikl: do-while
 
-**`do-while`** — avval tana bajariladi, keyin shart tekshiriladi. Shuning uchun tana kamida bir marta bajariladi. Java va C++'da bor: `do { ... } while (shart);` (oxirida nuqtali vergul!). Python'da `do-while` yoʻq; uning oʻrniga `while True:` va ichida `break` ishlatiladi. Bu sikl A8 mashgʻulotida batafsil koʻriladi.
+**`do-while`** — avval tana bajariladi, keyin shart tekshiriladi. Shuning uchun tana kamida bir marta bajariladi. Java va C++'da bor: `do { ... } while (shart);` (oxirida nuqtali vergul!). Pythonʼda `do-while` yoʻq; uning oʻrniga `while True:` va ichida `break` ishlatiladi. Bu sikl A8 mashgʻulotida batafsil koʻriladi.
 
 ## Hisoblagich va yigʻuvchi
 
@@ -232,7 +232,7 @@ Sikl yozishdan oldin uch savolga javob bering: nima takrorlanadi? qachon toʻxta
 
 - Sikl tanani shart rost ekan takrorlaydi; tananing bir marta bajarilishi — iteratsiya.
 - `for` — takrorlar soni maʼlum boʻlganda; `while` — shart bilan, tana bir marta ham bajarilmasligi mumkin; `do-while` — tana kamida bir marta bajariladi.
-- Python'da `range(a, b)` da *b* kirmaydi; Java va C++'da `for (boshlash; shart; qadam)`.
+- Pythonʼda `range(a, b)` da *b* kirmaydi; Java va C++'da `for (boshlash; shart; qadam)`.
 - Yigʻuvchi sikldan oldin 0 (yigʻindi) yoki 1 (koʻpaytma) bilan boshlanadi.
 - `break` siklni tugatadi, `continue` keyingi iteratsiyaga oʻtadi.
 - Sikl tanasida shartga taʼsir qiluvchi oʻzgaruvchi oʻzgarishi kerak, aks holda sikl cheksiz.
@@ -240,7 +240,7 @@ Sikl yozishdan oldin uch savolga javob bering: nima takrorlanadi? qachon toʻxta
 ## Oʻzingizni tekshiring
 
 :::check
-Q: Python'da `range(2, 10, 3)` qanday qiymatlarni beradi?
+Q: Pythonʼda `range(2, 10, 3)` qanday qiymatlarni beradi?
 A: 2, 5, 8 (10 kirmaydi).
 Q: `while` va `do-while` ning asosiy farqi nimada?
 A: `while` shartni tanadan oldin tekshiradi va tana bir marta ham bajarilmasligi mumkin; `do-while` avval tanani bajaradi, shuning uchun u kamida bir marta bajariladi.

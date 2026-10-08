@@ -28,8 +28,8 @@ Matnni qayta ishlovchi dasturlarning katta qismi bir xil sxema boʻyicha ishlayd
 
 Muhim nozikliklar:
 
-1. Python'da `s.split()` (argumentsiz) boshidagi, oxiridagi va takroriy boʻsh joylarni tashlab yuboradi; `s.split(" ")` esa **boʻsh soʻzlar** beradi.
-2. Java'da `split("\\s+")` satr boʻsh joy bilan boshlansa, birinchi element sifatida boʻsh satr qaytaradi — shuning uchun avval `trim()`.
+1. Pythonʼda `s.split()` (argumentsiz) boshidagi, oxiridagi va takroriy boʻsh joylarni tashlab yuboradi; `s.split(" ")` esa **boʻsh soʻzlar** beradi.
+2. Javaʼda `split("\\s+")` satr boʻsh joy bilan boshlansa, birinchi element sifatida boʻsh satr qaytaradi — shuning uchun avval `trim()`.
 3. C++'da `>>` operatori boʻsh joylarni oʻzi tashlab ketadi — soʻzlarga ajratishning eng oddiy usuli.
 
 ## Namunaviy masala: soʻzlar tartibini aylantirish
@@ -139,7 +139,7 @@ Pastdagi topshiriqni yeching: satrdagi **har bir soʻzni bosh harf bilan** boshl
 :::warning
 **Baholash mezonlari va koʻp uchraydigan xatolar**
 
-- Python'dagi tayyor `str.title()` dan foydalanmang — u apostrof va raqamlardan keyin ham bosh harf qoʻyadi va topshiriq maqsadi — formatlashni oʻzingiz yozish.
+- Pythonʼdagi tayyor `str.title()` dan foydalanmang — u apostrof va raqamlardan keyin ham bosh harf qoʻyadi va topshiriq maqsadi — formatlashni oʻzingiz yozish.
 - Bitta harfli soʻz (`a`) uchun `soz[1:]` / `substring(1)` boʻsh satr beradi — xato emas, lekin tekshirib koʻring.
 - Natija oxirida ortiqcha boʻsh joy qolmasligi kerak.
 - Kamida bitta soʻz borligi kafolatlangan, lekin satr boʻsh joy bilan boshlanishi mumkin.
@@ -159,9 +159,9 @@ Avval bitta soʻzni formatlovchi funksiyani yozib, uni alohida bir necha soʻzda
 ## Oʻzingizni tekshiring
 
 :::check
-Q: Python'da `"  a  b ".split()` va `"  a  b ".split(" ")` natijalari qanday farq qiladi?
+Q: Pythonʼda `"  a  b ".split()` va `"  a  b ".split(" ")` natijalari qanday farq qiladi?
 A: Birinchisi `["a", "b"]`, ikkinchisi boʻsh satrlar bilan: `["", "", "a", "", "b", ""]`.
-Q: Java'da nima uchun `split("\\s+")` dan oldin `trim()` chaqiriladi?
+Q: Javaʼda nima uchun `split("\\s+")` dan oldin `trim()` chaqiriladi?
 A: Satr boʻsh joy bilan boshlansa, `split` birinchi element sifatida boʻsh satr qaytaradi.
 Q: C++'da satrni soʻzlarga ajratishning eng oddiy usuli qaysi?
 A: `istringstream` yaratib, undan `>>` bilan soʻzma-soʻz oʻqish.

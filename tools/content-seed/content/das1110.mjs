@@ -13,11 +13,11 @@ const s1Tasks = [
     instructions: 'Kirish: bitta satrda ism (boʻsh joy boʻlishi mumkin). Chiqish: Salom, <ism>!',
     constraints: 'Ism uzunligi 1 dan 100 gacha.',
     python: {
-      starter: 'name = input().strip()\n# TODO: salomlashuv matnini chiqaring\n',
+      starter: 'name = input().strip()\n# ...\n',
       solution: 'name = input().strip()\nprint(f"Salom, {name}!")\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String name = in.nextLine().trim();\n        // TODO: salomlashuv matnini chiqaring\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String name = in.nextLine().trim();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String name = in.nextLine().trim();\n        System.out.println("Salom, " + name + "!");\n    }'),
     },
     tests: [['Ali', 'Salom, Ali!'], ['Madina', 'Salom, Madina!'], ['Ozoda Karimova', 'Salom, Ozoda Karimova!']],
@@ -29,11 +29,11 @@ const s1Tasks = [
     instructions: 'Kirish: bitta satrda a va b. Chiqish: beshta satrda a+b, a-b, a*b, a div b, a mod b.',
     constraints: '0 ≤ a ≤ 10^9, 1 ≤ b ≤ 10^9. Koʻpaytma 32 bitga sigʻmasligi mumkin: Java’da long ishlating.',
     python: {
-      starter: 'a, b = map(int, input().split())\n# TODO: beshta natijani chiqaring\n',
+      starter: 'a, b = map(int, input().split())\n# ...\n',
       solution: 'a, b = map(int, input().split())\nprint(a + b)\nprint(a - b)\nprint(a * b)\nprint(a // b)\nprint(a % b)\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), b = in.nextLong();\n        // TODO: beshta natijani chiqaring\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), b = in.nextLong();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), b = in.nextLong();\n        System.out.println(a + b);\n        System.out.println(a - b);\n        System.out.println(a * b);\n        System.out.println(a / b);\n        System.out.println(a % b);\n    }'),
     },
     tests: [
@@ -50,11 +50,11 @@ const s1Tasks = [
     instructions: 'Kirish: yil. Chiqish: Kabisa yoki Kabisa emas.',
     constraints: '1 ≤ yil ≤ 10000.',
     python: {
-      starter: 'y = int(input())\n# TODO: mantiqiy ifoda bilan tekshiring\n',
+      starter: 'y = int(input())\n# ...\n',
       solution: 'y = int(input())\nprint("Kabisa" if (y % 4 == 0 and y % 100 != 0) or y % 400 == 0 else "Kabisa emas")\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        int y = new Scanner(System.in).nextInt();\n        // TODO: mantiqiy ifoda bilan tekshiring\n    }'),
+      starter: J('    public static void main(String[] args) {\n        int y = new Scanner(System.in).nextInt();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        int y = new Scanner(System.in).nextInt();\n        boolean leap = (y % 4 == 0 && y % 100 != 0) || y % 400 == 0;\n        System.out.println(leap ? "Kabisa" : "Kabisa emas");\n    }'),
     },
     tests: [['2024', 'Kabisa'], ['2023', 'Kabisa emas'], ['1900', 'Kabisa emas'], ['2000', 'Kabisa']],
@@ -66,11 +66,11 @@ const s1Tasks = [
     instructions: 'Kirish: a b c butun sonlar (a ≠ 0). Chiqish: 0, 1 yoki 2.',
     constraints: '|a|, |b|, |c| ≤ 10^6. Diskriminantni long turida hisoblang.',
     python: {
-      starter: 'a, b, c = map(int, input().split())\nd = b * b - 4 * a * c\n# TODO: d ning ishorasiga qarab javob bering\n',
+      starter: 'a, b, c = map(int, input().split())\nd = b * b - 4 * a * c\n# ...\n',
       solution: 'a, b, c = map(int, input().split())\nd = b * b - 4 * a * c\nif d > 0:\n    print(2)\nelif d == 0:\n    print(1)\nelse:\n    print(0)\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), b = in.nextLong(), c = in.nextLong();\n        long d = b * b - 4 * a * c;\n        // TODO: d ning ishorasiga qarab javob bering\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), b = in.nextLong(), c = in.nextLong();\n        long d = b * b - 4 * a * c;\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), b = in.nextLong(), c = in.nextLong();\n        long d = b * b - 4 * a * c;\n        if (d > 0) System.out.println(2);\n        else if (d == 0) System.out.println(1);\n        else System.out.println(0);\n    }'),
     },
     tests: [['1 -3 2', '2'], ['1 2 1', '1'], ['1 0 5', '0'], ['2 4 -6', '2'], ['1000000 1 1000000', '0']],
@@ -82,11 +82,11 @@ const s1Tasks = [
     instructions: 'Kirish: butun son n. Chiqish: kun nomi (Dushanba … Yakshanba) yoki Xato.',
     constraints: '-100 ≤ n ≤ 100.',
     python: {
-      starter: 'n = int(input())\nmatch n:\n    case 1:\n        print("Dushanba")\n    # TODO: qolgan kunlar va Xato holati\n',
+      starter: 'n = int(input())\nmatch n:\n    case 1:\n        print("Dushanba")\n    # ...\n',
       solution: 'n = int(input())\nmatch n:\n    case 1:\n        print("Dushanba")\n    case 2:\n        print("Seshanba")\n    case 3:\n        print("Chorshanba")\n    case 4:\n        print("Payshanba")\n    case 5:\n        print("Juma")\n    case 6:\n        print("Shanba")\n    case 7:\n        print("Yakshanba")\n    case _:\n        print("Xato")\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        switch (n) {\n            case 1 -> System.out.println("Dushanba");\n            // TODO: qolgan kunlar va default holat\n            default -> System.out.println("Xato");\n        }\n    }'),
+      starter: J('    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        switch (n) {\n            case 1 -> System.out.println("Dushanba");\n            // ...\n            default -> System.out.println("Xato");\n        }\n    }'),
       solution: J('    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        String day = switch (n) {\n            case 1 -> "Dushanba";\n            case 2 -> "Seshanba";\n            case 3 -> "Chorshanba";\n            case 4 -> "Payshanba";\n            case 5 -> "Juma";\n            case 6 -> "Shanba";\n            case 7 -> "Yakshanba";\n            default -> "Xato";\n        };\n        System.out.println(day);\n    }'),
     },
     tests: [['1', 'Dushanba'], ['5', 'Juma'], ['7', 'Yakshanba'], ['0', 'Xato'], ['9', 'Xato']],
@@ -98,11 +98,11 @@ const s1Tasks = [
     instructions: 'Kirish: n. Chiqish: n!.',
     constraints: '0 ≤ n ≤ 20 (natija long turiga sigʻadi).',
     python: {
-      starter: 'n = int(input())\nf = 1\n# TODO: sikl yordamida f ni hisoblang\nprint(f)\n',
+      starter: 'n = int(input())\nf = 1\n# ...\nprint(f)\n',
       solution: 'n = int(input())\nf = 1\nfor i in range(2, n + 1):\n    f *= i\nprint(f)\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        long f = 1;\n        // TODO: sikl yordamida f ni hisoblang\n        System.out.println(f);\n    }'),
+      starter: J('    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        long f = 1;\n        // ...\n        System.out.println(f);\n    }'),
       solution: J('    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        long f = 1;\n        for (int i = 2; i <= n; i++) f *= i;\n        System.out.println(f);\n    }'),
     },
     tests: [['5', '120'], ['0', '1'], ['10', '3628800'], ['20', '2432902008176640000']],
@@ -114,11 +114,11 @@ const s1Tasks = [
     instructions: 'Kirish: n. Chiqish: Tub yoki Tub emas.',
     constraints: '1 ≤ n ≤ 10^9. 1 tub emas.',
     python: {
-      starter: 'n = int(input())\nd = 2\n# TODO: d * d <= n boʻlguncha boʻluvchi izlang\n',
+      starter: 'n = int(input())\nd = 2\n# ...\n',
       solution: 'n = int(input())\nprime = n >= 2\nd = 2\nwhile d * d <= n and prime:\n    if n % d == 0:\n        prime = False\n    d += 1\nprint("Tub" if prime else "Tub emas")\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        long n = new Scanner(System.in).nextLong();\n        long d = 2;\n        // TODO: d * d <= n boʻlguncha boʻluvchi izlang\n    }'),
+      starter: J('    public static void main(String[] args) {\n        long n = new Scanner(System.in).nextLong();\n        long d = 2;\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        long n = new Scanner(System.in).nextLong();\n        boolean prime = n >= 2;\n        long d = 2;\n        while (d * d <= n && prime) {\n            if (n % d == 0) prime = false;\n            d++;\n        }\n        System.out.println(prime ? "Tub" : "Tub emas");\n    }'),
     },
     tests: [['97', 'Tub'], ['100', 'Tub emas'], ['1', 'Tub emas'], ['2', 'Tub'], ['999999937', 'Tub']],
@@ -130,11 +130,11 @@ const s1Tasks = [
     instructions: 'Kirish: n. Chiqish: n ta satr; i-satrda i·1, i·2, …, i·n sonlari bitta boʻsh joy bilan ajratilgan.',
     constraints: '1 ≤ n ≤ 9.',
     python: {
-      starter: 'n = int(input())\n# TODO: tashqi sikl satrlar, ichki sikl ustunlar uchun\n',
+      starter: 'n = int(input())\n# ...\n',
       solution: 'n = int(input())\nfor i in range(1, n + 1):\n    print(" ".join(str(i * j) for j in range(1, n + 1)))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        // TODO: tashqi sikl satrlar, ichki sikl ustunlar uchun\n    }'),
+      starter: J('    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        StringBuilder out = new StringBuilder();\n        for (int i = 1; i <= n; i++) {\n            for (int j = 1; j <= n; j++) {\n                if (j > 1) out.append(\' \');\n                out.append(i * j);\n            }\n            out.append(\'\\n\');\n        }\n        System.out.print(out);\n    }'),
     },
     tests: [['3', '1 2 3\n2 4 6\n3 6 9'], ['1', '1'], ['5', '1 2 3 4 5\n2 4 6 8 10\n3 6 9 12 15\n4 8 12 16 20\n5 10 15 20 25']],
@@ -146,11 +146,11 @@ const s1Tasks = [
     instructions: 'Kirish: n; n ta butun son; x. Chiqish: indeks yoki -1.',
     constraints: '1 ≤ n ≤ 1000, qiymatlar |a| ≤ 10^9.',
     python: {
-      starter: 'n = int(input())\na = list(map(int, input().split()))\nx = int(input())\n# TODO: birinchi uchrashgan oʻrinni toping\n',
+      starter: 'n = int(input())\na = list(map(int, input().split()))\nx = int(input())\n# ...\n',
       solution: 'n = int(input())\na = list(map(int, input().split()))\nx = int(input())\nans = -1\nfor i in range(n):\n    if a[i] == x:\n        ans = i + 1\n        break\nprint(ans)\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        long x = in.nextLong();\n        // TODO: birinchi uchrashgan oʻrinni toping\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        long x = in.nextLong();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        long x = in.nextLong();\n        int ans = -1;\n        for (int i = 0; i < n; i++) {\n            if (a[i] == x) { ans = i + 1; break; }\n        }\n        System.out.println(ans);\n    }'),
     },
     tests: [['5\n4 8 15 16 23\n15', '3'], ['3\n1 2 3\n7', '-1'], ['6\n5 1 5 1 5 1\n1', '2'], ['1\n-9\n-9', '1']],
@@ -162,11 +162,11 @@ const s1Tasks = [
     instructions: 'Kirish: butun x. Chiqish: y.',
     constraints: '|x| ≤ 10^6.',
     python: {
-      starter: 'x = int(input())\n# TODO: uchta holatni ajrating\n',
+      starter: 'x = int(input())\n# ...\n',
       solution: 'x = int(input())\nif x < 0:\n    print(x * x)\nelif x <= 10:\n    print(2 * x + 1)\nelse:\n    print(x - 10)\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        long x = new Scanner(System.in).nextLong();\n        // TODO: uchta holatni ajrating\n    }'),
+      starter: J('    public static void main(String[] args) {\n        long x = new Scanner(System.in).nextLong();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        long x = new Scanner(System.in).nextLong();\n        long y;\n        if (x < 0) y = x * x;\n        else if (x <= 10) y = 2 * x + 1;\n        else y = x - 10;\n        System.out.println(y);\n    }'),
     },
     tests: [['-3', '9'], ['4', '9'], ['0', '1'], ['10', '21'], ['25', '15'], ['-1000000', '1000000000000']],
@@ -178,11 +178,11 @@ const s1Tasks = [
     instructions: 'Kirish: n. Chiqish: S, nuqtadan keyin 4 ta raqam.',
     constraints: '1 ≤ n ≤ 10^6. Java’da String.format(Locale.US, "%.4f", s) ishlating.',
     python: {
-      starter: 'n = int(input())\ns = 0.0\n# TODO: sikl bilan yigʻing\nprint(f"{s:.4f}")\n',
+      starter: 'n = int(input())\ns = 0.0\n# ...\nprint(f"{s:.4f}")\n',
       solution: 'n = int(input())\ns = 0.0\nfor i in range(1, n + 1):\n    s += 1 / i\nprint(f"{s:.4f}")\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        double s = 0;\n        // TODO: sikl bilan yigʻing\n        System.out.println(String.format(Locale.US, "%.4f", s));\n    }'),
+      starter: J('    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        double s = 0;\n        // ...\n        System.out.println(String.format(Locale.US, "%.4f", s));\n    }'),
       solution: J('    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        double s = 0;\n        for (int i = 1; i <= n; i++) s += 1.0 / i;\n        System.out.println(String.format(Locale.US, "%.4f", s));\n    }'),
     },
     tests: [['1', '1.0000'], ['2', '1.5000'], ['10', '2.9290'], ['100', '5.1874']],
@@ -194,11 +194,11 @@ const s1Tasks = [
     instructions: 'Kirish: n; n ta butun son. Chiqish: elementlar teskari tartibda, boʻsh joy bilan.',
     constraints: '1 ≤ n ≤ 10^4.',
     python: {
-      starter: 'n = int(input())\na = input().split()\n# TODO\n',
+      starter: 'n = int(input())\na = input().split()\n# ...\n',
       solution: 'n = int(input())\na = input().split()\nprint(" ".join(reversed(a)))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        // TODO\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        StringBuilder sb = new StringBuilder();\n        for (int i = n - 1; i >= 0; i--) {\n            sb.append(a[i]);\n            if (i > 0) sb.append(\' \');\n        }\n        System.out.println(sb);\n    }'),
     },
     tests: [['4\n1 2 3 4', '4 3 2 1'], ['1\n7', '7'], ['5\n-1 0 5 -3 8', '8 -3 5 0 -1']],
@@ -210,11 +210,11 @@ const s1Tasks = [
     instructions: 'Kirish: n; soʻng n ta satrda n tadan butun son. Chiqish: bitta satrda ikki son — bosh diagonal va yordamchi diagonal yigʻindisi.',
     constraints: '1 ≤ n ≤ 100, |a| ≤ 10^6.',
     python: {
-      starter: 'n = int(input())\nm = [list(map(int, input().split())) for _ in range(n)]\n# TODO\n',
+      starter: 'n = int(input())\nm = [list(map(int, input().split())) for _ in range(n)]\n# ...\n',
       solution: 'n = int(input())\nm = [list(map(int, input().split())) for _ in range(n)]\nmain = sum(m[i][i] for i in range(n))\nside = sum(m[i][n - 1 - i] for i in range(n))\nprint(main, side)\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[][] m = new long[n][n];\n        for (int i = 0; i < n; i++) for (int j = 0; j < n; j++) m[i][j] = in.nextLong();\n        // TODO\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[][] m = new long[n][n];\n        for (int i = 0; i < n; i++) for (int j = 0; j < n; j++) m[i][j] = in.nextLong();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[][] m = new long[n][n];\n        for (int i = 0; i < n; i++) for (int j = 0; j < n; j++) m[i][j] = in.nextLong();\n        long main = 0, side = 0;\n        for (int i = 0; i < n; i++) {\n            main += m[i][i];\n            side += m[i][n - 1 - i];\n        }\n        System.out.println(main + " " + side);\n    }'),
     },
     tests: [['3\n1 2 3\n4 5 6\n7 8 9', '15 15'], ['1\n42', '42 42'], ['2\n1 2\n3 4', '5 5'], ['3\n1 0 0\n0 2 0\n9 0 3', '6 11']],
@@ -226,11 +226,11 @@ const s1Tasks = [
     instructions: 'Kirish: n; a vektor (n ta son); b vektor (n ta son). Chiqish: skalyar koʻpaytma.',
     constraints: '1 ≤ n ≤ 10^4, |aᵢ|, |bᵢ| ≤ 10^4.',
     python: {
-      starter: 'n = int(input())\na = list(map(int, input().split()))\nb = list(map(int, input().split()))\n# TODO\n',
+      starter: 'n = int(input())\na = list(map(int, input().split()))\nb = list(map(int, input().split()))\n# ...\n',
       solution: 'n = int(input())\na = list(map(int, input().split()))\nb = list(map(int, input().split()))\nprint(sum(x * y for x, y in zip(a, b)))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n], b = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        for (int i = 0; i < n; i++) b[i] = in.nextLong();\n        // TODO\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n], b = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        for (int i = 0; i < n; i++) b[i] = in.nextLong();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n], b = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        for (int i = 0; i < n; i++) b[i] = in.nextLong();\n        long s = 0;\n        for (int i = 0; i < n; i++) s += a[i] * b[i];\n        System.out.println(s);\n    }'),
     },
     tests: [['3\n1 2 3\n4 5 6', '32'], ['2\n1 0\n0 1', '0'], ['4\n-1 2 -3 4\n5 -6 7 -8', '-70']],
@@ -242,11 +242,11 @@ const s1Tasks = [
     instructions: 'Kirish: n va k; n ta butun son. Chiqish: juftliklar soni.',
     constraints: '1 ≤ n ≤ 1000.',
     python: {
-      starter: 'n, k = map(int, input().split())\na = list(map(int, input().split()))\n# TODO: ichma-ich sikl\n',
+      starter: 'n, k = map(int, input().split())\na = list(map(int, input().split()))\n# ...\n',
       solution: 'n, k = map(int, input().split())\na = list(map(int, input().split()))\ncount = 0\nfor i in range(n):\n    for j in range(i + 1, n):\n        if a[i] + a[j] == k:\n            count += 1\nprint(count)\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long k = in.nextLong();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        // TODO: ichma-ich sikl\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long k = in.nextLong();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long k = in.nextLong();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        long count = 0;\n        for (int i = 0; i < n; i++)\n            for (int j = i + 1; j < n; j++)\n                if (a[i] + a[j] == k) count++;\n        System.out.println(count);\n    }'),
     },
     tests: [['5 6\n1 5 2 4 3', '2'], ['4 2\n1 1 1 1', '6'], ['3 100\n1 2 3', '0']],
@@ -258,7 +258,7 @@ const sumJava = {
   code: 'DEV-TASK-SUM',
   // V902's test cases, used only by verify-solutions.mjs.
   tests: [['3\n1 2 3', '6'], ['1\n42', '42'], ['4\n-5 5 -3 3', '0'], ['5\n1000000 1000000 1000000 1000000 1000000', '5000000']],
-  starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        // TODO: n ta sonni oʻqib, yigʻindini chiqaring\n    }'),
+  starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        // ...\n    }'),
   solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long s = 0;\n        for (int i = 0; i < n; i++) s += in.nextLong();\n        System.out.println(s);\n    }'),
 }
 
@@ -298,11 +298,11 @@ const s2Tasks = [
     constraints: '1 ≤ n, m ≤ 100.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'n, m = map(int, input().split())\nrows = [list(map(int, input().split())) for _ in range(n)]\n# TODO: har bir satrni saralang va chiqaring\n',
+      starter: 'n, m = map(int, input().split())\nrows = [list(map(int, input().split())) for _ in range(n)]\n# ...\n',
       solution: 'n, m = map(int, input().split())\nfor _ in range(n):\n    row = sorted(map(int, input().split()))\n    print(" ".join(map(str, row)))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt();\n        long[][] a = new long[n][m];\n        for (int i = 0; i < n; i++) for (int j = 0; j < m; j++) a[i][j] = in.nextLong();\n        // TODO: har bir satrni saralang va chiqaring\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt();\n        long[][] a = new long[n][m];\n        for (int i = 0; i < n; i++) for (int j = 0; j < m; j++) a[i][j] = in.nextLong();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt();\n        StringBuilder out = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            long[] row = new long[m];\n            for (int j = 0; j < m; j++) row[j] = in.nextLong();\n            Arrays.sort(row);\n            for (int j = 0; j < m; j++) {\n                if (j > 0) out.append(\' \');\n                out.append(row[j]);\n            }\n            out.append(\'\\n\');\n        }\n        System.out.print(out);\n    }'),
     },
     tests: [['2 3\n3 1 2\n9 7 8', '1 2 3\n7 8 9'], ['1 1\n5', '5'], ['3 2\n2 -1\n0 0\n10 -10', '-1 2\n0 0\n-10 10']],
@@ -315,11 +315,11 @@ const s2Tasks = [
     constraints: '1 ≤ n ≤ 10^5, 1 ≤ q ≤ 10^5. Chiziqli qidiruv vaqt limitidan oshadi.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'import sys\ndata = sys.stdin.read().split()\n# TODO: n, massiv, q va soʻrovlarni oʻqing; har biriga binar qidiruv\n',
+      starter: 'import sys\ndata = sys.stdin.read().split()\n# ...\n',
       solution: 'import sys\ndata = sys.stdin.read().split()\nn = int(data[0])\na = list(map(int, data[1:1 + n]))\nq = int(data[1 + n])\nout = []\nfor x in map(int, data[2 + n:2 + n + q]):\n    lo, hi, ans = 0, n - 1, -1\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if a[mid] == x:\n            ans = mid + 1\n            break\n        if a[mid] < x:\n            lo = mid + 1\n        else:\n            hi = mid - 1\n    out.append(str(ans))\nprint("\\n".join(out))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) throws IOException {\n        StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));\n        // TODO: n, massiv, q va soʻrovlarni oʻqing; har biriga binar qidiruv\n    }', 'import java.io.*;\nimport java.util.*;'),
+      starter: J('    public static void main(String[] args) throws IOException {\n        StreamTokenizer st = new StreamTokenizer(new BufferedReader(new InputStreamReader(System.in)));\n        // ...\n    }', 'import java.io.*;\nimport java.util.*;'),
       solution: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        StringTokenizer st = new StringTokenizer(br.readLine());\n        int n = Integer.parseInt(st.nextToken());\n        long[] a = new long[n];\n        st = new StringTokenizer(br.readLine());\n        for (int i = 0; i < n; i++) a[i] = Long.parseLong(st.nextToken());\n        int q = Integer.parseInt(br.readLine().trim());\n        StringBuilder out = new StringBuilder();\n        for (int k = 0; k < q; k++) {\n            long x = Long.parseLong(br.readLine().trim());\n            int lo = 0, hi = n - 1, ans = -1;\n            while (lo <= hi) {\n                int mid = (lo + hi) >>> 1;\n                if (a[mid] == x) { ans = mid + 1; break; }\n                if (a[mid] < x) lo = mid + 1; else hi = mid - 1;\n            }\n            out.append(ans).append(\'\\n\');\n        }\n        System.out.print(out);\n    }', 'import java.io.*;\nimport java.util.*;'),
     },
     tests: [
@@ -335,11 +335,11 @@ const s2Tasks = [
     instructions: 'Kirish: a b. Chiqish: bitta satrda EKUB va EKUK.',
     constraints: '1 ≤ a, b ≤ 10^9 (EKUK long turiga sigʻadi).',
     python: {
-      starter: 'def gcd(a, b):\n    # TODO: Evklid algoritmi\n    pass\n\n\ndef lcm(a, b):\n    # TODO\n    pass\n\n\na, b = map(int, input().split())\nprint(gcd(a, b), lcm(a, b))\n',
+      starter: 'def gcd(a, b):\n    # ...\n    pass\n\n\ndef lcm(a, b):\n    # ...\n    pass\n\n\na, b = map(int, input().split())\nprint(gcd(a, b), lcm(a, b))\n',
       solution: 'def gcd(a, b):\n    while b:\n        a, b = b, a % b\n    return a\n\n\ndef lcm(a, b):\n    return a // gcd(a, b) * b\n\n\na, b = map(int, input().split())\nprint(gcd(a, b), lcm(a, b))\n',
     },
     java: {
-      starter: J('    static long gcd(long a, long b) {\n        // TODO: Evklid algoritmi\n        return 0;\n    }\n\n    static long lcm(long a, long b) {\n        // TODO\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), b = in.nextLong();\n        System.out.println(gcd(a, b) + " " + lcm(a, b));\n    }'),
+      starter: J('    static long gcd(long a, long b) {\n        // ...\n        return 0;\n    }\n\n    static long lcm(long a, long b) {\n        // ...\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), b = in.nextLong();\n        System.out.println(gcd(a, b) + " " + lcm(a, b));\n    }'),
       solution: J('    static long gcd(long a, long b) {\n        while (b != 0) {\n            long t = a % b;\n            a = b;\n            b = t;\n        }\n        return a;\n    }\n\n    static long lcm(long a, long b) {\n        return a / gcd(a, b) * b;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), b = in.nextLong();\n        System.out.println(gcd(a, b) + " " + lcm(a, b));\n    }'),
     },
     tests: [['12 18', '6 36'], ['7 13', '1 91'], ['1000000000 999999999', '1 999999999000000000'], ['24 24', '24 24']],
@@ -352,11 +352,11 @@ const s2Tasks = [
     constraints: '1 ≤ a ≤ 10^9, 0 ≤ n ≤ 10^18, 1 ≤ m ≤ 10^9.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'def power(a, n, m):\n    # TODO: rekursiv tez darajaga koʻtarish\n    pass\n\n\na, n, m = map(int, input().split())\nprint(power(a, n, m))\n',
+      starter: 'def power(a, n, m):\n    # ...\n    pass\n\n\na, n, m = map(int, input().split())\nprint(power(a, n, m))\n',
       solution: 'def power(a, n, m):\n    if n == 0:\n        return 1 % m\n    half = power(a, n // 2, m)\n    result = half * half % m\n    if n % 2 == 1:\n        result = result * (a % m) % m\n    return result\n\n\na, n, m = map(int, input().split())\nprint(power(a, n, m))\n',
     },
     java: {
-      starter: J('    static long power(long a, long n, long m) {\n        // TODO: rekursiv tez darajaga koʻtarish\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), n = in.nextLong(), m = in.nextLong();\n        System.out.println(power(a, n, m));\n    }'),
+      starter: J('    static long power(long a, long n, long m) {\n        // ...\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), n = in.nextLong(), m = in.nextLong();\n        System.out.println(power(a, n, m));\n    }'),
       solution: J('    static long power(long a, long n, long m) {\n        if (n == 0) return 1 % m;\n        long half = power(a, n / 2, m);\n        long result = half * half % m;\n        if (n % 2 == 1) result = result * (a % m) % m;\n        return result;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(), n = in.nextLong(), m = in.nextLong();\n        System.out.println(power(a, n, m));\n    }'),
     },
     tests: [['2 10 1000', '24'], ['3 0 7', '1'], ['5 3 1', '0'], ['2 1000000000000000000 1000000007', '719476260'], ['123456789 987654321 998244353', '730701112']],
@@ -368,11 +368,11 @@ const s2Tasks = [
     instructions: 'Kirish: n; n ta butun son. Chiqish: oʻrtachadan qatʼiy katta elementlar boʻsh joy bilan; bunday element boʻlmasa -.',
     constraints: '1 ≤ n ≤ 10^5. Kasr sonlardan qochish uchun aᵢ · n &gt; yigʻindi shartini tekshiring.',
     python: {
-      starter: 'n = int(input())\na = list(map(int, input().split()))\n# TODO\n',
+      starter: 'n = int(input())\na = list(map(int, input().split()))\n# ...\n',
       solution: 'n = int(input())\na = list(map(int, input().split()))\ntotal = sum(a)\nbig = [x for x in a if x * n > total]\nprint(" ".join(map(str, big)) if big else "-")\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        // TODO\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        long total = 0;\n        for (int i = 0; i < n; i++) { a[i] = in.nextLong(); total += a[i]; }\n        List<String> big = new ArrayList<>();\n        for (long x : a) if (x * n > total) big.add(String.valueOf(x));\n        System.out.println(big.isEmpty() ? "-" : String.join(" ", big));\n    }'),
     },
     tests: [['5\n1 2 3 4 5', '4 5'], ['3\n7 7 7', '-'], ['4\n-5 10 0 -1', '10']],
@@ -384,11 +384,11 @@ const s2Tasks = [
     instructions: 'Kirish: bitta satr (faqat ASCII belgilar). Chiqish: kodlar boʻsh joy bilan.',
     constraints: 'Satr uzunligi 1 dan 200 gacha.',
     python: {
-      starter: 's = input()\n# TODO: ord() funksiyasidan foydalaning\n',
+      starter: 's = input()\n# ...\n',
       solution: 's = input()\nprint(" ".join(str(ord(ch)) for ch in s))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine();\n        // TODO: (int) belgi ASCII kodni beradi\n    }'),
+      starter: J('    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine();\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < s.length(); i++) {\n            if (i > 0) sb.append(\' \');\n            sb.append((int) s.charAt(i));\n        }\n        System.out.println(sb);\n    }'),
     },
     tests: [['Salom', '83 97 108 111 109'], ['A1 b', '65 49 32 98'], ['~!', '126 33']],
@@ -400,11 +400,11 @@ const s2Tasks = [
     instructions: 'Kirish: bitta satr (ASCII). Chiqish: Palindrom yoki Palindrom emas.',
     constraints: 'Satr uzunligi 1 dan 1000 gacha.',
     python: {
-      starter: 's = input()\n# TODO: harf va raqamlarni ajrating, kichik harfga oʻtkazing, teskarisi bilan solishtiring\n',
+      starter: 's = input()\n# ...\n',
       solution: 's = input()\nclean = [ch.lower() for ch in s if ch.isalnum()]\nprint("Palindrom" if clean == clean[::-1] else "Palindrom emas")\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine();\n        // TODO: harf va raqamlarni ajrating, kichik harfga oʻtkazing, teskarisi bilan solishtiring\n    }'),
+      starter: J('    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine();\n        StringBuilder clean = new StringBuilder();\n        for (char ch : s.toCharArray()) if (Character.isLetterOrDigit(ch)) clean.append(Character.toLowerCase(ch));\n        String c = clean.toString();\n        System.out.println(c.equals(new StringBuilder(c).reverse().toString()) ? "Palindrom" : "Palindrom emas");\n    }'),
     },
     tests: [['Anna', 'Palindrom'], ['Kitob', 'Palindrom emas'], ['A roza upala na lapu Azora', 'Palindrom'], ['12-21', 'Palindrom']],
@@ -417,11 +417,11 @@ const s2Tasks = [
     constraints: 'Matn hajmi 100 KB gacha.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'import sys\nlines = sys.stdin.read().splitlines()\n# TODO: satrlar, soʻzlar, belgilar sonini hisoblang\n',
+      starter: 'import sys\nlines = sys.stdin.read().splitlines()\n# ...\n',
       solution: 'import sys\nlines = sys.stdin.read().splitlines()\nwords = sum(len(line.split()) for line in lines)\nchars = sum(len(line) for line in lines)\nprint(len(lines), words, chars)\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String line;\n        // TODO: while ((line = br.readLine()) != null) { ... }\n    }', 'import java.io.*;'),
+      starter: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String line;\n        // ...\n    }', 'import java.io.*;'),
       solution: J('    public static void main(String[] args) throws IOException {\n        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));\n        String line;\n        long lines = 0, words = 0, chars = 0;\n        while ((line = br.readLine()) != null) {\n            lines++;\n            chars += line.length();\n            String t = line.trim();\n            if (!t.isEmpty()) words += t.split("\\\\s+").length;\n        }\n        System.out.println(lines + " " + words + " " + chars);\n    }', 'import java.io.*;'),
     },
     tests: [['Salom dunyo\nBu test', '2 4 18'], ['bir', '1 1 3'], ['  ikki   soʻz  \n\nuch', '3 3 18', { mode: 'TRIMMED' }]],
@@ -433,11 +433,11 @@ const s2Tasks = [
     instructions: 'Kirish: n; n ta son. Chiqish: maksimum va uning oʻrni (1 dan).',
     constraints: '1 ≤ n ≤ 10^5.',
     python: {
-      starter: 'def find_max(a):\n    # TODO: (qiymat, indeks) juftligini qaytaring\n    pass\n\n\nn = int(input())\na = list(map(int, input().split()))\nvalue, index = find_max(a)\nprint(value, index)\n',
+      starter: 'def find_max(a):\n    # ...\n    pass\n\n\nn = int(input())\na = list(map(int, input().split()))\nvalue, index = find_max(a)\nprint(value, index)\n',
       solution: 'def find_max(a):\n    best = 0\n    for i in range(1, len(a)):\n        if a[i] > a[best]:\n            best = i\n    return a[best], best + 1\n\n\nn = int(input())\na = list(map(int, input().split()))\nvalue, index = find_max(a)\nprint(value, index)\n',
     },
     java: {
-      starter: J('    static int findMax(long[] a) {\n        // TODO: eng katta elementning indeksini qaytaring\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        int i = findMax(a);\n        System.out.println(a[i] + " " + (i + 1));\n    }'),
+      starter: J('    static int findMax(long[] a) {\n        // ...\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        int i = findMax(a);\n        System.out.println(a[i] + " " + (i + 1));\n    }'),
       solution: J('    static int findMax(long[] a) {\n        int best = 0;\n        for (int i = 1; i < a.length; i++) if (a[i] > a[best]) best = i;\n        return best;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        int i = findMax(a);\n        System.out.println(a[i] + " " + (i + 1));\n    }'),
     },
     tests: [['5\n3 9 2 9 1', '9 2'], ['1\n-4', '-4 1'], ['4\n-1 -2 -3 -4', '-1 1']],
@@ -450,11 +450,11 @@ const s2Tasks = [
     constraints: '1 ≤ n, m, p ≤ 50, |aᵢⱼ|, |bᵢⱼ| ≤ 1000.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'def multiply(a, b):\n    # TODO\n    pass\n\n\nn, m, p = map(int, input().split())\na = [list(map(int, input().split())) for _ in range(n)]\nb = [list(map(int, input().split())) for _ in range(m)]\nfor row in multiply(a, b):\n    print(" ".join(map(str, row)))\n',
+      starter: 'def multiply(a, b):\n    # ...\n    pass\n\n\nn, m, p = map(int, input().split())\na = [list(map(int, input().split())) for _ in range(n)]\nb = [list(map(int, input().split())) for _ in range(m)]\nfor row in multiply(a, b):\n    print(" ".join(map(str, row)))\n',
       solution: 'def multiply(a, b):\n    n, m, p = len(a), len(b), len(b[0])\n    return [[sum(a[i][k] * b[k][j] for k in range(m)) for j in range(p)] for i in range(n)]\n\n\nn, m, p = map(int, input().split())\na = [list(map(int, input().split())) for _ in range(n)]\nb = [list(map(int, input().split())) for _ in range(m)]\nfor row in multiply(a, b):\n    print(" ".join(map(str, row)))\n',
     },
     java: {
-      starter: J('    static long[][] multiply(long[][] a, long[][] b) {\n        // TODO\n        return new long[0][0];\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt(), p = in.nextInt();\n        long[][] a = new long[n][m], b = new long[m][p];\n        for (int i = 0; i < n; i++) for (int j = 0; j < m; j++) a[i][j] = in.nextLong();\n        for (int i = 0; i < m; i++) for (int j = 0; j < p; j++) b[i][j] = in.nextLong();\n        // TODO: multiply natijasini chiqaring\n    }'),
+      starter: J('    static long[][] multiply(long[][] a, long[][] b) {\n        // ...\n        return new long[0][0];\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt(), p = in.nextInt();\n        long[][] a = new long[n][m], b = new long[m][p];\n        for (int i = 0; i < n; i++) for (int j = 0; j < m; j++) a[i][j] = in.nextLong();\n        for (int i = 0; i < m; i++) for (int j = 0; j < p; j++) b[i][j] = in.nextLong();\n        // ...\n    }'),
       solution: J('    static long[][] multiply(long[][] a, long[][] b) {\n        int n = a.length, m = b.length, p = b[0].length;\n        long[][] c = new long[n][p];\n        for (int i = 0; i < n; i++)\n            for (int j = 0; j < p; j++)\n                for (int k = 0; k < m; k++) c[i][j] += a[i][k] * b[k][j];\n        return c;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt(), p = in.nextInt();\n        long[][] a = new long[n][m], b = new long[m][p];\n        for (int i = 0; i < n; i++) for (int j = 0; j < m; j++) a[i][j] = in.nextLong();\n        for (int i = 0; i < m; i++) for (int j = 0; j < p; j++) b[i][j] = in.nextLong();\n        StringBuilder out = new StringBuilder();\n        for (long[] row : multiply(a, b)) {\n            for (int j = 0; j < row.length; j++) {\n                if (j > 0) out.append(\' \');\n                out.append(row[j]);\n            }\n            out.append(\'\\n\');\n        }\n        System.out.print(out);\n    }'),
     },
     tests: [['2 2 2\n1 2\n3 4\n5 6\n7 8', '19 22\n43 50'], ['1 3 1\n1 2 3\n4\n5\n6', '32'], ['2 1 3\n1\n-2\n3 0 1', '3 0 1\n-6 0 -2']],
@@ -467,11 +467,11 @@ const s2Tasks = [
     constraints: '1 ≤ n, m ≤ 10^5.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'n = int(input())\na = list(map(int, input().split()))\nm = int(input())\nb = list(map(int, input().split()))\n# TODO: ikki koʻrsatkich i va j bilan birlashtiring\n',
+      starter: 'n = int(input())\na = list(map(int, input().split()))\nm = int(input())\nb = list(map(int, input().split()))\n# ...\n',
       solution: 'n = int(input())\na = list(map(int, input().split()))\nm = int(input())\nb = list(map(int, input().split()))\ni = j = 0\nres = []\nwhile i < n and j < m:\n    if a[i] <= b[j]:\n        res.append(a[i])\n        i += 1\n    else:\n        res.append(b[j])\n        j += 1\nres.extend(a[i:])\nres.extend(b[j:])\nprint(" ".join(map(str, res)))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        int m = in.nextInt();\n        long[] b = new long[m];\n        for (int i = 0; i < m; i++) b[i] = in.nextLong();\n        // TODO: ikki koʻrsatkich i va j bilan birlashtiring\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        int m = in.nextInt();\n        long[] b = new long[m];\n        for (int i = 0; i < m; i++) b[i] = in.nextLong();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        int m = in.nextInt();\n        long[] b = new long[m];\n        for (int i = 0; i < m; i++) b[i] = in.nextLong();\n        StringBuilder out = new StringBuilder();\n        int i = 0, j = 0;\n        while (i < n || j < m) {\n            long next = (j >= m || (i < n && a[i] <= b[j])) ? a[i++] : b[j++];\n            if (out.length() > 0) out.append(\' \');\n            out.append(next);\n        }\n        System.out.println(out);\n    }'),
     },
     tests: [['3\n1 4 7\n4\n2 3 8 9', '1 2 3 4 7 8 9'], ['1\n5\n1\n5', '5 5'], ['2\n-3 10\n3\n-5 0 20', '-5 -3 0 10 20']],
@@ -484,11 +484,11 @@ const s2Tasks = [
     constraints: '1 ≤ n ≤ 10.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'def hanoi(n, src, dst, via, moves):\n    # TODO: rekursiya\n    pass\n\n\nn = int(input())\nmoves = []\nhanoi(n, 1, 3, 2, moves)\nprint(len(moves))\nfor a, b in moves:\n    print(a, b)\n',
+      starter: 'def hanoi(n, src, dst, via, moves):\n    # ...\n    pass\n\n\nn = int(input())\nmoves = []\nhanoi(n, 1, 3, 2, moves)\nprint(len(moves))\nfor a, b in moves:\n    print(a, b)\n',
       solution: 'def hanoi(n, src, dst, via, moves):\n    if n == 0:\n        return\n    hanoi(n - 1, src, via, dst, moves)\n    moves.append((src, dst))\n    hanoi(n - 1, via, dst, src, moves)\n\n\nn = int(input())\nmoves = []\nhanoi(n, 1, 3, 2, moves)\nprint(len(moves))\nfor a, b in moves:\n    print(a, b)\n',
     },
     java: {
-      starter: J('    static void hanoi(int n, int src, int dst, int via, List<int[]> moves) {\n        // TODO: rekursiya\n    }\n\n    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        List<int[]> moves = new ArrayList<>();\n        hanoi(n, 1, 3, 2, moves);\n        StringBuilder out = new StringBuilder().append(moves.size()).append(\'\\n\');\n        for (int[] mv : moves) out.append(mv[0]).append(\' \').append(mv[1]).append(\'\\n\');\n        System.out.print(out);\n    }'),
+      starter: J('    static void hanoi(int n, int src, int dst, int via, List<int[]> moves) {\n        // ...\n    }\n\n    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        List<int[]> moves = new ArrayList<>();\n        hanoi(n, 1, 3, 2, moves);\n        StringBuilder out = new StringBuilder().append(moves.size()).append(\'\\n\');\n        for (int[] mv : moves) out.append(mv[0]).append(\' \').append(mv[1]).append(\'\\n\');\n        System.out.print(out);\n    }'),
       solution: J('    static void hanoi(int n, int src, int dst, int via, List<int[]> moves) {\n        if (n == 0) return;\n        hanoi(n - 1, src, via, dst, moves);\n        moves.add(new int[] {src, dst});\n        hanoi(n - 1, via, dst, src, moves);\n    }\n\n    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        List<int[]> moves = new ArrayList<>();\n        hanoi(n, 1, 3, 2, moves);\n        StringBuilder out = new StringBuilder().append(moves.size()).append(\'\\n\');\n        for (int[] mv : moves) out.append(mv[0]).append(\' \').append(mv[1]).append(\'\\n\');\n        System.out.print(out);\n    }'),
     },
     tests: [['1', '1\n1 3'], ['2', '3\n1 2\n1 3\n2 3'], ['3', '7\n1 3\n1 2\n3 2\n1 3\n2 1\n2 3\n1 3']],
@@ -501,11 +501,11 @@ const s2Tasks = [
     constraints: '0 ≤ m ≤ 3, 0 ≤ n ≤ 5. Pythonda sys.setrecursionlimit(10000) qoʻying.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'import sys\nsys.setrecursionlimit(10000)\n\n\ndef ack(m, n):\n    # TODO\n    pass\n\n\nm, n = map(int, input().split())\nprint(ack(m, n))\n',
+      starter: 'import sys\nsys.setrecursionlimit(10000)\n\n\ndef ack(m, n):\n    # ...\n    pass\n\n\nm, n = map(int, input().split())\nprint(ack(m, n))\n',
       solution: 'import sys\nsys.setrecursionlimit(10000)\n\n\ndef ack(m, n):\n    if m == 0:\n        return n + 1\n    if n == 0:\n        return ack(m - 1, 1)\n    return ack(m - 1, ack(m, n - 1))\n\n\nm, n = map(int, input().split())\nprint(ack(m, n))\n',
     },
     java: {
-      starter: J('    static long ack(long m, long n) {\n        // TODO\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long m = in.nextLong(), n = in.nextLong();\n        System.out.println(ack(m, n));\n    }'),
+      starter: J('    static long ack(long m, long n) {\n        // ...\n        return 0;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long m = in.nextLong(), n = in.nextLong();\n        System.out.println(ack(m, n));\n    }'),
       solution: J('    static long ack(long m, long n) {\n        if (m == 0) return n + 1;\n        if (n == 0) return ack(m - 1, 1);\n        return ack(m - 1, ack(m, n - 1));\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long m = in.nextLong(), n = in.nextLong();\n        System.out.println(ack(m, n));\n    }'),
     },
     tests: [['0 0', '1'], ['1 2', '4'], ['2 3', '9'], ['3 3', '61'], ['3 5', '253']],
@@ -517,11 +517,11 @@ const s2Tasks = [
     instructions: 'Kirish: bitta satr (ASCII harflar va boʻsh joylar). Chiqish: formatlangan satr.',
     constraints: 'Satr uzunligi 1 dan 1000 gacha, kamida bitta soʻz bor.',
     python: {
-      starter: 's = input()\n# TODO: split(), har bir soʻzga capitalize(), join()\n',
+      starter: 's = input()\n# ...\n',
       solution: 's = input()\nprint(" ".join(w[0].upper() + w[1:].lower() for w in s.split()))\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine();\n        // TODO: trim().split("\\\\s+") va har bir soʻzni formatlang\n    }'),
+      starter: J('    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine();\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine();\n        String[] words = s.trim().split("\\\\s+");\n        StringBuilder sb = new StringBuilder();\n        for (String w : words) {\n            if (sb.length() > 0) sb.append(\' \');\n            sb.append(Character.toUpperCase(w.charAt(0))).append(w.substring(1).toLowerCase());\n        }\n        System.out.println(sb);\n    }'),
     },
     tests: [['salom dunyo', 'Salom Dunyo'], ['  aNIQ   va IJTIMOIY fanlar ', 'Aniq Va Ijtimoiy Fanlar'], ['x', 'X']],
@@ -534,11 +534,11 @@ const s2Tasks = [
     constraints: '1 ≤ n ≤ 1000, 1 ≤ X ≤ 10^9. Boshlangʻich balans 0.',
     difficulty: 'MEDIUM',
     python: {
-      starter: 'class BankAccount:\n    def __init__(self):\n        self._balance = 0\n\n    # TODO: deposit, withdraw va balance metodlari\n\n\nacc = BankAccount()\nfor _ in range(int(input())):\n    parts = input().split()\n    # TODO: buyruqni bajaring\n',
+      starter: 'class BankAccount:\n    def __init__(self):\n        self._balance = 0\n\n    # ...\n\n\nacc = BankAccount()\nfor _ in range(int(input())):\n    parts = input().split()\n    # ...\n',
       solution: 'class BankAccount:\n    def __init__(self):\n        self._balance = 0\n\n    def deposit(self, amount):\n        self._balance += amount\n\n    def withdraw(self, amount):\n        if amount > self._balance:\n            return False\n        self._balance -= amount\n        return True\n\n    def balance(self):\n        return self._balance\n\n\nacc = BankAccount()\nfor _ in range(int(input())):\n    parts = input().split()\n    if parts[0] == "deposit":\n        acc.deposit(int(parts[1]))\n    elif parts[0] == "withdraw":\n        if not acc.withdraw(int(parts[1])):\n            print("Mablag yetarli emas")\n    else:\n        print(acc.balance())\n',
     },
     java: {
-      starter: J('    static class BankAccount {\n        private long balance = 0;\n        // TODO: deposit, withdraw va balance metodlari\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n        BankAccount acc = new BankAccount();\n        for (int i = 0; i < n; i++) {\n            String[] parts = in.nextLine().trim().split(" ");\n            // TODO: buyruqni bajaring\n        }\n    }'),
+      starter: J('    static class BankAccount {\n        private long balance = 0;\n        // ...\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n        BankAccount acc = new BankAccount();\n        for (int i = 0; i < n; i++) {\n            String[] parts = in.nextLine().trim().split(" ");\n            // ...\n        }\n    }'),
       solution: J('    static class BankAccount {\n        private long balance = 0;\n\n        void deposit(long amount) { balance += amount; }\n\n        boolean withdraw(long amount) {\n            if (amount > balance) return false;\n            balance -= amount;\n            return true;\n        }\n\n        long balance() { return balance; }\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n        BankAccount acc = new BankAccount();\n        StringBuilder out = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            String[] parts = in.nextLine().trim().split(" ");\n            switch (parts[0]) {\n                case "deposit" -> acc.deposit(Long.parseLong(parts[1]));\n                case "withdraw" -> { if (!acc.withdraw(Long.parseLong(parts[1]))) out.append("Mablag yetarli emas\\n"); }\n                default -> out.append(acc.balance()).append(\'\\n\');\n            }\n        }\n        System.out.print(out);\n    }'),
     },
     tests: [

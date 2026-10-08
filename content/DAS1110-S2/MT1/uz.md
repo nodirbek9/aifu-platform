@@ -30,7 +30,7 @@ Qoidalar:
 1. Funksiya massivni **faqat oʻqisa**, C++'da `const vector<int>&` yozing — nusxa yaratilmaydi va tasodifan oʻzgartirib boʻlmaydi.
 2. Funksiya massivni **oʻzgartirsa**, buni nomi aytsin (`siljit`, `saralab_qoy`) va qiymat qaytarmasin.
 3. Oddiy C++ massivi funksiyaga koʻrsatkich sifatida tushadi va uzunligini „unutadi“ — uzunlik alohida uzatiladi.
-4. Python'da `a = [...]` funksiya ichida **yangi** roʻyxat yaratadi va tashqaridagisiga taʼsir qilmaydi; `a[i] = ...` yoki `a.append(...)` esa taʼsir qiladi.
+4. Pythonʼda `a = [...]` funksiya ichida **yangi** roʻyxat yaratadi va tashqaridagisiga taʼsir qilmaydi; `a[i] = ...` yoki `a.append(...)` esa taʼsir qiladi.
 
 ## Namunaviy masala: minimumga nisbatan siljitish
 
@@ -160,11 +160,11 @@ Funksiyani avval qogʻozda testlar jadvali bilan tekshiring: har bir test uchun 
 ## Oʻzingizni tekshiring
 
 :::check
-Q: Java'da `static void f(int[] a) { a[0] = 9; }` chaqirilgandan keyin chaqiruvchining massivida `a[0]` nimaga teng?
+Q: Javaʼda `static void f(int[] a) { a[0] = 9; }` chaqirilgandan keyin chaqiruvchining massivida `a[0]` nimaga teng?
 A: 9 ga — massivga havola uzatilgan, funksiya oʻsha massivni oʻzgartirdi.
 Q: C++'da `void f(vector<int> a) { a[0] = 9; }` chaqirilsa, tashqi massiv oʻzgaradimi?
 A: Yoʻq: `&` boʻlmagani uchun nusxa uzatilgan.
-Q: Python'da `def f(a): a = [0]` chaqirilsa, tashqi roʻyxat oʻzgaradimi?
+Q: Pythonʼda `def f(a): a = [0]` chaqirilsa, tashqi roʻyxat oʻzgaradimi?
 A: Yoʻq: `a = [0]` funksiya ichida yangi roʻyxat yaratadi va lokal nomni unga bogʻlaydi.
 Q: Nima uchun C++'da oddiy massiv bilan uzunlik alohida uzatiladi?
 A: Massiv funksiyaga koʻrsatkich sifatida tushadi va oʻz uzunligi haqidagi maʼlumotni yoʻqotadi.
@@ -172,5 +172,5 @@ A: Massiv funksiyaga koʻrsatkich sifatida tushadi va oʻz uzunligi haqidagi ma�
 
 :::link https://docs.python.org/3/faq/programming.html#how-do-i-write-a-function-with-output-parameters-call-by-reference
 Python: funksiyaga argument uzatish
-Python'da argumentlar qanday uzatilishi haqida rasmiy savol-javob (ingliz tilida).
+Pythonʼda argumentlar qanday uzatilishi haqida rasmiy savol-javob (ingliz tilida).
 :::

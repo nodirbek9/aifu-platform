@@ -37,11 +37,11 @@ Bu amaliy mashgʻulotda murakkab shartlarni mantiqiy ifoda sifatida yozishni va 
 | rost | yolgʻon | yolgʻon | rost | yolgʻon |
 | rost | rost | rost | rost | yolgʻon |
 
-Misollar: „son 10 dan 20 gacha“ — `x >= 10 and x <= 20` (Python'da qisqasi: `10 <= x <= 20`); „juft son“ — `x % 2 == 0`; „dam olish kuni“ — `kun == 6 or kun == 7`.
+Misollar: „son 10 dan 20 gacha“ — `x >= 10 and x <= 20` (Pythonʼda qisqasi: `10 <= x <= 20`); „juft son“ — `x % 2 == 0`; „dam olish kuni“ — `kun == 6 or kun == 7`.
 
 ### Qisqa tutashuv
 
-**Qisqa tutashuv (short-circuit)** — natija birinchi qismdan maʼlum boʻlsa, ikkinchi qism hisoblanmaydi. VA'da birinchi qism yolgʻon boʻlsa, butun ifoda yolgʻon; YOKI'da birinchi qism rost boʻlsa, butun ifoda rost. Bu xatoning oldini olishda foydali: `b != 0 and a / b > 2` ifodasi *b* = 0 boʻlganda nolga boʻlishga yetib bormaydi.
+**Qisqa tutashuv (short-circuit)** — natija birinchi qismdan maʼlum boʻlsa, ikkinchi qism hisoblanmaydi. VAʼda birinchi qism yolgʻon boʻlsa, butun ifoda yolgʻon; YOKIʼda birinchi qism rost boʻlsa, butun ifoda rost. Bu xatoning oldini olishda foydali: `b != 0 and a / b > 2` ifodasi *b* = 0 boʻlganda nolga boʻlishga yetib bormaydi.
 
 ### Amallar ustuvorligi
 
@@ -57,11 +57,11 @@ Ifodada qavs boʻlmasa, amallar quyidagi tartibda bajariladi (yuqoridan pastga):
 | 6 | VA: `and`, `&&` |
 | 7 | YOKI: `or`, `\|\|` |
 
-VA amali YOKI'dan oldin bajariladi: `a or b and c` — bu `a or (b and c)`. Shubha tugʻilsa, qavs qoʻying: qavs hech qachon ortiqcha emas.
+VA amali YOKIʼdan oldin bajariladi: `a or b and c` — bu `a or (b and c)`. Shubha tugʻilsa, qavs qoʻying: qavs hech qachon ortiqcha emas.
 
 ## Matematik funksiyalar
 
-Har bir tilda standart matematik funksiyalar toʻplami bor: Python'da `math` moduli (`import math`), Java'da `Math` klassi (import kerak emas), C++'da `<cmath>` sarlavha fayli.
+Har bir tilda standart matematik funksiyalar toʻplami bor: Pythonʼda `math` moduli (`import math`), Javaʼda `Math` klassi (import kerak emas), C++'da `<cmath>` sarlavha fayli.
 
 | Funksiya | Python | Java | C++ | Misol |
 |---|---|---|---|---|
@@ -76,7 +76,7 @@ Har bir tilda standart matematik funksiyalar toʻplami bor: Python'da `math` mod
 
 Trigonometrik funksiyalar burchakni **radianda** qabul qiladi: 180° = π radian, yaʼni `radian = gradus * pi / 180`.
 
-Python'ning `round()` funksiyasi teng masofadagi sonni **juft** songa yaxlitlaydi: `round(2.5)` = 2, `round(3.5)` = 4 („bankir yaxlitlashi“). Java va C++'da 2.5 → 3.
+Pythonʼning `round()` funksiyasi teng masofadagi sonni **juft** songa yaxlitlaydi: `round(2.5)` = 2, `round(3.5)` = 4 („bankir yaxlitlashi“). Java va C++'da 2.5 → 3.
 
 ## Ishlangan misol 1: kabisa yili
 
@@ -183,7 +183,7 @@ Kirish `2 3 4` boʻlsa: *p* = 4.5, ildiz ostida 4.5 · 2.5 · 1.5 · 0.5 = 8.437
 :::warning
 **Koʻp uchraydigan xatolar**
 
-- **`10 < x < 20` ni Java yoki C++'da yozish.** Python'da bu toʻgʻri, Java'da kompilyatsiya xatosi, C++'da esa notoʻgʻri maʼno: avval `10 < x` (0 yoki 1) hisoblanadi, keyin u 20 bilan solishtiriladi — natija har doim rost. Toʻgʻrisi: `x > 10 && x < 20`.
+- **`10 < x < 20` ni Java yoki C++'da yozish.** Pythonʼda bu toʻgʻri, Javaʼda kompilyatsiya xatosi, C++'da esa notoʻgʻri maʼno: avval `10 < x` (0 yoki 1) hisoblanadi, keyin u 20 bilan solishtiriladi — natija har doim rost. Toʻgʻrisi: `x > 10 && x < 20`.
 - **`&` va `&&` ni chalkashtirish.** `&` — bitli amal, u qisqa tutashuvsiz ishlaydi.
 - **Gradusni radianga oʻtkazmaslik.** `sin(30)` — 30 radianning sinusi, 0.5 emas.
 - **Haqiqiy sonlarni `==` bilan solishtirish.** `0.1 + 0.2 == 0.3` yolgʻon! Haqiqiy sonlar taxminiy saqlanadi; `abs(x - y) < 1e-9` kabi solishtiring.
@@ -198,7 +198,7 @@ Murakkab shartni yozishdan oldin uni oʻzbek tilida toʻliq gap bilan ayting: �
 - Mantiqiy amallar: VA (`and`, `&&`), YOKI (`or`, `||`), EMAS (`not`, `!`); natija haqiqiylik jadvali boʻyicha aniqlanadi.
 - Qisqa tutashuv: natija birinchi qismdan maʼlum boʻlsa, ikkinchisi hisoblanmaydi.
 - Ustuvorlik: EMAS → arifmetika → solishtirish → VA → YOKI; shubhada qavs qoʻying.
-- Matematik funksiyalar: Python'da `math`, Java'da `Math`, C++'da `<cmath>`; burchaklar radianda.
+- Matematik funksiyalar: Pythonʼda `math`, Javaʼda `Math`, C++'da `<cmath>`; burchaklar radianda.
 - Haqiqiy sonlarni `==` bilan emas, kichik farq orqali solishtiring.
 
 ## Oʻzingizni tekshiring
@@ -208,11 +208,11 @@ Q: *x* = 15 boʻlsa, `x > 10 and x % 2 == 0` qiymati qanday?
 A: Yolgʻon: birinchi qism rost, lekin 15 juft emas.
 Q: `not (a > 5)` ifodasini `not` siz qanday yozasiz?
 A: `a <= 5`.
-Q: `true || 1 / 0 > 0` ifodasi Java'da xato beradimi?
-A: Yoʻq: qisqa tutashuv tufayli YOKI'ning birinchi qismi rost boʻlgani uchun ikkinchisi hisoblanmaydi.
+Q: `true || 1 / 0 > 0` ifodasi Javaʼda xato beradimi?
+A: Yoʻq: qisqa tutashuv tufayli YOKIʼning birinchi qismi rost boʻlgani uchun ikkinchisi hisoblanmaydi.
 Q: 47 talabani 45 oʻrinli avtobuslarga joylash uchun nechta avtobus kerak va buni qaysi funksiya bilan hisoblaysiz?
 A: 2 ta: `ceil(47 / 45)` — yuqoriga yaxlitlash (butun boʻlishdan saqlanish uchun `47 / 45.0`).
-Q: Python'da `round(2.5)` va `round(3.5)` nimaga teng?
+Q: Pythonʼda `round(2.5)` va `round(3.5)` nimaga teng?
 A: 2 va 4: Python teng masofadagi sonni juft songa yaxlitlaydi.
 :::
 

@@ -291,7 +291,7 @@ Chiqarish rekursiv chaqiruvdan **keyin** turgani uchun raqamlar „qaytish“ bo
 
 - **Bazaviy holat yoʻq yoki unga yetib boʻlmaydi.** `faktorial(n - 1)` manfiy *n* bilan chaqirilsa yoki `n == 0` tekshirilmasa — stek toʻlib ketadi.
 - **Rekursiv chaqiruv natijasini qaytarmaslik.** `faktorial(n - 1) * n` hisoblanadi, lekin `return` yoʻq — natija yoʻqoladi.
-- **Juda chuqur rekursiya.** Python'da 1000 dan ortiq chuqurlik — `RecursionError`; bunday hollarda sikl ishlating.
+- **Juda chuqur rekursiya.** Pythonʼda 1000 dan ortiq chuqurlik — `RecursionError`; bunday hollarda sikl ishlating.
 - **Bir xil hisoblarni takrorlash.** Fibonachchining oddiy rekursiyasi *n* = 40 da yuz millionlab chaqiruv qiladi.
 - **Global oʻzgaruvchida natija toʻplash.** Rekursiv funksiya natijani `return` orqali bersin.
 :::
@@ -315,7 +315,7 @@ Rekursiv funksiya yozishda avval bazaviy holatni yozing, keyin „kichikroq masa
 Q: Rekursiv funksiyaning qaysi ikki qismi boʻlishi shart?
 A: Bazaviy holat (rekursiya toʻxtaydigan eng oddiy holat) va masalani bazaviy holatga yaqinlashtiradigan rekursiv qadam.
 Q: `def f(n): return n + f(n - 1)` funksiyasida qanday xato bor?
-A: Bazaviy holat yoʻq: rekursiya hech qachon toʻxtamaydi va stek toʻlib ketadi (Python'da `RecursionError`).
+A: Bazaviy holat yoʻq: rekursiya hech qachon toʻxtamaydi va stek toʻlib ketadi (Pythonʼda `RecursionError`).
 Q: Xanoy minoralari masalasida 5 ta disk uchun nechta yurish kerak?
 A: 2⁵ − 1 = 31.
 Q: 3-misolda `ikkilik(6)` nima chiqaradi?

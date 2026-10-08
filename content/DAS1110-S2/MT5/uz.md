@@ -26,7 +26,7 @@ Oddiy rekursiyada funksiya oʻzini kichikroq argument bilan chaqiradi: *f*(*n* �
 
 Ichma-ich chaqiruv **ichkaridan tashqariga** hisoblanadi: avval ichki *M*(*n* + 11) toʻliq hisoblanadi, uning natijasi tashqi *M* ga argument boʻlib beriladi. Bunday rekursiya toʻxtashini isbotlash oddiy rekursiyadagidan qiyin: argument har doim ham kamaymaydi (*n* + 11 — kattaroq!).
 
-Chaqiruvlarni sanash uchun funksiyadan tashqarida **hisoblagich** eʼlon qilinadi va funksiyaning birinchi qatorida oshiriladi: Python'da `global soni`, Java'da `static long soni`, C++'da global oʻzgaruvchi.
+Chaqiruvlarni sanash uchun funksiyadan tashqarida **hisoblagich** eʼlon qilinadi va funksiyaning birinchi qatorida oshiriladi: Pythonʼda `global soni`, Javaʼda `static long soni`, C++'da global oʻzgaruvchi.
 
 ## Namunaviy masala: Makkarti 91 funksiyasi
 
@@ -120,7 +120,7 @@ Testlar:
 | 150 | 140 | 1 |
 | 0 | 91 | 203 |
 
-Ajoyib xossa: 101 dan kichik **har qanday** *n* uchun natija doim 91 — funksiya nomi shundan. Bu natija oldindan koʻrinmaydi va uni faqat chaqiruvlarni kuzatib yoki matematik isbot bilan tushunish mumkin. Python'da `setrecursionlimit` chuqurlik chegarasini oshiradi: *n* = 0 da rekursiya 100 dan ortiq qavat chuqurlashadi.
+Ajoyib xossa: 101 dan kichik **har qanday** *n* uchun natija doim 91 — funksiya nomi shundan. Bu natija oldindan koʻrinmaydi va uni faqat chaqiruvlarni kuzatib yoki matematik isbot bilan tushunish mumkin. Pythonʼda `setrecursionlimit` chuqurlik chegarasini oshiradi: *n* = 0 da rekursiya 100 dan ortiq qavat chuqurlashadi.
 
 ## Mustaqil ish topshirigʻi
 
@@ -143,7 +143,7 @@ A(m, n) = A(m − 1, A(m, n − 1)),     m > 0, n > 0
 **Baholash mezonlari va koʻp uchraydigan xatolar**
 
 - Funksiya taʼrifdagi uchta holatni aynan shu tartibda tekshirishi kerak: avval *m* = 0, keyin *n* = 0.
-- Python'da `sys.setrecursionlimit` ni oshiring: *A*(3, 5) uchun chuqurlik yuzlab qavatga yetadi.
+- Pythonʼda `sys.setrecursionlimit` ni oshiring: *A*(3, 5) uchun chuqurlik yuzlab qavatga yetadi.
 - Natija juda katta boʻlishi mumkin, lekin berilgan chegaralarda `int` ga sigʻadi — buni xulosada tekshiring.
 - Tajriba jadvalidagi chaqiruvlar soni dastur bilan oʻlchanadi, taxmin qilinmaydi.
 :::
@@ -157,7 +157,7 @@ Avval *A*(0, *n*), keyin *A*(1, *n*) va *A*(2, *n*) uchun bir nechta qiymatni hi
 - Ichma-ich rekursiyada chaqiruv natijasi yana shu funksiyaga argument boʻladi; hisoblash ichkaridan tashqariga boradi.
 - Bunday funksiyalarning natijasi va chaqiruvlar soni oldindan koʻrinmaydi — ularni kuzatish jadvali va hisoblagich bilan oʻrganiladi.
 - Chaqiruvlar sonini oʻlchash uchun funksiyadan tashqaridagi hisoblagich har chaqiruvda oshiriladi.
-- Chuqur rekursiyada til chegaralarini hisobga oling: Python'da `setrecursionlimit`, Java va C++'da stek hajmi.
+- Chuqur rekursiyada til chegaralarini hisobga oling: Pythonʼda `setrecursionlimit`, Java va C++'da stek hajmi.
 
 ## Oʻzingizni tekshiring
 

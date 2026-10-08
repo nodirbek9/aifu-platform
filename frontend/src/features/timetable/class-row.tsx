@@ -4,7 +4,7 @@ import { cn } from '@/shared/lib/cn'
 import { formatTimeOfDay, type CampusNow } from '@/shared/lib/dates'
 import { Badge, SessionTypeBadge } from '@/shared/ui/badge'
 import { sessionBar } from '@/shared/ui/session-type'
-import { classMoment, isHeld, type ClassItem } from './model'
+import { classMoment, isHeld, splitCourseTitle, type ClassItem } from './model'
 
 /** Whose timetable it is: a student is told the teacher, a teacher the groups. */
 export type TimetableAudience = 'student' | 'teacher'
@@ -24,6 +24,7 @@ export function ClassRow({ item, now, marked = false, audience = 'student', onOp
   const { t } = useTranslation()
   const held = isHeld(item.status)
   const moment = classMoment(item, now)
+  const parsedTitle = splitCourseTitle(item.courseTitle)
 
   const body = (
     <>
@@ -37,9 +38,21 @@ export function ClassRow({ item, now, marked = false, audience = 'student', onOp
       />
       <div className="grid min-w-0 flex-1 gap-1.5">
         <div className="flex flex-wrap items-start justify-between gap-x-3 gap-y-1">
-          <p className={cn('font-display text-body text-text font-semibold', !held && 'line-through')}>
-            {item.courseTitle}
-          </p>
+          <div className="min-w-0 flex-1" title={item.courseTitle}>
+            <p
+              className={cn(
+                'font-display text-body text-text line-clamp-2 font-semibold break-words',
+                !held && 'line-through',
+              )}
+            >
+              {parsedTitle.subject}
+            </p>
+            {parsedTitle.termSuffix !== undefined && (
+              <p className={cn('text-caption text-text-muted font-normal', !held && 'line-through')}>
+                {parsedTitle.termSuffix}
+              </p>
+            )}
+          </div>
           {marked && held && (
             <Badge tone="accent">{moment === 'now' ? t('dashboard.now') : t('dashboard.next')}</Badge>
           )}

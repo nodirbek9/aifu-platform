@@ -112,7 +112,7 @@ Testlar jadvali — mustaqil ishda xuddi shunday jadval talab qilinadi:
 | 300 | ikkinchi | 225000 | chegara |
 | 350 | uchinchi | 292500 | oraliq ichi |
 
-Java'da `450L` — `long` literal: katta isteʼmolda `int` toʻlib ketmasligi uchun.
+Javaʼda `450L` — `long` literal: katta isteʼmolda `int` toʻlib ketmasligi uchun.
 
 ## Mustaqil ish topshirigʻi
 

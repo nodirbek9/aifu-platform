@@ -13,11 +13,11 @@ const tasks = [
     instructions: 'Kirish: n; n ta xarid summasi. Chiqish: har bir xarid uchun chegirma va toʻlanadigan summa.',
     constraints: '1 ≤ n ≤ 100; 0 ≤ summa ≤ 10^12.',
     python: {
-      starter: 'n = int(input())\nfor _ in range(n):\n    amount = int(input())\n    # TODO: if / elif / else\n',
+      starter: 'n = int(input())\nfor _ in range(n):\n    amount = int(input())\n    # ...\n',
       solution: 'n = int(input())\nfor _ in range(n):\n    amount = int(input())\n    if amount >= 1_000_000:\n        discount = amount * 10 // 100\n    elif amount >= 500_000:\n        discount = amount * 5 // 100\n    else:\n        discount = 0\n    print(discount, amount - discount)\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            long amount = in.nextLong();\n            // TODO: if / else if / else\n        }\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            long amount = in.nextLong();\n            // ...\n        }\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            long amount = in.nextLong();\n            long discount;\n            if (amount >= 1_000_000) discount = amount * 10 / 100;\n            else if (amount >= 500_000) discount = amount * 5 / 100;\n            else discount = 0;\n            System.out.println(discount + " " + (amount - discount));\n        }\n    }'),
     },
     tests: [
@@ -33,11 +33,11 @@ const tasks = [
     instructions: 'Kirish: summa foiz yillar. Chiqish: har bir yil uchun “yil balans” (murakkab foiz), oxirgi satrda Oddiy: yakuniy_summa.',
     constraints: '1 ≤ summa ≤ 10^10; 0 ≤ foiz ≤ 100; 1 ≤ yillar ≤ 30.',
     python: {
-      starter: 'principal, rate, years = map(int, input().split())\nbalance = principal\n# TODO: for year in range(1, years + 1):\n',
+      starter: 'principal, rate, years = map(int, input().split())\nbalance = principal\n# ...\n',
       solution: 'principal, rate, years = map(int, input().split())\nbalance = principal\nfor year in range(1, years + 1):\n    balance += balance * rate // 100\n    print(year, balance)\nprint("Oddiy:", principal + principal * rate * years // 100)\n',
     },
     java: {
-      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long principal = in.nextLong();\n        int rate = in.nextInt(), years = in.nextInt();\n        long balance = principal;\n        // TODO: for sikli\n    }'),
+      starter: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long principal = in.nextLong();\n        int rate = in.nextInt(), years = in.nextInt();\n        long balance = principal;\n        // ...\n    }'),
       solution: J('    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long principal = in.nextLong();\n        int rate = in.nextInt(), years = in.nextInt();\n        long balance = principal;\n        for (int year = 1; year <= years; year++) {\n            balance += balance * rate / 100;\n            System.out.println(year + " " + balance);\n        }\n        System.out.println("Oddiy: " + (principal + principal * rate * years / 100));\n    }'),
     },
     tests: [

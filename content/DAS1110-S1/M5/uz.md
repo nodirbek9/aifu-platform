@@ -43,7 +43,7 @@ Xotirada massiv elementlari **ketma-ket** joylashadi. Shuning uchun `a[i]` ga mu
 | Uzunlik | `len(a)` | `a.length` | `a.size()` |
 | Element | `a[i]` | `a[i]` | `a[i]` |
 
-Python'dagi `list` hajmi oʻzgaruvchan: `a.append(x)` oxiriga element qoʻshadi. Java'dagi massivning uzunligi yaratilganda belgilanadi va oʻzgarmaydi. C++'da `vector` (`#include <vector>`) — hajmi oʻzgaruvchan massiv; klassik C++ massivi `int a[100];` esa oʻlchami kompilyatsiya paytida maʼlum boʻlgan statik massiv (A9 mashgʻulotida koʻriladi).
+Pythonʼdagi `list` hajmi oʻzgaruvchan: `a.append(x)` oxiriga element qoʻshadi. Javaʼdagi massivning uzunligi yaratilganda belgilanadi va oʻzgarmaydi. C++'da `vector` (`#include <vector>`) — hajmi oʻzgaruvchan massiv; klassik C++ massivi `int a[100];` esa oʻlchami kompilyatsiya paytida maʼlum boʻlgan statik massiv (A9 mashgʻulotida koʻriladi).
 
 ## Massivni toʻldirish va aylanib chiqish
 
@@ -74,7 +74,7 @@ Indeks 0 dan *n* − 1 gacha boʻladi. `a[n]` — massivda **yoʻq** element:
 
 C++'dagi bu xususiyat eng xavfli xatolardan biri: dastur baʼzan ishlaydi, baʼzan qulaydi. Xavfsizlik zaifliklarining katta qismi aynan chegaradan chiqishdan kelib chiqadi. Shuning uchun sikl shartini doim `i < n` deb yozing, `i <= n` emas.
 
-Python'da manfiy indeks ham bor: `a[-1]` — oxirgi element, `a[-2]` — oxiridan ikkinchi. Java va C++'da bunday imkoniyat yoʻq.
+Pythonʼda manfiy indeks ham bor: `a[-1]` — oxirgi element, `a[-2]` — oxiridan ikkinchi. Java va C++'da bunday imkoniyat yoʻq.
 
 ## Ishlangan misol 1: statistik koʻrsatkichlar
 
@@ -289,16 +289,16 @@ Kirish `5` va `1 2 3 4 5` boʻlsa:
 | 1 | 3 | 2 ↔ 4 | 5 4 3 2 1 |
 | 2 | 2 | sikl tugaydi | 5 4 3 2 1 |
 
-Chiqadi: `5 4 3 2 1`. Juft uzunlikda (masalan, 4 ta) koʻrsatkichlar bir-biridan oʻtib ketganda toʻxtaydi. Sikl *n*/2 marta ishlaydi. Python'da `print(*a)` roʻyxat elementlarini probel bilan chiqaradi; qisqa yoʻl ham bor — `a.reverse()` yoki `a[::-1]`.
+Chiqadi: `5 4 3 2 1`. Juft uzunlikda (masalan, 4 ta) koʻrsatkichlar bir-biridan oʻtib ketganda toʻxtaydi. Sikl *n*/2 marta ishlaydi. Pythonʼda `print(*a)` roʻyxat elementlarini probel bilan chiqaradi; qisqa yoʻl ham bor — `a.reverse()` yoki `a[::-1]`.
 
 :::warning
 **Koʻp uchraydigan xatolar**
 
 - **Indeksni 1 dan boshlash.** Birinchi element — `a[0]`; `for i in range(1, n + 1)` oxirida chegaradan chiqadi.
-- **`i <= n` shart.** Oxirgi iteratsiyada `a[n]` — Python va Java'da xato, C++'da jimgina begona xotira.
+- **`i <= n` shart.** Oxirgi iteratsiyada `a[n]` — Python va Javaʼda xato, C++'da jimgina begona xotira.
 - **Eng kattasini 0 dan boshlash.** Barcha sonlar manfiy boʻlsa, javob notoʻgʻri 0 chiqadi. Birinchi elementdan boshlang.
 - **Teskari tartibda sikl oxirigacha almashtirish.** *n* marta almashtirilsa, massiv ikki marta aylanib, avvalgi holiga qaytadi.
-- **Java'da `a.length()`.** Massiv uchun `length` — qavssiz; `length()` satr uchun.
+- **Javaʼda `a.length()`.** Massiv uchun `length` — qavssiz; `length()` satr uchun.
 :::
 
 :::tip
@@ -309,10 +309,10 @@ Massiv bilan ishlaydigan dasturni uch holatda tekshiring: bitta element, ikki el
 
 - Massiv — bir xil turdagi elementlarning nomlangan, tartiblangan toʻplami; elementlar xotirada ketma-ket joylashadi.
 - Indeks 0 dan *n* − 1 gacha; `a[i]` ga murojaat har qanday *i* uchun bir xil tez.
-- Python'da `list`, Java'da `int[]` (uzunligi oʻzgarmas), C++'da `vector<int>`; uzunlik: `len(a)`, `a.length`, `a.size()`.
+- Pythonʼda `list`, Javaʼda `int[]` (uzunligi oʻzgarmas), C++'da `vector<int>`; uzunlik: `len(a)`, `a.length`, `a.size()`.
 - Aylanib chiqish: indeksli sikl yoki „har bir element uchun“ sikli.
 - Eng katta elementning indeksini saqlang; boshlangʻich qiymat — birinchi element.
-- Chegaradan chiqish Python va Java'da xato beradi, C++'da esa jimgina xotirani buzadi.
+- Chegaradan chiqish Python va Javaʼda xato beradi, C++'da esa jimgina xotirani buzadi.
 
 ## Oʻzingizni tekshiring
 
@@ -321,7 +321,7 @@ Q: `a = [4, 8, 15, 16, 23, 42]` boʻlsa, `a[2]`, `a[5]` va `len(a)` nimaga teng?
 A: 15, 42 va 6.
 Q: Nima uchun massiv indeksi 0 dan boshlanadi?
 A: Indeks — massiv boshidan siljish: birinchi element boshidan 0 element uzoqlikda.
-Q: Java'da `int[] a = new int[5];` dan keyin `a[5] = 1;` nima beradi?
+Q: Javaʼda `int[] a = new int[5];` dan keyin `a[5] = 1;` nima beradi?
 A: `ArrayIndexOutOfBoundsException`: indekslar 0 dan 4 gacha.
 Q: Eng katta elementni qidirishda nima uchun `mx = 0` dan emas, birinchi elementdan boshlash kerak?
 A: Barcha elementlar manfiy boʻlsa, 0 hech qaysi elementdan kichik boʻlmaydi va javob notoʻgʻri 0 chiqadi.
@@ -336,7 +336,7 @@ Roʻyxat metodlari: `append`, `reverse`, `sort` va boshqalar.
 
 :::link https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html
 Oracle Java Tutorial: massivlar
-Java'da massivni eʼlon qilish, yaratish va ishlatish.
+Javaʼda massivni eʼlon qilish, yaratish va ishlatish.
 :::
 
 :::link https://visualgo.net/en/list

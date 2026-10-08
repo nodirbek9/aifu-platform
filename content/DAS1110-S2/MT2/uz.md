@@ -175,7 +175,7 @@ Toʻrtburchak matritsalar bilan test qiling: kvadrat matritsalarda `n`, `m`, `p`
 ## Oʻzingizni tekshiring
 
 :::check
-Q: Java'da `int[][] m` matritsaning ustunlar sonini qanday topish mumkin?
+Q: Javaʼda `int[][] m` matritsaning ustunlar sonini qanday topish mumkin?
 A: `m[0].length` (matritsa boʻsh boʻlmasa).
 Q: C++'da `void f(int m[][])` nima uchun kompilyatsiya boʻlmaydi?
 A: Ikkinchi oʻlcham koʻrsatilmagan; kompilyator `m[i][j]` manzilini hisoblash uchun satr uzunligini bilishi kerak.
@@ -187,5 +187,5 @@ A: Diagonal elementlar oʻziga teng va har bir juftlik `(i, j)`–`(j, i)` bir m
 
 :::link https://numpy.org/doc/stable/reference/generated/numpy.matmul.html
 NumPy: matmul
-Amalda matritsalar Python'da NumPy kutubxonasi bilan koʻpaytiriladi — shu funksiya hujjati (ingliz tilida).
+Amalda matritsalar Pythonʼda NumPy kutubxonasi bilan koʻpaytiriladi — shu funksiya hujjati (ingliz tilida).
 :::

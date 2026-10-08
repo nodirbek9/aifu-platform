@@ -1,21 +1,21 @@
 ---
 title: Shablonlar bilan ishlash
-summary: Umumlashgan dasturlash gʻoyasi; C++ funksiya va sinf shablonlari, Java generiklari va cheklovlar (extends Comparable), Python'da „oʻrdak tiplash“ va TypeVar; shablon funksiya, shablon sinf (stek) va umumiy saralash.
+summary: Umumlashgan dasturlash gʻoyasi; C++ funksiya va sinf shablonlari, Java generiklari va cheklovlar (extends Comparable), Pythonʼda „oʻrdak tiplash“ va TypeVar; shablon funksiya, shablon sinf (stek) va umumiy saralash.
 ---
 
 ## Nima uchun bu mavzu muhim?
 
 Butun sonlar massivining eng kattasini topuvchi funksiya yozdik. Ertaga xuddi shu ish haqiqiy sonlar uchun, indinga satrlar uchun kerak boʻladi. Har safar funksiyani nusxalab, faqat turini almashtirish — xatoga yoʻl ochadi: bitta nusxada xato tuzatilsa, qolganlari eskicha qoladi.
 
-**Shablonlar** (C++'da template, Java'da generic) algoritmni **tur parametri** bilan bir marta yozish imkonini beradi: `T` turidagi massivning eng kattasi — `T` oʻrniga `int` ham, `double` ham, `String` ham qoʻyilishi mumkin. Standart kutubxonalarning oʻzi shunday qurilgan: `vector<int>`, `ArrayList<String>`, `sort` — barchasi shablonlar.
+**Shablonlar** (C++'da template, Javaʼda generic) algoritmni **tur parametri** bilan bir marta yozish imkonini beradi: `T` turidagi massivning eng kattasi — `T` oʻrniga `int` ham, `double` ham, `String` ham qoʻyilishi mumkin. Standart kutubxonalarning oʻzi shunday qurilgan: `vector<int>`, `ArrayList<String>`, `sort` — barchasi shablonlar.
 
 :::note
 **Bu darsdan soʻng siz:**
 
 - umumlashgan (generic) dasturlash nima uchun kerakligini tushuntira olasiz;
-- C++'da funksiya va sinf shablonini, Java'da generik metod va sinfni yoza olasiz;
+- C++'da funksiya va sinf shablonini, Javaʼda generik metod va sinfni yoza olasiz;
 - tur parametriga cheklov qoʻya olasiz (`T extends Comparable<T>`);
-- Python'da bir funksiya turli turlar bilan nima uchun ishlashini („oʻrdak tiplash“) tushuntira olasiz;
+- Pythonʼda bir funksiya turli turlar bilan nima uchun ishlashini („oʻrdak tiplash“) tushuntira olasiz;
 - shablon funksiya va sinflardan oʻz dasturingizda foydalana olasiz.
 :::
 
@@ -42,7 +42,7 @@ C++ shabloni — kod **qolipi**. Kompilyator `engKatta(sonlar)` chaqiruvini koʻ
 
 ## Java generiklari
 
-Java'da tur parametri burchakli qavsda yoziladi: sinf uchun `class Stek<T>`, metod uchun qaytaradigan turdan oldin `<T>`.
+Javaʼda tur parametri burchakli qavsda yoziladi: sinf uchun `class Stek<T>`, metod uchun qaytaradigan turdan oldin `<T>`.
 
 - Tur parametri faqat **obyekt turi** boʻla oladi: `Stek<Integer>`, `Stek<int>` emas. `int` va `Integer` orasidagi oʻtish avtomatik bajariladi (autoboxing).
 - **Cheklov**: `<T extends Comparable<T>>` — „`T` oʻzaro solishtiriladigan tur boʻlishi shart“. Shundan keyin `a.compareTo(b)` chaqirish mumkin. Cheklovsiz `T` uchun faqat `Object` metodlari mavjud.
@@ -52,7 +52,7 @@ Java'da tur parametri burchakli qavsda yoziladi: sinf uchun `class Stek<T>`, met
 
 Python dinamik tipli til: funksiya parametri istalgan turdagi qiymatni qabul qiladi. Funksiya ichidagi amallar (masalan, `>`) qiymat uchun mavjud boʻlsa, hammasi ishlaydi. Bu **oʻrdak tiplash** (duck typing) deyiladi: „oʻrdakdek yursa va oʻrdakdek gʻaqillasa — demak, oʻrdak“.
 
-Shuning uchun Python'da alohida shablon sintaksisi shart emas. Lekin kod oʻquvchisi va tekshiruv vositalari uchun **tur izohlari** yoziladi:
+Shuning uchun Pythonʼda alohida shablon sintaksisi shart emas. Lekin kod oʻquvchisi va tekshiruv vositalari uchun **tur izohlari** yoziladi:
 
 ```python
 from typing import TypeVar
@@ -187,7 +187,7 @@ Chiqish:
 uzum 2
 ```
 
-Har bir tilda algoritm **bir marta** yozilgan, lekin ikki xil tur bilan ishladi. C++'da kompilyator `engKatta<int>` va `engKatta<string>` degan ikki nusxa yaratdi. Java'da `int` lar `List<Integer>` da saqlanadi, solishtirish esa `compareTo` orqali — `<` faqat sonlar uchun. Java'da `equals` ishlatilgan: `Integer` obyektlarini `==` bilan solishtirish xavfli.
+Har bir tilda algoritm **bir marta** yozilgan, lekin ikki xil tur bilan ishladi. C++'da kompilyator `engKatta<int>` va `engKatta<string>` degan ikki nusxa yaratdi. Javaʼda `int` lar `List<Integer>` da saqlanadi, solishtirish esa `compareTo` orqali — `<` faqat sonlar uchun. Javaʼda `equals` ishlatilgan: `Integer` obyektlarini `==` bilan solishtirish xavfli.
 
 ## Ishlangan misol 2: shablon sinf — stek
 
@@ -328,7 +328,7 @@ uch ikki bir
 40 30 20 10
 ```
 
-`Stek<string>` va `Stek<int>` — bitta sinf shablonidan hosil boʻlgan ikki xil tur. C++'dagi `teskariChiqar<string>(oqim1)` da tur aniq yozilgan: funksiya argumentlarida `T` yoʻq, shuning uchun kompilyator uni oʻzi aniqlay olmaydi. Java'da `Stek<String>` ga `s.push(5)` yozilsa, dastur kompilyatsiya boʻlmaydi — generiklar xatoni ishga tushirishdan **oldin** ushlaydi. Python sinfi esa hech qanday tur eʼlon qilmaydi va har qanday qiymat bilan ishlaydi.
+`Stek<string>` va `Stek<int>` — bitta sinf shablonidan hosil boʻlgan ikki xil tur. C++'dagi `teskariChiqar<string>(oqim1)` da tur aniq yozilgan: funksiya argumentlarida `T` yoʻq, shuning uchun kompilyator uni oʻzi aniqlay olmaydi. Javaʼda `Stek<String>` ga `s.push(5)` yozilsa, dastur kompilyatsiya boʻlmaydi — generiklar xatoni ishga tushirishdan **oldin** ushlaydi. Python sinfi esa hech qanday tur eʼlon qilmaydi va har qanday qiymat bilan ishlaydi.
 
 ## Ishlangan misol 3: cheklovli umumiy saralash
 
@@ -502,13 +502,13 @@ Bekzod 88
 Malika 88
 ```
 
-C++ `cout` haqiqiy sonni ortiqcha nollarsiz chiqaradi, shuning uchun uning birinchi satri `-1.25 2 3.5 10.75` boʻladi. `saralash` haqiqiy sonlar haqida ham, talabalar haqida ham hech narsa bilmaydi — u faqat `<` (Java'da `compareTo`) dan foydalanadi. Java'dagi `<T extends Comparable<T>>` cheklovi shuni kafolatlaydi: `Comparable` boʻlmagan tur bilan chaqirilsa, kompilyator xato beradi. C++'da cheklov yozilmagan, lekin `Talaba` da `operator<` boʻlmasa, xato shablon ichidagi `joriy < a[j]` qatorida chiqadi.
+C++ `cout` haqiqiy sonni ortiqcha nollarsiz chiqaradi, shuning uchun uning birinchi satri `-1.25 2 3.5 10.75` boʻladi. `saralash` haqiqiy sonlar haqida ham, talabalar haqida ham hech narsa bilmaydi — u faqat `<` (Javaʼda `compareTo`) dan foydalanadi. Javaʼdagi `<T extends Comparable<T>>` cheklovi shuni kafolatlaydi: `Comparable` boʻlmagan tur bilan chaqirilsa, kompilyator xato beradi. C++'da cheklov yozilmagan, lekin `Talaba` da `operator<` boʻlmasa, xato shablon ichidagi `joriy < a[j]` qatorida chiqadi.
 
 :::warning
 **Koʻp uchraydigan xatolar**
 
-- **Java'da primitiv tur parametri.** `List<int>` yozib boʻlmaydi; `List<Integer>`, `List<Double>` ishlating.
-- **Java'da cheklovsiz `compareTo`.** `<T>` uchun `a.compareTo(b)` kompilyatsiya boʻlmaydi; `<T extends Comparable<T>>` yozing.
+- **Javaʼda primitiv tur parametri.** `List<int>` yozib boʻlmaydi; `List<Integer>`, `List<Double>` ishlating.
+- **Javaʼda cheklovsiz `compareTo`.** `<T>` uchun `a.compareTo(b)` kompilyatsiya boʻlmaydi; `<T extends Comparable<T>>` yozing.
 - **C++'da shablonni `.cpp` faylga yashirish.** Boshqa fayldan chaqirilganda „aniqlanmagan havola“ xatosi chiqadi; shablon kodi sarlavha faylida turadi.
 - **C++'da shablon xatosini notoʻgʻri joydan izlash.** Kompilyator xatoni shablon ichida koʻrsatadi, lekin sabab koʻpincha chaqiruvdagi tur — unga kerakli amal (`<`, `==`, `<<`) yetishmaydi.
 :::
@@ -522,7 +522,7 @@ Shablon yozishdan oldin algoritmni bitta aniq tur uchun (masalan, `int`) yozib, 
 - Shablon (generic) algoritmni tur parametri bilan bir marta yozish imkonini beradi.
 - C++ har bir ishlatilgan tur uchun shablonning alohida nusxasini yaratadi; shablon kodi sarlavha faylida turadi.
 - Java generiklari faqat obyekt turlari bilan ishlaydi; `extends` bilan cheklov qoʻyiladi, turlar kompilyatsiyada tekshiriladi.
-- Python'da oʻrdak tiplash tufayli funksiya har qanday mos tur bilan ishlaydi; `TypeVar` faqat izoh uchun.
+- Pythonʼda oʻrdak tiplash tufayli funksiya har qanday mos tur bilan ishlaydi; `TypeVar` faqat izoh uchun.
 - Shablon tur parametriga qoʻyadigan talablar — undan foydalaniladigan amallar (`<`, `==`, …).
 
 ## Oʻzingizni tekshiring
@@ -530,13 +530,13 @@ Shablon yozishdan oldin algoritmni bitta aniq tur uchun (masalan, `int`) yozib, 
 :::check
 Q: Shablonlar qanday muammoni hal qiladi?
 A: Bir xil algoritmni turli turlar uchun nusxalab yozishni: algoritm tur parametri bilan bir marta yoziladi.
-Q: Java'da nima uchun `Stek<int>` yozib boʻlmaydi?
+Q: Javaʼda nima uchun `Stek<int>` yozib boʻlmaydi?
 A: Tur parametri faqat obyekt turi boʻla oladi; `Stek<Integer>` ishlatiladi.
 Q: `<T extends Comparable<T>>` nimani bildiradi?
 A: `T` oʻzaro solishtiriladigan tur boʻlishi shart; shuning uchun `compareTo` chaqirish mumkin.
 Q: C++'da `engKatta(sonlar)` va `engKatta(sozlar)` chaqirilsa, kompilyator nechta funksiya yaratadi?
 A: Ikkita: `T = int` va `T = string` uchun alohida nusxa.
-Q: Python'da nima uchun maxsus shablon sintaksisi shart emas?
+Q: Pythonʼda nima uchun maxsus shablon sintaksisi shart emas?
 A: Til dinamik tipli: funksiya ichidagi amallar qiymat uchun mavjud boʻlsa, u har qanday turda ishlaydi (oʻrdak tiplash).
 :::
 

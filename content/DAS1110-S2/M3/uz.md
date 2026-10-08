@@ -1,6 +1,6 @@
 ---
 title: Obyektlar massivi
-summary: Obyektlarni massiv va roʻyxatda saqlash, Java'da null havolalar, sikl orqali obyektlarni oʻzgartirish (C++'da nusxa va havola), maydon boʻyicha qidirish va yigʻish, obyektlarning tabiiy tartibi (__lt__, Comparable, operator<).
+summary: Obyektlarni massiv va roʻyxatda saqlash, Javaʼda null havolalar, sikl orqali obyektlarni oʻzgartirish (C++'da nusxa va havola), maydon boʻyicha qidirish va yigʻish, obyektlarning tabiiy tartibi (__lt__, Comparable, operator<).
 ---
 
 ## Nima uchun bu mavzu muhim?
@@ -13,7 +13,7 @@ Oldingi maʼruzada bitta sinf va bir nechta obyekt yaratdik. Endi obyektlarni ma
 **Bu darsdan soʻng siz:**
 
 - obyektlar massivini (roʻyxatini) uch tilda yaratib, toʻldira olasiz;
-- Java'da `new Talaba[n]` nima yaratishini va nega `null` xatosi chiqishini tushuntira olasiz;
+- Javaʼda `new Talaba[n]` nima yaratishini va nega `null` xatosi chiqishini tushuntira olasiz;
 - sikl ichida obyektlarni toʻgʻri oʻzgartira olasiz (C++'da `auto&`);
 - maydon boʻyicha qidirish, yigʻindi va maksimumni hisoblay olasiz;
 - sinfga tabiiy tartib berib, obyektlarni standart funksiya bilan saralay olasiz.
@@ -27,7 +27,7 @@ Oldingi maʼruzada bitta sinf va bir nechta obyekt yaratdik. Endi obyektlarni ma
 | Java | `Talaba[] t = new Talaba[n];` | `List<Talaba> t = new ArrayList<>();`, `t.add(new Talaba(...))` |
 | C++ | `vector<Talaba> t(n);` (standart konstruktor kerak) | `vector<Talaba> t;`, `t.push_back(Talaba(...))` yoki `t.emplace_back(...)` |
 
-**Java'dagi tuzoq.** `new Talaba[n]` *n* ta obyekt **yaratmaydi** — u *n* ta boʻsh havola (`null`) yaratadi. Har bir elementga obyekt alohida beriladi: `t[i] = new Talaba(...)`. Busiz `t[0].ism` ga murojaat `NullPointerException` beradi.
+**Javaʼdagi tuzoq.** `new Talaba[n]` *n* ta obyekt **yaratmaydi** — u *n* ta boʻsh havola (`null`) yaratadi. Har bir elementga obyekt alohida beriladi: `t[i] = new Talaba(...)`. Busiz `t[0].ism` ga murojaat `NullPointerException` beradi.
 
 **C++'dagi xususiyat.** `vector<Talaba> t(n);` *n* ta obyektni darhol yaratadi, buning uchun sinfda parametrsiz (standart) konstruktor boʻlishi kerak. Agar faqat parametrli konstruktor boʻlsa, boʻsh `vector` yaratib, `push_back` yoki `emplace_back` bilan qoʻshing.
 
@@ -41,7 +41,7 @@ Java:    for (Talaba t : talabalar) { ... }
 C++:     for (auto& t : talabalar) { ... }
 ```
 
-Python va Java'da `t` — massivdagi obyektga **havola**, shuning uchun `t.ball += 5` massivdagi obyektni oʻzgartiradi. C++'da esa `for (auto t : talabalar)` har bir obyektning **nusxasini** oladi: nusxa oʻzgaradi, massiv esa oʻzgarishsiz qoladi. Obyektni oʻzgartirish uchun `auto&`, faqat oʻqish uchun `const auto&` yoziladi (nusxa ham yaratilmaydi).
+Python va Javaʼda `t` — massivdagi obyektga **havola**, shuning uchun `t.ball += 5` massivdagi obyektni oʻzgartiradi. C++'da esa `for (auto t : talabalar)` har bir obyektning **nusxasini** oladi: nusxa oʻzgaradi, massiv esa oʻzgarishsiz qoladi. Obyektni oʻzgartirish uchun `auto&`, faqat oʻqish uchun `const auto&` yoziladi (nusxa ham yaratilmaydi).
 
 ## Maydon boʻyicha qidirish va yigʻish
 
@@ -66,7 +66,7 @@ Oʻtgan maʼruzada saralash uchun kalit (`key`) yoki taqqoslash funksiyasini ber
 | Java | `implements Comparable<Kitob>` va `public int compareTo(Kitob b)` | `Collections.sort(a)`, `Arrays.sort(a)` |
 | C++ | `bool operator<(const Kitob& b) const` | `sort(a.begin(), a.end())` |
 
-Java'da `compareTo` manfiy son („men oldinroqman“), nol („tengmiz“) yoki musbat son qaytaradi; `Integer.compare(x, y)` va `String.compareTo` tayyor qiymat beradi.
+Javaʼda `compareTo` manfiy son („men oldinroqman“), nol („tengmiz“) yoki musbat son qaytaradi; `Integer.compare(x, y)` va `String.compareTo` tayyor qiymat beradi.
 
 ## Ishlangan misol 1: ombordagi mahsulotlar
 
@@ -421,14 +421,14 @@ Chiqish:
 2005 Dunyo
 ```
 
-Uchala tilda ham saralash funksiyasi chaqiruvida hech qanday kalit berilmagan: tartib sinfning oʻzida — `__lt__`, `compareTo` yoki `operator<` da. Python'da kortejlarni solishtirish `(yil, nom)` avval birinchi elementni, teng boʻlsa ikkinchisini solishtiradi — bu ikki kalitli tartibning qisqa yozuvi.
+Uchala tilda ham saralash funksiyasi chaqiruvida hech qanday kalit berilmagan: tartib sinfning oʻzida — `__lt__`, `compareTo` yoki `operator<` da. Pythonʼda kortejlarni solishtirish `(yil, nom)` avval birinchi elementni, teng boʻlsa ikkinchisini solishtiradi — bu ikki kalitli tartibning qisqa yozuvi.
 
 :::warning
 **Koʻp uchraydigan xatolar**
 
-- **Java'da `new Talaba[n]` dan keyin obyekt yaratmaslik.** Massiv elementlari `null`; `t[i] = new Talaba(...)` siz `NullPointerException` chiqadi.
+- **Javaʼda `new Talaba[n]` dan keyin obyekt yaratmaslik.** Massiv elementlari `null`; `t[i] = new Talaba(...)` siz `NullPointerException` chiqadi.
 - **C++'da `auto&` oʻrniga `auto`.** Sikl nusxani oʻzgartiradi, massiv esa oʻzgarmaydi — dastur jim ishlaydi, natija notoʻgʻri.
-- **Java'da satrlarni `==` bilan solishtirish.** `==` havolani solishtiradi; nom boʻyicha qidirishda `equals` ishlating.
+- **Javaʼda satrlarni `==` bilan solishtirish.** `==` havolani solishtiradi; nom boʻyicha qidirishda `equals` ishlating.
 - **Teng qiymatlarni hisobga olmaslik.** Maksimum topishda `>` va `>=` turli obyektni tanlaydi; shartda qaysi biri kerakligini aniqlang.
 :::
 
@@ -439,7 +439,7 @@ Obyektlar massivi bilan ishlaganda avval uni toʻgʻri oʻqiganingizni tekshirin
 ## Xulosa
 
 - Obyektlar massivda yoki oʻsuvchi roʻyxatda saqlanadi: Python `list`, Java `ArrayList`, C++ `vector`.
-- Java'da `new T[n]` faqat `null` havolalar yaratadi; har bir obyekt `new` bilan alohida yaratiladi.
+- Javaʼda `new T[n]` faqat `null` havolalar yaratadi; har bir obyekt `new` bilan alohida yaratiladi.
 - C++'da obyektlarni sikl ichida oʻzgartirish uchun `auto&`, oʻqish uchun `const auto&` yoziladi.
 - Massiv algoritmlari obyektlarga ham qoʻllanadi — maydonlar solishtiriladi, eng yaxshi obyekt yoki uning indeksi saqlanadi.
 - Tabiiy tartib sinfda `__lt__`, `compareTo` yoki `operator<` bilan beriladi.
@@ -447,13 +447,13 @@ Obyektlar massivi bilan ishlaganda avval uni toʻgʻri oʻqiganingizni tekshirin
 ## Oʻzingizni tekshiring
 
 :::check
-Q: Java'da `Talaba[] t = new Talaba[3];` dan keyin nechta `Talaba` obyekti mavjud?
+Q: Javaʼda `Talaba[] t = new Talaba[3];` dan keyin nechta `Talaba` obyekti mavjud?
 A: Birorta ham: massivda uchta `null` havola bor.
 Q: C++'da `for (auto t : v) t.ball = 0;` dan keyin `v` dagi ballar nolga teng boʻladimi?
 A: Yoʻq, `t` — nusxa; `for (auto& t : v)` yozish kerak.
-Q: Python'da `for t in talabalar: t.ball += 1` roʻyxatdagi obyektlarni oʻzgartiradimi?
+Q: Pythonʼda `for t in talabalar: t.ball += 1` roʻyxatdagi obyektlarni oʻzgartiradimi?
 A: Ha, `t` roʻyxatdagi obyektning oʻziga havola.
-Q: Java'da `compareTo` qanday qiymat qaytarishi kerak?
+Q: Javaʼda `compareTo` qanday qiymat qaytarishi kerak?
 A: Joriy obyekt oldinroq turishi kerak boʻlsa manfiy, teng boʻlsa nol, keyinroq boʻlsa musbat son.
 Q: Maksimum topishda nima uchun obyektni yoki indeksni saqlash qulay?
 A: Keyin eng yaxshi obyektning boshqa maydonlarini (masalan, nomini) ham chiqarish mumkin.

@@ -157,7 +157,7 @@ Kirish:
 | 2 | 8 | 19 |
 | 3 | 4 | 10 |
 
-Chiqadi: `8 8 4` va `2`. Har bir satr uchun `mx` va `s` tashqi sikl **ichida** yangidan boshlanadi — bu eng muhim nuqta. Java va C++'da eng katta yigʻindi eng kichik mumkin boʻlgan qiymatdan (`Long.MIN_VALUE`, `LLONG_MIN`) boshlanadi; Python'da birinchi satr yigʻindisidan.
+Chiqadi: `8 8 4` va `2`. Har bir satr uchun `mx` va `s` tashqi sikl **ichida** yangidan boshlanadi — bu eng muhim nuqta. Java va C++'da eng katta yigʻindi eng kichik mumkin boʻlgan qiymatdan (`Long.MIN_VALUE`, `LLONG_MIN`) boshlanadi; Pythonʼda birinchi satr yigʻindisidan.
 
 ## Mustaqil ish topshirigʻi
 
@@ -173,7 +173,7 @@ Quyida berilgan **matritsa diagonallari** masalasini yeching. Topshiriladigan is
 
 - Yordamchi diagonal: `a[i][n - 1 - i]`, `a[i][n - i]` emas.
 - Diagonal uchun ichma-ich sikl shart emas; ishlatilsa ham natija toʻgʻri boʻlishi kerak.
-- Python'da matritsani `[[0] * n] * n` bilan yaratmang — satrlar bitta obyekt boʻlib qoladi.
+- Pythonʼda matritsani `[[0] * n] * n` bilan yaratmang — satrlar bitta obyekt boʻlib qoladi.
 - Natijalar qoʻlda tekshirilgan boʻlishi kerak.
 :::
 

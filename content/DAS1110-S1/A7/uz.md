@@ -26,7 +26,7 @@ Bu amaliy mashgʻulotda `for` siklining shu imkoniyatlarini uchta klassik masala
 | 10 dan 1 gacha | `range(10, 0, -1)` | `for (int i = 10; i >= 1; i--)` |
 | *i*² ≤ *n* boʻlguncha | `while i * i <= n:` | `for (int i = 2; i * i <= n; i++)` |
 
-Java va C++'da `for` sharti istalgan mantiqiy ifoda boʻlishi mumkin (masalan, `i * i <= n`). Python'da `range` faqat arifmetik progressiya beradi; murakkab shart uchun `while` ishlatiladi.
+Java va C++'da `for` sharti istalgan mantiqiy ifoda boʻlishi mumkin (masalan, `i * i <= n`). Pythonʼda `range` faqat arifmetik progressiya beradi; murakkab shart uchun `while` ishlatiladi.
 
 ## Bayroq va break
 
@@ -175,7 +175,7 @@ Kirish `8` boʻlsa:
 | … | … | … | … |
 | 7 | 21 | 34 | 55 |
 
-Chiqadi: `1 1 2 3 5 8 13 21 `. Butun ketma-ketlikni saqlash shart emas: faqat oxirgi ikki had (*a*, *b*) yetarli. Python'da `a, b = b, a + b` ikkala qiymatni bir vaqtda yangilaydi; Java va C++'da vaqtinchalik `keyingi` oʻzgaruvchisi kerak. Fibonachchi sonlari tez oʻsadi: 93-had `long` ga ham sigʻmaydi.
+Chiqadi: `1 1 2 3 5 8 13 21 `. Butun ketma-ketlikni saqlash shart emas: faqat oxirgi ikki had (*a*, *b*) yetarli. Pythonʼda `a, b = b, a + b` ikkala qiymatni bir vaqtda yangilaydi; Java va C++'da vaqtinchalik `keyingi` oʻzgaruvchisi kerak. Fibonachchi sonlari tez oʻsadi: 93-had `long` ga ham sigʻmaydi.
 
 ## Ishlangan misol 3: qator yigʻindisi
 
@@ -249,19 +249,19 @@ Kodni katta *n* bilan ham sinab koʻring: tub son uchun 10⁹ ga yaqin son, Fibo
 - `for` da qadam (`range(a, b, step)`, `i += step`) va teskari tartib (`range(b, a, -1)`, `i--`) bor.
 - „Bormi?“ savoliga bayroq va `break` bilan javob beriladi.
 - Tub sonlikni √*n* gacha tekshirish yetarli; 1 tub emas.
-- Fibonachchi uchun faqat oxirgi ikki had saqlanadi; Python'da `a, b = b, a + b`.
+- Fibonachchi uchun faqat oxirgi ikki had saqlanadi; Pythonʼda `a, b = b, a + b`.
 - Haqiqiy qatorda `1.0 /` va `(double)` bilan butun boʻlish va toʻlib ketishdan saqlaning.
 
 ## Oʻzingizni tekshiring
 
 :::check
-Q: Python'da `range(20, 0, -5)` qanday qiymatlarni beradi?
+Q: Pythonʼda `range(20, 0, -5)` qanday qiymatlarni beradi?
 A: 20, 15, 10, 5.
 Q: Nima uchun tub sonlikni √*n* gacha tekshirish yetarli?
 A: Agar *n* = *a* · *b* va *a* ≤ *b* boʻlsa, *a* · *a* ≤ *n*, yaʼni *a* ≤ √*n*. Demak, boʻluvchi boʻlsa, ulardan biri albatta √*n* dan oshmaydi.
 Q: 2-misolda `n = 1` boʻlsa, nima chiqadi?
 A: Faqat `1` (va probel): sikl bir marta ishlaydi.
-Q: Java'da `1 / (k * k)` *k* = 2 boʻlganda nimaga teng va nima uchun?
+Q: Javaʼda `1 / (k * k)` *k* = 2 boʻlganda nimaga teng va nima uchun?
 A: 0: ikkala operand butun, butun boʻlish kasrni tashlaydi.
 Q: Tub son dasturida `break` olib tashlansa, natija oʻzgaradimi?
 A: Natija oʻzgarmaydi, lekin dastur sekinlashadi: boʻluvchi topilgandan keyin ham qolgan sonlar tekshiriladi.

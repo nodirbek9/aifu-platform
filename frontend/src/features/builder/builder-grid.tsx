@@ -3,6 +3,7 @@ import { Plus } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { cn } from '@/shared/lib/cn'
 import { sessionBar, sessionTint } from '@/shared/ui/session-type'
+import { splitCourseTitle } from '@/features/timetable/model'
 import { cellId } from './model'
 import type { Entry } from './queries'
 
@@ -20,8 +21,10 @@ export function EntryFace({ entry, lifted = false }: { entry: Entry; lifted?: bo
   const { t } = useTranslation()
   const type = entry.sessionType ?? 'LECTURE'
   const parity = entry.weekParity ?? 'EVERY'
+  const parsedTitle = splitCourseTitle(entry.courseTitle ?? '')
   return (
     <span
+      title={entry.courseTitle}
       className={cn(
         'text-caption relative grid w-full grid-cols-1 gap-0.5 overflow-hidden rounded-sm py-1 pr-1.5 pl-2.5 text-left tracking-normal',
         sessionTint[type],
@@ -29,7 +32,10 @@ export function EntryFace({ entry, lifted = false }: { entry: Entry; lifted?: bo
       )}
     >
       <span aria-hidden className={cn('absolute inset-y-0 left-0 w-1', sessionBar[type])} />
-      <span className="text-text truncate font-semibold">{entry.courseTitle}</span>
+      <span className="text-text line-clamp-2 min-w-0 font-semibold break-words">{parsedTitle.subject}</span>
+      {parsedTitle.termSuffix !== undefined && (
+        <span className="text-text-muted line-clamp-1 min-w-0 font-normal break-words">{parsedTitle.termSuffix}</span>
+      )}
       <span className="text-text-muted truncate">
         {[entry.teacherName, entry.roomLabel].filter(Boolean).join(' · ')}
       </span>

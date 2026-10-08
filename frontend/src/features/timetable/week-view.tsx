@@ -17,6 +17,7 @@ import {
   shownSlots,
   shownDays,
   slotOf,
+  splitCourseTitle,
   type ClassItem,
   type Day,
   type Week,
@@ -182,14 +183,16 @@ function ClassCard({
   const { t } = useTranslation()
   const held = isHeld(item.status)
   const who = audience === 'student' ? item.teacherName : item.groups.join(', ')
+  const parsedTitle = splitCourseTitle(item.courseTitle)
   return (
     <button
       type="button"
+      title={item.courseTitle}
       onClick={() => {
         onOpen(item)
       }}
       className={cn(
-        'relative grid w-full gap-0.5 overflow-hidden rounded-sm py-1.5 pr-2 pl-3 text-left',
+        'relative grid w-full min-w-0 gap-0.5 overflow-hidden rounded-sm py-1.5 pr-2 pl-3 text-left',
         'duration-fast ease-standard hover:shadow-menu transition-[box-shadow,opacity]',
         'focus-visible:outline-focus-ring focus-visible:outline-2 focus-visible:outline-offset-1',
         held ? sessionTint[item.sessionType] : 'bg-surface-sunken',
@@ -198,12 +201,22 @@ function ClassCard({
       <span aria-hidden className={cn('absolute inset-y-0 left-0 w-1', sessionBar[item.sessionType])} />
       <span
         className={cn(
-          'text-small text-text line-clamp-3 leading-snug font-semibold break-words hyphens-auto',
+          'text-small text-text line-clamp-2 min-w-0 leading-snug font-semibold break-words',
           !held && 'text-text-muted line-through',
         )}
       >
-        {item.courseTitle}
+        {parsedTitle.subject}
       </span>
+      {parsedTitle.termSuffix !== undefined && (
+        <span
+          className={cn(
+            'text-caption text-text-muted line-clamp-1 min-w-0 leading-tight font-normal break-words',
+            !held && 'line-through',
+          )}
+        >
+          {parsedTitle.termSuffix}
+        </span>
+      )}
       <span className="text-caption text-text-muted tracking-normal">
         {t(`sessionType.${item.sessionType}`)}
         {item.roomLabel !== undefined && ` · ${item.roomLabel}`}

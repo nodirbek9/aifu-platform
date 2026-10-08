@@ -30,7 +30,7 @@ Rekursiv funksiyani loyihalash tartibi:
 | Chaqiruvlar soni | jami necha marta funksiya chaqirilgani |
 | Chiqarish tartibi | rekursiv chaqiruvdan **oldin** chiqarilsa — toʻgʻri tartib, **keyin** — teskari tartib |
 
-Python'da rekursiya chuqurligi sukut boʻyicha ~1000 bilan cheklangan; Java va C++'da chegara stek hajmiga bogʻliq (odatda bir necha ming–oʻn minglab chaqiruv).
+Pythonʼda rekursiya chuqurligi sukut boʻyicha ~1000 bilan cheklangan; Java va C++'da chegara stek hajmiga bogʻliq (odatda bir necha ming–oʻn minglab chaqiruv).
 
 ## Namunaviy masala: raqamlarni teskari yozish
 

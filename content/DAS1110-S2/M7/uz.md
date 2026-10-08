@@ -1,19 +1,19 @@
 ---
 title: Visual Studio muhitida dasturlash
-summary: Integratsiyalashgan ishlab chiqish muhiti (IDE) tarkibi, Visual Studio'da yechim va loyiha, Debug va Release konfiguratsiyalari, kompilyator ogohlantirishlari, tuzatuvchi — toʻxtash nuqtalari, qadamlab bajarish, Watch va Call Stack oynalari; xatoni tizimli izlash.
+summary: Integratsiyalashgan ishlab chiqish muhiti (IDE) tarkibi, Visual Studioʻda yechim va loyiha, Debug va Release konfiguratsiyalari, kompilyator ogohlantirishlari, tuzatuvchi — toʻxtash nuqtalari, qadamlab bajarish, Watch va Call Stack oynalari; xatoni tizimli izlash.
 ---
 
 ## Nima uchun bu mavzu muhim?
 
 Hozirgacha dasturlarni oddiy matn muharririda yozib, buyruq qatoridan kompilyatsiya qilgan boʻlishingiz mumkin. Kichik dasturlar uchun bu yetarli. Lekin dastur yuzlab qatorga yetganda va natija notoʻgʻri chiqqanda, „qayerda xato?“ savoliga `print` qoʻyib javob izlash soatlab vaqt oladi.
 
-**Integratsiyalashgan ishlab chiqish muhiti** (IDE) muharrir, kompilyator va **tuzatuvchi**ni (debugger) bitta oynaga birlashtiradi. Tuzatuvchi dasturni istalgan qatorda toʻxtatib, barcha oʻzgaruvchilarning qiymatini koʻrsatadi va dasturni qadamma-qadam bajarishga imkon beradi. Professional dasturchilar vaqtining katta qismini aynan tuzatuvchida oʻtkazadi. Bu maʼruzada Visual Studio misolida shu vositalarni oʻrganamiz; ular IntelliJ IDEA, PyCharm va VS Code'da ham deyarli bir xil.
+**Integratsiyalashgan ishlab chiqish muhiti** (IDE) muharrir, kompilyator va **tuzatuvchi**ni (debugger) bitta oynaga birlashtiradi. Tuzatuvchi dasturni istalgan qatorda toʻxtatib, barcha oʻzgaruvchilarning qiymatini koʻrsatadi va dasturni qadamma-qadam bajarishga imkon beradi. Professional dasturchilar vaqtining katta qismini aynan tuzatuvchida oʻtkazadi. Bu maʼruzada Visual Studio misolida shu vositalarni oʻrganamiz; ular IntelliJ IDEA, PyCharm va VS Codeʼda ham deyarli bir xil.
 
 :::note
 **Bu darsdan soʻng siz:**
 
 - IDE ning asosiy qismlarini va ularning vazifasini ayta olasiz;
-- Visual Studio'da yechim va loyiha yaratib, C++ dasturini yigʻa va ishga tushira olasiz;
+- Visual Studioʻda yechim va loyiha yaratib, C++ dasturini yigʻa va ishga tushira olasiz;
 - Debug va Release konfiguratsiyalarining farqini tushuntira olasiz;
 - toʻxtash nuqtasi qoʻyib, dasturni qadamlab bajara va oʻzgaruvchilarni kuzata olasiz;
 - xatoni tizimli usulda — taxmin, tekshiruv, tuzatish — izlay olasiz.
@@ -21,7 +21,7 @@ Hozirgacha dasturlarni oddiy matn muharririda yozib, buyruq qatoridan kompilyats
 
 ## IDE tarkibi
 
-| Qism | Vazifasi | Visual Studio'da |
+| Qism | Vazifasi | Visual Studioʻda |
 |---|---|---|
 | Muharrir | kod yozish, rang bilan ajratish, avtomatik toʻldirish | IntelliSense — nom yozishni boshlaganda variantlar taklif qilinadi |
 | Loyiha tizimi | qaysi fayllar dasturga kirishini va qanday yigʻilishini saqlaydi | Solution Explorer oynasi |
@@ -31,13 +31,13 @@ Hozirgacha dasturlarni oddiy matn muharririda yozib, buyruq qatoridan kompilyats
 
 ## Yechim va loyiha
 
-Visual Studio'da ish **yechim** (solution, `.sln` fayli) ichida tashkil etiladi. Yechim bir yoki bir nechta **loyiha**dan (project, C++ uchun `.vcxproj`) iborat; har bir loyiha bitta dastur yoki kutubxona beradi.
+Visual Studioʻda ish **yechim** (solution, `.sln` fayli) ichida tashkil etiladi. Yechim bir yoki bir nechta **loyiha**dan (project, C++ uchun `.vcxproj`) iborat; har bir loyiha bitta dastur yoki kutubxona beradi.
 
 Yangi C++ dasturini yaratish:
 
 1. File → New → Project → **Console App** (C++) shablonini tanlang.
 2. Loyiha nomi va joylashuvini kiriting → Create.
-3. Solution Explorer'da `Source Files` ichida `.cpp` fayl paydo boʻladi — kodni shu yerda yozasiz.
+3. Solution Explorerʼda `Source Files` ichida `.cpp` fayl paydo boʻladi — kodni shu yerda yozasiz.
 4. Ctrl+F5 — tuzatuvchisiz ishga tushirish (oyna dastur tugagach yopilmaydi), F5 — tuzatuvchi bilan.
 
 C++ standartini tanlash: loyiha ustida oʻng tugma → Properties → C/C++ → Language → **C++ Language Standard** (masalan, ISO C++17). Ogohlantirish darajasi: C/C++ → General → **Warning Level** — oʻquv dasturlari uchun `/W4` tavsiya etiladi.
@@ -52,7 +52,7 @@ C++ standartini tanlash: loyiha ustida oʻng tugma → Properties → C/C++ → 
 | `assert` | ishlaydi | oʻchiriladi (`NDEBUG` belgilanadi) |
 | Tezlik | sekinroq | bir necha marta tezroq boʻlishi mumkin |
 
-Konfiguratsiya asboblar panelidagi roʻyxatdan tanlanadi. Muhim saboq: baʼzi xatolar (masalan, boshlangʻich qiymat berilmagan oʻzgaruvchi) Debug'da „ishlab“, Release'da boshqacha natija berishi mumkin — dastur ikkala rejimda ham tekshiriladi.
+Konfiguratsiya asboblar panelidagi roʻyxatdan tanlanadi. Muhim saboq: baʼzi xatolar (masalan, boshlangʻich qiymat berilmagan oʻzgaruvchi) Debugʻda „ishlab“, Releaseʼda boshqacha natija berishi mumkin — dastur ikkala rejimda ham tekshiriladi.
 
 ## Tuzatuvchi bilan ishlash
 
@@ -255,15 +255,15 @@ int main() {
 [debug] 3 topildi, qoldi 5
 ```
 
-Visual Studio'da xatolar oqimi konsol oynasida asosiy natija bilan birga koʻrinadi, avtomatik tekshiruv esa faqat asosiy oqimni solishtiradi. `assert` sharti bajarilmasa, dastur xabar bilan toʻxtaydi va xato aynan shu joyda ekani darhol maʼlum boʻladi. Javada `assert` sukut boʻyicha oʻchiq — u `java -ea Main` bilan yoqiladi; C++'da esa Release konfiguratsiyasida `NDEBUG` tufayli oʻchiriladi. Shuning uchun `assert` ichida dastur ishiga taʼsir qiladigan amal yozilmaydi.
+Visual Studioʻda xatolar oqimi konsol oynasida asosiy natija bilan birga koʻrinadi, avtomatik tekshiruv esa faqat asosiy oqimni solishtiradi. `assert` sharti bajarilmasa, dastur xabar bilan toʻxtaydi va xato aynan shu joyda ekani darhol maʼlum boʻladi. Javada `assert` sukut boʻyicha oʻchiq — u `java -ea Main` bilan yoqiladi; C++'da esa Release konfiguratsiyasida `NDEBUG` tufayli oʻchiriladi. Shuning uchun `assert` ichida dastur ishiga taʼsir qiladigan amal yozilmaydi.
 
 :::warning
 **Koʻp uchraydigan xatolar**
 
 - **Ogohlantirishlarni eʼtiborsiz qoldirish.** „Variable used without being initialized“ kabi ogohlantirish — koʻpincha haqiqiy xato; `/W4` bilan yigʻing va ularni tuzating.
-- **Release'da tuzatishga urinish.** Optimallashtirish tufayli oʻzgaruvchilar „yoʻqolib“ qoladi va qadamlar sakraydi; tuzatish uchun Debug tanlang.
+- **Releaseʼda tuzatishga urinish.** Optimallashtirish tufayli oʻzgaruvchilar „yoʻqolib“ qoladi va qadamlar sakraydi; tuzatish uchun Debug tanlang.
 - **Tuzatuv `print`larini asosiy chiqishda qoldirish.** Avtomatik tekshiruv ularni xato javob deb hisoblaydi; `cerr`, `System.err`, `sys.stderr` ishlating yoki olib tashlang.
-- **`assert` ichida muhim amal.** `assert(++k < n)` Release'da umuman bajarilmaydi va dastur xatti-harakati oʻzgaradi.
+- **`assert` ichida muhim amal.** `assert(++k < n)` Releaseʼda umuman bajarilmaydi va dastur xatti-harakati oʻzgaradi.
 :::
 
 :::tip
@@ -273,7 +273,7 @@ Xato topilganda uni keltirib chiqargan kirishni test sifatida saqlab qoʻying. H
 ## Xulosa
 
 - IDE muharrir, loyiha tizimi, yigʻuvchi, xatolar roʻyxati va tuzatuvchini birlashtiradi.
-- Visual Studio'da ish yechim (`.sln`) va loyihalar ichida tashkil etiladi; standart va ogohlantirish darajasi loyiha xususiyatlarida sozlanadi.
+- Visual Studioʻda ish yechim (`.sln`) va loyihalar ichida tashkil etiladi; standart va ogohlantirish darajasi loyiha xususiyatlarida sozlanadi.
 - Debug — tuzatish uchun (optimallashtirishsiz, `assert` ishlaydi), Release — foydalanuvchi uchun.
 - Tuzatuvchi: toʻxtash nuqtasi (F9), Step Over (F10), Step Into (F11), Locals, Watch va Call Stack oynalari.
 - Xato tizimli izlanadi: takrorlash → kutilgan natija → taxmin → tekshiruv → tuzatish.
@@ -300,5 +300,5 @@ Toʻxtash nuqtalari, qadamlash va oʻzgaruvchilarni kuzatish boʻyicha rasmiy qo
 
 :::link https://code.visualstudio.com/docs/editor/debugging
 VS Code: tuzatish
-VS Code'da Python, Java va C++ dasturlarini tuzatish (ingliz tilida).
+VS Codeʼda Python, Java va C++ dasturlarini tuzatish (ingliz tilida).
 :::

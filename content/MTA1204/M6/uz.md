@@ -455,7 +455,7 @@ Chiqish:
 1 3 2 4 5
 ```
 
-1 → 2 toʻgʻridan-toʻgʻri qirra 4 ga teng, lekin 1 → 3 → 2 yoʻli 1 + 2 = 3 — qisqaroq: 3-uch belgilanganda 2-uchning masofasi „boʻshatildi“. `ota` massivi har bir uchga qaysi uchdan kelinganini saqlaydi; yoʻl oxiridan boshiga tiklanib, teskari chiqariladi. Python'da `float("inf")` qoʻshish xavfsiz, Java va C++'da esa ∞ sifatida `MAX / 4` olindi va qirra mavjudligi alohida tekshirildi — aks holda `INF + w` toʻlib ketadi.
+1 → 2 toʻgʻridan-toʻgʻri qirra 4 ga teng, lekin 1 → 3 → 2 yoʻli 1 + 2 = 3 — qisqaroq: 3-uch belgilanganda 2-uchning masofasi „boʻshatildi“. `ota` massivi har bir uchga qaysi uchdan kelinganini saqlaydi; yoʻl oxiridan boshiga tiklanib, teskari chiqariladi. Pythonʼda `float("inf")` qoʻshish xavfsiz, Java va C++'da esa ∞ sifatida `MAX / 4` olindi va qirra mavjudligi alohida tekshirildi — aks holda `INF + w` toʻlib ketadi.
 
 ## Ishlangan misol 3: Floyd–Uorshell algoritmi
 
@@ -576,7 +576,7 @@ Chiqish:
 
 - **Roʻyxatda boshni yoki oxirni oʻchirishni unutish.** `bosh` va `oxir` koʻrsatkichlari eskirgan tugunga qarab qoladi.
 - **Deykstrani manfiy vaznli grafda ishlatish.** Belgilangan uch masofasi keyinchalik kamayishi mumkin — natija notoʻgʻri.
-- **Floyd'da sikllar tartibini almashtirish.** *k* tashqi sikl boʻlmasa, algoritm notoʻgʻri ishlaydi.
+- **Floydʼda sikllar tartibini almashtirish.** *k* tashqi sikl boʻlmasa, algoritm notoʻgʻri ishlaydi.
 - **∞ ga vazn qoʻshib toʻldirish.** Java va C++'da `Long.MAX_VALUE + w` manfiy son beradi; ∞ ni kichikroq oling yoki qirra borligini tekshiring.
 :::
 

@@ -67,7 +67,7 @@ Protsessor faqat **mashina kodini** — ikkilik koʻrinishdagi juda oddiy buyruq
 
 **Interpretator (interpreter)** dasturni bajarish paytida qatorma-qator oʻqiydi va darhol bajaradi. Dasturni tez sinab koʻrish qulay, lekin bajarilish sekinroq; xato esa faqat oʻsha qatorga navbat kelganda chiqadi. Python shunday ishlaydi.
 
-**Java** oraliq yoʻlni tanlaydi: kompilyator dasturni **bayt-kodga** oʻgiradi, uni esa **Java virtual mashinasi (JVM)** bajaradi. Shuning uchun bitta Java dasturi Windows'da ham, Linux'da ham qayta kompilyatsiyasiz ishlaydi.
+**Java** oraliq yoʻlni tanlaydi: kompilyator dasturni **bayt-kodga** oʻgiradi, uni esa **Java virtual mashinasi (JVM)** bajaradi. Shuning uchun bitta Java dasturi Windowsʼda ham, Linuxʼda ham qayta kompilyatsiyasiz ishlaydi.
 
 | | C++ | Java | Python |
 |---|---|---|---|
@@ -133,18 +133,18 @@ int main() {
 
 Kirish maʼlumoti `12` va `30` boʻlsin. Dastur quyidagicha ishlaydi:
 
-1. Birinchi qator oʻqiladi va butun songa aylantiriladi: *a* = 12. Python'da `input()` matn qaytaradi, shuning uchun `int(...)` kerak; Java'da `nextInt()`, C++'da `cin >>` sonni toʻgʻridan-toʻgʻri oʻqiydi.
+1. Birinchi qator oʻqiladi va butun songa aylantiriladi: *a* = 12. Pythonʼda `input()` matn qaytaradi, shuning uchun `int(...)` kerak; Javaʼda `nextInt()`, C++'da `cin >>` sonni toʻgʻridan-toʻgʻri oʻqiydi.
 2. Ikkinchi son oʻqiladi: *b* = 30.
 3. `s = a + b` — yigʻindi hisoblanadi va *s* oʻzgaruvchisiga yoziladi: *s* = 42.
 4. Natija chiqariladi: `Yigʻindi: 42`.
 
-Uchala dasturda ham **bir xil algoritm**, farq faqat sintaksisda. Java va C++'da oʻzgaruvchining turi (`int` — butun son) oldindan yoziladi; Python'da tur qiymatga qarab oʻzi aniqlanadi. Java dasturi `class Main` ichida, C++ dasturi `main()` funksiyasi ichida yoziladi — dastur shu yerdan boshlanadi.
+Uchala dasturda ham **bir xil algoritm**, farq faqat sintaksisda. Java va C++'da oʻzgaruvchining turi (`int` — butun son) oldindan yoziladi; Pythonʼda tur qiymatga qarab oʻzi aniqlanadi. Java dasturi `class Main` ichida, C++ dasturi `main()` funksiyasi ichida yoziladi — dastur shu yerdan boshlanadi.
 
 :::warning
 **Koʻp uchraydigan xatolar**
 
-- **Python'da `int()`ni unutish.** `input()` matn qaytaradi: `"12" + "30"` natijasi `"1230"` boʻladi, 42 emas.
-- **C++ va Java'da nuqtali vergulni (`;`) tushirib qoldirish.** Bu sintaksis xatosi — dastur kompilyatsiya qilinmaydi.
+- **Pythonʼda `int()`ni unutish.** `input()` matn qaytaradi: `"12" + "30"` natijasi `"1230"` boʻladi, 42 emas.
+- **C++ va Javaʼda nuqtali vergulni (`;`) tushirib qoldirish.** Bu sintaksis xatosi — dastur kompilyatsiya qilinmaydi.
 - **Katta-kichik harflarni aralashtirish.** `Print`, `Main`, `System.Out` — boshqa nomlar. Uchala til ham harf registrini farqlaydi.
 - **Masalani oʻylamasdan kod yozish.** Avval qogʻozda algoritmni tuzing: nima kiradi, nima chiqadi, oraliqda nima qilinadi.
 :::
@@ -170,7 +170,7 @@ Q: „Suv qaynaguncha kuting“ qadami algoritmning qaysi xossasini buzishi mumk
 A: Cheklilikni: agar plita yoqilmagan boʻlsa, suv hech qachon qaynamaydi va algoritm tugamaydi.
 Q: Kompilyator va interpretatorning asosiy farqi nimada?
 A: Kompilyator butun dasturni oldindan tarjima qilib, bajariladigan fayl yaratadi; interpretator esa dasturni bajarish paytida qatorma-qator tarjima qilib bajaradi.
-Q: Python'dagi `print(input() + input())` dasturiga `12` va `30` berilsa, nima chiqadi va nima uchun?
+Q: Pythonʼdagi `print(input() + input())` dasturiga `12` va `30` berilsa, nima chiqadi va nima uchun?
 A: `1230` chiqadi, chunki `input()` matn qaytaradi va ikki matn qoʻshilganda ular yonma-yon yopishtiriladi. Son sifatida qoʻshish uchun `int(input())` kerak.
 Q: Sintaksis xatosi va mantiqiy (semantik) xatoning farqi nimada?
 A: Sintaksis xatosida dastur umuman ishga tushmaydi (kompilyator yoki interpretator xabar beradi). Mantiqiy xatoda dastur ishlaydi, lekin notoʻgʻri natija beradi.
@@ -178,7 +178,7 @@ A: Sintaksis xatosida dastur umuman ishga tushmaydi (kompilyator yoki interpreta
 
 :::link https://docs.python.org/3/tutorial/introduction.html
 Python rasmiy qoʻllanmasi: Python bilan tanishuv
-Python'da birinchi qadamlar, sonlar va matnlar bilan ishlash.
+Pythonʼda birinchi qadamlar, sonlar va matnlar bilan ishlash.
 :::
 
 :::link https://en.cppreference.com/w/cpp/language/main_function

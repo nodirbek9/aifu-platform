@@ -31,7 +31,7 @@ Saralash va qidirish — dasturlashning eng koʻp ishlatiladigan amallari: inter
 
 Masalada „*n* ≤ 1000“ deyilsa, massiv eng katta holat uchun (`MAX = 1000`) eʼlon qilinadi va faqat birinchi *n* ta element ishlatiladi. Statik massivning uzunligini u „bilmaydi“ — *n* ni alohida oʻzgaruvchida saqlash kerak.
 
-Java va Python'da statik massiv yoʻq: Java massivi `new int[n]` bilan ish paytida yaratiladi (uzunligi keyin oʻzgarmaydi), Python roʻyxati esa hajmini oʻzgartira oladi.
+Java va Pythonʼda statik massiv yoʻq: Java massivi `new int[n]` bilan ish paytida yaratiladi (uzunligi keyin oʻzgarmaydi), Python roʻyxati esa hajmini oʻzgartira oladi.
 
 ## Chiziqli qidiruv
 

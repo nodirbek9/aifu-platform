@@ -62,7 +62,7 @@ print(t.ism, t.kurs)                   # Aziz 3
 
 ## Statik maydonlar
 
-Oddiy maydon har bir obyektda alohida. **Statik maydon** (Python'da — sinf atributi) esa sinfga tegishli va barcha obyektlar uchun **bitta**. Masalan, nechta talaba yaratilganini sanash uchun:
+Oddiy maydon har bir obyektda alohida. **Statik maydon** (Pythonʼda — sinf atributi) esa sinfga tegishli va barcha obyektlar uchun **bitta**. Masalan, nechta talaba yaratilganini sanash uchun:
 
 | Til | Statik maydon | Murojaat |
 |---|---|---|
@@ -151,7 +151,7 @@ int main() {
 }
 ```
 
-`3 5` kiritilsa, chiqish: `15 16`. C++'dagi `: en(en), boy(boy)` — **initsializatsiya roʻyxati**: maydonlar konstruktor tanasidan oldin qiymat oladi. Metod oxiridagi `const` — „bu metod obyektni oʻzgartirmaydi“ degan vaʼda. Java'da `static class` — `Main` ichidagi mustaqil sinf; bitta faylda yozish uchun shunday qilamiz.
+`3 5` kiritilsa, chiqish: `15 16`. C++'dagi `: en(en), boy(boy)` — **initsializatsiya roʻyxati**: maydonlar konstruktor tanasidan oldin qiymat oladi. Metod oxiridagi `const` — „bu metod obyektni oʻzgartirmaydi“ degan vaʼda. Javaʼda `static class` — `Main` ichidagi mustaqil sinf; bitta faylda yozish uchun shunday qilamiz.
 
 ## Ishlangan misol 2: vaqt sinfi
 
@@ -235,7 +235,7 @@ int main() {
 }
 ```
 
-`23 45` va `30` kiritilsa, chiqish `00:15`: 23:45 dan 30 daqiqa oʻtib yarim tundan oʻtdik. Obyekt ichida vaqt soat va daqiqa sifatida emas, **yarim tundan beri oʻtgan daqiqalar** sifatida saqlanadi — hisoblash shunda soddaroq. Bu ichki tanlov sinfdan foydalanuvchiga koʻrinmaydi: u faqat `qosh` va matn koʻrinishini biladi. Python'da `print(v)` avtomatik `__str__` ni, Java'da `println(v)` — `toString()` ni chaqiradi.
+`23 45` va `30` kiritilsa, chiqish `00:15`: 23:45 dan 30 daqiqa oʻtib yarim tundan oʻtdik. Obyekt ichida vaqt soat va daqiqa sifatida emas, **yarim tundan beri oʻtgan daqiqalar** sifatida saqlanadi — hisoblash shunda soddaroq. Bu ichki tanlov sinfdan foydalanuvchiga koʻrinmaydi: u faqat `qosh` va matn koʻrinishini biladi. Pythonʼda `print(v)` avtomatik `__str__` ni, Javaʼda `println(v)` — `toString()` ni chaqiradi.
 
 ## Ishlangan misol 3: kasr sinfi va statik hisoblagich
 
@@ -347,8 +347,8 @@ int main() {
 
 - **Python metodida `self` ni unutish.** `def yuza():` deb yozilsa, `t.yuza()` chaqiruvi xato beradi; maydonga ham faqat `self.en` orqali murojaat qilinadi.
 - **Java/C++'da `this` siz bir xil nom.** Konstruktorda `en = en;` parametrni oʻziga oʻzlashtiradi, maydon esa 0 boʻlib qoladi; `this.en = en` yozing.
-- **Java'da `new` siz obyekt.** `Tortburchak t;` faqat havola eʼlon qiladi (`null`); obyekt `new` bilan yaratiladi.
-- **Havola nusxa deb oʻylash.** Python/Java'da `b = a` yangi obyekt yaratmaydi; `b` ni oʻzgartirish `a` ni ham oʻzgartiradi.
+- **Javaʼda `new` siz obyekt.** `Tortburchak t;` faqat havola eʼlon qiladi (`null`); obyekt `new` bilan yaratiladi.
+- **Havola nusxa deb oʻylash.** Python/Javaʼda `b = a` yangi obyekt yaratmaydi; `b` ni oʻzgartirish `a` ni ham oʻzgartiradi.
 :::
 
 :::tip
@@ -361,7 +361,7 @@ Sinf loyihalashda avval „bu obyekt nimani **biladi**?“ (maydonlar) va „nim
 - Maydonlar obyekt maʼlumotini, metodlar uning amallarini ifodalaydi; konstruktor obyektni boshlangʻich holatga keltiradi.
 - `self` / `this` — metod chaqirilgan obyektning oʻzi.
 - Statik maydon sinfga tegishli va barcha obyektlar uchun bitta.
-- Python va Java'da oʻzgaruvchi obyektga havola saqlaydi, C++'da oʻzlashtirish nusxa yaratadi.
+- Python va Javaʼda oʻzgaruvchi obyektga havola saqlaydi, C++'da oʻzlashtirish nusxa yaratadi.
 
 ## Oʻzingizni tekshiring
 
@@ -370,7 +370,7 @@ Q: Sinf va obyekt oʻrtasidagi farq nima?
 A: Sinf — tur tavsifi (chizma), obyekt — shu sinfdan yaratilgan aniq qiymat; bitta sinfdan koʻp obyekt yaratish mumkin.
 Q: Konstruktor qachon ishlaydi?
 A: Obyekt yaratilayotganda, avtomatik ravishda bir marta.
-Q: Python'da `a = Talaba("Ali", 1)`, `b = a`, `b.kurs = 2` dan keyin `a.kurs` nechaga teng?
+Q: Pythonʼda `a = Talaba("Ali", 1)`, `b = a`, `b.kurs = 2` dan keyin `a.kurs` nechaga teng?
 A: 2 — `a` va `b` bitta obyektga havola.
 Q: C++'da `Talaba b = a; b.kurs = 2;` dan keyin `a.kurs` oʻzgaradimi?
 A: Yoʻq, `b` — `a` ning nusxasi.
@@ -385,5 +385,5 @@ Sinf, obyekt, `__init__` va metodlar haqida rasmiy qoʻllanma (ingliz tilida).
 
 :::link https://dev.java/learn/classes-objects/
 Java: sinflar va obyektlar
-Java'da sinf, konstruktor va `this` boʻyicha rasmiy oʻquv resursi (ingliz tilida).
+Javaʼda sinf, konstruktor va `this` boʻyicha rasmiy oʻquv resursi (ingliz tilida).
 :::
