@@ -18,6 +18,15 @@ Academic years and terms
 | GET | `/admin/academic-years/{id}/terms` | List terms in an academic year, in ordinal order |  |  | 200 TermView[] |
 | POST | `/admin/academic-years/{id}/terms` | Create a term within an academic year |  | CreateTermRequest | 201 TermView |
 
+## Admin: attempt grants
+
+Grant additional quiz attempts
+
+| Method | Path | What it does | Query | Body | Returns |
+|---|---|---|---|---|---|
+| GET | `/admin/attempt-grants` | List attempt grants | courseId?, page?, size?, sort? |  | 200 PageResponseAttemptGrantView |
+| POST | `/admin/quizzes/{quizId}/enrollments/{enrollmentId}/attempt-grants` | Grant an additional attempt for a quiz |  | AttemptGrantRequest | 200 AttemptGrantView |
+
 ## Admin: audit log
 
 Browse the append-only audit trail

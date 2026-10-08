@@ -16,4 +16,10 @@ public interface QuizAttemptGrantRepository extends JpaRepository<QuizAttemptGra
 
     @EntityGraph(attributePaths = {"grantedBy", "enrollment", "enrollment.student"})
     Page<QuizAttemptGrant> findByQuiz_Id(UUID quizId, Pageable pageable);
+
+    @EntityGraph(attributePaths = {"grantedBy", "enrollment", "enrollment.student"})
+    Page<QuizAttemptGrant> findByQuiz_Course_Id(UUID courseId, Pageable pageable);
+
+    @EntityGraph(attributePaths = {"grantedBy", "enrollment", "enrollment.student"})
+    Page<QuizAttemptGrant> findAll(Pageable pageable);
 }

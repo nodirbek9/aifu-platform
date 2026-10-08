@@ -12,6 +12,8 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
@@ -53,6 +55,8 @@ import uz.aifu.lms.grading.persistence.GradeEntryRepository;
  */
 @Service
 public class GradeEntryService {
+
+    private static final Logger log = LoggerFactory.getLogger(GradeEntryService.class);
 
     private final GradeEntryRepository gradeEntries;
     private final EnrollmentService enrollments;
@@ -317,6 +321,9 @@ public class GradeEntryService {
                         maxScore,
                         null,
                         when);
+        if (entry == null) {
+            return Optional.empty();
+        }
         recomputeFinalScore(enrollmentId);
         return Optional.of(entry);
     }
@@ -422,6 +429,11 @@ public class GradeEntryService {
      * own shape. If one already exists with a different score, it is superseded (new revision, old
      * row moves to REVISED); an identical replay is a no-op, matching {@code Submission}'s own
      * idempotent-write reasoning (Phase 8).
+     *
+     * <p>For graded quiz attempts, the best score counts: when a PUBLISHED grade already exists for
+     * the same quiz activity and enrollment, and the new attempt's score is lower than or equal to
+     * the existing grade's score, it is not superseded and no new row is created (logged at debug).
+     * When the new score is higher, it supersedes with a new revision row.
      */
     private GradeEntry recordOrSupersede(
             UUID enrollmentId,
@@ -434,23 +446,66 @@ public class GradeEntryService {
             BigDecimal maxScore,
             UUID evaluatorUserId,
             Instant when) {
+        boolean isQuizAttempt =
+                source == GradeSource.QUIZ
+                        && sourceRefType == GradeSourceRefType.QUIZ_ATTEMPT
+                        && activityId != null;
+
         Optional<GradeEntry> current =
-                gradeEntries
-                        .findByEnrollment_IdAndAssessmentComponentIdAndSourceRefTypeAndSourceRefIdAndStatus(
+                isQuizAttempt
+                        ? gradeEntries.findByEnrollment_IdAndActivityIdAndSourceAndStatus(
                                 enrollmentId,
-                                assessmentComponentId,
-                                sourceRefType,
-                                sourceRefId,
-                                GradeEntryStatus.PUBLISHED);
+                                activityId,
+                                GradeSource.QUIZ,
+                                GradeEntryStatus.PUBLISHED)
+                        : gradeEntries
+                                .findByEnrollment_IdAndAssessmentComponentIdAndSourceRefTypeAndSourceRefIdAndStatus(
+                                        enrollmentId,
+                                        assessmentComponentId,
+                                        sourceRefType,
+                                        sourceRefId,
+                                        GradeEntryStatus.PUBLISHED);
         if (current.isPresent()) {
             GradeEntry previous = current.get();
+            if (isQuizAttempt) {
+                if (score.compareTo(previous.getScore()) <= 0) {
+                    log.debug(
+                            "Quiz attempt score {} is <= existing published grade score {}; keeping best score for enrollment {} and activity {}",
+                            score,
+                            previous.getScore(),
+                            enrollmentId,
+                            activityId);
+                    return null;
+                }
+                previous.markRevised();
+                GradeEntry next =
+                        GradeEntry.supersede(
+                                previous,
+                                score,
+                                maxScore,
+                                source,
+                                sourceRefType,
+                                sourceRefId,
+                                evaluatorUserId,
+                                when);
+                return gradeEntries.save(next);
+            }
+
             if (previous.getScore().compareTo(score) == 0
                     && previous.getMaxScore().compareTo(maxScore) == 0) {
                 return previous;
             }
             previous.markRevised();
             GradeEntry next =
-                    GradeEntry.supersede(previous, score, maxScore, source, evaluatorUserId, when);
+                    GradeEntry.supersede(
+                            previous,
+                            score,
+                            maxScore,
+                            source,
+                            sourceRefType,
+                            sourceRefId,
+                            evaluatorUserId,
+                            when);
             return gradeEntries.save(next);
         }
         Enrollment enrollment = enrollments.require(enrollmentId);

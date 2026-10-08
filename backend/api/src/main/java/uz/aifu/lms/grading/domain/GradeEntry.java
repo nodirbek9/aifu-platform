@@ -144,14 +144,34 @@ public class GradeEntry {
             GradeSource source,
             UUID evaluatorUserId,
             Instant now) {
+        return supersede(
+                previous,
+                score,
+                maxScore,
+                source,
+                GradeSourceRefType.MANUAL,
+                previous.sourceRefId,
+                evaluatorUserId,
+                now);
+    }
+
+    public static GradeEntry supersede(
+            GradeEntry previous,
+            BigDecimal score,
+            BigDecimal maxScore,
+            GradeSource source,
+            GradeSourceRefType sourceRefType,
+            UUID sourceRefId,
+            UUID evaluatorUserId,
+            Instant now) {
         GradeEntry next =
                 new GradeEntry(
                         previous.enrollment,
                         previous.assessmentComponentId,
                         previous.activityId,
                         source,
-                        GradeSourceRefType.MANUAL,
-                        previous.sourceRefId,
+                        sourceRefType,
+                        sourceRefId,
                         score,
                         maxScore,
                         evaluatorUserId,

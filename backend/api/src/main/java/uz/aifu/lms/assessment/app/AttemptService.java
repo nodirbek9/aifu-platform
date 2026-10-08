@@ -2,16 +2,19 @@ package uz.aifu.lms.assessment.app;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.security.SecureRandom;
 import java.time.Clock;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
-import java.util.Random;
 import java.util.UUID;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -67,7 +70,7 @@ import uz.aifu.lms.enrollment.domain.Enrollment;
 public class AttemptService {
 
     private static final int MAX_OPTIMISTIC_RETRIES = 5;
-    private static final Random RANDOM = new Random();
+    private static final SecureRandom SECURE_RANDOM = new SecureRandom();
 
     private final QuizAttemptRepository attempts;
     private final QuizAttemptQuestionRepository attemptQuestions;
@@ -83,6 +86,7 @@ public class AttemptService {
     private final Clock clock;
     private final AttemptService self;
     private final Optional<uz.aifu.lms.iam.app.access.LessonGate> lessonGate;
+    private final uz.aifu.lms.assessment.persistence.QuizAttemptGrantRepository attemptGrants;
 
     public AttemptService(
             QuizAttemptRepository attempts,
@@ -98,7 +102,8 @@ public class AttemptService {
             ApplicationEventPublisher events,
             Clock clock,
             @Lazy AttemptService self,
-            Optional<uz.aifu.lms.iam.app.access.LessonGate> lessonGate) {
+            Optional<uz.aifu.lms.iam.app.access.LessonGate> lessonGate,
+            uz.aifu.lms.assessment.persistence.QuizAttemptGrantRepository attemptGrants) {
         this.attempts = attempts;
         this.attemptQuestions = attemptQuestions;
         this.selectedOptions = selectedOptions;
@@ -113,6 +118,7 @@ public class AttemptService {
         this.clock = clock;
         this.self = self;
         this.lessonGate = lessonGate;
+        this.attemptGrants = attemptGrants;
     }
 
     // ---------------------------------------------------------------- start
@@ -145,9 +151,12 @@ public class AttemptService {
                         });
 
         int maxAttemptNumber = attempts.findMaxAttemptNumber(quizId, enrollment.getId());
-        if (quiz.getMaxAttempts() != null && maxAttemptNumber >= quiz.getMaxAttempts()) {
-            throw Exceptions.rule(
-                    ErrorCode.ATTEMPT_LIMIT_REACHED, "Maximum attempts reached for this quiz");
+        if (quiz.getMaxAttempts() != null) {
+            long grants = attemptGrants.countByQuiz_IdAndEnrollment_Id(quizId, enrollment.getId());
+            if (maxAttemptNumber >= quiz.getMaxAttempts() + grants) {
+                throw Exceptions.rule(
+                        ErrorCode.ATTEMPT_LIMIT_REACHED, "Maximum attempts reached for this quiz");
+            }
         }
 
         Activity activity = resolveActivity(activityId, quizId);
@@ -175,6 +184,17 @@ public class AttemptService {
             // EnrollmentService.enroll.
             saved = attempts.saveAndFlush(attempt);
         } catch (DataIntegrityViolationException e) {
+            String message = e.getMessage() != null ? e.getMessage() : "";
+            if (message.contains("Attempt limit reached") || message.contains("23514")) {
+                throw Exceptions.rule(
+                        ErrorCode.ATTEMPT_LIMIT_REACHED, "Attempt limit reached for this quiz");
+            }
+            if (e.getCause() instanceof org.hibernate.exception.ConstraintViolationException cve) {
+                if ("23514".equals(cve.getSQLState())) {
+                    throw Exceptions.rule(
+                            ErrorCode.ATTEMPT_LIMIT_REACHED, "Attempt limit reached for this quiz");
+                }
+            }
             throw Exceptions.conflict(
                     ErrorCode.ATTEMPT_ALREADY_OPEN,
                     "An attempt is already in progress for this quiz");
@@ -198,14 +218,37 @@ public class AttemptService {
 
     private List<QuizAttemptQuestion> serveQuestions(Quiz quiz, QuizAttempt attempt) {
         List<Question> all = questions.findByQuiz_IdOrderByPosition(quiz.getId());
-        List<Question> served = new ArrayList<>(all);
+        List<Question> served;
         Integer poolSize = quiz.getQuestionPoolSize();
-        if (poolSize != null && poolSize < served.size()) {
-            Collections.shuffle(served, RANDOM);
-            served = new ArrayList<>(served.subList(0, poolSize));
+        if (poolSize != null && poolSize < all.size()) {
+            List<QuizAttemptQuestionRepository.ServedQuestionHistory> history =
+                    attemptQuestions.servedHistory(quiz.getId(), attempt.getEnrollment().getId());
+            Map<UUID, Instant> lastServed = new HashMap<>();
+            for (QuizAttemptQuestionRepository.ServedQuestionHistory row : history) {
+                if (row.getQuestionId() != null && row.getLastServedAt() != null) {
+                    lastServed.merge(
+                            row.getQuestionId(),
+                            row.getLastServedAt(),
+                            (prev, next) -> next.isAfter(prev) ? next : prev);
+                }
+            }
+            List<UUID> bank = all.stream().map(Question::getId).toList();
+            List<UUID> drawnIds = QuestionDraw.draw(bank, lastServed, poolSize, SECURE_RANDOM);
+            Map<UUID, Question> questionMap =
+                    all.stream().collect(Collectors.toMap(Question::getId, q -> q));
+            served = new ArrayList<>();
+            for (UUID id : drawnIds) {
+                Question question = questionMap.get(id);
+                if (question != null) {
+                    served.add(question);
+                }
+            }
+        } else {
+            served = new ArrayList<>(all);
         }
+
         if (quiz.isShuffleQuestions()) {
-            Collections.shuffle(served, RANDOM);
+            Collections.shuffle(served, SECURE_RANDOM);
         } else {
             served.sort(Comparator.comparingInt(Question::getPosition));
         }

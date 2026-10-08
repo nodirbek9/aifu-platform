@@ -58,6 +58,7 @@ public enum AuditAction {
     // --- Assessment / coding ---
     QUIZ_PUBLISHED,
     QUIZ_ATTEMPT_SUBMITTED,
+    QUIZ_ATTEMPT_GRANTED,
     CODING_TASK_PUBLISHED,
     CODING_SUBMISSION_CREATED,
     EXECUTION_JOB_DEAD,

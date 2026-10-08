@@ -419,6 +419,53 @@
           }
         }
       },
+      "AttemptGrantRequest" : {
+        "description" : "Request payload to grant an extra attempt",
+        "properties" : {
+          "reason" : {
+            "description" : "Reason for the grant",
+            "example" : "Student experienced a power outage",
+            "maxLength" : 1000,
+            "minLength" : 5,
+            "type" : "string"
+          }
+        },
+        "required" : [ "reason" ]
+      },
+      "AttemptGrantView" : {
+        "description" : "Representation of a granted extra attempt",
+        "properties" : {
+          "createdAt" : {
+            "description" : "When the grant was created",
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "enrollmentId" : {
+            "description" : "Enrollment ID",
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "grantedBy" : {
+            "description" : "Admin user ID who granted it",
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "id" : {
+            "description" : "Grant ID",
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "quizId" : {
+            "description" : "Quiz ID",
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "reason" : {
+            "description" : "Reason for the grant",
+            "type" : "string"
+          }
+        }
+      },
       "AttemptSummary" : {
         "description" : "Attempt summary for list views",
         "properties" : {
@@ -476,7 +523,7 @@
         "description" : "One audit trail entry",
         "properties" : {
           "action" : {
-            "enum" : [ "LOGIN_SUCCESS", "LOGIN_FAILURE", "ACCOUNT_LOCKED", "TOKEN_REFRESH", "TOKEN_REUSE_DETECTED", "LOGOUT", "LOGOUT_ALL", "PASSWORD_CHANGED", "USER_CREATED", "USER_UPDATED", "USER_STATUS_CHANGED", "USER_PASSWORD_RESET", "ROLE_GRANTED", "ROLE_REVOKED", "SUBJECT_CREATED", "SUBJECT_UPDATED", "SUBJECT_PUBLISHED", "SUBJECT_ARCHIVED", "COURSE_CREATED", "COURSE_UPDATED", "COURSE_PUBLISHED", "COURSE_ARCHIVED", "COURSE_TEACHER_ASSIGNED", "COURSE_TEACHER_REMOVED", "MODULE_CREATED", "MODULE_UPDATED", "MODULE_DELETED", "LESSON_CREATED", "LESSON_UPDATED", "LESSON_DELETED", "CONTENT_BLOCK_CHANGED", "ACTIVITY_CREATED", "ACTIVITY_UPDATED", "ACTIVITY_DELETED", "CONTENT_PUBLISHED", "TRANSLATION_CHANGED", "ENROLLMENT_CREATED", "ENROLLMENT_STATUS_CHANGED", "ENROLLMENT_WITHDRAWN", "QUIZ_PUBLISHED", "QUIZ_ATTEMPT_SUBMITTED", "CODING_TASK_PUBLISHED", "CODING_SUBMISSION_CREATED", "EXECUTION_JOB_DEAD", "QUIZ_CREATED", "QUIZ_UPDATED", "QUESTION_CREATED", "QUESTION_UPDATED", "QUESTION_DELETED", "CODING_TASK_CREATED", "CODING_TASK_UPDATED", "TEST_CASE_CREATED", "TEST_CASE_UPDATED", "TEST_CASE_DELETED", "GRADE_RECORDED", "GRADE_REVISED", "GRADE_PUBLISHED", "GRADE_VOIDED", "FEEDBACK_CREATED", "FEEDBACK_UPDATED", "FILE_UPLOADED", "FILE_DELETED", "GROUP_CHANGED", "TIMETABLE_PUBLISHED", "TIMETABLE_ENTRY_CHANGED", "TIMETABLE_CONFLICT_OVERRIDDEN", "TIMETABLE_EXCEPTION_ADDED", "ATTENDANCE_MARKED", "ADMIN_ACTION", "CONFIGURATION_CHANGED", "PERMISSION_DENIED" ],
+            "enum" : [ "LOGIN_SUCCESS", "LOGIN_FAILURE", "ACCOUNT_LOCKED", "TOKEN_REFRESH", "TOKEN_REUSE_DETECTED", "LOGOUT", "LOGOUT_ALL", "PASSWORD_CHANGED", "USER_CREATED", "USER_UPDATED", "USER_STATUS_CHANGED", "USER_PASSWORD_RESET", "ROLE_GRANTED", "ROLE_REVOKED", "SUBJECT_CREATED", "SUBJECT_UPDATED", "SUBJECT_PUBLISHED", "SUBJECT_ARCHIVED", "COURSE_CREATED", "COURSE_UPDATED", "COURSE_PUBLISHED", "COURSE_ARCHIVED", "COURSE_TEACHER_ASSIGNED", "COURSE_TEACHER_REMOVED", "MODULE_CREATED", "MODULE_UPDATED", "MODULE_DELETED", "LESSON_CREATED", "LESSON_UPDATED", "LESSON_DELETED", "CONTENT_BLOCK_CHANGED", "ACTIVITY_CREATED", "ACTIVITY_UPDATED", "ACTIVITY_DELETED", "CONTENT_PUBLISHED", "TRANSLATION_CHANGED", "ENROLLMENT_CREATED", "ENROLLMENT_STATUS_CHANGED", "ENROLLMENT_WITHDRAWN", "QUIZ_PUBLISHED", "QUIZ_ATTEMPT_SUBMITTED", "QUIZ_ATTEMPT_GRANTED", "CODING_TASK_PUBLISHED", "CODING_SUBMISSION_CREATED", "EXECUTION_JOB_DEAD", "QUIZ_CREATED", "QUIZ_UPDATED", "QUESTION_CREATED", "QUESTION_UPDATED", "QUESTION_DELETED", "CODING_TASK_CREATED", "CODING_TASK_UPDATED", "TEST_CASE_CREATED", "TEST_CASE_UPDATED", "TEST_CASE_DELETED", "GRADE_RECORDED", "GRADE_REVISED", "GRADE_PUBLISHED", "GRADE_VOIDED", "FEEDBACK_CREATED", "FEEDBACK_UPDATED", "FILE_UPLOADED", "FILE_DELETED", "GROUP_CHANGED", "TIMETABLE_PUBLISHED", "TIMETABLE_ENTRY_CHANGED", "TIMETABLE_CONFLICT_OVERRIDDEN", "TIMETABLE_EXCEPTION_ADDED", "ATTENDANCE_MARKED", "ADMIN_ACTION", "CONFIGURATION_CHANGED", "PERMISSION_DENIED" ],
             "type" : "string"
           },
           "actorLabel" : {
@@ -3950,6 +3997,43 @@
           "content" : {
             "items" : {
               "$ref" : "#/components/schemas/AnnouncementView"
+            },
+            "type" : "array"
+          },
+          "hasNext" : {
+            "type" : "boolean"
+          },
+          "hasPrevious" : {
+            "type" : "boolean"
+          },
+          "page" : {
+            "example" : 0,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "size" : {
+            "example" : 20,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "totalElements" : {
+            "example" : 137,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalPages" : {
+            "example" : 7,
+            "format" : "int32",
+            "type" : "integer"
+          }
+        }
+      },
+      "PageResponseAttemptGrantView" : {
+        "description" : "Paginated collection envelope",
+        "properties" : {
+          "content" : {
+            "items" : {
+              "$ref" : "#/components/schemas/AttemptGrantView"
             },
             "type" : "array"
           },
@@ -7818,6 +7902,78 @@
         "tags" : [ "Admin: academic calendar" ]
       }
     },
+    "/api/v1/admin/attempt-grants" : {
+      "get" : {
+        "operationId" : "listGrants",
+        "parameters" : [ {
+          "in" : "query",
+          "name" : "courseId",
+          "required" : false,
+          "schema" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        }, {
+          "description" : "Zero-based page index",
+          "in" : "query",
+          "name" : "page",
+          "required" : false,
+          "schema" : {
+            "default" : 0,
+            "format" : "int32",
+            "type" : "integer"
+          }
+        }, {
+          "description" : "Page size; capped by the server",
+          "in" : "query",
+          "name" : "size",
+          "required" : false,
+          "schema" : {
+            "default" : 20,
+            "format" : "int32",
+            "type" : "integer"
+          }
+        }, {
+          "description" : "property,asc or property,desc; may be repeated",
+          "in" : "query",
+          "name" : "sort",
+          "required" : false,
+          "schema" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageResponseAttemptGrantView"
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description" : "Any failure (4xx, 5xx): the error envelope"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "summary" : "List attempt grants",
+        "tags" : [ "Admin: attempt grants" ]
+      }
+    },
     "/api/v1/admin/audit-log" : {
       "get" : {
         "description" : "Every filter is optional; omitting all of them lists everything, newest first.",
@@ -7835,7 +7991,7 @@
           "name" : "action",
           "required" : false,
           "schema" : {
-            "enum" : [ "LOGIN_SUCCESS", "LOGIN_FAILURE", "ACCOUNT_LOCKED", "TOKEN_REFRESH", "TOKEN_REUSE_DETECTED", "LOGOUT", "LOGOUT_ALL", "PASSWORD_CHANGED", "USER_CREATED", "USER_UPDATED", "USER_STATUS_CHANGED", "USER_PASSWORD_RESET", "ROLE_GRANTED", "ROLE_REVOKED", "SUBJECT_CREATED", "SUBJECT_UPDATED", "SUBJECT_PUBLISHED", "SUBJECT_ARCHIVED", "COURSE_CREATED", "COURSE_UPDATED", "COURSE_PUBLISHED", "COURSE_ARCHIVED", "COURSE_TEACHER_ASSIGNED", "COURSE_TEACHER_REMOVED", "MODULE_CREATED", "MODULE_UPDATED", "MODULE_DELETED", "LESSON_CREATED", "LESSON_UPDATED", "LESSON_DELETED", "CONTENT_BLOCK_CHANGED", "ACTIVITY_CREATED", "ACTIVITY_UPDATED", "ACTIVITY_DELETED", "CONTENT_PUBLISHED", "TRANSLATION_CHANGED", "ENROLLMENT_CREATED", "ENROLLMENT_STATUS_CHANGED", "ENROLLMENT_WITHDRAWN", "QUIZ_PUBLISHED", "QUIZ_ATTEMPT_SUBMITTED", "CODING_TASK_PUBLISHED", "CODING_SUBMISSION_CREATED", "EXECUTION_JOB_DEAD", "QUIZ_CREATED", "QUIZ_UPDATED", "QUESTION_CREATED", "QUESTION_UPDATED", "QUESTION_DELETED", "CODING_TASK_CREATED", "CODING_TASK_UPDATED", "TEST_CASE_CREATED", "TEST_CASE_UPDATED", "TEST_CASE_DELETED", "GRADE_RECORDED", "GRADE_REVISED", "GRADE_PUBLISHED", "GRADE_VOIDED", "FEEDBACK_CREATED", "FEEDBACK_UPDATED", "FILE_UPLOADED", "FILE_DELETED", "GROUP_CHANGED", "TIMETABLE_PUBLISHED", "TIMETABLE_ENTRY_CHANGED", "TIMETABLE_CONFLICT_OVERRIDDEN", "TIMETABLE_EXCEPTION_ADDED", "ATTENDANCE_MARKED", "ADMIN_ACTION", "CONFIGURATION_CHANGED", "PERMISSION_DENIED" ],
+            "enum" : [ "LOGIN_SUCCESS", "LOGIN_FAILURE", "ACCOUNT_LOCKED", "TOKEN_REFRESH", "TOKEN_REUSE_DETECTED", "LOGOUT", "LOGOUT_ALL", "PASSWORD_CHANGED", "USER_CREATED", "USER_UPDATED", "USER_STATUS_CHANGED", "USER_PASSWORD_RESET", "ROLE_GRANTED", "ROLE_REVOKED", "SUBJECT_CREATED", "SUBJECT_UPDATED", "SUBJECT_PUBLISHED", "SUBJECT_ARCHIVED", "COURSE_CREATED", "COURSE_UPDATED", "COURSE_PUBLISHED", "COURSE_ARCHIVED", "COURSE_TEACHER_ASSIGNED", "COURSE_TEACHER_REMOVED", "MODULE_CREATED", "MODULE_UPDATED", "MODULE_DELETED", "LESSON_CREATED", "LESSON_UPDATED", "LESSON_DELETED", "CONTENT_BLOCK_CHANGED", "ACTIVITY_CREATED", "ACTIVITY_UPDATED", "ACTIVITY_DELETED", "CONTENT_PUBLISHED", "TRANSLATION_CHANGED", "ENROLLMENT_CREATED", "ENROLLMENT_STATUS_CHANGED", "ENROLLMENT_WITHDRAWN", "QUIZ_PUBLISHED", "QUIZ_ATTEMPT_SUBMITTED", "QUIZ_ATTEMPT_GRANTED", "CODING_TASK_PUBLISHED", "CODING_SUBMISSION_CREATED", "EXECUTION_JOB_DEAD", "QUIZ_CREATED", "QUIZ_UPDATED", "QUESTION_CREATED", "QUESTION_UPDATED", "QUESTION_DELETED", "CODING_TASK_CREATED", "CODING_TASK_UPDATED", "TEST_CASE_CREATED", "TEST_CASE_UPDATED", "TEST_CASE_DELETED", "GRADE_RECORDED", "GRADE_REVISED", "GRADE_PUBLISHED", "GRADE_VOIDED", "FEEDBACK_CREATED", "FEEDBACK_UPDATED", "FILE_UPLOADED", "FILE_DELETED", "GROUP_CHANGED", "TIMETABLE_PUBLISHED", "TIMETABLE_ENTRY_CHANGED", "TIMETABLE_CONFLICT_OVERRIDDEN", "TIMETABLE_EXCEPTION_ADDED", "ATTENDANCE_MARKED", "ADMIN_ACTION", "CONFIGURATION_CHANGED", "PERMISSION_DENIED" ],
             "type" : "string"
           }
         }, {
@@ -9545,6 +9701,65 @@
         } ],
         "summary" : "List the full permission catalogue",
         "tags" : [ "Admin: roles" ]
+      }
+    },
+    "/api/v1/admin/quizzes/{quizId}/enrollments/{enrollmentId}/attempt-grants" : {
+      "post" : {
+        "operationId" : "grantAttempt",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "quizId",
+          "required" : true,
+          "schema" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        }, {
+          "in" : "path",
+          "name" : "enrollmentId",
+          "required" : true,
+          "schema" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AttemptGrantRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AttemptGrantView"
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description" : "Any failure (4xx, 5xx): the error envelope"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "summary" : "Grant an additional attempt for a quiz",
+        "tags" : [ "Admin: attempt grants" ]
       }
     },
     "/api/v1/admin/roles" : {
@@ -20583,6 +20798,9 @@
   }, {
     "description" : "Public subject catalogue",
     "name" : "Subjects"
+  }, {
+    "description" : "Grant additional quiz attempts",
+    "name" : "Admin: attempt grants"
   }, {
     "description" : "The caller's own course progress",
     "name" : "My progress"

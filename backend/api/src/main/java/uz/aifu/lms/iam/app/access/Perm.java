@@ -47,6 +47,7 @@ public final class Perm {
     public static final String QUIZ_ATTEMPT_CREATE = "QUIZ_ATTEMPT_CREATE";
     public static final String QUIZ_ATTEMPT_SELF_READ = "QUIZ_ATTEMPT_SELF_READ";
     public static final String QUIZ_ATTEMPT_REVIEW = "QUIZ_ATTEMPT_REVIEW";
+    public static final String QUIZ_ATTEMPT_GRANT = "QUIZ_ATTEMPT_GRANT";
 
     // coding
     public static final String CODING_TASK_READ = "CODING_TASK_READ";

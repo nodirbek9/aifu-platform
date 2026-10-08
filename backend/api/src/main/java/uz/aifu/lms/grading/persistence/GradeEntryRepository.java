@@ -11,6 +11,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import uz.aifu.lms.grading.domain.GradeEntry;
 import uz.aifu.lms.grading.domain.GradeEntryStatus;
+import uz.aifu.lms.grading.domain.GradeSource;
 import uz.aifu.lms.grading.domain.GradeSourceRefType;
 
 public interface GradeEntryRepository extends JpaRepository<GradeEntry, UUID> {
@@ -47,4 +48,13 @@ public interface GradeEntryRepository extends JpaRepository<GradeEntry, UUID> {
                     GradeSourceRefType sourceRefType,
                     UUID sourceRefId,
                     GradeEntryStatus status);
+
+    /** Finds the current published entry for a specific activity (e.g. quiz) in an enrollment. */
+    @Query(
+            "select g from GradeEntry g where g.enrollment.id = :enrollmentId and g.activityId = :activityId and g.source = :source and g.status = :status")
+    Optional<GradeEntry> findByEnrollment_IdAndActivityIdAndSourceAndStatus(
+            @Param("enrollmentId") UUID enrollmentId,
+            @Param("activityId") UUID activityId,
+            @Param("source") GradeSource source,
+            @Param("status") GradeEntryStatus status);
 }
