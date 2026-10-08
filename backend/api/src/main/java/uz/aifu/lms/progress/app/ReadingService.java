@@ -22,8 +22,6 @@ import uz.aifu.lms.enrollment.domain.Enrollment;
 import uz.aifu.lms.progress.api.dto.ProgressDtos.LessonPathView;
 import uz.aifu.lms.progress.api.dto.ProgressDtos.ReadingBeatRequest;
 import uz.aifu.lms.progress.app.PathRules.LessonPathState;
-import uz.aifu.lms.progress.app.PathRules.LessonSteps;
-import uz.aifu.lms.progress.app.PathRules.StepState;
 import uz.aifu.lms.progress.domain.CourseLearningPath;
 import uz.aifu.lms.progress.domain.LessonProgress;
 import uz.aifu.lms.progress.domain.ProgressStatus;
@@ -132,19 +130,7 @@ public class ReadingService {
 
         Map<UUID, LessonPathState> states =
                 learningPathService.pathState(courseId, enrollment.getId());
-        LessonPathState state = states.get(lessonId);
-        LessonSteps steps =
-                state != null
-                        ? state.steps()
-                        : new LessonSteps(StepState.TODO, StepState.NONE, StepState.NONE);
-        boolean open = state != null && state.open();
-        int activeReadingSeconds = lp.getActiveReadingSeconds();
-        int requiredReadingSeconds =
-                lp.getRequiredReadingSeconds() != null ? lp.getRequiredReadingSeconds() : 0;
-        boolean reachedEnd = lp.isReachedEnd();
-
-        return new LessonPathView(
-                steps, activeReadingSeconds, requiredReadingSeconds, reachedEnd, open);
+        return learningPathService.lessonPathView(lessonId, states.get(lessonId), lp);
     }
 
     private <T> T retrying(Supplier<T> action) {

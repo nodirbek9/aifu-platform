@@ -173,7 +173,7 @@ code blocks, nothing hidden behind the bottom bar, on desktop and phone.
   `max_attempts = 2`, `question_pool_size = LEAST(5, count)` only where count ≥ 5, `passing_percent = 60`,
   `reveal_policy = 'AFTER_LAST_ATTEMPT'`; behind PRACTICE quiz: `max_attempts = NULL`. Update the seed
   generator (`tools/content-seed/generate.mjs`: 3 → 2) and regenerate V906 only if V906 is not yet applied anywhere
-  (it is — so instead add dev seed `V912__dev_seed_path_steps.sql` setting path_step/limits on dev content).
+  (it is — so instead add dev seed `V914__dev_seed_path_steps.sql` setting path_step/limits on dev content).
 - **B13 Contract + docs.** Regenerate `docs/api/openapi.json` (OpenApiContractIT -Dopenapi.write=true),
   `ENDPOINTS.md`, `frontend/src/shared/api/schema.d.ts`; `docs/03-API-GUIDE.md` §2 add the `details.reason`
   values; CLAUDE.md §8 row "≤ max_attempts + grants"; `docs/decisions/README.md` rows 012–018;

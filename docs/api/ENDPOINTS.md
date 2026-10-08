@@ -82,6 +82,15 @@ Student groups ("guruh") and their rosters
 | POST | `/admin/groups/{id}/students` | Put students into this group (moves them out of their previous group) |  | GroupStudentsRequest | 200 GroupStudentView[] |
 | DELETE | `/admin/groups/{id}/students/{userId}` | Remove a student from this group |  |  | 204 |
 
+## Admin: learning path
+
+Course learning path configuration and gate management
+
+| Method | Path | What it does | Query | Body | Returns |
+|---|---|---|---|---|---|
+| GET | `/admin/courses/{courseId}/learning-path` | Get course learning path configuration |  |  | 200 LearningPathConfigView |
+| PUT | `/admin/courses/{courseId}/learning-path` | Configure or enable/disable course learning path |  | LearningPathConfigRequest | 200 LearningPathConfigView |
+
 ## Admin: roles
 
 Role/permission catalogue (data, not code — ADR-004)
@@ -268,6 +277,14 @@ Student groups and rosters (staff)
 | GET | `/groups` | All groups with their student counts |  |  | 200 GroupView[] |
 | GET | `/groups/{id}` | One group |  |  | 200 GroupView |
 | GET | `/groups/{id}/students` | The group's roster, by name |  |  | 200 GroupStudentView[] |
+
+## Lesson path
+
+Learning path state of a lesson
+
+| Method | Path | What it does | Query | Body | Returns |
+|---|---|---|---|---|---|
+| GET | `/lessons/{lessonId}/path` | The learning path state of a lesson for the caller |  |  | 200 LessonPathView |
 
 ## Lesson reading
 

@@ -92,7 +92,7 @@ function quizSql(s, q) {
   const total = q.questions.reduce((sum, x) => sum + (x.points ?? 1), 0)
   lines.push(`-- quiz ${q.code}`)
   lines.push(`INSERT INTO quizzes (course_id, code, status, max_points, passing_percent, time_limit_seconds, max_attempts, shuffle_questions, shuffle_options, reveal_policy, published_at)
-SELECT ${cid}, ${dq(q.code)}, 'PUBLISHED', ${total}, 60, ${q.timeLimit ?? 900}, 3, false, true, 'AFTER_ATTEMPT', now()
+SELECT ${cid}, ${dq(q.code)}, 'PUBLISHED', ${total}, 60, ${q.timeLimit ?? 900}, 2, false, true, 'AFTER_ATTEMPT', now()
 WHERE ${cid} IS NOT NULL AND NOT EXISTS (SELECT 1 FROM quizzes WHERE code=${dq(q.code)});`)
   lines.push(`INSERT INTO quiz_translations (quiz_id, locale, title, description, instructions)
 SELECT id, 'uz', ${dq(q.title)}, ${dq(q.description ?? null)}, ${dq(q.instructions ?? 'Har bir savolni diqqat bilan oʻqing. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.')}

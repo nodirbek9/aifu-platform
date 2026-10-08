@@ -47,7 +47,9 @@ public class StudentWorkController {
             summary = "The course's modules and lessons with my status on each, in one call",
             description =
                     "Published content only. A lesson is locked while a lesson it requires is not"
-                            + " completed. A teacher or admin gets the same tree without statuses.")
+                            + " completed. When the course learning path is enabled the lock, its lockReason and"
+                            + " the lecture/test/practice steps come from the server gate; midterm shows the"
+                            + " midterm standing. A teacher or admin gets the same tree without statuses.")
     public CoursePlanView plan(
             @PathVariable UUID courseId,
             @RequestParam(required = false) String locale,

@@ -26,10 +26,13 @@ import uz.aifu.lms.curriculum.app.CourseOutlineService;
 import uz.aifu.lms.curriculum.app.CourseOutlineService.OutlineLesson;
 import uz.aifu.lms.curriculum.app.CourseOutlineService.OutlineModule;
 import uz.aifu.lms.curriculum.domain.Activity;
+import uz.aifu.lms.curriculum.domain.ActivityType;
 import uz.aifu.lms.curriculum.domain.Lesson;
 import uz.aifu.lms.curriculum.domain.PathStep;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.Enrollment;
+import uz.aifu.lms.progress.api.dto.ProgressDtos.LessonPathView;
+import uz.aifu.lms.progress.api.dto.ProgressDtos.MidtermView;
 import uz.aifu.lms.progress.app.PathRules.LessonInput;
 import uz.aifu.lms.progress.app.PathRules.LessonPathState;
 import uz.aifu.lms.progress.app.PathRules.LessonProgressInput;
@@ -340,6 +343,84 @@ public class LearningPathService {
         if (activity.getLesson() != null) {
             requireLessonOpen(activity.getLesson().getId(), enrollmentId);
         }
+    }
+
+    /**
+     * The course's midterm and the enrollment's standing on it (B11); null when the course has no
+     * midterm activity configured. A null enrollment (teacher preview) shows no attempts.
+     */
+    @Transactional(readOnly = true)
+    public MidtermView midtermView(UUID courseId, UUID enrollmentId) {
+        CourseLearningPath path = pathRepository.findByCourseId(courseId).orElse(null);
+        if (path == null || path.getMidtermActivity() == null) {
+            return null;
+        }
+        Activity midterm = path.getMidtermActivity();
+        ActivityProgress progress =
+                enrollmentId == null
+                        ? null
+                        : activityProgress
+                                .findByEnrollment_IdAndActivity_Id(enrollmentId, midterm.getId())
+                                .orElse(null);
+        Instant opensAt =
+                path.getMidtermOpensAt() != null
+                        ? path.getMidtermOpensAt()
+                        : midterm.getAvailableFrom();
+        return new MidtermView(
+                midterm.getId(),
+                midterm.getActivityType() == ActivityType.QUIZ ? midterm.getReferenceId() : null,
+                opensAt,
+                path.getMidtermAfterLesson() != null ? path.getMidtermAfterLesson().getId() : null,
+                progress != null && progress.getStatus() == ActivityProgressStatus.COMPLETED,
+                progress != null ? progress.getAttemptsUsed() : 0,
+                midterm.getAttemptLimit());
+    }
+
+    /** The path view of one lesson for an enrollment, or the open preview when it is null. */
+    @Transactional(readOnly = true)
+    public LessonPathView lessonPath(UUID lessonId, UUID courseId, UUID enrollmentId) {
+        LessonPathState state = pathState(courseId, enrollmentId).get(lessonId);
+        LessonProgress lp =
+                enrollmentId == null
+                        ? null
+                        : lessonProgress
+                                .findByEnrollment_IdAndLesson_Id(enrollmentId, lessonId)
+                                .orElse(null);
+        return lessonPathView(lessonId, state, lp);
+    }
+
+    /** Builds the lesson path view from an evaluated state and the lesson's progress row. */
+    @Transactional(readOnly = true)
+    public LessonPathView lessonPathView(UUID lessonId, LessonPathState state, LessonProgress lp) {
+        List<Activity> lessonActs =
+                activities.listByLesson(lessonId).stream()
+                        .filter(a -> a.getStatus() == PublicationStatus.PUBLISHED)
+                        .toList();
+        UUID testId = stepActivityId(lessonActs, PathStep.TEST);
+        UUID practiceId = stepActivityId(lessonActs, PathStep.PRACTICE);
+        LessonSteps steps =
+                state != null
+                        ? state.steps()
+                        : new LessonSteps(StepState.TODO, StepState.NONE, StepState.NONE);
+        return new LessonPathView(
+                steps,
+                lp != null ? lp.getActiveReadingSeconds() : 0,
+                lp != null && lp.getRequiredReadingSeconds() != null
+                        ? lp.getRequiredReadingSeconds()
+                        : 0,
+                lp != null && lp.isReachedEnd(),
+                state != null && state.open(),
+                testId,
+                practiceId,
+                state != null ? state.lockReason() : null);
+    }
+
+    private static UUID stepActivityId(List<Activity> lessonActs, PathStep step) {
+        return lessonActs.stream()
+                .filter(a -> a.getPathStep() == step)
+                .map(Activity::getId)
+                .findFirst()
+                .orElse(null);
     }
 
     /** Returns whether learning path enforcement is enabled for the course. */

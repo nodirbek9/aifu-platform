@@ -34,9 +34,12 @@ import uz.aifu.lms.enrollment.domain.Enrollment;
 import uz.aifu.lms.iam.app.access.AccessGuard;
 import uz.aifu.lms.iam.app.access.CourseAccess;
 import uz.aifu.lms.progress.api.dto.ProgressDtos.CoursePlanView;
+import uz.aifu.lms.progress.api.dto.ProgressDtos.LessonStepsView;
 import uz.aifu.lms.progress.api.dto.ProgressDtos.MyActivityView;
 import uz.aifu.lms.progress.api.dto.ProgressDtos.PlanLesson;
 import uz.aifu.lms.progress.api.dto.ProgressDtos.PlanModule;
+import uz.aifu.lms.progress.app.PathRules.LessonPathState;
+import uz.aifu.lms.progress.app.PathRules.LessonSteps;
 import uz.aifu.lms.progress.domain.ActivityProgress;
 import uz.aifu.lms.progress.domain.ActivityProgressStatus;
 import uz.aifu.lms.progress.domain.LessonProgress;
@@ -67,6 +70,7 @@ public class StudentWorkService {
     private final LessonProgressRepository lessonProgress;
     private final ActivityProgressRepository activityProgress;
     private final AccessGuard accessGuard;
+    private final LearningPathService learningPath;
     private final Clock clock;
 
     public StudentWorkService(
@@ -79,6 +83,7 @@ public class StudentWorkService {
             LessonProgressRepository lessonProgress,
             ActivityProgressRepository activityProgress,
             AccessGuard accessGuard,
+            LearningPathService learningPath,
             Clock clock) {
         this.outlines = outlines;
         this.activities = activities;
@@ -89,6 +94,7 @@ public class StudentWorkService {
         this.lessonProgress = lessonProgress;
         this.activityProgress = activityProgress;
         this.accessGuard = accessGuard;
+        this.learningPath = learningPath;
         this.clock = clock;
     }
 
@@ -131,6 +137,9 @@ public class StudentWorkService {
                         .filter(e -> e.getValue().getStatus() == ProgressStatus.COMPLETED)
                         .map(Map.Entry::getKey)
                         .collect(Collectors.toSet());
+        boolean gated = enrollmentId != null && learningPath.isPathEnabled(courseId);
+        Map<UUID, LessonPathState> pathStates =
+                enrollmentId == null ? Map.of() : learningPath.pathState(courseId, enrollmentId);
         int total = 0;
         UUID continueLessonId = null;
         List<PlanModule> modules = new ArrayList<>();
@@ -138,8 +147,12 @@ public class StudentWorkService {
             List<PlanLesson> lessons = new ArrayList<>();
             for (OutlineLesson lesson : module.lessons()) {
                 total++;
+                LessonPathState pathState = pathStates.get(lesson.id());
                 boolean locked =
-                        enrollmentId != null && !done.containsAll(lesson.prerequisiteLessonIds());
+                        gated && pathState != null
+                                ? !pathState.open()
+                                : enrollmentId != null
+                                        && !done.containsAll(lesson.prerequisiteLessonIds());
                 LessonProgress progress = progressByLesson.get(lesson.id());
                 ProgressStatus status =
                         enrollmentId == null
@@ -168,7 +181,10 @@ public class StudentWorkService {
                                 (int)
                                         lessonActivities.stream()
                                                 .filter(completedActivities::contains)
-                                                .count()));
+                                                .count(),
+                                stepsView(pathState),
+                                gated && pathState != null ? pathState.lockReason() : null,
+                                progress != null && progress.isWaived()));
             }
             modules.add(new PlanModule(module.id(), module.code(), module.title(), lessons));
         }
@@ -190,7 +206,16 @@ public class StudentWorkService {
                 (int) done.stream().filter(shown::contains).count(),
                 continueLessonId,
                 shown.contains(lastLessonId) ? lastLessonId : null,
-                modules);
+                modules,
+                learningPath.midtermView(courseId, enrollmentId));
+    }
+
+    private static LessonStepsView stepsView(LessonPathState state) {
+        if (state == null) {
+            return null;
+        }
+        LessonSteps steps = state.steps();
+        return new LessonStepsView(steps.lecture(), steps.test(), steps.practice());
     }
 
     // ------------------------------------------------------------------ my work

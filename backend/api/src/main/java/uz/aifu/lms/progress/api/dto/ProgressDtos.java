@@ -11,6 +11,8 @@ import java.util.UUID;
 import uz.aifu.lms.academics.domain.SessionType;
 import uz.aifu.lms.curriculum.domain.ActivityType;
 import uz.aifu.lms.progress.app.PathRules.LessonSteps;
+import uz.aifu.lms.progress.app.PathRules.LockReason;
+import uz.aifu.lms.progress.app.PathRules.StepState;
 import uz.aifu.lms.progress.domain.ProgressStatus;
 
 public final class ProgressDtos {
@@ -26,7 +28,33 @@ public final class ProgressDtos {
             int activeReadingSeconds,
             int requiredReadingSeconds,
             boolean reachedEnd,
-            boolean open) {}
+            boolean open,
+            @Schema(description = "The lesson's TEST step activity; null when it has none")
+                    UUID testActivityId,
+            @Schema(description = "The lesson's PRACTICE step activity; null when it has none")
+                    UUID practiceActivityId,
+            @Schema(
+                            description = "Why the lesson is locked; null when it is open",
+                            example = "PREVIOUS_LESSON_INCOMPLETE")
+                    LockReason lockReason) {}
+
+    @Schema(description = "State of the three learning-path steps of a lesson")
+    public record LessonStepsView(
+            @Schema(example = "DONE") StepState lecture,
+            @Schema(example = "TODO") StepState test,
+            @Schema(example = "NONE") StepState practice) {}
+
+    @Schema(description = "The course's midterm and the caller's standing on it")
+    public record MidtermView(
+            UUID activityId,
+            @Schema(description = "The quiz behind the midterm activity; null for other types")
+                    UUID quizId,
+            @Schema(example = "2026-10-20T09:00:00Z") Instant opensAt,
+            @Schema(description = "Lessons after this one need the midterm to be passed")
+                    UUID afterLessonId,
+            boolean passed,
+            @Schema(example = "1") int attemptsUsed,
+            @Schema(description = "null means unlimited", example = "2") Integer attemptsAllowed) {}
 
     @Schema(
             description =
@@ -86,7 +114,14 @@ public final class ProgressDtos {
                     boolean locked,
             List<UUID> prerequisiteLessonIds,
             @Schema(description = "Quizzes and tasks attached to the lesson") int activitiesTotal,
-            int activitiesCompleted) {}
+            int activitiesCompleted,
+            @Schema(description = "null for a viewer who is not a student of the course")
+                    LessonStepsView steps,
+            @Schema(
+                            description = "Set while locked by the learning path gate",
+                            example = "PREVIOUS_LESSON_INCOMPLETE")
+                    LockReason lockReason,
+            @Schema(description = "true when a teacher waived the lesson") boolean waived) {}
 
     public record PlanModule(UUID id, String code, String title, List<PlanLesson> lessons) {}
 
@@ -102,7 +137,9 @@ public final class ProgressDtos {
             int lessonsCompleted,
             UUID continueLessonId,
             @Schema(description = "The lesson the student opened most recently") UUID lastLessonId,
-            List<PlanModule> modules) {}
+            List<PlanModule> modules,
+            @Schema(description = "null when the course has no midterm configured")
+                    MidtermView midterm) {}
 
     // ------------------------------------------------------------------ my work (spec S-07,
     // S-01.3)

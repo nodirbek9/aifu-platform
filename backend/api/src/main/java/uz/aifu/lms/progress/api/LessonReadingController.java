@@ -48,7 +48,12 @@ public class LessonReadingController {
     @Operation(
             summary = "Record a reading heartbeat on a lesson",
             description =
-                    "Tracks active reading time, sticky end-reached state, and reevaluates lesson progress")
+                    "Tracks active reading time, sticky end-reached state, and reevaluates lesson progress."
+                            + " Returns the lesson path view, e.g. {\"steps\": {\"lecture\": \"TODO\","
+                            + " \"test\": \"NONE\", \"practice\": \"NONE\"}, \"activeReadingSeconds\": 30,"
+                            + " \"requiredReadingSeconds\": 180, \"reachedEnd\": false, \"open\": true,"
+                            + " \"testActivityId\": null, \"practiceActivityId\": null, \"lockReason\":"
+                            + " null}")
     public LessonPathView recordReadingBeat(
             @PathVariable UUID lessonId, @Valid @RequestBody ReadingBeatRequest request) {
         accessGuard.requireOpenLesson(lessonId);

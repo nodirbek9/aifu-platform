@@ -1,5 +1,6 @@
 package uz.aifu.lms.progress.app;
 
+import jakarta.persistence.EntityManager;
 import java.math.BigDecimal;
 import java.time.Clock;
 import java.time.DayOfWeek;
@@ -61,6 +62,7 @@ public class LearningPathConfigService {
     private final UserService users;
     private final AuditService auditService;
     private final Clock clock;
+    private final EntityManager entityManager;
 
     public LearningPathConfigService(
             CourseLearningPathRepository pathRepository,
@@ -73,7 +75,8 @@ public class LearningPathConfigService {
             ActivityProgressRepository activityProgressRepository,
             UserService users,
             AuditService auditService,
-            Clock clock) {
+            Clock clock,
+            EntityManager entityManager) {
         this.pathRepository = pathRepository;
         this.courses = courses;
         this.lessons = lessons;
@@ -85,6 +88,7 @@ public class LearningPathConfigService {
         this.users = users;
         this.auditService = auditService;
         this.clock = clock;
+        this.entityManager = entityManager;
     }
 
     @Transactional(readOnly = true)
@@ -105,10 +109,8 @@ public class LearningPathConfigService {
         User admin = users.require(adminUserId);
         Instant now = clock.instant();
 
-        CourseLearningPath path =
-                pathRepository
-                        .findByCourseId(courseId)
-                        .orElseGet(() -> new CourseLearningPath(course));
+        Optional<CourseLearningPath> existing = pathRepository.findByCourseId(courseId);
+        CourseLearningPath path = existing.orElseGet(() -> new CourseLearningPath(course));
 
         UUID midtermActId = request.midtermActivityId();
         UUID midtermAnchorId = request.midtermAfterLessonId();
@@ -171,7 +173,12 @@ public class LearningPathConfigService {
             path.disable();
         }
 
-        pathRepository.save(path);
+        if (existing.isPresent()) {
+            pathRepository.save(path);
+        } else {
+            // an assigned id with a primitive version: save() would merge; persist inserts
+            entityManager.persist(path);
+        }
 
         Map<String, Object> auditDetails = new HashMap<>();
         auditDetails.put("enabled", targetEnabled);

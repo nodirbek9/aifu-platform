@@ -523,7 +523,7 @@
         "description" : "One audit trail entry",
         "properties" : {
           "action" : {
-            "enum" : [ "LOGIN_SUCCESS", "LOGIN_FAILURE", "ACCOUNT_LOCKED", "TOKEN_REFRESH", "TOKEN_REUSE_DETECTED", "LOGOUT", "LOGOUT_ALL", "PASSWORD_CHANGED", "USER_CREATED", "USER_UPDATED", "USER_STATUS_CHANGED", "USER_PASSWORD_RESET", "ROLE_GRANTED", "ROLE_REVOKED", "SUBJECT_CREATED", "SUBJECT_UPDATED", "SUBJECT_PUBLISHED", "SUBJECT_ARCHIVED", "COURSE_CREATED", "COURSE_UPDATED", "COURSE_PUBLISHED", "COURSE_ARCHIVED", "COURSE_TEACHER_ASSIGNED", "COURSE_TEACHER_REMOVED", "MODULE_CREATED", "MODULE_UPDATED", "MODULE_DELETED", "LESSON_CREATED", "LESSON_UPDATED", "LESSON_DELETED", "CONTENT_BLOCK_CHANGED", "ACTIVITY_CREATED", "ACTIVITY_UPDATED", "ACTIVITY_DELETED", "CONTENT_PUBLISHED", "TRANSLATION_CHANGED", "ENROLLMENT_CREATED", "ENROLLMENT_STATUS_CHANGED", "ENROLLMENT_WITHDRAWN", "QUIZ_PUBLISHED", "QUIZ_ATTEMPT_SUBMITTED", "QUIZ_ATTEMPT_GRANTED", "CODING_TASK_PUBLISHED", "CODING_SUBMISSION_CREATED", "EXECUTION_JOB_DEAD", "QUIZ_CREATED", "QUIZ_UPDATED", "QUESTION_CREATED", "QUESTION_UPDATED", "QUESTION_DELETED", "CODING_TASK_CREATED", "CODING_TASK_UPDATED", "TEST_CASE_CREATED", "TEST_CASE_UPDATED", "TEST_CASE_DELETED", "GRADE_RECORDED", "GRADE_REVISED", "GRADE_PUBLISHED", "GRADE_VOIDED", "FEEDBACK_CREATED", "FEEDBACK_UPDATED", "FILE_UPLOADED", "FILE_DELETED", "GROUP_CHANGED", "TIMETABLE_PUBLISHED", "TIMETABLE_ENTRY_CHANGED", "TIMETABLE_CONFLICT_OVERRIDDEN", "TIMETABLE_EXCEPTION_ADDED", "ATTENDANCE_MARKED", "ADMIN_ACTION", "CONFIGURATION_CHANGED", "PERMISSION_DENIED" ],
+            "enum" : [ "LOGIN_SUCCESS", "LOGIN_FAILURE", "ACCOUNT_LOCKED", "TOKEN_REFRESH", "TOKEN_REUSE_DETECTED", "LOGOUT", "LOGOUT_ALL", "PASSWORD_CHANGED", "USER_CREATED", "USER_UPDATED", "USER_STATUS_CHANGED", "USER_PASSWORD_RESET", "ROLE_GRANTED", "ROLE_REVOKED", "SUBJECT_CREATED", "SUBJECT_UPDATED", "SUBJECT_PUBLISHED", "SUBJECT_ARCHIVED", "COURSE_CREATED", "COURSE_UPDATED", "COURSE_PUBLISHED", "COURSE_ARCHIVED", "COURSE_TEACHER_ASSIGNED", "COURSE_TEACHER_REMOVED", "MODULE_CREATED", "MODULE_UPDATED", "MODULE_DELETED", "LESSON_CREATED", "LESSON_UPDATED", "LESSON_DELETED", "CONTENT_BLOCK_CHANGED", "ACTIVITY_CREATED", "ACTIVITY_UPDATED", "ACTIVITY_DELETED", "CONTENT_PUBLISHED", "TRANSLATION_CHANGED", "LEARNING_PATH_CONFIGURED", "ENROLLMENT_CREATED", "ENROLLMENT_STATUS_CHANGED", "ENROLLMENT_WITHDRAWN", "QUIZ_PUBLISHED", "QUIZ_ATTEMPT_SUBMITTED", "QUIZ_ATTEMPT_GRANTED", "CODING_TASK_PUBLISHED", "CODING_SUBMISSION_CREATED", "EXECUTION_JOB_DEAD", "QUIZ_CREATED", "QUIZ_UPDATED", "QUESTION_CREATED", "QUESTION_UPDATED", "QUESTION_DELETED", "CODING_TASK_CREATED", "CODING_TASK_UPDATED", "TEST_CASE_CREATED", "TEST_CASE_UPDATED", "TEST_CASE_DELETED", "GRADE_RECORDED", "GRADE_REVISED", "GRADE_PUBLISHED", "GRADE_VOIDED", "FEEDBACK_CREATED", "FEEDBACK_UPDATED", "FILE_UPLOADED", "FILE_DELETED", "GROUP_CHANGED", "TIMETABLE_PUBLISHED", "TIMETABLE_ENTRY_CHANGED", "TIMETABLE_CONFLICT_OVERRIDDEN", "TIMETABLE_EXCEPTION_ADDED", "ATTENDANCE_MARKED", "ADMIN_ACTION", "CONFIGURATION_CHANGED", "PERMISSION_DENIED" ],
             "type" : "string"
           },
           "actorLabel" : {
@@ -1406,6 +1406,10 @@
           "lessonsTotal" : {
             "format" : "int32",
             "type" : "integer"
+          },
+          "midterm" : {
+            "$ref" : "#/components/schemas/MidtermView",
+            "description" : "null when the course has no midterm configured"
           },
           "modules" : {
             "items" : {
@@ -3181,6 +3185,79 @@
           }
         }
       },
+      "LearningPathConfigRequest" : {
+        "description" : "Request payload to configure a course learning path",
+        "properties" : {
+          "enabled" : {
+            "description" : "Whether server-side learning path gating is enabled",
+            "example" : true,
+            "type" : "boolean"
+          },
+          "midtermActivityId" : {
+            "description" : "Midterm QUIZ activity ID (optional, null if unconfigured)",
+            "example" : "b845ef20-8047-495c-9c97-6a422eb7813a",
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "midtermAfterLessonId" : {
+            "description" : "Anchor lesson ID after which the midterm is placed (optional, null if unconfigured)",
+            "example" : "e87f7b2c-623b-48d9-a41e-355d14ff1841",
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "midtermOpensAt" : {
+            "description" : "When the midterm opens (optional; defaults to week 8 Monday 00:00 Asia/Tashkent)",
+            "example" : "2026-10-19T00:00:00+05:00",
+            "format" : "date-time",
+            "type" : "string"
+          }
+        }
+      },
+      "LearningPathConfigView" : {
+        "description" : "Learning path configuration of a course",
+        "properties" : {
+          "enabled" : {
+            "description" : "Whether server-side learning path gating is enabled",
+            "example" : true,
+            "type" : "boolean"
+          },
+          "enabledAt" : {
+            "description" : "When the learning path was enabled",
+            "example" : "2026-10-08T12:00:00Z",
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "enabledBy" : {
+            "description" : "Admin user ID who enabled the learning path",
+            "example" : "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "midtermActivityId" : {
+            "description" : "Midterm QUIZ activity ID",
+            "example" : "b845ef20-8047-495c-9c97-6a422eb7813a",
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "midtermAfterLessonId" : {
+            "description" : "Anchor lesson ID after which the midterm is placed",
+            "example" : "e87f7b2c-623b-48d9-a41e-355d14ff1841",
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "midtermOpensAt" : {
+            "description" : "When the midterm opens",
+            "example" : "2026-10-19T00:00:00+05:00",
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "minReadingFraction" : {
+            "description" : "Minimum reading fraction required to complete reading (default 0.50)",
+            "example" : 0.5,
+            "type" : "number"
+          }
+        }
+      },
       "LessonCompletionSummary" : {
         "description" : "Lesson-level completion summary",
         "properties" : {
@@ -3288,8 +3365,19 @@
             "format" : "int32",
             "type" : "integer"
           },
+          "lockReason" : {
+            "description" : "Why the lesson is locked; null when it is open",
+            "enum" : [ "PREVIOUS_LESSON_INCOMPLETE", "MIDTERM_REQUIRED" ],
+            "example" : "PREVIOUS_LESSON_INCOMPLETE",
+            "type" : "string"
+          },
           "open" : {
             "type" : "boolean"
+          },
+          "practiceActivityId" : {
+            "description" : "The lesson's PRACTICE step activity; null when it has none",
+            "format" : "uuid",
+            "type" : "string"
           },
           "reachedEnd" : {
             "type" : "boolean"
@@ -3300,6 +3388,11 @@
           },
           "steps" : {
             "$ref" : "#/components/schemas/LessonSteps"
+          },
+          "testActivityId" : {
+            "description" : "The lesson's TEST step activity; null when it has none",
+            "format" : "uuid",
+            "type" : "string"
           }
         }
       },
@@ -3366,6 +3459,26 @@
           },
           "test" : {
             "enum" : [ "DONE", "TODO", "NONE" ],
+            "type" : "string"
+          }
+        }
+      },
+      "LessonStepsView" : {
+        "description" : "State of the three learning-path steps of a lesson",
+        "properties" : {
+          "lecture" : {
+            "enum" : [ "DONE", "TODO", "NONE" ],
+            "example" : "DONE",
+            "type" : "string"
+          },
+          "practice" : {
+            "enum" : [ "DONE", "TODO", "NONE" ],
+            "example" : "NONE",
+            "type" : "string"
+          },
+          "test" : {
+            "enum" : [ "DONE", "TODO", "NONE" ],
+            "example" : "TODO",
             "type" : "string"
           }
         }
@@ -3550,6 +3663,44 @@
           }
         },
         "required" : [ "studentId" ]
+      },
+      "MidtermView" : {
+        "description" : "The course's midterm and the caller's standing on it",
+        "properties" : {
+          "activityId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "afterLessonId" : {
+            "description" : "Lessons after this one need the midterm to be passed",
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "attemptsAllowed" : {
+            "description" : "null means unlimited",
+            "example" : 2,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "attemptsUsed" : {
+            "example" : 1,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "opensAt" : {
+            "example" : "2026-10-20T09:00:00Z",
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "passed" : {
+            "type" : "boolean"
+          },
+          "quizId" : {
+            "description" : "The quiz behind the midterm activity; null for other types",
+            "format" : "uuid",
+            "type" : "string"
+          }
+        }
       },
       "ModuleDetail" : {
         "description" : "Full module detail",
@@ -5049,6 +5200,12 @@
             "format" : "uuid",
             "type" : "string"
           },
+          "lockReason" : {
+            "description" : "Set while locked by the learning path gate",
+            "enum" : [ "PREVIOUS_LESSON_INCOMPLETE", "MIDTERM_REQUIRED" ],
+            "example" : "PREVIOUS_LESSON_INCOMPLETE",
+            "type" : "string"
+          },
           "locked" : {
             "description" : "true while a lesson this one requires is not completed",
             "type" : "boolean"
@@ -5072,8 +5229,16 @@
             "enum" : [ "NOT_STARTED", "IN_PROGRESS", "COMPLETED" ],
             "type" : "string"
           },
+          "steps" : {
+            "$ref" : "#/components/schemas/LessonStepsView",
+            "description" : "null for a viewer who is not a student of the course"
+          },
           "title" : {
             "type" : "string"
+          },
+          "waived" : {
+            "description" : "true when a teacher waived the lesson",
+            "type" : "boolean"
           }
         }
       },
@@ -7991,7 +8156,7 @@
           "name" : "action",
           "required" : false,
           "schema" : {
-            "enum" : [ "LOGIN_SUCCESS", "LOGIN_FAILURE", "ACCOUNT_LOCKED", "TOKEN_REFRESH", "TOKEN_REUSE_DETECTED", "LOGOUT", "LOGOUT_ALL", "PASSWORD_CHANGED", "USER_CREATED", "USER_UPDATED", "USER_STATUS_CHANGED", "USER_PASSWORD_RESET", "ROLE_GRANTED", "ROLE_REVOKED", "SUBJECT_CREATED", "SUBJECT_UPDATED", "SUBJECT_PUBLISHED", "SUBJECT_ARCHIVED", "COURSE_CREATED", "COURSE_UPDATED", "COURSE_PUBLISHED", "COURSE_ARCHIVED", "COURSE_TEACHER_ASSIGNED", "COURSE_TEACHER_REMOVED", "MODULE_CREATED", "MODULE_UPDATED", "MODULE_DELETED", "LESSON_CREATED", "LESSON_UPDATED", "LESSON_DELETED", "CONTENT_BLOCK_CHANGED", "ACTIVITY_CREATED", "ACTIVITY_UPDATED", "ACTIVITY_DELETED", "CONTENT_PUBLISHED", "TRANSLATION_CHANGED", "ENROLLMENT_CREATED", "ENROLLMENT_STATUS_CHANGED", "ENROLLMENT_WITHDRAWN", "QUIZ_PUBLISHED", "QUIZ_ATTEMPT_SUBMITTED", "QUIZ_ATTEMPT_GRANTED", "CODING_TASK_PUBLISHED", "CODING_SUBMISSION_CREATED", "EXECUTION_JOB_DEAD", "QUIZ_CREATED", "QUIZ_UPDATED", "QUESTION_CREATED", "QUESTION_UPDATED", "QUESTION_DELETED", "CODING_TASK_CREATED", "CODING_TASK_UPDATED", "TEST_CASE_CREATED", "TEST_CASE_UPDATED", "TEST_CASE_DELETED", "GRADE_RECORDED", "GRADE_REVISED", "GRADE_PUBLISHED", "GRADE_VOIDED", "FEEDBACK_CREATED", "FEEDBACK_UPDATED", "FILE_UPLOADED", "FILE_DELETED", "GROUP_CHANGED", "TIMETABLE_PUBLISHED", "TIMETABLE_ENTRY_CHANGED", "TIMETABLE_CONFLICT_OVERRIDDEN", "TIMETABLE_EXCEPTION_ADDED", "ATTENDANCE_MARKED", "ADMIN_ACTION", "CONFIGURATION_CHANGED", "PERMISSION_DENIED" ],
+            "enum" : [ "LOGIN_SUCCESS", "LOGIN_FAILURE", "ACCOUNT_LOCKED", "TOKEN_REFRESH", "TOKEN_REUSE_DETECTED", "LOGOUT", "LOGOUT_ALL", "PASSWORD_CHANGED", "USER_CREATED", "USER_UPDATED", "USER_STATUS_CHANGED", "USER_PASSWORD_RESET", "ROLE_GRANTED", "ROLE_REVOKED", "SUBJECT_CREATED", "SUBJECT_UPDATED", "SUBJECT_PUBLISHED", "SUBJECT_ARCHIVED", "COURSE_CREATED", "COURSE_UPDATED", "COURSE_PUBLISHED", "COURSE_ARCHIVED", "COURSE_TEACHER_ASSIGNED", "COURSE_TEACHER_REMOVED", "MODULE_CREATED", "MODULE_UPDATED", "MODULE_DELETED", "LESSON_CREATED", "LESSON_UPDATED", "LESSON_DELETED", "CONTENT_BLOCK_CHANGED", "ACTIVITY_CREATED", "ACTIVITY_UPDATED", "ACTIVITY_DELETED", "CONTENT_PUBLISHED", "TRANSLATION_CHANGED", "LEARNING_PATH_CONFIGURED", "ENROLLMENT_CREATED", "ENROLLMENT_STATUS_CHANGED", "ENROLLMENT_WITHDRAWN", "QUIZ_PUBLISHED", "QUIZ_ATTEMPT_SUBMITTED", "QUIZ_ATTEMPT_GRANTED", "CODING_TASK_PUBLISHED", "CODING_SUBMISSION_CREATED", "EXECUTION_JOB_DEAD", "QUIZ_CREATED", "QUIZ_UPDATED", "QUESTION_CREATED", "QUESTION_UPDATED", "QUESTION_DELETED", "CODING_TASK_CREATED", "CODING_TASK_UPDATED", "TEST_CASE_CREATED", "TEST_CASE_UPDATED", "TEST_CASE_DELETED", "GRADE_RECORDED", "GRADE_REVISED", "GRADE_PUBLISHED", "GRADE_VOIDED", "FEEDBACK_CREATED", "FEEDBACK_UPDATED", "FILE_UPLOADED", "FILE_DELETED", "GROUP_CHANGED", "TIMETABLE_PUBLISHED", "TIMETABLE_ENTRY_CHANGED", "TIMETABLE_CONFLICT_OVERRIDDEN", "TIMETABLE_EXCEPTION_ADDED", "ATTENDANCE_MARKED", "ADMIN_ACTION", "CONFIGURATION_CHANGED", "PERMISSION_DENIED" ],
             "type" : "string"
           }
         }, {
@@ -8228,6 +8393,96 @@
         "tags" : [ "Admin: courses" ]
       }
     },
+    "/api/v1/admin/courses/{courseId}/learning-path" : {
+      "get" : {
+        "operationId" : "get_26",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "courseId",
+          "required" : true,
+          "schema" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/LearningPathConfigView"
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description" : "Any failure (4xx, 5xx): the error envelope"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "summary" : "Get course learning path configuration",
+        "tags" : [ "Admin: learning path" ]
+      },
+      "put" : {
+        "operationId" : "put",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "courseId",
+          "required" : true,
+          "schema" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/LearningPathConfigRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/LearningPathConfigView"
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description" : "Any failure (4xx, 5xx): the error envelope"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "summary" : "Configure or enable/disable course learning path",
+        "tags" : [ "Admin: learning path" ]
+      }
+    },
     "/api/v1/admin/courses/{id}" : {
       "delete" : {
         "operationId" : "delete_9",
@@ -8262,7 +8517,7 @@
         "tags" : [ "Admin: courses" ]
       },
       "get" : {
-        "operationId" : "get_24",
+        "operationId" : "get_25",
         "parameters" : [ {
           "in" : "path",
           "name" : "id",
@@ -9036,7 +9291,7 @@
     },
     "/api/v1/admin/enrollments/{id}" : {
       "get" : {
-        "operationId" : "get_23",
+        "operationId" : "get_24",
         "parameters" : [ {
           "in" : "path",
           "name" : "id",
@@ -10174,7 +10429,7 @@
         "tags" : [ "Admin: subjects" ]
       },
       "get" : {
-        "operationId" : "get_22",
+        "operationId" : "get_23",
         "parameters" : [ {
           "in" : "path",
           "name" : "id",
@@ -11047,7 +11302,7 @@
         "tags" : [ "Admin: timetable" ]
       },
       "get" : {
-        "operationId" : "get_21",
+        "operationId" : "get_22",
         "parameters" : [ {
           "in" : "path",
           "name" : "id",
@@ -11748,7 +12003,7 @@
     },
     "/api/v1/admin/users/{id}" : {
       "get" : {
-        "operationId" : "get_20",
+        "operationId" : "get_21",
         "parameters" : [ {
           "in" : "path",
           "name" : "id",
@@ -12095,7 +12350,7 @@
     },
     "/api/v1/attempts/{attemptId}" : {
       "get" : {
-        "operationId" : "get_19",
+        "operationId" : "get_20",
         "parameters" : [ {
           "in" : "path",
           "name" : "attemptId",
@@ -13114,7 +13369,7 @@
     },
     "/api/v1/courses/{courseId}/coding-tasks/{id}" : {
       "get" : {
-        "operationId" : "get_18",
+        "operationId" : "get_19",
         "parameters" : [ {
           "in" : "path",
           "name" : "courseId",
@@ -13264,7 +13519,7 @@
     },
     "/api/v1/courses/{courseId}/plan/me" : {
       "get" : {
-        "description" : "Published content only. A lesson is locked while a lesson it requires is not completed. A teacher or admin gets the same tree without statuses.",
+        "description" : "Published content only. A lesson is locked while a lesson it requires is not completed. When the course learning path is enabled the lock, its lockReason and the lecture/test/practice steps come from the server gate; midterm shows the midterm standing. A teacher or admin gets the same tree without statuses.",
         "operationId" : "plan_1",
         "parameters" : [ {
           "in" : "path",
@@ -13441,7 +13696,7 @@
     },
     "/api/v1/courses/{courseId}/quizzes/{id}" : {
       "get" : {
-        "operationId" : "get_17",
+        "operationId" : "get_18",
         "parameters" : [ {
           "in" : "path",
           "name" : "courseId",
@@ -13504,7 +13759,7 @@
     },
     "/api/v1/courses/{id}" : {
       "get" : {
-        "operationId" : "get_16",
+        "operationId" : "get_17",
         "parameters" : [ {
           "in" : "path",
           "name" : "id",
@@ -13807,7 +14062,7 @@
         "tags" : [ "Files" ]
       },
       "get" : {
-        "operationId" : "get_15",
+        "operationId" : "get_16",
         "parameters" : [ {
           "in" : "path",
           "name" : "id",
@@ -13925,7 +14180,7 @@
     },
     "/api/v1/groups/{id}" : {
       "get" : {
-        "operationId" : "get_14",
+        "operationId" : "get_15",
         "parameters" : [ {
           "in" : "path",
           "name" : "id",
@@ -14064,6 +14319,48 @@
         "tags" : [ "Lessons" ]
       }
     },
+    "/api/v1/lessons/{lessonId}/path" : {
+      "get" : {
+        "description" : "Steps (lecture, test, practice: DONE, TODO or NONE), reading seconds, whether the lesson is open and, when it is not, why. A teacher or admin previewing the course always gets open=true. Example: {\"steps\": {\"lecture\": \"DONE\", \"test\": \"TODO\", \"practice\": \"NONE\"}, \"activeReadingSeconds\": 240, \"requiredReadingSeconds\": 180, \"reachedEnd\": true, \"open\": true, \"testActivityId\": \"0b6e1c1e-6f0b-4b43-9d5e-3f2f6f1d9a10\", \"practiceActivityId\": null, \"lockReason\": null}",
+        "operationId" : "get_14",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "lessonId",
+          "required" : true,
+          "schema" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/LessonPathView"
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description" : "Any failure (4xx, 5xx): the error envelope"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "summary" : "The learning path state of a lesson for the caller",
+        "tags" : [ "Lesson path" ]
+      }
+    },
     "/api/v1/lessons/{lessonId}/progress" : {
       "post" : {
         "description" : "status=IN_PROGRESS records a view; status=COMPLETED marks it done. Completing an already-completed lesson again is a no-op for completedAt (idempotent).",
@@ -14118,7 +14415,7 @@
     },
     "/api/v1/lessons/{lessonId}/reading" : {
       "post" : {
-        "description" : "Tracks active reading time, sticky end-reached state, and reevaluates lesson progress",
+        "description" : "Tracks active reading time, sticky end-reached state, and reevaluates lesson progress. Returns the lesson path view, e.g. {\"steps\": {\"lecture\": \"TODO\", \"test\": \"NONE\", \"practice\": \"NONE\"}, \"activeReadingSeconds\": 30, \"requiredReadingSeconds\": 180, \"reachedEnd\": false, \"open\": true, \"testActivityId\": null, \"practiceActivityId\": null, \"lockReason\": null}",
         "operationId" : "recordReadingBeat",
         "parameters" : [ {
           "in" : "path",
@@ -20757,6 +21054,9 @@
     "description" : "Activity administration",
     "name" : "Teacher: activities"
   }, {
+    "description" : "Learning path state of a lesson",
+    "name" : "Lesson path"
+  }, {
     "description" : "Teacher feedback on the caller's own work",
     "name" : "My feedback"
   }, {
@@ -20807,6 +21107,9 @@
   }, {
     "description" : "A module's published lessons, and one lesson's full content",
     "name" : "Lessons"
+  }, {
+    "description" : "Course learning path configuration and gate management",
+    "name" : "Admin: learning path"
   }, {
     "description" : "Account provisioning and lifecycle administration",
     "name" : "Admin: users"
