@@ -35,7 +35,7 @@ if one looks wrong, report it.
   through `tools/content/practice.mjs`; there is no production path that *creates* quizzes/tasks.
 - **Admin backend** is broad (users, roles, status, import, groups CRUD + members, timetables,
   entries, exceptions, check, load, enrollments incl. by-group/CSV/status). Gaps are mostly UI.
-- Migrations: V001–V027 applied; dev seeds V900–V911. **Phase 5 reserves V028–V030, phase 8 V031**;
+- Migrations: V001–V027 applied; dev seeds V900–V911. **Phase 5 reserves V032–V034 (V031, phase 8, was applied first, so Phase 5 starts after it)**;
   if numbers collide at merge time, take the next free number and keep the order.
 
 ## 1. Decisions (one-line reasons)
@@ -94,7 +94,7 @@ code blocks, nothing hidden behind the bottom bar, on desktop and phone.
 
 ### Backend (each B-step = migration/entity/DTO/test together, `./mvnw -pl api test`, ITs with `-Pit`)
 
-- **B1 Migration V028 `learning_path`** (schema only + safe backfill):
+- **B1 Migration V032 `learning_path`** (schema only + safe backfill):
   - `course_learning_paths(course_id PK→courses, enabled bool default false, enabled_at, enabled_by→users,
     midterm_activity_id→activities, midterm_after_lesson_id→lessons, midterm_opens_at timestamptz,
     min_reading_fraction numeric(3,2) default 0.50 CHECK 0..1, created_at, updated_at, version)`,
@@ -169,7 +169,7 @@ code blocks, nothing hidden behind the bottom bar, on desktop and phone.
   passed, attemptsUsed, attemptsAllowed}`); `locked` now comes from the gate when enabled.
   `GET /api/v1/lessons/{lessonId}/path` → `LessonPathView{steps, activeReadingSeconds, requiredReadingSeconds,
   reachedEnd, testActivityId, practiceActivityId, open, lockReason}`. springdoc examples on all.
-- **B12 Data migration V029 `learning_path_quiz_settings`.** For quizzes behind a TEST activity:
+- **B12 Data migration V033 `learning_path_quiz_settings`.** For quizzes behind a TEST activity:
   `max_attempts = 2`, `question_pool_size = LEAST(5, count)` only where count ≥ 5, `passing_percent = 60`,
   `reveal_policy = 'AFTER_LAST_ATTEMPT'`; behind PRACTICE quiz: `max_attempts = NULL`. Update the seed
   generator (`tools/content-seed/generate.mjs`: 3 → 2) and regenerate V906 only if V906 is not yet applied anywhere
@@ -177,7 +177,7 @@ code blocks, nothing hidden behind the bottom bar, on desktop and phone.
 - **B13 Contract + docs.** Regenerate `docs/api/openapi.json` (OpenApiContractIT -Dopenapi.write=true),
   `ENDPOINTS.md`, `frontend/src/shared/api/schema.d.ts`; `docs/03-API-GUIDE.md` §2 add the `details.reason`
   values; CLAUDE.md §8 row "≤ max_attempts + grants"; `docs/decisions/README.md` rows 012–018;
-  `StudentDataIsolationIT` case for `/lessons/{id}/path` and heartbeat. (V030 is left free for fixes found here.)
+  `StudentDataIsolationIT` case for `/lessons/{id}/path` and heartbeat. (V034 is left free for fixes found here.)
 
 ### Frontend (`frontend/`, AGENTS.md; run `npm run lint && npm run typecheck && npm test`)
 

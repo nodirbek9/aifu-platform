@@ -19,8 +19,8 @@ a task; the rest arrive during phase 6. Switching the gate on globally the day i
    is open and counts as done for unlocking; its circles still show the real step state, so the
    student can still finish it. Re-enabling is idempotent (only NULLs are filled).
 3. **Legacy completions:** a `lesson_progress` row that is COMPLETED before the migration gets
-   `read_completed_at = completed_at` (V028), so its lecture circle is green.
-4. **Attempts:** nothing is updated or deleted in `quiz_attempts`; V029 lowers `max_attempts` to 2
+   `read_completed_at = completed_at` (V032), so its lecture circle is green.
+4. **Attempts:** nothing is updated or deleted in `quiz_attempts`; V033 lowers `max_attempts` to 2
    only on TEST/MIDTERM quizzes. Students over the new limit keep their history and, thanks to (2),
    their lessons.
 5. **Missing steps are satisfied:** a lesson without a published TEST or PRACTICE activity does not

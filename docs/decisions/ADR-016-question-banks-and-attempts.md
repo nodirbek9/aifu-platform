@@ -35,7 +35,7 @@ snapshot). `max_attempts` is checked in the service only; seeds set it to 3. Uni
 5. **Concurrency:** two tabs starting → the loser hits `uq_quiz_attempt_open` →
    `ATTEMPT_ALREADY_OPEN`; double submit → existing `Idempotency-Key` replay; time-out → existing
    lazy `closeIfTimeIsUp`.
-6. **Settings by role** (set by the importer and by migration V029 for existing data):
+6. **Settings by role** (set by the importer and by migration V033 for existing data):
    TEST: max 2, pool 5, pass 60, `reveal_policy = AFTER_LAST_ATTEMPT`, shuffle options.
    PRACTICE (checked-answer task): no limit, pass 100, `reveal_policy = NEVER`.
    MIDTERM: max 2, pool 30, 2400 s, pass 60, `AFTER_LAST_ATTEMPT`.
