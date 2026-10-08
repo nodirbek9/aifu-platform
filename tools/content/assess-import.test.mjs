@@ -412,7 +412,7 @@ test('create: quizzes, questions, tasks and activities are created with the ADR-
     assert.equal(testActivity.lessonId, 'les-1')
     assert.equal(testActivity.isGraded, false)
     assert.equal(testActivity.status, 'PUBLISHED')
-    assert.equal(testActivity.pathStep, undefined, 'this API has no path_step — nothing is sent')
+    assert.equal(testActivity.pathStep, 'TEST')
 
     // the PRACTICE of M1 is a coding task: 3 languages, 3 tests, 2 hidden
     const task = byCode(api.tasks, `${courseCode}-M1-P`)
@@ -453,9 +453,8 @@ test('create: quizzes, questions, tasks and activities are created with the ADR-
     assert.equal(midtermActivity.isGraded, true)
     assert.equal(midtermActivity.assessmentComponentId, 'comp-on')
 
-    // the learning path is never touched; the path_step note is logged
+    // the learning path is never touched
     assert.ok(!api.calls.some((call) => call.url.includes('learning-path')), 'no learning-path call')
-    assert.ok(lines.some((line) => line.includes('does not expose activities.path_step')))
   } finally {
     fs.rmSync(dir, { recursive: true, force: true })
   }

@@ -2,7 +2,7 @@
 // tools/content/assess-import.mjs — imports the assessment files of phase 6
 // (docs/PLAN.md §4, C0) into the platform through its API:
 //
-//   node tools/content/assess-import.mjs <COURSE> [--lesson X] [--dry-run]
+//   node tools/content/assess-import.mjs <COURSE> [--lesson X] [--dry-run] [--replace]
 //
 // <COURSE> is a folder name under content/ (DAS1110-S1) or a path to the folder.
 // For every <LESSON>/assess.json it upserts, by stable code:
@@ -68,12 +68,13 @@ const MIDTERM_TITLE = { uz: 'Oraliq nazorat', ru: 'Промежуточный к
 // ------------------------------------------------------------------ context
 
 /** Shared state of one run: the api, the dry-run flag, the log, and what the API supports. */
-function makeContext(api, { dryRun, log }) {
+function makeContext(api, { dryRun, log, replace = false }) {
   const ctx = {
     api,
     dryRun,
+    replace,
     log,
-    pathStepSupported: false,
+    pathStepSupported: true, // activities accept pathStep since the backend change that came with C0c
     noteActivity(activity) {
       if (activity !== null && typeof activity === 'object' && 'pathStep' in activity) {
         ctx.pathStepSupported = true
@@ -122,7 +123,9 @@ async function ensureQuiz(ctx, state, courseId, { code, titles, settings, questi
     if (quiz === null) return null
     state.quizzes.set(code, quiz)
   }
-  await ctx.write('PATCH', `/teacher/quizzes/${quiz.id}`, settings)
+  // PATCH replaces the whole settings record: send the code and the points along or they are lost
+  const keep = quiz.maxPoints == null ? {} : { maxPoints: quiz.maxPoints }
+  await ctx.write('PATCH', `/teacher/quizzes/${quiz.id}`, { code, ...keep, ...settings })
   for (const locale of LOCALES) {
     await ctx.write('PUT', `/teacher/quizzes/${quiz.id}/translations/${locale}`, { title: titles[locale] })
   }
@@ -333,6 +336,21 @@ async function ensureActivity(ctx, state, courseId, { type, lesson, moduleId, re
         !a.referenceId,
     )
   const label = `activity ${pathStep} (${type})`
+  if (!activity && lessonId && pathStep) {
+    // one active TEST and one active PRACTICE per lesson (partial unique index)
+    const holder = state.activities.find(
+      (a) => a.lessonId === lessonId && a.pathStep === pathStep && a.status !== 'ARCHIVED',
+    )
+    if (holder) {
+      if (!ctx.replace) {
+        ctx.log(`  ${label}: SKIPPED, the lesson already has a ${pathStep} activity (${holder.id}); use --replace to archive it`)
+        return
+      }
+      ctx.log(`  ${label}: archiving the seeded activity ${holder.id}`)
+      await ctx.write('PUT', `/teacher/activities/${holder.id}/status`, { status: 'ARCHIVED' })
+      holder.status = 'ARCHIVED'
+    }
+  }
   if (!activity) {
     const body = {
       activityType: type,
@@ -485,7 +503,7 @@ function readJson(file, validate) {
  * `api` is anything with call(method, url, body) (api.mjs Api, or a fake in tests);
  * `log` defaults to console.log. With dryRun only GETs are made and the plan is printed.
  */
-export async function importCourse(course, { lesson = null, dryRun = false, api, log = console.log } = {}) {
+export async function importCourse(course, { lesson = null, dryRun = false, replace = false, api, log = console.log } = {}) {
   if (!api) throw new Error('importCourse needs an api (see tools/content/api.mjs)')
   const dir = courseDir(course)
   const courseCode = path.basename(dir)
@@ -516,7 +534,7 @@ export async function importCourse(course, { lesson = null, dryRun = false, api,
       (midterm ? ', midterm.json' : ''),
   )
 
-  const ctx = makeContext(api, { dryRun, log })
+  const ctx = makeContext(api, { dryRun, log, replace })
   const courseId = await findCourse(api, spec)
   const lessons = await lessonsByCode(api, courseId)
   const state = await readState(ctx, courseId)
@@ -545,6 +563,7 @@ async function main() {
   const lessonFlag = rest.indexOf('--lesson')
   const lesson = lessonFlag === -1 ? null : rest[lessonFlag + 1]
   const dryRun = rest.includes('--dry-run')
+  const replace = rest.includes('--replace')
   if (spec === undefined || (lessonFlag !== -1 && lesson === undefined)) {
     console.error('Usage: node tools/content/assess-import.mjs <COURSE> [--lesson X] [--dry-run]')
     process.exit(2)
@@ -556,7 +575,7 @@ async function main() {
   }
   const api = new Api(process.env.AIFU_API ?? 'http://localhost:8080', process.env.AIFU_USER ?? 'admin', process.env.AIFU_PASSWORD)
   try {
-    await importCourse(spec, { lesson, dryRun, api })
+    await importCourse(spec, { lesson, dryRun, replace, api })
   } catch (error) {
     console.error(error.message)
     process.exit(1)
