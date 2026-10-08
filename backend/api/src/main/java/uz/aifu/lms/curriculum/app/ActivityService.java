@@ -34,6 +34,7 @@ import uz.aifu.lms.curriculum.domain.ActivityType;
 import uz.aifu.lms.curriculum.domain.ActivityVariant;
 import uz.aifu.lms.curriculum.domain.CourseModule;
 import uz.aifu.lms.curriculum.domain.Lesson;
+import uz.aifu.lms.curriculum.domain.PathStep;
 import uz.aifu.lms.curriculum.persistence.ActivityRepository;
 import uz.aifu.lms.curriculum.persistence.ActivityTranslationRepository;
 import uz.aifu.lms.curriculum.persistence.ActivityVariantRepository;
@@ -179,6 +180,10 @@ public class ActivityService {
                         request.isGraded(),
                         component,
                         request.maxPoints());
+        if (request.pathStep() != null) {
+            requireValidPathStep(request.pathStep(), request.activityType(), lesson);
+            activity.setPathStep(request.pathStep());
+        }
         Activity saved = activities.save(activity);
         audit.record(
                 AuditAction.ACTIVITY_CREATED,
@@ -189,6 +194,25 @@ public class ActivityService {
                 null,
                 Map.of("courseId", courseId.toString()));
         return saved;
+    }
+
+    private static void requireValidPathStep(PathStep step, ActivityType type, Lesson lesson) {
+        boolean lessonStep = step == PathStep.TEST || step == PathStep.PRACTICE;
+        if (lessonStep && lesson == null) {
+            throw Exceptions.validation("path step " + step + " needs a lesson");
+        }
+        if (step == PathStep.MIDTERM && lesson != null) {
+            throw Exceptions.validation("path step MIDTERM is course-level and takes no lesson");
+        }
+        boolean typeOk =
+                switch (step) {
+                    case TEST, MIDTERM -> type == ActivityType.QUIZ;
+                    case PRACTICE -> type == ActivityType.QUIZ || type == ActivityType.CODING_TASK;
+                };
+        if (!typeOk) {
+            throw Exceptions.validation(
+                    "path step " + step + " does not fit activity type " + type);
+        }
     }
 
     @Transactional

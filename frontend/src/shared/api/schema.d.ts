@@ -3761,6 +3761,8 @@ export interface components {
             maxPoints?: number;
             /** Format: uuid */
             moduleId?: string;
+            /** @enum {string} */
+            pathStep?: "TEST" | "PRACTICE" | "MIDTERM";
             /** Format: int32 */
             position?: number;
             /** Format: uuid */
@@ -4463,6 +4465,11 @@ export interface components {
             maxPoints?: number;
             /** Format: uuid */
             moduleId?: string;
+            /**
+             * @description Learning path role of the activity (TEST, PRACTICE: need a lesson; MIDTERM: a course-level QUIZ); null for ordinary activities
+             * @enum {string}
+             */
+            pathStep?: "TEST" | "PRACTICE" | "MIDTERM";
         };
         /** @description Post an announcement to the students of a course OR of a group (exactly one of courseId and groupId). */
         CreateAnnouncementRequest: {

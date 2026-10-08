@@ -75,6 +75,10 @@
             "format" : "uuid",
             "type" : "string"
           },
+          "pathStep" : {
+            "enum" : [ "TEST", "PRACTICE", "MIDTERM" ],
+            "type" : "string"
+          },
           "position" : {
             "format" : "int32",
             "type" : "integer"
@@ -1586,6 +1590,11 @@
           },
           "moduleId" : {
             "format" : "uuid",
+            "type" : "string"
+          },
+          "pathStep" : {
+            "description" : "Learning path role of the activity (TEST, PRACTICE: need a lesson; MIDTERM: a course-level QUIZ); null for ordinary activities",
+            "enum" : [ "TEST", "PRACTICE", "MIDTERM" ],
             "type" : "string"
           }
         },

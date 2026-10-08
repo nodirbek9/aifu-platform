@@ -269,6 +269,71 @@ class CurriculumIT extends AbstractIntegrationTest {
         assertThat(response.getBody().code()).isEqualTo("VALIDATION_FAILED");
     }
 
+    @Test
+    void activity_withPathStep_isCreatedWithStep_andRulesAreEnforced() {
+        String adminToken = adminToken();
+        Course course = enrollmentFixtures.publishedCourse(150);
+        ModuleDetail module = createModule(adminToken, course.getId());
+        LessonDetail lesson = createLesson(adminToken, module.id());
+        String url = url("/api/v1/teacher/courses/" + course.getId() + "/activities");
+
+        ResponseEntity<ActivityDetail> test =
+                rest.exchange(
+                        url,
+                        HttpMethod.POST,
+                        new HttpEntity<>(
+                                new CreateActivityRequest(
+                                        null,
+                                        lesson.id(),
+                                        ActivityType.QUIZ,
+                                        false,
+                                        null,
+                                        null,
+                                        uz.aifu.lms.curriculum.domain.PathStep.TEST),
+                                bearer(adminToken)),
+                        ActivityDetail.class);
+        assertThat(test.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+        assertThat(test.getBody().pathStep())
+                .isEqualTo(uz.aifu.lms.curriculum.domain.PathStep.TEST);
+
+        // a lesson step without a lesson is rejected
+        ResponseEntity<ApiError> noLesson =
+                rest.exchange(
+                        url,
+                        HttpMethod.POST,
+                        new HttpEntity<>(
+                                new CreateActivityRequest(
+                                        module.id(),
+                                        null,
+                                        ActivityType.QUIZ,
+                                        false,
+                                        null,
+                                        null,
+                                        uz.aifu.lms.curriculum.domain.PathStep.PRACTICE),
+                                bearer(adminToken)),
+                        ApiError.class);
+        assertThat(noLesson.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        assertThat(noLesson.getBody().code()).isEqualTo("VALIDATION_FAILED");
+
+        // MIDTERM is a course-level quiz: a coding task cannot carry it
+        ResponseEntity<ApiError> wrongType =
+                rest.exchange(
+                        url,
+                        HttpMethod.POST,
+                        new HttpEntity<>(
+                                new CreateActivityRequest(
+                                        module.id(),
+                                        null,
+                                        ActivityType.CODING_TASK,
+                                        false,
+                                        null,
+                                        null,
+                                        uz.aifu.lms.curriculum.domain.PathStep.MIDTERM),
+                                bearer(adminToken)),
+                        ApiError.class);
+        assertThat(wrongType.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+    }
+
     private ModuleDetail createModule(String adminToken, UUID courseId) {
         ResponseEntity<ModuleDetail> response =
                 rest.exchange(

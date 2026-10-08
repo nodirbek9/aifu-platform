@@ -94,6 +94,7 @@ final class ActivityMapper {
                 activity.getVariantStrategy(),
                 activity.getAvailableFrom(),
                 activity.getDueAt(),
+                activity.getPathStep(),
                 activity.getStatus(),
                 translationViews,
                 variantViews);

@@ -9,6 +9,7 @@ import java.util.UUID;
 import uz.aifu.lms.common.domain.PublicationStatus;
 import uz.aifu.lms.curriculum.domain.ActivityType;
 import uz.aifu.lms.curriculum.domain.CollaborationMode;
+import uz.aifu.lms.curriculum.domain.PathStep;
 import uz.aifu.lms.curriculum.domain.VariantStrategy;
 
 public final class ActivityDtos {
@@ -24,7 +25,28 @@ public final class ActivityDtos {
             @NotNull ActivityType activityType,
             boolean isGraded,
             UUID assessmentComponentId,
-            BigDecimal maxPoints) {}
+            BigDecimal maxPoints,
+            @Schema(
+                            description =
+                                    "Learning path role of the activity (TEST, PRACTICE: need a lesson; MIDTERM: a course-level QUIZ); null for ordinary activities")
+                    PathStep pathStep) {
+        public CreateActivityRequest(
+                UUID moduleId,
+                UUID lessonId,
+                ActivityType activityType,
+                boolean isGraded,
+                UUID assessmentComponentId,
+                BigDecimal maxPoints) {
+            this(
+                    moduleId,
+                    lessonId,
+                    activityType,
+                    isGraded,
+                    assessmentComponentId,
+                    maxPoints,
+                    null);
+        }
+    }
 
     public record UpdateActivityRequest(
             UUID referenceId,
@@ -73,6 +95,7 @@ public final class ActivityDtos {
             VariantStrategy variantStrategy,
             Instant availableFrom,
             Instant dueAt,
+            PathStep pathStep,
             PublicationStatus status,
             List<ActivityTranslationView> translations,
             List<ActivityVariantView> variants) {}

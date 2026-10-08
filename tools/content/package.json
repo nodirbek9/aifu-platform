@@ -6,7 +6,7 @@
   "scripts": {
     "check": "node import.mjs ../../content --all --dry-run",
     "examples": "node run-examples.mjs",
-    "test": "node --test assess.test.mjs"
+    "test": "node --test assess.test.mjs assess-verify.test.mjs assess-import.test.mjs"
   },
   "dependencies": {
     "marked": "18.0.14"
