@@ -9,6 +9,7 @@ import {
   isSavable,
   moveOption,
   narrowAttempt,
+  narrowAttemptAllowance,
   narrowQuestion,
   parseNumber,
   readFlags,
@@ -224,5 +225,29 @@ describe('points and marks', () => {
     expect(readFlags('attempt-2')).toEqual([])
     writeFlags('attempt-1', [])
     expect(localStorage.length).toBe(0)
+  })
+})
+
+describe('narrowAttemptAllowance', () => {
+  it('narrows a fully populated allowance view', () => {
+    expect(narrowAttemptAllowance({ attemptsUsed: 1, attemptsAllowed: 3 })).toEqual({
+      attemptsUsed: 1,
+      attemptsAllowed: 3,
+    })
+  })
+
+  it('handles unlimited attempts when attemptsAllowed is absent', () => {
+    expect(narrowAttemptAllowance({ attemptsUsed: 2 })).toEqual({
+      attemptsUsed: 2,
+    })
+  })
+
+  it('provides safe defaults when raw view is undefined or null', () => {
+    expect(narrowAttemptAllowance(undefined)).toEqual({
+      attemptsUsed: 0,
+    })
+    expect(narrowAttemptAllowance(null)).toEqual({
+      attemptsUsed: 0,
+    })
   })
 })

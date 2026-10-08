@@ -1,5 +1,6 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { courseKeys } from '@/features/courses/queries'
+import { lessonKeys, useRefreshPathAfterWork } from '@/features/lesson/queries'
 import { api, unwrap } from '@/shared/api/client'
 import type { Locale } from '@/shared/i18n'
 import {
@@ -185,12 +186,18 @@ export function useFeedbackQuery(submissionId: string | undefined) {
 }
 
 /** After a graded submission finishes, the work list, the plan and the history are stale. */
-export function useRefreshAfterGrading(courseId: string, taskId: string) {
+export function useRefreshAfterGrading(courseId: string, taskId: string, lessonId?: string) {
   const queryClient = useQueryClient()
+  const refreshPath = useRefreshPathAfterWork(courseId, lessonId)
   return () =>
     Promise.all([
       queryClient.invalidateQueries({ queryKey: keys.history(taskId) }),
       queryClient.invalidateQueries({ queryKey: courseKeys.activities() }),
       queryClient.invalidateQueries({ queryKey: courseKeys.planOfCourse(courseId) }),
-    ])
+      ...(lessonId !== undefined && lessonId.length > 0
+        ? [queryClient.invalidateQueries({ queryKey: lessonKeys.path(lessonId) })]
+        : []),
+    ]).then(() => {
+      void refreshPath()
+    })
 }

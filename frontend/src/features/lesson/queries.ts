@@ -1,8 +1,17 @@
+import { useCallback } from 'react'
 import { keepPreviousData, useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import type { CoursePlan } from '@/features/courses/model'
 import { courseKeys } from '@/features/courses/queries'
 import { api, unwrap } from '@/shared/api/client'
 import type { Locale } from '@/shared/i18n'
-import { narrowLesson, narrowLessonPath } from './model'
+import {
+  evaluatePollingRetry,
+  hasCoursePlanChanged,
+  hasLessonPathChanged,
+  narrowLesson,
+  narrowLessonPath,
+  type LessonPath,
+} from './model'
 
 export const lessonKeys = {
   detail: (lessonId: string, locale: Locale) => ['lesson', lessonId, locale] as const,
@@ -95,4 +104,89 @@ export function useFileBlobQuery(fileId: string, enabled = true) {
     enabled,
     staleTime: Infinity,
   })
+}
+
+/**
+ * Re-polls the lesson path and course plan after work (quiz submit or coding task verdict).
+ * Bounded retry up to 5 refetches, 2 seconds apart, stopping early as soon as the response differs.
+ */
+export function useRefreshPathAfterWork(courseId?: string, lessonId?: string) {
+  const queryClient = useQueryClient()
+  return useCallback(
+    async (overrideLessonId?: string) => {
+      const activeLessonId = overrideLessonId ?? lessonId
+
+      const baselinePlan =
+        courseId !== undefined && courseId.length > 0
+          ? queryClient.getQueriesData<CoursePlan>({ queryKey: courseKeys.planOfCourse(courseId) })[0]?.[1]
+          : undefined
+      const baselinePath =
+        activeLessonId !== undefined && activeLessonId.length > 0
+          ? queryClient.getQueryData<LessonPath>(lessonKeys.path(activeLessonId))
+          : undefined
+
+      await Promise.all([
+        ...(activeLessonId !== undefined && activeLessonId.length > 0
+          ? [queryClient.invalidateQueries({ queryKey: lessonKeys.path(activeLessonId) })]
+          : []),
+        ...(courseId !== undefined && courseId.length > 0
+          ? [queryClient.invalidateQueries({ queryKey: courseKeys.planOfCourse(courseId) })]
+          : []),
+      ])
+
+      const immediatePlan =
+        courseId !== undefined && courseId.length > 0
+          ? queryClient.getQueriesData<CoursePlan>({ queryKey: courseKeys.planOfCourse(courseId) })[0]?.[1]
+          : undefined
+      const immediatePath =
+        activeLessonId !== undefined && activeLessonId.length > 0
+          ? queryClient.getQueryData<LessonPath>(lessonKeys.path(activeLessonId))
+          : undefined
+
+      const immediateChanged =
+        (activeLessonId !== undefined && activeLessonId.length > 0
+          ? hasLessonPathChanged(baselinePath, immediatePath)
+          : false) ||
+        (courseId !== undefined && courseId.length > 0
+          ? hasCoursePlanChanged(baselinePlan, immediatePlan)
+          : false)
+
+      if (immediateChanged) return
+
+      for (let attempt = 1; attempt <= 5; attempt++) {
+        await new Promise((resolve) => setTimeout(resolve, 2000))
+        await Promise.all([
+          ...(activeLessonId !== undefined && activeLessonId.length > 0
+            ? [queryClient.refetchQueries({ queryKey: lessonKeys.path(activeLessonId) })]
+            : []),
+          ...(courseId !== undefined && courseId.length > 0
+            ? [queryClient.refetchQueries({ queryKey: courseKeys.planOfCourse(courseId) })]
+            : []),
+        ])
+
+        const currentPlan =
+          courseId !== undefined && courseId.length > 0
+            ? queryClient.getQueriesData<CoursePlan>({ queryKey: courseKeys.planOfCourse(courseId) })[0]?.[1]
+            : undefined
+        const currentPath =
+          activeLessonId !== undefined && activeLessonId.length > 0
+            ? queryClient.getQueryData<LessonPath>(lessonKeys.path(activeLessonId))
+            : undefined
+
+        const hasChanged =
+          (activeLessonId !== undefined && activeLessonId.length > 0
+            ? hasLessonPathChanged(baselinePath, currentPath)
+            : false) ||
+          (courseId !== undefined && courseId.length > 0
+            ? hasCoursePlanChanged(baselinePlan, currentPlan)
+            : false)
+
+        const decision = evaluatePollingRetry(attempt, 5, hasChanged)
+        if (decision.shouldStop) {
+          break
+        }
+      }
+    },
+    [queryClient, courseId, lessonId],
+  )
 }

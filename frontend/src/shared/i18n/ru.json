@@ -285,6 +285,7 @@
     "nextActionPracticePrompt": "Выполните практические задания",
     "nextActionPractice": "Перейти к практике",
     "nextActionAllDone": "Все этапы пройдены! Следующий урок открыт",
+    "openPractice": "Открыть практику",
     "copy": "Скопировать",
     "copied": "Скопировано",
     "codeLanguage": "Язык программирования",
@@ -416,6 +417,9 @@
     "notYet": "Не сейчас",
     "attemptsTitle": "Мои попытки",
     "attemptN": "Попытка {{number}}",
+    "attemptNofM": "Попытка {{current}} из {{total}}",
+    "midtermBadge": "Промежуточный экзамен",
+    "attemptsExhaustedDean": "Ваши попытки исчерпаны. Обратитесь в деканат за дополнительной попыткой.",
     "status": {
       "IN_PROGRESS": "В процессе",
       "SUBMITTED": "Сдана",

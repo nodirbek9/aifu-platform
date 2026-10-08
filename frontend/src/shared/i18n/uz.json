@@ -285,6 +285,7 @@
     "nextActionPracticePrompt": "Amaliy topshiriqlarni bajaring",
     "nextActionPractice": "Amaliyotga oʻtish",
     "nextActionAllDone": "Barcha bosqichlar bajarildi! Keyingi dars ochildi",
+    "openPractice": "Amaliyotni ochish",
     "copy": "Nusxa olish",
     "copied": "Nusxa olindi",
     "codeLanguage": "Dasturlash tili",
@@ -416,6 +417,9 @@
     "notYet": "Hozir emas",
     "attemptsTitle": "Urinishlarim",
     "attemptN": "{{number}}-urinish",
+    "attemptNofM": "{{current}} / {{total}}-urinish",
+    "midtermBadge": "Oraliq imtihon",
+    "attemptsExhaustedDean": "Urinishlaringiz tugadi. Qoʻshimcha urinish uchun dekanatga murojaat qiling.",
     "status": {
       "IN_PROGRESS": "Jarayonda",
       "SUBMITTED": "Topshirilgan",

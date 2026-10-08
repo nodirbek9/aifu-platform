@@ -1,10 +1,12 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { narrowFeedback } from '@/features/coding/model'
 import { courseKeys } from '@/features/courses/queries'
+import { lessonKeys, useRefreshPathAfterWork } from '@/features/lesson/queries'
 import { api, unwrap } from '@/shared/api/client'
 import type { Locale } from '@/shared/i18n'
 import {
   narrowAttempt,
+  narrowAttemptAllowance,
   narrowAttemptSummary,
   narrowQuiz,
   toAnswerRequest,
@@ -15,6 +17,7 @@ import {
 const keys = {
   quiz: (quizId: string, locale: Locale) => ['quiz', quizId, locale] as const,
   attempts: (quizId: string) => ['quiz-attempts', quizId] as const,
+  allowance: (quizId: string) => ['quiz-allowance', quizId] as const,
   attemptOfAnyLocale: (attemptId: string) => ['quiz-attempt', attemptId] as const,
   attempt: (attemptId: string, locale: Locale) => ['quiz-attempt', attemptId, locale] as const,
   feedback: (attemptId: string) => ['feedback', 'QUIZ_ATTEMPT', attemptId] as const,
@@ -46,6 +49,22 @@ export function useAttemptsQuery(quizId: string) {
       )
       return (page.content ?? []).map(narrowAttemptSummary).filter((attempt) => attempt !== null)
     },
+  })
+}
+
+/** How many attempts I used and how many are allowed for me. */
+export function useAttemptAllowanceQuery(quizId: string) {
+  return useQuery({
+    queryKey: keys.allowance(quizId),
+    queryFn: async () =>
+      narrowAttemptAllowance(
+        await unwrap(
+          api.GET('/api/v1/quizzes/{quizId}/attempts/me/allowance', {
+            params: { path: { quizId } },
+          }),
+        ),
+      ),
+    enabled: quizId.length > 0,
   })
 }
 
@@ -104,8 +123,14 @@ export async function saveAnswer(attemptId: string, questionId: string, answer: 
  * Hands the attempt in. One idempotency key per attempt: a retry after a lost answer returns
  * the same result. The work list and the course plan are stale afterwards.
  */
-export function useSubmitAttempt(courseId: string, attempt: Pick<Attempt, 'id' | 'quizId'>, locale: Locale) {
+export function useSubmitAttempt(
+  courseId: string,
+  attempt: Pick<Attempt, 'id' | 'quizId'>,
+  locale: Locale,
+  lessonId?: string,
+) {
   const queryClient = useQueryClient()
+  const refreshPath = useRefreshPathAfterWork(courseId, lessonId)
   return useMutation({
     mutationFn: async () =>
       narrowAttempt(
@@ -121,22 +146,37 @@ export function useSubmitAttempt(courseId: string, attempt: Pick<Attempt, 'id' |
         // the submit answers in the language the attempt was started in; read it in the current one
         queryClient.invalidateQueries({ queryKey: keys.attemptOfAnyLocale(attempt.id) }),
         queryClient.invalidateQueries({ queryKey: keys.attempts(attempt.quizId) }),
+        queryClient.invalidateQueries({ queryKey: keys.allowance(attempt.quizId) }),
         queryClient.invalidateQueries({ queryKey: courseKeys.activities() }),
         queryClient.invalidateQueries({ queryKey: courseKeys.planOfCourse(courseId) }),
+        ...(lessonId !== undefined && lessonId.length > 0
+          ? [queryClient.invalidateQueries({ queryKey: lessonKeys.path(lessonId) })]
+          : []),
       ])
+      void refreshPath()
     },
   })
 }
 
 /** Reads the attempt again from the server — after the time ran out, or after a refused answer. */
-export function useRefreshAttempt(attemptId: string, quizId: string) {
+export function useRefreshAttempt(attemptId: string, quizId: string, courseId?: string, lessonId?: string) {
   const queryClient = useQueryClient()
+  const refreshPath = useRefreshPathAfterWork(courseId, lessonId)
   return () =>
     Promise.all([
       queryClient.invalidateQueries({ queryKey: keys.attemptOfAnyLocale(attemptId) }),
       queryClient.invalidateQueries({ queryKey: keys.attempts(quizId) }),
+      queryClient.invalidateQueries({ queryKey: keys.allowance(quizId) }),
       queryClient.invalidateQueries({ queryKey: courseKeys.activities() }),
-    ])
+      ...(courseId !== undefined && courseId.length > 0
+        ? [queryClient.invalidateQueries({ queryKey: courseKeys.planOfCourse(courseId) })]
+        : []),
+      ...(lessonId !== undefined && lessonId.length > 0
+        ? [queryClient.invalidateQueries({ queryKey: lessonKeys.path(lessonId) })]
+        : []),
+    ]).then(() => {
+      void refreshPath()
+    })
 }
 
 export function useAttemptFeedbackQuery(attemptId: string, enabled: boolean) {

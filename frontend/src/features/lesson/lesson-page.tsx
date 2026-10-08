@@ -14,12 +14,12 @@ import { useTranslation } from 'react-i18next'
 import { Link, useParams } from 'react-router'
 import { useAuth } from '@/features/auth/auth-context'
 import { ActivityRow } from '@/features/courses/activity-row'
-import { flattenPlan, type PlanLesson } from '@/features/courses/model'
+import { activityPath, flattenPlan, type PlanLesson } from '@/features/courses/model'
 import { useActivitiesQuery, useCoursePlanQuery, useCourseQuery } from '@/features/courses/queries'
 import { toApiProblem, type ApiProblem } from '@/shared/api/errors'
 import { useLocale } from '@/shared/i18n/use-locale'
 import { cn } from '@/shared/lib/cn'
-import { SessionTypeBadge } from '@/shared/ui/badge'
+import { Badge, SessionTypeBadge } from '@/shared/ui/badge'
 import { Button, button } from '@/shared/ui/button'
 import { EmptyState } from '@/shared/ui/empty-state'
 import { ErrorState } from '@/shared/ui/error-state'
@@ -362,7 +362,7 @@ function LessonBody({
       )}
 
       <div id="practice-section">
-        <Practice courseId={courseId} lessonId={lesson.id} blocks={lesson.blocks} />
+        <Practice courseId={courseId} lessonId={lesson.id} blocks={lesson.blocks} lessonPath={lessonPath} />
       </div>
 
       <footer className="border-border grid gap-8 border-t pt-8">
@@ -492,10 +492,15 @@ function NeighbourLink({ courseId, lesson, direction }: NeighbourLinkProps) {
   )
 }
 
-type PracticeProps = { courseId: string; lessonId: string; blocks: readonly LessonBlock[] }
+type PracticeProps = {
+  courseId: string
+  lessonId: string
+  blocks: readonly LessonBlock[]
+  lessonPath?: LessonPath
+}
 
 /** The practice of a lesson: its quizzes and tasks with where the student stands in each. */
-function Practice({ courseId, lessonId, blocks }: PracticeProps) {
+function Practice({ courseId, lessonId, blocks, lessonPath }: PracticeProps) {
   const { t } = useTranslation()
   const locale = useLocale()
   const activities = useActivitiesQuery(locale, courseId)
@@ -510,11 +515,40 @@ function Practice({ courseId, lessonId, blocks }: PracticeProps) {
   )
   if (!blocks.some((block) => block.kind === 'ref') && ofLesson.length === 0) return null
 
+  const practiceStep = lessonPath?.steps.practice
+  const practiceActivityId = lessonPath?.practiceActivityId
+  const practiceActivity =
+    practiceActivityId !== undefined
+      ? (activities.data ?? []).find((a) => a.activityId === practiceActivityId)
+      : undefined
+  const practiceLink =
+    practiceActivity !== undefined
+      ? activityPath(practiceActivity)
+      : practiceActivityId !== undefined
+        ? `/student/courses/${courseId}/activities/${practiceActivityId}`
+        : null
+
   return (
     <section className="grid gap-3">
-      <div className="grid gap-1">
-        <h2 className="font-display text-display-lg text-text font-semibold">{t('lesson.practiceTitle')}</h2>
-        <p className="text-small text-text-muted">{t('lesson.practiceBody')}</p>
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="grid gap-1">
+          <div className="flex flex-wrap items-center gap-3">
+            <h2 className="font-display text-display-lg text-text font-semibold">
+              {t('lesson.practiceTitle')}
+            </h2>
+            {practiceStep !== undefined && practiceStep !== 'NONE' && (
+              <Badge tone={practiceStep === 'DONE' ? 'success' : 'warning'}>
+                {t(practiceStep === 'DONE' ? 'steps.statusDone' : 'steps.statusTodo')}
+              </Badge>
+            )}
+          </div>
+          <p className="text-small text-text-muted">{t('lesson.practiceBody')}</p>
+        </div>
+        {practiceLink !== null && (
+          <Link to={practiceLink} className={button({ variant: 'outline', size: 'sm' })}>
+            {t('lesson.openPractice')}
+          </Link>
+        )}
       </div>
       {activities.isPending && <SkeletonText lines={2} />}
       {activities.isError && (

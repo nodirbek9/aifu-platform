@@ -38,13 +38,14 @@ type AttemptRunnerProps = {
   quiz: Quiz
   attempt: Attempt
   courseId: string
+  lessonId?: string
 }
 
 /**
  * S-06.2 — an open attempt: one question on the screen, the navigator beside it, answers saved
  * as the student goes, the clock in the header. At zero the attempt hands itself in.
  */
-export function AttemptRunner({ quiz, attempt, courseId }: AttemptRunnerProps) {
+export function AttemptRunner({ quiz, attempt, courseId, lessonId }: AttemptRunnerProps) {
   const { t } = useTranslation()
   const locale = useLocale()
   const { changeLocale } = useAuth()
@@ -63,8 +64,8 @@ export function AttemptRunner({ quiz, attempt, courseId }: AttemptRunnerProps) {
   const [timeUp, setTimeUp] = useState(false)
   const [problem, setProblem] = useState<ApiProblem | 'unsaved' | null>(null)
 
-  const refresh = useRefreshAttempt(attempt.id, attempt.quizId)
-  const submit = useSubmitAttempt(courseId, attempt, locale)
+  const refresh = useRefreshAttempt(attempt.id, attempt.quizId, courseId, lessonId)
+  const submit = useSubmitAttempt(courseId, attempt, locale, lessonId)
   const saver = useAnswerSaver(
     attempt.id,
     // the server says the attempt is over: read it again, the result takes this screen's place

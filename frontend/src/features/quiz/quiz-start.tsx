@@ -19,29 +19,36 @@ import {
   DialogTitle,
 } from '@/shared/ui/dialog'
 import { FallbackMark } from '@/shared/ui/fallback-mark'
+import { useCoursePlanQuery } from '@/features/courses/queries'
 import { formatPoints, type AttemptSummary, type Quiz } from './model'
-import { useStartAttempt } from './queries'
+import { useAttemptAllowanceQuery, useStartAttempt } from './queries'
 
 type QuizStartProps = {
   quiz: Quiz
   attempts: readonly AttemptSummary[]
   /** The activity the quiz is assigned through, when there is one: its deadline. */
   activity: Activity | undefined
+  courseId?: string
+  lessonId?: string
   onAttemptAlreadyOpen: () => void
 }
 
 /** S-06.1 — before the quiz: what it is, the rules, what is left — and the earlier attempts. */
-export function QuizStart({ quiz, attempts, activity, onAttemptAlreadyOpen }: QuizStartProps) {
+export function QuizStart({ quiz, attempts, activity, courseId, onAttemptAlreadyOpen }: QuizStartProps) {
   const { t } = useTranslation()
   const locale = useLocale()
   const navigate = useNavigate()
   const start = useStartAttempt(quiz.id, locale)
+  const allowance = useAttemptAllowanceQuery(quiz.id)
+  const plan = useCoursePlanQuery(courseId ?? '', locale)
+  const isMidterm = courseId !== undefined && courseId.length > 0 && plan.data?.midterm?.quizId === quiz.id
   const [confirmOpen, setConfirmOpen] = useState(false)
   const [problem, setProblem] = useState<ApiProblem | null>(null)
 
-  const used = attempts.length
-  const attemptsLeft = quiz.maxAttempts === undefined ? undefined : Math.max(0, quiz.maxAttempts - used)
-  const exhausted = attemptsLeft === 0
+  const used = allowance.data?.attemptsUsed ?? attempts.length
+  const allowed = allowance.data?.attemptsAllowed ?? quiz.maxAttempts
+  const attemptsLeft = allowed === undefined ? undefined : Math.max(0, allowed - used)
+  const exhausted = allowed !== undefined && used >= allowed
   const timed = quiz.timeLimitSeconds !== undefined
   const minutes = quiz.timeLimitSeconds === undefined ? undefined : Math.ceil(quiz.timeLimitSeconds / 60)
   const overdue = activity?.state === 'OVERDUE'
@@ -52,7 +59,12 @@ export function QuizStart({ quiz, attempts, activity, onAttemptAlreadyOpen }: Qu
   }
   facts.push({
     label: t('task.attempts'),
-    value: quiz.maxAttempts === undefined ? t('quiz.unlimited') : `${used} / ${quiz.maxAttempts}`,
+    value:
+      allowed === undefined
+        ? t('quiz.unlimited')
+        : exhausted
+          ? `${used} / ${allowed}`
+          : t('quiz.attemptNofM', { current: used + 1, total: allowed }),
     danger: exhausted,
   })
   facts.push({ label: t('quiz.passMark'), value: `${formatPoints(quiz.passingPercent)}%` })
@@ -87,9 +99,12 @@ export function QuizStart({ quiz, attempts, activity, onAttemptAlreadyOpen }: Qu
   return (
     <>
       <header className="grid gap-3">
-        <p className="text-caption tracking-caption text-text-muted font-medium uppercase">
-          {t('activityType.QUIZ')}
-        </p>
+        <div className="flex flex-wrap items-center gap-2">
+          <p className="text-caption tracking-caption text-text-muted font-medium uppercase">
+            {t('activityType.QUIZ')}
+          </p>
+          {isMidterm && <Badge tone="accent">{t('quiz.midtermBadge')}</Badge>}
+        </div>
         <h1 className="font-display text-display-lg text-text font-semibold">{quiz.title}</h1>
         {quiz.titleIsFallback && <FallbackMark />}
         {quiz.description !== undefined && (
@@ -132,29 +147,36 @@ export function QuizStart({ quiz, attempts, activity, onAttemptAlreadyOpen }: Qu
       </section>
 
       <div className="grid justify-items-start gap-3">
-        {exhausted && <Callout variant="WARNING">{t('errors.ATTEMPT_LIMIT_REACHED')}</Callout>}
-        {problem !== null && (
-          <p role="alert" className="bg-danger-soft text-small text-danger rounded-sm px-3 py-2 font-medium">
-            {t(`errors.${problem.code}`)}
-          </p>
-        )}
-        <Button
-          variant="accent"
-          size="lg"
-          disabled={exhausted}
-          loading={start.isPending && !timed}
-          onClick={() => {
-            if (timed) setConfirmOpen(true)
-            else begin()
-          }}
-        >
-          <Play aria-hidden className="size-4" />
-          {used === 0 ? t('quiz.start') : t('quiz.startAgain')}
-        </Button>
-        {attemptsLeft !== undefined && !exhausted && (
-          <p className="text-small text-text-muted tabular-nums">
-            {t('task.attemptsLeft', { count: attemptsLeft })}
-          </p>
+        {exhausted ? (
+          <Callout variant="WARNING">{t('quiz.attemptsExhaustedDean')}</Callout>
+        ) : (
+          <>
+            {problem !== null && (
+              <p
+                role="alert"
+                className="bg-danger-soft text-small text-danger rounded-sm px-3 py-2 font-medium"
+              >
+                {t(`errors.${problem.code}`)}
+              </p>
+            )}
+            <Button
+              variant="accent"
+              size="lg"
+              loading={start.isPending && !timed}
+              onClick={() => {
+                if (timed) setConfirmOpen(true)
+                else begin()
+              }}
+            >
+              <Play aria-hidden className="size-4" />
+              {used === 0 ? t('quiz.start') : t('quiz.startAgain')}
+            </Button>
+            {attemptsLeft !== undefined && (
+              <p className="text-small text-text-muted tabular-nums">
+                {t('task.attemptsLeft', { count: attemptsLeft })}
+              </p>
+            )}
+          </>
         )}
       </div>
 

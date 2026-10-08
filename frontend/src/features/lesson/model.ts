@@ -3,7 +3,12 @@ import type { Locale } from '@/shared/i18n'
 import { pickTranslation, readString } from '@/shared/lib/translations'
 import type { SessionType } from '@/shared/ui/badge'
 import { addHeadingIds, sanitizeHtml, type Heading } from '@/shared/ui/rich-text'
-import { narrowLessonSteps, type LessonSteps, type LockReason } from '@/features/courses/model'
+import {
+  narrowLessonSteps,
+  type CoursePlan,
+  type LessonSteps,
+  type LockReason,
+} from '@/features/courses/model'
 
 type Schemas = components['schemas']
 
@@ -262,4 +267,68 @@ export function nextActionOf(steps: LessonSteps): NextAction {
   if (steps.test === 'TODO') return 'TAKE_TEST'
   if (steps.practice === 'TODO') return 'PRACTICE'
   return 'ALL_DONE'
+}
+
+/* --------------------------------- bounded retry polling after work */
+
+export function hasLessonPathChanged(before?: LessonPath | null, after?: LessonPath | null): boolean {
+  if (!after) return false
+  if (!before) {
+    return after.steps.lecture === 'DONE' || after.steps.test === 'DONE' || after.steps.practice === 'DONE'
+  }
+  return (
+    before.steps.lecture !== after.steps.lecture ||
+    before.steps.test !== after.steps.test ||
+    before.steps.practice !== after.steps.practice ||
+    before.open !== after.open ||
+    before.lockReason !== after.lockReason
+  )
+}
+
+export function hasCoursePlanChanged(before?: CoursePlan | null, after?: CoursePlan | null): boolean {
+  if (!after) return false
+  if (!before) {
+    return after.lessonsCompleted > 0 || after.midterm?.passed === true
+  }
+  if (before.lessonsCompleted !== after.lessonsCompleted) return true
+  if (before.midterm?.passed !== after.midterm?.passed) return true
+  if (before.midterm?.attemptsUsed !== after.midterm?.attemptsUsed) return true
+
+  const beforeLessons = before.modules.flatMap((m) => m.lessons)
+  const afterLessons = after.modules.flatMap((m) => m.lessons)
+  if (beforeLessons.length !== afterLessons.length) return true
+  for (let i = 0; i < beforeLessons.length; i++) {
+    const b = beforeLessons[i]
+    const a = afterLessons[i]
+    if (!b || !a) return true
+    if (
+      b.status !== a.status ||
+      b.locked !== a.locked ||
+      b.steps.lecture !== a.steps.lecture ||
+      b.steps.test !== a.steps.test ||
+      b.steps.practice !== a.steps.practice
+    ) {
+      return true
+    }
+  }
+  return false
+}
+
+export type PollingRetryDecision = {
+  shouldStop: boolean
+  hasChanged: boolean
+}
+
+export function evaluatePollingRetry(
+  attempt: number,
+  maxAttempts: number,
+  hasChanged: boolean,
+): PollingRetryDecision {
+  if (hasChanged) {
+    return { shouldStop: true, hasChanged: true }
+  }
+  if (attempt >= maxAttempts) {
+    return { shouldStop: true, hasChanged: false }
+  }
+  return { shouldStop: false, hasChanged: false }
 }

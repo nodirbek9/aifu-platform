@@ -29,14 +29,29 @@ function Loading() {
 export function QuizPage() {
   const { t } = useTranslation()
   const locale = useLocale()
-  const { courseId = '', quizId = '' } = useParams()
+  const { courseId = '', quizId: paramQuizId = '', activityId: paramActivityId = '' } = useParams()
   const [search] = useSearchParams()
   const attemptId = search.get('attempt')
 
-  const quiz = useQuizQuery(courseId, quizId, locale)
-  const attempts = useAttemptsQuery(quizId)
-  const course = useCourseQuery(courseId, locale)
   const activities = useActivitiesQuery(locale, courseId)
+  const resolvedActivity =
+    paramActivityId.length > 0
+      ? activities.data?.find((activity) => activity.activityId === paramActivityId)
+      : undefined
+
+  const effectiveQuizId = paramQuizId.length > 0 ? paramQuizId : (resolvedActivity?.referenceId ?? '')
+
+  const quiz = useQuizQuery(courseId, effectiveQuizId, locale)
+  const attempts = useAttemptsQuery(effectiveQuizId)
+  const course = useCourseQuery(courseId, locale)
+
+  if (resolvedActivity?.type === 'CODING_TASK' && resolvedActivity.referenceId !== undefined) {
+    return <Navigate to={`/student/courses/${courseId}/tasks/${resolvedActivity.referenceId}`} replace />
+  }
+
+  const activeActivity =
+    resolvedActivity ?? activities.data?.find((activity) => activity.referenceId === effectiveQuizId)
+  const lessonId = search.get('lesson') ?? search.get('lessonId') ?? activeActivity?.lessonId
 
   const coursePath = `/student/courses/${courseId}?tab=work`
   const courseLabel = course.data?.title ?? t('lesson.back')
@@ -63,7 +78,15 @@ export function QuizPage() {
   }
 
   if (attemptId !== null) {
-    return <AttemptView key={attemptId} quiz={quiz.data} attemptId={attemptId} courseId={courseId} />
+    return (
+      <AttemptView
+        key={attemptId}
+        quiz={quiz.data}
+        attemptId={attemptId}
+        courseId={courseId}
+        lessonId={lessonId}
+      />
+    )
   }
 
   const open = attempts.data.find((attempt) => attempt.status === 'IN_PROGRESS')
@@ -74,7 +97,9 @@ export function QuizPage() {
       <QuizStart
         quiz={quiz.data}
         attempts={attempts.data}
-        activity={activities.data?.find((activity) => activity.referenceId === quiz.data.id)}
+        activity={activeActivity}
+        courseId={courseId}
+        lessonId={lessonId}
         onAttemptAlreadyOpen={() => {
           void attempts.refetch()
         }}
@@ -83,7 +108,17 @@ export function QuizPage() {
   )
 }
 
-function AttemptView({ quiz, attemptId, courseId }: { quiz: Quiz; attemptId: string; courseId: string }) {
+function AttemptView({
+  quiz,
+  attemptId,
+  courseId,
+  lessonId,
+}: {
+  quiz: Quiz
+  attemptId: string
+  courseId: string
+  lessonId?: string
+}) {
   const locale = useLocale()
   const attempt = useAttemptQuery(attemptId, locale)
   const quizPath = `/student/courses/${courseId}/quizzes/${quiz.id}`
@@ -111,7 +146,7 @@ function AttemptView({ quiz, attemptId, courseId }: { quiz: Quiz; attemptId: str
   if (attempt.data.quizId !== quiz.id) return <Navigate to={quizPath} replace />
 
   if (attempt.data.status === 'IN_PROGRESS') {
-    return <AttemptRunner quiz={quiz} attempt={attempt.data} courseId={courseId} />
+    return <AttemptRunner quiz={quiz} attempt={attempt.data} courseId={courseId} lessonId={lessonId} />
   }
   return (
     <QuizFrame backTo={quizPath} backLabel={quiz.title}>

@@ -285,6 +285,7 @@
     "nextActionPracticePrompt": "Complete practice assignments",
     "nextActionPractice": "Go to practice",
     "nextActionAllDone": "All steps completed! The next lesson is unlocked",
+    "openPractice": "Open practice",
     "copy": "Copy",
     "copied": "Copied",
     "codeLanguage": "Programming language",
@@ -416,6 +417,9 @@
     "notYet": "Not now",
     "attemptsTitle": "My attempts",
     "attemptN": "Attempt {{number}}",
+    "attemptNofM": "Attempt {{current}} of {{total}}",
+    "midtermBadge": "Midterm exam",
+    "attemptsExhaustedDean": "Your attempts are used. Ask the dean's office for one more attempt.",
     "status": {
       "IN_PROGRESS": "In progress",
       "SUBMITTED": "Handed in",

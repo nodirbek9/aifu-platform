@@ -149,7 +149,7 @@ function Workspace({ task }: { task: Task }) {
   const history = useHistoryQuery(task.id)
   const activities = useActivitiesQuery(locale, task.courseId)
   const activity = activities.data?.find((item) => item.referenceId === task.id)
-  const refreshAfterGrading = useRefreshAfterGrading(task.courseId, task.id)
+  const refreshAfterGrading = useRefreshAfterGrading(task.courseId, task.id, activity?.lessonId)
 
   const runBusy =
     startRun.isPending ||

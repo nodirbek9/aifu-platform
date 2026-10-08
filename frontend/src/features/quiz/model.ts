@@ -391,3 +391,22 @@ export function writeFlags(attemptId: string, flags: readonly string[]): void {
     // a full or blocked storage loses the marks, never the answers
   }
 }
+
+/* ---------------------------------------------------------------- allowance */
+
+export type AttemptAllowance = {
+  attemptsUsed: number
+  attemptsAllowed?: number
+}
+
+export function narrowAttemptAllowance(
+  raw: Schemas['AttemptAllowanceView'] | undefined | null,
+): AttemptAllowance {
+  const allowance: AttemptAllowance = {
+    attemptsUsed: raw?.attemptsUsed ?? 0,
+  }
+  if (raw?.attemptsAllowed !== undefined) {
+    allowance.attemptsAllowed = raw.attemptsAllowed
+  }
+  return allowance
+}
