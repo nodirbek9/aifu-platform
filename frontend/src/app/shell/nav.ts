@@ -9,6 +9,7 @@ import {
   House,
   Layers,
   Megaphone,
+  Route,
   ScrollText,
   Table2,
   UserCheck,
@@ -35,6 +36,7 @@ export type NavKey =
   | 'adminReference'
   | 'adminLoad'
   | 'adminAudit'
+  | 'learningPath'
 
 export type NavItem = {
   key: NavKey
@@ -69,6 +71,7 @@ const NAV: Record<Role, readonly NavItem[]> = {
     { key: 'adminTimetable', to: '/admin/timetable', icon: CalendarRange, primary: true },
     { key: 'adminUsers', to: '/admin/users', icon: Users, primary: true },
     { key: 'adminStructure', to: '/admin/structure', icon: Layers, primary: true },
+    { key: 'learningPath', to: '/admin/learning-path', icon: Route },
     { key: 'adminReference', to: '/admin/reference', icon: Database },
     { key: 'adminLoad', to: '/admin/load', icon: Table2 },
     { key: 'announcements', to: '/announcements', icon: Megaphone },

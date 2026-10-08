@@ -151,7 +151,7 @@ Health: `GET /actuator/health/liveness`, `/actuator/health/readiness`.
 |---|---|
 | A student has at most one non-terminal enrollment per course | partial unique index + service |
 | A quiz attempt belongs to exactly one enrollment, and the caller must own it | FK + `AttemptAccessGuard` |
-| Attempt number is contiguous per (quiz, enrollment) and ≤ `max_attempts` | unique index + service |
+| Attempt number is contiguous per (quiz, enrollment) and ≤ `max_attempts` + grants (at most one admin grant per quiz and enrollment, only after the attempts are used up) | unique index + `AttemptGrantService` |
 | A submission belongs to one (coding_task, enrollment) owned by caller | FK + `SubmissionAccessGuard` |
 | Progress rows always hang off `enrollment_id`, never bare `user_id` | FK, no nullable user path |
 | A teacher may mutate course content only if assigned to that course | `CourseAccessGuard` |

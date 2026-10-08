@@ -551,4 +551,12 @@ Completed steps F1–F4 of Phase 5 (Learning Path) per `docs/PLAN.md` §3 and `A
   - `features/lesson/lesson-page.tsx`: header displays `StepDots` and reading time progress ring/count; footer replaces "Mark done" button with steps status panel and nextAction prompt (`KEEP_READING`, `TAKE_TEST`, `PRACTICE`, `ALL_DONE`) when `pathEnabled: true`.
   - Localization in `uz.json`, `ru.json`, and `en.json` with identical keys and zero ASCII apostrophes for Uzbek Latin script.
 
+- **F7 Learning Path: Administrator's Side**:
+  - `features/admin/learning-path-queries.ts`: typed queries/mutations `useLearningPathConfigQuery`, `useSaveLearningPathConfig`, `useAttemptGrantsQuery`, `useGrantAttempt`; pure conversion and validation helpers `isoToCampusDatetimeLocal`, `campusDatetimeLocalToIso`, `validateGrantReason`, and `buildLearningPathConfigRequest`.
+  - `features/admin/learning-path-queries.test.ts`: vitest tests for all pure date conversion, reason validation, and request builder helpers.
+  - `features/admin/learning-path-page.tsx`: dedicated Admin page at `/admin/learning-path` with course picker, `LearningPathCard` (enable switch with waiver warning confirmation dialog, midterm quiz picker, anchor lesson picker, `midtermOpensAt` campus timezone picker), `ExtraAttemptsSection` (paginated table of grants), and `GiveAttemptDialog` (quiz picker, student enrollment picker, reason input min 5 chars, human error reporting).
+  - `features/admin/course-admin-page.tsx`: embedded `LearningPathCard` alongside components and locales; added "Give attempt" action trigger to `Enrollments` student table rows opening `GiveAttemptDialog` prefilled with the student.
+  - `app/shell/nav.ts` & `app/router.tsx`: added `learningPath` (`Route` icon) to Admin nav and lazy-loaded `/admin/learning-path` route.
+  - `shared/i18n/{uz,ru,en}.json`: added `nav.learningPath` and `admin.learningPath.*` catalogues across uz, ru, and en with exact key parity and correct Uzbek Latin modifier letters (U+02BB `ʻ`, U+02BC `ʼ`).
+
 

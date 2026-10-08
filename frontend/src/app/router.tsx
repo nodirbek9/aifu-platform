@@ -202,6 +202,12 @@ const adminRoutes: RouteObject[] = [
     path: 'audit',
     lazy: async () => ({ Component: (await import('@/features/admin/audit-page')).AuditPage }),
   },
+  {
+    path: 'learning-path',
+    lazy: async () => ({
+      Component: (await import('@/features/admin/learning-path-page')).LearningPathPage,
+    }),
+  },
 ]
 
 // The design-system catalogue exists in development builds only.

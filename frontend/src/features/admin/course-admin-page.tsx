@@ -22,6 +22,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow } fro
 import { Textarea } from '@/shared/ui/textarea'
 import { useToast } from '@/shared/ui/toast'
 import { PUBLICATION_TONE } from './model'
+import { GiveAttemptDialog, LearningPathCard } from './learning-path-page'
 import { useAllGroupsQuery } from './reference-queries'
 import {
   useAddComponent,
@@ -137,6 +138,7 @@ export function CourseAdminPage() {
         <div className="grid grid-cols-1 gap-6">
           <Components course={data} />
           <RequiredLocales key={(data.requiredLocales ?? []).join()} course={data} />
+          <LearningPathCard courseId={courseId} />
         </div>
       </div>
       <Enrollments courseId={courseId} />
@@ -569,6 +571,7 @@ function Enrollments({ courseId }: { courseId: string }) {
   const importCsv = useImportEnrollments(courseId)
   const [outcome, setOutcome] = useState<(EnrollResult | CsvImportRow)[]>()
   const [csvFailures, setCsvFailures] = useState<CsvImportRow[]>([])
+  const [giveAttemptEnrollmentId, setGiveAttemptEnrollmentId] = useState<string | null>(null)
   const summary = (rows: (EnrollResult | CsvImportRow)[]) => {
     const done = rows.filter((row) => row.success === true).length
     return t('admin.enrollOutcome', { done, failed: rows.length - done })
@@ -694,6 +697,9 @@ function Enrollments({ courseId }: { courseId: string }) {
                 <TableHeaderCell>{t('gradebook.student')}</TableHeaderCell>
                 <TableHeaderCell>{t('admin.status')}</TableHeaderCell>
                 <TableHeaderCell>{t('admin.enrolledAt')}</TableHeaderCell>
+                <TableHeaderCell className="text-right">
+                  {t('admin.learningPath.tableActions')}
+                </TableHeaderCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -708,11 +714,31 @@ function Enrollments({ courseId }: { courseId: string }) {
                   <TableCell>
                     {row.enrolledAt === undefined ? '' : formatRelativeTime(row.enrolledAt, locale)}
                   </TableCell>
+                  <TableCell className="text-right">
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => {
+                        setGiveAttemptEnrollmentId(row.id ?? null)
+                      }}
+                    >
+                      {t('admin.learningPath.giveAttemptAction')}
+                    </Button>
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </div>
+        {giveAttemptEnrollmentId !== null && (
+          <GiveAttemptDialog
+            courseId={courseId}
+            initialEnrollmentId={giveAttemptEnrollmentId}
+            onClose={() => {
+              setGiveAttemptEnrollmentId(null)
+            }}
+          />
+        )}
       </CardContent>
     </Card>
   )
