@@ -260,6 +260,14 @@ Student groups and rosters (staff)
 | GET | `/groups/{id}` | One group |  |  | 200 GroupView |
 | GET | `/groups/{id}/students` | The group's roster, by name |  |  | 200 GroupStudentView[] |
 
+## Lesson reading
+
+Reading heartbeat tracking for the learning path
+
+| Method | Path | What it does | Query | Body | Returns |
+|---|---|---|---|---|---|
+| POST | `/lessons/{lessonId}/reading` | Record a reading heartbeat on a lesson |  | ReadingBeatRequest | 200 LessonPathView |
+
 ## Lessons
 
 A module's published lessons, and one lesson's full content

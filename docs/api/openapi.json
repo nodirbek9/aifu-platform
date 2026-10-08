@@ -3234,6 +3234,28 @@
           }
         }
       },
+      "LessonPathView" : {
+        "description" : "Learning path state of the lesson returned after a reading heartbeat",
+        "properties" : {
+          "activeReadingSeconds" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "open" : {
+            "type" : "boolean"
+          },
+          "reachedEnd" : {
+            "type" : "boolean"
+          },
+          "requiredReadingSeconds" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "steps" : {
+            "$ref" : "#/components/schemas/LessonSteps"
+          }
+        }
+      },
       "LessonProgressView" : {
         "description" : "The caller's progress on one lesson, after recording it",
         "properties" : {
@@ -3281,6 +3303,22 @@
             "type" : "string"
           },
           "title" : {
+            "type" : "string"
+          }
+        }
+      },
+      "LessonSteps" : {
+        "properties" : {
+          "lecture" : {
+            "enum" : [ "DONE", "TODO", "NONE" ],
+            "type" : "string"
+          },
+          "practice" : {
+            "enum" : [ "DONE", "TODO", "NONE" ],
+            "type" : "string"
+          },
+          "test" : {
+            "enum" : [ "DONE", "TODO", "NONE" ],
             "type" : "string"
           }
         }
@@ -5304,6 +5342,19 @@
           },
           "title" : {
             "type" : "string"
+          }
+        }
+      },
+      "ReadingBeatRequest" : {
+        "description" : "Reading heartbeat payload sent periodically by the client",
+        "properties" : {
+          "atEnd" : {
+            "type" : "boolean"
+          },
+          "maxBlockPosition" : {
+            "format" : "int32",
+            "minimum" : 0,
+            "type" : "integer"
           }
         }
       },
@@ -13850,6 +13901,58 @@
         "tags" : [ "My progress" ]
       }
     },
+    "/api/v1/lessons/{lessonId}/reading" : {
+      "post" : {
+        "description" : "Tracks active reading time, sticky end-reached state, and reevaluates lesson progress",
+        "operationId" : "recordReadingBeat",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "lessonId",
+          "required" : true,
+          "schema" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ReadingBeatRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/LessonPathView"
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description" : "Any failure (4xx, 5xx): the error envelope"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "summary" : "Record a reading heartbeat on a lesson",
+        "tags" : [ "Lesson reading" ]
+      }
+    },
     "/api/v1/modules/{moduleId}/lessons" : {
       "get" : {
         "operationId" : "list_10",
@@ -20507,6 +20610,9 @@
   }, {
     "description" : "Manual entry, override, and the course grade roster",
     "name" : "Teacher: grades"
+  }, {
+    "description" : "Reading heartbeat tracking for the learning path",
+    "name" : "Lesson reading"
   }, {
     "description" : "The caller's own in-app notifications",
     "name" : "Notifications"

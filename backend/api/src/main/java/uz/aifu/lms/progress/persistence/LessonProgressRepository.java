@@ -1,5 +1,6 @@
 package uz.aifu.lms.progress.persistence;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -44,4 +45,18 @@ public interface LessonProgressRepository extends JpaRepository<LessonProgress, 
             @Param("courseId") UUID courseId,
             @Param("publishedStatus") PublicationStatus publishedStatus,
             @Param("completedStatus") ProgressStatus completedStatus);
+
+    /**
+     * Checks if any other lesson belonging to the same enrollment has received a heartbeat since
+     * the given cutoff. Used by the reading heartbeat to enforce single-clock reading across
+     * parallel tabs.
+     */
+    @Query(
+            "select case when count(lp) > 0 then true else false end from LessonProgress lp "
+                    + "where lp.enrollment.id = :enrollmentId and lp.lesson.id <> :lessonId "
+                    + "and lp.lastHeartbeatAt is not null and lp.lastHeartbeatAt >= :since")
+    boolean hasOtherHeartbeatSince(
+            @Param("enrollmentId") UUID enrollmentId,
+            @Param("lessonId") UUID lessonId,
+            @Param("since") Instant since);
 }

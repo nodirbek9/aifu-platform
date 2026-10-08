@@ -1,6 +1,7 @@
 package uz.aifu.lms.progress.api.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 import java.math.BigDecimal;
@@ -9,11 +10,23 @@ import java.util.List;
 import java.util.UUID;
 import uz.aifu.lms.academics.domain.SessionType;
 import uz.aifu.lms.curriculum.domain.ActivityType;
+import uz.aifu.lms.progress.app.PathRules.LessonSteps;
 import uz.aifu.lms.progress.domain.ProgressStatus;
 
 public final class ProgressDtos {
 
     private ProgressDtos() {}
+
+    @Schema(description = "Reading heartbeat payload sent periodically by the client")
+    public record ReadingBeatRequest(@Min(0) int maxBlockPosition, boolean atEnd) {}
+
+    @Schema(description = "Learning path state of the lesson returned after a reading heartbeat")
+    public record LessonPathView(
+            LessonSteps steps,
+            int activeReadingSeconds,
+            int requiredReadingSeconds,
+            boolean reachedEnd,
+            boolean open) {}
 
     @Schema(
             description =

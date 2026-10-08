@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import uz.aifu.lms.academics.domain.SessionType;
+import uz.aifu.lms.common.domain.PublicationStatus;
 import uz.aifu.lms.common.error.DomainException;
 import uz.aifu.lms.common.error.ErrorCode;
 import uz.aifu.lms.common.error.Exceptions;
@@ -25,6 +26,7 @@ import uz.aifu.lms.curriculum.app.CourseOutlineService;
 import uz.aifu.lms.curriculum.app.CourseOutlineService.OutlineLesson;
 import uz.aifu.lms.curriculum.app.CourseOutlineService.OutlineModule;
 import uz.aifu.lms.curriculum.domain.Activity;
+import uz.aifu.lms.curriculum.domain.Lesson;
 import uz.aifu.lms.curriculum.domain.PathStep;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.Enrollment;
@@ -61,6 +63,7 @@ public class LearningPathService {
     private final ActivityProgressRepository activityProgress;
     private final EnrollmentService enrollments;
     private final Clock clock;
+    private final RollupWriter rollupWriter;
 
     public LearningPathService(
             CourseLearningPathRepository pathRepository,
@@ -69,7 +72,8 @@ public class LearningPathService {
             LessonProgressRepository lessonProgress,
             ActivityProgressRepository activityProgress,
             EnrollmentService enrollments,
-            Clock clock) {
+            Clock clock,
+            RollupWriter rollupWriter) {
         this.pathRepository = pathRepository;
         this.outlines = outlines;
         this.activities = activities;
@@ -77,6 +81,7 @@ public class LearningPathService {
         this.activityProgress = activityProgress;
         this.enrollments = enrollments;
         this.clock = clock;
+        this.rollupWriter = rollupWriter;
     }
 
     /**
@@ -334,6 +339,99 @@ public class LearningPathService {
 
         if (activity.getLesson() != null) {
             requireLessonOpen(activity.getLesson().getId(), enrollmentId);
+        }
+    }
+
+    /** Returns whether learning path enforcement is enabled for the course. */
+    @Transactional(readOnly = true)
+    public boolean isPathEnabled(UUID courseId) {
+        if (courseId == null) {
+            return false;
+        }
+        return pathRepository
+                .findByCourseId(courseId)
+                .map(CourseLearningPath::isEnabled)
+                .orElse(false);
+    }
+
+    /**
+     * Reevaluates a lesson's completion status under the learning path rules (Phase 5, B7).
+     *
+     * <p>If reading is green (reached_end_at is set AND active_reading_seconds >=
+     * required_reading_seconds, which sets read_completed_at) and every present step (published
+     * TEST activity, published PRACTICE activity) is completed, marks the lesson COMPLETED via
+     * recordAccess and recomputes module and course roll-ups via {@link RollupWriter}. Never
+     * downgrades.
+     */
+    @Transactional
+    public void reevaluateLesson(Enrollment enrollment, Lesson lesson) {
+        if (enrollment == null || lesson == null) {
+            return;
+        }
+        if (!isPathEnabled(enrollment.getCourse().getId())) {
+            return;
+        }
+        LessonProgress lp =
+                lessonProgress
+                        .findByEnrollment_IdAndLesson_Id(enrollment.getId(), lesson.getId())
+                        .orElse(null);
+        if (lp == null || lp.getStatus() == ProgressStatus.COMPLETED) {
+            return;
+        }
+        Instant now = clock.instant();
+        if (!lp.isReadCompleted()) {
+            if (lp.isReachedEnd()
+                    && lp.getRequiredReadingSeconds() != null
+                    && lp.getActiveReadingSeconds() >= lp.getRequiredReadingSeconds()) {
+                lp.markReadCompleted(now);
+                lessonProgress.saveAndFlush(lp);
+            }
+        }
+        if (!lp.isReadCompleted()) {
+            return;
+        }
+
+        List<Activity> lessonActs =
+                activities.listByLesson(lesson.getId()).stream()
+                        .filter(a -> a.getStatus() == PublicationStatus.PUBLISHED)
+                        .toList();
+
+        Activity testAct =
+                lessonActs.stream()
+                        .filter(a -> a.getPathStep() == PathStep.TEST)
+                        .findFirst()
+                        .orElse(null);
+
+        Activity practiceAct =
+                lessonActs.stream()
+                        .filter(a -> a.getPathStep() == PathStep.PRACTICE)
+                        .findFirst()
+                        .orElse(null);
+
+        boolean testDone = true;
+        if (testAct != null) {
+            testDone =
+                    activityProgress
+                            .findByEnrollment_IdAndActivity_Id(enrollment.getId(), testAct.getId())
+                            .map(ap -> ap.getStatus() == ActivityProgressStatus.COMPLETED)
+                            .orElse(false);
+        }
+
+        boolean practiceDone = true;
+        if (practiceAct != null) {
+            practiceDone =
+                    activityProgress
+                            .findByEnrollment_IdAndActivity_Id(
+                                    enrollment.getId(), practiceAct.getId())
+                            .map(ap -> ap.getStatus() == ActivityProgressStatus.COMPLETED)
+                            .orElse(false);
+        }
+
+        if (testDone && practiceDone) {
+            lp.recordAccess(now, true, 0L);
+            lessonProgress.saveAndFlush(lp);
+            rollupWriter.recomputeModuleProgress(enrollment, lesson.getModule(), now);
+            rollupWriter.recomputeCourseProgress(enrollment, enrollment.getCourse().getId(), now);
         }
     }
 }

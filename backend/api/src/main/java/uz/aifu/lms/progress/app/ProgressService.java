@@ -23,7 +23,6 @@ import uz.aifu.lms.coding.app.SubmissionService;
 import uz.aifu.lms.coding.domain.Submission;
 import uz.aifu.lms.coding.domain.SubmissionStatus;
 import uz.aifu.lms.coding.domain.Verdict;
-import uz.aifu.lms.common.domain.PublicationStatus;
 import uz.aifu.lms.common.error.ErrorCode;
 import uz.aifu.lms.common.error.Exceptions;
 import uz.aifu.lms.common.events.QuizAttemptGradedEvent;
@@ -35,7 +34,6 @@ import uz.aifu.lms.curriculum.domain.Lesson;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.Enrollment;
 import uz.aifu.lms.progress.domain.ActivityProgress;
-import uz.aifu.lms.progress.domain.ActivityProgressStatus;
 import uz.aifu.lms.progress.domain.CourseProgress;
 import uz.aifu.lms.progress.domain.LessonProgress;
 import uz.aifu.lms.progress.domain.ModuleProgress;
@@ -77,6 +75,8 @@ public class ProgressService {
     private final EnrollmentService enrollments;
     private final SubmissionService submissions;
     private final Clock clock;
+    private final RollupWriter rollupWriter;
+    private final LearningPathService learningPathService;
     private final ProgressService self;
 
     public ProgressService(
@@ -89,6 +89,8 @@ public class ProgressService {
             EnrollmentService enrollments,
             SubmissionService submissions,
             Clock clock,
+            RollupWriter rollupWriter,
+            LearningPathService learningPathService,
             @Lazy ProgressService self) {
         this.courseProgress = courseProgress;
         this.moduleProgress = moduleProgress;
@@ -99,6 +101,8 @@ public class ProgressService {
         this.enrollments = enrollments;
         this.submissions = submissions;
         this.clock = clock;
+        this.rollupWriter = rollupWriter;
+        this.learningPathService = learningPathService;
         this.self = self;
     }
 
@@ -137,6 +141,12 @@ public class ProgressService {
         Enrollment enrollment = enrollments.requireActiveEnrollment(courseId, studentUserId);
         Instant now = clock.instant();
 
+        if (markCompleted && learningPathService.isPathEnabled(courseId)) {
+            throw Exceptions.validation(
+                    "Direct lesson completion is disabled for courses with an enabled learning path; "
+                            + "use the reading heartbeat and complete all lesson activities");
+        }
+
         LessonProgress lp =
                 lessonProgress
                         .findByEnrollment_IdAndLesson_Id(enrollment.getId(), lessonId)
@@ -150,46 +160,11 @@ public class ProgressService {
     }
 
     private void recomputeModuleProgress(Enrollment enrollment, CourseModule module, Instant now) {
-        ModuleProgress mp =
-                moduleProgress
-                        .findByEnrollment_IdAndModule_Id(enrollment.getId(), module.getId())
-                        .orElseGet(() -> new ModuleProgress(enrollment, module));
-        long total = lessons.countRequiredPublished(module.getId());
-        long completed =
-                lessonProgress.countCompletedRequiredInModule(
-                        enrollment.getId(),
-                        module.getId(),
-                        PublicationStatus.PUBLISHED,
-                        ProgressStatus.COMPLETED);
-        mp.recordAccess(now);
-        mp.applyRollup((int) total, (int) completed, now);
-        moduleProgress.saveAndFlush(mp);
+        rollupWriter.recomputeModuleProgress(enrollment, module, now);
     }
 
     private void recomputeCourseProgress(Enrollment enrollment, UUID courseId, Instant now) {
-        CourseProgress cp =
-                courseProgress
-                        .findById(enrollment.getId())
-                        .orElseGet(() -> new CourseProgress(enrollment));
-        long lessonsTotal = lessons.countRequiredPublishedInCourse(courseId);
-        long lessonsCompleted =
-                lessonProgress.countCompletedRequiredInCourse(
-                        enrollment.getId(),
-                        courseId,
-                        PublicationStatus.PUBLISHED,
-                        ProgressStatus.COMPLETED);
-        long activitiesTotal = activities.countPublished(courseId);
-        long activitiesCompleted =
-                activityProgress.countCompletedInCourse(
-                        enrollment.getId(), courseId, ActivityProgressStatus.COMPLETED);
-        cp.recordAccess(now);
-        cp.applyRollup(
-                (int) lessonsTotal,
-                (int) lessonsCompleted,
-                (int) activitiesTotal,
-                (int) activitiesCompleted,
-                now);
-        courseProgress.saveAndFlush(cp);
+        rollupWriter.recomputeCourseProgress(enrollment, courseId, now);
     }
 
     // ---------------------------------------------------------------- assessment integration
@@ -231,6 +206,10 @@ public class ProgressService {
 
         UUID courseId = enrollments.courseIdOf(enrollment.getId());
         recomputeCourseProgress(enrollment, courseId, event.gradedAt());
+
+        if (activity.getLesson() != null && learningPathService.isPathEnabled(courseId)) {
+            learningPathService.reevaluateLesson(enrollment, activity.getLesson());
+        }
     }
 
     // ---------------------------------------------------------------- coding integration
@@ -280,6 +259,10 @@ public class ProgressService {
 
             UUID courseId = enrollments.courseIdOf(enrollment.getId());
             recomputeCourseProgress(enrollment, courseId, now);
+
+            if (activity.getLesson() != null && learningPathService.isPathEnabled(courseId)) {
+                learningPathService.reevaluateLesson(enrollment, activity.getLesson());
+            }
         }
         // FAILED/CANCELLED submissions (sandbox infra failure, or an abandoned run) carry no
         // meaningful score — marked synced so the sweeper stops reprocessing them, but no attempt
