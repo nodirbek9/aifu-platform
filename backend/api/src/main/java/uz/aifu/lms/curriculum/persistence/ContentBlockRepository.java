@@ -33,4 +33,11 @@ public interface ContentBlockRepository extends JpaRepository<ContentBlock, UUID
     @Query(
             "select coalesce(max(x.position), -1) + 1 from ContentBlock x where x.lesson.id = :parentId and x.deletedAt is null")
     int nextPosition(@Param("parentId") UUID parentId);
+
+    /**
+     * The highest position among live student-visible blocks in the given lesson, or -1 if none.
+     */
+    @Query(
+            "select coalesce(max(x.position), -1) from ContentBlock x where x.lesson.id = :lessonId and x.deletedAt is null and x.visibility != uz.aifu.lms.curriculum.domain.BlockVisibility.TEACHER_ONLY")
+    int findLastVisibleBlockPosition(@Param("lessonId") UUID lessonId);
 }

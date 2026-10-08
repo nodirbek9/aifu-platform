@@ -84,6 +84,10 @@ public class Activity extends VersionedEntity {
     @Column(name = "status", nullable = false)
     private PublicationStatus status = PublicationStatus.DRAFT;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "path_step")
+    private PathStep pathStep;
+
     protected Activity() {}
 
     public Activity(
@@ -234,5 +238,13 @@ public class Activity extends VersionedEntity {
 
     public PublicationStatus getStatus() {
         return status;
+    }
+
+    public PathStep getPathStep() {
+        return pathStep;
+    }
+
+    public void setPathStep(PathStep pathStep) {
+        this.pathStep = pathStep;
     }
 }

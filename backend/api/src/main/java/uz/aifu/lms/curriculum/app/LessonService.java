@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,7 @@ import uz.aifu.lms.curriculum.domain.Lesson;
 import uz.aifu.lms.curriculum.domain.LessonLearningOutcome;
 import uz.aifu.lms.curriculum.domain.LessonPrerequisite;
 import uz.aifu.lms.curriculum.domain.LessonTranslation;
+import uz.aifu.lms.curriculum.persistence.ContentBlockRepository;
 import uz.aifu.lms.curriculum.persistence.LessonLearningOutcomeRepository;
 import uz.aifu.lms.curriculum.persistence.LessonPrerequisiteRepository;
 import uz.aifu.lms.curriculum.persistence.LessonRepository;
@@ -46,6 +48,31 @@ public class LessonService {
     private final TranslationCompletenessValidator translationValidator;
     private final AuditService audit;
     private final Clock clock;
+    private final ContentBlockRepository contentBlocks;
+
+    @Autowired
+    public LessonService(
+            LessonRepository lessons,
+            LessonTranslationRepository translations,
+            LessonLearningOutcomeRepository outcomeLinks,
+            LessonPrerequisiteRepository prerequisites,
+            ModuleService modules,
+            SubjectService subjects,
+            TranslationCompletenessValidator translationValidator,
+            AuditService audit,
+            Clock clock,
+            ContentBlockRepository contentBlocks) {
+        this.lessons = lessons;
+        this.translations = translations;
+        this.outcomeLinks = outcomeLinks;
+        this.prerequisites = prerequisites;
+        this.modules = modules;
+        this.subjects = subjects;
+        this.translationValidator = translationValidator;
+        this.audit = audit;
+        this.clock = clock;
+        this.contentBlocks = contentBlocks;
+    }
 
     public LessonService(
             LessonRepository lessons,
@@ -57,15 +84,17 @@ public class LessonService {
             TranslationCompletenessValidator translationValidator,
             AuditService audit,
             Clock clock) {
-        this.lessons = lessons;
-        this.translations = translations;
-        this.outcomeLinks = outcomeLinks;
-        this.prerequisites = prerequisites;
-        this.modules = modules;
-        this.subjects = subjects;
-        this.translationValidator = translationValidator;
-        this.audit = audit;
-        this.clock = clock;
+        this(
+                lessons,
+                translations,
+                outcomeLinks,
+                prerequisites,
+                modules,
+                subjects,
+                translationValidator,
+                audit,
+                clock,
+                null);
     }
 
     /**
@@ -371,6 +400,14 @@ public class LessonService {
                 ip,
                 null,
                 Map.of("transition", "prerequisite-removed"));
+    }
+
+    @Transactional(readOnly = true)
+    public int lastVisibleBlockPosition(UUID lessonId) {
+        if (contentBlocks == null) {
+            return -1;
+        }
+        return contentBlocks.findLastVisibleBlockPosition(lessonId);
     }
 
     private Set<String> availableLocales(UUID lessonId) {

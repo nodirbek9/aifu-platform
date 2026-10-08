@@ -8,6 +8,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import java.time.Duration;
 import java.time.Instant;
 import uz.aifu.lms.common.domain.UpdatableEntity;
 import uz.aifu.lms.common.util.Guards;
@@ -51,6 +52,27 @@ public class LessonProgress extends UpdatableEntity {
 
     @Column(name = "completed_at")
     private Instant completedAt;
+
+    @Column(name = "active_reading_seconds", nullable = false)
+    private int activeReadingSeconds = 0;
+
+    @Column(name = "last_heartbeat_at")
+    private Instant lastHeartbeatAt;
+
+    @Column(name = "max_block_position")
+    private Integer maxBlockPosition;
+
+    @Column(name = "reached_end_at")
+    private Instant reachedEndAt;
+
+    @Column(name = "required_reading_seconds")
+    private Integer requiredReadingSeconds;
+
+    @Column(name = "read_completed_at")
+    private Instant readCompletedAt;
+
+    @Column(name = "path_waived_at")
+    private Instant pathWaivedAt;
 
     protected LessonProgress() {}
 
@@ -107,5 +129,114 @@ public class LessonProgress extends UpdatableEntity {
 
     public Instant getCompletedAt() {
         return completedAt;
+    }
+
+    public int creditReading(Instant now, Duration maxCredit, Duration minGap) {
+        return creditReading(
+                now,
+                (int) Guards.required(maxCredit, "maxCredit").toSeconds(),
+                (int) Guards.required(minGap, "minGap").toSeconds());
+    }
+
+    public int creditReading(Instant now, int maxCreditSeconds, int minGapSeconds) {
+        Guards.required(now, "now");
+        if (firstAccessedAt == null) {
+            firstAccessedAt = now;
+        }
+        lastAccessedAt = now;
+        if (status == ProgressStatus.NOT_STARTED) {
+            status = ProgressStatus.IN_PROGRESS;
+        }
+        if (lastHeartbeatAt == null) {
+            lastHeartbeatAt = now;
+            return 0;
+        }
+        long gapSeconds = Duration.between(lastHeartbeatAt, now).toSeconds();
+        if (gapSeconds < minGapSeconds) {
+            return 0;
+        }
+        int credit = (int) Math.min(gapSeconds, maxCreditSeconds);
+        if (credit < 0) {
+            credit = 0;
+        }
+        activeReadingSeconds += credit;
+        timeSpentSeconds += credit;
+        lastHeartbeatAt = now;
+        return credit;
+    }
+
+    public void markReachedEnd(Instant now) {
+        if (this.reachedEndAt == null) {
+            this.reachedEndAt = Guards.required(now, "now");
+        }
+    }
+
+    public void markReachedEnd(Instant now, int blockPosition) {
+        updateMaxBlockPosition(blockPosition);
+        markReachedEnd(now);
+    }
+
+    public void updateMaxBlockPosition(int blockPosition) {
+        if (this.maxBlockPosition == null || blockPosition > this.maxBlockPosition) {
+            this.maxBlockPosition = blockPosition;
+        }
+    }
+
+    public void waive(Instant now) {
+        if (this.pathWaivedAt == null) {
+            this.pathWaivedAt = Guards.required(now, "now");
+        }
+    }
+
+    public void markReadCompleted(Instant now) {
+        if (this.readCompletedAt == null) {
+            this.readCompletedAt = Guards.required(now, "now");
+        }
+    }
+
+    public void snapshotRequiredReadingSeconds(int seconds) {
+        if (this.requiredReadingSeconds == null) {
+            this.requiredReadingSeconds = seconds;
+        }
+    }
+
+    public int getActiveReadingSeconds() {
+        return activeReadingSeconds;
+    }
+
+    public Instant getLastHeartbeatAt() {
+        return lastHeartbeatAt;
+    }
+
+    public Integer getMaxBlockPosition() {
+        return maxBlockPosition;
+    }
+
+    public Instant getReachedEndAt() {
+        return reachedEndAt;
+    }
+
+    public Integer getRequiredReadingSeconds() {
+        return requiredReadingSeconds;
+    }
+
+    public Instant getReadCompletedAt() {
+        return readCompletedAt;
+    }
+
+    public Instant getPathWaivedAt() {
+        return pathWaivedAt;
+    }
+
+    public boolean isReachedEnd() {
+        return reachedEndAt != null;
+    }
+
+    public boolean isReadCompleted() {
+        return readCompletedAt != null;
+    }
+
+    public boolean isWaived() {
+        return pathWaivedAt != null;
     }
 }
