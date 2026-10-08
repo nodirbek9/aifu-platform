@@ -5,7 +5,8 @@
   "description": "Imports the lessons of content/ into the platform through its API (docs/06-CONTENT-GUIDE.md)",
   "scripts": {
     "check": "node import.mjs ../../content --all --dry-run",
-    "examples": "node run-examples.mjs"
+    "examples": "node run-examples.mjs",
+    "test": "node --test assess.test.mjs"
   },
   "dependencies": {
     "marked": "18.0.14"
