@@ -36,9 +36,14 @@ export function quizIdByCode(code: string): string {
   return id
 }
 
-/** Removes the student's attempts at one quiz, so a flow always starts from "no attempts yet". */
+/**
+ * Removes the student's attempts at one quiz, so a flow always starts from "no attempts yet", and
+ * puts the quiz back to the settings the quiz flows were written for: three attempts, every
+ * question and the review after each attempt (the dev seed V914 of the learning path sets two attempts and a random draw of five).
+ */
 export function clearQuizAttempts(username: string, quizCode: string): void {
   runSql(`
+    update quizzes set max_attempts = 3, question_pool_size = null, reveal_policy = 'AFTER_ATTEMPT' where code = '${quizCode}';
     delete from quiz_attempts
     where quiz_id = (select id from quizzes where code = '${quizCode}')
       and enrollment_id in (${enrollmentsOf(username)})`)

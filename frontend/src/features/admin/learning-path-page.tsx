@@ -240,7 +240,7 @@ export function LearningPathCard({ courseId, courseTitle }: { courseId: string; 
           <Switch
             checked={enabled}
             onCheckedChange={handleToggle}
-            aria-label={t('admin.learningPath.enableSwitchLabel')}
+            label={<span className="sr-only">{t('admin.learningPath.enableSwitchLabel')}</span>}
           />
         </div>
 

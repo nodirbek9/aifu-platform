@@ -36,7 +36,9 @@ test.describe('the quiz (S-06)', () => {
     await page.getByRole('link', { name: new RegExp(QUIZ_TITLE) }).click()
     await expect(page.getByRole('heading', { level: 1, name: QUIZ_TITLE })).toBeVisible()
     await expect(page.getByText(uz.quiz.minutes.replace('{{count}}', '10'))).toBeVisible()
-    await expect(page.getByText('0 / 3')).toBeVisible()
+    await expect(
+      page.getByText(uz.quiz.attemptNofM.replace('{{current}}', '1').replace('{{total}}', '3')),
+    ).toBeVisible()
 
     await startQuiz(page)
 
@@ -108,7 +110,9 @@ test.describe('the quiz (S-06)', () => {
     // back on the quiz page the attempt is listed, and one attempt is used
     await page.getByRole('link', { name: uz.quiz.toQuizPage }).click()
     await expect(page.getByRole('link', { name: /1-urinish.*9 \/ 10/ })).toBeVisible()
-    await expect(page.getByText('1 / 3')).toBeVisible()
+    await expect(
+      page.getByText(uz.quiz.attemptNofM.replace('{{current}}', '2').replace('{{total}}', '3')),
+    ).toBeVisible()
     await expect(page.getByRole('button', { name: uz.quiz.startAgain })).toBeVisible()
   })
 
