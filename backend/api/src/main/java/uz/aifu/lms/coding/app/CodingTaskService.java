@@ -4,6 +4,7 @@ import java.time.Clock;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -28,6 +29,9 @@ import uz.aifu.lms.common.domain.PublicationStatus;
 import uz.aifu.lms.common.error.ErrorCode;
 import uz.aifu.lms.common.error.Exceptions;
 import uz.aifu.lms.common.i18n.LocaleCode;
+import uz.aifu.lms.curriculum.app.ActivityService;
+import uz.aifu.lms.curriculum.domain.Activity;
+import uz.aifu.lms.curriculum.domain.ActivityType;
 
 /** Coding task administration (docs/planning/phase-plan.md Phase 8). */
 @Service
@@ -40,6 +44,7 @@ public class CodingTaskService {
     private final TranslationCompletenessValidator translationValidator;
     private final AuditService audit;
     private final Clock clock;
+    private final Optional<ActivityService> activities;
 
     public CodingTaskService(
             CodingTaskRepository codingTasks,
@@ -48,7 +53,8 @@ public class CodingTaskService {
             CourseService courses,
             TranslationCompletenessValidator translationValidator,
             AuditService audit,
-            Clock clock) {
+            Clock clock,
+            Optional<ActivityService> activities) {
         this.codingTasks = codingTasks;
         this.translations = translations;
         this.testCases = testCases;
@@ -56,6 +62,14 @@ public class CodingTaskService {
         this.translationValidator = translationValidator;
         this.audit = audit;
         this.clock = clock;
+        this.activities = activities;
+    }
+
+    @Transactional(readOnly = true)
+    public Optional<UUID> findPublishedActivityId(UUID codingTaskId) {
+        return activities
+                .flatMap(a -> a.findSolePublishedFor(ActivityType.CODING_TASK, codingTaskId))
+                .map(Activity::getId);
     }
 
     @Transactional(readOnly = true)

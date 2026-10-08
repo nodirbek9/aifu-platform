@@ -82,6 +82,7 @@ public class AttemptService {
     private final ApplicationEventPublisher events;
     private final Clock clock;
     private final AttemptService self;
+    private final Optional<uz.aifu.lms.iam.app.access.LessonGate> lessonGate;
 
     public AttemptService(
             QuizAttemptRepository attempts,
@@ -96,7 +97,8 @@ public class AttemptService {
             QuestionGraderRegistry graders,
             ApplicationEventPublisher events,
             Clock clock,
-            @Lazy AttemptService self) {
+            @Lazy AttemptService self,
+            Optional<uz.aifu.lms.iam.app.access.LessonGate> lessonGate) {
         this.attempts = attempts;
         this.attemptQuestions = attemptQuestions;
         this.selectedOptions = selectedOptions;
@@ -110,6 +112,7 @@ public class AttemptService {
         this.events = events;
         this.clock = clock;
         this.self = self;
+        this.lessonGate = lessonGate;
     }
 
     // ---------------------------------------------------------------- start
@@ -148,6 +151,15 @@ public class AttemptService {
         }
 
         Activity activity = resolveActivity(activityId, quizId);
+        if (activity != null) {
+            if (activity.getAvailableFrom() != null && now.isBefore(activity.getAvailableFrom())) {
+                throw Exceptions.rule(
+                        ErrorCode.ACTIVITY_NOT_AVAILABLE, "Activity is not yet available");
+            }
+            if (lessonGate.isPresent()) {
+                lessonGate.get().requireActivityOpen(activity.getId(), enrollment.getId());
+            }
+        }
         Instant expiresAt =
                 quiz.getTimeLimitSeconds() == null
                         ? null

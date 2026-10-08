@@ -33,6 +33,7 @@ import uz.aifu.lms.curriculum.domain.Activity;
 import uz.aifu.lms.curriculum.domain.ActivityType;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.Enrollment;
+import uz.aifu.lms.iam.app.access.LessonGate;
 
 /**
  * Submission creation guards (docs/planning/phase-plan.md Phase 8,
@@ -51,6 +52,7 @@ public class SubmissionService {
     private final ActivityService activities;
     private final ExecutionProperties executionProperties;
     private final Clock clock;
+    private final Optional<LessonGate> lessonGate;
     private final Cache<UUID, Bucket> rateLimitBuckets =
             Caffeine.newBuilder()
                     .maximumSize(50_000)
@@ -64,7 +66,8 @@ public class SubmissionService {
             EnrollmentService enrollments,
             ActivityService activities,
             ExecutionProperties executionProperties,
-            Clock clock) {
+            Clock clock,
+            Optional<LessonGate> lessonGate) {
         this.submissions = submissions;
         this.codingTasks = codingTasks;
         this.taskLanguages = taskLanguages;
@@ -72,6 +75,7 @@ public class SubmissionService {
         this.activities = activities;
         this.executionProperties = executionProperties;
         this.clock = clock;
+        this.lessonGate = lessonGate;
     }
 
     @Transactional(readOnly = true)
@@ -217,6 +221,9 @@ public class SubmissionService {
         }
 
         Activity activity = resolveActivity(activityId, codingTaskId);
+        if (activity != null && lessonGate.isPresent()) {
+            lessonGate.get().requireActivityOpen(activity.getId(), enrollment.getId());
+        }
         Instant now = clock.instant();
         Submission submission =
                 new Submission(

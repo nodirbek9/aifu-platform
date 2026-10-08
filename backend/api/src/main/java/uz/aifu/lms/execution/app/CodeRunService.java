@@ -13,6 +13,7 @@ import java.util.EnumSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import org.slf4j.Logger;
@@ -43,6 +44,7 @@ import uz.aifu.lms.execution.persistence.CodeRunRepository;
 import uz.aifu.lms.execution.persistence.CodeRunTestResultRepository;
 import uz.aifu.lms.iam.app.access.AccessGuard;
 import uz.aifu.lms.iam.app.access.CourseAccess;
+import uz.aifu.lms.iam.app.access.LessonGate;
 
 /**
  * Ungraded runs (product spec S-04.4, S-05.4, S-05.5, T-05). Like a submission, a run is only
@@ -62,6 +64,7 @@ public class CodeRunService {
     private final AccessGuard accessGuard;
     private final ExecutionProperties properties;
     private final Clock clock;
+    private final Optional<LessonGate> lessonGate;
     private final Cache<UUID, Bucket> rateLimitBuckets =
             Caffeine.newBuilder()
                     .maximumSize(50_000)
@@ -76,7 +79,8 @@ public class CodeRunService {
             ProgrammingLanguageService languages,
             AccessGuard accessGuard,
             ExecutionProperties properties,
-            Clock clock) {
+            Clock clock,
+            Optional<LessonGate> lessonGate) {
         this.runs = runs;
         this.testResults = testResults;
         this.codingTasks = codingTasks;
@@ -85,6 +89,7 @@ public class CodeRunService {
         this.accessGuard = accessGuard;
         this.properties = properties;
         this.clock = clock;
+        this.lessonGate = lessonGate;
     }
 
     // ------------------------------------------------------------------ run / run examples
@@ -105,6 +110,16 @@ public class CodeRunService {
             CodingTask task = codingTasks.require(request.codingTaskId());
             if (task.getStatus() != PublicationStatus.PUBLISHED && !access.canSeeDrafts()) {
                 throw Exceptions.notFound("CodingTask", request.codingTaskId());
+            }
+            if (access.enrollment().isPresent() && lessonGate.isPresent()) {
+                codingTasks
+                        .findPublishedActivityId(request.codingTaskId())
+                        .ifPresent(
+                                actId ->
+                                        lessonGate
+                                                .get()
+                                                .requireActivityOpen(
+                                                        actId, access.enrollment().get()));
             }
             requireTaskLanguage(request.codingTaskId(), request.languageCode());
         }

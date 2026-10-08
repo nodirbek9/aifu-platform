@@ -33,32 +33,23 @@ public class AccessGuard {
     private final Optional<CurriculumLocator> curriculumLocator;
     private final Optional<AssessmentLocator> assessmentLocator;
     private final Optional<CodingLocator> codingLocator;
+    private final Optional<LessonGate> lessonGate;
 
-    /**
-     * The ports below are implemented by modules ({@code academics}, {@code enrollment}, {@code
-     * curriculum}, {@code assessment}, {@code coding}) that do not exist yet in this codebase's
-     * current phase. They are {@link Optional} rather than required beans so this guard — and
-     * therefore the whole application context — can boot before those modules are built; once a
-     * module registers its adapter bean, Spring populates the corresponding {@code Optional}
-     * automatically and no change is needed here. Calling a guard method that needs a port with no
-     * adapter yet fails loudly via {@link #require}, which is the correct behaviour: that endpoint
-     * genuinely cannot authorize anything until the owning module exists. One port per owning
-     * module (ADR-013) — never share one {@code Optional<T>} slot between two modules' adapters,
-     * since Spring can resolve at most one bean per {@code Optional<T>}.
-     */
     public AccessGuard(
             CurrentUserProvider currentUser,
             Optional<CourseTeacherLookup> courseTeacherLookup,
             Optional<EnrollmentLookup> enrollmentLookup,
             Optional<CurriculumLocator> curriculumLocator,
             Optional<AssessmentLocator> assessmentLocator,
-            Optional<CodingLocator> codingLocator) {
+            Optional<CodingLocator> codingLocator,
+            Optional<LessonGate> lessonGate) {
         this.currentUser = currentUser;
         this.courseTeacherLookup = courseTeacherLookup;
         this.enrollmentLookup = enrollmentLookup;
         this.curriculumLocator = curriculumLocator;
         this.assessmentLocator = assessmentLocator;
         this.codingLocator = codingLocator;
+        this.lessonGate = lessonGate;
     }
 
     private CourseTeacherLookup courseTeachers() {
@@ -218,6 +209,14 @@ public class AccessGuard {
     public CourseAccess requireLessonViewer(UUID lessonId) {
         return requireCourseViewer(
                 resolve(curriculum().courseIdOfLesson(lessonId), "Lesson", lessonId));
+    }
+
+    public CourseAccess requireOpenLesson(UUID lessonId) {
+        CourseAccess access = requireLessonViewer(lessonId);
+        if (access.enrollment().isPresent() && lessonGate.isPresent()) {
+            lessonGate.get().requireLessonOpen(lessonId, access.enrollment().get());
+        }
+        return access;
     }
 
     public CourseAccess requireLessonEditor(UUID lessonId) {

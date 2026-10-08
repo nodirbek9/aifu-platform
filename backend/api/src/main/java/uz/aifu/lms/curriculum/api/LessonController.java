@@ -96,7 +96,7 @@ public class LessonController {
                     @Parameter(description = "Response locale; falls back per ADR-005")
                     String locale,
             @RequestHeader(value = "Accept-Language", required = false) String acceptLanguage) {
-        accessGuard.requireLessonViewer(lessonId);
+        accessGuard.requireOpenLesson(lessonId);
         Lesson lesson = lessons.requirePublished(lessonId);
         String resolvedLocale = resolveLocale(locale, acceptLanguage);
         // The student-facing rendering, also used for a teacher's preview and for the projector:
