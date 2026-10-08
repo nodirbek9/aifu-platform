@@ -1416,6 +1416,10 @@
               "$ref" : "#/components/schemas/PlanModule"
             },
             "type" : "array"
+          },
+          "pathEnabled" : {
+            "description" : "The course enforces the learning path",
+            "type" : "boolean"
           }
         }
       },
@@ -3372,6 +3376,10 @@
             "type" : "string"
           },
           "open" : {
+            "type" : "boolean"
+          },
+          "pathEnabled" : {
+            "description" : "The course enforces the learning path (steps unlock lessons)",
             "type" : "boolean"
           },
           "practiceActivityId" : {

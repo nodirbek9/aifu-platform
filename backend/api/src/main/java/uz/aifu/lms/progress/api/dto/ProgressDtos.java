@@ -36,7 +36,9 @@ public final class ProgressDtos {
             @Schema(
                             description = "Why the lesson is locked; null when it is open",
                             example = "PREVIOUS_LESSON_INCOMPLETE")
-                    LockReason lockReason) {}
+                    LockReason lockReason,
+            @Schema(description = "The course enforces the learning path (steps unlock lessons)")
+                    boolean pathEnabled) {}
 
     @Schema(description = "State of the three learning-path steps of a lesson")
     public record LessonStepsView(
@@ -139,7 +141,8 @@ public final class ProgressDtos {
             @Schema(description = "The lesson the student opened most recently") UUID lastLessonId,
             List<PlanModule> modules,
             @Schema(description = "null when the course has no midterm configured")
-                    MidtermView midterm) {}
+                    MidtermView midterm,
+            @Schema(description = "The course enforces the learning path") boolean pathEnabled) {}
 
     // ------------------------------------------------------------------ my work (spec S-07,
     // S-01.3)

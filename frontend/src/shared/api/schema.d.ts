@@ -77,6 +77,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/admin/attempt-grants": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** List attempt grants */
+        get: operations["listGrants"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/admin/audit-log": {
         parameters: {
             query?: never;
@@ -115,6 +132,24 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/admin/courses/{courseId}/learning-path": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Get course learning path configuration */
+        get: operations["get_26"];
+        /** Configure or enable/disable course learning path */
+        put: operations["put"];
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/admin/courses/{id}": {
         parameters: {
             query?: never;
@@ -123,7 +158,7 @@ export interface paths {
             cookie?: never;
         };
         /** Get one course, any status. Caller must be admin or an assigned teacher. */
-        get: operations["get_24"];
+        get: operations["get_25"];
         put?: never;
         post?: never;
         /** Soft-delete a course. Admin only. */
@@ -353,7 +388,7 @@ export interface paths {
             cookie?: never;
         };
         /** Get one enrollment with its full transition history */
-        get: operations["get_23"];
+        get: operations["get_24"];
         put?: never;
         post?: never;
         delete?: never;
@@ -556,6 +591,23 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/admin/quizzes/{quizId}/enrollments/{enrollmentId}/attempt-grants": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Grant an additional attempt for a quiz */
+        post: operations["grantAttempt"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/admin/roles": {
         parameters: {
             query?: never;
@@ -652,7 +704,7 @@ export interface paths {
             cookie?: never;
         };
         /** Get one subject, any status */
-        get: operations["get_22"];
+        get: operations["get_23"];
         put?: never;
         post?: never;
         /** Soft-delete a subject */
@@ -888,7 +940,7 @@ export interface paths {
             cookie?: never;
         };
         /** One timetable */
-        get: operations["get_21"];
+        get: operations["get_22"];
         put?: never;
         post?: never;
         /** Delete a draft timetable */
@@ -1082,7 +1134,7 @@ export interface paths {
             cookie?: never;
         };
         /** Get one account */
-        get: operations["get_20"];
+        get: operations["get_21"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1203,7 +1255,7 @@ export interface paths {
             cookie?: never;
         };
         /** Get the caller's own attempt, with served questions and responses */
-        get: operations["get_19"];
+        get: operations["get_20"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1538,7 +1590,7 @@ export interface paths {
             cookie?: never;
         };
         /** Get one published coding task, student-safe (no solution code, hidden tests redacted) */
-        get: operations["get_18"];
+        get: operations["get_19"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1573,7 +1625,7 @@ export interface paths {
         };
         /**
          * The course's modules and lessons with my status on each, in one call
-         * @description Published content only. A lesson is locked while a lesson it requires is not completed. A teacher or admin gets the same tree without statuses.
+         * @description Published content only. A lesson is locked while a lesson it requires is not completed. When the course learning path is enabled the lock, its lockReason and the lecture/test/practice steps come from the server gate; midterm shows the midterm standing. A teacher or admin gets the same tree without statuses.
          */
         get: operations["plan_1"];
         put?: never;
@@ -1626,7 +1678,7 @@ export interface paths {
             cookie?: never;
         };
         /** Get one published quiz */
-        get: operations["get_17"];
+        get: operations["get_18"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1643,7 +1695,7 @@ export interface paths {
             cookie?: never;
         };
         /** Get one published course with its rubric and session allocations */
-        get: operations["get_16"];
+        get: operations["get_17"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1734,7 +1786,7 @@ export interface paths {
             cookie?: never;
         };
         /** Get file metadata */
-        get: operations["get_15"];
+        get: operations["get_16"];
         put?: never;
         post?: never;
         /** Soft-delete a file's metadata (the underlying object is left in place) */
@@ -1786,7 +1838,7 @@ export interface paths {
             cookie?: never;
         };
         /** One group */
-        get: operations["get_14"];
+        get: operations["get_15"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1829,6 +1881,26 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/lessons/{lessonId}/path": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * The learning path state of a lesson for the caller
+         * @description Steps (lecture, test, practice: DONE, TODO or NONE), reading seconds, whether the lesson is open and, when it is not, why. A teacher or admin previewing the course always gets open=true. Example: {"steps": {"lecture": "DONE", "test": "TODO", "practice": "NONE"}, "activeReadingSeconds": 240, "requiredReadingSeconds": 180, "reachedEnd": true, "open": true, "testActivityId": "0b6e1c1e-6f0b-4b43-9d5e-3f2f6f1d9a10", "practiceActivityId": null, "lockReason": null}
+         */
+        get: operations["get_14"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/lessons/{lessonId}/progress": {
         parameters: {
             query?: never;
@@ -1843,6 +1915,26 @@ export interface paths {
          * @description status=IN_PROGRESS records a view; status=COMPLETED marks it done. Completing an already-completed lesson again is a no-op for completedAt (idempotent).
          */
         post: operations["record_1"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/lessons/{lessonId}/reading": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Record a reading heartbeat on a lesson
+         * @description Tracks active reading time, sticky end-reached state, and reevaluates lesson progress. Returns the lesson path view, e.g. {"steps": {"lecture": "TODO", "test": "NONE", "practice": "NONE"}, "activeReadingSeconds": 30, "requiredReadingSeconds": 180, "reachedEnd": false, "open": true, "testActivityId": null, "practiceActivityId": null, "lockReason": null}
+         */
+        post: operations["recordReadingBeat"];
         delete?: never;
         options?: never;
         head?: never;
@@ -3813,6 +3905,44 @@ export interface components {
             /** Format: date-time */
             submittedAt?: string;
         };
+        /** @description Request payload to grant an extra attempt */
+        AttemptGrantRequest: {
+            /**
+             * @description Reason for the grant
+             * @example Student experienced a power outage
+             */
+            reason: string;
+        };
+        /** @description Representation of a granted extra attempt */
+        AttemptGrantView: {
+            /**
+             * Format: date-time
+             * @description When the grant was created
+             */
+            createdAt?: string;
+            /**
+             * Format: uuid
+             * @description Enrollment ID
+             */
+            enrollmentId?: string;
+            /**
+             * Format: uuid
+             * @description Admin user ID who granted it
+             */
+            grantedBy?: string;
+            /**
+             * Format: uuid
+             * @description Grant ID
+             */
+            id?: string;
+            /**
+             * Format: uuid
+             * @description Quiz ID
+             */
+            quizId?: string;
+            /** @description Reason for the grant */
+            reason?: string;
+        };
         /** @description Attempt summary for list views */
         AttemptSummary: {
             /** Format: int32 */
@@ -3839,7 +3969,7 @@ export interface components {
         /** @description One audit trail entry */
         AuditLogView: {
             /** @enum {string} */
-            action?: "LOGIN_SUCCESS" | "LOGIN_FAILURE" | "ACCOUNT_LOCKED" | "TOKEN_REFRESH" | "TOKEN_REUSE_DETECTED" | "LOGOUT" | "LOGOUT_ALL" | "PASSWORD_CHANGED" | "USER_CREATED" | "USER_UPDATED" | "USER_STATUS_CHANGED" | "USER_PASSWORD_RESET" | "ROLE_GRANTED" | "ROLE_REVOKED" | "SUBJECT_CREATED" | "SUBJECT_UPDATED" | "SUBJECT_PUBLISHED" | "SUBJECT_ARCHIVED" | "COURSE_CREATED" | "COURSE_UPDATED" | "COURSE_PUBLISHED" | "COURSE_ARCHIVED" | "COURSE_TEACHER_ASSIGNED" | "COURSE_TEACHER_REMOVED" | "MODULE_CREATED" | "MODULE_UPDATED" | "MODULE_DELETED" | "LESSON_CREATED" | "LESSON_UPDATED" | "LESSON_DELETED" | "CONTENT_BLOCK_CHANGED" | "ACTIVITY_CREATED" | "ACTIVITY_UPDATED" | "ACTIVITY_DELETED" | "CONTENT_PUBLISHED" | "TRANSLATION_CHANGED" | "ENROLLMENT_CREATED" | "ENROLLMENT_STATUS_CHANGED" | "ENROLLMENT_WITHDRAWN" | "QUIZ_PUBLISHED" | "QUIZ_ATTEMPT_SUBMITTED" | "CODING_TASK_PUBLISHED" | "CODING_SUBMISSION_CREATED" | "EXECUTION_JOB_DEAD" | "QUIZ_CREATED" | "QUIZ_UPDATED" | "QUESTION_CREATED" | "QUESTION_UPDATED" | "QUESTION_DELETED" | "CODING_TASK_CREATED" | "CODING_TASK_UPDATED" | "TEST_CASE_CREATED" | "TEST_CASE_UPDATED" | "TEST_CASE_DELETED" | "GRADE_RECORDED" | "GRADE_REVISED" | "GRADE_PUBLISHED" | "GRADE_VOIDED" | "FEEDBACK_CREATED" | "FEEDBACK_UPDATED" | "FILE_UPLOADED" | "FILE_DELETED" | "GROUP_CHANGED" | "TIMETABLE_PUBLISHED" | "TIMETABLE_ENTRY_CHANGED" | "TIMETABLE_CONFLICT_OVERRIDDEN" | "TIMETABLE_EXCEPTION_ADDED" | "ATTENDANCE_MARKED" | "ADMIN_ACTION" | "CONFIGURATION_CHANGED" | "PERMISSION_DENIED";
+            action?: "LOGIN_SUCCESS" | "LOGIN_FAILURE" | "ACCOUNT_LOCKED" | "TOKEN_REFRESH" | "TOKEN_REUSE_DETECTED" | "LOGOUT" | "LOGOUT_ALL" | "PASSWORD_CHANGED" | "USER_CREATED" | "USER_UPDATED" | "USER_STATUS_CHANGED" | "USER_PASSWORD_RESET" | "ROLE_GRANTED" | "ROLE_REVOKED" | "SUBJECT_CREATED" | "SUBJECT_UPDATED" | "SUBJECT_PUBLISHED" | "SUBJECT_ARCHIVED" | "COURSE_CREATED" | "COURSE_UPDATED" | "COURSE_PUBLISHED" | "COURSE_ARCHIVED" | "COURSE_TEACHER_ASSIGNED" | "COURSE_TEACHER_REMOVED" | "MODULE_CREATED" | "MODULE_UPDATED" | "MODULE_DELETED" | "LESSON_CREATED" | "LESSON_UPDATED" | "LESSON_DELETED" | "CONTENT_BLOCK_CHANGED" | "ACTIVITY_CREATED" | "ACTIVITY_UPDATED" | "ACTIVITY_DELETED" | "CONTENT_PUBLISHED" | "TRANSLATION_CHANGED" | "LEARNING_PATH_CONFIGURED" | "ENROLLMENT_CREATED" | "ENROLLMENT_STATUS_CHANGED" | "ENROLLMENT_WITHDRAWN" | "QUIZ_PUBLISHED" | "QUIZ_ATTEMPT_SUBMITTED" | "QUIZ_ATTEMPT_GRANTED" | "CODING_TASK_PUBLISHED" | "CODING_SUBMISSION_CREATED" | "EXECUTION_JOB_DEAD" | "QUIZ_CREATED" | "QUIZ_UPDATED" | "QUESTION_CREATED" | "QUESTION_UPDATED" | "QUESTION_DELETED" | "CODING_TASK_CREATED" | "CODING_TASK_UPDATED" | "TEST_CASE_CREATED" | "TEST_CASE_UPDATED" | "TEST_CASE_DELETED" | "GRADE_RECORDED" | "GRADE_REVISED" | "GRADE_PUBLISHED" | "GRADE_VOIDED" | "FEEDBACK_CREATED" | "FEEDBACK_UPDATED" | "FILE_UPLOADED" | "FILE_DELETED" | "GROUP_CHANGED" | "TIMETABLE_PUBLISHED" | "TIMETABLE_ENTRY_CHANGED" | "TIMETABLE_CONFLICT_OVERRIDDEN" | "TIMETABLE_EXCEPTION_ADDED" | "ATTENDANCE_MARKED" | "ADMIN_ACTION" | "CONFIGURATION_CHANGED" | "PERMISSION_DENIED";
             actorLabel?: string;
             /** Format: uuid */
             actorUserId?: string;
@@ -4225,7 +4355,11 @@ export interface components {
             lessonsCompleted?: number;
             /** Format: int32 */
             lessonsTotal?: number;
+            /** @description null when the course has no midterm configured */
+            midterm?: components["schemas"]["MidtermView"];
             modules?: components["schemas"]["PlanModule"][];
+            /** @description The course enforces the learning path */
+            pathEnabled?: boolean;
         };
         /** @description The caller's own course-level progress, with a per-module breakdown */
         CourseProgressView: {
@@ -5007,6 +5141,75 @@ export interface components {
             id?: string;
             translations?: components["schemas"]["OutcomeTranslationView"][];
         };
+        /** @description Request payload to configure a course learning path */
+        LearningPathConfigRequest: {
+            /**
+             * @description Whether server-side learning path gating is enabled
+             * @example true
+             */
+            enabled?: boolean;
+            /**
+             * Format: uuid
+             * @description Midterm QUIZ activity ID (optional, null if unconfigured)
+             * @example b845ef20-8047-495c-9c97-6a422eb7813a
+             */
+            midtermActivityId?: string;
+            /**
+             * Format: uuid
+             * @description Anchor lesson ID after which the midterm is placed (optional, null if unconfigured)
+             * @example e87f7b2c-623b-48d9-a41e-355d14ff1841
+             */
+            midtermAfterLessonId?: string;
+            /**
+             * Format: date-time
+             * @description When the midterm opens (optional; defaults to week 8 Monday 00:00 Asia/Tashkent)
+             * @example 2026-10-19T00:00:00+05:00
+             */
+            midtermOpensAt?: string;
+        };
+        /** @description Learning path configuration of a course */
+        LearningPathConfigView: {
+            /**
+             * @description Whether server-side learning path gating is enabled
+             * @example true
+             */
+            enabled?: boolean;
+            /**
+             * Format: date-time
+             * @description When the learning path was enabled
+             * @example 2026-10-08T12:00:00Z
+             */
+            enabledAt?: string;
+            /**
+             * Format: uuid
+             * @description Admin user ID who enabled the learning path
+             * @example a1b2c3d4-e5f6-7890-abcd-ef1234567890
+             */
+            enabledBy?: string;
+            /**
+             * Format: uuid
+             * @description Midterm QUIZ activity ID
+             * @example b845ef20-8047-495c-9c97-6a422eb7813a
+             */
+            midtermActivityId?: string;
+            /**
+             * Format: uuid
+             * @description Anchor lesson ID after which the midterm is placed
+             * @example e87f7b2c-623b-48d9-a41e-355d14ff1841
+             */
+            midtermAfterLessonId?: string;
+            /**
+             * Format: date-time
+             * @description When the midterm opens
+             * @example 2026-10-19T00:00:00+05:00
+             */
+            midtermOpensAt?: string;
+            /**
+             * @description Minimum reading fraction required to complete reading (default 0.50)
+             * @example 0.5
+             */
+            minReadingFraction?: number;
+        };
         /** @description Lesson-level completion summary */
         LessonCompletionSummary: {
             avgTimeSpentSeconds?: number;
@@ -5047,6 +5250,34 @@ export interface components {
             status?: "DRAFT" | "PUBLISHED" | "ARCHIVED";
             translations?: components["schemas"]["LessonTranslationView"][];
         };
+        /** @description Learning path state of the lesson returned after a reading heartbeat */
+        LessonPathView: {
+            /** Format: int32 */
+            activeReadingSeconds?: number;
+            /**
+             * @description Why the lesson is locked; null when it is open
+             * @example PREVIOUS_LESSON_INCOMPLETE
+             * @enum {string}
+             */
+            lockReason?: "PREVIOUS_LESSON_INCOMPLETE" | "MIDTERM_REQUIRED";
+            open?: boolean;
+            /** @description The course enforces the learning path (steps unlock lessons) */
+            pathEnabled?: boolean;
+            /**
+             * Format: uuid
+             * @description The lesson's PRACTICE step activity; null when it has none
+             */
+            practiceActivityId?: string;
+            reachedEnd?: boolean;
+            /** Format: int32 */
+            requiredReadingSeconds?: number;
+            steps?: components["schemas"]["LessonSteps"];
+            /**
+             * Format: uuid
+             * @description The lesson's TEST step activity; null when it has none
+             */
+            testActivityId?: string;
+        };
         /** @description The caller's progress on one lesson, after recording it */
         LessonProgressView: {
             /** Format: date-time */
@@ -5071,6 +5302,32 @@ export interface components {
             /** @enum {string} */
             sessionType?: "LECTURE" | "SEMINAR" | "PRACTICAL" | "LABORATORY" | "INDEPENDENT_STUDY" | "COURSE_WORK";
             title?: string;
+        };
+        LessonSteps: {
+            /** @enum {string} */
+            lecture?: "DONE" | "TODO" | "NONE";
+            /** @enum {string} */
+            practice?: "DONE" | "TODO" | "NONE";
+            /** @enum {string} */
+            test?: "DONE" | "TODO" | "NONE";
+        };
+        /** @description State of the three learning-path steps of a lesson */
+        LessonStepsView: {
+            /**
+             * @example DONE
+             * @enum {string}
+             */
+            lecture?: "DONE" | "TODO" | "NONE";
+            /**
+             * @example NONE
+             * @enum {string}
+             */
+            practice?: "DONE" | "TODO" | "NONE";
+            /**
+             * @example TODO
+             * @enum {string}
+             */
+            test?: "DONE" | "TODO" | "NONE";
         };
         /** @description Lesson summary for a module's lesson list */
         LessonSummary: {
@@ -5154,6 +5411,38 @@ export interface components {
             status?: "PRESENT" | "ABSENT" | "LATE" | "EXCUSED";
             /** Format: uuid */
             studentId: string;
+        };
+        /** @description The course's midterm and the caller's standing on it */
+        MidtermView: {
+            /** Format: uuid */
+            activityId?: string;
+            /**
+             * Format: uuid
+             * @description Lessons after this one need the midterm to be passed
+             */
+            afterLessonId?: string;
+            /**
+             * Format: int32
+             * @description null means unlimited
+             * @example 2
+             */
+            attemptsAllowed?: number;
+            /**
+             * Format: int32
+             * @example 1
+             */
+            attemptsUsed?: number;
+            /**
+             * Format: date-time
+             * @example 2026-10-20T09:00:00Z
+             */
+            opensAt?: string;
+            passed?: boolean;
+            /**
+             * Format: uuid
+             * @description The quiz behind the midterm activity; null for other types
+             */
+            quizId?: string;
         };
         /** @description Full module detail */
         ModuleDetail: {
@@ -5369,6 +5658,32 @@ export interface components {
         /** @description Paginated collection envelope */
         PageResponseAnnouncementView: {
             content?: components["schemas"]["AnnouncementView"][];
+            hasNext?: boolean;
+            hasPrevious?: boolean;
+            /**
+             * Format: int32
+             * @example 0
+             */
+            page?: number;
+            /**
+             * Format: int32
+             * @example 20
+             */
+            size?: number;
+            /**
+             * Format: int64
+             * @example 137
+             */
+            totalElements?: number;
+            /**
+             * Format: int32
+             * @example 7
+             */
+            totalPages?: number;
+        };
+        /** @description Paginated collection envelope */
+        PageResponseAttemptGrantView: {
+            content?: components["schemas"]["AttemptGrantView"][];
             hasNext?: boolean;
             hasPrevious?: boolean;
             /**
@@ -6074,6 +6389,12 @@ export interface components {
             estimatedMinutes?: number;
             /** Format: uuid */
             id?: string;
+            /**
+             * @description Set while locked by the learning path gate
+             * @example PREVIOUS_LESSON_INCOMPLETE
+             * @enum {string}
+             */
+            lockReason?: "PREVIOUS_LESSON_INCOMPLETE" | "MIDTERM_REQUIRED";
             /** @description true while a lesson this one requires is not completed */
             locked?: boolean;
             prerequisiteLessonIds?: string[];
@@ -6085,7 +6406,11 @@ export interface components {
              * @enum {string}
              */
             status?: "NOT_STARTED" | "IN_PROGRESS" | "COMPLETED";
+            /** @description null for a viewer who is not a student of the course */
+            steps?: components["schemas"]["LessonStepsView"];
             title?: string;
+            /** @description true when a teacher waived the lesson */
+            waived?: boolean;
         };
         PlanModule: {
             code?: string;
@@ -6233,6 +6558,12 @@ export interface components {
             instructions?: string;
             locale?: string;
             title?: string;
+        };
+        /** @description Reading heartbeat payload sent periodically by the client */
+        ReadingBeatRequest: {
+            atEnd?: boolean;
+            /** Format: int32 */
+            maxBlockPosition?: number;
         };
         RecordAnswerRequest: {
             responseNumber?: number;
@@ -7359,11 +7690,48 @@ export interface operations {
             };
         };
     };
+    listGrants: {
+        parameters: {
+            query?: {
+                courseId?: string;
+                /** @description Zero-based page index */
+                page?: number;
+                /** @description Page size; capped by the server */
+                size?: number;
+                /** @description property,asc or property,desc; may be repeated */
+                sort?: string[];
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["PageResponseAttemptGrantView"];
+                };
+            };
+            /** @description Any failure (4xx, 5xx): the error envelope */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
     search_6: {
         parameters: {
             query?: {
                 actorUserId?: string;
-                action?: "LOGIN_SUCCESS" | "LOGIN_FAILURE" | "ACCOUNT_LOCKED" | "TOKEN_REFRESH" | "TOKEN_REUSE_DETECTED" | "LOGOUT" | "LOGOUT_ALL" | "PASSWORD_CHANGED" | "USER_CREATED" | "USER_UPDATED" | "USER_STATUS_CHANGED" | "USER_PASSWORD_RESET" | "ROLE_GRANTED" | "ROLE_REVOKED" | "SUBJECT_CREATED" | "SUBJECT_UPDATED" | "SUBJECT_PUBLISHED" | "SUBJECT_ARCHIVED" | "COURSE_CREATED" | "COURSE_UPDATED" | "COURSE_PUBLISHED" | "COURSE_ARCHIVED" | "COURSE_TEACHER_ASSIGNED" | "COURSE_TEACHER_REMOVED" | "MODULE_CREATED" | "MODULE_UPDATED" | "MODULE_DELETED" | "LESSON_CREATED" | "LESSON_UPDATED" | "LESSON_DELETED" | "CONTENT_BLOCK_CHANGED" | "ACTIVITY_CREATED" | "ACTIVITY_UPDATED" | "ACTIVITY_DELETED" | "CONTENT_PUBLISHED" | "TRANSLATION_CHANGED" | "ENROLLMENT_CREATED" | "ENROLLMENT_STATUS_CHANGED" | "ENROLLMENT_WITHDRAWN" | "QUIZ_PUBLISHED" | "QUIZ_ATTEMPT_SUBMITTED" | "CODING_TASK_PUBLISHED" | "CODING_SUBMISSION_CREATED" | "EXECUTION_JOB_DEAD" | "QUIZ_CREATED" | "QUIZ_UPDATED" | "QUESTION_CREATED" | "QUESTION_UPDATED" | "QUESTION_DELETED" | "CODING_TASK_CREATED" | "CODING_TASK_UPDATED" | "TEST_CASE_CREATED" | "TEST_CASE_UPDATED" | "TEST_CASE_DELETED" | "GRADE_RECORDED" | "GRADE_REVISED" | "GRADE_PUBLISHED" | "GRADE_VOIDED" | "FEEDBACK_CREATED" | "FEEDBACK_UPDATED" | "FILE_UPLOADED" | "FILE_DELETED" | "GROUP_CHANGED" | "TIMETABLE_PUBLISHED" | "TIMETABLE_ENTRY_CHANGED" | "TIMETABLE_CONFLICT_OVERRIDDEN" | "TIMETABLE_EXCEPTION_ADDED" | "ATTENDANCE_MARKED" | "ADMIN_ACTION" | "CONFIGURATION_CHANGED" | "PERMISSION_DENIED";
+                action?: "LOGIN_SUCCESS" | "LOGIN_FAILURE" | "ACCOUNT_LOCKED" | "TOKEN_REFRESH" | "TOKEN_REUSE_DETECTED" | "LOGOUT" | "LOGOUT_ALL" | "PASSWORD_CHANGED" | "USER_CREATED" | "USER_UPDATED" | "USER_STATUS_CHANGED" | "USER_PASSWORD_RESET" | "ROLE_GRANTED" | "ROLE_REVOKED" | "SUBJECT_CREATED" | "SUBJECT_UPDATED" | "SUBJECT_PUBLISHED" | "SUBJECT_ARCHIVED" | "COURSE_CREATED" | "COURSE_UPDATED" | "COURSE_PUBLISHED" | "COURSE_ARCHIVED" | "COURSE_TEACHER_ASSIGNED" | "COURSE_TEACHER_REMOVED" | "MODULE_CREATED" | "MODULE_UPDATED" | "MODULE_DELETED" | "LESSON_CREATED" | "LESSON_UPDATED" | "LESSON_DELETED" | "CONTENT_BLOCK_CHANGED" | "ACTIVITY_CREATED" | "ACTIVITY_UPDATED" | "ACTIVITY_DELETED" | "CONTENT_PUBLISHED" | "TRANSLATION_CHANGED" | "LEARNING_PATH_CONFIGURED" | "ENROLLMENT_CREATED" | "ENROLLMENT_STATUS_CHANGED" | "ENROLLMENT_WITHDRAWN" | "QUIZ_PUBLISHED" | "QUIZ_ATTEMPT_SUBMITTED" | "QUIZ_ATTEMPT_GRANTED" | "CODING_TASK_PUBLISHED" | "CODING_SUBMISSION_CREATED" | "EXECUTION_JOB_DEAD" | "QUIZ_CREATED" | "QUIZ_UPDATED" | "QUESTION_CREATED" | "QUESTION_UPDATED" | "QUESTION_DELETED" | "CODING_TASK_CREATED" | "CODING_TASK_UPDATED" | "TEST_CASE_CREATED" | "TEST_CASE_UPDATED" | "TEST_CASE_DELETED" | "GRADE_RECORDED" | "GRADE_REVISED" | "GRADE_PUBLISHED" | "GRADE_VOIDED" | "FEEDBACK_CREATED" | "FEEDBACK_UPDATED" | "FILE_UPLOADED" | "FILE_DELETED" | "GROUP_CHANGED" | "TIMETABLE_PUBLISHED" | "TIMETABLE_ENTRY_CHANGED" | "TIMETABLE_CONFLICT_OVERRIDDEN" | "TIMETABLE_EXCEPTION_ADDED" | "ATTENDANCE_MARKED" | "ADMIN_ACTION" | "CONFIGURATION_CHANGED" | "PERMISSION_DENIED";
                 entityType?: string;
                 entityId?: string;
                 from?: string;
@@ -7475,7 +7843,73 @@ export interface operations {
             };
         };
     };
-    get_24: {
+    get_26: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                courseId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["LearningPathConfigView"];
+                };
+            };
+            /** @description Any failure (4xx, 5xx): the error envelope */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    put: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                courseId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["LearningPathConfigRequest"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["LearningPathConfigView"];
+                };
+            };
+            /** @description Any failure (4xx, 5xx): the error envelope */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    get_25: {
         parameters: {
             query?: never;
             header?: never;
@@ -8020,7 +8454,7 @@ export interface operations {
             };
         };
     };
-    get_23: {
+    get_24: {
         parameters: {
             query?: never;
             header?: never;
@@ -8526,6 +8960,42 @@ export interface operations {
             };
         };
     };
+    grantAttempt: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                quizId: string;
+                enrollmentId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["AttemptGrantRequest"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["AttemptGrantView"];
+                };
+            };
+            /** @description Any failure (4xx, 5xx): the error envelope */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
     listRoles: {
         parameters: {
             query?: never;
@@ -8788,7 +9258,7 @@ export interface operations {
             };
         };
     };
-    get_22: {
+    get_23: {
         parameters: {
             query?: never;
             header?: never;
@@ -9416,7 +9886,7 @@ export interface operations {
             };
         };
     };
-    get_21: {
+    get_22: {
         parameters: {
             query?: never;
             header?: never;
@@ -9865,7 +10335,7 @@ export interface operations {
             };
         };
     };
-    get_20: {
+    get_21: {
         parameters: {
             query?: never;
             header?: never;
@@ -10100,7 +10570,7 @@ export interface operations {
             };
         };
     };
-    get_19: {
+    get_20: {
         parameters: {
             query?: {
                 locale?: string;
@@ -10747,7 +11217,7 @@ export interface operations {
             };
         };
     };
-    get_18: {
+    get_19: {
         parameters: {
             query?: {
                 locale?: string;
@@ -10931,7 +11401,7 @@ export interface operations {
             };
         };
     };
-    get_17: {
+    get_18: {
         parameters: {
             query?: {
                 locale?: string;
@@ -10967,7 +11437,7 @@ export interface operations {
             };
         };
     };
-    get_16: {
+    get_17: {
         parameters: {
             query?: never;
             header?: never;
@@ -11139,7 +11609,7 @@ export interface operations {
             };
         };
     };
-    get_15: {
+    get_16: {
         parameters: {
             query?: never;
             header?: never;
@@ -11259,7 +11729,7 @@ export interface operations {
             };
         };
     };
-    get_14: {
+    get_15: {
         parameters: {
             query?: never;
             header?: never;
@@ -11357,6 +11827,37 @@ export interface operations {
             };
         };
     };
+    get_14: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                lessonId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["LessonPathView"];
+                };
+            };
+            /** @description Any failure (4xx, 5xx): the error envelope */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
     record_1: {
         parameters: {
             query?: never;
@@ -11379,6 +11880,41 @@ export interface operations {
                 };
                 content: {
                     "*/*": components["schemas"]["LessonProgressView"];
+                };
+            };
+            /** @description Any failure (4xx, 5xx): the error envelope */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    recordReadingBeat: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                lessonId: string;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ReadingBeatRequest"];
+            };
+        };
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["LessonPathView"];
                 };
             };
             /** @description Any failure (4xx, 5xx): the error envelope */

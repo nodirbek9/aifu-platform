@@ -130,7 +130,7 @@ public class ReadingService {
 
         Map<UUID, LessonPathState> states =
                 learningPathService.pathState(courseId, enrollment.getId());
-        return learningPathService.lessonPathView(lessonId, states.get(lessonId), lp);
+        return learningPathService.lessonPathView(lessonId, courseId, states.get(lessonId), lp);
     }
 
     private <T> T retrying(Supplier<T> action) {

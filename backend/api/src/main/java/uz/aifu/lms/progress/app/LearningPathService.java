@@ -386,12 +386,13 @@ public class LearningPathService {
                         : lessonProgress
                                 .findByEnrollment_IdAndLesson_Id(enrollmentId, lessonId)
                                 .orElse(null);
-        return lessonPathView(lessonId, state, lp);
+        return lessonPathView(lessonId, courseId, state, lp);
     }
 
     /** Builds the lesson path view from an evaluated state and the lesson's progress row. */
     @Transactional(readOnly = true)
-    public LessonPathView lessonPathView(UUID lessonId, LessonPathState state, LessonProgress lp) {
+    public LessonPathView lessonPathView(
+            UUID lessonId, UUID courseId, LessonPathState state, LessonProgress lp) {
         List<Activity> lessonActs =
                 activities.listByLesson(lessonId).stream()
                         .filter(a -> a.getStatus() == PublicationStatus.PUBLISHED)
@@ -412,7 +413,8 @@ public class LearningPathService {
                 state != null && state.open(),
                 testId,
                 practiceId,
-                state != null ? state.lockReason() : null);
+                state != null ? state.lockReason() : null,
+                isPathEnabled(courseId));
     }
 
     private static UUID stepActivityId(List<Activity> lessonActs, PathStep step) {

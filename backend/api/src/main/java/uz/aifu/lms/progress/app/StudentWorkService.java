@@ -207,7 +207,8 @@ public class StudentWorkService {
                 continueLessonId,
                 shown.contains(lastLessonId) ? lastLessonId : null,
                 modules,
-                learningPath.midtermView(courseId, enrollmentId));
+                learningPath.midtermView(courseId, enrollmentId),
+                learningPath.isPathEnabled(courseId));
     }
 
     private static LessonStepsView stepsView(LessonPathState state) {
