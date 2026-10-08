@@ -12,6 +12,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jdbc.core.JdbcTemplate;
 import uz.aifu.lms.academics.app.CourseService;
 import uz.aifu.lms.academics.domain.AssessmentComponent;
 import uz.aifu.lms.academics.domain.Course;
@@ -36,6 +37,8 @@ import uz.aifu.lms.iam.api.dto.AuthDtos.LoginRequest;
 import uz.aifu.lms.iam.api.dto.AuthDtos.TokenResponse;
 import uz.aifu.lms.iam.domain.RoleCode;
 import uz.aifu.lms.iam.domain.User;
+import uz.aifu.lms.progress.api.dto.ProgressDtos.LessonPathView;
+import uz.aifu.lms.progress.api.dto.ProgressDtos.ReadingBeatRequest;
 import uz.aifu.lms.support.AbstractIntegrationTest;
 import uz.aifu.lms.support.fixtures.EnrollmentFixtures;
 import uz.aifu.lms.support.fixtures.UserFixtures;
@@ -55,6 +58,7 @@ class StudentDataIsolationIT extends AbstractIntegrationTest {
     @Autowired private EnrollmentFixtures enrollmentFixtures;
     @Autowired private EnrollmentService enrollments;
     @Autowired private CourseService courseService;
+    @Autowired private JdbcTemplate jdbc;
     @LocalServerPort private int port;
 
     @Test
@@ -140,6 +144,73 @@ class StudentDataIsolationIT extends AbstractIntegrationTest {
                         EnrollmentGradeSummary.class);
         assertThat(own.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(own.getBody().entries()).isNotEmpty();
+    }
+
+    @Test
+    void lessonPathAndReadingHeartbeat_ofAnotherCoursesStudent_areNotVisible_butOwnAre() {
+        User admin = userFixtures.activeUser(RoleCode.ADMIN);
+        Course course = enrollmentFixtures.publishedCourse(150);
+        UUID lessonId = publishedLesson(course.getId());
+
+        User owner = userFixtures.activeUser(RoleCode.STUDENT);
+        User intruder = userFixtures.activeUser(RoleCode.STUDENT); // never enrolled
+        enrollments.enroll(
+                course.getId(), owner.getId(), EnrollmentSource.ADMIN, admin.getId(), null);
+        String ownerToken = login(owner);
+        String intruderToken = login(intruder);
+
+        ResponseEntity<ApiError> stolenPath =
+                rest.exchange(
+                        url("/api/v1/lessons/" + lessonId + "/path"),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(intruderToken)),
+                        ApiError.class);
+        assertThat(stolenPath.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+
+        ResponseEntity<ApiError> stolenBeat =
+                rest.exchange(
+                        url("/api/v1/lessons/" + lessonId + "/reading"),
+                        HttpMethod.POST,
+                        new HttpEntity<>(new ReadingBeatRequest(0, false), bearer(intruderToken)),
+                        ApiError.class);
+        assertThat(stolenBeat.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
+
+        ResponseEntity<LessonPathView> ownPath =
+                rest.exchange(
+                        url("/api/v1/lessons/" + lessonId + "/path"),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(ownerToken)),
+                        LessonPathView.class);
+        assertThat(ownPath.getStatusCode()).isEqualTo(HttpStatus.OK);
+        ResponseEntity<LessonPathView> ownBeat =
+                rest.exchange(
+                        url("/api/v1/lessons/" + lessonId + "/reading"),
+                        HttpMethod.POST,
+                        new HttpEntity<>(new ReadingBeatRequest(0, false), bearer(ownerToken)),
+                        LessonPathView.class);
+        assertThat(ownBeat.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
+
+    private UUID publishedLesson(UUID courseId) {
+        UUID moduleId = UUID.randomUUID();
+        jdbc.update(
+                "INSERT INTO course_modules (id, course_id, position, status, created_at, updated_at, version) "
+                        + "VALUES (?, ?, 0, 'PUBLISHED', now(), now(), 0)",
+                moduleId,
+                courseId);
+        jdbc.update(
+                "INSERT INTO course_module_translations (module_id, locale, title) VALUES (?, 'uz', 'Modul')",
+                moduleId);
+        UUID lessonId = UUID.randomUUID();
+        jdbc.update(
+                "INSERT INTO lessons (id, module_id, position, session_type, status, is_required, estimated_minutes, created_at, updated_at, version) "
+                        + "VALUES (?, ?, 0, 'LECTURE', 'PUBLISHED', true, 1, now(), now(), 0)",
+                lessonId,
+                moduleId);
+        jdbc.update(
+                "INSERT INTO lesson_translations (lesson_id, locale, title) VALUES (?, 'uz', 'Dars')",
+                lessonId);
+        return lessonId;
     }
 
     private AssessmentComponent soleTopLevelComponent(UUID courseId) {
