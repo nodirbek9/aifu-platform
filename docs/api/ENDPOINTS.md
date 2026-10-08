@@ -357,6 +357,7 @@ Starting, answering, and submitting the caller's own attempts
 | POST | `/attempts/{attemptId}/submit` | Submit an attempt for grading. Idempotency-Key honoured (CLAUDE.md §9). |  |  | 200 AttemptDetail |
 | POST | `/quizzes/{quizId}/attempts` | Start a new attempt for a published quiz the caller is enrolled to take |  | StartAttemptRequest | 201 AttemptDetail |
 | GET | `/quizzes/{quizId}/attempts/me` | List the caller's own attempts at one quiz, most recent first | page?, size?, sort? |  | 200 PageResponseAttemptSummary |
+| GET | `/quizzes/{quizId}/attempts/me/allowance` | How many attempts the caller has used and may still use at one quiz |  |  | 200 AttemptAllowanceView |
 
 ## My submissions
 

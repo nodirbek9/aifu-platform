@@ -85,6 +85,12 @@ public final class AttemptDtos {
                     Instant serverTime,
             List<ServedQuestionView> questions) {}
 
+    @Schema(description = "Attempts used and allowed at one quiz")
+    public record AttemptAllowanceView(
+            @Schema(example = "1") int attemptsUsed,
+            @Schema(description = "Absent when the quiz has no limit", example = "2")
+                    Integer attemptsAllowed) {}
+
     @Schema(description = "Attempt summary for list views")
     public record AttemptSummary(
             UUID id,

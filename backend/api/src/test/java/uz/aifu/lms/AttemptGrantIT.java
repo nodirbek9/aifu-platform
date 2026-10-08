@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import uz.aifu.lms.academics.domain.Course;
+import uz.aifu.lms.assessment.api.dto.AttemptDtos.AttemptAllowanceView;
 import uz.aifu.lms.assessment.api.dto.AttemptDtos.AttemptDetail;
 import uz.aifu.lms.assessment.api.dto.AttemptDtos.StartAttemptRequest;
 import uz.aifu.lms.assessment.api.dto.AttemptGrantDtos.AttemptGrantRequest;
@@ -96,6 +97,17 @@ class AttemptGrantIT extends AbstractIntegrationTest {
                                 bearer(scenario.adminToken)),
                         AttemptGrantView.class);
         assertThat(grantResponse.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+
+        ResponseEntity<AttemptAllowanceView> allowance =
+                rest.exchange(
+                        url("/api/v1/quizzes/" + scenario.quizId + "/attempts/me/allowance"),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(scenario.studentToken)),
+                        AttemptAllowanceView.class);
+        assertThat(allowance.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(allowance.getBody()).isNotNull();
+        assertThat(allowance.getBody().attemptsUsed()).isEqualTo(2);
+        assertThat(allowance.getBody().attemptsAllowed()).isEqualTo(3);
 
         AttemptDetail thirdAttempt = startAttempt(scenario.studentToken, scenario.quizId);
         assertThat(thirdAttempt.attemptNumber()).isEqualTo(3);

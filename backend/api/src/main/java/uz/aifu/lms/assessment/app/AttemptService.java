@@ -469,6 +469,28 @@ public class AttemptService {
         return attempts.findByQuiz_Id(quizId, pageable);
     }
 
+    /**
+     * How many attempts the student has made at a quiz and how many are allowed (null: no limit).
+     */
+    @Transactional(readOnly = true)
+    public AttemptAllowance allowance(UUID quizId, UUID studentUserId) {
+        Quiz quiz = quizzes.requirePublished(quizId);
+        Enrollment enrollment =
+                enrollments.requireActiveEnrollment(quiz.getCourse().getId(), studentUserId);
+        int used = attempts.findMaxAttemptNumber(quizId, enrollment.getId());
+        Integer allowed =
+                quiz.getMaxAttempts() == null
+                        ? null
+                        : (int)
+                                (quiz.getMaxAttempts()
+                                        + attemptGrants.countByQuiz_IdAndEnrollment_Id(
+                                                quizId, enrollment.getId()));
+        return new AttemptAllowance(used, allowed);
+    }
+
+    /** Attempts used, and allowed (null when the quiz has no limit). */
+    public record AttemptAllowance(int used, Integer allowed) {}
+
     /** The highest attempt number reached so far — used by the reveal-policy check. */
     @Transactional(readOnly = true)
     public int maxAttemptNumber(UUID quizId, UUID enrollmentId) {

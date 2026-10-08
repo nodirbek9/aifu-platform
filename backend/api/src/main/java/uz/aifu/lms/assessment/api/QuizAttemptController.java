@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import uz.aifu.lms.assessment.api.dto.AttemptDtos.AttemptAllowanceView;
 import uz.aifu.lms.assessment.api.dto.AttemptDtos.AttemptDetail;
 import uz.aifu.lms.assessment.api.dto.AttemptDtos.AttemptSummary;
 import uz.aifu.lms.assessment.api.dto.AttemptDtos.RecordAnswerRequest;
@@ -138,6 +139,19 @@ public class QuizAttemptController {
                 attempts.listOwn(
                         quizId, currentUser.require().id(), pageableSupport.sanitize(pageable));
         return PageResponse.of(page, AttemptMapper::toSummary);
+    }
+
+    @GetMapping("/api/v1/quizzes/{quizId}/attempts/me/allowance")
+    @PreAuthorize("hasAuthority('QUIZ_ATTEMPT_SELF_READ')")
+    @Operation(
+            summary = "How many attempts the caller has used and may still use at one quiz",
+            description =
+                    "attemptsAllowed counts the quiz limit plus an administrator's grant;"
+                            + " it is absent when the quiz has no limit.")
+    public AttemptAllowanceView allowance(@PathVariable UUID quizId) {
+        AttemptService.AttemptAllowance result =
+                attempts.allowance(quizId, currentUser.require().id());
+        return new AttemptAllowanceView(result.used(), result.allowed());
     }
 
     // ---------------------------------------------------------------- reveal-policy-aware mapping

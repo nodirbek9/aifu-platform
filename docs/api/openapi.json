@@ -359,6 +359,22 @@
         },
         "required" : [ "teacherUserId" ]
       },
+      "AttemptAllowanceView" : {
+        "description" : "Attempts used and allowed at one quiz",
+        "properties" : {
+          "attemptsAllowed" : {
+            "description" : "Absent when the quiz has no limit",
+            "example" : 2,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "attemptsUsed" : {
+            "example" : 1,
+            "format" : "int32",
+            "type" : "integer"
+          }
+        }
+      },
       "AttemptDetail" : {
         "description" : "The caller's own attempt, with served questions and their own responses",
         "properties" : {
@@ -14891,6 +14907,48 @@
           "bearerAuth" : [ ]
         } ],
         "summary" : "List the caller's own attempts at one quiz, most recent first",
+        "tags" : [ "My quiz attempts" ]
+      }
+    },
+    "/api/v1/quizzes/{quizId}/attempts/me/allowance" : {
+      "get" : {
+        "description" : "attemptsAllowed counts the quiz limit plus an administrator's grant; it is absent when the quiz has no limit.",
+        "operationId" : "allowance",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "quizId",
+          "required" : true,
+          "schema" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AttemptAllowanceView"
+                }
+              }
+            },
+            "description" : "OK"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description" : "Any failure (4xx, 5xx): the error envelope"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "summary" : "How many attempts the caller has used and may still use at one quiz",
         "tags" : [ "My quiz attempts" ]
       }
     },

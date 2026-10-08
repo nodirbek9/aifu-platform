@@ -2077,6 +2077,26 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/quizzes/{quizId}/attempts/me/allowance": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * How many attempts the caller has used and may still use at one quiz
+         * @description attemptsAllowed counts the quiz limit plus an administrator's grant; it is absent when the quiz has no limit.
+         */
+        get: operations["allowance"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/reference/departments": {
         parameters: {
             query?: never;
@@ -3875,6 +3895,20 @@ export interface components {
             teacherRole?: "LEAD" | "ASSISTANT" | "GRADER" | "GUEST";
             /** Format: uuid */
             teacherUserId: string;
+        };
+        /** @description Attempts used and allowed at one quiz */
+        AttemptAllowanceView: {
+            /**
+             * Format: int32
+             * @description Absent when the quiz has no limit
+             * @example 2
+             */
+            attemptsAllowed?: number;
+            /**
+             * Format: int32
+             * @example 1
+             */
+            attemptsUsed?: number;
         };
         /** @description The caller's own attempt, with served questions and their own responses */
         AttemptDetail: {
@@ -12185,6 +12219,37 @@ export interface operations {
                 };
                 content: {
                     "*/*": components["schemas"]["PageResponseAttemptSummary"];
+                };
+            };
+            /** @description Any failure (4xx, 5xx): the error envelope */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    allowance: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                quizId: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description OK */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["AttemptAllowanceView"];
                 };
             };
             /** @description Any failure (4xx, 5xx): the error envelope */
