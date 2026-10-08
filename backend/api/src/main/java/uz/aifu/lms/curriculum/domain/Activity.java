@@ -232,6 +232,10 @@ public class Activity extends VersionedEntity {
         return availableFrom;
     }
 
+    public void setAvailableFrom(Instant availableFrom) {
+        this.availableFrom = availableFrom;
+    }
+
     public Instant getDueAt() {
         return dueAt;
     }

@@ -49,6 +49,7 @@ public enum AuditAction {
     ACTIVITY_DELETED,
     CONTENT_PUBLISHED,
     TRANSLATION_CHANGED,
+    LEARNING_PATH_CONFIGURED,
 
     // --- Enrollment ---
     ENROLLMENT_CREATED,

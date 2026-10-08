@@ -96,6 +96,11 @@ public class EnrollmentService {
     }
 
     @Transactional(readOnly = true)
+    public List<Enrollment> listActiveByCourse(UUID courseId) {
+        return enrollments.findByCourse_IdAndStatus(courseId, EnrollmentStatus.ACTIVE);
+    }
+
+    @Transactional(readOnly = true)
     public Page<Enrollment> listByStudent(UUID studentUserId, Pageable pageable) {
         return enrollments.findByStudent_Id(studentUserId, pageable);
     }

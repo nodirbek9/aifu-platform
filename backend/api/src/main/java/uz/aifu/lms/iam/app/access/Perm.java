@@ -40,6 +40,7 @@ public final class Perm {
     public static final String PROGRESS_SELF_READ = "PROGRESS_SELF_READ";
     public static final String PROGRESS_SELF_WRITE = "PROGRESS_SELF_WRITE";
     public static final String PROGRESS_COURSE_READ = "PROGRESS_COURSE_READ";
+    public static final String LEARNING_PATH_MANAGE = "LEARNING_PATH_MANAGE";
 
     // assessment
     public static final String QUIZ_READ = "QUIZ_READ";

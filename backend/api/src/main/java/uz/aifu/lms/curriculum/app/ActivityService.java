@@ -1,6 +1,7 @@
 package uz.aifu.lms.curriculum.app;
 
 import java.time.Clock;
+import java.time.Instant;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -208,6 +209,13 @@ public class ActivityService {
                 request.dueAt());
         audit.record(AuditAction.ACTIVITY_UPDATED, actorId, "activity", id, ip, null);
         return activity;
+    }
+
+    @Transactional
+    public void setAvailableFrom(UUID id, Instant availableFrom) {
+        Activity activity = require(id);
+        activity.setAvailableFrom(availableFrom);
+        activities.save(activity);
     }
 
     /**

@@ -8,7 +8,10 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.MapsId;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.PostLoad;
+import jakarta.persistence.PostPersist;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 import jakarta.persistence.Version;
 import java.math.BigDecimal;
 import java.time.Instant;
@@ -16,6 +19,7 @@ import java.util.UUID;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.hibernate.proxy.HibernateProxy;
+import org.springframework.data.domain.Persistable;
 import uz.aifu.lms.academics.domain.Course;
 import uz.aifu.lms.common.util.Guards;
 import uz.aifu.lms.curriculum.domain.Activity;
@@ -28,7 +32,7 @@ import uz.aifu.lms.iam.domain.User;
  */
 @Entity
 @Table(name = "course_learning_paths")
-public class CourseLearningPath {
+public class CourseLearningPath implements Persistable<UUID> {
 
     @Id
     @Column(name = "course_id")
@@ -75,11 +79,31 @@ public class CourseLearningPath {
     @Column(name = "version", nullable = false)
     private long version;
 
+    /** Spring Data calls persist (not merge) for a row that was never saved. */
+    @Transient private boolean isNewRow = false;
+
     protected CourseLearningPath() {}
 
     public CourseLearningPath(Course course) {
         this.course = Guards.required(course, "course");
         this.courseId = course.getId();
+        this.isNewRow = true;
+    }
+
+    @Override
+    public UUID getId() {
+        return courseId;
+    }
+
+    @Override
+    public boolean isNew() {
+        return isNewRow;
+    }
+
+    @PostPersist
+    @PostLoad
+    void markNotNew() {
+        this.isNewRow = false;
     }
 
     public CourseLearningPath(Course course, BigDecimal minReadingFraction) {
@@ -93,7 +117,9 @@ public class CourseLearningPath {
     public void enable(User enabledBy, Instant now) {
         this.enabled = true;
         this.enabledBy = Guards.required(enabledBy, "enabledBy");
-        this.enabledAt = Guards.required(now, "now");
+        if (this.enabledAt == null) {
+            this.enabledAt = Guards.required(now, "now");
+        }
     }
 
     public void disable() {

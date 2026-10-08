@@ -1,6 +1,7 @@
 package uz.aifu.lms.enrollment.persistence;
 
 import java.util.Collection;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import org.springframework.data.domain.Page;
@@ -40,6 +41,8 @@ public interface EnrollmentRepository extends JpaRepository<Enrollment, UUID> {
     int findMaxAttemptNo(@Param("courseId") UUID courseId, @Param("studentId") UUID studentId);
 
     long countByCourse_IdAndStatusIn(UUID courseId, Collection<EnrollmentStatus> statuses);
+
+    List<Enrollment> findByCourse_IdAndStatus(UUID courseId, EnrollmentStatus status);
 
     boolean existsByIdAndStudent_Id(UUID id, UUID studentId);
 
