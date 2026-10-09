@@ -168,7 +168,7 @@ Import is idempotent (codes `<COURSE>-<LESSON>-T`, `-P`, `-ON`). A lesson may ha
 and one active PRACTICE (partial unique index): where the dev seed already set one, import skips it
 unless `--replace` archives the seeded activity (an archived activity cannot be published again;
 go through DRAFT first). The seeded activities of DAS1110-S1 `M2`, `A2`, `A3`, `A8` and `MT6` are
-end-to-end fixtures and were kept. For `M2`, `A8` and `MT6` the new bank was not imported (the
+end-to-end fixtures and were kept. For `M2`, `A8` and `MT6` the new bank was imported without an activity (the
 import skips the occupied step); for `A2` and `A3` it was imported with an archived activity. A NUM
 `tolerance` must stay below 1,000,000 (the column is numeric(12,6)).
 
