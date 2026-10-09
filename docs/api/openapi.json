@@ -9044,11 +9044,20 @@
     },
     "/api/v1/admin/enrollments" : {
       "get" : {
+        "description" : "Requires courseId or userId. When both are supplied, their filters intersect. Unknown userId returns an empty page. Default order is enrolledAt descending, then id ascending; explicit sorting is preserved.",
         "operationId" : "listByCourse",
         "parameters" : [ {
           "in" : "query",
           "name" : "courseId",
-          "required" : true,
+          "required" : false,
+          "schema" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "userId",
+          "required" : false,
           "schema" : {
             "format" : "uuid",
             "type" : "string"
@@ -9118,7 +9127,7 @@
         "security" : [ {
           "bearerAuth" : [ ]
         } ],
-        "summary" : "List a course's enrollments, optionally filtered by status",
+        "summary" : "List enrollments by course or student, optionally filtered by status",
         "tags" : [ "Admin: enrollments" ]
       },
       "post" : {

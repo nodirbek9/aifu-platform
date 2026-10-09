@@ -2,6 +2,8 @@ package uz.aifu.lms;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
+import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -55,6 +57,39 @@ class AuthorizationMatrixIT extends AbstractIntegrationTest {
     }
 
     @Test
+    void adminEnrollmentsCrossUserFilter_withoutAnyToken_isUnauthorized() {
+        UUID studentId = fixtures.activeUser(RoleCode.STUDENT).getId();
+        for (String query :
+                List.of(
+                        "?userId=" + studentId,
+                        "?courseId=" + UUID.randomUUID() + "&userId=" + studentId)) {
+            ResponseEntity<String> response =
+                    rest.exchange(
+                            url("/api/v1/admin/enrollments" + query),
+                            HttpMethod.GET,
+                            null,
+                            String.class);
+            assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+        }
+    }
+
+    @Test
+    void adminEnrollmentsCrossUserFilter_withStudentToken_isForbidden() {
+        assertCrossUserFilterForbidden(RoleCode.STUDENT);
+    }
+
+    @Test
+    void adminEnrollmentsCrossUserFilter_withTeacherToken_isForbidden() {
+        assertCrossUserFilterForbidden(RoleCode.TEACHER);
+    }
+
+    @Test
+    void adminEnrollmentsCrossUserFilter_withAdminToken_isAllowed() {
+        ResponseEntity<String> response = getFilteredEnrollmentsAs(RoleCode.ADMIN);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
+
+    @Test
     void setRoles_withTeacherToken_isForbidden_evenThoughTeacherCanReachOtherAdminEndpoints() {
         // ROLE_MANAGE is strictly narrower than USER_MANAGE/USER_READ and granted to ADMIN only.
         User target = fixtures.activeUser(RoleCode.STUDENT);
@@ -90,6 +125,37 @@ class AuthorizationMatrixIT extends AbstractIntegrationTest {
         headers.setBearerAuth(tokenFor(fixtures.activeUser(roleCode)));
         return rest.exchange(
                 url("/api/v1/admin/users"),
+                HttpMethod.GET,
+                new HttpEntity<>(headers),
+                String.class);
+    }
+
+    private void assertCrossUserFilterForbidden(String roleCode) {
+        User target = fixtures.activeUser(RoleCode.STUDENT);
+        UUID randomCourseId = UUID.randomUUID();
+        for (String query :
+                List.of(
+                        "?userId=" + target.getId(),
+                        "?courseId=" + randomCourseId + "&userId=" + target.getId())) {
+            HttpHeaders headers = new HttpHeaders();
+            headers.setBearerAuth(tokenFor(fixtures.activeUser(roleCode)));
+            ResponseEntity<String> response =
+                    rest.exchange(
+                            url("/api/v1/admin/enrollments" + query),
+                            HttpMethod.GET,
+                            new HttpEntity<>(headers),
+                            String.class);
+            assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+            assertThat(response.getBody()).contains("\"code\":\"AUTH_FORBIDDEN\"");
+        }
+    }
+
+    private ResponseEntity<String> getFilteredEnrollmentsAs(String roleCode) {
+        User target = fixtures.activeUser(RoleCode.STUDENT);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(tokenFor(fixtures.activeUser(roleCode)));
+        return rest.exchange(
+                url("/api/v1/admin/enrollments?userId=" + target.getId()),
                 HttpMethod.GET,
                 new HttpEntity<>(headers),
                 String.class);

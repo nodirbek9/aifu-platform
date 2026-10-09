@@ -3,10 +3,12 @@ package uz.aifu.lms;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -26,8 +28,10 @@ import uz.aifu.lms.assessment.api.dto.QuizDtos.CreateQuizRequest;
 import uz.aifu.lms.assessment.api.dto.QuizDtos.QuizDetail;
 import uz.aifu.lms.assessment.api.dto.QuizDtos.UpsertQuizTranslationRequest;
 import uz.aifu.lms.assessment.domain.QuestionType;
+import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.domain.PublicationStatus;
 import uz.aifu.lms.common.error.ApiError;
+import uz.aifu.lms.enrollment.api.dto.EnrollmentDtos.EnrollmentSummary;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.Enrollment;
 import uz.aifu.lms.enrollment.domain.EnrollmentSource;
@@ -189,6 +193,74 @@ class StudentDataIsolationIT extends AbstractIntegrationTest {
                         new HttpEntity<>(new ReadingBeatRequest(0, false), bearer(ownerToken)),
                         LessonPathView.class);
         assertThat(ownBeat.getStatusCode()).isEqualTo(HttpStatus.OK);
+    }
+
+    @Test
+    void adminEnrollmentCrossUserFilter_isDeniedToStudents_andMeListsOnlyOwnEnrollments() {
+        User admin = userFixtures.activeUser(RoleCode.ADMIN);
+        Course course = enrollmentFixtures.publishedCourse(150);
+
+        User owner = userFixtures.activeUser(RoleCode.STUDENT);
+        User intruder = userFixtures.activeUser(RoleCode.STUDENT);
+        Enrollment ownerEnrollment =
+                enrollments.enroll(
+                        course.getId(), owner.getId(), EnrollmentSource.ADMIN, admin.getId(), null);
+        Enrollment intruderEnrollment =
+                enrollments.enroll(
+                        course.getId(),
+                        intruder.getId(),
+                        EnrollmentSource.ADMIN,
+                        admin.getId(),
+                        null);
+        String ownerToken = login(owner);
+        String intruderToken = login(intruder);
+
+        // The cross-user admin filter must never be a back door into another student's record.
+        for (String query :
+                List.of(
+                        "?userId=" + owner.getId(),
+                        "?courseId=" + course.getId() + "&userId=" + owner.getId())) {
+            ResponseEntity<ApiError> stolen =
+                    rest.exchange(
+                            url("/api/v1/admin/enrollments" + query),
+                            HttpMethod.GET,
+                            new HttpEntity<>(bearer(intruderToken)),
+                            ApiError.class);
+            assertThat(stolen.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+            assertThat(stolen.getBody().code()).isEqualTo("AUTH_FORBIDDEN");
+            assertThat(stolen.getBody().toString())
+                    .doesNotContain(ownerEnrollment.getId().toString());
+        }
+
+        // /enrollments/me stays the ownership-filtered view for a student.
+        ResponseEntity<PageResponse<EnrollmentSummary>> own =
+                rest.exchange(
+                        url("/api/v1/enrollments/me"),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(ownerToken)),
+                        new ParameterizedTypeReference<>() {});
+        assertThat(own.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(own.getBody().content())
+                .extracting(EnrollmentSummary::studentUserId)
+                .containsOnly(owner.getId());
+        assertThat(own.getBody().content())
+                .extracting(EnrollmentSummary::id)
+                .contains(ownerEnrollment.getId())
+                .doesNotContain(intruderEnrollment.getId());
+
+        ResponseEntity<PageResponse<EnrollmentSummary>> intruders =
+                rest.exchange(
+                        url("/api/v1/enrollments/me"),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(intruderToken)),
+                        new ParameterizedTypeReference<>() {});
+        assertThat(intruders.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(intruders.getBody().content())
+                .extracting(EnrollmentSummary::studentUserId)
+                .containsOnly(intruder.getId());
+        assertThat(intruders.getBody().content())
+                .extracting(EnrollmentSummary::id)
+                .doesNotContain(ownerEnrollment.getId());
     }
 
     private UUID publishedLesson(UUID courseId) {

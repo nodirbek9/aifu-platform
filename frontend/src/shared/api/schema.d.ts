@@ -312,7 +312,10 @@ export interface paths {
             path?: never;
             cookie?: never;
         };
-        /** List a course's enrollments, optionally filtered by status */
+        /**
+         * List enrollments by course or student, optionally filtered by status
+         * @description Requires courseId or userId. When both are supplied, their filters intersect. Unknown userId returns an empty page. Default order is enrolledAt descending, then id ascending; explicit sorting is preserved.
+         */
         get: operations["listByCourse"];
         put?: never;
         /** Enroll one student in a course */
@@ -8321,8 +8324,9 @@ export interface operations {
     };
     listByCourse: {
         parameters: {
-            query: {
-                courseId: string;
+            query?: {
+                courseId?: string;
+                userId?: string;
                 status?: "PENDING" | "ACTIVE" | "SUSPENDED" | "COMPLETED" | "FAILED" | "WITHDRAWN";
                 /** @description Zero-based page index */
                 page?: number;
