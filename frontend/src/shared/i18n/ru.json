@@ -1400,6 +1400,16 @@
     "teacherLoad": "По плану {{planned}} ч, в расписании {{scheduled}} ч",
     "teacherRoleLabel": "Роль",
     "teachers": "Преподаватели",
+    "teacherWork": {
+      "tab": "Преподаватели",
+      "courses": "Назначенные курсы",
+      "noCourses": "Нет назначенных курсов в этом семестре",
+      "weeklyHours": "Часы занятий за неделю",
+      "termLoad": "Нагрузка за семестр",
+      "chooseTimetable": "Выберите расписание",
+      "openTimetable": "Открыть расписание",
+      "loadingCourses": "Загрузка назначенных курсов"
+    },
     "term": "Семестр",
     "termName": "Название семестра",
     "texts": "Тексты",

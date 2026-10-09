@@ -1400,6 +1400,16 @@
     "teacherLoad": "Rejada {{planned}} soat, jadvalda {{scheduled}} soat",
     "teacherRoleLabel": "Vazifasi",
     "teachers": "Oʻqituvchilar",
+    "teacherWork": {
+      "tab": "Oʻqituvchilar",
+      "courses": "Biriktirilgan kurslar",
+      "noCourses": "Bu semestrda biriktirilgan kurslar yoʻq",
+      "weeklyHours": "Haftalik dars soatlari",
+      "termLoad": "Semestr yuklamasi",
+      "chooseTimetable": "Dars jadvalini tanlang",
+      "openTimetable": "Dars jadvalini ochish",
+      "loadingCourses": "Biriktirilgan kurslar yuklanmoqda"
+    },
     "term": "Semestr",
     "termName": "Semestr nomi",
     "texts": "Matnlar",

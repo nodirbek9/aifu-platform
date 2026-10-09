@@ -1400,6 +1400,16 @@
     "teacherLoad": "{{planned}} h planned, {{scheduled}} h scheduled",
     "teacherRoleLabel": "Role",
     "teachers": "Teachers",
+    "teacherWork": {
+      "tab": "Teachers",
+      "courses": "Assigned courses",
+      "noCourses": "No assigned courses in this term",
+      "weeklyHours": "Weekly teaching hours",
+      "termLoad": "Term teaching load",
+      "chooseTimetable": "Choose a timetable",
+      "openTimetable": "Open timetable",
+      "loadingCourses": "Loading assigned courses"
+    },
     "term": "Term",
     "termName": "Term name",
     "texts": "Texts",
