@@ -270,7 +270,9 @@ public class TimetableQueryService {
         List<TimetableException> touching = exceptions.findTouching(timetable.getId(), start, end);
         Map<String, TimetableException> onDate = new HashMap<>();
         for (TimetableException x : touching) {
-            onDate.put(x.getEntry().getId() + "@" + x.getOnDate(), x);
+            if (x.getKind() != ExceptionKind.ADD) {
+                onDate.put(x.getEntry().getId() + "@" + x.getOnDate(), x);
+            }
         }
         Set<LocalDate> holidayDates =
                 holidays.findByOnDateBetweenOrderByOnDate(start, end).stream()
@@ -342,6 +344,22 @@ public class TimetableQueryService {
                                     x.getNewRoom(),
                                     x.getNewTeacherUserId(),
                                     MOVED_IN,
+                                    x.getReason()));
+                }
+            } else if (x.getKind() == ExceptionKind.ADD
+                    && !x.getOnDate().isBefore(start)
+                    && !x.getOnDate().isAfter(end)) {
+                TimetableEntry entry = byId.get(x.getEntry().getId());
+                if (entry != null) {
+                    String status = holidayDates.contains(x.getOnDate()) ? HOLIDAY : SCHEDULED;
+                    result.add(
+                            occurrence(
+                                    entry,
+                                    x.getOnDate(),
+                                    x.getNewPairSlot(),
+                                    x.getNewRoom(),
+                                    x.getNewTeacherUserId(),
+                                    status,
                                     x.getReason()));
                 }
             }

@@ -50,6 +50,7 @@ import uz.aifu.lms.scheduling.domain.TimetableEntry;
 import uz.aifu.lms.scheduling.domain.TimetableException;
 import uz.aifu.lms.scheduling.domain.TimetableStatus;
 import uz.aifu.lms.scheduling.domain.WeekParity;
+import uz.aifu.lms.scheduling.persistence.HolidayRepository;
 import uz.aifu.lms.scheduling.persistence.PairSlotRepository;
 import uz.aifu.lms.scheduling.persistence.RoomRepository;
 import uz.aifu.lms.scheduling.persistence.StudentGroupRepository;
@@ -75,6 +76,7 @@ public class TimetableService {
     private final PairSlotRepository pairSlots;
     private final TimetableQueryService queries;
     private final AcademicCalendarService calendar;
+    private final HolidayRepository holidays;
     private final CourseDirectory courses;
     private final StudentDirectory people;
     private final AuditService audit;
@@ -90,6 +92,7 @@ public class TimetableService {
             PairSlotRepository pairSlots,
             TimetableQueryService queries,
             AcademicCalendarService calendar,
+            HolidayRepository holidays,
             CourseDirectory courses,
             StudentDirectory people,
             AuditService audit,
@@ -103,6 +106,7 @@ public class TimetableService {
         this.pairSlots = pairSlots;
         this.queries = queries;
         this.calendar = calendar;
+        this.holidays = holidays;
         this.courses = courses;
         this.people = people;
         this.audit = audit;
@@ -537,19 +541,55 @@ public class TimetableService {
         timetable.requireEditable();
         Term term = calendar.requireTerm(timetable.getTermId());
         LocalDate date = request.onDate();
-        boolean heldThatDay =
-                queries.occurrences(timetable, term, date, date).stream()
-                        .anyMatch(
-                                o ->
-                                        o.entry().getId().equals(entryId)
-                                                && o.date().equals(date)
-                                                && TimetableQueryService.SCHEDULED.equals(
-                                                        o.status()));
-        if (!heldThatDay) {
-            throw Exceptions.validation(
-                    "The class is not held on this date (wrong weekday or week, a holiday, outside its"
-                            + " date range, or already changed)");
+
+        List<TimetableQueryService.Occurrence> dailyOccurrences =
+                queries.occurrences(timetable, term, date, date);
+        if (request.kind() == ExceptionKind.ADD) {
+            if (date.isBefore(term.getStartsOn()) || date.isAfter(term.getEndsOn())) {
+                throw Exceptions.validation("The date is outside the term");
+            }
+            if (entry.getValidFrom() != null && date.isBefore(entry.getValidFrom())) {
+                throw Exceptions.validation("The date is outside its date range");
+            }
+            if (entry.getValidTo() != null && date.isAfter(entry.getValidTo())) {
+                throw Exceptions.validation("The date is outside its date range");
+            }
+            if (holidays.existsByOnDate(date)) {
+                throw Exceptions.validation("The date is a holiday");
+            }
+            if (exceptions.existsByEntry_IdAndOnDate(entryId, date)) {
+                throw Exceptions.validation(
+                        "An exception already exists for this entry on this date");
+            }
+            boolean exists =
+                    dailyOccurrences.stream()
+                            .anyMatch(
+                                    o ->
+                                            o.entry().getId().equals(entryId)
+                                                    && o.date().equals(date));
+            if (exists) {
+                throw Exceptions.validation(
+                        "An occurrence of this class already exists on this date");
+            }
+            if (request.newPairSlotId() == null) {
+                throw Exceptions.validation("newPairSlotId is required for ADD exception");
+            }
+        } else {
+            boolean heldThatDay =
+                    dailyOccurrences.stream()
+                            .anyMatch(
+                                    o ->
+                                            o.entry().getId().equals(entryId)
+                                                    && o.date().equals(date)
+                                                    && TimetableQueryService.SCHEDULED.equals(
+                                                            o.status()));
+            if (!heldThatDay) {
+                throw Exceptions.validation(
+                        "The class is not held on this date (wrong weekday or week, a holiday, outside its"
+                                + " date range, or already changed)");
+            }
         }
+
         PairSlot newSlot =
                 request.newPairSlotId() == null
                         ? null
@@ -618,7 +658,9 @@ public class TimetableService {
             LocaleCode locale) {
         LocalDate date = x.getKind() == ExceptionKind.MOVED ? x.getNewDate() : x.getOnDate();
         PairSlot slot =
-                x.getKind() == ExceptionKind.MOVED ? x.getNewPairSlot() : entry.getPairSlot();
+                (x.getKind() == ExceptionKind.MOVED || x.getKind() == ExceptionKind.ADD)
+                        ? x.getNewPairSlot()
+                        : entry.getPairSlot();
         UUID teacher =
                 x.getNewTeacherUserId() != null
                         ? x.getNewTeacherUserId()
@@ -681,7 +723,11 @@ public class TimetableService {
         payload.put("courseId", entry.getCourseId().toString());
         payload.put("kind", x.getKind().name());
         payload.put("date", x.getOnDate().toString());
-        payload.put("pairNo", entry.getPairSlot().getPairNo());
+        payload.put(
+                "pairNo",
+                x.getKind() == ExceptionKind.ADD
+                        ? x.getNewPairSlot().getPairNo()
+                        : entry.getPairSlot().getPairNo());
         if (x.getNewDate() != null) {
             payload.put("newDate", x.getNewDate().toString());
             payload.put("newPairNo", x.getNewPairSlot().getPairNo());

@@ -213,7 +213,7 @@ public class AdminTimetableController {
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/timetable-entries/{entryId}/exceptions")
     @Operation(
-            summary = "Cancel, move or replace one occurrence of a class",
+            summary = "Add, cancel, move or replace one occurrence of a class",
             description = "The teacher(s) and the students of the groups get a notification.")
     public ResponseEntity<ExceptionView> addException(
             @PathVariable UUID entryId,
