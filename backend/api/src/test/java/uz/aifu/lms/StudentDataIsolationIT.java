@@ -18,6 +18,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import uz.aifu.lms.academics.app.CourseService;
 import uz.aifu.lms.academics.domain.AssessmentComponent;
 import uz.aifu.lms.academics.domain.Course;
+import uz.aifu.lms.analytics.api.dto.AdminProblemDtos.AdminProblemView;
+import uz.aifu.lms.analytics.domain.AdminProblemView.AdminProblemType;
 import uz.aifu.lms.assessment.api.dto.AttemptDtos.AttemptDetail;
 import uz.aifu.lms.assessment.api.dto.AttemptDtos.StartAttemptRequest;
 import uz.aifu.lms.assessment.api.dto.QuestionDtos.CreateAnswerOptionRequest;
@@ -283,6 +285,58 @@ class StudentDataIsolationIT extends AbstractIntegrationTest {
                 "INSERT INTO lesson_translations (lesson_id, locale, title) VALUES (?, 'uz', 'Dars')",
                 lessonId);
         return lessonId;
+    }
+
+    @Test
+    void adminProblems_studentCannotReadOtherStudentsProblemsOrLeakRowsInErrors() {
+        User admin = userFixtures.activeUser(RoleCode.ADMIN);
+        User owner = userFixtures.activeUser(RoleCode.STUDENT);
+        User intruder = userFixtures.activeUser(RoleCode.STUDENT);
+        jdbc.update(
+                "UPDATE users SET locked_until = now() + interval '1 hour' WHERE id = ?",
+                owner.getId());
+        String adminToken = login(admin);
+        String intruderToken = login(intruder);
+
+        // Prove the victim has real rows in the read model before exercising denied reads.
+        for (AdminProblemType type :
+                List.of(AdminProblemType.STUDENT_WITHOUT_GROUP, AdminProblemType.LOCKED_ACCOUNT)) {
+            ResponseEntity<PageResponse<AdminProblemView>> allowed =
+                    rest.exchange(
+                            url("/api/v1/admin/problems?type=" + type + "&size=100"),
+                            HttpMethod.GET,
+                            new HttpEntity<>(bearer(adminToken)),
+                            new ParameterizedTypeReference<>() {});
+            assertThat(allowed.getStatusCode()).isEqualTo(HttpStatus.OK);
+            assertThat(allowed.getBody().content())
+                    .extracting(AdminProblemView::userId)
+                    .contains(owner.getId());
+        }
+
+        List<String> queries = new java.util.ArrayList<>();
+        queries.add("");
+        for (AdminProblemType type : AdminProblemType.values()) {
+            queries.add("?type=" + type + "&page=0&size=100");
+        }
+        for (String query : queries) {
+            ResponseEntity<String> denied =
+                    rest.exchange(
+                            url("/api/v1/admin/problems" + query),
+                            HttpMethod.GET,
+                            new HttpEntity<>(bearer(intruderToken)),
+                            String.class);
+            assertThat(denied.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+            assertThat(denied.getBody())
+                    .contains("\"code\":\"AUTH_FORBIDDEN\"", "\"requestId\":")
+                    .doesNotContain(
+                            owner.getId().toString(),
+                            owner.getFullName(),
+                            "\"content\"",
+                            "\"problemKey\"",
+                            "\"userId\"",
+                            "\"fullName\"",
+                            "\"lockedUntil\"");
+        }
     }
 
     private AssessmentComponent soleTopLevelComponent(UUID courseId) {

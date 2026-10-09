@@ -13,6 +13,11 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import uz.aifu.lms.academics.api.dto.CourseDtos.AssignTeacherRequest;
+import uz.aifu.lms.academics.app.CourseService;
+import uz.aifu.lms.academics.domain.Course;
+import uz.aifu.lms.academics.domain.TeacherRole;
+import uz.aifu.lms.analytics.domain.AdminProblemView.AdminProblemType;
 import uz.aifu.lms.iam.api.dto.AuthDtos.LoginRequest;
 import uz.aifu.lms.iam.api.dto.AuthDtos.TokenResponse;
 import uz.aifu.lms.iam.api.dto.UserDtos.SetRolesRequest;
@@ -21,6 +26,7 @@ import uz.aifu.lms.iam.domain.User;
 import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.ExceptionRequest;
 import uz.aifu.lms.scheduling.domain.ExceptionKind;
 import uz.aifu.lms.support.AbstractIntegrationTest;
+import uz.aifu.lms.support.fixtures.EnrollmentFixtures;
 import uz.aifu.lms.support.fixtures.UserFixtures;
 
 /**
@@ -31,6 +37,8 @@ import uz.aifu.lms.support.fixtures.UserFixtures;
 class AuthorizationMatrixIT extends AbstractIntegrationTest {
 
     @Autowired private UserFixtures fixtures;
+    @Autowired private EnrollmentFixtures enrollmentFixtures;
+    @Autowired private CourseService courses;
     @LocalServerPort private int port;
 
     @Test
@@ -131,6 +139,93 @@ class AuthorizationMatrixIT extends AbstractIntegrationTest {
                 HttpMethod.GET,
                 new HttpEntity<>(headers),
                 String.class);
+    }
+
+    @Test
+    void adminProblems_withoutAnyToken_isUnauthorizedAndExposesNoRows() {
+        for (String query : problemQueries()) {
+            ResponseEntity<String> response =
+                    rest.exchange(
+                            url("/api/v1/admin/problems" + query),
+                            HttpMethod.GET,
+                            null,
+                            String.class);
+            assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+            assertNoProblemRows(response);
+        }
+    }
+
+    @Test
+    void adminProblems_withStudentToken_isForbiddenAndExposesNoRows() {
+        assertProblemsForbidden(fixtures.activeUser(RoleCode.STUDENT));
+    }
+
+    @Test
+    void adminProblems_withTeacherToken_isForbiddenAndExposesNoRows() {
+        assertProblemsForbidden(fixtures.activeUser(RoleCode.TEACHER));
+    }
+
+    @Test
+    void adminProblems_withAssignedTeacherToken_isForbiddenAndExposesNoRows() {
+        User teacher = fixtures.activeUser(RoleCode.TEACHER);
+        User admin = fixtures.activeUser(RoleCode.ADMIN);
+        Course course = enrollmentFixtures.publishedCourse(150);
+        courses.assignTeacher(
+                course.getId(),
+                new AssignTeacherRequest(teacher.getId(), TeacherRole.LEAD),
+                admin.getId(),
+                null);
+        assertProblemsForbidden(teacher);
+    }
+
+    @Test
+    void adminProblems_withAdminToken_isAllowed() {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(tokenFor(fixtures.activeUser(RoleCode.ADMIN)));
+        ResponseEntity<String> response =
+                rest.exchange(
+                        url("/api/v1/admin/problems"),
+                        HttpMethod.GET,
+                        new HttpEntity<>(headers),
+                        String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).contains("\"content\":", "\"totalElements\":");
+    }
+
+    private void assertProblemsForbidden(User caller) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(tokenFor(caller));
+        for (String query : problemQueries()) {
+            ResponseEntity<String> response =
+                    rest.exchange(
+                            url("/api/v1/admin/problems" + query),
+                            HttpMethod.GET,
+                            new HttpEntity<>(headers),
+                            String.class);
+            assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+            assertThat(response.getBody()).contains("\"code\":\"AUTH_FORBIDDEN\"");
+            assertNoProblemRows(response);
+        }
+    }
+
+    private List<String> problemQueries() {
+        List<String> queries = new java.util.ArrayList<>();
+        queries.add("");
+        for (AdminProblemType type : AdminProblemType.values()) {
+            queries.add("?type=" + type);
+        }
+        return queries;
+    }
+
+    private void assertNoProblemRows(ResponseEntity<String> response) {
+        assertThat(response.getBody())
+                .contains("\"requestId\":")
+                .doesNotContain(
+                        "\"content\"",
+                        "\"problemKey\"",
+                        "\"fullName\"",
+                        "\"userId\"",
+                        "\"enrollmentId\"");
     }
 
     private void assertCrossUserFilterForbidden(String roleCode) {

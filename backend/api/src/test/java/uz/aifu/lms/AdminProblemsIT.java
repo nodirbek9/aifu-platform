@@ -6,6 +6,8 @@ import java.math.BigDecimal;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -13,9 +15,16 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.web.server.LocalServerPort;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import uz.aifu.lms.academics.api.dto.CourseDtos.AssignTeacherRequest;
@@ -26,10 +35,14 @@ import uz.aifu.lms.analytics.api.dto.AdminProblemDtos;
 import uz.aifu.lms.analytics.domain.AdminProblemView;
 import uz.aifu.lms.analytics.domain.AdminProblemView.AdminProblemType;
 import uz.aifu.lms.analytics.persistence.AdminProblemViewRepository;
+import uz.aifu.lms.common.api.PageResponse;
+import uz.aifu.lms.common.error.ApiError;
 import uz.aifu.lms.common.i18n.LocaleCode;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.Enrollment;
 import uz.aifu.lms.enrollment.domain.EnrollmentSource;
+import uz.aifu.lms.iam.api.dto.AuthDtos.LoginRequest;
+import uz.aifu.lms.iam.api.dto.AuthDtos.TokenResponse;
 import uz.aifu.lms.iam.domain.Role;
 import uz.aifu.lms.iam.domain.RoleCode;
 import uz.aifu.lms.iam.domain.StudentProfile;
@@ -42,9 +55,9 @@ import uz.aifu.lms.support.fixtures.EnrollmentFixtures;
 import uz.aifu.lms.support.fixtures.UserFixtures;
 
 /**
- * Phase 7.4-B1: Analytics-owned administrative problems read model against real PostgreSQL. Covers
- * positive and negative cases for all six problem types, expired locks, missing profiles, archived
- * records, unlimited attempts, grants, successful midterms and pending grading.
+ * Phase 7.4-B1/B2: Administrative problems read model and HTTP endpoint against real PostgreSQL.
+ * Covers positive and negative cases for all six problem types, expired locks, missing profiles,
+ * archived records, unlimited attempts, grants, successful midterms and pending grading.
  */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class AdminProblemsIT extends AbstractIntegrationTest {
@@ -59,6 +72,7 @@ class AdminProblemsIT extends AbstractIntegrationTest {
     @Autowired private StudentProfileRepository studentProfileRepository;
     @Autowired private PasswordEncoder passwordEncoder;
     @Autowired private JdbcTemplate jdbc;
+    @LocalServerPort private int port;
 
     private User adminUser;
     private User teacherUser;
@@ -584,7 +598,7 @@ class AdminProblemsIT extends AbstractIntegrationTest {
         for (int i = 0; i < page0.getContent().size() - 1; i++) {
             AdminProblemView current = page0.getContent().get(i);
             AdminProblemView next = page0.getContent().get(i + 1);
-            int typeCompare = current.getType().compareTo(next.getType());
+            int typeCompare = current.getType().name().compareTo(next.getType().name());
             assertThat(typeCompare).isLessThanOrEqualTo(0);
             if (typeCompare == 0) {
                 assertThat(current.getProblemKey().compareTo(next.getProblemKey()))
@@ -614,8 +628,300 @@ class AdminProblemsIT extends AbstractIntegrationTest {
     }
 
     // -------------------------------------------------------------------------
-    // Helper methods
+    // HTTP endpoint pagination, validation and live problem resolution
     // -------------------------------------------------------------------------
+
+    @Test
+    void list_allAndEachType_paginateWithStableOrderingAndCorrectTotals() {
+        createStudentUser(true);
+        createGroup("PAGE-" + randomSuffix(), "ACTIVE");
+        Course course = enrollmentFixtures.publishedCourse(150);
+        enroll(course, createStudentUser(false));
+        User locked = createStudentUser(true);
+        jdbc.update(
+                "UPDATE users SET locked_until = now() + interval '1 hour' WHERE id = ?",
+                locked.getId());
+        UUID quizId = createQuiz(course.getId(), 2, "PUBLISHED");
+        UUID activityId =
+                createMidtermActivity(
+                        course.getId(),
+                        quizId,
+                        getTopLevelAssessmentComponentId(course.getId()),
+                        "PUBLISHED");
+        enableCourseLearningPath(course.getId(), activityId, createPublishedLesson(course.getId()));
+        Enrollment exhausted = enroll(course, createStudentUser(true));
+        createQuizAttempt(quizId, exhausted.getId(), activityId, 1, "GRADED", false, 40);
+        createQuizAttempt(quizId, exhausted.getId(), activityId, 2, "GRADED", false, 40);
+
+        HttpHeaders headers = adminHeaders();
+        assertPagesMatchSql(null, headers);
+        for (AdminProblemType type : AdminProblemType.values()) {
+            assertPagesMatchSql(type, headers);
+        }
+    }
+
+    @Test
+    void list_multipleUserRolesAndQuizAttempts_doNotDuplicateProblemsWithinType() {
+        User student = createStudentUser(true);
+        jdbc.update(
+                "INSERT INTO user_roles (user_id, role_id) SELECT ?, id FROM roles WHERE code = ?",
+                student.getId(),
+                RoleCode.TEACHER);
+        Course course = enrollmentFixtures.publishedCourse(150);
+        UUID quizId = createQuiz(course.getId(), 2, "PUBLISHED");
+        UUID activityId =
+                createMidtermActivity(
+                        course.getId(),
+                        quizId,
+                        getTopLevelAssessmentComponentId(course.getId()),
+                        "PUBLISHED");
+        enableCourseLearningPath(course.getId(), activityId, createPublishedLesson(course.getId()));
+        Enrollment enrollment = enroll(course, student);
+        createQuizAttempt(quizId, enrollment.getId(), activityId, 1, "GRADED", false, 40);
+        createQuizAttempt(quizId, enrollment.getId(), activityId, 2, "GRADED", false, 40);
+
+        List<AdminProblemDtos.AdminProblemView> rows = allProblems(null, adminHeaders());
+        assertThat(rows)
+                .extracting(AdminProblemDtos.AdminProblemView::problemKey)
+                .doesNotHaveDuplicates();
+        assertThat(rows.stream().filter(row -> student.getId().equals(row.userId())))
+                .extracting(AdminProblemDtos.AdminProblemView::type)
+                .containsExactlyInAnyOrder(
+                        AdminProblemType.STUDENT_WITHOUT_GROUP,
+                        AdminProblemType.MIDTERM_ATTEMPTS_EXHAUSTED);
+    }
+
+    @Test
+    void list_invalidTypeAndUnsupportedSort_returnSafeBadRequest() {
+        HttpHeaders headers = adminHeaders();
+        for (String query : List.of("?type=UNKNOWN", "?sort=passwordHash,asc")) {
+            ResponseEntity<ApiError> response =
+                    rest.exchange(
+                            url(query), HttpMethod.GET, new HttpEntity<>(headers), ApiError.class);
+            assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+            assertThat(response.getBody().code())
+                    .isEqualTo(
+                            query.startsWith("?type=") ? "MALFORMED_REQUEST" : "VALIDATION_FAILED");
+            assertThat(response.getBody().requestId()).isNotBlank();
+            assertThat(response.getBody().toString())
+                    .doesNotContain("problemKey", "fullName", "passwordHash");
+        }
+    }
+
+    @Test
+    void list_sizeCapExplicitSortAndOutOfRangePage_preserveEnvelopeAndTotals() {
+        createStudentUser(true);
+        HttpHeaders headers = adminHeaders();
+        PageResponse<AdminProblemDtos.AdminProblemView> capped = getProblems("?size=1000", headers);
+        assertThat(capped.size()).isEqualTo(100);
+        assertThat(capped.content()).hasSizeLessThanOrEqualTo(100);
+        PageResponse<AdminProblemDtos.AdminProblemView> descending =
+                getProblems("?size=5&sort=problemKey,desc", headers);
+        List<String> expected =
+                jdbc.queryForList(
+                        "SELECT problem_key FROM v_admin_problems ORDER BY problem_key DESC LIMIT 5",
+                        String.class);
+        assertThat(descending.content())
+                .extracting(AdminProblemDtos.AdminProblemView::problemKey)
+                .containsExactlyElementsOf(expected);
+        PageResponse<AdminProblemDtos.AdminProblemView> byType =
+                getProblems("?size=5&sort=type,desc", headers);
+        List<String> typeExpected =
+                jdbc.queryForList(
+                        "SELECT problem_key FROM v_admin_problems ORDER BY type DESC, problem_key ASC LIMIT 5",
+                        String.class);
+        assertThat(byType.content())
+                .extracting(AdminProblemDtos.AdminProblemView::problemKey)
+                .containsExactlyElementsOf(typeExpected);
+        PageResponse<AdminProblemDtos.AdminProblemView> empty =
+                getProblems("?page=1000000&size=100", headers);
+        assertThat(empty.content()).isEmpty();
+        assertThat(empty.totalElements()).isEqualTo(capped.totalElements());
+        assertThat(empty.hasNext()).isFalse();
+    }
+
+    @Test
+    void list_assigningStudentGroup_removesMissingGroupProblem() {
+        User student = createStudentUser(true);
+        HttpHeaders headers = adminHeaders();
+        assertProblemPresent(AdminProblemType.STUDENT_WITHOUT_GROUP, student.getId(), headers);
+        String code = "FIX-" + randomSuffix();
+        createGroup(code, "ACTIVE");
+        saveStudentProfile(student, code);
+        assertProblemAbsent(AdminProblemType.STUDENT_WITHOUT_GROUP, student.getId(), headers);
+    }
+
+    @Test
+    void list_publishingGroupTimetable_removesMissingPublishedEntriesProblem() {
+        Course course = enrollmentFixtures.publishedCourse(150);
+        UUID groupId = createGroup("FIX-TT-" + randomSuffix(), "ACTIVE");
+        UUID timetableId =
+                createTimetable(getCourseTermId(course.getId()), "Fix " + randomSuffix(), "DRAFT");
+        createTimetableEntry(
+                timetableId, course.getId(), teacherUser.getId(), getFirstPairSlotId(), groupId);
+        HttpHeaders headers = adminHeaders();
+        assertProblemPresent(AdminProblemType.GROUP_WITHOUT_PUBLISHED_ENTRIES, groupId, headers);
+        jdbc.update("UPDATE timetables SET status = 'PUBLISHED' WHERE id = ?", timetableId);
+        assertProblemAbsent(AdminProblemType.GROUP_WITHOUT_PUBLISHED_ENTRIES, groupId, headers);
+    }
+
+    @Test
+    void list_unlockingAccount_removesLockedAccountProblem() {
+        User student = createStudentUser(true);
+        jdbc.update(
+                "UPDATE users SET locked_until = now() + interval '1 hour' WHERE id = ?",
+                student.getId());
+        HttpHeaders headers = adminHeaders();
+        assertProblemPresent(AdminProblemType.LOCKED_ACCOUNT, student.getId(), headers);
+        jdbc.update("UPDATE users SET locked_until = NULL WHERE id = ?", student.getId());
+        assertProblemAbsent(AdminProblemType.LOCKED_ACCOUNT, student.getId(), headers);
+    }
+
+    @Test
+    void list_assigningTeacher_removesMissingTeacherProblem() {
+        Course course = enrollmentFixtures.publishedCourse(150);
+        HttpHeaders headers = adminHeaders();
+        assertProblemPresent(AdminProblemType.COURSE_WITHOUT_TEACHER, course.getId(), headers);
+        courseService.assignTeacher(
+                course.getId(),
+                new AssignTeacherRequest(teacherUser.getId(), TeacherRole.LEAD),
+                adminUser.getId(),
+                null);
+        assertProblemAbsent(AdminProblemType.COURSE_WITHOUT_TEACHER, course.getId(), headers);
+    }
+
+    @Test
+    void list_reactivatingUser_removesInactiveUserEnrollmentProblem() {
+        Course course = enrollmentFixtures.publishedCourse(150);
+        User student = createStudentUser(false);
+        Enrollment enrollment = enroll(course, student);
+        HttpHeaders headers = adminHeaders();
+        assertProblemPresent(
+                AdminProblemType.ACTIVE_ENROLLMENT_INACTIVE_USER, enrollment.getId(), headers);
+        jdbc.update("UPDATE users SET status = 'ACTIVE' WHERE id = ?", student.getId());
+        assertProblemAbsent(
+                AdminProblemType.ACTIVE_ENROLLMENT_INACTIVE_USER, enrollment.getId(), headers);
+    }
+
+    @Test
+    void list_grantingAttempt_removesExhaustedMidtermProblem() {
+        Course course = enrollmentFixtures.publishedCourse(150);
+        UUID quizId = createQuiz(course.getId(), 2, "PUBLISHED");
+        UUID activityId =
+                createMidtermActivity(
+                        course.getId(),
+                        quizId,
+                        getTopLevelAssessmentComponentId(course.getId()),
+                        "PUBLISHED");
+        enableCourseLearningPath(course.getId(), activityId, createPublishedLesson(course.getId()));
+        Enrollment enrollment = enroll(course, createStudentUser(true));
+        createQuizAttempt(quizId, enrollment.getId(), activityId, 1, "GRADED", false, 40);
+        createQuizAttempt(quizId, enrollment.getId(), activityId, 2, "GRADED", false, 40);
+        HttpHeaders headers = adminHeaders();
+        assertProblemPresent(
+                AdminProblemType.MIDTERM_ATTEMPTS_EXHAUSTED, enrollment.getId(), headers);
+        createQuizGrant(quizId, enrollment.getId(), adminUser.getId(), "Additional attempt");
+        assertProblemAbsent(
+                AdminProblemType.MIDTERM_ATTEMPTS_EXHAUSTED, enrollment.getId(), headers);
+    }
+
+    private void assertPagesMatchSql(AdminProblemType type, HttpHeaders headers) {
+        List<String> expected =
+                type == null
+                        ? jdbc.queryForList(
+                                "SELECT problem_key FROM v_admin_problems ORDER BY type, problem_key",
+                                String.class)
+                        : jdbc.queryForList(
+                                "SELECT problem_key FROM v_admin_problems WHERE type = ? ORDER BY type, problem_key",
+                                String.class,
+                                type.name());
+        assertThat(expected).isNotEmpty();
+        List<AdminProblemDtos.AdminProblemView> rows = new ArrayList<>();
+        int size = 3;
+        int totalPages = (expected.size() + size - 1) / size;
+        for (int page = 0; page < totalPages; page++) {
+            String query =
+                    "?page=" + page + "&size=" + size + (type == null ? "" : "&type=" + type);
+            PageResponse<AdminProblemDtos.AdminProblemView> response = getProblems(query, headers);
+            assertThat(response.page()).isEqualTo(page);
+            assertThat(response.size()).isEqualTo(size);
+            assertThat(response.totalElements()).isEqualTo(expected.size());
+            assertThat(response.totalPages()).isEqualTo(totalPages);
+            assertThat(response.hasNext()).isEqualTo(page + 1 < totalPages);
+            assertThat(response.hasPrevious()).isEqualTo(page > 0);
+            if (type != null) {
+                assertThat(response.content())
+                        .extracting(AdminProblemDtos.AdminProblemView::type)
+                        .containsOnly(type);
+            }
+            rows.addAll(response.content());
+            assertThat(getProblems(query, headers)).isEqualTo(response);
+        }
+        assertThat(rows)
+                .extracting(AdminProblemDtos.AdminProblemView::problemKey)
+                .containsExactlyElementsOf(expected);
+        assertThat(rows)
+                .isSortedAccordingTo(
+                        Comparator.comparing(
+                                        (AdminProblemDtos.AdminProblemView row) ->
+                                                row.type().name())
+                                .thenComparing(AdminProblemDtos.AdminProblemView::problemKey));
+    }
+
+    private List<AdminProblemDtos.AdminProblemView> allProblems(
+            AdminProblemType type, HttpHeaders headers) {
+        List<AdminProblemDtos.AdminProblemView> rows = new ArrayList<>();
+        int page = 0;
+        PageResponse<AdminProblemDtos.AdminProblemView> response;
+        do {
+            response =
+                    getProblems(
+                            "?size=100&page=" + page++ + (type == null ? "" : "&type=" + type),
+                            headers);
+            rows.addAll(response.content());
+        } while (response.hasNext());
+        return rows;
+    }
+
+    private void assertProblemPresent(AdminProblemType type, UUID id, HttpHeaders headers) {
+        assertThat(allProblems(type, headers))
+                .extracting(AdminProblemDtos.AdminProblemView::problemKey)
+                .contains(type + ":" + id);
+    }
+
+    private void assertProblemAbsent(AdminProblemType type, UUID id, HttpHeaders headers) {
+        assertThat(allProblems(type, headers))
+                .extracting(AdminProblemDtos.AdminProblemView::problemKey)
+                .doesNotContain(type + ":" + id);
+    }
+
+    private PageResponse<AdminProblemDtos.AdminProblemView> getProblems(
+            String query, HttpHeaders headers) {
+        ResponseEntity<PageResponse<AdminProblemDtos.AdminProblemView>> response =
+                rest.exchange(
+                        url(query),
+                        HttpMethod.GET,
+                        new HttpEntity<>(headers),
+                        new ParameterizedTypeReference<>() {});
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        return response.getBody();
+    }
+
+    private HttpHeaders adminHeaders() {
+        ResponseEntity<TokenResponse> response =
+                rest.postForEntity(
+                        "http://localhost:" + port + "/api/v1/auth/login",
+                        new LoginRequest(adminUser.getUsername(), UserFixtures.RAW_PASSWORD),
+                        TokenResponse.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(response.getBody().accessToken());
+        return headers;
+    }
+
+    private String url(String query) {
+        return "http://localhost:" + port + "/api/v1/admin/problems" + query;
+    }
 
     private String randomSuffix() {
         return UUID.randomUUID().toString().replace("-", "").substring(0, 8);
