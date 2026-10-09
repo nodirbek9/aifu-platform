@@ -233,3 +233,102 @@ The contracts and permission matrix specified here are continuously enforced by 
 - `uz.aifu.lms.AuthorizationMatrixIT`: Verifies role denial (403 `AUTH_FORBIDDEN`) and anonymous denial (401) on administrative routes including timetable exceptions and cross-user enrollments.
 - `uz.aifu.lms.TimetableAddExceptionIT`: Integration test verifying ADD occurrence generation, conflict detection (409 `TIMETABLE_CONFLICT`), concurrency locks, Bean Validation constraints, date boundaries, and authorization isolation.
 - `uz.aifu.lms.AdminPeopleIT`: Tests cross-user enrollment filtering and admin-only access control.
+
+## 6. Phase 7.4: Administrative Problems
+
+Source of truth: [AdminProblemsController](../../backend/api/src/main/java/uz/aifu/lms/analytics/api/AdminProblemsController.java),
+[AdminProblemsService](../../backend/api/src/main/java/uz/aifu/lms/analytics/app/AdminProblemsService.java),
+and [AdminProblemDtos](../../backend/api/src/main/java/uz/aifu/lms/analytics/api/dto/AdminProblemDtos.java).
+The generated [OpenAPI contract](../api/openapi.json) and [endpoint catalogue](../api/ENDPOINTS.md)
+must be regenerated from this implementation before a frontend consumes the endpoint.
+
+### Read contract and authorization
+
+`GET /api/v1/admin/problems?type=&page=&size=&sort=` requires a bearer access token and
+`ANALYTICS_PLATFORM_READ`. ADMIN holds that permission; ordinary teachers, including teachers
+assigned to an affected course, and students do not. Course assignment grants no access to
+this platform-wide read model. This is a read-only service transaction over the analytics-owned
+SQL view; reading a row never changes an account, enrollment, timetable, or quiz attempt.
+
+| Caller / request | Expected response | Data exposure |
+|---|---|---|
+| ADMIN with `ANALYTICS_PLATFORM_READ`, valid parameters | 200 `PageResponseAdminProblemView` | Requested page only |
+| Ordinary assigned or unassigned TEACHER | 403 `AUTH_FORBIDDEN` | No problem rows or resource identities |
+| STUDENT | 403 `AUTH_FORBIDDEN` | No problem rows, including the caller's own problems |
+| Anonymous, invalid or expired bearer token | 401 `AUTH_TOKEN_MISSING` | No problem rows |
+| Authorized caller with invalid `type` or unsupported sort property | 400 `VALIDATION_FAILED` | No problem rows |
+
+For these protected routes, `JwtAuthenticationFilter` leaves invalid/expired tokens
+unauthenticated and `JsonAuthenticationEntryPoint` returns `AUTH_TOKEN_MISSING`; distinct
+`AUTH_TOKEN_INVALID` / `AUTH_TOKEN_EXPIRED` responses in the general error table above are not
+produced by this filter. Errors include `code`, `message`, `requestId`, and `path`. Optional
+`details` and `timestamp` depend on the error handler; do not require them on security-filter
+responses. Denied reads must not contain `content`, `problemKey`, `fullName`, `userId`, or
+`enrollmentId`, and must not include credentials, answers, or internal exception details.
+
+Omitting `type` includes all six categories. Filtering, counting and pagination happen in SQL;
+`totalElements` describes the filtered result, not the current page length. Page indices start
+at zero and size is capped at 100. Supported sort properties are `type` and `problemKey` only.
+The default is `type ASC, problemKey ASC`; missing default tie-breakers are appended to an
+explicit sort. A stable `problemKey` is `type + ":" + primary-resource-id`. The same resource
+may appear in different categories, but must not be duplicated within a category.
+
+### Row data and administrative fixes
+
+| Type | Resource identifiers | Administrative fix / required permission |
+|---|---|---|
+| `STUDENT_WITHOUT_GROUP` | `userId` | `POST /api/v1/admin/groups/{id}/students`, `GROUP_MANAGE` |
+| `GROUP_WITHOUT_PUBLISHED_ENTRIES` | `groupId`, `groupCode` | Build/publish a timetable through existing admin endpoints, `TIMETABLE_MANAGE` |
+| `COURSE_WITHOUT_TEACHER` | `courseId`, `subjectCode`, `cohortCode`, `termName` | `POST /api/v1/admin/courses/{id}/teachers`, `COURSE_TEACHER_MANAGE` |
+| `ACTIVE_ENROLLMENT_INACTIVE_USER` | `userId`, `enrollmentId`, `courseId` | Account status: `USER_MANAGE`; enrollment transition: `ENROLLMENT_MANAGE` and course-editor guard |
+| `LOCKED_ACCOUNT` | `userId`, `lockedUntil` | `POST /api/v1/admin/users/{id}/unlock`, `USER_MANAGE` |
+| `MIDTERM_ATTEMPTS_EXHAUSTED` | `userId`, `courseId`, `enrollmentId`, `quizId` | `POST /api/v1/admin/quizzes/{quizId}/enrollments/{enrollmentId}/attempt-grants`, `QUIZ_ATTEMPT_GRANT` |
+
+Rows additionally expose stored `fullName`, `groupId`, and `groupCode` where applicable.
+Midterm rows include `attemptsUsed`, `attemptsAllowed`, and `grantAvailable`.
+Inapplicable null properties are absent from JSON. No frontend URL, password hash, token,
+quiz answer, or solution code is part of this DTO. Identifiers in a row provide context;
+they do not authorize the caller to perform the proposed fix.
+
+The midterm allowance comes from the exact quiz/enrollment pair: the maximum attempt number
+versus `quizzes.max_attempts + count(quiz_attempt_grants)`. Unlimited quizzes, completed/passed
+midterms, usable in-progress attempts, and submitted attempts awaiting grading are excluded.
+Expired in-progress attempts can count without being mutated by this read. `grantAvailable`
+means no grant already exists for that pair; it is not a permission check. Each write
+endpoint independently validates permission and current state, so a stale row cannot authorize
+another grant or bypass a transition rule.
+
+### Related Phase 7 permission boundaries
+
+The matrix in section 2 states the intended Phase 7 administrative outcomes. Successful
+mutations there presume valid resources and transitions; authorization does not guarantee a
+write will pass domain validation. Account deactivation and enrollment withdrawal are separate
+requests requiring `USER_MANAGE` and `ENROLLMENT_MANAGE` respectively, with partial success
+possible. No combined atomic operation or hard-delete capability is implied.
+
+Existing staff reads retain their authorization: `/api/v1/groups` and its roster reads require
+`GROUP_READ`, held by ADMIN and TEACHER. Course teacher roster reads continue to require
+`ENROLLMENT_READ` plus the course ownership guard.
+
+**Cross-user enrollment enforcement gap (outside 7.4-B3):** V003 also grants `ENROLLMENT_READ`
+to TEACHER. The current `AdminEnrollmentController.listByCourse` checks that authority and
+only invokes the course-editor guard when `courseId` is supplied; `userId` alone has no
+administrative caller check. Consequently the 403 requirement in section 2 is not established
+by the current source for that filter. `AdminPeopleIT` and `AuthorizationMatrixIT` require
+teacher denial, including assigned teachers, but this documentation change does not repair
+that earlier chunk or claim those tests passed.
+
+### Verification
+
+- `AdminProblemsIT`: all six predicates, type filtering, totals, stable paging, size cap,
+  allowed/invalid sorts, no duplicates, and removal after underlying state changes.
+- `AuthorizationMatrixIT`: ADMIN access; assigned/unassigned teacher and student denial;
+  anonymous denial; no problem rows in denied responses, for all/type-filtered reads.
+- `StudentDataIsolationIT`: students cannot read another student's administrative problems
+  or obtain identifiers from denied requests and errors.
+- `ArchitectureBoundaryTest`: analytics keeps its existing module boundaries.
+- `OpenApiContractIT`: the committed contract matches the running application. Regeneration
+  uses `-Dopenapi.write=true`, followed by the endpoint catalogue and frontend type generators.
+
+These are required checks, not a claim that an integration run completed. A Docker-dependent
+test skipped because Docker is inaccessible does not verify this matrix or regenerate OpenAPI.
