@@ -40,13 +40,15 @@ export async function scaffold(manifest, { api, dryRun = false, log = console.lo
   const add = (method, url, body, bind) => plan.push({ method, url, body, ...(bind && { bind }) })
   const create = (url, body, id, componentCode) => {
     add('POST', url, body, { id, ...(componentCode && { componentCode }) })
-    return { id, status: 'DRAFT', translations: [] }
+    return { ...body, id, status: 'DRAFT', translations: [] }
   }
-  const translations = (entity, url, titles, extraKeys = []) => {
+  // keepExisting: lesson titles are owned by the lesson texts (import.mjs writes them from uz.md/ru.md/en.md), so the
+  // manifest only fills a missing one — otherwise every run of the chain would rewrite the other tool's title
+  const translations = (entity, url, titles, extraKeys = [], keepExisting = false) => {
     for (const locale of LOCALES) {
       if (titles?.[locale] === undefined) continue
       const current = entity.translations?.find((t) => t.locale === locale)
-      if (current?.title === titles[locale]) continue
+      if (current?.title === titles[locale] || (keepExisting && current?.title)) continue
       add('PUT', `${url}/translations/${locale}`, { ...pick(current ?? {}, extraKeys), title: titles[locale] })
     }
   }
@@ -133,8 +135,8 @@ export async function scaffold(manifest, { api, dryRun = false, log = console.lo
         ...(parentComponentId !== undefined && { parentComponentId }) }
       const current = [...components.values()].find((c) => c.code.toLowerCase() === spec.code.toLowerCase())
       if (current) {
-        compatible(current, { ...request, parentComponentId: parentComponentId ?? null }, `Assessment component ${spec.code}`)
-        // Jackson omits null parents; compare absent and null alike below instead.
+        compatible({ ...current, parentComponentId: current.parentComponentId ?? null },
+          { ...request, code: current.code, parentComponentId: parentComponentId ?? null }, `Assessment component ${spec.code}`) // the platform upper-cases component codes
         components.set(spec.code, current)
       } else components.set(spec.code, create(`/admin/courses/${course.id}/assessment-components`, request, `$component:${spec.displayOrder}`, spec.code))
       planned.add(spec.code)
@@ -166,7 +168,7 @@ export async function scaffold(manifest, { api, dryRun = false, log = console.lo
     translations(module, `/teacher/modules/${module.id}`, spec.titles, ['description'])
     const allLessons = lessonLists.get(module.id) ?? []
     const wantedLessons = []
-    for (const [j, topic] of spec.lessons.entries()) {
+    for (const topic of spec.lessons) {
       let lesson = lessonCodes.get(topic.code)
       if (lesson && lesson.moduleId !== module.id) throw new Error(`Lesson ${topic.code}: already belongs to another module; no writes performed`)
       if (!lesson) {
@@ -183,7 +185,7 @@ export async function scaffold(manifest, { api, dryRun = false, log = console.lo
           ...(topic.hours !== undefined && { allocatedHours: topic.hours }),
         })
       }
-      translations(lesson, `/teacher/lessons/${lesson.id}`, topic.titles, ['summary'])
+      translations(lesson, `/teacher/lessons/${lesson.id}`, topic.titles, ['summary'], true)
       wantedLessons.push(lesson)
       publishLessons.push(lesson)
     }
@@ -211,7 +213,7 @@ export async function scaffold(manifest, { api, dryRun = false, log = console.lo
     })
     const result = await api.call(op.method, url, resolve(op.body))
     if (op.bind) {
-      const entity = op.bind.componentCode ? result.assessmentComponents.find((c) => c.code === op.bind.componentCode) : result
+      const entity = op.bind.componentCode ? result.assessmentComponents.find((c) => c.code.toLowerCase() === op.bind.componentCode.toLowerCase()) : result
       if (!entity?.id) throw new Error(`${op.method} ${url}: response has no created ID; re-run to resume`)
       ids.set(op.bind.id, entity.id)
     }

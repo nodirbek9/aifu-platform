@@ -20,6 +20,163 @@ The three files of a lesson have **the same skeleton**: the same blocks in the s
 importer refuses a lesson whose languages disagree, so a translation can never silently drop a
 section.
 
+## 1a. Create the course skeleton from `course.json`
+
+`tools/content/scaffold.mjs` creates the subject, its delivery in an **existing** term, the
+assessment tree, modules and lessons through the admin/teacher API. No database access or
+backend edits are needed. Then the existing importer loads the lesson texts by code:
+
+```bash
+AIFU_API=http://localhost:8080 AIFU_USER=admin AIFU_PASSWORD=… node tools/content/scaffold.mjs content/<COURSE> --dry-run
+AIFU_API=http://localhost:8080 AIFU_USER=admin AIFU_PASSWORD=… node tools/content/scaffold.mjs content/<COURSE>
+AIFU_API=http://localhost:8080 AIFU_USER=admin AIFU_PASSWORD=… node tools/content/import.mjs content/<COURSE>
+```
+
+The argument may also be the path to `course.json`. Credentials are required for dry-run:
+after the shared client's authentication POST, **all scaffold calls are GETs**. Dry-run
+prints every proposed HTTP write, with symbolic IDs for entities that do not yet exist, and
+writes no academic data. Use an admin account; a teacher alone cannot create catalogue data.
+
+Complete example below is a **synthetic format/test fixture, not an AIFU syllabus**. Replace
+its academic values and translations with reviewed source material, and `TEST` with the code
+of an existing department. Do not populate unknowns from this example or another subject.
+Follow [the syllabus onboarding rules](academic-analysis/HOW-TO-ONBOARD-A-SYLLABUS.md).
+
+```json
+{
+  "subjectCode": "TEST1000",
+  "termName": "1-semestr",
+  "academicYearCode": "2026-2027",
+  "title": "Sinov kursi",
+  "subject": {
+    "names": {
+      "uz": "Sinov fani",
+      "ru": "Тестовая дисциплина",
+      "en": "Test subject"
+    },
+    "departmentCode": "TEST",
+    "type": "ELECTIVE",
+    "defaultInstructionLanguage": "uz"
+  },
+  "course": {
+    "credits": 1,
+    "totalHours": 4,
+    "instructionLanguage": "uz",
+    "gradeScaleCode": "AIFU_100_5",
+    "titles": {
+      "uz": "Sinov kursi",
+      "ru": "Тестовый курс",
+      "en": "Test course"
+    },
+    "sessionAllocations": {
+      "LECTURE": 2,
+      "PRACTICAL": 2
+    }
+  },
+  "assessmentComponents": [
+    {
+      "code": "JN",
+      "kind": "CONTINUOUS",
+      "maxPoints": 30,
+      "minPassPercent": 60,
+      "blocksFinal": true
+    },
+    {
+      "code": "JN_P",
+      "kind": "PRACTICAL_ACTIVITY",
+      "maxPoints": 30,
+      "parent": "JN"
+    },
+    {
+      "code": "ON",
+      "kind": "MIDTERM",
+      "maxPoints": 30,
+      "minPassPercent": 60,
+      "blocksFinal": true
+    },
+    {
+      "code": "YaN",
+      "kind": "FINAL",
+      "maxPoints": 40,
+      "minPassPercent": 60,
+      "assessmentForm": "WRITTEN"
+    }
+  ],
+  "modules": [
+    {
+      "code": "UNIT1",
+      "groupingSource": "PLATFORM_INFERRED",
+      "titles": {
+        "uz": "Sinov moduli",
+        "ru": "Тестовый модуль",
+        "en": "Test module"
+      },
+      "lessons": [
+        {
+          "code": "M1",
+          "sessionType": "LECTURE",
+          "hours": 2,
+          "titles": {
+            "uz": "Sinov maʼruzasi",
+            "ru": "Тестовая лекция",
+            "en": "Test lecture"
+          }
+        },
+        {
+          "code": "A1",
+          "sessionType": "PRACTICAL",
+          "hours": 2,
+          "titles": {
+            "uz": "Sinov mashgʻuloti",
+            "ru": "Тестовое занятие",
+            "en": "Test practical"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+| Field | Rule |
+|---|---|
+| `subjectCode`, `termName`, `title` | Existing importer fields keep working. Code and term name are required; title is optional. A legacy manifest without creation sections only locates an existing course; it never invents its skeleton. |
+| `academicYearCode` | Optional disambiguator. Term lookup searches all years by exact name. Missing/ambiguous terms fail before writes and list available names and years; no term is created. |
+| `subject.names`, `departmentCode` | Required if `subject` is supplied. Names have `uz`, `ru`, `en`; department is looked up by exact code. |
+| `subject.type`, `defaultInstructionLanguage` | Optional. Type is `MANDATORY`, `ELECTIVE` or `OPTIONAL`; instruction language is `uz`, `ru` or `en`. Omitted fields are not sent; the platform applies its own defaults. |
+| `course.credits`, `totalHours` | Required if `course` is supplied. Credits: 0.1–60, one decimal place; total hours: positive integer. Backend requires total hours even though OpenAPI omits it from its `required` list. No credit-to-hours conversion is assumed. |
+| `course.cohortCode` | Optional; course identity is subject + term + cohort (platform default `DEFAULT`). Legacy lookups with several deliveries fail as ambiguous. |
+| `course.titles` | Optional three-language titles. Without it, a supplied legacy `title` writes only the Uzbek course title when the `course` section is present. When both are supplied, `title` must equal `course.titles.uz`. |
+| `course.instructionLanguage`, `gradeScaleCode` | Optional creation fields. Omitted grade scale uses the platform default; the syllabus onboarding guide specifies when to reuse `AIFU_100_5`. |
+| `course.sessionAllocations` | Optional object keyed by session type, with non-negative integer hours. If supplied, its hours must sum to `totalHours`. Omit unspecified session types rather than filling them with zero. |
+| `assessmentComponents` | Optional complete rubric. Codes are unique, case-insensitively. Root `maxPoints` sum to 100; each group of children sums to its parent's `maxPoints`. `parent` references another component code; omit it on roots. Unknown parents and cycles fail offline. Parents are created before children, even if listed later. Display order follows array order. |
+| Component fields | Required: `code`, `kind`, positive `maxPoints`. Optional: `minPassPercent` (0–100), `blocksFinal`, `assessmentForm`. Kinds: `CONTINUOUS`, `MIDTERM`, `FINAL`, `ATTENDANCE`, `INDEPENDENT_WORK`, `PRACTICAL_ACTIVITY`, `PROJECT`, `COURSE_WORK`. Forms: `WRITTEN`, `ORAL`, `MIXED`, `PRACTICAL`, `TEST`, `PROJECT`. Points and percentages allow two decimals. No pass gate is inferred. |
+| `modules[].code`, `titles`, `lessons` | Required per supplied module. Array order is the teaching order. `groupingSource` is optional: `SYLLABUS_EXPLICIT`, `PLATFORM_INFERRED`, `TEACHER_DEFINED`; the platform defaults to inferred grouping. Use explicit grouping only when the syllabus supplies it. |
+| `lessons[].code`, `sessionType`, `titles` | Required per lesson. Lesson codes are unique across the course and match the Markdown folder names. Types: `LECTURE`, `SEMINAR`, `PRACTICAL`, `LABORATORY`, `INDEPENDENT_STUDY`. |
+| `lessons[].hours` | Optional, non-negative, up to 999.99 (database precision). If all lesson hours for a session type are known, their sum must equal its declared budget. Unknown hours remain absent; no estimates are inserted. Every supplied lesson type needs a budget when `sessionAllocations` is supplied. |
+
+All manifest errors, including weight and hour errors, are reported **before any API call**.
+The tool then reads every page of existing subjects/courses/modules/lessons and plans writes.
+An unchanged rerun performs no academic writes, including translation, ordering and status
+updates. Missing pieces of an interrupted run can be filled by rerunning the same manifest.
+Changed titles/hours are updated while preserving existing descriptions, lesson summaries and
+lesson metadata. Existing modules/lessons outside the manifest are retained after its ordered
+entries; an existing lesson in a different module is a conflict, not a silent move.
+
+Lessons are created `DRAFT`; the separate PATCH sets known hours and PUTs set translations.
+Only after the entire skeleton is complete are lessons published in manifest order, followed
+by modules. The **subject and course remain DRAFT when newly created**: review lesson content,
+activities and the syllabus, then use the platform publication workflow. This command does
+not create outcomes, prerequisites, teachers, activities or content blocks.
+
+Platform limitations: there is no transaction across these HTTP calls, so an API failure can
+leave a resumable partial skeleton. Archived modules/lessons must be restored explicitly.
+The API has no component edit endpoint and no credits/total-hours update endpoint; conflicting
+catalogue fields or rubric nodes are reported before writes. An extra existing rubric node
+also fails instead of deleting or guessing weights. Grade scale is a creation-only input and
+is not exposed in `CourseDetail`, so its existing value cannot be checked on a rerun. Run one
+scaffold at a time; concurrent creators have no scaffold-wide idempotency key.
+
 ## 2. What a lesson contains
 
 The order is fixed; every lesson follows it, so a student always knows where they are.

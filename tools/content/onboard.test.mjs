@@ -22,10 +22,10 @@ test('plan: --author adds the writer steps before the check; --enable and --repl
   assert.ok(steps.find((s) => s.name === 'import').args.includes('--replace'))
 })
 
-test('plan: a dry run writes nothing — no authoring, no sandbox run, every writer gets --dry-run', () => {
+test('plan: a dry run writes nothing — no authoring, no sandbox run, no import (the course may not exist yet)', () => {
   const steps = planSteps('NEW1', '/c/NEW1', { author: true, enable: true, dryRun: true })
-  assert.ok(!names(steps).some((n) => n.startsWith('author') || n === 'verify'))
-  for (const step of steps.filter((s) => ['lessons', 'import', 'path'].includes(s.name))) {
+  assert.ok(!names(steps).some((n) => n.startsWith('author') || n === 'verify' || n === 'import' || n === 'path'))
+  for (const step of steps.filter((s) => ['scaffold', 'lessons'].includes(s.name))) {
     assert.ok(step.args.includes('--dry-run'), step.name)
   }
 })

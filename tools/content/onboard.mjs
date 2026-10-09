@@ -32,10 +32,12 @@ export function planSteps(course, dir, { author = false, enable = false, replace
     steps.push({ name: 'author lessons', script: 'assess-author.mjs', args: [course, ...(verify ? [] : ['--no-verify'])] })
     steps.push({ name: 'author midterm', script: 'assess-author.mjs', args: [course, '--midterm'] })
   }
-  steps.push({ name: 'check', script: 'assess.mjs', args: ['check', course] })
-  if (verify && !dryRun) steps.push({ name: 'verify', script: 'assess-verify.mjs', args: [course] })
-  steps.push({ name: 'import', script: 'assess-import.mjs', args: [course, ...dry, ...(replace ? ['--replace'] : [])] })
-  steps.push({ name: 'path', script: 'assess-path.mjs', args: [course, ...dry, ...(enable ? ['--enable'] : [])] })
+  steps.push({ name: 'check', script: 'assess.mjs', args: ['check', dir] })
+  if (verify && !dryRun) steps.push({ name: 'verify', script: 'assess-verify.mjs', args: [dir] })
+  // the import and the path need the course to exist: a dry run of a new course stops before them
+  if (dryRun) return steps
+  steps.push({ name: 'import', script: 'assess-import.mjs', args: [dir, ...(replace ? ['--replace'] : [])] })
+  steps.push({ name: 'path', script: 'assess-path.mjs', args: [dir, ...(enable ? ['--enable'] : [])] })
   return steps
 }
 

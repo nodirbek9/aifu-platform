@@ -24,9 +24,16 @@ node tools/content/onboard.mjs <COURSE> --author           # + an AI worker writ
 node tools/content/onboard.mjs <COURSE> --enable           # + switch the learning path on
 ```
 
-`onboard.mjs` runs, in order and idempotently: scaffold (subject, course, scheme, modules, lessons) →
+`onboard.mjs` runs, in order and idempotently: scaffold (subject, course, scheme, modules, lessons; lesson titles of the manifest only fill gaps — the lesson texts own them) →
 lesson texts → authoring (`--author`) → check → verify (Docker) → import → learning-path config.
 It stops at the first failing step; fix and run the same command again.
+
+A new subject and course are created **DRAFT**: students see nothing until an administrator publishes them
+through the platform's publication workflow (the validators check translations, weights and required
+lessons). The chain never publishes academic data on its own.  on a new course shows the
+scaffold plan, parses the lessons and checks the banks; the import/path steps need the course to exist.
+Proven end to end on a throwaway course (scaffold → lessons → check → verify → import → path, a rerun
+writes nothing, then soft-deleted). The platform upper-cases assessment component codes ( → ).
 
 ## Rules
 
