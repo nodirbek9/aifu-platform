@@ -1618,7 +1618,13 @@
       "changeGroup": "Change group",
       "noGroup": "Student has no group assigned",
       "unknownGroup": "Group not found: {{code}}",
-      "groupChanged": "Student group changed"
+      "groupChanged": "Student group changed",
+      "coursesTitle": "Student enrollments",
+      "noEnrollments": "Student has no enrollments",
+      "openCourses": "Open courses",
+      "changeEnrollmentStatus": "Change enrollment status",
+      "statusChanged": "Enrollment status changed",
+      "reasonRequired": "Enter a reason for the status change"
     }
   },
   "builder": {

@@ -1618,7 +1618,13 @@
       "changeGroup": "Guruhni oʻzgartirish",
       "noGroup": "Talaba guruhga biriktirilmagan",
       "unknownGroup": "Guruh topilmadi: {{code}}",
-      "groupChanged": "Talabaning guruhi oʻzgartirildi"
+      "groupChanged": "Talabaning guruhi oʻzgartirildi",
+      "coursesTitle": "Talabaning kurslarga yozilishlari",
+      "noEnrollments": "Talaba hali kursga yozilmagan",
+      "openCourses": "Kurslarni ochish",
+      "changeEnrollmentStatus": "Kursga yozilish holatini oʻzgartirish",
+      "statusChanged": "Kursga yozilish holati oʻzgartirildi",
+      "reasonRequired": "Holatni oʻzgartirish sababini kiriting"
     }
   },
   "builder": {

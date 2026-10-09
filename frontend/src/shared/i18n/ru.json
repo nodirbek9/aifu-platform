@@ -1618,7 +1618,13 @@
       "changeGroup": "Изменить группу",
       "noGroup": "Студент не состоит в группе",
       "unknownGroup": "Группа не найдена: {{code}}",
-      "groupChanged": "Группа студента изменена"
+      "groupChanged": "Группа студента изменена",
+      "coursesTitle": "Записи студента на курсы",
+      "noEnrollments": "Студент не записан на курсы",
+      "openCourses": "Открыть курсы",
+      "changeEnrollmentStatus": "Изменить статус записи на курс",
+      "statusChanged": "Статус записи на курс изменён",
+      "reasonRequired": "Укажите причину изменения статуса"
     }
   },
   "builder": {
