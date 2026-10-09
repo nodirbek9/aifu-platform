@@ -1,0 +1,1410 @@
+{
+  "afterLesson": "A7",
+  "questions": [
+    {
+      "lesson": "M1",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Algoritm nima?",
+        "ru": "Что такое алгоритм?",
+        "en": "What is an algorithm?"
+      },
+      "explanation": {
+        "uz": "Javob: Masalani yechish uchun aniq tartibdagi chekli qadamlar ketma-ketligi.",
+        "ru": "Ответ: Конечная последовательность шагов в точном порядке для решения задачи.",
+        "en": "Answer: A finite sequence of steps in a precise order to solve a problem."
+      },
+      "answers": [
+        "Masalani yechish uchun aniq tartibdagi chekli qadamlar ketma-ketligi",
+        "Конечная последовательность шагов в точном порядке для решения задачи",
+        "A finite sequence of steps in a precise order to solve a problem"
+      ]
+    },
+    {
+      "lesson": "M1",
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Cheklilik algoritmning chekli qadamlardan keyin tugashini bildiradi.",
+        "ru": "Конечность означает, что алгоритм завершается за конечное число шагов.",
+        "en": "Finiteness means an algorithm ends after a finite number of steps."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsda berilgan qoida bilan mos keladi.",
+        "ru": "Это утверждение соответствует правилу из урока.",
+        "en": "This statement matches the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "lesson": "M1",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Blok-sxemada shart qaysi shaklda koʻrsatiladi?",
+        "ru": "Какой фигурой в блок-схеме обозначают условие?",
+        "en": "Which flowchart shape represents a condition?"
+      },
+      "explanation": {
+        "uz": "Javob: Romb.",
+        "ru": "Ответ: Ромб.",
+        "en": "Answer: Diamond."
+      },
+      "answers": [
+        "Romb",
+        "Ромб",
+        "Diamond"
+      ]
+    },
+    {
+      "lesson": "M1",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Python input() funksiyasi qiymatni dastlab qaysi turda qaytaradi?",
+        "ru": "В каком типе input() в Python изначально возвращает значение?",
+        "en": "What type does Python input() return initially?"
+      },
+      "explanation": {
+        "uz": "Javob: Matn (satr).",
+        "ru": "Ответ: Текст (строка).",
+        "en": "Answer: Text (string)."
+      },
+      "answers": [
+        "Matn (satr)",
+        "Текст (строка)",
+        "Text (string)"
+      ]
+    },
+    {
+      "lesson": "M1",
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Python’da input()dan olingan “12” va “30” int ga aylantirilmasa, qoʻshish 42 beradi.",
+        "ru": "Если “12” и “30” из input() не преобразовать в int, сложение даст 42.",
+        "en": "Adding “12” and “30” from input() gives 42 without converting them to integers."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsdagi qoida bilan mos emas.",
+        "ru": "Это утверждение не соответствует правилу из урока.",
+        "en": "This statement conflicts with the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ]
+    },
+    {
+      "lesson": "M1",
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Kompilyator va interpretatorni tarjima vaqti boʻyicha farqlang.",
+        "ru": "Чем компилятор отличается от интерпретатора по времени перевода?",
+        "en": "How do a compiler and interpreter differ in when they translate?"
+      },
+      "explanation": {
+        "uz": "Javob: Kompilyator dasturni oldindan butunlay tarjima qiladi; interpretator bajarish paytida qatorlab oʻqib bajaradi.",
+        "ru": "Ответ: Компилятор заранее переводит всю программу; интерпретатор читает и выполняет её построчно во время запуска.",
+        "en": "Answer: A compiler translates the whole program ahead of execution; an interpreter reads and executes it line by line during execution."
+      },
+      "answers": [
+        "Kompilyator dasturni oldindan butunlay tarjima qiladi; interpretator bajarish paytida qatorlab oʻqib bajaradi",
+        "Компилятор заранее переводит всю программу; интерпретатор читает и выполняет её построчно во время запуска",
+        "A compiler translates the whole program ahead of execution; an interpreter reads and executes it line by line during execution"
+      ]
+    },
+    {
+      "lesson": "M1",
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Java dasturi platformalarda qayta kompilyatsiyasiz ishlashiga JVM qanday yordam beradi?",
+        "ru": "Как JVM помогает Java-программе работать на разных платформах без повторной компиляции?",
+        "en": "How does the JVM let a Java program run on different platforms without recompilation?"
+      },
+      "explanation": {
+        "uz": "Javob: Java kodi bayt-kodga kompilyatsiya qilinadi, platformadagi JVM esa bayt-kodni bajaradi.",
+        "ru": "Ответ: Код Java компилируется в байт-код, а JVM на платформе выполняет этот байт-код.",
+        "en": "Answer: Java code is compiled to bytecode, and the platform JVM executes that bytecode."
+      },
+      "answers": [
+        "Java kodi bayt-kodga kompilyatsiya qilinadi, platformadagi JVM esa bayt-kodni bajaradi",
+        "Код Java компилируется в байт-код, а JVM на платформе выполняет этот байт-код",
+        "Java code is compiled to bytecode, and the platform JVM executes that bytecode"
+      ]
+    },
+    {
+      "lesson": "M2",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Dastur matnining ma’noli eng kichik boʻlaklari nima deyiladi?",
+        "ru": "Как называются минимальные значимые части текста программы?",
+        "en": "What are the smallest meaningful parts of program text called?"
+      },
+      "explanation": {
+        "uz": "Javob: Leksemalar (tokenlar).",
+        "ru": "Ответ: Лексемы (токены).",
+        "en": "Answer: Lexemes (tokens)."
+      },
+      "answers": [
+        "Leksemalar (tokenlar)",
+        "Лексемы (токены)",
+        "Lexemes (tokens)"
+      ]
+    },
+    {
+      "lesson": "M2",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Dastur yozish qoidalari sintaksismi yoki semantikami?",
+        "ru": "Правила записи программы относятся к синтаксису или семантике?",
+        "en": "Do program-writing rules belong to syntax or semantics?"
+      },
+      "explanation": {
+        "uz": "Javob: Sintaksis.",
+        "ru": "Ответ: Синтаксис.",
+        "en": "Answer: Syntax."
+      },
+      "answers": [
+        "Sintaksis",
+        "Синтаксис",
+        "Syntax"
+      ]
+    },
+    {
+      "lesson": "M2",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Dasturdagi literallar nimani bildiradi?",
+        "ru": "Что обозначают литералы в программе?",
+        "en": "What do literals represent in a program?"
+      },
+      "explanation": {
+        "uz": "Javob: Kodda bevosita yozilgan qiymatlarni.",
+        "ru": "Ответ: Значения, записанные непосредственно в коде.",
+        "en": "Answer: Values written directly in the code."
+      },
+      "answers": [
+        "Kodda bevosita yozilgan qiymatlarni",
+        "Значения, записанные непосредственно в коде",
+        "Values written directly in the code"
+      ]
+    },
+    {
+      "lesson": "M2",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Dastur ishlaydi, lekin notoʻgʻri natija beradi: bu qanday xato?",
+        "ru": "Программа работает, но выдаёт неверный результат: что это за ошибка?",
+        "en": "The program runs but produces a wrong result: what kind of error is this?"
+      },
+      "explanation": {
+        "uz": "Javob: Mantiqiy (semantik) xato.",
+        "ru": "Ответ: Логическая (семантическая) ошибка.",
+        "en": "Answer: A logical (semantic) error."
+      },
+      "answers": [
+        "Mantiqiy (semantik) xato",
+        "Логическая (семантическая) ошибка",
+        "A logical (semantic) error"
+      ]
+    },
+    {
+      "lesson": "M2",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Butun son va kasrli qiymat uchun odatda qaysi turlar ishlatiladi?",
+        "ru": "Какие типы обычно используют для целых и дробных значений?",
+        "en": "Which types are commonly used for integer and fractional values?"
+      },
+      "explanation": {
+        "uz": "Javob: Butun son uchun int, kasrli son uchun float/double.",
+        "ru": "Ответ: int для целого, float/double для дробного.",
+        "en": "Answer: int for integers, float/double for fractional numbers."
+      },
+      "answers": [
+        "Butun son uchun int, kasrli son uchun float/double",
+        "int для целого, float/double для дробного",
+        "int for integers, float/double for fractional numbers"
+      ]
+    },
+    {
+      "lesson": "M2",
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Sintaksisi toʻgʻri, lekin ma’nosi notoʻgʻri ifoda nimani koʻrsatadi?",
+        "ru": "Что показывает выражение с верным синтаксисом, но неверным смыслом?",
+        "en": "What does an expression with valid syntax but incorrect meaning indicate?"
+      },
+      "explanation": {
+        "uz": "Javob: Semantika sintaksisdan alohida: grammatik toʻgʻri kod ham notoʻgʻri ish bajarishi mumkin.",
+        "ru": "Ответ: Семантика отличается от синтаксиса: грамматически верный код может делать не то.",
+        "en": "Answer: Semantics differs from syntax: grammatically valid code can still do the wrong thing."
+      },
+      "answers": [
+        "Semantika sintaksisdan alohida: grammatik toʻgʻri kod ham notoʻgʻri ish bajarishi mumkin",
+        "Семантика отличается от синтаксиса: грамматически верный код может делать не то",
+        "Semantics differs from syntax: grammatically valid code can still do the wrong thing"
+      ]
+    },
+    {
+      "lesson": "M2",
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Identifikatorni kalit soʻz bilan bir xil ishlatish til grammatikasi bilan toʻqnashishi mumkin.",
+        "ru": "Использование ключевого слова как идентификатора может нарушить грамматику языка.",
+        "en": "Using a keyword as an identifier can conflict with the language grammar."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsda berilgan qoida bilan mos keladi.",
+        "ru": "Это утверждение соответствует правилу из урока.",
+        "en": "This statement matches the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "lesson": "M3",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Shart rost yoki yolgʻonligiga koʻra bajarilish yoʻlini tanlash nima?",
+        "ru": "Как называется выбор пути выполнения в зависимости от истинности условия?",
+        "en": "What is choosing an execution path based on whether a condition is true called?"
+      },
+      "explanation": {
+        "uz": "Javob: Tarmoqlanish.",
+        "ru": "Ответ: Ветвление.",
+        "en": "Answer: Branching."
+      },
+      "answers": [
+        "Tarmoqlanish",
+        "Ветвление",
+        "Branching"
+      ]
+    },
+    {
+      "lesson": "M3",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Bir nechta muqobil shartlarni ketma-ket tekshirish uchun qaysi tuzilma ishlatiladi?",
+        "ru": "Какая конструкция последовательно проверяет несколько альтернативных условий?",
+        "en": "Which construct checks several alternative conditions in sequence?"
+      },
+      "explanation": {
+        "uz": "Javob: else-if zanjiri.",
+        "ru": "Ответ: Цепочка else-if.",
+        "en": "Answer: An else-if chain."
+      },
+      "answers": [
+        "else-if zanjiri",
+        "Цепочка else-if",
+        "An else-if chain"
+      ]
+    },
+    {
+      "lesson": "M3",
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Agar mustaqil if shartlari rost boʻlsa, bir nechtasining tanasi bajarilishi mumkin.",
+        "ru": "Если условия независимых if истинны, могут выполниться тела нескольких блоков.",
+        "en": "If independent if conditions are true, multiple bodies may execute."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsda berilgan qoida bilan mos keladi.",
+        "ru": "Это утверждение соответствует правилу из урока.",
+        "en": "This statement matches the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "lesson": "M3",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Shartlar zanjirida birinchi rost shart topilgach odatda nima boʻladi?",
+        "ru": "Что обычно происходит после нахождения первого истинного условия в цепочке?",
+        "en": "What usually happens after the first true condition in a chain is found?"
+      },
+      "explanation": {
+        "uz": "Javob: Shu tarmoq bajariladi va qolgan else-if tarmoqlari tekshirilmaydi.",
+        "ru": "Ответ: Выполняется эта ветвь, остальные else-if не проверяются.",
+        "en": "Answer: That branch runs and the remaining else-if branches are skipped."
+      },
+      "answers": [
+        "Shu tarmoq bajariladi va qolgan else-if tarmoqlari tekshirilmaydi",
+        "Выполняется эта ветвь, остальные else-if не проверяются",
+        "That branch runs and the remaining else-if branches are skipped"
+      ]
+    },
+    {
+      "lesson": "M3",
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Oraliq [a,b) ni butun x uchun yozing: a kiritiladi, b kiritilmaydi.",
+        "ru": "Запишите целочисленное условие для [a,b): a включается, b исключается.",
+        "en": "Write the integer condition for [a,b): include a, exclude b."
+      },
+      "explanation": {
+        "uz": "Javob: x >= a va x < b.",
+        "ru": "Ответ: x >= a и x < b.",
+        "en": "Answer: x >= a and x < b."
+      },
+      "answers": [
+        "x >= a va x < b",
+        "x >= a и x < b",
+        "x >= a and x < b"
+      ]
+    },
+    {
+      "lesson": "M3",
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "else har bir alohida if ga tegishli; qavs yoki chekinish uning mosligini belgilamaydi.",
+        "ru": "else относится к каждому отдельному if независимо от скобок или отступов.",
+        "en": "An else belongs to every separate if regardless of braces or indentation."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsdagi qoida bilan mos emas.",
+        "ru": "Это утверждение не соответствует правилу из урока.",
+        "en": "This statement conflicts with the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ]
+    },
+    {
+      "lesson": "M4",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Bir xil amalni koʻp marta bajaruvchi tuzilma nima?",
+        "ru": "Какая конструкция многократно выполняет одно и то же действие?",
+        "en": "What construct repeats the same action many times?"
+      },
+      "explanation": {
+        "uz": "Javob: Sikl.",
+        "ru": "Ответ: Цикл.",
+        "en": "Answer: A loop."
+      },
+      "answers": [
+        "Sikl",
+        "Цикл",
+        "A loop"
+      ]
+    },
+    {
+      "lesson": "M4",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Takrorlar soni oldindan ma’lum boʻlsa, koʻpincha qaysi sikl qulay?",
+        "ru": "Какой цикл часто удобен, если число повторений заранее известно?",
+        "en": "Which loop is often convenient when the repetition count is known in advance?"
+      },
+      "explanation": {
+        "uz": "Javob: for sikli.",
+        "ru": "Ответ: Цикл for.",
+        "en": "Answer: A for loop."
+      },
+      "answers": [
+        "for sikli",
+        "Цикл for",
+        "A for loop"
+      ]
+    },
+    {
+      "lesson": "M4",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Sikl ichida umumiy yigʻindini toʻplovchi oʻzgaruvchi nima vazifani bajaradi?",
+        "ru": "Какую роль выполняет переменная-накопитель суммы в цикле?",
+        "en": "What does a sum accumulator do inside a loop?"
+      },
+      "explanation": {
+        "uz": "Javob: Har takrorda yangi qiymatni joriy yigʻindiga qoʻshib boradi.",
+        "ru": "Ответ: На каждой итерации добавляет новое значение к текущей сумме.",
+        "en": "Answer: It adds each new value to the running total."
+      },
+      "answers": [
+        "Har takrorda yangi qiymatni joriy yigʻindiga qoʻshib boradi",
+        "На каждой итерации добавляет новое значение к текущей сумме",
+        "It adds each new value to the running total"
+      ]
+    },
+    {
+      "lesson": "M4",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Sikl sharti hech qachon yolgʻon boʻlmasa, qanday holat yuz beradi?",
+        "ru": "Что произойдёт, если условие цикла никогда не станет ложным?",
+        "en": "What happens if a loop condition never becomes false?"
+      },
+      "explanation": {
+        "uz": "Javob: Cheksiz sikl.",
+        "ru": "Ответ: Бесконечный цикл.",
+        "en": "Answer: An infinite loop."
+      },
+      "answers": [
+        "Cheksiz sikl",
+        "Бесконечный цикл",
+        "An infinite loop"
+      ]
+    },
+    {
+      "lesson": "M4",
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Hisoblagich siklida hisoblagich yangilanmasa, qanday muammo tugʻilishi mumkin?",
+        "ru": "Какая проблема возможна, если счётчик цикла не обновляется?",
+        "en": "What problem can occur if a loop counter is not updated?"
+      },
+      "explanation": {
+        "uz": "Javob: Shart oʻzgarmay, sikl cheksiz davom etishi mumkin.",
+        "ru": "Ответ: Условие не меняется, и цикл может стать бесконечным.",
+        "en": "Answer: The condition may never change, causing an infinite loop."
+      },
+      "answers": [
+        "Shart oʻzgarmay, sikl cheksiz davom etishi mumkin",
+        "Условие не меняется, и цикл может стать бесконечным",
+        "The condition may never change, causing an infinite loop"
+      ]
+    },
+    {
+      "lesson": "M4",
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "do-while tanani kamida bir marta bajaradi, chunki shart tanadan keyin tekshiriladi.",
+        "ru": "do-while выполняет тело хотя бы один раз, потому что условие проверяется после тела.",
+        "en": "do-while runs its body at least once because it checks the condition afterward."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsda berilgan qoida bilan mos keladi.",
+        "ru": "Это утверждение соответствует правилу из урока.",
+        "en": "This statement matches the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "lesson": "M5",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Bir nom ostida indekslangan bir xil turdagi qiymatlar ketma-ketligi nima?",
+        "ru": "Как называется последовательность однотипных индексированных значений под одним именем?",
+        "en": "What is a sequence of indexed values of one type under one name called?"
+      },
+      "explanation": {
+        "uz": "Javob: Massiv.",
+        "ru": "Ответ: Массив.",
+        "en": "Answer: An array."
+      },
+      "answers": [
+        "Massiv",
+        "Массив",
+        "An array"
+      ]
+    },
+    {
+      "lesson": "M5",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Massiv uzunligi 8 boʻlsa, 0 dan indekslashda yaroqli indekslar qaysi oraliqda?",
+        "ru": "Каков диапазон допустимых индексов массива длины 8 при нумерации с 0?",
+        "en": "What is the valid index range for a length-8 array indexed from 0?"
+      },
+      "explanation": {
+        "uz": "Javob: 0 dan 7 gacha.",
+        "ru": "Ответ: От 0 до 7.",
+        "en": "Answer: 0 through 7."
+      },
+      "answers": [
+        "0 dan 7 gacha",
+        "От 0 до 7",
+        "0 through 7"
+      ]
+    },
+    {
+      "lesson": "M5",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Barcha massiv elementlari yigʻindisi uchun sikldan oldin yigʻuvchi nimaga tenglanadi?",
+        "ru": "Чему перед циклом присваивают накопитель суммы всех элементов массива?",
+        "en": "What value should initialize the accumulator before summing array elements?"
+      },
+      "explanation": {
+        "uz": "Javob: 0.",
+        "ru": "Ответ: 0.",
+        "en": "Answer: 0."
+      },
+      "answers": [
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "lesson": "M5",
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Massiv elementlariga indeks bilan murojaat qilinadi.",
+        "ru": "К элементам массива обращаются по индексу.",
+        "en": "Array elements are accessed by index."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsda berilgan qoida bilan mos keladi.",
+        "ru": "Это утверждение соответствует правилу из урока.",
+        "en": "This statement matches the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "lesson": "M5",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Massiv indeksi oxirgi yaroqli indeksdan katta boʻlsa nima roʻy beradi?",
+        "ru": "Что происходит, если индекс массива больше последнего допустимого?",
+        "en": "What happens if an array index exceeds the last valid index?"
+      },
+      "explanation": {
+        "uz": "Javob: Chegaradan chiqish xatosi yoki yaroqsiz murojaat.",
+        "ru": "Ответ: Ошибка выхода за границы или недопустимое обращение.",
+        "en": "Answer: An out-of-bounds error or invalid access."
+      },
+      "answers": [
+        "Chegaradan chiqish xatosi yoki yaroqsiz murojaat",
+        "Ошибка выхода за границы или недопустимое обращение",
+        "An out-of-bounds error or invalid access"
+      ]
+    },
+    {
+      "lesson": "M5",
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Oʻrtachadan yuqori elementlar sonini topishda nega ikki oʻtish foydali?",
+        "ru": "Почему для подсчёта значений выше среднего полезны два прохода?",
+        "en": "Why are two passes useful when counting values above the average?"
+      },
+      "explanation": {
+        "uz": "Javob: Avval oʻrtacha hisoblanadi, keyin har element u bilan taqqoslanadi.",
+        "ru": "Ответ: Сначала вычисляется среднее, затем каждый элемент сравнивается с ним.",
+        "en": "Answer: First compute the average, then compare each element against it."
+      },
+      "answers": [
+        "Avval oʻrtacha hisoblanadi, keyin har element u bilan taqqoslanadi",
+        "Сначала вычисляется среднее, затем каждый элемент сравнивается с ним",
+        "First compute the average, then compare each element against it"
+      ]
+    },
+    {
+      "lesson": "M5",
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Eng katta qiymatni topishda boshlangʻich maksimumni doim 0 olish manfiy massivda xato berishi mumkin.",
+        "ru": "Если для поиска максимума всегда начинать с 0, массив с отрицательными значениями может дать неверный ответ.",
+        "en": "Always initializing a maximum search to 0 can fail for an all-negative array."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsda berilgan qoida bilan mos keladi.",
+        "ru": "Это утверждение соответствует правилу из урока.",
+        "en": "This statement matches the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "lesson": "M6",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Matritsa elementida a[i][j] indekslari qaysi tartibda: satr-ustunmi yoki ustun-satrmi?",
+        "ru": "В каком порядке идут индексы a[i][j]: строка-столбец или столбец-строка?",
+        "en": "In a[i][j], are indices ordered row-column or column-row?"
+      },
+      "explanation": {
+        "uz": "Javob: Satr, keyin ustun.",
+        "ru": "Ответ: Строка, затем столбец.",
+        "en": "Answer: Row, then column."
+      },
+      "answers": [
+        "Satr, keyin ustun",
+        "Строка, затем столбец",
+        "Row, then column"
+      ]
+    },
+    {
+      "lesson": "M6",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "3×4 matritsada nechta element bor?",
+        "ru": "Сколько элементов в матрице 3×4?",
+        "en": "How many elements are in a 3×4 matrix?"
+      },
+      "explanation": {
+        "uz": "Javob: 12.",
+        "ru": "Ответ: 12.",
+        "en": "Answer: 12."
+      },
+      "answers": [
+        "12",
+        "12",
+        "12"
+      ]
+    },
+    {
+      "lesson": "M6",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Bosh diagonal elementlari uchun kvadrat matritsada indekslar qanday bogʻlangan?",
+        "ru": "Как связаны индексы элементов главной диагонали квадратной матрицы?",
+        "en": "How are indices related on a square matrix main diagonal?"
+      },
+      "explanation": {
+        "uz": "Javob: i = j.",
+        "ru": "Ответ: i = j.",
+        "en": "Answer: i = j."
+      },
+      "answers": [
+        "i = j",
+        "i = j",
+        "i = j"
+      ]
+    },
+    {
+      "lesson": "M6",
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Transponirlash satrlarni ustunlarga aylantiradi va oʻlchamlarni almashtiradi.",
+        "ru": "Транспонирование превращает строки в столбцы и меняет размеры местами.",
+        "en": "Transposition turns rows into columns and swaps the dimensions."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsda berilgan qoida bilan mos keladi.",
+        "ru": "Это утверждение соответствует правилу из урока.",
+        "en": "This statement matches the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "lesson": "M6",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "n×m matritsa transponirlangach oʻlchami qanday boʻladi?",
+        "ru": "Каков размер матрицы n×m после транспонирования?",
+        "en": "What are the dimensions after transposing an n×m matrix?"
+      },
+      "explanation": {
+        "uz": "Javob: m×n.",
+        "ru": "Ответ: m×n.",
+        "en": "Answer: m×n."
+      },
+      "answers": [
+        "m×n",
+        "m×n",
+        "m×n"
+      ]
+    },
+    {
+      "lesson": "M6",
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Yordamchi diagonal sharti n×n matritsada indekslar orqali qanday yoziladi?",
+        "ru": "Как записать условие побочной диагонали через индексы в матрице n×n?",
+        "en": "How is the secondary diagonal condition written using indices in an n×n matrix?"
+      },
+      "explanation": {
+        "uz": "Javob: i + j = n − 1.",
+        "ru": "Ответ: i + j = n − 1.",
+        "en": "Answer: i + j = n − 1."
+      },
+      "answers": [
+        "i + j = n − 1",
+        "i + j = n − 1",
+        "i + j = n − 1"
+      ]
+    },
+    {
+      "lesson": "M6",
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Python’da [[0] * m] * n mustaqil satrlar yaratadi.",
+        "ru": "В Python [[0] * m] * n создаёт независимые строки.",
+        "en": "In Python, [[0] * m] * n creates independent rows."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsdagi qoida bilan mos emas.",
+        "ru": "Это утверждение не соответствует правилу из урока.",
+        "en": "This statement conflicts with the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ]
+    },
+    {
+      "lesson": "M7",
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Funksiya e’lonidagi nomlangan kirish qiymati parametr, chaqiruvdagi aniq qiymat argument deyiladi.",
+        "ru": "Именованное входное значение в объявлении — параметр, конкретное значение при вызове — аргумент.",
+        "en": "A named input in a function declaration is a parameter; a value at the call is an argument."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsda berilgan qoida bilan mos keladi.",
+        "ru": "Это утверждение соответствует правилу из урока.",
+        "en": "This statement matches the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "lesson": "M7",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Funksiyadan qiymatni qaytaruvchi operator qaysi?",
+        "ru": "Какой оператор возвращает значение из функции?",
+        "en": "Which statement returns a value from a function?"
+      },
+      "explanation": {
+        "uz": "Javob: return.",
+        "ru": "Ответ: return.",
+        "en": "Answer: return."
+      },
+      "answers": [
+        "return",
+        "return",
+        "return"
+      ]
+    },
+    {
+      "lesson": "M7",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Lokal oʻzgaruvchi qayerda koʻrinadi?",
+        "ru": "Где видна локальная переменная?",
+        "en": "Where is a local variable visible?"
+      },
+      "explanation": {
+        "uz": "Javob: U e’lon qilingan funksiya ichida.",
+        "ru": "Ответ: Внутри функции, где она объявлена.",
+        "en": "Answer: Inside the function where it is declared."
+      },
+      "answers": [
+        "U e’lon qilingan funksiya ichida",
+        "Внутри функции, где она объявлена",
+        "Inside the function where it is declared"
+      ]
+    },
+    {
+      "lesson": "M7",
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Oddiy son parametrini funksiya ichida oʻzgartirish odatda chaqiruvchidagi sonni oʻzgartiradi.",
+        "ru": "Изменение числового параметра внутри функции обычно меняет число у вызывающего кода.",
+        "en": "Changing a numeric parameter inside a function usually changes the caller’s number."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsdagi qoida bilan mos emas.",
+        "ru": "Это утверждение не соответствует правилу из урока.",
+        "en": "This statement conflicts with the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ]
+    },
+    {
+      "lesson": "M7",
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Hisoblovchi funksiya natijani print qilish oʻrniga nima qilgani qayta foydalanishga qulay?",
+        "ru": "Что удобнее для повторного использования вычисляющей функции вместо print?",
+        "en": "What makes a calculation function easier to reuse than printing its result?"
+      },
+      "explanation": {
+        "uz": "Javob: Natijani return bilan qaytarish.",
+        "ru": "Ответ: Вернуть результат оператором return.",
+        "en": "Answer: Return the result."
+      },
+      "answers": [
+        "Natijani return bilan qaytarish",
+        "Вернуть результат оператором return",
+        "Return the result"
+      ]
+    },
+    {
+      "lesson": "M7",
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "C++ da funksiya main dan keyin yozilsa, oldindan nima berilishi kerak?",
+        "ru": "Что нужно указать заранее, если функция в C++ написана после main?",
+        "en": "What must be provided earlier if a C++ function is defined after main?"
+      },
+      "explanation": {
+        "uz": "Javob: Funksiya prototipi.",
+        "ru": "Ответ: Прототип функции.",
+        "en": "Answer: A function prototype."
+      },
+      "answers": [
+        "Funksiya prototipi",
+        "Прототип функции",
+        "A function prototype"
+      ]
+    },
+    {
+      "lesson": "M7",
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "C++ vector<int> parametrini qiymat boʻyicha uzatish vektor nusxasini beradi.",
+        "ru": "Передача параметра vector<int> по значению в C++ создаёт копию вектора.",
+        "en": "Passing a vector<int> parameter by value in C++ makes a copy of the vector."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsda berilgan qoida bilan mos keladi.",
+        "ru": "Это утверждение соответствует правилу из урока.",
+        "en": "This statement matches the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "lesson": "A1",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Ikki qiymatni oʻqib, natijani chiqaradigan oddiy dasturdagi uch bosqich nima?",
+        "ru": "Какие три этапа есть в простой программе, читающей два значения и выводящей результат?",
+        "en": "What are the three stages in a simple program that reads two values and prints a result?"
+      },
+      "explanation": {
+        "uz": "Javob: Kiritish, qayta ishlash, chiqarish.",
+        "ru": "Ответ: Ввод, обработка, вывод.",
+        "en": "Answer: Input, processing, output."
+      },
+      "answers": [
+        "Kiritish, qayta ishlash, chiqarish",
+        "Ввод, обработка, вывод",
+        "Input, processing, output"
+      ]
+    },
+    {
+      "lesson": "A1",
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "12 va 30 butun sonlarining yigʻindisi nechaga teng?",
+        "ru": "Чему равна сумма целых чисел 12 и 30?",
+        "en": "What is the sum of integers 12 and 30?"
+      },
+      "explanation": {
+        "uz": "Javob: 42.",
+        "ru": "Ответ: 42.",
+        "en": "Answer: 42."
+      },
+      "answers": [
+        42
+      ],
+      "tolerance": 0
+    },
+    {
+      "lesson": "A2",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Dastur matnidagi // belgisi Java va C++ da odatda nimani boshlaydi?",
+        "ru": "Что обычно начинает знак // в Java и C++?",
+        "en": "What does // usually begin in Java and C++ source?"
+      },
+      "explanation": {
+        "uz": "Javob: Bir qatorli izohni.",
+        "ru": "Ответ: Однострочный комментарий.",
+        "en": "Answer: A single-line comment."
+      },
+      "answers": [
+        "Bir qatorli izohni",
+        "Однострочный комментарий",
+        "A single-line comment"
+      ]
+    },
+    {
+      "lesson": "A2",
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Identifikator katta-kichik harflarni farqlaydigan tilda son va Son bir xil nom hisoblanadi.",
+        "ru": "В языке с учётом регистра имена son и Son считаются одинаковыми.",
+        "en": "In a case-sensitive language, son and Son are the same name."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsdagi qoida bilan mos emas.",
+        "ru": "Это утверждение не соответствует правилу из урока.",
+        "en": "This statement conflicts with the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ]
+    },
+    {
+      "lesson": "A3",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Ikki sonning kattasini topuvchi algoritmda taqqoslashdan soʻng qaysi natija tanlanadi?",
+        "ru": "Какой результат выбирается после сравнения при поиске большего из двух чисел?",
+        "en": "What result is selected after comparing two numbers to find the larger one?"
+      },
+      "explanation": {
+        "uz": "Javob: Shart rost boʻlsa birinchi son, aks holda ikkinchi son.",
+        "ru": "Ответ: Первое число при истинном условии, иначе второе.",
+        "en": "Answer: The first number if the condition is true, otherwise the second."
+      },
+      "answers": [
+        "Shart rost boʻlsa birinchi son, aks holda ikkinchi son",
+        "Первое число при истинном условии, иначе второе",
+        "The first number if the condition is true, otherwise the second"
+      ]
+    },
+    {
+      "lesson": "A3",
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "[0, 10) sharti 10 qiymatini ham qamrab oladi.",
+        "ru": "Условие [0, 10) также включает значение 10.",
+        "en": "The condition [0, 10) includes 10."
+      },
+      "explanation": {
+        "uz": "Bu fikr darsdagi qoida bilan mos emas.",
+        "ru": "Это утверждение не соответствует правилу из урока.",
+        "en": "This statement conflicts with the rule taught in the lesson."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ]
+    },
+    {
+      "lesson": "A4",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "1 dan 5 gacha yigʻindini hisoblashda boshlangʻich yigʻuvchi qiymati nima?",
+        "ru": "Каково начальное значение накопителя для суммы от 1 до 5?",
+        "en": "What is the initial accumulator value for the sum from 1 to 5?"
+      },
+      "explanation": {
+        "uz": "Javob: 0.",
+        "ru": "Ответ: 0.",
+        "en": "Answer: 0."
+      },
+      "answers": [
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "lesson": "A4",
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "1 + 2 + 3 + 4 + 5 yigʻindisini hisoblang.",
+        "ru": "Вычислите сумму 1 + 2 + 3 + 4 + 5.",
+        "en": "Calculate 1 + 2 + 3 + 4 + 5."
+      },
+      "explanation": {
+        "uz": "Javob: 15.",
+        "ru": "Ответ: 15.",
+        "en": "Answer: 15."
+      },
+      "answers": [
+        15
+      ],
+      "tolerance": 0
+    },
+    {
+      "lesson": "A5",
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Massiv qiymatlari 4, 7, 2 boʻlsa, yigʻindisi qancha?",
+        "ru": "Чему равна сумма значений массива 4, 7, 2?",
+        "en": "What is the sum of array values 4, 7, 2?"
+      },
+      "explanation": {
+        "uz": "Javob: 13.",
+        "ru": "Ответ: 13.",
+        "en": "Answer: 13."
+      },
+      "answers": [
+        13
+      ],
+      "tolerance": 0
+    },
+    {
+      "lesson": "A6",
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "2×3 matritsaning transponirlangan oʻlchami qanday?",
+        "ru": "Каков размер транспонированной матрицы 2×3?",
+        "en": "What are the dimensions of the transpose of a 2×3 matrix?"
+      },
+      "explanation": {
+        "uz": "Javob: 3×2.",
+        "ru": "Ответ: 3×2.",
+        "en": "Answer: 3×2."
+      },
+      "answers": [
+        "3×2",
+        "3×2",
+        "3×2"
+      ]
+    },
+    {
+      "lesson": "A6",
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "[[1,2],[3,4]] matritsaning bosh diagonali yigʻindisi nechaga teng?",
+        "ru": "Чему равна сумма главной диагонали матрицы [[1,2],[3,4]]?",
+        "en": "What is the main diagonal sum of [[1,2],[3,4]]?"
+      },
+      "explanation": {
+        "uz": "Javob: 5.",
+        "ru": "Ответ: 5.",
+        "en": "Answer: 5."
+      },
+      "answers": [
+        5
+      ],
+      "tolerance": 0
+    },
+    {
+      "lesson": "A7",
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "tubmi(7) funksiyasi qiymat qaytarishi kerakmi yoki faqat chop etishi kerakmi?",
+        "ru": "Должна ли tubmi(7) возвращать значение или только печатать его?",
+        "en": "Should tubmi(7) return a value or only print it?"
+      },
+      "explanation": {
+        "uz": "Javob: Qiymat qaytarishi kerak.",
+        "ru": "Ответ: Должна возвращать значение.",
+        "en": "Answer: It should return a value."
+      },
+      "answers": [
+        "Qiymat qaytarishi kerak",
+        "Должна возвращать значение",
+        "It should return a value"
+      ]
+    },
+    {
+      "lesson": "A7",
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "EKUB(12,18) qiymati qancha?",
+        "ru": "Чему равен НОД(12,18)?",
+        "en": "What is gcd(12,18)?"
+      },
+      "explanation": {
+        "uz": "Javob: 6.",
+        "ru": "Ответ: 6.",
+        "en": "Answer: 6."
+      },
+      "answers": [
+        6
+      ],
+      "tolerance": 0
+    }
+  ]
+}

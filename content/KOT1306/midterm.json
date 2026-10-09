@@ -1,0 +1,2480 @@
+{
+  "afterLesson": "A7",
+  "questions": [
+    {
+      "lesson": "M1",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Kompyuter tarmogʻi deganda nima tushuniladi?",
+        "ru": "Что понимают под компьютерной сетью?",
+        "en": "What is meant by a computer network?"
+      },
+      "options": [
+        {
+          "uz": "Oʻzaro bogʻlangan qurilmalar maʼlumot almashadigan tizim",
+          "ru": "Система взаимосвязанных устройств для обмена данными",
+          "en": "Interconnected devices that exchange data"
+        },
+        {
+          "uz": "Bitta kompyuterda ishlaydigan dastur",
+          "ru": "Программа на одном компьютере",
+          "en": "A program running on one computer"
+        },
+        {
+          "uz": "Faqat internetga ulangan server",
+          "ru": "Только сервер, подключённый к интернету",
+          "en": "Only a server connected to the Internet"
+        },
+        {
+          "uz": "Maʼlumot saqlash qurilmasi",
+          "ru": "Устройство хранения данных",
+          "en": "A data-storage device"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Oʻzaro bogʻlangan qurilmalar maʼlumot almashadigan tizim.",
+        "ru": "Правильный ответ: Система взаимосвязанных устройств для обмена данными.",
+        "en": "Correct answer: Interconnected devices that exchange data."
+      }
+    },
+    {
+      "lesson": "M1",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Bir odamning shaxsiy qurilmalari atrofidagi tarmoq turi qaysi?",
+        "ru": "Какой тип сети охватывает личные устройства одного человека?",
+        "en": "Which network type covers one person’s personal devices?"
+      },
+      "options": [
+        {
+          "uz": "PAN — shaxsiy hudud",
+          "ru": "PAN — персональная зона",
+          "en": "PAN — personal area"
+        },
+        {
+          "uz": "LAN — mahalliy hudud",
+          "ru": "LAN — локальная зона",
+          "en": "LAN — local area"
+        },
+        {
+          "uz": "MAN — shahar miqyosi",
+          "ru": "MAN — городской масштаб",
+          "en": "MAN — metropolitan area"
+        },
+        {
+          "uz": "WAN — keng hudud",
+          "ru": "WAN — большая территория",
+          "en": "WAN — wide area"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: PAN — shaxsiy hudud.",
+        "ru": "Правильный ответ: PAN — персональная зона.",
+        "en": "Correct answer: PAN — personal area."
+      }
+    },
+    {
+      "lesson": "M1",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Shahar miqyosidagi tarmoq qaysi qisqartma bilan belgilanadi?",
+        "ru": "Какой аббревиатурой обозначают сеть масштаба города?",
+        "en": "Which abbreviation denotes a city-scale network?"
+      },
+      "options": [
+        {
+          "uz": "PAN — shaxsiy hudud",
+          "ru": "PAN — персональная зона",
+          "en": "PAN — personal area"
+        },
+        {
+          "uz": "LAN — mahalliy hudud",
+          "ru": "LAN — локальная зона",
+          "en": "LAN — local area"
+        },
+        {
+          "uz": "MAN — shahar miqyosi",
+          "ru": "MAN — городской масштаб",
+          "en": "MAN — metropolitan area"
+        },
+        {
+          "uz": "WAN — keng hudud",
+          "ru": "WAN — большая территория",
+          "en": "WAN — wide area"
+        }
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: MAN — shahar miqyosi.",
+        "ru": "Правильный ответ: MAN — городской масштаб.",
+        "en": "Correct answer: MAN — metropolitan area."
+      }
+    },
+    {
+      "lesson": "M1",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Mijoz–server modelida xizmatni odatda qaysi tomon taqdim etadi?",
+        "ru": "Какая сторона обычно предоставляет услугу в модели клиент–сервер?",
+        "en": "Which side usually provides a service in the client–server model?"
+      },
+      "options": [
+        {
+          "uz": "Server",
+          "ru": "Сервер",
+          "en": "The server"
+        },
+        {
+          "uz": "Mijoz",
+          "ru": "Клиент",
+          "en": "The client"
+        },
+        {
+          "uz": "Kommutator",
+          "ru": "Коммутатор",
+          "en": "The switch"
+        },
+        {
+          "uz": "Takrorlagich",
+          "ru": "Повторитель",
+          "en": "The repeater"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Server.",
+        "ru": "Правильный ответ: Сервер.",
+        "en": "Correct answer: The server."
+      }
+    },
+    {
+      "lesson": "M2",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Qaysi topologiyada tugunlar markaziy qurilmaga ulanadi?",
+        "ru": "В какой топологии узлы подключены к центральному устройству?",
+        "en": "In which topology are nodes connected to a central device?"
+      },
+      "options": [
+        {
+          "uz": "Yulduz",
+          "ru": "Звезда",
+          "en": "Star"
+        },
+        {
+          "uz": "Shina",
+          "ru": "Шина",
+          "en": "Bus"
+        },
+        {
+          "uz": "Halqa",
+          "ru": "Кольцо",
+          "en": "Ring"
+        },
+        {
+          "uz": "Toʻliq bogʻlangan",
+          "ru": "Полносвязная",
+          "en": "Full mesh"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Yulduz.",
+        "ru": "Правильный ответ: Звезда.",
+        "en": "Correct answer: Star."
+      }
+    },
+    {
+      "lesson": "M2",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Qaysi qurilma turli IP tarmoqlari orasida paketlarni yoʻnaltiradi?",
+        "ru": "Какое устройство пересылает пакеты между разными IP-сетями?",
+        "en": "Which device forwards packets between different IP networks?"
+      },
+      "options": [
+        {
+          "uz": "Takrorlagich",
+          "ru": "Повторитель",
+          "en": "Repeater"
+        },
+        {
+          "uz": "Kommutator",
+          "ru": "Коммутатор",
+          "en": "Switch"
+        },
+        {
+          "uz": "Marshrutizator",
+          "ru": "Маршрутизатор",
+          "en": "Router"
+        },
+        {
+          "uz": "Tarmoq adapteri",
+          "ru": "Сетевой адаптер",
+          "en": "Network adapter"
+        }
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Marshrutizator.",
+        "ru": "Правильный ответ: Маршрутизатор.",
+        "en": "Correct answer: Router."
+      }
+    },
+    {
+      "lesson": "A1",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Kabeldagi signalni qayta tiklab, uzatish masofasini kengaytiradigan qurilma qaysi?",
+        "ru": "Какое устройство восстанавливает сигнал в кабеле и увеличивает дальность передачи?",
+        "en": "Which device regenerates a cable signal to extend transmission distance?"
+      },
+      "options": [
+        {
+          "uz": "Takrorlagich",
+          "ru": "Повторитель",
+          "en": "Repeater"
+        },
+        {
+          "uz": "Kommutator",
+          "ru": "Коммутатор",
+          "en": "Switch"
+        },
+        {
+          "uz": "Marshrutizator",
+          "ru": "Маршрутизатор",
+          "en": "Router"
+        },
+        {
+          "uz": "Tarmoq adapteri",
+          "ru": "Сетевой адаптер",
+          "en": "Network adapter"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Takrorlagich.",
+        "ru": "Правильный ответ: Повторитель.",
+        "en": "Correct answer: Repeater."
+      }
+    },
+    {
+      "lesson": "A1",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Kompyuterga tarmoq muhitiga ulanishni qaysi qism taʼminlaydi?",
+        "ru": "Какая часть обеспечивает подключение компьютера к сетевой среде?",
+        "en": "Which component connects a computer to the network medium?"
+      },
+      "options": [
+        {
+          "uz": "Takrorlagich",
+          "ru": "Повторитель",
+          "en": "Repeater"
+        },
+        {
+          "uz": "Kommutator",
+          "ru": "Коммутатор",
+          "en": "Switch"
+        },
+        {
+          "uz": "Marshrutizator",
+          "ru": "Маршрутизатор",
+          "en": "Router"
+        },
+        {
+          "uz": "Tarmoq adapteri",
+          "ru": "Сетевой адаптер",
+          "en": "Network adapter"
+        }
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Tarmoq adapteri.",
+        "ru": "Правильный ответ: Сетевой адаптер.",
+        "en": "Correct answer: Network adapter."
+      }
+    },
+    {
+      "lesson": "A2",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Yulduz topologiyasida markaziy tugun ishlamay qolsa odatda nima yuz beradi?",
+        "ru": "Что обычно происходит, если отказывает центральный узел топологии «звезда»?",
+        "en": "What usually happens if the central node in a star topology fails?"
+      },
+      "options": [
+        {
+          "uz": "Markaziy qurilma ishdan chiqsa, ulangan tugunlar aloqa yoʻqotishi mumkin",
+          "ru": "При отказе центрального устройства подключённые узлы могут потерять связь",
+          "en": "If the central device fails, connected nodes may lose communication"
+        },
+        {
+          "uz": "Barcha kabelsiz tugunlar avtomatik marshrutizatorga aylanadi",
+          "ru": "Все беспроводные узлы автоматически становятся маршрутизаторами",
+          "en": "All wireless nodes automatically become routers"
+        },
+        {
+          "uz": "Har bir tugun internetga chiqishda davom etadi",
+          "ru": "Каждый узел продолжает выходить в интернет",
+          "en": "Every node continues to access the Internet"
+        },
+        {
+          "uz": "Topologiya halqaga aylanadi",
+          "ru": "Топология превращается в кольцо",
+          "en": "The topology becomes a ring"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Markaziy qurilma ishdan chiqsa, ulangan tugunlar aloqa yoʻqotishi mumkin.",
+        "ru": "Правильный ответ: При отказе центрального устройства подключённые узлы могут потерять связь.",
+        "en": "Correct answer: If the central device fails, connected nodes may lose communication."
+      }
+    },
+    {
+      "lesson": "M3",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "OSI modelida jami nechta pogʻona bor?",
+        "ru": "Сколько уровней в модели OSI?",
+        "en": "How many layers are in the OSI model?"
+      },
+      "options": [
+        {
+          "uz": "4",
+          "ru": "4",
+          "en": "4"
+        },
+        {
+          "uz": "5",
+          "ru": "5",
+          "en": "5"
+        },
+        {
+          "uz": "7",
+          "ru": "7",
+          "en": "7"
+        },
+        {
+          "uz": "8",
+          "ru": "8",
+          "en": "8"
+        }
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: 7.",
+        "ru": "Правильный ответ: 7.",
+        "en": "Correct answer: 7."
+      }
+    },
+    {
+      "lesson": "M3",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Fizik pogʻonaning asosiy maʼlumot birligi qaysi?",
+        "ru": "Какова основная единица данных физического уровня?",
+        "en": "What is the basic data unit of the physical layer?"
+      },
+      "options": [
+        {
+          "uz": "Bit",
+          "ru": "Бит",
+          "en": "Bit"
+        },
+        {
+          "uz": "Kadr",
+          "ru": "Кадр",
+          "en": "Frame"
+        },
+        {
+          "uz": "Paket",
+          "ru": "Пакет",
+          "en": "Packet"
+        },
+        {
+          "uz": "Segment",
+          "ru": "Сегмент",
+          "en": "Segment"
+        },
+        {
+          "uz": "Maʼlumot",
+          "ru": "Данные",
+          "en": "Data"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Bit.",
+        "ru": "Правильный ответ: Бит.",
+        "en": "Correct answer: Bit."
+      }
+    },
+    {
+      "lesson": "M3",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "OSI kanal pogʻonasi maʼlumot birligi qaysi?",
+        "ru": "Какова единица данных канального уровня OSI?",
+        "en": "What is the data unit of the OSI data-link layer?"
+      },
+      "options": [
+        {
+          "uz": "Bit",
+          "ru": "Бит",
+          "en": "Bit"
+        },
+        {
+          "uz": "Kadr",
+          "ru": "Кадр",
+          "en": "Frame"
+        },
+        {
+          "uz": "Paket",
+          "ru": "Пакет",
+          "en": "Packet"
+        },
+        {
+          "uz": "Segment",
+          "ru": "Сегмент",
+          "en": "Segment"
+        },
+        {
+          "uz": "Maʼlumot",
+          "ru": "Данные",
+          "en": "Data"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Kadr.",
+        "ru": "Правильный ответ: Кадр.",
+        "en": "Correct answer: Frame."
+      }
+    },
+    {
+      "lesson": "M4",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Bir yoʻnalishda uzatish rejimi qanday ataladi?",
+        "ru": "Как называется режим передачи в одном направлении?",
+        "en": "What is transmission in one direction called?"
+      },
+      "options": [
+        {
+          "uz": "Simpleks",
+          "ru": "Симплекс",
+          "en": "Simplex"
+        },
+        {
+          "uz": "Yarim dupleks",
+          "ru": "Полудуплекс",
+          "en": "Half-duplex"
+        },
+        {
+          "uz": "Dupleks",
+          "ru": "Дуплекс",
+          "en": "Full-duplex"
+        },
+        {
+          "uz": "Ketma-ket",
+          "ru": "Последовательная",
+          "en": "Serial"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Simpleks.",
+        "ru": "Правильный ответ: Симплекс.",
+        "en": "Correct answer: Simplex."
+      }
+    },
+    {
+      "lesson": "M4",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Elektr shovqiniga chidamli va maʼlumotni yorugʻlikda uzatuvchi muhit qaysi?",
+        "ru": "Какая среда передаёт данные светом и устойчива к электрическим помехам?",
+        "en": "Which medium transmits data as light and resists electrical interference?"
+      },
+      "options": [
+        {
+          "uz": "Oʻralgan juftlik",
+          "ru": "Витая пара",
+          "en": "Twisted pair"
+        },
+        {
+          "uz": "Koaksial kabel",
+          "ru": "Коаксиальный кабель",
+          "en": "Coaxial cable"
+        },
+        {
+          "uz": "Optik tola",
+          "ru": "Оптоволокно",
+          "en": "Optical fibre"
+        },
+        {
+          "uz": "Simsiz radio muhit",
+          "ru": "Беспроводная радиосреда",
+          "en": "Wireless radio medium"
+        }
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Optik tola.",
+        "ru": "Правильный ответ: Оптоволокно.",
+        "en": "Correct answer: Optical fibre."
+      }
+    },
+    {
+      "lesson": "A4",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Manchester kodlashida bit vaqti ichidagi oʻtish odatda nimaga xizmat qiladi?",
+        "ru": "Для чего обычно служит переход внутри битового интервала в манчестерском кодировании?",
+        "en": "What is the transition within a bit interval used for in Manchester encoding?"
+      },
+      "options": [
+        {
+          "uz": "Bitlarning vaqtini sinxronlashga yordam beradi",
+          "ru": "Помогает синхронизировать время битов",
+          "en": "It helps synchronise bit timing"
+        },
+        {
+          "uz": "Har bitni ikkita kabelga uzatadi",
+          "ru": "Передаёт каждый бит по двум кабелям",
+          "en": "It sends each bit over two cables"
+        },
+        {
+          "uz": "Kadrdagi manzilni shifrlaydi",
+          "ru": "Шифрует адрес кадра",
+          "en": "It encrypts the frame address"
+        },
+        {
+          "uz": "Xatolarni marshrutlaydi",
+          "ru": "Маршрутизирует ошибки",
+          "en": "It routes errors"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Bitlarning vaqtini sinxronlashga yordam beradi.",
+        "ru": "Правильный ответ: Помогает синхронизировать время битов.",
+        "en": "Correct answer: It helps synchronise bit timing."
+      }
+    },
+    {
+      "lesson": "M5",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Ethernet tarmogʻida qurilmalarni kanal pogʻonasida aniqlash manzili nima?",
+        "ru": "Как называется адрес устройств Ethernet на канальном уровне?",
+        "en": "What address identifies devices at the Ethernet link layer?"
+      },
+      "options": [
+        {
+          "uz": "MAC manzil",
+          "ru": "MAC-адрес",
+          "en": "MAC address"
+        },
+        {
+          "uz": "IP manzil",
+          "ru": "IP-адрес",
+          "en": "IP address"
+        },
+        {
+          "uz": "TCP port raqami",
+          "ru": "Номер порта TCP",
+          "en": "TCP port number"
+        },
+        {
+          "uz": "SSID",
+          "ru": "SSID",
+          "en": "SSID"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "MAC manzil Ethernet kanal pogʻonasida qurilma interfeysini aniqlaydi.",
+        "ru": "MAC-адрес идентифицирует интерфейс устройства на канальном уровне Ethernet.",
+        "en": "A MAC address identifies a device interface at the Ethernet link layer."
+      }
+    },
+    {
+      "lesson": "M5",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Ethernet kadri oxiridagi FCS maydoni nimaga xizmat qiladi?",
+        "ru": "Для чего служит поле FCS в конце кадра Ethernet?",
+        "en": "What is the purpose of the FCS field at the end of an Ethernet frame?"
+      },
+      "options": [
+        {
+          "uz": "Kadrdagi tasodifiy uzatish xatolarini aniqlashga yordam beradi",
+          "ru": "Помогает обнаруживать случайные ошибки передачи в кадре",
+          "en": "Helps detect accidental transmission errors in the frame"
+        },
+        {
+          "uz": "Joʻnatuvchining IP manzilini topadi",
+          "ru": "Находит IP-адрес отправителя",
+          "en": "Finds the sender’s IP address"
+        },
+        {
+          "uz": "Kadrni shifrlaydi",
+          "ru": "Шифрует кадр",
+          "en": "Encrypts the frame"
+        },
+        {
+          "uz": "Kadrni keyingi tarmoqqa yoʻnaltiradi",
+          "ru": "Маршрутизирует кадр в следующую сеть",
+          "en": "Routes the frame to the next network"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "FCS tarkibidagi CRC qabul qiluvchi tomonga kadr buzilganini aniqlash imkonini beradi.",
+        "ru": "CRC в FCS позволяет получателю обнаружить повреждение кадра.",
+        "en": "The CRC in the FCS lets the receiver detect frame corruption."
+      }
+    },
+    {
+      "lesson": "M6",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Token Ring tarmogʻida qaysi obyekt uzatish navbatini beradi?",
+        "ru": "Какой объект задаёт очередь передачи в Token Ring?",
+        "en": "What object grants a transmission turn in Token Ring?"
+      },
+      "options": [
+        {
+          "uz": "Markerni egallagan tugun uzatadi",
+          "ru": "Передаёт узел, захвативший маркер",
+          "en": "The node holding the token transmits"
+        },
+        {
+          "uz": "Barcha tugunlar bir vaqtda uzatadi",
+          "ru": "Все узлы передают одновременно",
+          "en": "All nodes transmit at once"
+        },
+        {
+          "uz": "Faqat marshrutizator uzatadi",
+          "ru": "Передаёт только маршрутизатор",
+          "en": "Only the router transmits"
+        },
+        {
+          "uz": "Uzatish uchun IP broadcast shart",
+          "ru": "Для передачи нужен IP broadcast",
+          "en": "IP broadcast is required to transmit"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Markerni egallagan tugun uzatadi.",
+        "ru": "Правильный ответ: Передаёт узел, захвативший маркер.",
+        "en": "Correct answer: The node holding the token transmits."
+      }
+    },
+    {
+      "lesson": "M6",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "Wi-Fi uchun IEEE standartlar oilasi qaysi?",
+        "ru": "Какое семейство стандартов IEEE относится к Wi-Fi?",
+        "en": "Which IEEE standards family is used for Wi-Fi?"
+      },
+      "options": [
+        {
+          "uz": "TCP/IP",
+          "ru": "TCP/IP",
+          "en": "TCP/IP"
+        },
+        {
+          "uz": "OSI",
+          "ru": "OSI",
+          "en": "OSI"
+        },
+        {
+          "uz": "IEEE 802.3",
+          "ru": "IEEE 802.3",
+          "en": "IEEE 802.3"
+        },
+        {
+          "uz": "IEEE 802.11",
+          "ru": "IEEE 802.11",
+          "en": "IEEE 802.11"
+        }
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: IEEE 802.11.",
+        "ru": "Правильный ответ: IEEE 802.11.",
+        "en": "Correct answer: IEEE 802.11."
+      }
+    },
+    {
+      "lesson": "A7",
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "prompt": {
+        "uz": "192.168.10.0/24 tarmogʻida nechta odatiy foydalaniladigan host manzili bor?",
+        "ru": "Сколько обычных адресов узлов доступно в сети 192.168.10.0/24?",
+        "en": "How many conventional host addresses are usable in 192.168.10.0/24?"
+      },
+      "options": [
+        {
+          "uz": "254",
+          "ru": "254",
+          "en": "254"
+        },
+        {
+          "uz": "256",
+          "ru": "256",
+          "en": "256"
+        },
+        {
+          "uz": "255",
+          "ru": "255",
+          "en": "255"
+        },
+        {
+          "uz": "252",
+          "ru": "252",
+          "en": "252"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: 254.",
+        "ru": "Правильный ответ: 254.",
+        "en": "Correct answer: 254."
+      }
+    },
+    {
+      "lesson": "M1",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Internetga ulangan dunyo miqyosidagi tarmoq tasnifi qaysi?",
+        "ru": "Какой тип сети соответствует глобальной сети, соединяющей мир?",
+        "en": "Which network category describes a global network connecting the world?"
+      },
+      "options": [
+        {
+          "uz": "PAN — shaxsiy hudud",
+          "ru": "PAN — персональная зона",
+          "en": "PAN — personal area"
+        },
+        {
+          "uz": "LAN — mahalliy hudud",
+          "ru": "LAN — локальная зона",
+          "en": "LAN — local area"
+        },
+        {
+          "uz": "MAN — shahar miqyosi",
+          "ru": "MAN — городской масштаб",
+          "en": "MAN — metropolitan area"
+        },
+        {
+          "uz": "WAN — keng hudud",
+          "ru": "WAN — большая территория",
+          "en": "WAN — wide area"
+        }
+      ],
+      "correct": [
+        3
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: WAN — keng hudud.",
+        "ru": "Правильный ответ: WAN — большая территория.",
+        "en": "Correct answer: WAN — wide area."
+      }
+    },
+    {
+      "lesson": "M1",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "P2P tarmogʻida resurslar odatda qanday taqsimlanadi?",
+        "ru": "Как обычно распределяются ресурсы в сети P2P?",
+        "en": "How are resources usually shared in a P2P network?"
+      },
+      "options": [
+        {
+          "uz": "Mijoz–server",
+          "ru": "Клиент–сервер",
+          "en": "Client–server"
+        },
+        {
+          "uz": "Teng huquqli (P2P)",
+          "ru": "Одноранговая (P2P)",
+          "en": "Peer-to-peer (P2P)"
+        },
+        {
+          "uz": "Faqat terminal tizimi",
+          "ru": "Только терминальная система",
+          "en": "Terminal-only system"
+        },
+        {
+          "uz": "Faqat uzatish muhiti",
+          "ru": "Только среда передачи",
+          "en": "Transmission medium only"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Teng huquqli (P2P).",
+        "ru": "Правильный ответ: Одноранговая (P2P).",
+        "en": "Correct answer: Peer-to-peer (P2P)."
+      }
+    },
+    {
+      "lesson": "M2",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Toʻliq bogʻlangan topologiyaning asosiy afzalligi qaysi?",
+        "ru": "Каково главное преимущество полносвязной топологии?",
+        "en": "What is a key advantage of a full-mesh topology?"
+      },
+      "options": [
+        {
+          "uz": "Bitta ulanish yoʻli uzilsa aloqa saqlanishi mumkin",
+          "ru": "Связь может сохраниться при обрыве одного пути",
+          "en": "Communication may survive one link failure"
+        },
+        {
+          "uz": "Tugunlar soni doim kamayadi",
+          "ru": "Число узлов всегда уменьшается",
+          "en": "The number of nodes always decreases"
+        },
+        {
+          "uz": "Kabel uzunligi nol boʻladi",
+          "ru": "Длина кабеля становится нулевой",
+          "en": "Cable length becomes zero"
+        },
+        {
+          "uz": "Manzillash kerak boʻlmaydi",
+          "ru": "Адресация не требуется",
+          "en": "Addressing is no longer needed"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Bitta ulanish yoʻli uzilsa aloqa saqlanishi mumkin.",
+        "ru": "Правильный ответ: Связь может сохраниться при обрыве одного пути.",
+        "en": "Correct answer: Communication may survive one link failure."
+      }
+    },
+    {
+      "lesson": "M2",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Shina topologiyasida barcha tugunlar qanday ulanadi?",
+        "ru": "Как подключены все узлы в топологии «шина»?",
+        "en": "How are all nodes connected in a bus topology?"
+      },
+      "options": [
+        {
+          "uz": "Yulduz",
+          "ru": "Звезда",
+          "en": "Star"
+        },
+        {
+          "uz": "Shina",
+          "ru": "Шина",
+          "en": "Bus"
+        },
+        {
+          "uz": "Halqa",
+          "ru": "Кольцо",
+          "en": "Ring"
+        },
+        {
+          "uz": "Toʻliq bogʻlangan",
+          "ru": "Полносвязная",
+          "en": "Full mesh"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Shina.",
+        "ru": "Правильный ответ: Шина.",
+        "en": "Correct answer: Bus."
+      }
+    },
+    {
+      "lesson": "A1",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Kommutator kadrni odatda qaysi manzil jadvali asosida uzatadi?",
+        "ru": "На основе какой таблицы коммутатор обычно пересылает кадр?",
+        "en": "Which address table does a switch usually use to forward a frame?"
+      },
+      "options": [
+        {
+          "uz": "MAC manzillar jadvali",
+          "ru": "Таблица MAC-адресов",
+          "en": "MAC address table"
+        },
+        {
+          "uz": "IP yoʻnalish jadvali",
+          "ru": "Таблица маршрутизации IP",
+          "en": "IP routing table"
+        },
+        {
+          "uz": "DNS nomlar jadvali",
+          "ru": "Таблица имён DNS",
+          "en": "DNS name table"
+        },
+        {
+          "uz": "TCP portlar jadvali",
+          "ru": "Таблица портов TCP",
+          "en": "TCP port table"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Kommutator manba MAC manzillarini oʻrganib jadval tuzadi va manzilga qarab kadrni uzatadi.",
+        "ru": "Коммутатор изучает MAC-адреса источника, строит таблицу и пересылает кадры по адресу назначения.",
+        "en": "A switch learns source MAC addresses, builds a table, and forwards frames by destination address."
+      }
+    },
+    {
+      "lesson": "A1",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Bir nechta portga kelgan elektr signalini barcha portlarga tarqatadigan eski qurilma qaysi?",
+        "ru": "Какое старое устройство распространяет входящий электрический сигнал на все порты?",
+        "en": "Which older device repeats an incoming electrical signal to all ports?"
+      },
+      "options": [
+        {
+          "uz": "Konsentrator",
+          "ru": "Концентратор",
+          "en": "Hub"
+        },
+        {
+          "uz": "Koʻprik",
+          "ru": "Мост",
+          "en": "Bridge"
+        },
+        {
+          "uz": "Marshrutizator",
+          "ru": "Маршрутизатор",
+          "en": "Router"
+        },
+        {
+          "uz": "Tarmoq adapteri",
+          "ru": "Сетевой адаптер",
+          "en": "Network adapter"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Konsentrator.",
+        "ru": "Правильный ответ: Концентратор.",
+        "en": "Correct answer: Hub."
+      }
+    },
+    {
+      "lesson": "A2",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Fizik topologiya nimani ifodalaydi?",
+        "ru": "Что описывает физическая топология?",
+        "en": "What does physical topology describe?"
+      },
+      "options": [
+        {
+          "uz": "Qurilma va kabellarning real joylashuvi va ulanishi",
+          "ru": "Физическое расположение устройств и кабелей",
+          "en": "The actual placement and cabling of devices"
+        },
+        {
+          "uz": "IP manzillarning mantiqiy guruhlari",
+          "ru": "Логические группы IP-адресов",
+          "en": "Logical groups of IP addresses"
+        },
+        {
+          "uz": "Ilovalar orasidagi maʼlumot formati",
+          "ru": "Формат данных между приложениями",
+          "en": "The data format between applications"
+        },
+        {
+          "uz": "Foydalanuvchilarning tarmoqdagi rollari",
+          "ru": "Роли пользователей в сети",
+          "en": "User roles on the network"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Qurilma va kabellarning real joylashuvi va ulanishi.",
+        "ru": "Правильный ответ: Физическое расположение устройств и кабелей.",
+        "en": "Correct answer: The actual placement and cabling of devices."
+      }
+    },
+    {
+      "lesson": "M3",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "OSI da IP marshrutlash qaysi pogʻonaga tegishli?",
+        "ru": "К какому уровню OSI относится маршрутизация IP?",
+        "en": "Which OSI layer is responsible for IP routing?"
+      },
+      "options": [
+        {
+          "uz": "Fizik",
+          "ru": "Физический",
+          "en": "Physical"
+        },
+        {
+          "uz": "Kanal",
+          "ru": "Канальный",
+          "en": "Data link"
+        },
+        {
+          "uz": "Tarmoq",
+          "ru": "Сетевой",
+          "en": "Network"
+        },
+        {
+          "uz": "Transport",
+          "ru": "Транспортный",
+          "en": "Transport"
+        },
+        {
+          "uz": "Seans",
+          "ru": "Сеансовый",
+          "en": "Session"
+        },
+        {
+          "uz": "Taqdimot",
+          "ru": "Представления",
+          "en": "Presentation"
+        },
+        {
+          "uz": "Amaliy",
+          "ru": "Прикладной",
+          "en": "Application"
+        }
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Tarmoq.",
+        "ru": "Правильный ответ: Сетевой.",
+        "en": "Correct answer: Network."
+      }
+    },
+    {
+      "lesson": "M3",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Protokol va interfeys farqini qaysi jumla toʻgʻri ifodalaydi?",
+        "ru": "Какое утверждение верно описывает различие протокола и интерфейса?",
+        "en": "Which statement correctly distinguishes a protocol from an interface?"
+      },
+      "options": [
+        {
+          "uz": "Protokol — teng pogʻonalar qoidalari; interfeys — qoʻshni pogʻonalar orasidagi xizmat chegarasi",
+          "ru": "Протокол задаёт правила равных уровней; интерфейс — границу услуг соседних уровней",
+          "en": "A protocol defines rules between peer layers; an interface defines services between adjacent layers"
+        },
+        {
+          "uz": "Protokol kabel turi, interfeys esa IP manzil",
+          "ru": "Протокол — тип кабеля, интерфейс — IP-адрес",
+          "en": "A protocol is a cable type; an interface is an IP address"
+        },
+        {
+          "uz": "Ular bir xil tushuncha",
+          "ru": "Это одно и то же",
+          "en": "They are the same concept"
+        },
+        {
+          "uz": "Interfeys faqat foydalanuvchi oynasini anglatadi",
+          "ru": "Интерфейс означает только окно пользователя",
+          "en": "An interface means only a user window"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Protokol — teng pogʻonalar qoidalari; interfeys — qoʻshni pogʻonalar orasidagi xizmat chegarasi.",
+        "ru": "Правильный ответ: Протокол задаёт правила равных уровней; интерфейс — границу услуг соседних уровней.",
+        "en": "Correct answer: A protocol defines rules between peer layers; an interface defines services between adjacent layers."
+      }
+    },
+    {
+      "lesson": "M3",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Inkapsulyatsiya joʻnatuvchi tomonda qanday jarayon?",
+        "ru": "Что означает инкапсуляция на стороне отправителя?",
+        "en": "What does encapsulation mean at the sender?"
+      },
+      "options": [
+        {
+          "uz": "Har qatlam odatda boshqaruv sarlavhasini, ayrimlari esa yakuniy maydonni qoʻshadi",
+          "ru": "Каждый уровень обычно добавляет управляющий заголовок, иногда также конечное поле",
+          "en": "Each layer generally adds a control header, and some add a trailer"
+        },
+        {
+          "uz": "Har qatlam butun tarmoqni qayta kabellaydi",
+          "ru": "Каждый уровень заново прокладывает всю сеть",
+          "en": "Each layer recables the whole network"
+        },
+        {
+          "uz": "Faqat elektr kuchlanishini qoʻshadi",
+          "ru": "Добавляет только электрическое напряжение",
+          "en": "It adds only electrical voltage"
+        },
+        {
+          "uz": "Hech qanday qoʻshimcha axborot qoʻshilmaydi",
+          "ru": "Никакая дополнительная информация не добавляется",
+          "en": "No additional information is added"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Har qatlam odatda boshqaruv sarlavhasini, ayrimlari esa yakuniy maydonni qoʻshadi.",
+        "ru": "Правильный ответ: Каждый уровень обычно добавляет управляющий заголовок, иногда также конечное поле.",
+        "en": "Correct answer: Each layer generally adds a control header, and some add a trailer."
+      }
+    },
+    {
+      "lesson": "A3",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Packet Tracer da Simulation rejimi asosan nima uchun kerak?",
+        "ru": "Для чего в основном нужен режим Simulation в Packet Tracer?",
+        "en": "What is Packet Tracer’s Simulation mode mainly used for?"
+      },
+      "options": [
+        {
+          "uz": "Paketlarning qurilmalar boʻylab bosqichma-bosqich harakatini kuzatish",
+          "ru": "Пошаговое наблюдение за движением пакетов через устройства",
+          "en": "Inspecting packet movement through devices step by step"
+        },
+        {
+          "uz": "Haqiqiy internet tezligini oʻlchash",
+          "ru": "Измерение реальной скорости интернета",
+          "en": "Measuring real Internet speed"
+        },
+        {
+          "uz": "Windows drayverini oʻrnatish",
+          "ru": "Установка драйвера Windows",
+          "en": "Installing a Windows driver"
+        },
+        {
+          "uz": "Wi-Fi parolini shifrlash",
+          "ru": "Шифрование пароля Wi-Fi",
+          "en": "Encrypting a Wi-Fi password"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Paketlarning qurilmalar boʻylab bosqichma-bosqich harakatini kuzatish.",
+        "ru": "Правильный ответ: Пошаговое наблюдение за движением пакетов через устройства.",
+        "en": "Correct answer: Inspecting packet movement through devices step by step."
+      }
+    },
+    {
+      "lesson": "M4",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Ikki tomon navbat bilan uzatadigan rejim qanday ataladi?",
+        "ru": "Как называется режим, в котором стороны передают по очереди?",
+        "en": "What is the mode called when both sides take turns transmitting?"
+      },
+      "options": [
+        {
+          "uz": "Simpleks",
+          "ru": "Симплекс",
+          "en": "Simplex"
+        },
+        {
+          "uz": "Yarim dupleks",
+          "ru": "Полудуплекс",
+          "en": "Half-duplex"
+        },
+        {
+          "uz": "Dupleks",
+          "ru": "Дуплекс",
+          "en": "Full-duplex"
+        },
+        {
+          "uz": "Ketma-ket",
+          "ru": "Последовательная",
+          "en": "Serial"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Yarim dupleks.",
+        "ru": "Правильный ответ: Полудуплекс.",
+        "en": "Correct answer: Half-duplex."
+      }
+    },
+    {
+      "lesson": "M4",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Qaysi juftlikda ikkala tomon bir vaqtda uzatishi va qabul qilishi mumkin?",
+        "ru": "В каком режиме обе стороны могут одновременно передавать и принимать?",
+        "en": "In which mode can both sides transmit and receive simultaneously?"
+      },
+      "options": [
+        {
+          "uz": "Simpleks",
+          "ru": "Симплекс",
+          "en": "Simplex"
+        },
+        {
+          "uz": "Yarim dupleks",
+          "ru": "Полудуплекс",
+          "en": "Half-duplex"
+        },
+        {
+          "uz": "Dupleks",
+          "ru": "Дуплекс",
+          "en": "Full-duplex"
+        },
+        {
+          "uz": "Ketma-ket",
+          "ru": "Последовательная",
+          "en": "Serial"
+        }
+      ],
+      "correct": [
+        2
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Dupleks.",
+        "ru": "Правильный ответ: Дуплекс.",
+        "en": "Correct answer: Full-duplex."
+      }
+    },
+    {
+      "lesson": "M4",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Bir xil polosa va shovqin darajasida kanal sigʻimi oshishi uchun qaysi omil muhim?",
+        "ru": "Какой фактор важен для увеличения пропускной способности при той же полосе и шуме?",
+        "en": "Which factor matters for higher channel capacity with the same bandwidth and noise?"
+      },
+      "options": [
+        {
+          "uz": "Signal/shovqin nisbati oshishi",
+          "ru": "Увеличение отношения сигнал/шум",
+          "en": "An increase in the signal-to-noise ratio"
+        },
+        {
+          "uz": "MAC manzil uzunligi",
+          "ru": "Длина MAC-адреса",
+          "en": "MAC address length"
+        },
+        {
+          "uz": "Tugunlar soni kamayishi",
+          "ru": "Уменьшение числа узлов",
+          "en": "A reduction in the number of nodes"
+        },
+        {
+          "uz": "Kabel rangi",
+          "ru": "Цвет кабеля",
+          "en": "Cable colour"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Signal/shovqin nisbati oshishi.",
+        "ru": "Правильный ответ: Увеличение отношения сигнал/шум.",
+        "en": "Correct answer: An increase in the signal-to-noise ratio."
+      }
+    },
+    {
+      "lesson": "M4",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "CRC qabul qilingan maʼlumotda qanday xususiyatni tekshirishga yordam beradi?",
+        "ru": "Какое свойство принятых данных помогает проверять CRC?",
+        "en": "What property of received data does CRC help check?"
+      },
+      "options": [
+        {
+          "uz": "CRC",
+          "ru": "CRC",
+          "en": "CRC"
+        },
+        {
+          "uz": "TTL",
+          "ru": "TTL",
+          "en": "TTL"
+        },
+        {
+          "uz": "OUI",
+          "ru": "OUI",
+          "en": "OUI"
+        },
+        {
+          "uz": "SSID",
+          "ru": "SSID",
+          "en": "SSID"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: CRC.",
+        "ru": "Правильный ответ: CRC.",
+        "en": "Correct answer: CRC."
+      }
+    },
+    {
+      "lesson": "A4",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Manchester kodlashining NRZ ga nisbatan muhim xususiyati qaysi?",
+        "ru": "Какое важное свойство манчестерского кодирования отличает его от NRZ?",
+        "en": "What important property distinguishes Manchester encoding from NRZ?"
+      },
+      "options": [
+        {
+          "uz": "Bitlarning vaqtini sinxronlashga yordam beradi",
+          "ru": "Помогает синхронизировать время битов",
+          "en": "It helps synchronise bit timing"
+        },
+        {
+          "uz": "Har bitni ikkita kabelga uzatadi",
+          "ru": "Передаёт каждый бит по двум кабелям",
+          "en": "It sends each bit over two cables"
+        },
+        {
+          "uz": "Kadrdagi manzilni shifrlaydi",
+          "ru": "Шифрует адрес кадра",
+          "en": "It encrypts the frame address"
+        },
+        {
+          "uz": "Xatolarni marshrutlaydi",
+          "ru": "Маршрутизирует ошибки",
+          "en": "It routes errors"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Bitlarning vaqtini sinxronlashga yordam beradi.",
+        "ru": "Правильный ответ: Помогает синхронизировать время битов.",
+        "en": "Correct answer: It helps synchronise bit timing."
+      }
+    },
+    {
+      "lesson": "M5",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Ethernet MAC manzilining standart uzunligi qancha?",
+        "ru": "Какова стандартная длина MAC-адреса Ethernet?",
+        "en": "What is the standard length of an Ethernet MAC address?"
+      },
+      "options": [
+        {
+          "uz": "48 bit (6 oktet)",
+          "ru": "48 бит (6 октетов)",
+          "en": "48 bits (6 octets)"
+        },
+        {
+          "uz": "32 bit (4 oktet)",
+          "ru": "32 бита (4 октета)",
+          "en": "32 bits (4 octets)"
+        },
+        {
+          "uz": "16 bit (2 oktet)",
+          "ru": "16 бит (2 октета)",
+          "en": "16 bits (2 octets)"
+        },
+        {
+          "uz": "128 bit (16 oktet)",
+          "ru": "128 бит (16 октетов)",
+          "en": "128 bits (16 octets)"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: 48 bit (6 oktet).",
+        "ru": "Правильный ответ: 48 бит (6 октетов).",
+        "en": "Correct answer: 48 bits (6 octets)."
+      }
+    },
+    {
+      "lesson": "M5",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Unicast MAC manzil nimani bildiradi?",
+        "ru": "Что означает unicast MAC-адрес?",
+        "en": "What does a unicast MAC address indicate?"
+      },
+      "options": [
+        {
+          "uz": "Bitta tarmoq interfeysiga yoʻnaltirilgan manzil",
+          "ru": "Адрес, направленный одному сетевому интерфейсу",
+          "en": "An address directed to one network interface"
+        },
+        {
+          "uz": "Barcha interfeyslarga yuboriladigan manzil",
+          "ru": "Адрес для всех интерфейсов",
+          "en": "An address sent to every interface"
+        },
+        {
+          "uz": "Faqat ishlab chiqaruvchining nomi",
+          "ru": "Только имя производителя",
+          "en": "Only the manufacturer name"
+        },
+        {
+          "uz": "IP tarmoq prefiksi",
+          "ru": "Префикс IP-сети",
+          "en": "An IP network prefix"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Bitta tarmoq interfeysiga yoʻnaltirilgan manzil.",
+        "ru": "Правильный ответ: Адрес, направленный одному сетевому интерфейсу.",
+        "en": "Correct answer: An address directed to one network interface."
+      }
+    },
+    {
+      "lesson": "A5",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Promiscuous rejimidagi tarmoq adapteri nima qiladi?",
+        "ru": "Что делает сетевой адаптер в promiscuous-режиме?",
+        "en": "What does a network adapter do in promiscuous mode?"
+      },
+      "options": [
+        {
+          "uz": "Manzil maydonida oʻz MAC manzili boʻlmagan qabul qilingan kadrlarni ham yuqori qatlamga uzatadi",
+          "ru": "Передаёт верхним уровням принятые кадры, даже если MAC-адрес получателя не совпадает с собственным",
+          "en": "Passes received frames to higher layers even when the destination MAC is not its own"
+        },
+        {
+          "uz": "Faqat oʻzi yuborgan kadrlarni koʻrsatadi",
+          "ru": "Показывает только отправленные им кадры",
+          "en": "Shows only frames it transmitted"
+        },
+        {
+          "uz": "MAC manzilni IP manzilga aylantiradi",
+          "ru": "Преобразует MAC-адрес в IP-адрес",
+          "en": "Converts a MAC address to an IP address"
+        },
+        {
+          "uz": "Kadrlarni marshrutlaydi",
+          "ru": "Маршрутизирует кадры",
+          "en": "Routes frames"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Manzil maydonida oʻz MAC manzili boʻlmagan qabul qilingan kadrlarni ham yuqori qatlamga uzatadi.",
+        "ru": "Правильный ответ: Передаёт верхним уровням принятые кадры, даже если MAC-адрес получателя не совпадает с собственным.",
+        "en": "Correct answer: Passes received frames to higher layers even when the destination MAC is not its own."
+      }
+    },
+    {
+      "lesson": "A6",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Wi-Fi da kolliziyani kamaytirish uchun qaysi kirish usuli ishlatiladi?",
+        "ru": "Какой метод доступа применяется в Wi-Fi для снижения коллизий?",
+        "en": "Which access method does Wi-Fi use to reduce collisions?"
+      },
+      "options": [
+        {
+          "uz": "CSMA/CA",
+          "ru": "CSMA/CA",
+          "en": "CSMA/CA"
+        },
+        {
+          "uz": "CSMA/CD",
+          "ru": "CSMA/CD",
+          "en": "CSMA/CD"
+        },
+        {
+          "uz": "Token passing",
+          "ru": "Передача маркера",
+          "en": "Token passing"
+        },
+        {
+          "uz": "CRC routing",
+          "ru": "Маршрутизация CRC",
+          "en": "CRC routing"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: CSMA/CA.",
+        "ru": "Правильный ответ: CSMA/CA.",
+        "en": "Correct answer: CSMA/CA."
+      }
+    },
+    {
+      "lesson": "A6",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Yashirin stansiya muammosi nima sababli yuzaga keladi?",
+        "ru": "Почему возникает проблема скрытого узла?",
+        "en": "What causes the hidden-station problem?"
+      },
+      "options": [
+        {
+          "uz": "Ikki stansiya bir-birini eshitmaydi, ammo ikkalasi ham bir kirish nuqtasiga yetadi",
+          "ru": "Две станции не слышат друг друга, но обе достигают точки доступа",
+          "en": "Two stations cannot hear each other, but both can reach the access point"
+        },
+        {
+          "uz": "Ikki stansiya bir xil MAC manzil oladi",
+          "ru": "Две станции получают одинаковый MAC-адрес",
+          "en": "Two stations receive the same MAC address"
+        },
+        {
+          "uz": "Kirish nuqtasi IP manzilsiz ishlaydi",
+          "ru": "Точка доступа работает без IP-адреса",
+          "en": "The access point works without an IP address"
+        },
+        {
+          "uz": "Ethernet kadrida FCS boʻlmaydi",
+          "ru": "В кадре Ethernet нет FCS",
+          "en": "An Ethernet frame has no FCS"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Ikki stansiya bir-birini eshitmaydi, ammo ikkalasi ham bir kirish nuqtasiga yetadi.",
+        "ru": "Правильный ответ: Две станции не слышат друг друга, но обе достигают точки доступа.",
+        "en": "Correct answer: Two stations cannot hear each other, but both can reach the access point."
+      }
+    },
+    {
+      "lesson": "M6",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "FDDI ning zaxiralash xususiyatini qaysi variant ifodalaydi?",
+        "ru": "Какой вариант описывает резервирование в FDDI?",
+        "en": "Which option describes FDDI’s redundancy feature?"
+      },
+      "options": [
+        {
+          "uz": "Ikki halqa zaxira yoʻl beradi; uzilishda tugunlar halqalarni birlashtirib yoʻlni tiklashi mumkin",
+          "ru": "Два кольца дают резервный путь; при обрыве узлы могут замкнуть путь объединением колец",
+          "en": "Two rings provide a backup path; nodes can wrap the rings to restore a path after a break"
+        },
+        {
+          "uz": "Bitta markaziy kabel barcha qurilmalarga xizmat qiladi",
+          "ru": "Один центральный кабель обслуживает все устройства",
+          "en": "One central cable serves every device"
+        },
+        {
+          "uz": "Faqat Wi-Fi kanali almashadi",
+          "ru": "Меняется только канал Wi-Fi",
+          "en": "Only the Wi-Fi channel changes"
+        },
+        {
+          "uz": "IP manzillar zaxira nusxalanadi",
+          "ru": "Создаются резервные копии IP-адресов",
+          "en": "IP addresses are backed up"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Ikki halqa zaxira yoʻl beradi; uzilishda tugunlar halqalarni birlashtirib yoʻlni tiklashi mumkin.",
+        "ru": "Правильный ответ: Два кольца дают резервный путь; при обрыве узлы могут замкнуть путь объединением колец.",
+        "en": "Correct answer: Two rings provide a backup path; nodes can wrap the rings to restore a path after a break."
+      }
+    },
+    {
+      "lesson": "M7",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "IP datagrammasi qanday xizmat modeliga amal qiladi?",
+        "ru": "Какой модели обслуживания следует IP-дейтаграмма?",
+        "en": "Which service model does an IP datagram follow?"
+      },
+      "options": [
+        {
+          "uz": "IP paketni eng yaxshi urinish bilan yetkazadi; yetkazishni kafolatlamaydi",
+          "ru": "IP доставляет пакет по возможности, не гарантируя доставку",
+          "en": "IP uses best-effort delivery and does not guarantee delivery"
+        },
+        {
+          "uz": "IP har bir paketni albatta qayta uzatadi",
+          "ru": "IP обязательно повторно передаёт каждый пакет",
+          "en": "IP always retransmits every packet"
+        },
+        {
+          "uz": "IP faqat bitta lokal tarmoqda ishlaydi",
+          "ru": "IP работает только в одной локальной сети",
+          "en": "IP works only on one local network"
+        },
+        {
+          "uz": "IP MAC manzilni almashtiradi",
+          "ru": "IP заменяет MAC-адрес",
+          "en": "IP replaces the MAC address"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: IP paketni eng yaxshi urinish bilan yetkazadi; yetkazishni kafolatlamaydi.",
+        "ru": "Правильный ответ: IP доставляет пакет по возможности, не гарантируя доставку.",
+        "en": "Correct answer: IP uses best-effort delivery and does not guarantee delivery."
+      }
+    },
+    {
+      "lesson": "A7",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "192.168.10.64/26 quyi tarmogʻida nechta odatiy foydalaniladigan host manzili bor?",
+        "ru": "Сколько обычных адресов узлов доступно в подсети 192.168.10.64/26?",
+        "en": "How many conventional host addresses are usable in subnet 192.168.10.64/26?"
+      },
+      "options": [
+        {
+          "uz": "62",
+          "ru": "62",
+          "en": "62"
+        },
+        {
+          "uz": "64",
+          "ru": "64",
+          "en": "64"
+        },
+        {
+          "uz": "60",
+          "ru": "60",
+          "en": "60"
+        },
+        {
+          "uz": "126",
+          "ru": "126",
+          "en": "126"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: 62.",
+        "ru": "Правильный ответ: 62.",
+        "en": "Correct answer: 62."
+      }
+    },
+    {
+      "lesson": "M7",
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "prompt": {
+        "uz": "Tarmoq pogʻonasidagi paket ichiga joylangan Ethernet kadrining manzili qanday xususiyatga ega?",
+        "ru": "Какое свойство у адресов Ethernet-кадра, содержащего пакет сетевого уровня?",
+        "en": "What is true of Ethernet-frame addressing when it carries a network-layer packet?"
+      },
+      "options": [
+        {
+          "uz": "Ethernet MAC manzillari har bir kanal boʻgʻinida qayta yoziladi; IP manzillar odatda manba va manzil uchlari boʻyicha saqlanadi",
+          "ru": "MAC-адреса Ethernet меняются на каждом канальном участке; IP-адреса обычно сохраняются от источника до назначения",
+          "en": "Ethernet MAC addresses are rewritten at each link; IP addresses generally remain end-to-end"
+        },
+        {
+          "uz": "MAC va IP manzillar har bir marshrutizatorda oʻzgarmaydi",
+          "ru": "MAC- и IP-адреса не меняются на маршрутизаторах",
+          "en": "Neither MAC nor IP addresses change at routers"
+        },
+        {
+          "uz": "IP manzillar har bir kommutatorda tasodifiy almashadi",
+          "ru": "IP-адреса случайно меняются на каждом коммутаторе",
+          "en": "IP addresses change randomly at every switch"
+        },
+        {
+          "uz": "Ethernet kadri marshrutizatorlardan oʻtmaydi",
+          "ru": "Кадр Ethernet не проходит через маршрутизаторы",
+          "en": "An Ethernet frame never passes through routers"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Ethernet MAC manzillari har bir kanal boʻgʻinida qayta yoziladi; IP manzillar odatda manba va manzil uchlari boʻyicha saqlanadi.",
+        "ru": "Правильный ответ: MAC-адреса Ethernet меняются на каждом канальном участке; IP-адреса обычно сохраняются от источника до назначения.",
+        "en": "Correct answer: Ethernet MAC addresses are rewritten at each link; IP addresses generally remain end-to-end."
+      }
+    },
+    {
+      "lesson": "M1",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Markaziy server ishdan chiqsa, koʻp mijoz xizmatdan mahrum boʻladigan model qaysi?",
+        "ru": "В какой модели отказ центрального сервера лишает услуги многих клиентов?",
+        "en": "In which model can failure of a central server deprive many clients of service?"
+      },
+      "options": [
+        {
+          "uz": "Mijoz–server",
+          "ru": "Клиент–сервер",
+          "en": "Client–server"
+        },
+        {
+          "uz": "Teng huquqli (P2P)",
+          "ru": "Одноранговая (P2P)",
+          "en": "Peer-to-peer (P2P)"
+        },
+        {
+          "uz": "Faqat terminal tizimi",
+          "ru": "Только терминальная система",
+          "en": "Terminal-only system"
+        },
+        {
+          "uz": "Faqat uzatish muhiti",
+          "ru": "Только среда передачи",
+          "en": "Transmission medium only"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Mijoz–server.",
+        "ru": "Правильный ответ: Клиент–сервер.",
+        "en": "Correct answer: Client–server."
+      }
+    },
+    {
+      "lesson": "M2",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "N ta tugunli toʻliq bogʻlangan topologiyada har bir tugunni qolganlari bilan bevosita ulash gʻoyasi qaysi?",
+        "ru": "Какой принцип лежит в основе полносвязной топологии из N узлов?",
+        "en": "What principle defines a full mesh of N nodes?"
+      },
+      "options": [
+        {
+          "uz": "Har bir tugun qolgan har bir tugun bilan bevosita ulanishga ega",
+          "ru": "Каждый узел имеет прямое соединение с каждым другим узлом",
+          "en": "Every node has a direct link to every other node"
+        },
+        {
+          "uz": "Barcha tugunlar bitta magistral kabelga ulanadi",
+          "ru": "Все узлы подключены к одному магистральному кабелю",
+          "en": "All nodes connect to one backbone cable"
+        },
+        {
+          "uz": "Barcha tugunlar markaziy nuqtaga ulanadi",
+          "ru": "Все узлы подключены к центральной точке",
+          "en": "All nodes connect to a central point"
+        },
+        {
+          "uz": "Har bir tugun faqat ikkita qoʻshniga ulanadi",
+          "ru": "Каждый узел подключён только к двум соседям",
+          "en": "Each node connects to only two neighbours"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Har bir tugun qolgan har bir tugun bilan bevosita ulanishga ega.",
+        "ru": "Правильный ответ: Каждый узел имеет прямое соединение с каждым другим узлом.",
+        "en": "Correct answer: Every node has a direct link to every other node."
+      }
+    },
+    {
+      "lesson": "A1",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Kommutator manzil jadvalida manzil topilmasa, odatda nima qiladi?",
+        "ru": "Что обычно делает коммутатор, если адрес не найден в таблице?",
+        "en": "What does a switch usually do if it cannot find the destination address in its table?"
+      },
+      "options": [
+        {
+          "uz": "Kadrni kirish portidan tashqari portlarga tarqatadi",
+          "ru": "Рассылает кадр через порты, кроме входного",
+          "en": "Floods the frame out ports other than the incoming port"
+        },
+        {
+          "uz": "Kadrni darhol oʻchiradi",
+          "ru": "Сразу удаляет кадр",
+          "en": "Immediately deletes the frame"
+        },
+        {
+          "uz": "Manzilni DNS ga soʻrov qiladi",
+          "ru": "Запрашивает адрес у DNS",
+          "en": "Queries DNS for the address"
+        },
+        {
+          "uz": "IP sarlavhasini almashtiradi",
+          "ru": "Заменяет заголовок IP",
+          "en": "Replaces the IP header"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Kadrni kirish portidan tashqari portlarga tarqatadi.",
+        "ru": "Правильный ответ: Рассылает кадр через порты, кроме входного.",
+        "en": "Correct answer: Floods the frame out ports other than the incoming port."
+      }
+    },
+    {
+      "lesson": "A2",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Tarmoqda yagona nosozlik nuqtasini topishda qaysi holat xavfli?",
+        "ru": "Какой случай опасен при поиске единой точки отказа сети?",
+        "en": "Which condition is a risk when looking for a network single point of failure?"
+      },
+      "options": [
+        {
+          "uz": "Markaziy qurilma ishdan chiqsa, ulangan tugunlar aloqa yoʻqotishi mumkin",
+          "ru": "При отказе центрального устройства подключённые узлы могут потерять связь",
+          "en": "If the central device fails, connected nodes may lose communication"
+        },
+        {
+          "uz": "Barcha kabelsiz tugunlar avtomatik marshrutizatorga aylanadi",
+          "ru": "Все беспроводные узлы автоматически становятся маршрутизаторами",
+          "en": "All wireless nodes automatically become routers"
+        },
+        {
+          "uz": "Har bir tugun internetga chiqishda davom etadi",
+          "ru": "Каждый узел продолжает выходить в интернет",
+          "en": "Every node continues to access the Internet"
+        },
+        {
+          "uz": "Topologiya halqaga aylanadi",
+          "ru": "Топология превращается в кольцо",
+          "en": "The topology becomes a ring"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Markaziy qurilma ishdan chiqsa, ulangan tugunlar aloqa yoʻqotishi mumkin.",
+        "ru": "Правильный ответ: При отказе центрального устройства подключённые узлы могут потерять связь.",
+        "en": "Correct answer: If the central device fails, connected nodes may lose communication."
+      }
+    },
+    {
+      "lesson": "M3",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "OSI da bir xil pogʻonadagi tengdosh jarayonlar qaysi mexanizm orqali muloqot qiladi?",
+        "ru": "Через какой механизм взаимодействуют равноправные процессы одного уровня OSI?",
+        "en": "What mechanism lets peer processes at the same OSI layer communicate?"
+      },
+      "options": [
+        {
+          "uz": "Protokol orqali",
+          "ru": "С помощью протокола",
+          "en": "Through a protocol"
+        },
+        {
+          "uz": "Interfeys orqali",
+          "ru": "Через интерфейс",
+          "en": "Through an interface"
+        },
+        {
+          "uz": "Faqat optik kabel orqali",
+          "ru": "Только по оптоволоконному кабелю",
+          "en": "Only through optical fibre"
+        },
+        {
+          "uz": "MAC jadvali orqali",
+          "ru": "Через таблицу MAC",
+          "en": "Through a MAC table"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Protokol orqali.",
+        "ru": "Правильный ответ: С помощью протокола.",
+        "en": "Correct answer: Through a protocol."
+      }
+    },
+    {
+      "lesson": "M3",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Joʻnatuvchida ilova maʼlumoti qatlamlardan pastga tushganda har qatlam odatda nima qoʻshadi?",
+        "ru": "Что обычно добавляет каждый уровень при движении данных приложения вниз у отправителя?",
+        "en": "What does each layer generally add as application data moves down the sender’s stack?"
+      },
+      "options": [
+        {
+          "uz": "Har qatlam odatda boshqaruv sarlavhasini, ayrimlari esa yakuniy maydonni qoʻshadi",
+          "ru": "Каждый уровень обычно добавляет управляющий заголовок, иногда также конечное поле",
+          "en": "Each layer generally adds a control header, and some add a trailer"
+        },
+        {
+          "uz": "Har qatlam butun tarmoqni qayta kabellaydi",
+          "ru": "Каждый уровень заново прокладывает всю сеть",
+          "en": "Each layer recables the whole network"
+        },
+        {
+          "uz": "Faqat elektr kuchlanishini qoʻshadi",
+          "ru": "Добавляет только электрическое напряжение",
+          "en": "It adds only electrical voltage"
+        },
+        {
+          "uz": "Hech qanday qoʻshimcha axborot qoʻshilmaydi",
+          "ru": "Никакая дополнительная информация не добавляется",
+          "en": "No additional information is added"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Har qatlam odatda boshqaruv sarlavhasini, ayrimlari esa yakuniy maydonni qoʻshadi.",
+        "ru": "Правильный ответ: Каждый уровень обычно добавляет управляющий заголовок, иногда также конечное поле.",
+        "en": "Correct answer: Each layer generally adds a control header, and some add a trailer."
+      }
+    },
+    {
+      "lesson": "M4",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Shannon chegarasi qaysi kanal xususiyatlarini bogʻlaydi?",
+        "ru": "Какие свойства канала связывает предел Шеннона?",
+        "en": "Which channel properties are related by the Shannon limit?"
+      },
+      "options": [
+        {
+          "uz": "Kanal polosa kengligi va signal/shovqin nisbati",
+          "ru": "Ширина полосы канала и отношение сигнал/шум",
+          "en": "Channel bandwidth and signal-to-noise ratio"
+        },
+        {
+          "uz": "Kabel uzunligi va MAC manzili",
+          "ru": "Длина кабеля и MAC-адрес",
+          "en": "Cable length and MAC address"
+        },
+        {
+          "uz": "Tugun soni va TTL",
+          "ru": "Число узлов и TTL",
+          "en": "Node count and TTL"
+        },
+        {
+          "uz": "Paket nomi va port raqami",
+          "ru": "Имя пакета и номер порта",
+          "en": "Packet name and port number"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Kanal polosa kengligi va signal/shovqin nisbati.",
+        "ru": "Правильный ответ: Ширина полосы канала и отношение сигнал/шум.",
+        "en": "Correct answer: Channel bandwidth and signal-to-noise ratio."
+      }
+    },
+    {
+      "lesson": "M4",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Asinxron ketma-ket uzatishda qabul qiluvchi bayt chegarasini qanday topadi?",
+        "ru": "Как получатель определяет границу байта при асинхронной последовательной передаче?",
+        "en": "How does a receiver find byte boundaries in asynchronous serial transmission?"
+      },
+      "options": [
+        {
+          "uz": "Start va stop bitlari",
+          "ru": "Стартовый и стоповый биты",
+          "en": "Start and stop bits"
+        },
+        {
+          "uz": "OUI maydoni",
+          "ru": "Поле OUI",
+          "en": "The OUI field"
+        },
+        {
+          "uz": "IP prefiksi",
+          "ru": "Префикс IP",
+          "en": "The IP prefix"
+        },
+        {
+          "uz": "Token Ring markeri",
+          "ru": "Маркер Token Ring",
+          "en": "The Token Ring token"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Start va stop bitlari.",
+        "ru": "Правильный ответ: Стартовый и стоповый биты.",
+        "en": "Correct answer: Start and stop bits."
+      }
+    },
+    {
+      "lesson": "M5",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Unicast, multicast va broadcast MAC turlarini farqlovchi asosiy narsa nima?",
+        "ru": "Что прежде всего различает типы MAC unicast, multicast и broadcast?",
+        "en": "What primarily distinguishes unicast, multicast, and broadcast MAC types?"
+      },
+      "options": [
+        {
+          "uz": "Manzil bir tugun, guruh yoki barcha tugunlarga moʻljallanganini",
+          "ru": "Предназначен ли адрес одному узлу, группе или всем узлам",
+          "en": "Whether an address targets one node, a group, or all nodes"
+        },
+        {
+          "uz": "Qurilma ishlab chiqarilgan yilni",
+          "ru": "Год производства устройства",
+          "en": "The year the device was manufactured"
+        },
+        {
+          "uz": "IP paketning TTL qiymatini",
+          "ru": "Значение TTL IP-пакета",
+          "en": "The IP packet’s TTL value"
+        },
+        {
+          "uz": "Wi-Fi kanal kengligini",
+          "ru": "Ширину канала Wi-Fi",
+          "en": "The Wi-Fi channel width"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Manzil bir tugun, guruh yoki barcha tugunlarga moʻljallanganini.",
+        "ru": "Правильный ответ: Предназначен ли адрес одному узлу, группе или всем узлам.",
+        "en": "Correct answer: Whether an address targets one node, a group, or all nodes."
+      }
+    },
+    {
+      "lesson": "A5",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "Kommutatsiyalangan Ethernetda boshqa portlar trafigini kuzatish uchun snifferga qanday yoʻl kerak boʻlishi mumkin?",
+        "ru": "Что может потребоваться анализатору, чтобы видеть трафик других портов коммутатора?",
+        "en": "What might a sniffer need to see traffic from other switch ports?"
+      },
+      "options": [
+        {
+          "uz": "SPAN yoki port mirroring orqali trafik nusxasini olish",
+          "ru": "Получить копию трафика через SPAN или зеркалирование порта",
+          "en": "A traffic copy through SPAN or port mirroring"
+        },
+        {
+          "uz": "DNS zonani oʻzgartirish",
+          "ru": "Изменить зону DNS",
+          "en": "Change the DNS zone"
+        },
+        {
+          "uz": "TTL qiymatini oshirish",
+          "ru": "Увеличить TTL",
+          "en": "Increase the TTL"
+        },
+        {
+          "uz": "MAC manzilni yashirish",
+          "ru": "Скрыть MAC-адрес",
+          "en": "Hide the MAC address"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: SPAN yoki port mirroring orqali trafik nusxasini olish.",
+        "ru": "Правильный ответ: Получить копию трафика через SPAN или зеркалирование порта.",
+        "en": "Correct answer: A traffic copy through SPAN or port mirroring."
+      }
+    },
+    {
+      "lesson": "M6",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "CSMA/CA kolliziyani kabelda aniqlashga tayanadimi?",
+        "ru": "Опирается ли CSMA/CA на обнаружение коллизии в кабеле?",
+        "en": "Does CSMA/CA rely on detecting a collision on the cable?"
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Notoʻgʻri.",
+        "ru": "Правильный ответ: Неверно.",
+        "en": "Correct answer: False."
+      }
+    },
+    {
+      "lesson": "M6",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "BSS va ESS atamalarining toʻgʻri munosabati qaysi?",
+        "ru": "Каково верное соотношение понятий BSS и ESS?",
+        "en": "Which statement correctly relates BSS and ESS?"
+      },
+      "options": [
+        {
+          "uz": "ESS bir taqsimlangan tizim orqali bogʻlangan bir nechta BSS ni qamrab oladi",
+          "ru": "ESS объединяет несколько BSS через распределённую систему",
+          "en": "An ESS includes multiple BSSs connected through a distribution system"
+        },
+        {
+          "uz": "ESS — Ethernet kadridagi xato kodi",
+          "ru": "ESS — код ошибки кадра Ethernet",
+          "en": "ESS is an Ethernet frame error code"
+        },
+        {
+          "uz": "BSS va ESS bir xil maʼnoga ega",
+          "ru": "BSS и ESS означают одно и то же",
+          "en": "BSS and ESS mean the same thing"
+        },
+        {
+          "uz": "ESS faqat bitta simli kommutator portidir",
+          "ru": "ESS — только один порт проводного коммутатора",
+          "en": "An ESS is only one wired switch port"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: ESS bir taqsimlangan tizim orqali bogʻlangan bir nechta BSS ni qamrab oladi.",
+        "ru": "Правильный ответ: ESS объединяет несколько BSS через распределённую систему.",
+        "en": "Correct answer: An ESS includes multiple BSSs connected through a distribution system."
+      }
+    },
+    {
+      "lesson": "M7",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "IP paketining TTL qiymati nolga tushsa, odatda nima yuz beradi?",
+        "ru": "Что обычно происходит, когда TTL IP-пакета достигает нуля?",
+        "en": "What usually happens when an IP packet’s TTL reaches zero?"
+      },
+      "options": [
+        {
+          "uz": "Paket tashlanadi; marshrutizator ICMP Time Exceeded xabarini yuborishi mumkin",
+          "ru": "Пакет отбрасывается; маршрутизатор может отправить ICMP Time Exceeded",
+          "en": "The packet is discarded; a router may send an ICMP Time Exceeded message"
+        },
+        {
+          "uz": "Paket TTL 255 bilan qayta yuboriladi",
+          "ru": "Пакет повторно отправляется с TTL 255",
+          "en": "The packet is resent with TTL 255"
+        },
+        {
+          "uz": "Paket Ethernet broadcastga aylanadi",
+          "ru": "Пакет становится широковещательным Ethernet",
+          "en": "The packet becomes an Ethernet broadcast"
+        },
+        {
+          "uz": "Paket avtomatik ravishda qisqaradi",
+          "ru": "Пакет автоматически укорачивается",
+          "en": "The packet automatically becomes shorter"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Paket tashlanadi; marshrutizator ICMP Time Exceeded xabarini yuborishi mumkin.",
+        "ru": "Правильный ответ: Пакет отбрасывается; маршрутизатор может отправить ICMP Time Exceeded.",
+        "en": "Correct answer: The packet is discarded; a router may send an ICMP Time Exceeded message."
+      }
+    },
+    {
+      "lesson": "A7",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "192.168.1.0/24 tarmogʻini kamida 50 ta host sigʻadigan quyi tarmoqqa ajratishda eng kichik mos prefiks qaysi?",
+        "ru": "Какой наименьший подходящий префикс нужен для подсети, вмещающей не менее 50 узлов из 192.168.1.0/24?",
+        "en": "What is the smallest suitable prefix for a subnet that must hold at least 50 hosts from 192.168.1.0/24?"
+      },
+      "options": [
+        {
+          "uz": "/26",
+          "ru": "/26",
+          "en": "/26"
+        },
+        {
+          "uz": "/27",
+          "ru": "/27",
+          "en": "/27"
+        },
+        {
+          "uz": "/28",
+          "ru": "/28",
+          "en": "/28"
+        },
+        {
+          "uz": "/25",
+          "ru": "/25",
+          "en": "/25"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: /26.",
+        "ru": "Правильный ответ: /26.",
+        "en": "Correct answer: /26."
+      }
+    },
+    {
+      "lesson": "M7",
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "prompt": {
+        "uz": "ICMP ning tarmoqdagi asosiy vazifasi qaysi?",
+        "ru": "Какова основная роль ICMP в сети?",
+        "en": "What is ICMP’s primary role in a network?"
+      },
+      "options": [
+        {
+          "uz": "Xatolik va diagnostika xabarlarini uzatish; masalan, yetib bormaslik yoki vaqt tugashi",
+          "ru": "Передача сообщений об ошибках и диагностике, например недоступность или истечение времени",
+          "en": "Carrying error and diagnostic messages, such as unreachable or time exceeded"
+        },
+        {
+          "uz": "MAC manzillarni taqsimlash",
+          "ru": "Распределение MAC-адресов",
+          "en": "Assigning MAC addresses"
+        },
+        {
+          "uz": "Ilova nomlarini IP ga tarjima qilish",
+          "ru": "Преобразование имён приложений в IP",
+          "en": "Translating application names to IP"
+        },
+        {
+          "uz": "Ethernet tezligini kelishish",
+          "ru": "Согласование скорости Ethernet",
+          "en": "Negotiating Ethernet speed"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Toʻgʻri javob: Xatolik va diagnostika xabarlarini uzatish; masalan, yetib bormaslik yoki vaqt tugashi.",
+        "ru": "Правильный ответ: Передача сообщений об ошибках и диагностике, например недоступность или истечение времени.",
+        "en": "Correct answer: Carrying error and diagnostic messages, such as unreachable or time exceeded."
+      }
+    }
+  ]
+}

@@ -1,0 +1,1912 @@
+{
+  "afterLesson": "A7",
+  "questions": [
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Axborot xavfsizligi kiberxavfsizlikdan qaysi jihati bilan kengroq?",
+        "ru": "Чем информационная безопасность шире кибербезопасности?",
+        "en": "In what way is information security broader than cybersecurity?"
+      },
+      "options": [
+        {
+          "uz": "U qogʻozdagi va inson xotirasidagi axborotni ham qamrab oladi",
+          "ru": "Она охватывает также информацию на бумаге и в памяти людей",
+          "en": "It also covers information on paper and in people’s memory"
+        },
+        {
+          "uz": "U faqat kompyuter tarmoqlarini qamrab oladi",
+          "ru": "Она охватывает только компьютерные сети",
+          "en": "It covers only computer networks"
+        },
+        {
+          "uz": "U faqat maxfiy parollarni himoya qiladi",
+          "ru": "Она защищает только секретные пароли",
+          "en": "It protects only secret passwords"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Axborot xavfsizligi har qanday shakldagi axborotni, kiberxavfsizlik esa raqamli tizimlarni himoya qiladi.",
+        "ru": "Информационная безопасность защищает информацию в любой форме, а кибербезопасность — цифровые системы.",
+        "en": "Information security protects information in any form; cybersecurity focuses on digital systems."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Baholar bazasining sizib chiqishi, avvalo, konfidensiallikni buzadi.",
+        "ru": "Утечка базы оценок прежде всего нарушает конфиденциальность.",
+        "en": "A leak of a grade database primarily violates confidentiality."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Konfidensiallik axborot faqat vakolatli odamlarga ochiqligini anglatadi.",
+        "ru": "Конфиденциальность означает, что информация доступна только уполномоченным лицам.",
+        "en": "Confidentiality means information is available only to authorised people."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A1",
+      "prompt": {
+        "uz": "Oʻqituvchi baholar jadvalini adashib butun guruhga yubordi. Qaysi CIA xossasi buzildi?",
+        "ru": "Преподаватель по ошибке отправил таблицу оценок всей группе. Какое свойство CIA нарушено?",
+        "en": "A teacher accidentally sent a grade sheet to the whole group. Which CIA property was violated?"
+      },
+      "options": [
+        {
+          "uz": "Konfidensiallik",
+          "ru": "Конфиденциальность",
+          "en": "Confidentiality"
+        },
+        {
+          "uz": "Foydalanish mumkinligi",
+          "ru": "Доступность",
+          "en": "Availability"
+        },
+        {
+          "uz": "Zaxiralash",
+          "ru": "Резервирование",
+          "en": "Backup"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Vakolatsiz qabul qiluvchilar shaxsiy baholarni koʻrdi, demak maxfiylik buzildi.",
+        "ru": "Неуполномоченные получатели увидели личные оценки, значит нарушена конфиденциальность.",
+        "en": "Unauthorised recipients saw personal grades, so confidentiality was lost."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A1",
+      "prompt": {
+        "uz": "Serverdagi fayllar shifrlanib, xizmat ishlamay qolsa, foydalanish mumkinligi zarar koʻradi.",
+        "ru": "Если файлы сервера зашифрованы и служба перестаёт работать, страдает доступность.",
+        "en": "If server files are encrypted and the service stops, availability is harmed."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Vakolatli foydalanuvchilar kerakli xizmat va maʼlumotlardan foydalana olmayapti.",
+        "ru": "Уполномоченные пользователи не могут получить нужную службу и данные.",
+        "en": "Authorised users cannot access the service and data when needed."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Risk balli ehtimollik 3 va taʼsir 4 koʻpaytmasi bilan hisoblansa, ball nechaga teng?",
+        "ru": "Если балл риска равен произведению вероятности 3 и воздействия 4, чему он равен?",
+        "en": "If a risk score is likelihood 3 multiplied by impact 4, what is the score?"
+      },
+      "answers": [
+        12
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Risk matritsasida bu ikki qiymat koʻpaytiriladi: 3 × 4 = 12.",
+        "ru": "В матрице риска эти значения перемножаются: 3 × 4 = 12.",
+        "en": "The risk matrix multiplies the two values: 3 × 4 = 12."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A2",
+      "prompt": {
+        "uz": "Risk issiqlik xaritasida ehtimollik va taʼsir mezonlari izchil belgilanishi kerak.",
+        "ru": "В тепловой карте риска критерии вероятности и воздействия должны быть последовательными.",
+        "en": "In a risk heat map, likelihood and impact criteria should be defined consistently."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Aniq shkala mezonlari turli baholovchilarning natijalarini taqqoslashga yordam beradi.",
+        "ru": "Чёткие критерии шкал помогают сравнивать оценки разных экспертов.",
+        "en": "Clear scale criteria make assessments from different people comparable."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Begona tizimga ruxsatsiz kirish, hatto oʻrganish niyatida boʻlsa ham, qonuniy va etik muammo tugʻdirishi mumkin.",
+        "ru": "Несанкционированный доступ к чужой системе может быть юридической и этической проблемой, даже если цель — обучение.",
+        "en": "Unauthorised access to someone else’s system can be a legal and ethical problem even when done to learn."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Tekshiruv faqat vakolat va tegishli ruxsat doirasida bajarilishi kerak.",
+        "ru": "Проверку следует проводить только в пределах полномочий и полученного разрешения.",
+        "en": "Testing should be performed only within granted authority and permission."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A3",
+      "prompt": {
+        "uz": "Hujum zanjirini tahlil qilishda boshlangʻich kirish usuli va oqibatlarni aniqlash foydali.",
+        "ru": "При анализе цепочки атаки полезно выявлять способ первоначального доступа и последствия.",
+        "en": "When analysing an attack chain, it is useful to identify the initial access method and consequences."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Hodisa tahlili kirish yoʻli, rivojlanish, taʼsir va javob choralarini bogʻlaydi.",
+        "ru": "Анализ инцидента связывает путь проникновения, развитие, последствия и меры реагирования.",
+        "en": "Incident analysis connects the entry path, progression, impact and response."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Eng kam imtiyoz tamoyili foydalanuvchiga vazifasi uchun zarur eng kam huquqlarni berishni tavsiya qiladi.",
+        "ru": "Принцип наименьших привилегий рекомендует выдавать пользователю минимум прав, необходимых для его задач.",
+        "en": "Least privilege recommends giving a user only the minimum rights needed for their tasks."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Huquqlarni cheklash xato yoki buzilgan hisob taʼsir doirasini kamaytiradi.",
+        "ru": "Ограничение прав уменьшает последствия ошибки или взлома учётной записи.",
+        "en": "Restricting rights reduces the impact of mistakes or a compromised account."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A4",
+      "prompt": {
+        "uz": "Xavfsizlik siyosatida masʼullar va tekshirish tartibini aniq belgilash mumkin.",
+        "ru": "Политика безопасности может чётко определять ответственных и порядок проверки.",
+        "en": "A security policy can clearly define owners and review procedures."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Siyosat qoidalar bilan birga rollar, masʼuliyat va nazoratni ham belgilaydi.",
+        "ru": "Политика задаёт не только правила, но и роли, ответственность и контроль.",
+        "en": "A policy sets roles, responsibilities and oversight as well as rules."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Kerkxofs prinsipiga koʻra, kriptotizim xavfsizligi nimaga tayanishi kerak?",
+        "ru": "Согласно принципу Керкгоффса, на чём должна основываться безопасность криптосистемы?",
+        "en": "According to Kerckhoffs’s principle, what should a cryptosystem’s security rely on?"
+      },
+      "options": [
+        {
+          "uz": "Kalit maxfiyligiga, algoritm oshkor boʻlishi mumkin",
+          "ru": "На секретности ключа; алгоритм может быть известен",
+          "en": "On key secrecy; the algorithm may be public"
+        },
+        {
+          "uz": "Algoritmni hammadan yashirishga",
+          "ru": "На сокрытии алгоритма от всех",
+          "en": "On hiding the algorithm from everyone"
+        },
+        {
+          "uz": "Shifrmatnni qisqa saqlashga",
+          "ru": "На краткости шифротекста",
+          "en": "On keeping ciphertext short"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Kerkxofs prinsipi algoritm ochiq boʻlsa ham kalit sir tutilganda tizim xavfsiz boʻlishini talab qiladi.",
+        "ru": "Принцип Керкгоффса требует безопасности системы при известном алгоритме и секретном ключе.",
+        "en": "Kerckhoffs’s principle requires security even when the algorithm is known, provided the key stays secret."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A5",
+      "prompt": {
+        "uz": "Sezar shifrida harflar alifboda bir xil miqdorga siljitiladi.",
+        "ru": "В шифре Цезаря буквы сдвигаются в алфавите на одинаковое число позиций.",
+        "en": "In a Caesar cipher, letters are shifted by the same number of positions in the alphabet."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Sezar shifri oddiy almashtirish boʻlib, bitta siljish kalitidan foydalanadi.",
+        "ru": "Шифр Цезаря — простая замена с одним ключом-сдвигом.",
+        "en": "The Caesar cipher is a substitution using one shift value as its key."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "AES simmetrik shifrdir: shifrlash va deshifrlashda umumiy maxfiy kalit ishlatiladi.",
+        "ru": "AES — симметричный шифр: для шифрования и расшифрования используется общий секретный ключ.",
+        "en": "AES is a symmetric cipher: encryption and decryption use a shared secret key."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Simmetrik tizimlarda tomonlar bitta maxfiy kalitni xavfsiz saqlashi kerak.",
+        "ru": "В симметричных системах стороны должны хранить общий секретный ключ.",
+        "en": "In symmetric systems, the parties must protect their shared secret key."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A6",
+      "prompt": {
+        "uz": "PBKDF2 paroldan kalit hosil qilishda takroriy hisoblashdan foydalanadi.",
+        "ru": "PBKDF2 использует повторные вычисления для получения ключа из пароля.",
+        "en": "PBKDF2 uses repeated computation to derive a key from a password."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Takroriy iteratsiyalar parolni sinab koʻrishni hujumchi uchun qimmatroq qiladi.",
+        "ru": "Повторные итерации делают перебор пароля более затратным для атакующего.",
+        "en": "Repeated iterations make password guessing more expensive for an attacker."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Ochiq kalitli kriptografiya qaysi amaliy muammoni yengillashtiradi?",
+        "ru": "Какую практическую проблему облегчает криптография с открытым ключом?",
+        "en": "Which practical problem does public-key cryptography help solve?"
+      },
+      "options": [
+        {
+          "uz": "Begona tomonlar orasida kalitni xavfsiz kelishish",
+          "ru": "Безопасное согласование ключа между незнакомыми сторонами",
+          "en": "Agreeing on a key securely between parties who have not met"
+        },
+        {
+          "uz": "Barcha maʼlumotlarni siqish",
+          "ru": "Сжатие всех данных",
+          "en": "Compressing all data"
+        },
+        {
+          "uz": "Tarmoq tezligini oshirish",
+          "ru": "Увеличение скорости сети",
+          "en": "Increasing network speed"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Ochiq kalitli usullar oldindan umumiy sirga ega boʻlmagan tomonlarga kalit almashishda yordam beradi.",
+        "ru": "Методы с открытым ключом помогают сторонам без заранее общего секрета обменяться ключом.",
+        "en": "Public-key methods help parties without a pre-shared secret establish a key."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "RSA da n moduli ikki tub sonning koʻpaytmasi sifatida tuziladi.",
+        "ru": "В RSA модуль n строится как произведение двух простых чисел.",
+        "en": "In RSA, modulus n is formed as the product of two prime numbers."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "RSA kalit yaratishda n = p × q, bunda p va q tub sonlar.",
+        "ru": "При создании ключей RSA используется n = p × q, где p и q — простые числа.",
+        "en": "RSA key generation uses n = p × q, where p and q are primes."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "Amaliy RSA uchun ochiq kalitni tekshirish va xavfsiz toʻldirish sxemasidan foydalanish muhim.",
+        "ru": "Для практического RSA важно проверять открытый ключ и применять безопасную схему дополнения.",
+        "en": "Practical RSA needs public-key validation and a secure padding scheme."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Darslikdagi yalangʻoch RSA deterministik va strukturaviy hujumlarga moyil; OAEP yoki PSS kabi standart sxemalar kerak.",
+        "ru": "Голый RSA детерминирован и уязвим к структурным атакам; нужны стандартные схемы, например OAEP или PSS.",
+        "en": "Textbook RSA is deterministic and vulnerable to structural attacks; standard schemes such as OAEP or PSS are needed."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Talaba bazasidagi yozuvlar ruxsatsiz oʻzgartirilgan, lekin tizim ishlayapti. Qaysi xossa bevosita buzilgan?",
+        "ru": "Записи в базе студентов изменены без разрешения, но система работает. Какое свойство непосредственно нарушено?",
+        "en": "Student database records were changed without permission, but the system still works. Which property was directly violated?"
+      },
+      "options": [
+        {
+          "uz": "Yaxlitlik",
+          "ru": "Целостность",
+          "en": "Integrity"
+        },
+        {
+          "uz": "Foydalanish mumkinligi",
+          "ru": "Доступность",
+          "en": "Availability"
+        },
+        {
+          "uz": "Konfidensiallik",
+          "ru": "Конфиденциальность",
+          "en": "Confidentiality"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Yaxlitlik ruxsatsiz yoki sezilmaydigan oʻzgarishlarning oldini oladi.",
+        "ru": "Целостность защищает от несанкционированных или незаметных изменений.",
+        "en": "Integrity protects information from unauthorised or unnoticed changes."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Qaysilari aktivga zarar yetkazishi mumkin boʻlgan tahdid misollari?",
+        "ru": "Какие варианты являются примерами угроз, способных причинить вред активу?",
+        "en": "Which are examples of threats that could harm an asset?"
+      },
+      "options": [
+        {
+          "uz": "Yongʻin",
+          "ru": "Пожар",
+          "en": "Fire"
+        },
+        {
+          "uz": "Yangilanmagan serverdagi zaiflik",
+          "ru": "Уязвимость на необновлённом сервере",
+          "en": "A vulnerability on an unpatched server"
+        },
+        {
+          "uz": "Xodimning tasodifiy xatosi",
+          "ru": "Случайная ошибка сотрудника",
+          "en": "An employee’s accidental mistake"
+        },
+        {
+          "uz": "Serverga hujum qiluvchi zararli guruh",
+          "ru": "Злоумышленная группа, атакующая сервер",
+          "en": "A malicious group attacking the server"
+        }
+      ],
+      "correct": [
+        0,
+        2,
+        3
+      ],
+      "explanation": {
+        "uz": "Tahdid zarar keltirishi mumkin boʻlgan hodisa yoki manbadir; zaiflik esa tizimdagi kamchilikdir.",
+        "ru": "Угроза — возможное вредоносное событие или источник; уязвимость — недостаток системы.",
+        "en": "A threat is a harmful event or source; a vulnerability is a weakness in the system."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Aktiv qiymati 200 000 soʻm, taʼsir koeffitsiyenti 0,25. Bir hodisa zarari SLE qancha? SLE = AV × EF.",
+        "ru": "Стоимость актива — 200 000 сумов, коэффициент воздействия — 0,25. Чему равен ущерб за одно событие SLE = AV × EF?",
+        "en": "An asset is worth 200,000 soʻm and the exposure factor is 0.25. What is single-loss expectancy, SLE = AV × EF?"
+      },
+      "answers": [
+        50000
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "SLE = 200 000 × 0,25 = 50 000 soʻm.",
+        "ru": "SLE = 200 000 × 0,25 = 50 000 сумов.",
+        "en": "SLE = 200,000 × 0.25 = 50,000 soʻm."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Yillik hodisalar chastotasi ARO 2 va bitta hodisa zarari SLE 50 000 soʻm. Yillik kutilayotgan zarar koʻrsatkichining qisqartmasini yozing.",
+        "ru": "Частота событий в год ARO равна 2, ущерб за событие SLE — 50 000 сумов. Напишите сокращение ожидаемого годового ущерба.",
+        "en": "Annual rate of occurrence ARO is 2 and single-loss expectancy SLE is 50,000 soʻm. Write the abbreviation for annual expected loss."
+      },
+      "answers": [
+        "ALE",
+        "ale"
+      ],
+      "explanation": {
+        "uz": "Yillik kutilayotgan zarar ALE = SLE × ARO.",
+        "ru": "Ожидаемый годовой ущерб ALE = SLE × ARO.",
+        "en": "Annualised loss expectancy is ALE = SLE × ARO."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Tashkilot riskdan qochish uchun xavfli xizmatni butunlay toʻxtatdi. Bu qaysi risk strategiyasi?",
+        "ru": "Организация полностью прекратила опасную услугу, чтобы избежать риска. Какая это стратегия?",
+        "en": "An organisation discontinued a risky service entirely to avoid its risk. Which risk strategy is this?"
+      },
+      "options": [
+        {
+          "uz": "Riskdan qochish",
+          "ru": "Избежание риска",
+          "en": "Risk avoidance"
+        },
+        {
+          "uz": "Riskni qabul qilish",
+          "ru": "Принятие риска",
+          "en": "Risk acceptance"
+        },
+        {
+          "uz": "Riskni uzatish",
+          "ru": "Передача риска",
+          "en": "Risk transfer"
+        },
+        {
+          "uz": "Riskni kamaytirish",
+          "ru": "Снижение риска",
+          "en": "Risk mitigation"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Faoliyatni bekor qilish risk manbasini olib tashlaydi, bu riskdan qochishdir.",
+        "ru": "Отказ от деятельности устраняет источник риска — это избегание риска.",
+        "en": "Stopping the activity removes the source of risk, which is avoidance."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A2",
+      "prompt": {
+        "uz": "Risk issiqlik xaritasida taʼsirning moliyaviy va operatsion baholari farq qilsa, darsdagi yondashuv boʻyicha qaysi ball olinadi?",
+        "ru": "Если финансовая и операционная оценки воздействия различаются, какой балл берётся по подходу урока?",
+        "en": "If financial and operational impact ratings differ, which score is used under the lesson’s approach?"
+      },
+      "options": [
+        {
+          "uz": "Eng yuqori taʼsir balli",
+          "ru": "Наивысший балл воздействия",
+          "en": "The highest impact score"
+        },
+        {
+          "uz": "Eng past ball",
+          "ru": "Самый низкий балл",
+          "en": "The lowest score"
+        },
+        {
+          "uz": "Ikki ballning oʻrtachasi",
+          "ru": "Среднее двух баллов",
+          "en": "The average of the two scores"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Bir nechta taʼsir oʻlchovi boʻlsa, eng yuqori ball olinadi.",
+        "ru": "При нескольких измерениях воздействия берётся наивысшая оценка.",
+        "en": "When several impact dimensions are assessed, the highest rating is used."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Raqamli kriminalistikada dalillar zanjirini saqlashga qaysi amallar yordam beradi?",
+        "ru": "Какие действия помогают сохранять цепочку обращения с цифровыми доказательствами?",
+        "en": "Which actions help preserve the chain of custody for digital evidence?"
+      },
+      "options": [
+        {
+          "uz": "Har bir dalilni kim va qachon olganini qayd etish",
+          "ru": "Фиксировать, кто и когда получил каждое доказательство",
+          "en": "Record who collected each item and when"
+        },
+        {
+          "uz": "Asl nusxani oʻzgartirmasdan saqlash",
+          "ru": "Сохранять оригинал без изменений",
+          "en": "Preserve the original without alteration"
+        },
+        {
+          "uz": "Dalilni umumiy papkaga nomlarsiz tashlash",
+          "ru": "Сложить доказательства в общую папку без описания",
+          "en": "Put evidence in a shared folder without labels"
+        },
+        {
+          "uz": "Yaxlitlikni xesh orqali tekshirish",
+          "ru": "Проверять целостность с помощью хеша",
+          "en": "Check integrity with a hash"
+        }
+      ],
+      "correct": [
+        0,
+        1,
+        3
+      ],
+      "explanation": {
+        "uz": "Qaydlar, asl nusxani saqlash va xesh dalilning kelib chiqishi hamda yaxlitligini koʻrsatadi.",
+        "ru": "Журналы, сохранение оригинала и хеш подтверждают происхождение и целостность доказательства.",
+        "en": "Logs, preservation of the original and hashes support evidence provenance and integrity."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A3",
+      "prompt": {
+        "uz": "Hujumchi yangilanmagan server zaifligidan foydalanib ichkariga kirdi. Bu tavsifdagi zaiflik qaysi?",
+        "ru": "Злоумышленник проник через уязвимость необновлённого сервера. Что здесь является уязвимостью?",
+        "en": "An attacker entered by exploiting an unpatched server flaw. What is the vulnerability in this description?"
+      },
+      "options": [
+        {
+          "uz": "Serverning yangilanmaganligi",
+          "ru": "Отсутствие обновления сервера",
+          "en": "The server being unpatched"
+        },
+        {
+          "uz": "Hujumchining mavjudligi",
+          "ru": "Наличие злоумышленника",
+          "en": "The presence of an attacker"
+        },
+        {
+          "uz": "Tizimdan foydalanish oqibati",
+          "ru": "Последствие использования системы",
+          "en": "The consequence of using the system"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Zaiflik — tahdid foydalanishi mumkin boʻlgan tizim kamchiligi.",
+        "ru": "Уязвимость — недостаток системы, которым может воспользоваться угроза.",
+        "en": "A vulnerability is a system weakness that a threat can exploit."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Raqamli dalilni xeshlash uning yaxlitligini tekshirishga yordam beradi, ammo kim olganini qayd etish zaruratini almashtirmaydi.",
+        "ru": "Хеширование цифрового доказательства помогает проверить целостность, но не заменяет запись о том, кто его получил.",
+        "en": "Hashing digital evidence helps verify integrity but does not replace recording who collected it."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Xesh oʻzgarishni aniqlaydi, dalillar zanjiri esa saqlash va topshirish tarixini ham hujjatlashtiradi.",
+        "ru": "Хеш выявляет изменения, а цепочка хранения также документирует передачу и хранение.",
+        "en": "A hash detects changes; chain of custody also documents storage and transfers."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Siyosat hujjatlar iyerarxiyasida protseduradan odatda qaysi hujjat yuqoriroq turadi?",
+        "ru": "Какой документ обычно стоит выше процедуры в иерархии документов?",
+        "en": "Which document usually sits above a procedure in the document hierarchy?"
+      },
+      "options": [
+        {
+          "uz": "Siyosat",
+          "ru": "Политика",
+          "en": "Policy"
+        },
+        {
+          "uz": "Ish yoʻriqnomasi",
+          "ru": "Рабочая инструкция",
+          "en": "Work instruction"
+        },
+        {
+          "uz": "Kundalik jurnal",
+          "ru": "Ежедневный журнал",
+          "en": "Daily log"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Siyosat yuqori darajadagi talablarni beradi; standartlar, protseduralar va yoʻriqnomalar ularni amaliyotga aylantiradi.",
+        "ru": "Политика задаёт требования высокого уровня; стандарты, процедуры и инструкции переводят их в практику.",
+        "en": "Policy sets high-level requirements; standards, procedures and instructions operationalise them."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A4",
+      "prompt": {
+        "uz": "Yaxshi xavfsizlik siyosati loyihasini tayyorlashdan oldin nimalarni aniqlash kerak?",
+        "ru": "Что следует определить до подготовки проекта политики безопасности?",
+        "en": "What should be identified before drafting a security policy?"
+      },
+      "options": [
+        {
+          "uz": "Himoyalanadigan aktivlar",
+          "ru": "Защищаемые активы",
+          "en": "Assets to protect"
+        },
+        {
+          "uz": "Tegishli risklar va talablar",
+          "ru": "Соответствующие риски и требования",
+          "en": "Relevant risks and requirements"
+        },
+        {
+          "uz": "Masʼullar va vazifalar",
+          "ru": "Ответственных и их задачи",
+          "en": "Owners and responsibilities"
+        },
+        {
+          "uz": "Faqat hujjat shriftining turi",
+          "ru": "Только тип шрифта документа",
+          "en": "Only the document font"
+        }
+      ],
+      "correct": [
+        0,
+        1,
+        2
+      ],
+      "explanation": {
+        "uz": "Siyosat aktiv, risk va talablarni tushunib, bajariladigan rollar bilan yoziladi.",
+        "ru": "Политика строится на понимании активов, рисков и требований, а также распределении ролей.",
+        "en": "A policy should reflect assets, risks and requirements and assign workable responsibilities."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Nol ishonch yondashuvi tarmoq ichidagi har bir soʻrov avtomatik ishonchli deb hisoblaydi.",
+        "ru": "Подход Zero Trust считает каждый запрос внутри сети автоматически доверенным.",
+        "en": "Zero Trust treats every request inside the network as automatically trusted."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Nol ishonchda joylashuvning oʻzi ishonch bermaydi; soʻrovlar tekshiriladi.",
+        "ru": "В Zero Trust само расположение не даёт доверия; запросы проверяются.",
+        "en": "In Zero Trust, location alone grants no trust; requests are verified."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Bir xil ochiq matn va kalit bilan Sezar shifri doim bir xil shifrmatn beradi. Bu qaysi zaiflikni koʻrsatadi?",
+        "ru": "Шифр Цезаря всегда даёт одинаковый шифротекст для одного открытого текста и ключа. Какая слабость видна?",
+        "en": "The Caesar cipher gives the same ciphertext for the same plaintext and key. Which weakness does this show?"
+      },
+      "options": [
+        {
+          "uz": "Deterministik almashtirish matn tuzilishini yashirmaydi",
+          "ru": "Детерминированная замена не скрывает структуру текста",
+          "en": "Deterministic substitution does not hide text structure"
+        },
+        {
+          "uz": "Kalit almashinuvi murakkabligi",
+          "ru": "Сложность обмена ключами",
+          "en": "Key exchange complexity"
+        },
+        {
+          "uz": "Shifrmatnni uzatib boʻlmasligi",
+          "ru": "Невозможность передать шифротекст",
+          "en": "Inability to transmit ciphertext"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Bir harf har safar bir xil harfga almashsa, tilning naqshlari saqlanib, chastota tahliliga yoʻl ochadi.",
+        "ru": "Если буква всегда заменяется одинаково, сохраняются языковые закономерности и возможен частотный анализ.",
+        "en": "If a letter always maps to the same letter, language patterns remain and frequency analysis can work."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A5",
+      "prompt": {
+        "uz": "26 harfli alifboda Sezar shifrining trivial boʻlmagan siljish kalitlari nechta?",
+        "ru": "Сколько нетривиальных ключей-сдвигов у шифра Цезаря для алфавита из 26 букв?",
+        "en": "How many non-trivial shift keys does a Caesar cipher have in a 26-letter alphabet?"
+      },
+      "answers": [
+        25
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "0 siljish shifrlamaydi; qolgan 1 dan 25 gacha boʻlgan 25 siljish kalit boʻla oladi.",
+        "ru": "Сдвиг 0 ничего не шифрует; остаются 25 сдвигов от 1 до 25.",
+        "en": "Shift 0 does nothing, leaving 25 possible shifts from 1 through 25."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Vijiner shifrida kalit uzunligi bir nechta boʻlsa, matndagi har bir belgi ayni bir siljishni ishlatadi.",
+        "ru": "Если ключ шифра Виженера длиннее одного символа, для каждого символа текста используется один и тот же сдвиг.",
+        "en": "If a Vigenère key has multiple characters, the same shift is used for every text character."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Vijinerda kalit belgilarining siljishlari ketma-ket takrorlanadi; siljishlar matn boʻylab oʻzgaradi.",
+        "ru": "В Виженере повторяются сдвиги символов ключа, поэтому сдвиг меняется по тексту.",
+        "en": "Vigenère repeats the key’s shifts, so the shift changes across the text."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "AES-128 uchun AES ishlov beradigan blok uzunligi necha bit?",
+        "ru": "Какова длина блока AES, в том числе для AES-128?",
+        "en": "What is the AES block length, including for AES-128?"
+      },
+      "answers": [
+        128
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "AES ning blok uzunligi doim 128 bit; 128, 192 va 256 qiymatlar kalit uzunliklaridir.",
+        "ru": "Блок AES всегда равен 128 битам; 128, 192 и 256 — это длины ключа.",
+        "en": "AES always has a 128-bit block; 128, 192 and 256 are key lengths."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Bir xil ochiq matn bloklari ECB rejimida qanday xususiyatga ega shifrmatn bloklari beradi?",
+        "ru": "Какие блоки шифротекста дают одинаковые блоки открытого текста в режиме ECB?",
+        "en": "What ciphertext blocks does ECB produce for identical plaintext blocks?"
+      },
+      "options": [
+        {
+          "uz": "Bir xil shifrmatn bloklari",
+          "ru": "Одинаковые блоки шифротекста",
+          "en": "Identical ciphertext blocks"
+        },
+        {
+          "uz": "Har doim tasodifiy va turlicha bloklar",
+          "ru": "Всегда случайные и разные блоки",
+          "en": "Always random and different blocks"
+        },
+        {
+          "uz": "Boʻsh bloklar",
+          "ru": "Пустые блоки",
+          "en": "Empty blocks"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "ECB har bir blokni mustaqil, bir xil kalit bilan shifrlaydi va takroriy naqshlarni ochib qoʻyadi.",
+        "ru": "ECB шифрует каждый блок независимо одним ключом и раскрывает повторяющиеся шаблоны.",
+        "en": "ECB encrypts each block independently with the same key and reveals repeated patterns."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A6",
+      "prompt": {
+        "uz": "Darsda AES-GCM bilan birga tilga olingan, paroldan kalit hosil qiluvchi standart usulning qisqa nomini yozing.",
+        "ru": "Напишите краткое название стандартного способа получения ключа из пароля, рассмотренного на занятии.",
+        "en": "Write the short name of the standard password-based key derivation method discussed in the lesson."
+      },
+      "answers": [
+        "PBKDF2",
+        "pbkdf2"
+      ],
+      "explanation": {
+        "uz": "PBKDF2 parol va tuzdan koʻp iteratsiya orqali kalit hosil qiladi.",
+        "ru": "PBKDF2 получает ключ из пароля и соли с помощью многих итераций.",
+        "en": "PBKDF2 derives a key from a password and salt using many iterations."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Diffie–Hellman almashinuvida tinglovchi p, g, A va B ni koʻrsa, umumiy sirni topish uchun qaysi qiyin masalani yechishi kerak?",
+        "ru": "Если наблюдатель видит p, g, A и B в Diffie–Hellman, какую трудную задачу ему нужно решить для получения общего секрета?",
+        "en": "If an observer sees p, g, A and B in Diffie–Hellman, which hard problem must be solved to recover the shared secret?"
+      },
+      "options": [
+        {
+          "uz": "Diskret logarifm",
+          "ru": "Дискретный логарифм",
+          "en": "Discrete logarithm"
+        },
+        {
+          "uz": "Matnni saralash",
+          "ru": "Сортировка текста",
+          "en": "Sorting the text"
+        },
+        {
+          "uz": "AES blokini kengaytirish",
+          "ru": "Расширение блока AES",
+          "en": "Expanding an AES block"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Ochiq qiymatlardan maxfiy darajani topish diskret logarifm masalasidir.",
+        "ru": "Восстановление секретной степени по открытым значениям — задача дискретного логарифмирования.",
+        "en": "Recovering the secret exponent from public values is the discrete logarithm problem."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "RSA misolida p = 5 va q = 11 boʻlsa, n = p × q qiymatini toping.",
+        "ru": "В примере RSA p = 5 и q = 11. Найдите n = p × q.",
+        "en": "In an RSA example, p = 5 and q = 11. Find n = p × q."
+      },
+      "answers": [
+        55
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "RSA modulini ikki tub son koʻpaytmasi beradi: 5 × 11 = 55.",
+        "ru": "Модуль RSA равен произведению двух простых чисел: 5 × 11 = 55.",
+        "en": "The RSA modulus is the product of the two primes: 5 × 11 = 55."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "RSA ning amaliy qoʻllanishida qaysi xavfsizlik amallari toʻgʻri?",
+        "ru": "Какие меры безопасности правильны при практическом применении RSA?",
+        "en": "Which security practices are correct when using RSA in practice?"
+      },
+      "options": [
+        {
+          "uz": "Shifrlashda OAEP kabi standart toʻldirishdan foydalanish",
+          "ru": "Использовать стандартное дополнение, например OAEP, для шифрования",
+          "en": "Use standard padding such as OAEP for encryption"
+        },
+        {
+          "uz": "Imzo uchun PSS kabi standart sxemani tanlash",
+          "ru": "Выбирать стандартную схему, например PSS, для подписи",
+          "en": "Choose a standard scheme such as PSS for signatures"
+        },
+        {
+          "uz": "Xom RSA ni takrorlanuvchi shifrlash uchun ishlatish",
+          "ru": "Использовать голый RSA для повторяемого шифрования",
+          "en": "Use raw RSA for repeatable encryption"
+        },
+        {
+          "uz": "Maxfiy kalitni himoyalash",
+          "ru": "Защищать закрытый ключ",
+          "en": "Protect the private key"
+        }
+      ],
+      "correct": [
+        0,
+        1,
+        3
+      ],
+      "explanation": {
+        "uz": "OAEP, PSS va yopiq kalit himoyasi kerak; xom RSA deterministik boʻlib xavfsiz emas.",
+        "ru": "Нужны OAEP, PSS и защита закрытого ключа; голый RSA детерминирован и небезопасен.",
+        "en": "OAEP, PSS and private-key protection are needed; raw RSA is deterministic and unsafe."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Universitet tizimi ishlayapti, ammo hujumchi talabalar baholarini oʻzgartirdi va jurnalni ham oʻchirib tashladi. Qaysi CIA xossalari aniq taʼsirlangan?",
+        "ru": "Система университета работает, но злоумышленник изменил оценки и удалил журнал. Какие свойства CIA явно затронуты?",
+        "en": "The university system is running, but an attacker changed grades and deleted the log. Which CIA properties are clearly affected?"
+      },
+      "options": [
+        {
+          "uz": "Yaxlitlik va foydalanish mumkinligi",
+          "ru": "Целостность и доступность",
+          "en": "Integrity and availability"
+        },
+        {
+          "uz": "Faqat konfidensiallik",
+          "ru": "Только конфиденциальность",
+          "en": "Confidentiality only"
+        },
+        {
+          "uz": "Faqat foydalanish mumkinligi",
+          "ru": "Только доступность",
+          "en": "Availability only"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Baholar oʻzgargani yaxlitlikka; jurnal oʻchirilgani esa kerakli yozuvdan foydalanish imkoniga zarar yetkazdi.",
+        "ru": "Изменение оценок нарушает целостность, а удаление журнала — доступность нужных записей.",
+        "en": "Changed grades violate integrity; deleting the log harms availability of needed records."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Chuqur himoya qatlamlariga qaysi chora misol boʻladi?",
+        "ru": "Какие меры являются примерами эшелонированной защиты?",
+        "en": "Which measures are examples of defence in depth?"
+      },
+      "options": [
+        {
+          "uz": "Tarmoqda segmentlash va brandmauer",
+          "ru": "Сегментация сети и межсетевой экран",
+          "en": "Network segmentation and a firewall"
+        },
+        {
+          "uz": "Ilovada autentifikatsiya va kirish huquqlari",
+          "ru": "Аутентификация и права доступа в приложении",
+          "en": "Application authentication and access controls"
+        },
+        {
+          "uz": "Faqat bitta antivirusga tayanish",
+          "ru": "Полагаться только на один антивирус",
+          "en": "Relying on one antivirus alone"
+        },
+        {
+          "uz": "Maʼlumotni shifrlash va xodimlarni oʻqitish",
+          "ru": "Шифрование данных и обучение сотрудников",
+          "en": "Encrypting data and training staff"
+        }
+      ],
+      "correct": [
+        0,
+        1,
+        3
+      ],
+      "explanation": {
+        "uz": "Chuqur himoya bir-birini toʻldiruvchi bir nechta qatlamga tayanadi.",
+        "ru": "Эшелонированная защита опирается на несколько взаимодополняющих уровней.",
+        "en": "Defence in depth relies on several complementary layers."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "SLE = 80 000 soʻm va ARO = 3 boʻlsa, ALE qancha soʻm?",
+        "ru": "Если SLE = 80 000 сумов и ARO = 3, чему равен ALE в сумах?",
+        "en": "If SLE = 80,000 soʻm and ARO = 3, what is ALE in soʻm?"
+      },
+      "answers": [
+        240000
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "ALE = SLE × ARO = 80 000 × 3 = 240 000 soʻm.",
+        "ru": "ALE = SLE × ARO = 80 000 × 3 = 240 000 сумов.",
+        "en": "ALE = SLE × ARO = 80,000 × 3 = 240,000 soʻm."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "ALE 300 000 soʻm boʻlgan riskni kamaytiruvchi nazorat yiliga 200 000 soʻm turadi va riskni toʻliq bartaraf qiladi. Nazorat xarajatidan keyingi kutilgan sof foyda qancha?",
+        "ru": "Контроль полностью устраняет риск с ALE 300 000 сумов и стоит 200 000 сумов в год. Какова ожидаемая чистая выгода после стоимости контроля?",
+        "en": "A control fully removes a risk with ALE 300,000 soʻm and costs 200,000 soʻm per year. What is the expected net benefit after control cost?"
+      },
+      "answers": [
+        100000
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Oldi olingan kutilgan zarar 300 000; sof foyda = 300 000 − 200 000 = 100 000 soʻm.",
+        "ru": "Предотвращённый ожидаемый ущерб — 300 000; чистая выгода = 300 000 − 200 000 = 100 000 сумов.",
+        "en": "Expected avoided loss is 300,000; net benefit = 300,000 − 200,000 = 100,000 soʻm."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Riskni uzatish strategiyasiga qaysi misollar mos keladi?",
+        "ru": "Какие примеры соответствуют стратегии передачи риска?",
+        "en": "Which examples fit the risk-transfer strategy?"
+      },
+      "options": [
+        {
+          "uz": "Sugʻurta orqali ayrim moliyaviy oqibatlarni boshqa tomonga oʻtkazish",
+          "ru": "Передача части финансовых последствий страховщику",
+          "en": "Transferring some financial consequences to an insurer"
+        },
+        {
+          "uz": "Xizmatni yopib risk manbasini yoʻqotish",
+          "ru": "Закрытие услуги для устранения источника риска",
+          "en": "Closing a service to remove the source of risk"
+        },
+        {
+          "uz": "Shartnoma orqali ayrim xavfsizlik majburiyatlarini provayderga berish",
+          "ru": "Передача части обязательств по безопасности поставщику по договору",
+          "en": "Assigning some security obligations to a provider by contract"
+        },
+        {
+          "uz": "Riskni hech qanday chorasiz qabul qilish",
+          "ru": "Принятие риска без каких-либо мер",
+          "en": "Accepting the risk without any action"
+        }
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "explanation": {
+        "uz": "Sugʻurta va shartnomaviy topshirish oqibatlarning bir qismini boshqa tomonga oʻtkazadi.",
+        "ru": "Страхование и договорное распределение передают часть последствий другой стороне.",
+        "en": "Insurance and contractual allocation shift part of the consequences to another party."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A2",
+      "prompt": {
+        "uz": "Qoldiq risk — nazorat joriy qilingandan keyin ham saqlanadigan risk.",
+        "ru": "Остаточный риск — это риск, сохраняющийся после внедрения мер контроля.",
+        "en": "Residual risk is the risk that remains after controls are implemented."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Nazorat riskni kamaytirishi mumkin, ammo odatda uni butunlay yoʻq qilmaydi.",
+        "ru": "Мера контроля может снизить риск, но обычно не устраняет его полностью.",
+        "en": "A control can reduce risk but usually does not remove it entirely."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Tekshiruvchi disk nusxasini olgandan keyin uning xeshi oʻzgarmaganini tasdiqladi. Bu qaysi xulosani qoʻllab-quvvatlaydi?",
+        "ru": "Следователь подтвердил, что хеш копии диска не изменился. Какой вывод это поддерживает?",
+        "en": "An investigator confirmed that a disk image’s hash has not changed. Which conclusion does this support?"
+      },
+      "options": [
+        {
+          "uz": "Nusxa olingandan beri yaxlitlik saqlangan",
+          "ru": "Целостность копии сохранялась после создания",
+          "en": "The copy’s integrity has been preserved since acquisition"
+        },
+        {
+          "uz": "Dalil albatta jinoyat sodir etilganini isbotlaydi",
+          "ru": "Доказательство обязательно доказывает совершение преступления",
+          "en": "The evidence proves a crime definitely occurred"
+        },
+        {
+          "uz": "Dalilni kim yaratganini aniqlaydi",
+          "ru": "Устанавливает, кто создал доказательство",
+          "en": "It identifies who created the evidence"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Bir xil xesh nusxa tarkibi oʻzgarmaganini koʻrsatadi, lekin hodisaning huquqiy mazmunini oʻzi isbotlamaydi.",
+        "ru": "Совпадение хеша показывает неизменность копии, но само по себе не устанавливает юридический смысл события.",
+        "en": "A matching hash shows the copy has not changed, but does not by itself establish the legal meaning of an event."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A3",
+      "prompt": {
+        "uz": "Tashqi hujumdan keyin shoshilib serverni qayta yozib yuborish, dalillar saqlanmasdan oldin boʻlsa, kriminalistik tahlilni qiyinlashtirishi mumkin.",
+        "ru": "Поспешная переустановка сервера после внешней атаки может затруднить криминалистический анализ, если доказательства ещё не сохранены.",
+        "en": "Rushing to rebuild a server after an external attack can hinder forensics if evidence has not yet been preserved."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Oʻzgarishlar loglar va boshqa raqamli izlarni yoʻq qilishi mumkin; dalilni ehtiyotkorlik bilan saqlash zarur.",
+        "ru": "Изменения могут уничтожить журналы и другие цифровые следы; доказательства нужно сначала сохранить.",
+        "en": "Changes may destroy logs and other digital traces; evidence should be preserved carefully first."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Eng kam imtiyoz va vazifalarni ajratish birgalikda qanday xavfni kamaytiradi?",
+        "ru": "Какой риск совместно уменьшают наименьшие привилегии и разделение обязанностей?",
+        "en": "What risk is reduced by combining least privilege and separation of duties?"
+      },
+      "options": [
+        {
+          "uz": "Bitta hisob yoki xodimning xatosi katta taʼsir koʻrsatishi",
+          "ru": "Сильное влияние ошибки одной учётной записи или сотрудника",
+          "en": "A single account or employee mistake having a large impact"
+        },
+        {
+          "uz": "Bitta shaxsning ziddiyatli vazifalarni nazoratsiz bajarishi",
+          "ru": "Неконтролируемое выполнение одним лицом конфликтующих обязанностей",
+          "en": "One person performing conflicting duties without oversight"
+        },
+        {
+          "uz": "Tashkilotda har qanday xatoni mutlaqo yoʻq qilish",
+          "ru": "Полное устранение любых ошибок в организации",
+          "en": "Eliminating every error in an organisation"
+        }
+      ],
+      "correct": [
+        0,
+        1
+      ],
+      "explanation": {
+        "uz": "Cheklangan huquqlar va mustaqil tekshiruv suiisteʼmol hamda xatolarning taʼsirini pasaytiradi, lekin barcha xatolarni yoʻq qilmaydi.",
+        "ru": "Ограниченные права и независимая проверка снижают последствия ошибок и злоупотреблений, но не устраняют все ошибки.",
+        "en": "Limited rights and independent checks reduce the impact of errors and abuse, but cannot eliminate every error."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A4",
+      "prompt": {
+        "uz": "AUP kabi muammoga yoʻnaltirilgan siyosat foydalanuvchilarning resurslardan maqbul foydalanish qoidalarini belgilashi mumkin.",
+        "ru": "Политика приемлемого использования (AUP) может устанавливать правила допустимого использования ресурсов.",
+        "en": "An acceptable-use policy (AUP) can set rules for appropriate use of resources."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "AUP muayyan masalaga qaratilgan siyosat boʻlib, ruxsat etilgan foydalanishni ifodalaydi.",
+        "ru": "AUP — политика по отдельному вопросу, описывающая допустимое использование.",
+        "en": "An AUP is a topic-specific policy describing permitted use."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "A dan Z gacha boʻlgan 26 belgili alifboda Sezar kalitining trivial boʻlmagan qiymatlari soni nechta?",
+        "ru": "Сколько нетривиальных значений ключа Цезаря есть для алфавита из 26 букв A–Z?",
+        "en": "How many non-trivial Caesar key values are there for the 26-letter A–Z alphabet?"
+      },
+      "answers": [
+        25
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "26 siljishdan nol siljish shifrlamaydi, qolgan 25 tasi mumkin boʻlgan kalitlardir.",
+        "ru": "Из 26 сдвигов нулевой ничего не шифрует, поэтому остаётся 25 ключей.",
+        "en": "Of 26 shifts, zero does not encrypt, leaving 25 possible keys."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A5",
+      "prompt": {
+        "uz": "Uzun Vijiner shifrmatnida moslik indeksi bir necha blokda yuqori chiqqani nimani koʻrsatishi mumkin?",
+        "ru": "Что может означать повышенный индекс совпадений в нескольких блоках длинного шифротекста Виженера?",
+        "en": "What might a high index of coincidence in several blocks of a long Vigenère ciphertext indicate?"
+      },
+      "options": [
+        {
+          "uz": "Kalit uzunligi yoki davri haqida ishora",
+          "ru": "Подсказку о длине или периоде ключа",
+          "en": "A clue about the key length or period"
+        },
+        {
+          "uz": "AES blok uzunligi aniq 128 bitligini",
+          "ru": "Что длина блока AES равна ровно 128 битам",
+          "en": "That the AES block length is exactly 128 bits"
+        },
+        {
+          "uz": "Matn albatta umuman shifrlanmaganini",
+          "ru": "Что текст точно вообще не был зашифрован",
+          "en": "That the text was definitely not encrypted"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Kalit davri boʻyicha ajratilgan ustunlar bir alifbo siljishiga yaqinlashadi; statistik oʻxshashlik kalit davrini taxmin qilishga yordam beradi.",
+        "ru": "Столбцы по периоду ключа приближаются к одноалфавитному сдвигу; статистика помогает оценить период.",
+        "en": "Columns grouped by key period behave more like single-alphabet shifts; statistics can help estimate the period."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "AES-GCM CBC yoki CTR dan muhim jihati bilan nimasi bilan farq qiladi?",
+        "ru": "Чем AES-GCM принципиально отличается от CBC или CTR?",
+        "en": "How does AES-GCM importantly differ from CBC or CTR?"
+      },
+      "options": [
+        {
+          "uz": "Shifrlash bilan birga autentifikatsiya va yaxlitlikni tekshiradi",
+          "ru": "Обеспечивает аутентификацию и проверку целостности вместе с шифрованием",
+          "en": "It provides authentication and integrity checking alongside encryption"
+        },
+        {
+          "uz": "U kalit talab qilmaydi",
+          "ru": "Он не требует ключа",
+          "en": "It needs no key"
+        },
+        {
+          "uz": "U faqat ochiq matnni siqadi",
+          "ru": "Он только сжимает открытый текст",
+          "en": "It only compresses plaintext"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "GCM autentifikatsiyalangan rejim boʻlib, shifrlashdan tashqari maʼlumot buzilganini aniqlash imkonini beradi.",
+        "ru": "GCM — режим аутентифицированного шифрования, позволяющий обнаружить изменение данных.",
+        "en": "GCM is authenticated encryption and can detect data tampering in addition to encrypting."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A6",
+      "prompt": {
+        "uz": "AES dan foydalanishda qaysi tanlovlar xavfsiz amaliyotga mos?",
+        "ru": "Какие решения соответствуют безопасной практике использования AES?",
+        "en": "Which choices fit secure AES practice?"
+      },
+      "options": [
+        {
+          "uz": "Har bir kalit bilan IV/nonce ni talab qilingan tarzda noyob tanlash",
+          "ru": "Выбирать уникальный IV/nonce для каждого ключа согласно требованиям режима",
+          "en": "Choose a unique IV/nonce per key as required by the mode"
+        },
+        {
+          "uz": "Parolni bevosita AES kaliti deb ishlatish",
+          "ru": "Использовать пароль напрямую как ключ AES",
+          "en": "Use a password directly as the AES key"
+        },
+        {
+          "uz": "Paroldan kalit chiqarishda tuz va sekin KDF ishlatish",
+          "ru": "Использовать соль и медленную KDF для получения ключа из пароля",
+          "en": "Use a salt and a slow KDF when deriving a key from a password"
+        },
+        {
+          "uz": "Kalitni shifrmatn yonida ochiq saqlash",
+          "ru": "Хранить ключ открытым рядом с шифротекстом",
+          "en": "Store the key in clear next to the ciphertext"
+        }
+      ],
+      "correct": [
+        0,
+        2
+      ],
+      "explanation": {
+        "uz": "Nonce qoidalariga rioya qilish va tuzli, sekin KDF kalitdan notoʻgʻri foydalanish xavfini kamaytiradi.",
+        "ru": "Соблюдение правил nonce и медленная KDF с солью снижают риски неверного обращения с ключом.",
+        "en": "Following nonce rules and using a salted, slow KDF reduces key-handling risks."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "AES-256 da kalit uzunligi 256 bit. Standart raundlar soni nechta?",
+        "ru": "Длина ключа AES-256 составляет 256 бит. Сколько раундов выполняет стандарт?",
+        "en": "AES-256 uses a 256-bit key. How many rounds does the standard use?"
+      },
+      "answers": [
+        14
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "AES kalit uzunligi 256 bit boʻlganda 14 raund bajariladi.",
+        "ru": "Для ключа AES длиной 256 бит выполняется 14 раундов.",
+        "en": "AES performs 14 rounds with a 256-bit key."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "RSA kichik misolida p = 5, q = 11. φ(n) = (p − 1)(q − 1) qiymatini toping.",
+        "ru": "В небольшом примере RSA p = 5, q = 11. Найдите φ(n) = (p − 1)(q − 1).",
+        "en": "In a small RSA example, p = 5 and q = 11. Find φ(n) = (p − 1)(q − 1)."
+      },
+      "answers": [
+        40
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "φ(n) = 4 × 10 = 40.",
+        "ru": "φ(n) = 4 × 10 = 40.",
+        "en": "φ(n) = 4 × 10 = 40."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "p = 5, q = 11 va e = 3 boʻlsa, RSA da d·e ≡ 1 (mod φ(n)) shartini qanoatlantiruvchi eng kichik musbat d ni toping.",
+        "ru": "При p = 5, q = 11 и e = 3 найдите наименьшее положительное d, для которого d·e ≡ 1 (mod φ(n)).",
+        "en": "For p = 5, q = 11 and e = 3, find the least positive d satisfying d·e ≡ 1 (mod φ(n))."
+      },
+      "answers": [
+        27
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "φ(n) = 40; 3 × 27 = 81, qoldiq 1 mod 40, demak d = 27.",
+        "ru": "φ(n) = 40; 3 × 27 = 81, остаток 1 по модулю 40, значит d = 27.",
+        "en": "φ(n) = 40; 3 × 27 = 81, which is 1 modulo 40, so d = 27."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Oddiy Diffie–Hellman almashinuvi tomonlarning haqiqiyligini oʻzi tekshiradi va oʻrtadagi odam hujumini toʻxtatadi.",
+        "ru": "Обычный Diffie–Hellman сам проверяет подлинность сторон и останавливает атаку посредника.",
+        "en": "Plain Diffie–Hellman authenticates the parties by itself and stops a man-in-the-middle attack."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Diffie–Hellman kalit kelishadi, lekin autentifikatsiyasiz faol hujumchiga qarshi tomonlarni tasdiqlamaydi.",
+        "ru": "Diffie–Hellman согласует ключ, но без аутентификации не подтверждает стороны против активного посредника.",
+        "en": "Diffie–Hellman establishes a key but does not authenticate parties against an active intermediary without authentication."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "Kichik, toʻldirishsiz RSA misollaridan qanday xavfsizlik saboqlari chiqadi?",
+        "ru": "Какие уроки безопасности следуют из небольших примеров RSA без дополнения?",
+        "en": "Which security lessons follow from small, unpadded RSA examples?"
+      },
+      "options": [
+        {
+          "uz": "Kichik n ni faktorlash oson va d ni tiklash mumkin",
+          "ru": "Малое n легко факторизовать и восстановить d",
+          "en": "A small n is easy to factor and d can be recovered"
+        },
+        {
+          "uz": "Deterministik xom RSA bir xil xabar uchun bir xil natija beradi",
+          "ru": "Детерминированный голый RSA даёт одинаковый результат для одинакового сообщения",
+          "en": "Deterministic raw RSA gives the same result for the same message"
+        },
+        {
+          "uz": "Kichik misol haqiqiy kalit oʻlchamini tanlashga asos boʻladi",
+          "ru": "Маленький пример подходит для выбора реального размера ключа",
+          "en": "A toy example is a sound basis for choosing a real key size"
+        },
+        {
+          "uz": "Amaliy tizimga standart toʻldirish va toʻgʻri kalit oʻlchami kerak",
+          "ru": "Практической системе нужны стандартное дополнение и правильный размер ключа",
+          "en": "A practical system needs standard padding and an appropriate key size"
+        }
+      ],
+      "correct": [
+        0,
+        1,
+        3
+      ],
+      "explanation": {
+        "uz": "Kichik misollar matematikani koʻrsatadi, lekin xavfsizlik bermaydi; amaliy RSA da yetarli kalit va OAEP/PSS kerak.",
+        "ru": "Маленькие примеры показывают математику, но не дают безопасности; практическому RSA нужны достаточный ключ и OAEP/PSS.",
+        "en": "Toy examples illustrate the math, not security; practical RSA needs a sufficient key and OAEP/PSS."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "RSA da ochiq kalit bilan shifrlangan xabarni odatda tegishli yopiq kalit bilan deshifrlashadi.",
+        "ru": "Сообщение, зашифрованное открытым ключом RSA, обычно расшифровывают соответствующим закрытым ключом.",
+        "en": "A message encrypted with an RSA public key is normally decrypted with the corresponding private key."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Ochiq kalit tarqatilishi mumkin; unga mos yopiq kalit maxfiy qoladi va shifrlangan xabarni ochadi.",
+        "ru": "Открытый ключ можно распространять; соответствующий закрытый ключ хранится в секрете и расшифровывает сообщение.",
+        "en": "The public key can be shared; its matching private key stays secret and decrypts the message."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A2",
+      "prompt": {
+        "uz": "Risk reyestrida nima saqlash eng muhim?",
+        "ru": "Что особенно важно фиксировать в реестре рисков?",
+        "en": "What is especially important to record in a risk register?"
+      },
+      "options": [
+        {
+          "uz": "Risk, baho, masʼul, chora va qoldiq risk",
+          "ru": "Риск, оценку, ответственного, меру и остаточный риск",
+          "en": "The risk, rating, owner, control and residual risk"
+        },
+        {
+          "uz": "Faqat tashkilot xodimlarining ismlari",
+          "ru": "Только имена сотрудников организации",
+          "en": "Only the names of the organisation’s staff"
+        },
+        {
+          "uz": "Shifrlash kalitlari",
+          "ru": "Ключи шифрования",
+          "en": "Encryption keys"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Reyestr riskni baholash, masʼul va koʻriladigan chorani kuzatish uchun xizmat qiladi.",
+        "ru": "Реестр помогает отслеживать оценку риска, ответственного и меры.",
+        "en": "A register tracks the risk assessment, owner and planned controls."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Kiberhodisa boʻyicha dalilni kim, qachon olgani qayd etilsa, dalillar zanjirini tekshirish osonlashadi.",
+        "ru": "Если записать, кто и когда получил доказательство по киберинциденту, цепочку его хранения легче проверить.",
+        "en": "Recording who collected cyber-incident evidence and when makes its chain of custody easier to verify."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Dalillar zanjiri dalilni yigʻish, saqlash va topshirish tarixini hujjatlashtiradi.",
+        "ru": "Цепочка хранения документирует сбор, хранение и передачу доказательства.",
+        "en": "Chain of custody documents evidence collection, storage and transfer."
+      }
+    }
+  ]
+}

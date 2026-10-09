@@ -1,0 +1,1159 @@
+{
+  "afterLesson": "A7",
+  "questions": [
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Tanlab saralashda har qadamda saralanmagan qismdan qaysi element tanlanadi?",
+        "ru": "Какой элемент на каждом шаге выбирают из неотсортированной части при сортировке выбором?",
+        "en": "Which element is selected from the unsorted part at each step of selection sort?"
+      },
+      "answers": [
+        "minimum"
+      ],
+      "explanation": {
+        "uz": "Javob: minimum. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: minimum. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: minimum. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Qoʻyib saralashda yangi element qaysi qismga kiritiladi?",
+        "ru": "В какую часть вставляется новый элемент при сортировке вставками?",
+        "en": "Into which part is a new element placed in insertion sort?"
+      },
+      "answers": [
+        "sorted prefix"
+      ],
+      "explanation": {
+        "uz": "Javob: sorted prefix. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: sorted prefix. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: sorted prefix. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Barqaror saralash teng kalitli elementlarning qaysi xususiyatini saqlaydi?",
+        "ru": "Какое свойство элементов с равными ключами сохраняет устойчивая сортировка?",
+        "en": "What property of equal-key elements does a stable sort preserve?"
+      },
+      "answers": [
+        "relative order"
+      ],
+      "explanation": {
+        "uz": "Javob: relative order. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: relative order. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: relative order. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Birlashtirib saralashning umumiy murakkabligi qanday?",
+        "ru": "Какова общая сложность сортировки слиянием?",
+        "en": "What is the general time complexity of merge sort?"
+      },
+      "answers": [
+        "O(n log n)"
+      ],
+      "explanation": {
+        "uz": "Javob: O(n log n). Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: O(n log n). Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: O(n log n). This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A1",
+      "prompt": {
+        "uz": "a[i][j] yozuvida i nimani, j nimani bildiradi?",
+        "ru": "В записи a[i][j] что обозначают i и j?",
+        "en": "In a[i][j], what do i and j denote?"
+      },
+      "answers": [
+        "row and column"
+      ],
+      "explanation": {
+        "uz": "Javob: row and column. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: row and column. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: row and column. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A1",
+      "prompt": {
+        "uz": "2 × 3 matritsa transponirlangandan keyin nechta satrga ega boʻladi?",
+        "ru": "Сколько строк будет у транспонированной матрицы 2 × 3?",
+        "en": "How many rows does the transpose of a 2 × 3 matrix have?"
+      },
+      "answers": [
+        3
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 3. Transponirlashda satrlar va ustunlar soni oʻrin almashadi.",
+        "ru": "Ответ: 3. При транспонировании число строк и столбцов меняется местами.",
+        "en": "Answer: 3. Transposing swaps the row and column counts."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Sinf va obyekt orasidagi farqni bir soʻzli juftlik bilan yozing: sinf — ..., obyekt — ... .",
+        "ru": "Запишите разницу между классом и объектом парой слов: класс — ..., объект — ... .",
+        "en": "Complete the distinction: a class is a ..., an object is an ... ."
+      },
+      "answers": [
+        "template, instance"
+      ],
+      "explanation": {
+        "uz": "Javob: template, instance. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: template, instance. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: template, instance. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Obyekt yaratilganda boshlangʻich maydon qiymatlarini beradigan maxsus metod nima deyiladi?",
+        "ru": "Как называется специальный метод, задающий начальные значения полей при создании объекта?",
+        "en": "What is the special method that assigns initial field values when an object is created?"
+      },
+      "answers": [
+        "constructor"
+      ],
+      "explanation": {
+        "uz": "Javob: constructor. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: constructor. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: constructor. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Java da obyekt havolasi qiymati hech bir obyektni koʻrsatmasa, uning qiymati qanday boʻladi?",
+        "ru": "Каково значение ссылки на объект в Java, если она не указывает ни на один объект?",
+        "en": "What is the value of a Java object reference when it points to no object?"
+      },
+      "answers": [
+        "null"
+      ],
+      "explanation": {
+        "uz": "Javob: null. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: null. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: null. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A3",
+      "prompt": {
+        "uz": "Qiymat qaytaruvchi funksiya natijani chaqiruvchiga qaysi kalit soʻz bilan uzatadi?",
+        "ru": "Каким ключевым словом функция передаёт результат вызывающему коду?",
+        "en": "Which keyword does a value-returning function use to send a result to its caller?"
+      },
+      "answers": [
+        "return"
+      ],
+      "explanation": {
+        "uz": "Javob: return. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: return. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: return. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Obyekt maydonlarini bevosita tashqi koddan yashirib, murojaatni metodlar orqali boshqarish tamoyili nima?",
+        "ru": "Как называется принцип сокрытия полей объекта от прямого доступа и управления доступом через методы?",
+        "en": "What principle hides fields from direct external access and controls access through methods?"
+      },
+      "answers": [
+        "encapsulation"
+      ],
+      "explanation": {
+        "uz": "Javob: encapsulation. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: encapsulation. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: encapsulation. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A4",
+      "prompt": {
+        "uz": "Rekursiv funksiya oʻzini toʻxtovsiz chaqirmasligi uchun qanday shart kerak?",
+        "ru": "Какое условие нужно рекурсивной функции, чтобы она не вызывала себя бесконечно?",
+        "en": "What condition does a recursive function need to avoid calling itself forever?"
+      },
+      "answers": [
+        "base case"
+      ],
+      "explanation": {
+        "uz": "Javob: base case. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: base case. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: base case. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "C++ da tur parametri ishlatib qayta qoʻllanadigan funksiya taʼrifi nima deyiladi?",
+        "ru": "Как называется повторно используемое определение функции с параметром типа в C++?",
+        "en": "What is a reusable C++ function definition with a type parameter called?"
+      },
+      "answers": [
+        "function template"
+      ],
+      "explanation": {
+        "uz": "Javob: function template. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: function template. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: function template. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A5",
+      "prompt": {
+        "uz": "C++ da new bilan ajratilgan xotira odatda qaysi amal bilan boʻshatiladi?",
+        "ru": "Какой операцией обычно освобождают память, выделенную через new в C++?",
+        "en": "Which operation normally releases memory allocated with new in C++?"
+      },
+      "answers": [
+        "delete"
+      ],
+      "explanation": {
+        "uz": "Javob: delete. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: delete. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: delete. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Kalit boʻyicha tez murojaat va takrorlanmas elementlar talab qilinganda qaysi konteyner mos?",
+        "ru": "Какой контейнер подходит, если нужны быстрый доступ по ключу и уникальные элементы?",
+        "en": "Which container fits when key-based lookup and unique elements are needed?"
+      },
+      "answers": [
+        "map"
+      ],
+      "explanation": {
+        "uz": "Javob: map. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: map. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: map. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A6",
+      "prompt": {
+        "uz": "ASCII jadvalida katta lotin harfi va mos kichik harf kodlari orasidagi farq nechaga teng?",
+        "ru": "Чему равна разница кодов заглавной и соответствующей строчной латинской буквы в ASCII?",
+        "en": "What is the ASCII code difference between an uppercase Latin letter and its lowercase counterpart?"
+      },
+      "answers": [
+        "32"
+      ],
+      "explanation": {
+        "uz": "Javob: 32. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 32. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 32. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Dastur bajarilishini maʼlum qatorda vaqtincha toʻxtatadigan tuzatuvchi belgisi nima?",
+        "ru": "Как называется метка отладчика, временно останавливающая программу на заданной строке?",
+        "en": "What debugger marker temporarily pauses execution at a chosen line?"
+      },
+      "answers": [
+        "breakpoint"
+      ],
+      "explanation": {
+        "uz": "Javob: breakpoint. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: breakpoint. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: breakpoint. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "Satr boshidagi va oxiridagi boʻsh joylarni olib tashlash amali nima deyiladi?",
+        "ru": "Как называется операция удаления пробелов в начале и конце строки?",
+        "en": "What is the operation that removes whitespace from the beginning and end of a string called?"
+      },
+      "answers": [
+        "trim"
+      ],
+      "explanation": {
+        "uz": "Javob: trim. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: trim. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: trim. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "Takroriy belgilar sonini belgi bilan birga qayd etadigan siqish usuli qanday ataladi?",
+        "ru": "Как называется метод сжатия, записывающий повторяющийся символ вместе с его количеством?",
+        "en": "What compression method records a repeated symbol together with its count?"
+      },
+      "answers": [
+        "RLE"
+      ],
+      "explanation": {
+        "uz": "Javob: RLE. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: RLE. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: RLE. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Elementlarni bir uchidan olib ikkinchi uchiga qoʻshadigan FIFO tuzilma nima?",
+        "ru": "Как называется структура FIFO, где элементы добавляют с одного конца, а извлекают с другого?",
+        "en": "What FIFO structure adds elements at one end and removes them at the other?"
+      },
+      "answers": [
+        "queue"
+      ],
+      "explanation": {
+        "uz": "Javob: queue. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: queue. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: queue. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Tanlab saralashda 5 elementli massiv uchun nechta taqqoslash bajariladi? Formula n(n−1)/2.",
+        "ru": "Сколько сравнений выполняет сортировка выбором для массива из 5 элементов? Формула n(n−1)/2.",
+        "en": "How many comparisons does selection sort make for 5 elements? Use n(n−1)/2."
+      },
+      "answers": [
+        10
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 10. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 10. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 10. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "n ikki baravar boʻlsa, O(n²) algoritmning ishlar soni taxminan necha baravar ortadi?",
+        "ru": "Во сколько раз примерно возрастёт число операций O(n²), если n увеличить вдвое?",
+        "en": "By about what factor does the work of an O(n²) algorithm grow when n doubles?"
+      },
+      "answers": [
+        "4"
+      ],
+      "explanation": {
+        "uz": "Javob: 4. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 4. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 4. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Eng yomon holatda tez saralashning murakkabligi qanday?",
+        "ru": "Какова сложность быстрой сортировки в худшем случае?",
+        "en": "What is quicksort’s worst-case time complexity?"
+      },
+      "answers": [
+        "O(n^2)"
+      ],
+      "explanation": {
+        "uz": "Javob: O(n^2). Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: O(n^2). Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: O(n^2). This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A1",
+      "prompt": {
+        "uz": "Matritsa [[2,5,1],[4,0,3]] berilgan. Ikkinchi ustun yigʻindisini toping.",
+        "ru": "Дана матрица [[2,5,1],[4,0,3]]. Найдите сумму второго столбца.",
+        "en": "Given [[2,5,1],[4,0,3]], find the sum of the second column."
+      },
+      "answers": [
+        5
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 5. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 5. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 5. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A1",
+      "prompt": {
+        "uz": "Matritsada ustun maksimumini qidirishda boshlangʻich eng katta qiymatni qanday tanlash xavfsiz?",
+        "ru": "Как безопасно выбрать начальное максимальное значение при поиске максимума столбца матрицы?",
+        "en": "What is a safe initial maximum when searching a matrix column?"
+      },
+      "answers": [
+        "first element"
+      ],
+      "explanation": {
+        "uz": "Javob: first element. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: first element. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: first element. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Python va Java da b = a obyektga tayinlansa, b alohida nusxami yoki shu obyektga havolami?",
+        "ru": "Если в Python или Java выполнить b = a для объекта, b будет копией или ссылкой на тот же объект?",
+        "en": "In Python or Java, after b = a for an object, is b a copy or a reference to the same object?"
+      },
+      "answers": [
+        "reference"
+      ],
+      "explanation": {
+        "uz": "Javob: reference. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: reference. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: reference. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Java da konstruktor ichida parametr nomi maydon nomi bilan bir xil boʻlsa, maydonni aniq koʻrsatish uchun nima ishlatiladi?",
+        "ru": "Что используют в Java, чтобы явно обратиться к полю, если имя параметра совпадает с именем поля?",
+        "en": "What explicitly refers to a Java field when its name matches a constructor parameter?"
+      },
+      "answers": [
+        "this"
+      ],
+      "explanation": {
+        "uz": "Javob: this. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: this. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: this. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "5 ta obyektning ball maydonlari 8, 4, 8, 2, 5. 8 balldan yuqori boʻlmagan obyektlar soni nechta?",
+        "ru": "Баллы пяти объектов: 8, 4, 8, 2, 5. Сколько объектов имеют не более 8 баллов?",
+        "en": "Five objects have scores 8, 4, 8, 2, 5. How many have scores no greater than 8?"
+      },
+      "answers": [
+        5
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 5. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 5. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 5. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "C++ diapazon siklida obyekt nusxalanmasligi uchun element odatda qanday olinadi?",
+        "ru": "Как обычно получают элемент в цикле диапазона C++, чтобы не копировать объект?",
+        "en": "How is an element usually bound in a C++ range loop to avoid copying it?"
+      },
+      "answers": [
+        "const reference"
+      ],
+      "explanation": {
+        "uz": "Javob: const reference. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: const reference. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: const reference. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Python da obyektlar uchun tabiiy tartibni aniqlovchi taqqoslash metodi qaysi?",
+        "ru": "Какой метод задаёт естественный порядок объектов в Python?",
+        "en": "Which Python method defines an object’s natural ordering?"
+      },
+      "answers": [
+        "__lt__"
+      ],
+      "explanation": {
+        "uz": "Javob: __lt__. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: __lt__. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: __lt__. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A3",
+      "prompt": {
+        "uz": "Funksiyaning nomi va parametr turlari bilan qaytarish turi koʻrsatilgan tavsifi nima deyiladi?",
+        "ru": "Как называется описание функции с именем, типами параметров и типом результата?",
+        "en": "What is a function description containing its name, parameter types, and return type called?"
+      },
+      "answers": [
+        "signature"
+      ],
+      "explanation": {
+        "uz": "Javob: signature. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: signature. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: signature. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A3",
+      "prompt": {
+        "uz": "Java da bir xil nomli, ammo parametrlar roʻyxati turlicha metodlar yozish qanday ataladi?",
+        "ru": "Как называется определение методов с одинаковым именем, но разными списками параметров в Java?",
+        "en": "What is defining same-named Java methods with different parameter lists called?"
+      },
+      "answers": [
+        "overloading"
+      ],
+      "explanation": {
+        "uz": "Javob: overloading. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: overloading. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: overloading. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Voris sinf ota sinf konstruktorini chaqirish uchun Java da qaysi kalit soʻzdan foydalanadi?",
+        "ru": "Какое ключевое слово использует подкласс Java для вызова конструктора родительского класса?",
+        "en": "Which Java keyword does a subclass use to call its parent constructor?"
+      },
+      "answers": [
+        "super"
+      ],
+      "explanation": {
+        "uz": "Javob: super. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: super. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: super. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Obyekt turlicha boʻlsa ham bir xil metod chaqirigʻi tegishli xatti-harakatni bajarishi qaysi tamoyil?",
+        "ru": "Какой принцип позволяет одинаковому вызову метода выполнять разное поведение для объектов разных типов?",
+        "en": "Which principle lets the same method call behave differently for objects of different types?"
+      },
+      "answers": [
+        "polymorphism"
+      ],
+      "explanation": {
+        "uz": "Javob: polymorphism. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: polymorphism. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: polymorphism. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A4",
+      "prompt": {
+        "uz": "Memoizatsiyada fib(5) qiymatlari 0,1,1,2,3,5 indekslar bilan berilsa, fib(5) nechaga teng?",
+        "ru": "В мемоизации значения fib(0..5) равны 0,1,1,2,3,5. Чему равен fib(5)?",
+        "en": "With fib(0..5) = 0,1,1,2,3,5, what is fib(5)?"
+      },
+      "answers": [
+        5
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 5. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 5. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 5. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A4",
+      "prompt": {
+        "uz": "Rekursiyada oldin kichik masalalarni yechib, keyin javoblarni birlashtirish qaysi usul?",
+        "ru": "Как называется подход, в котором рекурсия сначала решает меньшие задачи, а затем объединяет ответы?",
+        "en": "What approach solves smaller problems recursively and then combines their answers?"
+      },
+      "answers": [
+        "divide and conquer"
+      ],
+      "explanation": {
+        "uz": "Javob: divide and conquer. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: divide and conquer. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: divide and conquer. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Java generigida T Comparable boʻlishi talabini ifodalovchi chegara qanday yoziladi?",
+        "ru": "Как записывается ограничение, требующее, чтобы T реализовал Comparable, в Java generics?",
+        "en": "How is the Java generic bound requiring T to be Comparable written?"
+      },
+      "answers": [
+        "T extends Comparable"
+      ],
+      "explanation": {
+        "uz": "Javob: T extends Comparable. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: T extends Comparable. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: T extends Comparable. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Python da umumiy funksiya uchun turlarni statik koʻrsatishga yordam beruvchi vosita nima?",
+        "ru": "Как называется средство Python для статического обозначения типов в обобщённой функции?",
+        "en": "What Python facility helps annotate types in a generic function?"
+      },
+      "answers": [
+        "TypeVar"
+      ],
+      "explanation": {
+        "uz": "Javob: TypeVar. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: TypeVar. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: TypeVar. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A5",
+      "prompt": {
+        "uz": "Dinamik massivga 4 ta butun son uchun 4 × 4 baytdan xotira ajratilsa, jami necha bayt kerak?",
+        "ru": "Сколько байт нужно для динамического массива из четырёх целых, если каждое занимает 4 байта?",
+        "en": "How many bytes are needed for four integers if each occupies 4 bytes?"
+      },
+      "answers": [
+        16
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 16. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 16. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 16. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A5",
+      "prompt": {
+        "uz": "new bilan yaratilgan bir oʻlchamli C++ massiv xotirasini boʻshatish uchun qaysi shakl ishlatiladi?",
+        "ru": "Какая форма освобождает память одномерного массива C++, созданного через new?",
+        "en": "Which form releases a one-dimensional C++ array allocated with new?"
+      },
+      "answers": [
+        "delete[]"
+      ],
+      "explanation": {
+        "uz": "Javob: delete[]. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: delete[]. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: delete[]. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Takroriy elementlarni olib tashlab, tartiblangan qiymatlarni saqlash kerak. Qaysi konteyner mos?",
+        "ru": "Нужно убрать дубликаты и хранить упорядоченные значения. Какой контейнер подходит?",
+        "en": "Which container fits when duplicates must be removed and values kept ordered?"
+      },
+      "answers": [
+        "set"
+      ],
+      "explanation": {
+        "uz": "Javob: set. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: set. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: set. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A6",
+      "prompt": {
+        "uz": "ASCII kodida A = 65 boʻlsa, a kichik harfining kodi nechaga teng?",
+        "ru": "Если в ASCII A = 65, чему равен код строчной a?",
+        "en": "If ASCII A = 65, what is the code of lowercase a?"
+      },
+      "answers": [
+        97
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 97. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 97. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 97. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Tuzatuvchida dastur hozir qaysi chaqiruvlar zanjirida ekanini koʻrsatadigan oyna nima?",
+        "ru": "Какое окно отладчика показывает цепочку текущих вызовов?",
+        "en": "Which debugger window shows the current chain of function calls?"
+      },
+      "answers": [
+        "Call Stack"
+      ],
+      "explanation": {
+        "uz": "Javob: Call Stack. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: Call Stack. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: Call Stack. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "Satr ichida qidirilgan qism necha marta uchrashini aniqlash amali nima?",
+        "ru": "Как называется операция определения числа вхождений искомой подстроки?",
+        "en": "What operation determines how many times a substring occurs?"
+      },
+      "answers": [
+        "count"
+      ],
+      "explanation": {
+        "uz": "Javob: count. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: count. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: count. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A2",
+      "prompt": {
+        "uz": "Saralangan massivda qiymatni binary search topa olmasa, lower bound qaysi element indeksini beradi?",
+        "ru": "Какой индекс элемента возвращает lower bound, если binary search ищет значение в отсортированном массиве?",
+        "en": "Which element index does lower bound identify when searching a sorted array?"
+      },
+      "answers": [
+        "first index with value >= target"
+      ],
+      "explanation": {
+        "uz": "Lower bound qiymati izlanayotgan qiymatdan kichik boʻlmagan birinchi element indeksini bildiradi; qiymat topilmasa ham kiritish oʻrni aniqlanadi.",
+        "ru": "Lower bound указывает индекс первого элемента, не меньшего искомого; даже если значение отсутствует, определяется место вставки.",
+        "en": "Lower bound identifies the first element not less than the target, giving an insertion position even when the target is absent."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Tanlab saralashda n = 8 boʻlsa, aniq taqqoslashlar soni nechta?",
+        "ru": "Сколько сравнений точно выполнит сортировка выбором при n = 8?",
+        "en": "How many comparisons does selection sort make exactly when n = 8?"
+      },
+      "answers": [
+        28
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 28. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 28. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 28. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "n = 1000 da qaysi oʻsish sekinroq: O(n log n) yoki O(n²)?",
+        "ru": "Какой рост медленнее при n = 1000: O(n log n) или O(n²)?",
+        "en": "Which grows more slowly at n = 1000: O(n log n) or O(n²)?"
+      },
+      "answers": [
+        "O(n log n)"
+      ],
+      "explanation": {
+        "uz": "Javob: O(n log n). Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: O(n log n). Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: O(n log n). This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A1",
+      "prompt": {
+        "uz": "[[3,1],[4,2],[5,0]] matritsasining transponirlangan koʻrinishida 1-satr, 3-ustundagi qiymat nechaga teng?",
+        "ru": "В транспонированной матрице [[3,1],[4,2],[5,0]] чему равен элемент первой строки, третьего столбца?",
+        "en": "In the transpose of [[3,1],[4,2],[5,0]], what is at row 1, column 3?"
+      },
+      "answers": [
+        5
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 5. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 5. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 5. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Python da b = a tayinidan keyin b orqali obyekt maydoni oʻzgartirildi. a dagi obyektga taʼsir qiladimi?",
+        "ru": "В Python после b = a поле объекта изменили через b. Изменится ли объект, доступный через a?",
+        "en": "In Python, after b = a, a field is changed through b. Does the object accessed through a change?"
+      },
+      "answers": [
+        "yes"
+      ],
+      "explanation": {
+        "uz": "Javob: yes. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: yes. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: yes. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Ballari 70, 90, 70, 50 boʻlgan obyektlar roʻyxatida balli 70 ga teng obyektlar sonini toping.",
+        "ru": "В списке объектов с баллами 70, 90, 70, 50 найдите количество объектов с баллом 70.",
+        "en": "For object scores 70, 90, 70, 50, how many objects have score 70?"
+      },
+      "answers": [
+        2
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 2. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 2. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 2. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A3",
+      "prompt": {
+        "uz": "Funksiya bitta qiymat qaytarsa, lekin uning ichidagi oraliq qiymat ham chaqiruvchiga kerak boʻlsa, darsda koʻrilgan sodda Python yechimi nima?",
+        "ru": "Если функция возвращает одно значение, но вызывающему коду нужен ещё промежуточный результат, какое простое решение Python разбиралось на занятии?",
+        "en": "If a function returns one value but the caller also needs an intermediate result, what simple Python solution was taught?"
+      },
+      "answers": [
+        "tuple"
+      ],
+      "explanation": {
+        "uz": "Javob: tuple. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: tuple. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: tuple. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Ota sinfdagi metodni voris sinfda oʻz xatti-harakati bilan almashtirish nima deyiladi?",
+        "ru": "Как называется замена поведения метода родительского класса в подклассе?",
+        "en": "What is replacing a parent method’s behavior in a subclass called?"
+      },
+      "answers": [
+        "overriding"
+      ],
+      "explanation": {
+        "uz": "Javob: overriding. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: overriding. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: overriding. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A4",
+      "prompt": {
+        "uz": "Fibonachchi rekursiyasi memoizatsiyasiz fib(0) dan fib(6) gacha har bir qiymatni saqlasa, xotirada nechta turli indeksli natija turadi?",
+        "ru": "Если рекурсия Фибоначчи с мемоизацией сохраняет fib(0)..fib(6), сколько результатов с разными индексами хранится?",
+        "en": "If memoized Fibonacci stores fib(0) through fib(6), how many distinct indexed results are stored?"
+      },
+      "answers": [
+        7
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 7. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 7. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 7. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "C++ shablon funksiyasi ikki turli son turida yigʻindi qaytarishi uchun qaysi xususiyatni umumlashtiradi?",
+        "ru": "Какое свойство обобщает шаблонная функция C++, чтобы возвращать сумму для разных числовых типов?",
+        "en": "What property does a C++ function template generalize to sum values of different numeric types?"
+      },
+      "answers": [
+        "type"
+      ],
+      "explanation": {
+        "uz": "Javob: type. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: type. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: type. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A5",
+      "prompt": {
+        "uz": "3 × 4 matritsa bir oʻlchamli massivda saqlansa, jami nechta element uchun joy kerak?",
+        "ru": "Сколько элементов нужно разместить при хранении матрицы 3 × 4 в одномерном массиве?",
+        "en": "How many elements must a flat array hold to store a 3 × 4 matrix?"
+      },
+      "answers": [
+        12
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 12. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 12. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 12. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Konteyner elementlarini navbat bilan koʻrib chiqishga imkon beruvchi obyekt nima?",
+        "ru": "Как называется объект, позволяющий последовательно просматривать элементы контейнера?",
+        "en": "What object allows elements of a container to be traversed one by one?"
+      },
+      "answers": [
+        "iterator"
+      ],
+      "explanation": {
+        "uz": "Javob: iterator. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: iterator. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: iterator. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A6",
+      "prompt": {
+        "uz": "Matnda ASCII kichik harflari kodlari boʻyicha sanaladi. 'a' dan 'z' gacha nechta indeks kerak?",
+        "ru": "Для подсчёта строчных ASCII-букв по кодам сколько индексов нужно от a до z включительно?",
+        "en": "How many indices are needed to count lowercase ASCII letters from a through z?"
+      },
+      "answers": [
+        26
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 26. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 26. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 26. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Qadam-baqadam bajarish vaqtida joriy metoddan chiqib, chaqiruvchi metod ichiga kirmaydigan tuzatuvchi amali nima?",
+        "ru": "Как называется действие отладчика, которое завершает текущий метод, не заходя внутрь вызываемого метода?",
+        "en": "Which debugger action completes the current method without stepping into a called method?"
+      },
+      "answers": [
+        "step out"
+      ],
+      "explanation": {
+        "uz": "Javob: step out. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: step out. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: step out. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "RLE da `aaabbc` satri har bir belgi va ketma-ketlik soni bilan yozilsa, natijada nechta belgi/son birligi boʻladi?",
+        "ru": "Если записать `aaabbc` методом RLE как символы и длины серий, сколько пар символ-число получится?",
+        "en": "Encoding `aaabbc` with RLE as symbol and run-length pairs gives how many pairs?"
+      },
+      "answers": [
+        3
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "Javob: 3. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: 3. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: 3. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "Elektron pochta satrida domen qismni ajratish uchun odatda oxirgi @ dan keyingi qism olinadimi yoki birinchi @ dan keyingi qismmi?",
+        "ru": "Чтобы выделить домен адреса электронной почты, обычно берут часть после последнего @ или после первого @?",
+        "en": "To extract an email domain, do you normally take the part after the last @ or the first @?"
+      },
+      "answers": [
+        "last @"
+      ],
+      "explanation": {
+        "uz": "Javob: last @. Bu xulosa darsda berilgan taʼrif yoki algoritm qadamlaridan kelib chiqadi.",
+        "ru": "Ответ: last @. Это следует из определения или шагов алгоритма, разобранных на занятии.",
+        "en": "Answer: last @. This follows from the definition or algorithm steps taught in the lesson."
+      }
+    }
+  ]
+}

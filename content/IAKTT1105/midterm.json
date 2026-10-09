@@ -1,0 +1,2301 @@
+{
+  "afterLesson": "S7",
+  "questions": [
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Qayta ishlanmagan sana, tovar va narx yozuvlari qaysi tushunchaga kiradi?",
+        "ru": "К какому понятию относятся необработанные записи даты, товара и цены?",
+        "en": "What term describes raw entries for date, product and price?"
+      },
+      "options": [
+        {
+          "uz": "Maʼlumotlar",
+          "ru": "Данные",
+          "en": "Data"
+        },
+        {
+          "uz": "Axborot",
+          "ru": "Информация",
+          "en": "Information"
+        },
+        {
+          "uz": "Bilim",
+          "ru": "Знание",
+          "en": "Knowledge"
+        },
+        {
+          "uz": "Jarayon",
+          "ru": "Процесс",
+          "en": "Process"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Bular hali izohlanmagan xom faktlar; maʼlumotlar tahlil qilingach axborotga aylanadi.",
+        "ru": "Это ещё не интерпретированные факты; после обработки данные становятся информацией.",
+        "en": "These are uninterpreted raw facts; processed data becomes information."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Axborot tizimiga kiradigan tarkibiy qismlarni tanlang.",
+        "ru": "Выберите компоненты информационной системы.",
+        "en": "Select components of an information system."
+      },
+      "options": [
+        {
+          "uz": "Apparat",
+          "ru": "Оборудование",
+          "en": "Hardware"
+        },
+        {
+          "uz": "Odamlar",
+          "ru": "Люди",
+          "en": "People"
+        },
+        {
+          "uz": "Jarayonlar",
+          "ru": "Процессы",
+          "en": "Processes"
+        },
+        {
+          "uz": "Faqat monitor rangi",
+          "ru": "Только цвет монитора",
+          "en": "Only monitor colour"
+        }
+      ],
+      "correct": [
+        0,
+        1,
+        2
+      ],
+      "explanation": {
+        "uz": "Tizim apparat, dastur, tarmoq, maʼlumot, odamlar va jarayonlarni birlashtiradi.",
+        "ru": "Система объединяет оборудование, ПО, сети, данные, людей и процессы.",
+        "en": "A system brings together hardware, software, networks, data, people and processes."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Chek yozuvlari oylik mahsulotlar kesimida jamlandi. Bu qaysi bosqich?",
+        "ru": "Записи чеков свели в месячный отчёт по товарам. Какой это этап?",
+        "en": "Receipts were summarized into a monthly report by product. Which stage is this?"
+      },
+      "options": [
+        {
+          "uz": "Xom maʼlumot",
+          "ru": "Сырые данные",
+          "en": "Raw data"
+        },
+        {
+          "uz": "Maʼnoli axborot",
+          "ru": "Осмысленная информация",
+          "en": "Meaningful information"
+        },
+        {
+          "uz": "Tajriba",
+          "ru": "Опыт",
+          "en": "Experience"
+        },
+        {
+          "uz": "Apparat",
+          "ru": "Оборудование",
+          "en": "Hardware"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Tartiblangan va maqsadli jamlama xom yozuvlarga maʼno beradi, demak bu axborot.",
+        "ru": "Упорядоченное целевое сведение придаёт исходным записям смысл, то есть это информация.",
+        "en": "An organized, purposeful summary gives raw entries meaning, so it is information."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Axborotdan foydalanish uning nusxalarini ishlatgan sari kamaytiradi.",
+        "ru": "Использование информации уменьшает её количество по мере использования копий.",
+        "en": "Using information reduces its amount as copies are used."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Axborotni koʻp marta ishlatish odatda uni kamaytirmaydi, lekin maxfiyligi va dolzarbligi boshqarilishi kerak.",
+        "ru": "Многократное использование обычно не уменьшает информацию, но нужно управлять её конфиденциальностью и актуальностью.",
+        "en": "Repeated use generally does not deplete information, though privacy and currency must be managed."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "S1",
+      "prompt": {
+        "uz": "AKT loyihasi samaradorligidagi ROI nimani ifodalaydi?",
+        "ru": "Что показывает ROI проекта ИКТ?",
+        "en": "What does ROI express for an ICT project?"
+      },
+      "options": [
+        {
+          "uz": "Sarmoyaga nisbatan qaytimni",
+          "ru": "Возврат относительно вложений",
+          "en": "Return relative to investment"
+        },
+        {
+          "uz": "Tarmoqdagi qurilmalar sonini",
+          "ru": "Число устройств в сети",
+          "en": "Number of devices on a network"
+        },
+        {
+          "uz": "Xodimlar sonini",
+          "ru": "Число сотрудников",
+          "en": "Number of employees"
+        },
+        {
+          "uz": "Fayl hajmini",
+          "ru": "Размер файла",
+          "en": "File size"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "ROI loyiha foydasi yoki qaytimini kiritilgan sarmoya bilan solishtiradi.",
+        "ru": "ROI сопоставляет отдачу проекта с вложенными инвестициями.",
+        "en": "ROI compares a project’s return with the investment made."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "S1",
+      "prompt": {
+        "uz": "Raqamli yetuklikni baholashda qaysi dalil eng foydali?",
+        "ru": "Какое свидетельство полезнее всего при оценке цифровой зрелости?",
+        "en": "Which evidence is most useful when assessing digital maturity?"
+      },
+      "options": [
+        {
+          "uz": "Jarayonlarda raqamli vositalar qanday qoʻllanishi",
+          "ru": "Как цифровые средства используются в процессах",
+          "en": "How digital tools are used in processes"
+        },
+        {
+          "uz": "Ofis devorining rangi",
+          "ru": "Цвет стен офиса",
+          "en": "Office wall colour"
+        },
+        {
+          "uz": "Kompaniya nomining uzunligi",
+          "ru": "Длина названия компании",
+          "en": "Length of the company name"
+        },
+        {
+          "uz": "Printer markasi yakka oʻzi",
+          "ru": "Только марка принтера",
+          "en": "Printer brand alone"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Yetuklik texnologiyaning ish jarayonlariga qanchalik mazmunli qoʻshilganiga bogʻliq.",
+        "ru": "Зрелость зависит от того, насколько осмысленно технологии встроены в процессы.",
+        "en": "Maturity depends on how meaningfully technology is integrated into work processes."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "S1",
+      "prompt": {
+        "uz": "Doʻkon avtomatik zaxira hisobi uchun dastur olmoqchi. ROI ni baholashda qaysi taqqoslash kerak?",
+        "ru": "Магазин хочет автоматизировать учёт запасов. Что сравнить для оценки ROI?",
+        "en": "A shop wants to automate stock tracking. What should be compared to assess ROI?"
+      },
+      "options": [
+        {
+          "uz": "О‘rnatish va yuritish xarajatlarini kutilgan foyda bilan",
+          "ru": "Расходы на внедрение и поддержку с ожидаемой выгодой",
+          "en": "Implementation and operating costs with expected benefits"
+        },
+        {
+          "uz": "Faqat dastur logotipini",
+          "ru": "Только логотип программы",
+          "en": "Only the software logo"
+        },
+        {
+          "uz": "Monitor oʻlchamini daromad bilan",
+          "ru": "Размер монитора с доходом",
+          "en": "Monitor size with revenue"
+        },
+        {
+          "uz": "Xodimlar yoshini",
+          "ru": "Возраст сотрудников",
+          "en": "Employees’ ages"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Sarmoyaning samarasi kutilgan vaqt yoki xarajat tejalishi kabi foydani jami xarajatga solishtiradi.",
+        "ru": "Эффект инвестиций сопоставляет ожидаемую экономию времени или затрат с полными расходами.",
+        "en": "Investment impact compares expected benefits such as time or cost savings with total costs."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "S1",
+      "prompt": {
+        "uz": "Raqamlashtirish rejasi kichik biznesning muammosi va maqsadidan boshlanishi kerak.",
+        "ru": "План цифровизации малого бизнеса должен начинаться с его проблемы и цели.",
+        "en": "A small business digitization plan should start from its problem and goal."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Ehtiyojdan boshlash texnologiya tanlovini natija va qiymatga bogʻlaydi.",
+        "ru": "Начало с потребности связывает выбор технологии с результатом и ценностью.",
+        "en": "Starting from a need ties technology choice to an outcome and value."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Kompyuter dasturlari ishlayotgan paytda tezkor ish maydoni sifatida qaysi xotiradan foydalanadi?",
+        "ru": "Какая память служит рабочей областью для запущенных программ?",
+        "en": "Which memory serves as a working area for running programs?"
+      },
+      "options": [
+        {
+          "uz": "Operativ xotira",
+          "ru": "Оперативная память",
+          "en": "RAM"
+        },
+        {
+          "uz": "SSD arxivi",
+          "ru": "Архив SSD",
+          "en": "SSD archive"
+        },
+        {
+          "uz": "Printer xotirasi",
+          "ru": "Память принтера",
+          "en": "Printer memory"
+        },
+        {
+          "uz": "Domen nomi",
+          "ru": "Доменное имя",
+          "en": "Domain name"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Operativ xotira joriy vazifalar uchun ishlatiladi; u doimiy saqlash qurilmasi emas.",
+        "ru": "Оперативная память используется для текущих задач; это не постоянное хранилище.",
+        "en": "RAM is used for current tasks; it is not persistent storage."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "SSD va HDD maʼlumotni doimiy saqlash qurilmalariga misol boʻladi.",
+        "ru": "SSD и HDD являются примерами устройств постоянного хранения данных.",
+        "en": "SSD and HDD are examples of persistent data storage."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "SSD va HDD elektr oʻchganidan keyin ham fayllarni saqlaydi.",
+        "ru": "SSD и HDD сохраняют файлы и после отключения питания.",
+        "en": "SSDs and HDDs retain files after power is off."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Tashkilot server sotib olmasdan, bulut resursi uchun foydalanilgan miqdorga qarab toʻlaydi. Bu koʻproq qaysi xarajat modeliga mos?",
+        "ru": "Организация не покупает сервер, а платит за облачные ресурсы по мере использования. Какая модель затрат подходит?",
+        "en": "An organization rents cloud resources and pays by usage instead of buying a server. Which cost model fits best?"
+      },
+      "options": [
+        {
+          "uz": "OPEX",
+          "ru": "OPEX",
+          "en": "OPEX"
+        },
+        {
+          "uz": "CAPEX",
+          "ru": "CAPEX",
+          "en": "CAPEX"
+        },
+        {
+          "uz": "Bir martalik aktiv xaridi",
+          "ru": "Разовая покупка актива",
+          "en": "One-time asset purchase"
+        },
+        {
+          "uz": "Amortizatsiyasiz mulk",
+          "ru": "Собственность без амортизации",
+          "en": "Asset without depreciation"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Bulut obunasi va foydalanish toʻlovi operatsion xarajat (OPEX), serverni sotib olish esa kapital xarajat (CAPEX) hisoblanadi.",
+        "ru": "Плата за облако относится к операционным расходам (OPEX), покупка сервера — к капитальным (CAPEX).",
+        "en": "Cloud subscription and usage fees are operating expenses (OPEX); buying a server is capital expenditure (CAPEX)."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Loyiha serveri yiliga 12 million soʻm elektr, 8 million soʻm xizmat talab qiladi. Shu ikki xarajatning yillik jami nechaga teng?",
+        "ru": "Сервер проекта требует 12 млн сумов в год на электричество и 8 млн на обслуживание. Какова сумма этих затрат?",
+        "en": "A project server costs 12 million soums yearly for power and 8 million for support. What is their total?"
+      },
+      "answers": [
+        20
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "12 + 8 = 20 million soʻm; bu faqat berilgan ikki xarajatning yigʻindisi.",
+        "ru": "12 + 8 = 20 млн сумов; это сумма только двух указанных расходов.",
+        "en": "12 + 8 = 20 million soums; this totals only the two stated costs."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "S2",
+      "prompt": {
+        "uz": "Qogʻozdagi hisob-fakturadagi matnni tahrirlanadigan raqamli matnga aylantirishda qaysi texnologiya yordam beradi?",
+        "ru": "Какая технология помогает превратить текст бумажного счёта в редактируемый цифровой текст?",
+        "en": "Which technology helps turn text on a paper invoice into editable digital text?"
+      },
+      "options": [
+        {
+          "uz": "OCR",
+          "ru": "OCR",
+          "en": "OCR"
+        },
+        {
+          "uz": "DNS",
+          "ru": "DNS",
+          "en": "DNS"
+        },
+        {
+          "uz": "RAM",
+          "ru": "RAM",
+          "en": "RAM"
+        },
+        {
+          "uz": "PivotTable",
+          "ru": "Сводная таблица",
+          "en": "PivotTable"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "OCR tasvirlangan yoki skanerlangan belgilarni tanib matnga aylantiradi.",
+        "ru": "OCR распознаёт символы на изображении или скане и превращает их в текст.",
+        "en": "OCR recognizes characters in an image or scan and converts them to text."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "S2",
+      "prompt": {
+        "uz": "Doʻkonda mahsulot shtrix-kodini kassaga kiritishda odatda qaysi qurilma ishlatiladi?",
+        "ru": "Какое устройство обычно вводит штрихкод товара в кассу магазина?",
+        "en": "Which device is commonly used to enter a product barcode at checkout?"
+      },
+      "options": [
+        {
+          "uz": "Shtrix-kod skaneri",
+          "ru": "Сканер штрихкода",
+          "en": "Barcode scanner"
+        },
+        {
+          "uz": "Proyektor",
+          "ru": "Проектор",
+          "en": "Projector"
+        },
+        {
+          "uz": "Chek printeri",
+          "ru": "Принтер чеков",
+          "en": "Receipt printer"
+        },
+        {
+          "uz": "Karnay",
+          "ru": "Колонка",
+          "en": "Speaker"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Skaner kodni oʻqib, mahsulot identifikatorini savdo tizimiga uzatadi.",
+        "ru": "Сканер считывает код и передаёт идентификатор товара в систему продаж.",
+        "en": "A scanner reads the code and sends the product identifier to the sales system."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "S2",
+      "prompt": {
+        "uz": "Savdo nuqtasida xaridni qabul qilishdan boshlab chekni berishgacha boʻlgan zanjirga mos qurilmalarni tanlang.",
+        "ru": "Выберите устройства для цепочки от приёма покупки до выдачи чека.",
+        "en": "Select devices for the flow from registering a purchase to issuing a receipt."
+      },
+      "options": [
+        {
+          "uz": "Shtrix-kod skaneri",
+          "ru": "Сканер штрихкода",
+          "en": "Barcode scanner"
+        },
+        {
+          "uz": "Karta terminali",
+          "ru": "Платёжный терминал",
+          "en": "Card terminal"
+        },
+        {
+          "uz": "Chek printeri",
+          "ru": "Принтер чеков",
+          "en": "Receipt printer"
+        },
+        {
+          "uz": "Proyektor",
+          "ru": "Проектор",
+          "en": "Projector"
+        }
+      ],
+      "correct": [
+        0,
+        1,
+        2
+      ],
+      "explanation": {
+        "uz": "Skaner mahsulotni kiritadi, terminal toʻlovni oladi, printer chekni chiqaradi.",
+        "ru": "Сканер вводит товар, терминал принимает оплату, принтер печатает чек.",
+        "en": "The scanner enters the item, terminal accepts payment, and printer issues the receipt."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "S2",
+      "prompt": {
+        "uz": "Bir nechta doʻkondagi fayllar umumiy holda saqlanib, tarmoq orqali ochilishi kerak. Qaysi yechim shu ehtiyojga eng mos?",
+        "ru": "Файлы нескольких магазинов должны храниться совместно и быть доступны по сети. Какое решение лучше подходит?",
+        "en": "Several shops need shared files stored centrally and available over a network. Which solution best fits?"
+      },
+      "options": [
+        {
+          "uz": "NAS",
+          "ru": "NAS",
+          "en": "NAS"
+        },
+        {
+          "uz": "OCR",
+          "ru": "OCR",
+          "en": "OCR"
+        },
+        {
+          "uz": "Chek printeri",
+          "ru": "Принтер чеков",
+          "en": "Receipt printer"
+        },
+        {
+          "uz": "NFC yorligʻi",
+          "ru": "Метка NFC",
+          "en": "NFC tag"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "NAS tarmoqqa ulangan saqlash qurilmasi boʻlib, bir nechta foydalanuvchiga umumiy fayllarni beradi.",
+        "ru": "NAS — сетевое хранилище, предоставляющее общие файлы нескольким пользователям.",
+        "en": "A NAS is network-attached storage that provides shared files to multiple users."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Operatsion tizim va qurilmalarni boshqaradigan dasturlar qaysi toifaga kiradi?",
+        "ru": "К какой категории относятся операционная система и программы управления устройствами?",
+        "en": "Which category includes an operating system and device-management software?"
+      },
+      "options": [
+        {
+          "uz": "Tizim dasturiy taʼminoti",
+          "ru": "Системное ПО",
+          "en": "System software"
+        },
+        {
+          "uz": "Amaliy dastur",
+          "ru": "Прикладное ПО",
+          "en": "Application software"
+        },
+        {
+          "uz": "Taqdimot mazmuni",
+          "ru": "Содержание презентации",
+          "en": "Presentation content"
+        },
+        {
+          "uz": "Maʼlumotlar jadvali",
+          "ru": "Таблица данных",
+          "en": "Data table"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Tizim dasturlari apparatni boshqarish va amaliy dasturlar uchun muhit yaratadi.",
+        "ru": "Системное ПО управляет оборудованием и создаёт среду для приложений.",
+        "en": "System software manages hardware and provides a platform for applications."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "CRM tizimi asosan qanday ishga yordam beradi?",
+        "ru": "Для какой работы в основном предназначена CRM-система?",
+        "en": "What work is a CRM system mainly designed to support?"
+      },
+      "options": [
+        {
+          "uz": "Mijozlar bilan munosabatlarni boshqarish",
+          "ru": "Управление отношениями с клиентами",
+          "en": "Customer relationship management"
+        },
+        {
+          "uz": "Operatsion xotirani almashtirish",
+          "ru": "Замена оперативной памяти",
+          "en": "Replacing RAM"
+        },
+        {
+          "uz": "Tarmoq kabelini sinash",
+          "ru": "Проверка сетевого кабеля",
+          "en": "Testing a network cable"
+        },
+        {
+          "uz": "Slaydlarni chop etish",
+          "ru": "Печать слайдов",
+          "en": "Printing slides"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "CRM mijozlar, aloqalar va savdo imkoniyatlari haqidagi ishni boshqarishga moʻljallangan.",
+        "ru": "CRM предназначена для управления клиентами, контактами и возможностями продаж.",
+        "en": "CRM is designed to manage customers, contacts and sales opportunities."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Tashkilot dasturiy mahsulotni tanlayotganda biznes talabi bilan birga qaysi omillarni ham koʻrishi kerak?",
+        "ru": "Какие факторы следует учитывать при выборе ПО вместе с бизнес-требованиями?",
+        "en": "Alongside business needs, what factors should an organization consider when choosing software?"
+      },
+      "options": [
+        {
+          "uz": "Litsenziya, moslik, joriy etish va qoʻllab-quvvatlash xarajati",
+          "ru": "Лицензия, совместимость, внедрение и поддержка",
+          "en": "License, compatibility, implementation and support costs"
+        },
+        {
+          "uz": "Faqat ikonka shakli",
+          "ru": "Только форма значка",
+          "en": "Only the icon shape"
+        },
+        {
+          "uz": "Ishlab chiquvchi xodimlar soni",
+          "ru": "Число сотрудников разработчика",
+          "en": "Vendor employee count"
+        },
+        {
+          "uz": "Kompyuter qutisi rangi",
+          "ru": "Цвет корпуса компьютера",
+          "en": "Computer case colour"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Mahsulot tanlovi funksiyadan tashqari moslik, litsenziyalash va butun foydalanish xarajatini ham hisobga oladi.",
+        "ru": "Выбор учитывает не только функции, но и совместимость, лицензирование и общую стоимость владения.",
+        "en": "Selection includes compatibility, licensing and total ownership cost as well as features."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Ochiq manbali dasturiy taʼminot har doim bepul va texnik yordamsiz degani.",
+        "ru": "ПО с открытым исходным кодом всегда бесплатно и без технической поддержки.",
+        "en": "Open-source software always means free of charge and no technical support."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Ochiq manba litsenziya va kodga kirish usulini anglatadi; narx va qoʻllab-quvvatlash alohida belgilanadi.",
+        "ru": "Открытый исходный код описывает доступ и лицензию; цена и поддержка определяются отдельно.",
+        "en": "Open source describes access and licensing; price and support are separate matters."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "S3",
+      "prompt": {
+        "uz": "Kompyuter resurslarini, fayllarni va foydalanuvchi huquqlarini boshqaradigan asosiy dastur nima?",
+        "ru": "Как называется основная программа, управляющая ресурсами компьютера, файлами и правами пользователей?",
+        "en": "What is the core software that manages computer resources, files and user permissions?"
+      },
+      "options": [
+        {
+          "uz": "Operatsion tizim",
+          "ru": "Операционная система",
+          "en": "Operating system"
+        },
+        {
+          "uz": "Elektron jadval",
+          "ru": "Электронная таблица",
+          "en": "Spreadsheet"
+        },
+        {
+          "uz": "CRM",
+          "ru": "CRM",
+          "en": "CRM"
+        },
+        {
+          "uz": "Veb-sahifa",
+          "ru": "Веб-страница",
+          "en": "Web page"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Operatsion tizim apparat resurslarini va foydalanuvchi muhitini boshqaradi.",
+        "ru": "Операционная система управляет аппаратными ресурсами и пользовательской средой.",
+        "en": "An operating system manages hardware resources and the user environment."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "S3",
+      "prompt": {
+        "uz": "Linux distributivlarining koʻpi qanday litsenziya xususiyati bilan taniladi?",
+        "ru": "Каким лицензионным свойством известны многие дистрибутивы Linux?",
+        "en": "What licensing characteristic applies to many Linux distributions?"
+      },
+      "options": [
+        {
+          "uz": "Ochiq manbali",
+          "ru": "Открытый исходный код",
+          "en": "Open source"
+        },
+        {
+          "uz": "Faqat Apple qurilmasida ishlaydi",
+          "ru": "Работает только на устройствах Apple",
+          "en": "Runs only on Apple devices"
+        },
+        {
+          "uz": "Faqat obuna asosida",
+          "ru": "Только по подписке",
+          "en": "Subscription only"
+        },
+        {
+          "uz": "Qurilma drayveri",
+          "ru": "Драйвер устройства",
+          "en": "Device driver"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Koʻp Linux distributivlari ochiq manbali litsenziya bilan tarqatiladi.",
+        "ru": "Многие дистрибутивы Linux распространяются по лицензиям с открытым исходным кодом.",
+        "en": "Many Linux distributions are distributed under open-source licenses."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "S3",
+      "prompt": {
+        "uz": "Korxonada zarur buxgalteriya dasturi faqat Windows da sinovdan oʻtgan. OT tanlashda birinchi tekshiriladigan mezon nima?",
+        "ru": "Нужная бухгалтерская программа проверена только в Windows. Какой критерий проверить первым при выборе ОС?",
+        "en": "The required accounting software has only been tested on Windows. What should be checked first when choosing an OS?"
+      },
+      "options": [
+        {
+          "uz": "Kerakli dasturlar bilan moslik",
+          "ru": "Совместимость с нужными программами",
+          "en": "Compatibility with required software"
+        },
+        {
+          "uz": "Fon rasmi",
+          "ru": "Обои рабочего стола",
+          "en": "Desktop wallpaper"
+        },
+        {
+          "uz": "Sichqoncha rangi",
+          "ru": "Цвет мыши",
+          "en": "Mouse colour"
+        },
+        {
+          "uz": "Fayl nomlarining uzunligi",
+          "ru": "Длина имён файлов",
+          "en": "File-name length"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Ish uchun zarur dasturlar ishlashi kerak; keyin litsenziya, malaka va TCO ni taqqoslash mumkin.",
+        "ru": "Необходимое ПО должно работать; затем сравнивают лицензию, навыки и TCO.",
+        "en": "Required software must work; licensing, skills and TCO can then be compared."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "S3",
+      "prompt": {
+        "uz": "macOS odatda turli ishlab chiqaruvchilarning istalgan kompyuteriga rasmiy tarzda oʻrnatiladi.",
+        "ru": "macOS официально устанавливается на любой компьютер разных производителей.",
+        "en": "macOS is officially installed on any computer from any manufacturer."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Dars taqqoslashida macOS Apple kompyuterlari bilan bogʻlangan.",
+        "ru": "В сравнении курса macOS связана с компьютерами Apple.",
+        "en": "In the lesson comparison, macOS is associated with Apple computers."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "A1 katagidagi qiymatni jamlash uchun qaysi funksiya ishlatiladi?",
+        "ru": "Какая функция используется для суммирования значений?",
+        "en": "Which function is used to add values?"
+      },
+      "options": [
+        {
+          "uz": "SUM",
+          "ru": "SUM",
+          "en": "SUM"
+        },
+        {
+          "uz": "AVERAGE",
+          "ru": "AVERAGE",
+          "en": "AVERAGE"
+        },
+        {
+          "uz": "COUNT",
+          "ru": "COUNT",
+          "en": "COUNT"
+        },
+        {
+          "uz": "MAX",
+          "ru": "MAX",
+          "en": "MAX"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "SUM sonlar yigʻindisini hisoblaydi.",
+        "ru": "SUM вычисляет сумму чисел.",
+        "en": "SUM calculates the sum of numbers."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Formulani boshqa qatorlarga koʻchirganda katak manzili mos ravishda siljiydi. Bu qanday murojaat?",
+        "ru": "При копировании формулы в другие строки адрес ячейки сдвигается. Как называется такая ссылка?",
+        "en": "When a formula is copied to other rows, the cell address shifts. What kind of reference is this?"
+      },
+      "options": [
+        {
+          "uz": "Nisbiy",
+          "ru": "Относительная",
+          "en": "Relative"
+        },
+        {
+          "uz": "Absolyut",
+          "ru": "Абсолютная",
+          "en": "Absolute"
+        },
+        {
+          "uz": "Tashqi kalit",
+          "ru": "Внешний ключ",
+          "en": "Foreign key"
+        },
+        {
+          "uz": "Domen",
+          "ru": "Домен",
+          "en": "Domain"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Nisbiy murojaat nusxa koʻchirilganda yangi joyga moslashib oʻzgaradi.",
+        "ru": "Относительная ссылка меняется при копировании с учётом нового положения.",
+        "en": "A relative reference adjusts when copied to a new location."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "B2 katakdagi soliq stavkasi nusxa koʻchirilgan formulalarda oʻzgarmasligi kerak. Qaysi turdagi murojaat tanlanadi?",
+        "ru": "Ставка налога в ячейке B2 не должна меняться в скопированных формулах. Какую ссылку выбрать?",
+        "en": "The tax rate in B2 must stay fixed in copied formulas. Which reference should be used?"
+      },
+      "options": [
+        {
+          "uz": "Absolyut murojaat $B$2",
+          "ru": "Абсолютная ссылка $B$2",
+          "en": "Absolute reference $B$2"
+        },
+        {
+          "uz": "Nisbiy murojaat B2",
+          "ru": "Относительная ссылка B2",
+          "en": "Relative reference B2"
+        },
+        {
+          "uz": "Ustun sarlavhasi",
+          "ru": "Заголовок столбца",
+          "en": "Column heading"
+        },
+        {
+          "uz": "Saralash kaliti",
+          "ru": "Ключ сортировки",
+          "en": "Sort key"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Absolyut murojaat ustun va qatorni belgilab, formula koʻchirilganda manzilni saqlaydi.",
+        "ru": "Абсолютная ссылка фиксирует столбец и строку при копировании формулы.",
+        "en": "An absolute reference fixes the column and row when a formula is copied."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Savdo roʻyxatidagi maʼlumot sifatini yaxshilash uchun jadval vositalarini tanlang.",
+        "ru": "Выберите инструменты таблицы для повышения качества данных о продажах.",
+        "en": "Select spreadsheet tools that can improve the quality of sales data."
+      },
+      "options": [
+        {
+          "uz": "Data Validation",
+          "ru": "Проверка данных",
+          "en": "Data Validation"
+        },
+        {
+          "uz": "Dublikatlarni olib tashlash",
+          "ru": "Удаление дубликатов",
+          "en": "Remove Duplicates"
+        },
+        {
+          "uz": "Shartli formatlash",
+          "ru": "Условное форматирование",
+          "en": "Conditional Formatting"
+        },
+        {
+          "uz": "Slayd oʻtishi",
+          "ru": "Переход слайда",
+          "en": "Slide transition"
+        }
+      ],
+      "correct": [
+        0,
+        1,
+        2
+      ],
+      "explanation": {
+        "uz": "Tekshiruv notoʻgʻri kiritishni cheklaydi, dublikatni olib tashlash takrorlarni bartaraf etadi, shartli formatlash muammolarni koʻrsatadi.",
+        "ru": "Проверка ограничивает неверный ввод, удаление дубликатов убирает повторы, форматирование выделяет проблемы.",
+        "en": "Validation limits invalid entry, duplicate removal removes repeats, and conditional formatting highlights issues."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Agar sotuv 240 dona, bir donaning narxi 15000 soʻm boʻlsa, umumiy tushum nechaga teng?",
+        "ru": "Если продано 240 единиц по 15 000 сумов, какова выручка?",
+        "en": "If 240 units are sold at 15,000 soums each, what is the revenue?"
+      },
+      "answers": [
+        3600000
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "240 × 15 000 = 3 600 000 soʻm.",
+        "ru": "240 × 15 000 = 3 600 000 сумов.",
+        "en": "240 × 15,000 = 3,600,000 soums."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Har bir filial boʻyicha oyma-oy jami savdoni mahsulot va oy kesimida koʻrish kerak. Qaysi vosita mos?",
+        "ru": "Нужно посмотреть общие продажи по филиалам в разрезе товара и месяца. Какой инструмент подходит?",
+        "en": "You need total sales by branch, broken down by product and month. Which tool fits?"
+      },
+      "options": [
+        {
+          "uz": "Yigʻma jadval (PivotTable)",
+          "ru": "Сводная таблица (PivotTable)",
+          "en": "PivotTable"
+        },
+        {
+          "uz": "Data Validation",
+          "ru": "Проверка данных",
+          "en": "Data Validation"
+        },
+        {
+          "uz": "Imlo tekshiruvi",
+          "ru": "Проверка орфографии",
+          "en": "Spell check"
+        },
+        {
+          "uz": "Fayl tizimi",
+          "ru": "Файловая система",
+          "en": "File system"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Yigʻma jadval maydonlarni guruhlab, jamlama koʻrsatkichlarni turli kesimlarda chiqaradi.",
+        "ru": "Сводная таблица группирует поля и показывает итоги в разных разрезах.",
+        "en": "A PivotTable groups fields and presents summaries across different dimensions."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "S4",
+      "prompt": {
+        "uz": "Katta jadvalni pastga aylantirganda sarlavha qatori koʻrinib turishi uchun nima qilinadi?",
+        "ru": "Что сделать, чтобы строка заголовка оставалась видимой при прокрутке большой таблицы?",
+        "en": "What keeps a header row visible while scrolling through a large sheet?"
+      },
+      "options": [
+        {
+          "uz": "Freeze Panes",
+          "ru": "Закрепить области",
+          "en": "Freeze Panes"
+        },
+        {
+          "uz": "Remove Duplicates",
+          "ru": "Удалить дубликаты",
+          "en": "Remove Duplicates"
+        },
+        {
+          "uz": "Goal Seek",
+          "ru": "Подбор параметра",
+          "en": "Goal Seek"
+        },
+        {
+          "uz": "PDF Export",
+          "ru": "Экспорт в PDF",
+          "en": "PDF Export"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Freeze Panes sarlavha qatorini aylantirish vaqtida mahkamlaydi.",
+        "ru": "Закрепление областей сохраняет строку заголовка при прокрутке.",
+        "en": "Freeze Panes keeps the header row visible while scrolling."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "S4",
+      "prompt": {
+        "uz": "Faqat Toshkent filialining yozuvlarini vaqtincha koʻrsatish uchun qaysi amal mos?",
+        "ru": "Какое действие подходит, чтобы временно показать только записи филиала Ташкент?",
+        "en": "Which action is suitable to temporarily show only records for the Tashkent branch?"
+      },
+      "options": [
+        {
+          "uz": "Filtr",
+          "ru": "Фильтр",
+          "en": "Filter"
+        },
+        {
+          "uz": "Dublikatlarni olib tashlash",
+          "ru": "Удалить дубликаты",
+          "en": "Remove Duplicates"
+        },
+        {
+          "uz": "Mavzu tanlash",
+          "ru": "Выбрать тему",
+          "en": "Choose a theme"
+        },
+        {
+          "uz": "Diagramma animatsiyasi",
+          "ru": "Анимация диаграммы",
+          "en": "Chart animation"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Filtr shartga mos yozuvlarni koʻrsatib, boshqalarini yashiradi.",
+        "ru": "Фильтр показывает записи, соответствующие условию, и скрывает остальные.",
+        "en": "A filter shows matching records and hides the rest."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "S4",
+      "prompt": {
+        "uz": "Mijozlarni sotuv summasi boʻyicha kamayish tartibida koʻrsatish uchun qaysi amal kerak?",
+        "ru": "Какое действие нужно, чтобы показать клиентов по убыванию суммы продаж?",
+        "en": "Which action orders customers by decreasing sales amount?"
+      },
+      "options": [
+        {
+          "uz": "Saralash",
+          "ru": "Сортировка",
+          "en": "Sort"
+        },
+        {
+          "uz": "Data Validation",
+          "ru": "Проверка данных",
+          "en": "Data Validation"
+        },
+        {
+          "uz": "Shartli formatlash",
+          "ru": "Условное форматирование",
+          "en": "Conditional Formatting"
+        },
+        {
+          "uz": "Freeze Panes",
+          "ru": "Закрепить области",
+          "en": "Freeze Panes"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Saralash yozuvlarni tanlangan ustun qiymati boʻyicha tartiblaydi.",
+        "ru": "Сортировка упорядочивает записи по значению выбранного столбца.",
+        "en": "Sorting orders records by the chosen column value."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "S4",
+      "prompt": {
+        "uz": "Yigʻma jadvalda mahsulotlar qatorga, oylar ustunga, sotuv summasi qiymatlar maydoniga qoʻyildi. Qiymatlar maydonida odatda nima hisoblanadi?",
+        "ru": "В сводной таблице товары помещены в строки, месяцы — в столбцы, сумма продаж — в область значений. Что обычно вычисляется там?",
+        "en": "Products are rows, months are columns, and sales amount is in Values in a PivotTable. What is typically computed there?"
+      },
+      "options": [
+        {
+          "uz": "Tanlangan maydonning yigʻindisi",
+          "ru": "Сумма выбранного поля",
+          "en": "Sum of the selected field"
+        },
+        {
+          "uz": "Sarlavha shriftining rangi",
+          "ru": "Цвет шрифта заголовка",
+          "en": "Header font colour"
+        },
+        {
+          "uz": "Faylning kengaytmasi",
+          "ru": "Расширение файла",
+          "en": "File extension"
+        },
+        {
+          "uz": "Tarmoq IP manzili",
+          "ru": "IP-адрес сети",
+          "en": "Network IP address"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Raqamli qiymat maydoni odatda SUM kabi agregatsiya orqali jamlanadi.",
+        "ru": "Числовое поле обычно агрегируется, например функцией SUM.",
+        "en": "A numeric value field is commonly aggregated, for example with SUM."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Taqdimot slaydi uchun tavsiya etilgan asosiy dizayn tamoyili qaysi?",
+        "ru": "Какой базовый принцип дизайна рекомендуется для слайда презентации?",
+        "en": "Which basic design principle is recommended for a presentation slide?"
+      },
+      "options": [
+        {
+          "uz": "Bitta slayd — bitta asosiy fikr",
+          "ru": "Один слайд — одна основная мысль",
+          "en": "One slide — one main idea"
+        },
+        {
+          "uz": "Har bir slaydni toʻliq matn bilan toʻldirish",
+          "ru": "Заполнять каждый слайд сплошным текстом",
+          "en": "Fill every slide with dense text"
+        },
+        {
+          "uz": "Har satrga boshqa shrift",
+          "ru": "Разный шрифт в каждой строке",
+          "en": "A different font on every line"
+        },
+        {
+          "uz": "Barcha animatsiyani yoqish",
+          "ru": "Включить всю анимацию",
+          "en": "Enable every animation"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Bitta aniq fikr va oʻqiladigan dizayn auditoriyaga mazmunni tez anglashga yordam beradi.",
+        "ru": "Одна ясная мысль и читаемый дизайн помогают аудитории быстро понять содержание.",
+        "en": "One clear idea and readable design help an audience grasp the message quickly."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Slayddagi har bir elementga animatsiya qoʻshish har doim tushunarlilikni oshiradi.",
+        "ru": "Анимация каждого элемента слайда всегда повышает понятность.",
+        "en": "Animating every slide element always improves clarity."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ],
+      "explanation": {
+        "uz": "Ortiqcha animatsiya diqqatni chalgʻitishi mumkin; u faqat mazmunni ochishga xizmat qilishi kerak.",
+        "ru": "Избыточная анимация может отвлекать; она должна помогать раскрытию содержания.",
+        "en": "Excessive animation can distract; it should serve the message."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Jadvaldagi koʻrsatkichlar yangilanganda taqdimot diagrammasi ham yangilanishi kerak. Qaysi usul bunga yordam beradi?",
+        "ru": "Диаграмма презентации должна обновляться при изменении таблицы. Какой способ помогает?",
+        "en": "A presentation chart should update when the source table changes. Which method helps?"
+      },
+      "options": [
+        {
+          "uz": "Excel diagrammasini bogʻlangan holda qoʻyish",
+          "ru": "Вставить связанную диаграмму Excel",
+          "en": "Insert a linked Excel chart"
+        },
+        {
+          "uz": "Diagrammani rasmga aylantirish",
+          "ru": "Преобразовать диаграмму в изображение",
+          "en": "Convert the chart to an image"
+        },
+        {
+          "uz": "Eslatmalarni chop etish",
+          "ru": "Распечатать заметки",
+          "en": "Print speaker notes"
+        },
+        {
+          "uz": "Slaydni yashirish",
+          "ru": "Скрыть слайд",
+          "en": "Hide the slide"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Bogʻlangan diagramma manbadagi maʼlumotga aloqani saqlaydi va u yangilanganda qayta aks etishi mumkin.",
+        "ru": "Связанная диаграмма сохраняет связь с источником и может обновляться вместе с ним.",
+        "en": "A linked chart retains its source connection and can reflect source updates."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Taqdimot tarqatish uchun keng qoʻllanadigan, tahrirni cheklovchi formatga chiqarilishi kerak. Qaysi format?",
+        "ru": "Презентацию нужно экспортировать в распространённый формат для распространения с ограниченным редактированием. Какой формат?",
+        "en": "The presentation should be exported to a common format that limits editing for distribution. Which format?"
+      },
+      "options": [
+        {
+          "uz": "PDF",
+          "ru": "PDF",
+          "en": "PDF"
+        },
+        {
+          "uz": "CSV",
+          "ru": "CSV",
+          "en": "CSV"
+        },
+        {
+          "uz": "SQL",
+          "ru": "SQL",
+          "en": "SQL"
+        },
+        {
+          "uz": "RAM",
+          "ru": "RAM",
+          "en": "RAM"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "PDF koʻrinishni turli qurilmalarda bir xil saqlash va tarqatish uchun keng ishlatiladi.",
+        "ru": "PDF широко используют для распространения с сохранением одинакового вида на разных устройствах.",
+        "en": "PDF is widely used to distribute a document with consistent appearance across devices."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "S5",
+      "prompt": {
+        "uz": "Bir xil shrift va ranglarni koʻplab slaydlarga izchil qoʻllash uchun qaysi vosita qulay?",
+        "ru": "Какой инструмент удобен для единообразного применения шрифтов и цветов на многих слайдах?",
+        "en": "Which tool helps apply consistent fonts and colours across many slides?"
+      },
+      "options": [
+        {
+          "uz": "Slide Master",
+          "ru": "Образец слайдов",
+          "en": "Slide Master"
+        },
+        {
+          "uz": "Slide Sorter",
+          "ru": "Сортировщик слайдов",
+          "en": "Slide Sorter"
+        },
+        {
+          "uz": "Spell check",
+          "ru": "Проверка орфографии",
+          "en": "Spell check"
+        },
+        {
+          "uz": "Data Validation",
+          "ru": "Проверка данных",
+          "en": "Data Validation"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Slide Master umumiy dizayn elementlarini bir joydan sozlash imkonini beradi.",
+        "ru": "Образец слайдов позволяет настраивать общие элементы дизайна в одном месте.",
+        "en": "Slide Master lets you set shared design elements in one place."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "S5",
+      "prompt": {
+        "uz": "Tinglovchiga aytiladigan qoʻshimcha izohlarni qayerga yozish mumkin?",
+        "ru": "Куда можно записать дополнительные пояснения для выступающего?",
+        "en": "Where can extra speaking cues be recorded?"
+      },
+      "options": [
+        {
+          "uz": "Maʼruzachi eslatmalari",
+          "ru": "Заметки докладчика",
+          "en": "Speaker notes"
+        },
+        {
+          "uz": "Diagramma oʻqi",
+          "ru": "Ось диаграммы",
+          "en": "Chart axis"
+        },
+        {
+          "uz": "Fayl kengaytmasi",
+          "ru": "Расширение файла",
+          "en": "File extension"
+        },
+        {
+          "uz": "Tarmoq sozlamasi",
+          "ru": "Сетевая настройка",
+          "en": "Network setting"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Maʼruzachi eslatmalari namoyish paytida taqdimotchiga yordam beradigan izohlarni saqlaydi.",
+        "ru": "Заметки докладчика хранят подсказки, помогающие во время выступления.",
+        "en": "Speaker notes store cues that help the presenter during delivery."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "S5",
+      "prompt": {
+        "uz": "Excel dagi bogʻlangan diagramma taqdimotga qoʻshildi. Manba jadval oʻzgardi, lekin slaydda yangi raqamlar yoʻq. Nimani tekshirish kerak?",
+        "ru": "Связанная диаграмма Excel добавлена в презентацию. Источник изменён, но новые числа на слайде не появились. Что проверить?",
+        "en": "A linked Excel chart is in the presentation. The source changed but the slide shows old numbers. What should be checked?"
+      },
+      "options": [
+        {
+          "uz": "Bogʻlanish yangilanganini",
+          "ru": "Обновление связи",
+          "en": "Whether the link was refreshed"
+        },
+        {
+          "uz": "Slayd fon rangini",
+          "ru": "Цвет фона слайда",
+          "en": "Slide background colour"
+        },
+        {
+          "uz": "Mikrofon balandligini",
+          "ru": "Громкость микрофона",
+          "en": "Microphone volume"
+        },
+        {
+          "uz": "PDF sahifa hajmini",
+          "ru": "Размер страницы PDF",
+          "en": "PDF page size"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Bogʻlangan obyekt manbadan yangilanishi kerak; bogʻlanish uzilgan yoki yangilanmagan boʻlishi mumkin.",
+        "ru": "Связанный объект нужно обновить из источника; связь могла быть нарушена или не обновлена.",
+        "en": "The linked object needs a source refresh; the link may be broken or not refreshed."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "S5",
+      "prompt": {
+        "uz": "Muqobil matn (Alt Text) vizual mazmunni koʻra olmaydigan foydalanuvchilarga uni anglashga yordam beradi.",
+        "ru": "Альтернативный текст помогает понять визуальное содержимое пользователям, которые не могут его видеть.",
+        "en": "Alt text helps users who cannot see a visual understand its content."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Muqobil matn rasm yoki diagrammaning mazmunini matn orqali yetkazadi va qulaylikni yaxshilaydi.",
+        "ru": "Альтернативный текст передаёт содержание изображения или диаграммы и повышает доступность.",
+        "en": "Alt text conveys an image or chart’s meaning in text and improves accessibility."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Bir binodagi kompyuterlarni bogʻlaydigan tarmoq odatda nima deyiladi?",
+        "ru": "Как обычно называется сеть, соединяющая компьютеры в одном здании?",
+        "en": "What is a network connecting computers in one building commonly called?"
+      },
+      "options": [
+        {
+          "uz": "LAN",
+          "ru": "LAN",
+          "en": "LAN"
+        },
+        {
+          "uz": "WAN",
+          "ru": "WAN",
+          "en": "WAN"
+        },
+        {
+          "uz": "PAN",
+          "ru": "PAN",
+          "en": "PAN"
+        },
+        {
+          "uz": "DNS",
+          "ru": "DNS",
+          "en": "DNS"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "LAN cheklangan mahalliy hudud, masalan bino yoki ofisni qamrab oladi.",
+        "ru": "LAN охватывает ограниченную локальную область, например здание или офис.",
+        "en": "A LAN covers a limited local area such as a building or office."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Domen nomini mos IP manziliga topishga qaysi xizmat yordam beradi?",
+        "ru": "Какая служба помогает найти IP-адрес по доменному имени?",
+        "en": "Which service helps find an IP address from a domain name?"
+      },
+      "options": [
+        {
+          "uz": "DNS",
+          "ru": "DNS",
+          "en": "DNS"
+        },
+        {
+          "uz": "OCR",
+          "ru": "OCR",
+          "en": "OCR"
+        },
+        {
+          "uz": "RAM",
+          "ru": "RAM",
+          "en": "RAM"
+        },
+        {
+          "uz": "CRM",
+          "ru": "CRM",
+          "en": "CRM"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "DNS domen nomlarini tarmoqdagi IP manzillarga moslaydi.",
+        "ru": "DNS сопоставляет доменные имена с IP-адресами в сети.",
+        "en": "DNS maps domain names to network IP addresses."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Brauzer veb-server bilan xavfsiz HTTPS ulanishini oʻrnatmoqda. HTTPS ning foydasi nima?",
+        "ru": "Браузер устанавливает безопасное HTTPS-соединение с веб-сервером. В чём преимущество HTTPS?",
+        "en": "A browser is making a secure HTTPS connection to a web server. What is HTTPS’s benefit?"
+      },
+      "options": [
+        {
+          "uz": "Uzatishdagi maʼlumotni shifrlash va serverni tekshirish",
+          "ru": "Шифрование данных при передаче и проверка сервера",
+          "en": "Encrypting data in transit and authenticating the server"
+        },
+        {
+          "uz": "Faylni avtomatik arxivlash",
+          "ru": "Автоматическая архивация файла",
+          "en": "Automatically archiving files"
+        },
+        {
+          "uz": "Wi-Fi tezligini ikki baravar qilish",
+          "ru": "Удвоение скорости Wi-Fi",
+          "en": "Doubling Wi-Fi speed"
+        },
+        {
+          "uz": "IP manzilni domen bilan almashtirish",
+          "ru": "Замена IP-адреса доменом",
+          "en": "Replacing an IP address with a domain"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "HTTPS TLS himoyasi orqali uzatish maxfiyligi va server haqiqiyligini qoʻllab-quvvatlaydi.",
+        "ru": "HTTPS с защитой TLS обеспечивает конфиденциальность передачи и проверку подлинности сервера.",
+        "en": "HTTPS uses TLS to support transport privacy and server authentication."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Internet uzilishi savdo jarayonini toʻxtatishi mumkin. Aloqa kanalini baholashda qaysi omillar muhim?",
+        "ru": "Сбой интернета может остановить продажи. Какие факторы важны при оценке канала связи?",
+        "en": "An Internet outage can stop sales. Which factors matter when evaluating a connection?"
+      },
+      "options": [
+        {
+          "uz": "Tezlik",
+          "ru": "Скорость",
+          "en": "Speed"
+        },
+        {
+          "uz": "Ishonchlilik va SLA",
+          "ru": "Надёжность и SLA",
+          "en": "Reliability and SLA"
+        },
+        {
+          "uz": "Narx",
+          "ru": "Стоимость",
+          "en": "Cost"
+        },
+        {
+          "uz": "Kabel rangining koʻrinishi",
+          "ru": "Видимый цвет кабеля",
+          "en": "Visible cable colour"
+        }
+      ],
+      "correct": [
+        0,
+        1,
+        2
+      ],
+      "explanation": {
+        "uz": "Kanal tanlovi tezlik, uzluksizlik kafolati, ishonchlilik va xarajat oʻrtasidagi muvozanatni talab qiladi.",
+        "ru": "Выбор канала требует баланса скорости, гарантии доступности, надёжности и стоимости.",
+        "en": "Choosing a channel requires balancing speed, availability commitments, reliability and cost."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Tarmoqda 4 ta qurilmaning har biri 25 Mbit/s maʼlumot uzatadi. Jami nazariy oqim necha Mbit/s?",
+        "ru": "Четыре устройства передают по 25 Мбит/с. Каков общий теоретический поток?",
+        "en": "Four devices each transfer 25 Mbit/s. What is the total theoretical throughput?"
+      },
+      "answers": [
+        100
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "4 × 25 = 100 Mbit/s, agar oqimlar bir vaqtda va jamlanadigan deb olinsa.",
+        "ru": "4 × 25 = 100 Мбит/с при одновременных суммируемых потоках.",
+        "en": "4 × 25 = 100 Mbit/s if the flows are simultaneous and additive."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "S6",
+      "prompt": {
+        "uz": "Energiya isteʼmoli koʻrsatkichlarini masofadan yuboradigan aqlli hisoblagich qaysi soha misoli?",
+        "ru": "К какой отрасли относится умный счётчик, удалённо передающий показатели энергопотребления?",
+        "en": "Which sector example is a smart meter sending energy usage remotely?"
+      },
+      "options": [
+        {
+          "uz": "Energetika va kommunal xizmatlar",
+          "ru": "Энергетика и коммунальные услуги",
+          "en": "Energy and utilities"
+        },
+        {
+          "uz": "Taqdimot dizayni",
+          "ru": "Дизайн презентаций",
+          "en": "Presentation design"
+        },
+        {
+          "uz": "Matn terish",
+          "ru": "Набор текста",
+          "en": "Word processing"
+        },
+        {
+          "uz": "Fayl arxivi",
+          "ru": "Файловый архив",
+          "en": "File archive"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Tarmoqqa ulangan aqlli hisoblagich kommunal isteʼmolni oʻlchab, koʻrsatkichlarni masofadan uzatadi.",
+        "ru": "Умный сетевой счётчик измеряет коммунальное потребление и передаёт показания удалённо.",
+        "en": "A connected smart meter measures utility consumption and sends readings remotely."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "S6",
+      "prompt": {
+        "uz": "Elektron bojxona deklaratsiyasi tarmoq texnologiyalaridan qanday natija uchun foydalanadi?",
+        "ru": "Для какого результата электронная таможенная декларация использует сетевые технологии?",
+        "en": "What outcome does an electronic customs declaration use network technology to support?"
+      },
+      "options": [
+        {
+          "uz": "Maʼlumotni masofadan uzatish va jarayonni tezlashtirish",
+          "ru": "Удалённая передача данных и ускорение процесса",
+          "en": "Remote data transfer and faster processing"
+        },
+        {
+          "uz": "Kompyuter xotirasini kengaytirish",
+          "ru": "Расширение памяти компьютера",
+          "en": "Expanding computer memory"
+        },
+        {
+          "uz": "Slaydlarni bezash",
+          "ru": "Оформление слайдов",
+          "en": "Decorating slides"
+        },
+        {
+          "uz": "Mahsulot kodini chop etish",
+          "ru": "Печать кода товара",
+          "en": "Printing a product code"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Elektron deklaratsiya hujjatni tarmoq orqali topshirishga imkon beradi va vaqtni tejashi mumkin.",
+        "ru": "Электронная декларация позволяет подавать документы по сети и может экономить время.",
+        "en": "An electronic declaration enables network submission and can save time."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "S6",
+      "prompt": {
+        "uz": "Daladagi tuproq namligi datchiklari markaziy tizimga uzatadi va sugʻorish rejasiga taʼsir qiladi. Bu qaysi yondashuv?",
+        "ru": "Датчики влажности почвы передают данные в центральную систему и влияют на план полива. Какой это подход?",
+        "en": "Soil moisture sensors send data to a central system and inform irrigation plans. What approach is this?"
+      },
+      "options": [
+        {
+          "uz": "IoT va tarmoqqa ulangan datchiklar",
+          "ru": "IoT и подключённые датчики",
+          "en": "IoT and connected sensors"
+        },
+        {
+          "uz": "Slide Master",
+          "ru": "Образец слайдов",
+          "en": "Slide Master"
+        },
+        {
+          "uz": "OCR",
+          "ru": "OCR",
+          "en": "OCR"
+        },
+        {
+          "uz": "Maʼlumotlarni saralash",
+          "ru": "Сортировка данных",
+          "en": "Sorting data"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "IoT jismoniy datchiklarni tarmoqqa ulab, masofadan kuzatish va boshqarishga imkon beradi.",
+        "ru": "IoT подключает физические датчики к сети для удалённого мониторинга и управления.",
+        "en": "IoT connects physical sensors to a network for remote monitoring and control."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "S6",
+      "prompt": {
+        "uz": "GPS kuzatuv logistika jarayonida transport joylashuvi va yetkazib berishni kuzatishga yordam beradi.",
+        "ru": "GPS-мониторинг помогает отслеживать местоположение транспорта и доставку в логистике.",
+        "en": "GPS tracking helps monitor vehicle location and delivery in logistics."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "GPS joylashuv maʼlumotini beradi; logistika tizimi uni rejalash va kuzatuvda ishlatishi mumkin.",
+        "ru": "GPS предоставляет данные о местоположении, которые логистика может использовать для планирования и контроля.",
+        "en": "GPS provides location data that logistics systems can use for planning and tracking."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Relyatsion jadvaldagi yozuvni noyob ajratib turadigan maydon nima deyiladi?",
+        "ru": "Как называется поле, уникально идентифицирующее запись в реляционной таблице?",
+        "en": "What is the field that uniquely identifies a record in a relational table called?"
+      },
+      "options": [
+        {
+          "uz": "Birlamchi kalit",
+          "ru": "Первичный ключ",
+          "en": "Primary key"
+        },
+        {
+          "uz": "Tashqi disk",
+          "ru": "Внешний диск",
+          "en": "External drive"
+        },
+        {
+          "uz": "Filtr",
+          "ru": "Фильтр",
+          "en": "Filter"
+        },
+        {
+          "uz": "Domen",
+          "ru": "Домен",
+          "en": "Domain"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Birlamchi kalit jadvaldagi har bir yozuv uchun yagona identifikator beradi.",
+        "ru": "Первичный ключ даёт уникальный идентификатор каждой записи таблицы.",
+        "en": "A primary key gives every table record a unique identifier."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Bitta mijozda bir nechta buyurtma boʻlishi mumkin. Mijoz va buyurtma jadvallari orasidagi bogʻlanish qaysi?",
+        "ru": "У одного клиента может быть несколько заказов. Какой тип связи между таблицами клиентов и заказов?",
+        "en": "One customer can have several orders. What relationship links customer and order tables?"
+      },
+      "options": [
+        {
+          "uz": "1:N",
+          "ru": "1:N",
+          "en": "1:N"
+        },
+        {
+          "uz": "1:1",
+          "ru": "1:1",
+          "en": "1:1"
+        },
+        {
+          "uz": "N:0",
+          "ru": "N:0",
+          "en": "N:0"
+        },
+        {
+          "uz": "Bunday bogʻlanish yoʻq",
+          "ru": "Связи нет",
+          "en": "No relationship"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Bitta mijozga koʻp buyurtma tegishli boʻlishi mumkin, yaʼni birga koʻp (1:N).",
+        "ru": "Одному клиенту могут принадлежать многие заказы — связь один-ко-многим (1:N).",
+        "en": "One customer can own many orders, a one-to-many (1:N) relationship."
+      }
+    },
+    {
+      "type": "MULTI",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Big Data ning 5V tavsifiga kiradigan oʻlchovlarni tanlang.",
+        "ru": "Выберите характеристики 5V Big Data.",
+        "en": "Select characteristics in the Big Data 5Vs."
+      },
+      "options": [
+        {
+          "uz": "Volume",
+          "ru": "Объём",
+          "en": "Volume"
+        },
+        {
+          "uz": "Velocity",
+          "ru": "Скорость",
+          "en": "Velocity"
+        },
+        {
+          "uz": "Variety",
+          "ru": "Разнообразие",
+          "en": "Variety"
+        },
+        {
+          "uz": "Voltage",
+          "ru": "Напряжение",
+          "en": "Voltage"
+        }
+      ],
+      "correct": [
+        0,
+        1,
+        2
+      ],
+      "explanation": {
+        "uz": "5V ga hajm, tezlik, xilma-xillik, ishonchlilik va qiymat kiradi; kuchlanish kirmaydi.",
+        "ru": "5V включают объём, скорость, разнообразие, достоверность и ценность; напряжение не входит.",
+        "en": "The 5Vs are volume, velocity, variety, veracity and value; voltage is not one of them."
+      }
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Mijozda 3 ta buyurtma bor: 120000, 80000 va 50000 soʻm. SUM boʻyicha jami qancha?",
+        "ru": "У клиента три заказа: 120 000, 80 000 и 50 000 сумов. Какова сумма по SUM?",
+        "en": "A customer has three orders: 120,000, 80,000 and 50,000 soums. What is their SUM?"
+      },
+      "answers": [
+        250000
+      ],
+      "tolerance": 0,
+      "explanation": {
+        "uz": "120 000 + 80 000 + 50 000 = 250 000 soʻm.",
+        "ru": "120 000 + 80 000 + 50 000 = 250 000 сумов.",
+        "en": "120,000 + 80,000 + 50,000 = 250,000 soums."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Mijoz jadvalidagi shaharni har bir buyurtmada takrorlamasdan hisobot chiqarish uchun qaysi SQL gʻoyasi mos?",
+        "ru": "Какой приём SQL подходит для отчёта без повторения города клиента в каждом заказе?",
+        "en": "Which SQL idea fits a report without repeating each customer’s city in every order?"
+      },
+      "options": [
+        {
+          "uz": "JOIN orqali jadvallarni kalit boʻyicha bogʻlash",
+          "ru": "Соединить таблицы через JOIN по ключу",
+          "en": "Join tables on a key with JOIN"
+        },
+        {
+          "uz": "ORDER BY orqali jadvallarni birlashtirish",
+          "ru": "Объединить таблицы через ORDER BY",
+          "en": "Combine tables with ORDER BY"
+        },
+        {
+          "uz": "WHERE ni olib tashlash",
+          "ru": "Удалить WHERE",
+          "en": "Remove WHERE"
+        },
+        {
+          "uz": "Har qatorni qayta qoʻlda kiritish",
+          "ru": "Вводить каждую строку вручную",
+          "en": "Re-enter each row manually"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "JOIN tashqi kalit va birlamchi kalit mosligi orqali mijoz va buyurtma maʼlumotlarini birlashtiradi.",
+        "ru": "JOIN объединяет данные клиента и заказа по соответствию внешнего и первичного ключей.",
+        "en": "JOIN combines customer and order data by matching foreign and primary keys."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "S7",
+      "prompt": {
+        "uz": "Bank toʻlovlari oqimini kelishi bilan qayta ishlash qanday qayta ishlash turi?",
+        "ru": "Как называется обработка банковских платежей по мере поступления?",
+        "en": "What kind of processing handles bank payments as they arrive?"
+      },
+      "options": [
+        {
+          "uz": "Oqimli qayta ishlash",
+          "ru": "Потоковая обработка",
+          "en": "Stream processing"
+        },
+        {
+          "uz": "Faqat paketli qayta ishlash",
+          "ru": "Только пакетная обработка",
+          "en": "Batch-only processing"
+        },
+        {
+          "uz": "Qoʻlda saralash",
+          "ru": "Ручная сортировка",
+          "en": "Manual sorting"
+        },
+        {
+          "uz": "Slayd namoyishi",
+          "ru": "Показ слайдов",
+          "en": "Slide show"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Oqimli qayta ishlash uzluksiz kelayotgan hodisalarni darhol yoki juda tez tahlil qiladi.",
+        "ru": "Потоковая обработка анализирует непрерывно поступающие события сразу или почти сразу.",
+        "en": "Stream processing analyzes continuously arriving events immediately or near real time."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "S7",
+      "prompt": {
+        "uz": "Oʻtgan oyda qancha tranzaksiya boʻlganini koʻrsatish qaysi tahlil turiga kiradi?",
+        "ru": "К какому виду аналитики относится подсчёт числа транзакций за прошлый месяц?",
+        "en": "Which analytics type counts the transactions from last month?"
+      },
+      "options": [
+        {
+          "uz": "Tavsifiy",
+          "ru": "Описательная",
+          "en": "Descriptive"
+        },
+        {
+          "uz": "Diagnostik",
+          "ru": "Диагностическая",
+          "en": "Diagnostic"
+        },
+        {
+          "uz": "Prognostik",
+          "ru": "Прогнозная",
+          "en": "Predictive"
+        },
+        {
+          "uz": "Preskriptiv",
+          "ru": "Предписывающая",
+          "en": "Prescriptive"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Tavsifiy tahlil oʻtgan yoki joriy holatda nima boʻlganini jamlaydi.",
+        "ru": "Описательная аналитика суммирует, что произошло в прошлом или происходит сейчас.",
+        "en": "Descriptive analytics summarizes what happened or is happening."
+      }
+    },
+    {
+      "type": "SINGLE",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "S7",
+      "prompt": {
+        "uz": "Oʻtgan davr maʼlumotlaridan foydalanib kelasi oy talabini taxmin qilish qaysi tahlil?",
+        "ru": "Какой вид аналитики оценивает спрос следующего месяца по прошлым данным?",
+        "en": "Which analytics type estimates next month’s demand from historical data?"
+      },
+      "options": [
+        {
+          "uz": "Prognostik",
+          "ru": "Прогнозная",
+          "en": "Predictive"
+        },
+        {
+          "uz": "Tavsifiy",
+          "ru": "Описательная",
+          "en": "Descriptive"
+        },
+        {
+          "uz": "Diagnostik",
+          "ru": "Диагностическая",
+          "en": "Diagnostic"
+        },
+        {
+          "uz": "Maʼlumot kiritish",
+          "ru": "Ввод данных",
+          "en": "Data entry"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Prognostik tahlil avvalgi naqshlar asosida kelajak natijalarini baholaydi.",
+        "ru": "Прогнозная аналитика оценивает будущие результаты по прошлым закономерностям.",
+        "en": "Predictive analytics estimates future outcomes from historical patterns."
+      }
+    },
+    {
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "S7",
+      "prompt": {
+        "uz": "MapReduce usulida Map maʼlumot qismlarini mahalliy qayta ishlaydi, Reduce oraliq natijalarni birlashtiradi.",
+        "ru": "В MapReduce этап Map обрабатывает части данных, а Reduce объединяет промежуточные результаты.",
+        "en": "In MapReduce, Map processes data partitions and Reduce combines intermediate results."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ],
+      "explanation": {
+        "uz": "Vazifa taqsimlanib Map bosqichida bajariladi, soʻng Reduce hisoblangan qismlarni yigʻadi.",
+        "ru": "Задача распределяется на этапе Map, затем Reduce объединяет вычисленные части.",
+        "en": "Map handles distributed portions, then Reduce combines the computed parts."
+      }
+    }
+  ]
+}

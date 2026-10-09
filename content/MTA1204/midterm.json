@@ -1,0 +1,1393 @@
+{
+  "afterLesson": "A7",
+  "questions": [
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Algoritm aniq va chekli qadamlar ketma-ketligi boʻlishi kerak.",
+        "ru": "Алгоритм должен быть последовательностью точных и конечных шагов.",
+        "en": "An algorithm should be a sequence of precise and finite steps."
+      },
+      "explanation": {
+        "uz": "Javob: true. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: true. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: true. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Blok-sxemada shart qaysi shakl bilan belgilanadi? Javobni 1 ta soʻz bilan yozing: romb uchun tomonlar soni.",
+        "ru": "Сколько сторон у ромба, которым на блок-схеме обозначают условие?",
+        "en": "How many sides does the diamond used for a decision have?"
+      },
+      "explanation": {
+        "uz": "Javob: 4. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 4. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 4. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        4
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Tyuring mashinasida lenta boʻylab yurib, belgilarni oʻqiydigan qism nima deyiladi?",
+        "ru": "Как называется часть машины Тьюринга, которая движется по ленте и читает символы?",
+        "en": "What is the part of a Turing machine that moves along the tape and reads symbols called?"
+      },
+      "explanation": {
+        "uz": "Javob: kallak. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: головка. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: head. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "kallak",
+        "головка",
+        "head"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A1",
+      "prompt": {
+        "uz": "EKUB ikki sonning eng katta umumiy boʻluvchisini anglatadi.",
+        "ru": "НОД означает наибольший общий делитель двух чисел.",
+        "en": "GCD means the greatest common divisor of two numbers."
+      },
+      "explanation": {
+        "uz": "Javob: true. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: true. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: true. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A1",
+      "prompt": {
+        "uz": "Evklid algoritmida 48 va 18 uchun EKUB nechaga teng?",
+        "ru": "Чему равен НОД чисел 48 и 18 по алгоритму Евклида?",
+        "en": "What is the GCD of 48 and 18 using Euclid’s algorithm?"
+      },
+      "explanation": {
+        "uz": "Javob: 6. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 6. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 6. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        6
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Saralangan massivda oʻrtadagi element bilan solishtirib oraliqni qisqartiradigan izlash usuli nima?",
+        "ru": "Как называется поиск, который сокращает диапазон, сравнивая средний элемент отсортированного массива?",
+        "en": "Which search method narrows a sorted array range by comparing its middle element?"
+      },
+      "explanation": {
+        "uz": "Javob: binar izlash. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: бинарный поиск. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: binary search. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "binar izlash",
+        "бинарный поиск",
+        "binary search"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Binar izlash tartiblanmagan massivda ham toʻgʻri natijani kafolatlaydi.",
+        "ru": "Бинарный поиск гарантирует правильный результат и в неотсортированном массиве.",
+        "en": "Binary search guarantees a correct result even on an unsorted array."
+      },
+      "explanation": {
+        "uz": "Javob: false. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: false. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: false. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "8 ta elementli massivda binar izlashning log₂(n) oʻsish tartibi uchun log₂(8) qiymatini toping.",
+        "ru": "Найдите log₂(8), соответствующий порядку роста бинарного поиска для 8 элементов.",
+        "en": "Find log₂(8), the logarithmic scale for binary search on 8 elements."
+      },
+      "explanation": {
+        "uz": "Javob: 3. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 3. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 3. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        3
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Kalitni jadval indeksiga aylantiruvchi funksiya nima deyiladi?",
+        "ru": "Как называется функция, преобразующая ключ в индекс таблицы?",
+        "en": "What is a function that maps a key to a table index called?"
+      },
+      "explanation": {
+        "uz": "Javob: xesh-funksiya. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: хеш-функция. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: hash function. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "xesh-funksiya",
+        "хеш-функция",
+        "hash function"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Xesh-jadvalda ikki kalit bir indeksga tushishi mumkin; bu toʻqnashuv deyiladi.",
+        "ru": "В хеш-таблице два ключа могут попасть в один индекс; это называется коллизией.",
+        "en": "Two keys can map to one hash-table index; this is called a collision."
+      },
+      "explanation": {
+        "uz": "Javob: true. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: true. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: true. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Maks-uyumda 7 ta element boʻlsa, ildizdagi qiymat qaysi tartib qiymatiga ega: eng kattasi uchun 1 deb sanang.",
+        "ru": "В max-куче из 7 элементов какое место по величине занимает корень, если наибольшее считать первым?",
+        "en": "In a max-heap of 7 elements, what rank by value does the root have, counting the largest as rank 1?"
+      },
+      "explanation": {
+        "uz": "Javob: 1. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 1. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 1. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        1
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Pufaksimon saralash qaysi elementlarni solishtiradi?",
+        "ru": "Какие элементы сравнивает пузырьковая сортировка?",
+        "en": "Which elements does bubble sort compare?"
+      },
+      "explanation": {
+        "uz": "Javob: qoʻshni elementlar. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: соседние элементы. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: adjacent elements. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "qoʻshni elementlar",
+        "соседние элементы",
+        "adjacent elements"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Stek LIFO qoidasiga amal qiladi: oxirgi qoʻyilgan element birinchi olinadi.",
+        "ru": "Стек работает по правилу LIFO: последним добавленный элемент извлекается первым.",
+        "en": "A stack follows LIFO: the last item pushed is the first popped."
+      },
+      "explanation": {
+        "uz": "Javob: true. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: true. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: true. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Boʻsh stekka 3 element qoʻyilib, soʻng bitta element olinsa, nechta element qoladi?",
+        "ru": "Сколько элементов останется, если в пустой стек добавить 3 элемента, а затем извлечь один?",
+        "en": "How many items remain after pushing 3 items onto an empty stack and popping one?"
+      },
+      "explanation": {
+        "uz": "Javob: 2. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 2. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 2. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        2
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "FIFO qoidasida elementlar qaysi tartibda olinadi?",
+        "ru": "В каком порядке извлекаются элементы по правилу FIFO?",
+        "en": "In what order are items removed under FIFO?"
+      },
+      "explanation": {
+        "uz": "Javob: birinchi kirgan birinchi chiqadi. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: первым пришёл — первым вышел. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: first in first out. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "birinchi kirgan birinchi chiqadi",
+        "первым пришёл — первым вышел",
+        "first in first out"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Bir bogʻlamli roʻyxatning har tugunida keyingi tugunga havola boʻladi.",
+        "ru": "В каждом узле односвязного списка есть ссылка на следующий узел.",
+        "en": "Each node in a singly linked list has a link to the next node."
+      },
+      "explanation": {
+        "uz": "Javob: true. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: true. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: true. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Yoʻnaltirilmagan grafda 5 ta uch va 4 ta qirra boʻlsa, qirralar soni nechta?",
+        "ru": "В неориентированном графе 5 вершин и 4 ребра. Сколько рёбер?",
+        "en": "An undirected graph has 5 vertices and 4 edges. How many edges does it have?"
+      },
+      "explanation": {
+        "uz": "Javob: 4. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 4. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 4. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        4
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Daraxtda bolalari yoʻq tugun qanday ataladi?",
+        "ru": "Как называется узел дерева без детей?",
+        "en": "What is a tree node with no children called?"
+      },
+      "explanation": {
+        "uz": "Javob: barg. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: лист. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: leaf. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "barg",
+        "лист",
+        "leaf"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Binar daraxt tugunida koʻpi bilan ikkita bola boʻladi.",
+        "ru": "У узла бинарного дерева не более двух детей.",
+        "en": "A binary-tree node has at most two children."
+      },
+      "explanation": {
+        "uz": "Javob: true. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: true. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: true. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "EASY",
+      "points": 1,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "Deykstra masofa algoritmida manba uchining oʻzidan oʻziga masofasi qancha?",
+        "ru": "Каково расстояние от исходной вершины до самой себя в алгоритме Дейкстры?",
+        "en": "In Dijkstra’s algorithm, what is the distance from the source vertex to itself?"
+      },
+      "explanation": {
+        "uz": "Javob: 0. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 0. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 0. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        0
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A2",
+      "prompt": {
+        "uz": "Fibonachchi rekursiyasida bir xil qiymatlarni qayta hisoblamaslik uchun hisoblangan natijalarni saqlash usuli nima?",
+        "ru": "Как называется способ сохранять вычисленные значения, чтобы не пересчитывать их в рекурсии Фибоначчи?",
+        "en": "What method stores computed values so Fibonacci recursion does not recalculate them?"
+      },
+      "explanation": {
+        "uz": "Xotiralash oldin hisoblangan qiymatlarni saqlaydi; shu sabab Fibonachchi misolida murakkablik eksponensialdan O(n) ga tushadi.",
+        "ru": "Мемоизация сохраняет уже вычисленные значения, поэтому для примера Фибоначчи сложность снижается с экспоненциальной до O(n).",
+        "en": "Memoization stores values already computed, reducing the Fibonacci example from exponential time to O(n)."
+      },
+      "answers": [
+        "xotiralash",
+        "мемоизация",
+        "memoization"
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A3",
+      "prompt": {
+        "uz": "Saralangan massiv [2, 5, 8, 12, 17] da binar izlash 12 ni tekshirganda avval qaysi oʻrindagi elementni tekshiradi (1 dan sanang)?",
+        "ru": "В массиве [2, 5, 8, 12, 17] какой элемент бинарный поиск проверит первым при поиске 12 (нумерация с 1)?",
+        "en": "In [2, 5, 8, 12, 17], which position does binary search check first when searching for 12 (1-based)?"
+      },
+      "explanation": {
+        "uz": "Javob: 3. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 3. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 3. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        3
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "O(f(n)) belgisi murakkablik uchun qanday chegara beradi?",
+        "ru": "Какую границу сложности обозначает O(f(n))?",
+        "en": "What kind of complexity bound does O(f(n)) express?"
+      },
+      "explanation": {
+        "uz": "Javob: yuqori chegara. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: верхняя граница. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: upper bound. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "yuqori chegara",
+        "верхняя граница",
+        "upper bound"
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Xesh jadvalida M=8 savat boʻlsa, h(k)=k mod M boʻyicha 19 kalitining indeksi nechaga teng?",
+        "ru": "В хеш-таблице с M=8 корзинами чему равен индекс ключа 19 при h(k)=k mod M?",
+        "en": "With M=8 buckets and h(k)=k mod M, what index does key 19 get?"
+      },
+      "explanation": {
+        "uz": "Javob: 3. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 3. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 3. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        3
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Zanjirlash usulida toʻqnashgan yozuvlar odatda qayerda saqlanadi?",
+        "ru": "Где обычно хранятся записи с коллизиями при методе цепочек?",
+        "en": "Where are colliding records usually stored in separate chaining?"
+      },
+      "explanation": {
+        "uz": "Javob: roʻyxatda. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: в списке. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: in a list. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "roʻyxatda",
+        "в списке",
+        "in a list"
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A4",
+      "prompt": {
+        "uz": "[4, 1, 3] massivini maks-uyumga aylantirganda ildizdagi eng katta qiymat nechaga teng boʻladi?",
+        "ru": "Какое наибольшее значение окажется в корне max-кучи после преобразования массива [4, 1, 3]?",
+        "en": "What largest value is at the root of a max-heap built from [4, 1, 3]?"
+      },
+      "explanation": {
+        "uz": "Javob: 4. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 4. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 4. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        4
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Tez saralashda boʻlinadigan massiv boʻyicha ajratish qiymati nima deyiladi?",
+        "ru": "Как называется опорное значение, относительно которого разделяют массив в быстрой сортировке?",
+        "en": "What is the value used to partition an array in quicksort called?"
+      },
+      "explanation": {
+        "uz": "Javob: tayanch element. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: опорный элемент. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: pivot. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "tayanch element",
+        "опорный элемент",
+        "pivot"
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Boʻsh navbatga 4 element qoʻshib, 2 tasini olsak, navbatda nechta qoladi?",
+        "ru": "В пустую очередь добавили 4 элемента и извлекли 2. Сколько осталось?",
+        "en": "Four items are enqueued and two dequeued. How many remain?"
+      },
+      "explanation": {
+        "uz": "Javob: 2. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 2. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 2. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        2
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Navbatning boshidan olish va oxiriga qoʻshish orqali hosil boʻladigan tartib qisqartmasi nima?",
+        "ru": "Какая аббревиатура описывает порядок очереди, где извлекают из начала и добавляют в конец?",
+        "en": "What acronym describes a queue that removes from the front and adds at the back?"
+      },
+      "explanation": {
+        "uz": "Javob: FIFO. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: FIFO. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: FIFO. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "FIFO",
+        "FIFO",
+        "FIFO"
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Bir bogʻlamli roʻyxatda boshidan 4 ta havolani kuzatsak, nechanchi tugunga хүремiz, boshlangʻich tugunni 1 deb olganda?",
+        "ru": "В односвязном списке, проследив 4 ссылки от головы, до какого узла дойдём, считая исходный узел первым?",
+        "en": "In a singly linked list, after following 4 links from the head, which node is reached if the head is node 1?"
+      },
+      "explanation": {
+        "uz": "Javob: 5. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 5. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 5. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        5
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Grafni har bir uchning qoʻshnilarini roʻyxatlab saqlash usuli nima deyiladi?",
+        "ru": "Как называется способ хранения графа списком соседей каждой вершины?",
+        "en": "What is the graph representation that lists each vertex’s neighbors called?"
+      },
+      "explanation": {
+        "uz": "Javob: qoʻshnilik roʻyxati. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: список смежности. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: adjacency list. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "qoʻshnilik roʻyxati",
+        "список смежности",
+        "adjacency list"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Deykstra algoritmi manfiy vaznli qirralarda umumiy holatda toʻgʻri ishlaydi.",
+        "ru": "Алгоритм Дейкстры в общем случае корректен на рёбрах с отрицательным весом.",
+        "en": "Dijkstra’s algorithm is generally correct with negative-weight edges."
+      },
+      "explanation": {
+        "uz": "Javob: false. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: false. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: false. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "BQD ga 50, 30, 70 ketma-ket kiritilsa, ildizning balandligi sathlar soni boʻyicha nechaga teng?",
+        "ru": "В BST последовательно вставили 50, 30, 70. Какова высота дерева в числе уровней?",
+        "en": "Insert 50, 30, 70 into a BST. What is its height in levels?"
+      },
+      "explanation": {
+        "uz": "Javob: 2. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 2. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 2. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        2
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "BQD da chap qism daraxt kalitlari tugun kalitiga nisbatan qanday boʻladi?",
+        "ru": "Как соотносятся ключи левого поддерева BST с ключом узла?",
+        "en": "How do keys in the left subtree of a BST compare with the node key?"
+      },
+      "explanation": {
+        "uz": "Javob: kichik. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: меньше. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: smaller. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "kichik",
+        "меньше",
+        "smaller"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "BQD ning simmetrik aylanishi kalitlarni saralangan tartibda beradi.",
+        "ru": "Симметричный обход BST выдаёт ключи в отсортированном порядке.",
+        "en": "Inorder traversal of a BST outputs keys in sorted order."
+      },
+      "explanation": {
+        "uz": "Javob: true. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: true. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: true. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "Qirralar vazni 1, 2 va 4 boʻlgan yagona yoʻl orqali borilsa, yoʻl uzunligi nechaga teng?",
+        "ru": "Чему равна длина единственного пути с весами рёбер 1, 2 и 4?",
+        "en": "What is the length of a path whose edge weights are 1, 2, and 4?"
+      },
+      "explanation": {
+        "uz": "Javob: 7. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 7. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 7. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        7
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "Barcha juft uchlar orasidagi eng qisqa yoʻllarni topuvchi algoritm familiyasi qanday yoziladi?",
+        "ru": "Как называется алгоритм поиска кратчайших путей между всеми парами вершин?",
+        "en": "Which algorithm finds shortest paths between every pair of vertices?"
+      },
+      "explanation": {
+        "uz": "Javob: Floyd–Uorshell. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: Флойд—Уоршелл. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: Floyd–Warshall. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "Floyd–Uorshell",
+        "Флойд—Уоршелл",
+        "Floyd–Warshall"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Cheklilik xossasi algoritmning har qanday toʻgʻri kirishda tugashini talab qiladi.",
+        "ru": "Свойство конечности требует, чтобы алгоритм завершался на каждом допустимом входе.",
+        "en": "Finiteness requires an algorithm to terminate on every valid input."
+      },
+      "explanation": {
+        "uz": "Javob: true. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: true. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: true. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "A1",
+      "prompt": {
+        "uz": "Evklid algoritmida 10 va 10 uchun b nol boʻlguncha nechta boʻlish qadami bajariladi?",
+        "ru": "Сколько шагов деления выполняет алгоритм Евклида для 10 и 10, пока b не станет нулём?",
+        "en": "How many division steps does Euclid’s algorithm take for 10 and 10 until b becomes zero?"
+      },
+      "explanation": {
+        "uz": "Javob: 1. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 1. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 1. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        1
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Ω(f(n)) belgisi murakkablikning qaysi chegarasini bildiradi?",
+        "ru": "Какую границу сложности обозначает Ω(f(n))?",
+        "en": "What kind of complexity bound does Ω(f(n)) express?"
+      },
+      "explanation": {
+        "uz": "Javob: quyi chegara. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: нижняя граница. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: lower bound. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "quyi chegara",
+        "нижняя граница",
+        "lower bound"
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "10 ta yozuv 5 ta savatga taqsimlangan boʻlsa, yuklanish koeffitsienti nechaga teng?",
+        "ru": "Если 10 записей распределены по 5 корзинам, чему равен коэффициент загрузки?",
+        "en": "If 10 records are stored in 5 buckets, what is the load factor?"
+      },
+      "explanation": {
+        "uz": "Javob: 2. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 2. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 2. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        2
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Maʼlumot operativ xotiraga sigʻmaganda bajariladigan saralash turi qanday ataladi?",
+        "ru": "Как называется сортировка данных, не помещающихся в оперативную память?",
+        "en": "What is sorting called when the data do not fit in main memory?"
+      },
+      "explanation": {
+        "uz": "Javob: tashqi saralash. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: внешняя сортировка. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: external sorting. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "tashqi saralash",
+        "внешняя сортировка",
+        "external sorting"
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Navbatga A, B, C tartibida qoʻshib, bitta element olinsa, navbat boshida qaysi element qoladi? A=1, B=2, C=3 deb belgilang.",
+        "ru": "В очередь добавили A, B, C и извлекли один элемент. Какой останется первым? Обозначьте A=1, B=2, C=3.",
+        "en": "Enqueue A, B, C and dequeue once. Which item is now at the front? Encode A=1, B=2, C=3."
+      },
+      "explanation": {
+        "uz": "Javob: 2. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 2. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 2. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        2
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "TF",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Qoʻshnilik matritsasida n uchli graf uchun n×n katak boʻladi.",
+        "ru": "Матрица смежности графа с n вершинами имеет размер n×n.",
+        "en": "An adjacency matrix for a graph with n vertices has n×n cells."
+      },
+      "explanation": {
+        "uz": "Javob: true. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: true. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: true. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "MEDIUM",
+      "points": 2,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Daraxt balandligi dars taʼrifida eng chuqur barg chuqurligidan qanday olinadi?",
+        "ru": "Как по определению из занятия получают высоту дерева из глубины самого глубокого листа?",
+        "en": "According to the lesson definition, how is tree height derived from the deepest leaf depth?"
+      },
+      "explanation": {
+        "uz": "Javob: bir qoʻshiladi. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: прибавляют один. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: add one. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "bir qoʻshiladi",
+        "прибавляют один",
+        "add one"
+      ]
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M1",
+      "prompt": {
+        "uz": "Cheklangan qadamda toʻxtashini isbotlab boʻlmaydigan mashhur misol sifatida tilga olingan gipoteza nomini yozing.",
+        "ru": "Как называется гипотеза, приведённая как известный пример, для которой не доказана остановка за конечное число шагов?",
+        "en": "Name the conjecture mentioned as a famous example whose termination in a finite number of steps is unproved."
+      },
+      "explanation": {
+        "uz": "Javob: Kollats gipotezasi. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: гипотеза Коллатца. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: Collatz conjecture. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "Kollats gipotezasi",
+        "гипотеза Коллатца",
+        "Collatz conjecture"
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "T(n)=3n²+10n boʻlsa, katta n uchun O bahoda qaysi darajali had qoladi? n darajasini yozing.",
+        "ru": "Если T(n)=3n²+10n, какая степень остаётся в O-оценке для больших n? Введите степень n.",
+        "en": "For T(n)=3n²+10n, what power remains in the Big-O bound for large n? Enter the power of n."
+      },
+      "explanation": {
+        "uz": "Javob: 2. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 2. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 2. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        2
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M2",
+      "prompt": {
+        "uz": "Θ(f(n)) qaysi ikki yoʻnalishdagi chegarani birgalikda bildiradi?",
+        "ru": "Какие две границы одновременно выражает Θ(f(n))?",
+        "en": "Which two directions of bounds does Θ(f(n)) express together?"
+      },
+      "explanation": {
+        "uz": "Javob: yuqori va quyi. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: верхнюю и нижнюю. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: upper and lower. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "yuqori va quyi",
+        "верхнюю и нижнюю",
+        "upper and lower"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Xesh-jadvalda oʻrtacha O(1) qidirish eng yomon holatda ham doim O(1) boʻlishini anglatadi.",
+        "ru": "Средний поиск O(1) в хеш-таблице означает, что худший случай тоже всегда O(1).",
+        "en": "Average O(1) hash-table search means the worst case is always O(1)."
+      },
+      "explanation": {
+        "uz": "Javob: false. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: false. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: false. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        1
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M3",
+      "prompt": {
+        "uz": "Chiziqli probingda M=7, h(k)=k mod 7. 10 kaliti 3 indeksda, u band va 4 indeks ham band, keyingi boʻsh indeks 5 boʻlsa, kalit qaysi indeksga tushadi?",
+        "ru": "При линейном пробировании M=7, h(k)=k mod 7. Для ключа 10 индексы 3 и 4 заняты, следующий свободный индекс — 5. Куда попадёт ключ?",
+        "en": "With linear probing, M=7 and h(k)=k mod 7. Key 10 hashes to 3; indices 3 and 4 are occupied, and 5 is the next free slot. Where is it stored?"
+      },
+      "explanation": {
+        "uz": "Javob: 5. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 5. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 5. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        5
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M4",
+      "prompt": {
+        "uz": "Shell saralashida yakuniy qadam qanday boʻlishi shart? Qadam qiymatini yozing.",
+        "ru": "Каким должен быть последний шаг сортировки Шелла? Укажите значение шага.",
+        "en": "What must the final gap be in Shell sort? Give its value."
+      },
+      "explanation": {
+        "uz": "Javob: 1. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: один. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: one. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "1",
+        "один",
+        "one"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A5",
+      "prompt": {
+        "uz": "Pufaksimon saralashda almashishlar soni inversiyalar soniga teng.",
+        "ru": "В пузырьковой сортировке число обменов равно числу инверсий.",
+        "en": "In bubble sort, the number of swaps equals the number of inversions."
+      },
+      "explanation": {
+        "uz": "Javob: true. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: true. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: true. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M5",
+      "prompt": {
+        "uz": "Stekka 1, 2, 3 qoʻyildi, soʻng ikki marta pop qilindi. Keyingi pop qaysi qiymatni qaytaradi?",
+        "ru": "В стек добавили 1, 2, 3, затем дважды выполнили pop. Какое значение вернёт следующий pop?",
+        "en": "Push 1, 2, 3 onto a stack, then pop twice. What value does the next pop return?"
+      },
+      "explanation": {
+        "uz": "Javob: 1. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 1. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 1. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        1
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A6",
+      "prompt": {
+        "uz": "Bir-biriga mos kelmagan yopuvchi qavsni tekshirayotganda stekdan qaysi amal olinadi?",
+        "ru": "Какую операцию стека используют при проверке закрывающей скобки?",
+        "en": "Which stack operation is used when checking a closing bracket?"
+      },
+      "explanation": {
+        "uz": "Javob: pop. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: извлечение. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: pop. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "pop",
+        "извлечение",
+        "pop"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Deykstrada manfiy boʻlmagan vaznlar uchun navbatdan olingan eng kichik masofa yakuniy deb belgilanadi.",
+        "ru": "В алгоритме Дейкстры для неотрицательных весов извлечённое из очереди минимальное расстояние считается окончательным.",
+        "en": "With nonnegative weights, Dijkstra treats the smallest distance removed from the queue as final."
+      },
+      "explanation": {
+        "uz": "Javob: true. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: true. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: true. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Deykstra manbadan 2 gacha masofani 5 deb topdi. 2 dan 3 gacha vazn 4, 1 dan 3 gacha bevosita vazn 12. 3 gacha eng qisqa masofa qancha?",
+        "ru": "Дейкстра нашёл расстояние от источника до 2 равным 5. Вес ребра 2–3 равен 4, прямого ребра 1–3 — 12. Каково кратчайшее расстояние до 3?",
+        "en": "Dijkstra finds distance 5 from the source to vertex 2. Edge 2–3 has weight 4 and direct edge 1–3 has weight 12. What is the shortest distance to 3?"
+      },
+      "explanation": {
+        "uz": "Javob: 9. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 9. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 9. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        9
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M6",
+      "prompt": {
+        "uz": "Floyd–Uorshell algoritmida k-tashqi bosqich nimani tekshiradi? Javobni “oraliq uch” iborasi bilan boshlang.",
+        "ru": "Что проверяет внешний этап k в алгоритме Флойда—Уоршелла? Ответьте фразой «промежуточная вершина».",
+        "en": "What does outer iteration k check in Floyd–Warshall? Answer with “intermediate vertex”."
+      },
+      "explanation": {
+        "uz": "Javob: oraliq uch. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: промежуточная вершина. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: intermediate vertex. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "oraliq uch",
+        "промежуточная вершина",
+        "intermediate vertex"
+      ]
+    },
+    {
+      "type": "TF",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "Saralangan tartibda oddiy BQD qurilsa, balandligi n gacha yetib, amallar O(n) boʻlishi mumkin.",
+        "ru": "Если обычное BST строить по отсортированным ключам, его высота может достигнуть n, а операции — O(n).",
+        "en": "A plain BST built from sorted keys can reach height n and have O(n) operations."
+      },
+      "explanation": {
+        "uz": "Javob: true. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: true. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: true. This follows the lesson definitions and examples."
+      },
+      "options": [
+        {
+          "uz": "Toʻgʻri",
+          "ru": "Верно",
+          "en": "True"
+        },
+        {
+          "uz": "Notoʻgʻri",
+          "ru": "Неверно",
+          "en": "False"
+        }
+      ],
+      "correct": [
+        0
+      ]
+    },
+    {
+      "type": "NUM",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "M7",
+      "prompt": {
+        "uz": "1,2,3,4,5 qiymatlari ketma-ket oddiy BQD ga kiritilsa, ildizdan eng chuqur barggacha qirralar soni nechta?",
+        "ru": "Если последовательно вставить 1,2,3,4,5 в обычное BST, сколько рёбер будет от корня до самого глубокого листа?",
+        "en": "Insert 1,2,3,4,5 in order into a plain BST. How many edges are there from the root to the deepest leaf?"
+      },
+      "explanation": {
+        "uz": "Javob: 4. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: 4. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: 4. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        4
+      ],
+      "tolerance": 0
+    },
+    {
+      "type": "SHORT",
+      "difficulty": "HARD",
+      "points": 3,
+      "lesson": "A7",
+      "prompt": {
+        "uz": "Faqat manfiy boʻlmagan qirra vaznlarida Deykstra algoritmi uchun bajarilishi zarur boʻlgan shart nima?",
+        "ru": "Какое условие на веса рёбер необходимо для алгоритма Дейкстры?",
+        "en": "What condition on edge weights is required for Dijkstra’s algorithm?"
+      },
+      "explanation": {
+        "uz": "Javob: manfiy boʻlmasligi. Bu natija darsdagi taʼrif va misollarga mos keladi.",
+        "ru": "Ответ: неотрицательные. Это соответствует определениям и примерам занятия.",
+        "en": "Answer: nonnegative. This follows the lesson definitions and examples."
+      },
+      "answers": [
+        "manfiy boʻlmasligi",
+        "неотрицательные",
+        "nonnegative"
+      ]
+    }
+  ]
+}

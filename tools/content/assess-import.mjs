@@ -92,8 +92,15 @@ function makeContext(api, { dryRun, log, replace = false }) {
   return ctx
 }
 
-const listAll = async (api, url) =>
-  (await api.call('GET', `${url}${url.includes('?') ? '&' : '?'}size=500`)).content ?? []
+// the API caps a page at 100: read every page, or a course with more items looks half empty
+const listAll = async (api, url) => {
+  const all = []
+  for (let page = 0; ; page++) {
+    const result = await api.call('GET', `${url}${url.includes('?') ? '&' : '?'}size=100&page=${page}`)
+    all.push(...(result.content ?? []))
+    if (!result.hasNext && !(result.totalPages > page + 1)) return all
+  }
+}
 
 async function readState(ctx, courseId) {
   const quizzes = await listAll(ctx.api, `/teacher/courses/${courseId}/quizzes`)
@@ -323,7 +330,7 @@ async function syncTestCases(ctx, task, tests) {
  * same place, left by an interrupted run) or creates it, then binds the reference,
  * writes the titles and publishes. path_step is sent only when the API exposes it.
  */
-async function ensureActivity(ctx, state, courseId, { type, lesson, moduleId, referenceId, pathStep, graded, componentId, titles }) {
+async function ensureActivity(ctx, state, courseId, { type, lesson, moduleId, referenceId, pathStep, graded, componentId, maxPoints, titles }) {
   const lessonId = lesson?.id ?? null
   const place = lessonId ?? moduleId
   let activity =
@@ -357,6 +364,7 @@ async function ensureActivity(ctx, state, courseId, { type, lesson, moduleId, re
       ...(lessonId ? { lessonId } : { moduleId }),
       isGraded: graded,
       ...(componentId && { assessmentComponentId: componentId }),
+      ...(graded && maxPoints != null && { maxPoints }),
     }
     if (ctx.pathStepSupported) body.pathStep = pathStep
     ctx.log(`  ${label}: create and bind to ${referenceId ?? '(new)'}`)
@@ -377,6 +385,10 @@ async function ensureActivity(ctx, state, courseId, { type, lesson, moduleId, re
   }
   for (const locale of LOCALES) {
     await ctx.write('PUT', `/teacher/activities/${activity.id}/translations/${locale}`, { title: titles[locale] })
+  }
+  if (activity.status === 'ARCHIVED') {
+    ctx.log(`  ${label}: archived on purpose (a kept seeded activity holds the step); left alone`)
+    return
   }
   if (activity.status !== 'PUBLISHED') {
     await ctx.write('PUT', `/teacher/activities/${activity.id}/status`, { status: 'PUBLISHED' })
@@ -467,7 +479,9 @@ async function importMidterm(ctx, state, courseId, courseCode, data, lessons) {
   if (!anchor) throw new Error(`${courseCode}: midterm afterLesson ${data.afterLesson}: no lesson with that code`)
   const course = await ctx.api.call('GET', `/admin/courses/${courseId}`)
   const component = (course.assessmentComponents ?? []).find((c) => c.kind === 'MIDTERM')
-  if (!component) throw new Error(`${courseCode}: the course has no MIDTERM (ON) assessment component`)
+  // no MIDTERM component in the grading scheme: the midterm is only a path gate, not a graded item
+  // (inventing a grade weight is not ours to do — docs/academic-analysis/PENDING-INPUTS.md)
+  if (!component) ctx.log(`  note: ${courseCode} has no MIDTERM assessment component; the midterm is imported ungraded`)
   const code = `${courseCode}-ON`
   const quiz = await ensureQuiz(ctx, state, courseId, {
     code,
@@ -482,8 +496,9 @@ async function importMidterm(ctx, state, courseId, courseCode, data, lessons) {
     moduleId: anchor.moduleId,
     referenceId: quiz?.id ?? null,
     pathStep: 'MIDTERM',
-    graded: true,
-    componentId: component.id,
+    graded: component !== undefined,
+    componentId: component?.id,
+    maxPoints: component?.maxPoints,
     titles: MIDTERM_TITLE,
   })
   ctx.log(`  midterm ${code}: bound after lesson ${data.afterLesson}; the learning path is NOT enabled by this import`)
