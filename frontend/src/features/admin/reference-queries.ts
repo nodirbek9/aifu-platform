@@ -88,14 +88,24 @@ export function useDeleteGroup() {
 }
 
 export function useAddGroupStudents(groupId: string) {
-  return useRefreshingMutation([referenceKeys.groups, ['groups']], (userIds: string[]) =>
-    unwrap(
-      api.POST('/api/v1/admin/groups/{id}/students', {
-        params: { path: { id: groupId } },
-        body: { userIds },
-      }),
-    ),
-  )
+  const queryClient = useQueryClient()
+  return useMutation({
+    mutationFn: (userIds: string[]) =>
+      unwrap(
+        api.POST('/api/v1/admin/groups/{id}/students', {
+          params: { path: { id: groupId } },
+          body: { userIds },
+        }),
+      ),
+    onSettled: async (_data, _error, userIds) => {
+      // Group prefixes include both old and new rosters, even when the old group is unknown.
+      await Promise.all([
+        queryClient.invalidateQueries({ queryKey: referenceKeys.groups }),
+        queryClient.invalidateQueries({ queryKey: ['groups'] }),
+        ...userIds.map((userId) => queryClient.invalidateQueries({ queryKey: ['admin', 'users', userId] })),
+      ])
+    },
+  })
 }
 
 export function useRemoveGroupStudent(groupId: string) {
