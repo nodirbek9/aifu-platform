@@ -1612,6 +1612,13 @@
       "grantReasonHint": "Qoʻshimcha urinish nima sababdan berilayotganini tushuntiring (kamida 5 ta belgi).",
       "submitGrant": "Urinishni taqdim etish",
       "grantSuccess": "Qoʻshimcha urinish muvaffaqiyatli taqdim etildi"
+    },
+    "studentCard": {
+      "groupTitle": "Talabaning guruhi",
+      "changeGroup": "Guruhni oʻzgartirish",
+      "noGroup": "Talaba guruhga biriktirilmagan",
+      "unknownGroup": "Guruh topilmadi: {{code}}",
+      "groupChanged": "Talabaning guruhi oʻzgartirildi"
     }
   },
   "builder": {

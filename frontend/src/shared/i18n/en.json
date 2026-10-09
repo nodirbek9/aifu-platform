@@ -1612,6 +1612,13 @@
       "grantReasonHint": "Explain why the extra attempt is being granted (minimum 5 characters).",
       "submitGrant": "Grant attempt",
       "grantSuccess": "Extra attempt granted successfully"
+    },
+    "studentCard": {
+      "groupTitle": "Student group",
+      "changeGroup": "Change group",
+      "noGroup": "Student has no group assigned",
+      "unknownGroup": "Group not found: {{code}}",
+      "groupChanged": "Student group changed"
     }
   },
   "builder": {

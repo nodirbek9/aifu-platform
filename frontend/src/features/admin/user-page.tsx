@@ -16,6 +16,7 @@ import { Select } from '@/shared/ui/select'
 import { Skeleton } from '@/shared/ui/skeleton'
 import { useToast } from '@/shared/ui/toast'
 import { STATUS_TONE, STATUSES } from './model'
+import { StudentGroupCard } from './student-group-card'
 import {
   useResetPassword,
   useRolesQuery,
@@ -74,7 +75,12 @@ export function UserPage() {
         </p>
       </header>
       <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
-        <DetailsCard key={`details-${data.id ?? ''}`} user={data} />
+        <div className="grid grid-cols-1 gap-6">
+          <DetailsCard key={`details-${data.id ?? ''}`} user={data} />
+          {(data.roles ?? []).includes('STUDENT') && (
+            <StudentGroupCard key={`group-${data.id ?? ''}`} user={data} />
+          )}
+        </div>
         <div className="grid grid-cols-1 gap-6">
           <RolesCard key={`roles-${(data.roles ?? []).join()}`} user={data} />
           <StatusCard user={data} />
