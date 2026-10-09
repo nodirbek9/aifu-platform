@@ -89,11 +89,25 @@ public class TimetableException {
             throw Exceptions.rule(
                     ErrorCode.VALIDATION_FAILED, "A replacement needs a new teacher or a new room");
         }
+        if (kind == ExceptionKind.ADD && newPairSlot == null) {
+            throw Exceptions.rule(
+                    ErrorCode.VALIDATION_FAILED, "An added class needs its pair slot");
+        }
+        if (kind == ExceptionKind.ADD && newDate != null) {
+            throw Exceptions.rule(
+                    ErrorCode.VALIDATION_FAILED, "An added class cannot have a new date");
+        }
         this.newDate = kind == ExceptionKind.MOVED ? newDate : null;
-        this.newPairSlot = kind == ExceptionKind.MOVED ? newPairSlot : null;
+        this.newPairSlot =
+                (kind == ExceptionKind.MOVED || kind == ExceptionKind.ADD) ? newPairSlot : null;
         this.newRoom = kind == ExceptionKind.CANCELLED ? null : newRoom;
         this.newTeacherUserId = kind == ExceptionKind.CANCELLED ? null : newTeacherUserId;
         this.reason = (reason == null || reason.isBlank()) ? null : reason.trim();
+        if (kind == ExceptionKind.ADD && (this.reason == null || this.reason.length() > 300)) {
+            throw Exceptions.rule(
+                    ErrorCode.VALIDATION_FAILED,
+                    "An added class needs a reason between 1 and 300 characters");
+        }
         this.createdBy = createdBy;
     }
 

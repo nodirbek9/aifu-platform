@@ -1,6 +1,8 @@
 package uz.aifu.lms.scheduling.api.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.AssertTrue;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -213,7 +215,24 @@ public final class SchedulingDtos {
             UUID newPairSlotId,
             UUID newRoomId,
             UUID newTeacherUserId,
-            @Size(max = 300) String reason) {}
+            @Size(max = 300) String reason) {
+
+        @JsonIgnore
+        @AssertTrue(
+                message =
+                        "An added class requires newPairSlotId, no newDate, and a reason between 1"
+                                + " and 300 characters")
+        public boolean isAddValid() {
+            if (kind != ExceptionKind.ADD) {
+                return true;
+            }
+            return newPairSlotId != null
+                    && newDate == null
+                    && reason != null
+                    && !reason.trim().isEmpty()
+                    && reason.trim().length() <= 300;
+        }
+    }
 
     public record ExceptionView(
             UUID id,

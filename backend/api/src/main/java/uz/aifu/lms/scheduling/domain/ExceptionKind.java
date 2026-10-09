@@ -4,5 +4,6 @@ package uz.aifu.lms.scheduling.domain;
 public enum ExceptionKind {
     CANCELLED,
     MOVED,
-    REPLACED
+    REPLACED,
+    ADD
 }
