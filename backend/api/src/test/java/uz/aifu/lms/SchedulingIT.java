@@ -5,6 +5,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.web.server.LocalServerPort;
@@ -772,6 +773,332 @@ class SchedulingIT extends AbstractIntegrationTest {
         assertThat(rows.get(0).scheduledHours()).isEqualTo(mondays * 2);
         assertThat(rows.get(0).remainingHours()).isEqualTo(30 - mondays * 2);
         assertThat(rows.get(0).teacherName()).isEqualTo(w.teacher.getFullName());
+    }
+
+    @Test
+    void load_teacherFilter_returnsTermTotalsIncludingUnscheduledPlannedLoad() {
+        World w = new World();
+        Course unscheduled = fixtures.course(w.term, w.teacher);
+        assertThat(w.add(w.lecture(MONDAY, 0, WeekParity.EVERY)).getStatusCode())
+                .isEqualTo(HttpStatus.CREATED);
+        assertThat(
+                        w.add(
+                                        w.entry(
+                                                w.otherCourse,
+                                                w.otherTeacher,
+                                                w.otherRoom,
+                                                w.otherGroup,
+                                                MONDAY,
+                                                0,
+                                                WeekParity.EVERY,
+                                                null,
+                                                null))
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.CREATED);
+        assertThat(
+                        put(
+                                        w.admin,
+                                        "/api/v1/admin/teaching-load?termId=" + w.term.getId(),
+                                        new LoadBulkRequest(
+                                                List.of(
+                                                        new LoadItemRequest(
+                                                                w.course.getId(),
+                                                                w.group.id(),
+                                                                SessionType.LECTURE,
+                                                                w.teacher.getId(),
+                                                                60),
+                                                        new LoadItemRequest(
+                                                                unscheduled.getId(),
+                                                                w.group.id(),
+                                                                SessionType.LECTURE,
+                                                                w.teacher.getId(),
+                                                                12),
+                                                        new LoadItemRequest(
+                                                                w.otherCourse.getId(),
+                                                                w.otherGroup.id(),
+                                                                SessionType.LECTURE,
+                                                                w.otherTeacher.getId(),
+                                                                80))),
+                                        String.class)
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.OK);
+
+        int mondays = 0;
+        for (LocalDate date = w.term.getStartsOn();
+                !date.isAfter(w.term.getEndsOn());
+                date = date.plusDays(1)) {
+            if (date.getDayOfWeek().getValue() == MONDAY) {
+                mondays++;
+            }
+        }
+        String path = "/api/v1/admin/timetables/" + w.timetable.id() + "/load?teacherId=";
+        ResponseEntity<List<LoadRow>> response =
+                rest.exchange(
+                        url(path + w.teacher.getId()),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(w.admin)),
+                        new ParameterizedTypeReference<>() {});
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
+        assertThat(response.getBody())
+                .extracting(LoadRow::courseId)
+                .containsExactlyInAnyOrder(w.course.getId(), unscheduled.getId());
+        assertThat(response.getBody())
+                .extracting(LoadRow::teacherUserId)
+                .containsOnly(w.teacher.getId());
+        int termHours = mondays * 2;
+        assertThat(response.getBody())
+                .filteredOn(row -> row.courseId().equals(w.course.getId()))
+                .singleElement()
+                .satisfies(
+                        row -> {
+                            assertThat(row.plannedHours()).isEqualTo(60);
+                            assertThat(row.scheduledHours()).isEqualTo(termHours);
+                            assertThat(row.remainingHours()).isEqualTo(60 - termHours);
+                        });
+        assertThat(response.getBody())
+                .filteredOn(row -> row.courseId().equals(unscheduled.getId()))
+                .singleElement()
+                .satisfies(
+                        row -> {
+                            assertThat(row.plannedHours()).isEqualTo(12);
+                            assertThat(row.scheduledHours()).isZero();
+                            assertThat(row.remainingHours()).isEqualTo(12);
+                        });
+
+        // The concrete week has one pair; the load endpoint counts the whole term.
+        List<ClassView> weekly =
+                classes(
+                        week(
+                                w.admin,
+                                "/api/v1/admin/timetables/"
+                                        + w.timetable.id()
+                                        + "/week?teacherId="
+                                        + w.teacher.getId()
+                                        + "&date="
+                                        + w.week1));
+        assertThat(weekly).hasSize(1).extracting(ClassView::status).containsExactly("SCHEDULED");
+        assertThat(termHours).isGreaterThan(weekly.size() * 2);
+        assertThat(
+                        getList(
+                                w.admin,
+                                path + w.otherTeacher.getId(),
+                                new ParameterizedTypeReference<List<LoadRow>>() {}))
+                .extracting(LoadRow::courseId)
+                .containsExactly(w.otherCourse.getId());
+        assertThat(
+                        getList(
+                                w.admin,
+                                path + UUID.randomUUID(),
+                                new ParameterizedTypeReference<List<LoadRow>>() {}))
+                .isEmpty();
+    }
+
+    @Test
+    void week_teacherFilter_resolvesRequestedWeekAndParityWithoutOtherTeachers() {
+        World w = new World();
+        assertThat(w.add(w.lecture(MONDAY, 0, WeekParity.EVERY)).getStatusCode())
+                .isEqualTo(HttpStatus.CREATED);
+        assertThat(w.add(w.lecture(TUESDAY, 1, WeekParity.ODD)).getStatusCode())
+                .isEqualTo(HttpStatus.CREATED);
+        assertThat(
+                        w.add(
+                                        w.entry(
+                                                w.otherCourse,
+                                                w.otherTeacher,
+                                                w.otherRoom,
+                                                w.otherGroup,
+                                                MONDAY,
+                                                0,
+                                                WeekParity.EVERY,
+                                                null,
+                                                null))
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.CREATED);
+        String path =
+                "/api/v1/admin/timetables/"
+                        + w.timetable.id()
+                        + "/week?teacherId="
+                        + w.teacher.getId()
+                        + "&date=";
+
+        WeekView even = week(w.admin, path + w.week1.plusDays(3));
+        assertThat(even.timetableId()).isEqualTo(w.timetable.id());
+        assertThat(even.termId()).isEqualTo(w.term.getId());
+        assertThat(even.weekStart()).isEqualTo(w.week1);
+        assertThat(even.weekEnd()).isEqualTo(w.week1.plusDays(6));
+        assertThat(even.weekNumber()).isEqualTo(2);
+        assertThat(even.parity()).isEqualTo(WeekParity.EVEN);
+        assertThat(classes(even)).extracting(ClassView::date).containsExactly(w.week1);
+        assertThat(classes(even))
+                .extracting(ClassView::teacherUserId)
+                .containsOnly(w.teacher.getId());
+
+        WeekView odd = week(w.admin, path + w.week1.plusWeeks(1).plusDays(6));
+        assertThat(odd.weekStart()).isEqualTo(w.week1.plusWeeks(1));
+        assertThat(odd.weekNumber()).isEqualTo(3);
+        assertThat(odd.parity()).isEqualTo(WeekParity.ODD);
+        assertThat(classes(odd))
+                .extracting(ClassView::date)
+                .containsExactly(w.week1.plusWeeks(1), w.week1.plusWeeks(1).plusDays(1));
+        assertThat(classes(odd))
+                .extracting(ClassView::teacherUserId)
+                .containsOnly(w.teacher.getId());
+    }
+
+    @Test
+    void week_teacherFilter_includesCancellationAndMoveIntoAnotherWeek() {
+        World w = new World();
+        var monday = w.add(w.lecture(MONDAY, 0, WeekParity.EVERY));
+        var tuesday = w.add(w.lecture(TUESDAY, 1, WeekParity.EVERY));
+        assertThat(monday.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+        assertThat(tuesday.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+        w.publish();
+        assertThat(
+                        post(
+                                        w.admin,
+                                        "/api/v1/admin/timetable-entries/"
+                                                + monday.getBody().id()
+                                                + "/exceptions",
+                                        new ExceptionRequest(
+                                                w.week1,
+                                                ExceptionKind.CANCELLED,
+                                                null,
+                                                null,
+                                                null,
+                                                null,
+                                                "Teacher unavailable"),
+                                        String.class)
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.CREATED);
+        LocalDate destination = w.week1.plusWeeks(1).plusDays(3);
+        assertThat(
+                        post(
+                                        w.admin,
+                                        "/api/v1/admin/timetable-entries/"
+                                                + tuesday.getBody().id()
+                                                + "/exceptions",
+                                        new ExceptionRequest(
+                                                w.week1.plusDays(1),
+                                                ExceptionKind.MOVED,
+                                                destination,
+                                                w.slots.get(3).id(),
+                                                null,
+                                                null,
+                                                "Rescheduled next week"),
+                                        String.class)
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.CREATED);
+        String path =
+                "/api/v1/admin/timetables/"
+                        + w.timetable.id()
+                        + "/week?teacherId="
+                        + w.teacher.getId()
+                        + "&date=";
+
+        List<ClassView> source = classes(week(w.admin, path + w.week1.plusDays(4)));
+        assertThat(source).extracting(ClassView::status).containsExactly("CANCELLED", "MOVED_OUT");
+        assertThat(source)
+                .extracting(ClassView::date)
+                .containsExactly(w.week1, w.week1.plusDays(1));
+        assertThat(source)
+                .extracting(ClassView::changeReason)
+                .containsExactly("Teacher unavailable", "Rescheduled next week");
+        List<ClassView> target = classes(week(w.admin, path + destination));
+        assertThat(target)
+                .extracting(ClassView::status)
+                .containsExactly("SCHEDULED", "SCHEDULED", "MOVED_IN");
+        assertThat(target)
+                .extracting(ClassView::date)
+                .containsExactly(
+                        w.week1.plusWeeks(1), w.week1.plusWeeks(1).plusDays(1), destination);
+        assertThat(target.get(2).entryId()).isEqualTo(tuesday.getBody().id());
+        assertThat(target.get(2).pairNo()).isEqualTo(w.slots.get(3).pairNo());
+        assertThat(target).extracting(ClassView::teacherUserId).containsOnly(w.teacher.getId());
+    }
+
+    @Test
+    void week_teacherFilter_replacementIncludesActualTeacherAndOriginalTeacherContext() {
+        World w = new World();
+        var entry = w.add(w.lecture(MONDAY, 0, WeekParity.EVERY));
+        assertThat(entry.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+        w.publish();
+        assertThat(
+                        post(
+                                        w.admin,
+                                        "/api/v1/admin/timetable-entries/"
+                                                + entry.getBody().id()
+                                                + "/exceptions",
+                                        new ExceptionRequest(
+                                                w.week1,
+                                                ExceptionKind.REPLACED,
+                                                null,
+                                                null,
+                                                null,
+                                                w.otherTeacher.getId(),
+                                                "Covering teacher"),
+                                        String.class)
+                                .getStatusCode())
+                .isEqualTo(HttpStatus.CREATED);
+        String path =
+                "/api/v1/admin/timetables/"
+                        + w.timetable.id()
+                        + "/week?date="
+                        + w.week1.plusDays(2)
+                        + "&teacherId=";
+
+        for (User teacher : List.of(w.teacher, w.otherTeacher)) {
+            assertThat(classes(week(w.admin, path + teacher.getId())))
+                    .singleElement()
+                    .satisfies(
+                            view -> {
+                                assertThat(view.entryId()).isEqualTo(entry.getBody().id());
+                                assertThat(view.date()).isEqualTo(w.week1);
+                                assertThat(view.status()).isEqualTo("REPLACED");
+                                assertThat(view.teacherUserId()).isEqualTo(w.otherTeacher.getId());
+                                assertThat(view.teacherName())
+                                        .isEqualTo(w.otherTeacher.getFullName());
+                                assertThat(view.changeReason()).isEqualTo("Covering teacher");
+                            });
+        }
+        assertThat(classes(week(w.admin, path + UUID.randomUUID()))).isEmpty();
+        assertThat(
+                        classes(
+                                week(
+                                        w.admin,
+                                        "/api/v1/admin/timetables/"
+                                                + w.timetable.id()
+                                                + "/week?date="
+                                                + w.week1.plusWeeks(1)
+                                                + "&teacherId="
+                                                + w.otherTeacher.getId())))
+                .isEmpty();
+    }
+
+    @Test
+    void adminTimetableReads_assignedTeachersAreForbiddenIncludingTheirOwnFilters() {
+        World w = new World();
+        assertThat(w.add(w.lecture(MONDAY, 0, WeekParity.EVERY)).getStatusCode())
+                .isEqualTo(HttpStatus.CREATED);
+        w.publish();
+        String path = "/api/v1/admin/timetables/" + w.timetable.id();
+        for (User teacher : List.of(w.teacher, w.otherTeacher)) {
+            String token = login(teacher);
+            for (String endpoint :
+                    List.of(
+                            "/api/v1/admin/timetables",
+                            path,
+                            path + "/load?teacherId=" + teacher.getId(),
+                            path + "/load?teacherId=" + w.teacher.getId(),
+                            path + "/week?teacherId=" + teacher.getId() + "&date=" + w.week1,
+                            path + "/week?teacherId=" + w.teacher.getId() + "&date=" + w.week1)) {
+                var response = get(token, endpoint, ApiError.class);
+                assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+                assertThat(response.getBody()).isNotNull();
+                assertThat(response.getBody().code()).isEqualTo("AUTH_FORBIDDEN");
+                assertThat(response.getBody().requestId()).isNotBlank();
+            }
+        }
     }
 
     // ------------------------------------------------------------------ helpers

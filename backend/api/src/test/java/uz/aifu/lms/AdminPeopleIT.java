@@ -24,6 +24,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.jdbc.core.JdbcTemplate;
 import uz.aifu.lms.academics.api.dto.CourseDtos.AssignTeacherRequest;
+import uz.aifu.lms.academics.api.dto.CourseDtos.CourseDetail;
+import uz.aifu.lms.academics.api.dto.CourseDtos.TeacherView;
 import uz.aifu.lms.academics.app.CourseService;
 import uz.aifu.lms.academics.domain.Course;
 import uz.aifu.lms.academics.domain.TeacherRole;
@@ -34,6 +36,7 @@ import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.EnrollmentSource;
 import uz.aifu.lms.iam.api.dto.AuthDtos.LoginRequest;
 import uz.aifu.lms.iam.api.dto.AuthDtos.TokenResponse;
+import uz.aifu.lms.iam.api.dto.UserDtos.UserSummary;
 import uz.aifu.lms.iam.domain.RoleCode;
 import uz.aifu.lms.iam.domain.User;
 import uz.aifu.lms.support.AbstractIntegrationTest;
@@ -53,6 +56,7 @@ class AdminPeopleIT extends AbstractIntegrationTest {
 
     private User studentA;
     private User studentB;
+    private User teacher;
     private Course sharedCourse;
     private Course otherCourse;
     private UUID sharedEnrollmentA;
@@ -65,7 +69,7 @@ class AdminPeopleIT extends AbstractIntegrationTest {
     @BeforeAll
     void createPeopleAndEnrollments() {
         User admin = users.activeUser(RoleCode.ADMIN);
-        User teacher = users.activeUser(RoleCode.TEACHER);
+        teacher = users.activeUser(RoleCode.TEACHER);
         studentA = users.activeUser(RoleCode.STUDENT);
         studentB = users.activeUser(RoleCode.STUDENT);
         sharedCourse = fixtures.publishedCourse(150);
@@ -87,6 +91,69 @@ class AdminPeopleIT extends AbstractIntegrationTest {
         adminToken = login(admin);
         teacherToken = login(teacher);
         studentToken = login(studentA);
+    }
+
+    @Test
+    void users_teacherRoleFilter_includesTeachersAndExcludesStudentOnlyAccounts() {
+        List<UUID> teacherIds = new ArrayList<>();
+        int pageNumber = 0;
+        PageResponse<UserSummary> page;
+        do {
+            var response =
+                    rest.exchange(
+                            url("/api/v1/admin/users?role=TEACHER&size=100&page=" + pageNumber),
+                            HttpMethod.GET,
+                            new HttpEntity<>(bearer(adminToken)),
+                            new ParameterizedTypeReference<PageResponse<UserSummary>>() {});
+            assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+            page = response.getBody();
+            assertThat(page).isNotNull();
+            assertThat(page.content())
+                    .allSatisfy(user -> assertThat(user.roles()).contains(RoleCode.TEACHER));
+            page.content().stream().map(UserSummary::id).forEach(teacherIds::add);
+            pageNumber++;
+        } while (page.hasNext());
+
+        assertThat(teacherIds)
+                .contains(teacher.getId())
+                .doesNotContain(studentA.getId(), studentB.getId());
+    }
+
+    @Test
+    void courseDetails_unscheduledAssignment_containsTeacherIdentityAndRole() {
+        assertThat(
+                        jdbc.queryForObject(
+                                "select count(*) from timetable_entries where course_id = ?",
+                                Long.class,
+                                sharedCourse.getId()))
+                .isZero();
+        var response =
+                rest.exchange(
+                        url("/api/v1/admin/courses/" + sharedCourse.getId()),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(adminToken)),
+                        CourseDetail.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
+        assertThat(response.getBody().teachers())
+                .containsExactly(
+                        new TeacherView(teacher.getId(), teacher.getFullName(), TeacherRole.LEAD));
+    }
+
+    @Test
+    void users_teacherRoleFilter_assignedTeacherIsForbidden() {
+        var response =
+                rest.exchange(
+                        url("/api/v1/admin/users?role=TEACHER"),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(teacherToken)),
+                        ApiError.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+        assertThat(response.getBody()).isNotNull();
+        assertThat(response.getBody().code()).isEqualTo("AUTH_FORBIDDEN");
+        assertThat(response.getBody().requestId()).isNotBlank();
     }
 
     @Test
