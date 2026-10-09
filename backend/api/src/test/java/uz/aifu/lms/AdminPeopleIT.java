@@ -3,6 +3,7 @@ package uz.aifu.lms;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import com.fasterxml.jackson.databind.JsonNode;
+import java.net.URI;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -31,14 +32,21 @@ import uz.aifu.lms.academics.domain.Course;
 import uz.aifu.lms.academics.domain.TeacherRole;
 import uz.aifu.lms.common.api.PageResponse;
 import uz.aifu.lms.common.error.ApiError;
+import uz.aifu.lms.enrollment.api.dto.EnrollmentDtos.EnrollmentDetail;
 import uz.aifu.lms.enrollment.api.dto.EnrollmentDtos.EnrollmentSummary;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.EnrollmentSource;
+import uz.aifu.lms.enrollment.domain.EnrollmentStatus;
+import uz.aifu.lms.iam.api.dto.AuthDtos.CurrentUserResponse;
 import uz.aifu.lms.iam.api.dto.AuthDtos.LoginRequest;
+import uz.aifu.lms.iam.api.dto.AuthDtos.RefreshRequest;
 import uz.aifu.lms.iam.api.dto.AuthDtos.TokenResponse;
+import uz.aifu.lms.iam.api.dto.UserDtos.ChangeStatusRequest;
+import uz.aifu.lms.iam.api.dto.UserDtos.UserDetail;
 import uz.aifu.lms.iam.api.dto.UserDtos.UserSummary;
 import uz.aifu.lms.iam.domain.RoleCode;
 import uz.aifu.lms.iam.domain.User;
+import uz.aifu.lms.iam.domain.UserStatus;
 import uz.aifu.lms.support.AbstractIntegrationTest;
 import uz.aifu.lms.support.fixtures.EnrollmentFixtures;
 import uz.aifu.lms.support.fixtures.UserFixtures;
@@ -390,6 +398,205 @@ class AdminPeopleIT extends AbstractIntegrationTest {
                         "password",
                         "accessToken",
                         "refreshToken");
+    }
+
+    @Test
+    void disable_student_revokesEveryRefreshSessionAndDeniesLoginWithoutAffectingOtherAccounts() {
+        User target = users.activeUser(RoleCode.STUDENT);
+        User unrelated = users.activeUser(RoleCode.STUDENT);
+        User admin = users.activeUser(RoleCode.ADMIN);
+        Course course = fixtures.publishedCourse(150);
+        UUID targetEnrollment = enroll(course, target, admin);
+        UUID unrelatedEnrollment = enroll(course, unrelated, admin);
+        EnrollmentDetail targetEnrollmentBefore = enrollmentDetail(targetEnrollment);
+        EnrollmentDetail unrelatedEnrollmentBefore = enrollmentDetail(unrelatedEnrollment);
+        TokenResponse firstSession = loginTokens(target);
+        TokenResponse secondSession = loginTokens(target);
+        TokenResponse unrelatedSession = loginTokens(unrelated);
+        UserDetail before = userDetail(target.getId(), adminToken);
+        UserDetail unrelatedBefore = userDetail(unrelated.getId(), adminToken);
+        String reason = "Student requested account deactivation";
+
+        var response = disable(target.getId(), adminToken, reason, UserDetail.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
+        assertThat(response.getBody().id()).isEqualTo(target.getId());
+        assertThat(response.getBody().status()).isEqualTo(UserStatus.DISABLED);
+        assertThat(response.getBody().username()).isEqualTo(before.username());
+        assertThat(response.getBody().roles()).isEqualTo(before.roles());
+        assertThat(userDetail(target.getId(), adminToken)).isEqualTo(response.getBody());
+        assertThat(enrollmentDetail(targetEnrollment)).isEqualTo(targetEnrollmentBefore);
+        assertThat(
+                        jdbc.queryForObject(
+                                "select count(*) from refresh_tokens where user_id = ?",
+                                Long.class,
+                                target.getId()))
+                .isEqualTo(2);
+        assertThat(
+                        jdbc.queryForObject(
+                                "select count(*) from refresh_tokens where user_id = ?"
+                                        + " and revoked_at is not null"
+                                        + " and revoked_reason = 'ACCOUNT_DISABLED'",
+                                Long.class,
+                                target.getId()))
+                .isEqualTo(2);
+        assertThat(
+                        jdbc.queryForObject(
+                                "select details->>'reason' from audit_log"
+                                        + " where entity_id = ? and action = 'USER_STATUS_CHANGED'",
+                                String.class,
+                                target.getId()))
+                .isEqualTo(reason);
+
+        var deniedLogin =
+                rest.postForEntity(
+                        url("/api/v1/auth/login"),
+                        new LoginRequest(target.getUsername(), UserFixtures.RAW_PASSWORD),
+                        ApiError.class);
+        assertThat(deniedLogin.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+        assertThat(deniedLogin.getBody()).isNotNull();
+        assertThat(deniedLogin.getBody().code()).isEqualTo("AUTH_INVALID_CREDENTIALS");
+        for (TokenResponse session : List.of(firstSession, secondSession)) {
+            var deniedRefresh =
+                    rest.postForEntity(
+                            url("/api/v1/auth/refresh"),
+                            new RefreshRequest(session.refreshToken()),
+                            ApiError.class);
+            assertThat(deniedRefresh.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+            assertThat(deniedRefresh.getBody()).isNotNull();
+            assertThat(deniedRefresh.getBody().code()).isEqualTo("AUTH_REFRESH_TOKEN_REUSED");
+            assertThat(deniedRefresh.getBody().requestId()).isNotBlank();
+        }
+        var unrelatedAccess =
+                rest.exchange(
+                        url("/api/v1/me"),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(unrelatedSession.accessToken())),
+                        CurrentUserResponse.class);
+        assertThat(unrelatedAccess.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(unrelatedAccess.getBody()).isNotNull();
+        assertThat(unrelatedAccess.getBody().id()).isEqualTo(unrelated.getId());
+        var unrelatedRefresh =
+                rest.postForEntity(
+                        url("/api/v1/auth/refresh"),
+                        new RefreshRequest(unrelatedSession.refreshToken()),
+                        TokenResponse.class);
+        assertThat(unrelatedRefresh.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(userDetail(unrelated.getId(), adminToken)).isEqualTo(unrelatedBefore);
+
+        URI withdrawalUri =
+                org.springframework.web.util.UriComponentsBuilder.fromUriString(
+                                url("/api/v1/admin/enrollments/" + targetEnrollment + "/status"))
+                        .queryParam("status", EnrollmentStatus.WITHDRAWN)
+                        .queryParam("reason", reason)
+                        .build()
+                        .toUri();
+        var withdrawal =
+                rest.exchange(
+                        withdrawalUri,
+                        HttpMethod.PUT,
+                        new HttpEntity<>(bearer(adminToken)),
+                        EnrollmentDetail.class);
+        assertThat(withdrawal.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(withdrawal.getBody()).isNotNull();
+        assertThat(withdrawal.getBody().status()).isEqualTo(EnrollmentStatus.WITHDRAWN);
+        EnrollmentDetail withdrawn = enrollmentDetail(targetEnrollment);
+        assertThat(withdrawn.status()).isEqualTo(EnrollmentStatus.WITHDRAWN);
+        assertThat(withdrawn.withdrawnAt()).isNotNull();
+        assertThat(withdrawn.events()).hasSize(2);
+        assertThat(withdrawn.events().getFirst())
+                .isEqualTo(targetEnrollmentBefore.events().getFirst());
+        assertThat(withdrawn.events().getLast().reason()).isEqualTo(reason);
+        assertThat(enrollmentDetail(unrelatedEnrollment)).isEqualTo(unrelatedEnrollmentBefore);
+        assertThat(userDetail(target.getId(), adminToken).status()).isEqualTo(UserStatus.DISABLED);
+    }
+
+    @Test
+    void disable_selfDeactivation_isRejectedWithoutChangingAccountOrSession() {
+        User admin = users.activeUser(RoleCode.ADMIN);
+        String token = login(admin);
+        UserDetail before = userDetail(admin.getId(), token);
+
+        var response = disable(admin.getId(), token, "Self deactivation", ApiError.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNPROCESSABLE_ENTITY);
+        assertThat(response.getBody()).isNotNull();
+        assertThat(response.getBody().code()).isEqualTo("INVALID_STATE_TRANSITION");
+        assertThat(response.getBody().requestId()).isNotBlank();
+        assertThat(userDetail(admin.getId(), token)).isEqualTo(before);
+        assertThat(
+                        jdbc.queryForObject(
+                                "select count(*) from refresh_tokens"
+                                        + " where user_id = ? and revoked_at is not null",
+                                Long.class,
+                                admin.getId()))
+                .isZero();
+    }
+
+    @Test
+    void disable_assignedTeacherAndStudents_areForbiddenWithoutChangingAccounts() {
+        User target = users.activeUser(RoleCode.STUDENT);
+        User unrelated = users.activeUser(RoleCode.STUDENT);
+        UserDetail before = userDetail(target.getId(), adminToken);
+        UserDetail unrelatedBefore = userDetail(unrelated.getId(), adminToken);
+
+        for (String token : List.of(teacherToken, studentToken)) {
+            var response =
+                    disable(target.getId(), token, "Unauthorized deactivation", ApiError.class);
+
+            assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+            assertThat(response.getBody()).isNotNull();
+            assertThat(response.getBody().code()).isEqualTo("AUTH_FORBIDDEN");
+            assertThat(response.getBody().requestId()).isNotBlank();
+            assertThat(userDetail(target.getId(), adminToken)).isEqualTo(before);
+            assertThat(userDetail(unrelated.getId(), adminToken)).isEqualTo(unrelatedBefore);
+        }
+    }
+
+    private EnrollmentDetail enrollmentDetail(UUID enrollmentId) {
+        var response =
+                rest.exchange(
+                        url("/api/v1/admin/enrollments/" + enrollmentId),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(adminToken)),
+                        EnrollmentDetail.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
+        return response.getBody();
+    }
+
+    private TokenResponse loginTokens(User user) {
+        var response =
+                rest.postForEntity(
+                        url("/api/v1/auth/login"),
+                        new LoginRequest(user.getUsername(), UserFixtures.RAW_PASSWORD),
+                        TokenResponse.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
+        return response.getBody();
+    }
+
+    private <T> ResponseEntity<T> disable(
+            UUID userId, String token, String reason, Class<T> responseType) {
+        return rest.exchange(
+                url("/api/v1/admin/users/" + userId + "/status"),
+                HttpMethod.PUT,
+                new HttpEntity<>(
+                        new ChangeStatusRequest(UserStatus.DISABLED, reason), bearer(token)),
+                responseType);
+    }
+
+    private UserDetail userDetail(UUID userId, String token) {
+        var response =
+                rest.exchange(
+                        url("/api/v1/admin/users/" + userId),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(token)),
+                        UserDetail.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
+        return response.getBody();
     }
 
     private UUID enroll(Course course, User student, User admin) {

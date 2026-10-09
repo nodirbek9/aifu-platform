@@ -6,6 +6,8 @@ import java.net.URI;
 import java.util.List;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.http.HttpEntity;
@@ -13,6 +15,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.jdbc.core.JdbcTemplate;
 import uz.aifu.lms.academics.api.dto.CourseDtos.AssignTeacherRequest;
 import uz.aifu.lms.academics.app.CourseService;
 import uz.aifu.lms.academics.domain.Course;
@@ -22,6 +25,7 @@ import uz.aifu.lms.common.error.ApiError;
 import uz.aifu.lms.enrollment.api.dto.EnrollmentDtos.CreateEnrollmentRequest;
 import uz.aifu.lms.enrollment.api.dto.EnrollmentDtos.EnrollmentDetail;
 import uz.aifu.lms.enrollment.api.dto.EnrollmentDtos.EnrollmentSummary;
+import uz.aifu.lms.enrollment.domain.EnrollmentEventType;
 import uz.aifu.lms.enrollment.domain.EnrollmentStatus;
 import uz.aifu.lms.iam.api.dto.AuthDtos.LoginRequest;
 import uz.aifu.lms.iam.api.dto.AuthDtos.TokenResponse;
@@ -41,6 +45,7 @@ class EnrollmentIT extends AbstractIntegrationTest {
     @Autowired private UserFixtures userFixtures;
     @Autowired private EnrollmentFixtures enrollmentFixtures;
     @Autowired private CourseService courses;
+    @Autowired private JdbcTemplate jdbc;
     @LocalServerPort private int port;
 
     @Test
@@ -260,6 +265,180 @@ class EnrollmentIT extends AbstractIntegrationTest {
                         new HttpEntity<>(bearer(login(studentB))),
                         new org.springframework.core.ParameterizedTypeReference<>() {});
         assertThat(asB.getBody().content()).isEmpty();
+    }
+
+    @ParameterizedTest
+    @EnumSource(
+            value = EnrollmentStatus.class,
+            names = {"ACTIVE", "PENDING", "SUSPENDED"})
+    void withdraw_nonTerminalEnrollment_appendsHistoryAndPreservesOtherEnrollments(
+            EnrollmentStatus initialStatus) {
+        User admin = userFixtures.activeUser(RoleCode.ADMIN);
+        String adminToken = login(admin);
+        Course course = enrollmentFixtures.publishedCourse(150);
+        User student = userFixtures.activeUser(RoleCode.STUDENT);
+        User unrelatedStudent = userFixtures.activeUser(RoleCode.STUDENT);
+        EnrollmentDetail target;
+        if (initialStatus == EnrollmentStatus.PENDING) {
+            // The creation endpoint defaults to ACTIVE, so seed a pending fixture directly.
+            UUID pendingId = UUID.randomUUID();
+            jdbc.update(
+                    "insert into enrollments (id, course_id, student_user_id, status, created_by)"
+                            + " values (?, ?, ?, 'PENDING', ?)",
+                    pendingId,
+                    course.getId(),
+                    student.getId(),
+                    admin.getId());
+            jdbc.update(
+                    "insert into enrollment_events"
+                            + " (enrollment_id, event_type, to_status, actor_user_id)"
+                            + " values (?, 'CREATED', 'PENDING', ?)",
+                    pendingId,
+                    admin.getId());
+            target = detail(adminToken, pendingId);
+        } else {
+            target = persistedEnrollment(adminToken, course.getId(), student.getId());
+        }
+        EnrollmentDetail unrelated =
+                persistedEnrollment(adminToken, course.getId(), unrelatedStudent.getId());
+        Course otherCourse = enrollmentFixtures.publishedCourse(150);
+        EnrollmentDetail unselected =
+                persistedEnrollment(adminToken, otherCourse.getId(), student.getId());
+
+        if (initialStatus == EnrollmentStatus.SUSPENDED) {
+            assertStatus(
+                    changeStatus(
+                            adminToken,
+                            target.id(),
+                            EnrollmentStatus.SUSPENDED,
+                            "Medical leave before withdrawal",
+                            EnrollmentDetail.class),
+                    EnrollmentStatus.SUSPENDED);
+        }
+        EnrollmentDetail before = detail(adminToken, target.id());
+        assertThat(before.status()).isEqualTo(initialStatus);
+        String reason = "Student requested withdrawal from the course";
+
+        var response =
+                changeStatus(
+                        adminToken,
+                        target.id(),
+                        EnrollmentStatus.WITHDRAWN,
+                        reason,
+                        EnrollmentDetail.class);
+
+        assertStatus(response, EnrollmentStatus.WITHDRAWN);
+        EnrollmentDetail after = detail(adminToken, target.id());
+        assertThat(after.status()).isEqualTo(EnrollmentStatus.WITHDRAWN);
+        assertThat(after.id()).isEqualTo(before.id());
+        assertThat(after.studentUserId()).isEqualTo(student.getId());
+        assertThat(after.courseId()).isEqualTo(course.getId());
+        assertThat(after.attemptNo()).isEqualTo(before.attemptNo());
+        assertThat(after.enrolledAt()).isEqualTo(before.enrolledAt());
+        assertThat(after.withdrawnAt()).isNotNull();
+        assertThat(after.events()).hasSize(before.events().size() + 1);
+        assertThat(after.events().subList(0, before.events().size())).isEqualTo(before.events());
+        var withdrawal = after.events().getLast();
+        assertThat(withdrawal.eventType()).isEqualTo(EnrollmentEventType.WITHDRAWN);
+        assertThat(withdrawal.fromStatus()).isEqualTo(initialStatus);
+        assertThat(withdrawal.toStatus()).isEqualTo(EnrollmentStatus.WITHDRAWN);
+        assertThat(withdrawal.reason()).isEqualTo(reason);
+        assertThat(withdrawal.occurredAt()).isNotNull();
+        assertThat(
+                        jdbc.queryForObject(
+                                "select actor_user_id from enrollment_events"
+                                        + " where enrollment_id = ? and event_type = 'WITHDRAWN'",
+                                UUID.class,
+                                target.id()))
+                .isEqualTo(admin.getId());
+        assertThat(detail(adminToken, unrelated.id())).isEqualTo(unrelated);
+        assertThat(detail(adminToken, unselected.id())).isEqualTo(unselected);
+    }
+
+    @Test
+    void withdraw_completedEnrollment_rejectsTransitionWithoutChangingHistory() {
+        String adminToken = adminToken();
+        Course course = enrollmentFixtures.publishedCourse(150);
+        User student = userFixtures.activeUser(RoleCode.STUDENT);
+        EnrollmentDetail target = enroll(adminToken, course.getId(), student.getId()).getBody();
+        assertStatus(
+                changeStatus(
+                        adminToken,
+                        target.id(),
+                        EnrollmentStatus.COMPLETED,
+                        "Course finished",
+                        EnrollmentDetail.class),
+                EnrollmentStatus.COMPLETED);
+        EnrollmentDetail before = detail(adminToken, target.id());
+
+        var response =
+                changeStatus(
+                        adminToken,
+                        target.id(),
+                        EnrollmentStatus.WITHDRAWN,
+                        "Account deactivation",
+                        ApiError.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CONFLICT);
+        assertThat(response.getBody()).isNotNull();
+        assertThat(response.getBody().code()).isEqualTo("ENROLLMENT_INVALID_TRANSITION");
+        assertThat(response.getBody().requestId()).isNotBlank();
+        assertThat(before.completedAt()).isNotNull();
+        assertThat(before.withdrawnAt()).isNull();
+        assertThat(detail(adminToken, target.id())).isEqualTo(before);
+    }
+
+    @Test
+    void withdraw_assignedTeacherAndStudents_areForbiddenWithoutChangingHistory() {
+        User admin = userFixtures.activeUser(RoleCode.ADMIN);
+        String adminToken = login(admin);
+        Course course = enrollmentFixtures.publishedCourse(150);
+        User student = userFixtures.activeUser(RoleCode.STUDENT);
+        User unrelatedStudent = userFixtures.activeUser(RoleCode.STUDENT);
+        User teacher = userFixtures.activeUser(RoleCode.TEACHER);
+        courses.assignTeacher(
+                course.getId(),
+                new AssignTeacherRequest(teacher.getId(), TeacherRole.LEAD),
+                admin.getId(),
+                null);
+        EnrollmentDetail target = persistedEnrollment(adminToken, course.getId(), student.getId());
+        EnrollmentDetail unrelated =
+                persistedEnrollment(adminToken, course.getId(), unrelatedStudent.getId());
+
+        for (User caller : List.of(teacher, student, unrelatedStudent)) {
+            var response =
+                    changeStatus(
+                            login(caller),
+                            target.id(),
+                            EnrollmentStatus.WITHDRAWN,
+                            "Unauthorized withdrawal",
+                            ApiError.class);
+            assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+            assertThat(response.getBody()).isNotNull();
+            assertThat(response.getBody().code()).isEqualTo("AUTH_FORBIDDEN");
+            assertThat(response.getBody().requestId()).isNotBlank();
+            assertThat(detail(adminToken, target.id())).isEqualTo(target);
+            assertThat(detail(adminToken, unrelated.id())).isEqualTo(unrelated);
+        }
+    }
+
+    private EnrollmentDetail persistedEnrollment(String adminToken, UUID courseId, UUID studentId) {
+        var response = enroll(adminToken, courseId, studentId);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+        assertThat(response.getBody()).isNotNull();
+        return detail(adminToken, response.getBody().id());
+    }
+
+    private EnrollmentDetail detail(String adminToken, UUID id) {
+        var response =
+                rest.exchange(
+                        url("/api/v1/admin/enrollments/" + id),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(adminToken)),
+                        EnrollmentDetail.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(response.getBody()).isNotNull();
+        return response.getBody();
     }
 
     private void assertStatus(
