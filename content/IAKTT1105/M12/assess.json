@@ -1,0 +1,338 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blokcheyn texnologiyasida yozuvlarni (tranzaksiyalarni) sezdirmasdan oʻzgartirish mumkin, chunki u markazlashmagan tizimdir.",
+          "ru": "В технологии блокчейн можно незаметно изменять записи (транзакции), так как это децентрализованная система.",
+          "en": "In blockchain technology, records (transactions) can be changed unnoticed because it is a decentralized system."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Oʻtgan yozuvni oʻzgartirish keyingi barcha bloklarni buzadi va boshqa ishtirokchilar buni rad etadi.",
+          "ru": "Изменение прошлой записи ломает все следующие блоки, и другие участники отвергают это.",
+          "en": "Changing a past record breaks all following blocks, and other participants reject it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blokcheynda \"Proof of Stake\" (ulush isboti) konsensus mexanizmi nima bilan ajralib turadi?",
+          "ru": "Чем отличается механизм консенсуса \"Proof of Stake\" (доказательство доли) в блокчейне?",
+          "en": "What distinguishes the \"Proof of Stake\" consensus mechanism in a blockchain?"
+        },
+        "options": [
+          {
+            "uz": "U energiya tejamkor boʻlib, blok qoʻshish huquqi garovga qoʻyilgan mablagʻga qarab beriladi",
+            "ru": "Он энергоэффективен, и право добавить блок предоставляется в зависимости от размера внесённого залога",
+            "en": "It is energy-efficient, and the right to add a block is given according to the funds staked"
+          },
+          {
+            "uz": "U blok qoʻshish uchun juda koʻp elektr energiyasini talab qiladi",
+            "ru": "Он требует очень много электроэнергии для добавления блока",
+            "en": "It requires a lot of electricity to add a block"
+          },
+          {
+            "uz": "Unda faqat yagona markaziy bank tranzaksiyalarni tasdiqlaydi",
+            "ru": "В нём транзакции подтверждает только единый центральный банк",
+            "en": "In it, only a single central bank confirms transactions"
+          },
+          {
+            "uz": "U faqat xususiy blokcheynlarda ishlatilishi shart",
+            "ru": "Он должен использоваться только в частных блокчейнах",
+            "en": "It must be used only in private blockchains"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Proof of Stake mexanizmi energiya tejamkor va ishtirokchilarni garovga qoʻyilgan mablagʻga qarab tanlaydi.",
+          "ru": "Механизм Proof of Stake энергоэффективен и выбирает участников по размеру внесённого залога.",
+          "en": "The Proof of Stake mechanism is energy-efficient and selects participants according to the funds staked."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda keltirilgan qaysi xususiyatlar blokcheynga xos?",
+          "ru": "Какие из приведённых свойств характерны для блокчейна согласно уроку?",
+          "en": "Which of the following properties are characteristic of a blockchain according to the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Oʻzgarmaslik",
+            "ru": "Неизменность",
+            "en": "Immutability"
+          },
+          {
+            "uz": "Markazsizlik",
+            "ru": "Децентрализация",
+            "en": "Decentralization"
+          },
+          {
+            "uz": "Taqsimlanganlik",
+            "ru": "Распределённость",
+            "en": "Distribution"
+          },
+          {
+            "uz": "Oson tahrirlanish",
+            "ru": "Лёгкость редактирования",
+            "en": "Easy editing"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Blokcheynning asosiy xossalari: taqsimlanganlik, oʻzgarmaslik, shaffoflik va markazsizlik.",
+          "ru": "Основные свойства блокчейна: распределённость, неизменность, прозрачность и децентрализация.",
+          "en": "The main properties of blockchain are distribution, immutability, transparency, and decentralization."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qachon blokcheyn oʻrniga oddiy maʼlumotlar bazasidan foydalanish afzalroq?",
+          "ru": "Когда предпочтительнее использовать обычную базу данных вместо блокчейна?",
+          "en": "When is it preferable to use an ordinary database instead of a blockchain?"
+        },
+        "options": [
+          {
+            "uz": "Agar maʼlumotni faqat bitta ishonchli tashkilot boshqarsa",
+            "ru": "Если данными управляет одна доверенная организация",
+            "en": "If one trusted organization manages the data"
+          },
+          {
+            "uz": "Agar tizimda mutlaqo ishonchsiz ishtirokchilar koʻp boʻlsa",
+            "ru": "Если в системе много абсолютно ненадёжных участников",
+            "en": "If there are many completely untrustworthy participants in the system"
+          },
+          {
+            "uz": "Agar xalqaro pul oʻtkazmalarini vositachisiz amalga oshirish kerak boʻlsa",
+            "ru": "Если международные денежные переводы нужно осуществлять без посредников",
+            "en": "If international money transfers must be carried out without intermediaries"
+          },
+          {
+            "uz": "Agar taʼminot zanjirida tovar kelib chiqishini shaffof kuzatish talab etilsa",
+            "ru": "Если требуется прозрачное отслеживание происхождения товара в цепочке поставок",
+            "en": "If transparent tracking of the origin of goods in the supply chain is required"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Agar bitta ishonchli tashkilot maʼlumotni boshqarsa, oddiy maʼlumotlar bazasi arzonroq va tezroq.",
+          "ru": "Если данными управляет одна доверенная организация, обычная база данных дешевле и быстрее.",
+          "en": "If one trusted organization manages the data, an ordinary database is cheaper and faster."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oʻzbekistonda kripto-aktivlar bilan bogʻliq xizmat koʻrsatuvchilar vakolatli davlat organidan litsenziya olishi shart emas.",
+          "ru": "В Узбекистане поставщикам услуг, связанных с криптоактивами, не обязательно получать лицензию уполномоченного государственного органа.",
+          "en": "In Uzbekistan, crypto-asset service providers do not need to obtain a licence from the authorized state body."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Oʻzbekistonda kripto-aktivlar aylanmasi tartibga solingan va litsenziya olish talab etiladi.",
+          "ru": "В Узбекистане оборот криптоактивов регулируется, и получение лицензии обязательно.",
+          "en": "In Uzbekistan, the circulation of crypto-assets is regulated, and obtaining a licence is required."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi xesh zanjiri misolida ishlatilgan FNV-1a xesh-funksiyasi necha bitli hisoblanadi?",
+          "ru": "Сколько битов имеет хеш-функция FNV-1a, использованная в примере цепочки хешей в уроке?",
+          "en": "How many bits is the FNV-1a hash function used in the hash chain example in the lesson?"
+        },
+        "answers": [32],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsdagi misolda oʻquv maqsadida 32 bitli FNV-1a funksiyasidan foydalanilgan.",
+          "ru": "В примере из урока в учебных целях использовалась 32-битная функция FNV-1a.",
+          "en": "In the lesson's example, a 32-bit FNV-1a function was used for teaching purposes."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dars matniga koʻra, blokcheyn iqtisodiyotning qaysi sohalarida qoʻllanilishi koʻrsatilgan?",
+          "ru": "В каких сферах экономики, согласно тексту урока, применяется блокчейн?",
+          "en": "According to the lesson text, in which areas of the economy is blockchain applied?"
+        },
+        "options": [
+          {
+            "uz": "Taʼminot zanjiri (tovarlar harakatini kuzatish)",
+            "ru": "Цепочки поставок (отслеживание движения товаров)",
+            "en": "Supply chains (tracking the movement of goods)"
+          },
+          {
+            "uz": "Davlat reyestrlari va xaridlari",
+            "ru": "Государственные реестры и закупки",
+            "en": "Government registries and procurement"
+          },
+          {
+            "uz": "Hujjatlar va diplomlarni tasdiqlash",
+            "ru": "Подтверждение документов и дипломов",
+            "en": "Verifying documents and diplomas"
+          },
+          {
+            "uz": "Kompyuter xotirasini tezlashtirish",
+            "ru": "Ускорение компьютерной памяти",
+            "en": "Speeding up computer memory"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Taʼminot zanjiri, moliya, hujjatlarni tasdiqlash va davlat reyestrlari sanab oʻtilgan. Xotira tezlashtirish unga kirmaydi.",
+          "ru": "Перечислены цепочки поставок, финансы, подтверждение документов и госреестры. Ускорение памяти к ним не относится.",
+          "en": "Supply chains, finance, document verification, and government registries are listed. Speeding up computer memory is not."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi maʼlumotlarga koʻra, smart-kontrakt (aqlli shartnoma)larning qanday xavfli tomoni bor?",
+          "ru": "Согласно данным урока, в чём заключается опасность смарт-контрактов?",
+          "en": "According to the lesson, what is a danger of smart contracts?"
+        },
+        "options": [
+          {
+            "uz": "Ulardagi dasturiy xatolar katta moliyaviy yoʻqotishlarga olib kelishi mumkin",
+            "ru": "Программные ошибки в них могут привести к большим финансовым потерям",
+            "en": "Software bugs in them can lead to large financial losses"
+          },
+          {
+            "uz": "Ular faqat bitta kompyuterda saqlanadi va osongina oʻchib ketadi",
+            "ru": "Они хранятся только на одном компьютере и легко удаляются",
+            "en": "They are stored on only one computer and are easily deleted"
+          },
+          {
+            "uz": "Ular tranzaksiya tezligini oddiy bazalarga qaraganda million marta oshirib yuboradi",
+            "ru": "Они увеличивают скорость транзакций в миллион раз по сравнению с обычными базами",
+            "en": "They increase transaction speed by a million times compared to ordinary databases"
+          },
+          {
+            "uz": "Ular yozuvlarni faqat hukumat ruxsati bilan oʻzgartirishni talab qiladi",
+            "ru": "Они требуют изменения записей только с разрешения правительства",
+            "en": "They require records to be changed only with government permission"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilganidek, smart-kontrakt xatoliklari katta yoʻqotishlarga olib kelgan holatlar mavjud.",
+          "ru": "Как сказано в уроке, ошибки смарт-контрактов приводили к большим потерям.",
+          "en": "As stated in the lesson, smart contract bugs have led to large losses."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Shartlar bajarilganda avtomatik ishga tushadigan, blokcheynda saqlanadigan dastur nima deb ataladi? (Javobni ikkita soʻz bilan yozing)",
+          "ru": "Как называется программа, хранящаяся в блокчейне и автоматически запускающаяся при выполнении условий? (Напишите ответ из двух слов)",
+          "en": "What is a program stored on the blockchain that runs automatically when conditions are met called? (Write the answer in two words)"
+        },
+        "answers": [
+          "smart-kontrakt",
+          "aqlli shartnoma",
+          "смарт-контракт",
+          "умный контракт",
+          "smart contract"
+        ],
+        "explanation": {
+          "uz": "Bu dastur smart-kontrakt (aqlli shartnoma) deb ataladi va vositachilarsiz ishlaydi.",
+          "ru": "Эта программа называется смарт-контрактом (умным контрактом) и работает без посредников.",
+          "en": "This program is called a smart contract and operates without intermediaries."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Matnning xesh-qiymatini hisoblash",
+      "ru": "Вычисление хеш-значения текста",
+      "en": "Calculating the hash value of a text"
+    },
+    "statement": {
+      "uz": "Blokcheynda maʼlumotlar oʻzgarmasligini taʼminlash uchun xesh funksiyalardan foydalaniladi. Sizning vazifangiz: bitta qatordan iborat matnni oʻqib, uning 32 bitli FNV-1a xesh-qiymatini 8 belgili oʻn oltilik (hex) sanoq sistemasida chiqaruvchi dastur yozish. Darsda berilgan fnv1a funksiyasidan foydalanishingiz mumkin. Matn oxiridagi boʻsh joy va yangi qator belgilarini olib tashlab, soʻngra xeshni hisoblang. Kiritish: bitta qatorda ixtiyoriy matn. Chiqarish: faqat 8 ta belgidan iborat xesh-qiymat (masalan, 174beafb).",
+      "ru": "В блокчейне для обеспечения неизменности данных используются хеш-функции. Ваша задача: прочитать текст, состоящий из одной строки, и вывести его 32-битное хеш-значение FNV-1a в виде 8-символьной шестнадцатеричной (hex) строки. Вы можете использовать функцию fnv1a из урока. Удалите пробелы и символы новой строки в конце текста перед вычислением хеша. Ввод: произвольный текст в одной строке. Вывод: только 8-символьное хеш-значение (например, 174beafb).",
+      "en": "In a blockchain, hash functions are used to ensure data immutability. Your task: read a text consisting of a single line and print its 32-bit FNV-1a hash value as an 8-character hexadecimal (hex) string. You can use the fnv1a function provided in the lesson. Strip trailing whitespace and newlines from the text before calculating the hash. Input: arbitrary text on a single line. Output: only the 8-character hash value (for example, 174beafb)."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\ndef fnv1a(matn):\n    h = 2166136261\n    for b in matn.encode(\"utf-8\"):\n        h = ((h ^ b) * 16777619) & 0xFFFFFFFF\n    return h\n\nmatn = sys.stdin.read().strip()\n",
+        "java": "import java.nio.charset.StandardCharsets;\nimport java.util.Scanner;\n\npublic class Main {\n    static int fnv1a(String matn) {\n        int h = 0x811C9DC5;\n        for (byte b : matn.getBytes(StandardCharsets.UTF_8)) h = (h ^ (b & 0xFF)) * 16777619;\n        return h;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in, StandardCharsets.UTF_8);\n        if (in.hasNextLine()) {\n            String yozuv = in.nextLine().trim();\n            \n        }\n    }\n}\n",
+        "cpp": "#include <cstdint>\n#include <cstdio>\n#include <iostream>\n#include <string>\n\nusing namespace std;\n\nuint32_t fnv1a(const string& matn) {\n    uint32_t h = 2166136261u;\n    for (unsigned char b : matn) h = (h ^ b) * 16777619u;\n    return h;\n}\n\nint main() {\n    string yozuv;\n    if (getline(cin, yozuv)) {\n        if (!yozuv.empty() && yozuv.back() == '\\r') yozuv.pop_back();\n        \n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\ndef fnv1a(matn):\n    h = 2166136261\n    for b in matn.encode(\"utf-8\"):\n        h = ((h ^ b) * 16777619) & 0xFFFFFFFF\n    return h\n\nmatn = sys.stdin.read().strip()\nprint(format(fnv1a(matn), \"08x\"))\n",
+        "java": "import java.nio.charset.StandardCharsets;\nimport java.util.Scanner;\n\npublic class Main {\n    static int fnv1a(String matn) {\n        int h = 0x811C9DC5;\n        for (byte b : matn.getBytes(StandardCharsets.UTF_8)) h = (h ^ (b & 0xFF)) * 16777619;\n        return h;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in, StandardCharsets.UTF_8);\n        if (in.hasNextLine()) {\n            String yozuv = in.nextLine().trim();\n            System.out.println(String.format(\"%08x\", fnv1a(yozuv)));\n        }\n    }\n}\n",
+        "cpp": "#include <cstdint>\n#include <cstdio>\n#include <iostream>\n#include <string>\n\nusing namespace std;\n\nuint32_t fnv1a(const string& matn) {\n    uint32_t h = 2166136261u;\n    for (unsigned char b : matn) h = (h ^ b) * 16777619u;\n    return h;\n}\n\nint main() {\n    string yozuv;\n    if (getline(cin, yozuv)) {\n        if (!yozuv.empty() && yozuv.back() == '\\r') yozuv.pop_back();\n        char buf[16];\n        snprintf(buf, sizeof buf, \"%08x\", fnv1a(yozuv));\n        cout << buf << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "00000000|Paxta 20t Fermer->Zavod\n",
+          "expected": "174beafb",
+          "hidden": false
+        },
+        {
+          "input": "174beafb|Ip 15t Zavod->Fabrika\n",
+          "expected": "a6917dc3",
+          "hidden": true
+        },
+        {
+          "input": "a6917dc3|Mato 9000m Fabrika->Eksport\n",
+          "expected": "d839ca87",
+          "hidden": true
+        },
+        {
+          "input": "00000000|Paxta 25t Fermer->Zavod\n",
+          "expected": "1483cdfe",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

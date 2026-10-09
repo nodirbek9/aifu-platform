@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Algoritmlarni solishtirishda odatda nima asosga olinadi?",
+          "ru": "Что обычно берут за основу при сравнении алгоритмов?",
+          "en": "What is usually used to compare algorithms?"
+        },
+        "options": [
+          {
+            "uz": "Kirish oʻlchami oshganda bajariladigan asosiy amallar sonining oʻsish tezligi",
+            "ru": "Скорость роста числа основных операций при росте размера входа",
+            "en": "The rate at which the number of basic operations grows with the input size"
+          },
+          {
+            "uz": "Dasturning konkret kompyuterda ishlash vaqti, soniyalarda",
+            "ru": "Время работы программы на конкретном компьютере в секундах",
+            "en": "The running time of the program on a specific computer, in seconds"
+          },
+          {
+            "uz": "Dastur qatorlari soni va fayl hajmi",
+            "ru": "Число строк программы и размер файла",
+            "en": "The number of lines in the program and the file size"
+          },
+          {
+            "uz": "Qaysi dasturlash tili ishlatilgani",
+            "ru": "Какой язык программирования был использован",
+            "en": "Which programming language was used"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Soniyalar kompyuterga bogʻliq, amallar soni esa yoʻq — shuning uchun amallar sanaladi va algoritmlar oʻsish tezligi bilan solishtiriladi.",
+          "ru": "Секунды зависят от компьютера, а число операций — нет: поэтому считают операции и сравнивают по скорости роста.",
+          "en": "Seconds depend on the computer, the number of operations does not — so operations are counted and algorithms are compared by their rate of growth."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "T(n) = O(f(n)) belgisi murakkablikning yuqoridan chegarasini bildiradi: yetarlicha katta n da T(n) ≤ c · f(n).",
+          "ru": "Обозначение T(n) = O(f(n)) означает верхнюю границу сложности: при достаточно больших n выполнено T(n) ≤ c · f(n).",
+          "en": "The notation T(n) = O(f(n)) states an upper bound on complexity: for large enough n, T(n) ≤ c · f(n)."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bu yuqoridan chegara va uni „koʻpi bilan f tartibida“ deb oʻqish kerak; pastdan chegaraga Ω, ikki tomondan chegaraga Θ ishlatiladi.",
+          "ru": "Это верхняя граница, которую читают как «не более чем порядка f»; нижнюю границу обозначают Ω, границу с обеих сторон — Θ.",
+          "en": "It is an upper bound, read as “at most of order f”; Ω is the lower bound and Θ the bound from both sides."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Murakkablikni hisoblash qoidalari boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие из утверждений о правилах вычисления сложности верны?",
+          "en": "Which statements about the rules of computing complexity are correct?"
+        },
+        "options": [
+          {
+            "uz": "Oʻzgarmas koʻpaytuvchilar tashlanadi: 3n → O(n)",
+            "ru": "Постоянные множители отбрасываются: 3n → O(n)",
+            "en": "Constant factors are dropped: 3n → O(n)"
+          },
+          {
+            "uz": "Eng tez oʻsuvchi had qoladi: n² + 100n → O(n²)",
+            "ru": "Остаётся наиболее быстро растущий член: n² + 100n → O(n²)",
+            "en": "The fastest-growing term remains: n² + 100n → O(n²)"
+          },
+          {
+            "uz": "Ichma-ich joylashgan sikllarning murakkabliklari qoʻshiladi",
+            "ru": "Сложности вложенных друг в друга циклов складываются",
+            "en": "The complexities of nested loops are added"
+          },
+          {
+            "uz": "Ketma-ket bajariladigan qismlarning murakkabliklari qoʻshiladi",
+            "ru": "Сложности идущих подряд частей складываются",
+            "en": "The complexities of consecutive parts are added"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Darsdagi toʻrt qoida: oʻzgarmas koʻpaytuvchilar tashlanadi, eng tez oʻsuvchi had qoladi, ketma-ket qismlar qoʻshiladi, ichma-ich sikllar esa koʻpaytiriladi.",
+          "ru": "В лекции четыре правила: постоянные множители отбрасываются, остаётся самый быстро растущий член, идущие подряд части складываются, а вложенные циклы — перемножаются.",
+          "en": "The lesson gives four rules: constant factors are dropped, the fastest-growing term remains, consecutive parts are added, nested loops are multiplied."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Murakkablik sinflari jadvaliga koʻra, n = 10⁶ boʻlganda qaysi murakkablik bir necha soatga choʻziladi?",
+          "ru": "Согласно таблице классов сложности, какая из них при n = 10⁶ растянется на несколько часов?",
+          "en": "According to the table of complexity classes, which one takes several hours for n = 10⁶?"
+        },
+        "options": [
+          {
+            "uz": "O(n log n)",
+            "ru": "O(n log n)",
+            "en": "O(n log n)"
+          },
+          {
+            "uz": "O(n²)",
+            "ru": "O(n²)",
+            "en": "O(n²)"
+          },
+          {
+            "uz": "O(log n)",
+            "ru": "O(log n)",
+            "en": "O(log n)"
+          },
+          {
+            "uz": "O(1)",
+            "ru": "O(1)",
+            "en": "O(1)"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "n = 10⁶ da O(n log n) ≈ 2 · 10⁷ amal — bu bir zumda, O(n²) esa 10¹² amal — zamonaviy kompyuterda bir necha soat.",
+          "ru": "При n = 10⁶ O(n log n) — это ≈ 2 · 10⁷ операций, что мгновенно, а O(n²) — 10¹² операций, несколько часов на современном компьютере.",
+          "en": "For n = 10⁶, O(n log n) is about 2 · 10⁷ operations — instant — while O(n²) is 10¹² operations, several hours on a modern computer."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Interpolyatsion izlashda tekshiriladigan oʻrin orin = chap + (x − a[chap]) · (ong − chap) / (a[ong] − a[chap]) formulasi bilan hisoblanadi. Massivda 10, 20, 30, …, 100 sonlari turibdi, chap = 0, ong = 9, x = 70 boʻlsa, formula 0 dan sanalganda qaysi oʻrinni taklif qiladi?",
+          "ru": "В интерполяционном поиске проверяемая позиция вычисляется по формуле position = left + (x − a[left]) · (right − left) / (a[right] − a[left]). В массиве стоят числа 10, 20, 30, …, 100, left = 0, right = 9, x = 70. Какую позицию (с нулевым отсчётом) предлагает формула?",
+          "en": "Interpolation search computes the position to check as position = left + (x − a[left]) · (right − left) / (a[right] − a[left]). The array holds 10, 20, 30, …, 100, left = 0, right = 9 and x = 70. Which position (counted from 0) does the formula suggest?"
+        },
+        "answers": [6],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "(70 − 10) · (9 − 0) / (100 − 10) = 540 / 90 = 6, yaʼni 0 dan sanaganda 6, 1 dan sanaganda 7 — darsdagi jadvalda ham shunday.",
+          "ru": "(70 − 10) · (9 − 0) / (100 − 10) = 540 / 90 = 6, то есть позиция 6 при отсчёте от нуля и 7 при отсчёте от единицы — как в таблице лекции.",
+          "en": "(70 − 10) · (9 − 0) / (100 − 10) = 540 / 90 = 6, which is position 6 from zero and 7 from one — as in the lesson's table."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "T(n) = T(n/2) + O(1) rekurrent munosabatning yechimini O belgisi bilan yozing (masalan, O(n)).",
+          "ru": "Запишите решение рекуррентного соотношения T(n) = T(n/2) + O(1) в обозначении O (например, O(n)).",
+          "en": "Write the solution of the recurrence T(n) = T(n/2) + O(1) using the O notation (for example, O(n))."
+        },
+        "answers": ["O(log n)", "O(logn)", "O(log(n))"],
+        "explanation": {
+          "uz": "Binar izlashda har qadam qidiruv oraligʻini ikki baravar qisqartiradi: n → n/2 → n/4 → … → 1, jami log₂ n qadam.",
+          "ru": "Каждый шаг бинарного поиска уменьшает область вдвое: n → n/2 → n/4 → … → 1, всего log₂ n шагов.",
+          "en": "Each step of binary search halves the range: n → n/2 → n/4 → … → 1, which is log₂ n steps."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Oddiy rekursiv Fibonachchi uchun T(n) = T(n − 1) + T(n − 2) + O(1) rekurrent munosabat qaysi tartibni beradi?",
+          "ru": "Какой порядок даёт рекуррентное соотношение T(n) = T(n − 1) + T(n − 2) + O(1) для обычной рекурсивной функции Фибоначчи?",
+          "en": "Which order does the recurrence T(n) = T(n − 1) + T(n − 2) + O(1) give for plain recursive Fibonacci?"
+        },
+        "options": [
+          {
+            "uz": "O(n²)",
+            "ru": "O(n²)",
+            "en": "O(n²)"
+          },
+          {
+            "uz": "O(n log n)",
+            "ru": "O(n log n)",
+            "en": "O(n log n)"
+          },
+          {
+            "uz": "O(1,618ⁿ)",
+            "ru": "O(1,618ⁿ)",
+            "en": "O(1.618ⁿ)"
+          },
+          {
+            "uz": "O(log n)",
+            "ru": "O(log n)",
+            "en": "O(log n)"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Darsdagi jadvalga koʻra bu munosabat O(φⁿ) ≈ O(1,618ⁿ) — shuning uchun oddiy rekursiv Fibonachchi tez ishlamaydi.",
+          "ru": "По таблице из лекции это соотношение даёт O(φⁿ) ≈ O(1,618ⁿ) — поэтому обычная рекурсивная функция Фибоначчи медленная.",
+          "en": "The lesson's table gives O(φⁿ) ≈ O(1.618ⁿ) for this recurrence — which is why plain recursive Fibonacci is slow."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Interpolyatsion izlash boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об интерполяционном поиске верны?",
+          "en": "Which statements about interpolation search are correct?"
+        },
+        "options": [
+          {
+            "uz": "Massiv saralangan va qiymatlar tekis taqsimlangan boʻlsa, oʻrtacha O(log log n) ishlaydi",
+            "ru": "Если массив отсортирован и значения распределены равномерно, в среднем работает за O(log log n)",
+            "en": "On a sorted array with uniformly distributed values it takes O(log log n) on average"
+          },
+          {
+            "uz": "Saralanmagan massivda ham toʻgʻri natija beradi",
+            "ru": "Он даёт верный результат и на несортированном массиве",
+            "en": "It also gives a correct result on an unsorted array"
+          },
+          {
+            "uz": "a[ong] = a[chap] boʻlgan holat formulaning nolga boʻlinmasligi uchun alohida tekshiriladi",
+            "ru": "Случай a[right] = a[left] проверяется отдельно, потому что иначе формула делит на ноль",
+            "en": "The case a[right] = a[left] is checked separately, because the formula would otherwise divide by zero"
+          },
+          {
+            "uz": "Qiymatlar 1, 2, 4, 8, … kabi notekis taqsimlanganda binar izlashdan koʻp qadam olishi mumkin",
+            "ru": "При неравномерном распределении, например 1, 2, 4, 8, …, он может сделать больше шагов, чем бинарный поиск",
+            "en": "With an uneven distribution, say 1, 2, 4, 8, …, it may take more steps than binary search"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "Saralanmagan massivda binar va interpolyatsion izlashning natijasi notoʻgʻri — avval saralash kerak. Ikki baravar oʻsuvchi sonlarda formula kichik qiymatlar tomonga „egilib“, 4 qadam oldi, binar izlash esa 3 qadamda topdi.",
+          "ru": "На несортированном массиве и бинарный, и интерполяционный поиск дают неверный результат — сначала нужно сортировать. На удваивающихся числах формула «сдвигается» к малым значениям и сделала 4 шага против 3 у бинарного поиска.",
+          "en": "On an unsorted array both binary and interpolation search give a wrong result — the array must be sorted first. On doubling numbers the formula leans towards small values and needed 4 steps against 3 for binary search."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "P sinfiga yechimi polinomial vaqtda tekshiriladigan, NP sinfiga esa polinomial vaqtda yechiladigan masalalar kiradi.",
+          "ru": "Класс P включает задачи, решение которых можно проверить за полиномиальное время, а класс NP — задачи, решаемые за полиномиальное время.",
+          "en": "Class P holds the problems whose solution can be checked in polynomial time, and class NP those solvable in polynomial time."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Teskarisi: P — polinomial vaqtda yechiladigan masalalar, NP — yechimi berilsa polinomial vaqtda tekshiriladigan masalalar; sudoku shunga misol — yechishi qiyin, tekshirishi oson.",
+          "ru": "Наоборот: P — задачи, решаемые за полиномиальное время, а NP — задачи, чьё данное решение проверяется за полиномиальное время; пример — судоку: решать трудно, проверять легко.",
+          "en": "It is the other way round: P is solvable in polynomial time, NP is checkable in polynomial time given a solution; sudoku is the example — hard to solve, easy to check."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Binar izlashning eng yomon holatdagi taqqoslash soni",
+      "ru": "Число сравнений бинарного поиска в худшем случае",
+      "en": "Comparisons of binary search in the worst case"
+    },
+    "statement": {
+      "uz": "Binar izlash har bir taqqoslashdan keyin qidiruv oraligʻini ikki baravar qisqartiradi: oraliq uzunligi m boʻlsa, u m/2 ga aylanadi (bu yerda m/2 — butun boʻlinish). Oraliq uzunligi 0 ga tushganda ish tugaydi. Kirish: bitta satrda bitta butun son n (1 ≤ n ≤ 10⁹) — saralangan massivning uzunligi. Chiqish: bitta qatorda, faqat son koʻrinishida, eng yomon holatdagi taqqoslashlar sonini — yaʼni shu qisqartirishlar sonini — chiqaring, hech qanday qoʻshimcha soʻz yozmang. Masalan, n = 1 boʻlsa javob 1, n = 8 boʻlsa javob 4. Darsda million element uchun javob 20 ekanligi aytilgan.",
+      "ru": "После каждого сравнения бинарный поиск уменьшает область поиска вдвое: если её длина m, она становится m/2 (здесь m/2 — целочисленное деление). Когда длина области падает до 0, работа заканчивается. Вход: одна строка с одним целым числом n (1 ≤ n ≤ 10⁹) — это длина отсортированного массива. Выход: в одной строке, только число, — число сравнений в худшем случае, то есть число таких уменьшений, без каких-либо пояснений. Например, при n = 1 ответ 1, при n = 8 ответ 4. В лекции для миллиона элементов указан ответ 20.",
+      "en": "After every comparison binary search halves the search range: if its length is m, m becomes m/2 (here m/2 is integer division). The work ends when the length reaches 0. Input: one line with a single integer n (1 ≤ n ≤ 10⁹), the length of a sorted array. Output: on one line, only the number, the worst-case number of comparisons — that is, the number of these halvings — with no extra words. For example, n = 1 gives 1 and n = 8 gives 4. The lesson states 20 for a million elements."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nqadam = 0\nwhile n > 1:\n    n //= 2\n    qadam += 1\nprint(qadam)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int qadam = 0;\n        while (n > 1) {\n            n = n / 2;\n            qadam++;\n        }\n        System.out.println(qadam);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int qadam = 0;\n    while (n > 1) {\n        n = n / 2;\n        qadam++;\n    }\n    cout << qadam << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nqadam = 0\nwhile n > 0:\n    n //= 2\n    qadam += 1\nprint(qadam)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int qadam = 0;\n        while (n > 0) {\n            n = n / 2;\n            qadam++;\n        }\n        System.out.println(qadam);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int qadam = 0;\n    while (n > 0) {\n        n = n / 2;\n        qadam++;\n    }\n    cout << qadam << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "1000000\n", "expected": "20", "hidden": false },
+        { "input": "1\n", "expected": "1", "hidden": false },
+        { "input": "8\n", "expected": "4", "hidden": false },
+        { "input": "7\n", "expected": "3", "hidden": true },
+        { "input": "1000000000\n", "expected": "30", "hidden": true }
+      ]
+    }
+  }
+}

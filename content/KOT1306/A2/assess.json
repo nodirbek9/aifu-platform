@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tarmoq sxemasi graf koʻrinishida ifodalanganda tugunlar nimani bildiradi?",
+          "ru": "Что обозначают узлы, когда схема сети представлена в виде графа?",
+          "en": "When a network diagram is represented as a graph, what do the nodes stand for?"
+        },
+        "options": [
+          {
+            "uz": "Qurilmalarni — kompyuter, kommutator, marshrutizator",
+            "ru": "Устройства — компьютеры, коммутаторы, маршрутизаторы",
+            "en": "The devices — computers, switches, routers"
+          },
+          {
+            "uz": "Qurilmalar orasidagi aloqa liniyalarini",
+            "ru": "Линии связи между устройствами",
+            "en": "The links between the devices"
+          },
+          {
+            "uz": "Har bir tugunning IP manzilini",
+            "ru": "IP-адрес каждого узла",
+            "en": "The IP address of each node"
+          },
+          {
+            "uz": "Kadrlarning ketma-ket kelish tartibini",
+            "ru": "Порядок следования кадров",
+            "en": "The order in which frames arrive"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Grafda tugunlar — qurilmalar, qirralar esa ular orasidagi aloqa liniyalari.",
+          "ru": "В графе узлы — это устройства, а рёбра — линии связи между ними.",
+          "en": "In the graph the nodes are the devices and the edges are the links between them."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Toʻliq bogʻlangan tarmoqda ham kritik tugunlar, ham koʻprik qirralar mavjud.",
+          "ru": "В полностью связанной сети есть и критические узлы, и мостовые рёбра.",
+          "en": "A fully meshed network has both critical nodes and bridge edges."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsga koʻra, toʻliq bogʻlangan tarmoqda kritik tugun ham, koʻprik qirra ham yoʻq; kritik tugun boʻlmagan yana bir sxema — halqa.",
+          "ru": "По занятию, в полностью связанной сети нет ни критических узлов, ни мостовых рёбер; ещё одна схема без критических узлов — кольцо.",
+          "en": "According to the lesson a full mesh has neither critical nodes nor bridge edges; a ring is another topology without critical nodes."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kross kabel qaysi qurilma juftliklarini ulaydi?",
+          "ru": "Какие пары устройств соединяются перекрёстным кабелем?",
+          "en": "Which pairs of devices are connected with a crossover cable?"
+        },
+        "options": [
+          {
+            "uz": "Kompyuter — kompyuter",
+            "ru": "Компьютер — компьютер",
+            "en": "Computer — computer"
+          },
+          {
+            "uz": "Kommutator — kommutator",
+            "ru": "Коммутатор — коммутатор",
+            "en": "Switch — switch"
+          },
+          {
+            "uz": "Kompyuter — kommutator",
+            "ru": "Компьютер — коммутатор",
+            "en": "Computer — switch"
+          },
+          {
+            "uz": "Marshrutizator — kompyuter",
+            "ru": "Маршрутизатор — компьютер",
+            "en": "Router — computer"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Kross kabel bir xil turdagi qurilmalarni va marshrutizator bilan kompyuterni ulaydi; kompyuter — kommutator juftligi uchun toʻgʻri kabel kerak.",
+          "ru": "Перекрёстный кабель соединяет устройства одного типа, а также маршрутизатор с компьютером; для пары компьютер — коммутатор нужен прямой кабель.",
+          "en": "A crossover cable joins devices of the same kind and a router with a computer; a computer and a switch need a straight-through cable."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "T568A va T568B sxemalari qaysi kontaktlarda farq qiladi?",
+          "ru": "На каких контактах схемы T568A и T568B различаются?",
+          "en": "On which pins do the T568A and T568B schemes differ?"
+        },
+        "options": [
+          {
+            "uz": "1, 2 va 3, 6",
+            "ru": "1, 2 и 3, 6",
+            "en": "1, 2 and 3, 6"
+          },
+          {
+            "uz": "4 va 5",
+            "ru": "4 и 5",
+            "en": "4 and 5"
+          },
+          {
+            "uz": "7 va 8",
+            "ru": "7 и 8",
+            "en": "7 and 8"
+          },
+          {
+            "uz": "Barcha sakkiz kontaktda",
+            "ru": "Во всех восьми контактах",
+            "en": "In all eight pins"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Yashil va toʻq sariq juftliklar oʻrin almashadi; 4, 5, 7 va 8 kontaktlar ikki sxemada ham bir xil.",
+          "ru": "Зелёная и оранжевая пары меняются местами; контакты 4, 5, 7 и 8 в обеих схемах одинаковы.",
+          "en": "The green and orange pairs swap places; pins 4, 5, 7 and 8 are the same in both schemes."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi misoldagi tarmoqning liniyalari: 1–2, 2–3, 3–1, 3–4, 4–5, 4–6. Nechta kritik tugun bor?",
+          "ru": "Линии сети из примера занятия: 1–2, 2–3, 3–1, 3–4, 4–5, 4–6. Сколько в ней критических узлов?",
+          "en": "The links of the network from the lesson example are 1–2, 2–3, 3–1, 3–4, 4–5, 4–6. How many critical nodes does it have?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Kritik tugunlar — 3 va 4: 3-tugun halqani tarmoqning qolgan qismidan ajratadi, 4-tugun esa yulduz markazi boʻlib, 5 va 6 ni bogʻlaydi.",
+          "ru": "Критические узлы — 3 и 4: третий отделяет кольцо от остальной части сети, четвёртый — центр звезды, через который связаны 5 и 6.",
+          "en": "The critical nodes are 3 and 4: node 3 separates the ring from the rest of the network, node 4 is the star centre that joins 5 and 6."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Halqada kadrlar cheksiz aylanmasligi uchun bitta liniyani zaxiraga oʻtkazuvchi protokollning qisqartmasini yozing.",
+          "ru": "Запишите сокращение протокола, который переводит одну линию кольца в резерв, чтобы кадры не кружились бесконечно.",
+          "en": "Write the abbreviation of the protocol that puts one ring link on standby so that frames do not circle forever."
+        },
+        "answers": ["STP", "stp", "Spanning Tree Protocol"],
+        "explanation": {
+          "uz": "STP (Spanning Tree Protocol) Packet Tracer da halqaning bitta portini toʻq sariq rangda bloklab qoʻyadi.",
+          "ru": "STP (Spanning Tree Protocol) в Packet Tracer блокирует один порт кольца, помечая его оранжевым.",
+          "en": "STP (Spanning Tree Protocol) blocks one port of the ring in Packet Tracer, marking it orange."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tarmoq savollari va graf tushunchalari orasidagi moslik boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о соответствии вопросов о сети и понятий графа верны?",
+          "en": "Which statements matching network questions to graph notions are correct?"
+        },
+        "options": [
+          {
+            "uz": "Ikki kompyuter bir-biriga yeta oladimi degan savol — ular orasida yoʻl bormi degan savol",
+            "ru": "Вопрос «смогут ли два компьютера достать друг друга» — это вопрос, есть ли между ними путь",
+            "en": "Whether two computers can reach each other is the question of whether there is a path between them"
+          },
+          {
+            "uz": "Tarmoq nechta alohida boʻlakdan iborat degan savol — bogʻliqlik komponentlari soni",
+            "ru": "Вопрос «из скольких отдельных кусков состоит сеть» — это число связных компонент",
+            "en": "How many separate pieces the network has is the number of connected components"
+          },
+          {
+            "uz": "Markaziy qurilmaga nechta kabel ulanadi degan savol — tugun darajasi",
+            "ru": "Вопрос «сколько кабелей подключено к центральному устройству» — это степень вершины",
+            "en": "How many cables go into the central device is the degree of the node"
+          },
+          {
+            "uz": "Qaysi kabel uzilsa tarmoq boʻlinadi degan savol — kritik tugun",
+            "ru": "Вопрос «какой кабель нужно перерезать, чтобы сеть разделилась» — это критический узел",
+            "en": "Which cable being cut splits the network is the critical node"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Kabel uzilganda tarmoq boʻlinishi — koʻprik qirra; kritik tugun esa qurilma buzilganda tarmoq boʻlinadigan tugun.",
+          "ru": "Разделение сети при обрыве кабеля — это мостовое ребро; критический узел — вершина, выход которой из строя делит сеть.",
+          "en": "A network split when a cable is cut is a bridge edge; a critical node is the device whose failure splits the network."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Auto-MDI/X nima qiladi?",
+          "ru": "Что делает Auto-MDI/X?",
+          "en": "What does Auto-MDI/X do?"
+        },
+        "options": [
+          {
+            "uz": "Qurilma kabelning toʻgʻri yoki kross ekanini oʻzi aniqlaydi",
+            "ru": "Устройство само определяет, прямой кабель или перекрёстный",
+            "en": "The device works out by itself whether the cable is straight-through or crossover"
+          },
+          {
+            "uz": "Kabel tezligini avtomatik ravishda 1000 Mbit/s ga koʻtaradi",
+            "ru": "Автоматически поднимает скорость кабеля до 1000 Mbit/s",
+            "en": "It automatically raises the cable speed to 1000 Mbit/s"
+          },
+          {
+            "uz": "Halqada bitta liniyani zaxiraga oʻtkazadi",
+            "ru": "Переводит одну линию кольца в резерв",
+            "en": "It puts one ring link on standby"
+          },
+          {
+            "uz": "Kompyuterga IP manzilni avtomatik beradi",
+            "ru": "Автоматически выдаёт компьютеру IP-адрес",
+            "en": "It gives a computer an IP address automatically"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda zamonaviy qurilmalar Auto-MDI/X tufayli kabel turini oʻzi aniqlashi aytilgan, lekin Packet Tracer da va imtihonda qoida soʻraladi.",
+          "ru": "В занятии сказано, что современные устройства сами определяют тип кабеля благодаря Auto-MDI/X, но в Packet Tracer и на экзамене спрашивают правило.",
+          "en": "The lesson says modern devices detect the cable type themselves thanks to Auto-MDI/X, but Packet Tracer and exams still ask for the rule."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Packet Tracer da 4 ta kommutator halqa qilib ulanganda, tarmoq fizik jihatdan halqa, lekin mantiqan daraxt boʻlib ishlaydi.",
+          "ru": "Когда 4 коммутатора в Packet Tracer соединены кольцом, сеть физически является кольцом, но логически работает как дерево.",
+          "en": "When 4 switches in Packet Tracer are wired in a ring, the network is physically a ring but works logically as a tree."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "STP bitta liniyani bloklagani uchun fizik halqa mantiqiy daraxtga aylanadi — bu fizik va mantiqiy topologiyani aralashtirmaslik haqidagi misol.",
+          "ru": "Поскольку STP блокирует одну линию, физическое кольцо превращается в логическое дерево — это пример того, как физическое и логическое представление сети расходятся.",
+          "en": "Because STP blocks one link, the physical ring becomes a logical tree — the lesson's example of telling physical and logical topology apart."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Eng koʻp kabel ulangan tugun",
+      "ru": "Узел с наибольшим числом кабелей",
+      "en": "The node with the most cables"
+    },
+    "statement": {
+      "uz": "Markaziy qurilmaga nechta kabel ulanganligi darsda tugun darajasi deb ataldi. Dasturingiz tarmoq grafini oʻqisin va eng katta darajali tugunni topsin. Kirish: birinchi qatorda tugunlar soni n va liniyalar soni m (ikkisi butun son, boʻshliq bilan); keyingi m qatorda bitta liniyaning ikki uchining raqami u va v. Liniya ikki tomonlama, yaʼni u tuguniga ham, v tuguniga ham bittadan kabel qoʻshiladi. Raqamlar 1 dan n gacha, liniyalar takrorlanmaydi, u ≠ v va har bir tugun kamida bitta liniya bilan ulangan; 2 ≤ n ≤ 100. Chiqish: bitta qatorda avval eng katta daraja, soʻng boʻshliq bilan shu darajadagi tugunlar soni. Masalan, 6 tugunli tarmoqda liniyalar 1 2, 2 3, 3 1, 3 4, 4 5, 4 6 boʻlsa, dastur 3 2 chiqaradi.",
+      "ru": "В занятии число кабелей, подключённых к центральному устройству, названо степенью вершины. Ваша программа должна прочитать граф сети и найти вершину с наибольшей степенью. Ввод: в первой строке число узлов n и число линий m (два целых числа через пробел); в каждой из следующих m строк — номера двух концов одной линии u и v. Линия двусторонняя, то есть кабель добавляется и к узлу u, и к узлу v. Номера — от 1 до n, линии не повторяются, u ≠ v, и каждый узел связан хотя бы одной линией; 2 ≤ n ≤ 100. Вывод: в одной строке сначала наибольшая степень, затем через пробел — сколько узлов имеют такую степень. Например, для 6 узлов с линиями 1 2, 2 3, 3 1, 3 4, 4 5, 4 6 программа выводит 3 2.",
+      "en": "The lesson called the number of cables on a central device the degree of a node. Your program must read the graph of a network and find the node with the largest degree. Input: the first line holds the number of nodes n and the number of links m, two integers separated by a space; each of the next m lines holds the numbers of the two ends of one link, u and v. A link is two-sided, so a cable counts for node u and for node v alike. The numbers run from 1 to n, no link is repeated, u ≠ v, and every node carries at least one link; 2 ≤ n ≤ 100. Output: on one line, first the largest degree, then, separated by a space, how many nodes have that degree. For example, for 6 nodes with the links 1 2, 2 3, 3 1, 3 4, 4 5, 4 6 the program prints 3 2."
+    },
+    "code": {
+      "starter": {
+        "python": "n, m = map(int, input().split())\ndaraja = [0] * (n + 1)\nfor _ in range(m):\n    u, v = map(int, input().split())\n    daraja[u] += 1\neng = max(daraja[1:])\nsoni = 0\nfor x in daraja[1:]:\n    if x == eng:\n        soni += 1\nprint(eng, soni)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int m = in.nextInt();\n        int[] daraja = new int[n + 1];\n        for (int i = 0; i < m; i++) {\n            int u = in.nextInt();\n            int v = in.nextInt();\n            daraja[u]++;\n        }\n        int eng = 0;\n        for (int i = 1; i <= n; i++) {\n            if (daraja[i] > eng) eng = daraja[i];\n        }\n        int soni = 0;\n        for (int i = 1; i <= n; i++) {\n            if (daraja[i] == eng) soni++;\n        }\n        System.out.println(eng + \" \" + soni);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<int> daraja(n + 1, 0);\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        daraja[u]++;\n    }\n    int eng = 0;\n    for (int i = 1; i <= n; i++) {\n        if (daraja[i] > eng) eng = daraja[i];\n    }\n    int soni = 0;\n    for (int i = 1; i <= n; i++) {\n        if (daraja[i] == eng) soni++;\n    }\n    cout << eng << \" \" << soni << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n, m = map(int, input().split())\ndaraja = [0] * (n + 1)\nfor _ in range(m):\n    u, v = map(int, input().split())\n    daraja[u] += 1\n    daraja[v] += 1\neng = max(daraja[1:])\nsoni = 0\nfor x in daraja[1:]:\n    if x == eng:\n        soni += 1\nprint(eng, soni)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int m = in.nextInt();\n        int[] daraja = new int[n + 1];\n        for (int i = 0; i < m; i++) {\n            int u = in.nextInt();\n            int v = in.nextInt();\n            daraja[u]++;\n            daraja[v]++;\n        }\n        int eng = 0;\n        for (int i = 1; i <= n; i++) {\n            if (daraja[i] > eng) eng = daraja[i];\n        }\n        int soni = 0;\n        for (int i = 1; i <= n; i++) {\n            if (daraja[i] == eng) soni++;\n        }\n        System.out.println(eng + \" \" + soni);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<int> daraja(n + 1, 0);\n    for (int i = 0; i < m; i++) {\n        int u, v;\n        cin >> u >> v;\n        daraja[u]++;\n        daraja[v]++;\n    }\n    int eng = 0;\n    for (int i = 1; i <= n; i++) {\n        if (daraja[i] > eng) eng = daraja[i];\n    }\n    int soni = 0;\n    for (int i = 1; i <= n; i++) {\n        if (daraja[i] == eng) soni++;\n    }\n    cout << eng << \" \" << soni << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "6 6\n1 2\n2 3\n3 1\n3 4\n4 5\n4 6\n", "expected": "3 2", "hidden": false },
+        { "input": "5 4\n1 2\n1 3\n1 4\n1 5\n", "expected": "4 1", "hidden": false },
+        { "input": "3 3\n1 2\n2 3\n3 1\n", "expected": "2 3", "hidden": true },
+        { "input": "2 1\n2 1\n", "expected": "1 2", "hidden": true },
+        { "input": "4 4\n1 2\n2 3\n3 4\n4 1\n", "expected": "2 4", "hidden": true }
+      ]
+    }
+  }
+}

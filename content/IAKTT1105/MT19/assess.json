@@ -1,0 +1,354 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Mijoz yoʻli xaritasi (customer journey map) asosan nimani koʻrsatadi?",
+          "ru": "Что в первую очередь показывает карта пути клиента (customer journey map)?",
+          "en": "What does a customer journey map primarily show?"
+        },
+        "options": [
+          {
+            "uz": "Foydalanuvchi xizmatni olish jarayonida bosib oʻtadigan qadamlar va muammolarni",
+            "ru": "Шаги и проблемы, которые пользователь проходит при получении услуги",
+            "en": "The steps and problems a user goes through when receiving a service"
+          },
+          {
+            "uz": "Xizmatni taqdim etuvchi tashkilotning ichki moliyaviy hisobotlarini",
+            "ru": "Внутренние финансовые отчёты организации, предоставляющей услугу",
+            "en": "Internal financial reports of the organization providing the service"
+          },
+          {
+            "uz": "Xizmat sifatini hisoblaydigan avtomatik algoritmni",
+            "ru": "Автоматический алгоритм, рассчитывающий качество услуги",
+            "en": "An automatic algorithm that calculates service quality"
+          },
+          {
+            "uz": "Dastur kodi qanday yozilishini va serverlar ishlashini",
+            "ru": "То, как написан код программы и как работают серверы",
+            "en": "How the program code is written and how servers work"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra, mijoz yoʻli xaritasi foydalanuvchi xizmatni olish jarayonida bosib oʻtadigan qadamlar, uning harakatlari, his-tuygʻulari va muammolarini koʻrsatadi.",
+          "ru": "Согласно занятию, карта пути клиента показывает шаги, которые пользователь проходит при получении услуги, его действия, ощущения и проблемы.",
+          "en": "According to the lesson, a customer journey map shows the steps a user goes through when receiving a service, their actions, feelings and problems."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "WCAG standartiga koʻra, xizmatdan faqat sogʻlom odamlar foydalanishi yetarli, qolganlar uchun alohida tizim yaratish kerak.",
+          "ru": "Согласно стандарту WCAG, достаточно, чтобы услугой могли пользоваться только здоровые люди, а для остальных нужно создавать отдельную систему.",
+          "en": "According to the WCAG standard, it is enough if only healthy people can use a service, while a separate system should be created for others."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "WCAG hammaboplik standartidir. Unga koʻra, xizmatdan koʻrish, eshitish yoki harakatlanishda cheklovi bor odamlar ham bevosita foydalana olishi kerak.",
+          "ru": "WCAG — это стандарт доступности. Согласно ему, услугой должны пользоваться и люди с нарушениями зрения, слуха или движения напрямую.",
+          "en": "WCAG is an accessibility standard. According to it, a service must also be directly usable by people with visual, hearing or mobility impairments."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Quyidagilardan qaysilari xizmat sifati koʻrsatkichlari hisoblanadi?",
+          "ru": "Какие из перечисленных являются показателями качества услуги?",
+          "en": "Which of the following are service quality indicators?"
+        },
+        "options": [
+          {
+            "uz": "Yakunlash darajasi",
+            "ru": "Доля завершения",
+            "en": "Completion rate"
+          },
+          {
+            "uz": "CSAT (mijoz qoniqishi)",
+            "ru": "CSAT (удовлетворённость клиента)",
+            "en": "CSAT (customer satisfaction)"
+          },
+          {
+            "uz": "NPS (sodiqlik indeksi)",
+            "ru": "NPS (индекс лояльности)",
+            "en": "NPS (Net Promoter Score)"
+          },
+          {
+            "uz": "CPU harorati",
+            "ru": "Температура CPU",
+            "en": "CPU temperature"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda xizmat sifatini oʻlchash uchun yakunlash darajasi, bajarish vaqti, CSAT, NPS va CES kabi koʻrsatkichlar keltirilgan.",
+          "ru": "На занятии в качестве показателей качества услуги приведены доля завершения, время исполнения, CSAT, NPS и CES.",
+          "en": "The lesson lists indicators like completion rate, processing time, CSAT, NPS and CES to measure service quality."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yakob Nilsenning qaysi evristikasi foydalanuvchidan barcha narsani boshqatdan kiritishni talab qilmasdan, oldingi maʼlumotlarni koʻrsatishni nazarda tutadi?",
+          "ru": "Какая эвристика Якоба Нильсена подразумевает показ ранее введённых данных, не требуя от пользователя вводить всё заново?",
+          "en": "Which of Jakob Nielsen's heuristics implies showing previously entered data without requiring the user to type everything again?"
+        },
+        "options": [
+          {
+            "uz": "Eslab qolish emas, tanib olish",
+            "ru": "Узнавание, а не запоминание",
+            "en": "Recognition rather than recall"
+          },
+          {
+            "uz": "Tizim holati koʻrinadi",
+            "ru": "Видимость состояния системы",
+            "en": "Visibility of system status"
+          },
+          {
+            "uz": "Minimalistik dizayn",
+            "ru": "Минималистичный дизайн",
+            "en": "Minimalist design"
+          },
+          {
+            "uz": "Moslashuvchanlik",
+            "ru": "Гибкость",
+            "en": "Flexibility"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "«Eslab qolish emas, tanib olish» evristikasi foydalanuvchi maʼlumotlarni yodda saqlashga majbur boʻlmasligi va oldin kiritgan maʼlumotlari koʻrsatilishi kerakligini bildiradi.",
+          "ru": "Эвристика «Узнавание, а не запоминание» означает, что пользователь не должен держать информацию в памяти, и ранее введённые данные должны показываться.",
+          "en": "The \"Recognition rather than recall\" heuristic means the user should not have to keep information in memory, and previously entered data should be shown."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "A/B test orqali qaror qabul qilishda faqat ekspertlarning his-tuygʻulari va shaxsiy tajribasiga tayaniladi.",
+          "ru": "При принятии решения с помощью A/B-тестирования полагаются только на ощущения и личный опыт экспертов.",
+          "en": "When making a decision using an A/B test, one relies only on the feelings and personal experience of experts."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "A/B testda variantlar haqiqiy foydalanuvchilarga koʻrsatiladi va qaror his-tuygʻu emas, balki real maʼlumotlar va natijalar asosida qabul qilinadi.",
+          "ru": "В A/B-тесте варианты показываются реальным пользователям, и решение принимается на основе реальных данных и результатов, а не ощущений.",
+          "en": "In an A/B test, options are shown to real users, and the decision is made based on real data and results, not feelings."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Foydalanuvchilarning «Xizmatni tavsiya qilasizmi?» degan savolga bergan javoblari asosida hisoblanadigan sodiqlik indeksining qisqartma nomini (uchta harf) yozing.",
+          "ru": "Напишите аббревиатуру (три буквы) «индекса лояльности», который рассчитывается на основе ответов пользователей на вопрос «Порекомендуете ли вы услугу?».",
+          "en": "Write the abbreviation (three letters) for the \"Net Promoter Score\", which is calculated based on users' answers to the question \"Would you recommend the service?\"."
+        },
+        "answers": [
+          "NPS",
+          "nps"
+        ],
+        "explanation": {
+          "uz": "«Tavsiya qilasizmi?» savoli asosida hisoblanadigan koʻrsatkich NPS (Net Promoter Score) deb ataladi.",
+          "ru": "Показатель, рассчитываемый на основе вопроса «Порекомендуете ли?», называется NPS (Net Promoter Score).",
+          "en": "The indicator calculated based on the question \"Would you recommend it?\" is called NPS (Net Promoter Score)."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Davlat xizmatidan foydalanish uchun 800 ta ariza boshlangan, shulardan 600 tasi muvaffaqiyatli yakunlangan. Xizmatning yakunlash darajasi (foizda) nechaga teng? (Faqat son yozing)",
+          "ru": "Для получения госуслуги было начато 800 заявлений, из них 600 успешно завершены. Чему равна доля завершения услуги (в процентах)? (Напишите только число)",
+          "en": "800 applications were started to use a state service, and 600 of them were successfully completed. What is the completion rate of the service (in percent)? (Write only the number)"
+        },
+        "answers": [
+          75
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Yakunlash darajasi = (yakunlangan / boshlangan) × 100. Bizda (600 / 800) × 100 = 75.",
+          "ru": "Доля завершения = (завершённые / начатые) × 100. У нас (600 / 800) × 100 = 75.",
+          "en": "Completion rate = (completed / started) × 100. We have (600 / 800) × 100 = 75."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "WCAG xalqaro hammaboplik standartining asosiy toʻrt tamoyilini tanlang.",
+          "ru": "Выберите четыре основных принципа международного стандарта доступности WCAG.",
+          "en": "Select the four main principles of the WCAG international accessibility standard."
+        },
+        "options": [
+          {
+            "uz": "Idrok etiladigan (Perceivable)",
+            "ru": "Воспринимаемость (Perceivable)",
+            "en": "Perceivable"
+          },
+          {
+            "uz": "Boshqariladigan (Operable)",
+            "ru": "Управляемость (Operable)",
+            "en": "Operable"
+          },
+          {
+            "uz": "Tushunarli (Understandable)",
+            "ru": "Понятность (Understandable)",
+            "en": "Understandable"
+          },
+          {
+            "uz": "Mustahkam (Robust)",
+            "ru": "Надёжность (Robust)",
+            "en": "Robust"
+          },
+          {
+            "uz": "Minimalistik (Minimalistic)",
+            "ru": "Минималистичность (Minimalistic)",
+            "en": "Minimalistic"
+          }
+        ],
+        "correct": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "explanation": {
+          "uz": "Darsda taʼkidlangan WCAG ning toʻrt tamoyili: idrok etiladigan, boshqariladigan, tushunarli va mustahkam. Minimalistik esa Nilsen evristikalaridan biridir.",
+          "ru": "Четыре принципа WCAG, подчёркнутые на занятии: воспринимаемость, управляемость, понятность и надёжность. Минималистичный — это одна из эвристик Нильсена.",
+          "en": "The four WCAG principles highlighted in the lesson are perceivable, operable, understandable and robust. Minimalist is one of Nielsen's heuristics."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Xizmat sxemasi (service blueprint) asosan nima maqsadda ishlatiladi?",
+          "ru": "Для какой основной цели используется схема услуги (service blueprint)?",
+          "en": "For what main purpose is a service blueprint used?"
+        },
+        "options": [
+          {
+            "uz": "Mijoz yoʻlini «sahna ortidagi» jarayonlar (qaysi xodim yoki tizim ishlashi) bilan toʻldirish va koʻrsatish uchun",
+            "ru": "Для дополнения и показа пути клиента процессами «за кулисами» (работа какого сотрудника или системы)",
+            "en": "To complement and show the customer journey with \"backstage\" processes (which employee or system works)"
+          },
+          {
+            "uz": "Faqatgina foydalanuvchining his-tuygʻulari va ogʻriq nuqtalarini aniqlash uchun",
+            "ru": "Только для выявления ощущений и болевых точек пользователя",
+            "en": "Only to identify the user's feelings and pain points"
+          },
+          {
+            "uz": "Dastur kodi qanchalik tez ishlashini soniyalarda oʻlchash uchun",
+            "ru": "Для измерения скорости работы программного кода в секундах",
+            "en": "To measure how fast the program code runs in seconds"
+          },
+          {
+            "uz": "Xizmat koʻrsatuvchi tashkilotning yillik byudjetini rejalashtirish uchun",
+            "ru": "Для планирования годового бюджета организации, предоставляющей услугу",
+            "en": "To plan the annual budget of the service-providing organization"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Xizmat sxemasi mijoz yoʻlini orqa fondagi jarayonlar: tizimlar, xodimlar va integratsiyalar qanday taʼminlashi bilan bogʻlaydi.",
+          "ru": "Схема услуги связывает путь клиента с фоновыми процессами: как системы, сотрудники и интеграции обеспечивают его.",
+          "en": "A service blueprint connects the customer journey with background processes: how systems, employees and integrations support it."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "CSAT koʻrsatkichini hisoblash",
+      "ru": "Расчёт показателя CSAT",
+      "en": "Calculating the CSAT indicator"
+    },
+    "statement": {
+      "uz": "Mijozlarning xizmatdan qoniqishini (CSAT) hisoblash uchun 4 va 5 ball qoʻyganlar ulushini topish kerak. Dasturingiz bitta qatorda boʻsh joy bilan ajratilgan 1 dan 5 gacha boʻlgan baholarni oʻqisin. 4 va 5 baholar sonining umumiy baholar soniga nisbatini foizda, bitta oʻnlik kasr aniqligida «CSAT: X%» koʻrinishida chiqaring. Masalan, «5 4 3 5 2 4 1 5» kiritilsa, 8 ta bahodan 5 tasi (4 yoki 5) boʻlgani uchun «CSAT: 62.5%» chiqishi kerak.",
+      "ru": "Для расчёта удовлетворённости клиентов (CSAT) нужно найти долю тех, кто поставил 4 и 5 баллов. Ваша программа должна прочитать в одной строке оценки от 1 до 5, разделённые пробелом. Выведите отношение количества оценок 4 и 5 к общему количеству оценок в процентах с точностью до одного десятичного знака в формате «CSAT: X%». Например, при вводе «5 4 3 5 2 4 1 5» из 8 оценок 5 являются четвёрками или пятёрками, поэтому должно вывестись «CSAT: 62.5%».",
+      "en": "To calculate customer satisfaction (CSAT), you need to find the share of those who gave 4 and 5 points. Your program should read ratings from 1 to 5 separated by a space on a single line. Print the ratio of the number of 4 and 5 ratings to the total number of ratings as a percentage, accurate to one decimal place, in the format \"CSAT: X%\". For example, if \"5 4 3 5 2 4 1 5\" is entered, 5 out of 8 ratings are 4 or 5, so it should print \"CSAT: 62.5%\"."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\nsatr = sys.stdin.read().strip()\nbaholar = [int(x) for x in satr.split()]\n\nprint(f\"CSAT: 0.0%\")\n",
+        "java": "import java.util.Arrays;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int[] baholar = Arrays.stream(in.nextLine().trim().split(\"\\\\s+\")).mapToInt(Integer::parseInt).toArray();\n        \n        System.out.println(String.format(\"CSAT: %.1f%%\", 0.0));\n    }\n}\n",
+        "cpp": "#include <cstdio>\n#include <iostream>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    istringstream ss(satr);\n    vector<int> baholar;\n    int b;\n    while (ss >> b) baholar.push_back(b);\n    \n    printf(\"CSAT: %.1f%%\\n\", 0.0);\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\nsatr = sys.stdin.read().strip()\nbaholar = [int(x) for x in satr.split()]\nyaxshi = sum(1 for b in baholar if b >= 4)\nprint(f\"CSAT: {yaxshi * 100.0 / len(baholar):.1f}%\")\n",
+        "java": "import java.util.Arrays;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int[] baholar = Arrays.stream(in.nextLine().trim().split(\"\\\\s+\")).mapToInt(Integer::parseInt).toArray();\n        int n = baholar.length;\n        int yaxshi = 0;\n        for (int b : baholar) {\n            if (b >= 4) yaxshi++;\n        }\n        System.out.println(String.format(\"CSAT: %.1f%%\", yaxshi * 100.0 / n));\n    }\n}\n",
+        "cpp": "#include <cstdio>\n#include <iostream>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    istringstream ss(satr);\n    vector<int> baholar;\n    int b;\n    while (ss >> b) baholar.push_back(b);\n    \n    int n = baholar.size();\n    int yaxshi = 0;\n    for (int x : baholar) {\n        if (x >= 4) yaxshi++;\n    }\n    printf(\"CSAT: %.1f%%\\n\", yaxshi * 100.0 / n);\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "5 4 3 5 2 4 1 5\n",
+          "expected": "CSAT: 62.5%",
+          "hidden": false
+        },
+        {
+          "input": "5 5 5 5\n",
+          "expected": "CSAT: 100.0%",
+          "hidden": false
+        },
+        {
+          "input": "1 2 3 1 2\n",
+          "expected": "CSAT: 0.0%",
+          "hidden": true
+        },
+        {
+          "input": "4 4 4 3 3\n",
+          "expected": "CSAT: 60.0%",
+          "hidden": true
+        },
+        {
+          "input": "5\n",
+          "expected": "CSAT: 100.0%",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

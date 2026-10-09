@@ -1,0 +1,337 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Elektron soliq hisobotlari qayerdan topshiriladi?",
+          "ru": "Откуда сдаются электронные налоговые отчёты?",
+          "en": "Where are electronic tax reports submitted from?"
+        },
+        "options": [
+          {
+            "uz": "my.soliq.uz (Soliq toʻlovchining shaxsiy kabineti)",
+            "ru": "my.soliq.uz (Личный кабинет налогоплательщика)",
+            "en": "my.soliq.uz (Taxpayer's personal cabinet)"
+          },
+          {
+            "uz": "lex.uz (Qonunchilik bazasi)",
+            "ru": "lex.uz (Законодательная база)",
+            "en": "lex.uz (Legislative database)"
+          },
+          {
+            "uz": "e-imzo.uz",
+            "ru": "e-imzo.uz",
+            "en": "e-imzo.uz"
+          },
+          {
+            "uz": "bank.uz",
+            "ru": "bank.uz",
+            "en": "bank.uz"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Soliq hisobotlari my.soliq.uz saytidagi shaxsiy kabinet orqali topshiriladi.",
+          "ru": "Налоговые отчёты сдаются через личный кабинет на сайте my.soliq.uz.",
+          "en": "Tax reports are submitted through the personal cabinet on my.soliq.uz."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Elektron raqamli imzo (ERI) yordamida hisobot topshirishda soliq idorasiga borish shart emas.",
+          "ru": "При сдаче отчётов с помощью электронной цифровой подписи (ЭЦП) посещать налоговую инспекцию не нужно.",
+          "en": "When submitting reports using an electronic digital signature (ERI), it is not necessary to visit the tax office."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "ERI orqali hisobotlar qogʻozsiz, masofadan yuboriladi va idoraga borish talab etilmaydi.",
+          "ru": "Через ЭЦП отчёты отправляются без бумаги и удалённо, визит не требуется.",
+          "en": "Through ERI, reports are sent paperless and remotely, requiring no visit."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oddiy va murakkab foiz oʻrtasidagi farq nima?",
+          "ru": "В чём разница между простым и сложным процентом?",
+          "en": "What is the difference between simple and compound interest?"
+        },
+        "options": [
+          {
+            "uz": "Oddiy foiz faqat boshlangʻich summaga hisoblanadi, murakkab foiz esa oldingi foizlar qoʻshilgan joriy balansga",
+            "ru": "Простой процент начисляется только на начальную сумму, а сложный — на текущий баланс с учётом прошлых процентов",
+            "en": "Simple interest is calculated only on the initial amount, while compound interest is on the current balance including past interest"
+          },
+          {
+            "uz": "Oddiy foiz qisqa muddatli, murakkab foiz uzoq muddatli kreditlar uchun",
+            "ru": "Простой процент для краткосрочных, сложный для долгосрочных кредитов",
+            "en": "Simple interest is for short-term, compound for long-term loans"
+          },
+          {
+            "uz": "Oddiy foiz omonatlar uchun, murakkab foiz kreditlar uchun",
+            "ru": "Простой процент для вкладов, сложный для кредитов",
+            "en": "Simple interest is for deposits, compound for loans"
+          },
+          {
+            "uz": "Oddiy foiz joriy balansga, murakkab foiz boshlangʻich summaga hisoblanadi",
+            "ru": "Простой процент начисляется на текущий баланс, сложный — на начальную сумму",
+            "en": "Simple interest is calculated on the current balance, compound on the initial amount"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Oddiy foiz har yili bir xil miqdorda hisoblanadi, murakkab foiz esa oʻsib boradigan balansga nisbatan qoʻllaniladi.",
+          "ru": "Простой процент каждый год одинаков, а сложный применяется к растущему балансу.",
+          "en": "Simple interest is the same amount each year, while compound interest applies to a growing balance."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda qaysi soliq turlari sanab oʻtilgan?",
+          "ru": "Какие виды налогов перечислены в занятии?",
+          "en": "Which types of taxes are listed in the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Qoʻshilgan qiymat soligʻi (QQS)",
+            "ru": "Налог на добавленную стоимость (НДС)",
+            "en": "Value added tax (VAT)"
+          },
+          {
+            "uz": "Aylanmadan olinadigan soliq",
+            "ru": "Налог с оборота",
+            "en": "Turnover tax"
+          },
+          {
+            "uz": "Ijtimoiy soliq",
+            "ru": "Социальный налог",
+            "en": "Social tax"
+          },
+          {
+            "uz": "Ekologiya soligʻi",
+            "ru": "Экологический налог",
+            "en": "Environmental tax"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda QQS, foyda, aylanma, JShDS, ijtimoiy va mol-mulk soliqlari sanalgan. Ekologiya soligʻi aytilmagan.",
+          "ru": "В занятии перечислены НДС, налог на прибыль, с оборота, НДФЛ, социальный и налог на имущество. Экологический налог не упомянут.",
+          "en": "The lesson lists VAT, profit tax, turnover tax, PIT, social tax, and property taxes. Environmental tax is not mentioned."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Xodimning ish haqidan ushlanib toʻlanadigan soliqning qisqartmasi nima?",
+          "ru": "Какова аббревиатура налога, который удерживается из заработной платы сотрудника?",
+          "en": "What is the acronym for the tax deducted from the employee's salary?"
+        },
+        "answers": ["JShDS", "JSHDS", "jshds", "НДФЛ", "PIT"],
+        "explanation": {
+          "uz": "Jismoniy shaxslardan olinadigan daromad soligʻi (JShDS) toʻgʻridan-toʻgʻri xodim ish haqidan ushlanadi.",
+          "ru": "Налог на доходы физических лиц (НДФЛ, в тексте JShDS) удерживается прямо из зарплаты.",
+          "en": "The personal income tax (PIT, or JShDS in Uzbek) is deducted directly from the employee's salary."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ijtimoiy soliq xodimning ish haqidan ushlab qolinadi.",
+          "ru": "Социальный налог удерживается из заработной платы сотрудника.",
+          "en": "Social tax is deducted from the employee's salary."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Ijtimoiy soliq xodimning ish haqidan emas, balki ish beruvchining oʻz hisobidan ish haqi fondiga toʻlanadi.",
+          "ru": "Социальный налог платится не из зарплаты сотрудника, а за счёт собственных средств работодателя.",
+          "en": "Social tax is not deducted from the employee's salary, but is paid by the employer from their own funds."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsda qaysi kredit toʻlov usullari keltirilgan?",
+          "ru": "Какие методы погашения кредита приведены в занятии?",
+          "en": "What credit payment methods are given in the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Annuitet",
+            "ru": "Аннуитет",
+            "en": "Annuity"
+          },
+          {
+            "uz": "Differensial",
+            "ru": "Дифференцированный",
+            "en": "Differential"
+          },
+          {
+            "uz": "Kapitalizatsiya",
+            "ru": "Капитализация",
+            "en": "Capitalization"
+          },
+          {
+            "uz": "Kafolatli",
+            "ru": "Гарантированный",
+            "en": "Guaranteed"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Kreditni toʻlashning asosiy ikki usuli keltirilgan: annuitet va differensial toʻlovlar. Kapitalizatsiya omonatlarga xos.",
+          "ru": "Приведены два основных метода погашения кредита: аннуитетные и дифференцированные платежи.",
+          "en": "Two main methods of loan repayment are given: annuity and differential payments. Capitalization is for deposits."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Agar xodimning hisoblangan ish haqi 5000000 soʻm va JShDS stavkasi 12% boʻlsa, JShDS summasini yozing.",
+          "ru": "Если начисленная зарплата сотрудника составляет 5000000 сумов, а ставка JShDS — 12%, напишите сумму JShDS.",
+          "en": "If the employee's gross salary is 5000000 sums and the JShDS rate is 12%, write the JShDS amount."
+        },
+        "answers": [600000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "5000000 ning 12 foizi 600000 ga teng (5000000 * 12 / 100).",
+          "ru": "12 процентов от 5000000 равно 600000 (5000000 * 12 / 100).",
+          "en": "12 percent of 5000000 is 600000 (5000000 * 12 / 100)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kreditlarni solishtirishda qaysi foiz stavkasidan foydalanish tavsiya etiladi?",
+          "ru": "Какую процентную ставку рекомендуется использовать при сравнении кредитов?",
+          "en": "Which interest rate is recommended to be used when comparing loans?"
+        },
+        "options": [
+          {
+            "uz": "Yillik samarali foiz stavkasi",
+            "ru": "Годовая эффективная процентная ставка",
+            "en": "Annual effective interest rate"
+          },
+          {
+            "uz": "Nominal foiz stavkasi",
+            "ru": "Номинальная процентная ставка",
+            "en": "Nominal interest rate"
+          },
+          {
+            "uz": "Oylik foiz stavkasi",
+            "ru": "Месячная процентная ставка",
+            "en": "Monthly interest rate"
+          },
+          {
+            "uz": "Oddiy foiz stavkasi",
+            "ru": "Простая процентная ставка",
+            "en": "Simple interest rate"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Samarali foiz stavkasi barcha komissiya va yashirin toʻlovlarni oʻz ichiga olgani uchun aniqroqdir.",
+          "ru": "Эффективная процентная ставка точнее, так как включает все комиссии и скрытые платежи.",
+          "en": "The effective interest rate is more accurate because it includes all commissions and hidden fees."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Omonat foizlarini hisoblash",
+      "ru": "Расчет процентов по вкладу",
+      "en": "Calculating deposit interest"
+    },
+    "statement": {
+      "uz": "Omonatga boshlangʻich summa qoʻyildi va yillik foiz stavkasi belgilandi. Dasturingiz 3 ta butun sonni qatorma-qator oʻqisin: boshlangʻich summa, yillik foiz stavkasi (foizda, masalan 20) va muddat (yillarda). Dastur muddat oxirida oddiy foiz boʻyicha jami summa va murakkab foiz (har yili kapitallashtirish, yillik foiz pastga yaxlitlanadi) boʻyicha jami summani hisoblab, bitta qatorda probel bilan ajratib chiqarsin. Faqat ikkita butun sonni chiqaring.",
+      "ru": "Вложен начальный депозит под определённый годовой процент. Ваша программа должна прочитать три целых числа, каждое на отдельной строке: начальная сумма, годовая процентная ставка (в процентах, например 20) и срок (в годах). Программа должна вычислить и вывести через пробел в одной строке два целых числа: итоговую сумму по простому проценту и итоговую сумму по сложному проценту (капитализация ежегодно, сумма процента на каждом шаге округляется вниз до целого). Выводите только числа.",
+      "en": "An initial deposit is placed at a certain annual interest rate. Your program should read three integers, each on a separate line: the initial amount, the annual interest rate (in percent, e.g., 20), and the term (in years). The program must calculate and output two integers separated by a space on one line: the total amount with simple interest and the total amount with compound interest (capitalized annually, with the interest amount rounded down to an integer at each step). Output only the numbers."
+    },
+    "code": {
+      "starter": {
+        "python": "P = int(input())\nR = int(input())\nT = int(input())\n\nprint(f\"{P} {P}\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long P = in.nextLong();\n        long R = in.nextLong();\n        long T = in.nextLong();\n        \n        System.out.println(P + \" \" + P);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long P, R, T;\n    if (cin >> P >> R >> T) {\n        cout << P << \" \" << P << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "P = int(input())\nR = int(input())\nT = int(input())\n\nsimple = P + (P * R // 100) * T\ncompound = P\nfor _ in range(T):\n    compound += compound * R // 100\n\nprint(f\"{simple} {compound}\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long P = in.nextLong();\n        long R = in.nextLong();\n        long T = in.nextLong();\n        \n        long simple = P + (P * R / 100) * T;\n        long compound = P;\n        for (long i = 0; i < T; i++) {\n            compound += compound * R / 100;\n        }\n        \n        System.out.println(simple + \" \" + compound);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long P, R, T;\n    if (cin >> P >> R >> T) {\n        long long simple = P + (P * R / 100) * T;\n        long long compound = P;\n        for (long long i = 0; i < T; i++) {\n            compound += compound * R / 100;\n        }\n        cout << simple << \" \" << compound << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "1000000\n20\n3\n",
+          "expected": "1600000 1728000",
+          "hidden": false
+        },
+        {
+          "input": "500000\n10\n5\n",
+          "expected": "750000 805255",
+          "hidden": false
+        },
+        {
+          "input": "100000\n5\n2\n",
+          "expected": "110000 110250",
+          "hidden": true
+        },
+        {
+          "input": "2000000\n15\n1\n",
+          "expected": "2300000 2300000",
+          "hidden": true
+        },
+        {
+          "input": "3000000\n8\n4\n",
+          "expected": "3960000 4081466",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

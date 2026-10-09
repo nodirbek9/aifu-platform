@@ -1,0 +1,439 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ierarxik maʼlumotlar modelida maʼlumot qanday tuziladi?",
+          "ru": "Как данные организованы в иерархической модели?",
+          "en": "How is data structured in the hierarchical model?"
+        },
+        "options": [
+          {
+            "uz": "Daraxt koʻrinishida: har bir yozuvning bitta «ota»si bor",
+            "ru": "Древом: у каждой записи один «родитель»",
+            "en": "A tree: each record has one «parent»"
+          },
+          {
+            "uz": "Yozuvlar koʻp-koʻp bogʻlangan graf koʻrinishida",
+            "ru": "Графом записей со связями «многие ко многим»",
+            "en": "A graph of records linked many-to-many"
+          },
+          {
+            "uz": "Kalit boʻyicha qidiriladigan juftliklar koʻrinishida",
+            "ru": "Парами, где значение находится по ключу",
+            "en": "Pairs found by a key"
+          },
+          {
+            "uz": "JSON kabi moslashuvchan hujjatlar koʻrinishida",
+            "ru": "Гибкими документами вроде JSON",
+            "en": "Flexible JSON-like documents"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda ierarxik modelga fayl tizimi va eski bank tizimlari (IBM IMS) misol qilib keltirilgan; graf — tarmoqli model, hujjatlar — NoSQL.",
+          "ru": "В занятии к иерархической модели отнесены файловая система и старые банковские системы (IBM IMS); граф — это сетевая модель, документы — NoSQL.",
+          "en": "The lesson gives the file system and old banking systems (IBM IMS) for the hierarchical model; a graph is the network model, documents are NoSQL."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda qaysi modellar NoSQL deb sanalgan?",
+          "ru": "Какие модели в занятии названы NoSQL?",
+          "en": "Which models does the lesson call NoSQL?"
+        },
+        "options": [
+          {
+            "uz": "Hujjatli (MongoDB)",
+            "ru": "Документная (MongoDB)",
+            "en": "Document (MongoDB)"
+          },
+          {
+            "uz": "Kalit-qiymat (Redis)",
+            "ru": "Ключ-значение (Redis)",
+            "en": "Key-value (Redis)"
+          },
+          {
+            "uz": "Graf (Neo4j)",
+            "ru": "Графовая (Neo4j)",
+            "en": "Graph (Neo4j)"
+          },
+          {
+            "uz": "Relatsion (PostgreSQL)",
+            "ru": "Реляционная (PostgreSQL)",
+            "en": "Relational (PostgreSQL)"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "PostgreSQL, MySQL, Oracle, SQL Server — relatsion model; u moliya uchun qatʼiy tuzilma va tranzaksiyalar bilan asosiy model.",
+          "ru": "PostgreSQL, MySQL, Oracle, SQL Server — реляционная модель; она остаётся основной для финансов из-за строгой структуры и транзакций.",
+          "en": "PostgreSQL, MySQL, Oracle and SQL Server are the relational model, which stays the main one for finance because of its strict structure and transactions."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsga koʻra, relatsion model (E. Kodd, 1970) iqtisodiy tizimlarda hanuz asosiy model boʻlib qolmoqda.",
+          "ru": "По занятию, реляционная модель (Э. Кодд, 1970) до сих пор остаётся основной в экономических системах.",
+          "en": "According to the lesson, the relational model (E. Codd, 1970) is still the main model in economic systems."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Sabab: qatʼiy tuzilma, tranzaksiyalar va yaxlitlik kafolati (ACID) moliya uchun muhim.",
+          "ru": "Причина: строгая структура, транзакции и гарантии целостности (ACID) важны для финансов.",
+          "en": "The reason: a strict structure, transactions and integrity guarantees (ACID) matter for finance."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Loyihalash bosqichlarida ER-diagramma — mohiyatlar va bogʻlanishlar — qaysi bosqichning natijasi?",
+          "ru": "На каком этапе проектирования получается ER-диаграмма — сущности и связи?",
+          "en": "At which design stage does the ER diagram — entities and relationships — come out?"
+        },
+        "options": [
+          {
+            "uz": "Talablarni yigʻish",
+            "ru": "Сбор требований",
+            "en": "Gathering requirements"
+          },
+          {
+            "uz": "Konseptual model",
+            "ru": "Концептуальная модель",
+            "en": "Conceptual model"
+          },
+          {
+            "uz": "Mantiqiy model",
+            "ru": "Логическая модель",
+            "en": "Logical model"
+          },
+          {
+            "uz": "Fizik model",
+            "ru": "Физическая модель",
+            "en": "Physical model"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Konseptual model MBBT ga bogʻliq emas; jadvallar, ustunlar, kalitlar va normallashtirish — mantiqiy model, turlar va indekslar — fizik model.",
+          "ru": "Концептуальная модель не зависит от СУБД; таблицы, столбцы, ключи и нормализация — логическая модель, типы и индексы — физическая.",
+          "en": "The conceptual model is independent of the DBMS; tables, columns, keys and normalization are the logical model, types and indexes the physical one."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi bitta Excel savdo jadvali 3NF gacha keltirilganda nechta jadval hosil boʻladi?",
+          "ru": "Сколько таблиц получается, когда одна Excel-таблица продаж из занятия доведена до 3НФ?",
+          "en": "How many tables result when the single Excel sales table from the lesson is normalized to 3NF?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Mijoz, Mahsulot, Buyurtma va BuyurtmaQatori — toʻrt jadval; hisobotlar esa ularni JOIN bilan yigʻiladi (M7).",
+          "ru": "Клиент, Товар, Заказ и СтрокаЗаказа — четыре таблицы; отчёты собираются из них через JOIN (M7).",
+          "en": "Customer, Product, Order and OrderLine — four tables; reports are assembled from them with JOIN (M7)."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ustunda qiymatlarning takrorlanishini taʼqiqlaydigan cheklovning nomini yozing (masalan, soliq identifikatsiya raqami uchun).",
+          "ru": "Напишите название ограничения, запрещающего повторение значений в столбце (например, для ИНН).",
+          "en": "Write the name of the constraint that forbids repeated values in a column (for example, for a tax ID)."
+        },
+        "answers": ["UNIQUE", "unique", "Unique"],
+        "explanation": {
+          "uz": "Darsda uch cheklov sanalgan: NOT NULL — majburiy, UNIQUE — takrorlanmas, CHECK — qiymat chegarasi (narx > 0).",
+          "ru": "В занятии названы три ограничения: NOT NULL — обязательно, UNIQUE — без повторов, CHECK — граница значения (цена > 0).",
+          "en": "The lesson lists three: NOT NULL for required, UNIQUE for no duplicates, CHECK for a value limit (price > 0)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Jadval 3NF ga keltirilgandan keyin darsda qaysi natijalar aytilgan?",
+          "ru": "Какие результаты после доведения таблицы до 3НФ названы в занятии?",
+          "en": "Which outcomes does the lesson state after the table is normalized to 3NF?"
+        },
+        "options": [
+          {
+            "uz": "Mijoz telefonining bitta joyda saqlanishi",
+            "ru": "Телефон клиента хранится в одном месте",
+            "en": "The customer's phone is stored in one place"
+          },
+          {
+            "uz": "Yangi mahsulotni buyurtmasiz ham kiritish mumkinligi",
+            "ru": "Новый товар можно внести и без заказа",
+            "en": "A new product can be entered without an order"
+          },
+          {
+            "uz": "Buyurtma oʻchirilsa ham mijoz maʼlumoti saqlanib qolishi",
+            "ru": "При удалении заказа сведения о клиенте сохраняются",
+            "en": "Deleting an order keeps the customer's information"
+          },
+          {
+            "uz": "Bir katakda bir nechta qiymat qoldirilishi",
+            "ru": "В одной ячейке оставляют несколько значений",
+            "en": "A cell keeps several values"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Bir katakda bir nechta qiymat («Choynak, Piyola») 1NF talabiga zid va darsda koʻp uchraydigan xato sifatida sanalgan: filtrlash va hisoblash imkonsiz boʻladi.",
+          "ru": "Несколько значений в одной ячейке («Чайник, Пиала») противоречат требованию 1НФ и названы частой ошибкой: фильтровать и считать невозможно.",
+          "en": "Several values in one cell («Teapot, Cup») break the 1NF rule and are listed as a common mistake: filtering and calculating become impossible."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "«Kim kimga pul oʻtkazgan» — aloqalar tahlili uchun dars qaysi modelni tanlashni maslahat beradi?",
+          "ru": "Какую модель занятие советует выбрать для анализа связей «кто кому переводил деньги»?",
+          "en": "Which model does the lesson advise for analysing connections — who transferred money to whom?"
+        },
+        "options": [
+          {
+            "uz": "Kalit-qiymat",
+            "ru": "Ключ-значение",
+            "en": "Key-value"
+          },
+          {
+            "uz": "Hujjatli",
+            "ru": "Документная",
+            "en": "Document"
+          },
+          {
+            "uz": "Graf",
+            "ru": "Графовая",
+            "en": "Graph"
+          },
+          {
+            "uz": "Ierarxik",
+            "ru": "Иерархическая",
+            "en": "Hierarchical"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Graf — tugunlar va qirralar (Neo4j). Pul va qoldiqlar uchun relatsion, tez oʻqish va vaqtinchalik maʼlumot uchun kalit-qiymat tanlanadi.",
+          "ru": "Граф — узлы и рёбра (Neo4j). Для денег и остатков берут реляционную, для быстрого чтения и временных данных — ключ-значение.",
+          "en": "A graph is nodes and edges (Neo4j). Money and balances take the relational model, very fast reads and temporary data take key-value."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Buyurtma qatoriga qoʻshimcha yoziladigan «sotilgan paytdagi narx» — bu maʼlumotlarni takrorlash xatosi.",
+          "ru": "Записываемая дополнительно в строку заказа «цена на момент продажи» — это ошибка дублирования данных.",
+          "en": "The extra «price at the time of sale» written into the order line is a duplication error."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda bu takror emas, tarixiy fakt deyilgan: narx oʻzgarsa ham eski buyurtmalar summasi oʻzgarmasligi kerak.",
+          "ru": "В занятии это названо не дублированием, а историческим фактом: при изменении цены суммы старых заказов не должны меняться.",
+          "en": "The lesson calls this not duplication but a historical fact: when a price changes, the totals of old orders must not."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Oʻquv markazi bazasini loyihalash",
+      "ru": "Проектирование базы данных учебного центра",
+      "en": "Designing the database of a training centre"
+    },
+    "statement": {
+      "uz": "Bu amaliyot MT8 dagi loyihalash topshirigʻi boʻyicha: talabalar, oʻqituvchilar, kurslar, guruhlar va toʻlovlar uchun baza loyihalanasiz — mohiyatlar va atributlar, kardinallik, ER-diagramma, 3NF dagi jadvallar va hisobot uchun birlashtirishlar. Javoblar faqat MT8 dars matnidan olinadi.",
+      "ru": "Это упражнение по заданию MT8 на проектирование: база для студентов, преподавателей, курсов, групп и оплат — сущности и атрибуты, кардинальность, ER-диаграмма, таблицы в 3НФ и соединения для отчёта. Ответы берутся только из текста MT8.",
+      "en": "This exercise follows the MT8 design assignment: a database for students, teachers, courses, groups and payments — entities and attributes, cardinality, an ER diagram, tables in 3NF and the joins a report needs. Every answer comes only from the MT8 text."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "NUM",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Loyihalash topshirigʻida oʻquv markazi uchun nechta mohiyat roʻyxatga olingan?",
+            "ru": "Сколько сущностей перечислено в задании на проектирование для учебного центра?",
+            "en": "How many entities does the design assignment list for the training centre?"
+          },
+          "answers": [5],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Talabalar, oʻqituvchilar, kurslar, guruhlar va toʻlovlar — besh mohiyat; birinchi band ularning atributlarini yozishni soʻraydi.",
+            "ru": "Студенты, преподаватели, курсы, группы и оплаты — пять сущностей; первый пункт просит выписать их атрибуты.",
+            "en": "Students, teachers, courses, groups and payments — five entities; the first step asks for their attributes."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Topshiriqda talaba — guruh bogʻlanishi qanday kardinallikka misol qilib berilgan?",
+            "ru": "Какая кардинальность указана в задании для связи «студент — группа»?",
+            "en": "Which cardinality does the assignment give as the example of the student — group relationship?"
+          },
+          "options": [
+            {
+              "uz": "1 : 1",
+              "ru": "1 : 1",
+              "en": "1 : 1"
+            },
+            {
+              "uz": "1 : N",
+              "ru": "1 : N",
+              "en": "1 : N"
+            },
+            {
+              "uz": "N : M",
+              "ru": "N : M",
+              "en": "N : M"
+            },
+            {
+              "uz": "Bogʻlanish mavjud emas",
+              "ru": "Связи нет",
+              "en": "There is no relationship"
+            }
+          ],
+          "correct": [2],
+          "explanation": {
+            "uz": "Darsda N : M bogʻlanish relatsion bazada oraliq jadval bilan amalga oshiriladi deyilgan (masalan, BuyurtmaQatori).",
+            "ru": "По занятию связь N : M в реляционной базе реализуется промежуточной таблицей (например, СтрокаЗаказа).",
+            "en": "In the lesson an N : M relationship is implemented in a relational database with a junction table (for example, OrderLine)."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Topshiriqning toʻrtinchi bandi jadvallarni 3NF da yozganda qaysilarni koʻrsatishni talab qiladi?",
+            "ru": "Что требует четвёртый пункт задания указать при записи таблиц в 3НФ?",
+            "en": "What does the fourth step of the assignment require you to state when writing the tables in 3NF?"
+          },
+          "options": [
+            {
+              "uz": "Ustunlarni",
+              "ru": "Столбцы",
+              "en": "The columns"
+            },
+            {
+              "uz": "Birlamchi kalitlarni",
+              "ru": "Первичные ключи",
+              "en": "The primary keys"
+            },
+            {
+              "uz": "Tashqi kalitlarni",
+              "ru": "Внешние ключи",
+              "en": "The foreign keys"
+            },
+            {
+              "uz": "Indekslarni",
+              "ru": "Индексы",
+              "en": "The indexes"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Indekslar — fizik model bosqichining natijasi, toʻrtinchi band roʻyxatida yoʻq.",
+            "ru": "Индексы — результат этапа физической модели, в списке четвёртого пункта их нет.",
+            "en": "Indexes belong to the physical model stage and are not in the list of the fourth step."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "ER-diagramma chizish uchun dars qogʻozdan tashqari qaysi vositani nomlaydi?",
+            "ru": "Какий инструмент, кроме бумаги, назван в занятии для рисования ER-диаграммы?",
+            "en": "Which tool, besides paper, does the lesson name for drawing an ER diagram?"
+          },
+          "answers": ["draw.io", "Draw.io", "drawio", "draw io"],
+          "explanation": {
+            "uz": "Uchinchi band: ER-diagramma qogʻozda yoki draw.io da chiziladi.",
+            "ru": "Третий пункт: ER-диаграмма рисуется на бумаге или в draw.io.",
+            "en": "The third step: draw the ER diagram on paper or in draw.io."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Topshiriq «har bir kurs boʻyicha oylik tushum» hisoboti uchun qaysi jadvallarni birlashtirish kerakligini ham aniqlashni soʻraydi.",
+            "ru": "Задание требует также определить, какие таблицы нужно объединить для отчёта «месячная выручка по курсам».",
+            "en": "The assignment also asks which tables must be joined for the report «monthly revenue by course»."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Bu beshinchi band; normallashtirilgan bazada hisobotlar JOIN bilan yigʻiladi (M7).",
+            "ru": "Это пятый пункт; в нормализованной базе отчёты собираются через JOIN (M7).",
+            "en": "That is the fifth step; in a normalized database reports are assembled with JOIN (M7)."
+          }
+        }
+      ]
+    }
+  }
+}

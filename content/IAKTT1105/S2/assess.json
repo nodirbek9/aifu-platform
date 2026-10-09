@@ -1,0 +1,322 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Chek printerlarida qaysi texnologiya ishlatiladi?",
+          "ru": "Какая технология используется в чековых принтерах?",
+          "en": "Which technology is used in receipt printers?"
+        },
+        "options": [
+          {
+            "uz": "Termoprinting — siyohsiz, maxsus qogʻozga issiqlik bilan chop etish",
+            "ru": "Термопечать — без чернил, нагревом на специальной бумаге",
+            "en": "Thermal printing — inkless, printing on special paper with heat"
+          },
+          {
+            "uz": "Lazer — toner kukuni va lazer nuri bilan chop etish",
+            "ru": "Лазерная — с тонером и лазерным лучом",
+            "en": "Laser — printing with toner powder and a laser beam"
+          },
+          {
+            "uz": "Siyohli — siyoh bilan varaqqa sempurish",
+            "ru": "Струйная — распыление чернил на бумагу",
+            "en": "Inkjet — spraying ink onto paper"
+          },
+          {
+            "uz": "Matritsali — igna bilan lenta orqali bosish",
+            "ru": "Матричная — удар иглами через ленту",
+            "en": "Dot-matrix — striking pins through a ribbon"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Termoprinterlar siyoh ishlatmaydi: maxsus issiqlikka sezgir qogʻozga bosim va issiqlik bilan belgi chiqaradi. Shuning uchun ular kassalarda chek chiqarishda keng qoʻllaniladi.",
+          "ru": "Термопринтеры не используют чернила: на специальной термобумаге изображение получается под воздействием тепла. Поэтому они широко применяются для печати чеков на кассах.",
+          "en": "Thermal printers use no ink: the image is produced on heat-sensitive paper by applying heat. That is why they are widely used for printing receipts at tills."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Flesh-xotirani (USB flesh) asosiy saqlash vositasi sifatida ishlatish xavfsiz, chunki u arzon va koʻchma.",
+          "ru": "Использовать флеш-память (USB-флешку) как основное хранилище безопасно, потому что она дешёвая и переносная.",
+          "en": "Using flash memory (a USB drive) as the main storage is safe because it is cheap and portable."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Flesh-xotira oson yoʻqolishi, mexanik zararlanishi va virus yuqishi mumkin. U vaqtincha fayl koʻchirishga moʻljallangan; asosiy saqlash uchun HDD, SSD yoki NAS afzal.",
+          "ru": "Флешка легко теряется, механически повреждается и заражается вирусами. Она предназначена для временного переноса файлов; для постоянного хранения лучше HDD, SSD или NAS.",
+          "en": "A flash drive can be easily lost, physically damaged and infected with malware. It is designed for temporary file transfer; for permanent storage an HDD, SSD or NAS is preferred."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Quyidagilardan qaysilari kiritish qurilmalariga kiradi?",
+          "ru": "Какие из перечисленных устройств относятся к устройствам ввода?",
+          "en": "Which of the following are input devices?"
+        },
+        "options": [
+          {
+            "uz": "Shtrix-kod skaneri",
+            "ru": "Считыватель штрихкодов",
+            "en": "Barcode scanner"
+          },
+          {
+            "uz": "Termoprinter (chek printeri)",
+            "ru": "Термопринтер (чековый принтер)",
+            "en": "Thermal printer (receipt printer)"
+          },
+          {
+            "uz": "RFID oʻquvchi",
+            "ru": "RFID-считыватель",
+            "en": "RFID reader"
+          },
+          {
+            "uz": "Mijoz displeyi",
+            "ru": "Дисплей покупателя",
+            "en": "Customer display"
+          },
+          {
+            "uz": "Toʻlov terminali (POS)",
+            "ru": "Платёжный терминал (POS)",
+            "en": "Payment terminal (POS)"
+          }
+        ],
+        "correct": [0, 2, 4],
+        "explanation": {
+          "uz": "Shtrix-kod skaneri, RFID oʻquvchi va toʻlov terminali maʼlumotni kompyuterga kiritadi (skaner mahsulot kodini, RFID esa radio teglarni oʻqiydi, terminal esa toʻlov maʼlumotini qabul qiladi). Termoprinter va mijoz displeyi esa chiqarish qurilmalari hisoblanadi.",
+          "ru": "Считыватель штрихкодов, RFID-считыватель и платёжный терминал вводят данные в компьютер. Термопринтер и дисплей покупателя — устройства вывода.",
+          "en": "The barcode scanner, RFID reader and payment terminal feed data into the computer. The thermal printer and customer display are output devices."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oʻzbekistondagi onlayn kassalar va fiskal modul haqida qaysi ifoda toʻgʻri?",
+          "ru": "Какое утверждение об онлайн-кассах и фискальном модуле в Узбекистане верно?",
+          "en": "Which statement about online cash registers and the fiscal module in Uzbekistan is correct?"
+        },
+        "options": [
+          {
+            "uz": "Fiskal modul chek maʼlumotlarini kun oxirida Soliq qoʻmitasiga yuboradi",
+            "ru": "Фискальный модуль отправляет данные чека в Налоговый комитет в конце дня",
+            "en": "The fiscal module sends receipt data to the Tax Committee at the end of the day"
+          },
+          {
+            "uz": "Har bir chek maʼlumoti fiskal modul orqali real vaqtda Soliq qoʻmitasiga yuboriladi va chekda tekshirish uchun QR kod boʻladi",
+            "ru": "Данные каждого чека через фискальный модуль в реальном времени передаются в Налоговый комитет, а на чеке есть QR-код для проверки",
+            "en": "The data of every receipt is sent through the fiscal module to the Tax Committee in real time, and the receipt carries a QR code for verification"
+          },
+          {
+            "uz": "Onlayn kassalar faqat katta savdo markazlari uchun majburiy",
+            "ru": "Онлайн-кассы обязательны только для крупных торговых центров",
+            "en": "Online cash registers are mandatory only for large shopping centres"
+          },
+          {
+            "uz": "Fiskal modul faqat toʻlov terminalida boʻladi, kassada emas",
+            "ru": "Фискальный модуль есть только в платёжном терминале, а не в кассе",
+            "en": "The fiscal module is only in the payment terminal, not in the cash register"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Seminarda koʻrsatilganicha, Oʻzbekistonda savdo va xizmat koʻrsatishda onlayn kassalar qoʻllaniladi: har bir chek maʼlumoti fiskal modul orqali real vaqtda Soliq qoʻmitasiga yuboriladi, chekda esa tekshirish uchun QR kod boʻladi.",
+          "ru": "Как указано в семинаре, в Узбекистане в торговле и сфере услуг применяются онлайн-кассы: данные каждого чека через фискальный модуль в реальном времени передаются в Налоговый комитет, а на чеке есть QR-код для проверки.",
+          "en": "As shown in the seminar, in Uzbekistan online cash registers are used in trade and services: the data of every receipt is sent through the fiscal module to the Tax Committee in real time, and the receipt carries a QR code for verification."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kichik doʻkon uchun jihozlar: shtrix-kod skaneri 350 000 soʻm, chek printeri 800 000 soʻm, toʻlov terminali 1 200 000 soʻm va mijoz displeyi 450 000 soʻm turadi. Jami xarajat necha soʻm?",
+          "ru": "Оборудование для небольшого магазина: считыватель штрихкодов стоит 350 000 сум, чековый принтер — 800 000 сум, платёжный терминал — 1 200 000 сум, дисплей покупателя — 450 000 сум. Какова общая стоимость?",
+          "en": "Equipment for a small shop: a barcode scanner costs 350 000 soum, a receipt printer 800 000 soum, a payment terminal 1 200 000 soum and a customer display 450 000 soum. What is the total cost?"
+        },
+        "answers": [2800000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "350 000 + 800 000 + 1 200 000 + 450 000 = 2 800 000 soʻm. Doʻkon jihozlari xarajatini aniqlashda har bir qurilma narxini qoʻshish kerak.",
+          "ru": "350 000 + 800 000 + 1 200 000 + 450 000 = 2 800 000 сум. Для определения общей стоимости оборудования магазина нужно сложить цену каждого устройства.",
+          "en": "350 000 + 800 000 + 1 200 000 + 450 000 = 2 800 000 soum. To find the total equipment cost, add the price of each device."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Skanerlangan qogʻoz hujjat tasvirini tahrirlanadigan matnga aylantiradigan texnologiyaning qisqartmasini yozing.",
+          "ru": "Напишите аббревиатуру технологии, которая превращает изображение отсканированного документа в редактируемый текст.",
+          "en": "Write the abbreviation of the technology that turns a scanned document image into editable text."
+        },
+        "answers": ["OCR"],
+        "explanation": {
+          "uz": "OCR (Optical Character Recognition — optik belgilarni tanib olish) skanerlangan tasvirdan harflarni tanib olib, tahrirlash mumkin boʻlgan matnga aylantiradi.",
+          "ru": "OCR (Optical Character Recognition — оптическое распознавание символов) распознаёт символы на отсканированном изображении и превращает их в редактируемый текст.",
+          "en": "OCR (Optical Character Recognition) recognises characters in a scanned image and turns them into editable text."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kichik ofis uchun 3-2-1 zaxira qoidasi qanday qoʻllaniladi?",
+          "ru": "Как применяется правило резервного копирования 3-2-1 для небольшого офиса?",
+          "en": "How is the 3-2-1 backup rule applied to a small office?"
+        },
+        "options": [
+          {
+            "uz": "3 ta kompyuter, 2 ta printer va 1 ta skaner boʻlishi kerak",
+            "ru": "Нужно иметь 3 компьютера, 2 принтера и 1 сканер",
+            "en": "You should have 3 computers, 2 printers and 1 scanner"
+          },
+          {
+            "uz": "Maʼlumotning 3 ta nusxasi, 2 xil saqlash vositasida saqlanishi va 1 ta nusxa ofisdan tashqarida (masalan, bulutda) boʻlishi kerak",
+            "ru": "Нужно иметь 3 копии данных, хранить их на 2 разных носителях и держать 1 копию вне офиса (например, в облаке)",
+            "en": "You should have 3 copies of the data, store them on 2 different media types and keep 1 copy offsite (for example, in the cloud)"
+          },
+          {
+            "uz": "Haftada 3 marta, oyda 2 marta va yilda 1 marta zaxira nusxa olish kerak",
+            "ru": "Нужно делать резервные копии 3 раза в неделю, 2 раза в месяц и 1 раз в год",
+            "en": "You should make backups 3 times a week, 2 times a month and 1 time a year"
+          },
+          {
+            "uz": "3 GB dan ortiq fayl 2 ta NAS va 1 ta HDD ga koʻchirilishi kerak",
+            "ru": "Файлы больше 3 ГБ нужно копировать на 2 NAS и 1 HDD",
+            "en": "Files over 3 GB should be copied to 2 NAS devices and 1 HDD"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "3-2-1 qoidasi: 3 ta nusxa (asosiy + 2 zaxira), 2 xil saqlash turi (masalan, SSD va NAS), 1 nusxa ofis tashqarisida (bulut yoki boshqa bino). Bu yagona disk buzilishi yoki falokatdan himoya qiladi.",
+          "ru": "Правило 3-2-1: 3 копии данных (оригинал + 2 резервные), 2 разных типа хранилища (например, SSD и NAS), 1 копия вне офиса (облако или другое здание). Это защищает от отказа одного диска или катастрофы.",
+          "en": "The 3-2-1 rule: 3 copies of the data (original + 2 backups), 2 different storage types (for example, an SSD and a NAS), 1 copy offsite (cloud or another building). This protects against a single disk failure or disaster."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "SSD haqidagi qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об SSD верны?",
+          "en": "Which statements about an SSD are correct?"
+        },
+        "options": [
+          {
+            "uz": "SSD HDD ga qaraganda tezroq va mexanik zarbalarga chidamliroq",
+            "ru": "SSD быстрее HDD и более устойчив к механическим ударам",
+            "en": "An SSD is faster than an HDD and more resistant to physical shocks"
+          },
+          {
+            "uz": "SSD da 1 GB narxi HDD ga qaraganda arzonroq",
+            "ru": "Цена за ГБ у SSD дешевле, чем у HDD",
+            "en": "The price per GB of an SSD is lower than that of an HDD"
+          },
+          {
+            "uz": "SSD operatsion tizim va ishchi dasturlar uchun tavsiya etiladi",
+            "ru": "SSD рекомендуется для операционной системы и рабочих программ",
+            "en": "An SSD is recommended for the operating system and working programs"
+          },
+          {
+            "uz": "SSD arxiv va zaxira nusxalar uchun HDD dan koʻra iqtisodiy jihatdan foydali",
+            "ru": "SSD экономически выгоднее HDD для архивов и резервных копий",
+            "en": "An SSD is more economical than an HDD for archives and backups"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "SSD juda tez ishlaydi va harakatlanuvchi qismlari yoʻqligi sababli zarbalarga chidamli — shuning uchun OT va dasturlar uchun afzal. Ammo 1 GB narxi HDD ga qaraganda qimmatroq, shuning uchun katta arxivlar uchun HDD iqtisodiy jihatdan foydali.",
+          "ru": "SSD очень быстрый и устойчив к ударам из-за отсутствия движущихся частей — поэтому предпочтителен для ОС и программ. Но цена за ГБ у него выше, чем у HDD, поэтому для больших архивов HDD экономически выгоднее.",
+          "en": "An SSD is very fast and resistant to shocks because it has no moving parts — so it is preferred for the OS and programs. But its price per GB is higher than that of an HDD, so for large archives an HDD is more economical."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bulut ombori har doim oʻz diskidan arzon, chunki provayder texnik xizmatni oʻz zimmasiga oladi.",
+          "ru": "Облачное хранилище всегда дешевле собственного диска, потому что провайдер берёт на себя техническое обслуживание.",
+          "en": "Cloud storage is always cheaper than your own disk because the provider takes on technical maintenance."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bulut ombori doimiy obuna toʻlovini talab qiladi; katta hajmdagi maʼlumotlarni uzoq muddatda saqlashda oʻz diski (NAS yoki HDD) arzonga tushishi mumkin. Bundan tashqari, bulut uchun doimiy Internet ulanishi va maxfiylik masalasi ham hisobga olinadi.",
+          "ru": "Облачное хранилище требует постоянной абонентской платы; при хранении больших объёмов данных в долгосрочной перспективе собственный диск (NAS или HDD) может оказаться дешевле. Кроме того, нужно учитывать постоянное подключение к интернету и вопрос конфиденциальности.",
+          "en": "Cloud storage requires an ongoing subscription fee; for large volumes of data over a long period, your own disk (NAS or HDD) can be cheaper. You also need to account for a constant Internet connection and the privacy question."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Doʻkon jihozlari xarajatini hisoblash",
+      "ru": "Подсчёт стоимости оборудования магазина",
+      "en": "Calculating the cost of shop equipment"
+    },
+    "statement": {
+      "uz": "Kichik doʻkon ochilmoqda. Egasi n ta qurilma uchun narxlar roʻyxatini beradi. Dasturingiz birinchi qatorda butun son n ni oʻqisin, keyin n ta qatorda har bir qurilmaning narxini (butun son, soʻmda) oʻqisin va jami xarajatni bitta qatorda, faqat son koʻrinishida chiqarsin — hech qanday qoʻshimcha soʻz yozmang. Masalan, n = 3 va narxlar 350000, 800000, 1200000 boʻlsa, dastur 2350000 chiqaradi.",
+      "ru": "Открывается небольшой магазин. Владелец даёт список цен n устройств. Ваша программа должна прочитать целое число n в первой строке, затем n строк с ценой каждого устройства (целое число, в сумах) и вывести общую стоимость одной строкой — только число, без слов. Например, при n = 3 и ценах 350000, 800000, 1200000 программа выводит 2350000.",
+      "en": "A small shop is opening. The owner gives a list of prices for n devices. Your program must read the integer n on the first line, then n lines each with the price of one device (an integer, in soum), and print the total cost on one line — only the number, no words. For example, if n = 3 and the prices are 350000, 800000, 1200000, the program prints 2350000."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\ntotal = 0\nfor i in range(n):\n    price = int(input())\n    total = total + 0\nprint(total)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long total = 0;\n        for (int i = 0; i < n; i++) {\n            long price = in.nextLong();\n            total = total + 0;\n        }\n        System.out.println(total);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    long long total = 0;\n    for (int i = 0; i < n; i++) {\n        long long price;\n        cin >> price;\n        total = total + 0;\n    }\n    cout << total << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\ntotal = 0\nfor i in range(n):\n    price = int(input())\n    total = total + price\nprint(total)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long total = 0;\n        for (int i = 0; i < n; i++) {\n            long price = in.nextLong();\n            total = total + price;\n        }\n        System.out.println(total);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    long long total = 0;\n    for (int i = 0; i < n; i++) {\n        long long price;\n        cin >> price;\n        total = total + price;\n    }\n    cout << total << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\n350000\n800000\n1200000\n", "expected": "2350000", "hidden": false },
+        { "input": "1\n500000\n", "expected": "500000", "hidden": false },
+        { "input": "4\n350000\n800000\n1200000\n450000\n", "expected": "2800000", "hidden": true },
+        { "input": "5\n100000\n200000\n300000\n400000\n500000\n", "expected": "1500000", "hidden": true },
+        { "input": "2\n999999\n1\n", "expected": "1000000", "hidden": true }
+      ]
+    }
+  }
+}

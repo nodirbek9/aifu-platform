@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Barmoq izini solishtirishning asosiy usulida qaysi belgilar ishlatiladi?",
+          "ru": "Какие признаки используются в основном способе сравнения отпечатков пальцев?",
+          "en": "Which features are used in the main method of comparing fingerprints?"
+        },
+        "options": [
+          {
+            "uz": "2-daraja belgilari — minutsiyalar: chiziq uchlari, ikkiga ajralishlari, ularning joylashuvi va yoʻnalishi",
+            "ru": "Признаки 2-го уровня — минуции: окончания и разветвления линий, их расположение и направление",
+            "en": "Level-2 features — minutiae: line endings and bifurcations, their position and direction"
+          },
+          {
+            "uz": "1-daraja umumiy naqsh — yoy, ilmoq, burama",
+            "ru": "Общий узор 1-го уровня — дуга, петля, завиток",
+            "en": "Level-1 overall pattern — arch, loop, whorl"
+          },
+          {
+            "uz": "3-daraja belgilari — teri teshiklari va chiziq qalinligi",
+            "ru": "Признаки 3-го уровня — поры кожи и толщина линий",
+            "en": "Level-3 features — skin pores and line thickness"
+          },
+          {
+            "uz": "Barmoq uzunligi va tirnoq shakli",
+            "ru": "Длина пальца и форма ногтя",
+            "en": "The length of the finger and the shape of the nail"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvaliga koʻra 1-daraja naqsh tasnif va tez qidiruv uchun, 3-daraja yuqori aniqlikdagi kriminalistik tahlil uchun, asosiy solishtirish usuli esa minutsiyalardir.",
+          "ru": "По таблице занятия узор 1-го уровня нужен для классификации и быстрого поиска, 3-го — для высокоточной криминалистики, а основной способ сравнения — минуции.",
+          "en": "In the lesson's table the level-1 pattern is for classification and fast search, level-3 for high-precision criminal analysis, while the main comparison method uses minutiae."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Papillyar chiziqlar naqshi hatto egizaklarda ham bir xil boʻladi.",
+          "ru": "Рисунок папиллярных линий одинаков даже у близнецов.",
+          "en": "The pattern of papillary lines is the same even in twins."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda naqsh homiladorlik davrida shakllanadi, umr boʻyi oʻzgarmaydi va hatto egizaklarda ham farq qiladi deyilgan.",
+          "ru": "В занятии сказано, что узор формируется в период внутриутробного развития, не меняется всю жизнь и различается даже у близнецов.",
+          "en": "The lesson says the pattern forms before birth, never changes during life, and differs even between twins."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Barmoq izi skanerlari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о сканерах отпечатков пальцев верны?",
+          "en": "Which statements about fingerprint scanners are correct?"
+        },
+        "options": [
+          {
+            "uz": "Sigʻimli skaner chiziqlar va chuqurchalar orasidagi elektr sigʻimi farqidan foydalanadi",
+            "ru": "Ёмкостный сканер использует разность электрической ёмкости между гребнями и впадинами",
+            "en": "A capacitive scanner uses the difference in electrical capacitance between ridges and valleys"
+          },
+          {
+            "uz": "Ultratovushli skaner 3D tasvir oladi va iflos yoki nam barmoq bilan ham ishlaydi",
+            "ru": "Ультразвуковой сканер получает 3D-изображение и работает даже с грязным или влажным пальцем",
+            "en": "An ultrasonic scanner takes a 3D image and works even with a dirty or wet finger"
+          },
+          {
+            "uz": "Optik skaner arzon, lekin oddiy soxta nusxalarga zaifroq",
+            "ru": "Оптический сканер дёшев, но слабее против простых подделок",
+            "en": "An optical scanner is cheap but weaker against simple fakes"
+          },
+          {
+            "uz": "Termal skaner telefonlarda eng keng tarqalgan skaner hisoblanadi",
+            "ru": "Тепловой сканер — самый распространённый сканер в телефонах",
+            "en": "A thermal scanner is the most common scanner in phones"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda termal va boshqa skanerlar kam tarqalgan deb, telefon va noutbuklarda keng tarqalganini esa sigʻimli skaner deb koʻrsatilgan.",
+          "ru": "В занятии тепловые и прочие сканеры названы малораспространёнными, а широко распространёнными в телефонах и ноутбуках — ёмкостные.",
+          "en": "The lesson calls thermal and other scanners rare, and the capacitive one the scanner widely used in phones and laptops."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Barmoq izi shablonlari nega markaziy serverda emas, qurilmaning xavfsiz anklavida saqlanadi?",
+          "ru": "Почему шаблоны отпечатков хранят не на центральном сервере, а в защищённом блоке устройства?",
+          "en": "Why are fingerprint templates kept in the device's secure enclave rather than on a central server?"
+        },
+        "options": [
+          {
+            "uz": "Biometrik belgini almashtirib boʻlmaydi: sizib chiqqan shablon umrbod xavf boʻlib qoladi",
+            "ru": "Биометрический признак нельзя заменить: утечка шаблона создаёт пожизненный риск",
+            "en": "A biometric feature cannot be replaced: a leaked template is a risk for life"
+          },
+          {
+            "uz": "Shablonlar juda katta hajmli boʻlib, server xotirasiga sigʻmaydi",
+            "ru": "Шаблоны слишком велики по объёму и не помещаются в память сервера",
+            "en": "Templates are too large in volume to fit in server memory"
+          },
+          {
+            "uz": "Qurilma shablonlar yordamida internetga ulanadi",
+            "ru": "Устройство с помощью шаблонов подключается к интернету",
+            "en": "The device uses the templates to connect to the internet"
+          },
+          {
+            "uz": "Serverda shablonlarni solishtirish texnik jihatdan mumkin emas",
+            "ru": "На сервере шаблоны сравнивать технически невозможно",
+            "en": "Comparing templates on a server is technically impossible"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi taqqoslash: parol sizsa — almashtiriladi, barmoq izi sizsa — umrbod; shuning uchun shablonlar xavfsiz anklavda (Secure Enclave, TPM, TEE) shifrlangan holda saqlanadi va tashqariga chiqmaydi.",
+          "ru": "Сравнение из занятия: пароля утечёт — его меняют, отпечатка — навсегда; поэтому шаблоны хранятся зашифрованными в защищённом блоке (Secure Enclave, TPM, TEE) и не выходят наружу.",
+          "en": "The lesson compares them: a leaked password can be changed, a leaked fingerprint cannot; so templates are kept encrypted in the secure enclave (Secure Enclave, TPM, TEE) and never leave it."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Saqlangan shablon 40 bitdan iborat. Yangi namuna undan 6 bitda farq qilsa, normallashgan Hamming masofasi nechaga teng?",
+          "ru": "Сохранённый шаблон состоит из 40 бит. Новый образец отличается от него в 6 битах. Чему равна нормированное расстояние Хэмминга?",
+          "en": "A stored template has 40 bits. A new sample differs from it in 6 bits. What is the normalized Hamming distance?"
+        },
+        "answers": [0.15],
+        "tolerance": 0.001,
+        "explanation": {
+          "uz": "Darsdagi formula: HD = farq qiluvchi bitlar soni / bitlar soni = 6 / 40 = 0,15.",
+          "ru": "Формула из занятия: HD = число отличающихся битов / число битов = 6 / 40 = 0,15.",
+          "en": "The lesson's formula: HD = differing bits / number of bits = 6 / 40 = 0.15."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "«Bu kim?» degan savolga javob izlab, namuna bazadagi barcha shablonlar bilan solishtiriladigan jarayon qanday ataladi?",
+          "ru": "Как называется процесс, в котором образец сравнивается со всеми шаблонами базы, чтобы ответить на вопрос «это кто?»",
+          "en": "What is the process called in which a sample is compared with every template in the base to answer \"who is this?\""
+        },
+        "answers": ["identifikatsiya", "identification", "идентификация"],
+        "explanation": {
+          "uz": "Darsda verifikatsiya — 1:1 «bu ali mi?», identifikatsiya esa 1:N «bu kim?» deb farqlangan; 1:N da xato ehtimoli baza hajmi bilan oshadi.",
+          "ru": "В занятии верификация — это 1:1 «это он?», а идентификация — 1:N «это кто?»; при 1:N вероятность ошибки растёт с размером базы.",
+          "en": "The lesson separates verification (1:1, \"is this the person?\") from identification (1:N, \"who is this?\"), where the error probability grows with the size of the base."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Zamonaviy qurilmada barmoq izi elektron raqamli imzo bilan imzolashda aslida nimani bajaradi?",
+          "ru": "Что фактически делает отпечаток пальца при подписи электронной цифровой подписью в современном устройстве?",
+          "en": "In a modern device, what does the fingerprint actually do when something is signed with a digital signature?"
+        },
+        "options": [
+          {
+            "uz": "Qurilmadagi yopiq kalitga kirishni ochadi — imzoni esa xavfsiz anklav yopiq kalit bilan yaratadi",
+            "ru": "Открывает доступ к закрытому ключу в устройстве — подпись создаёт защищённый блок тем самым закрытым ключом",
+            "en": "It unlocks access to the private key on the device — the enclave creates the signature with that private key"
+          },
+          {
+            "uz": "Hujjatning mazmunini shifrlaydi va serverga yuboradi",
+            "ru": "Шифрует содержание документа и отправляет его на сервер",
+            "en": "It encrypts the document content and sends it to the server"
+          },
+          {
+            "uz": "Ochiq kalit bilan hujjatning yaxlitligini tekshiradi",
+            "ru": "Проверяет целостность документа открытым ключом",
+            "en": "It checks the document's integrity with the public key"
+          },
+          {
+            "uz": "Markaziy imzolash serverga soʻrov yuboradi va kalitni u yerda saqlaydi",
+            "ru": "Отправляет запрос на центральный сервер подписи и хранит ключ там",
+            "en": "It sends a request to a central signing server and keeps the key there"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda barmoq izi ERI ning oʻzi emas, u qurilmadagi yopiq kalitga kirishni ochadi; biometrik maʼlumot tarmoqqa umuman chiqmaydi.",
+          "ru": "В занятии отпечаток — это не сама ЭЦП: он открывает доступ к закрытому ключу на устройстве, а биометрические данные вообще не выходят в сеть.",
+          "en": "The lesson says the fingerprint is not the signature itself: it unlocks the private key on the device, and the biometric data never leaves it."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Chegara, FAR va FRR haqida darsdagi Hamming masofasi misoli boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о пороге, FAR и FRR верны по примеру с расстоянием Хэмминга из занятия?",
+          "en": "Which statements about the threshold, FAR and FRR are correct for the lesson's Hamming distance example?"
+        },
+        "options": [
+          {
+            "uz": "Chegarani 0,25 dan pastga tushirish FRR ni oshiradi",
+            "ru": "Понижение порога ниже 0,25 увеличивает FRR",
+            "en": "Lowering the threshold below 0.25 increases FRR"
+          },
+          {
+            "uz": "Chegarani yuqoriga koʻtarish FAR ni oshiradi",
+            "ru": "Повышение порога увеличивает FAR",
+            "en": "Raising the threshold increases FAR"
+          },
+          {
+            "uz": "Tasodifiy begona namunalar uchun HD ≈ 0,5, bir odamning namunalari uchun esa ancha kichik",
+            "ru": "У случайных чужих образцов HD ≈ 0,5, у образцов одного человека — заметно меньше",
+            "en": "Random impostor samples give HD ≈ 0.5, samples of one person give a much smaller value"
+          },
+          {
+            "uz": "Ikki skanerlash aynan bir xil boʻlishi mumkin, shuning uchun dastur aniq tenglikni tekshiradi",
+            "ru": "Два сканирования могут быть одинаковы, поэтому программа проверяет точное равенство",
+            "en": "Two scans can be identical, so the program checks for exact equality"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda ikki skanerlash hech qachon toʻliq bir xil boʻlmasligi (bosim, burchak, namlik) va shuning uchun aniq tenglik emas, yaqinlik tekshirilishi koʻrsatilgan.",
+          "ru": "В занятии сказано, что два сканирования никогда не совпадают полностью (давление, угол, влажность), поэтому проверяется не точное равенство, а близость.",
+          "en": "The lesson says two scans are never exactly alike (pressure, angle, moisture), so what is checked is closeness, not exact equality."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Saqlangan shablon bilan aynan bir xil (HD = 0) namuna har doim eng ishonchli moslikdir.",
+          "ru": "Образец, точно совпадающий с сохранённым шаблоном (HD = 0), — всегда самое надёжное совпадение.",
+          "en": "A sample identical to the stored template (HD = 0) is always the most trustworthy match."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda haqiqiy skanerlashda bu deyarli boʻlmaydi deyilgan: aynan bir xil namuna ilgari olingan shablonni qayta yuborish (replay) belgisi boʻlishi mumkin, shuning uchun baʼzi tizimlar juda kichik farqni ham shubhali hisoblaydi.",
+          "ru": "В занятии сказано, что при настоящем сканировании это почти не встречается: точно совпадающий образец может быть повторной отправкой ранее взятого шаблона (replay), поэтому некоторые системы считают и слишком малое различие подозрительным.",
+          "en": "The lesson says this almost never happens with real scans: an exactly identical sample may be a replay of a template taken earlier, so some systems treat even a very small difference as suspicious."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Chegara boʻyicha FAR va FRR sonini hisoblash",
+      "ru": "Подсчёт FAR и FRR по порогу",
+      "en": "Counting FAR and FRR against a threshold"
+    },
+    "statement": {
+      "uz": "Darsda solishtirish taxminiy deyilgan: yangi namunaning oʻxshashlik bali chegara bilan taqqoslanadi va qanchalik koʻp qabul qilish yoki rad etish xatosi borligi FAR va FRR bilan oʻlchanadi. Dasturingiz sinov natijalari boʻyicha ikkita sonni chiqaradi: rad etilgan egasi namunalar soni va qabul qilingan begona namunalar soni.\n\nKirish: birinchi qatorda chegara — nuqta bilan yozilgan oʻnlik son. Keyingi har bir qatorda ikkita qiymat: namunaning turi (1 — egasi, 0 — begona) va oʻxshashlik bali (0 dan 1 gacha). Namuna qabul qilingan hisoblanadi, agar bali chegaraga teng yoki undan katta boʻlsa; aks holda rad etilgan.\nChiqish: ikki qator — birinchi qatorda rad etilgan egasi namunalar soni, ikkinchi qatorda qabul qilingan begona namunalar soni. Faqat son chiqaring, boshqa hech qanday soʻz yozmang.\n\nMasalan, chegara 0.80 boʻlib, qatorlar 1 0.91, 1 0.78, 0 0.83, 0 0.41 kiritsa, dastur 1 va 1 chiqaradi: 0.78 — rad etilgan egasi namunasi, 0.83 — qabul qilingan begona namuna.",
+      "ru": "В занятии сказано, что сравнение приближённое: оценка сходства нового образца сопоставляется с порогом, а число ошибок измеряется FAR и FRR. Ваша программа должна вывести два числа по результатам проверки: сколько образцов владельца было отклонено и сколько чужих образцов было принято.\n\nВвод: в первой строке порог — десятичное число с точкой. В каждой следующей строке два значения: тип образца (1 — владелец, 0 — чужой) и оценка сходства (от 0 до 1). Образец считается принятым, если оценка равна порогу или больше него; иначе он отклонён.\nВывод: две строки — сначала число отклонённых образцов владельца, затем число принятых чужих образцов. Только числа, без каких-либо слов.\n\nНапример, при пороге 0.80 и строках 1 0.91, 1 0.78, 0 0.83, 0 0.41 программа выводит 1 и 1: 0.78 — отклонённый образец владельца, а 0.83 — принятый чужой образец.",
+      "en": "The lesson says comparison is approximate: the similarity score of a new sample is checked against a threshold, and the mistakes are measured by FAR and FRR. Your program must print two numbers from a set of test results: how many owner samples were rejected and how many impostor samples were accepted.\n\nInput: the first line is the threshold, a decimal number written with a dot. Each following line holds two values: the kind of sample (1 — owner, 0 — impostor) and its similarity score (between 0 and 1). A sample counts as accepted when its score is equal to or above the threshold, otherwise it is rejected.\nOutput: two lines — first the number of rejected owner samples, then the number of accepted impostor samples. Print only numbers, no words at all.\n\nFor example, the threshold 0.80 with the lines 1 0.91, 1 0.78, 0 0.83, 0 0.41 makes the program print 1 and 1: 0.78 is a rejected owner sample and 0.83 an accepted impostor sample."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nt = sys.stdin.read().split()\nchegara = float(t[0])\nrad = 0\nqabul = 0\nfor bal in t[2::2]:\n    if float(bal) >= chegara:\n        qabul += 1\n    else:\n        rad += 1\nprint(rad)\nprint(qabul)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        double chegara = Double.parseDouble(in.next());\n        int rad = 0;\n        int qabul = 0;\n        while (in.hasNext()) {\n            in.next();\n            double bal = Double.parseDouble(in.next());\n            if (bal >= chegara) {\n                qabul++;\n            } else {\n                rad++;\n            }\n        }\n        System.out.println(rad);\n        System.out.println(qabul);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    double chegara;\n    string tur, bal;\n    cin >> chegara;\n    int rad = 0;\n    int qabul = 0;\n    while (cin >> tur >> bal) {\n        double s = stod(bal);\n        if (s >= chegara) {\n            qabul++;\n        } else {\n            rad++;\n        }\n    }\n    cout << rad << endl << qabul << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nt = sys.stdin.read().split()\nchegara = float(t[0])\nrad = 0\nqabul = 0\nfor tur, bal in zip(t[1::2], t[2::2]):\n    if float(bal) >= chegara and tur == \"0\":\n        qabul += 1\n    if float(bal) < chegara and tur == \"1\":\n        rad += 1\nprint(rad)\nprint(qabul)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        double chegara = Double.parseDouble(in.next());\n        int rad = 0;\n        int qabul = 0;\n        while (in.hasNext()) {\n            String tur = in.next();\n            double bal = Double.parseDouble(in.next());\n            if (bal >= chegara && tur.equals(\"0\")) {\n                qabul++;\n            }\n            if (bal < chegara && tur.equals(\"1\")) {\n                rad++;\n            }\n        }\n        System.out.println(rad);\n        System.out.println(qabul);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    double chegara;\n    string tur, bal;\n    cin >> chegara;\n    int rad = 0;\n    int qabul = 0;\n    while (cin >> tur >> bal) {\n        double s = stod(bal);\n        if (s >= chegara && tur == \"0\") {\n            qabul++;\n        }\n        if (s < chegara && tur == \"1\") {\n            rad++;\n        }\n    }\n    cout << rad << endl << qabul << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "0.80\n1 0.91\n1 0.78\n0 0.83\n0 0.41\n", "expected": "1\n1", "hidden": false },
+        { "input": "0.5\n1 0.5\n0 0.5\n", "expected": "0\n1", "hidden": false },
+        { "input": "0.60\n1 0.61\n1 0.99\n0 0.62\n0 0.75\n", "expected": "0\n2", "hidden": true },
+        { "input": "0.10\n0 0.11\n0 0.10\n1 0.09\n", "expected": "1\n2", "hidden": true },
+        { "input": "0.75\n1 0.70\n1 0.80\n0 0.74\n0 0.20\n1 0.75\n", "expected": "1\n0", "hidden": true }
+      ]
+    }
+  }
+}

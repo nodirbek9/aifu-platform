@@ -1,0 +1,322 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Koʻrsatkich arifmetikasida *(p + i) ifodasi nimaga teng?",
+          "ru": "Чему равно выражение *(p + i) в арифметике указателей?",
+          "en": "In pointer arithmetic, what is the expression *(p + i) equal to?"
+        },
+        "options": [
+          {
+            "uz": "i-elementning manzili",
+            "ru": "Адрес элемента i",
+            "en": "The address of element i"
+          },
+          {
+            "uz": "Birinchi elementdan i bayt oldinga surilgan manzil",
+            "ru": "Адрес на i байт дальше от первого элемента",
+            "en": "An address i bytes past the first element"
+          },
+          {
+            "uz": "p[i] — massivning i-elementi qiymati",
+            "ru": "p[i] — значение элемента i массива",
+            "en": "p[i] — the value of element i of the array"
+          },
+          {
+            "uz": "Birinchi element qiymatiga i qoʻshilgan son",
+            "ru": "Число i, прибавленное к значению первого элемента",
+            "en": "The number i added to the value of the first element"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Darsdagi jadvalga koʻra: p + i — i-element manzili, *(p + i) esa uning qiymati, yaʼni p[i] bilan bir xil. Kompilyator i * sizeof(int) baytni oʻzi hisoblaydi.",
+          "ru": "По таблице из занятия: p + i — адрес элемента i, а *(p + i) — его значение, то же самое, что p[i]. Компилятор сам вычисляет i * sizeof(int) байт.",
+          "en": "Per the lesson table: p + i is the address of element i, and *(p + i) is its value — the same as p[i]. The compiler computes the i * sizeof(int) bytes itself."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Java va Pythonʼda ham koʻrsatkich arifmetikasi mavjud: massiveni koʻrsatkich bilan aylanish mumkin.",
+          "ru": "В Java и Python тоже есть арифметика указателей: по массиву можно идти указателем.",
+          "en": "Java and Python also have pointer arithmetic: you can walk an array with a pointer there."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsga koʻra, Java va Pythonʼda koʻrsatkich arifmetikasi yoʻq — u yerda faqat indeks ishlatiladi va chegaradan chiqish darhol xatoga olib keladi.",
+          "ru": "По занятию, в Java и Python арифметики указателей нет — там используются только индексы, а выход за границы сразу приводит к ошибке.",
+          "en": "According to the lesson, Java and Python have no pointer arithmetic — only indices are used there, and going out of bounds is an error at once."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "4 × 6 matritsa bir oʻlchamli massivda satrlar ketma-ket qilib saqlanadi. 2-satr, 3-ustundagi element (hisob 0 dan) massivning qaysi indeksida turadi?",
+          "ru": "Матрица 4 × 6 хранится в одномерном массиве, строки идут одна за другой. Под каким индексом (с нуля) находится элемент строки 2, столбца 3?",
+          "en": "A 4 × 6 matrix is kept in a one-dimensional array, rows one after another. At which index (from 0) sits the element of row 2, column 3?"
+        },
+        "answers": [15],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Matritsaning oʻlchami 4 × 6 boʻlgani uchun indeks i * m + j = 2 * 6 + 3 = 15. Bu darsning „oʻzingizni tekshiring“ savollaridan biri.",
+          "ru": "При размерах 4 × 6 индекс равен i * m + j = 2 * 6 + 3 = 15 — это один из вопросов раздела «проверьте себя».",
+          "en": "With sizes 4 × 6 the index is i * m + j = 2 * 6 + 3 = 15 — one of the questions of the lesson's check-yourself section."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "C++ʼda new int*[n] va har bir satr uchun new int[m] bilan yaratilgan n × m matritsa xotirani qanday toʻgʻri boʻshatadi?",
+          "ru": "Как правильно освободить память матрицы n × m, созданной в C++ через new int*[n] и new int[m] для каждой строки?",
+          "en": "In C++, how is a dynamic n × m matrix created with new int*[n] and new int[m] per row correctly freed?"
+        },
+        "options": [
+          {
+            "uz": "Avval delete[] a, soʻng har bir satr uchun delete[] a[i]",
+            "ru": "Сначала delete[] a, затем delete[] a[i] для каждой строки",
+            "en": "First delete[] a, then delete[] a[i] for each row"
+          },
+          {
+            "uz": "Avval har bir satr uchun delete[] a[i], soʻng delete[] a",
+            "ru": "Сначала delete[] a[i] для каждой строки, затем delete[] a",
+            "en": "First delete[] a[i] for every row, then delete[] a"
+          },
+          {
+            "uz": "Faqat delete[] a — satrlar oʻzi boʻshatiladi",
+            "ru": "Достаточно delete[] a — строки освободятся сами",
+            "en": "Only delete[] a — the rows free themselves"
+          },
+          {
+            "uz": "Har bir satr uchun alohida delete a[i]",
+            "ru": "Для каждой строки отдельный delete a[i]",
+            "en": "A separate delete a[i] for every row"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Boʻshatish teskari tartibda: avval satrlar, keyin koʻrsatkichlar massivi — aks holda satrlar manzili yoʻqoladi va a[i] ga murojaat aniqlanmagan xatti-harakat boʻladi. new[] bilan yaratilgan massiv faqat delete[] bilan boʻshatiladi.",
+          "ru": "Освобождение идёт в обратном порядке: сначала строки, потом массив указателей — иначе адреса строк теряются, а обращение к a[i] становится неопределённым поведением. Массив, созданный new[], освобождается только delete[].",
+          "en": "Freeing goes in reverse order: first the rows, then the pointer array — otherwise the rows' addresses are lost and touching a[i] becomes undefined behaviour. An array made with new[] is freed only with delete[]."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Matritsani bir oʻlchamli uzluksiz massivda saqlashning darsda aytilgan afzalliklari qaysilar?",
+          "ru": "Какие преимущества хранения матрицы в одномерном непрерывном массиве названы в занятии?",
+          "en": "Which advantages of keeping a matrix in a single contiguous one-dimensional array does the lesson name?"
+        },
+        "options": [
+          {
+            "uz": "Bitta new va bitta delete[] — xato qilish ehtimoli kam",
+            "ru": "Один new и один delete[] — меньше шансов ошибиться",
+            "en": "One new and one delete[] — less room for mistakes"
+          },
+          {
+            "uz": "Elementlar xotirada yonma-yon — protsessor keshi tufayli tezroq murojaat",
+            "ru": "Элементы соседствуют в памяти — обращение быстрее благодаря кешу процессора",
+            "en": "The elements sit adjacent in memory — access is faster thanks to the processor cache"
+          },
+          {
+            "uz": "Satrlarning uzunligi har xil boʻlishi mumkin",
+            "ru": "Строки могут иметь разную длину",
+            "en": "The rows can have different lengths"
+          },
+          {
+            "uz": "Butun matritsani funksiyaga oddiy massivdek uzatish mumkin",
+            "ru": "Всю матрицу можно передать в функцию как обычный массив",
+            "en": "The whole matrix can be passed to a function like an ordinary array"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Uchinchi afzallik tishli massivga tegishli, bir oʻlchamli saqlashga emas. Bir oʻlchamli saqlashda esa bittadan new/delete, kesh tufayli tezlik va matritsani oddiy massivdek uzatish afzal.",
+          "ru": "Третьё относится к «рваному» массиву, а не к одномерному хранению. У одномерного хранения плюсы другие: один new/delete, скорость из-за кеша и передача всей матрицы как обычного массива.",
+          "en": "The third belongs to the jagged array, not to one-dimensional storage. The latter's advantages are one new/delete each, cache-driven speed, and passing the whole matrix as an ordinary array."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda amaliy loyihalarda new/delete oʻrniga dinamik matritsa uchun qaysi C++ turi tavsiya qilingan?",
+          "ru": "Какой тип C++ занятие советует использовать для динамической матрицы вместо new/delete в реальных проектах?",
+          "en": "Which C++ type does the lesson recommend for a dynamic matrix instead of new/delete in real projects?"
+        },
+        "answers": [
+          "vector<vector<int>>",
+          "vector",
+          "std::vector",
+          "std::vector<vector<int>>"
+        ],
+        "explanation": {
+          "uz": "Darsda vector<vector<int>> tavsiya qilingan: u xotirani oʻzi boʻshatadi. new/delete bilish esa muhim — vector ichida aynan shu jarayon yashiringan.",
+          "ru": "В занятии рекомендуется vector<vector<int>>: он освобождает память сам. Знание new/delete при этом важно — внутри vector скрыт ровно этот процесс.",
+          "en": "The lesson recommends vector<vector<int>>, which frees memory by itself. Knowing new/delete still matters: exactly that process hides inside vector."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Spiral matritsa dasturidagi ikki ichki shart (agar) nimaga kerak?",
+          "ru": "Зачем в программе спиральной матрицы стоят два внутренних условия?",
+          "en": "Why does the spiral matrix program contain the two inner conditions?"
+        },
+        "options": [
+          {
+            "uz": "Spiralni soat strelkasiga qarab yurish uchun",
+            "ru": "Чтобы спираль шла против часовой стрелки",
+            "en": "So that the spiral runs counterclockwise"
+          },
+          {
+            "uz": "Toʻrtburchak matritsada bitta satr yoki ustun qolganda uni ikki marta toʻldirmaslik uchun",
+            "ru": "Чтобы оставшуюся в неквадратной матрице одиночную строку или столбец не заполнить дважды",
+            "en": "So that a single row or column left in a rectangular matrix is not filled twice"
+          },
+          {
+            "uz": "Kiritilgan sonlarning chegaralarini tekshirish uchun",
+            "ru": "Чтобы проверять границы вводимых чисел",
+            "en": "So that the input values are checked for range"
+          },
+          {
+            "uz": "Xotira sizib chiqishining oldini olish uchun",
+            "ru": "Чтобы предотвратить утечку памяти",
+            "en": "So that memory does not leak"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Toʻrtta chegara har aylanishdan keyin ichkariga suriladi; toʻrtburchak (kvadrat emas) matritsada bitta satr yoki ustun qolganda ichki shartlar uni ikki marta toʻldirishning oldini oladi. Spiral esa soat strelkasi boʻyicha yuradi.",
+          "ru": "Четыре границы после каждого витка сдвигаются внутрь; если в прямоугольной (не квадратной) матрице остаётся одна строка или столбец, именно внутренние условия спасают от двойного заполнения. Сама спираль при этом идёт по часовой стрелке.",
+          "en": "The four bounds move inwards after every lap; when a single row or column remains in a rectangular, non-square matrix, the inner conditions keep it from being filled twice. The spiral itself runs clockwise."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Koʻrsatkichlar va dinamik xotira haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об указателях и динамической памяти верны?",
+          "en": "Which statements about pointers and dynamic memory are correct?"
+        },
+        "options": [
+          {
+            "uz": "Koʻrsatkichga i qoʻshilsa, u i ta element oldinga suriladi, bayt emas",
+            "ru": "Прибавление i к указателю сдвигает его на i элементов, а не на i байт",
+            "en": "Adding i to a pointer moves it forward by i elements, not i bytes"
+          },
+          {
+            "uz": "q - p ayirmasi ikki koʻrsatkich orasidagi elementlar sonini beradi",
+            "ru": "Разность q - p даёт число элементов между двумя указателями",
+            "en": "The difference q - p gives the number of elements between two pointers"
+          },
+          {
+            "uz": "p <= a + n sharti bilan massivni oxirigacha aylanish toʻgʻri",
+            "ru": "Для обхода массива до конца верно условие p <= a + n",
+            "en": "To walk the array to its end the condition p <= a + n is correct"
+          },
+          {
+            "uz": "new[] bilan yaratilgan massivni delete bilan ham boʻshatish mumkin",
+            "ru": "Массив, созданный new[], можно освободить и через delete",
+            "en": "An array created with new[] can also be freed with delete"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Darsning xatolar roʻyxatiga koʻra: p <= a + n — bir element ortiq, shart p < a + n boʻlishi kerak; new[] bilan yaratilgan massiv esa faqat delete[] bilan boʻshatiladi.",
+          "ru": "Список ошибок занятия: p <= a + n захватывает лишний элемент, нужно p < a + n; а массив, созданный new[], освобождается только delete[].",
+          "en": "Per the lesson's mistake list: p <= a + n runs one element past the end — the condition must be p < a + n; and an array made with new[] is freed only with delete[]."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Paskal uchburchagi dasturida qiymatlar uchun long turi tanlangan, chunki 35-satrdagi sonlar int chegarasidan oshib ketadi.",
+          "ru": "В программе треугольника Паскаля выбран тип long, потому что значения 35-й строки превышают границу int.",
+          "en": "The Pascal triangle program chose the long type because values in row 35 exceed the int limit."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilishicha, 30-satrda qiymatlar 77 558 760 gacha yetadi, 35-satrda esa int chegarasidan oshadi — shuning uchun long ishlatilgan.",
+          "ru": "В занятии сказано: в 30-й строке значения доходят до 77 558 760, а в 35-й превышают границу int — поэтому взят long.",
+          "en": "The lesson states that row 30 reaches 77 558 760 and row 35 passes the int limit, which is why long was chosen."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Matritsani transpozitsiya qilish",
+      "ru": "Транспонирование матрицы",
+      "en": "Transposing a matrix"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda n va m, soʻng n ta qatorda m tadan butun son kiritiladi. Matritsani dinamik saqlang va uni transpozitsiya qiling: natijada m ta qator chiqsin, har bir qatorda bitta boʻsh joy bilan ajratilgan n ta son — yaʼni har bir ustun alohida qator boʻlib chiqsin. Masalan, 2 3, soʻng 1 2 3 va 4 5 6 kiritilsa, chiqish: 1 4, keyingi qatorda 2 5, yana bir qatorda 3 6 boʻladi.",
+      "ru": "В первой строке задаются n и m, затем в n строках по m целых чисел. Храните матрицу динамически и транспонируйте её: выведите m строк, в каждой — по n чисел, разделённых одним пробелом, то есть каждый столбец отдельной строкой. Например, для 2 3 и строк 1 2 3 и 4 5 6 вывод будет: 1 4, затем 2 5, затем 3 6.",
+      "en": "The first line holds n and m, then n lines of m integers each. Keep the matrix dynamically and transpose it: print m rows, each with n numbers separated by a single space — every column becomes a row. For example, the input 2 3 with rows 1 2 3 and 4 5 6 gives 1 4, then 2 5, then 3 6."
+    },
+    "code": {
+      "starter": {
+        "python": "n, m = map(int, input().split())\na = [list(map(int, input().split())) for _ in range(n)]\n\nfor i in range(n):\n    print(*a[i])\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt();\n        int[][] a = new int[n][m];\n        for (int i = 0; i < n; i++)\n            for (int j = 0; j < m; j++)\n                a[i][j] = in.nextInt();\n\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < m; j++) {\n                if (j > 0) System.out.print(\" \");\n                System.out.print(a[i][j]);\n            }\n            System.out.println();\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    int** a = new int*[n];\n    for (int i = 0; i < n; i++) a[i] = new int[m];\n    for (int i = 0; i < n; i++)\n        for (int j = 0; j < m; j++)\n            cin >> a[i][j];\n\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < m; j++) {\n            if (j > 0) cout << \" \";\n            cout << a[i][j];\n        }\n        cout << endl;\n    }\n\n    for (int i = 0; i < n; i++) delete[] a[i];\n    delete[] a;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n, m = map(int, input().split())\na = [list(map(int, input().split())) for _ in range(n)]\n\nfor j in range(m):\n    ustun = []\n    for i in range(n):\n        ustun.append(str(a[i][j]))\n    print(\" \".join(ustun))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt();\n        int[][] a = new int[n][m];\n        for (int i = 0; i < n; i++)\n            for (int j = 0; j < m; j++)\n                a[i][j] = in.nextInt();\n\n        for (int j = 0; j < m; j++) {\n            for (int i = 0; i < n; i++) {\n                if (i > 0) System.out.print(\" \");\n                System.out.print(a[i][j]);\n            }\n            System.out.println();\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    int** a = new int*[n];\n    for (int i = 0; i < n; i++) a[i] = new int[m];\n    for (int i = 0; i < n; i++)\n        for (int j = 0; j < m; j++)\n            cin >> a[i][j];\n\n    for (int j = 0; j < m; j++) {\n        for (int i = 0; i < n; i++) {\n            if (i > 0) cout << \" \";\n            cout << a[i][j];\n        }\n        cout << endl;\n    }\n\n    for (int i = 0; i < n; i++) delete[] a[i];\n    delete[] a;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "2 3\n1 2 3\n4 5 6\n", "expected": "1 4\n2 5\n3 6", "hidden": false },
+        { "input": "1 1\n7\n", "expected": "7", "hidden": false },
+        { "input": "3 2\n1 2\n3 4\n5 6\n", "expected": "1 3 5\n2 4 6", "hidden": true },
+        { "input": "2 2\n-5 0\n1 -2\n", "expected": "-5 1\n0 -2", "hidden": true },
+        { "input": "1 4\n9 8 7 6\n", "expected": "9\n8\n7\n6", "hidden": true }
+      ]
+    }
+  }
+}

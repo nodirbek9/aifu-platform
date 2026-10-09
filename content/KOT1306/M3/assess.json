@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "ISO/OSI modeli tarmoq orqali aloqani nechta pogʻonaga ajratadi?",
+          "ru": "На сколько уровней модель ISO/OSI разделяет сетевое взаимодействие?",
+          "en": "How many layers does the ISO/OSI model split network communication into?"
+        },
+        "options": [
+          {
+            "uz": "4",
+            "ru": "4",
+            "en": "4"
+          },
+          {
+            "uz": "5",
+            "ru": "5",
+            "en": "5"
+          },
+          {
+            "uz": "7",
+            "ru": "7",
+            "en": "7"
+          },
+          {
+            "uz": "10",
+            "ru": "10",
+            "en": "10"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "OSI — yetti pogʻonali etalon model (1984, ISO/IEC 7498); toʻrt pogʻona — TCP/IP modeliga tegishli.",
+          "ru": "OSI — эталонная модель из семи уровней (1984, ISO/IEC 7498); четыре уровня относятся к модели TCP/IP.",
+          "en": "OSI is the reference model with seven layers (1984, ISO/IEC 7498); four layers belong to TCP/IP."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "OSI modeli — protokollar toʻplami emas, u qaysi vazifani qaysi pogʻona bajarishi kerakligini tavsiflovchi model.",
+          "ru": "Модель OSI — не набор протоколов, а модель, описывающая, какой уровень какую задачу должен выполнять.",
+          "en": "The OSI model is not a suite of protocols; it describes which layer should do which job."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilanidek, model — vazifani qaysi pogʻona bajarishini koʻrsatuvchi xarita; amaldagi protokollar toʻplami esa TCP/IP.",
+          "ru": "Как сказано в занятии, модель — это карта, показывающая, какой уровень за что отвечает; реальный набор протоколов — TCP/IP.",
+          "en": "As the lesson says, the model is a map of which layer does what; the actual protocol suite is TCP/IP."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Pogʻonali yondashuvning afzalliklari qaysilar?",
+          "ru": "Какие из перечисленного — преимущества уровневой модели?",
+          "en": "Which of these are advantages of the layered approach?"
+        },
+        "options": [
+          {
+            "uz": "Murakkablik boʻlinadi: har bir pogʻona faqat oʻz vazifasini hal qiladi",
+            "ru": "Сложность разделяется: каждый уровень решает только свою задачу",
+            "en": "Complexity is divided: each layer solves only its own task"
+          },
+          {
+            "uz": "Qismalarni mustaqil almashtirish mumkin: kabelni optikaga almashtirish yuqori pogʻona dasturlarini oʻzgartirmaydi",
+            "ru": "Компоненты можно менять независимо: замена кабеля на оптику не меняет программы верхних уровней",
+            "en": "Parts can be replaced independently: swapping cable for fibre does not change upper-layer programs"
+          },
+          {
+            "uz": "Muammoni pogʻonama-pogʻona izlash mumkin",
+            "ru": "Проблему можно искать уровень за уровнем",
+            "en": "A problem can be traced layer by layer"
+          },
+          {
+            "uz": "Pogʻonalar soni tarmoq tezligini avtomatik oshiradi",
+            "ru": "Число уровней само по себе повышает скорость сети",
+            "en": "The number of layers by itself raises the speed of the network"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi toʻrtta afzallik: murakkablikni boʻlish, mustaqil almashtirish, moslik (turli ishlab chiqaruvchilar mahsulotlari birga ishlaydi) va oʻqitish hamda diagnostika. Tezlik esa oʻtkazuvchanlikka bogʻliq.",
+          "ru": "Четыре преимущества из занятия: разбиение сложности, независимая замена, совместимость продуктов разных производителей и обучение с диагностикой. Скорость зависит от пропускной способности, а не от числа уровней.",
+          "en": "The lesson's advantages are dividing complexity, independent replacement, compatibility of different vendors' products, and teaching and diagnosis. Speed depends on bandwidth, not on the layer count."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Mantiqiy manzil berish va marshrutlash qaysi pogʻonada bajariladi va uning maʼlumot birligi (PDU) qanday ataladi?",
+          "ru": "На каком уровне выполняются логическая адресация и маршрутизация, и как называется его PDU?",
+          "en": "Which layer does logical addressing and routing, and what is its PDU called?"
+        },
+        "options": [
+          {
+            "uz": "1-pogʻona, fizik — bit",
+            "ru": "1-й уровень, физический — бит",
+            "en": "Layer 1, physical — bit"
+          },
+          {
+            "uz": "2-pogʻona, kanal — kadr",
+            "ru": "2-й уровень, канальный — кадр",
+            "en": "Layer 2, data link — frame"
+          },
+          {
+            "uz": "3-pogʻona, tarmoq — paket",
+            "ru": "3-й уровень, сетевой — пакет",
+            "en": "Layer 3, network — packet"
+          },
+          {
+            "uz": "4-pogʻona, transport — segment",
+            "ru": "4-й уровень, транспортный — сегмент",
+            "en": "Layer 4, transport — segment"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "3-pogʻona (tarmoq) mantiqiy manzillash va marshrutlash bilan shugʻullanadi, PDU — paket, qurilma — marshrutizator. 2-pogʻonada fizik MAC manzil ishlatiladi.",
+          "ru": "Логическая адресация и маршрутизация — 3-й (сетевой) уровень, PDU — пакет, устройство — маршрутизатор. На 2-м уровне используется физический MAC-адрес.",
+          "en": "Logical addressing and routing belong to layer 3 (network); its PDU is the packet and its device the router. Layer 2 uses the physical MAC address."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ethernet kadrida maʼlumot maydoni (MTU) 1500 bayt. Undan IP (20 bayt) va TCP (20 bayt) sarlavhalari chiqarib tashlansa, bitta segmentga eng koʻpi bilan necha bayt foydali maʼlumot sigʻadi (MSS)?",
+          "ru": "Поле данных кадра Ethernet (MTU) — 1500 байт. Если вычесть заголовки IP (20 байт) и TCP (20 байт), сколько байт полезных данных поместится в один сегмент (MSS)?",
+          "en": "The Ethernet frame's data field (MTU) is 1500 bytes. After the IP (20 bytes) and TCP (20 bytes) headers are taken out, how many bytes of useful data fit into one segment (MSS)?"
+        },
+        "answers": [1460],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "1500 - 20 - 20 = 1460 bayt — bu MSS, darsda shunday berilgan.",
+          "ru": "1500 - 20 - 20 = 1460 байт — это MSS, как указано в занятии.",
+          "en": "1500 - 20 - 20 = 1460 bytes — the MSS given in the lesson."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Internet protokollarini standartlashtiruvchi va RFC hujjatlarini chop etuvchi tashkilotning qisqartmasini yozing.",
+          "ru": "Напишите сокращение организации, которая стандартизирует протоколы Интернета и выпускает документы RFC.",
+          "en": "Write the abbreviation of the organisation that standardises Internet protocols and publishes the RFC documents."
+        },
+        "answers": ["IETF", "ietf", "Internet Engineering Task Force"],
+        "explanation": {
+          "uz": "IETF — Internet protokollari boʻyicha RFC hujjatlarini chiqaradi (RFC 791 — IP, RFC 9293 — TCP). OSI modelini esa ISO qabul qilgan.",
+          "ru": "IETF выпускает RFC по протоколам Интернета (RFC 791 — IP, RFC 9293 — TCP); модель OSI приняла ISO.",
+          "en": "The IETF publishes the RFCs of Internet protocols (RFC 791 for IP, RFC 9293 for TCP); the OSI model came from ISO."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Protokol, interfeys va xizmat haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о протоколе, интерфейсе и сервисе верны?",
+          "en": "Which statements about a protocol, an interface and a service are correct?"
+        },
+        "options": [
+          {
+            "uz": "Protokol turli kompyuterlardagi bir xil pogʻonalar orasidagi qoidalar — gorizontal aloqa",
+            "ru": "Протокол — правила между одинаковыми уровнями разных компьютеров, то есть горизонтальное взаимодействие",
+            "en": "A protocol is the rules between the same layer on different computers — a horizontal conversation"
+          },
+          {
+            "uz": "Interfeys bitta kompyuterdagi qoʻshni pogʻonalar orasidagi chegara — masalan, dastur TCP ga socket orqali murojaat qiladi",
+            "ru": "Интерфейс — граница между соседними уровнями одного компьютера, например обращение приложения к TCP через сокет",
+            "en": "An interface is the boundary between neighbouring layers in one computer — for example an app reaching TCP through a socket"
+          },
+          {
+            "uz": "Xizmat — quyi pogʻonaning yuqori pogʻonaga beradigan imkoniyati",
+            "ru": "Сервис — возможность, которую нижний уровень предоставляет верхнему",
+            "en": "A service is what a lower layer offers to the layer above it"
+          },
+          {
+            "uz": "N-pogʻona boshqa kompyuterdagi N-pogʻona bilan haqiqatan toʻgʻridan-toʻgʻri maʼlumot almashadi",
+            "ru": "N-й уровень действительно обменивается данными напрямую с N-м уровнем другого компьютера",
+            "en": "Layer N really exchanges data directly with layer N of the other computer"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "N-pogʻona yuqori pogʻona bilan mantiqan gaplashadi: haqiqatda maʼlumot pastga tushadi, fizik muhit orqali oʻtadi va narigi tomonda yuqoriga koʻtariladi. Protokol esa sintaksis, semantika va sinxronizatsiyani belgilaydi.",
+          "ru": "Общение одноимённых уровней логическое: на самом деле данные спускаются вниз, идут по физической среде и на той стороне поднимаются вверх. Протокол же задаёт синтаксис, семантику и синхронизацию.",
+          "en": "Same-layer conversation is logical: the data really goes down, crosses the physical medium and climbs back up on the other side. A protocol defines syntax, semantics and synchronisation."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qabul qiluvchi tomonda 2-pogʻona barcha sarlavhalarni birdaniga olib tashlaydi.",
+          "ru": "На принимающей стороне 2-й уровень сразу снимает все заголовки.",
+          "en": "On the receiving side, layer 2 removes all the headers at once."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dekapsulyatsiyada har bir pogʻona faqat oʻzining sarlavhasini oʻqib olib tashlaydi va qolganini yuqoriga uzatadi — bu pogʻonalarning mustaqilligini koʻrsatadi.",
+          "ru": "При декапсуляции каждый уровень читает и снимает только свой заголовок, а остальное передаёт вверх — это и есть независимость уровней.",
+          "en": "In decapsulation each layer reads and removes only its own header and passes the rest upward — that is the independence of the layers."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "2920 bayt foydali maʼlumot MSS = 1460 baytli segmentlarga boʻlinib, har bir kadrga 58 bayt sarf qoʻshilgan holda yuboriladi. Kabeldan jami necha bayt oʻtadi?",
+          "ru": "2920 байт полезных данных делятся на сегменты MSS = 1460 байт, к каждому кадру добавляется 58 байт служебных. Сколько всего байт пройдёт по кабелю?",
+          "en": "2920 bytes of useful data are split into segments of MSS = 1460 bytes, and each frame carries 58 bytes of overhead. How many bytes travel over the cable in total?"
+        },
+        "answers": [3036],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "2920 bayt ikki toʻliq segmentga boʻlinadi (1460 + 1460), demak 2 ta kadr: 2920 + 2 · 58 = 3036 bayt.",
+          "ru": "2920 байт дают два полных сегмента (1460 + 1460), значит кадра два: 2920 + 2 · 58 = 3036 байт.",
+          "en": "2920 bytes fill two whole segments (1460 + 1460), so there are two frames: 2920 + 2 · 58 = 3036 bytes."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Protokolning pogʻonasi va maʼlumot birligi",
+      "ru": "Уровень протокола и его PDU",
+      "en": "The layer of a protocol and its PDU"
+    },
+    "statement": {
+      "uz": "Darsdagi OSI jadvaliga koʻra har bir pogʻonaning oʻz maʼlumot birligi bor: 1-pogʻona — bit, 2-pogʻona — frame (kadr), 3-pogʻona — packet (paket), 4-pogʻona — TCP uchun segment, UDP uchun datagram, 5, 6 va 7-pogʻonalar — message (xabar). Dasturingiz birinchi satrda k sonni, keyingi k satrda esa bittadan protokol yoki texnologiya nomini oʻqiydi: mumkin boʻlgan nomlar — RS-232, DSL, Ethernet, WiFi, PPP, IP, ICMP, OSPF, TCP, UDP, NetBIOS, RPC, TLS, JPEG, UTF-8, HTTP, FTP, SMTP, DNS. Har bir nom uchun alohida qatorda uchta narsani chiqaring: berilgan nom, OSI pogʻona raqami (1 dan 7 gacha) va maʼlumot birligining yuqoridagi inglizcha nomi — barchasi bitta boʻshliq bilan ajratilsin. Yuqoridagi roʻyxatda yoʻq nom uchun pogʻona raqami oʻrniga 0, birlik oʻrniga unknown chiqaring. Masalan, HTTP kirsa chiqadi: HTTP 7 message; UDP kirsa: UDP 4 datagram; MPLS kirsa: MPLS 0 unknown. Chegaralar: 1 ≤ k ≤ 100, nomlar roʻyxatda koʻrsatilgan katta-kichik harflar bilan keladi.",
+      "ru": "По таблице OSI из занятия у каждого уровня своя единица данных: уровень 1 — bit, уровень 2 — frame, уровень 3 — packet, уровень 4 — segment для TCP и datagram для UDP, уровни 5, 6 и 7 — message. Ваша программа читает в первой строке число k, затем в k строках по одному имени протокола или технологии; возможные имена: RS-232, DSL, Ethernet, WiFi, PPP, IP, ICMP, OSPF, TCP, UDP, NetBIOS, RPC, TLS, JPEG, UTF-8, HTTP, FTP, SMTP, DNS. Для каждого имени выведите отдельной строкой три значения через один пробел: само имя, номер уровня OSI (от 1 до 7) и английское название единицы данных. Для имени, которого нет в списке, выведите уровень 0 и единицу unknown. Примеры: HTTP -> HTTP 7 message; UDP -> UDP 4 datagram; MPLS -> MPLS 0 unknown. Ограничения: 1 ≤ k ≤ 100, имена приходят точно в указанной регистрационной форме.",
+      "en": "According to the OSI table in the lesson every layer has its own data unit: layer 1 — bit, layer 2 — frame, layer 3 — packet, layer 4 — segment for TCP and datagram for UDP, layers 5, 6 and 7 — message. Your program reads k on the first line, then one protocol or technology name per line for k lines; the possible names are RS-232, DSL, Ethernet, WiFi, PPP, IP, ICMP, OSPF, TCP, UDP, NetBIOS, RPC, TLS, JPEG, UTF-8, HTTP, FTP, SMTP, DNS. For each name print one line with three values separated by a single space: the name as given, its OSI layer number (1 to 7) and the English name of the data unit. For a name that is not in the list, print level 0 and the unit unknown. Examples: HTTP gives HTTP 7 message; UDP gives UDP 4 datagram; MPLS gives MPLS 0 unknown. Limits: 1 ≤ k ≤ 100, names arrive in the exact capitalisation shown above."
+    },
+    "code": {
+      "starter": {
+        "python": "pogonalar = {\n    \"HTTP\": (7, \"message\"),\n    \"IP\": (3, \"packet\"),\n    \"Ethernet\": (2, \"frame\"),\n    \"RS-232\": (1, \"bit\"),\n}\n\nk = int(input())\nfor _ in range(k):\n    nom = input().strip()\n    raqam, birligi = pogonalar.get(nom, (0, \"unknown\"))\n    print(nom, raqam, birligi)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static int pogona(String nom) {\n        switch (nom) {\n            case \"RS-232\": return 1;\n            case \"Ethernet\": return 2;\n            case \"IP\": return 3;\n            case \"HTTP\": return 7;\n            default: return 0;\n        }\n    }\n\n    static String birlik(String nom) {\n        int p = pogona(nom);\n        if (p == 1) return \"bit\";\n        if (p == 2) return \"frame\";\n        if (p == 3) return \"packet\";\n        if (p == 7) return \"message\";\n        return \"unknown\";\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int k = in.nextInt();\n        for (int i = 0; i < k; i++) {\n            String nom = in.next();\n            System.out.println(nom + \" \" + pogona(nom) + \" \" + birlik(nom));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint pogona(const string& nom) {\n    if (nom == \"RS-232\") return 1;\n    if (nom == \"Ethernet\") return 2;\n    if (nom == \"IP\") return 3;\n    if (nom == \"HTTP\") return 7;\n    return 0;\n}\n\nstring birlik(const string& nom) {\n    int p = pogona(nom);\n    if (p == 1) return \"bit\";\n    if (p == 2) return \"frame\";\n    if (p == 3) return \"packet\";\n    if (p == 7) return \"message\";\n    return \"unknown\";\n}\n\nint main() {\n    int k;\n    cin >> k;\n    for (int i = 0; i < k; i++) {\n        string nom;\n        cin >> nom;\n        cout << nom << \" \" << pogona(nom) << \" \" << birlik(nom) << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "pogonalar = {\n    \"RS-232\": (1, \"bit\"),\n    \"DSL\": (1, \"bit\"),\n    \"Ethernet\": (2, \"frame\"),\n    \"WiFi\": (2, \"frame\"),\n    \"PPP\": (2, \"frame\"),\n    \"IP\": (3, \"packet\"),\n    \"ICMP\": (3, \"packet\"),\n    \"OSPF\": (3, \"packet\"),\n    \"TCP\": (4, \"segment\"),\n    \"UDP\": (4, \"datagram\"),\n    \"NetBIOS\": (5, \"message\"),\n    \"RPC\": (5, \"message\"),\n    \"TLS\": (6, \"message\"),\n    \"JPEG\": (6, \"message\"),\n    \"UTF-8\": (6, \"message\"),\n    \"HTTP\": (7, \"message\"),\n    \"FTP\": (7, \"message\"),\n    \"SMTP\": (7, \"message\"),\n    \"DNS\": (7, \"message\"),\n}\n\nk = int(input())\nfor _ in range(k):\n    nom = input().strip()\n    raqam, birligi = pogonalar.get(nom, (0, \"unknown\"))\n    print(nom, raqam, birligi)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static int pogona(String nom) {\n        switch (nom) {\n            case \"RS-232\": case \"DSL\": return 1;\n            case \"Ethernet\": case \"WiFi\": case \"PPP\": return 2;\n            case \"IP\": case \"ICMP\": case \"OSPF\": return 3;\n            case \"TCP\": case \"UDP\": return 4;\n            case \"NetBIOS\": case \"RPC\": return 5;\n            case \"TLS\": case \"JPEG\": case \"UTF-8\": return 6;\n            case \"HTTP\": case \"FTP\": case \"SMTP\": case \"DNS\": return 7;\n            default: return 0;\n        }\n    }\n\n    static String birlik(String nom) {\n        int p = pogona(nom);\n        if (p == 1) return \"bit\";\n        if (p == 2) return \"frame\";\n        if (p == 3) return \"packet\";\n        if (p == 4) {\n            if (nom.equals(\"TCP\")) return \"segment\";\n            return \"datagram\";\n        }\n        if (p == 0) return \"unknown\";\n        return \"message\";\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int k = in.nextInt();\n        for (int i = 0; i < k; i++) {\n            String nom = in.next();\n            System.out.println(nom + \" \" + pogona(nom) + \" \" + birlik(nom));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint pogona(const string& nom) {\n    if (nom == \"RS-232\" || nom == \"DSL\") return 1;\n    if (nom == \"Ethernet\" || nom == \"WiFi\" || nom == \"PPP\") return 2;\n    if (nom == \"IP\" || nom == \"ICMP\" || nom == \"OSPF\") return 3;\n    if (nom == \"TCP\" || nom == \"UDP\") return 4;\n    if (nom == \"NetBIOS\" || nom == \"RPC\") return 5;\n    if (nom == \"TLS\" || nom == \"JPEG\" || nom == \"UTF-8\") return 6;\n    if (nom == \"HTTP\" || nom == \"FTP\" || nom == \"SMTP\" || nom == \"DNS\") return 7;\n    return 0;\n}\n\nstring birlik(const string& nom) {\n    int p = pogona(nom);\n    if (p == 1) return \"bit\";\n    if (p == 2) return \"frame\";\n    if (p == 3) return \"packet\";\n    if (p == 4) {\n        if (nom == \"TCP\") return \"segment\";\n        return \"datagram\";\n    }\n    if (p == 0) return \"unknown\";\n    return \"message\";\n}\n\nint main() {\n    int k;\n    cin >> k;\n    for (int i = 0; i < k; i++) {\n        string nom;\n        cin >> nom;\n        cout << nom << \" \" << pogona(nom) << \" \" << birlik(nom) << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4\nHTTP\nIP\nEthernet\nRS-232\n", "expected": "HTTP 7 message\nIP 3 packet\nEthernet 2 frame\nRS-232 1 bit", "hidden": false },
+        { "input": "2\nTCP\nUDP\n", "expected": "TCP 4 segment\nUDP 4 datagram", "hidden": false },
+        { "input": "1\nDNS\n", "expected": "DNS 7 message", "hidden": true },
+        { "input": "3\nNetBIOS\nJPEG\nPPP\n", "expected": "NetBIOS 5 message\nJPEG 6 message\nPPP 2 frame", "hidden": true },
+        { "input": "2\nMPLS\nOSPF\n", "expected": "MPLS 0 unknown\nOSPF 3 packet", "hidden": true }
+      ]
+    }
+  }
+}

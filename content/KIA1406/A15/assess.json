@@ -1,0 +1,413 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "STRIDE dagi \"R\" harfi qanday tahdidni bildiradi?",
+          "ru": "Какая угроза обозначается буквой «R» в STRIDE?",
+          "en": "Which threat does the letter \"R\" in STRIDE stand for?"
+        },
+        "options": [
+          {
+            "uz": "Repudiation — bajarilgan harakatni inkor etish",
+            "ru": "Repudiation — отрицание выполненного действия",
+            "en": "Repudiation — denying an action that was done"
+          },
+          {
+            "uz": "Tampering — maʼlumot yoki dasturni oʻzgartirish",
+            "ru": "Tampering — изменение данных или программы",
+            "en": "Tampering — altering data or software"
+          },
+          {
+            "uz": "Spoofing — oʻzini boshqa sifatida koʻrsatish",
+            "ru": "Spoofing — выдача себя за другого",
+            "en": "Spoofing — pretending to be someone else"
+          },
+          {
+            "uz": "Elevation of privilege — huquqlarni oshirish",
+            "ru": "Elevation of privilege — получение более высоких прав",
+            "en": "Elevation of privilege — gaining higher rights"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: Repudiation — harakatni inkor etish, IoT misoli — kim eshikni ochgani yozilmagan; undan himoya — jurnallar.",
+          "ru": "Таблица из занятия: Repudiation — отрицание действия, пример IoT — не записано, кто открыл дверь; защита — журналы.",
+          "en": "The lesson table: Repudiation is denying an action, the IoT example is that who opened the door was not recorded; the protection is logs."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kazinodagi akvarium termometri hodisasining asosiy sababi — termometrning paroli juda zaif boʻlgani.",
+          "ru": "Основная причина инцидента с термометром в аквариуме казино — слишком слабый пароль термометра.",
+          "en": "The main cause of the casino aquarium thermometer incident was the thermometer's weak password."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda asosiy sabab boshqa: IoT qurilma ichki tarmoq bilan bitta segmentda turgan va chiquvchi trafik nazorat qilinmagan. Saboq — segmentlash va chiquvchi trafikni cheklash.",
+          "ru": "Главная причина в занятии другая: IoT-устройство находилось в одном сегменте с внутренней сетью, а исходящий трафик не контролировался. Урок — сегментация и контроль исходящего трафика.",
+          "en": "The lesson names another cause: the IoT device sat in the same segment as the internal network and outbound traffic was not controlled. The lesson is segmentation and controlling outbound traffic."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Muvofiqlashtirilgan oshkor qilishda kelishilgan muddatda eʼlon qilingan zaiflikka koʻpincha qaysi identifikator beriladi?",
+          "ru": "Какой идентификатор обычно присваивается уязвимости, объявленной в согласованный срок при координированном раскрытии?",
+          "en": "Which identifier is usually given to the vulnerability announced at the agreed time in coordinated disclosure?"
+        },
+        "answers": ["CVE", "cve"],
+        "explanation": {
+          "uz": "Darsdagi CVD jarayonining 3-qadami: kelishilgan muddatda yangilanish chiqariladi va zaiflik eʼlon qilinadi — koʻpincha CVE identifikatori bilan.",
+          "ru": "Шаг 3 процесса CVD из занятия: в согласованный срок выпускается обновление и уязвимость объявляется — часто с идентификатором CVE.",
+          "en": "Step 3 of the lesson's CVD process: at the agreed time an update is released and the vulnerability is announced, often with a CVE identifier."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "STRIDE boʻyicha imzolanmagan proshivka qaysi toifadagi tahdidga misol boʻladi?",
+          "ru": "К какой категории угроз по STRIDE относится немаркированная (неподписанная) прошивка?",
+          "en": "In STRIDE, which threat category does unsigned firmware belong to?"
+        },
+        "options": [
+          {
+            "uz": "Spoofing",
+            "ru": "Spoofing",
+            "en": "Spoofing"
+          },
+          {
+            "uz": "Tampering",
+            "ru": "Tampering",
+            "en": "Tampering"
+          },
+          {
+            "uz": "Denial of service",
+            "ru": "Denial of service",
+            "en": "Denial of service"
+          },
+          {
+            "uz": "Information disclosure",
+            "ru": "Information disclosure",
+            "en": "Information disclosure"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Jadvalda Tampering — maʼlumot yoki dasturni oʻzgartirish, IoT misoli — imzolanmagan proshivka; himoya xususiyatlari — yaxlitlik va imzolangan yangilanish.",
+          "ru": "В таблице Tampering — изменение данных или программы, пример IoT — неподписанная прошивка; свойства защиты — целостность и подписанные обновления.",
+          "en": "In the table Tampering is altering data or software, the IoT example is unsigned firmware; the security properties are integrity and signed updates."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Taqdimotni baholash mezonlarida \"tahdid modeli (STRIDE) toʻliq va asoslangan\" bandi uchun nechta ball beriladi?",
+          "ru": "Сколько баллов по критерию «модель угроз (STRIDE) полна и обоснована» в таблице оценки презентации?",
+          "en": "How many points does the criterion \"the threat model (STRIDE) is complete and justified\" carry in the presentation's assessment table?"
+        },
+        "answers": [25],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Jadval: arxitektura va oqimlar — 20, tahdid modeli — 25, bazaviy talablar bilan solishtirish — 15, choralar — 25, taqdimot sifati — 15; jami 100.",
+          "ru": "Таблица: архитектура и потоки — 20, модель угроз — 25, сравнение с базовыми требованиями — 15, меры — 25, качество презентации — 15; всего 100.",
+          "en": "The table: architecture and flows 20, threat model 25, comparison with baseline requirements 15, measures 25, presentation quality 15; 100 in total."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "\"Kim nima qilishi kerak\" jadvalida qaysi tavsiyalar foydalanuvchiga tegishli (ishlab chiqaruvchi yoki tashkilotga emas)?",
+          "ru": "Какие рекомендации из таблицы «кто что должен делать» относятся к пользователю (а не к производителю или организации)?",
+          "en": "In the \"who should do what\" table, which recommendations belong to the user (not the manufacturer or the organization)?"
+        },
+        "options": [
+          {
+            "uz": "Zavod parolini almashtirish",
+            "ru": "Сменить заводской пароль",
+            "en": "Changing the factory password"
+          },
+          {
+            "uz": "Yangilanishlarni oʻrnatish",
+            "ru": "Устанавливать обновления",
+            "en": "Installing updates"
+          },
+          {
+            "uz": "Keraksiz funksiyalarni (masofaviy kirish, UPnP) oʻchirish",
+            "ru": "Отключать ненужные функции (удалённый доступ, UPnP)",
+            "en": "Disabling unnecessary features (remote access, UPnP)"
+          },
+          {
+            "uz": "Zaifliklar uchun rasmiy qabul kanalini eʼlon qilish",
+            "ru": "Объявить официальный канал приёма сообщений об уязвимостях",
+            "en": "Publishing an official channel for vulnerability reports"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Foydalanuvchi: zavod parolini almashtirish, yangilanishlarni oʻrnatish, MFA ni yoqish, keraksiz funksiyalarni oʻchirish, qoʻllab-quvvatlanmaydigan qurilmalarni almashtirish. Zaifliklar kanali — ishlab chiqaruvchining vazifasi.",
+          "ru": "Пользователь: сменить заводской пароль, ставить обновления, включить MFA, отключить лишние функции, заменять неподдерживаемые устройства. Канал для сообщений об уязвимостях — задача производителя.",
+          "en": "The user: change the factory password, install updates, enable MFA, disable unnecessary features, replace unsupported devices. The vulnerability-report channel is the manufacturer's job."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ulangan avtomobil hodisasida (2015) tadqiqotchilarga multimedia tizimi orqali masofadan taʼsir qilish imkonini bergan asosiy zaiflik nima edi?",
+          "ru": "Какая основная уязвимость в инциденте с подключённым автомобилем (2015) позволила исследователям дистанционно повлиять на него через мультимедийную систему?",
+          "en": "In the connected car incident (2015), what main weakness let researchers remotely affect the car through its infotainment system?"
+        },
+        "options": [
+          {
+            "uz": "Multimedia va avtomobilni boshqarish tizimlari orasida yetarli ajratish yoʻqligi va masofadan yangilash imkonining cheklanganligi",
+            "ru": "Недостаточная изоляция между мультимедиа и системами управления автомобилем и ограниченная возможность удалённого обновления",
+            "en": "Insufficient separation between the infotainment and the vehicle control systems, and limited ability to update remotely"
+          },
+          {
+            "uz": "Barcha qurilmalarda ishlatiladigan universal zavod paroli",
+            "ru": "Универсальный заводской пароль на всех устройствах",
+            "en": "A universal factory password used on all devices"
+          },
+          {
+            "uz": "Shifrlanmagan video oqimning tashqariga chiqishi",
+            "ru": "Незашифрованный видеопоток уходил наружу",
+            "en": "An unencrypted video stream leaving the device"
+          },
+          {
+            "uz": "Kim eshikni ochgani jurnallarda yozib borilmagani",
+            "ru": "Отсутствие журналов о том, кто открывал дверь",
+            "en": "No logs of who opened the door"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda sabab — multimedia va boshqaruv tizimlari orasidagi yetarli ajratish yoʻqligi va masofadan yangilashning cheklanganligi; saboq — muhim tizimlarni ajratish va imzolangan OTA yangilanishlari. STRIDE: Elevation of privilege va Tampering.",
+          "ru": "Причина в занятии — недостаточная изоляция мультимедиа от систем управления и ограниченное удалённое обновление; урок — разделять критичные системы и подписанные OTA-обновления. STRIDE: Elevation of privilege и Tampering.",
+          "en": "The lesson's cause is the insufficient separation of infotainment from the control systems and the limited remote update; the lesson is separating critical systems and signed OTA updates. STRIDE: Elevation of privilege and Tampering."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "IoT keysini tahlil qilishda maqsad — hujum texnikasini imkon qadar batafsil tasvirlash.",
+          "ru": "Цель разбора IoT-кейса — как можно подробнее описать технику атаки.",
+          "en": "The goal of analysing an IoT case is to describe the attack technique in as much detail as possible."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi xatolar roʻyxati: hujum texnikasini batafsil tasvirlash — xato; maqsad — sabab va himoya, texnik \"retseptlar\" kerak emas. Hodisalar ochiq manbalar asosida, himoya xulosalari uchun oʻrganiladi.",
+          "ru": "Список ошибок из занятия: подробно описывать технику атаки — ошибка; цель — причины и защита, технические \"рецепты\" не нужны. Инциденты изучаются по открытым источникам, ради защитных выводов.",
+          "en": "The lesson's list of mistakes: describing attack techniques in detail is wrong; the goal is causes and protection, technical \"recipes\" are not needed. Incidents are studied from open sources for defensive conclusions."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "ETSI EN 303 645 ga koʻra, ishlab chiqaruvchida zaifliklar haqida xabar qabul qilish uchun rasmiy kanal boʻlishi shart.",
+          "ru": "Согласно ETSI EN 303 645, у производителя обязан быть официальный канал для приёма сообщений об уязвимостях.",
+          "en": "Per ETSI EN 303 645 a manufacturer must have an official channel for receiving vulnerability reports."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: CVD ning 1-qadamida tadqiqotchi zaiflikni ishlab chiqaruvchining rasmiy kanali orqali xabar qiladi — bu ETSI EN 303 645 ning 2-bandi talabi.",
+          "ru": "В занятии: на шаге 1 процесса CVD исследователь сообщает об уязвимости через официальный канал производителя — это требование пункта 2 ETSI EN 303 645.",
+          "en": "In the lesson, step 1 of CVD has the researcher report through the manufacturer's official channel — the requirement of clause 2 of ETSI EN 303 645."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Keys tahlili boʻyicha nazorat savollari",
+      "ru": "Контрольные вопросы по разбору кейсов",
+      "en": "Check questions on the case analyses"
+    },
+    "statement": {
+      "uz": "A15 mashgʻuloti matniga asoslangan savollarga javob bering: tahlil metodikasi, STRIDE toifalari, tarixiy keyslar va baholash mezonlari.",
+      "ru": "Ответьте на вопросы по тексту занятия A15: методика анализа, категории STRIDE, исторические кейсы и критерии оценки.",
+      "en": "Answer questions based on the A15 session text: the analysis method, the STRIDE categories, the historical cases and the assessment criteria."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "TF",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Uy kameralari va bolalar monitorlari keysida ishlab chiqaruvchiga tavsiyalardan biri — MFA ni sukut boʻyicha yoqib qoʻyish.",
+            "ru": "Одна из рекомендаций производителю по кейсу домашних камер и мониторов детей — включить MFA по умолчанию.",
+            "en": "For the home camera and baby monitor cases, one recommendation to the manufacturer is to have MFA on by default."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda: ishlab chiqaruvchi uchun — MFA ni sukut boʻyicha yoqish va gʻayrioddiy kirishlar haqida xabar berish; foydalanuvchi uchun — kuchli parol va MFA.",
+            "ru": "В занятии: для производителя — MFA по умолчанию и уведомления о необычных входах; для пользователя — надёжный пароль и MFA.",
+            "en": "The lesson: for the manufacturer — MFA on by default and notifications about unusual sign-ins; for the user — a strong password and MFA."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Tahlil metodikasining 4-qadamida (tahdid modelidan keyin) nima qilinadi?",
+            "ru": "Что делается на шаге 4 методики анализа (после модели угроз)?",
+            "en": "What does step 4 of the analysis method do (after the threat model)?"
+          },
+          "options": [
+            {
+              "uz": "Bazaviy talablar (ETSI EN 303 645) bilan solishtirish va chetga chiqishlar roʻyxatini tuzish",
+              "ru": "Сравнение с базовыми требованиями (ETSI EN 303 645) и список отклонений",
+              "en": "Comparing with the baseline requirements (ETSI EN 303 645) and listing the deviations"
+            },
+            {
+              "uz": "Qurilmalar roʻyxatini tuzish va arxitektura sxemasini chizish",
+              "ru": "Составление инвентаря устройств и схема архитектуры",
+              "en": "Building the device inventory and drawing the architecture diagram"
+            },
+            {
+              "uz": "Xavf matritsasini toʻldirish (ehtimol va taʼsir)",
+              "ru": "Заполнение матрицы рисков (вероятность и влияние)",
+              "en": "Filling the risk matrix (likelihood and impact)"
+            },
+            {
+              "uz": "Ustuvorlikka koʻra tavsiyalarni yozish",
+              "ru": "Запись рекомендаций в порядке приоритета",
+              "en": "Writing the prioritized recommendations"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Metodika qadamlari: 1 — tizimni tasvirlash, 2 — aktivlar va oqimlar, 3 — tahdid modeli, 4 — bazaviy talablar bilan solishtirish, 5 — xavfni baholash, 6 — choralar.",
+            "ru": "Шаги методики: 1 — описание системы, 2 — активы и потоки, 3 — модель угроз, 4 — сравнение с базовыми требованиями, 5 — оценка риска, 6 — меры.",
+            "en": "The method's steps: 1 describing the system, 2 assets and flows, 3 threat model, 4 comparison with the baseline requirements, 5 risk assessment, 6 measures."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Qaysi keyslarda dars STRIDE tahdidi sifatida Spoofing ni koʻrsatadi?",
+            "ru": "В каких кейсах занятие указывает Spoofing как угрозу по STRIDE?",
+            "en": "In which cases does the lesson list Spoofing as a STRIDE threat?"
+          },
+          "options": [
+            {
+              "uz": "Mirai botneti (zavod hisobidan foydalanish)",
+              "ru": "Ботнет Mirai (использование заводской учётной записи)",
+              "en": "The Mirai botnet (use of the factory account)"
+            },
+            {
+              "uz": "Uy kameralari va bolalar monitorlari (begonalar kirib olgani)",
+              "ru": "Домашние камеры и мониторы детей (проникновение посторонних)",
+              "en": "Home cameras and baby monitors (outsiders getting in)"
+            },
+            {
+              "uz": "Akvarium termometri (maʼlumotlar tashqariga chiqarilgani)",
+              "ru": "Термометр в аквариуме (вывод данных наружу)",
+              "en": "The aquarium thermometer (data sent outside)"
+            },
+            {
+              "uz": "Ulangan avtomobil (masofadan taʼsir qilish)",
+              "ru": "Подключённый автомобиль (дистанционное воздействие)",
+              "en": "The connected car (remote influence)"
+            }
+          ],
+          "correct": [0, 1],
+          "explanation": {
+            "uz": "Darsda: Mirai — Spoofing va Denial of service; kameralar — Spoofing va Information disclosure. Akvarium termometri — Information disclosure; avtomobil — Elevation of privilege va Tampering.",
+            "ru": "В занятии: Mirai — Spoofing и Denial of service; камеры — Spoofing и Information disclosure. Термометр — Information disclosure; автомобиль — Elevation of privilege и Tampering.",
+            "en": "In the lesson: Mirai is Spoofing and Denial of service; the cameras are Spoofing and Information disclosure. The thermometer is Information disclosure; the car is Elevation of privilege and Tampering."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Baholash mezonlarida \"taqdimot sifati, manbalar va savollarga javob\" bandi uchun nechta ball beriladi?",
+            "ru": "Сколько баллов даёт критерий «качество презентации, источники и ответы на вопросы»?",
+            "en": "How many points does the criterion \"presentation quality, sources and answering questions\" carry?"
+          },
+          "answers": [15],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Jadval: 20 + 25 + 15 + 25 + 15 = 100 ball; soʻralgan mezon — 15 ball.",
+            "ru": "Таблица: 20 + 25 + 15 + 25 + 15 = 100 баллов; спрашиваемый критерий — 15 баллов.",
+            "en": "The table: 20 + 25 + 15 + 25 + 15 = 100 points; the asked criterion is 15 points."
+          }
+        }
+      ]
+    }
+  }
+}

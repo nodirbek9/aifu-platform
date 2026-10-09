@@ -1,0 +1,439 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qidiruv soʻrovi yoniga filetype:pdf yozilsa, qanday natija olinadi?",
+          "ru": "Что даст добавление filetype:pdf к поисковому запросу?",
+          "en": "What does adding filetype:pdf to a search query give?"
+        },
+        "options": [
+          {
+            "uz": "Faqat PDF formatidagi hujjatlar",
+            "ru": "Только документы в формате PDF",
+            "en": "Only documents in PDF format"
+          },
+          {
+            "uz": "PDF soʻzi qatnashmagan sahifalar",
+            "ru": "Страницы, где слова PDF нет",
+            "en": "Pages that do not contain the word PDF"
+          },
+          {
+            "uz": "Aynan «PDF» iborasi bor sahifalar",
+            "ru": "Страницы ровно с фразой «PDF»",
+            "en": "Pages containing exactly the phrase «PDF»"
+          },
+          {
+            "uz": "Faqat PDF bilan bogʻliq mavzudagi yangiliklar",
+            "ru": "Только новости по теме PDF",
+            "en": "Only news on the topic of PDF"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda misol: filetype:pdf moliyaviy hisobot 2025 — faqat PDF hujjatlar. Soʻzni chiqarib tashlash uchun - belgisi, aniq ibora uchun qoʻshtirnoq ishlatiladi.",
+          "ru": "В занятии пример: filetype:pdf финансовая отчётность 2025 — только PDF-документы. Для исключения слова служит минус, для точной фразы — кавычки.",
+          "en": "The lesson example is filetype:pdf financial statements 2025 — PDF documents only. A minus excludes a word, quotation marks demand an exact phrase."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "CRAAP mezonlaridan Relevance (moslik) manbadagi maʼlumot mening savolimga javob beradimi — shuni tekshiradi.",
+          "ru": "Критерий Relevance (соответствие) в CRAAP проверяет, отвечает ли источник на мой вопрос.",
+          "en": "The Relevance criterion in CRAAP checks whether the source answers my question."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Relevance — moslik. Dolzarblikni (Currency) eʼlon va yangilanish sanasi, maqsadni (Purpose) esa xabar berish, sotish yoki ishontirish niyati tekshiradi.",
+          "ru": "Relevance — соответствие. Актуальность (Currency) — это дата публикации и обновления, цель (Purpose) — информировать, продать или убедить.",
+          "en": "Relevance is the match. Currency is the publication and update date; Purpose is whether the aim is to inform, to sell or to persuade."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi samarali qidiruv usullari jadvaliga qaysilari kiritilgan?",
+          "ru": "Что из перечисленного есть в таблице приёмов эффективного поиска в занятии?",
+          "en": "Which of these are in the lesson's table of search techniques?"
+        },
+        "options": [
+          {
+            "uz": "Aniq ibora uchun qoʻshtirnoq",
+            "ru": "Кавычки для точной фразы",
+            "en": "Quotation marks for an exact phrase"
+          },
+          {
+            "uz": "Bir soʻzni oldiga - qoʻyib chiqarib tashlash",
+            "ru": "Исключение слова знаком минус перед ним",
+            "en": "Excluding a word with a minus before it"
+          },
+          {
+            "uz": "site: bilan sayt boʻyicha qidirish",
+            "ru": "Поиск по сайту через site:",
+            "en": "Searching inside a site with site:"
+          },
+          {
+            "uz": "sort: bilan sana boʻyicha saralash",
+            "ru": "Сортировка по дате через sort:",
+            "en": "Sorting by date with sort:"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalda qoʻshtirnoq, -, site:, filetype: va OR keltirilgan; sort: unda yoʻq.",
+          "ru": "В таблице: кавычки, минус, site:, site:gov.uz по типу домена, filetype: и OR; sort: там нет.",
+          "en": "The table has quotation marks, minus, site:, site:gov.uz by domain type, filetype: and OR; sort: is not there."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Koʻp qabul qiluvchiga xat yuborilganda ularning manzillarini bir-biridan yashirish uchun qaysi maydon ishlatiladi?",
+          "ru": "Какое поле используют при рассылке, чтобы скрыть адреса получателей друг от друга?",
+          "en": "Which field is used in a mass mailing so that recipients' addresses stay hidden from each other?"
+        },
+        "options": [
+          {
+            "uz": "Kimga (To)",
+            "ru": "«Кому»",
+            "en": "To"
+          },
+          {
+            "uz": "Nusxa (Cc)",
+            "ru": "«Копия»",
+            "en": "Cc"
+          },
+          {
+            "uz": "Yashirin nusxa (Bcc)",
+            "ru": "«Скрытая копия»",
+            "en": "Bcc"
+          },
+          {
+            "uz": "Mavzu",
+            "ru": "Тема",
+            "en": "Subject"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "«Kimga» — harakat qilishi kerak boʻlganlar, «Nusxa» — xabardor boʻlishi kerak boʻlganlar; barcha manzillarni «Kimga» da ochiq yuborish koʻp uchraydigan xato.",
+          "ru": "«Кому» — те, кто должен действовать, «Копия» — кто должен быть в курсе; открытые адреса всех участников в поле «Кому» — частая ошибка.",
+          "en": "«To» is for those who must act, «Cc» for those who should be informed; sending with every address visible in «To» is a common mistake."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda yaxshi soʻrovnoma 5–10 savoldan iborat boʻlishi tavsiya etiladi. Bunday soʻrovnoma eng koʻpi bilan nechta savoldan tashkil topadi?",
+          "ru": "В занятии хороший опрос советуют делать из 5–10 вопросов. Из какого наибольшего числа вопросов он может состоять?",
+          "en": "The lesson advises a good survey of 5–10 questions. What is the largest number of questions such a survey may have?"
+        },
+        "answers": [10],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Soʻrovnoma qisqa boʻladi: 5–10 savol, har bir savolda bitta mavzu, yoʻnaltiruvchi savolsiz, shaxsiy maʼlumot esa faqat zarur boʻlsa va rozilik bilan.",
+          "ru": "Опрос короткий: 5–10 вопросов, одна тема в каждом вопросе, без наводящих вопросов, персональные данные — только при необходимости и с согласия.",
+          "en": "The survey is short: 5–10 questions, one topic per question, no leading questions, personal data only when necessary and with consent."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Bulutda har kimga faqat kerakli huquqni berish tamoyilining nomini yozing.",
+          "ru": "Напишите название принципа, по которому в облаке каждому дают только нужное право доступа.",
+          "en": "Write the name of the principle that gives everyone only the permission they need in the cloud."
+        },
+        "answers": ["minimal imtiyoz", "Minimal imtiyoz", "minimal imtiyoz tamoyili", "least privilege"],
+        "explanation": {
+          "uz": "Bu — minimal imtiyoz tamoyili (M14). Unga muddatli havolalar va loyiha tugagach kirishni yopish ham qoʻshiladi.",
+          "ru": "Это принцип минимальных привилегий (M14); к нему относятся ссылки со сроком действия и закрытие доступа после проекта.",
+          "en": "It is the least privilege principle (M14), joined by expiring links and closing access when the project ends."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Loyiha jamoasining ichki, maxfiy hisobati bulutda qaysi darajada ulashiladi?",
+          "ru": "На каком уровне в облаке открывают внутренний конфиденциальный отчёт проектной команды?",
+          "en": "At which level is an internal, confidential project report shared in the cloud?"
+        },
+        "options": [
+          {
+            "uz": "Cheklangan — faqat koʻrsatilgan odamlar",
+            "ru": "Ограниченный — только указанные люди",
+            "en": "Restricted — only named people"
+          },
+          {
+            "uz": "Tashkilot ichida — barcha xodimlar",
+            "ru": "Внутри организации — все сотрудники",
+            "en": "Within the organization — all employees"
+          },
+          {
+            "uz": "Havolasi bor har kim",
+            "ru": "Все, у кого есть ссылка",
+            "en": "Anyone with the link"
+          },
+          {
+            "uz": "Hisobotni elektron pochta ilovasi sifatida hammaga yuborish",
+            "ru": "Отправить отчёт вложением всем",
+            "en": "Send the report to everyone as an attachment"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ichki va maxfiy hujjatlar — cheklangan daraja; «tashkilot ichida» umumiy yoʻriqnomalar uchun, «havolasi bor har kim» faqat ommaviy material uchun.",
+          "ru": "Внутренние и конфиденциальные документы — ограниченный уровень; «внутри организации» — для общих инструкций, «все, у кого ссылка» — только для публичных материалов.",
+          "en": "Internal and confidential documents mean restricted; «within the organization» is for general guidelines, «anyone with the link» for public materials only."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ish yozishmalari qoidalari boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о правилах деловой переписки верны?",
+          "en": "Which statements about business correspondence rules are correct?"
+        },
+        "options": [
+          {
+            "uz": "Bitta xat — bitta masala, asosiy soʻrov birinchi xatboshida boʻladi",
+            "ru": "Одно письмо — один вопрос, главная просьба в первом абзаце",
+            "en": "One email is one issue, with the main request in the first paragraph"
+          },
+          {
+            "uz": "Katta fayllar ilova qilib emas, bulutdagi havola bilan yuboriladi",
+            "ru": "Большие файлы отправляют не вложением, а ссылкой на облако",
+            "en": "Large files go as a cloud link, not as an attachment"
+          },
+          {
+            "uz": "«Kimga» — harakat qilishi kerak boʻlganlar, «Nusxa» — xabardor boʻlishi kerak boʻlganlar",
+            "ru": "«Кому» — те, кто должен действовать, «Копия» — те, кто должен быть в курсе",
+            "en": "«To» holds those who must act, «Cc» those who should be informed"
+          },
+          {
+            "uz": "Ish xatini shaxsiy pochta manzilidan yuborish toʻgʻri",
+            "ru": "Деловое письмо правильно отправлять с личного адреса",
+            "en": "A business email should be sent from a personal address"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Ish xati korporativ manzildan yuboriladi; «Kimga» da barcha ishtirokchilar manzilini ochiq yuborish esa darsdagi koʻp uchraydigan xatolar roʻyxatida.",
+          "ru": "Деловые письма шлют с корпоративного адреса, а открытые адреса всех участников в поле «Кому» — из списка частых ошибок.",
+          "en": "Business emails come from a corporate address, and visible addresses of all participants in «To» are on the list of common mistakes."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Faktlarni tekshirishda raqamni bitta mustaqil manbadan olish kifoya, deyiladi.",
+          "ru": "При проверке фактов достаточно взять цифру из одного независимого источника.",
+          "en": "Fact-checking allows taking a figure from a single independent source."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Raqam kamida ikkita mustaqil manbadan tekshiriladi va asl manbaga boriladi — yangilik saytiga emas, statistikaga. «Birinchi topilgan sahifadagi raqamni ishlatish» xato sifatida sanalgan.",
+          "ru": "Цифру проверяют минимум по двум независимым источникам и доходят до первоисточника — агентства статистики, а не новостного сайта. «Взять цифру с первой найденной страницы» названо ошибкой.",
+          "en": "A figure is checked in at least two independent sources and traced to the original source — the statistics agency, not a news site. «Using the figure from the first page found» is listed as a mistake."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Internetdagi besh amaliy topshiriq",
+      "ru": "Пять практических заданий в Интернете",
+      "en": "The five practical assignments online"
+    },
+    "statement": {
+      "uz": "Bu amaliyot MT7 dagi topshiriqlar toʻplami boʻyicha: Markaziy bank hisobotini operatorlar bilan topish, inflyatsiya haqidagi maqolani baholash, hamkor kompaniyaga ish xati, bulutda papkani ulashish va qisqa soʻrovnoma. Javoblar faqat MT7 dars matnidan olinadi.",
+      "ru": "Это упражнение по набору заданий MT7: найти отчёт Центробанка операторами, оценить статью об инфляции, написать деловое письмо партнёру, расшарить папку в облаке и составить короткий опрос. Ответы берутся только из текста MT7.",
+      "en": "This exercise follows the set of assignments in MT7: find the Central Bank report with operators, assess an inflation article, write a business email to a partner, share a cloud folder and build a short survey. Every answer comes only from the MT7 text."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Birinchi topshiriqda Oʻzbekiston Markaziy bankining soʻnggi yillik hisobotini PDF da topish uchun qaysi ikki operator buyuriladi?",
+            "ru": "Какие два оператора требуются в первом задании, чтобы найти последний годовой отчёт Центробанка Узбекистана в PDF?",
+            "en": "Which two operators does the first assignment ask for, to find the latest annual report of the Central Bank of Uzbekistan as a PDF?"
+          },
+          "options": [
+            {
+              "uz": "site: va filetype:",
+              "ru": "site: и filetype:",
+              "en": "site: and filetype:"
+            },
+            {
+              "uz": "filetype: va OR",
+              "ru": "filetype: и OR",
+              "en": "filetype: and OR"
+            },
+            {
+              "uz": "Qoʻshtirnoq va -",
+              "ru": "Кавычки и минус",
+              "en": "Quotation marks and minus"
+            },
+            {
+              "uz": "site: va qoʻshtirnoq",
+              "ru": "site: и кавычки",
+              "en": "site: and quotation marks"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "site: bilan domen cheklanadi (masalan, gov.uz), filetype: bilan fayl turi; ikkalasi birga qoʻllanadi.",
+            "ru": "site: ограничивает домен (например, gov.uz), filetype — тип файла; в задании они применяются вместе.",
+            "en": "site: limits the domain (for example, gov.uz) and filetype the document type; the assignment uses both together."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Uchinchi topshiriqda ish xatida boʻlishi aytilgan elementlar qaysilar?",
+            "ru": "Какие элементы, по третьему заданию, должны быть в деловом письме?",
+            "en": "Which elements does the third assignment say the business email must have?"
+          },
+          "options": [
+            {
+              "uz": "Mavzu",
+              "ru": "Тема",
+              "en": "Subject"
+            },
+            {
+              "uz": "Murojaat",
+              "ru": "Обращение",
+              "en": "Greeting"
+            },
+            {
+              "uz": "Imzo",
+              "ru": "Подпись",
+              "en": "Signature"
+            },
+            {
+              "uz": "Yashirin nusxa manzillari",
+              "ru": "Адреса скрытой копии",
+              "en": "Hidden-copy addresses"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Topshiriq roʻyxatida mavzu, murojaat, maqsad, sana va imzo bor; BCC unda tilga olinmagan.",
+            "ru": "В списке задания: тема, обращение, цель, дата и подпись; BCC там не назван.",
+            "en": "The assignment lists subject, greeting, purpose, date and signature; Bcc is not among them."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Beshinchi topshiriqda mijozlar qoniqishi soʻrovnmasi nechta savoldan tuzilishi kerak?",
+            "ru": "Из скольких вопросов по пятому заданию нужно составить опрос удовлетворённости клиентов?",
+            "en": "How many questions should the customer satisfaction survey in the fifth assignment have?"
+          },
+          "answers": [5],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Topshiriq 5 savollik soʻrovnoma deydi; dars esa yaxshi soʻrovnomani 5–10 savol bilan qisqa tutishni maslahat beradi.",
+            "ru": "Задание говорит об опросе из 5 вопросов; занятие в целом советует держать опрос коротким — 5–10 вопросов.",
+            "en": "The assignment asks for a 5-question survey; the lesson in general keeps a survey short, at 5–10 questions."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Toʻrtinchi topshiriqda papka bitta kursdoshga qaysi huquq bilan ulashiladi?",
+            "ru": "С каким правом по четвёртому заданию папка открывается одному однокурснику?",
+            "en": "Which permission does the fourth assignment give the single classmate on the folder?"
+          },
+          "answers": ["izoh", "izoh qoldirish", "comment"],
+          "explanation": {
+            "uz": "Bulutda uch huquq bor: koʻrish, izoh qoldirish, tahrirlash; topshiriqda faqat «izoh» talab qilinadi — minimal imtiyoz.",
+            "ru": "В облаке три права: просмотр, комментирование, редактирование; задание требует только «комментирование» — минимальные привилегии.",
+            "en": "The cloud offers view, comment and edit; the assignment asks for comment only — least privilege."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Ikkinchi topshiriqda maqoladagi inflyatsiya raqamini rasmiy manbadan tekshirish shart emas.",
+            "ru": "Во втором задании цифру об инфляции из статьи проверять по официальному источнику не обязательно.",
+            "en": "In the second assignment the inflation figure from the article need not be checked in an official source."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Ikkinchi topshiriq maqolani CRAAP mezonlari boʻyicha baholashni va raqamni rasmiy manbadan tekshirishni buyuradi.",
+            "ru": "Второе задание требует оценить статью по критериям CRAAP и проверить цифру по официальному источнику.",
+            "en": "The second assignment requires assessing the article against the CRAAP criteria and checking the figure in an official source."
+          }
+        }
+      ]
+    }
+  }
+}

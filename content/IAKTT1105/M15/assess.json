@@ -1,0 +1,499 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kasbiy axborot kompleksi universal dasturdan (masalan, Excel yoki Word) nima bilan farq qiladi?",
+          "ru": "Чем профессиональный информационный комплекс отличается от универсальной программы (например, Excel или Word)?",
+          "en": "How does a professional information complex differ from a general-purpose program such as Excel or Word?"
+        },
+        "options": [
+          {
+            "uz": "Unga soha qoidalari — hisob rejasi, soliq stavkalari, hisobot shakllari — oʻrnatilgan va qonunchilik oʻzgarganda yangilanadi",
+            "ru": "В него встроены отраслевые правила — план счетов, налоговые ставки, формы отчётности — и они обновляются при изменении законодательства",
+            "en": "Sector rules — the chart of accounts, tax rates, report forms — are built into it and are updated when legislation changes"
+          },
+          {
+            "uz": "U faqat katta serverlarda ishlaydi va hech qachon bulutda joylashmaydi",
+            "ru": "Он работает только на больших серверах и никогда не размещается в облаке",
+            "en": "It runs only on large servers and is never hosted in the cloud"
+          },
+          {
+            "uz": "U har doim pullik va faqat bitta foydalanuvchiga moʻljallangan",
+            "ru": "Он всегда платный и предназначен только для одного пользователя",
+            "en": "It is always paid and designed for a single user"
+          },
+          {
+            "uz": "U faqat buxgalterlar uchun yaratilgan",
+            "ru": "Он создан только для бухгалтеров",
+            "en": "It is built only for accountants"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bulutli tizimlar (QuickBooks, Xero, Sage) yoki huquqiy bazalar ham kasbiy komplekslardir — ular buxgalterga emas, turli kasblarga xizmat qiladi; muhim belgi — ichiga oʻrnatilgan soha qoidalari.",
+          "ru": "Облачные системы (QuickBooks, Xero, Sage) или правовые базы тоже являются профессиональными комплексами и служат разным профессиям, а не только бухгалтерам; главный признак — встроенные отраслевые правила.",
+          "en": "Cloud systems (QuickBooks, Xero, Sage) and legal databases are professional complexes too and serve many professions, not only accountants; the defining feature is the built-in sector rules."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda qaysilari buxgalteriya va moliya tizimlari sifatida tilga olingan?",
+          "ru": "Что из перечисленного названо на уроке бухгалтерскими и финансовыми системами?",
+          "en": "Which of these does the lesson name as accounting and finance systems?"
+        },
+        "options": [
+          {
+            "uz": "1C:Buxgalteriya",
+            "ru": "1С:Бухгалтерия",
+            "en": "1C:Accounting"
+          },
+          {
+            "uz": "QuickBooks",
+            "ru": "QuickBooks",
+            "en": "QuickBooks"
+          },
+          {
+            "uz": "Xero",
+            "ru": "Xero",
+            "en": "Xero"
+          },
+          {
+            "uz": "Stata",
+            "ru": "Stata",
+            "en": "Stata"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Stata — ekonometrika uchun statistika paketi; buxgalteriya tizimlariga darsda yana Sage kiritilgan.",
+          "ru": "Stata — статистический пакет для эконометрики; в урок по бухгалтерским системам включены также QuickBooks, Xero и Sage.",
+          "en": "Stata is a statistics package for econometrics; the lesson also lists Sage among accounting and finance systems."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "ERP tizimining asosiy afzalligi — korxonaning barcha asosiy jarayonlari yagona maʼlumotlar bazasida birlashtiriladi.",
+          "ru": "Главное преимущество ERP-системы в том, что все основные процессы предприятия объединяются в единой базе данных.",
+          "en": "The main advantage of an ERP system is that all of a company's core processes are brought together in a single database."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Maʼlumot bir marta kiritiladi va hamma boʻlimlarda koʻrinadi, rahbariyat koʻrsatkichlarni real vaqtda koʻradi; kamchiligi — qimmatlik, uzoq joriy etish va jarayonlarni qayta qurish zarurati.",
+          "ru": "Данные вводятся один раз и видны во всех подразделениях, руководство видит показатели в реальном времени; недостатки — дороговизна, долгое внедрение и необходимость перестройки процессов.",
+          "en": "Data is entered once and is visible in all departments, and management sees indicators in real time; the drawbacks are the cost, the long implementation and having to redesign processes."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "ERP tizimida yetkazib beruvchilar, buyurtmalar va shartnomalar qaysi modulning ishidir?",
+          "ru": "За какой модуль ERP-системы отвечают поставщики, заказы и договоры?",
+          "en": "Which ERP module handles suppliers, orders and contracts?"
+        },
+        "options": [
+          {
+            "uz": "Moliya va buxgalteriya",
+            "ru": "Финансы и бухгалтерия",
+            "en": "Finance and accounting"
+          },
+          {
+            "uz": "Xaridlar",
+            "ru": "Закупки",
+            "en": "Procurement"
+          },
+          {
+            "uz": "Ombor va logistika",
+            "ru": "Склад и логистика",
+            "en": "Warehouse and logistics"
+          },
+          {
+            "uz": "Kadrlar (HRM)",
+            "ru": "Кадры (HRM)",
+            "en": "Human resources (HRM)"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Ombor va logistika qoldiqlar, harakat va inventarizatsiya uchun; moliya va buxgalteriya — hisob, byudjet, gʻaznachilik va hisobotlar; sotuv va CRM — mijozlar, buyurtmalar, narxlar.",
+          "ru": "Склад и логистика — это остатки, движение и инвентаризация; финансы и бухгалтерия — учёт, бюджет, казначейство и отчёты; продажи и CRM — клиенты, заказы, цены.",
+          "en": "Warehouse and logistics covers stock levels, movements and stocktaking; finance and accounting covers bookkeeping, budgeting, treasury and reports; sales and CRM covers customers, orders and prices."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Hisobotlarni elektron topshirish, soliq qarzni koʻrish va maʼlumotnoma olish uchun qaysi tizim xizmat qiladi?",
+          "ru": "Какая система служит для электронной сдачи отчётности, проверки задолженности и получения справок?",
+          "en": "Which system is used for filing reports electronically, viewing tax debt and obtaining certificates?"
+        },
+        "options": [
+          {
+            "uz": "Soliq toʻlovchining shaxsiy kabineti (my.soliq.uz)",
+            "ru": "Личный кабинет налогоплательщика (my.soliq.uz)",
+            "en": "The taxpayer's personal account (my.soliq.uz)"
+          },
+          {
+            "uz": "Elektron hisob-fakturalar tizimi (ESF)",
+            "ru": "Система электронных счетов-фактур (ЭСФ)",
+            "en": "The electronic invoices system (ESF)"
+          },
+          {
+            "uz": "Onlayn nazorat-kassa mashinalari",
+            "ru": "Онлайн контрольно-кассовые машины",
+            "en": "Online cash registers"
+          },
+          {
+            "uz": "Statistika hisobotlari tizimi",
+            "ru": "Система статистической отчётности",
+            "en": "The statistical reporting system"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "ESF korxonalar orasida elektron raqamli imzo bilan hisob-faktura almashish uchun, onlayn kassalar har bir chekni soliq organiga yuboradi, statistika tizimi esa korxonalarning statistik hisobotlarini topshiradi.",
+          "ru": "ЭСФ служит для обмена счетами-фактурами между компаниями с ЭЦП, онлайн-кассы передают каждый чек в налоговый орган, а система статистики сдаёт статистические отчёты предприятий.",
+          "en": "ESF is for exchanging invoices between companies signed with a digital signature, online cash registers send every receipt to the tax authority, and the statistics system files companies' statistical reports."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tizimni tanlashda faqat litsenziya narxiga qarash yetarli, qolgan xarajatlar ikkinchi darajali.",
+          "ru": "При выборе системы достаточно смотреть только на цену лицензии, остальные затраты второстепенны.",
+          "en": "When choosing a system it is enough to look only at the licence price; the other costs are secondary."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dars buni koʻp uchraydigan xato deb ataydi: joriy etish, oʻqitish, qoʻllab-quvvatlash va yangilanishlar koʻpincha litsenziyadan qimmat — bir necha yil uchun TCO hisoblanadi.",
+          "ru": "Урок называет это частой ошибкой: внедрение, обучение, поддержка и обновления часто дороже лицензии — считают TCO за несколько лет.",
+          "en": "The lesson calls this a common mistake: implementation, training, support and updates often cost more than the licence — the TCO must be calculated over several years."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Litsenziya 200 000 000 soʻm, joriy etish 350 000 000 soʻm, xodimlarni oʻqitish 50 000 000 soʻm va qoʻllab-quvvatlash yiliga 40 000 000 soʻm turadi. Besh yillik TCO necha soʻmni tashkil qiladi?",
+          "ru": "Лицензия стоит 200 000 000 сумов, внедрение — 350 000 000, обучение сотрудников — 50 000 000, а поддержка — 40 000 000 сумов в год. Каков TCO за пять лет в сумах?",
+          "en": "The licence costs 200,000,000 soums, implementation 350,000,000, staff training 50,000,000, and support 40,000,000 soums a year. What is the TCO over five years, in soums?"
+        },
+        "answers": [800000000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "200 000 000 + 350 000 000 + 50 000 000 + 40 000 000 × 5 = 800 000 000 soʻm; dars TCO ga litsenziya, joriy etish, oʻqitish, qoʻllab-quvvatlash va yangilanishlarni kiritishni maslahat beradi.",
+          "ru": "200 000 000 + 350 000 000 + 50 000 000 + 40 000 000 × 5 = 800 000 000 сумов; урок советует включать в TCO лицензию, внедрение, обучение, поддержку и обновления.",
+          "en": "200,000,000 + 350,000,000 + 50,000,000 + 40,000,000 × 5 = 800,000,000 soums; the lesson advises including the licence, implementation, training, support and updates in the TCO."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bank avtomatlashtirilgan tizimiga (ABS, core banking) darsda qaysi tizimlar ulanishi aytilgan?",
+          "ru": "Какие системы, по уроку, подключаются к автоматизированной банковской системе (АБС, core banking)?",
+          "en": "Which systems does the lesson say connect to a core banking system (ABS)?"
+        },
+        "options": [
+          {
+            "uz": "Internet va mobil banking",
+            "ru": "Интернет- и мобильный банкинг",
+            "en": "Internet and mobile banking"
+          },
+          {
+            "uz": "Karta protsessingi",
+            "ru": "Карточный процессинг",
+            "en": "Card processing"
+          },
+          {
+            "uz": "Skoring va Markaziy bankning toʻlov tizimi",
+            "ru": "Скоринг и платёжная система Центрального банка",
+            "en": "Scoring and the Central Bank's payment system"
+          },
+          {
+            "uz": "Ishlab chiqarishni rejalashtirish moduli",
+            "ru": "Модуль планирования производства",
+            "en": "The production planning module"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Ishlab chiqarish — ERP moduli; ABS hisoblar, kreditlar, omonatlar, toʻlovlar va bank buxgalteriyasini yuritadi, shuningdek regulyator hisobotlariga ulanadi.",
+          "ru": "Производство — модуль ERP; АБС ведёт счета, кредиты, вклады, платежи и банковскую бухгалтерию и связана с отчётностью регулятору.",
+          "en": "Production is an ERP module; the core banking system maintains accounts, loans, deposits, payments and the bank's bookkeeping, and is connected to regulatory reporting."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Moliyaviy hisobotning xalqaro standartini qisqartma bilan yozing.",
+          "ru": "Укажите международный стандарт финансовой отчётности аббревиатурой.",
+          "en": "Give the abbreviation of the international standard for financial reporting."
+        },
+        "answers": ["IFRS", "ifrs", "MHXS", "МСФО", "MSFO"],
+        "explanation": {
+          "uz": "IFRS (oʻzbekcha — MHXS) — moliyaviy hisobotning xalqaro standarti; yirik kompaniyalar va banklar unga oʻtmoqda, tizimlar ikki standartda hisobot berishni qoʻllab-quvvatlaydi.",
+          "ru": "IFRS (МСФО) — международный стандарт финансовой отчётности; крупные компании и банки переходят на него, а системы поддерживают отчётность по двум стандартам.",
+          "en": "IFRS is the international standard for financial reporting; large companies and banks are moving to it, and systems support reporting under both standards."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "ERP ga oʻtishda korxona jarayonlarini qayta qurish shart emas — mavjud tartibda davom etaversa boʻladi.",
+          "ru": "При переходе на ERP перестройка процессов предприятия не обязательна — можно оставить существующий порядок.",
+          "en": "Moving to an ERP does not require redesigning the company's processes — the existing order can be kept."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dars ERP kamchiliklari qatorida jarayonlarni qayta qurish talab etilishini va joriy etish oylar yoki yillar olishini aytdi; joriy etishning oʻzi talablarni yigʻishdan boshlanadi.",
+          "ru": "Среди недостатков ERP урок назвал необходимость перестройки процессов и внедрение, длящееся месяцы или годы; само внедрение начинается со сбора требований.",
+          "en": "Among ERP's drawbacks the lesson names having to redesign processes and an implementation lasting months or years; implementation itself starts with gathering requirements."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Kasbiy axborot komplekslari: turlari, tizimlar va tanlash mezonlari",
+      "ru": "Профессиональные информационные комплексы: виды, системы и критерии выбора",
+      "en": "Professional information complexes: types, systems and selection criteria"
+    },
+    "statement": {
+      "uz": "Darsda oʻrganilgan buxgalteriya, ERP, bank, soliq, statistika va huquqiy tizimlar hamda tizim tanlash mezonlari boʻyicha quyidagi savollarga javob bering.",
+      "ru": "Ответьте на вопросы о бухгалтерских, ERP, банковских, налоговых, статистических и правовых системах, разобранных на уроке, и о критериях выбора системы.",
+      "en": "Answer the questions below on the accounting, ERP, banking, tax, statistics and legal systems covered in the lesson and on the criteria for choosing a system."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Elektron hisob-fakturalar (ESF) tizimi nimani taʼminlaydi?",
+            "ru": "Что обеспечивает система электронных счетов-фактур (ЭСФ)?",
+            "en": "What does the electronic invoices system (ESF) provide?"
+          },
+          "options": [
+            {
+              "uz": "Hisob-fakturalarni elektron raqamli imzo bilan almashishni",
+              "ru": "Обмен счетами-фактурами с электронной цифровой подписью",
+              "en": "Exchanging invoices signed with an electronic digital signature"
+            },
+            {
+              "uz": "Har bir chekni soliq organiga real vaqtda yuborishni",
+              "ru": "Передачу каждого чека в налоговый орган в реальном времени",
+              "en": "Sending every receipt to the tax authority in real time"
+            },
+            {
+              "uz": "Qonunchilik hujjatlarining amaldagi tahririni eʼlon qilishni",
+              "ru": "Публикацию действующей редакции правовых документов",
+              "en": "Publishing legal documents in their current wording"
+            },
+            {
+              "uz": "Korxona qoldiqlarini inventarizatsiya qilishni",
+              "ru": "Проведение инвентаризации остатков предприятия",
+              "en": "Stocktaking of a company's inventory"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Cheklarni onlayn nazorat-kassa mashinalari yuboradi, huquqiy hujjatlarni Lex.uz eʼlon qiladi, inventarizatsiya esa ERP ombor va logistika moduliga tegishli.",
+            "ru": "Чеки передают онлайн-кассы, правовые документы публикует Lex.uz, а инвентаризация относится к модулю «Склад и логистика» ERP.",
+            "en": "Receipts are sent by online cash registers, legal documents are published by Lex.uz, and stocktaking belongs to the warehouse and logistics module of an ERP."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Onlayn nazorat-kassa mashinasidan har bir chek soliq organiga real vaqtda yuboriladi.",
+            "ru": "Каждый чек с онлайн контрольно-кассовой машины передаётся в налоговый орган в реальном времени.",
+            "en": "Every receipt from an online cash register is sent to the tax authority in real time."
+          },
+          "options": [
+            { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+            { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Bu darsdagi soliq va hisobot tizimlari jadvalida shunday berilgan; hisobotlar elektron raqamli imzo bilan tasdiqlanadi.",
+            "ru": "Так записано в таблице налоговых и отчётных систем урока; отчёты подтверждаются электронной цифровой подписью.",
+            "en": "This is how the lesson's table of tax and reporting systems states it; reports are confirmed with an electronic digital signature."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Ijtimoiy-iqtisodiy soʻrovnomalar maʼlumotlarini grafik interfeys orqali tahlil qilish uchun darsda qaysi paket tavsiya etilgan?",
+            "ru": "Какой пакет урок рекомендует для анализа данных социально-экономических опросов через графический интерфейс?",
+            "en": "Which package does the lesson recommend for analysing socio-economic survey data through a graphical interface?"
+          },
+          "options": [
+            { "uz": "SPSS", "ru": "SPSS", "en": "SPSS" },
+            { "uz": "Stata va EViews", "ru": "Stata и EViews", "en": "Stata and EViews" },
+            { "uz": "Power BI va Tableau", "ru": "Power BI и Tableau", "en": "Power BI and Tableau" },
+            { "uz": "1C:Buxgalteriya", "ru": "1С:Бухгалтерия", "en": "1C:Accounting" }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Stata va EViews — regressiya, vaqt qatorlari va panel maʼlumotlar uchun ekonometrika vositalari; Power BI va Tableau — interaktiv dashboardlar; R va Python — kod orqali katta maʼlumotlar va mashinali oʻqitish.",
+            "ru": "Stata и EViews — эконометрика: регрессия, временные ряды, панельные данные; Power BI и Tableau — интерактивные дашборды; R и Python — работа через код с большими данными и машинным обучением.",
+            "en": "Stata and EViews are econometrics tools: regression, time series and panel data; Power BI and Tableau give interactive dashboards; R and Python work through code with big data and machine learning."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsda sanab oʻtilgan joriy etish bosqichlarining soni nechta?",
+            "ru": "Сколько этапов внедрения названо на уроке?",
+            "en": "How many implementation stages does the lesson list?"
+          },
+          "answers": [7],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Yettita: talablarni yigʻish → tizim va hamkorni tanlash → jarayonlarni loyihalash va sozlash → maʼlumotlarni koʻchirish → xodimlarni oʻqitish → sinov ekspluatatsiyasi → sanoat ekspluatatsiyasi va qoʻllab-quvvatlash.",
+            "ru": "Семь: сбор требований → выбор системы и партнёра → проектирование и настройка процессов → перенос данных → обучение сотрудников → опытная эксплуатация → промышленная эксплуатация и поддержка.",
+            "en": "Seven: gathering requirements → choosing the system and the partner → designing and configuring processes → migrating data → training staff → trial operation → full operation and support."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Tizimni tanlash mezonlari qatoriga darsda qaysilari kiritilgan?",
+            "ru": "Что из перечисленного входит в критерии выбора системы по уроку?",
+            "en": "Which of these are among the lesson's criteria for choosing a system?"
+          },
+          "options": [
+            {
+              "uz": "Funksionallik va milliy qonunchilikka moslashuv",
+              "ru": "Функциональность и адаптация к национальному законодательству",
+              "en": "Functionality and adaptation to national legislation"
+            },
+            {
+              "uz": "TCO va masshtablilik",
+              "ru": "TCO и масштабируемость",
+              "en": "TCO and scalability"
+            },
+            {
+              "uz": "Integratsiya, yetkazib beruvchi, xavfsizlik va joylashuv modeli",
+              "ru": "Интеграция, поставщик, безопасность и модель размещения",
+              "en": "Integration, vendor, security and deployment model"
+            },
+            {
+              "uz": "Dastur interfeysining rangi",
+              "ru": "Цвет интерфейса программы",
+              "en": "The colour of the program's interface"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Integratsiya — bank, soliq, kassa va sayt bilan API orqali ulanish; xavfsizlik — kirish huquqlari, jurnallar, zaxira va maʼlumotlarning joylashuvi; joylashuv modeli — oʻz serveri yoki bulut (SaaS).",
+            "ru": "Интеграция — подключение к банку, налоговой, кассам и сайту через API; безопасность — права доступа, журналы, резервные копии и место хранения данных; модель размещения — свой сервер или облако (SaaS).",
+            "en": "Integration means connecting to the bank, the tax system, cash registers and the website through an API; security covers access rights, logs, backups and where the data is located; the deployment model is an own server or the cloud (SaaS)."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Lex.uz bazasida hujjatlar amaldagi tahrirda va oʻzgarishlar tarixi bilan bepul beriladi.",
+            "ru": "В базе Lex.uz документы бесплатно приводятся в действующей редакции с историей изменений.",
+            "en": "The Lex.uz database provides documents free of charge in their current wording with the history of changes."
+          },
+          "options": [
+            { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+            { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Bu Oʻzbekiston qonunchilik maʼlumotlarining milliy bazasi; xalqaro va pullik huquqiy tizimlar qoʻshimcha ravishda izohlar, shablonlar va sud amaliyotini beradi.",
+            "ru": "Это Национальная база данных законодательства Узбекистана; зарубежные и платные правовые системы дополнительно дают комментарии, шаблоны и судебную практику.",
+            "en": "This is the national database of legislation of Uzbekistan; international and paid legal systems add commentaries, templates and case law."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Tartibsiz, xatolarga boy jarayonni tizimga kiritib avtomatlashtirsangiz, dars xulosasiga koʻra nima boʻladi?",
+            "ru": "Если автоматизировать хаотичный, полный ошибок процесс, что, по выводу урока, получится?",
+            "en": "According to the lesson, what happens if you automate a chaotic, error-prone process?"
+          },
+          "options": [
+            {
+              "uz": "Tartibsizlik tezlashadi — jarayon avval tushunilishi va qayta qurilishi kerak",
+              "ru": "Хаос лишь ускорится — процесс нужно сначала понять и перестроить",
+              "en": "The chaos just speeds up — the process must first be understood and redesigned"
+            },
+            {
+              "uz": "Jarayon oʻz-oʻzidan tartibga tushadi",
+              "ru": "Процесс сам собой придёт в порядок",
+              "en": "The process will tidy itself up"
+            },
+            {
+              "uz": "Xatolar kamayadi, chunki dastur ularni tuzatadi",
+              "ru": "Ошибок станет меньше, потому что программа их исправит",
+              "en": "There will be fewer errors because the program corrects them"
+            },
+            {
+              "uz": "Xarajatlar litsenziya narxiga teng boʻlib qoladi",
+              "ru": "Затраты останутся равными цене лицензии",
+              "en": "The costs will stay equal to the licence price"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Dars buni joriy etishning koʻp uchraydigan xatolaridan biri deydi; shuningdek, oʻqitishni tejash investitsiya oʻzini oqlamasligiga, notoʻgʻri boshlangʻich qoldiqlar esa butun hisobning buzilishiga olib keladi.",
+            "ru": "Урок относит это к частым ошибкам внедрения; экономия на обучении также ведёт к неокупаемости инвестиций, а неверные начальные остатки — к искажению всего учёта.",
+            "en": "The lesson lists this among the common implementation mistakes; saving on training means the investment does not pay off, and wrong opening balances corrupt all the accounting."
+          }
+        }
+      ]
+    }
+  }
+}

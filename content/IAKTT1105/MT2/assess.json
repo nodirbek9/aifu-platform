@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Statistik tahlil qaysi bosqichdan boshlanadi?",
+          "ru": "С какого этапа начинается статистический анализ?",
+          "en": "Which stage does statistical analysis start with?"
+        },
+        "options": [
+          {
+            "uz": "Savol qoʻyish: masalan, «Reklama xarajati sotuvga taʼsir qiladimi?»",
+            "ru": "Постановка вопроса: например, «Влияют ли расходы на рекламу на продажи?»",
+            "en": "Asking the question: for example, «Does advertising spend affect sales?»"
+          },
+          {
+            "uz": "Maʼlumotlarni tozalash",
+            "ru": "Очистка данных",
+            "en": "Cleaning the data"
+          },
+          {
+            "uz": "Grafiklar va diagrammalar qurish",
+            "ru": "Построение графиков и диаграмм",
+            "en": "Building charts and diagrams"
+          },
+          {
+            "uz": "Natijani biznes tilida izohlash",
+            "ru": "Интерпретация результата языком бизнеса",
+            "en": "Interpreting the result in business language"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bosqichlar tartibi: savol → yigʻish → tozalash → tavsifiy tahlil → vizualizatsiya → bogʻliqlik va xulosa.",
+          "ru": "Порядок этапов: вопрос → сбор → очистка → описательный анализ → визуализация → взаимосвязи и выводы.",
+          "en": "The order of stages: question → collection → cleaning → descriptive analysis → visualization → relationships and conclusions."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Mediana qatorning juda katta yoki juda kichik chetki qiymatlariga sezgir emas.",
+          "ru": "Медиана не чувствительна к очень большим или очень малым крайним значениям ряда.",
+          "en": "The median is not sensitive to very large or very small extreme values of a series."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Mediana — tartiblangan qatorning oʻrtasidagi qiymat; oʻrtachani esa katta qiymatlar «tortib ketadi».",
+          "ru": "Медиана — значение в середине упорядоченного ряда; среднее же «тянут» вверх большие значения.",
+          "en": "The median is the middle value of the sorted series; extreme values «pull» the mean instead."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tavsifiy statistika koʻrsatkichlariga qaysilari kiradi?",
+          "ru": "Какие из перечисленного — показатели описательной статистики?",
+          "en": "Which of these are indicators of descriptive statistics?"
+        },
+        "options": [
+          {
+            "uz": "Oʻrtacha",
+            "ru": "Среднее",
+            "en": "Mean"
+          },
+          {
+            "uz": "Moda",
+            "ru": "Мода",
+            "en": "Mode"
+          },
+          {
+            "uz": "Kvartillar",
+            "ru": "Квартили",
+            "en": "Quartiles"
+          },
+          {
+            "uz": "Korrelyatsiya koeffitsiyenti",
+            "ru": "Коэффициент корреляции",
+            "en": "Correlation coefficient"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Korrelyatsiya — bogʻliqlik koʻrsatkichi, u alohida boʻlimda; tavsifga yana standart chetlanish, variatsiya koeffitsiyenti, min va max ham kiradi.",
+          "ru": "Корреляция — показатель взаимосвязи, она в отдельном разделе; в описание входят также стандартное отклонение, коэффициент вариации, мин и макс.",
+          "en": "Correlation is a relationship indicator and sits in its own section; description also covers standard deviation, coefficient of variation, min and max."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Variatsiya koeffitsiyenti nima uchun ishlatiladi?",
+          "ru": "Для чего используется коэффициент вариации?",
+          "en": "What is the coefficient of variation used for?"
+        },
+        "options": [
+          {
+            "uz": "Turli oʻlchamdagi qatorlarning tarqoqligini nisbiy koʻrinishda solishtirish uchun",
+            "ru": "Для относительного сравнения разброса рядов разного масштаба",
+            "en": "For comparing in relative terms the spread of series of different scales"
+          },
+          {
+            "uz": "Chetki qiymatlarni avtomatik oʻchirish uchun",
+            "ru": "Для автоматического удаления крайних значений",
+            "en": "For automatically removing extreme values"
+          },
+          {
+            "uz": "Maʼlumotlar hajmini gigabaytlarda hisoblash uchun",
+            "ru": "Для объёма данных в гигабайтах",
+            "en": "For measuring the data volume in gigabytes"
+          },
+          {
+            "uz": "Diagramma ranglarini tanlash uchun",
+            "ru": "Для выбора цветов диаграммы",
+            "en": "For choosing the colours of a chart"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Variatsiya koeffitsiyenti = standart chetlanish / oʻrtacha × 100%; formulaning oʻzi ham shu maʼnoni beradi.",
+          "ru": "Коэффициент вариации = стандартное отклонение / среднее × 100%; сама формула и даёт этот смысл.",
+          "en": "Coefficient of variation = standard deviation / mean × 100%; the formula itself carries this meaning."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi misolda 9 ta xodim 5 mln, rahbar esa 50 mln soʻm oladi. Ish haqining oʻrtacha qiymati nechcha mln soʻm?",
+          "ru": "В примере из занятия 9 сотрудников получают 5 млн, а руководитель 50 млн сумов. Каково среднее значение зарплаты в млн сумов?",
+          "en": "In the lesson example 9 employees earn 5 million and the manager 50 million soums. What is the mean salary in million soums?"
+        },
+        "answers": [9.5],
+        "tolerance": 0.01,
+        "explanation": {
+          "uz": "(9 × 5 + 50) / 10 = 9.5 mln; mediana esa 5 mln — shuning uchun notekis taqsimotda odatiy maoshni mediana yaxshiroq koʻrsatadi.",
+          "ru": "(9 × 5 + 50) / 10 = 9,5 млн; медиана же 5 млн — поэтому при неравномерном распределении типичную зарплату лучше показывает медиана.",
+          "en": "(9 × 5 + 50) / 10 = 9.5 million; the median is 5 million, which is why the median shows the typical pay better in uneven data."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Sotuv va reklama qatorlarining chiziqli bogʻliqligini hisoblovchi Excel funksiyasining nomini yozing.",
+          "ru": "Напишите имя функции Excel, вычисляющей линейную связь рядов продаж и рекламы.",
+          "en": "Write the name of the Excel function that computes the linear relationship of the sales and advertising series."
+        },
+        "answers": ["CORREL", "КОРРЕЛ", "correl"],
+        "explanation": {
+          "uz": "Korrelyatsiya koeffitsiyenti r Excel da CORREL (ruscha: КОРРЕЛ) funksiyasi bilan hisoblanadi; qiymati −1 dan 1 gacha.",
+          "ru": "Коэффициент корреляции r считается в Excel функцией КОРРЕЛ (CORREL); его значение от −1 до 1.",
+          "en": "The correlation coefficient r is computed in Excel by CORREL (КОРРЕЛ in Russian); its value runs from −1 to 1."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Reklama va sotuv birga oʻsib borishi reklama sotuvni oshirganini isbotlaydi.",
+          "ru": "То, что реклама и продажи растут вместе, доказывает, что реклама увеличила продажи.",
+          "en": "Advertising and sales growing together proves that advertising increased sales."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Korrelyatsiya sababiyat emas: ikkala koʻrsatkich ham mavsumga bogʻliq boʻlishi mumkin (muzqaymoq va suvda choʻkish kabi). Sababiyat uchun A/B test yoki ekonometrik usullar kerak.",
+          "ru": "Корреляция — не причинность: оба показателя могут зависеть от сезона (как мороженое и утопления). Для причинности нужен A/B-тест или эконометрические методы.",
+          "en": "Correlation is not causation: both may depend on the season (like ice cream and drownings). Causality needs an A/B test or econometric methods."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi 12 oylik sotuv qatori (42 38 45 51 47 55 60 58 49 44 53 62) uchun mediana nechcha mln soʻm?",
+          "ru": "Чему равна медиана ряда 12-месячных продаж из занятия (42 38 45 51 47 55 60 58 49 44 53 62) в млн сумов?",
+          "en": "What is the median of the lesson series of 12 monthly sales (42 38 45 51 47 55 60 58 49 44 53 62), in million soums?"
+        },
+        "answers": [50],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Tartiblangan qatorda oʻrtadagi ikki son 49 va 51; (49 + 51) / 2 = 50 mln — dastur ham «Mediana: 50.00» chiqaradi.",
+          "ru": "В упорядоченном ряду средние числа 49 и 51; (49 + 51) / 2 = 50 млн — программа тоже печатает «Медиана: 50.00».",
+          "en": "The two middle values of the sorted series are 49 and 51; (49 + 51) / 2 = 50 million — the program prints «Median: 50.00»."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi vositalar jadvali boʻyicha qaysi moslashuvlar toʻgʻri?",
+          "ru": "Какие соответствия из таблицы инструментов занятия верны?",
+          "en": "Which matches from the lesson's table of tools are correct?"
+        },
+        "options": [
+          {
+            "uz": "SPSS — soʻrovnoma natijalarini menyular orqali tahlil qilish uchun",
+            "ru": "SPSS — анализ опросов через меню",
+            "en": "SPSS — menu-driven survey analysis"
+          },
+          {
+            "uz": "Stata, EViews — ekonometrika va vaqt qatorlari uchun",
+            "ru": "Stata, EViews — эконометрика и временные ряды",
+            "en": "Stata, EViews — econometrics and time series"
+          },
+          {
+            "uz": "Power BI, Tableau — rahbariyat uchun interaktiv dashboardlar",
+            "ru": "Power BI, Tableau — интерактивные дашборды для руководства",
+            "en": "Power BI, Tableau — interactive dashboards for management"
+          },
+          {
+            "uz": "Google Sheets — katta maʼlumotlar va mashinali oʻqitish uchun",
+            "ru": "Google Таблицы — большие данные и машинное обучение",
+            "en": "Google Sheets — big data and machine learning"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Katta maʼlumotlar, avtomatlashtirish va mashinali oʻqitish — Python (pandas) ustuni; Google Sheets esa bulutda jamoaviy kichik tahlil uchun.",
+          "ru": "Большие данные, автоматизация и машинное обучение — строка Python (pandas); Google Таблицы — совместный небольшой анализ в облаке.",
+          "en": "Big data, automation and machine learning belong to the Python (pandas) row; Google Sheets is for small collaborative analyses in the cloud."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Oʻrtacha, mediana va range",
+      "ru": "Среднее, медиана и размах",
+      "en": "Mean, median and range"
+    },
+    "statement": {
+      "uz": "Tadqiqot guruhi bitta koʻrsatkichning kuzatuvlarini tahlil qilmoqda. Bitta qatorda boʻsh joy bilan ajratilgan butun sonlar beriladi (1 dan 100 tagacha son, har biri 0 dan 1000 gacha). Dasturingiz shu qator uchun oʻrtacha qiymatni, medianani va range ni (eng katta va eng kichik qiymat farqi) hisoblab, uchta qator chiqarsin: birinchi qatorda oʻrtacha, ikkinchisida mediana, uchinchisida range. Har bir natijani nuqtadan keyin ikki xonada yozing (masalan, 18.00), hech qanday qoʻshimcha soʻz yozmang. Sonlar soni juft boʻlsa, mediana tartiblangan qatorning oʻrtasidagi ikki sonning oʻrtachasiga teng. Masalan, «1 2 3 4 5» kirsa, dastur ketma-ket qatorlarda 3.00, 3.00, 4.00 chiqaradi.",
+      "ru": "Группа исследователей анализирует наблюдения одного показателя. Дана одна строка целых чисел через пробел (от 1 до 100 чисел, каждое от 0 до 1000). Ваша программа должна вычислить для этого ряда среднее, медиану и размах (разность наибольшего и наименьшего значений) и напечатать три строки: среднее, медиана, размах — каждое значение с двумя знаками после точки (например, 18.00), без каких-либо дополнительных слов. Если чисел чётное количество, медиана равна среднему двух средних значений упорядоченного ряда. Например, при вводе «1 2 3 4 5» программа печатает 3.00, 3.00, 4.00 — каждое на отдельной строке.",
+      "en": "A research group analyses the observations of one indicator. The input is a single line of integers separated by spaces (from 1 to 100 numbers, each from 0 to 1000). Your program must compute the mean, the median and the range (largest minus smallest value) of this series and print three lines: the mean, the median, the range — each with exactly two digits after the decimal point (for example, 18.00) and no extra words. If the count is even, the median is the average of the two middle values of the sorted series. For the input «1 2 3 4 5» the program prints 3.00, 3.00, 4.00, one per line."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nnums = [int(x) for x in sys.stdin.read().split()]\nn = len(nums)\nnums.sort()\nmean = sum(nums) / n\nif n % 2 == 1:\n    median = float(nums[n // 2])\nelse:\n    median = (nums[n // 2 - 1] + nums[n // 2]) / 2\nprint(f\"{mean:.2f}\")\nprint(f\"{median:.2f}\")\nprint(f\"{nums[-1]:.2f}\")\n",
+        "java": "import java.util.Arrays;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] parts = in.nextLine().trim().split(\"\\\\s+\");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Arrays.sort(nums);\n        int n = nums.length;\n        double sum = 0;\n        for (int x : nums) {\n            sum += x;\n        }\n        double mean = sum / n;\n        double median;\n        if (n % 2 == 1) {\n            median = nums[n / 2];\n        } else {\n            median = (nums[n / 2 - 1] + nums[n / 2]) / 2.0;\n        }\n        System.out.printf(\"%.2f%n\", mean);\n        System.out.printf(\"%.2f%n\", median);\n        System.out.printf(\"%.2f%n\", nums[n - 1] * 1.0);\n    }\n}\n",
+        "cpp": "#include <algorithm>\n#include <cstdio>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> nums;\n    int x;\n    while (cin >> x) {\n        nums.push_back(x);\n    }\n    sort(nums.begin(), nums.end());\n    int n = nums.size();\n    double sum = 0;\n    for (int v : nums) {\n        sum += v;\n    }\n    double mean = sum / n;\n    double median;\n    if (n % 2 == 1) {\n        median = nums[n / 2];\n    } else {\n        median = (nums[n / 2 - 1] + nums[n / 2]) / 2.0;\n    }\n    printf(\"%.2f\\n\", mean);\n    printf(\"%.2f\\n\", median);\n    printf(\"%.2f\\n\", (double)nums[n - 1]);\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nnums = [int(x) for x in sys.stdin.read().split()]\nn = len(nums)\nnums.sort()\nmean = sum(nums) / n\nif n % 2 == 1:\n    median = float(nums[n // 2])\nelse:\n    median = (nums[n // 2 - 1] + nums[n // 2]) / 2\nprint(f\"{mean:.2f}\")\nprint(f\"{median:.2f}\")\nprint(f\"{nums[-1] - nums[0]:.2f}\")\n",
+        "java": "import java.util.Arrays;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] parts = in.nextLine().trim().split(\"\\\\s+\");\n        int[] nums = new int[parts.length];\n        for (int i = 0; i < parts.length; i++) {\n            nums[i] = Integer.parseInt(parts[i]);\n        }\n        Arrays.sort(nums);\n        int n = nums.length;\n        double sum = 0;\n        for (int x : nums) {\n            sum += x;\n        }\n        double mean = sum / n;\n        double median;\n        if (n % 2 == 1) {\n            median = nums[n / 2];\n        } else {\n            median = (nums[n / 2 - 1] + nums[n / 2]) / 2.0;\n        }\n        System.out.printf(\"%.2f%n\", mean);\n        System.out.printf(\"%.2f%n\", median);\n        System.out.printf(\"%.2f%n\", (nums[n - 1] - nums[0]) * 1.0);\n    }\n}\n",
+        "cpp": "#include <algorithm>\n#include <cstdio>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    vector<int> nums;\n    int x;\n    while (cin >> x) {\n        nums.push_back(x);\n    }\n    sort(nums.begin(), nums.end());\n    int n = nums.size();\n    double sum = 0;\n    for (int v : nums) {\n        sum += v;\n    }\n    double mean = sum / n;\n    double median;\n    if (n % 2 == 1) {\n        median = nums[n / 2];\n    } else {\n        median = (nums[n / 2 - 1] + nums[n / 2]) / 2.0;\n    }\n    printf(\"%.2f\\n\", mean);\n    printf(\"%.2f\\n\", median);\n    printf(\"%.2f\\n\", (double)(nums[n - 1] - nums[0]));\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "1 2 3 4 5\n", "expected": "3.00\n3.00\n4.00", "hidden": false },
+        { "input": "10 20 30 40\n", "expected": "25.00\n25.00\n30.00", "hidden": false },
+        { "input": "4 8 15 16 23 42\n", "expected": "18.00\n15.50\n38.00", "hidden": true },
+        { "input": "7 7 3 3\n", "expected": "5.00\n5.00\n4.00", "hidden": true },
+        { "input": "100 1 1 1 1\n", "expected": "20.80\n1.00\n99.00", "hidden": true }
+      ]
+    }
+  }
+}

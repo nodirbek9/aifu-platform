@@ -1,0 +1,264 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Postfiks yozuvdagi 3 4 + 2 * ifodasining odatiy (infiks) koʻrinishi qaysi?",
+          "ru": "Какой обычной (инфиксной) записи соответствует постфиксное выражение 3 4 + 2 *?",
+          "en": "Which ordinary (infix) expression matches the postfix expression 3 4 + 2 *?"
+        },
+        "options": [
+          { "uz": "3 + 4 * 2", "ru": "3 + 4 * 2", "en": "3 + 4 * 2" },
+          { "uz": "(3 + 4) * 2", "ru": "(3 + 4) * 2", "en": "(3 + 4) * 2" },
+          { "uz": "3 * (4 + 2)", "ru": "3 * (4 + 2)", "en": "3 * (4 + 2)" },
+          { "uz": "(3 * 4) + 2", "ru": "(3 * 4) + 2", "en": "(3 * 4) + 2" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Amal operandlardan keyin yoziladi: 3 4 + bu (3 + 4), keyin 2 * — natija (3 + 4) * 2 = 14.",
+          "ru": "Операция записывается после операндов: 3 4 + — это (3 + 4), затем * 2, то есть (3 + 4) * 2 = 14.",
+          "en": "The operator is written after its operands: 3 4 + is (3 + 4), then * 2, i.e. (3 + 4) * 2 = 14."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Postfiks yozuvda qavslar ham, amallar ustuvorligi ham kerak emas.",
+          "ru": "Постфиксная запись не требует ни скобок, ни приоритета операций.",
+          "en": "Postfix notation needs neither brackets nor operator precedence."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars: postfiks (teskari polyak) yozuvda amal operandlaridan keyin turadi, hisoblash tartibini stekning oʻzi hal qiladi.",
+          "ru": "По занятию: в постфиксной (обратной польской) записи операция стоит после операндов, а порядок вычисления сам задаётся стеком.",
+          "en": "The lesson: in postfix (reverse Polish) notation the operator follows its operands, and the stack itself settles the order of evaluation."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Xulosedagi tanlov boʻyicha qaysi ifodalar toʻgʻri: qaysi masala uchun qaysi tuzilma?",
+          "ru": "Какие соответствия «задача — структура» из итогов занятия верны?",
+          "en": "Which of the task-to-structure pairings from the summary are correct?"
+        },
+        "options": [
+          {
+            "uz": "Faqat oxirgi elementni olish kerak boʻlsa — stek",
+            "ru": "Если нужно брать только последний элемент — стек",
+            "en": "Taking only the last element — a stack"
+          },
+          {
+            "uz": "Ikkala uchida ishlash kerak boʻlsa — dek",
+            "ru": "Если нужно работать с обоих концов — дек",
+            "en": "Working at both ends — a deque"
+          },
+          {
+            "uz": "Matn oʻrtasiga tez qoʻshish va oʻchirish kerak boʻlsa — massiv",
+            "ru": "Если нужна быстрая вставка и удаление в середине текста — массив",
+            "en": "Fast inserting and deleting in the middle of a text — an array"
+          },
+          {
+            "uz": "Sirpanuvchi oynaning maksimumi uchun — monoton dek",
+            "ru": "Для максимума в скользящем окне — монотонный дек",
+            "en": "The sliding-window maximum — a monotone deque"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Oʻrtaga qoʻshish va oʻchirish uchun ikki bogʻlamli roʻyxat kerak: massivda oʻrtadagi yozish yoki oʻchirish qolgan belgilarni har safar suradi.",
+          "ru": "Для вставки и удаления в середине нужен двусвязный список: в массиве такая операция каждый раз сдвигает остальные символы.",
+          "en": "Changing the middle needs a doubly linked list: in an array every middle write or deletion shifts the remaining characters each time."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Postfiks ifoda 2 3 4 * + ning qiymati nechaga teng?",
+          "ru": "Чему равно значение постфиксного выражения 2 3 4 * +?",
+          "en": "What is the value of the postfix expression 2 3 4 * +?"
+        },
+        "answers": [14],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Stekka 2, 3, 4 qoʻyiladi; * amali ikkita soʻnggi sonni oladi va 3 · 4 = 12 ni qaytaradi; + esa 2 + 12 = 14 beradi.",
+          "ru": "В стек кладутся 2, 3 и 4; оператор * забирает два последних числа и возвращает 3 · 4 = 12; затем + даёт 2 + 12 = 14.",
+          "en": "2, 3 and 4 go onto the stack; * pops the last two and pushes 3 · 4 = 12; then + gives 2 + 12 = 14."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Monoton dekda nima saqlanadi?",
+          "ru": "Что хранится в монотонном деке?",
+          "en": "What does the monotone deque store?"
+        },
+        "options": [
+          {
+            "uz": "Oynadagi qiymatlarni, ular boshidan oxiriga kamayib boradi",
+            "ru": "Значения окна — они убывают от начала дека к его концу",
+            "en": "The window's values, decreasing from front to back"
+          },
+          {
+            "uz": "Indekslarni, ularning qiymatlari boshidan oxiriga kamayib boradi",
+            "ru": "Индексы — их значения убывают от начала дека к его концу",
+            "en": "Indices whose values decrease from front to back"
+          },
+          {
+            "uz": "Indekslarni, ularning qiymatlari boshidan oxiriga oʻsib boradi",
+            "ru": "Индексы — их значения возрастают от начала дека к его концу",
+            "en": "Indices whose values grow from front to back"
+          },
+          {
+            "uz": "Faqat joriy oyna maksimumining indeksini",
+            "ru": "Только индекс текущего максимума окна",
+            "en": "Only the index of the current window maximum"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dek qiymatlarni emas, indekslarni saqlaydi: indeks element qachon oynadan chiqib ketishini bilish uchun kerak. Qiymatlari boshdan oxirga kamayib boradi, dek boshi — joriy maksimum.",
+          "ru": "Дек хранит не значения, а индексы: индекс нужен, чтобы знать, когда элемент покинет окно. Их значения убывают от начала к концу, начало дека — текущий максимум.",
+          "en": "The deque holds indices, not values — the index tells when an element leaves the window. Their values decrease from front to back, and the front of the deque is the current maximum."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ikki bogʻlamli roʻyxatda har bir tugun oldingi bilan birga qaysi ikkinchi koʻrsatkichni saqlaydi? Darsdagi nomini yozing.",
+          "ru": "Какой второй указатель, наряду с oldingi, хранит каждый узел двусвязного списка? Напишите имя из занятия.",
+          "en": "Which second pointer, besides oldingi, does every node of a doubly linked list keep? Write the name from the lesson."
+        },
+        "answers": ["keyingi"],
+        "explanation": {
+          "uz": "Har tugun oldingi va keyingi koʻrsatkichlarini saqlaydi — shuning uchun roʻyxat ikki bogʻlamli deyiladi.",
+          "ru": "Каждый узел хранит указатели oldingi (предыдущий) и keyingi (следующий) — поэтому список и называется двусвязным.",
+          "en": "Every node keeps the pointers oldingi (previous) and keyingi (next) — which is why the list is doubly linked."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Postfiks ifodani hisoblaganda -5 kabi token ham minus amali deb qabul qilinadi, chunki tarkibida minus belgisi bor.",
+          "ru": "При вычислении постфиксного выражения токен вида -5 тоже принимается за оператор минуса, так как содержит знак минуса.",
+          "en": "When evaluating a postfix expression, a token like -5 is also taken for the minus operator because it contains a minus sign."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Amal faqat token aniq - ga teng boʻlsa tan olinadi; -5 operator emas — u stekka son sifatida qoʻyiladi. Masalan, -5 3 * uchun natija -15.",
+          "ru": "Оператор распознаётся только тогда, когда токен равен ровно «-»; поэтому -5 оператором не считается и кладётся в стек как число: для -5 3 * ответ -15.",
+          "en": "An operator is recognised only when the token is exactly \"-\", so -5 is not taken for one and goes onto the stack as a number: -5 3 * evaluates to -15."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "n = 8 va k = 3 boʻlsa, sirpanuvchi oyna dasturi nechta maksimum chiqaradi?",
+          "ru": "Сколько максимумов выведет программа скользящего окна при n = 8 и k = 3?",
+          "en": "How many window maxima does the sliding-window program print for n = 8 and k = 3?"
+        },
+        "answers": [6],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Uzunligi k boʻlgan tutash oynalar soni n − k + 1 = 8 − 3 + 1 = 6. Darsdagi 1 3 -1 -3 5 3 6 7 misolida chiqish: 3 3 5 5 6 7.",
+          "ru": "Числа пересекающихся окон длины k равно n − k + 1 = 8 − 3 + 1 = 6. В примере занятия 1 3 -1 -3 5 3 6 7 вывод — 3 3 5 5 6 7.",
+          "en": "The number of consecutive windows of length k is n − k + 1 = 8 − 3 + 1 = 6. The lesson's example 1 3 -1 -3 5 3 6 7 outputs 3 3 5 5 6 7."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения из занятия верны?",
+          "en": "Which statements from the lesson are correct?"
+        },
+        "options": [
+          {
+            "uz": "a b - postfiksida stekdan avval b olinadi — u oʻng operand, shuning uchun a − b hisoblanadi",
+            "ru": "В выражении a b - из стека первым извлекается b — это правый операнд, поэтому вычисляется a − b",
+            "en": "In a b - the stack pops b first — it is the right operand, so a − b is computed"
+          },
+          {
+            "uz": "Dekda qiymatlar saqlansa, qaysi element oynadan chiqib ketganini aniqlab boʻlmaydi",
+            "ru": "Если в деке хранить значения, нельзя определить, какой элемент уже покинул окно",
+            "en": "If the deque stored values instead of indices, one could not tell which element has left the window"
+          },
+          {
+            "uz": "Ikki bogʻlamli roʻyxatda tugun qoʻshishda toʻrt, oʻchirishda ikki koʻrsatkich oʻzgaradi",
+            "ru": "Вставка узла в двусвязный список меняет четыре указателя, удаление — два",
+            "en": "Inserting a node into a doubly linked list changes four pointers, deleting one changes two"
+          },
+          {
+            "uz": "Monoton dekda har bir indeks bir necha marta qayta-qayta kirib-chiqishi mumkin",
+            "ru": "В монотонном деке каждый индекс может входить и выходить много раз",
+            "en": "In a monotone deque an index can enter and leave many times"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Har bir indeks dekka bir marta kiradi va bir marta chiqadi — shuning uchun jami vaqt O(n). Qolgan uch ifoda darsda bor (koʻp uchraydigan xatolar boʻlimida operandlar almashinuvi, qiymat emas indeks saqlash va koʻrsatkichlar soni).",
+          "ru": "Каждый индекс входит в дек один раз и выходит один раз — поэтому общее время O(n). Три других утверждения есть в занятии (в разделе типичных ошибок: порядок операндов, хранение индексов, число указателей).",
+          "en": "Every index enters the deque once and leaves once — that is why the total time is O(n). The other three statements come from the lesson's common-mistakes section: operand order, storing indices rather than values, and the number of pointers."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Sirpanuvchi oynaning minimumi",
+      "ru": "Минимум в скользящем окне",
+      "en": "Sliding-window minimum"
+    },
+    "statement": {
+      "uz": "Darsdagi monoton dek usulining teskarisini yozing. Birinchi satrda n va k, ikkinchisida n ta butun son (boʻsh joy bilan ajratilgan). Har bir uzunligi k boʻlgan tutash oyna uchun minimumni toping va barcha n − k + 1 ta natijani bitta satrda, boʻsh joy bilan ajratib chiqaring. Dekda qiymatlar emas, indekslar saqlansin; har bir indeks dekka bir marta kirib, bir marta chiqsin — jami O(n). Masalan, 8 3 va 1 3 -1 -3 5 3 6 7 kirilsa, chiqish: -1 -3 -3 -3 3 3.",
+      "ru": "Напишите обращение монотонного дека из занятия. Первая строка — n и k, вторая — n целых чисел через пробел. Для каждого окна длины k найдите минимум и выведите все n − k + 1 результатов одной строкой через пробел. В деке должны храниться индексы, а не значения; каждый индекс входит в дек и выходит из него один раз — всего O(n). Например, на ввод 8 3 и 1 3 -1 -3 5 3 6 7 вывод: -1 -3 -3 -3 3 3.",
+      "en": "Write the mirror image of the lesson's monotone deque. The first line holds n and k, the second n integers separated by spaces. For every consecutive window of length k find the minimum and print all n − k + 1 results on one line, space separated. The deque must keep indices, not values; every index enters and leaves the deque once — O(n) in total. For example, the input 8 3 and 1 3 -1 -3 5 3 6 7 gives -1 -3 -3 -3 3 3."
+    },
+    "code": {
+      "starter": {
+        "python": "from collections import deque\n\nn, k = map(int, input().split())\na = list(map(int, input().split()))\ndek = deque()\nnatija = []\nfor i in range(n):\n    while dek and a[dek[-1]] <= a[i]:\n        dek.pop()\n    dek.append(i)\n    if dek[0] <= i - k:\n        dek.popleft()\n    if i >= k - 1:\n        natija.append(a[dek[0]])\nprint(*natija)\n",
+        "java": "import java.util.ArrayDeque;\nimport java.util.Deque;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), k = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n\n        Deque<Integer> dek = new ArrayDeque<>();\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            while (!dek.isEmpty() && a[dek.peekLast()] <= a[i]) dek.pollLast();\n            dek.addLast(i);\n            if (dek.peekFirst() <= i - k) dek.pollFirst();\n            if (i >= k - 1) {\n                if (sb.length() > 0) sb.append(' ');\n                sb.append(a[dek.peekFirst()]);\n            }\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <deque>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    vector<int> a(n);\n    for (int& v : a) cin >> v;\n\n    deque<int> dek;\n    bool birinchi = true;\n    for (int i = 0; i < n; i++) {\n        while (!dek.empty() && a[dek.back()] <= a[i]) dek.pop_back();\n        dek.push_back(i);\n        if (dek.front() <= i - k) dek.pop_front();\n        if (i >= k - 1) {\n            cout << (birinchi ? \"\" : \" \") << a[dek.front()];\n            birinchi = false;\n        }\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "from collections import deque\n\nn, k = map(int, input().split())\na = list(map(int, input().split()))\ndek = deque()\nnatija = []\nfor i in range(n):\n    while dek and a[dek[-1]] >= a[i]:\n        dek.pop()\n    dek.append(i)\n    if dek[0] <= i - k:\n        dek.popleft()\n    if i >= k - 1:\n        natija.append(a[dek[0]])\nprint(*natija)\n",
+        "java": "import java.util.ArrayDeque;\nimport java.util.Deque;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), k = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n\n        Deque<Integer> dek = new ArrayDeque<>();\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            while (!dek.isEmpty() && a[dek.peekLast()] >= a[i]) dek.pollLast();\n            dek.addLast(i);\n            if (dek.peekFirst() <= i - k) dek.pollFirst();\n            if (i >= k - 1) {\n                if (sb.length() > 0) sb.append(' ');\n                sb.append(a[dek.peekFirst()]);\n            }\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <deque>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    vector<int> a(n);\n    for (int& v : a) cin >> v;\n\n    deque<int> dek;\n    bool birinchi = true;\n    for (int i = 0; i < n; i++) {\n        while (!dek.empty() && a[dek.back()] >= a[i]) dek.pop_back();\n        dek.push_back(i);\n        if (dek.front() <= i - k) dek.pop_front();\n        if (i >= k - 1) {\n            cout << (birinchi ? \"\" : \" \") << a[dek.front()];\n            birinchi = false;\n        }\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "8 3\n1 3 -1 -3 5 3 6 7\n", "expected": "-1 -3 -3 -3 3 3", "hidden": false },
+        { "input": "3 1\n4 2 9\n", "expected": "4 2 9", "hidden": false },
+        { "input": "5 5\n5 4 3 2 1\n", "expected": "1", "hidden": true },
+        { "input": "4 2\n7 7 7 7\n", "expected": "7 7 7", "hidden": true },
+        { "input": "6 4\n2 7 1 8 4 5\n", "expected": "1 1 1", "hidden": true }
+      ]
+    }
+  }
+}

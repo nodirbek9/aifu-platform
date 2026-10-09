@@ -1,0 +1,482 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "NIST SP 800-61 boʻyicha hodisaga javob bosqichlarining toʻgʻi ketma-ketligi qaysi?",
+          "ru": "Какая правильная последовательность этапов реагирования на инцидент по NIST SP 800-61?",
+          "en": "Which is the correct order of the incident response phases per NIST SP 800-61?"
+        },
+        "options": [
+          {
+            "uz": "Tayyorgarlik → aniqlash va tahlil → cheklash, yoʻq qilish va tiklash → hodisadan keyingi faoliyat",
+            "ru": "Подготовка → обнаружение и анализ → локализация, устранение и восстановление → действия после инцидента",
+            "en": "Preparation → detection and analysis → containment, eradication and recovery → post-incident activity"
+          },
+          {
+            "uz": "Aniqlash → tiklash → tayyorgarlik → hodisadan keyingi faoliyat",
+            "ru": "Обнаружение → восстановление → подготовка → действия после инцидента",
+            "en": "Detection → recovery → preparation → post-incident activity"
+          },
+          {
+            "uz": "Cheklash → tayyorgarlik → aniqlash va tahlil → yoʻq qilish",
+            "ru": "Локализация → подготовка → обнаружение и анализ → устранение",
+            "en": "Containment → preparation → detection and analysis → eradication"
+          },
+          {
+            "uz": "Hodisadan keyingi faoliyat → tayyorgarlik → cheklash → aniqlash",
+            "ru": "Действия после инцидента → подготовка → локализация → обнаружение",
+            "en": "Post-incident activity → preparation → containment → detection"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda NIST SP 800-61 boʻyicha toʻrt bosqich ketma-ket keltirilgan: tayyorgarlik, aniqlash va tahlil, cheklash-yoʻq qilish-tiklash, hodisadan keyingi faoliyat (saboqlar, qoidalarni yaxshilash).",
+          "ru": "В занятии по NIST SP 800-61 приведены четыре этапа последовательно: подготовка, обнаружение и анализ, локализация-устранение-восстановление, действия после инцидента (уроки, улучшение правил).",
+          "en": "The lesson lists four phases in order per NIST SP 800-61: preparation, detection and analysis, containment-eradication-recovery, post-incident activity (lessons learned, improving rules)."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsga koʻra, hujumchi qurilmadagi jurnallarni birinchi navbatda oʻchiradi.",
+          "ru": "По занятию злоумышленник удаляет журналы на устройстве в первую очередь.",
+          "en": "According to the lesson, an attacker deletes the logs on the device first."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shu sababli jurnallarni faqat qurilmaning oʻzida saqlash — koʻp uchraydigan xato: markaziy serverga yuborilganda hujumchi jurnalni oʻchirsa ham nusxa qoladi.",
+          "ru": "Поэтому хранить журналы только на самом устройстве — частая ошибка: при отправке на центральный сервер копия остаётся, даже если злоумышленник удалит журнал на устройстве.",
+          "en": "That is why keeping logs only on the device itself is a common mistake: when logs are sent to a central server, a copy remains even if the attacker deletes the log on the device."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda uy tarmogʻi uchun qaysi simsiz xavfsizlik rejimi tavsiya etilgan?",
+          "ru": "Какой режим беспроводной безопасности занятия рекомендуют для домашней сети?",
+          "en": "Which wireless security mode does the lesson recommend for a home network?"
+        },
+        "options": [
+          {
+            "uz": "WPA3-Personal (SAE), kamida WPA2-AES",
+            "ru": "WPA3-Personal (SAE), хотя бы WPA2-AES",
+            "en": "WPA3-Personal (SAE), at least WPA2-AES"
+          },
+          {
+            "uz": "WEP",
+            "ru": "WEP",
+            "en": "WEP"
+          },
+          {
+            "uz": "WPA (TKIP)",
+            "ru": "WPA (TKIP)",
+            "en": "WPA (TKIP)"
+          },
+          {
+            "uz": "Ochiq tarmoq",
+            "ru": "Открытая сеть",
+            "en": "Open network"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvali: WEP butunlay buzilgan, WPA (TKIP) eskirgan; WPA3-Personal (SAE) tavsiya etiladi — oflayn parol tanlashga chidamli va oldinga maxfiylik beradi. Uy uchun choralarida WPA3 (yoki kamida WPA2-AES) aytilgan.",
+          "ru": "Таблица занятия: WEP полностью взломан, WPA (TKIP) устарел; WPA3-Personal (SAE) рекомендуется — стойкий к офлайн-подбору пароля и даёт прямую секретность. В мерах для дома назван WPA3 (или хотя бы WPA2-AES).",
+          "en": "The lesson table: WEP is completely broken, WPA (TKIP) is outdated; WPA3-Personal (SAE) is recommended — resistant to offline password guessing, with forward secrecy. The home measures name WPA3 (or at least WPA2-AES)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ruxsatsiz foydalanishni aniqlash uchun darsda qaysi maʼlumot manbalari keltirilgan?",
+          "ru": "Какие источники данных для обнаружения несанкционированного использования приведены в занятии?",
+          "en": "Which data sources for detecting unauthorized use does the lesson list?"
+        },
+        "options": [
+          {
+            "uz": "OT jurnallari (Windows Security, Linux auth.log)",
+            "ru": "Журналы ОС (Windows Security, Linux auth.log)",
+            "en": "OS logs (Windows Security, Linux auth.log)"
+          },
+          {
+            "uz": "Xavfsizlik devori, VPN va proksi jurnallari",
+            "ru": "Журналы межсетевого экрана, VPN и прокси",
+            "en": "Firewall, VPN and proxy logs"
+          },
+          {
+            "uz": "IDS/IPS va EDR ogohlantirishlari",
+            "ru": "Оповещения IDS/IPS и EDR",
+            "en": "IDS/IPS and EDR alerts"
+          },
+          {
+            "uz": "Elektr hisoblagich koʻrsatkichlari",
+            "ru": "Показания электросчётчика",
+            "en": "Electricity meter readings"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi manbalar jadvali: OT jurnallari, ilova va maʼlumotlar bazasi jurnallari, xavfsizlik devori/VPN/proksi jurnallari, IDS/IPS va EDR ogohlantirishlari, bulut va identifikatsiya xizmatlari jurnallari, fizik kirish tizimlari. Elektr hisoblagich koʻrsatkichlari unda yoʻq.",
+          "ru": "Таблица источников из занятия: журналы ОС, журналы приложений и баз данных, журналы межсетевого экрана/VPN/прокси, оповещения IDS/IPS и EDR, журналы облаков и служб идентификации, системы физического доступа. Показаний электросчётчика там нет.",
+          "en": "The lesson's source table: OS logs, application and database logs, firewall/VPN/proxy logs, IDS/IPS and EDR alerts, cloud and identity service logs, physical access systems. Electricity meter readings are not in it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qurilmalarda vaqtni sinxronlash (NTP) nima uchun kerak?",
+          "ru": "Зачем синхронизировать время на устройствах (NTP)?",
+          "en": "Why is time synchronization on devices (NTP) needed?"
+        },
+        "options": [
+          {
+            "uz": "Hodisalarni ketma-ketlikda bogʻlab, zanjirni tiklash uchun",
+            "ru": "Чтобы связать события в последовательность и восстановить цепочку",
+            "en": "To link events in sequence and reconstruct the chain"
+          },
+          {
+            "uz": "Jurnal saqlash muddatini qonunga mos qisqartirish uchun",
+            "ru": "Чтобы сократить срок хранения журналов в соответствии с законом",
+            "en": "To shorten the log retention period in line with the law"
+          },
+          {
+            "uz": "Zararli dasturlarni avtomatik aniqlash tezligini oshirish uchun",
+            "ru": "Чтобы ускорить автоматическое обнаружение вредоносных программ",
+            "en": "To speed up automatic detection of malware"
+          },
+          {
+            "uz": "Tarmoq trafigini kamaytirish uchun",
+            "ru": "Чтобы снизить сетевой трафик",
+            "en": "To reduce network traffic"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: vaqt sinxronlanmasa, hodisalarni ketma-ketlikda bogʻlab boʻlmaydi; vaqt sinxronlanmagan qurilmalar koʻp uchraydigan xato — hodisalar zanjiri tiklanmaydi. Saqlash muddati esa alohida, qonun va siyosat boʻyicha belgilanadi.",
+          "ru": "В занятии: без синхронизации времени события нельзя связать в последовательность; устройства с несинхронизированным временем — частая ошибка, цепочку событий не восстановить. Срок хранения задаётся отдельно, законом и политикой.",
+          "en": "The lesson: without synchronized time events cannot be linked in sequence; devices with unsynchronized time are a common mistake — the chain of events cannot be reconstructed. The retention period is set separately, by law and policy."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "NIST SP 800-61 boʻyicha hodisaga javobda nechta bosqich keltirilgan?",
+          "ru": "Сколько этапов реагирования на инцидент по NIST SP 800-61 приведено?",
+          "en": "How many incident response phases does NIST SP 800-61 list?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Toʻrt bosqich: tayyorgarlik; aniqlash va tahlil; cheklash, yoʻq qilish va tiklash; hodisadan keyingi faoliyat.",
+          "ru": "Четыре этапа: подготовка; обнаружение и анализ; локализация, устранение и восстановление; действия после инцидента.",
+          "en": "Four phases: preparation; detection and analysis; containment, eradication and recovery; post-incident activity."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "«Imkonsiz sayohat» anomaliyasi nima?",
+          "ru": "Что такое аномалия «невозможное перемещение»?",
+          "en": "What is the «impossible travel» anomaly?"
+        },
+        "options": [
+          {
+            "uz": "Bitta hisobga qisqa vaqtda bir-biridan uzoq joylardan kirish — hisob maʼlumotlari oʻgʻirlanganining belgisi",
+            "ru": "Входы в одну учётную запись из удалённых друг от друга мест за короткое время — признак кражи учётных данных",
+            "en": "Logons to one account from distant places within a short time — a sign of stolen credentials"
+          },
+          {
+            "uz": "Xodimning tatil dam olish kunlarida tizimga kirishi",
+            "ru": "Вход сотрудника в систему в выходные дни",
+            "en": "An employee logging into the system on a weekend"
+          },
+          {
+            "uz": "Bir kompyuterdan ikki brauzer bilan bir vaqtda ishlatish",
+            "ru": "Одновременная работа с одного компьютера в двух браузерах",
+            "en": "Using two browsers at once from the same computer"
+          },
+          {
+            "uz": "Tarmoq kabelining uzilishi tufayli ulanishning uzilishi",
+            "ru": "Обрыв соединения из-за повреждения сетевого кабеля",
+            "en": "A connection drop caused by a damaged network cable"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars asosiy chiziqdan chetlashishlarni misol bilan ochadi: tunda kirish, imkonsiz sayohat (bir soatda ikki davlatdan kirish), odatdagidan koʻp yuklab olish. «Oʻzingizni tekshiring» boʻlimida bu hisob maʼlumotlari oʻgʻirlanganining belgisi deb atalgan.",
+          "ru": "Занятие раскрывает отклонения от базовой линии примерами: входы ночью, невозможное перемещение (входы из двух стран за час), скачивание больше обычного. В разделе «Проверьте себя» это названо признаком кражи учётных данных.",
+          "en": "The lesson explains deviations from the baseline with examples: logins at night, impossible travel (logins from two countries within an hour), downloading more than usual. The check-yourself section calls it a sign of stolen credentials."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "WPA2/WPA3-Enterprise (802.1X) rejimining Personal rejimidan asosiy afzalligi nima?",
+          "ru": "В чём главное преимущество режима WPA2/WPA3-Enterprise (802.1X) перед Personal?",
+          "en": "What is the main advantage of WPA2/WPA3-Enterprise (802.1X) over Personal mode?"
+        },
+        "options": [
+          {
+            "uz": "Umumiy parol yoʻq: har bir foydalanuvchi oʻz hisobi yoki sertifikati bilan RADIUS server orqali kiradi va alohida bloklanishi mumkin",
+            "ru": "Нет общего пароля: каждый пользователь входит со своей учётной записью или сертификатом через сервер RADIUS и может быть заблокирован отдельно",
+            "en": "There is no shared password: each user logs in with their own account or certificate via a RADIUS server and can be blocked individually"
+          },
+          {
+            "uz": "Hech qanday server talab qilmaydi, routerda bir necha boshqa sozlamalar bilan birga yoqiladi",
+            "ru": "Не требует никаких серверов, включается на роутере вместе с несколькими другими настройками",
+            "en": "It needs no servers and is switched on the router together with a few other settings"
+          },
+          {
+            "uz": "Parolni tarmoqqa ulanishdan oldin kiritish shart emas",
+            "ru": "Пароль не нужно вводить перед подключением к сети",
+            "en": "No password has to be entered before joining the network"
+          },
+          {
+            "uz": "Signalni binodan tashqariga chiqmaydigan qilib avtomatik kamaytiradi",
+            "ru": "Автоматически снижает сигнал так, что он не выходит за пределы здания",
+            "en": "It automatically lowers the signal so it does not leave the building"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda Enterprise rejim tashkilotlar uchun: har bir foydalanuvchi oʻz hisobi yoki sertifikati bilan RADIUS orqali kiradi; xodim ketganda faqat uning hisobi bloklanadi. Personal rejimning kuchi esa umumiy parolga bogʻliq, uni bilganlar soni nazoratsiz oshadi.",
+          "ru": "В занятии Enterprise-режим — для организаций: каждый пользователь со своей учётной записью или сертификатом через RADIUS; при уходе сотрудника блокируется только его учётная запись. Стойкость Personal режима зависит от общего пароля, число знающих его бесконтрольно растёт.",
+          "en": "The lesson presents Enterprise mode for organizations: each user with their own account or certificate via RADIUS; when an employee leaves, only their account is blocked. Personal mode's strength depends on the shared password, and the number of people who know it grows uncontrollably."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, ogohlantirishlarni SIEM ga yigʻish kifoya — tahlil va javob jarayoni shart emas.",
+          "ru": "По занятию сбора оповещений в SIEM достаточно — процесс анализа и реагирования не обязателен.",
+          "en": "According to the lesson, collecting alerts into a SIEM is enough — an analysis and response process is not required."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda bu koʻp uchraydigan xato deb koʻrsatilgan: «Ogohlantirishlarni hech kim koʻrmasligi. SIEM ga yigʻish — boshlanish, tahlil va javob jarayoni kerak». Soxta signallar koʻp, saralash — SOC tahlilchisining asosiy ishi.",
+          "ru": "В занятии это названо частой ошибкой: «Оповещения никто не смотрит. Сбор в SIEM — только начало, нужен процесс анализа и реагирования». Ложных тревог много, сортировка — основная работа аналитика SOC.",
+          "en": "The lesson calls this a common mistake: «Nobody looks at the alerts. Collecting into a SIEM is a start; an analysis and response process is needed». There are many false alerts, and triage is the main work of a SOC analyst."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Uy routerini xavfsiz sozlashni tekshirishdan oldingi nazorat savollari",
+      "ru": "Проверочные вопросы перед проверкой безопасной настройки домашнего роутера",
+      "en": "Check questions before verifying the secure home router setup"
+    },
+    "statement": {
+      "uz": "Darsdagi amaliy topshiriq — oʻz routeringiz sozlamalarida xavfsizlik rejimi, WPS va proshivka versiyasini tekshirish — dan oldin besh savolga javob bering. Savollar aniqlash uslubiyati, tipik belgilar, hodisaga javob va simsiz tarmoqlar xavfsizligi boʻlimlariga asoslangan. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Перед практическим заданием занятия — проверить в настройках своего роутера режим безопасности, WPS и версию прошивки — ответьте на пять вопросов. Они опираются на методики обнаружения, типичные индикаторы, реагирование на инциденты и безопасность беспроводных сетей. Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before the lesson's practical task — checking the security mode, WPS and firmware version in your own router's settings — answer five questions. They rest on the detection methodology, typical indicators, incident response and wireless network security. The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Darsning maslahatida Windows kompyuterida oxirgi haftadagi kirishlarni qaysi jurnal boʻyicha koʻrib chiqish taklif qilingan?",
+            "ru": "По какому журналу в совете занятия предлагается просмотреть входы за последнюю неделю на компьютере с Windows?",
+            "en": "Which log does the lesson's tip ask you to review for the last week's logons on a Windows computer?"
+          },
+          "options": [
+            {
+              "uz": "eventvwr.msc dagi Security jurnali (4624, 4625 hodisalar)",
+              "ru": "Журнал Security в eventvwr.msc (события 4624, 4625)",
+              "en": "The Security log in eventvwr.msc (events 4624, 4625)"
+            },
+            {
+              "uz": "Tizim tiklash nuqtalari jurnali",
+              "ru": "Журнал точек восстановления системы",
+              "en": "The system restore points log"
+            },
+            {
+              "uz": "Brauzer tarixi jurnali",
+              "ru": "Журнал истории браузера",
+              "en": "The browser history log"
+            },
+            {
+              "uz": "Printser navbati jurnali",
+              "ru": "Журнал очереди печати",
+              "en": "The print queue log"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsning maslahati: eventvwr.msc → Security jurnalidan oxirgi bir haftadagi kirishlar (4624, 4625) koʻrib chiqiladi — bu «asosiy chiziq» ni tushunishning oddiy mashqi.",
+            "ru": "Совет из занятия: просмотреть входы за последнюю неделю (4624, 4625) в журнале Security через eventvwr.msc — это простое упражнение для понимания «базовой линии».",
+            "en": "The lesson's tip: look through the logons of the last week (4624, 4625) in the Security log via eventvwr.msc — a simple exercise for understanding the «baseline»."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Uy tarmogʻida darsda oʻchirish tavsiya etilgan funksiya qaysi?",
+            "ru": "Какую функцию в домашней сети занятие рекомендует отключить?",
+            "en": "Which function in a home network does the lesson advise to turn off?"
+          },
+          "options": [
+            {
+              "uz": "WPS",
+              "ru": "WPS",
+              "en": "WPS"
+            },
+            {
+              "uz": "DHAV",
+              "ru": "DHCP",
+              "en": "DHCP"
+            },
+            {
+              "uz": "NAT",
+              "ru": "NAT",
+              "en": "NAT"
+            },
+            {
+              "uz": "DNS",
+              "ru": "DNS",
+              "en": "DNS"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda WPS va standart router parolini qoldirish — uy tarmoqlaridagi eng oddiy zaifliklar deb koʻrsatilgan; uy uchun choralarda «WPS ni oʻchirish» aytilgan.",
+            "ru": "В занятии оставление WPS и стандартного пароля роутера названо самыми простыми уязвимостями домашних сетей; в мерах для дома указано «отключите WPS».",
+            "en": "The lesson calls leaving WPS and the default router password the simplest weaknesses of home networks; the home measures say to «disable WPS»."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsda tipik belgilar (indikatorlar) qatoriga qaysilari kiritilgan?",
+            "ru": "Что из перечисленного отнесено в занятии к типичным индикаторам?",
+            "en": "Which of these does the lesson list among the typical indicators?"
+          },
+          "options": [
+            {
+              "uz": "Ishdan tashqari vaqtda imtiyozli hisobga kirish",
+              "ru": "Вход в привилегированную учётную запись в нерабочее время",
+              "en": "A logon to a privileged account outside working hours"
+            },
+            {
+              "uz": "Jurnallarning tozalanishi",
+              "ru": "Очистка журналов",
+              "en": "Cleared logs"
+            },
+            {
+              "uz": "Tashqi notanish manzilga katta hajmli maʼlumot ketishi",
+              "ru": "Уход большого объёма данных на незнакомый внешний адрес",
+              "en": "A large volume of data going to an unknown external address"
+            },
+            {
+              "uz": "Yangilanishdan keyin kompyuterni qayta ishga tushirish",
+              "ru": "Перезагрузка компьютера после обновления",
+              "en": "Restarting the computer after an update"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Darsdagi tipik belgilar: ishdan tashqari vaqtda imtiyozli hisobga kirish; yangi administrator hisobi yoki guruhga qoʻshilish; jurnallarning tozalanishi; notanish dastur yoki xizmat; katta hajmli maʼlumotning tashqi notanish manzilga ketishi; bir manzildan koʻp hisoblarga kirish urinishlari. Qayta ishga tushirish roʻyxatda yoʻq.",
+            "ru": "Типичные индикаторы из занятия: привилегированный вход в нерабочее время; новая учётная запись администратора или добавление в группу; очистка журналов; незнакомая программа или служба; большая передача данных на незнакомый внешний адрес; попытки входа во многие учётные записи с одного адреса. Перезагрузка в списке отсутствует.",
+            "en": "The lesson's typical indicators: a privileged logon outside working hours; a new administrator account or group addition; cleared logs; an unknown program or service; a large data volume to an unknown external address; logon attempts to many accounts from one address. A restart is not on the list."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Darsga koʻra, jamoat Wi-Fi tarmogʻida tanish koʻrinadigan tarmoq nomi har doim haqiqiy tashkilotga tegishli.",
+            "ru": "По занятию в публичном Wi-Fi знакомое имя сети всегда принадлежит настоящей организации.",
+            "en": "According to the lesson, in public Wi-Fi a familiar network name always belongs to the real organization."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Darsda ogohlantirilgan: tarmoq nomi tanish boʻlsa ham, u soxta boʻlishi mumkin — soxta kirish nuqtalari (rogue AP) tashkilot nomini taqlid qiladi. Foydalanuvchiga avtomatik ulanishni oʻchirish, HTTPS va VPN ishlatish tavsiya qilingan.",
+            "ru": "Занятие предупреждает: даже если имя сети знакомое, оно может быть поддельным — поддельные точки доступа (rogue AP) имитируют имя организации. Пользователю советом названы отказ от автоподключения, HTTPS и VPN.",
+            "en": "The lesson warns: even if a network name looks familiar, it may be fake — rogue access points imitate the organization's name. Users are advised to turn off automatic connection and use HTTPS and a VPN."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Soxta kirish nuqtasining inglizcha atamasini (ikki soʻz) yozing.",
+            "ru": "Запишите английское название поддельной точки доступа (два слова).",
+            "en": "Write the English name of a fake access point (two words)."
+          },
+          "answers": ["rogue AP", "rogue ap", "rogue access point", "Rogue AP", "Rogue Access Point", "rogue access point (rogue AP)"],
+          "explanation": {
+            "uz": "Darsda soxta kirish nuqtasi — rogue AP: ruxsatsiz oʻrnatilgan yoki tashkilot nomini taqlid qiluvchi kirish nuqtasi; WIDS bilan aniqlanadi.",
+            "ru": "В занятии поддельная точка доступа — rogue AP: установленная без разрешения или имитирующая имя организации; обнаруживается средствами WIDS.",
+            "en": "The lesson names a fake access point rogue AP: installed without authorization or imitating the organization's name, detected with a WIDS."
+          }
+        }
+      ]
+    }
+  }
+}

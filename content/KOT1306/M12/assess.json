@@ -1,0 +1,316 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Domen nomini IPv4 manziliga aylantiruvchi DNS resurs yozuvi qaysi?",
+          "ru": "Какая DNS-запись превращает доменное имя в IPv4-адрес?",
+          "en": "Which DNS resource record turns a domain name into an IPv4 address?"
+        },
+        "options": [
+          {
+            "uz": "A",
+            "ru": "A",
+            "en": "A"
+          },
+          {
+            "uz": "AAAA",
+            "ru": "AAAA",
+            "en": "AAAA"
+          },
+          {
+            "uz": "MX",
+            "ru": "MX",
+            "en": "MX"
+          },
+          {
+            "uz": "PTR",
+            "ru": "PTR",
+            "en": "PTR"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "A yozuvi nomni IPv4 ga, AAAA — IPv6 ga, MX — pochta serveriga, PTR esa IP manzildan nomga qaytaradi.",
+          "ru": "Запись A ведёт к IPv4, AAAA — к IPv6, MX — к почтовому серверу, а PTR возвращает имя из IP-адреса.",
+          "en": "An A record gives IPv4, AAAA gives IPv6, MX gives the mail server, and PTR maps an IP address back to a name."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "DNS faqat UDP orqali ishlaydi, TCP esa unda umuman ishlatilmaydi.",
+          "ru": "DNS работает только по UDP, а TCP в нём не используется вовсе.",
+          "en": "DNS works only over UDP; TCP is never used for it."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Soʻrovlar odatda UDP 53 orqali, katta javoblar va zona uzatish (AXFR) esa TCP 53 orqali boradi.",
+          "ru": "Запросы обычно идут по UDP 53, а большие ответы и передача зоны (AXFR) — по TCP 53.",
+          "en": "Queries usually go over UDP 53; large answers and zone transfers (AXFR) go over TCP 53."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi resurs yozuvlari jadvalida qaysi turlar keltirilgan?",
+          "ru": "Какие типы перечислены в таблице ресурсных записей занятия?",
+          "en": "Which types appear in the lesson's table of resource records?"
+        },
+        "options": [
+          {
+            "uz": "CNAME — aliasni asosiy nomga bogʻlash",
+            "ru": "CNAME — связь псевдонима с каноническим именем",
+            "en": "CNAME — linking an alias to a canonical name"
+          },
+          {
+            "uz": "NS — zonaning vakolatli serverlari",
+            "ru": "NS — авторитетные серверы зоны",
+            "en": "NS — the zone's authoritative servers"
+          },
+          {
+            "uz": "TXT — matn: SPF, domen egalligini tasdiqlash",
+            "ru": "TXT — текст: SPF, подтверждение владения доменом",
+            "en": "TXT — text: SPF, proof of domain ownership"
+          },
+          {
+            "uz": "SRV — xizmatlar roʻyxati serverlari",
+            "ru": "SRV — серверы списка служб",
+            "en": "SRV — service-list servers"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalda A, AAAA, CNAME, MX, NS, PTR, TXT, SOA bor; SRV darsda keltirilmagan.",
+          "ru": "В таблице: A, AAAA, CNAME, MX, NS, PTR, TXT, SOA; SRV в занятии нет.",
+          "en": "The table lists A, AAAA, CNAME, MX, NS, PTR, TXT and SOA; SRV is not in the lesson."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Nom hal qilishda mijoz oʻz rekursiv resolveriga qanday, resolver esa ildiz va TLD serverlariga qanday soʻrov yuboradi?",
+          "ru": "Какие запросы клиент шлёт своему рекурсивному резолверу, а резолвер — корневому и TLD-серверам?",
+          "en": "What kind of query does the client send to its recursive resolver, and what does the resolver send to the root and TLD servers?"
+        },
+        "options": [
+          {
+            "uz": "Mijoz — rekursiv (toʻliq javob soʻraydi), resolver — iterativ (keyingi serverni soʻrab yuradi)",
+            "ru": "Клиент — рекурсивный (просит полный ответ), резолвер — итеративный (спрашивает, к какому серверу идти дальше)",
+            "en": "The client recursive (asking for the full answer), the resolver iterative (asking which server to ask next)"
+          },
+          {
+            "uz": "Ikkala tomon ham rekursiv soʻrov yuboradi",
+            "ru": "Обе стороны шлют рекурсивные запросы",
+            "en": "Both sides send recursive queries"
+          },
+          {
+            "uz": "Ikkala tomon ham iterativ soʻrov yuboradi",
+            "ru": "Обе стороны шлют итеративные запросы",
+            "en": "Both sides send iterative queries"
+          },
+          {
+            "uz": "Mijoz — iterativ, resolver — rekursiv",
+            "ru": "Клиент — итеративный, резолвер — рекурсивный",
+            "en": "The client iterative, the resolver recursive"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Rekursiv soʻrovda server javobni oxirigacha topib beradi; iterativda har bir server faqat keyingi kelishingiz kerak boʻlgan serverni koʻrsatadi.",
+          "ru": "При рекурсивном запросе сервер сам доводит ответ до конца; при итеративном каждый сервер лишь указывает, к кому идти дальше.",
+          "en": "With a recursive query the server finds the full answer; with an iterative one each server only points to the next one to ask."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "DNS xabarida mail.uz nomi har bir yorliq oldiga uning uzunligi yozib, oxiriga ildiz uchun 00 qoʻshilib kodlanadi. Bu nom uchun jami nechta bayt kerak boʻladi?",
+          "ru": "В DNS-сообщении имя mail.uz кодируется с длиной перед каждой меткой и 00 для корня в конце. Сколько всего байтов занимает это имя?",
+          "en": "In a DNS message the name mail.uz is encoded with each label preceded by its length and a final 00 for the root. How many bytes does this name take in all?"
+        },
+        "answers": [9],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "04 + mail (4 bayt) + 02 + uz (2 bayt) + 00 = 9 bayt: 1+4+1+2+1.",
+          "ru": "04 + mail (4 байта) + 02 + uz (2 байта) + 00 = 9 байт: 1+4+1+2+1.",
+          "en": "04 + mail (4 bytes) + 02 + uz (2 bytes) + 00 = 9 bytes: 1+4+1+2+1."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "IP manzildan domen nomini topish uchun qaysi resurs yozuv turi ishlatiladi? Nomini yozing.",
+          "ru": "Какой тип ресурсных записей используется, чтобы из IP-адреса получить доменное имя? Напишите его имя.",
+          "en": "Which resource record type is used to find a name from an IP address? Write its name."
+        },
+        "answers": ["PTR", "ptr"],
+        "explanation": {
+          "uz": "PTR yozuvi teskari zonada (in-addr.arpa) IP manzilni nomga aylantiradi.",
+          "ru": "Запись PTR в обратной зоне (in-addr.arpa) превращает IP-адрес в имя.",
+          "en": "A PTR record in the reverse zone (in-addr.arpa) turns an IP address back into a name."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nega zonaning uchiga, masalan aifu.uz nomiga, CNAME yozuvi qoʻyib boʻlmaydi?",
+          "ru": "Почему нельзя поставить CNAME на вершину зоны, например на aifu.uz?",
+          "en": "Why can a CNAME not be placed at the zone apex, for example on aifu.uz?"
+        },
+        "options": [
+          {
+            "uz": "Chunki zona uchida allaqachon SOA va NS yozuvlari bor — shuning uchun u yerga CNAME yozib boʻlmaydi",
+            "ru": "Потому что на вершине зоны уже есть SOA и NS — поэтому там нельзя ставить CNAME",
+            "en": "Because the zone apex already carries SOA and NS records, so a CNAME cannot go there"
+          },
+          {
+            "uz": "Chunki CNAME faqat IPv6 manzilli nomlarda ishlaydi",
+            "ru": "Потому что CNAME работает только с именами на IPv6",
+            "en": "Because a CNAME works only with IPv6 names"
+          },
+          {
+            "uz": "Chunki ildiz serverlar barcha CNAME larni taqiqlaydi",
+            "ru": "Потому что корневые серверы запрещают все CNAME",
+            "en": "Because the root servers forbid all CNAMEs"
+          },
+          {
+            "uz": "Chunki CNAME javoblar umuman keshlanmaydi",
+            "ru": "Потому что ответы CNAME вообще не кэшируются",
+            "en": "Because CNAME answers are never cached"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi tipik xato: zona uchida SOA va NS boʻlgani uchun u yerga CNAME emas, A yoki AAAA yozuvi yoziladi.",
+          "ru": "Типичная ошибка из занятия: на вершине зоны есть SOA и NS, поэтому там пишут A или AAAA, а не CNAME.",
+          "en": "The lesson's common mistake: the apex carries SOA and NS, so it gets an A or AAAA record, not a CNAME."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "DNS tuzilishi va kesh haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об устройстве DNS и кэшировании верны?",
+          "en": "Which statements about the DNS structure and caching are correct?"
+        },
+        "options": [
+          {
+            "uz": "Ildizda 13 ta server nomi (a…m.root-servers.net) bor, ularning nusxalari dunyo boʻylab yuzlab",
+            "ru": "Корней — 13 имён серверов (a…m.root-servers.net), копии которых по всему миру исчисляются сотнями",
+            "en": "There are 13 root server names (a…m.root-servers.net) with hundreds of copies worldwide"
+          },
+          {
+            "uz": "Kichik TTL — oʻzgarishlar tez tarqaladi, lekin serverlarga yuk boʻladi; katta TTL — aksi",
+            "ru": "Малый TTL — изменения распространяются быстро, но нагрузка на серверы растёт; большой TTL — наоборот",
+            "en": "A small TTL spreads changes fast but loads the servers; a large TTL does the opposite"
+          },
+          {
+            "uz": "Vakolatli (authoritative) server — zona yozuvlarining asl manbai",
+            "ru": "Авторитетный сервер — первоисточник записей зоны",
+            "en": "The authoritative server is the original source of a zone's records"
+          },
+          {
+            "uz": "TLD serverlar domenning A yozuvlarini oʻzida saqlaydi",
+            "ru": "TLD-серверы хранят A-записи домена у себя",
+            "en": "TLD servers store a domain's A records themselves"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "TLD zonasida faqat delegatsiya — domen haqidagi javobni kimdan soʻrash (NS yozuvlari) turadi; asl yozuvlar vakolatli serverda.",
+          "ru": "В зоне TLD лежит только делегирование — у кого спрашивать про домен (NS-записи); сами записи находятся на авторитетном сервере.",
+          "en": "A TLD zone holds only the delegation — which NS servers to ask about the domain; the real records live on the authoritative server."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "TTL = 3600 boʻlgan A yozuvi oʻzgartirilsa, baʼzi mijozlar bir soatgacha eski manzilni koʻraverishi mumkin.",
+          "ru": "Если изменить A-запись с TTL = 3600, некоторые клиенты будут видеть старый адрес ещё до часа.",
+          "en": "If an A record with TTL = 3600 is changed, some clients may keep seeing the old address for up to an hour."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Eski javob keshlarda TTL tugaguncha yashaydi — shuning uchun yangi manzil darhol hammaga koʻrinmaydi.",
+          "ru": "Старый ответ живёт в кэшах до истечения TTL, поэтому новый адрес увидят не сразу все.",
+          "en": "The old answer lives in caches until its TTL runs out, so the new address is not seen by everyone at once."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Domen nomini tahlil qilish",
+      "ru": "Разбор доменного имени",
+      "en": "Analysing a domain name"
+    },
+    "statement": {
+      "uz": "Domen nomi oʻngdan chapga oʻqiladi: ildiz, TLD, ikkinchi darajali domen, keyin xostlar yoki quyi domenlar. Dasturingiz birinchi qatorda n sonni, keyingi n qatorda bittadan toʻliq domen nomini (kamida ikkita yorliq, faqat harflar, raqamlar, - va nuqtalar) oʻqisin. Har bir nom uchun bitta qatorda uchta qiymatni boʻshliq bilan chiqaring: yorliqlar soni, eng oʻngdagi yorliq (TLD) va ikkinchi darajali domen (eng oʻngdagi ikki yorliq nuqta bilan bogʻlangan). Masalan, lms.aifu.uz uchun: 3 uz aifu.uz; mail.backup.example.com uchun: 4 com example.com.",
+      "ru": "Доменное имя читается справа налево: корень, TLD, домен второго уровня, затем хосты или поддомены. Прочитайте в первой строке число n, а в следующих n строках — по одному полному доменному имени (не менее двух меток, только буквы, цифры, - и точки). Для каждого имени выведите одной строкой три значения через пробел: число меток, самую правую метку (TLD) и домен второго уровня (две самые правые метки через точку). Например, lms.aifu.uz даст: 3 uz aifu.uz, а mail.backup.example.com даст: 4 com example.com.",
+      "en": "A domain name is read right to left: root, TLD, second-level domain, then hosts or subdomains. Your program must read n on the first line and then n fully qualified domain names (at least two labels, only letters, digits, - and dots), one per line. For each name print three values on one line separated by spaces: the number of labels, the rightmost label (the TLD) and the second-level domain (the two rightmost labels joined by a dot). For example, lms.aifu.uz gives 3 uz aifu.uz, and mail.backup.example.com gives 4 com example.com."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nfor _ in range(n):\n    nom = input().strip()\n    yorliqlar = nom.split(\".\")\n    print(str(len(yorliqlar)) + \" \" + yorliqlar[0] + \" \" + \".\".join(yorliqlar[-2:]))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            String nom = in.next();\n            String[] yorliqlar = nom.split(\"\\\\.\");\n            System.out.println(yorliqlar.length + \" \" + yorliqlar[0] + \" \"\n                    + yorliqlar[yorliqlar.length - 2] + \".\" + yorliqlar[yorliqlar.length - 1]);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    while (n--) {\n        string nom;\n        cin >> nom;\n        vector<string> yorliqlar;\n        size_t boshi = 0;\n        while (true) {\n            size_t nuqta = nom.find('.', boshi);\n            yorliqlar.push_back(nom.substr(boshi, nuqta == string::npos ? string::npos : nuqta - boshi));\n            if (nuqta == string::npos) break;\n            boshi = nuqta + 1;\n        }\n        string domen = yorliqlar[yorliqlar.size() - 2] + \".\" + yorliqlar[yorliqlar.size() - 1];\n        cout << yorliqlar.size() << \" \" << yorliqlar[0] << \" \" << domen << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nfor _ in range(n):\n    nom = input().strip()\n    yorliqlar = nom.split(\".\")\n    print(str(len(yorliqlar)) + \" \" + yorliqlar[-1] + \" \" + \".\".join(yorliqlar[-2:]))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            String nom = in.next();\n            String[] yorliqlar = nom.split(\"\\\\.\");\n            System.out.println(yorliqlar.length + \" \" + yorliqlar[yorliqlar.length - 1] + \" \"\n                    + yorliqlar[yorliqlar.length - 2] + \".\" + yorliqlar[yorliqlar.length - 1]);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    while (n--) {\n        string nom;\n        cin >> nom;\n        vector<string> yorliqlar;\n        size_t boshi = 0;\n        while (true) {\n            size_t nuqta = nom.find('.', boshi);\n            yorliqlar.push_back(nom.substr(boshi, nuqta == string::npos ? string::npos : nuqta - boshi));\n            if (nuqta == string::npos) break;\n            boshi = nuqta + 1;\n        }\n        string domen = yorliqlar[yorliqlar.size() - 2] + \".\" + yorliqlar[yorliqlar.size() - 1];\n        cout << yorliqlar.size() << \" \" << yorliqlar[yorliqlar.size() - 1] << \" \" << domen << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "2\nlms.aifu.uz\nwww.aifu.uz\n", "expected": "3 uz aifu.uz\n3 uz aifu.uz", "hidden": false },
+        { "input": "1\naifu.uz\n", "expected": "2 uz aifu.uz", "hidden": false },
+        { "input": "3\nuz.gov.uz\nmail.backup.example.com\na.b.c.d.example.org\n", "expected": "3 uz gov.uz\n4 com example.com\n6 org example.org", "hidden": true },
+        { "input": "4\nns1.aifu.uz\nx-1.aifu.uz\ncom.uz\nmail.aifu.uz\n", "expected": "3 uz aifu.uz\n3 uz aifu.uz\n2 uz com.uz\n3 uz aifu.uz", "hidden": true }
+      ]
+    }
+  }
+}

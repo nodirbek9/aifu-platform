@@ -1,0 +1,223 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Algoritmik topshiriqni bajarish birinchi navbatda nimadan boshlanadi?",
+          "ru": "С чего в первую очередь начинают выполнение алгоритмического задания?",
+          "en": "What is the first step of doing an algorithmic assignment?"
+        },
+        "options": [
+          { "uz": "Tez yechimni kodlashdan", "ru": "С кодирования быстрого решения", "en": "Coding the fast solution" },
+          { "uz": "Shartni tahlil qilishdan: kirish, chiqish va cheklovlar", "ru": "С анализа условия: вход, выход и ограничения", "en": "Analysing the statement: input, output and constraints" },
+          { "uz": "Tasodifiy sonlar generatorini sozlashdan", "ru": "С настройки генератора случайных чисел", "en": "Setting up the random number generator" },
+          { "uz": "Hisobotni yozishdan", "ru": "С написания отчёта", "en": "Writing the report" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi tartib: birinchi qadam — shartni tahlil qilish; cheklovlardan kerakli murakkablik chiqariladi: *n* ≤ 10⁵ boʻlsa, *O*(*n*²) yaramaydi.",
+          "ru": "Порядок из занятия: первый шаг — анализ условия; из ограничений выводится требуемая сложность: при *n* ≤ 10⁵ решение *O*(*n*²) не годится.",
+          "en": "The lesson's order: the first step is analysing the statement; the required complexity is derived from the constraints: with *n* ≤ 10⁵ an *O*(*n*²) solution will not do."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Stress-testda ishonchli yechim tekshirilayotgan tez yechimcha tez ishlashi shart.",
+          "ru": "В стресс-тесте надёжное решение обязано работать так же быстро, как проверяемое быстрое.",
+          "en": "In a stress test the reliable solution must run as fast as the checked fast one."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Ishonchli yechim sodda va aniq toʻgʻri boʻlishi kerak — uning tezligi ahamiyatli emas; notoʻgʻri boʻlishi mumkin boʻlgan tomoni — tez yechim.",
+          "ru": "Надёжное решение должно быть простым и заведомо верным — его скорость не важна; ошибочным может быть как раз быстрое решение.",
+          "en": "The reliable solution must be simple and certainly correct — its speed does not matter; it is the fast solution that may be wrong."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Stress-test nechta qismdan iborat?",
+          "ru": "Из скольких частей состоит стресс-тест?",
+          "en": "How many parts does a stress test consist of?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Uch qism: generator (kichik tasodifiy kirish yaratadi), ishonchli yechim (sekin, lekin aniq toʻgʻri) va solishtiruvchi dastur — komparator.",
+          "ru": "Три части: генератор (создаёт маленькие случайные входы), надёжное решение (медленное, но заведомо верное) и сравнивающая программа — компаратор.",
+          "en": "Three parts: the generator (creates small random inputs), the reliable solution (slow but certainly correct) and the comparator that runs both and compares the results."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Stress-test generatori nima uchun kichik kirishlar yaratadi?",
+          "ru": "Почему генератор стресс-теста создаёт маленькие входы?",
+          "en": "Why does the stress-test generator create small inputs?"
+        },
+        "options": [
+          { "uz": "Tez yechim kichik massivda aniqroq ishlaydi", "ru": "Быстрое решение на маленьком массиве работает точнее", "en": "The fast solution works more accurately on a small array" },
+          { "uz": "Topilgan xatoni qoʻlda tahlil qilish oson boʻlishi uchun", "ru": "Чтобы найденную ошибку легко было разобрать вручную", "en": "So that a found bug is easy to analyse by hand" },
+          { "uz": "Tasodifiy sonlar ketma-ketligi qisqa boʻlishi uchun", "ru": "Чтобы последовательность случайных чисел была короче", "en": "To keep the sequence of random numbers shorter" },
+          { "uz": "Xotira tejalsin deb", "ru": "Чтобы сэкономить память", "en": "To save memory" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dars ogohlantiradi: 10⁵ elementli xatoli testni qoʻlda tekshirib boʻlmaydi — generator kichik, tahlil qilishga qulay kirishlar yaratadi.",
+          "ru": "Из занятия: ошибочный тест из 10⁵ элементов вручную не разобрать — генератор создаёт маленькие, удобные для разбора входы.",
+          "en": "The lesson warns: a failing test with 10⁵ elements cannot be analysed by hand, so the generator creates small, hand-friendly inputs."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Namunaviy testdan oʻtgan dastur allaqachon toʻgʻri hisoblanadi.",
+          "ru": "Программа, прошедшая тест из примера, уже считается верной.",
+          "en": "A program that passes the sample test is already correct."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: `42 1` kirishda xato koʻrinmaydi, ammo `42 3` da xato 2-testdayoq topiladi — bitta namunani bosish dasturning toʻgʻriligini kafolatlamaydi.",
+          "ru": "В занятии: на входе `42 1` ошибка не проявляется, а при `42 3` она находится уже во 2-м тесте — один пройденный пример не гарантирует верность программы.",
+          "en": "In the lesson, with input `42 1` no bug shows up, yet with `42 3` the bug is found already in test 2 — passing one sample does not guarantee that the program is correct."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Mustaqil ishni bajarish va hisobot boʻyicha qaysi fikrlar toʻgʻri?",
+          "ru": "Какие утверждения о выполнении самостоятельной работы и об отчёте верны?",
+          "en": "Which statements about doing the independent work and the report are correct?"
+        },
+        "options": [
+          { "uz": "Sekin yechim tez yechimdan mustaqil boʻlishi kerak: bir gʻoyani ikki marta yozish bir xil xatoni takrorlaydi", "ru": "Медленное решение должно быть независимо от быстрого: та же идея, написанная дважды, повторяет ту же ошибку", "en": "The slow solution must be independent of the fast one: the same idea written twice repeats the same bug" },
+          { "uz": "Urugʻsiz tasodifiy testlar xatoni qayta yaratishga imkon bermaydi", "ru": "Случайные тесты без зерна не дают воссоздать ошибку", "en": "Random tests without a seed do not let you recreate a bug" },
+          { "uz": "Hisobotda faqat `barcha testlar oʻtdi` deb yozish yetarli", "ru": "Достаточно написать в отчёте лишь «все тесты прошли»", "en": "Writing only `all tests passed` in the report is enough" },
+          { "uz": "Generator imkon qadar yirik kirishlar yaratishi kerak", "ru": "Генератор должен создавать как можно более крупные входы", "en": "The generator should create as large inputs as possible" },
+          { "uz": "Xatoli dasturni tekshirish uchun minglab tasodifiy kichik test ishlatiladi", "ru": "Для проверки ошибочной программы прогоняют тысячи случайных маленьких тестов", "en": "Thousands of small random tests are run to check a possibly wrong program" }
+        ],
+        "correct": [0, 1, 4],
+        "explanation": {
+          "uz": "Hisobotda qaysi va qancha testlar ishlatilgani koʻrsatilishi kerak; yirik kirishlar esa qoʻlda tahlilni imkonsiz qiladi — stress-test kichik testlardan foydalanadi.",
+          "ru": "В отчёте нужно показать, какие тесты и сколько их было; крупные входы делают ручной разбор невозможным — стресс-тест работает на маленьких тестах.",
+          "en": "The report must show which tests were used and how many of them; large inputs make a hand analysis impossible — the stress test works on small ones."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dars tillarning standart tasodifiy sonlari oʻrniga oddiy chiziqli kongruent formuladan foydalandi. Asosiy sabab nima?",
+          "ru": "В занятии вместо стандартных генераторов языков использована простая линейная конгруэнтная формула. Какова главная причина?",
+          "en": "The lesson used a simple linear congruential formula instead of the languages' standard random generators. What is the main reason?"
+        },
+        "options": [
+          { "uz": "Standart generatorlar urugʻ qabul qilmaydi", "ru": "Стандартные генераторы не принимают зерно", "en": "The standard generators do not take a seed" },
+          { "uz": "Formula uchala tilda ham bir xil sonlarni beradi: xatoli testni boshqa tilda ham qayta yaratish mumkin", "ru": "Формула даёт одинаковые числа на всех трёх языках: ошибочный тест можно воссоздать и на другом языке", "en": "The formula gives exactly the same numbers in all three languages: a failing test can be recreated in another language too" },
+          { "uz": "Formula ancha tez hisoblanadi", "ru": "Формула вычисляется заметно быстрее", "en": "The formula computes noticeably faster" },
+          { "uz": "Formula katta oraliqdagi sonlarni beradi", "ru": "Формула даёт числа из более широкого диапазона", "en": "The formula gives numbers from a wider range" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Tillar standart generatorlari turlicha ishlaydi; `holat = (holat · 1103515245 + 12345) mod 2³¹` esa hamma tilda bir xil ketma-ketlikni beradi.",
+          "ru": "Стандартные генераторы языков работают по-разному, а `holat = (holat · 1103515245 + 12345) mod 2³¹` даёт одинаковую последовательность на всех языках.",
+          "en": "The languages' standard generators differ, while `holat = (holat · 1103515245 + 12345) mod 2³¹` gives the identical sequence in every language."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi misolda talaba binar qidiruvda `<` oʻrniga `<=` yozib qoʻydi. Bunday dastur nimani hisoblaydi?",
+          "ru": "В примере из занятия студент написал в двоичном поиске `<=` вместо `<`. Что вычисляет такое решение?",
+          "en": "In the lesson's example the student wrote `<=` instead of `<` in the binary search. What does that solution compute?"
+        },
+        "options": [
+          { "uz": "*x* dan qatʼiy kichik elementlar sonini — quyi chegarani", "ru": "Число элементов строго меньше *x* — нижнюю границу", "en": "The number of elements strictly less than *x* — the lower bound" },
+          { "uz": "*x* dan kichik yoki teng elementlar sonini — yuqori chegarani", "ru": "Число элементов меньше или равных *x* — верхнюю границу", "en": "The number of elements less than or equal to *x* — the upper bound" },
+          { "uz": "*x* ga teng elementlar sonini", "ru": "Число элементов, равных *x*", "en": "The number of elements equal to *x*" },
+          { "uz": "Massivning uzunligini", "ru": "Длину массива", "en": "The length of the array" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Shuning uchun `2 4 5 6 9 9` massivida, *x* = 4 boʻlganda, xatoli yechim 2 qaytaradi — u 4 ga teng elementni ham sanaydi; ishonchli yechim esa 1 beradi.",
+          "ru": "Поэтому на массиве `2 4 5 6 9 9` при *x* = 4 ошибочное решение возвращает 2 — оно считает и элемент, равный 4; надёжное решение даёт 1.",
+          "en": "That is why on the array `2 4 5 6 9 9` with *x* = 4 the buggy solution returns 2 — it also counts the element equal to 4, while the reliable one gives 1."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi misolda `1 100` kirish uchun stress-test nechanchi testda xatoni topadi?",
+          "ru": "На каком по счёту тесте стресс-тест из занятия находит ошибку при входе `1 100`?",
+          "en": "At which test number does the lesson's stress test find the bug for input `1 100`?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "5-testda: a = 2 4 5 6 9 9, x = 4, kutilgan 1, olingan 2 — xato ochiladi va dastur shu testda toʻxtaydi.",
+          "ru": "В тесте 5: a = 2 4 5 6 9 9, x = 4, ожидалось 1, получено 2 — ошибка раскрывается, и программа останавливается на этом тесте.",
+          "en": "In test 5: a = 2 4 5 6 9 9, x = 4, expected 1, got 2 — the bug is exposed and the program stops there."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Stress-test: darsdagi xatoli binar qidiruvni tekshirish",
+      "ru": "Стресс-тест: проверка ошибочного двоичного поиска из занятия",
+      "en": "Stress test: checking the buggy binary search from the lesson"
+    },
+    "statement": {
+      "uz": "Darsdagi stress-testni qayta yarating. Kirish: bitta satrda urugʻ *s* (0 ≤ *s* < 2³¹) va testlar soni *T* (1 ≤ *T* ≤ 1000). Har bir tasodifiy sonni chiziqli kongruent generator beradi: *holat* *s* dan boshlanadi va har bir `tasodifiy()` chaqiruvi *holat* = (*holat* · 1103515245 + 12345) mod 2147483648 ni hisoblab, uni qaytaradi. *t* = 1, …, *T* testda: *n* = `tasodifiy()` mod 8 + 1; soʻngra *n* ta `tasodifiy()` mod 10 sonidan *a* massivi tuziladi va oʻsmas tartibda saralanadi; oxirida *x* = `tasodifiy()` mod 10. Ishonchli natija — *kutilgan* — *a* dagi *x* dan qatʼiy kichik elementlar soni. Tez natija — *olingan* — darsdagi xatoli binar qidiruv: *chap* = 0, *ong* = *n*; *chap* < *ong* boʻlgancha *orta* = (*chap* + *ong*) / 2 (butun boʻlinish) olinadi, *a*[*orta*] ≤ *x* boʻlsa *chap* = *orta* + 1, aks holda *ong* = *orta*; natijada *olingan* = *chap*. Testlar tartib bilan solishtiriladi: natijalar farq qilgan birinchi *t* da toʻrt qator chiqarilib, toʻxtatiladi — `Bug found: test t`, soʻng `a = ` va *a* elementlari bittadan boʻsh joy bilan ajratib, soʻng `x = ` va *x*, soʻng `expected kutilgan, got olingan` koʻrinishidagi toʻrtinchi qator. Agar birorta test farq qilmasa, `All correct: T tests` chiqariladi. Masalan, `1 100` kirishda javob: `Bug found: test 5`, `a = 2 4 5 6 9 9`, `x = 4`, `expected 1, got 2`; `42 1` kirishda esa `All correct: 1 tests`. Starterdagi generator va test yaratish allaqachon toʻgʻri ishlaydi — sizga ishonchli sanash, xatoli qidiruv, solishtiruv va hisobot chiqarish qismini yozish qoladi.",
+      "ru": "Воспроизведите стресс-тест из занятия. Ввод: в одной строке зерно *s* (0 ≤ *s* < 2³¹) и число тестов *T* (1 ≤ *T* ≤ 1000). Каждое случайное число даёт линейный конгруэнтный генератор: *holat* начинается со *s*, и каждый вызов `tasodifiy()` вычисляет *holat* = (*holat* · 1103515245 + 12345) mod 2147483648 и возвращает его. Для теста *t* = 1, …, *T*: *n* = `tasodifiy()` mod 8 + 1; затем *n* чисел `tasodifiy()` mod 10 образуют массив *a*, отсортированный неубывающе; наконец *x* = `tasodifiy()` mod 10. Надёжный результат *kutilgan* — число элементов *a*, строго меньших *x*. Быстрый результат *olingan* — ошибочный двоичный поиск из занятия: *chap* = 0, *ong* = *n*; пока *chap* < *ong* берут *orta* = (*chap* + *ong*) / 2 (целочисленное деление), при *a*[*orta*] ≤ *x* присваивают *chap* = *orta* + 1, иначе *ong* = *orta*; в конце *olingan* = *chap*. Тесты сравнивают по порядку: на первом *t*, где два результата расходятся, выведите ровно четыре строки и остановитесь — `Bug found: test t`, затем `a = ` и элементы *a* через один пробел, затем `x = ` и *x*, затем `expected K, got O`. Если расхождений нет, выведите `All correct: T tests`. Например, на вводе `1 100` получится `Bug found: test 5`, `a = 2 4 5 6 9 9`, `x = 4`, `expected 1, got 2`; на вводе `42 1` — `All correct: 1 tests`. Генератор и создание тестов в стартере уже работают; вам нужно добавить надёжный подсчёт, ошибочный поиск, сравнение и вывод отчёта.",
+      "en": "Reproduce the lesson's stress test. Input: one line with the seed *s* (0 ≤ *s* < 2³¹) and the number of tests *T* (1 ≤ *T* ≤ 1000). Every random number comes from the linear congruential generator: *holat* starts at *s*, and each call `tasodifiy()` sets *holat* = (*holat* · 1103515245 + 12345) mod 2147483648 and returns it. For test *t* = 1, …, *T*: *n* = `tasodifiy()` mod 8 + 1; then *n* values `tasodifiy()` mod 10 form the array *a*, sorted in non-decreasing order; finally *x* = `tasodifiy()` mod 10. The reliable result *kutilgan* is the number of elements of *a* strictly less than *x*. The fast result *olingan* is the lesson's buggy binary search: *chap* = 0, *ong* = *n*; while *chap* < *ong* take *orta* = (*chap* + *ong*) / 2 (integer division), set *chap* = *orta* + 1 when *a*[*orta*] ≤ *x* and otherwise *ong* = *orta*; then *olingan* = *chap*. Compare the tests in order: at the first *t* whose two results differ, print exactly four lines and stop — `Bug found: test t`, then `a = ` followed by the elements of *a* separated by single spaces, then `x = ` followed by *x*, then `expected K, got O`. If no test differs, print `All correct: T tests`. For example, the input `1 100` gives `Bug found: test 5`, `a = 2 4 5 6 9 9`, `x = 4`, `expected 1, got 2`; the input `42 1` gives `All correct: 1 tests`. The starter's generator and test creation already work; you have to add the reliable count, the buggy search, the comparison and the report."
+    },
+    "code": {
+      "starter": {
+        "python": "holat = 0\n\n\ndef tasodifiy():\n    global holat\n    holat = (holat * 1103515245 + 12345) % 2147483648\n    return holat\n\n\nholat, testlar = map(int, input().split())\nfor t in range(1, testlar + 1):\n    n = tasodifiy() % 8 + 1\n    a = sorted(tasodifiy() % 10 for _ in range(n))\n    x = tasodifiy() % 10\nprint(f\"All correct: {testlar} tests\")\n",
+        "java": "import java.util.Arrays;\nimport java.util.Scanner;\n\npublic class Main {\n    static long holat;\n\n    static long tasodifiy() {\n        holat = (holat * 1103515245L + 12345) % 2147483648L;\n        return holat;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        holat = in.nextLong();\n        int testlar = in.nextInt();\n        for (int t = 1; t <= testlar; t++) {\n            int n = (int) (tasodifiy() % 8) + 1;\n            int[] a = new int[n];\n            for (int i = 0; i < n; i++) a[i] = (int) (tasodifiy() % 10);\n            Arrays.sort(a);\n            int x = (int) (tasodifiy() % 10);\n        }\n        System.out.println(\"All correct: \" + testlar + \" tests\");\n    }\n}\n",
+        "cpp": "#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nlong long holat;\n\nlong long tasodifiy() {\n    holat = (holat * 1103515245LL + 12345) % 2147483648LL;\n    return holat;\n}\n\nint main() {\n    int testlar;\n    cin >> holat >> testlar;\n    for (int t = 1; t <= testlar; t++) {\n        int n = tasodifiy() % 8 + 1;\n        vector<int> a(n);\n        for (int& v : a) v = tasodifiy() % 10;\n        sort(a.begin(), a.end());\n        int x = tasodifiy() % 10;\n    }\n    cout << \"All correct: \" << testlar << \" tests\" << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "holat = 0\n\n\ndef tasodifiy():\n    global holat\n    holat = (holat * 1103515245 + 12345) % 2147483648   # a linear congruential generator\n    return holat\n\n\ndef ishonchli(a, x):                        # slow but certainly correct\n    return sum(1 for v in a if v < x)\n\n\ndef tez(a, x):                              # binary search — with a bug!\n    chap, ong = 0, len(a)\n    while chap < ong:\n        orta = (chap + ong) // 2\n        if a[orta] <= x:                    # bug: it should be <\n            chap = orta + 1\n        else:\n            ong = orta\n    return chap\n\n\nholat, testlar = map(int, input().split())\nfor t in range(1, testlar + 1):\n    n = tasodifiy() % 8 + 1\n    a = sorted(tasodifiy() % 10 for _ in range(n))\n    x = tasodifiy() % 10\n    kutilgan, olingan = ishonchli(a, x), tez(a, x)\n    if kutilgan != olingan:\n        print(f\"Bug found: test {t}\")\n        print(\"a =\", *a)\n        print(\"x =\", x)\n        print(f\"expected {kutilgan}, got {olingan}\")\n        break\nelse:\n    print(f\"All correct: {testlar} tests\")\n",
+        "java": "import java.util.Arrays;\nimport java.util.Scanner;\n\npublic class Main {\n    static long holat;\n\n    static long tasodifiy() {\n        holat = (holat * 1103515245L + 12345) % 2147483648L;    // a linear congruential generator\n        return holat;\n    }\n\n    static int ishonchli(int[] a, int x) {          // slow but certainly correct\n        int soni = 0;\n        for (int v : a) if (v < x) soni++;\n        return soni;\n    }\n\n    static int tez(int[] a, int x) {                // binary search — with a bug!\n        int chap = 0, ong = a.length;\n        while (chap < ong) {\n            int orta = (chap + ong) / 2;\n            if (a[orta] <= x) chap = orta + 1;      // bug: it should be <\n            else ong = orta;\n        }\n        return chap;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        holat = in.nextLong();\n        int testlar = in.nextInt();\n        for (int t = 1; t <= testlar; t++) {\n            int n = (int) (tasodifiy() % 8) + 1;\n            int[] a = new int[n];\n            for (int i = 0; i < n; i++) a[i] = (int) (tasodifiy() % 10);\n            Arrays.sort(a);\n            int x = (int) (tasodifiy() % 10);\n            int kutilgan = ishonchli(a, x), olingan = tez(a, x);\n            if (kutilgan != olingan) {\n                System.out.println(\"Bug found: test \" + t);\n                StringBuilder sb = new StringBuilder(\"a =\");\n                for (int v : a) sb.append(' ').append(v);\n                System.out.println(sb);\n                System.out.println(\"x = \" + x);\n                System.out.println(\"expected \" + kutilgan + \", got \" + olingan);\n                return;\n            }\n        }\n        System.out.println(\"All correct: \" + testlar + \" tests\");\n    }\n}\n",
+        "cpp": "#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nlong long holat;\n\nlong long tasodifiy() {\n    holat = (holat * 1103515245LL + 12345) % 2147483648LL;     // a linear congruential generator\n    return holat;\n}\n\nint ishonchli(const vector<int>& a, int x) {        // slow but certainly correct\n    int soni = 0;\n    for (int v : a) if (v < x) soni++;\n    return soni;\n}\n\nint tez(const vector<int>& a, int x) {              // binary search — with a bug!\n    int chap = 0, ong = a.size();\n    while (chap < ong) {\n        int orta = (chap + ong) / 2;\n        if (a[orta] <= x) chap = orta + 1;          // bug: it should be <\n        else ong = orta;\n    }\n    return chap;\n}\n\nint main() {\n    int testlar;\n    cin >> holat >> testlar;\n    for (int t = 1; t <= testlar; t++) {\n        int n = tasodifiy() % 8 + 1;\n        vector<int> a(n);\n        for (int& v : a) v = tasodifiy() % 10;\n        sort(a.begin(), a.end());\n        int x = tasodifiy() % 10;\n        int kutilgan = ishonchli(a, x), olingan = tez(a, x);\n        if (kutilgan != olingan) {\n            cout << \"Bug found: test \" << t << endl;\n            cout << \"a =\";\n            for (int v : a) cout << ' ' << v;\n            cout << endl << \"x = \" << x << endl;\n            cout << \"expected \" << kutilgan << \", got \" << olingan << endl;\n            return 0;\n        }\n    }\n    cout << \"All correct: \" << testlar << \" tests\" << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "1 100\n", "expected": "Bug found: test 5\na = 2 4 5 6 9 9\nx = 4\nexpected 1, got 2\n", "hidden": false },
+        { "input": "42 1\n", "expected": "All correct: 1 tests\n", "hidden": true },
+        { "input": "42 3\n", "expected": "Bug found: test 2\na = 2 2 3 5 6 9\nx = 6\nexpected 4, got 5\n", "hidden": false },
+        { "input": "1 4\n", "expected": "All correct: 4 tests\n", "hidden": true },
+        { "input": "42 2\n", "expected": "Bug found: test 2\na = 2 2 3 5 6 9\nx = 6\nexpected 4, got 5\n", "hidden": true }
+      ]
+    }
+  }
+}

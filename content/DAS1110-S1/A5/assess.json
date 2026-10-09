@@ -1,0 +1,307 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Bitta oʻzgaruvchi bir nechta aniq qiymat bilan solishtirilganda qaysi operator odatda `if-else if` zanjiridan qulayroq?",
+          "ru": "Какой оператор обычно удобнее цепочки `if-else if`, когда одна переменная сравнивается с несколькими точными значениями?",
+          "en": "When one variable is compared with several exact values, which statement is usually handier than an `if-else if` chain?"
+        },
+        "options": [
+          {
+            "uz": "`switch` (Java, C++) yoki `match` (Python) tanlash operatori",
+            "ru": "Оператор выбора `switch` (Java, C++) или `match` (Python)",
+            "en": "The selection statement `switch` (Java, C++) or `match` (Python)"
+          },
+          {
+            "uz": "Faqat ternar operator",
+            "ru": "Только тернарный оператор",
+            "en": "Only the ternary operator"
+          },
+          {
+            "uz": "Ichma-ich joylangan `if` operatorlari",
+            "ru": "Вложенные друг в друга `if`",
+            "en": "Nested `if` statements"
+          },
+          {
+            "uz": "Takrorlash (sikl) operatorlari",
+            "ru": "Операторы цикла",
+            "en": "Loop statements"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsning «Qachon nima ishlatiladi?» jadvaliga koʻra, bir nechta aniq qiymat solishtirilganda `switch`/`match` oʻqilishi osonroq.",
+          "ru": "Согласно таблице занятия «что и когда», при сравнении с несколькими точными значениями `switch`/`match` читается легче.",
+          "en": "Per the lesson's \"which one when?\" table, for several exact values `switch`/`match` is more readable."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python tilida `match` operatorida `break` kerak emas, chunki unda tushib ketish (fall-through) yoʻq.",
+          "ru": "В Python оператору `match` не нужен `break`, потому что в нём нет «проваливания» (fall-through).",
+          "en": "In Python, `match` needs no `break`, because it has no fall-through."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Pythonʼda faqat mos kelgan `case` bajariladi va keyingisiga oʻtib ketmaydi, shuning uchun `break` talab qilinmaydi.",
+          "ru": "В Python выполняется только совпавший `case`, без перехода к следующему, поэтому `break` не нужен.",
+          "en": "In Python only the matching `case` runs and execution does not pass on, so no `break` is needed."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python tilida `match` operatorida `default` vazifasini bajaruvchi yozuvni toʻliq yozing (ikki nuqta bilan).",
+          "ru": "Полностью напишите (с двумя точками) запись в `match` на Python, которая играет роль `default`.",
+          "en": "Write in full (with the two colons) the `match` form in Python that plays the role of `default`."
+        },
+        "answers": ["case _:", "case _"],
+        "explanation": {
+          "uz": "`case _:` boshqa barcha holatlarni oladi — u `default`ning oʻrnini bosadi.",
+          "ru": "`case _:` забирает все остальные случаи и заменяет `default`.",
+          "en": "`case _:` catches every other case and stands in for `default`."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Java tilida `switch`da `case 3:` dagi `break` tushib qoldi va kiritilgan qiymat 3 ga teng. Nima boʻladi?",
+          "ru": "В Java в `switch` у `case 3:` пропущен `break`, а введённое значение равно 3. Что произойдёт?",
+          "en": "In Java a `switch` is missing the `break` of `case 3:` and the value is 3. What happens?"
+        },
+        "options": [
+          {
+            "uz": "`case 3` bajariladi, keyin birinchi `break` topilguncha (yoki `switch` oxirigacha) keyingi `case`lar ham bajariladi",
+            "ru": "Выполнится `case 3`, затем и последующие `case` — до первого `break` или до конца `switch`",
+            "en": "`case 3` runs, then the following `case`s too — up to the first `break` or the end of the `switch`"
+          },
+          {
+            "uz": "Faqatgina `case 3` bajariladi",
+            "ru": "Выполнится только `case 3`",
+            "en": "Only `case 3` runs"
+          },
+          {
+            "uz": "Dastur sintaksis xatosi bilan toʻxtaydi",
+            "ru": "Программа остановится с синтаксической ошибкой",
+            "en": "The program stops with a syntax error"
+          },
+          {
+            "uz": "`default` bandi bajariladi",
+            "ru": "Выполнится `default`",
+            "en": "The `default` branch runs"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bu tushib ketish (fall-through) — darsda `break`ni unutish eng koʻp uchraydigan xato deb koʻrsatilgan.",
+          "ru": "Это проваливание (fall-through) — в занятии забытый `break` назван типичной ошибкой.",
+          "en": "This is fall-through — the lesson lists forgetting `break` as a common mistake."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`-7 % 2` ifodaning qiymati Java va C++ tillarida nechaga teng?",
+          "ru": "Чему равно значение выражения `-7 % 2` в Java и C++?",
+          "en": "What is the value of `-7 % 2` in Java and C++?"
+        },
+        "answers": [-1],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda aytilganidek, `-7 % 2` Pythonʼda 1, Java va C++ʼda −1 ga teng. Shuning uchun toq sonni `n % 2 == 1` bilan tekshirish manfiy sonlarda xato beradi.",
+          "ru": "Как указано в занятии, `-7 % 2` равен 1 в Python и −1 в Java и C++. Поэтому проверять нечётность через `n % 2 == 1` на отрицательных числах ошибочно.",
+          "en": "As the lesson states, `-7 % 2` is 1 in Python and −1 in Java and C++. So testing oddness with `n % 2 == 1` goes wrong on negative numbers."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ternar operator haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о тернарном операторе верны?",
+          "en": "Which statements about the ternary operator are correct?"
+        },
+        "options": [
+          {
+            "uz": "U operator emas, ifoda — natijani oʻzgaruvchiga berish yoki toʻgʻridan-toʻgʻri chiqarish mumkin",
+            "ru": "Это не оператор, а выражение — результат можно присвоить переменной или вывести напрямую",
+            "en": "It is an expression, not a statement — its result can be assigned to a variable or printed directly"
+          },
+          {
+            "uz": "Python tilida `qiymat1 if shart else qiymat2` koʻrinishida yoziladi",
+            "ru": "В Python записывается как `значение1 if условие else значение2`",
+            "en": "In Python it is written `value1 if condition else value2`"
+          },
+          {
+            "uz": "Java va C++ tilida `shart ? qiymat1 : qiymat2` koʻrinishida yoziladi",
+            "ru": "В Java и C++ записывается как `условие ? значение1 : значение2`",
+            "en": "In Java and C++ it is written `condition ? value1 : value2`"
+          },
+          {
+            "uz": "Ichma-ich ternar operatorlar kodni oʻqishni osonlashtiradi",
+            "ru": "Вложенные тернарные операторы облегчают чтение кода",
+            "en": "Nested ternary operators make the code easier to read"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsning ogohlantirishiga koʻra, ichma-ich ternar (bir qatorda uch-toʻrtta `?`) kodni oʻqib boʻlmaydigan qiladi — unda `if` yaxshiroq.",
+          "ru": "Согласно предупреждению занятия, вложенные тернарные операторы (три-четыре `?` в строке) делают код нечитаемым — лучше взять `if`.",
+          "en": "The lesson's warning says nested ternaries (three or four `?` on one line) make unreadable code — use `if` there."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "C++ tilida `switch` operatorini satr qiymati bilan ishlatish mumkin.",
+          "ru": "В C++ оператор `switch` можно использовать со значением типа `String`.",
+          "en": "In C++ the `switch` statement can be used on a `String` value."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "C++ʼda `switch` faqat butun son va belgi turlari bilan ishlaydi; satr qiymati bilan ishlash faqat Javaʼda mavjud.",
+          "ru": "В C++ `switch` работает только с целыми числами и символами; строки (`String`) поддерживает только Java.",
+          "en": "In C++ `switch` works only with integer and character types; only Java also supports strings (`String`)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qaysi vaziyatda `switch`/`match` oʻrniga `if-else if` ishlatish kerak?",
+          "ru": "В какой ситуации вместо `switch`/`match` нужно использовать `if-else if`?",
+          "en": "In which situation should you use `if-else if` instead of `switch`/`match`?"
+        },
+        "options": [
+          {
+            "uz": "Qiymat oraligʻini (masalan, `ball >= 86`) yoki murakkab shartni tekshirishda",
+            "ru": "При проверке диапазона значений (например, `ball >= 86`) или сложного условия",
+            "en": "When checking a range (for example `ball >= 86`) or a complex condition"
+          },
+          {
+            "uz": "Bitta butun sonni bir nechta aniq son bilan solishtirganda",
+            "ru": "Когда одно целое сравнивают с несколькими точными числами",
+            "en": "When one integer is compared with several exact numbers"
+          },
+          {
+            "uz": "Menyu bandini uning raqami boʻyicha tanlaganda",
+            "ru": "Когда пункт меню выбирают по его номеру",
+            "en": "When a menu item is chosen by its number"
+          },
+          {
+            "uz": "Hafta kunini uning raqami boʻyicha aniqlaganda",
+            "ru": "Когда день недели определяют по его номеру",
+            "en": "When a weekday is determined by its number"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "`case` yorligʻida faqat aniq oʻzgarmas qiymat turadi; oraliqlar va murakkab shartlar uchun `if-else if` kerak.",
+          "ru": "В `case` может стоять только точная константа; для диапазонов и сложных условий нужен `if-else if`.",
+          "en": "A `case` holds only an exact constant; ranges and complex conditions need `if-else if`."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`case` yorligʻida oʻzgaruvchi yoki oraliq yozish mumkin, masalan `case x > 5:`.",
+          "ru": "В метке `case` можно написать переменную или диапазон, например `case x > 5:`.",
+          "en": "A `case` label can hold a variable or a range, for example `case x > 5:`."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda bu xato deb koʻrsatilgan: `case` da faqat oʻzgarmas qiymat boʻladi, oraliq uchun `if` ishlatiladi.",
+          "ru": "В занятии это названо ошибкой: в `case` только константа, для диапазона берётся `if`.",
+          "en": "The lesson marks this as a mistake: a `case` holds only a constant; a range uses `if`."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Unli yoki undosh harf",
+      "ru": "Гласная или согласная буква",
+      "en": "A vowel or a consonant"
+    },
+    "statement": {
+      "uz": "Dasturingiz bitta kichik lotin harfini (a dan z gacha) oʻqisin. Agar u unli harf boʻlsa (a, e, i, o, u) `vowel` deb, aks holda `consonant` deb bitta qatorga chiqaring. Tanlash operatoridan (`switch` yoki `match`) foydalaning va besh unli harfni bitta amalga guruhlang.",
+      "ru": "Программа читает одну строчную латинскую букву (от a до z). Если это гласная (a, e, i, o, u) — выведите `vowel`, иначе — `consonant`, одной строкой. Используйте оператор выбора (`switch` или `match`) и объедините пять гласных в одно действие.",
+      "en": "Your program reads one lowercase Latin letter (a to z). If it is a vowel (a, e, i, o, u) print `vowel`, otherwise print `consonant` — on a single line. Use the selection statement (`switch` or `match`) and group the five vowels under one action."
+    },
+    "code": {
+      "starter": {
+        "python": "harf = input()\nmatch harf:\n    case \"a\":\n        print(\"vowel\")\n    case _:\n        print(\"consonant\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        char harf = in.next().charAt(0);\n        switch (harf) {\n            case 'a':\n                System.out.println(\"vowel\");\n                break;\n            default:\n                System.out.println(\"consonant\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char harf;\n    cin >> harf;\n    switch (harf) {\n        case 'a':\n            cout << \"vowel\" << endl;\n            break;\n        default:\n            cout << \"consonant\" << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "harf = input()\nmatch harf:\n    case \"a\" | \"e\" | \"i\" | \"o\" | \"u\":\n        print(\"vowel\")\n    case _:\n        print(\"consonant\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        char harf = in.next().charAt(0);\n        switch (harf) {\n            case 'a':\n            case 'e':\n            case 'i':\n            case 'o':\n            case 'u':\n                System.out.println(\"vowel\");\n                break;\n            default:\n                System.out.println(\"consonant\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    char harf;\n    cin >> harf;\n    switch (harf) {\n        case 'a':\n        case 'e':\n        case 'i':\n        case 'o':\n        case 'u':\n            cout << \"vowel\" << endl;\n            break;\n        default:\n            cout << \"consonant\" << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "e\n", "expected": "vowel", "hidden": false },
+        { "input": "z\n", "expected": "consonant", "hidden": false },
+        { "input": "u\n", "expected": "vowel", "hidden": true },
+        { "input": "b\n", "expected": "consonant", "hidden": true },
+        { "input": "o\n", "expected": "vowel", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,301 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Prefiks /24 boʻlgan tarmoqda nechta qurilmaga (xostga) manzil berish mumkin?",
+          "ru": "Сколько устройств (узлов) можно адресовать в сети с префиксом /24?",
+          "en": "How many devices (hosts) can be addressed in a network with prefix /24?"
+        },
+        "options": [
+          {
+            "uz": "256",
+            "ru": "256",
+            "en": "256"
+          },
+          {
+            "uz": "255",
+            "ru": "255",
+            "en": "255"
+          },
+          {
+            "uz": "254",
+            "ru": "254",
+            "en": "254"
+          },
+          {
+            "uz": "128",
+            "ru": "128",
+            "en": "128"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Xost bitlari 8 ta, shuning uchun 2^8 − 2 = 254: xost qismi hammasi 0 boʻlgan manzil — tarmoq manzili, hammasi 1 boʻlgani — broadkast manzili, ularni qurilmaga berib boʻlmaydi.",
+          "ru": "Битов узла 8, поэтому 2^8 − 2 = 254: адрес с нулевой частью узла — адрес сети, с единицами — широковещательный; их устройству не выдают.",
+          "en": "There are 8 host bits, so 2^8 − 2 = 254: the address whose host part is all 0s is the network address and the all-1s one is broadcast; neither can be given to a device."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "172.32.5.10 manzili xususiy (RFC 1918) manzil hisoblanadi.",
+          "ru": "Адрес 172.32.5.10 является частным (RFC 1918).",
+          "en": "The address 172.32.5.10 is a private (RFC 1918) address."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Xususiy diapazon 172.16.0.0/12 — u 172.16.0.0 dan 172.31.255.255 gacha. 172.32.x.x esa ommaviy manzil.",
+          "ru": "Частный диапазон 172.16.0.0/12 простирается от 172.16.0.0 до 172.31.255.255. Адрес 172.32.x.x уже публичный.",
+          "en": "The private range 172.16.0.0/12 runs from 172.16.0.0 to 172.31.255.255. 172.32.x.x is a public address."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi diapazonlar xususiy (RFC 1918) manzillariga kiradi?",
+          "ru": "Какие из перечисленных диапазонов относятся к частным адресам (RFC 1918)?",
+          "en": "Which of these ranges are private (RFC 1918) addresses?"
+        },
+        "options": [
+          {
+            "uz": "10.0.0.0/8",
+            "ru": "10.0.0.0/8",
+            "en": "10.0.0.0/8"
+          },
+          {
+            "uz": "172.16.0.0/12",
+            "ru": "172.16.0.0/12",
+            "en": "172.16.0.0/12"
+          },
+          {
+            "uz": "192.168.0.0/16",
+            "ru": "192.168.0.0/16",
+            "en": "192.168.0.0/16"
+          },
+          {
+            "uz": "127.0.0.0/8",
+            "ru": "127.0.0.0/8",
+            "en": "127.0.0.0/8"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Xususiy manzillar — 10/8, 172.16/12 va 192.168/16; ular Internetda marshrutlanmaydi. 127.0.0.0/8 esa loopback: kompyuterning oʻzi.",
+          "ru": "Частные адреса — 10/8, 172.16/12 и 192.168/16; они не маршрутизируются в Интернете. 127.0.0.0/8 — это loopback, сам компьютер.",
+          "en": "The private addresses are 10/8, 172.16/12 and 192.168/16; they are not routed on the Internet. 127.0.0.0/8 is loopback — the computer itself."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "255.255.255.192 maskasi qaysi prefiksga toʻgʻri keladi?",
+          "ru": "Какому префиксу соответствует маска 255.255.255.192?",
+          "en": "Which prefix does the mask 255.255.255.192 correspond to?"
+        },
+        "options": [
+          {
+            "uz": "/25",
+            "ru": "/25",
+            "en": "/25"
+          },
+          {
+            "uz": "/26",
+            "ru": "/26",
+            "en": "/26"
+          },
+          {
+            "uz": "/27",
+            "ru": "/27",
+            "en": "/27"
+          },
+          {
+            "uz": "/28",
+            "ru": "/28",
+            "en": "/28"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "192 = 11000000, yaʼni maskada jami 24 + 2 = 26 ta bir — prefiks /26. Xost bitlari 6 ta, 2^6 − 2 = 62 xost.",
+          "ru": "192 = 11000000, всего в маске 24 + 2 = 26 единиц, значит префикс /26. Битов узла 6, узлов 2^6 − 2 = 62.",
+          "en": "192 = 11000000, so the mask holds 24 + 2 = 26 ones — prefix /26. There are 6 host bits, 2^6 − 2 = 62 hosts."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "10.20.30.40/12 tarmogʻi manzilining ikkinchi okteti nechaga teng?",
+          "ru": "Чему равен второй октет сетевого адреса для 10.20.30.40/12?",
+          "en": "What is the second octet of the network address of 10.20.30.40/12?"
+        },
+        "answers": [16],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Prefiks /12 — maska 255.240.0.0: birinchi oktet toʻliq, ikkinchisi chegaraviy. Blok oʻlchami 256 − 240 = 16, tarmoqlar 0, 16, 32, … dan boshlanadi; 20 oraligʻi 16–31, shuning uchun tarmoq — 10.16.0.0.",
+          "ru": "Префикс /12: первый октет полный, второй — пограничный. Размер блока 256 − 240 = 16, сети начинаются с 0, 16, 32, …; 20 попадает в диапазон 16–31, поэтому сеть — 10.16.0.0.",
+          "en": "With /12 the first octet is full and the second is the boundary one. The block size is 256 − 240 = 16, networks start at 0, 16, 32, …; 20 falls into 16–31, so the network is 10.16.0.0."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "IPv4 manzilining qaysi bitlari tarmoqqa, qaysilari xostga tegishli ekanini nima belgilaydi? Bitta soʻz bilan yozing.",
+          "ru": "Что определяет, какие биты адреса IPv4 относятся к сети, а какие к узлу? Ответьте одним словом.",
+          "en": "What determines which bits of an IPv4 address belong to the network and which to the host? Answer in one word."
+        },
+        "answers": [
+          "maska",
+          "mask",
+          "prefiks",
+          "prefix"
+        ],
+        "explanation": {
+          "uz": "Maskada tarmoq bitlari 1, xost bitlari 0. Prefiks — shu maskaning qisqa yozuvi, yaʼni birlar soni.",
+          "ru": "В маске биты сети равны 1, биты узла — 0. Префикс — краткая запись той же маски, число единиц.",
+          "en": "In the mask the network bits are 1 and the host bits are 0. The prefix is the short form of that mask — the number of ones."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Manzillash haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об адресации верны?",
+          "en": "Which statements about addressing are correct?"
+        },
+        "options": [
+          {
+            "uz": "CIDR 1993-yildan beri joriy: prefiks istalgan uzunlikda boʻlishi mumkin",
+            "ru": "CIDR введён с 1993 года: префикс может быть любой длины",
+            "en": "CIDR was introduced in 1993: a prefix can be of any length"
+          },
+          {
+            "uz": "D sinf multicast manzillar uchun ajratilgan",
+            "ru": "Класс D отведён для multicast-адресов",
+            "en": "Class D is reserved for multicast addresses"
+          },
+          {
+            "uz": "Bugun haqiqiy maskani sinf belgilaydi",
+            "ru": "Сегодня настоящую маску определяет класс",
+            "en": "Today the class is what determines the real mask"
+          },
+          {
+            "uz": "255.255.255.191 maska boʻla olmaydi, chunki maskada birlar faqat chapda, qator boʻlib turadi",
+            "ru": "255.255.255.191 не может быть маской: единицы в маске стоят только слева и подряд",
+            "en": "255.255.255.191 cannot be a mask, because the ones in a mask stand only on the left, in a row"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Uchinchi ifoda xato: sinf — birinchi oktetdan kelib chiqadigan tarixiy belgi, haqiqiy maskani esa prefiks beradi. Birinchi, ikkinchi va toʻrtinchi ifodalar darsda aytilgan.",
+          "ru": "Неверно третье утверждение: класс — историческая метка по первому октету, а настоящую маску задаёт префикс. Первое, второе и четвёртое утверждения соответствуют занятию.",
+          "en": "The third statement is wrong: the class is a historical label from the first octet, while the real mask comes from the prefix. The first, second and fourth statements match the lesson."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kompyuterdagi manzil 169.254.33.7 boʻlsa, bu DHCP server javob bermaganini bildiradi.",
+          "ru": "Если на компьютере адрес 169.254.33.7, это означает, что сервер DHCP не ответил.",
+          "en": "If a computer has the address 169.254.33.7, it means the DHCP server did not answer."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "169.254.0.0/16 — link-local: DHCP javob bermaganda Windows oʻziga shu manzilni beradi (APIPA). Bu «Internet ishlayapti» degani emas.",
+          "ru": "169.254.0.0/16 — link-local: если DHCP не ответил, Windows выдаёт себе такой адрес (APIPA). Это не означает, что Интернет работает.",
+          "en": "169.254.0.0/16 is link-local: when DHCP does not answer, Windows assigns itself this address (APIPA). It does not mean the Internet works."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "192.168.1.0/24 tarmogʻini kamida 6 ta bir xil quyi tarmoqqa boʻlish uchun nechta bit qarzga olish kerak?",
+          "ru": "Сколько битов нужно заимствовать, чтобы разбить сеть 192.168.1.0/24 минимум на 6 одинаковых подсетей?",
+          "en": "How many bits must be borrowed to split 192.168.1.0/24 into at least 6 equal subnets?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Quyi tarmoqlar soni 2^b: b = 2 boʻlsa 4 ta — yetmaydi, b = 3 boʻlsa 8 ta — yetadi. Yangi prefiks /27, har bir quyi tarmoqda 2^5 − 2 = 30 xost.",
+          "ru": "Число подсетей 2^b: при b = 2 их 4 — мало, при b = 3 — 8, достаточно. Новый префикс /27, в каждой подсети 2^5 − 2 = 30 узлов.",
+          "en": "The number of subnets is 2^b: b = 2 gives 4 — not enough, b = 3 gives 8 — enough. The new prefix is /27, with 2^5 − 2 = 30 hosts per subnet."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Manzilni ikkilik va 32 bitli son koʻrinishiga oʻgirish",
+      "ru": "Перевод адреса в двоичную и 32-битную форму",
+      "en": "Converting an address into binary and into a 32-bit number"
+    },
+    "statement": {
+      "uz": "IPv4 manzili — 32 bit; uni toʻrtta 8 bitli oktetga boʻlib, nuqtali oʻnlik koʻrinishda yozishadi. Birinchi satrda bitta nuqtali oʻnlikdagi IPv4 manzili beriladi, masalan 10.1.2.3. Dasturingiz ikkita satr chiqarsin. Birinchi satrda — manzilning ikkilik koʻrinishi: har bir oktet yetishmasa chapga nollar qoʻshib 8 bitga toʻldiriladi va oktetlar nuqta bilan ajratiladi (192.168.10.77 → 11000000.10101000.00001010.01001101). Ikkinchi satrda — shu 32 bitning oʻnlik qiymati: birinchi oktet 2^24, ikkinchisi 2^16, uchinchisi 2^8 ga koʻpaytirilib, toʻrttasi qoʻshiladi. Boshqa hech narsa yozmang. Masalan, 10.1.2.3 uchun: 00001010.00000001.00000010.00000011 va 167838211. Manzil 255.255.255.255 gacha boʻlishi mumkin, shuning uchun oʻnlik qiymat 32 bitli butun songa sigʻmaydi — 64 bitli tiptan foydalaning va 2^24, 2^16, 2^8 oʻrniga 16777216, 65536, 256 sonlariga koʻpaytiring.",
+      "ru": "Адрес IPv4 — это 32 бита; его делят на четыре 8-битных октета и записывают в точечно-десятичном виде. В первой строке дан один адрес в точечно-десятичной форме, например 10.1.2.3. Программа печатает две строки. Первая — двоичная запись адреса: каждый октет дополняется нулями слева до 8 бит, октеты разделены точками (192.168.10.77 → 11000000.10101000.00001010.01001101). Вторая — десятичное значение этих 32 бит: первый октет умножается на 2^24, второй на 2^16, третий на 2^8, и все четыре складываются. Больше ничего выводить не нужно. Например, для 10.1.2.3: 00001010.00000001.00000010.00000011 и 167838211. Адрес может доходить до 255.255.255.255, поэтому десятичное значение не помещается в 32-битное целое: берите 64-битный тип и умножайте на 16777216, 65536, 256.",
+      "en": "An IPv4 address is 32 bits, split into four 8-bit octets and written in dotted decimal. The first line holds one dotted-decimal address, for example 10.1.2.3. Your program prints two lines. The first line is the binary form of the address: each octet is padded on the left with zeros to 8 bits and the octets are separated by dots (192.168.10.77 → 11000000.10101000.00001010.01001101). The second line is the decimal value of those 32 bits: the first octet multiplied by 2^24, the second by 2^16, the third by 2^8, and the four products added. Print nothing else. For 10.1.2.3 the output is 00001010.00000001.00000010.00000011 and 167838211. The address can go as far as 255.255.255.255, so use a 64-bit integer for the value and multiply by 16777216, 65536, 256."
+    },
+    "code": {
+      "starter": {
+        "python": "qismlar = input().split(\".\")\nson = 0\nfor q in qismlar:\n    son = son * 256 + int(q)\nprint(\".\".join(bin(int(q))[2:] for q in qismlar))\nprint(son)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        in.useDelimiter(\"[^0-9]+\");\n        int a = in.nextInt();\n        int b = in.nextInt();\n        int c = in.nextInt();\n        int d = in.nextInt();\n        long son = (long) a * 16777216 + (long) b * 65536 + (long) c * 256 + d;\n        System.out.println(a + \".\" + b + \".\" + c + \".\" + d);\n        System.out.println(son);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b, c, d;\n    char nuqta;\n    cin >> a >> nuqta >> b >> nuqta >> c >> nuqta >> d;\n    cout << a << \".\" << b << \".\" << c << \".\" << d << endl;\n    long long son = (long long)a * 16777216 + (long long)b * 65536 + (long long)c * 256 + d;\n    cout << son << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "qismlar = input().split(\".\")\nson = 0\nfor q in qismlar:\n    son = son * 256 + int(q)\nprint(\".\".join(format(int(q), \"08b\") for q in qismlar))\nprint(son)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static String sakkizBit(int o) {\n        return String.format(\"%8s\", Integer.toBinaryString(o)).replace(' ', '0');\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        in.useDelimiter(\"[^0-9]+\");\n        int a = in.nextInt();\n        int b = in.nextInt();\n        int c = in.nextInt();\n        int d = in.nextInt();\n        long son = (long) a * 16777216 + (long) b * 65536 + (long) c * 256 + d;\n        System.out.println(sakkizBit(a) + \".\" + sakkizBit(b) + \".\" + sakkizBit(c) + \".\" + sakkizBit(d));\n        System.out.println(son);\n    }\n}\n",
+        "cpp": "#include <bitset>\n#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b, c, d;\n    char nuqta;\n    cin >> a >> nuqta >> b >> nuqta >> c >> nuqta >> d;\n    cout << bitset<8>(a) << \".\" << bitset<8>(b) << \".\" << bitset<8>(c) << \".\" << bitset<8>(d) << endl;\n    long long son = (long long)a * 16777216 + (long long)b * 65536 + (long long)c * 256 + d;\n    cout << son << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "10.1.2.3\n", "expected": "00001010.00000001.00000010.00000011\n167838211", "hidden": false },
+        { "input": "192.168.10.77\n", "expected": "11000000.10101000.00001010.01001101\n3232238157", "hidden": false },
+        { "input": "127.0.0.1\n", "expected": "01111111.00000000.00000000.00000001\n2130706433", "hidden": true },
+        { "input": "8.8.8.8\n", "expected": "00001000.00001000.00001000.00001000\n134744072", "hidden": true },
+        { "input": "255.255.255.255\n", "expected": "11111111.11111111.11111111.11111111\n4294967295", "hidden": true }
+      ]
+    }
+  }
+}

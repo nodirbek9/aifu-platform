@@ -1,0 +1,300 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Elektron biznes va elektron tijorat haqida qaysi ifoda toʻgʻri?",
+          "ru": "Какое утверждение об электронном бизнесе и электронной коммерции верно?",
+          "en": "Which statement about e-business and e-commerce is correct?"
+        },
+        "options": [
+          {
+            "uz": "Elektron tijorat — elektron biznesning bir qismi: internet orqali sotish va sotib olish",
+            "ru": "Электронная коммерция — часть электронного бизнеса: продажа и покупка через интернет",
+            "en": "E-commerce is a part of e-business: selling and buying over the Internet"
+          },
+          {
+            "uz": "Elektron biznes faqat sotishni qamraydi, tijorat esa barcha jarayonlarni oʻz ichiga oladi",
+            "ru": "Электронный бизнес охватывает только продажи, а коммерция — все процессы",
+            "en": "E-business covers only sales, while e-commerce covers all processes"
+          },
+          {
+            "uz": "Ikkalasi bir narsa, farqi yoʻq",
+            "ru": "Это одно и то же, различия нет",
+            "en": "They are the same thing — there is no difference"
+          },
+          {
+            "uz": "Elektron tijorat faqat bank kartasi orqali toʻlovdir",
+            "ru": "Электронная коммерция — это только оплата банковскими картами",
+            "en": "E-commerce is only payment with bank cards"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Elektron biznes — barcha jarayonlarning (xarid, ishlab chiqarish, sotish, hisob, hamkorlar bilan aloqa) raqamli texnologiyalar orqali tashkil qilinishi; elektron tijorat — uning qismi: internetdagi savdo va toʻlov.",
+          "ru": "Электронный бизнес — организация всех процессов (закупки, производство, продажи, учёт, связь с партнёрами) через цифровые технологии; электронная коммерция — его часть: торговля и оплата через интернет.",
+          "en": "E-business is organizing all processes (purchasing, production, sales, accounting, communication with partners) through digital technologies; e-commerce is its part: selling and buying, including payment, over the Internet."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Quyidagilardan qaysilari darsdagi elektron tijorat biznes modellariga kiradi?",
+          "ru": "Что из перечисленного относится к бизнес-моделям электронной коммерции из урока?",
+          "en": "Which of these are e-commerce business models from the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Marketpleys — sotuvchilardan komissiya va reklama daromadi",
+            "ru": "Маркетплейс — комиссия с продавцов и доход от рекламы",
+            "en": "Marketplace — commission from sellers and advertising"
+          },
+          {
+            "uz": "Obuna — oylik yoki yillik toʻlov",
+            "ru": "Подписка — ежемесячная или годовая плата",
+            "en": "Subscription — a monthly or yearly fee"
+          },
+          {
+            "uz": "Freemium — asosiy xizmat bepul, kengaytirilgani pulliq",
+            "ru": "Фримиум — базовый сервис бесплатен, расширенный платен",
+            "en": "Freemium — the basic service is free, the extended one is paid"
+          },
+          {
+            "uz": "Zavodda tovar ishlab chiqarish",
+            "ru": "Производство товаров на заводе",
+            "en": "Manufacturing goods in a factory"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi modellar: internet-doʻkon, marketpleys, obuna, platforma, freemium va reklama; zavod ishlab chiqarishi ulardan biri emas.",
+          "ru": "Модели из урока: интернет-магазин, маркетплейс, подписка, платформа, фримиум и рекламная; заводское производство среди них нет.",
+          "en": "The lesson lists: online shop, marketplace, subscription, platform, freemium and advertising; factory production is not one of them."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Marketpleys asosan oʻz tovarlarini sotib daromad oladi.",
+          "ru": "Маркетплейс зарабатывает главным образом на продаже собственных товаров.",
+          "en": "A marketplace earns money mainly by selling its own goods."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Marketpleys sotuvchilardan komissiya oladi va reklama daromadi bilan ishlaydi; oʻz tovarini esa internet-doʻkon sotadi.",
+          "ru": "Маркетплейс берёт комиссию с продавцов и живёт на рекламе; собственные товары продаёт интернет-магазин.",
+          "en": "A marketplace earns commission from sellers and advertising revenue; selling its own goods is the online shop's model."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "ROAS 3,5 boʻlsa, bu nimani anglatadi?",
+          "ru": "Что означает ROAS 3,5?",
+          "en": "What does a ROAS of 3.5 mean?"
+        },
+        "options": [
+          {
+            "uz": "Reklamaga sarflangan har 1 soʻm 3,5 soʻm tushum keltirdi",
+            "ru": "Каждый сум, потраченный на рекламу, принёс 3,5 сума выручки",
+            "en": "Each soum spent on advertising brought 3.5 soums of revenue"
+          },
+          {
+            "uz": "Har 1 soʻm reklama evaziga 3,5 yangi xaridor keladi",
+            "ru": "На каждый сум рекламы приходится 3,5 нового покупателя",
+            "en": "Each soum of advertising brings 3.5 new customers"
+          },
+          {
+            "uz": "Buyurtmalar soni 3,5 barobar oshdi",
+            "ru": "Число заказов выросло в 3,5 раза",
+            "en": "The number of orders grew 3.5 times"
+          },
+          {
+            "uz": "Kanal konversiyasi 3,5% ga teng",
+            "ru": "Конверсия канала составила 3,5%",
+            "en": "The channel's conversion equals 3.5%"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "ROAS = tushum / reklama xarajati: har bir soʻm reklama 3,5 soʻm tushum keltirdi.",
+          "ru": "ROAS = выручка / затраты на рекламу: 3,5 сума выручки на каждый сум рекламы.",
+          "en": "ROAS = revenue / advertising cost: 3.5 soums of revenue per soum spent on advertising."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Toʻlov, xarid, taksi va bank xizmatlarini bitta ilovada jamlagan ilova qanday ataladi?",
+          "ru": "Как называется приложение, объединяющее оплату, покупки, такси и банкинг в одном приложении?",
+          "en": "What is an app called that combines payments, shopping, taxis and banking in one app?"
+        },
+        "options": [
+          { "uz": "Superilova", "ru": "Суперприложение", "en": "A super app" },
+          { "uz": "Marketpleys", "ru": "Маркетплейс", "en": "A marketplace" },
+          { "uz": "Chatbot", "ru": "Чат-бот", "en": "A chatbot" },
+          { "uz": "CRM tizimi", "ru": "CRM-система", "en": "A CRM system" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi Osiyo tajribasi — WeChat va Grab: toʻlov, xarid, taksi va banking bitta ilovada.",
+          "ru": "Азиатский опыт из урока — WeChat и Grab: оплата, покупки, такси и банкинг в одном приложении.",
+          "en": "The lesson's Asian examples are WeChat and Grab: payments, shopping, taxis and banking in a single app."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Telegram kanaliga reklama uchun 3 000 000 soʻm sarflandi va 200 yangi xaridor keldi. CAC necha soʻm?",
+          "ru": "Реклама в Telegram стоила 3 000 000 сумов и принесла 200 новых покупателей. Чему равен CAC (в сумах)?",
+          "en": "Advertising on Telegram cost 3,000,000 soums and brought 200 new customers. What is the CAC in soums?"
+        },
+        "answers": [15000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "CAC = reklama xarajati / yangi xaridorlar = 3 000 000 / 200 = 15 000 soʻm — darsdagi misolda ham shunday.",
+          "ru": "CAC = затраты на рекламу / новые покупатели = 3 000 000 / 200 = 15 000 сумов — как в примере урока.",
+          "en": "CAC = advertising cost / new customers = 3,000,000 / 200 = 15,000 soums, as in the lesson's example."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Asosiy xizmat bepul, kengaytirilgan imkoniyatlar esa pulliq — bu qanday biznes modeli?",
+          "ru": "Базовый сервис бесплатен, а расширенные возможности — за деньги. Как называется такая бизнес-модель?",
+          "en": "The basic service is free and the extended features cost money. Which business model is this?"
+        },
+        "answers": ["freemium", "Freemium", "фримиум"],
+        "explanation": {
+          "uz": "Freemium: masalan, ofis va bulutli servislar — bepul baza va pullik kengaytirilgan imkoniyatlar.",
+          "ru": "Фримиум: например, офисные и облачные сервисы — бесплатная база и платные расширенные возможности.",
+          "en": "Freemium: for example office and cloud services — a free base plus paid extended features."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Raqamli marketing koʻrsatkichlari va qarorlar haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о показателях цифрового маркетинга и решениях верны?",
+          "en": "Which statements about digital marketing indicators and decisions are correct?"
+        },
+        "options": [
+          {
+            "uz": "Konversiya = buyurtmalar / tashriflar × 100%",
+            "ru": "Конверсия = заказы / посещения × 100%",
+            "en": "Conversion = orders / visits × 100%"
+          },
+          {
+            "uz": "Xulosa uchun tushum emas, foyda muhim: marja past boʻlsa, yuqori ROAS ham zarar boʻlishi mumkin",
+            "ru": "Для решения важна прибыль, а не выручка: при низкой марже даже высокий ROAS может означать убыток",
+            "en": "Decisions rest on profit, not revenue: with a low margin even a high ROAS can mean a loss"
+          },
+          {
+            "uz": "CAC ni LTV bilan solishtirish kerak: CAC < LTV boʻlsa, xaridor jalbi oqilona",
+            "ru": "CAC сравнивают с LTV: привлечение покупателя оправдано, если CAC < LTV",
+            "en": "CAC is compared with LTV: acquiring a customer pays off when CAC < LTV"
+          },
+          {
+            "uz": "Eng koʻp tashrif keltirgan kanal avtomatik ravishda eng samarali hisoblanadi",
+            "ru": "Канал с наибольшим числом посещений автоматически самый эффективный",
+            "en": "The channel with the most visits is automatically the most effective one"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi misolda Google eng koʻp tashrif berdi, ammo CAC eng yuqori va ROAS eng past edi — qaror foydaga asoslanadi, tashrif soniga emas.",
+          "ru": "В примере урока Google дал больше всех посещений, но CAC оказался самым высоким, а ROAS — самым низким: решение принимают по прибыли, а не по числу посещений.",
+          "en": "In the lesson's example Google brought the most visits, yet its CAC was the highest and its ROAS the lowest — decisions follow profit, not the number of visits."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Agar tovar marjasi 20% boʻlsa, ROAS 3,5 boʻlgan kanal zarar ishlaydi.",
+          "ru": "Если маржа товара 20%, то канал с ROAS 3,5 работает в убыток.",
+          "en": "If the product margin is 20%, a channel with ROAS 3.5 works at a loss."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Marja 20% da har bir soʻm reklama 3,5 × 0,2 = 0,7 soʻm foyda keltiradi — xarajat qoplanmaydi.",
+          "ru": "При марже 20% каждый сум рекламы даёт 3,5 × 0,2 = 0,7 сума прибыли — затраты не покрываются.",
+          "en": "With a 20% margin each soum of advertising returns 3.5 × 0.2 = 0.7 soums of profit — the cost is not covered."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Reklama kanallarini solishtirish: koʻrsatkichlar va eng foydali kanal",
+      "ru": "Сравнение рекламных каналов: показатели и самый прибыльный канал",
+      "en": "Comparing ad channels: indicators and the most profitable channel"
+    },
+    "statement": {
+      "uz": "Darsdagi dastur kabi kiritishning har bir qatorida shu tartibda: kanal, tashriflar, buyurtmalar, tushum, reklama xarajati (soʻm). Kanal nomi bitta soʻzdan iborat; boʻsh qatorlar uchraydi va ular oʻtkazib yuboriladi. Har bir kanal qatori uchun darsdagi formatda bitta qator chiqaring: «kanal: conversion P.PP%, average order A, CAC C, ROAS R.RR» — bunda conversion = 100 × buyurtmalar / tashriflar ikki kasr belgisi bilan, average order = tushumni buyurtmalarga boʻlishning butun qismi (pastga yaxlitlanadi), CAC = reklama xarajatini buyurtmalarga boʻlishning butun qismi, ROAS = tushum / reklama ikki kasr belgisi bilan. Soʻng marja 30% deb oling: kanal foydasi = (tushum × 30) ni 100 ga boʻlishning butun qismidan reklama xarajatini ayirish. Barcha kanal qatorlaridan keyin yana bitta qator chiqaring: «best: KANAL» — eng katta foyda bergan kanal; bir nechta kanalning foydasi teng boʻlsa, kiritishda birinchi kelgan tanlanadi. Masalan, «Telegram 8000 200 26000000 3000000» qatoriga «Telegram: conversion 2.50%, average order 130000, CAC 15000, ROAS 8.67» toʻgʻri keladi.",
+      "ru": "Как в программе урока, каждая строка входа содержит: канал, посещения, заказы, выручку, затраты на рекламу (сумы). Название канала — одно слово; пустые строки встречаются и пропускаются. Для каждой строки канала выведите строку в формате урока: «kanal: conversion P.PP%, average order A, CAC C, ROAS R.RR» — conversion = 100 × заказы / посещения с двумя знаками после точки, average order = целочисленное деление выручки на заказы (округление вниз), CAC = целочисленное деление затрат на рекламу на заказы, ROAS = выручка / реклама с двумя знаками после точки. Затем считайте маржу 30%: прибыль канала = целочисленное деление выручки × 30 на 100 минус затраты на рекламу. После всех строк канала выведите ещё одну строку: «best: КАНАЛ» — канал с наибольшей прибылью; при равной прибыли выбирается тот, что встретился во входе раньше. Например, строка «Telegram 8000 200 26000000 3000000» даёт «Telegram: conversion 2.50%, average order 130000, CAC 15000, ROAS 8.67».",
+      "en": "As in the lesson's program, each input line holds: channel, visits, orders, revenue, advertising cost (soums). The channel name is one word; blank lines occur and are skipped. For each channel line print one line in the lesson's format: «channel: conversion P.PP%, average order A, CAC C, ROAS R.RR» — conversion = 100 × orders / visits with two decimal places, average order = revenue divided by orders rounded down to an integer, CAC = advertising cost divided by orders rounded down, ROAS = revenue / advertising with two decimal places. Then assume a 30% margin: the channel's profit = the integer part of revenue × 30 divided by 100, minus the advertising cost. After all the channel lines print one more line: «best: CHANNEL» — the channel with the largest profit; if several channels have equal profit, the one that appears first in the input wins. For example, the line «Telegram 8000 200 26000000 3000000» gives «Telegram: conversion 2.50%, average order 130000, CAC 15000, ROAS 8.67»."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nfor satr in sys.stdin.read().split(\"\\n\"):\n    if not satr.strip():\n        continue\n    kanal, tashrif, buyurtma, tushum, reklama = satr.split()\n    tashrif, buyurtma, tushum, reklama = int(tashrif), int(buyurtma), int(tushum), int(reklama)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        while (in.hasNext()) {\n            String kanal = in.next();\n            long tashrif = in.nextLong(), buyurtma = in.nextLong(), tushum = in.nextLong(), reklama = in.nextLong();\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string kanal;\n    long long tashrif, buyurtma, tushum, reklama;\n    while (cin >> kanal >> tashrif >> buyurtma >> tushum >> reklama) {\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nbest_kanal = \"\"\nbest_foyda = None\n\nfor satr in sys.stdin.read().split(\"\\n\"):\n    if not satr.strip():\n        continue\n    kanal, tashrif, buyurtma, tushum, reklama = satr.split()\n    tashrif, buyurtma, tushum, reklama = int(tashrif), int(buyurtma), int(tushum), int(reklama)\n    konversiya = 100 * buyurtma / tashrif\n    chek = tushum // buyurtma\n    cac = reklama // buyurtma\n    roas = tushum / reklama\n    foyda = tushum * 30 // 100 - reklama\n    if best_foyda is None or foyda > best_foyda:\n        best_foyda = foyda\n        best_kanal = kanal\n    print(f\"{kanal}: conversion {konversiya:.2f}%, average order {chek}, CAC {cac}, ROAS {roas:.2f}\")\n\nprint(f\"best: {best_kanal}\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String bestKanal = \"\";\n        long bestFoyda = Long.MIN_VALUE;\n        while (in.hasNext()) {\n            String kanal = in.next();\n            long tashrif = in.nextLong(), buyurtma = in.nextLong(), tushum = in.nextLong(), reklama = in.nextLong();\n            double konversiya = 100.0 * buyurtma / tashrif;\n            long chek = tushum / buyurtma;\n            long cac = reklama / buyurtma;\n            double roas = (double) tushum / reklama;\n            long foyda = tushum * 30 / 100 - reklama;\n            if (foyda > bestFoyda) {\n                bestFoyda = foyda;\n                bestKanal = kanal;\n            }\n            System.out.println(String.format(\"%s: conversion %.2f%%, average order %d, CAC %d, ROAS %.2f\", kanal, konversiya, chek, cac, roas));\n        }\n        System.out.println(\"best: \" + bestKanal);\n    }\n}\n",
+        "cpp": "#include <climits>\n#include <cstdio>\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string kanal;\n    long long tashrif, buyurtma, tushum, reklama;\n    string bestKanal = \"\";\n    long long bestFoyda = LLONG_MIN;\n    while (cin >> kanal >> tashrif >> buyurtma >> tushum >> reklama) {\n        double konversiya = 100.0 * buyurtma / tashrif;\n        long long chek = tushum / buyurtma;\n        long long cac = reklama / buyurtma;\n        double roas = (double) tushum / reklama;\n        long long foyda = tushum * 30 / 100 - reklama;\n        if (foyda > bestFoyda) {\n            bestFoyda = foyda;\n            bestKanal = kanal;\n        }\n        printf(\"%s: conversion %.2f%%, average order %lld, CAC %lld, ROAS %.2f\\n\", kanal.c_str(), konversiya, chek, cac, roas);\n    }\n    printf(\"best: %s\\n\", bestKanal.c_str());\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "Instagram 12000 240 36000000 6000000\nTelegram 8000 200 26000000 3000000\nGoogle 15000 180 31500000 9000000\n",
+          "expected": "Instagram: conversion 2.00%, average order 150000, CAC 25000, ROAS 6.00\nTelegram: conversion 2.50%, average order 130000, CAC 15000, ROAS 8.67\nGoogle: conversion 1.20%, average order 175000, CAC 50000, ROAS 3.50\nbest: Instagram",
+          "hidden": false
+        },
+        {
+          "input": "Email 500 50 2500000 500000\n",
+          "expected": "Email: conversion 10.00%, average order 50000, CAC 10000, ROAS 5.00\nbest: Email",
+          "hidden": false
+        },
+        {
+          "input": "Facebook 20000 100 1700000 1500000\n\nTikTok 9000 300 4500000 1000000\nSms 1000 10 300000 400000\n",
+          "expected": "Facebook: conversion 0.50%, average order 17000, CAC 15000, ROAS 1.13\nTikTok: conversion 3.33%, average order 15000, CAC 3333, ROAS 4.50\nSms: conversion 1.00%, average order 30000, CAC 40000, ROAS 0.75\nbest: TikTok",
+          "hidden": true
+        },
+        {
+          "input": "A 100 10 100000 50000\nB 200 20 200000 100000\n",
+          "expected": "A: conversion 10.00%, average order 10000, CAC 5000, ROAS 2.00\nB: conversion 10.00%, average order 10000, CAC 5000, ROAS 2.00\nbest: A",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

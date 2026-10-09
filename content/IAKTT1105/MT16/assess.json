@@ -1,0 +1,410 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Avtomatlashtirilgan (automated) va avtomatik (automatic) tizimlarning asosiy farqi nima?",
+          "ru": "В чем главное отличие автоматизированной системы от автоматической?",
+          "en": "What is the main difference between an automated and an automatic system?"
+        },
+        "options": [
+          {
+            "uz": "Avtomatlashtirilganda qarorni odam qabul qiladi, avtomatikda esa jarayon odam aralashuvisiz oʻtadi",
+            "ru": "В автоматизированной решение принимает человек, в автоматической процесс идет без участия человека",
+            "en": "In an automated one a person makes the decision, in an automatic one the process runs without human intervention"
+          },
+          {
+            "uz": "Avtomatik tizim kompyutersiz ishlaydi",
+            "ru": "Автоматическая система работает без компьютера",
+            "en": "An automatic system works without a computer"
+          },
+          {
+            "uz": "Avtomatlashtirilgan tizim faqat faktografik maʼlumotlar bilan ishlaydi",
+            "ru": "Автоматизированная система работает только с фактографическими данными",
+            "en": "An automated system only works with factual data"
+          },
+          {
+            "uz": "Avtomatik tizimda maʼlumotlar bulutda saqlanadi",
+            "ru": "В автоматической системе данные хранятся в облаке",
+            "en": "In an automatic system data is stored in the cloud"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Avtomatlashtirilgan tizimda odam va kompyuter birgalikda ishlaydi, ammo qaror odamda qoladi. Avtomatik tizimda esa odam aralashuvi yoʻq.",
+          "ru": "В автоматизированной системе человек и компьютер работают вместе, но решение за человеком. В автоматической участие человека не требуется.",
+          "en": "In an automated system, a person and a computer work together, but the decision remains with the person. In an automatic system, there is no human intervention."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Fayl-server arxitekturasida barcha maʼlumotlar serverda qayta ishlanib, mijozga faqat natija yuboriladi.",
+          "ru": "В архитектуре файл-сервер все данные обрабатываются на сервере, а клиенту отправляется только результат.",
+          "en": "In a file-server architecture, all data is processed on the server and only the result is sent to the client."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Fayl-serverda qayta ishlash har bir kompyuterda bajariladi. Serverda qayta ishlaydigan tizim bu mijoz-server arxitekturasidir.",
+          "ru": "В архитектуре файл-сервер обработка идет на каждом компьютере. Обработка на сервере происходит в клиент-серверной архитектуре.",
+          "en": "In a file-server, processing is done on each computer. The system that processes on the server is the client-server architecture."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi tizimlar axborot-qidiruv (information retrieval) tizimlariga misol boʻla oladi?",
+          "ru": "Какие системы являются примерами информационно-поисковых систем?",
+          "en": "Which systems are examples of information retrieval systems?"
+        },
+        "options": [
+          {
+            "uz": "Lex.uz qonunchilik bazasi",
+            "ru": "База законодательства Lex.uz",
+            "en": "The Lex.uz legislation database"
+          },
+          {
+            "uz": "Kutubxona katalogi",
+            "ru": "Библиотечный каталог",
+            "en": "A library catalogue"
+          },
+          {
+            "uz": "Ish haqini hisoblash tizimi",
+            "ru": "Система расчета зарплаты",
+            "en": "A payroll calculation system"
+          },
+          {
+            "uz": "Birjadagi algoritmik savdo",
+            "ru": "Алгоритмическая торговля на бирже",
+            "en": "Algorithmic trading on an exchange"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Lex.uz va kutubxona kataloglari hisob-kitob bajarmasdan faqat maʼlumot qidirib beruvchi tizimlardir.",
+          "ru": "Lex.uz и библиотечные каталоги предназначены только для поиска информации без выполнения расчетов.",
+          "en": "Lex.uz and library catalogues are systems designed only for finding information without performing calculations."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tizimlarni masshtabi boʻyicha tasniflashda butun tashkilot va uning filiallarini qamrab oladigan tizim qanday ataladi?",
+          "ru": "Как называется система в классификации по масштабу, охватывающая всю организацию с филиалами?",
+          "en": "In the classification by scale, what is a system covering the whole organization and its branches called?"
+        },
+        "options": [
+          {
+            "uz": "Guruh",
+            "ru": "Групповая",
+            "en": "Group"
+          },
+          {
+            "uz": "Korporativ",
+            "ru": "Корпоративная",
+            "en": "Corporate"
+          },
+          {
+            "uz": "Tarmoqlararo",
+            "ru": "Межотраслевая",
+            "en": "Inter-sectoral"
+          },
+          {
+            "uz": "Global",
+            "ru": "Глобальная",
+            "en": "Global"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Butun tashkilot va uning filiallarini qamrab oluvchi tizim (masalan, ERP) korporativ deb ataladi.",
+          "ru": "Система, охватывающая всю организацию и её филиалы (например, ERP), называется корпоративной.",
+          "en": "A system that covers the whole organization and its branches (e.g., ERP) is called corporate."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Bulutli (SaaS) tizimlarni shunchaki \"Internetdagi sayt\" deb atash toʻgʻri, chunki ularda maʼlumot xavfsizligi masalalari boʻlmaydi.",
+          "ru": "Облачные (SaaS) системы правильно называть просто \"сайтом в Интернете\", так как в них нет вопросов безопасности данных.",
+          "en": "It is correct to call cloud (SaaS) systems simply \"a website on the Internet\" because they do not involve data security issues."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bulutli tizimlar ancha murakkab boʻlib, ularda maʼlumot joylashuvi, SLA va xavfsizlik kabi muhim masalalar mavjud.",
+          "ru": "Облачные системы сложнее, в них всегда присутствуют важные вопросы размещения данных, SLA и безопасности.",
+          "en": "Cloud systems are more complex and involve important issues like data location, SLA and security."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Odam va kompyuter birgalikda ishlaydigan, ammo qarorni odam qabul qiladigan tizim qanday darajadagi avtomatlashtirishga kiradi?",
+          "ru": "К какой степени автоматизации относится система, где человек и компьютер работают вместе, но решение принимает человек?",
+          "en": "What level of automation does a system belong to where a person and a computer work together, but the person makes the decision?"
+        },
+        "answers": [
+          "Avtomatlashtirilgan",
+          "avtomatlashtirilgan",
+          "Автоматизированные",
+          "Автоматизированная",
+          "автоматизированные",
+          "автоматизированная",
+          "Automated",
+          "automated"
+        ],
+        "explanation": {
+          "uz": "Bunday tizimlar avtomatlashtirilgan deb ataladi. Masalan, iqtisodiyotdagi koʻplab buxgalteriya yoki CRM tizimlari.",
+          "ru": "Такие системы называются автоматизированными. Например, большинство бухгалтерских или CRM систем в экономике.",
+          "en": "Such systems are called automated. For example, most accounting or CRM systems in the economy."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Axborot-hal qiluvchi (information processing) tizimlar qanday kichik turlarga boʻlinadi?",
+          "ru": "На какие подтипы делятся информационно-решающие системы?",
+          "en": "What subtypes are information processing systems divided into?"
+        },
+        "options": [
+          {
+            "uz": "Boshqaruv (managerial)",
+            "ru": "Управляющие (managerial)",
+            "en": "Managerial"
+          },
+          {
+            "uz": "Maslahat beruvchi (advisory)",
+            "ru": "Советующие (advisory)",
+            "en": "Advisory"
+          },
+          {
+            "uz": "Qidiruv (retrieval)",
+            "ru": "Поисковые (retrieval)",
+            "en": "Retrieval"
+          },
+          {
+            "uz": "Hujjatli (documentary)",
+            "ru": "Документальные (documentary)",
+            "en": "Documentary"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Darsda yozilganidek, axborot-hal qiluvchi tizimlar boshqaruv qarorlari uchun natija beruvchi yoki qaror qabul qilishda maslahat beruvchi turlarga boʻlinadi.",
+          "ru": "Как указано в занятии, информационно-решающие системы делятся на управляющие и советующие.",
+          "en": "As mentioned in the lesson, information processing systems are divided into managerial and advisory."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bitta tizimni tasniflash haqida qaysi fikr toʻgʻri?",
+          "ru": "Какое утверждение о классификации одной системы верно?",
+          "en": "Which statement about classifying a single system is correct?"
+        },
+        "options": [
+          {
+            "uz": "Har bir tizim faqat bitta sinfga tegishli boʻlishi mumkin",
+            "ru": "Каждая система может относиться только к одному классу",
+            "en": "Each system can belong to only one class"
+          },
+          {
+            "uz": "Tizim vaqt oʻtishi bilan oʻz sinfini oʻzgartira olmaydi",
+            "ru": "Система не может изменить свой класс со временем",
+            "en": "A system cannot change its class over time"
+          },
+          {
+            "uz": "Tasniflash koʻp oʻlchovli boʻlib, tizim bir vaqtning oʻzida bir nechta belgilar boʻyicha tasniflanadi",
+            "ru": "Классификация многомерна, и система классифицируется сразу по нескольким признакам",
+            "en": "Classification is multidimensional, and a system is classified by several characteristics at once"
+          },
+          {
+            "uz": "Tizimning pasporti faqat uning avtomatlashtirish darajasini koʻrsatadi",
+            "ru": "Паспорт системы показывает только её степень автоматизации",
+            "en": "The system's passport only shows its level of automation"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Tasniflash koʻp oʻlchovli: bitta tizim ham arxitekturasi, ham masshtabi, ham sohasi va boshqa belgilari boʻyicha tavsiflanadi.",
+          "ru": "Классификация многомерна: одна система описывается по архитектуре, масштабу, сфере применения и другим признакам.",
+          "en": "Classification is multidimensional: one system is described by architecture, scale, field of application, and other characteristics."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tasniflash jadvalida arxitektura boʻyicha nechta tur keltirilgan?",
+          "ru": "Сколько видов по архитектуре приведено в таблице классификации?",
+          "en": "How many types by architecture are listed in the classification table?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Jadvalda 5 ta arxitektura turi mavjud: lokal, fayl-server, mijoz-server, koʻp qatlamli, bulutli.",
+          "ru": "В таблице представлено 5 видов архитектуры: локальные, файл-сервер, клиент-сервер, многоуровневые, облачные.",
+          "en": "There are 5 architecture types in the table: local, file-server, client-server, multi-tier, and cloud."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Tizimlarni amaliy tasniflash",
+      "ru": "Практическая классификация систем",
+      "en": "Practical classification of systems"
+    },
+    "statement": {
+      "uz": "Oʻrganilgan bilimlarni mustahkamlash uchun tizimlarni turli belgilar boʻyicha tasniflashga doir savollarga javob bering.",
+      "ru": "Для закрепления изученных знаний ответьте на вопросы по классификации систем по различным признакам.",
+      "en": "To consolidate the learned knowledge, answer the questions about the classification of systems by various characteristics."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Lex.uz tizimi qayta ishlash xususiyati boʻyicha qaysi turga kiradi?",
+            "ru": "К какому виду по характеру обработки относится система Lex.uz?",
+            "en": "Which type by nature of processing does the Lex.uz system belong to?"
+          },
+          "options": [
+            {
+              "uz": "Axborot-hal qiluvchi (boshqaruv)",
+              "ru": "Информационно-решающая (управляющая)",
+              "en": "Information processing: managerial"
+            },
+            {
+              "uz": "Axborot-hal qiluvchi (maslahat beruvchi)",
+              "ru": "Информационно-решающая (советующая)",
+              "en": "Information processing: advisory"
+            },
+            {
+              "uz": "Axborot-qidiruv",
+              "ru": "Информационно-поисковая",
+              "en": "Information retrieval"
+            }
+          ],
+          "correct": [2],
+          "explanation": {
+            "uz": "Lex.uz maʼlumotni topish va berish uchun moʻljallangan boʻlib, u hisob-kitob bajarmaydi.",
+            "ru": "Lex.uz предназначена для поиска и выдачи информации, она не выполняет расчетов.",
+            "en": "Lex.uz is designed for finding and providing information, it does not perform calculations."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Lokal arxitekturaga ega tizimda bir nechta foydalanuvchilar bir vaqtning oʻzida hamkorlikda ishlay oladilar.",
+            "ru": "В системе с локальной архитектурой несколько пользователей могут работать совместно одновременно.",
+            "en": "In a system with local architecture, several users can work collaboratively at the same time."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Lokal arxitekturada dastur va maʼlumot bitta kompyuterda boʻladi, shuning uchun hamkorlikda ishlash imkoni yoʻq.",
+            "ru": "В локальной архитектуре программа и данные находятся на одном компьютере, поэтому совместной работы нет.",
+            "en": "In local architecture, the program and data are on one computer, so there is no collaboration."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Yagona interaktiv davlat xizmatlari portali (my.gov.uz) qaysi sinflarga tegishli?",
+            "ru": "К каким классам относится единый портал интерактивных государственных услуг (my.gov.uz)?",
+            "en": "Which classes does the single interactive public services portal (my.gov.uz) belong to?"
+          },
+          "options": [
+            {
+              "uz": "Operatsion boshqaruv darajasi",
+              "ru": "Операционный уровень управления",
+              "en": "Operational level of management"
+            },
+            {
+              "uz": "Global masshtab",
+              "ru": "Глобальный масштаб",
+              "en": "Global scale"
+            },
+            {
+              "uz": "Koʻp qatlamli arxitektura",
+              "ru": "Многоуровневая архитектура",
+              "en": "Multi-tier architecture"
+            },
+            {
+              "uz": "Faqat hujjatli maʼlumot turi",
+              "ru": "Только документальный вид данных",
+              "en": "Only documentary type of data"
+            }
+          ],
+          "correct": [0, 2],
+          "explanation": {
+            "uz": "Portal operatsion darajada va koʻp qatlamli arxitekturaga ega. Uning masshtabi davlat, maʼlumot turi esa ham faktografik, ham hujjatlidir.",
+            "ru": "Портал работает на операционном уровне и имеет многоуровневую архитектуру. Его масштаб — государственный, а данные — и фактографические, и документальные.",
+            "en": "The portal is at the operational level and has a multi-tier architecture. Its scale is national, and its data type is both factual and documentary."
+          }
+        }
+      ]
+    }
+  }
+}

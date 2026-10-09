@@ -1,0 +1,472 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Xatdagi havolaning haqiqiy manzilini xavfsiz qanday bilish mumkin?",
+          "ru": "Как безопасно узнать настоящий адрес ссылки в письме?",
+          "en": "How can you safely find out the real address of a link in an email?"
+        },
+        "options": [
+          {
+            "uz": "Sichqonchani havola ustida ushlab (bosmasdan) manzilni koʻrish va domenni oʻngdan oʻqish",
+            "ru": "Навести курсор на ссылку (не нажимая), посмотреть адрес и прочитать домен справа",
+            "en": "Hover over the link (without clicking), look at the address and read the domain from the right"
+          },
+          {
+            "uz": "Havolani tez ochib, sahifaga qarab tekshirish",
+            "ru": "Быстро открыть ссылку и проверить, глядя на страницу",
+            "en": "Open the link quickly and check by looking at the page"
+          },
+          {
+            "uz": "Havola matniga ishonish — u doim haqiqiy manzilni koʻrsatadi",
+            "ru": "Доверять тексту ссылки — он всегда показывает настоящий адрес",
+            "en": "Trust the link text — it always shows the real address"
+          },
+          {
+            "uz": "Havolani doʻstga yuborib, uning ochib koʻrishini soʻrash",
+            "ru": "Отправить ссылку другу и попросить его открыть и проверить",
+            "en": "Send the link to a friend and ask them to open and check it"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars qoidasi: sichqonchani havola ustida bosmasdan ushlab haqiqiy manzilni koʻrish, domenni oʻngdan oʻqish.",
+          "ru": "Правило из занятия: держать курсор на ссылке без нажатия, смотреть настоящий адрес и читать домен справа.",
+          "en": "The lesson's rule: hold the cursor over the link without clicking, see the real address and read the domain from the right."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Zamonaviy fishing xatlarida imlo xatolari boʻlmasligi va logotip toʻgʻri boʻlishi mumkin.",
+          "ru": "Современные фишинговые письма могут быть без орфографических ошибок и с верным логотипом.",
+          "en": "Modern phishing emails can be free of spelling mistakes and carry the correct logo."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda til va dizayn belgisida: xatolar yoki notoʻgʻri logotip boʻlishi mumkin, lekin zamonaviy fishing xatolarsiz ham boʻladi.",
+          "ru": "В занятии о признаке «язык и оформление»: ошибки и неверный логотип возможны, но современный фишинг бывает и без ошибок.",
+          "en": "In the lesson's language-and-design sign: mistakes or a wrong logo may appear, but modern phishing can also be error-free."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Fishing xatining dars jadvalida keltirilgan belgilari qaysilar?",
+          "ru": "Какие из перечисленного — признаки фишингового письма из таблицы занятия?",
+          "en": "Which of these are signs of a phishing email from the lesson's table?"
+        },
+        "options": [
+          {
+            "uz": "Yuboruvchining toʻliq manzilidagi domen koʻrinadigan nomga mos emas: bank.uz oʻrniga bank-uz.support.com",
+            "ru": "Домен в полном адресе отправителя не соответствует отображаемому имени: вместо bank.uz — bank-uz.support.com",
+            "en": "The domain in the sender's full address does not match the display name: bank-uz.support.com instead of bank.uz"
+          },
+          {
+            "uz": "Shoshilinchlik va qoʻrquv: \"24 soat ichida\", \"hisobingiz bloklanadi\", \"jarima\"",
+            "ru": "Срочность и страх: «в течение 24 часов», «ваш счёт будет заблокирован», «штраф»",
+            "en": "Urgency and fear: \"within 24 hours\", \"your account will be blocked\", \"a fine\""
+          },
+          {
+            "uz": "Ikki kengaytmali ilova: hisob-faktura.pdf.exe kabi fayl",
+            "ru": "Вложение с двойным расширением: файл вроде «счёт-фактура.pdf.exe»",
+            "en": "An attachment with a double extension: a file like invoice.pdf.exe"
+          },
+          {
+            "uz": "Xat organizatsiyaning oʻz pochta roʻyxatiga yuborilgan va unda parol yoki SMS kod soʻralmagan",
+            "ru": "Письмо отправлено на собственный список рассылки организации, и в нём не просят пароль или SMS-код",
+            "en": "The email is addressed to the organization's own mailing list and does not ask for a password or an SMS code"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadval belgilari: yuboruvchi domeni, havola, shoshilinchlik, gʻayrioddiy soʻrov, shubhali ilova, til va dizayn. Rasmiy roʻyxatga yozilgan, soʻrovsiz xat esa bu belgilar roʻyxatida yoʻq.",
+          "ru": "Признаки из таблицы: домен отправителя, ссылка, срочность, необычная просьба, подозрительное вложение, язык и оформление. Письма на собственный список рассылки без просьб в этом перечне нет.",
+          "en": "The table lists the sender's domain, the link, urgency, an unusual request, a suspicious attachment, language and design. An email to the official list with no request is not in that set."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yuboruvchi manzili online-bank.uz.security-check.com koʻrinishida boʻlsa, darsdagi maslahatga koʻra haqiqiy domen qaysi?",
+          "ru": "Если адрес отправителя выглядит как online-bank.uz.security-check.com, какой домен настоящий по совету из занятия?",
+          "en": "If the sender's address looks like online-bank.uz.security-check.com, which domain is the real one by the lesson's advice?"
+        },
+        "options": [
+          {
+            "uz": "security-check.com",
+            "ru": "security-check.com",
+            "en": "security-check.com"
+          },
+          {
+            "uz": "online-bank.uz",
+            "ru": "online-bank.uz",
+            "en": "online-bank.uz"
+          },
+          {
+            "uz": "bank.uz",
+            "ru": "bank.uz",
+            "en": "bank.uz"
+          },
+          {
+            "uz": "online-bank.uz.security",
+            "ru": "online-bank.uz.security",
+            "en": "online-bank.uz.security"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda domenni oʻngdan oʻqish aytilgan: dars misolida example.uz.evil.com haqiqatda evil.com; bu yerda ham oxirgi ikki qism — security-check.com.",
+          "ru": "В занятии сказано читать домен справа: в примере занятия example.uz.evil.com — это на самом деле evil.com; здесь тоже правы последние две части — security-check.com.",
+          "en": "The lesson says to read the domain from the right: in its example example.uz.evil.com is really evil.com, so here too the last two parts win — security-check.com."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Dars tavsiya qilgan oylik xabardorlik treningi eng koʻpi bilan necha daqiqa davom etadi?",
+          "ru": "Сколько минут максимум длится рекомендованная занятием ежемесячная тренировка по осведомлённости?",
+          "en": "At most how many minutes long is the monthly awareness training the lesson recommends?"
+        },
+        "answers": [10],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda yiliga bir marta uzun maʼruza emas, har oy 5–10 daqiqalik real misollar tavsiya etilgan — eng koʻpi 10 daqiqa.",
+          "ru": "В занятии рекомендуют не длинную лекцию раз в год, а ежемесячные реальные примеры по 5–10 минут — максимум 10 минут.",
+          "en": "The lesson recommends not a long lecture once a year but monthly real examples of 5–10 minutes — 10 minutes at most."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda potensial keraksiz ilovalar uchun qaysi qisqartma ishlatilgan?",
+          "ru": "Какая аббревиатура используется в занятии для потенциально нежелательных приложений?",
+          "en": "Which abbreviation does the lesson use for potentially unwanted applications?"
+        },
+        "answers": ["PUA", "pua"],
+        "explanation": {
+          "uz": "Amaliy ishning 2-qadamida ESET oʻrnatayotganda LiveGrid va potensial keraksiz ilovalarni (PUA) aniqlash yoqiladi.",
+          "ru": "В шаге 2 практической работы при установке ESET включаются LiveGrid и обнаружение потенциально нежелательных приложений (PUA).",
+          "en": "Step 2 of the practical work says that installing ESET enables LiveGrid and the detection of potentially unwanted applications (PUA)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "ESET modullari haqida dars jadvaliga koʻra qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о модулях ESET верны по таблице занятия?",
+          "en": "Which statements about the ESET modules are correct according to the lesson's table?"
+        },
+        "options": [
+          {
+            "uz": "Ransomware Shield fayllarni ommaviy shifrlash xatti-harakatini aniqlaydi",
+            "ru": "Ransomware Shield обнаруживает поведение массового шифрования файлов",
+            "en": "Ransomware Shield detects the behaviour of mass file encryption"
+          },
+          {
+            "uz": "LiveGrid — bulut reputatsiya tizimi, yangi fayllar haqida tez maʼlumot beradi",
+            "ru": "LiveGrid — облачная система репутации, дающая быстрые сведения о новых файлах",
+            "en": "LiveGrid is a cloud reputation system giving fast information about new files"
+          },
+          {
+            "uz": "Qurilma nazorati USB va boshqa tashuvchilardan foydalanish qoidalarini belgilaydi",
+            "ru": "Контроль устройств задаёт правила использования USB и других носителей",
+            "en": "Device control sets the rules for using USB and other media"
+          },
+          {
+            "uz": "Anti-Phishing karantinda saqlangan fayllarni avtomatik oʻchirib tashlaydi",
+            "ru": "Anti-Phishing автоматически удаляет файлы, помещённые в карантин",
+            "en": "Anti-Phishing automatically deletes the files stored in quarantine"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalda Anti-Phishing maʼlum fishing va soxta saytlarni brauzerda bloklaydi, karantin bilan bogʻliq vazifa unga berilmagan.",
+          "ru": "В таблице Anti-Phishing блокирует известные фишинговые и поддельные сайты в браузере; задачи, связанные с карантином, ему не приписаны.",
+          "en": "In the table Anti-Phishing blocks known phishing and fake sites in the browser; no quarantine job is assigned to it."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "ESET oʻrnatilganda Windows Defender ESET bilan birga real vaqt rejimida faol ishlashda davom etadi.",
+          "ru": "После установки ESET Windows Defender продолжает активно работать в реальном времени вместе с ESET.",
+          "en": "After ESET is installed, Windows Defender keeps running actively in real time alongside ESET."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: Windows Defender ESET oʻrnatilganda avtomatik passiv rejimga oʻtadi; ikki faol antivirus — ziddiyat va sekinlashuv, bu keng tarqalgan xato.",
+          "ru": "В занятии: при установке ESET Windows Defender автоматически переходит в пассивный режим; два активных антивируса — это конфликты и замедление, частая ошибка.",
+          "en": "The lesson says Windows Defender switches to passive mode automatically when ESET is installed; two active antiviruses mean conflicts and slowdowns, a common mistake."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ruxsat etilgan fishing simulyatsiyalarining asosiy maqsadi nima?",
+          "ru": "Какова главная цель разрешённых фишинговых симуляций?",
+          "en": "What is the main goal of authorized phishing simulations?"
+        },
+        "options": [
+          {
+            "uz": "Xodimlarni oʻrgatish — jazolash va kamsitish emas",
+            "ru": "Обучить сотрудников — не наказать и не унизить их",
+            "en": "To teach staff — not to punish or humiliate them"
+          },
+          {
+            "uz": "Qaysi xodimlarga ishonib boʻlmasligini aniqlash",
+            "ru": "Выяснить, каким сотрудникам нельзя доверять",
+            "en": "To find out which staff members cannot be trusted"
+          },
+          {
+            "uz": "Xodimlarni qoʻrqitib, koʻproq ehtiyot boʻlishga majbur qilish",
+            "ru": "Испугать сотрудников, чтобы они были осторожнее",
+            "en": "To scare staff into being more careful"
+          },
+          {
+            "uz": "Antivirus bazalarini yangilash uchun sabab yaratish",
+            "ru": "Создать повод обновить антивирусные базы",
+            "en": "To create a reason to update the antivirus databases"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda simulyatsiyalar rahbariyat va huquqiy xizmat roziligi bilan, xodimlarni kamsitmasdan oʻtkaziladi va maqsad — oʻrgatish, jazolash emas; jazolash ishonchni buzadi va xabar berishni kamaytiradi.",
+          "ru": "В занятии симуляции проводятся с согласия руководства и юридической службы, без унижения сотрудников; цель — обучать, а не наказывать; наказание разрушает доверие и снижает число сообщений.",
+          "en": "The lesson runs simulations with the consent of management and legal, without humiliating staff; the goal is to teach, not to punish — punishing destroys trust and lowers reporting."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Xat va tizimni xavfsiz tekshirish qarorlari",
+      "ru": "Решения по безопасной проверке письма и системы",
+      "en": "Decisions for safely checking a message and the system"
+    },
+    "statement": {
+      "uz": "Bu mashq — dars boʻyicha qarorlarni mashq qilish: shubhali xat bilan nima qilish, xabardorlik dasturining tarkibi, ESET oʻrnatish va uning kengroq versiyalari hamda \"buzilgan\" antivirus xavfi. Har bir savolga faqat dars matniga tayanib javob bering.",
+      "ru": "Эта практика — тренировка решений по занятию: что делать с подозрительным письмом, состав программы осведомлённости, установка ESET и её расширенные версии, а также опасность «взломанного» антивируса. Отвечайте, опираясь только на текст занятия.",
+      "en": "This practice trains decisions from the lesson: what to do with a suspicious email, the content of an awareness programme, installing ESET and its broader editions, and the danger of a \"cracked\" antivirus. Answer using only the lesson text."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Shubhali havola bilan xat olganingizda toʻgʻri harakat qanday?",
+            "ru": "Что правильно сделать, получив письмо со подозрительной ссылкой?",
+            "en": "What is the right action when you receive an email with a suspicious link?"
+          },
+          "options": [
+            {
+              "uz": "Havolani ochmasdan, fishing haqida xabar berish",
+              "ru": "Не открывать ссылку, а сообщить о фишинге",
+              "en": "Do not open the link — report the phishing"
+            },
+            {
+              "uz": "Havolani ochib, antivirus reaksiyasini tekshirish",
+              "ru": "Открыть ссылку и проверить реакцию антивируса",
+              "en": "Open the link and see how the antivirus reacts"
+            },
+            {
+              "uz": "Havolani \"tekshirish uchun\" yangi oynada ochish",
+              "ru": "Открыть ссылку в новом окне, чтобы «проверить»",
+              "en": "Open the link in a new window \"to check it\""
+            },
+            {
+              "uz": "Havola manzilini doʻstga yuborib ochishini soʻrash",
+              "ru": "Отправить адрес ссылки другу и попросить его открыть",
+              "en": "Send the link address to a friend and ask them to open it"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsdagi xatolar roʻyxati: xatdagi havolani \"tekshirish uchun\" ochish — xato; shubhali havolani ochmang, xabar bering.",
+            "ru": "Список ошибок из занятия: открывать ссылку из письма, «чтобы проверить», — ошибка; не открывайте подозрительную ссылку, сообщайте о ней.",
+            "en": "The lesson's mistake list: opening a link in an email \"to check it\" is wrong — do not open a suspicious link, report it."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsda tashkilot xabardorlik dasturiga nimalar kiritilgan?",
+            "ru": "Что входит в программу осведомлённости организации по занятию?",
+            "en": "What does the lesson include in an organization's awareness programme?"
+          },
+          "options": [
+            {
+              "uz": "Har oy 5–10 daqiqalik, real misollarga asoslangan qisqa treninglar",
+              "ru": "Короткие регулярные тренинги: ежемесячные реальные примеры по 5–10 минут",
+              "en": "Short regular training: monthly real examples of 5–10 minutes"
+            },
+            {
+              "uz": "Rahbariyat va huquqiy xizmat roziligi bilan oʻtkaziladigan fishing simulyatsiyalari",
+              "ru": "Фишинговые симуляции, разрешённые руководством и юридической службой",
+              "en": "Phishing simulations authorized by management and the legal department"
+            },
+            {
+              "uz": "Pochta dasturida \"fishing haqida xabar berish\" tugmasi va aniq aloqa raqami",
+              "ru": "Кнопка «сообщить о фишинге» в почтовом клиенте и понятный контактный номер",
+              "en": "A \"report phishing\" button in the mail client and a clear contact number"
+            },
+            {
+              "uz": "Yiliga bir marta oʻtkaziladigan uzun maʼruza va shu bilan tugaydigan oʻqitish",
+              "ru": "Одна длинная лекция в год, на этом обучение заканчивается",
+              "en": "One long lecture a year, after which the teaching stops"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Dars: yiliga bir marta uzun maʼruza emas, qisqa va muntazam treninglar; simulyatsiyalar ruxsat etilgan va kamsitmasdan; xabar berish oson boʻlishi kerak.",
+            "ru": "В занятии: не длинная лекция раз в год, а короткие регулярные тренинги; симуляции разрешённые и без унижения; сообщение должно быть простым.",
+            "en": "The lesson: not a long lecture once a year but short regular training; simulations are authorized and non-humiliating; reporting must be easy."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "ESET ni oʻrnatayotganda LiveGrid va potensial keraksiz ilovalarni (PUA) aniqlashni yoqish tavsiya etiladi.",
+            "ru": "При установке ESET рекомендуется включить LiveGrid и обнаружение потенциально нежелательных приложений (PUA).",
+            "en": "When installing ESET, the lesson advises enabling LiveGrid and the detection of potentially unwanted applications (PUA)."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Amaliy ishning 2-qadami: trial versiyasi faqat rasmiy saytdan yuklab olinadi va oʻrnatishda LiveGrid hamda PUA aniqlash yoqiladi.",
+            "ru": "Шаг 2 практической работы: пробную версию скачивают только с официального сайта, при установке включают LiveGrid и обнаружение PUA.",
+            "en": "Step 2 of the practical work: the trial version is downloaded only from the official website, and installation enables LiveGrid and PUA detection."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "HARD",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsga koʻra, NOD32 dan tashqari kengroq ESET versiyalari (Internet Security, Smart Security Premium) nimani oʻz ichiga oladi?",
+            "ru": "Что, согласно занятию, входит в расширенные версии ESET кроме NOD32 (Internet Security, Smart Security Premium)?",
+            "en": "According to the lesson, what do the broader ESET editions (Internet Security, Smart Security Premium) include beyond NOD32?"
+          },
+          "options": [
+            {
+              "uz": "Devor (firewall)",
+              "ru": "Межсетевой экран (файрвол)",
+              "en": "A firewall"
+            },
+            {
+              "uz": "Bank toʻlovlarini himoyalash",
+              "ru": "Защита банковских платежей",
+              "en": "Protection of banking payments"
+            },
+            {
+              "uz": "Parol menejeri",
+              "ru": "Менеджер паролей",
+              "en": "A password manager"
+            },
+            {
+              "uz": "Har bir versiyaga kiritilgan ESET PROTECT markaziy konsoli",
+              "ru": "Центральная консоль ESET PROTECT, входящая в каждую версию",
+              "en": "The ESET PROTECT central console included in every edition"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Darsda kengroq versiyalar devor, bank toʻlovlarini himoyalash va parol menejerini qoʻshadi deyilgan; ESET PROTECT esa korporativ versiyani boshqaradi.",
+            "ru": "В занятии расширенные версии добавляют межсетевой экран, защиту банковских платежей и менеджер паролей; ESET PROTECT управляет корпоративной версией.",
+            "en": "The lesson says the broader editions add a firewall, banking payment protection and a password manager; ESET PROTECT manages the corporate edition."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 1,
+          "prompt": {
+            "uz": "Norasmiy \"kalit\" yoki \"buzilgan\" antivirus oʻzi zararli dastur manbai boʻlishi mumkin va bu qonunbuzarlik.",
+            "ru": "Неофициальный «ключ» или «взломанный» антивирус может сам быть источником вредоносного кода, и это нарушение закона.",
+            "en": "An unofficial \"key\" or a \"cracked\" antivirus may itself be a source of malware, and it is illegal."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsdagi koʻp uchraydigan xatolar roʻyxati: bunday dastur oʻzi zararli dastur manbai boʻlishi mumkin va bu qonunbuzarlik; dastur faqat rasmiy saytdan yuklab olinadi.",
+            "ru": "Список частых ошибок занятия: такая программа сама может быть источником вредоносного кода, и это нарушение закона; скачивают только с официального сайта.",
+            "en": "The lesson's list of common mistakes: such software may itself be a source of malware and is illegal; download only from the official website."
+          }
+        }
+      ]
+    }
+  }
+}

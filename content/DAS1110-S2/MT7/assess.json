@@ -1,0 +1,221 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Guruhda talabalar bor: guruh tarqalsa ham talabalar qoladi. Bu qanday bogʻlanish?",
+          "ru": "В группе есть студенты: даже если группу расформируют, студенты останутся. Что это за связь?",
+          "en": "A group has students: even if the group is dissolved, the students remain. Which relation is this?"
+        },
+        "options": [
+          { "uz": "Agregatsiya", "ru": "Агрегация", "en": "Aggregation" },
+          { "uz": "Kompozitsiya", "ru": "Композиция", "en": "Composition" },
+          { "uz": "Assotsiatsiya", "ru": "Ассоциация", "en": "Association" },
+          { "uz": "Bu bogʻlanish turlaridan biri emas", "ru": "Это не один из видов связи", "en": "None of the kinds of relation" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Jadvalda agregatsiya — „…da … bor“, lekin qismlar mustaqil yashaydi; guruh va talabalar shuning misoli.",
+          "ru": "В таблице агрегация — «имеет», но части живут независимо; группа и студенты — её пример.",
+          "en": "In the table aggregation is a \"has a\" whose parts live independently; the group and its students are that example."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kompozitsiyada qismlar butundan mustaqil yashaydi.",
+          "ru": "При композиции части живут независимо от целого.",
+          "en": "In composition the parts live independently of the whole."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Kompozitsiyada qismlar butun bilan birga yaratiladi va yoʻqoladi (kitobda sahifalar); mustaqil yashashi — agregatsiyaga tegishli.",
+          "ru": "При композиции части создаются и исчезают вместе с целым (в книге — страницы); независимость относится к агрегации.",
+          "en": "In composition the parts are created and destroyed together with the whole (a book and its pages); living independently belongs to aggregation."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Loyihalash qoidalariga koʻra qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны согласно правилам проектирования?",
+          "en": "According to the design rules, which statements are correct?"
+        },
+        "options": [
+          { "uz": "Har bir maʼlumot bitta sinfda saqlanadi", "ru": "Каждый элемент данных хранится в одном классе", "en": "Every piece of data is stored in one class" },
+          { "uz": "Holatni faqat egasi oʻzgartiradi", "ru": "Состояние меняет только владелец", "en": "Only the owner changes the state" },
+          { "uz": "Metod natija qaytaradi, xabar chiqarish — asosiy dasturning ishi", "ru": "Метод возвращает результат, а выводить сообщение — дело основной программы", "en": "A method returns a result; printing a message is the main program's job" },
+          { "uz": "Har bir metod foydalanuvchiga xabar chiqarishi kerak", "ru": "Каждый метод должен выводить сообщение пользователю", "en": "Every method should print a message to the user" }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Toʻrtinchi qoida emas: metod `true`/`false` qaytaradi, matnni asosiy dastur tanlaydi.",
+          "ru": "Четвёртое — не правило: метод возвращает `true`/`false`, а текст выбирает основная программа.",
+          "en": "The fourth is not a rule: a method returns `true`/`false` and the main program chooses the text."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`qosh NOM SONI` buyrugʻi bajarilganda dastur nima chiqaradi?",
+          "ru": "Что программа выводит при выполнении команды `qosh НАЗВАНИЕ КОЛИЧЕСТВО`?",
+          "en": "What does the program print when the command `qosh NAME COUNT` is executed?"
+        },
+        "options": [
+          { "uz": "Hech narsa chiqarilmaydi", "ru": "Ничего не выводится", "en": "Nothing is printed" },
+          { "uz": "`NOM: MAVJUD/JAMI`", "ru": "`НАЗВАНИЕ: ДОСТУПНО/ВСЕГО`", "en": "`NAME: AVAILABLE/TOTAL`" },
+          { "uz": "`SONI` soni", "ru": "Число `КОЛИЧЕСТВО`", "en": "The number `COUNT`" },
+          { "uz": "`berildi` yoki `yoʻq`", "ru": "`выдана` или `нет`", "en": "`issued` or `unavailable`" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda `qosh` uchun „javob chiqarilmaydi“ deyilgan; javobni `ber`, `qaytar` va `holat` beradi.",
+          "ru": "В занятии про `qosh` сказано «ответ не выводится»; отвечают `ber`, `qaytar` и `holat`.",
+          "en": "The lesson says of `qosh` that no reply is printed; `ber`, `qaytar` and `holat` are the ones that answer."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Namunadagi kirishning birinchi satrida 8 turdi, soʻng 8 ta buyruq kiritildi. Dastur nechta javob qatori chiqaradi?",
+          "ru": "В образце в первой строке было 8, и было введено 8 команд. Сколько строк ответа выведет программа?",
+          "en": "In the sample the first line was 8 and eight commands were given. How many answer lines does the program print?"
+        },
+        "answers": [7],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "`qosh` javob chiqarmaydi: 8 buyruqdan 7 tasi chiqadi — `berildi`, `berildi`, `yoʻq`, `Sarob: 0/2`, `qabul qilindi`, „xato“, `Alpomish: 0/0`.",
+          "ru": "`qosh` не отвечает: из 8 команд выводятся 7 — «выдана», «выдана», «нет», `Sarob: 0/2`, «принята», «ошибка», `Alpomish: 0/0`.",
+          "en": "`qosh` prints no reply, so 7 of the 8 commands answer: `issued`, `issued`, `unavailable`, `Sarob: 0/2`, `returned`, `error`, `Alpomish: 0/0`."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Javaʼda „kitob boʻlmasa, yangisini yarat“ iborasining qisqa yozuvi boʻlgan metodning nomini yozing.",
+          "ru": "Напишите имя метода в Java — краткую запись фразы «если такой книги нет, создать новую».",
+          "en": "Write the name of the Java method that is the short way of saying „if there is no such book, create a new one“."
+        },
+        "answers": ["computeIfAbsent", "computeIfAbsent()"],
+        "explanation": {
+          "uz": "`kitoblar.computeIfAbsent(nom, Kitob::new)` shu qoidani bir qatorga yozadi.",
+          "ru": "`kitoblar.computeIfAbsent(nom, Kitob::new)` записывает это правило одной строкой.",
+          "en": "`kitoblar.computeIfAbsent(nom, Kitob::new)` writes that rule in a single line."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Namunada `ber Sarob` uchinchi marta nima uchun rad etildi?",
+          "ru": "Почему в образце третья команда `ber Sarob` была отклонена?",
+          "en": "Why was the third `ber Sarob` refused in the sample?"
+        },
+        "options": [
+          { "uz": "Ikkala nusxa ham berilgan edi: `berilgan == jami`", "ru": "Оба экземпляра уже были выданы: `berilgan == jami`", "en": "Both copies were already lent: `berilgan == jami`" },
+          { "uz": "Kitob nomida xato boʻlgani uchun", "ru": "Из-за ошибки в названии книги", "en": "Because the book name was misspelled" },
+          { "uz": "`Kutubxona` `Kitob` metodini chaqirmagani uchun", "ru": "Потому что `Kutubxona` не вызвала метод `Kitob`", "en": "Because `Kutubxona` did not call the method of `Kitob`" },
+          { "uz": "Nusxalar soni 0 ga teng boʻlgani uchun", "ru": "Потому что число экземпляров стало равно 0", "en": "Because the number of copies had become 0" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "`Kitob.ber()` `berilgan == jami` boʻlsa `false` qaytaradi, holatni esa faqat `Kitob`ning oʻzi tekshiradi.",
+          "ru": "`Kitob.ber()` возвращает `false` при `berilgan == jami`; проверку выполняет только сам `Kitob`.",
+          "en": "`Kitob.ber()` returns `false` when `berilgan == jami`; the check lives inside `Kitob` alone."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bank hisobi sinfi topshirigʻi boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны для задания про класс банковского счёта?",
+          "en": "Which statements are correct for the bank-account class assignment?"
+        },
+        "options": [
+          { "uz": "Rad etilgan yechishdan keyin balans oʻzgarmasligi kerak", "ru": "После отклонённого снятия баланс не должен измениться", "en": "After a refused withdrawal the balance must not change" },
+          { "uz": "Summalar 10⁹ gacha va buyruqlar 1000 tagacha boʻlgani uchun balans `int` ga sigʻmasligi mumkin", "ru": "Суммы до 10⁹ и команд до 1000, поэтому баланс может не поместиться в `int`", "en": "Sums reach 10⁹ and commands 1000, so the balance may not fit in an `int`" },
+          { "uz": "Balans maydoniga sinfdan tashqaridan toʻgʻridan-toʻgʻri murojaat qilinsa, ish toʻliq baholanmaydi", "ru": "Прямое обращение к полю баланса извне класса лишает работу полного балла", "en": "Accessing the balance field directly from outside the class costs full marks" },
+          { "uz": "Rad etilganligi haqidagi xabarni sinf metodining oʻzi chiqarishi kerak", "ru": "Сообщение об отказе должен выводить сам метод класса", "en": "The class method itself should print the refusal message" }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Toʻrtinchisi qoidaga zid: xabarni asosiy dastur chiqaradi, metod faqat natija qaytaradi.",
+          "ru": "Четвёртое противоречит правилу: сообщение выводит основная программа, метод лишь возвращает результат.",
+          "en": "The fourth contradicts the rule: the main program prints the message, the method only returns a result."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kutubxonada bunday kitob boʻlmasa, `holat NOM` buyrugʻi hech qanday qator chiqarmaydi.",
+          "ru": "Если такой книги в библиотеке нет, команда `holat НАЗВАНИЕ` не выводит ни одной строки.",
+          "en": "If the library has no such book, the command `holat NAME` prints no line at all."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "`Kutubxona.holat` kitob boʻlmasa ham matn qaytaradi: namunada `Alpomish: 0/0` chiqdi.",
+          "ru": "`Kutubxona.holat` возвращает текст и при отсутствии книги: в образце выведено `Alpomish: 0/0`.",
+          "en": "`Kutubxona.holat` returns text even when the book is absent: the sample printed `Alpomish: 0/0`."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Ombor sinfi",
+      "ru": "Кладовая: класс со скрытым полем",
+      "en": "A store class with a hidden field"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda ombor sigʻimi C, ikkinchi qatorda amallar soni n beriladi; keyingi n qatorda bittadan butun son yozilgan: musbat son — omborga qoʻyish, manfiy son — ombordan olish (0 berilmaydi). Omborda dastlab mahsulot yoʻq. Agar qoʻyishdan keyin miqdor sigʻimdan oshsa yoki olish uchun mahsulot yetmasa, amal rad etiladi va miqdor oʻzgarmaydi. Har bir amal uchun alohida qatorda `ok` (bajarildi) yoki `error` (rad etildi) chiqaring, oxirgi qatorda esa ombordagi miqdorni chiqaring. Masalan, sigʻim `10` va amallar `5`, `3`, `9`, `-2` boʻlsa, dastur beshta qator chiqaradi: `ok`, `ok`, `error`, `ok`, `6`. `Ombor` sinfini yozing: miqdor maydoni yopiq boʻlsin, uni faqat shu sinf metodlari oʻzgartirsin, metodlar natija qaytarsin, xabarni esa asosiy dastur chiqarsin. Chegaralar: 1 ≤ C ≤ 10⁹, 1 ≤ n ≤ 1000, har bir sonning moduli 10⁹ dan oshmaydi — miqdor `int` ga sigʻmasligi mumkin.",
+      "ru": "В первой строке задаётся вместимость кладовой C, во второй — число операций n; в следующих n строках по одному целому числу: положительное — положить, отрицательное — забрать (0 не встречается). Сначала кладовая пуста. Если после укладки объём превысит вместимость либо для выборки не хватает товара, операция отклоняется, и объём не меняется. На каждую операцию выводите отдельной строкой `ok` (выполнена) или `error` (отклонена), а последней строкой — объём в кладовой. Например, при вместимости `10` и операциях `5`, `3`, `9`, `-2` программа выводит пять строк: `ok`, `ok`, `error`, `ok`, `6`. Напишите класс `Ombor`: поле объёма закрыто, меняют его только методы класса, методы возвращают результат, а сообщения выводит основная программа. Ограничения: 1 ≤ C ≤ 10⁹, 1 ≤ n ≤ 1000, модуль каждого числа не превосходит 10⁹ — значение может не поместиться в `int`.",
+      "en": "The first line gives the capacity C of a store, the second the number of operations n; the next n lines hold one integer each: positive means putting goods in, negative means taking them out (0 never occurs). The store starts empty. If putting goods in would exceed the capacity, or there is not enough goods to take out, the operation is refused and the amount does not change. For every operation print `ok` (done) or `error` (refused) on its own line, and print the amount in the store on the last line. For example, capacity `10` with the operations `5`, `3`, `9`, `-2` makes the program print five lines: `ok`, `ok`, `error`, `ok`, `6`. Write a class `Ombor`: its amount field is private and only the class's methods change it, the methods return a result, and the main program prints the messages. Limits: 1 ≤ C ≤ 10⁹, 1 ≤ n ≤ 1000, the absolute value of each number is at most 10⁹ — the amount may not fit in an `int`."
+    },
+    "code": {
+      "starter": {
+        "python": "class Ombor:\n    def __init__(self, sigim):\n        self._sigim = sigim\n        self._jami = 0\n\n    def qoyish(self, x):\n        if self._jami + x > self._sigim:\n            return False\n        self._jami += x\n        return True\n\n    def olish(self, x):\n        self._jami -= x\n        return True\n\n    def miqdor(self):\n        return self._jami\n\n\nombor = Ombor(int(input()))\nfor _ in range(int(input())):\n    d = int(input())\n    if d > 0:\n        print(\"ok\" if ombor.qoyish(d) else \"error\")\n    else:\n        print(\"ok\" if ombor.olish(-d) else \"error\")\nprint(ombor.miqdor())\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static class Ombor {\n        private long jami = 0;\n        private final long sigim;\n\n        Ombor(long sigim) {\n            this.sigim = sigim;\n        }\n\n        boolean qoyish(long x) {\n            if (jami + x > sigim) return false;\n            jami += x;\n            return true;\n        }\n\n        boolean olish(long x) {\n            jami -= x;\n            return true;\n        }\n\n        long miqdor() {\n            return jami;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        Ombor ombor = new Ombor(in.nextLong());\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            long d = in.nextLong();\n            if (d > 0) System.out.println(ombor.qoyish(d) ? \"ok\" : \"error\");\n            else System.out.println(ombor.olish(-d) ? \"ok\" : \"error\");\n        }\n        System.out.println(ombor.miqdor());\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nclass Ombor {\n    long long jami = 0;\n    long long sigim;\n\npublic:\n    Ombor(long long sigim) : sigim(sigim) {}\n\n    bool qoyish(long long x) {\n        if (jami + x > sigim) return false;\n        jami += x;\n        return true;\n    }\n\n    bool olish(long long x) {\n        jami -= x;\n        return true;\n    }\n\n    long long miqdor() const {\n        return jami;\n    }\n};\n\nint main() {\n    long long c;\n    int n;\n    cin >> c >> n;\n    Ombor ombor(c);\n    for (int i = 0; i < n; i++) {\n        long long d;\n        cin >> d;\n        if (d > 0) cout << (ombor.qoyish(d) ? \"ok\" : \"error\") << endl;\n        else cout << (ombor.olish(-d) ? \"ok\" : \"error\") << endl;\n    }\n    cout << ombor.miqdor() << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "class Ombor:\n    def __init__(self, sigim):\n        self._sigim = sigim\n        self._jami = 0\n\n    def qoyish(self, x):\n        if self._jami + x > self._sigim:\n            return False\n        self._jami += x\n        return True\n\n    def olish(self, x):\n        if x > self._jami:\n            return False\n        self._jami -= x\n        return True\n\n    def miqdor(self):\n        return self._jami\n\n\nombor = Ombor(int(input()))\nfor _ in range(int(input())):\n    d = int(input())\n    if d > 0:\n        print(\"ok\" if ombor.qoyish(d) else \"error\")\n    else:\n        print(\"ok\" if ombor.olish(-d) else \"error\")\nprint(ombor.miqdor())\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static class Ombor {\n        private long jami = 0;\n        private final long sigim;\n\n        Ombor(long sigim) {\n            this.sigim = sigim;\n        }\n\n        boolean qoyish(long x) {\n            if (jami + x > sigim) return false;\n            jami += x;\n            return true;\n        }\n\n        boolean olish(long x) {\n            if (x > jami) return false;\n            jami -= x;\n            return true;\n        }\n\n        long miqdor() {\n            return jami;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        Ombor ombor = new Ombor(in.nextLong());\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            long d = in.nextLong();\n            if (d > 0) System.out.println(ombor.qoyish(d) ? \"ok\" : \"error\");\n            else System.out.println(ombor.olish(-d) ? \"ok\" : \"error\");\n        }\n        System.out.println(ombor.miqdor());\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nclass Ombor {\n    long long jami = 0;\n    long long sigim;\n\npublic:\n    Ombor(long long sigim) : sigim(sigim) {}\n\n    bool qoyish(long long x) {\n        if (jami + x > sigim) return false;\n        jami += x;\n        return true;\n    }\n\n    bool olish(long long x) {\n        if (x > jami) return false;\n        jami -= x;\n        return true;\n    }\n\n    long long miqdor() const {\n        return jami;\n    }\n};\n\nint main() {\n    long long c;\n    int n;\n    cin >> c >> n;\n    Ombor ombor(c);\n    for (int i = 0; i < n; i++) {\n        long long d;\n        cin >> d;\n        if (d > 0) cout << (ombor.qoyish(d) ? \"ok\" : \"error\") << endl;\n        else cout << (ombor.olish(-d) ? \"ok\" : \"error\") << endl;\n    }\n    cout << ombor.miqdor() << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "7\n5\n4\n-6\n3\n3\n-10\n", "expected": "ok\nerror\nok\nerror\nerror\n7", "hidden": false },
+        { "input": "5\n3\n5\n1\n-5\n", "expected": "ok\nerror\nok\n0", "hidden": false },
+        { "input": "8\n4\n3\n3\n3\n-1\n", "expected": "ok\nok\nerror\nok\n5", "hidden": true },
+        { "input": "10\n3\n6\n4\n-10\n", "expected": "ok\nok\nok\n0", "hidden": true },
+        { "input": "1000000000\n3\n1000000000\n-1000000000\n500000000\n", "expected": "ok\nok\nok\n500000000", "hidden": true }
+      ]
+    }
+  }
+}

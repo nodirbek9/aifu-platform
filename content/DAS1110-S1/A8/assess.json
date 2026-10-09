@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Do-while siklining tanasi kamida bir marta bajariladi.",
+          "ru": "Тело цикла do-while выполняется хотя бы один раз.",
+          "en": "The body of a do-while loop runs at least once."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Soʻng shartli sikl avval tanani bajaradi, shartni keyin tekshiradi. while esa tanani bir marta ham bajarmasligi mumkin.",
+          "ru": "Цикл с постусловием сначала выполняет тело и только потом проверяет условие. while же может не выполнить тело ни разу.",
+          "en": "A post-condition loop runs the body first and checks the condition afterwards. while may run the body not even once."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python tilida do-while siklining oʻrniga qaysi andoza ishlatiladi?",
+          "ru": "Какой шаблон заменяет цикл do-while в Python?",
+          "en": "Which pattern replaces the do-while loop in Python?"
+        },
+        "options": [
+          {
+            "uz": "while True: ichida tana, oxirida shart yolgʻon boʻlsa break",
+            "ru": "Тело внутри while True:, а в конце break, если условие ложно",
+            "en": "The body inside while True:, and at the end break when the condition is false"
+          },
+          {
+            "uz": "Oddiy for sikli",
+            "ru": "Обычный цикл for",
+            "en": "An ordinary for loop"
+          },
+          {
+            "uz": "do-while yozuvi Python tilida ham mavjud",
+            "ru": "Запись do-while существует и в Python",
+            "en": "The do-while syntax also exists in Python"
+          },
+          {
+            "uz": "Shartni sikl oldiga yozish",
+            "ru": "Условие пишется перед циклом",
+            "en": "Writing the condition before the loop"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Python da do-while yoʻq, uning oʻrniga cheksiz sikl va undan chiqish andozasi qoʻllanadi: while True: ichida tana, oxirida shart yolgʻon boʻlsa break.",
+          "ru": "В Python нет do-while, вместо него используется шаблон бесконечного цикла с выходом: тело в while True:, а в конце break, если условие ложно.",
+          "en": "Python has no do-while; instead the infinite loop with an exit is used: the body inside while True:, and break at the end when the condition is false."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ichma-ich sikllar haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о вложенных циклах верны?",
+          "en": "Which statements about nested loops are correct?"
+        },
+        "options": [
+          {
+            "uz": "Tashqi siklning har bir iteratsiyasida ichki sikl toʻliq bajariladi",
+            "ru": "На каждой итерации внешнего цикла внутренний выполняется полностью",
+            "en": "On every iteration of the outer loop the inner loop runs in full"
+          },
+          {
+            "uz": "Tashqi va ichki hisoblagichlarga turli nom berish kerak",
+            "ru": "Счётчикам внешнего и внутреннего циклов нужно давать разные имена",
+            "en": "The outer and inner counters need different names"
+          },
+          {
+            "uz": "Ichki sikldagi break faqat shu siklni tugatadi, tashqi sikl davom etadi",
+            "ru": "Break внутри внутреннего цикла завершает только его, внешний цикл продолжается",
+            "en": "break in the inner loop ends only that loop; the outer loop goes on"
+          },
+          {
+            "uz": "Ichki sikl bir marta bajariladi, keyin tashqi siklni ham toʻxtatadi",
+            "ru": "Внутренний цикл выполняется один раз и после этого останавливает внешний",
+            "en": "The inner loop runs once and then stops the outer one too"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Ichki sikl tashqining har bir qadamida toʻliq ishlaydi. Bir xil nomli hisoblagich — eng koʻp uchraydigan xato, break esa faqat oʻzi turgan siklni tugatadi.",
+          "ru": "Внутренний цикл полностью работает на каждом шаге внешнего. Одинаковое имя счётчика — самая частая ошибка, а break завершает лишь тот цикл, в котором стоит.",
+          "en": "The inner loop runs completely at each step of the outer one. Sharing one counter name is the most common bug, and break ends only the loop it is in."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tashqi sikl for i in range(5), ichki sikl for j in range(3) boʻlib, ichida faqat bitta print(i, j) buyrugʻi bor. Nechta qator chiqadi?",
+          "ru": "Сколько строк напечатает print(i, j), если внешний цикл for i in range(5), а внутренний for j in range(3)?",
+          "en": "How many lines does print(i, j) output if the outer loop is for i in range(5) and the inner one is for j in range(3)?"
+        },
+        "answers": [15],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Tashqi sikl 5 marta, ichki sikl har safar 3 marta ishlaydi: 5 · 3 = 15 qator.",
+          "ru": "Внешний цикл выполняется 5 раз, внутренний каждый раз — 3 раза: 5 · 3 = 15 строк.",
+          "en": "The outer loop runs 5 times and the inner one 3 times each: 5 · 3 = 15 lines."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yulduzcha uchburchagi misolida yangi qator chiqarish (print()) ichki siklning ichiga kirsachi nima boʻladi?",
+          "ru": "Что произойдёт в примере с треугольником из звёздочек, если перевод строки print() поместить внутрь внутреннего цикла?",
+          "en": "In the star triangle example, what happens if the new line print() is moved inside the inner loop?"
+        },
+        "options": [
+          {
+            "uz": "Har bir yulduzcha oʻz alohida qatorida chiqadi",
+            "ru": "Каждая звёздочка окажется на отдельной строке",
+            "en": "Every star ends up on its own line"
+          },
+          {
+            "uz": "Hech narsa oʻzgarmaydi",
+            "ru": "Ничего не изменится",
+            "en": "Nothing changes"
+          },
+          {
+            "uz": "Uchburchak teskari tartibda chiqadi",
+            "ru": "Треугольник выведется в обратном порядке",
+            "en": "The triangle prints upside down"
+          },
+          {
+            "uz": "Uchburchak oʻrniga toʻrtburchak chiqadi",
+            "ru": "Вместо треугольника получится прямоугольник",
+            "en": "A square appears instead of the triangle"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Yangi qator ichki sikldan keyin, lekin tashqi siklning ichida chiqariladi. Ichki sikl ichiga tushsa, n = 4 da oʻn ta qator hosil boʻladi, har birida bitta yulduzcha.",
+          "ru": "Новая строка выводится после внутреннего цикла, но внутри внешнего. Если поместить её внутрь, при n = 4 получится 10 строк по одной звёздочке.",
+          "en": "The new line belongs after the inner loop but inside the outer one. Moved inside, it gives 10 lines with one star each when n = 4."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Java va C++ tilida do-while siklining oxirida qaysi belgi tushirib qoldirilsa, kompilyatsiya xatosi chiqadi? Belgini oʻzi bilan yozing.",
+          "ru": "Какой символ, пропущенный в конце do-while в Java и C++, приведёт к ошибке компиляции? Напишите сам символ.",
+          "en": "Which symbol, left out at the end of do-while in Java and C++, causes a compile error? Write the symbol itself."
+        },
+        "answers": [";", "nuqta-vergul", "semicolon"],
+        "explanation": {
+          "uz": "Darsda do { tana } while (shart); yozuvida nuqta-vergulni unutish tipik xato deb koʻrsatilgan.",
+          "ru": "На занятии указано, что типичная ошибка — забыть точку с запятой в записи do { тело } while (условие);",
+          "en": "The lesson lists forgetting the semicolon in do { body } while (condition); as a typical mistake."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Pifagor uchliklari masalida ichki sikllar nega a + 1 va b + 1 dan boshlanadi?",
+          "ru": "Почему в задаче о тройках Пифагора внутренние циклы начинаются с a + 1 и b + 1?",
+          "en": "In the Pythagorean triples task, why do the inner loops start at a + 1 and b + 1?"
+        },
+        "options": [
+          {
+            "uz": "Har bir uchlik bir marta chiqishi va a < b < c sharti avtomatik bajarilishi uchun",
+            "ru": "Чтобы каждая тройка печаталась один раз и условие a < b < c выполнялось автоматически",
+            "en": "So that each triple is printed once and a < b < c holds automatically"
+          },
+          {
+            "uz": "c ni √(a² + b²) orqali hisoblash uchun",
+            "ru": "Чтобы вычислять c как √(a² + b²)",
+            "en": "So that c is computed as √(a² + b²)"
+          },
+          {
+            "uz": "Uchliklar kamayib borish tartibida chiqishi uchun",
+            "ru": "Чтобы тройки выводились в порядке убывания",
+            "en": "So that the triples come out in decreasing order"
+          },
+          {
+            "uz": "Massivni saralash shart boʻlmasligi uchun",
+            "ru": "Чтобы не требовалась сортировка массива",
+            "en": "So that sorting the array is not needed"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Boshlanishlarni a + 1 va b + 1 qilish orqali 4 3 5 kabi takrorlanishlar chiqmaydi. Agar sikllar 1 dan boshlansa, har bir uchlik ikki marta chiqadi va bajarilish vaqti ham ortadi.",
+          "ru": "Старт с a + 1 и b + 1 исключает повторы вроде 4 3 5. Если начать циклы с 1, каждая тройка напечатается дважды, а время работы вырастет.",
+          "en": "Starting at a + 1 and b + 1 rules out repeats like 4 3 5. If the loops started at 1, each triple would print twice and the running time would grow."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qaysi harakatlar darsdagi koʻp uchraydigan xatolar roʻyxatiga kiradi?",
+          "ru": "Какие действия входят в список частых ошибок с занятия?",
+          "en": "Which actions are in the lesson's list of common mistakes?"
+        },
+        "options": [
+          {
+            "uz": "Tashqi va ichki siklda bitta hisoblagich nomidan foydalanish",
+            "ru": "Использовать одно и то же имя счётчика во внешнем и внутреннем цикле",
+            "en": "Using the same counter name in the outer and the inner loop"
+          },
+          {
+            "uz": "Yangi qatorni ichki siklning ichida chiqarish",
+            "ru": "Выводить перевод строки внутри внутреннего цикла",
+            "en": "Printing the new line inside the inner loop"
+          },
+          {
+            "uz": "Python da while True: dan chiqishni unutish",
+            "ru": "Забыть выход из while True: в Python",
+            "en": "Forgetting the exit from while True: in Python"
+          },
+          {
+            "uz": "Ichki sikl chegarasini tashqi hisoblagichga bogʻlash",
+            "ru": "Связывать границу внутреннего цикла со счётчиком внешнего",
+            "en": "Making the inner loop bound depend on the outer counter"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Ichki sikl chegarasining tashqi hisoblagichga bogʻliq boʻlishi — xato emas, bu uchburchak shakllarni beradi. Qolgan uchtasi roʻyxatda: ichki sikl tashqini buzadi, har bir belgi alohida qatorga chiqadi, chiqish boʻlmasa sikl cheksiz boʻladi.",
+          "ru": "Зависимость границы внутреннего цикла от счётчика внешнего — не ошибка, так получают треугольные фигуры. Остальные три в списке: внутренний цикл портит внешний, каждый символ выходит на отдельной строке, а без выхода цикл становится бесконечным.",
+          "en": "Letting the inner bound depend on the outer counter is not a mistake: that is how triangular shapes are made. The other three are on the list: the inner loop spoils the outer one, every character lands on its own line, and without an exit the loop never ends."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "do-while siklida shart birinchi tekshiruvdayoq yolgʻon boʻlsa, sikl tanasi umuman bajarilmaydi.",
+          "ru": "Если в цикле do-while условие ложно уже при первой проверке, тело цикла не выполнится вовсе.",
+          "en": "In a do-while loop, if the condition is false at the very first check, the body does not run at all."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Shart tanadan keyin tekshiriladi, shuning uchun do { ... } while (false); ham tanani bir marta bajaradi. Tanani bir marta ham bajarmaslik while ga xos.",
+          "ru": "Условие проверяется после тела, поэтому и do { ... } while (false); выполнит тело один раз. Ни разу не выполнять тело может только while.",
+          "en": "The condition is checked after the body, so even do { ... } while (false); runs the body once. Only while can skip the body entirely."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Yulduzchali ramoqa",
+      "ru": "Рамка из звёздочек",
+      "en": "A frame of stars"
+    },
+    "statement": {
+      "uz": "Darsdagi uchburchak faqat yulduzchadan tuzilgan edi, bu topshiriqda esa ichkarisi boʻsh ramoqa chiqariladi. Dastur ikkita butun sonni oʻqiydi: birinchi qatorda qatorlar soni n, ikkinchi qatorda har qatordagi belgilar soni m (1 ≤ n ≤ 20, 1 ≤ m ≤ 20). Ichma-ich sikllar bilan n qatorli ramoqa chiqaring: birinchi va oxirgi qator toʻliq m ta yulduzchadan (*), qolgan qatorlarda esa chap va oʻng chekkadagi ikkita yulduzcha, ular orasida probel boʻlsin. Har qatorda aynan m ta belgi boʻlsin va har qatordan keyin yangi qatorga oʻting. Masalan, n = 3 va m = 5 boʻlsa uchta qator chiqadi: birinchi qator besh yulduzcha, ikkinchi qator yulduzcha, uchta probel va yana bitta yulduzcha, uchinchi qator yana besh yulduzcha. n = 1 boʻlsa yagona qator toʻliq yulduzchadan iborat, m = 1 boʻlsa har qatorda bittadan yulduzcha turadi.",
+      "ru": "Треугольник с занятия состоял только из звёздочек, а здесь нужно вывести рамку с пустой серединой. Программа читает два целых числа: в первой строке число рядов n, во второй — число символов в ряду m (1 ≤ n ≤ 20, 1 ≤ m ≤ 20). Вложенными циклами выведите рамку из n рядов: первый и последний ряд полностью состоят из m звёздочек (*), а в остальных рядах стоят по звёздочке по левому и правому краю, между ними — пробелы. В каждом ряду ровно m символов, после каждого ряда переходите на новую строку. Например, при n = 3 и m = 5 выйдет три строки: первая — пять звёздочек, вторая — звёздочка, три пробела и снова звёздочка, третья — опять пять звёздочек. При n = 1 единственный ряд целиком из звёздочек, при m = 1 в каждом ряду по одной звёздочке.",
+      "en": "The lesson's triangle was made of stars only; here you print a frame with an empty inside. Your program reads two integers: the first line holds the number of rows n, the second the number of characters per row m (1 ≤ n ≤ 20, 1 ≤ m ≤ 20). With nested loops print a frame of n rows: the first and the last row are m stars (*) in full, while every other row has a star at the left and at the right edge with spaces between them. Each row holds exactly m characters, and every row is followed by a new line. For example, n = 3 and m = 5 gives three rows: the first is five stars, the second is a star, three spaces and a star, the third is five stars again. When n = 1 the single row is all stars; when m = 1 each row is one star."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nm = int(input())\n\nfor i in range(n):\n    for j in range(m):\n        print(\"*\", end=\"\")\n    print()\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int m = in.nextInt();\n\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < m; j++) {\n                System.out.print(\"*\");\n            }\n            System.out.println();\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < m; j++) {\n            cout << \"*\";\n        }\n        cout << endl;\n    }\n\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nm = int(input())\n\nfor i in range(n):\n    for j in range(m):\n        if i == 0 or i == n - 1 or j == 0 or j == m - 1:\n            print(\"*\", end=\"\")\n        else:\n            print(\" \", end=\"\")\n    print()\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int m = in.nextInt();\n\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < m; j++) {\n                if (i == 0 || i == n - 1 || j == 0 || j == m - 1) {\n                    System.out.print(\"*\");\n                } else {\n                    System.out.print(\" \");\n                }\n            }\n            System.out.println();\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < m; j++) {\n            if (i == 0 || i == n - 1 || j == 0 || j == m - 1) {\n                cout << \"*\";\n            } else {\n                cout << \" \";\n            }\n        }\n        cout << endl;\n    }\n\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\n5\n", "expected": "*****\n*   *\n*****", "hidden": false },
+        { "input": "1\n1\n", "expected": "*", "hidden": false },
+        { "input": "2\n4\n", "expected": "****\n****", "hidden": true },
+        { "input": "4\n3\n", "expected": "***\n* *\n* *\n***", "hidden": true },
+        { "input": "5\n6\n", "expected": "******\n*    *\n*    *\n*    *\n******", "hidden": true }
+      ]
+    }
+  }
+}

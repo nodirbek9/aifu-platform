@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "ASCII jadvaliga koʻra kichik lotin harflari (`a` … `z`) qaysi kodlar oraligʻida joylashgan?",
+          "ru": "Согласно таблице ASCII, в каком диапазоне кодов расположены строчные латинские буквы (`a` … `z`)?",
+          "en": "According to the ASCII table, in which code range are the lowercase Latin letters (`a` … `z`)?"
+        },
+        "options": [
+          {
+            "uz": "97 … 122",
+            "ru": "97 … 122",
+            "en": "97 … 122"
+          },
+          {
+            "uz": "48 … 57",
+            "ru": "48 … 57",
+            "en": "48 … 57"
+          },
+          {
+            "uz": "65 … 90",
+            "ru": "65 … 90",
+            "en": "65 … 90"
+          },
+          {
+            "uz": "0 … 127",
+            "ru": "0 … 127",
+            "en": "0 … 127"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "ASCII jadvalida raqamlar 48–57, katta harflar 65–90, kichik harflar 97–122 oraligʻida ketma-ket joylashgan.",
+          "ru": "В таблице ASCII цифры идут 48–57, заглавные буквы 65–90, строчные — 97–122, причём подряд.",
+          "en": "In the ASCII table digits run 48–57, capitals 65–90 and lowercase 97–122, each in sequence."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Pythonʼda bitta belgi uchun alohida `char` turi mavjud.",
+          "ru": "В Python для одного символа существует отдельный тип `char`.",
+          "en": "Python has a separate `char` type for a single character."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Pythonʼda alohida belgi turi yoʻq: belgi — uzunligi 1 boʻlgan satr, shuning uchun `ord` va `chr` ishlatiladi.",
+          "ru": "Отдельного типа символа в Python нет: символ — это строка длины 1, поэтому используются `ord` и `chr`.",
+          "en": "Python has no separate character type: a character is a string of length 1, so `ord` and `chr` are used."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "UTF-8 kodlashi haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о кодировке UTF-8 верны?",
+          "en": "Which statements about the UTF-8 encoding are correct?"
+        },
+        "options": [
+          {
+            "uz": "ASCII belgilar 1 bayt egallaydi",
+            "ru": "Символы ASCII занимают 1 байт",
+            "en": "ASCII characters take 1 byte"
+          },
+          {
+            "uz": "Har bir belgi har doim 4 baytdan iborat",
+            "ru": "Каждый символ всегда занимает 4 байта",
+            "en": "Every character always takes 4 bytes"
+          },
+          {
+            "uz": "Bitta belgi 1 dan 4 gacha bayt egallashi mumkin",
+            "ru": "Один символ может занимать от 1 до 4 байт",
+            "en": "One character may take from 1 to 4 bytes"
+          },
+          {
+            "uz": "Unicode raqamining xotirada saqlanish usuli kodlash deb ataladi",
+            "ru": "Способ хранения номера Unicode в памяти называется кодировкой",
+            "en": "The way a Unicode number is stored in memory is called the encoding"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "UTF-8 da belgi 1–4 bayt; har doim 4 baytni esa alohida UTF-32 kodlashi saqlaydi.",
+          "ru": "В UTF-8 символ занимает 1–4 байта; всегда 4 байта хранит отдельная кодировка UTF-32.",
+          "en": "In UTF-8 a character takes 1–4 bytes; the encoding that always uses 4 bytes is UTF-32."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`char s[] = \"Salom\";` eʼlonida massiv nechta belgi uchun joy egallaydi?",
+          "ru": "Сколько символов занимает массив в объявлении `char s[] = \"Salom\";`?",
+          "en": "How many characters of space does the array take in `char s[] = \"Salom\";`?"
+        },
+        "answers": [6],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "5 ta harfga nol belgisi `\\0` qoʻshiladi: jami 6 joy. `strlen` esa 5 qaytaradi.",
+          "ru": "К 5 буквам добавляется нуль-символ `\\0`: всего 6 мест, при этом `strlen` вернёт 5.",
+          "en": "The five letters plus the null character `\\0` make 6 places, while `strlen` returns 5."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "C++ʼda avval `cin >> k` bilan son oʻqib, keyin `getline(cin, s)` bilan qator oʻqimoqchi boʻlsa, `getline` dan oldin qaysi chaqiruv qoʻshiladi?",
+          "ru": "В C++ после `cin >> k` нужно прочитать строку через `getline(cin, s)`. Какой вызов надо добавить перед `getline`?",
+          "en": "In C++, after a number is read with `cin >> k`, a line is read with `getline(cin, s)`. Which call must be added before `getline`?"
+        },
+        "answers": ["cin.ignore()", "cin.ignore", "ignore()", "ignore"],
+        "explanation": {
+          "uz": "Sondan keyingi `\\n` oqimda qoladi va `getline` boʻsh qator qaytaradi; `cin.ignore()` uni tashlab yuboradi.",
+          "ru": "После числа в потоке остаётся `\\n`, и `getline` возвращает пустую строку; `cin.ignore()` убирает его.",
+          "en": "After the number a `\\n` stays in the stream and `getline` returns an empty line; `cin.ignore()` drops it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "C-satrda uning uzunligi qanday saqlanadi?",
+          "ru": "Как в C-строке хранится её длина?",
+          "en": "How is the length of a C string stored?"
+        },
+        "options": [
+          {
+            "uz": "Alohida saqlanmaydi — `\\0` gacha boʻlgan belgilar sanaladi",
+            "ru": "Отдельно не хранится: символы считаются до `\\0`",
+            "en": "It is not stored separately: characters are counted up to `\\0`"
+          },
+          {
+            "uz": "Satr oxirida son koʻrinishida yozib qoʻyiladi",
+            "ru": "В конце строки в виде числа",
+            "en": "As a number written at the end of the string"
+          },
+          {
+            "uz": "Massiv eʼlon qilingan joyda alohida oʻzgaruvchida turadi",
+            "ru": "В отдельной переменной там же, где объявлен массив",
+            "en": "In a separate variable next to the array declaration"
+          },
+          {
+            "uz": "Uzunlikni hech qanday usulda bilib boʻlmaydi",
+            "ru": "Длину нельзя узнать никак",
+            "en": "The length cannot be found at all"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "C-satr — `\\0` bilan tugaydigan `char` massivi, `strlen` shu belgigacha sanaydi. `\\0` tushib qolsa, sanash xotirada keyingi tasodifiy nolgacha davom etadi.",
+          "ru": "C-строка — это массив `char`, оканчивающийся `\\0`, и `strlen` считает до этого символа. Если `\\0` пропал, счёт идёт до следующего случайного нуля в памяти.",
+          "en": "A C string is a `char` array ending with `\\0`, and `strlen` counts up to it. If `\\0` is lost, counting runs on to the next random zero in memory."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Belgilar va kodlash boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о символах и кодировании верны?",
+          "en": "Which statements about characters and encoding are correct?"
+        },
+        "options": [
+          {
+            "uz": "Java va C++ʼda `char` — butun son turi, unga son qoʻshish mumkin",
+            "ru": "В Java и C++ `char` — целочисленный тип, к нему можно прибавить число",
+            "en": "In Java and C++ `char` is an integer type and a number can be added to it"
+          },
+          {
+            "uz": "`ʻ` belgisi (U+02BB) UTF-8ʼda 2 bayt egallaydi",
+            "ru": "Символ `ʻ` (U+02BB) в UTF-8 занимает 2 байта",
+            "en": "The character `ʻ` (U+02BB) takes 2 bytes in UTF-8"
+          },
+          {
+            "uz": "ASCII jadvali 128 belgini 0–127 kodlarga moslaydi",
+            "ru": "Таблица ASCII сопоставляет 128 символов кодам 0–127",
+            "en": "The ASCII table maps 128 characters to the codes 0–127"
+          },
+          {
+            "uz": "C++ʼda `char` turiga bitta Unicode belgisi sigʻadi",
+            "ru": "В тип `char` в C++ помещается один символ Unicode",
+            "en": "One Unicode character fits into the C++ type `char`"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "`char` — 1 bayt, bitta Unicode belgisi sigʻmaydi; keng belgi uchun wchar_t, wstring, char16_t va char32_t turlari bor.",
+          "ru": "`char` — это 1 байт, символ Unicode в него не помещается; для широких символов есть `wchar_t`, `wstring`, `char16_t` и `char32_t`.",
+          "en": "`char` is 1 byte and a Unicode character does not fit in it; for wide characters there are `wchar_t`, `wstring`, `char16_t` and `char32_t`."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`strlen(s)` C-satrning uzunligini hisoblashda `\\0` belgisini ham qoʻshib sanaydi.",
+          "ru": "`strlen(s)` при вычислении длины C-строки считает и `\\0`.",
+          "en": "`strlen(s)` counts the `\\0` as well when it computes the length of a C string."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "`strlen` `\\0` gacha sanaydi, uni kiritmaydi: `\"Salom\"` uchun natija 5.",
+          "ru": "`strlen` считает до `\\0`, не включая его: для `\"Salom\"` результат 5.",
+          "en": "`strlen` counts up to `\\0` without including it: for `\"Salom\"` the result is 5."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Belgilarni turlarga ajratuvchi ishlangan misol mantigʻiga koʻra, `2 + 3 = 5` qatorida «boshqa» belgilar (harf, raqam va probel boʻlmaganlar) nechta?",
+          "ru": "Согласно логике разбора из занятия, сколько «прочих» символов (не букв, не цифр и не пробелов) в строке `2 + 3 = 5`?",
+          "en": "Following the logic of the lesson's classification example, how many \"other\" characters (none of them a letter, a digit or a space) are in the line `2 + 3 = 5`?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Boshqa belgilar — `+` va `=`. Qatorda bundan tashqari 3 ta raqam, 3 ta probel bor, harflar yoʻq.",
+          "ru": "Это `+` и `=`; кроме них в строке 3 цифры и 3 пробела, букв нет.",
+          "en": "They are `+` and `=`; besides them the line has 3 digits and 3 spaces, and no letters."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Harflarning katta-kichikligini almashtirish",
+      "ru": "Поменять регистр букв",
+      "en": "Swap the case of the letters"
+    },
+    "statement": {
+      "uz": "Bitta qator matn kiritiladi: faqat ASCII belgilar (lotin harflari, raqamlar, probellar va tinish belgilari). Darsdagi kabi kichik harf kodi katta harf kodidan 32 ga katta ekanidan foydalanib, har bir kichik harfni katta harfga, har bir katta harfni kichik harfga aylantiring. Boshqa belgilarni oʻzgartirmang. Natijani bitta qatorda chiqaring — faqat oʻzgargan matn, hech qanday qoʻshimcha soʻz yozmang. Masalan, `Salom, Dunyo!` kirsa, dastur `sALOM, dUNYO!` chiqaradi.",
+      "ru": "Вводится одна строка текста: только символы ASCII (латинские буквы, цифры, пробелы и знаки препинания). Используя то, что код строчной буквы на 32 больше кода заглавной, сделайте каждую строчную букву заглавной, а каждую заглавную — строчной. Остальные символы не меняйте. Выведите результат одной строкой — только сам текст, без каких-либо слов и подписей. Например, на ввод `Salom, Dunyo!` программа выводит `sALOM, dUNYO!`.",
+      "en": "The input is one line of text with ASCII characters only (Latin letters, digits, spaces and punctuation). Using the fact that a lowercase letter's code is 32 more than the capital's, turn every lowercase letter into a capital and every capital into a lowercase letter. Leave all other characters unchanged. Print the result on one line — only the transformed text, with no words or labels. For example, the input `Salom, Dunyo!` makes the program print `sALOM, dUNYO!`."
+    },
+    "code": {
+      "starter": {
+        "python": "qator = input()\n\nnatija = []\nfor c in qator:\n    if 'a' <= c <= 'z':\n        c = chr(ord(c) - 32)\n    natija.append(c)\n\nprint(\"\".join(natija))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String qator = in.nextLine();\n\n        StringBuilder natija = new StringBuilder();\n        for (char c : qator.toCharArray()) {\n            if (c >= 'a' && c <= 'z') {\n                c = (char) (c - 32);\n            }\n            natija.append(c);\n        }\n\n        System.out.println(natija);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string qator;\n    getline(cin, qator);\n\n    for (char& c : qator) {\n        if (c >= 'a' && c <= 'z') {\n            c = (char) (c - 32);\n        }\n    }\n\n    cout << qator << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "qator = input()\n\nnatija = []\nfor c in qator:\n    if 'a' <= c <= 'z':\n        c = chr(ord(c) - 32)\n    elif 'A' <= c <= 'Z':\n        c = chr(ord(c) + 32)\n    natija.append(c)\n\nprint(\"\".join(natija))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String qator = in.nextLine();\n\n        StringBuilder natija = new StringBuilder();\n        for (char c : qator.toCharArray()) {\n            if (c >= 'a' && c <= 'z') {\n                c = (char) (c - 32);\n            } else if (c >= 'A' && c <= 'Z') {\n                c = (char) (c + 32);\n            }\n            natija.append(c);\n        }\n\n        System.out.println(natija);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string qator;\n    getline(cin, qator);\n\n    for (char& c : qator) {\n        if (c >= 'a' && c <= 'z') {\n            c = (char) (c - 32);\n        } else if (c >= 'A' && c <= 'Z') {\n            c = (char) (c + 32);\n        }\n    }\n\n    cout << qator << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "Salom, Dunyo!\n", "expected": "sALOM, dUNYO!", "hidden": false },
+        { "input": "a\n", "expected": "A", "hidden": false },
+        { "input": "AIFU 2026\n", "expected": "aifu 2026", "hidden": true },
+        { "input": "123, -.\n", "expected": "123, -.", "hidden": true },
+        { "input": "zZyY\n", "expected": "ZzYy", "hidden": true }
+      ]
+    }
+  }
+}

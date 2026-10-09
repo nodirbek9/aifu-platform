@@ -1,0 +1,295 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Wireshark nima?",
+          "ru": "Что такое Wireshark?",
+          "en": "What is Wireshark?"
+        },
+        "options": [
+          {
+            "uz": "Bepul, ochiq kodli tarmoq trafigini tahlil qiluvchi dastur (Windows, Linux, macOS)",
+            "ru": "Бесплатная программа с открытым кодом для анализа сетевого трафика (Windows, Linux, macOS)",
+            "en": "A free, open-source program for analysing network traffic (Windows, Linux, macOS)"
+          },
+          {
+            "uz": "Tarmoqni hujumlardan himoya qiluvchi apparot qurilmasi (firewall)",
+            "ru": "Аппаранный межсетевой экран для защиты сети от взломщиков",
+            "en": "A hardware firewall protecting the network from attackers"
+          },
+          {
+            "uz": "Domen nomlarini IP-manzillarga aylantiruvchi server",
+            "ru": "Сервер, преобразующий доменные имена в IP-адреса",
+            "en": "A server that turns domain names into IP addresses"
+          },
+          {
+            "uz": "Kompyuterdagi viruslarni oʻchiruvchi dastur",
+            "ru": "Программа для удаления вирусов на компьютере",
+            "en": "A program that removes viruses from the computer"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: Wireshark — bepul, ochiq kodli trafik tahlilchisi; u uch qismdan iborat oynada paketlar roʻyxati, paket tafsilotlari va baytlarni koʻrsatadi.",
+          "ru": "В занятии: Wireshark — бесплатный анализатор трафика с открытым кодом; его окно состоит из списка пакетов, деталей пакета и байтов.",
+          "en": "The lesson: Wireshark is a free, open-source traffic analyser; its window has the packet list, packet details and bytes."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Zamonaviy kommutatorli tarmoqda tarmoq kartasini promiscuous rejimga oʻtkazsak ham, odatda asosan oʻz trafigimiz koʻrinadi.",
+          "ru": "В современной коммутаторной сети даже в promiscuous режиме сетевой карты в основном виден только собственный трафик.",
+          "en": "On a modern switched network, even with the card in promiscuous mode you mostly see only your own traffic."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra: promiscuous rejimda karta segmentdagi barcha kadrlarni qabul qiladi, lekin kommutatorli tarmoqda baribir asosan oʻz trafigimiz koʻrinadi; butun segmentni kuzatish uchun kommutatorda port oynasi (SPAN) sozlanadi — bu administrator vazifasi.",
+          "ru": "По занятию: в promiscuous режиме карта принимает все кадры сегмента, но в коммутаторной сети всё равно виден в основном свой трафик; для наблюдения за всем сегментом на коммутаторе настраивают зеркало порта (SPAN) — это задача администратора.",
+          "en": "Per the lesson: promiscuous mode accepts all frames of the segment, but on a switched network you still mostly see your own traffic; observing a whole segment needs a port mirror (SPAN) on the switch, which is the administrator's job."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi jadvalga koʻra, 110-portda ishlaydigan shifrlanmagan POP3 protokolini qaysi xavfsiz protokol almashtiradi?",
+          "ru": "Согласно таблице из занятия, какой безопасный протокол заменяет незашифрованный POP3 на порту 110?",
+          "en": "According to the lesson table, which secure protocol replaces unencrypted POP3 on port 110?"
+        },
+        "answers": ["POP3S", "pop3s"],
+        "explanation": {
+          "uz": "Jadvalda: POP3 / IMAP (110 / 143) oʻrniga POP3S / IMAPS (995 / 993) ishlatiladi.",
+          "ru": "В таблице: вместо POP3 / IMAP (110 / 143) используют POP3S / IMAPS (995 / 993).",
+          "en": "The table: POP3 / IMAP (110 / 143) is replaced by POP3S / IMAPS (995 / 993)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "tcp.flags.syn == 1 && tcp.flags.ack == 0 koʻrsatish filtri nimani koʻrsatadi?",
+          "ru": "Что показывает фильтр отображения tcp.flags.syn == 1 && tcp.flags.ack == 0?",
+          "en": "What does the display filter tcp.flags.syn == 1 && tcp.flags.ack == 0 show?"
+        },
+        "options": [
+          {
+            "uz": "Yangi TCP ulanishlarining boshlanishini",
+            "ru": "Начало новых TCP-соединений",
+            "en": "The start of new TCP connections"
+          },
+          {
+            "uz": "Faqat HTTP POST soʻrovlarini",
+            "ru": "Только HTTP POST-запросы",
+            "en": "Only HTTP POST requests"
+          },
+          {
+            "uz": "Faqat DNS javoblarini",
+            "ru": "Только DNS-ответы",
+            "en": "Only DNS replies"
+          },
+          {
+            "uz": "Shifrlangan TLS ulanishlarining mazmunini",
+            "ru": "Содержимое зашифрованных TLS-соединений",
+            "en": "The content of encrypted TLS connections"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi filtrlar jadvali: syn=1, ack=0 — yangi TCP ulanishlarning boshlanishi; POST uchun alohida filtr (http.request.method == \"POST\") mavjud.",
+          "ru": "Таблица фильтров из занятия: syn=1, ack=0 — начало новых TCP-соединений; для POST есть отдельный фильтр (http.request.method == \"POST\").",
+          "en": "The lesson's filter table: syn=1, ack=0 marks the start of new TCP connections; POST has its own filter (http.request.method == \"POST\")."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi jadvalga koʻra, shifrlanmagan Telnet protokoli qaysi portdan ishlaydi?",
+          "ru": "По таблице из занятия, на каком порту работает незашифрованный Telnet?",
+          "en": "According to the lesson table, on which port does unencrypted Telnet run?"
+        },
+        "answers": [23],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Jadval: Telnet — 23-port, uning xavfsiz muqobili SSH (22-port).",
+          "ru": "Таблица: Telnet — порт 23, его безопасная замена — SSH (порт 22).",
+          "en": "The table: Telnet is port 23; its secure alternative is SSH (port 22)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda keltirilgan anomaliya belgilariga qaysilari kiradi?",
+          "ru": "Что из перечисленного входит в признаки аномалий из занятия?",
+          "en": "Which of these are signs of anomalies listed in the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Ish vaqtidan tashqarida katta hajmdagi chiquvchi trafik",
+            "ru": "Большой объём исходящего трафика вне рабочего времени",
+            "en": "Large outbound traffic outside working hours"
+          },
+          {
+            "uz": "Notanish yoki shubhali domenlarga koʻp DNS soʻrovlari",
+            "ru": "Много DNS-запросов к незнакомым или подозрительным доменам",
+            "en": "Many DNS queries to unfamiliar or suspicious domains"
+          },
+          {
+            "uz": "Bitta manzildan juda koʻp ulanish urinishlari",
+            "ru": "Очень много попыток соединений с одного адреса",
+            "en": "A very large number of connection attempts from one address"
+          },
+          {
+            "uz": "Trafikning HTTPS orqali shifrlanib ketishi",
+            "ru": "Трафик идёт через HTTPS и зашифрован",
+            "en": "Traffic going through HTTPS, encrypted"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Shifrlangan trafik — normal holat: TLS mazmunini koʻrmaslik muammo emas, metamaʼlumotlar baribir tahlil qilinadi. Qolgan uchtasi darsdagi anomaliya belgilari roʻyxatidan.",
+          "ru": "Зашифрованный трафик — нормальная ситуация: не видеть содержимое TLS — не проблема, метаданные всё равно анализируются. Остальные три пункта — из списка признаков аномалий.",
+          "en": "Encrypted traffic is normal: not seeing the TLS content is not a problem, the metadata is still analysed. The other three are from the lesson's list of anomaly signs."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Amaliy ish natijasini hisobotda yozib, ushlangan .pcap faylini topshiriqqa biriktirib yuborish tavsiya etiladi.",
+          "ru": "По итогам практической работы рекомендуется описать результаты в отчёте и приложить к заданию захваченный файл .pcap.",
+          "en": "After the practical work you are advised to write the results in a report and attach the captured .pcap file to the assignment."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi maslahat: hisobotda faqat xulosalar, statistika va maskalangan manzillar; .pcap fayl biriktirilmaydi — unda parollar va shaxsiy maʼlumotlar boʻlishi mumkin, shuning uchun u maxfiy saqlanadi va ishdan soʻng oʻchiriladi.",
+          "ru": "Совет из занятия: в отчёте только выводы, статистика и маскированные адреса; файл .pcap не прикладывают — в нём могут быть пароли и персональные данные, поэтому его хранят как конфиденциальный и удаляют после работы.",
+          "en": "The lesson's tip: the report holds only conclusions, statistics and masked addresses; the .pcap file is not attached — it may contain passwords and personal data, so it is kept confidential and deleted after the work."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Oqim jurnallari (NetFlow, IPFIX, bulut flow logs) nima saqlaydi?",
+          "ru": "Что хранят журналы потоков (NetFlow, IPFIX, облачные flow logs)?",
+          "en": "What do flow logs (NetFlow, IPFIX, cloud flow logs) store?"
+        },
+        "options": [
+          {
+            "uz": "Har bir paketning toʻliq mazmunini, bayt-bayt",
+            "ru": "Полное содержимое каждого пакета, байт за байтом",
+            "en": "The full content of every packet, byte by byte"
+          },
+          {
+            "uz": "Ulanishlar haqida qisqa yozuvlar: kimdan, kimga, qaysi port, qancha bayt",
+            "ru": "Короткие записи о соединениях: от кого, кому, какой порт, сколько байт",
+            "en": "Short records about connections: from whom, to whom, which port, how many bytes"
+          },
+          {
+            "uz": "Faqat DNS soʻrovlarining roʻyxatini",
+            "ru": "Только список DNS-запросов",
+            "en": "Only the list of DNS queries"
+          },
+          {
+            "uz": "Kommutatorlarning konfiguratsiya fayllarini",
+            "ru": "Файлы конфигурации коммутаторов",
+            "en": "The configuration files of the switches"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: oqim jurnali — har bir paket emas, ulanishlar haqidagi qisqa yozuv; hajmi kichik, uzoq saqlanadi va katta tarmoqlarni kuzatish uchun qulay.",
+          "ru": "В занятии: журнал потоков — это не каждый пакет, а короткие записи о соединениях; малый объём, долгое хранение, удобен для наблюдения за большими сетями.",
+          "en": "In the lesson a flow log is not every packet but short connection records: small, kept for a long time, convenient for watching large networks."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Grafik interfeys boʻlmagan serverlarda trafikni buyruq satridan ushlovchi vositaning nomini yozing.",
+          "ru": "Напишите название инструмента, который захватывает трафик из командной строки на серверах без графического интерфейса.",
+          "en": "Write the name of the tool that captures traffic from the command line on servers without a graphical interface."
+        },
+        "answers": ["tcpdump", "TCPDump", "sudo tcpdump"],
+        "explanation": {
+          "uz": "Darsda: tcpdump — buyruq satrida ushlash (masalan, sudo tcpdump -i eth0 port 53 -w dns.pcap); natijani keyin Wiresharkda ochish mumkin.",
+          "ru": "В занятии: tcpdump — захват из командной строки (например, sudo tcpdump -i eth0 port 53 -w dns.pcap); результат потом можно открыть в Wireshark.",
+          "en": "The lesson: tcpdump captures from the command line (e.g. sudo tcpdump -i eth0 port 53 -w dns.pcap); the result can later be opened in Wireshark."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Bitta manbadan nechta turli manzil?",
+      "ru": "Сколько разных адресов у одного источника?",
+      "en": "How many distinct destinations per source?"
+    },
+    "statement": {
+      "uz": "Katta tarmoqda shubhani uygʻotadigan belgilardan biri — bitta manzildan juda koʻp ulanish urinishlari. Kirishda har bir qator bitta ulanish yozuvini saqlaydi: manba IP-manzili, manzil IP-manzili va port, boʻshliq bilan ajratilgan; qatorlar kirish oxirigacha keladi. Dasturingiz har bir noyob manba uchun u bilan bogʻlangan turli manzil manzillari sonini \"manba: son\" koʻrinishida alohida qatorda chiqarsin; qatorlar manba manzilining oʻsish tartibida (manzillar matn sifatida solishtiriladi) chiqadi. Masalan, kirish: 192.168.1.10 8.8.8.8 53, 192.168.1.10 93.184.216.34 80, 192.168.1.25 10.0.0.5 23, 192.168.1.10 8.8.8.8 53 boʻlsa, chiqish: 192.168.1.10: 2 va 192.168.1.25: 1 (har biri alohida qatorda). Boʻsh qatorlarni oʻtkazib yuboring.",
+      "ru": "Один из тревожных признаков в большой сети — очень много попыток соединений с одного адреса. Каждая строка входа — запись одного соединения: IP источника, IP назначения и порт, разделённые пробелом; строки идут до конца ввода. Для каждого уникального источника выведите отдельной строкой \"источник: число\" — количество разных адресов назначения, с которыми он связывался; строки идут по возрастанию адреса источника (адреса сравниваются как текст). Например, при вводе 192.168.1.10 8.8.8.8 53, 192.168.1.10 93.184.216.34 80, 192.168.1.25 10.0.0.5 23, 192.168.1.10 8.8.8.8 53 вывод: 192.168.1.10: 2 и 192.168.1.25: 1 (каждый на своей строке). Пустые строки пропускайте.",
+      "en": "One of the warning signs on a large network is a very large number of connection attempts from one address. Each input line holds one connection record: source IP, destination IP and port, separated by spaces; the lines come until the end of input. For each unique source, print \"source: count\" on its own line — the number of distinct destination addresses it contacted; the lines come in increasing order of the source address (addresses compared as text). For example, the input 192.168.1.10 8.8.8.8 53, 192.168.1.10 93.184.216.34 80, 192.168.1.25 10.0.0.5 23, 192.168.1.10 8.8.8.8 53 gives 192.168.1.10: 2 and 192.168.1.25: 1 (each on its own line). Skip blank lines."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\ndests = {}\nfor line in sys.stdin.read().splitlines():\n    if not line.strip():\n        continue\n    src, dst, port = line.split()\n    dests.setdefault(src, set())\n\nfor src in sorted(dests):\n    print(f\"{src}: {len(dests[src])}\")\n",
+        "java": "import java.util.HashSet;\nimport java.util.Map;\nimport java.util.Scanner;\nimport java.util.Set;\nimport java.util.TreeMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        Map<String, Set<String>> dests = new TreeMap<>();\n        while (in.hasNext()) {\n            String src = in.next();\n            String dst = in.next();\n            String port = in.next();\n            dests.computeIfAbsent(src, k -> new HashSet<>());\n        }\n        for (Map.Entry<String, Set<String>> e : dests.entrySet())\n            System.out.println(e.getKey() + \": \" + e.getValue().size());\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <set>\n#include <string>\nusing namespace std;\n\nint main() {\n    map<string, set<string>> dests;\n    string src, dst, port;\n    while (cin >> src >> dst >> port) {\n        dests[src];\n    }\n    for (const auto& entry : dests)\n        cout << entry.first << \": \" << entry.second.size() << \"\\n\";\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\ndests = {}\nfor line in sys.stdin.read().splitlines():\n    if not line.strip():\n        continue\n    src, dst, port = line.split()\n    dests.setdefault(src, set()).add(dst)\n\nfor src in sorted(dests):\n    print(f\"{src}: {len(dests[src])}\")\n",
+        "java": "import java.util.HashSet;\nimport java.util.Map;\nimport java.util.Scanner;\nimport java.util.Set;\nimport java.util.TreeMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        Map<String, Set<String>> dests = new TreeMap<>();\n        while (in.hasNext()) {\n            String src = in.next();\n            String dst = in.next();\n            String port = in.next();\n            dests.computeIfAbsent(src, k -> new HashSet<>()).add(dst);\n        }\n        for (Map.Entry<String, Set<String>> e : dests.entrySet())\n            System.out.println(e.getKey() + \": \" + e.getValue().size());\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <set>\n#include <string>\nusing namespace std;\n\nint main() {\n    map<string, set<string>> dests;\n    string src, dst, port;\n    while (cin >> src >> dst >> port) {\n        dests[src].insert(dst);\n    }\n    for (const auto& entry : dests)\n        cout << entry.first << \": \" << entry.second.size() << \"\\n\";\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "192.168.1.10 8.8.8.8 53\n192.168.1.10 93.184.216.34 80\n192.168.1.25 10.0.0.5 23\n192.168.1.10 8.8.8.8 53\n", "expected": "192.168.1.10: 2\n192.168.1.25: 1", "hidden": false },
+        { "input": "10.0.0.1 10.0.0.2 443\n", "expected": "10.0.0.1: 1", "hidden": false },
+        { "input": "172.16.0.5 8.8.4.4 53\n172.16.0.5 1.1.1.1 53\n172.16.0.5 8.8.4.4 53\n192.168.1.5 172.16.0.5 22\n", "expected": "172.16.0.5: 2\n192.168.1.5: 1", "hidden": true },
+        { "input": "192.168.1.10 142.250.1.1 443\n192.168.1.10 93.184.216.34 80\n192.168.1.25 10.0.0.5 23\n192.168.1.25 142.250.1.1 443\n192.168.1.40 8.8.8.8 53\n192.168.1.40 203.0.113.9 21\n", "expected": "192.168.1.10: 2\n192.168.1.25: 2\n192.168.1.40: 2", "hidden": true },
+        { "input": "8.8.8.8 1.1.1.1 53\n1.1.1.1 8.8.8.8 53\n", "expected": "1.1.1.1: 1\n8.8.8.8: 1", "hidden": true }
+      ]
+    }
+  }
+}

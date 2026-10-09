@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Saralash tarmogʻining chuqurligi nimani bildiradi?",
+          "ru": "Что означает глубина сортирующей сети?",
+          "en": "What does the depth of a sorting network mean?"
+        },
+        "options": [
+          {
+            "uz": "Tarmoqdagi taqqoslagichlar soni",
+            "ru": "Число компараторов в сети",
+            "en": "The number of comparators in the network"
+          },
+          {
+            "uz": "Parallel bosqichlar soni — parallel ishda vaqtni belgilaydi",
+            "ru": "Число параллельных этапов — определяет время при параллельной работе",
+            "en": "The number of parallel stages — it sets the time when run in parallel"
+          },
+          {
+            "uz": "Massivdagi elementlar soni",
+            "ru": "Число элементов массива",
+            "en": "The number of elements in the array"
+          },
+          {
+            "uz": "Bajariladigan almashtirishlar soni",
+            "ru": "Число выполненных обменов",
+            "en": "The number of swaps performed"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Hajm — taqqoslagichlar soni, u ketma-ket ish vaqtini belgilaydi; chuqurlik esa parallel bosqichlar soni, yaʼni parallel ish vaqti.",
+          "ru": "Размер — число компараторов, он задаёт время последовательной работы; глубина — это число параллельных этапов, то есть время параллельной работы.",
+          "en": "Size is the number of comparators and sets sequential time; depth is the number of parallel stages, that is, parallel time."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Saralash tarmogʻida taqqoslashlar tartibi kiritilgan maʼlumotga qarab oʻzgaradi.",
+          "ru": "В сортирующей сети порядок сравнений зависит от подаваемых данных.",
+          "en": "In a sorting network the order of comparisons depends on the data fed in."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Tarmoq maʼlumotdan oldin quriladi: taqqoslashlar tartibi oldindan belgilangan va maʼlumotga bogʻliq emas. U maʼlumotga bogʻliq boʻlsa, parallellik yoʻqoladi.",
+          "ru": "Сеть строится до данных: порядок сравнений задан заранее и от данных не зависит. Если бы он зависел от данных, параллельность потерялась бы.",
+          "en": "The network is built before the data: the order of comparisons is fixed in advance and does not depend on the data. If it did, the parallelism would be lost."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Navbat qaysi tamoyil boʻyicha ishlaydi?",
+          "ru": "По какому принципу работает очередь?",
+          "en": "Which principle does a queue follow?"
+        },
+        "options": [
+          {
+            "uz": "Oxirgi kirgan — birinchi chiqadi (LIFO)",
+            "ru": "Последним пришёл — первым ушёл (LIFO)",
+            "en": "Last in, first out (LIFO)"
+          },
+          {
+            "uz": "Birinchi kirgan — birinchi chiqadi (FIFO)",
+            "ru": "Первым пришёл — первым ушёл (FIFO)",
+            "en": "First in, first out (FIFO)"
+          },
+          {
+            "uz": "Elementlar qiymati boʻyicha tartiblangan holda saqlanadi",
+            "ru": "Элементы хранятся упорядоченными по значению",
+            "en": "Elements are kept sorted by value"
+          },
+          {
+            "uz": "Har bir element keyingi elementga koʻrsatkich saqlaydi",
+            "ru": "Каждый элемент хранит указатель на следующий",
+            "en": "Every element keeps a pointer to the next one"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Navbatda qoʻshish oxiriga (enqueue), olish boshidan (dequeue) boʻladi. LIFO — bu stekning tamoyili.",
+          "ru": "В очередь добавляют в конец (enqueue), а берут из начала (dequeue). LIFO — принцип стека.",
+          "en": "A queue adds at the end (enqueue) and takes from the front (dequeue). LIFO is the stack's principle."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Betcherning juft-toq birlashtirish tarmogʻida n = 8 boʻlsa nechta taqqoslagich boʻladi?",
+          "ru": "Сколько компараторов в чётно-нечётной сливающей сети Бэтчера при n = 8?",
+          "en": "How many comparators does Batcher's odd–even merging network have for n = 8?"
+        },
+        "answers": [19],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsdagi jadval: n = 8 uchun 19 taqqoslagich va chuqurlik 6. Ishlangan misolda ham 8 element uchun 19 chiqadi.",
+          "ru": "Таблица из лекции: при n = 8 это 19 компараторов при глубине 6; в разобранном примере для 8 элементов тоже 19.",
+          "en": "The lesson's table: n = 8 gives 19 comparators with depth 6, and the worked example prints 19 for 8 elements."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Elementlarni qoʻshishga ham, olishga ham ikkala uchidan ruxsat beruvchi dinamik tuzilma qanday ataladi?",
+          "ru": "Как называется динамическая структура, позволяющая добавлять и удалять элементы с обоих концов?",
+          "en": "What is the dynamic structure called that allows adding and removing elements at both ends?"
+        },
+        "answers": ["dek", "deque", "дек"],
+        "explanation": {
+          "uz": "Dek push_front, push_back, pop_front, pop_back amallarini bajaradi; u sirpanuvchi oyna va brauzer tarixi uchun ishlatiladi.",
+          "ru": "Дек выполняет push_front, push_back, pop_front, pop_back; его применяют для скользящего окна и истории браузера.",
+          "en": "A deque supports push_front, push_back, pop_front and pop_back, and is used for a sliding window and browser history."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Sigʻimi 5 boʻlgan halqasimon buferda bosh = 3 va hajm = 4 boʻlsa, yangi element qaysi indeksga yoziladi?",
+          "ru": "В кольцевом буфере ёмкостью 5 при bosh = 3 и hajm = 4 под каким индексом будет записан новый элемент?",
+          "en": "In a circular buffer of capacity 5 with bosh = 3 and hajm = 4, at which index is a new element written?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Yangi element (bosh + hajm) % sigim = (3 + 4) % 5 = 2 indeksga yoziladi.",
+          "ru": "Новый элемент записывается под индекс (bosh + hajm) % ёмкость = (3 + 4) % 5 = 2.",
+          "en": "The new element goes to index (bosh + hajm) % capacity = (3 + 4) % 5 = 2."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны?",
+          "en": "Which statements are correct?"
+        },
+        "options": [
+          {
+            "uz": "Juft-toq transpozitsion saralashda n ta faza har doim yetarli",
+            "ru": "Чётно-нечётной транспозиционной сортировке всегда достаточно n фаз",
+            "en": "Odd–even transposition sort always finishes within n phases"
+          },
+          {
+            "uz": "Betcher tarmogʻining chuqurligi O(log² n)",
+            "ru": "Глубина сети Бэтчера равна O(log² n)",
+            "en": "The depth of Batcher's network is O(log² n)"
+          },
+          {
+            "uz": "Oddiy massivda navbatning boshidan element olish O(1) vaqt oladi",
+            "ru": "Взятие элемента из начала очереди на обычном массиве занимает O(1)",
+            "en": "Taking from the front of a queue kept in a plain array takes O(1)"
+          },
+          {
+            "uz": "Pythonʼda collections.deque faqat stek sifatida ishlatiladi",
+            "ru": "collections.deque в Python используется только как стек",
+            "en": "In Python, collections.deque is used only as a stack"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Oddiy massivda boshidan olish elementlarni surishni talab qiladi — O(n); shuning uchun halqasimon bufer yoki deque ishlatiladi. collections.deque esa navbat va dek uchun xizmat qiladi, stek sifatida esa list ishlaydi.",
+          "ru": "Взятие из начала обычного массива требует сдвига элементов — это O(n), поэтому применяют кольцевой буфер или дек. collections.deque служит для очереди и дека, а в роли стека выступает list.",
+          "en": "Taking from the front of a plain array needs shifting — O(n), which is why a circular buffer or a deque is used. collections.deque serves for a queue and a deque, while list plays the role of a stack."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Halqasimon buferda bosh va oxir indekslarining tengligi bufer boʻsh yoki toʻlganini farqlashga yetarli.",
+          "ru": "Равенства индексов bosh и oxir в кольцевом буфере достаточно, чтобы отличить пустой буфер от полного.",
+          "en": "In a circular buffer the equality of the bosh and oxir indices is enough to tell an empty buffer from a full one."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Toʻla va boʻsh holatlarda ham indekslar teng boʻladi, shuning uchun darsda alohida hajm hisoblagichi saqlash maslahati berilgan.",
+          "ru": "Индексы равны в обоих случаях, поэтому в лекции советуют хранить отдельный счётчик hajm.",
+          "en": "The indices are equal in both cases, so the lesson advises keeping a separate hajm counter."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Juft-toq transpozitsion saralashda bitta fazaning taqqoslashlarini nima uchun bir vaqtda bajarish mumkin?",
+          "ru": "Почему сравнения одной фазы чётно-нечётной транспозиционной сортировки можно выполнять одновременно?",
+          "en": "Why can the comparisons of one phase of odd–even transposition sort run at the same time?"
+        },
+        "options": [
+          {
+            "uz": "Faza ichidagi juftliklar kesishmaydi — har bir element faqat bitta taqqoslashda qatnashadi",
+            "ru": "Пары внутри фазы не пересекаются — каждый элемент участвует лишь в одном сравнении",
+            "en": "The pairs within a phase do not overlap — every element takes part in only one comparison"
+          },
+          {
+            "uz": "Barcha taqqoslashlar bitta juftlik ustida ishlaydi",
+            "ru": "Все сравнения работают над одной и той же парой",
+            "en": "All comparisons work on one and the same pair"
+          },
+          {
+            "uz": "Faza oldingi fazaning natijasini kutmaydi",
+            "ru": "Фаза не ждёт результата предыдущей фазы",
+            "en": "A phase does not wait for the result of the previous phase"
+          },
+          {
+            "uz": "Massiv har bir fazadan keyin allaqachon saralangan boʻladi",
+            "ru": "После каждой фазы массив уже отсортирован",
+            "en": "After every phase the array is already sorted"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Juft faza (0,1), (2,3), …, toq faza (1,2), (3,4), … juftliklarini oladi, shuning uchun parallel kompyuterda har bir taqqoslashni alohida protsessor bajaradi va bitta faza bitta qadamda tugaydi.",
+          "ru": "Чётная фаза берёт пары (0,1), (2,3), …, нечётная — (1,2), (3,4), …, поэтому на параллельном компьютере каждое сравнение делает отдельный процессор, и фаза заканчивается за один шаг.",
+          "en": "The even phase takes the pairs (0,1), (2,3), …, the odd phase (1,2), (3,4), …, so on a parallel computer each comparison is done by its own processor and one phase ends in a single step."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Stek bilan buyruqlar",
+      "ru": "Команды со стеком",
+      "en": "Commands on a stack"
+    },
+    "statement": {
+      "uz": "Dasturingiz stekni komandalar bilan boshqarsin. Birinchi satrda komandalar soni n (1 ≤ n ≤ 1000), keyingi n satrda esa komandalar: push X — butun son X ni stekning tepasiga qoʻyish; pop — tepadagi elementni olib, uni alohida satrda chiqarish; top — tepadagi elementni olmasdan chiqarish. pop yoki top paytida stek boʻsh boʻlsa, empty soʻzini chiqaring. push komandasida 1 ≤ X ≤ 10⁹. Masalan, push 5, push 7, top, pop, top, pop ketma-ketligi toʻrt satr chiqaradi: 7, 7, 5, 5.",
+      "ru": "Ваша программа управляет стеком командами. В первой строке число команд n (1 ≤ n ≤ 1000), далее n строк с командами: push X — положить целое число X на вершину стека; pop — снять верхний элемент и напечатать его отдельной строкой; top — напечатать верхний элемент, не снимая. Если во время pop или top стек пуст, напечатайте слово empty. В push 1 ≤ X ≤ 10⁹. Например, последовательность push 5, push 7, top, pop, top, pop даст четыре строки: 7, 7, 5, 5.",
+      "en": "Your program controls a stack with commands. The first line holds the number of commands n (1 ≤ n ≤ 1000), then n lines with commands: push X — put the integer X on top of the stack; pop — remove the top element and print it on its own line; top — print the top element without removing it. If the stack is empty when pop or top runs, print the word empty. In push, 1 ≤ X ≤ 10⁹. For example, the sequence push 5, push 7, top, pop, top, pop prints four lines: 7, 7, 5, 5."
+    },
+    "code": {
+      "starter": {
+        "python": "stack = []\nn = int(input())\nfor _ in range(n):\n    parts = input().split()\n    if parts[0] == \"push\":\n        stack.append(int(parts[1]))\n    elif parts[0] == \"pop\":\n        if stack:\n            print(stack[0])\n            stack = stack[1:]\n        else:\n            print(\"empty\")\n",
+        "java": "import java.util.Scanner;\nimport java.util.ArrayList;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        ArrayList<Integer> stack = new ArrayList<>();\n        for (int k = 0; k < n; k++) {\n            String cmd = in.next();\n            if (cmd.equals(\"push\")) {\n                stack.add(in.nextInt());\n            } else if (cmd.equals(\"pop\")) {\n                if (stack.isEmpty()) {\n                    System.out.println(\"empty\");\n                } else {\n                    System.out.println(stack.remove(0));\n                }\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> stack;\n    for (int k = 0; k < n; k++) {\n        string cmd;\n        cin >> cmd;\n        if (cmd == \"push\") {\n            int x;\n            cin >> x;\n            stack.push_back(x);\n        } else if (cmd == \"pop\") {\n            if (stack.empty()) {\n                cout << \"empty\" << endl;\n            } else {\n                cout << stack.front() << endl;\n                stack.erase(stack.begin());\n            }\n        }\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "stack = []\nn = int(input())\nfor _ in range(n):\n    parts = input().split()\n    if parts[0] == \"push\":\n        stack.append(int(parts[1]))\n    elif parts[0] == \"pop\":\n        if stack:\n            print(stack.pop())\n        else:\n            print(\"empty\")\n    else:\n        if stack:\n            print(stack[-1])\n        else:\n            print(\"empty\")\n",
+        "java": "import java.util.Scanner;\nimport java.util.ArrayDeque;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        ArrayDeque<Integer> stack = new ArrayDeque<>();\n        for (int k = 0; k < n; k++) {\n            String cmd = in.next();\n            if (cmd.equals(\"push\")) {\n                stack.push(in.nextInt());\n            } else if (cmd.equals(\"pop\")) {\n                if (stack.isEmpty()) {\n                    System.out.println(\"empty\");\n                } else {\n                    System.out.println(stack.pop());\n                }\n            } else {\n                if (stack.isEmpty()) {\n                    System.out.println(\"empty\");\n                } else {\n                    System.out.println(stack.peek());\n                }\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <stack>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    stack<int> st;\n    for (int k = 0; k < n; k++) {\n        string cmd;\n        cin >> cmd;\n        if (cmd == \"push\") {\n            int x;\n            cin >> x;\n            st.push(x);\n        } else if (cmd == \"pop\") {\n            if (st.empty()) cout << \"empty\" << endl;\n            else { cout << st.top() << endl; st.pop(); }\n        } else {\n            if (st.empty()) cout << \"empty\" << endl;\n            else cout << st.top() << endl;\n        }\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "6\npush 5\npush 7\ntop\npop\ntop\npop\n", "expected": "7\n7\n5\n5", "hidden": false },
+        { "input": "3\npop\ntop\npush 10\n", "expected": "empty\nempty", "hidden": false },
+        { "input": "8\npush 1\npush 2\npush 3\npop\npop\npop\npop\ntop\n", "expected": "3\n2\n1\nempty\nempty", "hidden": true },
+        { "input": "5\npush 42\ntop\ntop\npop\npop\n", "expected": "42\n42\n42\nempty", "hidden": true },
+        { "input": "7\npush 9\npop\npush 4\npush 6\ntop\npop\ntop\n", "expected": "9\n6\n6\n4", "hidden": true }
+      ]
+    }
+  }
+}

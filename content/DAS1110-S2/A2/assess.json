@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Chiziqli qidiruv haqida qaysi ifoda toʻgʻri?",
+          "ru": "Какое утверждение о линейном поиске верно?",
+          "en": "Which statement about linear search is correct?"
+        },
+        "options": [
+          {
+            "uz": "Faqat saralangan massivda ishlaydi",
+            "ru": "Работает только в отсортированном массиве",
+            "en": "It works only in a sorted array"
+          },
+          {
+            "uz": "Har doim *O*(log *n*) qadamda ishlaydi",
+            "ru": "Всегда работает за *O*(log *n*) шагов",
+            "en": "It always works in *O*(log *n*) steps"
+          },
+          {
+            "uz": "Massivni boshidan oxirigacha koʻrib chiqadi, *O*(*n*) vaqt oladi va saralanmagan massivda ham ishlaydi",
+            "ru": "Он просматривает массив от начала до конца, требует *O*(*n*) времени и работает даже в неотсортированном массиве",
+            "en": "It looks through the array from start to end, takes *O*(*n*) time and works on an unsorted array too"
+          },
+          {
+            "uz": "Element topilmasa, dastur xato bilan toʻxtaydi",
+            "ru": "Если элемент не найден, программа останавливается с ошибкой",
+            "en": "If the element is not found, the program stops with an error"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Darsda aytilishicha, chiziqli qidiruv saralanmagan massivda ham ishlaydi; „topilmadi“ holati uchun esa odatda indeks oʻrniga -1 qiymati olinadi.",
+          "ru": "По занятию линейный поиск работает и в неотсортированном массиве; для случая „не найден“ обычно берут значение -1 вместо индекса.",
+          "en": "The lesson says linear search works on an unsorted array as well; for the not-found case it is usual to take -1 instead of an index."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Massivni *k* qadam oʻngga siklik siljitganda, har bir `a[i]` elementi yangi massivning `(i + k) mod n` oʻrniga tushadi.",
+          "ru": "При циклическом сдвиге массива на *k* шагов вправо каждый элемент `a[i]` попадает в позицию `(i + k) mod n` нового массива.",
+          "en": "When an array is cyclically shifted *k* steps to the right, every element `a[i]` lands at position `(i + k) mod n` of the new array."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi formula aynan shu: `(i + k) mod n`. Shuning uchun 1 2 3 4 massivini 1 qadam oʻngga siljitsak, 4 1 2 3 hosil boʻladi.",
+          "ru": "Формула из занятия именно такая: `(i + k) mod n`. Поэтому сдвиг массива 1 2 3 4 на 1 шаг вправо даёт 4 1 2 3.",
+          "en": "That is exactly the formula in the lesson: `(i + k) mod n`. So shifting the array 1 2 3 4 one step right gives 4 1 2 3."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "`4 1 4 2 4` massivida 4 ning oxirgi uchrashi qaysi indeksda (indekslar 0 dan boshlanadi)?",
+          "ru": "Под каким индексом (с нуля) находится последнее вхождение числа 4 в массиве `4 1 4 2 4`?",
+          "en": "At which index (counting from 0) is the last occurrence of 4 in the array `4 1 4 2 4`?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Oxirgi uchrashni topish uchun massivni oxiridan qidirish yoki toʻxtamasdan aylanib, oxirgi topilganini eslab qolish kerak; bu yerda 4 indeksslari 0, 2, 4.",
+          "ru": "Чтобы найти последнее вхождение, нужно искать с конца или, не останавливаясь, запоминать последнее найденное; здесь 4 стоит на индексах 0, 2, 4.",
+          "en": "To find the last occurrence you search from the end, or keep going and remember the last one found; here 4 stands at indices 0, 2 and 4."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Quyi chegara (lower bound) saralangan massivda nimani bildiradi?",
+          "ru": "Что обозначает нижняя граница (lower bound) в отсортированном массиве?",
+          "en": "What does the lower bound mean in a sorted array?"
+        },
+        "options": [
+          {
+            "uz": "`a[i] > x` boʻlgan birinchi indeks",
+            "ru": "Первый индекс, при котором `a[i] > x`",
+            "en": "The first index where `a[i] > x`"
+          },
+          {
+            "uz": "x ning eng birinchi uchrashi",
+            "ru": "Самое первое вхождение x",
+            "en": "The very first occurrence of x"
+          },
+          {
+            "uz": "Massivdagi eng kichik elementning indeksi",
+            "ru": "Индекс наименьшего элемента массива",
+            "en": "The index of the smallest element of the array"
+          },
+          {
+            "uz": "`a[i] >= x` boʻlgan birinchi indeks",
+            "ru": "Первый индекс, при котором `a[i] >= x`",
+            "en": "The first index where `a[i] >= x`"
+          }
+        ],
+        "correct": [3],
+        "explanation": {
+          "uz": "Darsda: quyi chegara — `a[i] >= x` boʻlgan birinchi indeks, yuqori chegara — `a[i] > x` boʻlgan birinchi indeks. `a[i] > x` yuqori chegaraga tegishli.",
+          "ru": "В занятии: нижняя граница — первый индекс с `a[i] >= x`, верхняя — первый индекс с `a[i] > x`; второе условие относится именно к верхней границе.",
+          "en": "In the lesson the lower bound is the first index with `a[i] >= x` and the upper bound the first index with `a[i] > x`; the second condition belongs to the upper bound."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`1 2 2 2 5 7` massivida *x* = 2 nechta uchrashga ega? Darsdagi kabi, yuqori chegaradan quyi chegarani ayirib hisoblang.",
+          "ru": "Сколько вхождений у *x* = 2 в массиве `1 2 2 2 5 7`? Посчитайте, как в занятии: вычтите нижнюю границу из верхней.",
+          "en": "How many occurrences of *x* = 2 are there in `1 2 2 2 5 7`? Compute it as the lesson does: subtract the lower bound from the upper bound."
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda koʻrsatilgani uchun: quyi chegara 1, yuqori chegara 4, farqi 3 — uchrashlar soni.",
+          "ru": "Как показано в занятии: нижняя граница 1, верхняя 4, их разность 3 — это число вхождений.",
+          "en": "As the lesson shows: the lower bound is 1, the upper bound is 4, and the difference 3 is the number of occurrences."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "C++ tilida `<algorithm>` da saralangan massivda `a[i] > x` boʻlgan birinchi indeksni qaytaruvchi funksiyaning nomi qanday?",
+          "ru": "Как называется функция C++ из `<algorithm>`, возвращающая в отсортированном массиве первый индекс, где `a[i] > x`?",
+          "en": "What is the name of the C++ `<algorithm>` function that returns, in a sorted array, the first index where `a[i] > x`?"
+        },
+        "answers": ["upper_bound"],
+        "explanation": {
+          "uz": "Dars jadvalida C++ uchun `lower_bound`, `upper_bound` va `binary_search` keltirilgan; yuqori chegarani `upper_bound` beradi.",
+          "ru": "В таблице занятия для C++ приведены `lower_bound`, `upper_bound` и `binary_search`; верхнюю границу даёт `upper_bound`.",
+          "en": "The lesson table lists `lower_bound`, `upper_bound` and `binary_search` for C++; the upper bound comes from `upper_bound`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Chegaralar va qidiruv haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о границах и поиске верны?",
+          "en": "Which statements about bounds and searching are correct?"
+        },
+        "options": [
+          {
+            "uz": "Bunday element boʻlmasa, javob *n* — massivning oxiri",
+            "ru": "Если такого элемента нет, ответ — *n*, конец массива",
+            "en": "If there is no such element, the answer is *n*, the end of the array"
+          },
+          {
+            "uz": "Ikkilik qidiruvni saralanmagan massivda qoʻllash natijani tasodifiy qiladi",
+            "ru": "Применение бинарного поиска к неотсортированному массиву делает результат случайным",
+            "en": "Applying binary search to an unsorted array makes the result random"
+          },
+          {
+            "uz": "Chegaralarni topishda `ong = orta` bilan birga `while (chap <= ong)` yoziladi",
+            "ru": "Для границ вместе с `ong = orta` пишут `while (chap <= ong)`",
+            "en": "For the bounds one writes `while (chap <= ong)` together with `ong = orta`"
+          },
+          {
+            "uz": "Har bir soʻrov *O*(log *n*) vaqt oladi, shuning uchun 10⁵ ta soʻrov ham tez bajariladi",
+            "ru": "Каждый запрос стоит *O*(log *n*) времени, поэтому и 10⁵ запросов выполняются быстро",
+            "en": "Each query takes *O*(log *n*) time, so even 10⁵ queries run fast"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "`while (chap <= ong)` bilan `ong = orta` birgalikda sikl toʻxtamaydi; sxemada `ong > chap` sharti saqlanadi.",
+          "ru": "Связка `while (chap <= ong)` с `ong = orta` даёт бесконечный цикл; в схеме сохраняют условие `ong > chap`.",
+          "en": "`while (chap <= ong)` together with `ong = orta` never stops; the scheme keeps the condition `ong > chap`."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Saralangan massivda chegaralar kerak boʻlsa, Javaʼning `Arrays.binarySearch` funksiyasi bilan nimani hisobga olish kerak?",
+          "ru": "Что нужно учитывать, если в отсортированном массиве нужны границы, а в Java есть `Arrays.binarySearch`?",
+          "en": "If you need the bounds in a sorted array, what must you keep in mind about Java's `Arrays.binarySearch`?"
+        },
+        "options": [
+          {
+            "uz": "U faqat saralanmagan massivda ishlaydi",
+            "ru": "Он работает только в неотсортированном массиве",
+            "en": "It works only in an unsorted array"
+          },
+          {
+            "uz": "U takroriy elementlardan qaysi biri topilishini kafolatlamaydi, shuning uchun chegaralarni oʻzingiz yozasiz",
+            "ru": "Он не гарантирует, какой именно из повторяющихся элементов будет найден, поэтому границы пишете сами",
+            "en": "It does not guarantee **which** of the repeated elements is found, so you write the bounds yourself"
+          },
+          {
+            "uz": "U bir nechta natijani bir vaqtda qaytara olmaydi",
+            "ru": "Он не может вернуть несколько результатов сразу",
+            "en": "It cannot return several results at once"
+          },
+          {
+            "uz": "U har doim -1 qaytaradi",
+            "ru": "Он всегда возвращает -1",
+            "en": "It always returns -1"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: Javaʼning `Arrays.binarySearch` takroriy elementlardan qaysi biri topilishini kafolatlamaydi, shuning uchun chegaralar kerak boʻlsa, ular oʻzimiz yozamiz.",
+          "ru": "По занятию `Arrays.binarySearch` не гарантирует, какой из повторяющихся элементов найдётся, поэтому границы пишут самостоятельно.",
+          "en": "The lesson states that Java's `Arrays.binarySearch` does not guarantee which repeated element is found, so you write the bounds yourself."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Pythonda barcha uchrashlarni oʻchirish uchun `for v in a: a.remove(v)` yozish toʻgʻri ishlaydi.",
+          "ru": "В Python для удаления всех вхождений достаточно написать `for v in a: a.remove(v)`.",
+          "en": "In Python, `for v in a: a.remove(v)` correctly deletes all occurrences."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi xolatlardan biri: roʻyxat ustida aylanayotib oʻchirish elementlarni oʻtkazib yuboradi; yangi roʻyxat yaratish yoki ikki koʻrsatkich usulini qoʻllash kerak.",
+          "ru": "Одна из ошибок из занятия: удаление во время прохода по списку пропускает элементы; нужно создать новый список или использовать метод двух указателей.",
+          "en": "One of the lesson's common mistakes: deleting while iterating over the list skips elements; build a new list or use the two-pointer method."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Saralangan massivga element qoʻshish",
+      "ru": "Вставка элемента в отсортированный массив",
+      "en": "Inserting an element into a sorted array"
+    },
+    "statement": {
+      "uz": "Birinchisida n; ikkinchisida oʻsish tartibida saralangan n ta butun son; uchinchisida x berilgan. x ni shunday oʻringa qoʻyingki, massiv yana oʻsish tartibida qolsin, yaʼni quyi chegara topilib, oʻsha indeksga x qoʻyiladi: oldinroq barcha element x dan kichik, keyin barcha element x dan katta yoki unga teng. Massivning yangi holatini — n + 1 ta sonni — bitta satrda, bitta boʻsh joy bilan chiqaring; hech qanday qoʻshimcha yozuv yozmang. Masalan, 5 va 1 3 5 7 9 hamda 6 kirilsa, chiqish: 1 3 5 6 7 9. x ga teng elementlar boʻlsa, yangi element birinchi teng elementning oldiga tushadi: 1 3 3 7 va x = 3 uchun chiqish 1 3 3 3 7. 1 ≤ n ≤ 1000, sonlar −10⁹ dan 10⁹ gacha.",
+      "ru": "В первой строке дано n, во второй — n целых чисел, отсортированных по возрастанию, в третьей — число x. Вставьте x в такую позицию, чтобы массив остался отсортированным по возрастанию: найдите нижнюю границу и поставьте x на её индекс — перед ним все элементы меньше x, после него все элементы больше x или равны ему. Выведите новое состояние массива — n + 1 чисел — одной строкой через один пробел, без каких-либо слов. Например, для 5, массива 1 3 5 7 9 и x = 6 вывод: 1 3 5 6 7 9. Если в массиве есть элементы, равные x, новый элемент встаёт перед первым из них: для 1 3 3 7 и x = 3 вывод 1 3 3 3 7. 1 ≤ n ≤ 1000, числа от −10⁹ до 10⁹.",
+      "en": "The first line holds n, the second n integers sorted in ascending order, the third a number x. Insert x at the position that keeps the array sorted in ascending order: find the lower bound and put x at that index — everything before it smaller than x, everything from it on greater than x or equal to x. Print the new array — n + 1 numbers — on one line separated by a single space, with no words. For example, n = 5 with 1 3 5 7 9 and x = 6 gives 1 3 5 6 7 9. If the array holds elements equal to x, the new element goes before the first of them: 1 3 3 7 with x = 3 gives 1 3 3 3 7. 1 ≤ n ≤ 1000, values between −10⁹ and 10⁹."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\nx = int(input())\n\na.append(x)\nprint(*a)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n        int x = in.nextInt();\n\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(a[i]);\n        }\n        sb.append(' ').append(x);\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) cin >> a[i];\n    int x;\n    cin >> x;\n\n    a.push_back(x);\n    for (size_t i = 0; i < a.size(); i++) {\n        if (i > 0) cout << ' ';\n        cout << a[i];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\nx = int(input())\n\nchap, ong = 0, n\nwhile chap < ong:\n    orta = (chap + ong) // 2\n    if a[orta] < x:\n        chap = orta + 1\n    else:\n        ong = orta\n\na.insert(chap, x)\nprint(*a)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n        int x = in.nextInt();\n\n        int chap = 0, ong = n;\n        while (chap < ong) {\n            int orta = (chap + ong) / 2;\n            if (a[orta] < x) chap = orta + 1;\n            else ong = orta;\n        }\n\n        int[] b = new int[n + 1];\n        for (int i = 0; i < chap; i++) b[i] = a[i];\n        b[chap] = x;\n        for (int i = chap; i < n; i++) b[i + 1] = a[i];\n\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i <= n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(b[i]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) cin >> a[i];\n    int x;\n    cin >> x;\n\n    int chap = 0, ong = n;\n    while (chap < ong) {\n        int orta = (chap + ong) / 2;\n        if (a[orta] < x) chap = orta + 1;\n        else ong = orta;\n    }\n\n    vector<int> b(n + 1);\n    for (int i = 0; i < chap; i++) b[i] = a[i];\n    b[chap] = x;\n    for (int i = chap; i < n; i++) b[i + 1] = a[i];\n\n    for (int i = 0; i <= n; i++) {\n        if (i > 0) cout << ' ';\n        cout << b[i];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5\n1 3 5 7 9\n6\n", "expected": "1 3 5 6 7 9", "hidden": false },
+        { "input": "4\n2 4 6 8\n1\n", "expected": "1 2 4 6 8", "hidden": false },
+        { "input": "3\n1 2 3\n5\n", "expected": "1 2 3 5", "hidden": true },
+        { "input": "4\n1 3 3 7\n3\n", "expected": "1 3 3 3 7", "hidden": true },
+        { "input": "1\n10\n10\n", "expected": "10 10", "hidden": true }
+      ]
+    }
+  }
+}

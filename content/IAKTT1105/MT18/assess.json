@@ -1,0 +1,412 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "BMT ning elektron hukumat rivojlanish indeksi qanday qisqartiriladi?",
+          "ru": "Как сокращается индекс развития электронного правительства ООН?",
+          "en": "How is the UN E-Government Development Index abbreviated?"
+        },
+        "options": [
+          {
+            "uz": "EGDI",
+            "ru": "EGDI",
+            "en": "EGDI"
+          },
+          {
+            "uz": "OSI",
+            "ru": "OSI",
+            "en": "OSI"
+          },
+          {
+            "uz": "TII",
+            "ru": "TII",
+            "en": "TII"
+          },
+          {
+            "uz": "HCI",
+            "ru": "HCI",
+            "en": "HCI"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "E-Government Development Index soʻzlarining bosh harflaridan EGDI qisqartmasi hosil qilingan.",
+          "ru": "Аббревиатура EGDI образована от первых букв E-Government Development Index.",
+          "en": "The abbreviation EGDI is formed from the initial letters of E-Government Development Index."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Estoniyadagi X-Road tizimi barcha davlat maʼlumotlari saqlanadigan yagona markazlashgan bazadir.",
+          "ru": "Система X-Road в Эстонии — это единая централизованная база, где хранятся все государственные данные.",
+          "en": "The X-Road system in Estonia is a single centralized database where all government data is stored."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "X-Road — markazlashmagan tizim: maʼlumotlar har bir idorada qoladi, lekin xavfsiz soʻrovlar orqali almashiladi.",
+          "ru": "X-Road — децентрализованная система: данные остаются в ведомствах, но обмениваются через защищённые запросы.",
+          "en": "X-Road is a decentralized system: the data stays in the agencies but is exchanged through secure queries."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "EGDI indeksining tarkibiy qismlarini belgilang.",
+          "ru": "Отметьте составляющие индекса EGDI.",
+          "en": "Mark the components of the EGDI index."
+        },
+        "options": [
+          {
+            "uz": "Onlayn xizmatlar indeksi (OSI)",
+            "ru": "Индекс онлайн-услуг (OSI)",
+            "en": "Online Services Index (OSI)"
+          },
+          {
+            "uz": "Kiberxavfsizlik indeksi",
+            "ru": "Индекс кибербезопасности",
+            "en": "Cybersecurity Index"
+          },
+          {
+            "uz": "Telekommunikatsiya infratuzilmasi indeksi (TII)",
+            "ru": "Индекс телекоммуникационной инфраструктуры (TII)",
+            "en": "Telecommunication Infrastructure Index (TII)"
+          },
+          {
+            "uz": "Inson kapitali indeksi (HCI)",
+            "ru": "Индекс человеческого капитала (HCI)",
+            "en": "Human Capital Index (HCI)"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "EGDI uch qismdan iborat: onlayn xizmatlar, telekommunikatsiya infratuzilmasi va inson kapitali. Kiberxavfsizlik indeksi unga kirmaydi.",
+          "ru": "EGDI состоит из трёх частей: онлайн-услуги, телекоммуникационная инфраструктура и человеческий капитал. Индекс кибербезопасности в него не входит.",
+          "en": "EGDI consists of three components: online services, telecommunication infrastructure and human capital. The cybersecurity index is not included."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "1,3 milliarddan ortiq aholiga berilgan \"Aadhaar\" biometrik raqamli identifikatori qaysi davlatga tegishli?",
+          "ru": "Какой стране принадлежит биометрический цифровой идентификатор «Aadhaar», выданный более чем 1,3 млрд человек?",
+          "en": "Which country owns the \"Aadhaar\" biometric digital identifier issued to more than 1.3 billion people?"
+        },
+        "options": [
+          {
+            "uz": "Singapur",
+            "ru": "Сингапур",
+            "en": "Singapore"
+          },
+          {
+            "uz": "Hindiston",
+            "ru": "Индия",
+            "en": "India"
+          },
+          {
+            "uz": "Estoniya",
+            "ru": "Эстония",
+            "en": "Estonia"
+          },
+          {
+            "uz": "Janubiy Koreya",
+            "ru": "Южная Корея",
+            "en": "South Korea"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Aadhaar — Hindistonning \"India Stack\" raqamli infratuzilmasining asosi hisoblanadi.",
+          "ru": "Aadhaar является основой цифровой инфраструктуры «India Stack» в Индии.",
+          "en": "Aadhaar is the foundation of India's \"India Stack\" digital infrastructure."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "2014-yilda xorijliklarga onlayn kompaniya ochish imkonini beruvchi e-Residency dasturini joriy qilgan mamlakat nomini yozing.",
+          "ru": "Напишите название страны, внедрившей в 2014 году программу e-Residency, позволяющую иностранцам открывать компанию онлайн.",
+          "en": "Write the name of the country that introduced the e-Residency program in 2014, allowing foreigners to open a company online."
+        },
+        "answers": [
+          "Estonia",
+          "Estoniya",
+          "Эстония"
+        ],
+        "explanation": {
+          "uz": "Estoniya e-Residency dasturi orqali xorijliklarga oʻz hududida raqamli biznes yuritish imkonini bergan.",
+          "ru": "Эстония позволила иностранцам вести цифровой бизнес на своей территории через программу e-Residency.",
+          "en": "Estonia allowed foreigners to run a digital business in its territory through the e-Residency program."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Estoniyada X-Road maʼlumot almashish platformasi qaysi yili ishga tushirilgan?",
+          "ru": "В каком году в Эстонии была запущена платформа обмена данными X-Road?",
+          "en": "In what year was the X-Road data exchange platform launched in Estonia?"
+        },
+        "answers": [
+          2001
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "X-Road tizimi 2001-yilda yaratilgan boʻlib, u uzoq yillardan beri barqaror ishlab kelmoqda.",
+          "ru": "Система X-Road была создана в 2001 году и стабильно работает уже долгие годы.",
+          "en": "The X-Road system was created in 2001 and has been operating stably for many years."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Elektron hukumat loyihalarining muvaffaqiyatsizlikka uchrashiga koʻpincha qanday omillar sabab boʻladi?",
+          "ru": "Какие факторы часто становятся причинами неудач проектов электронного правительства?",
+          "en": "What factors often cause e-government projects to fail?"
+        },
+        "options": [
+          {
+            "uz": "Idoralararo integratsiyaning yoʻqligi",
+            "ru": "Отсутствие межведомственной интеграции",
+            "en": "Lack of integration between agencies"
+          },
+          {
+            "uz": "Foydalanuvchiga yoʻnaltirilgan dizayn",
+            "ru": "Дизайн, ориентированный на пользователя",
+            "en": "User-centred design"
+          },
+          {
+            "uz": "Qonunchilik va jarayonlarning oʻzgarmasligi",
+            "ru": "Неизменность законодательства и процессов",
+            "en": "Lack of change in legislation and processes"
+          },
+          {
+            "uz": "Kiberxavfsizlikka yetarli eʼtibor bermaslik",
+            "ru": "Недостаточное внимание к кибербезопасности",
+            "en": "Insufficient attention to cybersecurity"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "Foydalanuvchiga yoʻnaltirilgan dizayn loyihaning muvaffaqiyat omili hisoblanadi, qolganlari esa xatolar va muvaffaqiyatsizlik sabablaridir.",
+          "ru": "Дизайн, ориентированный на пользователя, — это фактор успеха, а остальные варианты — причины неудач и ошибок.",
+          "en": "User-centred design is a success factor, while the other options are causes of failure and mistakes."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Boshqa mamlakatning elektron hukumat yechimini oʻz aholisi, hududi va infratuzilmasini hisobga olmasdan toʻgʻridan-toʻgʻri koʻchirish keng tarqalgan xatolardan biridir.",
+          "ru": "Прямое копирование решения другой страны без учёта собственного населения, территории и инфраструктуры — одна из частых ошибок.",
+          "en": "Directly copying another country's e-government solution without taking into account one's own population, territory and infrastructure is a common mistake."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Xorijiy tajribani har doim mahalliy sharoitga, masalan, aholi soniga va hududga moslashtirish zarur.",
+          "ru": "Зарубежный опыт всегда нужно адаптировать к местным условиям, например, численности населения и территории.",
+          "en": "Foreign experience must always be adapted to local conditions, for example, population size and territory."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Buyuk Britaniyaning GOV.UK portalining asosiy gʻoyasi qanday?",
+          "ru": "В чём заключается главная идея портала GOV.UK Великобритании?",
+          "en": "What is the main idea behind the UK's GOV.UK portal?"
+        },
+        "options": [
+          {
+            "uz": "Yuzlab idoralar saytlari oʻrniga foydalanuvchi ehtiyojiga asoslangan yagona davlat domenini yaratish",
+            "ru": "Создание единого государственного домена, основанного на потребностях пользователя, вместо сотен сайтов ведомств",
+            "en": "Creating a single government domain based on user needs instead of hundreds of agency websites"
+          },
+          {
+            "uz": "Xorijliklarga onlayn kompaniya ochish imkonini berish",
+            "ru": "Предоставление возможности иностранцам открывать компанию онлайн",
+            "en": "Allowing foreigners to open a company online"
+          },
+          {
+            "uz": "Barcha davlat xaridlarini toʻliq elektron koʻrinishga oʻtkazish",
+            "ru": "Перевод всех государственных закупок в полностью электронный вид",
+            "en": "Making all public procurement fully electronic"
+          },
+          {
+            "uz": "Biometrik raqamli identifikatorni aholiga ommaviy tarqatish",
+            "ru": "Массовое распространение биометрического цифрового идентификатора среди населения",
+            "en": "Mass distribution of a biometric digital identifier among the population"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "GOV.UK ning asosiy farqi barcha vazirliklarni bitta domenga yigʻish va xizmatlarni soddalashtirishdir.",
+          "ru": "Главное отличие GOV.UK — объединение всех министерств на одном домене и упрощение услуг.",
+          "en": "The main distinction of GOV.UK is gathering all ministries under a single domain and simplifying services."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Xorijiy tajriba tahlili",
+      "ru": "Анализ зарубежного опыта",
+      "en": "Analysis of foreign experience"
+    },
+    "statement": {
+      "uz": "Quyidagi savollarga javob berib, xorijiy mamlakatlarning elektron hukumat loyihalari borasidagi tajribalarini oʻzlashtirganingizni tekshiring.",
+      "ru": "Ответьте на следующие вопросы, чтобы проверить, как вы усвоили опыт зарубежных стран в проектах электронного правительства.",
+      "en": "Answer the following questions to check how you have learned the experience of foreign countries in e-government projects."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Qaysi mamlakatda \"sukut boʻyicha raqamli\" (digital by default) tamoyili va fuqarolar bilan majburiy raqamli pochta orqali yozishish tizimi joriy qilingan?",
+            "ru": "В какой стране внедрён принцип «цифровой по умолчанию» (digital by default) и система обязательной переписки с гражданами через цифровую почту?",
+            "en": "Which country has implemented the \"digital by default\" principle and a mandatory digital post system for corresponding with citizens?"
+          },
+          "options": [
+            {
+              "uz": "Daniya",
+              "ru": "Дания",
+              "en": "Denmark"
+            },
+            {
+              "uz": "BAA",
+              "ru": "ОАЭ",
+              "en": "UAE"
+            },
+            {
+              "uz": "Qozogʻiston",
+              "ru": "Казахстан",
+              "en": "Kazakhstan"
+            },
+            {
+              "uz": "Janubiy Koreya",
+              "ru": "Южная Корея",
+              "en": "South Korea"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Daniyada davlat va fuqarolar orasidagi yozishmalar asosan Digital Post tizimi orqali amalga oshiriladi.",
+            "ru": "В Дании переписка между государством и гражданами ведётся в основном через систему Digital Post.",
+            "en": "In Denmark, correspondence between the state and citizens is carried out mainly through the Digital Post system."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "\"India Stack\" yondashuviga koʻra, davlat barcha raqamli xizmatlarni oʻzi yaratadi va xususiy sektorning bu jarayonda ishtirok etishiga yoʻl qoʻymaydi.",
+            "ru": "Согласно подходу «India Stack», государство создаёт все цифровые услуги самостоятельно и не допускает участия частного сектора в этом процессе.",
+            "en": "According to the \"India Stack\" approach, the state creates all digital services itself and does not allow private sector participation in the process."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Aksincha, bu yondashuvda davlat ochiq platformalar yaratadi, xususiy kompaniyalar esa ular ustida oʻz xizmatlarini quradi.",
+            "ru": "Наоборот, при этом подходе государство создаёт открытые платформы, а частные компании строят на их основе свои сервисы.",
+            "en": "On the contrary, in this approach the state creates open platforms, and private companies build their services on top of them."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Davlat xizmatlarining hammabop boʻlishini taʼminlash uchun qanday choralar koʻriladi?",
+            "ru": "Какие меры принимаются для обеспечения доступности государственных услуг для всех?",
+            "en": "What measures are taken to ensure the inclusiveness of public services?"
+          },
+          "options": [
+            {
+              "uz": "Davlat xizmatlari markazlari faoliyatini oflayn saqlab qolish",
+              "ru": "Сохранение офлайн-работы центров обслуживания населения",
+              "en": "Keeping public service centres operating offline"
+            },
+            {
+              "uz": "Raqamli koʻnikmasi yoʻq fuqarolarga yordam koʻrsatish va istisnolar qilish",
+              "ru": "Оказание помощи и сохранение исключений для граждан без цифровых навыков",
+              "en": "Providing assistance and making exemptions for citizens without digital skills"
+            },
+            {
+              "uz": "Barcha qogʻoz hujjatlarni bir kunda butunlay bekor qilish",
+              "ru": "Полная отмена всех бумажных документов за один день",
+              "en": "Completely cancelling all paper documents in one day"
+            },
+            {
+              "uz": "Faqatgina sunʼiy intellekt orqali xizmat koʻrsatishni majburiy qilish",
+              "ru": "Обязательное предоставление услуг только через искусственный интеллект",
+              "en": "Making service provision mandatory only through artificial intelligence"
+            }
+          ],
+          "correct": [0, 1],
+          "explanation": {
+            "uz": "Hammaboplikni saqlash uchun oflayn markazlar va raqamli koʻnikmasi past kishilar uchun yordam mexanizmlari saqlanadi.",
+            "ru": "Для сохранения доступности поддерживаются офлайн-центры и механизмы помощи для людей с низким уровнем цифровых навыков.",
+            "en": "To maintain inclusiveness, offline centres and assistance mechanisms for people with low digital skills are kept."
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,306 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Operativ xotira (RAM) kompyuterda qanday vazifani bajaradi?",
+          "ru": "Какую задачу выполняет в компьютере оперативная память (RAM)?",
+          "en": "What task does main memory (RAM) perform in a computer?"
+        },
+        "options": [
+          {
+            "uz": "Ishlayotgan dastur va maʼlumotlarni vaqtincha saqlaydi; elektr oʻchsa tozalanadi",
+            "ru": "Временно хранит работающие программы и данные; очищается при отключении питания",
+            "en": "Holds running programs and data temporarily; cleared when the power goes off"
+          },
+          {
+            "uz": "Fayllarni uzoq muddat saqlaydi",
+            "ru": "Хранит файлы долгосрочно",
+            "en": "Keeps files long term"
+          },
+          {
+            "uz": "Buyruqlarni bajaradi va hisoblaydi",
+            "ru": "Выполняет инструкции и вычисляет",
+            "en": "Executes instructions and computes"
+          },
+          {
+            "uz": "Barcha qurilmalarni oʻzaro bogʻlaydi",
+            "ru": "Соединяет между собой все устройства",
+            "en": "Connects all the devices to each other"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: operativ xotira vaqtinchalik, elektr oʻchganda tozalanadi; fayllar doimiy xotirada saqlanadi, buyruqlarni protsessor bajaradi, qurilmalarni ona plata va shina bogʻlaydi.",
+          "ru": "По занятию: оперативная память временна и очищается при отключении питания; файлы хранятся в постоянной памяти, инструкции выполняет процессор, устройства соединяет материнская плата и шина.",
+          "en": "In the lesson RAM is temporary and cleared when the power goes off; files live in storage, the processor executes instructions, and the motherboard and bus connect the devices."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Bir baytda nechta bit bor?",
+          "ru": "Сколько бит в одном байте?",
+          "en": "How many bits are in one byte?"
+        },
+        "answers": [8],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda 1 bayt = 8 bit deb berilgan; shuning uchun tarmoq tezligi bitda, fayl hajmi baytda oʻlchanadi.",
+          "ru": "В занятии указано 1 байт = 8 бит; поэтому скорость сети измеряется в битах, а размер файла — в байтах.",
+          "en": "The lesson states 1 byte = 8 bits, which is why network speed is measured in bits and file size in bytes."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "100 Mbit/s tezlikdagi kanal sekundiga 100 megabayt uzatadi.",
+          "ru": "Канал со скоростью 100 Мбит/с передаёт 100 мегабайт в секунду.",
+          "en": "A 100 Mbit/s link transfers 100 megabytes per second."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi ogohlantirish: bit va baytni aralashtirmang — 100 Mbit/s sekundiga taxminan 12,5 MB (100 / 8) uzatadi.",
+          "ru": "Предупреждение из занятия: не путайте биты и байты — 100 Мбит/с это примерно 12,5 Мбайт в секунду (100 / 8).",
+          "en": "The lesson warns not to mix up bits and bytes: 100 Mbit/s is about 12.5 MB per second (100 / 8)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qaysi biri CAPEX ga misol?",
+          "ru": "Что из перечисленного является примером CAPEX?",
+          "en": "Which of these is an example of CAPEX?"
+        },
+        "options": [
+          {
+            "uz": "Boshida server sotib olish uchun qilingan katta kapital xarajat",
+            "ru": "Крупные капитальные затраты на покупку сервера в начале",
+            "en": "A large capital expense to buy a server at the start"
+          },
+          {
+            "uz": "Bulut uchun har oy toʻlanadigan toʻlov",
+            "ru": "Ежемесячная плата за облако",
+            "en": "A monthly payment for the cloud"
+          },
+          {
+            "uz": "Xodimlarning oylik ish haqi",
+            "ru": "Ежемесячная оплата труда сотрудников",
+            "en": "Staff salaries paid every month"
+          },
+          {
+            "uz": "Har oy uchun elektr energiyasi toʻlovi",
+            "ru": "Ежемесячный платёж за электроэнергию",
+            "en": "The monthly electricity bill"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra, oʻz infratuzilmasi CAPEX — boshida katta kapital xarajat; bulut esa OPEX — har oy foydalanish uchun toʻlov.",
+          "ru": "По занятию, своя инфраструктура — это CAPEX, крупные стартовые капитальные затраты; облако — OPEX, ежемесячная плата за использование.",
+          "en": "In the lesson own infrastructure is CAPEX — a large capital expense at the start; the cloud is OPEX — a monthly payment for use."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Umumiy egalik qiymati (TCO) tarkibiga qaysi xarajatlar kiradi?",
+          "ru": "Какие затраты входят в общую стоимость владения (TCO)?",
+          "en": "Which costs are part of the total cost of ownership (TCO)?"
+        },
+        "options": [
+          {
+            "uz": "Litsenziyalar",
+            "ru": "Лицензии",
+            "en": "Licences"
+          },
+          {
+            "uz": "Elektr energiyasi",
+            "ru": "Электроэнергия",
+            "en": "Electricity"
+          },
+          {
+            "uz": "Xodimlar ish haqi",
+            "ru": "Оплата труда сотрудников",
+            "en": "Staff salaries"
+          },
+          {
+            "uz": "Reklama uchun ajratilgan byudjet",
+            "ru": "Бюджет, выделенный на рекламу",
+            "en": "The budget set aside for advertising"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda TCO ga xarid, oʻrnatish, litsenziyalar, elektr energiyasi, texnik xizmat, xodimlar ish haqi, taʼmirlash va utilizatsiya kiradi deb aytilgan.",
+          "ru": "В занятии в TCO входят покупка, установка, лицензии, электроэнергия, обслуживание, зарплата сотрудников, ремонт и утилизация.",
+          "en": "The lesson puts into TCO purchase, installation, licences, electricity, maintenance, staff salaries, repairs and disposal."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oʻz serverini tashqi maʼlumotlar markaziga qoʻyish qanday ataladi?",
+          "ru": "Как называется размещение собственного сервера во внешнем центре обработки данных?",
+          "en": "What is it called when you place your own server in an external data centre?"
+        },
+        "answers": ["kolokatsiya", "Kolokatsiya", "колокация", "Колокация", "colocation", "Colocation"],
+        "explanation": {
+          "uz": "Darsda kichik korxona uchun oʻz maʼlumotlar markazini qurish qimmat, shuning uchun kolokatsiya yoki bulut tanlanadi deb aytilgan.",
+          "ru": "По занятию, строить свой центр данных малой компании дорого, поэтому выбирают колокацию или облако.",
+          "en": "The lesson says building its own data centre is expensive for a small company, so colocation or the cloud is chosen."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Virtualizatsiya nimani imkonini beradi?",
+          "ru": "Что позволяет делать виртуализация?",
+          "en": "What does virtualization make possible?"
+        },
+        "options": [
+          {
+            "uz": "Bir fizik serverda bir nechta virtual serverni ishga tushirish",
+            "ru": "Запускать несколько виртуальных серверов на одном физическом сервере",
+            "en": "Running several virtual servers on one physical server"
+          },
+          {
+            "uz": "Fayllarni diskda uzoqroq saqlash",
+            "ru": "Дольше хранить файлы на диске",
+            "en": "Keeping files on disk for longer"
+          },
+          {
+            "uz": "Protsessor chastotasini ikki barobar oshirish",
+            "ru": "Удваивать частоту процессора",
+            "en": "Doubling the processor frequency"
+          },
+          {
+            "uz": "Tarmoq tezligini bitdan baytga oʻtkazish",
+            "ru": "Переводить скорость сети из битов в байты",
+            "en": "Converting network speed from bits into bytes"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: bir fizik serverda virtualizatsiya yordamida bir nechta virtual server ishlaydi — bu apparatdan samaraliroq foydalanish.",
+          "ru": "По занятию: на одном физическом сервере благодаря виртуализации работают несколько виртуальных — оборудование используется эффективнее.",
+          "en": "The lesson: with virtualization several virtual servers run on one physical server, making better use of the hardware."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi hisobda server 60 000 000 soʻm, yillik texnik xizmat 8 000 000 soʻm, bulut esa oyiga 3 000 000 soʻm turadi. Oʻz serveri bulutdan birinchi marta qaysi yilda arzon boʻladi?",
+          "ru": "В расчёте из занятия сервер стоит 60 000 000 сумов, годовое обслуживание 8 000 000 сумов, облако — 3 000 000 сумов в месяц. На какой год собственный сервер впервые становится дешевле облака?",
+          "en": "In the lesson's calculation a server costs 60,000,000 soʻm, yearly maintenance 8,000,000 soʻm, and the cloud 3,000,000 soʻm a month. In which year does the own server first become cheaper than the cloud?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "1-yil: server 68 mln, bulut 36 mln; 2-yil: 76 mln va 72 mln; 3-yil: 84 mln < 108 mln — demak, uchinchi yil.",
+          "ru": "1-й год: сервер 68 млн, облако 36 млн; 2-й год: 76 и 72 млн; 3-й год: 84 млн < 108 млн — значит, третий год.",
+          "en": "Year 1: server 68m, cloud 36m; year 2: 76m and 72m; year 3: 84m < 108m — so the third year."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi maʼlumotlarga koʻra qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны согласно занятию?",
+          "en": "Which statements are correct according to the lesson?"
+        },
+        "options": [
+          {
+            "uz": "HDD arzon, lekin sekin; SSD esa tez va chidamli",
+            "ru": "HDD дёшев, но медленный; SSD быстрый и надёжный",
+            "en": "An HDD is cheap but slow; an SSD is fast and durable"
+          },
+          {
+            "uz": "Maʼlumotlar markazida uzluksiz elektr taʼminoti, sovutish va yongʻin oʻchirish tizimi boʻladi",
+            "ru": "В центре обработки данных есть бесперебойное электропитание, охлаждение и пожаротушение",
+            "en": "A data centre has uninterruptible power supply, cooling and fire suppression"
+          },
+          {
+            "uz": "Kichik korxona uchun oʻz maʼlumotlar markazini qurish qimmat",
+            "ru": "Малой компании дорого строить собственный центр обработки данных",
+            "en": "Building its own data centre is expensive for a small company"
+          },
+          {
+            "uz": "Bulut modeli CAPEX ga asoslanadi",
+            "ru": "Модель облака основана на CAPEX",
+            "en": "The cloud model is based on CAPEX"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda bulut OPEX deb aytilgan: har oy foydalanish uchun toʻlov, boshlangʻich sarmoya yoʻq.",
+          "ru": "В занятии облако отнесено к OPEX: ежемесячная плата за использование без начальных вложений.",
+          "en": "The lesson counts the cloud as OPEX: a monthly payment for use, with no initial investment."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Faylni yuklab olish vaqti",
+      "ru": "Время загрузки файла",
+      "en": "The time to download a file"
+    },
+    "statement": {
+      "uz": "Tarmoq tezligi bitda (Mbit/s), fayl hajmi esa bayt va megabaytda oʻlchanadi, 1 bayt = 8 bit. Dasturingiz bitta qatorda ikkita butun sonni oʻqisin: n — fayl hajmi (MB), v — kanal tezligi (Mbit/s). n MB faylni shu kanaldan yuklab olish uchun yetarli boʻlgan minimal butun soniyalar sonini bitta qatorda chiqaring (natijani yuqoriga yaxlitlang). Masalan, 12 8 kirsa, dastur 12 chiqaradi; 5 100 kirsa — 1, chunki 0,4 sekund yetmaydi. 0 ≤ n ≤ 1 000 000, 1 ≤ v ≤ 10 000.",
+      "ru": "Скорость сети измеряется в битах (Мбит/с), размер файла — в байтах, 1 байт = 8 бит. Прочитайте в одной строке два целых числа: n — размер файла в МБ, v — скорость канала в Мбит/с. Выведите одной строкой минимальное целое число секунд, которого хватит, чтобы скачать файл (округляйте вверх). Например, ввод 12 8 даёт 12, а ввод 5 100 даёт 1, потому что 0,4 секунды не хватит. 0 ≤ n ≤ 1 000 000, 1 ≤ v ≤ 10 000.",
+      "en": "Network speed is measured in bits (Mbit/s) and file size in bytes, with 1 byte = 8 bits. Your program reads two integers on one line: n — the file size in MB, v — the link speed in Mbit/s. Print on one line the smallest whole number of seconds that is enough to download the file (round up). For example, the input 12 8 makes the program print 12, and 5 100 prints 1, because 0.4 seconds is not enough. 0 ≤ n ≤ 1 000 000, 1 ≤ v ≤ 10 000."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nn, v = map(int, sys.stdin.read().split())\n\nprint(n * 8 // v)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long n = in.nextLong();\n        long v = in.nextLong();\n        System.out.println(n * 8 / v);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long n, v;\n    cin >> n >> v;\n    cout << n * 8 / v << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nn, v = map(int, sys.stdin.read().split())\n\nprint((n * 8 + v - 1) // v)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long n = in.nextLong();\n        long v = in.nextLong();\n        System.out.println((n * 8 + v - 1) / v);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long n, v;\n    cin >> n >> v;\n    cout << (n * 8 + v - 1) / v << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "12 8\n", "expected": "12", "hidden": false },
+        { "input": "5 100\n", "expected": "1", "hidden": false },
+        { "input": "1 3\n", "expected": "3", "hidden": true },
+        { "input": "100 100\n", "expected": "8", "hidden": true },
+        { "input": "0 50\n", "expected": "0", "hidden": true }
+      ]
+    }
+  }
+}

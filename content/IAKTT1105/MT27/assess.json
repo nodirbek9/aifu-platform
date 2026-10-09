@@ -1,0 +1,341 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "BNPL xizmatlaridagi \"foizsiz\" muddatli toʻlovlar xaridor uchun hech qanday moliyaviy xavf tugʻdirmaydi.",
+          "ru": "Рассрочки «без процентов» в сервисах BNPL не несут для покупателя никаких финансовых рисков.",
+          "en": "\"Interest-free\" instalments in BNPL services pose no financial risks for the buyer."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Xaridor oson qarzga botishi, kechikish jarimalari toʻlashi va parallel qarzlar orttirish xavfi bor.",
+          "ru": "Существует риск легко влезть в долги, получить штрафы за просрочку и накопить параллельные долги.",
+          "en": "There is a risk of falling into debt easily, paying late fees, and accumulating parallel debts."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ochiq banking (Open Banking) nima?",
+          "ru": "Что такое открытый банкинг (Open Banking)?",
+          "en": "What is Open Banking?"
+        },
+        "options": [
+          {
+            "uz": "Bankning mijoz roziligi bilan uning maʼlumotlarini API orqali boshqa xizmatlarga ochishi",
+            "ru": "Открытие банком с согласия клиента его данных через API другим сервисам",
+            "en": "A bank opening its customer data to other services via API with the customer's consent"
+          },
+          {
+            "uz": "Bankning dam olish kunlarisiz 24/7 ishlashi",
+            "ru": "Работа банка 24/7 без выходных дней",
+            "en": "A bank operating 24/7 without days off"
+          },
+          {
+            "uz": "Faqat internet orqali xizmat koʻrsatuvchi bank filiali",
+            "ru": "Филиал банка, обслуживающий только через интернет",
+            "en": "A bank branch providing services only via the internet"
+          },
+          {
+            "uz": "Mijozning parolsiz oʻz hisobiga kirish imkoniyati",
+            "ru": "Возможность клиента входить в свой счёт без пароля",
+            "en": "The ability of a customer to log into their account without a password"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ochiq bankingda mijoz boshqa moliyaviy ilovalarga (masalan, buxgalteriya dasturiga) oʻz bank hisoblariga ulanishga ruxsat beradi.",
+          "ru": "В открытом банкинге клиент разрешает другим финансовым приложениям (например, бухгалтерской программе) подключаться к своим банковским счетам.",
+          "en": "In open banking, the customer allows other financial applications (such as accounting software) to connect to their bank accounts."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Internet-savdo iqtisodiyotida birlik iqtisodiyotiga va marjaga qaysi xarajatlar taʼsir qiladi?",
+          "ru": "Какие затраты влияют на юнит-экономику и маржу в интернет-торговле?",
+          "en": "Which costs affect unit economics and margin in internet trade?"
+        },
+        "options": [
+          {
+            "uz": "Oxirgi milya (mijozgacha yetkazib berish)",
+            "ru": "Последняя миля (доставка до клиента)",
+            "en": "The last mile (delivery to the customer)"
+          },
+          {
+            "uz": "Qaytarishlar (ayniqsa kiyim-kechakda)",
+            "ru": "Возвраты (особенно одежды)",
+            "en": "Returns (especially for clothing)"
+          },
+          {
+            "uz": "Mijozni jalb qilish xarajati (CAC)",
+            "ru": "Затраты на привлечение клиента (CAC)",
+            "en": "Customer acquisition cost (CAC)"
+          },
+          {
+            "uz": "Mijozning brauzerni yangilash xarajati",
+            "ru": "Затраты клиента на обновление браузера",
+            "en": "The cost of the customer refreshing the browser"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsga koʻra: oxirgi milya, qaytarishlar, toʻlov va marketpleys komissiyalari, hamda mijozni jalb qilish xarajati internet-savdodagi asosiy xarajatlardir.",
+          "ru": "По занятию: последняя миля, возвраты, комиссии платёжных систем и маркетплейсов, а также CAC — основные затраты в интернет-торговле.",
+          "en": "According to the lesson: the last mile, returns, payment and marketplace commissions, and CAC are the main costs in internet trade."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qaysi atributsiya modelida xarid uchun butun tushum mijozning xariddan oldingi eng oxirgi aloqa qilgan kanaliga yoziladi?",
+          "ru": "В какой модели атрибуции вся выручка за покупку записывается на последний канал, с которым контактировал клиент перед покупкой?",
+          "en": "In which attribution model is all revenue for a purchase credited to the last channel the customer interacted with before buying?"
+        },
+        "options": [
+          {
+            "uz": "Oxirgi bosish (last click)",
+            "ru": "Последний клик (last click)",
+            "en": "Last click"
+          },
+          {
+            "uz": "Birinchi bosish (first click)",
+            "ru": "Первый клик (first click)",
+            "en": "First click"
+          },
+          {
+            "uz": "Chiziqli (linear)",
+            "ru": "Линейная (linear)",
+            "en": "Linear"
+          },
+          {
+            "uz": "Pozitsion (position-based)",
+            "ru": "Позиционная (position-based)",
+            "en": "Position-based"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "\"Oxirgi bosish\" modeli hamma tushumni faqat soʻnggi kanalga beradi, garchi mijoz avvalroq boshqa kanallar orqali jalb qilingan boʻlsa ham.",
+          "ru": "Модель «последний клик» отдаёт всю выручку только последнему каналу, хотя клиент мог быть привлечён ранее через другие каналы.",
+          "en": "The \"last click\" model gives all revenue to the last channel only, even if the customer was engaged earlier through other channels."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Sugʻurta hodisasi obyektiv koʻrsatkich (masalan, yomgʻir miqdori) bilan avtomatik aniqlanadigan sugʻurta turi qanday ataladi? (Faqat bitta soʻz bilan yozing)",
+          "ru": "Как называется вид страхования, при котором страховой случай автоматически определяется объективным показателем (например, количеством осадков)? (Напишите одно слово)",
+          "en": "What is the type of insurance called where the insured event is automatically determined by an objective indicator (e.g., rainfall)? (Write one word)"
+        },
+        "answers": [
+          "Parametrik",
+          "Parametric",
+          "Параметрическое"
+        ],
+        "explanation": {
+          "uz": "Parametrik sugʻurtada hodisa sodir boʻlgani inson aralashuvisiz obyektiv parametrlar bilan oʻlchanadi.",
+          "ru": "В параметрическом страховании наступление события измеряется объективными параметрами без вмешательства человека.",
+          "en": "In parametric insurance, the occurrence of an event is measured by objective parameters without human intervention."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Chiziqli atributsiya modeli xabardorlik yaratgan birinchi kanallarning hissasini umuman inobatga olmaydi.",
+          "ru": "Линейная модель атрибуции совершенно не учитывает вклад первых каналов, создавших осведомлённость.",
+          "en": "The linear attribution model completely ignores the contribution of the first channels that created awareness."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Chiziqli model barcha kanallarga, jumladan birinchi va oraliq kanallarga ham teng ulush ajratadi, faqat oxirgisiga emas.",
+          "ru": "Линейная модель распределяет долю поровну между всеми каналами, включая первые и промежуточные, а не только последнему.",
+          "en": "The linear model allocates an equal share to all channels, including the first and intermediate ones, not just the last one."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Foydalanishga asoslangan (usage-based) sugʻurtaga nimalar misol boʻladi?",
+          "ru": "Каковы примеры страхования на основе использования (usage-based)?",
+          "en": "What are examples of usage-based insurance?"
+        },
+        "options": [
+          {
+            "uz": "Avtomobil yurgan kilometriga qarab sugʻurta toʻlash",
+            "ru": "Оплата страховки в зависимости от пробега автомобиля",
+            "en": "Paying insurance based on the kilometres a car travels"
+          },
+          {
+            "uz": "Telematika orqali haydash uslubiga qarab narx belgilash",
+            "ru": "Ценообразование на основе стиля вождения через телематику",
+            "en": "Pricing based on driving style via telematics"
+          },
+          {
+            "uz": "Zilzila kuchiga qarab avtomatik toʻlov (parametrik)",
+            "ru": "Автоматическая выплата в зависимости от силы землетрясения (параметрическое)",
+            "en": "Automatic payout based on earthquake strength (parametric)"
+          },
+          {
+            "uz": "Har doim hamma uchun bir xil belgilangan mukofot toʻlash",
+            "ru": "Оплата всегда одинаковой фиксированной премии для всех",
+            "en": "Always paying the same fixed premium for everyone"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "\"Qancha haydasang, shuncha toʻla\" va telematika foydalanishga asoslangan sugʻurtadir. Zilzila kuchi — bu parametrik sugʻurta.",
+          "ru": "«Плати, сколько ездишь» и телематика — это страхование на основе использования. Сила землетрясения — это параметрическое страхование.",
+          "en": "\"Pay as you drive\" and telematics are usage-based insurance. Earthquake strength is parametric insurance."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Agar mijoz yoʻli \"Instagram>Telegram>Google>Direct\" boʻlsa va xarid summasi 100 000 soʻm boʻlsa, pozitsion atributsiya modeli (40/20/40) boʻyicha Instagram kanaliga qancha summa yoziladi?",
+          "ru": "Если путь клиента — «Instagram>Telegram>Google>Direct», а сумма покупки составляет 100 000, какая сумма будет записана каналу Instagram по позиционной модели атрибуции (40/20/40)?",
+          "en": "If the customer path is \"Instagram>Telegram>Google>Direct\" and the purchase amount is 100000, what amount is credited to the Instagram channel under the position-based attribution model (40/20/40)?"
+        },
+        "answers": [40000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Pozitsion modelda birinchi kanalga (Instagram) 40%, oxirgisiga (Direct) 40% va oraliqdagi barchasiga jami 20% taqsimlanadi. 100 000 ning 40% i 40 000.",
+          "ru": "В позиционной модели первому каналу (Instagram) даётся 40%, последнему (Direct) 40%, а всем промежуточным вместе 20%. 40% от 100 000 — это 40 000.",
+          "en": "In the position-based model, 40% is given to the first channel (Instagram), 40% to the last (Direct), and 20% in total to the intermediate ones. 40% of 100000 is 40000."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Marketpleys ichida muddatli toʻlov xizmati taqdim etilishi nima deb ataladi?",
+          "ru": "Как называется предоставление услуги рассрочки внутри маркетплейса?",
+          "en": "What is the provision of an instalment service inside a marketplace called?"
+        },
+        "options": [
+          {
+            "uz": "Oʻrnatilgan moliya (embedded finance)",
+            "ru": "Встроенные финансы (embedded finance)",
+            "en": "Embedded finance"
+          },
+          {
+            "uz": "Ochiq banking (Open banking)",
+            "ru": "Открытый банкинг (Open banking)",
+            "en": "Open banking"
+          },
+          {
+            "uz": "Parametrik sugʻurta",
+            "ru": "Параметрическое страхование",
+            "en": "Parametric insurance"
+          },
+          {
+            "uz": "Bepul yetkazib berish",
+            "ru": "Бесплатная доставка",
+            "en": "Free delivery"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bank boʻlmagan ilova ichida moliyaviy xizmat koʻrsatilishi oʻrnatilgan moliya (embedded finance) deyiladi.",
+          "ru": "Предоставление финансовой услуги внутри небанковского приложения называется встроенными финансами (embedded finance).",
+          "en": "Providing a financial service inside a non-bank app is called embedded finance."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Birinchi bosish atributsiyasi",
+      "ru": "Атрибуция по первому клику",
+      "en": "First-click attribution"
+    },
+    "statement": {
+      "uz": "Mijoz xarid qilishdan oldin bir nechta kanal orqali oʻtadi. \"Birinchi bosish\" (first click) modelida butun tushum mijoz birinchi boʻlib kelgan kanalga yoziladi. Dasturingizga har bir qatorda xarid summasi va mijoz yoʻli (kanallar `>` bilan ajratilgan) beriladi. Barcha kanallarni alifbo tartibida va ularning \"birinchi bosish\" modeli boʻyicha jami tushumini chiqaring. Agar kanal umuman birinchi boʻlmagan boʻlsa, uning tushumi 0 boʻladi. Chiqish formati: `Kanal: first click X`.",
+      "ru": "Перед покупкой клиент проходит через несколько каналов. В модели «первый клик» (first click) вся выручка записывается каналу, с которого клиент начал путь. Вашей программе на каждой строке даётся сумма покупки и путь клиента (каналы через `>`). Выведите все каналы в алфавитном порядке и их общую выручку по модели «первый клик». Если канал ни разу не был первым, его выручка равна 0. Формат вывода: `Канал: first click X`.",
+      "en": "Before buying, a customer interacts with several channels. In the \"first click\" model, all revenue is credited to the first channel in the path. Your program will receive on each line a purchase amount and a customer path (channels separated by `>`). Print all channels in alphabetical order with their total revenue under the \"first click\" model. If a channel was never the first, its revenue is 0. Output format: `Channel: first click X`."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\noxirgi = {}\nfor satr in sys.stdin.read().split(\"\\n\"):\n    if not satr.strip():\n        continue\n    summa, yol = satr.split()\n    summa = int(summa)\n    kanallar = yol.split(\">\")\n    \n",
+        "java": "import java.util.Map;\nimport java.util.Scanner;\nimport java.util.TreeMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        TreeMap<String, Long> oxirgi = new TreeMap<>();\n        while (in.hasNext()) {\n            long summa = in.nextLong();\n            String[] kanallar = in.next().split(\">\");\n            \n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    map<string, long long> oxirgi;\n    long long summa;\n    string yol;\n    while (cin >> summa >> yol) {\n        vector<string> kanallar;\n        stringstream ss(yol);\n        string k;\n        while (getline(ss, k, '>')) kanallar.push_back(k);\n        \n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\noxirgi = {}\nfor satr in sys.stdin.read().split(\"\\n\"):\n    if not satr.strip():\n        continue\n    summa, yol = satr.split()\n    summa = int(summa)\n    kanallar = yol.split(\">\")\n    for k in kanallar:\n        oxirgi.setdefault(k, 0)\n    oxirgi[kanallar[0]] += summa\n\nfor k in sorted(oxirgi):\n    print(f\"{k}: first click {oxirgi[k]}\")\n",
+        "java": "import java.util.Map;\nimport java.util.Scanner;\nimport java.util.TreeMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        TreeMap<String, Long> oxirgi = new TreeMap<>();\n        while (in.hasNext()) {\n            long summa = in.nextLong();\n            String[] kanallar = in.next().split(\">\");\n            for (String k : kanallar) {\n                oxirgi.putIfAbsent(k, 0L);\n            }\n            oxirgi.merge(kanallar[0], summa, Long::sum);\n        }\n        for (Map.Entry<String, Long> e : oxirgi.entrySet()) {\n            System.out.println(e.getKey() + \": first click \" + e.getValue());\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    map<string, long long> oxirgi;\n    long long summa;\n    string yol;\n    while (cin >> summa >> yol) {\n        vector<string> kanallar;\n        stringstream ss(yol);\n        string k;\n        while (getline(ss, k, '>')) kanallar.push_back(k);\n        for (auto& x : kanallar) {\n            oxirgi[x] += 0;\n        }\n        oxirgi[kanallar.front()] += summa;\n    }\n    for (auto& [k, v] : oxirgi) cout << k << \": first click \" << v << \"\\n\";\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "120000 Instagram>Google>Direct\n90000 Telegram>Direct\n60000 Google\n150000 Instagram>Telegram>Google>Direct\n",
+          "expected": "Direct: first click 0\nGoogle: first click 60000\nInstagram: first click 270000\nTelegram: first click 90000\n",
+          "hidden": false
+        },
+        {
+          "input": "50000 SEO>Direct\n",
+          "expected": "Direct: first click 0\nSEO: first click 50000\n",
+          "hidden": false
+        },
+        {
+          "input": "10000 Facebook>Google\n20000 Google>Facebook\n",
+          "expected": "Facebook: first click 10000\nGoogle: first click 20000\n",
+          "hidden": true
+        },
+        {
+          "input": "30000 A>B>C\n40000 B>C>A\n50000 C>A>B\n",
+          "expected": "A: first click 30000\nB: first click 40000\nC: first click 50000\n",
+          "hidden": true
+        },
+        {
+          "input": "100 X\n200 X\n",
+          "expected": "X: first click 300\n",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

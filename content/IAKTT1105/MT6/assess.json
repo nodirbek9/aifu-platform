@@ -1,0 +1,429 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tarmoq effekti nima?",
+          "ru": "Что такое сетевой эффект?",
+          "en": "What is the network effect?"
+        },
+        "options": [
+          {
+            "uz": "Xizmat qiymati foydalanuvchilar soni oshgani sari oʻsadi",
+            "ru": "Ценность сервиса растёт по мере увеличения числа пользователей",
+            "en": "A service's value grows as the number of its users increases"
+          },
+          {
+            "uz": "Foydalanuvchilar koʻpaygani sari xizmatning narxi arzonlashadi",
+            "ru": "Чем больше пользователей, тем дешевле обходится услуга",
+            "en": "As users increase, the service becomes cheaper"
+          },
+          {
+            "uz": "Tarmoq kengaygani sari Internet tezligi pasayadi",
+            "ru": "Рост сети снижает скорость Интернета",
+            "en": "A bigger network lowers the Internet speed"
+          },
+          {
+            "uz": "Har bir yangi foydalanuvchi eskilarining foydasini kamaytiradi",
+            "ru": "Каждый новый пользователь снижает пользу для остальных",
+            "en": "Every new user lowers the value for the existing ones"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bitta telefon foydasiz, ikkitasi bitta aloqa beradi, millionlab telefonlar esa ulkan imkoniyat — tarmoq effekti shunda.",
+          "ru": "Один телефон бесполезен, два дают одну связь, а миллионы телефонов — огромные возможности; в этом и состоит сетевой эффект.",
+          "en": "One telephone is useless, two give one connection, and millions give enormous opportunities — that is the network effect."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Metkalf qonuniga koʻra, tarmoqdagi mumkin boʻlgan juft ulanishlar soni foydalanuvchilar sonining kvadratiga yaqin oʻsadi.",
+          "ru": "По закону Меткалфа число возможных парных связей растёт примерно как квадрат числа пользователей.",
+          "en": "By Metcalfe's law the number of possible pairwise connections grows roughly with the square of the number of users."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ulanishlar soni n·(n − 1)/2 ga teng: foydalanuvchilar 10 barobar oshganda (100 dan 1 000 gacha) ulanishlar ~100 barobar oshadi.",
+          "ru": "Число связей равно n·(n − 1)/2: при росте пользователей в 10 раз (со 100 до 1 000) связей становится примерно в 100 раз больше.",
+          "en": "The count is n·(n − 1)/2: a 10-fold rise in users (from 100 to 1,000) gives about 100 times more connections."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Iqtisodiy taʼsir mexanizmlari jadvaliga qaysilari kiritilgan?",
+          "ru": "Что из перечисленного входит в таблицу механизмов экономического влияния?",
+          "en": "Which of these are in the table of economic impact mechanisms?"
+        },
+        "options": [
+          {
+            "uz": "Tranzaksiya xarajatlarining kamayishi",
+            "ru": "Снижение трансакционных издержек",
+            "en": "Lower transaction costs"
+          },
+          {
+            "uz": "Axborot assimetriyasining kamayishi",
+            "ru": "Снижение информационной асимметрии",
+            "en": "Less information asymmetry"
+          },
+          {
+            "uz": "Bozorning kengayishi",
+            "ru": "Расширение рынка",
+            "en": "Market expansion"
+          },
+          {
+            "uz": "Inflyatsiyaning pasayishi",
+            "ru": "Снижение инфляции",
+            "en": "Lower inflation"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalda shuningdek unumdorlikning oshishi, yangi biznes modellari va shaffoflik bor; inflyatsiya mexanizm sifatida keltirilmagan.",
+          "ru": "В таблице также рост производительности, новые бизнес-модели и прозрачность; инфляция среди механизмов не названа.",
+          "en": "The table also lists higher productivity, new business models and transparency; inflation is not one of the mechanisms."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "ICT Development Index (IDI) va E-Government Development Index (EGDI) indekslarini mos ravishda kim hisoblaydi?",
+          "ru": "Кто рассчитывает индексы ICT Development Index (IDI) и E-Government Development Index (EGDI) соответственно?",
+          "en": "Who calculates the ICT Development Index (IDI) and the E-Government Development Index (EGDI), respectively?"
+        },
+        "options": [
+          { "uz": "IDI — ITU, EGDI — BMT", "ru": "IDI — МСЭ, EGDI — ООН", "en": "IDI — the ITU, EGDI — the UN" },
+          { "uz": "IDI — BMT, EGDI — ITU", "ru": "IDI — ООН, EGDI — МСЭ", "en": "IDI — the UN, EGDI — the ITU" },
+          {
+            "uz": "Ikkalasini ham ITU hisoblaydi",
+            "ru": "Оба считает МСЭ (ITU)",
+            "en": "The ITU calculates both"
+          },
+          {
+            "uz": "Ikkalasini ham milliy statistika (stat.uz) hisoblaydi",
+            "ru": "Оба считает национальная статистика (stat.uz)",
+            "en": "National statistics (stat.uz) calculates both"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "IDI — AKT rivojlanishining umumiy indeksi va uni ITU (Xalqaro elektraloqa ittifoqi) hisoblaydi; EGDI esa elektron hukumat rivojini oʻlchaydi va BMT ga tegishli.",
+          "ru": "IDI — сводный индекс развития ИКТ, его рассчитывает МСЭ; EGDI измеряет развитие электронного правительства и относится к ООН.",
+          "en": "IDI is the composite index of ICT development, calculated by the ITU; EGDI measures e-government development and belongs to the UN."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Metkalf qonuni boʻyicha 50 foydalanuvchili tarmoqda nechta juft aloqa boʻlishi mumkin?",
+          "ru": "Сколько парных связей возможно в сети из 50 пользователей по закону Меткалфа?",
+          "en": "How many pairwise connections are possible in a network of 50 users under Metcalfe's law?"
+        },
+        "answers": [1225],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "n·(n − 1)/2 = 50 × 49 / 2 = 1 225.",
+          "ru": "n·(n − 1)/2 = 50 × 49 / 2 = 1 225.",
+          "en": "n·(n − 1)/2 = 50 × 49 / 2 = 1,225."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Texnologiyalardan foydalanish imkoniyatidagi farq qanday ataladi?",
+          "ru": "Как называется различие в возможностях пользоваться технологиями?",
+          "en": "What is the gap in the opportunity to use technology called?"
+        },
+        "answers": ["raqamli tafovut", "Raqamli tafovut", "digital divide"],
+        "explanation": {
+          "uz": "Raqamli tafovut uch turga boʻlinadi: hududiy (shahar va qishloq), ijtimoiy (daromad, yosh, jins) va koʻnikma boʻyicha.",
+          "ru": "Цифровое неравенство делится на три вида: территориальное (город и село), социальное (доход, возраст, пол) и по навыкам.",
+          "en": "The digital divide has three kinds: geographic (town and village), social (income, age, gender) and skills-based."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tumandagi 40 ta fermer xoʻjaligini optik Internetga ulash loyihasining samaradorligi eng ishonchli qanday oʻlchanadi?",
+          "ru": "Как наиболее достоверно измерить эффективность проекта подключения 40 фермерских хозяйств района к оптическому Интернету?",
+          "en": "What is the most reliable way to measure a project that connects 40 farms of a district to fibre Internet?"
+        },
+        "options": [
+          {
+            "uz": "Loyihadan oldin va keyingi koʻrsatkichlar solishtiriladi, imkon boʻlsa ulanmagan qoʻshni tuman nazorat guruhi sifatida olinadi",
+            "ru": "Сравнивают показатели до и после проекта, а при возможности берут неподключённый соседний район как контрольную группу",
+            "en": "Indicators are compared before and after the project and, if possible, an unconnected neighbouring district is used as a control group"
+          },
+          {
+            "uz": "Faqat loyihaning qurilish va uskunalar xarajatlari hisoblanadi",
+            "ru": "Считают только затраты на строительство и оборудование",
+            "en": "Only the construction and equipment costs are counted"
+          },
+          {
+            "uz": "Internetga ulangan xoʻjaliklar soni hisobotda eʼlon qilinadi",
+            "ru": "В отчёте объявляют число подключённых хозяйств",
+            "en": "The report announces how many farms were connected"
+          },
+          {
+            "uz": "Poytaxtdagi operatorning tarif rejasi bilan solishtiriladi",
+            "ru": "Сравнивают с тарифным планом оператора в столице",
+            "en": "It is compared with the tariff plan of a capital-city operator"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Foyda qatoriga bozor narxlariga kirish, onlayn sotuv, aqlli sugʻorish, tejalgan vaqt va yoʻl kiradi; nazorat guruhi loyihadan tashqari omillarni ajratishga yordam beradi.",
+          "ru": "В выгоды входят доступ к рыночным ценам, онлайн-продажи, умный полив, экономия времени и дороги; контрольная группа помогает отделить факторы вне проекта.",
+          "en": "The benefits include access to market prices, online sales, smart irrigation and saved time and travel; a control group separates factors outside the project."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Raqamli tafovut va uni qisqartirish yoʻllari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о цифровом неравенстве и путях его сокращения верны?",
+          "en": "Which statements about the digital divide and the ways to narrow it are correct?"
+        },
+        "options": [
+          {
+            "uz": "Hududiy tafovut — shahar va qishloq, markaz va chekka tumanlar oʻrtasidagi qamrov va tezlik farqi",
+            "ru": "Территориальное неравенство — различие в покрытии и скорости между городом и селом, центром и отдалёнными районами",
+            "en": "The geographic divide is the difference in coverage and speed between town and village, the centre and remote districts"
+          },
+          {
+            "uz": "Koʻnikma tafovutida Internet bor, lekin undan samarali foydalanish bilimi yoʻq",
+            "ru": "При неравенстве по навыкам Интернет есть, но нет знаний эффективно им пользоваться",
+            "en": "With the skills divide there is Internet access but not the knowledge to use it effectively"
+          },
+          {
+            "uz": "Chekka hududlarga optik tola qurish va arzon tariflar tafovutni qisqartirish choralari qatoriga kiradi",
+            "ru": "Строительство оптоволокна в отдалённых районах и доступные тарифы относятся к мерам сокращения неравенства",
+            "en": "Building fibre in remote areas and affordable tariffs belong to the measures that narrow the divide"
+          },
+          {
+            "uz": "Keng polosali Internet oʻtkazilsa, raqamli tafovut oʻz-oʻzidan yoʻqoladi",
+            "ru": "Если провести широкополосный Интернет, цифровое неравенство исчезнет само собой",
+            "en": "If broadband Internet is provided, the digital divide disappears by itself"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Dars «Internet qamrovini raqamlashuv bilan tenglashtirish» ni koʻp uchraydigan xato deydi: koʻnikma va xizmatlar boʻlmasa, kanal ishlatilmaydi.",
+          "ru": "Урок называет частой ошибкой отождествлять покрытие Интернетом с цифровизацией: без навыков и сервисов канал не используется.",
+          "en": "The lesson lists equating Internet coverage with digitalization as a common mistake: without skills and services the channel goes unused."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Metkalf qonuni tarmoqning haqiqiy qiymatini aniq koʻrsatadi, chunki har bir aloqa bir xil qimmatli.",
+          "ru": "Закон Меткалфа точно показывает реальную ценность сети, поскольку каждая связь одинаково ценна.",
+          "en": "Metcalfe's law gives the real value of a network exactly, because every connection is equally valuable."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bu yuqori baho: haqiqatda har bir aloqa bir xil qimmatli emas, lekin asosiy xulosa toʻgʻri — tarmoq qiymati foydalanuvchilar sonidan tezroq oʻsadi.",
+          "ru": "Это оценка сверху: в реальности связи не одинаково ценны, но главный вывод верен — ценность сети растёт быстрее числа пользователей.",
+          "en": "It is an upper estimate: in reality not every connection is equally valuable, yet the main conclusion holds — a network's value grows faster than its number of users."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Soha boʻyicha tahliliy referat",
+      "ru": "Аналитический реферат по отрасли",
+      "en": "The analytical essay on a sector"
+    },
+    "statement": {
+      "uz": "MT6 ning topshirigini bajon: bitta iqtisodiyot sohasini tanlang (bank, savdo, qishloq xoʻjaligi, transport, sogʻliqni saqlash, taʼlim) va 3–4 sahifalik tahliliy referat yozing. Quyidagi savollarga javoblar faqat MT6 dars matnidan olinadi.",
+      "ru": "Выполняете задание MT6: выбрать одну отрасль экономики (банки, торговля, сельское хозяйство, транспорт, здравоохранение, образование) и написать аналитический реферат на 3–4 страницы. Ответы на вопросы берутся только из текста MT6.",
+      "en": "This is the MT6 assignment: choose one sector of the economy (banking, trade, agriculture, transport, healthcare, education) and write a 3–4 page analytical essay. Every answer below comes only from the MT6 text."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "NUM",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Referatda iqtisodiy taʼsir mexanizmlaridan kamida nechta keltirilishi kerak?",
+            "ru": "Сколько механизмов экономического влияния минимум нужно привести в реферате?",
+            "en": "What is the minimum number of economic impact mechanisms the essay must present?"
+          },
+          "answers": [3],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Topshiriqning ikkinchi bandi jadvaldan kamida 3 mexanizmni va aniq misollarni buyuradi.",
+            "ru": "Второй пункт задания требует не менее 3 механизмов из таблицы и конкретные примеры.",
+            "en": "The second item of the assignment asks for at least 3 mechanisms from the table with concrete examples."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Referatning majburiy qismlari qaysilar?",
+            "ru": "Какие части реферата обязательны?",
+            "en": "Which parts of the essay are mandatory?"
+          },
+          "options": [
+            {
+              "uz": "Sohada qoʻllaniladigan tarmoq texnologiyalari",
+              "ru": "Сетевые технологии, применяемые в отрасли",
+              "en": "The network technologies used in the sector"
+            },
+            {
+              "uz": "Iqtisodiy taʼsir mexanizmlari va aniq misollar",
+              "ru": "Механизмы экономического влияния и конкретные примеры",
+              "en": "The mechanisms of economic impact with concrete examples"
+            },
+            {
+              "uz": "Manbasi va yili bilan kamida 2 ta raqamli koʻrsatkich va boshqa mamlakat bilan solishtirish",
+              "ru": "Не менее 2 цифровых показателей с источником и годом и сравнение с другой страной",
+              "en": "At least 2 digital indicators with source and year, and a comparison with another country"
+            },
+            {
+              "uz": "Sohadagi provayderlarning tarif rejalari roʻyxati",
+              "ru": "Перечень тарифных планов операторов отрасли",
+              "en": "A list of the sector's provider tariff plans"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Tariflar roʻyxati topshiriqda yoʻq; toʻrtinchi qator esa raqamli tafovut muammolari va taklifingizni talab qiladi.",
+            "ru": "Список тарифов в задании не назван; четвёртый пункт требует проблем цифрового неравенства и вашего предложения.",
+            "en": "Tariff lists are not in the assignment; the fourth item asks for digital divide problems and your proposal."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Referatda raqamli koʻrsatkichlarni keltirishda ular bilan birga nima koʻrsatilishi aytiladi?",
+            "ru": "Что нужно указать вместе с цифровыми показателями в реферате?",
+            "en": "What must be given together with the digital indicators in the essay?"
+          },
+          "options": [
+            { "uz": "Manbasi va yili", "ru": "Источник и год", "en": "The source and the year" },
+            { "uz": "Faqat yili", "ru": "Только год", "en": "The year only" },
+            { "uz": "Faqat manba nomi", "ru": "Только название источника", "en": "The source name only" },
+            { "uz": "Keyingi yil prognozi", "ru": "Прогноз на следующий год", "en": "A forecast for the next year" }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Dars indekslarni solishtirishda metodika va yilga eʼtibor berishni maslahat beradi, chunki turli yillarda indeks tarkibi oʻzgarishi mumkin.",
+            "ru": "Урок советует смотреть на методику и год при сравнении индексов, потому что их состав в разные годы меняется.",
+            "en": "The lesson warns that when comparing indices you must check the methodology and the year, since an index's composition changes between years."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Indekslarni solishtirishda qaysi ikki narsaga eʼtibor berish kerak?",
+            "ru": "На какие две вещи обращать внимание при сравнении индексов?",
+            "en": "Which two things should you pay attention to when comparing indices?"
+          },
+          "answers": ["metodika va yil", "yil va metodika", "методика и год", "methodology and year"],
+          "explanation": {
+            "uz": "Javob: metodika va yil — indeksning tarkibi turli yillarda oʻzgarishi mumkin.",
+            "ru": "Ответ: методика и год — состав индекса в разные годы может меняться.",
+            "en": "Answer: the methodology and the year — an index's composition may change between years."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Aholini Internet bilan qamrab olish raqamlashuvning toʻliq koʻrsatkichi hisoblanadi.",
+            "ru": "Охват населения Интернетом — полный показатель цифровизации.",
+            "en": "Covering the population with the Internet is a complete measure of digitalization."
+          },
+          "options": [
+            { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+            { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Darsda bu koʻp uchraydigan xato: koʻnikma va xizmatlar boʻlmasa, kanal ishlatilmaydi.",
+            "ru": "В уроке это названо частой ошибкой: без навыков и сервисов канал не используется.",
+            "en": "The lesson lists this as a common mistake: without skills and services the channel goes unused."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "\"Raqamli Oʻzbekiston — 2030\" strategiyasining matni va yangilanishlarini qayerdan kuzatish tavsiya etiladi?",
+            "ru": "Где рекомендуется следить за текстом и обновлениями стратегии «Цифровой Узбекистан — 2030»?",
+            "en": "Where does the lesson advise following the text and updates of the \"Digital Uzbekistan — 2030\" strategy?"
+          },
+          "options": [
+            {
+              "uz": "Lex.uz va Raqamli texnologiyalar vazirligi saytidan",
+              "ru": "На Lex.uz и сайте Министерства цифровых технологий",
+              "en": "On Lex.uz and the Ministry of Digital Technologies website"
+            },
+            {
+              "uz": "ITU statistika sahifasidan",
+              "ru": "На странице статистики МСЭ",
+              "en": "On the ITU statistics page"
+            },
+            {
+              "uz": "Global Findex hisobotidan",
+              "ru": "Из отчёта Global Findex",
+              "en": "From the Global Findex report"
+            },
+            {
+              "uz": "Markaziy bankning pul-kredit siyosati hisobotidan",
+              "ru": "Из отчёта о денежно-кредитной политике Центробанка",
+              "en": "From the Central Bank's monetary policy report"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Strategiya raqamli infratuzilma, elektron hukumat, raqamli iqtisodiyot, raqamli taʼlim va kadrlar tayyorlashga qaratilgan; matni Lex.uz da.",
+            "ru": "Стратегия направлена на цифровую инфраструктуру, электронное правительство, цифровую экономику, цифровое образование и подготовку кадров; её текст — на Lex.uz.",
+            "en": "The strategy targets digital infrastructure, e-government, the digital economy, digital education and training; its text is on Lex.uz."
+          }
+        }
+      ]
+    }
+  }
+}

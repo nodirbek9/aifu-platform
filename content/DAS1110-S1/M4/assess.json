@@ -1,0 +1,318 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Iteratsiya deganda nima tushuniladi?",
+          "ru": "Что понимается под итерацией?",
+          "en": "What is meant by an iteration?"
+        },
+        "options": [
+          {
+            "uz": "Sikl tanasining bir marta bajarilishi",
+            "ru": "Однократное выполнение тела цикла",
+            "en": "One single execution of the loop body"
+          },
+          {
+            "uz": "Siklning boshlanishidan tugashigacha boʻlgan vaqt",
+            "ru": "Время от начала цикла до его окончания",
+            "en": "The time from the start of the loop to its end"
+          },
+          {
+            "uz": "Shartning tekshirilishi",
+            "ru": "Проверка условия",
+            "en": "The checking of the condition"
+          },
+          {
+            "uz": "Sikldan darhol chiqib ketish",
+            "ru": "Немедленный выход из цикла",
+            "en": "Leaving the loop at once"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra: iteratsiya — tananing bir marta bajarilishi, tana esa takrorlanadigan amallar. Sikldan darhol chiqib ketish — bu break.",
+          "ru": "По занятию: итерация — однократное выполнение тела, а тело — это повторяемые действия. Немедленный выход из цикла — это break.",
+          "en": "In the lesson an iteration is one execution of the body, and the body is the repeated actions. Leaving the loop at once is break."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python tilida do-while sikli mavjud emas.",
+          "ru": "В Python цикл do-while отсутствует.",
+          "en": "Python has no do-while loop."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Python tilida do-while yoʻq; uning oʻrniga while True: yoziladi va ichida break ishlatiladi. Java va C++ tilida esa do-while bor.",
+          "ru": "В Python нет do-while: вместо него пишут while True: и внутри применяют break. На Java и C++ цикл do-while есть.",
+          "en": "Python has no do-while; while True: with a break inside is used instead. Java and C++ do have it."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Siklning qismlari qaysilar?",
+          "ru": "Что из перечисленного — части цикла?",
+          "en": "Which of these are parts of a loop?"
+        },
+        "options": [
+          {
+            "uz": "Sikl tanasi",
+            "ru": "Тело цикла",
+            "en": "The loop body"
+          },
+          {
+            "uz": "Davom etish sharti",
+            "ru": "Условие продолжения",
+            "en": "The continuation condition"
+          },
+          {
+            "uz": "Sikl oʻzgaruvchisi (hisoblagich)",
+            "ru": "Переменная цикла (счётчик)",
+            "en": "The loop variable (counter)"
+          },
+          {
+            "uz": "Bajariladigan fayl",
+            "ru": "Исполняемый файл",
+            "en": "The executable file"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda siklning toʻrt qismi sanalgan: tana, iteratsiya, davom etish sharti va sikl oʻzgaruvchisi. Bajariladigan fayl siklga emas, dasturga tegishli.",
+          "ru": "В занятии названы четыре части цикла: тело, итерация, условие продолжения и переменная цикла. Исполняемый файл относится к программе, а не к циклу.",
+          "en": "The lesson names four parts: the body, the iteration, the continuation condition and the loop variable. An executable file belongs to the program, not to a loop."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qaysi sikl tananing kamida bir marta bajarilishini kafolatlaydi?",
+          "ru": "Какой цикл гарантирует, что тело выполнится хотя бы один раз?",
+          "en": "Which loop guarantees that the body runs at least once?"
+        },
+        "options": [
+          {
+            "uz": "Soʻng shartli sikl (do-while)",
+            "ru": "Цикл с постусловием (do-while)",
+            "en": "The post-condition loop (do-while)"
+          },
+          {
+            "uz": "Old shartli sikl (while)",
+            "ru": "Цикл с предусловием (while)",
+            "en": "The pre-condition loop (while)"
+          },
+          {
+            "uz": "Parametrli sikl (for)",
+            "ru": "Цикл с параметром (for)",
+            "en": "The counted loop (for)"
+          },
+          {
+            "uz": "Ularning hech biri kafolatlamaydi",
+            "ru": "Ни один из них не гарантирует",
+            "en": "None of them guarantees it"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "do-while avval tanani bajaradi, shartni keyin tekshiradi. while va for shartni tanadan oldin tekshiradi, shuning uchun ularning tanasi bir marta ham bajarilmasligi mumkin.",
+          "ru": "do-while сначала выполняет тело, а условие проверяет после. while и for проверяют условие перед телом, поэтому их тело может не выполниться ни разу.",
+          "en": "do-while runs the body first and checks the condition after. while and for check the condition before the body, so their body may never run."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "s = 0 va for i in range(1, 6): s += i bajarilgandan soʻng s nimaga teng boʻladi?",
+          "ru": "Чему станет равно s после выполнения s = 0 и for i in range(1, 6): s += i?",
+          "en": "After running s = 0 and for i in range(1, 6): s += i, what is the value of s?"
+        },
+        "answers": [15],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "range(1, 6) qiymatlari 1, 2, 3, 4, 5 (6 kirmaydi). Yigʻuvchi sikldan oldin 0 ga tenglangani uchun s = 1 + 2 + 3 + 4 + 5 = 15 boʻladi.",
+          "ru": "range(1, 6) даёт 1, 2, 3, 4, 5 (6 не входит). Накопитель задан до цикла нулём, поэтому s = 1 + 2 + 3 + 4 + 5 = 15.",
+          "en": "range(1, 6) gives 1, 2, 3, 4, 5 (6 is not included). The accumulator starts at 0 before the loop, so s = 1 + 2 + 3 + 4 + 5 = 15."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Python tilida range(2, 10, 3) qanday qiymatlarni beradi? Ularni vergul bilan ajratib, ketma-ket yozing.",
+          "ru": "Какие значения даёт в Python range(2, 10, 3)? Запишите их подряд, разделяя запятыми.",
+          "en": "Which values does range(2, 10, 3) give in Python? Write them in order, separated by commas."
+        },
+        "answers": ["2, 5, 8", "2,5,8", "2 5 8"],
+        "explanation": {
+          "uz": "Boshlangʻich qiymat 2, qadam 3: 2, 5, 8. Keyingi qiymat 11 chegaradan oshadi, 10 esa tugash chegarasi boʻlgani uchun kirmaydi.",
+          "ru": "Начало 2, шаг 3: 2, 5, 8. Следующее значение 11 уже за границей, а 10 в range не входит.",
+          "en": "It starts at 2 with step 3: 2, 5, 8. The next value 11 is past the bound, and 10 itself is not included in range."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Yigʻuvchining (akkumulyator) boshlangʻich qiymati sikl tanasida berilishi kerak.",
+          "ru": "Начальное значение накопителя нужно задавать внутри тела цикла.",
+          "en": "The accumulator must be given its start value inside the loop body."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Boshlangʻich qiymat sikldan oldin beriladi: sikl ichida bersangiz, u har iteratsiyada nolga tushib qoladi va natija faqat oxirgi qiymatga teng boʻlib qoladi.",
+          "ru": "Начальное значение задают до цикла: заданное внутри, оно будет обнуляться на каждой итерации, и в результате останется только последнее значение.",
+          "en": "The start value is set before the loop: set inside, it is reset on every iteration and the result ends up being only the last value."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Agar while (n > 0) siklining tanasida n oʻzgartirilmasa, nima sodir boʻladi?",
+          "ru": "Что произойдёт, если в теле while (n > 0) переменная n не меняется?",
+          "en": "What happens if n never changes inside the body of while (n > 0)?"
+        },
+        "options": [
+          {
+            "uz": "Sikl hech qachon tugamaydi va platformada „vaqt chegarasi oshdi“ natijasi chiqadi",
+            "ru": "Цикл никогда не закончится, и на платформе появится вердикт «превышен лимит времени»",
+            "en": "The loop never ends and the platform reports a time limit exceeded verdict"
+          },
+          {
+            "uz": "Kompilyator sintaksis xatosini beradi",
+            "ru": "Компилятор сообщает о синтаксической ошибке",
+            "en": "The compiler reports a syntax error"
+          },
+          {
+            "uz": "Sikl bir marta bajarilib, oʻzligicha toʻxtaydi",
+            "ru": "Цикл выполнится один раз и сам остановится",
+            "en": "The loop runs once and stops by itself"
+          },
+          {
+            "uz": "Dastur 0 ni chiqaradi",
+            "ru": "Программа выведет 0",
+            "en": "The program prints 0"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shartga taʼsir qiluvchi oʻzgaruvchi tanada albatta oʻzgarishi kerak, aks holda sikl cheksiz boʻladi. Buning uchun platforma dasturni toʻxtatib, „vaqt chegarasi oshdi“ natijasini beradi.",
+          "ru": "Переменная, влияющая на условие, обязательно должна меняться в теле, иначе цикл станет бесконечным. Тогда платформа останавливает программу и выдаёт вердикт «превышен лимит времени».",
+          "en": "The variable that affects the condition must change in the body, otherwise the loop is infinite; the platform then stops the program with a time limit exceeded verdict."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi faktorialni hisoblovchi dastur haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о программе вычисления факториала из занятия верны?",
+          "en": "Which statements about the factorial program in the lesson are correct?"
+        },
+        "options": [
+          {
+            "uz": "Koʻpaytma uchun boshlangʻich qiymat 1 olinadi, 0 emas",
+            "ru": "Для произведения начальное значение равно 1, а не 0",
+            "en": "A product starts at 1, not at 0"
+          },
+          {
+            "uz": "f = 0 dan boshlansa ham natija toʻgʻri chiqadi",
+            "ru": "Если начать с f = 0, результат тоже будет верным",
+            "en": "Starting with f = 0 also gives the right result"
+          },
+          {
+            "uz": "0 kiritilganda sikl bir marta ham bajarilmaydi va 1 chiqadi, chunki 0! = 1",
+            "ru": "При вводе 0 цикл не выполнится ни разу и напечатается 1, потому что 0! = 1",
+            "en": "For the input 0 the loop never runs and 1 is printed, because 0! = 1"
+          },
+          {
+            "uz": "20! natijasi oddiy int turiga sigʻadi",
+            "ru": "Значение 20! помещается в обычный int",
+            "en": "The value of 20! fits in a plain int"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "f = 0 boʻlsa, natija har doim 0 ga teng. 20! = 2432902008176640000 esa int ga sigʻmaydi — Java tilida long, C++ tilida long long kerak.",
+          "ru": "При f = 0 результат всегда равен 0. А 20! = 2432902008176640000 в int не помещается — нужны long на Java и long long на C++.",
+          "en": "With f = 0 the result is always 0. And 20! = 2432902008176640000 does not fit in an int; it needs long in Java and long long in C++."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Manfiy boʻlmagan sonlarning yigʻindisi",
+      "ru": "Сумма неотрицательных чисел",
+      "en": "The sum of the non-negative numbers"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda butun son n (1 dan 100 gacha), keyingi n qatorda bittadan butun son beriladi (har biri -10000 dan 10000 gacha). Shu n ta son ichida faqat manfiy boʻlmaganlarini qoʻshing va yigʻindini bitta qatorda, faqat son koʻrinishida chiqaring — hech qanday qoʻshimcha soʻz yozmang. Masalan, 4 va 7, -2, 5, -8 kiritsa, dastur 12 chiqaradi. Manfiy sonlarni continue bilan oʻtkazib yuborish mumkin, yigʻuvchini esa sikldan oldin 0 ga tenglang.",
+      "ru": "В первой строке задаётся целое число n (от 1 до 100), в следующих n строках — по одному целому числу (каждое от -10000 до 10000). Сложите из этих n чисел только неотрицательные и выведите сумму одной строкой — только число, без дополнительных слов. Например, ввод 4 и чисел 7, -2, 5, -8 даёт 12. Отрицательные числа можно пропускать с помощью continue, а накопитель обнуляйте до цикла.",
+      "en": "The first line contains an integer n (1 to 100), and the next n lines contain one integer each (each from -10000 to 10000). Add up only the non-negative ones of these n numbers and print the sum on one line — only the number, with no extra words. For example, the input 4 followed by 7, -2, 5 and -8 gives 12. You can skip the negative numbers with continue, and the accumulator must be set to 0 before the loop."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\ns = 0\nfor i in range(n):\n    x = int(input())\n    s += x\nprint(s)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int s = 0;\n        for (int i = 0; i < n; i++) {\n            int x = in.nextInt();\n            s += x;\n        }\n        System.out.println(s);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int s = 0;\n    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        s += x;\n    }\n    cout << s << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\ns = 0\nfor i in range(n):\n    x = int(input())\n    if x < 0:\n        continue\n    s += x\nprint(s)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int s = 0;\n        for (int i = 0; i < n; i++) {\n            int x = in.nextInt();\n            if (x < 0) {\n                continue;\n            }\n            s += x;\n        }\n        System.out.println(s);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int s = 0;\n    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        if (x < 0) {\n            continue;\n        }\n        s += x;\n    }\n    cout << s << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4\n7\n-2\n5\n-8\n", "expected": "12", "hidden": false },
+        { "input": "3\n-1\n-2\n-3\n", "expected": "0", "hidden": false },
+        { "input": "1\n0\n", "expected": "0", "hidden": false },
+        { "input": "5\n10\n20\n30\n40\n50\n", "expected": "150", "hidden": true },
+        { "input": "6\n-5\n3\n-3\n3\n0\n1\n", "expected": "7", "hidden": true },
+        { "input": "2\n10000\n-10000\n", "expected": "10000", "hidden": true }
+      ]
+    }
+  }
+}

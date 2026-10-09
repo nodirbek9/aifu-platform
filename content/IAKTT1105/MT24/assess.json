@@ -1,0 +1,445 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blokcheyn texnologiyasi barcha sohalarga bir xil talablar (tezlik, maxfiylik, huquqiy kuch) asosida joriy qilinadi.",
+          "ru": "Технология блокчейн внедряется во все отрасли на основе одинаковых требований (скорость, конфиденциальность, юридическая сила).",
+          "en": "Blockchain technology is implemented across all sectors based on the same requirements (speed, confidentiality, legal force)."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [
+          1
+        ],
+        "explanation": {
+          "uz": "Sohalarning talablari keskin farq qiladi: masalan, moliyada tezlik va maxfiylik kerak boʻlsa, davlat reyestrlarida ochiqlik va huquqiy kuch muhimroq.",
+          "ru": "Требования отраслей резко различаются: например, в финансах нужны скорость и конфиденциальность, а в госреестрах важнее открытость и юридическая сила.",
+          "en": "The requirements of sectors differ sharply: for example, finance needs speed and confidentiality, while state registers value openness and legal force more."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Gruziya yer reyestri tajribasida blokcheyn qaysi vazifani bajaradi?",
+          "ru": "Какую задачу выполняет блокчейн в опыте земельного реестра Грузии?",
+          "en": "What task does blockchain perform in Georgia's land registry experience?"
+        },
+        "options": [
+          {
+            "uz": "Reyestr yozuvlarining yaxlitligini va oʻzgartirilmaganini tasdiqlaydi",
+            "ru": "Подтверждает целостность записей реестра и то, что они не изменялись",
+            "en": "Confirms the integrity of the register entries and that they have not been changed"
+          },
+          {
+            "uz": "Shaxsiy maʼlumotlarni markazsizlashtirilgan tarzda saqlaydi",
+            "ru": "Хранит персональные данные децентрализованным образом",
+            "en": "Stores personal data in a decentralized manner"
+          },
+          {
+            "uz": "Yer uchastkalarini sotish boʻyicha aqlli shartnomalarni ishga tushiradi",
+            "ru": "Запускает смарт-контракты по продаже земельных участков",
+            "en": "Executes smart contracts for the sale of land plots"
+          },
+          {
+            "uz": "Davlat reyestri funksiyasini toʻliq oʻzgartiradi va qonuniy huquq beradi",
+            "ru": "Полностью заменяет функцию госреестра и даёт законные права",
+            "en": "Completely replaces the function of the state register and grants legal rights"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Blokcheyn faqat hujjatlarning xeshlarini saqlaydi, bu yozuvlar yaxlitligini tasdiqlaydi. Huquqiy kuch davlat reyestrida qoladi va shaxsiy maʼlumotlar blokcheynga yozilmaydi.",
+          "ru": "Блокчейн хранит только хеши документов, подтверждая целостность записей. Юридическая сила остаётся за госреестром, а персональные данные в блокчейн не записываются.",
+          "en": "Blockchain only stores hashes of documents, confirming the integrity of entries. Legal force remains with the state register, and personal data is not written to the blockchain."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Orakul muammosini hal qilish uchun qanday usullardan foydalanish mumkin?",
+          "ru": "Какие методы можно использовать для решения «проблемы оракула»?",
+          "en": "Which methods can be used to solve the \"oracle problem\"?"
+        },
+        "options": [
+          {
+            "uz": "Mustaqil laboratoriya va auditor sertifikatlaridan foydalanish",
+            "ru": "Использование сертификатов независимых лабораторий и аудиторов",
+            "en": "Using certificates from independent laboratories and auditors"
+          },
+          {
+            "uz": "Barcha maʼlumotlarni faqat bitta markaziy serverdan olish",
+            "ru": "Получение всех данных только из одного центрального сервера",
+            "en": "Getting all data from only one central server"
+          },
+          {
+            "uz": "Notoʻgʻri maʼlumot kiritganlik uchun javobgarlik belgilash",
+            "ru": "Установление ответственности за введение ложных данных",
+            "en": "Establishing liability for false data entry"
+          },
+          {
+            "uz": "Ishonchli IoT qurilmalaridan maʼlumot olish",
+            "ru": "Получение данных с надёжных IoT-устройств",
+            "en": "Getting data from reliable IoT devices"
+          },
+          {
+            "uz": "Blokcheynga yozilgan maʼlumotni oʻchirib tashlash imkoniyatini qoʻshish",
+            "ru": "Добавление возможности удаления данных, записанных в блокчейн",
+            "en": "Adding the ability to delete data written to the blockchain"
+          }
+        ],
+        "correct": [
+          0,
+          2,
+          3
+        ],
+        "explanation": {
+          "uz": "Orakul muammosining yechimlari sifatida mustaqil auditorlar, ishonchli IoT qurilmalari, bir necha mustaqil manbalardan foydalanish va notoʻgʻri maʼlumot uchun javobgarlik koʻrsatilgan.",
+          "ru": "В качестве решений проблемы оракула указаны независимые аудиторы, надёжные IoT-устройства, использование нескольких независимых источников и ответственность за ложные данные.",
+          "en": "Solutions to the oracle problem include independent auditors, reliable IoT devices, using several independent sources, and liability for false data."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Nima uchun sogʻliqni saqlash sohasida bemorning tibbiy maʼlumotlari blokcheynda saqlanmaydi?",
+          "ru": "Почему в сфере здравоохранения медицинские данные пациента не хранятся в блокчейне?",
+          "en": "Why is a patient's medical data not stored on the blockchain in healthcare?"
+        },
+        "options": [
+          {
+            "uz": "Tibbiy maʼlumotlarni saqlash blokcheyn uchun juda qimmat boʻlgani uchun",
+            "ru": "Потому что хранение медицинских данных слишком дорого для блокчейна",
+            "en": "Because storing medical data is too expensive for blockchain"
+          },
+          {
+            "uz": "Qatʼiy maxfiylik talablari va blokcheyndagi yozuvni oʻchirib boʻlmasligi tufayli",
+            "ru": "Из-за строгих требований конфиденциальности и невозможности удалить запись в блокчейне",
+            "en": "Due to strict confidentiality requirements and the impossibility of deleting a record on the blockchain"
+          },
+          {
+            "uz": "Bemorlarning soni koʻpligi tufayli blokcheyn tarmogʻining tezligi pasayib ketishi sababli",
+            "ru": "Потому что из-за большого количества пациентов скорость сети блокчейн снижается",
+            "en": "Because the speed of the blockchain network drops due to the large number of patients"
+          },
+          {
+            "uz": "Regulyatorlar tibbiyot sohasida blokcheyndan foydalanishni toʻliq taqiqlagani uchun",
+            "ru": "Потому что регуляторы полностью запретили использование блокчейна в медицине",
+            "en": "Because regulators have completely banned the use of blockchain in medicine"
+          }
+        ],
+        "correct": [
+          1
+        ],
+        "explanation": {
+          "uz": "Tibbiy maʼlumotlar uchun qatʼiy maxfiylik talablari mavjud. Blokcheynda maʼlumotlar \"abadiy\" saqlangani uchun, u yerga faqat maʼlumot xeshi va kirish jurnali yoziladi.",
+          "ru": "Существуют строгие требования к конфиденциальности медицинских данных. Поскольку блокчейн хранит данные «навсегда», туда записывается только хеш и журнал доступа.",
+          "en": "There are strict confidentiality requirements for medical data. Since blockchain stores data \"forever\", only the hash and the access log are written there."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Blokcheyn va DLT boʻyicha atamalar, xavfsizlik va oʻzaro moslikni belgilovchi xalqaro standartlar qoʻmitasining (ISO/TC) raqamini yozing.",
+          "ru": "Напишите номер международного комитета по стандартам (ISO/TC), определяющего термины, безопасность и интероперабельность блокчейна и DLT.",
+          "en": "Write the number of the international standards committee (ISO/TC) for blockchain and DLT that defines terminology, security, and interoperability."
+        },
+        "answers": [
+          "307",
+          "ISO/TC 307"
+        ],
+        "explanation": {
+          "uz": "Blokcheyn boʻyicha xalqaro standartlar ISO/TC 307 qoʻmitasi tomonidan ishlab chiqiladi.",
+          "ru": "Международные стандарты по блокчейну разрабатываются комитетом ISO/TC 307.",
+          "en": "International standards for blockchain are developed by the ISO/TC 307 committee."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda berilgan xarajat-foyda tahlili misolida, 6 ta bank konsorsiumi loyihasining sof yillik foydasi necha million soʻmni tashkil qilgan?",
+          "ru": "В приведённом в занятии примере анализа затрат и выгод, сколько миллионов сумов составила чистая годовая выгода проекта консорциума 6 банков?",
+          "en": "In the cost-benefit analysis example given in the lesson, how many million soums was the net annual benefit of the 6-bank consortium project?"
+        },
+        "answers": [
+          680
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Jami yillik foyda 4280 mln soʻm, jami xarajat 3600 mln soʻm. Sof foyda: 4280 - 3600 = 680 mln soʻm.",
+          "ru": "Итоговая годовая выгода 4280 млн сумов, итоговые затраты 3600 млн сумов. Чистая выгода: 4280 - 3600 = 680 млн сумов.",
+          "en": "Total annual benefit is 4,280 million soums, total cost is 3,600 million soums. Net benefit: 4,280 - 3,600 = 680 million soums."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Blokcheyn texnologiyasi kontekstida \"Orakul muammosi\" qanday taʼriflanadi?",
+          "ru": "Как определяется «Проблема оракула» в контексте технологии блокчейн?",
+          "en": "How is the \"Oracle problem\" defined in the context of blockchain technology?"
+        },
+        "options": [
+          {
+            "uz": "Blokcheyn tarmogʻining xalqaro toʻlovlarda juda koʻp elektr energiyasi sarflashi",
+            "ru": "Чрезмерное потребление электроэнергии сетью блокчейн при международных платежах",
+            "en": "Excessive electricity consumption by the blockchain network in international payments"
+          },
+          {
+            "uz": "Real dunyodan blokcheynga kiritilayotgan maʼlumotning toʻgʻriligini blokcheynning oʻzi kafolatlay olmasligi",
+            "ru": "Сам блокчейн не может гарантировать правильность данных, внесённых из реального мира",
+            "en": "The blockchain itself cannot guarantee that data entered from the real world is correct"
+          },
+          {
+            "uz": "Har xil blokcheyn tarmoqlari oʻrtasida maʼlumot almashishning texnik imkonsizligi",
+            "ru": "Техническая невозможность обмена данными между различными сетями блокчейн",
+            "en": "The technical impossibility of exchanging data between different blockchain networks"
+          },
+          {
+            "uz": "Blokcheyndagi maʼlumotlarni mustaqil auditorlar tomondan tekshirish taqiqlanganligi",
+            "ru": "Запрет на проверку данных в блокчейне независимыми аудиторами",
+            "en": "The prohibition on verifying data in the blockchain by independent auditors"
+          }
+        ],
+        "correct": [
+          1
+        ],
+        "explanation": {
+          "uz": "Blokcheyn faqat ichidagi yozuvning oʻzgarmasligini taʼminlaydi. Agar tizimga real dunyodan dastlabki notoʻgʻri maʼlumot kiritilsa (masalan, notoʻgʻri hisoblagich), blokcheyn shu notoʻgʻri maʼlumotni saqlab qoladi.",
+          "ru": "Блокчейн обеспечивает лишь неизменность внутренней записи. Если из реального мира поступают изначально ложные данные (например, сломанный счётчик), блокчейн сохранит их.",
+          "en": "Blockchain only ensures the immutability of the record inside it. If initial false data from the real world is entered (e.g., a broken meter), the blockchain will store this false data."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, sohaviy loyihalarni amalga oshirishda koʻp uchraydigan xatolarga qaysilar kiradi?",
+          "ru": "Согласно занятию, какие ошибки часто встречаются при реализации отраслевых проектов?",
+          "en": "According to the lesson, which are common mistakes when implementing sector projects?"
+        },
+        "options": [
+          {
+            "uz": "Bitta yechimni barcha sohalarga qoʻllash",
+            "ru": "Применять одно решение ко всем отраслям",
+            "en": "Applying one solution to all sectors"
+          },
+          {
+            "uz": "Regulyator va davlat idoralarini loyihadan toʻliq chetlashtirish",
+            "ru": "Полное исключение регуляторов и госорганов из проекта",
+            "en": "Completely excluding regulators and government agencies from the project"
+          },
+          {
+            "uz": "Orakul muammosini eʼtiborsiz qoldirish",
+            "ru": "Игнорировать проблему оракула",
+            "en": "Ignoring the oracle problem"
+          },
+          {
+            "uz": "Sezgirlik tahlilisiz qaror qabul qilish",
+            "ru": "Принимать решение без анализа чувствительности",
+            "en": "Deciding without a sensitivity analysis"
+          },
+          {
+            "uz": "Blokcheyndan faqat moliyaviy sohada foydalanish",
+            "ru": "Использование блокчейна исключительно в финансовом секторе",
+            "en": "Using blockchain exclusively in the financial sector"
+          }
+        ],
+        "correct": [
+          0,
+          2,
+          3
+        ],
+        "explanation": {
+          "uz": "Darsda koʻp uchraydigan xatolar roʻyxatida: bitta yechimni hamma joyga qoʻllash, orakul muammosini inobatga olmaslik, faqat texnologik foydani hisoblash va sezgirlik tahlilisiz qaror qabul qilish keltirilgan.",
+          "ru": "В списке частых ошибок из занятия приведены: применение одного решения везде, игнорирование проблемы оракула, учёт только технологических выгод и принятие решений без анализа чувствительности.",
+          "en": "The list of common mistakes in the lesson includes applying one solution everywhere, ignoring the oracle problem, counting only technological benefits, and deciding without a sensitivity analysis."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tarmoq effektiga koʻra, blokcheyn loyihasida ishtirokchilar va operatsiyalar soni kamaysa ham, asosiy xarajatlar tezda kamayib, loyiha oʻzini tezroq oqlaydi.",
+          "ru": "Из-за сетевого эффекта, даже если число участников и операций в блокчейн-проекте снижается, основные затраты быстро падают, и проект окупается быстрее.",
+          "en": "Due to the network effect, even if the number of participants and operations in a blockchain project decreases, base costs fall quickly, and the project pays off faster."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [
+          1
+        ],
+        "explanation": {
+          "uz": "Aksincha, agar ishtirokchilar va operatsiyalar soni kamaysa, foyda proporsional ravishda kamayadi, lekin infratuzilma va boshqaruv kabi xarajatlarning katta qismi oʻzgarishsiz qoladi, shuning uchun natija zararga aylanadi.",
+          "ru": "Наоборот, если число участников и операций падает, выгоды снижаются пропорционально, а большая часть затрат на инфраструктуру и управление остаётся, превращая результат в убыток.",
+          "en": "On the contrary, if the number of participants and operations falls, benefits decrease proportionally, but most infrastructure and management costs remain, turning the result into a loss."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Sohalardagi xususiyatlarni baholash",
+      "ru": "Оценка отраслевых особенностей",
+      "en": "Evaluating sector features"
+    },
+    "statement": {
+      "uz": "Ushbu amaliyotda biz turli sohalarning blokcheyn tizimlariga boʻlgan oʻziga xos talablarini tekshiramiz. Oʻz bilimlaringizni sinab koʻring.",
+      "ru": "В этой практике мы проверим специфические требования различных отраслей к системам блокчейн. Проверьте свои знания.",
+      "en": "In this practice we test the specific requirements of various sectors for blockchain systems. Test your knowledge."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Taʼlim sohasida raqamli diplomlar nima uchun blokcheynga tayanadi?",
+            "ru": "Почему цифровые дипломы в сфере образования опираются на блокчейн?",
+            "en": "Why do digital diplomas in education rely on blockchain?"
+          },
+          "options": [
+            {
+              "uz": "Diplom oʻzgartirilmaganligi va haqiqiyligini ish beruvchilar bir necha soniyada mustaqil tekshirishi uchun",
+              "ru": "Чтобы работодатели могли за несколько секунд самостоятельно проверять подлинность диплома и то, что он не изменялся",
+              "en": "So that employers can independently verify the diploma's authenticity and that it has not been altered in seconds"
+            },
+            {
+              "uz": "Universitetlarning barcha shaxsiy fayllarini ochiq serverlarda saqlash uchun",
+              "ru": "Чтобы хранить все личные файлы университетов на открытых серверах",
+              "en": "To store all universities' personal files on open servers"
+            },
+            {
+              "uz": "Taʼlim muassasalari oʻrtasida tezkor toʻlovlarni amalga oshirish uchun",
+              "ru": "Для осуществления быстрых платежей между образовательными учреждениями",
+              "en": "To make fast payments between educational institutions"
+            },
+            {
+              "uz": "Talabalarning barcha baholarini blokcheynda \"abadiy\" qoldirish uchun",
+              "ru": "Чтобы оставить все оценки студентов в блокчейне «навсегда»",
+              "en": "To leave all students' grades on the blockchain \"forever\""
+            }
+          ],
+          "correct": [
+            0
+          ],
+          "explanation": {
+            "uz": "Raqamli diplomlarning asosiy xususiyati shundaki, universitet imzolagan hujjat xeshi orqali ish beruvchi uning haqiqiyligini zudlik bilan tekshira oladi (masalan, Blockcerts orqali).",
+            "ru": "Основная особенность цифровых дипломов заключается в том, что работодатель может мгновенно проверить подлинность документа по хешу, подписанному университетом (например, через Blockcerts).",
+            "en": "The main feature of digital diplomas is that an employer can instantly verify the document's authenticity using a hash signed by the university (e.g., via Blockcerts)."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Savdoni moliyalashtirish sohasida qogʻoz hujjatlar (masalan, konosament) qanday elektron muqobilga almashtirilmoqda va uning asosi nima?",
+            "ru": "На какую электронную альтернативу заменяются бумажные документы (например, коносамент) в торговом финансировании и что является её основой?",
+            "en": "What electronic alternative is replacing paper documents (e.g., bills of lading) in trade finance and what is its basis?"
+          },
+          "options": [
+            {
+              "uz": "Elektron pochta orqali yuborilgan tasdiqlanmagan xabar",
+              "ru": "Неподтверждённое сообщение, отправленное по электронной почте",
+              "en": "An unverified message sent via email"
+            },
+            {
+              "uz": "Elektron konosament (eBL), qonun jihatdan qogʻozga teng tan olinishi shart boʻlgan raqamli hujjat",
+              "ru": "Электронный коносамент (eBL), цифровой документ, который по закону должен признаваться равным бумажному",
+              "en": "An electronic bill of lading (eBL), a digital document that must be legally recognized as equal to a paper one"
+            },
+            {
+              "uz": "Tezkor xabar almashish dasturlari orqali joʻnatiladigan oddiy rasmlar",
+              "ru": "Обычные изображения, отправляемые через мессенджеры",
+              "en": "Regular pictures sent through instant messaging apps"
+            },
+            {
+              "uz": "Faqat bank ichida aylanadigan, ammo qonuniy kuchga ega boʻlmagan reyestr",
+              "ru": "Реестр, который циркулирует только внутри банка, но не имеет юридической силы",
+              "en": "A register that circulates only within the bank but has no legal force"
+            }
+          ],
+          "correct": [
+            1
+          ],
+          "explanation": {
+            "uz": "Savdoni moliyalashtirishda elektron konosament (eBL) qoʻllanilib, uning eng muhim sharti — qonunda qogʻozga teng darajada tan olinishidir.",
+            "ru": "В торговом финансировании применяется электронный коносамент (eBL), его главное условие — юридическое признание наравне с бумажным.",
+            "en": "In trade finance, an electronic bill of lading (eBL) is used, its most important condition being legal recognition equal to a paper one."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Energetika sohasida \"yashil\" elektr energiyasining 1 MWt·soati uchun raqamli sertifikatni ikki marta sotish mumkin emasligiga blokcheyn kafolat beradi.",
+            "ru": "В энергетике блокчейн гарантирует, что цифровой сертификат на 1 МВт·ч «зеленой» электроэнергии нельзя продать дважды.",
+            "en": "In the energy sector, blockchain guarantees that a digital certificate for 1 MWh of \"green\" electricity cannot be sold twice."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [
+            0
+          ],
+          "explanation": {
+            "uz": "Bu kelib chiqish kafolatlarining (Guarantees of origin) asosiy xususiyatidir — blokcheyn orqali aynan ikki marta sotishning (double-spending) oldi olinadi.",
+            "ru": "Это главная особенность гарантий происхождения — с помощью блокчейна предотвращается двойная продажа (double-spending).",
+            "en": "This is the main feature of guarantees of origin — blockchain prevents double-spending."
+          }
+        }
+      ]
+    }
+  }
+}

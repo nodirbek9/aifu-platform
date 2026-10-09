@@ -1,0 +1,305 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 10,
+        "prompt": {
+          "uz": "Kriptografiyaning asosiy maqsadlaridan biri nima?",
+          "ru": "Какова одна из основных целей криптографии?",
+          "en": "What is one of the main goals of cryptography?"
+        },
+        "explanation": {
+          "uz": "Kriptografiya ma\u02bclumotlarni ruxsatsiz shaxslardan himoya qilishga xizmat qiladi.",
+          "ru": "Криптография служит для защиты данных от несанкционированных лиц.",
+          "en": "Cryptography serves to protect data from unauthorized persons."
+        },
+        "options": [
+          {
+            "uz": "Axborot maxfiyligini ta\u02bcminlash",
+            "ru": "Обеспечение конфиденциальности информации",
+            "en": "Ensuring information confidentiality"
+          },
+          {
+            "uz": "Kompyuter xotirasini tozalash",
+            "ru": "Очистка памяти компьютера",
+            "en": "Clearing computer memory"
+          },
+          {
+            "uz": "Internet tezligini oshirish",
+            "ru": "Увеличение скорости интернета",
+            "en": "Increasing internet speed"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 10,
+        "prompt": {
+          "uz": "Simmetrik shifrlashning o\u02bbziga xos xususiyati nima?",
+          "ru": "Какова особенность симметричного шифрования?",
+          "en": "What is the specific feature of symmetric encryption?"
+        },
+        "explanation": {
+          "uz": "Simmetrik shifrlashda shifrlash va deshifrlash uchun bitta kalit ishlatiladi.",
+          "ru": "В симметричном шифровании для шифрования и дешифрования используется один и тот же ключ.",
+          "en": "In symmetric encryption, the same key is used for encryption and decryption."
+        },
+        "options": [
+          {
+            "uz": "Bitta kalit ishlatiladi",
+            "ru": "Используется один ключ",
+            "en": "A single key is used"
+          },
+          {
+            "uz": "Ikkita turli kalit ishlatiladi",
+            "ru": "Используются два разных ключа",
+            "en": "Two different keys are used"
+          },
+          {
+            "uz": "Kalit ishlatilmaydi",
+            "ru": "Ключ не используется",
+            "en": "No key is used"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 10,
+        "prompt": {
+          "uz": "Asimmetrik shifrlashda ochiq va yopiq kalitlar juftligi qo\u02bbllaniladi.",
+          "ru": "В асимметричном шифровании используется пара из открытого и закрытого ключей.",
+          "en": "Asymmetric encryption uses a public and private key pair."
+        },
+        "explanation": {
+          "uz": "Bu asimmetrik shifrlashning asosiy tamoyilidir.",
+          "ru": "Это основной принцип асимметричного шифрования.",
+          "en": "This is the core principle of asymmetric encryption."
+        },
+        "options": [
+          {
+            "uz": "Rost",
+            "ru": "Истина",
+            "en": "True"
+          },
+          {
+            "uz": "Yolg\u02bbon",
+            "ru": "Ложь",
+            "en": "False"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 15,
+        "prompt": {
+          "uz": "Kriptografik xesh-funksiyalarning asosiy xususiyatlarini tanlang.",
+          "ru": "Выберите основные свойства криптографических хеш-функций.",
+          "en": "Select the main properties of cryptographic hash functions."
+        },
+        "explanation": {
+          "uz": "Xesh-funksiyalar bir tomonlama va kolliziyalarga chidamli bo\u02bblishi kerak.",
+          "ru": "Хеш-функции должны быть односторонними и устойчивыми к коллизиям.",
+          "en": "Hash functions must be one-way and collision-resistant."
+        },
+        "options": [
+          {
+            "uz": "Bir tomonlamalik",
+            "ru": "Односторонность",
+            "en": "One-way function"
+          },
+          {
+            "uz": "Kolliziyalarga chidamlilik",
+            "ru": "Устойчивость к коллизиям",
+            "en": "Collision resistance"
+          },
+          {
+            "uz": "Ma\u02bclumotlarni siqish",
+            "ru": "Сжатие данных",
+            "en": "Data compression"
+          },
+          {
+            "uz": "Kalitlarni tiklash",
+            "ru": "Восстановление ключей",
+            "en": "Key recovery"
+          }
+        ],
+        "correct": [0, 1]
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 15,
+        "prompt": {
+          "uz": "Axborotning o\u02bbzgarmaganligini ta\u02bcminlovchi xususiyat qanday ataladi?",
+          "ru": "Как называется свойство, обеспечивающее неизменность информации?",
+          "en": "What is the property that ensures information remains unchanged called?"
+        },
+        "explanation": {
+          "uz": "Butunlik (Integrity) axborotning ruxsatsiz o\u02bbzgartirilmasligini bildiradi.",
+          "ru": "Целостность (Integrity) означает, что информация не была изменена без авторизации.",
+          "en": "Integrity means the information has not been altered without authorization."
+        },
+        "answers": [
+          "Butunlik",
+          "Integrity",
+          "Целостность",
+          "butunlik",
+          "integrity",
+          "целостность"
+        ]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 15,
+        "prompt": {
+          "uz": "Raqamli imzo qaysi muammoni hal qiladi?",
+          "ru": "Какую проблему решает цифровая подпись?",
+          "en": "What problem does a digital signature solve?"
+        },
+        "explanation": {
+          "uz": "Raqamli imzo hujjatning kim tomonidan yuborilganligini va o\u02bbzgartirilmaganligini tasdiqlaydi.",
+          "ru": "Цифровая подпись подтверждает, от кого отправлен документ и что он не изменен.",
+          "en": "A digital signature confirms who sent the document and that it has not been altered."
+        },
+        "options": [
+          {
+            "uz": "Avtorlikni va butunlikni tasdiqlash",
+            "ru": "Подтверждение авторства и целостности",
+            "en": "Confirming authorship and integrity"
+          },
+          {
+            "uz": "Fayl hajmini kamaytirish",
+            "ru": "Уменьшение размера файла",
+            "en": "Reducing file size"
+          },
+          {
+            "uz": "Qurilmani viruslardan himoyalash",
+            "ru": "Защита устройства от вирусов",
+            "en": "Protecting device from viruses"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 20,
+        "prompt": {
+          "uz": "Qaysi algoritmlar asimmetrik shifrlashga misol bo\u02bbladi?",
+          "ru": "Какие алгоритмы являются примерами асимметричного шифрования?",
+          "en": "Which algorithms are examples of asymmetric encryption?"
+        },
+        "explanation": {
+          "uz": "RSA va ECC keng tarqalgan asimmetrik algoritmlardir. AES esa simmetrik.",
+          "ru": "RSA и ECC - это распространенные асимметричные алгоритмы. AES - симметричный.",
+          "en": "RSA and ECC are common asymmetric algorithms. AES is symmetric."
+        },
+        "options": [
+          {
+            "uz": "RSA",
+            "ru": "RSA",
+            "en": "RSA"
+          },
+          {
+            "uz": "ECC",
+            "ru": "ECC",
+            "en": "ECC"
+          },
+          {
+            "uz": "AES",
+            "ru": "AES",
+            "en": "AES"
+          },
+          {
+            "uz": "DES",
+            "ru": "DES",
+            "en": "DES"
+          }
+        ],
+        "correct": [0, 1]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 20,
+        "prompt": {
+          "uz": "Ochiq kalitlar infratuzilmasida (PKI) sertifikatni kim beradi?",
+          "ru": "Кто выдает сертификат в инфраструктуре открытых ключей (PKI)?",
+          "en": "Who issues the certificate in a Public Key Infrastructure (PKI)?"
+        },
+        "explanation": {
+          "uz": "Sertifikatlashtirish markazi (CA) raqamli sertifikatlarni berish uchun javobgardir.",
+          "ru": "Удостоверяющий центр (CA) несет ответственность за выдачу цифровых сертификатов.",
+          "en": "A Certificate Authority (CA) is responsible for issuing digital certificates."
+        },
+        "options": [
+          {
+            "uz": "Sertifikatlashtirish markazi (CA)",
+            "ru": "Удостоверяющий центр (CA)",
+            "en": "Certificate Authority (CA)"
+          },
+          {
+            "uz": "Foydalanuvchining o\u02bbzi",
+            "ru": "Сам пользователь",
+            "en": "The user themselves"
+          },
+          {
+            "uz": "Internet provayderi",
+            "ru": "Интернет-провайдер",
+            "en": "Internet provider"
+          }
+        ],
+        "correct": [0]
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Kriptografiya amaliyoti",
+      "ru": "Практика по криптографии",
+      "en": "Cryptography practice"
+    },
+    "statement": {
+      "uz": "Kriptografiya asoslarini qanchalik o\u02bbzlashtirganingizni tekshiring.",
+      "ru": "Проверьте, насколько хорошо вы усвоили основы криптографии.",
+      "en": "Check how well you have mastered the basics of cryptography."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SHORT",
+          "difficulty": "EASY",
+          "points": 20,
+          "prompt": {
+            "uz": "Ma\u02bclumotlarni shifrlash uchun ishlatiladigan yashirin qiymat nima deb ataladi?",
+            "ru": "Как называется секретное значение, используемое для шифрования данных?",
+            "en": "What is the secret value used for encrypting data called?"
+          },
+          "explanation": {
+            "uz": "Kalit (key) shifrlash va deshifrlash jarayonlarida qo\u02bbllaniladi.",
+            "ru": "Ключ (key) применяется в процессах шифрования и дешифрования.",
+            "en": "A key is used in encryption and decryption processes."
+          },
+          "answers": [
+            "Kalit",
+            "kalit",
+            "Key",
+            "key",
+            "Ключ",
+            "ключ"
+          ]
+        }
+      ]
+    }
+  }
+}

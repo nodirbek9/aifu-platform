@@ -1,0 +1,225 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Imtihonga tayyorgarlikda har bir asosiy algoritm kamida qaysi darajaga yetishi kerak?",
+          "ru": "Какой минимум уровня освоения должен достичь каждый основной алгоритм при подготовке к экзамену?",
+          "en": "At least which mastery level should every main algorithm reach when preparing for the exam?"
+        },
+        "options": [
+          { "uz": "1 — taniyman", "ru": "1. Узнаю", "en": "1. Recognise" },
+          { "uz": "2 — tushuntiraman", "ru": "2. Объясняю", "en": "2. Explain" },
+          { "uz": "3 — yozaman", "ru": "3. Пишу", "en": "3. Write" },
+          { "uz": "4 — tahlil qilaman", "ru": "4. Анализирую", "en": "4. Analyse" }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Dars: imtihonga tayyorgarlikda har bir asosiy algoritm kamida 3-darajaga — „yozaman“ga yetishi kerak: kitobga qaramasdan 20 daqiqada ishlaydigan dastur.",
+          "ru": "В занятии сказано: при подготовке к экзамену каждый основной алгоритм должен дойти минимум до 3-го уровня — «пишу»: работающая программа за 20 минут без книги.",
+          "en": "The lesson says that for exam preparation every main algorithm should reach at least level 3 — write: a working program in 20 minutes without looking at the book."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Algoritmni qoʻlda bajarish uchun bir necha ming elementdan iborat katta kirish tanlanadi.",
+          "ru": "Для ручного выполнения алгоритма выбирают большой вход из нескольких тысяч элементов.",
+          "en": "For running an algorithm by hand one picks a large input of several thousand elements."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Kirish 5–8 elementli boʻlib, unda chekka holat ham boʻlishi kerak: teng elementlar, manfiy son yoki bitta element.",
+          "ru": "Вход выбирают маленький (5–8 элементов) и с крайним случаем: равные элементы, отрицательное число или один элемент.",
+          "en": "The input is small (5–8 elements) and includes an edge case: equal elements, a negative number or a single element."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Oʻzlashtirish shkalasi nechta darajadan iborat?",
+          "ru": "Сколько уровней в шкале освоения?",
+          "en": "How many levels does the mastery scale have?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Shkala toʻrt darajali: taniyman, tushuntiraman, yozaman, tahlil qilaman.",
+          "ru": "Шкала четырёхуровневая: узнаю, объясняю, пишу, анализирую.",
+          "en": "The scale has four levels: recognise, explain, write, analyse."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qoʻlda bajarishda har bir qadamda jadvalga nima yoziladi?",
+          "ru": "Что записывают в таблицу на каждом шаге при ручном выполнении?",
+          "en": "What is written into the table at every step of running an algorithm by hand?"
+        },
+        "options": [
+          { "uz": "Faqat yakuniy natija", "ru": "Только окончательный результат", "en": "Only the final result" },
+          { "uz": "Oʻzgaruvchilar holati: indekslar, massiv, stek, masofalar", "ru": "Состояние переменных: индексы, массив, стек, расстояния", "en": "The state of the variables: indices, the array, the stack, the distances" },
+          { "uz": "Dasturning toʻliq kodi", "ru": "Полный код программы", "en": "The full code of the program" },
+          { "uz": "Algoritmlar tili qoidalari", "ru": "Правила языка программирования", "en": "The rules of the programming language" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Jadvalga har qadamda oʻzgaruvchilar holati yoziladi — shunda „nima boʻlishini bilmayman“ degan joy aniq koʻrinadi va aynan oʻsha qism maʼruza matnidan qayta oʻqiladi.",
+          "ru": "В таблицу на каждом шаге записывают состояние переменных — так видно место, где вы «не знаете, что будет», и именно этот фрагмент нужно перечитать в тексте лекции.",
+          "en": "The table holds the state of the variables at every step, so the place where you say \"I don't know what happens\" becomes visible and exactly that part is re-read from the lecture text."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Modullar jadvalida „Dinamik tuzilmalar“ moduli uchun qaysi tushunchalar tayanch deb sanalgan?",
+          "ru": "Какие понятия из таблицы модулей отнесены к модулю «Динамические структуры»?",
+          "en": "Which notions does the module table list as the key notions of \"Dynamic structures\"?"
+        },
+        "options": [
+          { "uz": "Stek", "ru": "Стек", "en": "Stack" },
+          { "uz": "Navbat", "ru": "Очередь", "en": "Queue" },
+          { "uz": "Dek", "ru": "Дек", "en": "Deque" },
+          { "uz": "Deykstra algoritmi", "ru": "Алгоритм Дейкстры", "en": "Dijkstra's algorithm" },
+          { "uz": "Kesmalar daraxti", "ru": "Дерево отрезков", "en": "Segment tree" },
+          { "uz": "Bogʻlangan roʻyxatlar", "ru": "Связные списки", "en": "Linked lists" }
+        ],
+        "correct": [0, 1, 2, 5],
+        "explanation": {
+          "uz": "Dinamik tuzilmalar: stek, navbat, dek, bogʻlangan roʻyxatlar; qoʻlda bajarish mashqi — halqasimon buferni 5 ta buyruqda kuzatish. Deykstra — graflar, kesmalar daraxti — daraxtlar moduliga tegishli.",
+          "ru": "Динамические структуры — стек, очередь, дек, связные списки; упражнение для ручного выполнения — проследить кольцевой буфер на 5 командах. Дейкстра относится к графам, дерево отрезков — к деревьям.",
+          "en": "Dynamic structures are stack, queue, deque and linked lists, and the hand-running exercise is to trace a circular buffer through 5 commands. Dijkstra belongs to graphs, the segment tree to trees."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Mustaqil ishni topshirishda har bir algoritm uchun faqat „dastur ishladi“ deb yozish yetarli.",
+          "ru": "Для сдачи самостоятельной работы достаточно написать по одной фразе «программа работает» к каждому алгоритму.",
+          "en": "For handing in the assignment, writing just \"the program worked\" for each algorithm is enough."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Koʻp uchraydigan xatolar roʻyxatida: „ishladi“ deb yozish yetarli emas — har bir algoritm uchun murakkablik va eng yomon kirish ham koʻrsatilishi kerak.",
+          "ru": "Среди частых ошибок: недостаточно написать «работает» — для каждого алгоритма нужно указать сложность и худший вход.",
+          "en": "The common-mistake list says it is not enough to write \"it worked\": for every algorithm you must also show its complexity and its worst input."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Topshiriq boʻyicha kitobga qaramasdan kamida nechta algoritm yozish kerak?",
+          "ru": "Сколько как минимум алгоритмов нужно написать по заданию, не глядя в книгу?",
+          "en": "At least how many algorithms does the assignment require you to write without the book?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Kamida beshta algoritm — har bir moduldan bittadan — yoziladi va kursdagi namunaviy misollar bilan tekshiriladi.",
+          "ru": "Не менее пяти алгоритмов — по одному из каждого модуля — и проверка их на образцах из курса.",
+          "en": "At least five algorithms, one from each module, checked afterwards against the course's sample examples."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Modullar jadvalida „Algoritmlar va murakkablik“ uchun *T*(*n*) = 2*T*(*n*/2) + *n* rekurrent munosabatining yechimini asoslash soʻraladi. Yechim qaysi?",
+          "ru": "В таблице модулей для «Алгоритмов и сложности» требуется обосновать решение *T*(*n*) = 2*T*(*n*/2) + *n*. Каково это решение?",
+          "en": "The module table asks you to justify the solution of *T*(*n*) = 2*T*(*n*/2) + *n* for \"Algorithms and complexity\". Which is it?"
+        },
+        "options": [
+          { "uz": "*O*(*n*)", "ru": "*O*(*n*)", "en": "*O*(*n*)" },
+          { "uz": "*O*(*n* log *n*)", "ru": "*O*(*n* log *n*)", "en": "*O*(*n* log *n*)" },
+          { "uz": "*O*(*n*²)", "ru": "*O*(*n*²)", "en": "*O*(*n*²)" },
+          { "uz": "*O*(log *n*)", "ru": "*O*(log *n*)", "en": "*O*(log *n*)" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bu — birlashtirib saralash rekurrenti: ikkita yarim oʻlchamli masala va chiziqli birlashtirish. Asosiy teoremaga koʻra yechim *O*(*n* log *n*) — kursning saralash modulidagi merge sort bahosi.",
+          "ru": "Это рекуррентность сортировки слиянием: две задачи половины размера плюс линейное слияние; по основной теореме решение — *O*(*n* log *n*), как в модуле сортировки курса.",
+          "en": "This is the merge-sort recurrence: two half-size problems plus a linear merge, and by the master theorem the solution is *O*(*n* log *n*) — the merge-sort bound of the course's sorting module."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Baholash mezonlari va koʻp uchraydigan xatolar boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о критериях оценки и частых ошибках верны?",
+          "en": "Which statements about the grading criteria and common mistakes are correct?"
+        },
+        "options": [
+          { "uz": "Qoʻlda bajarish jadvallari dastur natijasidan koʻchirilmay, mustaqil tuziladi", "ru": "Таблицы ручного выполнения составляются самостоятельно, а не копируются из вывода программы", "en": "The tables of running by hand are made independently, not copied from a program's output" },
+          { "uz": "Har bir algoritm uchun uning murakkabligi hamda eng yomon kirishi koʻrsatiladi", "ru": "Для каждого алгоритма указываются его сложность и худший вход", "en": "For every algorithm its complexity and its worst input are shown" },
+          { "uz": "Boshqa talabaning kodini koʻchirishda ish qabul qilinmaydi", "ru": "Работа не принимается, если скопирован код другого студента", "en": "The work is not accepted if another student's code was copied" },
+          { "uz": "Takrorlashni imtihon arafasida bir kechada qilish eng samarali reja", "ru": "Самый эффективный план — повторить всё за одну ночь перед экзаменом", "en": "The most effective plan is to revise everything in one night before the exam" },
+          { "uz": "Bitta algoritmni guruhdoshga 5 daqiqada tushuntira olish — uni bilmaslik belgisi", "ru": "Если алгоритм не удаётся объяснить одногруппнику за 5 минут, значит, он выучен", "en": "Failing to explain an algorithm to a classmate in 5 minutes means you have mastered it" }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Samarali reja — haftiga bitta modul; tushuntirib bera olmaslik esa bilmaslik belgisi va keyingi takrorlash mavzusi.",
+          "ru": "Самый эффективный план — один модуль в неделю; а то, что не удаётся объяснить, — признак незнания и следующая тема для повторения.",
+          "en": "The effective plan is one module a week, and what you cannot explain is a sign of not knowing — the next topic to review."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Qoʻlda bajarish: qoʻyib saralashning taqqoslashlari",
+      "ru": "Выполнение вручную: сравнения в сортировке вставками",
+      "en": "Running by hand: insertion-sort comparisons"
+    },
+    "statement": {
+      "uz": "Kursning „qoʻlda bajarish“ usulini bu masalada qoʻllang: qoʻyib saralashning taqqoslashlar sonini hisoblang. Kirish: birinchi satrda *n* (1 ≤ *n* ≤ 100), ikkinchi satrda *n* ta butun son — massiv. Algoritm qogʻozda bajarganidek ishlaydi: i = 1, …, *n*−1 uchun key = a[i] olinadi va undan oldingi elementlar bilan — a[i−1], a[i−2], … — keydan katta boʻlmagan element uchraguncha yoki massiv boshiga yetguncha taqqoslanadi; elementning har bir key bilan taqqoslashi sanaladi. Soʻng key topilgan joyga qoʻyiladi. Barcha taqqoslashlarning umumiy sonini bitta satrda chiqaring. Masalan, `5 2 9 1 7` (modullar jadvalidagi aynan shu massiv) uchun toʻrtta key mos ravishda 1, 1, 3 va 2 ta taqqoslash talab qiladi: `5>2` ha; `5>9` yoʻq; `9>1`, `5>1`, `2>1` ha; `9>7` ha, keyin `5>7` yoʻq — jami `7`. Saralangan massiv aynan *n*−1, kamayib borgani esa *n*·(*n*−1)/2 ta taqqoslash oladi: shu ikki chegarani qoʻlda tekshirish — dars soʻraydigan eng yaxshi va eng yomon kirishni his qilish mashqi.",
+      "ru": "Примените приём «ручного выполнения» из курса к этой задаче: подсчитайте сравнения в сортировке вставками. Ввод: в первой строке *n* (1 ≤ *n* ≤ 100), во второй — *n* целых чисел, массив. Алгоритм работает как на бумаге: для i = 1, …, *n*−1 берётся key = a[i] и сравнивается с a[i−1], a[i−2], … до тех пор, пока не встретится элемент, не превосходящий key, или пока не будет достигнуто начало массива; засчитывается каждое сравнение элемента с key. Затем key ставится на найденное место. Выведите общее число сравнений одной строкой. Например, для `5 2 9 1 7` (тот самый массив из таблицы модулей) четыре ключа требуют 1, 1, 3 и 2 сравнения: `5>2` да; `5>9` нет; `9>1`, `5>1`, `2>1` да; `9>7` да, затем `5>7` нет — всего `7`. На отсортированном массиве получится ровно *n*−1 сравнений, на убывающем — *n*·(*n*−1)/2: проверить эти две границы руками — то самое упражнение на чувство лучшего и худшего входа из занятия.",
+      "en": "Use the lesson's method of running an algorithm by hand on this task: count the comparisons of insertion sort. Input: *n* (1 ≤ *n* ≤ 100) on the first line, then *n* integers on the second line — the array. The algorithm works as on paper: for i = 1, …, *n*−1 take key = a[i] and compare it with a[i−1], a[i−2], … until you meet an element not greater than key or reach the beginning of the array; every comparison of an element with key is counted. Then the key is placed at the position found. Print the total number of comparisons on one line. For example, on `5 2 9 1 7` (the very array from the module table) the four keys need 1, 1, 3 and 2 comparisons: `5>2` yes; `5>9` no; `9>1`, `5>1`, `2>1` yes; `9>7` yes, then `5>7` no — altogether `7`. A sorted array takes exactly *n*−1 comparisons and a strictly decreasing one *n*·(*n*−1)/2: checking these two bounds by hand is exactly the feeling-for-the-worst-input exercise of the lesson."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\ncomps = 0\nfor i in range(1, n):\n    key = a[i]\n    j = i - 1\n    while j > 0:\n        comps += 1\n        if a[j] > key:\n            a[j + 1] = a[j]\n            j -= 1\n        else:\n            break\n    a[j + 1] = key\nprint(comps)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n        int comps = 0;\n        for (int i = 1; i < n; i++) {\n            int key = a[i];\n            int j = i - 1;\n            while (j > 0) {\n                comps++;\n                if (a[j] > key) {\n                    a[j + 1] = a[j];\n                    j--;\n                } else {\n                    break;\n                }\n            }\n            a[j + 1] = key;\n        }\n        System.out.println(comps);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int a[105];\n    for (int i = 0; i < n; i++) cin >> a[i];\n    int comps = 0;\n    for (int i = 1; i < n; i++) {\n        int key = a[i];\n        int j = i - 1;\n        while (j > 0) {\n            comps++;\n            if (a[j] > key) {\n                a[j + 1] = a[j];\n                j--;\n            } else {\n                break;\n            }\n        }\n        a[j + 1] = key;\n    }\n    cout << comps << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\ncomps = 0\nfor i in range(1, n):\n    key = a[i]\n    j = i - 1\n    while j >= 0:\n        comps += 1\n        if a[j] > key:\n            a[j + 1] = a[j]\n            j -= 1\n        else:\n            break\n    a[j + 1] = key\nprint(comps)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n        int comps = 0;\n        for (int i = 1; i < n; i++) {\n            int key = a[i];\n            int j = i - 1;\n            while (j >= 0) {\n                comps++;\n                if (a[j] > key) {\n                    a[j + 1] = a[j];\n                    j--;\n                } else {\n                    break;\n                }\n            }\n            a[j + 1] = key;\n        }\n        System.out.println(comps);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int a[105];\n    for (int i = 0; i < n; i++) cin >> a[i];\n    int comps = 0;\n    for (int i = 1; i < n; i++) {\n        int key = a[i];\n        int j = i - 1;\n        while (j >= 0) {\n            comps++;\n            if (a[j] > key) {\n                a[j + 1] = a[j];\n                j--;\n            } else {\n                break;\n            }\n        }\n        a[j + 1] = key;\n    }\n    cout << comps << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5\n5 2 9 1 7\n", "expected": "7", "hidden": false },
+        { "input": "5\n1 2 3 4 5\n", "expected": "4", "hidden": false },
+        { "input": "5\n5 4 3 2 1\n", "expected": "10", "hidden": false },
+        { "input": "1\n42\n", "expected": "0", "hidden": true },
+        { "input": "5\n3 3 2 2 1\n", "expected": "10", "hidden": true }
+      ]
+    }
+  }
+}

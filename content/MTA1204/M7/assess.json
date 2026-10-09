@@ -1,0 +1,295 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Daraxt nima?",
+          "ru": "Что такое дерево?",
+          "en": "What is a tree?"
+        },
+        "options": [
+          {
+            "uz": "Sikllari boʻlmagan bogʻlamli graf",
+            "ru": "Связный граф без циклов",
+            "en": "A connected graph without cycles"
+          },
+          {
+            "uz": "Koʻrsatkichlar bilan ulangan elementlar roʻyxati",
+            "ru": "Перечень элементов, соединённых указателями",
+            "en": "A list of elements joined by pointers"
+          },
+          {
+            "uz": "Qiymatlari boʻyicha tartiblangan massiv",
+            "ru": "Массив, упорядоченный по значениям",
+            "en": "An array sorted by value"
+          },
+          {
+            "uz": "Har uchi bilan har uchi bogʻlangan graf",
+            "ru": "Граф, где каждая вершина связана с каждой",
+            "en": "A graph where every vertex joins every other"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Daraxt — sikllari boʻlmagan bogʻlamli graf; bitta uchi ildiz deb tanlansa, qolgan har bir tugunning yagona otasi boʻladi.",
+          "ru": "Дерево — связный граф без циклов; если одну вершину выбрать корнем, у каждого другого узла будет ровно один родитель.",
+          "en": "A tree is a connected graph without cycles; if one vertex is chosen as the root, every other node has exactly one parent."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Binar qidiruv daraxtida har bir tugunning chap qism daraxtidagi kalitlar undan kichik, oʻng qism daraxtidagilari esa undan qatʼiy katta.",
+          "ru": "В двоичном дереве поиска ключи левого поддерева каждого узла меньше него, а ключи правого — строго больше.",
+          "en": "In a binary search tree the keys of a node's left subtree are smaller than it and those of the right subtree are strictly greater."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Oʻng qism daraxtdagi kalitlar katta yoki teng. Darsda ogohlantirish bor: teng kalit doim bir tomonga (masalan, oʻngga) ketishi kerak, aks holda qidiruv uni topa olmaydi.",
+          "ru": "Ключи правого поддерева — больше или равны. В лекции есть предупреждение: равный ключ обязан уходить в одну сторону (например, вправо), иначе поиск его не найдёт.",
+          "en": "The keys of the right subtree are greater or equal. The lesson warns that an equal key must always go to one side (say, the right), otherwise search cannot find it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Binar qidiruv daraxtida kalitlarni saralangan tartibda chiqaruvchi aylanish qaysi biri?",
+          "ru": "Какой обход двоичного дерева поиска выводит ключи в отсортированном порядке?",
+          "en": "Which traversal of a binary search tree prints the keys in sorted order?"
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri aylanish (preorder)",
+            "ru": "Прямой обход (preorder)",
+            "en": "Preorder traversal"
+          },
+          {
+            "uz": "Simmetrik aylanish (inorder)",
+            "ru": "Симметричный обход (inorder)",
+            "en": "Inorder traversal"
+          },
+          {
+            "uz": "Teskari aylanish (postorder)",
+            "ru": "Обратный обход (postorder)",
+            "en": "Postorder traversal"
+          },
+          {
+            "uz": "Sathma-sath aylanish (level order)",
+            "ru": "Обход по уровням (level order)",
+            "en": "Level-order traversal"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Simmetrik aylanish chap → tugun → oʻng tartibida yuradi, shuning uchun BQD da kalitlar oʻsish tartibida chiqadi. Daraxtli saralash shu xususiyatga asoslanadi.",
+          "ru": "Симметричный обход идёт в порядке левое → узел → правое, поэтому в ДДП ключи выходят по возрастанию — на этом свойстве держится сортировка деревом.",
+          "en": "Inorder walks left → node → right, so in a BST the keys come out in ascending order — tree sort builds on this property."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Daraxt balandligi deganda nima tushuniladi?",
+          "ru": "Что понимается под высотой дерева?",
+          "en": "What is meant by the height of a tree?"
+        },
+        "options": [
+          {
+            "uz": "Sathlar soni — eng chuqur bargning chuqurligi + 1",
+            "ru": "Число уровней — глубина самого глубокого листа плюс 1",
+            "en": "The number of levels — the depth of the deepest leaf plus 1"
+          },
+          {
+            "uz": "Daraxtdagi tugunlarning umumiy soni",
+            "ru": "Общее число узлов дерева",
+            "en": "The total number of nodes in the tree"
+          },
+          {
+            "uz": "Ildizdagi bolalar soni",
+            "ru": "Число потомков корня",
+            "en": "The number of children of the root"
+          },
+          {
+            "uz": "Daraxtdagi qirralar soni",
+            "ru": "Число рёбер дерева",
+            "en": "The number of edges in the tree"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Balandlik — sathlar soni; tugun chuqurligi esa ildizdan u gacha boʻlgan qirralar soni.",
+          "ru": "Высота — это число уровней, а глубина узла — число рёбер от корня до него.",
+          "en": "The height is the number of levels, while a node's depth is the number of edges from the root to it."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "1, 2, 3, 4, 5 sonlari tartib bilan boʻsh binar qidiruv daraxtiga qoʻshilsa, hosil boʻlgan daraxtning balandligi nechaga teng?",
+          "ru": "Чему равна высота дерева, если числа 1, 2, 3, 4, 5 вставить по порядку в пустое двоичное дерево поиска?",
+          "en": "If 1, 2, 3, 4, 5 are inserted in order into an empty binary search tree, what is the height of the tree?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Har bir yangi son oldingilaridan katta — u doim oʻngga ketadi va daraxt zanjirga aylanadi: balandlik 5 (ishlangan misolda ham 1 2 3 4 5 uchun 5 chiqadi).",
+          "ru": "Каждое новое число больше предыдущих — оно уходит вправо, и дерево превращается в цепочку: высота 5 (в разобранном примере для 1 2 3 4 5 тоже 5).",
+          "en": "Every new number is larger than all before it and always goes right, so the tree becomes a chain: height 5 (the worked example prints 5 for 1 2 3 4 5 too)."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Sathma-sath aylanishda qaysi dinamik tuzilma ishlatiladi?",
+          "ru": "Какая динамическая структура используется при обходе по уровням?",
+          "en": "Which dynamic structure does level-order traversal use?"
+        },
+        "answers": ["navbat", "очередь", "queue"],
+        "explanation": {
+          "uz": "Tugun chiqarilganda uning bolalari navbatning oxiriga qoʻyiladi, shuning uchun yuqori sath pastki sathdan oldin chiqadi.",
+          "ru": "При выводе узла его потомки ставятся в конец очереди, поэтому верхний уровень всегда выходит раньше нижнего.",
+          "en": "When a node is output its children are put at the end of the queue, so an upper level comes out before a lower one."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Muvozanatlashtirilgan daraxtlar haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о сбалансированных деревьях верны?",
+          "en": "Which statements about balanced trees are correct?"
+        },
+        "options": [
+          {
+            "uz": "AVL daraxtida har bir tugunda chap va oʻng qism daraxtlar balandliklari farqi 1 dan oshmaydi",
+            "ru": "В дереве АВЛ в каждом узле высоты поддеревьев отличаются не более чем на 1",
+            "en": "In an AVL tree the subtree heights differ by at most 1 at every node"
+          },
+          {
+            "uz": "Qizil-qora daraxtda eng uzun yoʻl eng qisqa yoʻldan koʻpi bilan 2 baravar uzun",
+            "ru": "В красно-чёрном дереве самый длинный путь не более чем вдвое длиннее кратчайшего",
+            "en": "In a red-black tree the longest path is at most twice the shortest"
+          },
+          {
+            "uz": "B-daraxt kompilyatordagi sintaktik daraxt turidir",
+            "ru": "B-дерево — это вид синтаксического дерева в компиляторе",
+            "en": "A B-tree is a kind of compiler syntax tree"
+          },
+          {
+            "uz": "Muvozanat balandlikni h = O(log n) da saqlaydi, shuning uchun barcha amallar tez boʻladi",
+            "ru": "Сбалансированность держит высоту на уровне h = O(log n), поэтому все операции быстры",
+            "en": "Balance keeps the height at h = O(log n), so every operation is fast"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "B-daraxt — koʻp bolali, barcha barglari bir sathdagi daraxt; u maʼlumotlar bazasi va fayl tizimi indekslarida ishlatiladi. Qizil-qora daraxt esa Java TreeMap va C++ map/set da ishlaydi.",
+          "ru": "B-дерево — многодетное, с листьями на одном уровне; оно применяется в индексах баз данных и файловых систем. Красно-чёрное дерево работает в Java TreeMap и C++ map/set.",
+          "en": "A B-tree has many children with all leaves on one level and serves database and file-system indexes; the red-black tree underlies Java's TreeMap and C++'s map/set."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Saralangan ketma-ketlikni oddiy binar qidiruv daraxtiga qoʻshish daraxt balandligini O(log n) da saqlaydi.",
+          "ru": "Вставка отсортированной последовательности в обычное двоичное дерево поиска держит его высоту на уровне O(log n).",
+          "en": "Inserting a sorted sequence into a plain binary search tree keeps its height at O(log n)."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Saralangan kirishda har bir element oʻngga ketadi va daraxt bitta shoxga — zanjirga aylanadi: h = n, qidirish O(n), rekursiya esa stekni toʻldirishi mumkin. Shuning uchun muvozanatlashtirilgan daraxt (TreeMap, map) yoki tasodifiy tartib kerak.",
+          "ru": "На отсортированном входе каждый элемент уходит вправо, дерево превращается в одну «ветку» — цепочку: h = n, поиск O(n), а рекурсия может переполнить стек. Поэтому нужно сбалансированное дерево (TreeMap, map) или случайный порядок.",
+          "en": "With sorted input every element goes right and the tree turns into a single branch — a chain: h = n, search is O(n), and recursion can overflow the stack. That is why a balanced tree (TreeMap, map) or a random order is needed."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qizil-qora daraxtda eng uzun yoʻl eng qisqa yoʻldan koʻpi bilan necha marta uzun boʻladi?",
+          "ru": "Во сколько раз самый длинный путь в красно-чёрном дереве может превосходить кратчайший?",
+          "en": "At most how many times longer can the longest path of a red-black tree be than the shortest?"
+        },
+        "answers": ["2", "ikki", "два", "two"],
+        "explanation": {
+          "uz": "Qizil-qora daraxt muvozanatini tugunlar rangi qoidalari bilan saqlaydi: eng uzun yoʻl eng qisqasidan koʻpi bilan 2 baravar uzun — shuning uchun balandlik O(log n) da qoladi.",
+          "ru": "Равновесие в красно-чёрном дереве поддерживается правилами цвета узлов: самый длинный путь не более чем вдвое длиннее кратчайшего, поэтому высота остаётся O(log n).",
+          "en": "A red-black tree keeps its balance through colour rules for nodes: the longest path is at most twice the shortest, so the height stays O(log n)."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Qidiruvda koʻrilgan tugunlar",
+      "ru": "Узлы, просмотренные при поиске",
+      "en": "Nodes visited during the search"
+    },
+    "statement": {
+      "uz": "Birinchi satrda n (1 ≤ n ≤ 1000), ikkinchi satrda n ta har xil butun son beriladi: ular koʻrsatilgan tartibda boʻsh binar qidiruv daraxtiga qoʻshiladi (kichik kalit chapga, katta kalit oʻngga). Uchinchi satrda soʻrovlar soni q (1 ≤ q ≤ 1000), toʻrtinchi satrda q ta butun son — soʻrov kalitlari; har bir kalit daraxtda albatta uchraydi. Har bir soʻrov uchun qidiruvda koʻrilgan tugunlar sonini chiqaring: ildizdan boshlang, kalit kichik boʻlsa chapga, katta boʻlsa oʻngga yuring va kalit topilgan tugunni ham sanang. Chiqish: bitta satrda, soʻrovlar tartibida, bitta boʻsh joy bilan ajratib. Masalan, kalitlar 50 30 70 20 40 60 80 va soʻrovlar 20 50 70 boʻlsa, javob 3 1 2 boʻladi.",
+      "ru": "В первой строке n (1 ≤ n ≤ 1000), во второй — n различных целых чисел: они вставляются в пустое двоичное дерево поиска в указанном порядке (меньший ключ — влево, больший — вправо). В третьей строке число запросов q (1 ≤ q ≤ 1000), в четвёртой — q целых чисел, ключей запросов; каждый ключ заведомо есть в дереве. Для каждого запроса выведите число узлов, просмотренных при поиске: идите от корня, при меньшем ключе — влево, при большем — вправо, и узел с найденным ключом тоже считайте. Вывод: одна строка, ответы в порядке запросов через один пробел. Например, при ключах 50 30 70 20 40 60 80 и запросах 20 50 70 ответ: 3 1 2.",
+      "en": "The first line holds n (1 ≤ n ≤ 1000), the second line n distinct integers: they are inserted into an empty binary search tree in the given order (a smaller key goes left, a larger key goes right). The third line holds the number of queries q (1 ≤ q ≤ 1000), the fourth line q integers — the query keys, and every key is guaranteed to be in the tree. For each query print the number of nodes visited during its search: start at the root, go left while the key is smaller and right while it is larger, and count the node holding the found key as well. Output: one line with the answers in the order of the queries, separated by a single space. For example, the keys 50 30 70 20 40 60 80 with the queries 20 50 70 give 3 1 2."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nkeys = list(map(int, input().split()))\nq = int(input())\nqueries = list(map(int, input().split()))\n\nans = []\nfor x in queries:\n    ans.append(keys.index(x) + 1)\nprint(*ans)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] keys = new int[n];\n        for (int i = 0; i < n; i++) keys[i] = in.nextInt();\n        int q = in.nextInt();\n        for (int k = 0; k < q; k++) {\n            int x = in.nextInt();\n            for (int i = 0; i < n; i++) {\n                if (keys[i] == x) {\n                    System.out.print((i + 1) + \" \");\n                }\n            }\n        }\n        System.out.println();\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> keys(n);\n    for (int i = 0; i < n; i++) cin >> keys[i];\n    int q;\n    cin >> q;\n    for (int k = 0; k < q; k++) {\n        int x;\n        cin >> x;\n        for (int i = 0; i < n; i++) {\n            if (keys[i] == x) {\n                cout << i + 1 << \" \";\n            }\n        }\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "class Tugun:\n    def __init__(self, kalit):\n        self.kalit = kalit\n        self.chap = None\n        self.ong = None\n\n\nn = int(input())\nildiz = None\nfor x in map(int, input().split()):\n    yangi = Tugun(x)\n    if ildiz is None:\n        ildiz = yangi\n        continue\n    joriy = ildiz\n    while True:\n        if x < joriy.kalit:\n            if joriy.chap is None:\n                joriy.chap = yangi\n                break\n            joriy = joriy.chap\n        else:\n            if joriy.ong is None:\n                joriy.ong = yangi\n                break\n            joriy = joriy.ong\n\nq = int(input())\nnatija = []\nfor x in map(int, input().split()):\n    joriy = ildiz\n    son = 0\n    while joriy is not None:\n        son += 1\n        if x == joriy.kalit:\n            break\n        joriy = joriy.chap if x < joriy.kalit else joriy.ong\n    natija.append(son)\nprint(*natija)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static class Tugun {\n        int kalit;\n        Tugun chap, ong;\n        Tugun(int kalit) { this.kalit = kalit; }\n    }\n\n    static Tugun qosh(Tugun ildiz, int kalit) {\n        Tugun yangi = new Tugun(kalit);\n        if (ildiz == null) return yangi;\n        Tugun joriy = ildiz;\n        while (true) {\n            if (kalit < joriy.kalit) {\n                if (joriy.chap == null) {\n                    joriy.chap = yangi;\n                    return ildiz;\n                }\n                joriy = joriy.chap;\n            } else {\n                if (joriy.ong == null) {\n                    joriy.ong = yangi;\n                    return ildiz;\n                }\n                joriy = joriy.ong;\n            }\n        }\n    }\n\n    static int qadamlar(Tugun ildiz, int x) {\n        int son = 0;\n        Tugun joriy = ildiz;\n        while (joriy != null) {\n            son++;\n            if (x == joriy.kalit) return son;\n            joriy = x < joriy.kalit ? joriy.chap : joriy.ong;\n        }\n        return son;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        Tugun ildiz = null;\n        for (int i = 0; i < n; i++) ildiz = qosh(ildiz, in.nextInt());\n        int q = in.nextInt();\n        StringBuilder sb = new StringBuilder();\n        for (int k = 0; k < q; k++) {\n            if (k > 0) sb.append(' ');\n            sb.append(qadamlar(ildiz, in.nextInt()));\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nstruct Tugun {\n    int kalit;\n    Tugun* chap = nullptr;\n    Tugun* ong = nullptr;\n};\n\nTugun* qosh(Tugun* ildiz, int kalit) {\n    Tugun* yangi = new Tugun{kalit};\n    if (ildiz == nullptr) return yangi;\n    Tugun* joriy = ildiz;\n    while (true) {\n        Tugun*& keyingi = kalit < joriy->kalit ? joriy->chap : joriy->ong;\n        if (keyingi == nullptr) {\n            keyingi = yangi;\n            return ildiz;\n        }\n        joriy = keyingi;\n    }\n}\n\nint qadamlar(Tugun* ildiz, int x) {\n    int son = 0;\n    Tugun* joriy = ildiz;\n    while (joriy != nullptr) {\n        son++;\n        if (x == joriy->kalit) return son;\n        joriy = x < joriy->kalit ? joriy->chap : joriy->ong;\n    }\n    return son;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    Tugun* ildiz = nullptr;\n    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        ildiz = qosh(ildiz, x);\n    }\n    int q;\n    cin >> q;\n    for (int k = 0; k < q; k++) {\n        int x;\n        cin >> x;\n        cout << qadamlar(ildiz, x) << (k + 1 == q ? \"\\n\" : \" \");\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "7\n50 30 70 20 40 60 80\n3\n20 50 70\n", "expected": "3 1 2", "hidden": false },
+        { "input": "5\n1 2 3 4 5\n2\n5 3\n", "expected": "5 3", "hidden": false },
+        { "input": "4\n40 20 60 50\n4\n50 60 20 40\n", "expected": "3 2 2 1", "hidden": true },
+        { "input": "1\n7\n1\n7\n", "expected": "1", "hidden": true },
+        { "input": "6\n15 10 20 12 18 25\n4\n25 12 10 15\n", "expected": "3 3 2 1", "hidden": true }
+      ]
+    }
+  }
+}

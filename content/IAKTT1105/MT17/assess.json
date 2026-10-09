@@ -1,0 +1,322 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 5,
+        "prompt": {
+          "uz": "Elektron hukumatning asosiy maqsadi nima?",
+          "ru": "Какова основная цель электронного правительства?",
+          "en": "What is the primary goal of e-government?"
+        },
+        "explanation": {
+          "uz": "Elektron hukumat davlat xizmatlarini raqamli shaklda aholiga taqdim etadi.",
+          "ru": "Электронное правительство предоставляет государственные услуги населению в цифровом виде.",
+          "en": "E-government provides public services to citizens in digital form."
+        },
+        "options": [
+          {
+            "uz": "Davlat xizmatlarini elektron shaklda taqdim etish",
+            "ru": "Предоставление государственных услуг в электронном виде",
+            "en": "Providing public services electronically"
+          },
+          {
+            "uz": "Fuqarolarga kompyuter sotish",
+            "ru": "Продажа компьютеров гражданам",
+            "en": "Selling computers to citizens"
+          },
+          {
+            "uz": "Hukumatni robotlar bilan almashtirish",
+            "ru": "Замена правительства роботами",
+            "en": "Replacing government with robots"
+          },
+          {
+            "uz": "Internetni tartibga solish",
+            "ru": "Регулирование интернета",
+            "en": "Regulating the internet"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 5,
+        "prompt": {
+          "uz": "Elektron hukumat oʻzaro shaffoflik va hisobdorlikni oshiradi.",
+          "ru": "Электронное правительство повышает прозрачность и подотчетность.",
+          "en": "E-government improves transparency and accountability."
+        },
+        "explanation": {
+          "uz": "Ochiq maʼlumotlar va elektron xizmatlar hukumat shaffofligini oshiradi.",
+          "ru": "Открытые данные и электронные услуги повышают прозрачность правительства.",
+          "en": "Open data and e-services increase government transparency."
+        },
+        "options": [
+          {
+            "uz": "Rost",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Yolgʻon",
+            "ru": "Ложь",
+            "en": "False"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 5,
+        "prompt": {
+          "uz": "Quyidagilardan qaysi biri elektron hukumatning fuqarolar uchun toʻgʻridan-toʻgʻri afzalligi hisoblanadi?",
+          "ru": "Что из этого является прямым преимуществом электронного правительства для граждан?",
+          "en": "Which of these is a direct benefit of e-government for citizens?"
+        },
+        "explanation": {
+          "uz": "Elektron xizmatlar uydan chiqmasdan, istalgan vaqtda xizmatlardan foydalanish imkonini beradi.",
+          "ru": "Электронные услуги позволяют пользоваться ими в любое время, не выходя из дома.",
+          "en": "E-services allow access to services at any time without leaving home."
+        },
+        "options": [
+          {
+            "uz": "Davlat xizmatlaridan 24/7 foydalanish imkoniyati",
+            "ru": "Круглосуточный доступ к государственным услугам",
+            "en": "24/7 access to public services"
+          },
+          {
+            "uz": "Javob vaqtlarining sekinlashishi",
+            "ru": "Замедление времени ответа",
+            "en": "Slower response times"
+          },
+          {
+            "uz": "Qogʻozbozlikning koʻpayishi",
+            "ru": "Увеличение бумажной волокиты",
+            "en": "Increased paperwork"
+          },
+          {
+            "uz": "Davlat idoralariga borish zarurati",
+            "ru": "Необходимость посещения государственных учреждений",
+            "en": "Need to travel to government offices"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 10,
+        "prompt": {
+          "uz": "Quyidagilardan qaysilari elektron hukumat munosabatlari modellariga kiradi?",
+          "ru": "Какие из следующих моделей взаимодействия относятся к электронному правительству?",
+          "en": "Which of the following are models of e-government interactions?"
+        },
+        "explanation": {
+          "uz": "Elektron hukumat asosan G2C (fuqarolarga), G2B (biznesga), va G2G (davlatdan davlatga) modellarini oʻz ichiga oladi.",
+          "ru": "Электронное правительство в основном включает модели G2C (гражданам), G2B (бизнесу) и G2G (между государственными органами).",
+          "en": "E-government mainly includes G2C (to citizens), G2B (to business), and G2G (government to government) models."
+        },
+        "options": [
+          {
+            "uz": "G2C (Davlat - Fuqaro)",
+            "ru": "G2C (Государство - Гражданин)",
+            "en": "G2C (Government to Citizen)"
+          },
+          {
+            "uz": "G2B (Davlat - Biznes)",
+            "ru": "G2B (Государство - Бизнес)",
+            "en": "G2B (Government to Business)"
+          },
+          {
+            "uz": "C2C (Fuqaro - Fuqaro)",
+            "ru": "C2C (Гражданин - Гражданин)",
+            "en": "C2C (Citizen to Citizen)"
+          },
+          {
+            "uz": "G2G (Davlat - Davlat)",
+            "ru": "G2G (Государство - Государство)",
+            "en": "G2G (Government to Government)"
+          }
+        ],
+        "correct": [0, 1, 3]
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 10,
+        "prompt": {
+          "uz": "Elektron hukumatda G2C qisqartmasi nimani anglatadi? (Inglizcha kengaytmasini yozing)",
+          "ru": "Что означает аббревиатура G2C в электронном правительстве? (Напишите английскую расшифровку)",
+          "en": "What does the acronym G2C stand for in e-government?"
+        },
+        "explanation": {
+          "uz": "G2C bu Government to Citizen (Davlatdan fuqaroga) munosabatlari modeli.",
+          "ru": "G2C — это модель взаимодействия Government to Citizen (Государство — Гражданину).",
+          "en": "G2C stands for Government to Citizen interaction model."
+        },
+        "answers": [
+          "Government to Citizen",
+          "government to citizen",
+          "Government to citizen"
+        ]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 10,
+        "prompt": {
+          "uz": "Elektron hukumatni joriy etishdagi asosiy qiyinchiliklar nimalardan iborat?",
+          "ru": "Каковы основные проблемы при внедрении электронного правительства?",
+          "en": "What are the main challenges in implementing e-government?"
+        },
+        "explanation": {
+          "uz": "Xavfsizlik, xarajatlar va aholining raqamli savodxonligi elektron hukumatni rivojlantirishdagi asosiy toʻsiqlar hisoblanadi.",
+          "ru": "Безопасность, затраты и цифровая грамотность населения являются основными барьерами в развитии электронного правительства.",
+          "en": "Security, costs, and digital literacy of the population are the main barriers in developing e-government."
+        },
+        "options": [
+          {
+            "uz": "Kiberxavfsizlik tahdidlari",
+            "ru": "Угрозы кибербезопасности",
+            "en": "Cybersecurity threats"
+          },
+          {
+            "uz": "Joriy etishning yuqori xarajatlari",
+            "ru": "Высокие затраты на внедрение",
+            "en": "High implementation costs"
+          },
+          {
+            "uz": "Raqamli savodxonlikning yetishmasligi",
+            "ru": "Недостаток цифровой грамотности",
+            "en": "Lack of digital literacy"
+          },
+          {
+            "uz": "Internet tezligining pasayishi",
+            "ru": "Снижение скорости интернета",
+            "en": "Decrease in internet speed"
+          }
+        ],
+        "correct": [0, 1, 2]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 15,
+        "prompt": {
+          "uz": "Elektron hukumatning qaysi modeli turli davlat idoralari oʻrtasida maʼlumot almashish va elektron almashinuvlarni amalga oshirishni oʻz ichiga oladi?",
+          "ru": "Какая модель электронного правительства включает обмен данными и электронное взаимодействие между различными государственными органами?",
+          "en": "Which model of e-government involves sharing data and conducting electronic exchanges between different governmental agencies?"
+        },
+        "explanation": {
+          "uz": "G2G (Davlatdan davlatga) modeli hukumat idoralari oʻrtasidagi samarali axborot almashinuvini taʼminlaydi.",
+          "ru": "Модель G2G (Государство — Государству) обеспечивает эффективный обмен информацией между правительственными учреждениями.",
+          "en": "The G2G (Government to Government) model ensures efficient information exchange between government agencies."
+        },
+        "options": [
+          {
+            "uz": "G2G",
+            "ru": "G2G",
+            "en": "G2G"
+          },
+          {
+            "uz": "G2B",
+            "ru": "G2B",
+            "en": "G2B"
+          },
+          {
+            "uz": "G2C",
+            "ru": "G2C",
+            "en": "G2C"
+          },
+          {
+            "uz": "G2E",
+            "ru": "G2E",
+            "en": "G2E"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 15,
+        "prompt": {
+          "uz": "Elektron hukumatni joriy etish har doim fuqarolar oʻrtasidagi raqamli tafovutni kamaytiradi.",
+          "ru": "Внедрение электронного правительства всегда сокращает цифровой разрыв среди граждан.",
+          "en": "E-government implementation always reduces the digital divide among citizens."
+        },
+        "explanation": {
+          "uz": "Aksincha, agar internet va texnologiyalarga kirish hammada teng boʻlmasa, raqamli tafovut kengayishi mumkin.",
+          "ru": "Наоборот, если доступ к интернету и технологиям неравномерный, цифровой разрыв может увеличиться.",
+          "en": "Conversely, if access to internet and technologies is unequal, the digital divide can widen."
+        },
+        "options": [
+          {
+            "uz": "Rost",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Yolgʻon",
+            "ru": "Ложь",
+            "en": "False"
+          }
+        ],
+        "correct": [1]
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Elektron hukumat xizmatlari",
+      "ru": "Услуги электронного правительства",
+      "en": "E-government services"
+    },
+    "statement": {
+      "uz": "G2C va G2B munosabatlari oʻrtasidagi asosiy farqni tushuntiring.",
+      "ru": "Объясните основную разницу между отношениями G2C и G2B.",
+      "en": "Explain the main difference between G2C and G2B interactions."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 10,
+          "prompt": {
+            "uz": "G2B modeli kimlarga qaratilgan?",
+            "ru": "На кого ориентирована модель G2B?",
+            "en": "Who is the G2B model targeted at?"
+          },
+          "explanation": {
+            "uz": "G2B (Davlatdan biznesga) modeli davlat xizmatlarini tadbirkorlik subyektlariga taqdim etishga qaratilgan.",
+            "ru": "Модель G2B (От правительства к бизнесу) направлена на предоставление государственных услуг субъектам бизнеса.",
+            "en": "The G2B (Government to Business) model focuses on providing government services to business entities."
+          },
+          "options": [
+            {
+              "uz": "Tadbirkorlik subyektlariga",
+              "ru": "Субъектам бизнеса",
+              "en": "Business entities"
+            },
+            {
+              "uz": "Oddiy fuqarolarga",
+              "ru": "Обычным гражданам",
+              "en": "Ordinary citizens"
+            },
+            {
+              "uz": "Chet el davlatlariga",
+              "ru": "Иностранным государствам",
+              "en": "Foreign countries"
+            }
+          ],
+          "correct": [0]
+        }
+      ]
+    }
+  }
+}

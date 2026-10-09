@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "\"Avval mobil\" (mobile first) yondashuvida xizmat avval katta ekranlar uchun loyihalanadi, soʻngra telefonlarga moslashtiriladi.",
+          "ru": "В подходе «сначала мобильный» (mobile first) услуга сначала проектируется для больших экранов, а затем адаптируется к телефонам.",
+          "en": "In the \"mobile first\" approach, a service is designed for large screens first, and then adapted for phones."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "\"Avval mobil\" yondashuvida xizmat avval telefon uchun loyihalanadi, keyin katta ekranlarga moslashtiriladi.",
+          "ru": "В подходе «сначала мобильный» услуга сначала проектируется для телефона, затем адаптируется к большим экранам.",
+          "en": "In the \"mobile first\" approach, a service is designed for the phone first and then adapted to larger screens."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tokenizatsiya texnologiyasi nima maqsadda ishlatiladi?",
+          "ru": "Для какой цели используется технология токенизации?",
+          "en": "For what purpose is tokenization technology used?"
+        },
+        "options": [
+          {
+            "uz": "Hamyonda karta raqami oʻrniga uning oʻrnini bosuvchi tokenni saqlash orqali xavfsizlikni taʼminlash uchun",
+            "ru": "Для обеспечения безопасности путём хранения в кошельке токена вместо номера карты",
+            "en": "To ensure security by storing a token replacing the card number in the wallet"
+          },
+          {
+            "uz": "Telefon va terminal oʻrtasida kontaktsiz toʻlovni amalga oshirish uchun",
+            "ru": "Для осуществления бесконтактной оплаты между телефоном и терминалом",
+            "en": "To enable contactless payment between the phone and the terminal"
+          },
+          {
+            "uz": "Kassa orqali har bir xarid uchun dinamik QR kod yaratish uchun",
+            "ru": "Для создания динамического QR-кода на кассе для каждой покупки",
+            "en": "To generate a dynamic QR code for each purchase at the till"
+          },
+          {
+            "uz": "Oflayn rejimda veb-ilovani ishlashini taʼminlash uchun",
+            "ru": "Для обеспечения работы веб-приложения в офлайн-режиме",
+            "en": "To allow a web app to work in offline mode"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Tokenizatsiya yordamida karta raqami emas, balki token saqlanadi. Agar token oʻgʻirlansa ham haqiqiy karta maʼlumoti oshkor boʻlmaydi.",
+          "ru": "С помощью токенизации вместо номера карты хранится токен. Даже при его краже реальные данные карты не раскрываются.",
+          "en": "With tokenization, a token is stored instead of the card number. Even if the token is stolen, the real card data is not exposed."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Native ilovalarning (iOS, Android) mobil veb-sayt va botlarga nisbatan qanday afzalliklari bor?",
+          "ru": "Какие преимущества есть у нативных приложений (iOS, Android) по сравнению с мобильными сайтами и ботами?",
+          "en": "What advantages do native apps (iOS, Android) have over mobile websites and bots?"
+        },
+        "options": [
+          {
+            "uz": "Eng tez va qulay interfeysni taqdim etishi",
+            "ru": "Самый быстрый и удобный интерфейс",
+            "en": "The fastest and most convenient interface"
+          },
+          {
+            "uz": "Push-xabarlar yuborish imkoniyati",
+            "ru": "Возможность отправки push-уведомлений",
+            "en": "The ability to send push notifications"
+          },
+          {
+            "uz": "Qurilma imkoniyatlaridan (kamera, sensorlar) toʻliq foydalanishi",
+            "ru": "Полное использование возможностей устройства (камеры, датчиков)",
+            "en": "Full use of device features (camera, sensors)"
+          },
+          {
+            "uz": "Ishlab chiqishning arzonligi va oʻrnatish talab qilinmasligi",
+            "ru": "Дешевизна разработки и отсутствие необходимости в установке",
+            "en": "Cheap to develop and no installation required"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Native ilovalar tez, qulay va qurilma imkoniyatlarini toʻliq ishga soladi. Ammo ularni ishlab chiqish qimmat va foydalanuvchidan oʻrnatishni talab qiladi.",
+          "ru": "Нативные приложения быстры, удобны и полностью используют функции устройства. Однако их разработка дорогая, и они требуют установки.",
+          "en": "Native apps are fast, convenient, and use device features fully. However, they are expensive to develop and require installation."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Agar DAU/MAU nisbati 0.25 ga teng boʻlsa, oʻrtacha foydalanuvchi bir oyda (30 kun deb hisoblanganda) taxminan necha kun ilovaga kiradi?",
+          "ru": "Если отношение DAU/MAU равно 0.25, примерно сколько дней в месяц (считая месяц за 30 дней) средний пользователь заходит в приложение?",
+          "en": "If the DAU/MAU ratio is 0.25, approximately how many days a month (assuming a 30-day month) does the average user open the app?"
+        },
+        "answers": [7.5],
+        "tolerance": 0.1,
+        "explanation": {
+          "uz": "0.25 bu oyning toʻrtdan bir qismi. 30 kunning choragi 7.5 kunni tashkil etadi.",
+          "ru": "0.25 — это четверть месяца. Четверть от 30 дней составляет 7.5 дней.",
+          "en": "0.25 is a quarter of a month. A quarter of 30 days is 7.5 days."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kassa apparati har bir xarid uchun alohida, summa koʻrsatilgan va avtomatik tasdiqlanadigan kod yaratadigan toʻlov texnologiyasi qanday nomlanadi? Ikki soʻz bilan javob bering.",
+          "ru": "Как называется технология оплаты, при которой касса для каждой покупки создаёт отдельный код с суммой, подтверждаемый автоматически? Ответьте двумя словами.",
+          "en": "What is the payment technology called where the till generates a new code with the amount for each purchase that is confirmed automatically? Answer in two words."
+        },
+        "answers": ["dinamik QR", "Dinamik QR", "динамический QR", "Динамический QR", "dynamic QR", "Dynamic QR"],
+        "explanation": {
+          "uz": "Dinamik QR kod har bir tranzaksiya uchun yangitdan yaratiladi va summani oʻz ichiga oladi, statik QR esa doimiydir.",
+          "ru": "Динамический QR-код создаётся заново для каждой транзакции и содержит сумму, в отличие от статического QR.",
+          "en": "A dynamic QR code is generated anew for each transaction and includes the amount, unlike a static QR code."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ilova doʻkonlari iqtisodiyotiga koʻra, quyidagi qaysi toʻlov turi uchun App Store va Google Play odatda komissiya (15-30%) oladi?",
+          "ru": "Согласно экономике магазинов приложений, за какой из следующих типов платежей App Store и Google Play обычно берут комиссию (15-30%)?",
+          "en": "According to app store economics, for which of the following types of payments do the App Store and Google Play usually take a commission (15-30%)?"
+        },
+        "options": [
+          {
+            "uz": "Raqamli tovarlar va obunalar uchun toʻlovlardan",
+            "ru": "С платежей за цифровые товары и подписки",
+            "en": "From payments for digital goods and subscriptions"
+          },
+          {
+            "uz": "Jismoniy tovarlar (masalan, kiyim yoki oziq-ovqat) xaridi uchun",
+            "ru": "За покупку физических товаров (например, одежды или еды)",
+            "en": "For the purchase of physical goods (such as clothing or food)"
+          },
+          {
+            "uz": "Taksi kabi xizmatlar uchun toʻlovlardan",
+            "ru": "С платежей за такие услуги, как такси",
+            "en": "From payments for services like taxis"
+          },
+          {
+            "uz": "Ilovadan tashqaridagi barcha moliyaviy oʻtkazmalardan",
+            "ru": "Со всех финансовых переводов вне приложения",
+            "en": "From all financial transfers outside the app"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilganidek, doʻkonlar komissiyasi raqamli tovarlar va obunalarga qoʻllanadi; jismoniy tovarlar va xizmatlarga bu komissiya odatda olinmaydi.",
+          "ru": "Как сказано в занятии, комиссия магазинов применяется к цифровым товарам и подпискам; на физические товары и услуги она обычно не распространяется.",
+          "en": "As the lesson states, store commissions apply to digital goods and subscriptions; they usually do not apply to physical goods and services."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kogorta tahlili orqali qanday xulosalar chiqarish mumkin?",
+          "ru": "Какие выводы можно сделать с помощью когортного анализа?",
+          "en": "What conclusions can be drawn through cohort analysis?"
+        },
+        "options": [
+          {
+            "uz": "Yangi qoʻshilgan xususiyatlar yoki oʻzgarishlar ilovaning yopishqoqligini oshirganini aniqlash",
+            "ru": "Определить, повысили ли новые добавленные функции или изменения липкость приложения",
+            "en": "Determine whether newly added features or changes have increased the app's stickiness"
+          },
+          {
+            "uz": "Turli oylarda oʻrnatgan foydalanuvchilar guruhlarining vaqt boʻyicha saqlab qolinishini solishtirish",
+            "ru": "Сравнить удержание во времени групп пользователей, установивших приложение в разные месяцы",
+            "en": "Compare the retention over time of groups of users who installed in different months"
+          },
+          {
+            "uz": "Ilovani oʻrnatishlarning umumiy soni asosida foydalanuvchilarning toʻliq faolligini baholash",
+            "ru": "Оценить полную активность пользователей на основе только общего числа установок",
+            "en": "Evaluate total user activity based solely on the overall number of installs"
+          },
+          {
+            "uz": "Jismoniy tovarlarni sotishdan tushadigan doʻkon komissiyasini hisoblash",
+            "ru": "Рассчитать комиссию магазина приложений от продажи физических товаров",
+            "en": "Calculate the app store commission from selling physical goods"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Kogorta tahlili turli vaqtda kelgan foydalanuvchilarni guruhlab kuzatishga va shu orqali mahsulotdagi oʻzgarishlar natijasini bilishga yordam beradi. Faqat oʻrnatishlar soni faollikni koʻrsatmaydi.",
+          "ru": "Когортный анализ позволяет наблюдать за группами пользователей, пришедших в разное время, и тем самым оценивать результаты изменений в продукте. Одно лишь число установок не показывает активность.",
+          "en": "Cohort analysis helps observe groups of users who arrived at different times, thus showing the results of product changes. The number of installs alone does not show activity."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Progressiv veb-ilova (PWA) aslida veb-sayt boʻlsa ham, u telefonga oʻrnatilishi, ekranga belgisi qoʻshilishi va oflayn rejimda ishlashi mumkin.",
+          "ru": "Хотя прогрессивное веб-приложение (PWA) по сути является сайтом, его можно установить на телефон, добавить значок на экран и оно может работать в офлайн-режиме.",
+          "en": "Even though a progressive web app (PWA) is essentially a website, it can be installed on the phone, added to the home screen, and work in offline mode."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "PWA texnologiyasi veb-saytlarga native ilovalarga xos boʻlgan ekranga qoʻshish va oflayn ishlash kabi xususiyatlarni beradi.",
+          "ru": "Технология PWA даёт веб-сайтам функции, характерные для нативных приложений, такие как добавление на экран и работа офлайн.",
+          "en": "PWA technology gives websites native app features like adding to the home screen and offline operation."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Mobil tijorat xavfsizligiga oid qaysi qoidalar toʻgʻri?",
+          "ru": "Какие правила, касающиеся безопасности мобильной коммерции, верны?",
+          "en": "Which rules regarding mobile commerce security are correct?"
+        },
+        "options": [
+          {
+            "uz": "Ilovalarni faqat rasmiy doʻkondan oʻrnatish va ruxsatlarni tekshirish kerak",
+            "ru": "Приложения следует устанавливать только из официальных магазинов и проверять их разрешения",
+            "en": "Apps should only be installed from official stores and their permissions checked"
+          },
+          {
+            "uz": "Ishlab chiquvchi maʼlumotni telefonda shifrlab saqlashi tavsiya etiladi",
+            "ru": "Разработчику рекомендуется хранить данные на телефоне в зашифрованном виде",
+            "en": "The developer is recommended to store data encrypted on the phone"
+          },
+          {
+            "uz": "Tokenizatsiya tizimi faqat oflayn xaridlar xavfsizligi uchungina javob beradi",
+            "ru": "Система токенизации отвечает исключительно за безопасность офлайн-покупок",
+            "en": "The tokenization system is exclusively responsible for the security of offline purchases"
+          },
+          {
+            "uz": "Ekran ulashish ilovalari orqali SMS kodlarni xodimga koʻrsatish xavfsiz sanaladi",
+            "ru": "Показ SMS-кодов сотруднику через приложения для демонстрации экрана считается безопасным",
+            "en": "Showing SMS codes to an employee via screen-sharing apps is considered secure"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Ilovalarni rasmiy doʻkondan olish va maʼlumotlarni shifrlash xavfsizlik qoidalaridir. SMS kodni hech kimga, ayniqsa ekran ulashish orqali, koʻrsatish mumkin emas. Tokenizatsiya faqat oflayn uchun emas.",
+          "ru": "Установка из официальных магазинов и шифрование данных — правила безопасности. SMS-код никому нельзя показывать, особенно через показ экрана. Токенизация работает не только для офлайн.",
+          "en": "Getting apps from official stores and encrypting data are security rules. You must not show an SMS code to anyone, especially via screen sharing. Tokenization is not only for offline."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "DAU/MAU koʻrsatkichini hisoblash",
+      "ru": "Расчёт показателя DAU/MAU",
+      "en": "Calculating the DAU/MAU metric"
+    },
+    "statement": {
+      "uz": "Ilovaning \"yopishqoqligini\" bilish uchun DAU (kunlik faol foydalanuvchilar) va MAU (oylik faol foydalanuvchilar) nisbati hisoblanadi. Dasturingiz ikkita butun sonni oʻqisin: alohida qatorlarda DAU va MAU qiymatlari. DAU/MAU nisbatini foizda hisoblang va bitta kasr raqami aniqligida chiqaring (masalan, \"25.0%\"). Agar DAU 5000 va MAU 20000 boʻlsa, dastur 25.0% chiqaradi.",
+      "ru": "Для оценки «липкости» приложения рассчитывается отношение DAU (ежедневные активные пользователи) к MAU (ежемесячные активные пользователи). Ваша программа должна прочитать два целых числа: значения DAU и MAU на отдельных строках. Вычислите отношение DAU/MAU в процентах и выведите его с одним знаком после запятой (например, «25.0%»). Если DAU равно 5000, а MAU равно 20000, программа должна вывести 25.0%.",
+      "en": "To evaluate an app's \"stickiness\", the ratio of DAU (daily active users) to MAU (monthly active users) is calculated. Your program must read two integers: the DAU and MAU values on separate lines. Calculate the DAU/MAU ratio as a percentage and print it with one decimal place (for example, \"25.0%\"). If DAU is 5000 and MAU is 20000, the program should print 25.0%."
+    },
+    "code": {
+      "starter": {
+        "python": "dau = int(input())\nmau = int(input())\n\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long dau = in.nextLong();\n        long mau = in.nextLong();\n        \n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <cstdio>\nusing namespace std;\n\nint main() {\n    long long dau, mau;\n    cin >> dau >> mau;\n    \n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "dau = int(input())\nmau = int(input())\n\nprint(f\"{100 * dau / mau:.1f}%\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long dau = in.nextLong();\n        long mau = in.nextLong();\n        System.out.println(String.format(java.util.Locale.US, \"%.1f%%\", 100.0 * dau / mau));\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <cstdio>\nusing namespace std;\n\nint main() {\n    long long dau, mau;\n    cin >> dau >> mau;\n    printf(\"%.1f%%\\n\", 100.0 * dau / mau);\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5000\n20000\n", "expected": "25.0%", "hidden": false },
+        { "input": "1200\n10000\n", "expected": "12.0%", "hidden": false },
+        { "input": "7500\n15000\n", "expected": "50.0%", "hidden": true },
+        { "input": "0\n1000\n", "expected": "0.0%", "hidden": true },
+        { "input": "800\n2400\n", "expected": "33.3%", "hidden": true }
+      ]
+    }
+  }
+}

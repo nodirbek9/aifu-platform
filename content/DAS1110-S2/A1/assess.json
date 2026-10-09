@@ -1,0 +1,318 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ikki oʻlchamli massivda indekslar 0 dan boshlanadi. 3 × 5 matritsada a[2][4] qaysi elementni bildiradi?",
+          "ru": "Индексы в двумерном массиве начинаются с 0. Какой элемент обозначает a[2][4] в матрице 3 × 5?",
+          "en": "Indices in a two-dimensional array start at 0. Which element is a[2][4] in a 3 × 5 matrix?"
+        },
+        "options": [
+          {
+            "uz": "Ikkinchi satr, toʻrtinchi ustun",
+            "ru": "Вторая строка, четвёртый столбец",
+            "en": "The second row, fourth column"
+          },
+          {
+            "uz": "Beshinchi satr, uchinchi ustun",
+            "ru": "Пятая строка, третий столбец",
+            "en": "The fifth row, third column"
+          },
+          {
+            "uz": "Uchinchi satr, beshinchi ustun — oxirgi satrning oxirgi elementi",
+            "ru": "Третья строка, пятый столбец — последний элемент последней строки",
+            "en": "The third row, fifth column — the last element of the last row"
+          },
+          {
+            "uz": "2 va 4 oʻrinlarda turuvchi ikki element",
+            "ru": "Два элемента, стоящие на местах 2 и 4",
+            "en": "The two elements standing at places 2 and 4"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "a[i][j] — i-satr, j-ustun; ikkala indeks 0 dan boshlanadi, shuning uchun a[2][4] — uchinchi satr, beshinchi ustun.",
+          "ru": "a[i][j] — это строка i и столбец j, оба индекса начинаются с 0, поэтому a[2][4] — третья строка и пятый столбец.",
+          "en": "a[i][j] is row i and column j, and both indices start at 0, so a[2][4] is the third row, fifth column."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ikki oʻlchamli massiv — bu massivlar massivi: uning har bir elementi oʻzi ham massiv, yaʼni satr.",
+          "ru": "Двумерный массив — это массив массивов: каждый его элемент сам является массивом, то есть строкой.",
+          "en": "A two-dimensional array is an array of arrays: each of its elements is itself an array, a row."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilgani: ikki oʻlchamli massiv — massivlar massivi, har bir element oʻzi ham massiv (satr).",
+          "ru": "Как сказано в занятии: двумерный массив — массив массивов, каждый элемент сам является массивом (строкой).",
+          "en": "The lesson says a two-dimensional array is an array of arrays, and every element is itself an array (a row)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Statik massiv haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о статическом массиве верны?",
+          "en": "Which statements about a static array are correct?"
+        },
+        "options": [
+          {
+            "uz": "Oʻlchami kiritilgan sonlardan olinadi, shuning uchun unga 10⁵ × 10⁵ matritsani ham eʼlon qilish mumkin",
+            "ru": "Его размер берут из введённых чисел, поэтому в нём можно объявить и матрицу 10⁵ × 10⁵",
+            "en": "Its size comes from the numbers you read, so you can declare a 10⁵ × 10⁵ matrix in it"
+          },
+          {
+            "uz": "Oʻlchami kompilyatsiya vaqtida maʼlum boʻladi",
+            "ru": "Его размер известен во время компиляции",
+            "en": "Its size is known at compile time"
+          },
+          {
+            "uz": "C++ tilida int a[100][100]; yozilsa, masalada 3 × 4 matritsa kerak boʻlsa ham 100 · 100 ta int uchun joy ajratiladi",
+            "ru": "В C++ запись int a[100][100]; выделяет место под 100 · 100 int, даже если в задаче нужна матрица 3 × 4",
+            "en": "In C++, int a[100][100]; reserves room for 100 · 100 int values even if the problem needs only a 3 × 4 matrix"
+          },
+          {
+            "uz": "Haqiqiy oʻlchamlar alohida n va m oʻzgaruvchilarida saqlanadi",
+            "ru": "Фактические размеры хранятся в отдельных переменных n и m",
+            "en": "The actual sizes are kept in separate variables n and m"
+          }
+        ],
+        "correct": [1, 2, 3],
+        "explanation": {
+          "uz": "Statik massivning oʻlchami oldindan, kompilyatsiya vaqtida belgilanadi va u eng katta chegaradan kichik boʻlmasligi kerak. Oʻlchami ishga tushganda belgilanadigan massiv Java va Pythonʼga xos.",
+          "ru": "Размер статического массива задаётся заранее, при компиляции, и он не может быть меньше наибольшей границы задачи. Размер, определяемый во время работы, характерен для Java и Python.",
+          "en": "A static array is sized in advance, at compile time, and must not be smaller than the largest bound. A size decided at run time belongs to Java and Python."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Pythonda n × m matritsa oʻrniga [[0] * m] * n deb yozilsa nima boʻladi?",
+          "ru": "Что получится, если вместо матрицы n × m в Python написать [[0] * m] * n?",
+          "en": "In Python, what happens if you write [[0] * m] * n instead of an n × m matrix?"
+        },
+        "options": [
+          {
+            "uz": "Matritsa nollar bilan toʻladi, xolos — boshqa muammo boʻlmaydi",
+            "ru": "Ничего, кроме того, что матрица заполнится нулями",
+            "en": "Nothing beyond the matrix being filled with zeros"
+          },
+          {
+            "uz": "Indekslar 1 dan boshlanadi",
+            "ru": "Индексы начнутся с 1",
+            "en": "The indices will start at 1"
+          },
+          {
+            "uz": "Matritsa avtomatik transponirlanadi",
+            "ru": "Матрица автоматически транспонируется",
+            "en": "The matrix is transposed automatically"
+          },
+          {
+            "uz": "Barcha satrlar bitta roʻyxatga havola boʻladi: bitta elementni oʻzgartirsangiz, butun ustun oʻzgaradi",
+            "ru": "Все строки становятся ссылками на один и тот же список: изменение одного элемента меняет целый столбец",
+            "en": "All rows become references to one and the same list: changing one element changes the whole column"
+          }
+        ],
+        "correct": [3],
+        "explanation": {
+          "uz": "[[0] * m] * n bitta satrning n ta havolasini yaratadi. Toʻgʻri yozuv: [[0] * m for _ in range(n)].",
+          "ru": "[[0] * m] * n создаёт n ссылок на одну строку. Правильная запись: [[0] * m for _ in range(n)].",
+          "en": "[[0] * m] * n creates n references to a single row. The correct form is [[0] * m for _ in range(n)]."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsning birinchi ishlangan misolidagi 3 × 4 matritsa: 5 1 8 2 / 7 3 0 4 / 1 9 6 2. Uchala satr yigʻindisining yigʻindisi nechaga teng?",
+          "ru": "Матрица 3 × 4 из первого разобранного примера занятия: 5 1 8 2 / 7 3 0 4 / 1 9 6 2. Чему равна сумма всех трёх сумм строк?",
+          "en": "The 3 × 4 matrix of the lesson's first worked example: 5 1 8 2 / 7 3 0 4 / 1 9 6 2. What is the total of the three row sums?"
+        },
+        "answers": [48],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda chiqarilgan satr yigʻindilari: 16, 14, 18; ularning yigʻindisi 48.",
+          "ru": "Суммы строк из занятия: 16, 14, 18; их общая сумма — 48.",
+          "en": "The lesson prints the row sums 16, 14 and 18; together they make 48."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsning uchinchi misolida C++ satrlarni yigʻindisi boʻyicha qaysi standart funksiy bilan saraladi? Funksiyaning nomini yozing.",
+          "ru": "Какой стандартной функцией в третьем примере занятия C++ отсортировал строки по их сумме? Напишите имя функции.",
+          "en": "In the third example of the lesson, which standard function did C++ use to sort the rows by their sum? Write the function name."
+        },
+        "answers": ["stable_sort"],
+        "explanation": {
+          "uz": "Darsda sort emas, stable_sort ishlatildi: yigʻindisi teng satrlar kiritilgan tartibda qolishi kerak edi.",
+          "ru": "В занятии использовали stable_sort, а не sort: строки с равными суммами должны были остаться в порядке ввода.",
+          "en": "The lesson used stable_sort, not sort, because rows with equal sums had to keep their input order."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Matritsani saralash va transponirlash haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о сортировке и транспонировании матрицы верны?",
+          "en": "Which statements about sorting and transposing a matrix are correct?"
+        },
+        "options": [
+          {
+            "uz": "Satrlar butunligicha saralanganda satr ichidagi tartib oʻzgarmaydi, faqat satrlarning oʻrni almashadi",
+            "ru": "При сортировке целых строк порядок внутри строки не меняется — меняются только места строк",
+            "en": "When whole rows are sorted, the order inside a row does not change — only the rows change places"
+          },
+          {
+            "uz": "Ustunni saralash uchun ustun elementlarini alohida massivga koʻchirish shart emas, ular joyida saralanadi",
+            "ru": "Столбец не обязательно переносить в отдельный массив — он сортируется на месте",
+            "en": "A column does not have to be copied into a separate array — it is sorted in place"
+          },
+          {
+            "uz": "Transponirlashda t[j][i] = a[i][j] va natija m × n oʻlchamli boʻladi",
+            "ru": "При транспонировании t[j][i] = a[i][j], и результат имеет размер m × n",
+            "en": "Transposing means t[j][i] = a[i][j], and the result is m × n"
+          },
+          {
+            "uz": "Statik int a[100][100] massividagi satrlarni sort bilan butunligicha almashtirib boʻlmaydi, vector satrlari esa butunligicha almashtiriladi",
+            "ru": "Строки статического массива int a[100][100] нельзя переставить через sort целиком, а строки vector переставляются целиком",
+            "en": "The rows of a static int a[100][100] cannot be swapped as wholes by sort, while vector rows can be swapped as wholes"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "Darsga koʻra ustunni saralash uchun uni alohida massivga koʻchirish, saralash va qaytarib yozish kerak.",
+          "ru": "По занятию столбец нужно скопировать в отдельный массив, отсортировать и записать обратно.",
+          "en": "According to the lesson, a column must be copied into a separate array, sorted there, and written back."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ustunning eng katta elementini topganda darsda boshlangʻich qiymat nega 0 emas, birinchi elementdan olinadi?",
+          "ru": "Почему при поиске максимального элемента столбца начальное значение берётся из первого элемента, а не равно 0?",
+          "en": "When finding the largest element of a column, why does the lesson start from the first element instead of 0?"
+        },
+        "options": [
+          {
+            "uz": "0 qiymati matritsada hech qachon uchramaydi",
+            "ru": "Значение 0 в матрице никогда не встречается",
+            "en": "The value 0 never appears in a matrix"
+          },
+          {
+            "uz": "Manfiy sonlardan iborat ustunda 0 dan boshlasak javob notoʻgʻri chiqadi",
+            "ru": "Если начать с 0, столбец из отрицательных чисел даст неверный ответ",
+            "en": "Starting from 0 gives a wrong answer for a column of negative numbers"
+          },
+          {
+            "uz": "Birinchi element har doim eng katta boʻladi",
+            "ru": "Первый элемент всегда самый большой",
+            "en": "The first element is always the largest"
+          },
+          {
+            "uz": "0 dan boshlash dasturni sekinlashtiradi",
+            "ru": "Старт с 0 замедляет программу",
+            "en": "Starting from 0 makes the program slower"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi ikkinchi misolda ustun -5 -1 va -3 -7 boʻlib, maksimumlar -1 va -3 chiqadi: 0 dan boshlansa, notoʻgʻri javob berilardi.",
+          "ru": "Во втором примере занятия столбцы -5 -1 и -3 -7, максимумы -1 и -3: при старте с 0 ответ был бы неверным.",
+          "en": "In the lesson's second example the columns are -5 -1 and -3 -7, with maximums -1 and -3: starting from 0 would give a wrong answer."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Katta statik massivni C++ tilida main funksiyasi ichida eʼlon qilish maʼqul, chunki funksiya steki katta boʻladi.",
+          "ru": "Большой статический массив в C++ лучше объявлять внутри функции main, потому что стек функции большой.",
+          "en": "In C++ a large static array is best declared inside main, because a function's stack is large."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Funksiya steki kichik (odatda 1–8 MB), int a[1000][1000] uni toʻldirib dasturni ishga tushishi bilan yiqitadi; katta statik massiv global eʼlon qilinadi.",
+          "ru": "Стек функции мал (обычно 1–8 МБ), int a[1000][1000] заполняет его, и программа падает при запуске; большой статический массив объявляют глобально.",
+          "en": "A function's stack is small (usually 1–8 MB), so int a[1000][1000] fills it and the program crashes on start; a large static array is declared globally."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Matritsani spiral boʻyicha chiqarish",
+      "ru": "Вывод матрицы по спирали",
+      "en": "Printing a matrix in a spiral"
+    },
+    "statement": {
+      "uz": "Birinchisida n va m, soʻng n ta satrda m tadan butun son berilgan. Barcha elementlarni spiral boʻyicha, yuqori chap burchakdan boshlab, soat mili yoʻnalishida chiqaring: avval yuqori satr chapdan oʻngga, keyin oʻng chekka yuqoridan pastga, keyin pastki satr oʻngdan chapga, keyin chap chekka pastdan yuqoriga; soʻng ichkarida qolgan boʻlak bilan shunday davom eting. Barcha sonlar bitta satrda, bitta boʻsh joy bilan chiqadi; hech qanday qoʻshimcha yozuv yozmang. Masalan, 3 4 va 5 1 8 2 / 7 3 0 4 / 1 9 6 2 boʻlsa, chiqish: 5 1 8 2 4 2 6 9 1 7 3 0. 1 ≤ n, m ≤ 100, har bir element −10⁶ dan 10⁶ gacha.",
+      "ru": "В первой строке даны n и m, затем в n строках по m целых чисел. Выведите все элементы по спирали, начиная с левого верхнего угла и двигаясь по часовой стрелке: сначала верхняя строка слева направо, затем правый край сверху вниз, затем нижняя строка справа налево, затем левый край снизу вверх, и так для оставшегося внутреннего блока. Все числа выводятся в одной строке, через один пробел. Например, для 3 4 и 5 1 8 2 / 7 3 0 4 / 1 9 6 2 вывод: 5 1 8 2 4 2 6 9 1 7 3 0. 1 ≤ n, m ≤ 100, каждый элемент от −10⁶ до 10⁶.",
+      "en": "The first line holds n and m, then n lines of m integers each. Print all elements in a spiral starting at the top-left corner and going clockwise: first the top row left to right, then the right edge top to bottom, then the bottom row right to left, then the left edge bottom to top, and so on through the block that is left inside. All the numbers come on one line, separated by a single space. For example, 3 4 with 5 1 8 2 / 7 3 0 4 / 1 9 6 2 gives 5 1 8 2 4 2 6 9 1 7 3 0. 1 ≤ n, m ≤ 100, each element between −10⁶ and 10⁶."
+    },
+    "code": {
+      "starter": {
+        "python": "n, m = map(int, input().split())\na = [list(map(int, input().split())) for _ in range(n)]\n\nfor i in range(n):\n    print(*a[i])\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt();\n        int[][] a = new int[n][m];\n        for (int i = 0; i < n; i++)\n            for (int j = 0; j < m; j++)\n                a[i][j] = in.nextInt();\n\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < m; j++) {\n                if (j > 0) System.out.print(\" \");\n                System.out.print(a[i][j]);\n            }\n            System.out.println();\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> a(n, vector<int>(m));\n    for (int i = 0; i < n; i++)\n        for (int j = 0; j < m; j++)\n            cin >> a[i][j];\n\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < m; j++) {\n            if (j > 0) cout << ' ';\n            cout << a[i][j];\n        }\n        cout << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n, m = map(int, input().split())\na = [list(map(int, input().split())) for _ in range(n)]\n\ntop, bottom = 0, n - 1\nleft, right = 0, m - 1\nout = []\nwhile top <= bottom and left <= right:\n    for j in range(left, right + 1):\n        out.append(a[top][j])\n    top += 1\n    for i in range(top, bottom + 1):\n        out.append(a[i][right])\n    right -= 1\n    if top <= bottom:\n        for j in range(right, left - 1, -1):\n            out.append(a[bottom][j])\n        bottom -= 1\n    if left <= right:\n        for i in range(bottom, top - 1, -1):\n            out.append(a[i][left])\n        left += 1\n\nprint(*out)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static StringBuilder sb = new StringBuilder();\n\n    static void yoz(int x) {\n        if (sb.length() > 0) sb.append(\" \");\n        sb.append(x);\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt();\n        int[][] a = new int[n][m];\n        for (int i = 0; i < n; i++)\n            for (int j = 0; j < m; j++)\n                a[i][j] = in.nextInt();\n\n        int top = 0, bottom = n - 1, left = 0, right = m - 1;\n        while (top <= bottom && left <= right) {\n            for (int j = left; j <= right; j++) yoz(a[top][j]);\n            top++;\n            for (int i = top; i <= bottom; i++) yoz(a[i][right]);\n            right--;\n            if (top <= bottom) {\n                for (int j = right; j >= left; j--) yoz(a[bottom][j]);\n                bottom--;\n            }\n            if (left <= right) {\n                for (int i = bottom; i >= top; i--) yoz(a[i][left]);\n                left++;\n            }\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> a(n, vector<int>(m));\n    for (int i = 0; i < n; i++)\n        for (int j = 0; j < m; j++)\n            cin >> a[i][j];\n\n    vector<int> out;\n    int top = 0, bottom = n - 1, left = 0, right = m - 1;\n    while (top <= bottom && left <= right) {\n        for (int j = left; j <= right; j++) out.push_back(a[top][j]);\n        top++;\n        for (int i = top; i <= bottom; i++) out.push_back(a[i][right]);\n        right--;\n        if (top <= bottom) {\n            for (int j = right; j >= left; j--) out.push_back(a[bottom][j]);\n            bottom--;\n        }\n        if (left <= right) {\n            for (int i = bottom; i >= top; i--) out.push_back(a[i][left]);\n            left++;\n        }\n    }\n\n    for (size_t i = 0; i < out.size(); i++) {\n        if (i > 0) cout << ' ';\n        cout << out[i];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3 4\n5 1 8 2\n7 3 0 4\n1 9 6 2\n", "expected": "5 1 8 2 4 2 6 9 1 7 3 0", "hidden": false },
+        { "input": "1 1\n42\n", "expected": "42", "hidden": false },
+        { "input": "2 2\n1 2\n3 4\n", "expected": "1 2 4 3", "hidden": true },
+        { "input": "3 1\n7\n8\n9\n", "expected": "7 8 9", "hidden": true },
+        { "input": "1 4\n5 -3 0 12\n", "expected": "5 -3 0 12", "hidden": true },
+        { "input": "4 4\n1 2 3 4\n5 6 7 8\n9 10 11 12\n13 14 15 16\n", "expected": "1 2 3 4 8 12 16 15 14 13 9 5 6 7 11 10", "hidden": true }
+      ]
+    }
+  }
+}

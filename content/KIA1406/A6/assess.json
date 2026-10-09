@@ -1,0 +1,323 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Parametrlar jadvaliga koʻra, 256 bitlik kalit bilan AES nechta raund bajaradi?",
+          "ru": "Согласно таблице параметров, сколько раундов выполняет AES с ключом 256 бит?",
+          "en": "According to the parameter table, how many rounds does AES run with a 256-bit key?"
+        },
+        "options": [
+          {
+            "uz": "10",
+            "ru": "10",
+            "en": "10"
+          },
+          {
+            "uz": "12",
+            "ru": "12",
+            "en": "12"
+          },
+          {
+            "uz": "14",
+            "ru": "14",
+            "en": "14"
+          },
+          {
+            "uz": "16",
+            "ru": "16",
+            "en": "16"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Jadvalda: kalit 128, 192 yoki 256 bit boʻlsa, mos ravishda 10, 12 yoki 14 raund; blok esa doim 128 bit (16 bayt).",
+          "ru": "В таблице: ключ 128, 192 или 256 бит даёт соответственно 10, 12 или 14 раундов; блок же всегда 128 бит (16 байт).",
+          "en": "The table gives 10, 12 or 14 rounds for a 128, 192 or 256-bit key; the block is always 128 bits (16 bytes)."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "CTR va GCM rejimlarida PKCS#7 toʻldirishi talab qilinmaydi.",
+          "ru": "В режимах CTR и GCM дополнение PKCS#7 не требуется.",
+          "en": "PKCS#7 padding is not required in CTR and GCM mode."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Toʻldirish jadvalda CBC va ECB uchun yozilgan, CTR va GCM da esa kerak emas.",
+          "ru": "Дополнение указано в таблице для CBC и ECB, в CTR и GCM оно не нужно.",
+          "en": "The table lists padding for CBC and ECB only; CTR and GCM do not need it."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Rejim tanlovi boʻyicha jadvalda qaysi koʻrsatmalar berilgan?",
+          "ru": "Какие указания по выбору режима даны в таблице?",
+          "en": "Which guidance about choosing a mode does the table give?"
+        },
+        "options": [
+          {
+            "uz": "GCM — shifrlash bilan birga yaxlitlik ham beradi, tavsiya etiladi",
+            "ru": "GCM — шифрование плюс целостность, рекомендуется",
+            "en": "GCM — encryption together with integrity, recommended"
+          },
+          {
+            "uz": "CBC — agar IV tasodifiy boʻlsa",
+            "ru": "CBC — если IV случайный",
+            "en": "CBC — if the IV is random"
+          },
+          {
+            "uz": "ECB — ishlatmang",
+            "ru": "ECB — не использовать",
+            "en": "ECB — do not use"
+          },
+          {
+            "uz": "Kalitni shifrlangan fayl yonida saqlash",
+            "ru": "Хранить ключ рядом с зашифрованным файлом",
+            "en": "Keep the key next to the encrypted file"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Kalitni shifrmatn yonida saqlash — xatolar roʻyxatidagi xatti-harakat: kalit alohida joyda, yaʼni kalitlar omborida, parol menejerida yoki apparat modulida saqlanadi.",
+          "ru": "Хранение ключа рядом с шифртекстом — действие из списка ошибок: ключ хранят отдельно — в хранилище ключей, менеджере паролей или аппаратном модуле.",
+          "en": "Keeping the key beside the ciphertext comes from the mistakes list: the key belongs elsewhere — a key vault, a password manager or a hardware module."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "1-qadamda FIPS 197 test vektori qanday maqsadda ishlatiladi?",
+          "ru": "Для чего на шаге 1 используется тестовый вектор FIPS 197?",
+          "en": "What is the FIPS 197 test vector used for in step 1?"
+        },
+        "options": [
+          {
+            "uz": "Dastur toʻgʻri ishlashini tekshirish uchun",
+            "ru": "Проверить, что программа работает правильно",
+            "en": "To check that a program works correctly"
+          },
+          {
+            "uz": "Kalitni paroldan hosil qilish uchun",
+            "ru": "Получить ключ из пароля",
+            "en": "To derive a key from a password"
+          },
+          {
+            "uz": "Tarmoq tezligini oʻlchash uchun",
+            "ru": "Измерить скорость сети",
+            "en": "To measure network speed"
+          },
+          {
+            "uz": "Arxivda fayl nomlarini shifrlash uchun",
+            "ru": "Зашифровать имена файлов в архиве",
+            "en": "To encrypt file names in an archive"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Test vektori — dastur toʻgʻri ishlashini tekshirishning standart usuli: natija standartdagi 69c4e0d86a7b0430d8cdb78070b4c55a qiymatiga teng boʻlishi kerak.",
+          "ru": "Тестовый вектор — стандартный способ проверить правильность программы: результат должен равняться значению из стандарта 69c4e0d86a7b0430d8cdb78070b4c55a.",
+          "en": "A test vector is the standard way to check that a program works: the result must equal 69c4e0d86a7b0430d8cdb78070b4c55a from the standard."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Jadvalga koʻra, GCM rejimida nonce (IV) nechta baytdan iborat?",
+          "ru": "Сколько байт составляет nonce (IV) в режиме GCM согласно таблице?",
+          "en": "How many bytes is the nonce (IV) in GCM mode, according to the table?"
+        },
+        "answers": [12],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "GCM da 12 baytlik nonce bitta kalit bilan hech qachon takrorlanmaydi; CBC da esa 16 bayt tasodifiy IV ishlatiladi.",
+          "ru": "В GCM nonce в 12 байт никогда не повторяется с тем же ключом; в CBC используют 16 случайных байт IV.",
+          "en": "In GCM the 12-byte nonce is never repeated with the same key; CBC uses 16 random bytes of IV."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "GF(2⁸) maydonida ikki baytni qoʻshish qaysi amal bilan bajariladi?",
+          "ru": "Какой операцией складывают два байта в поле GF(2⁸)?",
+          "en": "Which operation adds two bytes in the field GF(2⁸)?"
+        },
+        "answers": ["XOR", "xor", "XOR (⊕)", "⊕"],
+        "explanation": {
+          "uz": "Darsda aytilishicha, GF(2⁸) da qoʻshish — XOR, koʻpaytirish esa koʻphadlarni koʻpaytirib, 0x11B moduli boʻyicha qoldiq olish.",
+          "ru": "По занятию сложение в GF(2⁸) — это XOR, а умножение — произведение многочленов с остатком по модулю 0x11B.",
+          "en": "In the lesson, addition in GF(2⁸) is XOR, while multiplication multiplies the polynomials and takes the remainder modulo 0x11B."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nima uchun S-box AES ning eng muhim qismi hisoblanadi?",
+          "ru": "Почему S-box считается важнейшей частью AES?",
+          "en": "Why is the S-box considered the crucial part of AES?"
+        },
+        "options": [
+          {
+            "uz": "U AES ning yagona chiziqsiz qismi: kirish va chiqish orasida oddiy chiziqli bogʻlanish yoʻq",
+            "ru": "Это единственная нелинейная часть AES: между входом и выходом нет простой линейной связи",
+            "en": "It is the only non-linear part of AES: there is no simple linear relation between input and output"
+          },
+          {
+            "uz": "U kalitni 256 bitga kengaytiradi",
+            "ru": "Она расширяет ключ до 256 бит",
+            "en": "It expands the key to 256 bits"
+          },
+          {
+            "uz": "U har bir ustunni matritsaga koʻpaytiradi",
+            "ru": "Она умножает каждый столбец на матрицу",
+            "en": "It multiplies each column by a matrix"
+          },
+          {
+            "uz": "U shifrmatnga yaxlitlik kodi qoʻshadi",
+            "ru": "Она добавляет к шифртексту код целостности",
+            "en": "It adds an authentication code to the ciphertext"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Teskari element tufayli S-box chiziqsiz boʻladi — bu chiziqli va differensial kriptotahlilga qarshi asosiy himoya.",
+          "ru": "Благодаря обратному элементу S-box нелинейна — это основная защита от линейного и дифференциального криптоанализа.",
+          "en": "Because of the inverse element the S-box is non-linear, which is the main protection against linear and differential cryptanalysis."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "MixColumns boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о MixColumns верны?",
+          "en": "Which statements about MixColumns are correct?"
+        },
+        "options": [
+          {
+            "uz": "Holat matritsasining har bir ustunini (4 bayt) GF(2⁸) da berilgan matritsaga koʻpaytiradi",
+            "ru": "Умножает каждый столбец матрицы состояния (4 байта) на заданную матрицу в GF(2⁸)",
+            "en": "It multiplies each column of the state matrix (4 bytes) by the given matrix in GF(2⁸)"
+          },
+          {
+            "uz": "Bir xil baytlardan iborat ustun oʻzgarmaydi, chunki 2 ⊕ 3 ⊕ 1 ⊕ 1 = 1",
+            "ru": "Столбец из одинаковых байтов не меняется, так как 2 ⊕ 3 ⊕ 1 ⊕ 1 = 1",
+            "en": "A column of identical bytes stays unchanged, because 2 ⊕ 3 ⊕ 1 ⊕ 1 = 1"
+          },
+          {
+            "uz": "Bitta baytning biti oʻzgarsa, butun ustun oʻzgaradi — bu tarqatish (diffusion) tamoyili",
+            "ru": "Если меняется бит одного байта, меняется весь столбец — это принцип рассеивания (diffusion)",
+            "en": "A changed bit of one byte changes the whole column — the diffusion principle"
+          },
+          {
+            "uz": "Oxirgi raundda ham MixColumns bajariladi",
+            "ru": "MixColumns выполняется и в последнем раунде",
+            "en": "MixColumns is also performed in the last round"
+          },
+          {
+            "uz": "ShiftRows bilan birga ikki raunddan keyin har bir kirish bayti holatning barcha 16 baytiga taʼsir qiladi",
+            "ru": "Вместе с ShiftRows через два раунда каждый входной байт влияет на все 16 байт состояния",
+            "en": "Together with ShiftRows, after two rounds every input byte affects all 16 bytes of the state"
+          }
+        ],
+        "correct": [0, 1, 2, 4],
+        "explanation": {
+          "uz": "Raund tartibi: SubBytes → ShiftRows → MixColumns → AddRoundKey, lekin oxirgi raundda MixColumns yoʻq.",
+          "ru": "Порядок раунда: SubBytes → ShiftRows → MixColumns → AddRoundKey, но в последнем раунде MixColumns отсутствует.",
+          "en": "A round is SubBytes → ShiftRows → MixColumns → AddRoundKey, and the last round has no MixColumns."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "3-qadamda bir xil fayl bir xil parol bilan ikki marta shifrlanganda shifrmatnlar bir xil chiqadi.",
+          "ru": "Если на шаге 3 один и тот же файл зашифровать дважды одним и тем же паролем, шифртексты получтся одинаковыми.",
+          "en": "Encrypting the same file twice with the same password on step 3 gives the same ciphertext."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Tuz har safar yangi boʻlgani uchun PBKDF2 boshqa kalit va IV hosil qiladi, shuning uchun shifrmatnlar farq qiladi.",
+          "ru": "Соль каждый раз новая, поэтому PBKDF2 получает другой ключ и IV, и шифртексты различаются.",
+          "en": "The salt is new every time, so PBKDF2 derives a different key and IV, and the ciphertexts differ."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "PKCS#7 toʻldirishini hisoblash",
+      "ru": "Подсчет дополнения PKCS#7",
+      "en": "Computing the PKCS#7 padding"
+    },
+    "statement": {
+      "uz": "Darsdagi parametrlar jadvaliga koʻra AES bloki doim 16 bayt, CBC va ECB rejimlarida esa PKCS#7 toʻldirishi qoʻyiladi: yetmagan n bayt oʻrniga qiymati n boʻlgan n ta bayt yoziladi; agar uzunlik 16 ga boʻlinsa ham yana butun bir blok qoʻshiladi (1-qadamda shu sababli FIPS 197 vektoridan keyin bitta toʻldirish bloki chiqqani aytilgan). Dasturingiz bitta butun son L ni oʻqisin (1 ≤ L ≤ 10000) — ochiq matnning baytlardagi uzunligi. Bitta qatorda, oralarini bitta boʻshliq bilan ajratib, uchta qiymatni chiqaring: qoʻshilgan toʻldirish baytlari soni, bitta toʻldirish baytining qiymati kichik harfli ikki xonali hex koʻrinishida va toʻldirishdan keyingi umumiy uzunlik. Boshqa hech narsa yozmang. Masalan, L = 5 boʻlsa 11 bayt yetishmaydi, ularning har birining qiymati 0x0b, umumiy uzunlik 16 — dastur 11 0b 16 chiqaradi.",
+      "ru": "Согласно таблице параметров блок AES всегда 16 байт, а в режимах CBC и ECB используется дополнение PKCS#7: вместо недостающих n байтов записываются n байтов со значением n; если длина кратна 16, добавляется ещё один полный блок (поэтому на шаге 1 после вектора FIPS 197 идёт блок дополнения). Программа читает одно целое L (1 ≤ L ≤ 10000) — длину открытого текста в байтах. В одной строке выведите через один пробел три значения: число байт дополнения, значение одного байта дополнения двумя шестнадцатеричными цифрами малыми буквами и общую длину после дополнения. Ничего больше не выводите. Например, при L = 5 не хватает 11 байт, каждый со значением 0x0b, итоговая длина 16 — программа выводит 11 0b 16.",
+      "en": "According to the parameter table the AES block is always 16 bytes, and in CBC and ECB the PKCS#7 padding is used: the n missing bytes are written as n bytes of value n, and when the length is already a multiple of 16 a whole extra block is added (which is why step 1 shows a padding block after the FIPS 197 vector). Your program reads one integer L (1 ≤ L ≤ 10000), the length of the plaintext in bytes. On one line, separated by single spaces, print three values: the number of padding bytes, the value of one padding byte as two lowercase hexadecimal digits, and the total length after the padding. Print nothing else. For L = 5, eleven bytes are missing, each of value 0x0b, and the total is 16, so the program prints 11 0b 16."
+    },
+    "code": {
+      "starter": {
+        "python": "L = int(input())\nn = 16 - L % 16\nprint(n, format(n, \"02x\"), L)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int L = in.nextInt();\n        int n = 16 - L % 16;\n        System.out.println(n + \" \" + String.format(\"%02x\", n) + \" \" + L);\n    }\n}\n",
+        "cpp": "#include <cstdio>\n\nint main() {\n    int L;\n    scanf(\"%d\", &L);\n    int n = 16 - L % 16;\n    printf(\"%d %02x %d\\n\", n, n, L);\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "L = int(input())\nn = 16 - L % 16\nprint(n, format(n, \"02x\"), L + n)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int L = in.nextInt();\n        int n = 16 - L % 16;\n        System.out.println(n + \" \" + String.format(\"%02x\", n) + \" \" + (L + n));\n    }\n}\n",
+        "cpp": "#include <cstdio>\n\nint main() {\n    int L;\n    scanf(\"%d\", &L);\n    int n = 16 - L % 16;\n    printf(\"%d %02x %d\\n\", n, n, L + n);\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5\n", "expected": "11 0b 16", "hidden": false },
+        { "input": "16\n", "expected": "16 10 32", "hidden": false },
+        { "input": "1\n", "expected": "15 0f 16", "hidden": true },
+        { "input": "31\n", "expected": "1 01 32", "hidden": true },
+        { "input": "100\n", "expected": "12 0c 112", "hidden": true },
+        { "input": "48\n", "expected": "16 10 64", "hidden": true }
+      ]
+    }
+  }
+}

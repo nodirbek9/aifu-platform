@@ -1,0 +1,354 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Algoritm nima?",
+          "ru": "Что такое алгоритм?",
+          "en": "What is an algorithm?"
+        },
+        "options": [
+          {
+            "uz": "Berilgan masalani yechishga olib keluvchi aniq, cheklangan amallar ketma-ketligi",
+            "ru": "Точная, конечная последовательность действий, приводящая к решению задачи",
+            "en": "A precise, finite sequence of actions that solves the problem"
+          },
+          {
+            "uz": "Faqat kompyuterda ishlaydigan bitta dasturlash tili",
+            "ru": "Один язык программирования, работающий только на компьютере",
+            "en": "A single programming language that runs only on a computer"
+          },
+          {
+            "uz": "Maʼlumotlarni saqlash uchun jadval",
+            "ru": "Таблица для хранения данных",
+            "en": "A table for storing data"
+          },
+          {
+            "uz": "Excel formulasini nusxalash usuli",
+            "ru": "Способ копирования формулы в Excel",
+            "en": "A way to copy an Excel formula"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars taʼrifi: algoritm — berilgan masalani yechish uchun bajariladigan aniq, cheklangan amallar ketma-ketligi; soʻz al-Xorazmiy nomidan kelgan.",
+          "ru": "Определение из занятия: алгоритм — точная, конечная последовательность действий для решения данной задачи; слово происходит от имени аль-Хорезми.",
+          "en": "The lesson defines an algorithm as a precise, finite sequence of actions performed to solve a given problem; the word comes from the name of al-Khwarizmi."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blok-sxemada shart (tekshirish) qaysi shaklda belgilanadi?",
+          "ru": "Какая фигура в блок-схеме обозначает условие (проверку)?",
+          "en": "Which flowchart shape marks a condition?"
+        },
+        "options": [
+          {
+            "uz": "Romb",
+            "ru": "Ромб",
+            "en": "A diamond"
+          },
+          {
+            "uz": "Toʻgʻri toʻrtburchak",
+            "ru": "Прямоугольник",
+            "en": "A rectangle"
+          },
+          {
+            "uz": "Oval",
+            "ru": "Овал",
+            "en": "An oval"
+          },
+          {
+            "uz": "Parallelogramm",
+            "ru": "Параллелограмм",
+            "en": "A parallelogram"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi blok-sxema qoidalari: oval — boshlash/tugash, parallelogramm — kiritish/chiqarish, toʻrtburchak — amal, romb — shart, strelkalar — tartib.",
+          "ru": "Правила блок-схемы из занятия: овал — начало/конец, параллелограмм — ввод/вывод, прямоугольник — действие, ромб — условие, стрелки — порядок.",
+          "en": "The lesson's flowchart rules: an oval is start/end, a parallelogram is input/output, a rectangle is an action, a diamond is a condition, arrows are the order."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Algoritmning samaradorlik xususiyati: u cheklangan sonli qadamdan soʻng natija berishi shart.",
+          "ru": "Свойство эффективности алгоритма: он должен давать результат за конечное число шагов.",
+          "en": "The effectiveness property of an algorithm means it must give a result after a finite number of steps."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi xususiyatlar jadvali: samaradorlik — cheklangan qadamlar sonidan keyin natija berish; bu aynan shu taʼrif.",
+          "ru": "Таблица свойств из занятия: эффективность — давать результат после конечного числа шагов; это именно то определение.",
+          "en": "The lesson's properties table: effectiveness means giving a result after a finite number of steps — exactly this definition."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Roʻyxatdagi barcha xodislarning ish haqini hisoblash — qaysi tuzilishga misol?",
+          "ru": "Расчёт зарплаты для всех сотрудников списка — пример какой структуры?",
+          "en": "Calculating the pay of every employee on a list is an example of which structure?"
+        },
+        "options": [
+          {
+            "uz": "Tsikl (takrorlanish)",
+            "ru": "Цикл (повторение)",
+            "en": "Looping (a cycle)"
+          },
+          {
+            "uz": "Chiziqli tuzilish",
+            "ru": "Линейная структура",
+            "en": "A linear structure"
+          },
+          {
+            "uz": "Tarmoqlanish (shart)",
+            "ru": "Разветвление (условие)",
+            "en": "Branching (a condition)"
+          },
+          {
+            "uz": "Kiritish yoki chiqarish",
+            "ru": "Ввод или вывод",
+            "en": "Input or output"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi tuzilishlar jadvali: har bir oy uchun hisoblash va roʻyxatdagi har bir xodisa boʻyicha ish haqi — tsiklga misol.",
+          "ru": "Таблица структур из занятия: расчёт для каждого месяца и зарплаты каждого сотрудника по списку — примеры цикла.",
+          "en": "The lesson's structures table: a calculation for every month and the pay of every employee on a list are examples of looping."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Doimiy xarajat 12 000 000 soʻm, birlik narxi 50 000 soʻm va birlik oʻzgaruvchan xarajati 30 000 soʻm boʻlsa, zarar nuqtasi necha birlikni tashkil qiladi?",
+          "ru": "При постоянных затратах 12 000 000 сум, цене единицы 50 000 сум и переменных затратах на единицу 30 000 сум — какова точка безубыточности в единицах?",
+          "en": "With fixed costs of 12 000 000 som, a unit price of 50 000 som and a unit variable cost of 30 000 som, what is the break-even point in units?"
+        },
+        "answers": [600],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Marja 50 000 − 30 000 = 20 000; 12 000 000 / 20 000 = 600 — darsning birinchi ishlangan misoli aynan shu natijani beradi.",
+          "ru": "Маржа 50 000 − 30 000 = 20 000; 12 000 000 / 20 000 = 600 — первый разобранный пример занятия даёт именно этот результат.",
+          "en": "The margin is 50 000 − 30 000 = 20 000 and 12 000 000 / 20 000 = 600 — the lesson's first worked example gives exactly this result."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Algoritmning besh xususiyatiga qaysilari kiradi?",
+          "ru": "Что из перечисленного входит в пять свойств алгоритма?",
+          "en": "Which of these are among the five properties of an algorithm?"
+        },
+        "options": [
+          {
+            "uz": "Diskretlik — algoritm alohida qadamlardan iborat",
+            "ru": "Дискретность — алгоритм состоит из отдельных шагов",
+            "en": "Discreteness — the algorithm consists of separate steps"
+          },
+          {
+            "uz": "Aniqlik — har bir qadam bir maʼnoli, ikki tomonlama tushunilmaydi",
+            "ru": "Определённость — каждый шаг однозначен",
+            "en": "Definiteness — every step is unambiguous"
+          },
+          {
+            "uz": "Universallik — u oʻxshash masalalar sinfi uchun ishlaydi",
+            "ru": "Общность — работает для класса подобных задач",
+            "en": "Generality — it works for a class of similar problems"
+          },
+          {
+            "uz": "Kompilyatsiyalanuvchanlik — algoritm doim dasturlash tilida yozilishi shart",
+            "ru": "Компилируемость — алгоритм обязан быть написан на языке программирования",
+            "en": "Compilability — an algorithm must always be written in a programming language"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Dars jadvalida beshta xususiyat: diskretlik, aniqlik, tushunarlilik, samaradorlik, universallik. Kompilyatsiyalanuvchanlik yoʻq — algoritm soʻz bilan, blok-sxemada yoki psevdocodda ham ifodalanadi.",
+          "ru": "В таблице занятия пять свойств: дискретность, определённость, понятность, эффективность, общность. Компилируемости нет — алгоритм можно выразить словами, блок-схемой или псевдокодом.",
+          "en": "The lesson's table lists five properties: discreteness, definiteness, understandability, effectiveness, generality. Compilability is not one of them — an algorithm can be expressed in words, a flowchart or pseudocode."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Zarar nuqtasini hisoblashda birlik narxi birlik oʻzgaruvchan xarajatiga teng yoki undan kichik boʻlsa (p ≤ v), nima boʻladi?",
+          "ru": "Что происходит при расчёте точки безубыточности, если цена единицы равна переменным затратам на единицу или меньше её (p ≤ v)?",
+          "en": "In the break-even calculation, what happens if the unit price equals the unit variable cost or is lower (p ≤ v)?"
+        },
+        "options": [
+          {
+            "uz": "Har qancha sotilsa ham doimiy xarajat qoplanmaydi — birligi hissa nol yoki manfiy",
+            "ru": "Сколько ни продавай, постоянные затраты не покрываются — маржа на единицу нулевая или отрицательная",
+            "en": "However much is sold, the fixed cost is never covered — the per-unit margin is zero or negative"
+          },
+          {
+            "uz": "Zarar nuqtasi avtomatik ravishda nol birlikka tushadi",
+            "ru": "Точка безубыточности автоматически становится равной нулю",
+            "en": "The break-even point automatically drops to zero units"
+          },
+          {
+            "uz": "Doimiy xarajat oʻzi kamayib ketadi",
+            "ru": "Постоянные затраты сами уменьшаются",
+            "en": "The fixed costs decrease on their own"
+          },
+          {
+            "uz": "Narx pasaygani uchun talab keskin oshadi va zarar qoplanadi",
+            "ru": "Из-за низкой цены спрос резко растёт и убыток покрывается",
+            "en": "The low price makes demand surge, so the loss is covered"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsning ishlangan misolida 5 000 000 soʻm doimiy xarajat va 15 000 = 15 000 holati «loss not covered: price too low» beradi — sotish hech qachon zararni qoplay olmaydi.",
+          "ru": "В разобранном примере занятия строка 5 000 000 при 15 000 = 15 000 даёт «loss not covered: price too low» — продажи никогда не покрывают постоянные затраты.",
+          "en": "The lesson's worked example prints \"loss not covered: price too low\" for the line with 5 000 000 fixed cost and 15 000 = 15 000 — sales never cover the fixed cost."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Baʼzi dasturlash tillarida butun sonlar bilan 7 / 2 = 3 boʻladi.",
+          "ru": "В некоторых языках программирования при целочисленном делении 7 / 2 = 3.",
+          "en": "In some programming languages, integer division gives 7 / 2 = 3."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsning «Koʻp uchraydigan xatolar» roʻyxatida: baʼzi tillarda 7 / 2 = 3 (butun boʻlish) — butun va haqiqiy sonlarni aralashtirish xatolarga olib keladi.",
+          "ru": "В списке «Частые ошибки» занятия: в некоторых языках 7 / 2 = 3 (целочисленное деление) — смешение целых и вещественных чисел приводит к ошибкам.",
+          "en": "The lesson's Common mistakes list: in some languages 7 / 2 = 3 (integer division) — mixing integers and real numbers causes errors."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dastur yaratish bosqichlariga koʻra, dastur yozib chiqqandan keyin qaysi bosqich keladi?",
+          "ru": "Какой этап создания программы идёт сразу после написания программы?",
+          "en": "According to the lesson's stages, which step comes right after writing the program?"
+        },
+        "options": [
+          {
+            "uz": "Sinov maʼlumotlarida test qilish",
+            "ru": "Тестирование на тестовых данных",
+            "en": "Testing on test data"
+          },
+          {
+            "uz": "Masala shartini berish",
+            "ru": "Постановка задачи",
+            "en": "Stating the problem"
+          },
+          {
+            "uz": "Matematik model tuzish",
+            "ru": "Построение математической модели",
+            "en": "Building the mathematical model"
+          },
+          {
+            "uz": "Blok-sxemani chizish",
+            "ru": "Рисование блок-схемы",
+            "en": "Drawing the flowchart"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi ketma-ketlik: masala → matematik model → algoritm (blok-sxema) → dastur → test (sinov maʼlumotlarida) → xatolarni tuzatish → foydalanish va hujjatlashtirish.",
+          "ru": "Последовательность из занятия: задача → модель → алгоритм (блок-схема) → программа → тестирование → исправление ошибок → использование и документация.",
+          "en": "The lesson's sequence: problem → mathematical model → algorithm (flowchart) → program → testing on test data → fixing errors → use and documentation."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Zarar nuqtasi — shartli tarmoqlanish va tsikl",
+      "ru": "Точка безубыточности — условие и цикл",
+      "en": "Break-even point — branching and looping"
+    },
+    "statement": {
+      "uz": "Darsning zarar nuqtasi masalasini dasturlashtiring: kompaniyaning oylik doimiy xarajati F, mahsulot birligining narxi p va birligining oʻzgaruvchan xarajati v. Kiritishda har bir qatorda uch butun son «F p v» beriladi (soʻm); boʻsh qatorlar uchraydi va ular oʻtkazib yuboriladi. Har bir qator uchun bitta natija qatori chiqaring. Agar p ≤ v boʻlsa, hissa nol yoki manfiy: «loss not covered: price too low» chiqaring. Agar p > v boʻlsa, kamida ⌈F / (p − v)⌉ birlik sotilsa zarar qoplanadi — birlikning kasr qismi sotilmaydi, shuning uchun yuqoriga yaxlitlanadi (butun sonlarda (F + m − 1) div m, m = p − v); chiqaring: «break-even point: N units, revenue S», bu yerda S = N · p. Natijalar kiritish tartibida chiqariladi. Masalan: kiritish «12000000 50000 30000» boʻlsa, hissa 20000 va N = 600 — chiqish «break-even point: 600 units, revenue 30000000»; kiritish «5000000 15000 15000» boʻlsa, chiqish «loss not covered: price too low».",
+      "ru": "Запрограммируйте задачу точки безубыточности из занятия: ежемесячные постоянные затраты F, цена единицы p и переменные затраты на единицу v. На вход подаются строки из трёх целых чисел «F p v» (сум); пустые строки встречаются и пропускаются. Для каждой строки выведите одну строку результата. Если p ≤ v, маржа нулевая или отрицательная: выведите «loss not covered: price too low». Если p > v, убыток покрывается при продаже не менее ⌈F / (p − v)⌉ единиц — дробную часть единицы продать нельзя, поэтому округляем вверх (в целых числах (F + m − 1) div m, где m = p − v); выведите «break-even point: N units, revenue S», где S = N · p. Результаты выводятся в порядке ввода. Например, на входе «12000000 50000 30000» маржа равна 20000 и N = 600 — вывод «break-even point: 600 units, revenue 30000000»; на входе «5000000 15000 15000» — «loss not covered: price too low».",
+      "en": "Program the lesson's break-even problem: the company's monthly fixed cost F, the unit price p and the unit variable cost v. The input gives lines of three integers «F p v» (som); blank lines occur and are skipped. Print one result line for each input line. If p ≤ v the margin is zero or negative: print «loss not covered: price too low». If p > v, at least ⌈F / (p − v)⌉ units must be sold to cover the loss — a fraction of a unit cannot be sold, so the result is rounded up (with integers: (F + m − 1) div m, where m = p − v); print «break-even point: N units, revenue S», where S = N · p. Results are printed in input order. For example, the input «12000000 50000 30000» has margin 20000 and N = 600 — the output is «break-even point: 600 units, revenue 30000000»; the input «5000000 15000 15000» gives «loss not covered: price too low»."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nfor satr in sys.stdin:\n    if not satr.strip():\n        continue\n    doimiy, narx, ozgaruvchan = map(int, satr.split())\n    marja = narx - ozgaruvchan\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        while (in.hasNextLong()) {\n            long doimiy = in.nextLong(), narx = in.nextLong(), ozgaruvchan = in.nextLong();\n            long marja = narx - ozgaruvchan;\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long doimiy, narx, ozgaruvchan;\n    while (cin >> doimiy >> narx >> ozgaruvchan) {\n        long long marja = narx - ozgaruvchan;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nfor satr in sys.stdin:\n    if not satr.strip():\n        continue\n    doimiy, narx, ozgaruvchan = map(int, satr.split())\n    marja = narx - ozgaruvchan\n    if marja <= 0:\n        print(\"loss not covered: price too low\")\n    else:\n        miqdor = (doimiy + marja - 1) // marja\n        print(f\"break-even point: {miqdor} units, revenue {miqdor * narx}\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        while (in.hasNextLong()) {\n            long doimiy = in.nextLong(), narx = in.nextLong(), ozgaruvchan = in.nextLong();\n            long marja = narx - ozgaruvchan;\n            if (marja <= 0) {\n                System.out.println(\"loss not covered: price too low\");\n            } else {\n                long miqdor = (doimiy + marja - 1) / marja;\n                System.out.println(\"break-even point: \" + miqdor + \" units, revenue \" + miqdor * narx);\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long doimiy, narx, ozgaruvchan;\n    while (cin >> doimiy >> narx >> ozgaruvchan) {\n        long long marja = narx - ozgaruvchan;\n        if (marja <= 0) {\n            cout << \"loss not covered: price too low\" << endl;\n        } else {\n            long long miqdor = (doimiy + marja - 1) / marja;\n            cout << \"break-even point: \" << miqdor << \" units, revenue \" << miqdor * narx << endl;\n        }\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "12000000 50000 30000\n5000000 15000 15000\n9100000 40000 25000\n",
+          "expected": "break-even point: 600 units, revenue 30000000\nloss not covered: price too low\nbreak-even point: 607 units, revenue 24280000",
+          "hidden": false
+        },
+        {
+          "input": "300000 100 40\n",
+          "expected": "break-even point: 5000 units, revenue 500000",
+          "hidden": false
+        },
+        {
+          "input": "100000 500 600\n",
+          "expected": "loss not covered: price too low",
+          "hidden": true
+        },
+        {
+          "input": "1000001 35000 27000\n100000 500 600\n",
+          "expected": "break-even point: 126 units, revenue 4410000\nloss not covered: price too low",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

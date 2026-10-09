@@ -1,0 +1,306 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tarmoq adapteri (NIC) qaysi pogʻonalarda ishlaydi?",
+          "ru": "На каких уровнях работает сетевой адаптер (NIC)?",
+          "en": "At which layers does a network adapter (NIC) work?"
+        },
+        "options": [
+          {
+            "uz": "1 va 2-pogʻonalarda",
+            "ru": "На уровнях 1 и 2",
+            "en": "At layers 1 and 2"
+          },
+          {
+            "uz": "Faqat 2-pogʻonada",
+            "ru": "Только на уровне 2",
+            "en": "At layer 2 only"
+          },
+          {
+            "uz": "2 va 3-pogʻonalarda",
+            "ru": "На уровнях 2 и 3",
+            "en": "At layers 2 and 3"
+          },
+          {
+            "uz": "3 va 4-pogʻonalarda",
+            "ru": "На уровнях 3 и 4",
+            "en": "At layers 3 and 4"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Adapter bitlarni signalga aylantiradi (1-pogʻona) va kadrlarni yigʻadi (2-pogʻona).",
+          "ru": "Адаптер превращает биты в сигнал (уровень 1) и собирает кадры (уровень 2).",
+          "en": "The adapter turns bits into signals (layer 1) and assembles frames (layer 2)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi jadvalda tarmoq adapterining qaysi parametrlari keltirilgan?",
+          "ru": "Какие из перечисленного — параметры сетевого адаптера из таблицы занятия?",
+          "en": "Which of these are parameters of the network adapter from the lesson table?"
+        },
+        "options": [
+          {
+            "uz": "MAC manzil",
+            "ru": "MAC-адрес",
+            "en": "MAC address"
+          },
+          {
+            "uz": "Dupleks",
+            "ru": "Дуплекс",
+            "en": "Duplex"
+          },
+          {
+            "uz": "Standart shlyuz manzili",
+            "ru": "Адрес шлюза по умолчанию",
+            "en": "The default gateway address"
+          },
+          {
+            "uz": "Muhit — qaysi kabel yoki radio",
+            "ru": "Среда — какой кабель или радио",
+            "en": "Medium — which cable or radio"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Jadvalda MAC manzil, tezlik, dupleks, ulanish turi va muhit bor. Shlyuz manzili adapter parametri emas, u faqat ipconfig /all natijasida koʻrinadi.",
+          "ru": "В таблице: MAC-адрес, скорость, дуплекс, тип подключения и среда. Адрес шлюза — не параметр адаптера, он только появляется в выводе ipconfig /all.",
+          "en": "The table lists MAC address, speed, duplex, connection type and medium. The gateway address is not an adapter parameter; it only appears in the ipconfig /all output."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kommutator MAC jadvaliga kadrning qabul qiluvchi manzilini yozadi.",
+          "ru": "Коммутатор записывает в MAC-таблицу адрес получателя кадра.",
+          "en": "A switch writes the destination address of the frame into its MAC table."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Kommutator faqat yuboruvchi manzilni va kadr kelgan portni yozadi; qabul qiluvchi manzil boʻyicha esa faqat qaror qabul qilinadi.",
+          "ru": "Коммутатор записывает только адрес отправителя и входной порт; адрес получателя служит лишь для принятия решения.",
+          "en": "A switch records only the source address and the incoming port; the destination address is used only for the decision."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kommutator MAC jadvalidagi yozuvni odatda necha soniya ishlatilmasa oʻchiradi?",
+          "ru": "Через сколько секунд неиспользования коммутатор обычно удаляет запись из MAC-таблицы?",
+          "en": "After how many seconds without use does a switch usually remove an entry from its MAC table?"
+        },
+        "answers": [300],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Bu jarayon aging deb ataladi: yozuv 300 soniya ishlatilmasa oʻchiriladi.",
+          "ru": "Этот процесс называется aging: запись удаляется через 300 секунд неиспользования.",
+          "en": "The process is called aging: an entry is removed after 300 seconds without use."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kadr uzatilishdan oldin toʻliq qabul qilinib, FCS tekshiriladigan uzatish usuli qaysi?",
+          "ru": "Какой способ передачи предполагает, что кадр принимается целиком и проверяется FCS?",
+          "en": "Which forwarding method receives the frame completely and checks the FCS before forwarding?"
+        },
+        "options": [
+          {
+            "uz": "Store-and-forward",
+            "ru": "Store-and-forward",
+            "en": "Store-and-forward"
+          },
+          {
+            "uz": "Cut-through",
+            "ru": "Cut-through",
+            "en": "Cut-through"
+          },
+          {
+            "uz": "Fragment-free",
+            "ru": "Fragment-free",
+            "en": "Fragment-free"
+          },
+          {
+            "uz": "Autonegotiation",
+            "ru": "Autonegotiation",
+            "en": "Autonegotiation"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra: store-and-forward kadrga toʻliq qabul qilinib, FCS tekshiriladi; cut-through qabul qiluvchi manzil oʻqilishi bilan, fragment-free birinchi 64 bayt qabul qilingach uzatadi.",
+          "ru": "По занятию: store-and-forward принимает кадр целиком и проверяет FCS; cut-through начинает передачу сразу после чтения адреса получателя, fragment-free — после первых 64 байт.",
+          "en": "In the lesson store-and-forward receives the whole frame and checks the FCS; cut-through starts as soon as the destination address is read, fragment-free after the first 64 bytes."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Windows da barcha adapterlarning MAC manzillarini koʻrsatuvchi buyruqni yozing.",
+          "ru": "Запишите команду Windows, показывающую MAC-адреса всех адаптеров.",
+          "en": "Write the Windows command that shows the MAC addresses of all adapters."
+        },
+        "answers": ["getmac", "getmac /v", "getmac /V"],
+        "explanation": {
+          "uz": "Darsda getmac /v barcha adapterlarning MAC manzillarini chiqaradi, ipconfig /all esa har adapterning toʻliq maʼlumotini beradi.",
+          "ru": "В занятии getmac /v выводит MAC-адреса всех адаптеров, а ipconfig /all даёт полные сведения по каждому адаптеру.",
+          "en": "In the lesson getmac /v prints the MAC addresses of all adapters, while ipconfig /all gives the full details of each adapter."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kolliziya va broadkast domenlari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о коллизионных и широковещательных доменах верны?",
+          "en": "Which statements about collision and broadcast domains are correct?"
+        },
+        "options": [
+          {
+            "uz": "24 portli konsentratorga ulangan 24 ta kompyuter bitta kolliziya domenini tashkil qiladi",
+            "ru": "24 компьютера на 24-портовом концентраторе образуют один коллизионный домен",
+            "en": "24 computers on a 24-port hub form one collision domain"
+          },
+          {
+            "uz": "Kommutatorning har bir porti alohida kolliziya domeni",
+            "ru": "Каждый порт коммутатора — отдельный коллизионный домен",
+            "en": "Every port of a switch is a separate collision domain"
+          },
+          {
+            "uz": "Kommutator broadkast kadrlarini oʻtkazmaydi",
+            "ru": "Коммутатор не пропускает широковещательные кадры",
+            "en": "A switch does not pass broadcast frames"
+          },
+          {
+            "uz": "Marshrutizatorning har bir interfeysi alohida broadkast domeni",
+            "ru": "Каждый интерфейс маршрутизатора — отдельный широковещательный домен",
+            "en": "Every router interface is a separate broadcast domain"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Broadkastni konsentrator ham, kommutator ham oʻtkazadi va barcha portlarga tarqatadi; uni faqat marshrutizator yoki VLAN toʻsadi.",
+          "ru": "И концентратор, и коммутатор пропускают широковещательный кадр на все порты; останавливает его только маршрутизатор или VLAN.",
+          "en": "Both a hub and a switch pass a broadcast out to every port; only a router or a VLAN stops it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kommutatorning MAC jadvalida qabul qiluvchi manzil kadr kelgan 3-portning oʻzida yozilgan. Kommutator nima qiladi?",
+          "ru": "В MAC-таблице коммутатора адрес получателя записан за тем же 3-м портом, откуда пришёл кадр. Что сделает коммутатор?",
+          "en": "The switch's MAC table has the destination address behind the very port 3 on which the frame arrived. What does the switch do?"
+        },
+        "options": [
+          {
+            "uz": "Kadrni tashlab yuboradi — filtrlash",
+            "ru": "Отбрасывает кадр — фильтрация",
+            "en": "Drops the frame — filtering"
+          },
+          {
+            "uz": "Kadrni 3-portdan tashqari barcha portlarga tarqatadi",
+            "ru": "Рассылает кадр на все порты, кроме 3-го",
+            "en": "Floods the frame to every port except port 3"
+          },
+          {
+            "uz": "Kadrni qaytadan 3-portga uzatadi",
+            "ru": "Передаёт кадр обратно на тот же порт 3",
+            "en": "Forwards the frame back out of port 3"
+          },
+          {
+            "uz": "Kadrni marshrutizatorga yuboradi",
+            "ru": "Отправляет кадр маршрутизатору",
+            "en": "Sends the frame to the router"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Qabul qiluvchi kadr kelgan segmentning oʻzida — kadr kommutatordan oʻtmaydi va filtrlanadi.",
+          "ru": "Получатель находится в том же сегменте, откуда пришёл кадр, — кадр не проходит через коммутатор и фильтруется.",
+          "en": "The receiver is on the very segment the frame came from, so it does not cross the switch and is filtered."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Marshrutizatorning ikki interfeysi bor: birinchisiga 4 kompyuterli konsentrator, ikkinchisiga 6 kompyuterli kommutator ulangan (har bir kompyuter oʻz portida). Nechta kolliziya domeni bor?",
+          "ru": "У маршрутизатора два интерфейса: к первому подключён концентратор с 4 компьютерами, ко второму — коммутатор с 6 компьютерами (каждый на своём порту). Сколько всего коллизионных доменов?",
+          "en": "A router has two interfaces: the first carries a hub with 4 computers, the second a switch with 6 computers, each on its own port. How many collision domains are there in total?"
+        },
+        "answers": [8],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Konsentrator segmenti — 1 domen, kommutator segmenti — 6 port va marshrutizatorga ulangan port, yaʼni 7. Jami 1 + 7 = 8.",
+          "ru": "Сегмент концентратора — 1 домен; сегмент коммутатора — 6 портов плюс порт к маршрутизатору, то есть 7. Всего 1 + 7 = 8.",
+          "en": "The hub segment is 1 domain; the switch segment is its 6 ports plus the port to the router, so 7. In total 1 + 7 = 8."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "MAC jadvalidagi faol yozuvlar",
+      "ru": "Живые записи в MAC-таблице",
+      "en": "Live entries in the MAC table"
+    },
+    "statement": {
+      "uz": "Kommutator MAC jadvalidagi yozuvni odatda 300 soniya ishlatilmasa oʻchiradi (aging). Kirish: birinchi qatorda hozirgi vaqt T va jadvaldagi yozuvlar soni n — ikki butun son, boʻshliq bilan; keyingi n qatorda har bir yozuvning port raqami va uni oxirgi marta ishlatilgan vaqt. Agar T dan oxirgi ishlatilgan vaqt 300 ga teng yoki undan katta boʻlsa, yozuv allaqachon oʻchirilgan hisoblanadi. Jadvalda qolgan yozuvlar sonini bitta qatorda, faqat son koʻrinishida chiqaring — hech qanday qoʻshimcha soʻz yozmang. Vaqtlar 0 dan oshmaydigan butun sonlar, 1 ≤ n ≤ 100. Masalan, T = 500 boʻlib, yozuvlar 250, 200, 201 va 500 soniyalarda ishlatilgan boʻlsa, dastur 3 chiqaradi.",
+      "ru": "Коммутатор обычно удаляет запись MAC-таблицы, если её не используют 300 секунд (aging). Ввод: в первой строке текущее время T и число записей n — два целых числа через пробел; в каждой из следующих n строк указан номер порта записи и время её последнего использования. Если T минус время последнего использования равно 300 или больше, запись уже удалена. Выведите одним числом на отдельной строке, сколько записей осталось в таблице, — без каких-либо слов. Все времена — целые числа от 0, 1 ≤ n ≤ 100. Например, при T = 500 и записях, использовавшихся в моменты 250, 200, 201 и 500, программа выводит 3.",
+      "en": "A switch usually removes a MAC table entry once it has gone 300 seconds without use (aging). Input: the first line holds the current time T and the number of entries n, two integers separated by a space; each of the next n lines holds the port number of one entry and the time it was last used. If T minus the last-used time equals 300 or more, the entry is already gone. Print on one line, as a number only and with no words, how many entries are still in the table. All times are integers from 0, and 1 ≤ n ≤ 100. For example, with T = 500 and entries last used at 250, 200, 201 and 500, the program prints 3."
+    },
+    "code": {
+      "starter": {
+        "python": "t, n = map(int, input().split())\nsoni = 0\nfor _ in range(n):\n    qism = input().split()\n    if t - int(qism[1]) <= 300:\n        soni += 1\nprint(soni)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int t = in.nextInt();\n        int n = in.nextInt();\n        int soni = 0;\n        for (int i = 0; i < n; i++) {\n            int port = in.nextInt();\n            int oxirgi = in.nextInt();\n            if (t - oxirgi <= 300) soni++;\n        }\n        System.out.println(soni);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t, n;\n    cin >> t >> n;\n    int soni = 0;\n    for (int i = 0; i < n; i++) {\n        int port, oxirgi;\n        cin >> port >> oxirgi;\n        if (t - oxirgi <= 300) soni++;\n    }\n    cout << soni << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "t, n = map(int, input().split())\nsoni = 0\nfor _ in range(n):\n    qism = input().split()\n    if t - int(qism[1]) < 300:\n        soni += 1\nprint(soni)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int t = in.nextInt();\n        int n = in.nextInt();\n        int soni = 0;\n        for (int i = 0; i < n; i++) {\n            int port = in.nextInt();\n            int oxirgi = in.nextInt();\n            if (t - oxirgi < 300) soni++;\n        }\n        System.out.println(soni);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int t, n;\n    cin >> t >> n;\n    int soni = 0;\n    for (int i = 0; i < n; i++) {\n        int port, oxirgi;\n        cin >> port >> oxirgi;\n        if (t - oxirgi < 300) soni++;\n    }\n    cout << soni << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "500 4\n1 250\n2 200\n3 201\n4 500\n", "expected": "3", "hidden": false },
+        { "input": "1000 3\n1 700\n2 700\n3 700\n", "expected": "0", "hidden": false },
+        { "input": "0 1\n1 0\n", "expected": "1", "hidden": true },
+        { "input": "10000 5\n1 9701\n2 9700\n3 9699\n4 0\n5 10000\n", "expected": "2", "hidden": true },
+        { "input": "60 2\n1 0\n2 59\n", "expected": "2", "hidden": true }
+      ]
+    }
+  }
+}

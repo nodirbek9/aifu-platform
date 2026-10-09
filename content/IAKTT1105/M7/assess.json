@@ -1,0 +1,354 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "DBMS (maʼlumotlar bazasi boshqaruv tizimi) nima?",
+          "ru": "Что такое СУБД (система управления базами данных)?",
+          "en": "What is a DBMS (database management system)?"
+        },
+        "options": [
+          {
+            "uz": "Maʼlumotlarni saqlovchi, qidiruvchi, oʻzgartiruvchi va himoya qiluvchi dastur",
+            "ru": "Программа для хранения, поиска, изменения и защиты данных",
+            "en": "Software for storing, searching, changing and protecting data"
+          },
+          {
+            "uz": "Faqat elektron jadvallar bilan ishlaydigan dastur",
+            "ru": "Программа только для электронных таблиц",
+            "en": "A program only for spreadsheets"
+          },
+          {
+            "uz": "Internet brauzeri",
+            "ru": "Веб-браузер",
+            "en": "A web browser"
+          },
+          {
+            "uz": "Fayllarni siquvchi arxiv dasturi",
+            "ru": "Программа-архиватор для сжатия файлов",
+            "en": "A file archiver"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars taʼrifini beradi: DBMS — maʼlumotlarni saqlash, qidirish, oʻzgartirish va himoya qilish uchun dastur; u bir vaqtda koʻp foydalanuvchiga xizmat koʻrsatadi.",
+          "ru": "В занятии: СУБД — программное обеспечение для хранения, поиска, изменения и защиты данных, обслуживающее многих пользователей одновременно.",
+          "en": "The lesson defines a DBMS as software for storing, searching, changing and protecting data and serving many users at once."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Eng keng tarqalgan maʼlumotlar modeli — relational (jadvaliy) model.",
+          "ru": "Наиболее распространённая модель данных — реляционная (табличная).",
+          "en": "The most widespread data model is the relational (table) model."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi maʼlumotlar modellari jadvalida relational model «eng keng tarqalgan» deb belgilangan — buhgalteriya, bank, ERP tizimlarida ishlatiladi.",
+          "ru": "В таблице моделей из занятия реляционная модель отмечена как самая распространённая — бухгалтерия, банк, ERP.",
+          "en": "The lesson's table of models marks the relational model as the most widespread — used in accounting, banking and ERP systems."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Jadvaldan maʼlumot tanlash (olist) uchun qaysi SQL buyrugʻi ishlatiladi?",
+          "ru": "Какая команда SQL используется для выборки данных из таблицы?",
+          "en": "Which SQL command is used to select data from a table?"
+        },
+        "options": [
+          {
+            "uz": "SELECT",
+            "ru": "SELECT",
+            "en": "SELECT"
+          },
+          {
+            "uz": "INSERT",
+            "ru": "INSERT",
+            "en": "INSERT"
+          },
+          {
+            "uz": "UPDATE",
+            "ru": "UPDATE",
+            "en": "UPDATE"
+          },
+          {
+            "uz": "DELETE",
+            "ru": "DELETE",
+            "en": "DELETE"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi SQL buyruqlari jadvali: SELECT … FROM — tanlash; INSERT — qoʻshish, UPDATE — oʻzgartirish, DELETE — oʻchirish.",
+          "ru": "Таблица команд SQL в занятии: SELECT … FROM — выборка; INSERT — добавление, UPDATE — изменение, DELETE — удаление.",
+          "en": "The lesson's SQL table: SELECT … FROM selects data; INSERT adds, UPDATE changes, DELETE removes."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Asosiy kalit (primary key) nima?",
+          "ru": "Что такое первичный ключ (primary key)?",
+          "en": "What is a primary key?"
+        },
+        "options": [
+          {
+            "uz": "Har bir yozuvni unikal identifikatsiya qiluvchi ustun",
+            "ru": "Столбец, уникально идентифицирующий каждую запись",
+            "en": "A field that uniquely identifies each record"
+          },
+          {
+            "uz": "Jadvalning birinchi ustuni",
+            "ru": "Первый столбец таблицы",
+            "en": "The first column of the table"
+          },
+          {
+            "uz": "Maʼlumotlarni saralash tartibi",
+            "ru": "Порядок сортировки данных",
+            "en": "The sorting order of the data"
+          },
+          {
+            "uz": "Ikita jadvalni birlashtiruvchi SQL buyrugʻi",
+            "ru": "Команда SQL, объединяющая две таблицы",
+            "en": "The SQL command that joins two tables"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: asosiy kalit har bir yozuvni unikal identifikatsiya qiladi — masalan id, shaxs ID raqami yoki soliq raqami. Jadval birlashtirish — bu JOIN, saralash — ORDER BY.",
+          "ru": "В занятии: первичный ключ уникально идентифицирует каждую запись — например id, ID номер личности или налоговый номер. Объединение таблиц — это JOIN, сортировка — ORDER BY.",
+          "en": "The lesson: a primary key uniquely identifies each record — e.g. id, a personal ID number or a tax ID. Joining tables is JOIN, sorting is ORDER BY."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsning ishlangan misolida (4 mijoz, 6 buyurtma) Aziza mijozining barcha buyurtmalari umumiy summasi qancha soʻm?",
+          "ru": "В разобранном примере занятия (4 клиента, 6 заказов) какова общая сумма всех заказов клиента Азизы в сомах?",
+          "en": "In the lesson's worked example (4 customers, 6 orders), what is the total amount of Aziza's orders in som?"
+        },
+        "answers": [900000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Misol maʼlumotlarida Aziza (id 1) buyurtmalari: 450000 + 300000 + 150000 = 900000 — bu GROUP BY mijoz_id va SUM(summa) natijasi; chiqishda «Aziza (Toshkent): 3 orders, 900000» qatori.",
+          "ru": "В данных примера у Азизы (id 1) заказы 450000 + 300000 + 150000 = 900000 — это результат GROUP BY mijoz_id и SUM(summa); в выводе строка «Aziza (Toshkent): 3 orders, 900000».",
+          "en": "In the example data Aziza (id 1) has orders 450000 + 300000 + 150000 = 900000 — the result of GROUP BY mijoz_id with SUM(summa); the output line is \"Aziza (Toshkent): 3 orders, 900000\"."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Big Data ning 5 V kontseptsiyasiga qaysilar kiradi?",
+          "ru": "Что из перечисленного входит в концепцию 5 V большого данных?",
+          "en": "Which of these belong to the 5 Vs concept of Big Data?"
+        },
+        "options": [
+          {
+            "uz": "Volume — hajm",
+            "ru": "Volume — объём",
+            "en": "Volume"
+          },
+          {
+            "uz": "Velocity — real vaqtda oqim tezligi",
+            "ru": "Velocity — скорость потока в реальном времени",
+            "en": "Velocity — real-time stream speed"
+          },
+          {
+            "uz": "Variety — xilma-xillik",
+            "ru": "Variety — разнообразие",
+            "en": "Variety"
+          },
+          {
+            "uz": "Visibility — koʻrinarlilik",
+            "ru": "Visibility — видимость",
+            "en": "Visibility"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi 5 V jadvali: Volume, Velocity, Variety, Veracity, Value. Visibility unda yoʻq.",
+          "ru": "Таблица 5 V в занятии: Volume, Velocity, Variety, Veracity, Value. Visibility в ней нет.",
+          "en": "The lesson's 5 Vs table: Volume, Velocity, Variety, Veracity, Value. Visibility is not in it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bank oʻtkazmasi — tranzaksiya: A hisobidan yechish va B hisobiga qoʻyish. Tranzaksiyaning atomilligi (ACID dagi atomicity) nimani kafolatlaydi?",
+          "ru": "Банковский перевод — транзакция: списание со счёта A и зачисление на счёт B. Что гарантирует атомарность (atomicity из ACID)?",
+          "en": "A bank transfer is a transaction: debit from account A and credit to account B. What does atomicity (the A of ACID) guarantee?"
+        },
+        "options": [
+          {
+            "uz": "Ikkala amal ham bajariladi yoki hech biri bajarilmaydi — pul «gʻoyib boʻlmaydi»",
+            "ru": "Либо выполняются обе операции, либо ни одна — деньги не «исчезнут»",
+            "en": "Either both operations happen or neither does — money does not \"disappear\""
+          },
+          {
+            "uz": "Amallar har doim bir vaqtda, parallel bajariladi",
+            "ru": "Операции всегда выполняются параллельно",
+            "en": "The operations always run in parallel"
+          },
+          {
+            "uz": "Tranzaksiya faqat oʻqish amallari uchun ishlaydi",
+            "ru": "Транзакция работает только для операций чтения",
+            "en": "A transaction only applies to read operations"
+          },
+          {
+            "uz": "Ikkinchi amalni operator qoʻlda tasdiqlaydi",
+            "ru": "Вторую операцию оператор подтверждает вручную",
+            "en": "An operator confirms the second step manually"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: tranzaksiya — butunlik bilan bajariladigan amallar guruhi; A dan yechish va B ga qoʻyish ikkalasi ham yoki hech qaysi biri bajariladi, shunda pul yoʻqolmaydi.",
+          "ru": "В занятии: транзакция — группа операций, выполняемых как единое целое; списание с A и зачисление на B происходят либо оба, либо ни один — деньги не исчезают.",
+          "en": "The lesson: a transaction is a group of operations executed as a whole — debiting A and crediting B either both happen or neither does, so money does not disappear."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "WHERE shartisiz bajarilgan UPDATE buyrugʻi jadvalning faqat bitta yozuvini oʻzgartiradi.",
+          "ru": "Команда UPDATE без условия WHERE изменяет только одну запись таблицы.",
+          "en": "An UPDATE command without a WHERE condition changes only one record of the table."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi «Koʻp uchraydigan xatolar» roʻyxatida: UPDATE yoki DELETE WHERE siz — butun jadval oʻzgartiriladi yoki oʻchiriladi, avval SELECT bilan tekshirish kerak.",
+          "ru": "В списке «Частые ошибки» занятия: UPDATE или DELETE без WHERE меняет или удаляет всю таблицу — сначала проверяйте через SELECT.",
+          "en": "The lesson's Common mistakes list: UPDATE or DELETE without WHERE changes or deletes the whole table — check with SELECT first."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ishlangan misolda Javlonning buyurtmasi yoʻq, ammo hisobotda u «no orders» boʻlib chiqadi. Buni taʼminlaydigan SQL konstruksiyasi qaysi?",
+          "ru": "В разобранном примере у Жавлона нет заказов, но в отчёте он появляется со строкой «no orders». Какая конструкция SQL это обеспечивает?",
+          "en": "In the worked example Javlon has no orders, yet the report shows him as \"no orders\". Which SQL construct ensures this?"
+        },
+        "options": [
+          {
+            "uz": "LEFT JOIN",
+            "ru": "LEFT JOIN",
+            "en": "LEFT JOIN"
+          },
+          {
+            "uz": "GROUP BY",
+            "ru": "GROUP BY",
+            "en": "GROUP BY"
+          },
+          {
+            "uz": "ORDER BY … DESC",
+            "ru": "ORDER BY … DESC",
+            "en": "ORDER BY … DESC"
+          },
+          {
+            "uz": "INSERT INTO",
+            "ru": "INSERT INTO",
+            "en": "INSERT INTO"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi soʻrovda mijozlar LEFT JOIN orqali ulangan: chap jadvaldagi (mijozlar) yozuvlar moslik boʻlmasa ham hisobotda saqlanadi — shuning uchun Javlon «no orders» boʻlib chiqadi.",
+          "ru": "В запросе занятия клиенты соединены через LEFT JOIN: строки левой таблицы (mijozlar) остаются в отчёте даже без совпадений — поэтому Жавлон выходит как «no orders».",
+          "en": "The lesson's query joins customers with LEFT JOIN: rows of the left table (mijozlar) stay in the report even without matches — that is why Javlon appears as \"no orders\"."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Mijozlar boʻyicha buyurtmalar hisoboti (JOIN va GROUP BY)",
+      "ru": "Отчёт заказов по клиентам (JOIN и GROUP BY)",
+      "en": "Orders report by customer (JOIN and GROUP BY)"
+    },
+    "statement": {
+      "uz": "Darsdagi hisobotni dasturlashtiring. Kiritishda avval m — mijozlar soni, soʻng m ta «id ism shahar» qatori, keyin k — buyurtmalar soni va k ta «buyurtma_id mijoz_id summa» qatori beriladi. Har bir mijoz uchun bitta qator chiqaring. Avval buyurtmasi bor mijozlar: umumiy summa kamayish tartibida, teng summalarda id oʻsish tartibida (id — matn sifatida solishtiriladi), format: Ism (Shahar): N orders, S. Oxirida buyurtma bermagan mijozlar id oʻsish tartibida, format: Ism (Shahar): no orders. «orders» soʻzi 1 buyurtmada ham shunday yoziladi. Masalan: kiritish 2 / 1 Don Toshkent / 2 Sano Samarqand / 3 / 1 1 500000 / 2 2 700000 / 3 1 200000 boʻlsa, chiqish: Don (Toshkent): 2 orders, 700000 va Sano (Samarqand): 1 orders, 700000 — yigʻindilar teng (700000), shuning uchun id boʻyicha tartib.",
+      "ru": "Запрограммируйте отчёт из занятия. На вход подаются: m — число клиентов, затем m строк «id имя город», затем k — число заказов и k строк «заказ клиент сумма». Выведите по одной строке на клиента. Сначала клиенты с заказами — по убыванию общей суммы, при равных суммах по возрастанию id (id сравниваются как текст) — в формате Имя (Город): N orders, S. В конце клиенты без заказов по возрастанию id — в формате Имя (Город): no orders. Слово «orders» пишется и при одном заказе. Например, вход 2 / 1 Don Toshkent / 2 Sano Samarqand / 3 / 1 1 500000 / 2 2 700000 / 3 1 200000 даёт Don (Toshkent): 2 orders, 700000 и Sano (Samarqand): 1 orders, 700000 — суммы равны (700000), поэтому порядок по id.",
+      "en": "Program the lesson's report. The input gives: m — the number of customers, then m lines «id name city», then k — the number of orders and k lines «order_id customer_id amount». Print one line per customer. First the customers who have orders, by decreasing total amount; on equal totals by increasing id (ids are compared as text) — in the format Name (City): N orders, S. Last the customers without orders, by increasing id — in the format Name (City): no orders. The word «orders» is written even for a single order. For example, the input 2 / 1 Don Toshkent / 2 Sano Samarqand / 3 / 1 1 500000 / 2 2 700000 / 3 1 200000 gives Don (Toshkent): 2 orders, 700000 then Sano (Samarqand): 1 orders, 700000 — the totals are equal (700000), so the order follows the id."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\ntokens = sys.stdin.read().split()\npos = 0\nm = int(tokens[pos])\npos += 1\nmijozlar = {}\nfor _ in range(m):\n    mijozlar[tokens[pos]] = (tokens[pos + 1], tokens[pos + 2])\n    pos += 3\nk = int(tokens[pos])\npos += 1\njami, soni = {}, {}\nfor _ in range(k):\n    mid = tokens[pos + 1]\n    jami[mid] = jami.get(mid, 0) + int(tokens[pos + 2])\n    soni[mid] = soni.get(mid, 0) + 1\n    pos += 3\n",
+        "java": "import java.util.HashMap;\nimport java.util.Map;\nimport java.util.Scanner;\nimport java.util.TreeMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int m = in.nextInt();\n        Map<String, String[]> mijozlar = new TreeMap<>();\n        for (int i = 0; i < m; i++) {\n            String id = in.next();\n            mijozlar.put(id, new String[] {in.next(), in.next()});\n        }\n        int k = in.nextInt();\n        Map<String, Long> jami = new HashMap<>();\n        Map<String, Integer> soni = new HashMap<>();\n        for (int i = 0; i < k; i++) {\n            in.next();\n            String mijozId = in.next();\n            long summa = in.nextLong();\n            jami.merge(mijozId, summa, Long::sum);\n            soni.merge(mijozId, 1, Integer::sum);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\n#include <utility>\nusing namespace std;\n\nint main() {\n    int m, k;\n    cin >> m;\n    map<string, pair<string, string>> mijozlar;\n    for (int i = 0; i < m; i++) {\n        string id, ism, shahar;\n        cin >> id >> ism >> shahar;\n        mijozlar[id] = {ism, shahar};\n    }\n    cin >> k;\n    map<string, long long> jami;\n    map<string, int> soni;\n    for (int i = 0; i < k; i++) {\n        string bid, mijozId;\n        long long summa;\n        cin >> bid >> mijozId >> summa;\n        jami[mijozId] += summa;\n        soni[mijozId] += 1;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\ntokens = sys.stdin.read().split()\npos = 0\nm = int(tokens[pos])\npos += 1\nmijozlar = {}\nfor _ in range(m):\n    mijozlar[tokens[pos]] = (tokens[pos + 1], tokens[pos + 2])\n    pos += 3\nk = int(tokens[pos])\npos += 1\njami, soni = {}, {}\nfor _ in range(k):\n    mid = tokens[pos + 1]\n    jami[mid] = jami.get(mid, 0) + int(tokens[pos + 2])\n    soni[mid] = soni.get(mid, 0) + 1\n    pos += 3\nfor mid in sorted(jami, key=lambda x: (-jami[x], x)):\n    ism, shahar = mijozlar[mid]\n    print(f\"{ism} ({shahar}): {soni[mid]} orders, {jami[mid]}\")\nfor mid in sorted(mijozlar):\n    if mid not in jami:\n        print(f\"{mijozlar[mid][0]} ({mijozlar[mid][1]}): no orders\")\n",
+        "java": "import java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Scanner;\nimport java.util.TreeMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int m = in.nextInt();\n        Map<String, String[]> mijozlar = new TreeMap<>();\n        for (int i = 0; i < m; i++) {\n            String id = in.next();\n            mijozlar.put(id, new String[] {in.next(), in.next()});\n        }\n        int k = in.nextInt();\n        Map<String, Long> jami = new HashMap<>();\n        Map<String, Integer> soni = new HashMap<>();\n        for (int i = 0; i < k; i++) {\n            in.next();\n            String mijozId = in.next();\n            long summa = in.nextLong();\n            jami.merge(mijozId, summa, Long::sum);\n            soni.merge(mijozId, 1, Integer::sum);\n        }\n        List<String> tartib = new ArrayList<>(jami.keySet());\n        tartib.sort((a, b) -> !jami.get(a).equals(jami.get(b)) ? Long.compare(jami.get(b), jami.get(a)) : a.compareTo(b));\n        for (String mid : tartib) {\n            String[] mj = mijozlar.get(mid);\n            System.out.println(mj[0] + \" (\" + mj[1] + \"): \" + soni.get(mid) + \" orders, \" + jami.get(mid));\n        }\n        for (Map.Entry<String, String[]> e : mijozlar.entrySet()) {\n            if (!jami.containsKey(e.getKey())) {\n                System.out.println(e.getValue()[0] + \" (\" + e.getValue()[1] + \"): no orders\");\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <algorithm>\n#include <iostream>\n#include <map>\n#include <string>\n#include <utility>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int m, k;\n    cin >> m;\n    map<string, pair<string, string>> mijozlar;\n    for (int i = 0; i < m; i++) {\n        string id, ism, shahar;\n        cin >> id >> ism >> shahar;\n        mijozlar[id] = {ism, shahar};\n    }\n    cin >> k;\n    map<string, long long> jami;\n    map<string, int> soni;\n    for (int i = 0; i < k; i++) {\n        string bid, mijozId;\n        long long summa;\n        cin >> bid >> mijozId >> summa;\n        jami[mijozId] += summa;\n        soni[mijozId] += 1;\n    }\n    vector<string> tartib;\n    for (auto& p : jami) tartib.push_back(p.first);\n    sort(tartib.begin(), tartib.end(), [&](const string& a, const string& b) {\n        return jami[a] != jami[b] ? jami[a] > jami[b] : a < b;\n    });\n    for (const string& mid : tartib) {\n        auto& mj = mijozlar[mid];\n        cout << mj.first << \" (\" << mj.second << \"): \" << soni[mid] << \" orders, \" << jami[mid] << endl;\n    }\n    for (const auto& p : mijozlar) {\n        if (!jami.count(p.first)) cout << p.second.first << \" (\" << p.second.second << \"): no orders\" << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "4\n1 Aziza Toshkent\n2 Bekzod Samarqand\n3 Dilnoza Toshkent\n4 Javlon Buxoro\n6\n101 1 450000\n102 2 1200000\n103 1 300000\n104 3 800000\n105 2 250000\n106 1 150000\n",
+          "expected": "Bekzod (Samarqand): 2 orders, 1450000\nAziza (Toshkent): 3 orders, 900000\nDilnoza (Toshkent): 1 orders, 800000\nJavlon (Buxoro): no orders",
+          "hidden": false
+        },
+        {
+          "input": "2\n1 Don Toshkent\n2 Sano Samarqand\n3\n1 1 500000\n2 2 700000\n3 1 200000\n",
+          "expected": "Don (Toshkent): 2 orders, 700000\nSano (Samarqand): 1 orders, 700000",
+          "hidden": false
+        },
+        {
+          "input": "1\n1 Malik Buxoro\n0\n",
+          "expected": "Malik (Buxoro): no orders",
+          "hidden": true
+        },
+        {
+          "input": "4\n1 Aziza Toshkent\n2 Bobur Namangan\n3 Dilshad Fargona\n4 Elyor Xiva\n2\n101 3 900000\n102 1 900000\n",
+          "expected": "Aziza (Toshkent): 1 orders, 900000\nDilshad (Fargona): 1 orders, 900000\nBobur (Namangan): no orders\nElyor (Xiva): no orders",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

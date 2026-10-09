@@ -1,0 +1,460 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Axborot xavfsizligining foydalanish mumkinligi xossasi nimani anglatadi?",
+          "ru": "Что означает свойство доступности информации?",
+          "en": "What does the availability property of information mean?"
+        },
+        "options": [
+          {
+            "uz": "Vakolatli foydalanuvchi kerakli paytda axborot va xizmatdan foydalana oladi",
+            "ru": "Уполномоченный пользователь может пользоваться информацией и сервисами, когда это нужно",
+            "en": "An authorized user can use information and services when needed"
+          },
+          {
+            "uz": "Axborot faqat ruxsat berilgan shaxslargina ochiq boʻladi",
+            "ru": "Информация открыта только разрешённым лицам",
+            "en": "Information is open only to permitted people"
+          },
+          {
+            "uz": "Maʼlumot ruxsatsiz oʻzgartirilmaydi",
+            "ru": "Данные не изменяются без разрешения",
+            "en": "Data is not modified without authorisation"
+          },
+          {
+            "uz": "Maʼlumot har doim kamida ikki nusxada saqlanadi",
+            "ru": "Данные всегда хранятся минимум в двух копиях",
+            "en": "Data is always kept in at least two copies"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra foydalanish mumkinligi — vakolatli foydalanuvchi kerakli paytda axborot va xizmatdan foydalana olishi. Ikkinchi variant — konfidensiallik, uchinchi — yaxlitlik.",
+          "ru": "По занятию доступность — возможность уполномоченного пользователя пользоваться информацией и сервисами, когда это нужно. Второй вариант — конфиденциальность, третий — целостность.",
+          "en": "In the lesson availability means that an authorized user can use information and services when needed. The second option is confidentiality, the third is integrity."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "IDS hujumni aniqlagach, uni oʻzi ham yoʻlda toʻxtatadi.",
+          "ru": "Обнаружив атаку, IDS сама останавливает её на пути.",
+          "en": "After detecting an attack, IDS itself stops it in transit."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda IDS oʻzi toʻxtatmaydi, deyilgan: u erta aniqlab, javob uchun vaqt beradi, ogohlantirishlarni esa kimdir koʻrishi kerak. Trafikni yoʻlda toʻxtatish — IPS vazifasi.",
+          "ru": "В занятии сказано, что IDS сама не останавливает атаку: она рано обнаруживает её и даёт время на ответ, а уведомления должен кто-то просматривать. Останавливать трафик на пути — задача IPS.",
+          "en": "The lesson says IDS does not stop the attack itself: it detects early and gives time to respond, and someone must read the alerts. Stopping traffic in transit is the job of an IPS."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Quyidagilardan qaysilari foydalanish mumkinligiga tahdid sifatida darsda keltirilgan?",
+          "ru": "Что из перечислено в занятии как угроза доступности?",
+          "en": "Which of these does the lesson list as threats to availability?"
+        },
+        "options": [
+          {
+            "uz": "Fayllarni shifrlab, toʻlov talab qiluvchi zararli dasturlar",
+            "ru": "Вредоносные программы, шифрующие файлы и требующие оплаты",
+            "en": "Malware that encrypts files and demands payment"
+          },
+          {
+            "uz": "Xizmatdan voz kechish hujumlari (DoS/DDoS)",
+            "ru": "Атаки отказа в обслуживании (DoS/DDoS)",
+            "en": "Denial of service attacks (DoS/DDoS)"
+          },
+          {
+            "uz": "Apparat nosozliklari va elektr uzilishi",
+            "ru": "Отказы оборудования и отключения электричества",
+            "en": "Hardware failures and power outages"
+          },
+          {
+            "uz": "Maʼlumotni ruxsatsiz shaxsga oʻtqazib yuborish",
+            "ru": "Передача данных несанкционированному лицу",
+            "en": "Handing data over to an unauthorised person"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi tahdidlar: zararli dasturlar (ayniqsa shifrlovchilar va yoʻq qiluvchilar), DoS/DDoS, apparat nosozliklari, elektr uzilishi, tabiiy ofatlar, inson xatolari. Maʼlumot uzatilganda konfidensiallik buziladi.",
+          "ru": "Угрозы из занятия: вредоносные программы (особенно шифровальщики и уничтожители данных), DoS/DDoS, отказы оборудования, электричества, природные бедствия, ошибки людей. Передача данных нарушает конфиденциальность.",
+          "en": "The lesson lists malware (especially ransomware and data destroyers), DoS/DDoS, hardware failures, power outages, natural disasters and human mistakes. Passing data on breaks confidentiality."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "IPS nosoz holatda fail-open rejimida ishlaganda nima sodir boʻladi?",
+          "ru": "Что происходит, когда отказавший IPS работает в режиме fail-open?",
+          "en": "What happens when a failed IPS works in fail-open mode?"
+        },
+        "options": [
+          {
+            "uz": "Trafik tekshiruvdan oʻtkazilmay davom etadi — xizmat ishlaydi, lekin himoyasiz",
+            "ru": "Трафик идёт без проверки — сервис работает, но без защиты",
+            "en": "Traffic passes without inspection — the service works but is unprotected"
+          },
+          {
+            "uz": "Trafik butunlay toʻxtatiladi — himoya saqlanadi, lekin xizmat uziladi",
+            "ru": "Трафик полностью останавливается — защита сохраняется, но сервис прерывается",
+            "en": "Traffic is stopped entirely — protection is kept but the service is interrupted"
+          },
+          {
+            "uz": "Qurilma avtomatik ravishda zaxira qurilmadan tiklanadi",
+            "ru": "Устройство автоматически восстанавливается с резервного",
+            "en": "The device automatically restores itself from a standby unit"
+          },
+          {
+            "uz": "Qurilma faqat aniqlash rejimiga oʻtib, ogohlantirish yuboradi",
+            "ru": "Устройство переходит в режим обнаружения и рассылает оповещения",
+            "en": "The device switches to detection-only mode and sends alerts"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Fail-open nosozlikda trafikni tekshirmasdan oʻtkazadi; toʻxtatish esa fail-closed xatti-harakati. Tanlov risk baholashga bogʻliq.",
+          "ru": "Fail-open при отказе пропускает трафик без проверки; остановка — это поведение fail-closed. Выбор зависит от оценки риска.",
+          "en": "Fail-open passes traffic without inspection on failure; stopping it is fail-closed behaviour. The choice depends on the risk assessment."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "CrowdStrike EDR mahsulotining notoʻgʻri konfiguratsiya yangilanishi millionlab Windows kompyuterlarini qaysi yilda ishdan chiqardi?",
+          "ru": "В каком году ошибочное обновление конфигурации EDR CrowdStrike вывело из строя миллионы компьютеров Windows?",
+          "en": "In which year did a faulty configuration update of the CrowdStrike EDR product crash millions of Windows computers?"
+        },
+        "answers": [2024],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda 2024-yil iyul hodisasi keltirilgan: aviakompaniyalar, banklar va kasalxonalar faoliyati buzilgan.",
+          "ru": "В занятии приведён июльский инцидент 2024 года: нарушилась работа авиакомпаний, банков и больниц.",
+          "en": "The lesson cites the July 2024 incident, which disrupted airlines, banks and hospitals."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Hujumchilarning taktika va usullari hamda ularga qarshi choralarni tizimlashtiruvchi bilimlar bazasining nomini yozing.",
+          "ru": "Запишите название базы знаний, систематизирующей тактики и техники злоумышленников и меры против них.",
+          "en": "Write the name of the knowledge base that systematizes attackers' tactics and techniques and the measures against them."
+        },
+        "answers": ["MITRE ATT&CK", "MITRE", "ATT&CK", "mitre attack", "MITRE ATT&CK base"],
+        "explanation": {
+          "uz": "Darsga koʻra tadqiqotchilar va SOC jamoalari zararli faoliyatni tasvirlash uchun MITRE ATT&CK bazasidan foydalanadi.",
+          "ru": "По занятию исследователи и команды SOC описывают вредоносную активность по базе MITRE ATT&CK.",
+          "en": "According to the lesson, researchers and SOC teams describe malicious activity using the MITRE ATT&CK base."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qurt (worm) virustan nimasi bilan farq qiladi?",
+          "ru": "Чем червь отличается от вируса?",
+          "en": "How does a worm differ from a virus?"
+        },
+        "options": [
+          {
+            "uz": "Qurt tarmoq orqali mustaqil tarqaladi, virusga esa koʻpayish uchun xost obyekt kerak",
+            "ru": "Червь распространяется по сети самостоятельно, вирусу для размножения нужен объект-хозяин",
+            "en": "A worm spreads on its own over the network; a virus needs a host object to reproduce"
+          },
+          {
+            "uz": "Qurt faqat ofis hujjatlaridagi makroslarni zararlaydi",
+            "ru": "Червь поражает только макросы в офисных документах",
+            "en": "A worm only infects macros in office documents"
+          },
+          {
+            "uz": "Virus tarmoq orqali tarqaladi, qurt esa umuman tarqalmaydi",
+            "ru": "Вирус распространяется по сети, а червь вовсе не распространяется",
+            "en": "A virus spreads over the network while a worm does not spread at all"
+          },
+          {
+            "uz": "Qurt foydali dastur qiyofasiga kiradi va koʻpaymaydi",
+            "ru": "Червь маскируется под полезную программу и не размножается",
+            "en": "A worm disguises itself as a useful program and does not reproduce"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi tasnifga koʻra: virus xost obyektni zararlab koʻpayadi, qurt tarmoq orqali mustaqil tarqaladi, troyan esa qiyofaga kiradi, lekin oʻzi koʻpaymaydi.",
+          "ru": "По классификации из занятия: вирус размножается, заражая объект-хозяин, червь распространяется по сети самостоятельно, а троян маскируется, но сам не размножается.",
+          "en": "In the lesson's classification a virus reproduces by infecting a host object, a worm spreads on its own over the network, and a Trojan disguises itself but does not reproduce."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Zararli dasturlar tasnifi boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о классификации вредоносных программ верны?",
+          "en": "Which statements about the classification of malware are correct?"
+        },
+        "options": [
+          {
+            "uz": "Troyan foydali dastur qiyofasida boʻladi, lekin oʻzi koʻpaymaydi",
+            "ru": "Троян маскируется под полезную программу, но сам не размножается",
+            "en": "A Trojan disguises itself as a useful program but does not reproduce itself"
+          },
+          {
+            "uz": "Rootkit oʻzini va boshqa zararli dasturlarni operatsion tizimdan yashiradi",
+            "ru": "Руткит скрывает себя и другие вредоносные программы от ОС",
+            "en": "A rootkit hides itself and other malware from the operating system"
+          },
+          {
+            "uz": "Faylsiz zararli dastur diskka fayl yozmasdan, tizim vositalari va xotirada ishlaydi",
+            "ru": "Бесфайловое вредоносное ПО работает в памяти и системными средствами, не записывая файлы на диск",
+            "en": "Fileless malware runs in memory and through system tools without writing files to disk"
+          },
+          {
+            "uz": "Wiper maʼlumotni shifrlab, toʻlov talab qiladi",
+            "ru": "Wiper шифрует данные и требует оплату",
+            "en": "A wiper encrypts data and demands payment"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Wiper maʼlumotni qaytarib boʻlmaydigan qilib yoʻq qiladi; shifrlab, toʻlov talab qilish — shifrlovchiga xos.",
+          "ru": "Wiper уничтожает данные безвозвратно; шифрование с требованием оплаты характерно для шифровальщика.",
+          "en": "A wiper destroys data irrecoverably; encrypting and demanding payment is characteristic of ransomware."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, shifrlovchi hujumidan keyin toʻlov qilish maʼlumot qaytib berilishini kafolatlaydi.",
+          "ru": "Согласно занятию, оплата после атаки шифровальщика гарантирует возврат данных.",
+          "en": "According to the lesson, paying after a ransomware attack guarantees that the data is returned."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda koʻp uchraydigan xato sifatida: toʻlov maʼlumot qaytishini kafolatlamaydi va jinoyatchilarni moliyalashtiradi; avval zaxira nusxa va vakolatli organlar bilan ishlang.",
+          "ru": "В занятии это названо частой ошибкой: оплата не гарантирует возврат данных и финансирует преступников; сначала — резервные копии и работа с уполномоченными органами.",
+          "en": "The lesson calls this a common mistake: payment does not guarantee the data comes back and finances criminals; work with backups and the authorized bodies first."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Zararli dasturlarga qarshi choralar boʻyicha nazorat savollari",
+      "ru": "Проверочные вопросы о мерах против вредоносных программ",
+      "en": "Check questions on measures against malware"
+    },
+    "statement": {
+      "uz": "Himoya choralarini tanlash boʻyicha mustaqil topshiriqni yozishdan oldin darsning «Tur boʻyicha asosiy choralar» va «Koʻp uchraydigan xatolar» boʻlimlariga asoslangan besh savolga javob bering. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Прежде чем писать самостоятельное задание о выборе мер защиты, ответьте на пять вопросов по разделам «Основные меры по типам» и «Частые ошибки». Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before writing the independent task on choosing protective measures, answer five questions based on the lesson's \"Main measures by type\" and \"Common mistakes\" sections. The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Darsda shifrlovchilarga qarshi qaysi chora asosiy deb koʻrsatilgan?",
+            "ru": "Какая мера против шифровальщиков названа в занятии основной?",
+            "en": "Which measure does the lesson name as the main one against ransomware?"
+          },
+          "options": [
+            {
+              "uz": "Oflayn yoki oʻzgartirib boʻlmaydigan zaxira nusxa va sinalgan tiklash rejasi",
+              "ru": "Офлайн- или неизменяемые резервные копии и проверенный план восстановления",
+              "en": "Offline or immutable backups and a tested recovery plan"
+            },
+            {
+              "uz": "Antivirus bazasini haftada bir marta yangilash",
+              "ru": "Обновлять антивирусную базу раз в неделю",
+              "en": "Updating the antivirus database once a week"
+            },
+            {
+              "uz": "Barcha parollarni bir vaqtda almashtirish",
+              "ru": "Одновременно сменить все пароли",
+              "en": "Changing all passwords at the same time"
+            },
+            {
+              "uz": "Brauzer keshi va cookie fayllarni tozalash",
+              "ru": "Очистить кэш браузера и cookie-файлы",
+              "en": "Clearing the browser cache and cookies"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda shifrlovchilarga qarshi oflayn zaxira nusxa va tiklash rejasi (MT17) koʻrsatilgan; toʻlov qilish esa xato deb ogohlantirilgan.",
+            "ru": "Против шифровальщиков в занятии указаны офлайн-резервные копии и план восстановления (MT17); оплата названа ошибкой.",
+            "en": "Against ransomware the lesson lists offline backups and a recovery plan (MT17); paying is warned against as a mistake."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Rootkitlarga qarshi darsda qanday choralar taklif qilingan?",
+            "ru": "Какие меры против руткитов предложены в занятии?",
+            "en": "Which measures against rootkits does the lesson propose?"
+          },
+          "options": [
+            {
+              "uz": "Xavfsiz yuklash (Secure Boot) va shubha boʻlsa operatsion tizimni toʻliq qayta oʻrnatish",
+              "ru": "Безопасная загрузка (Secure Boot) и при сомнении — полная переустановка ОС",
+              "en": "Secure Boot and, if in doubt, a full reinstallation of the operating system"
+            },
+            {
+              "uz": "Klaviaturani almashtirish va parolni uzunroq qilish",
+              "ru": "Заменить клавиатуру и удлинить пароль",
+              "en": "Replacing the keyboard and lengthening the password"
+            },
+            {
+              "uz": "Reklama dasturlarini bloklovchi kengaytma oʻrnatish",
+              "ru": "Установить расширение, блокирующее рекламные программы",
+              "en": "Installing an ad-blocking browser extension"
+            },
+            {
+              "uz": "Tarmoq kabelini yangi standartga almashtirish",
+              "ru": "Заменить сетевой кабель на новый стандарт",
+              "en": "Swapping the network cable for a newer standard"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Rootkit sezilmay uzoq qolishi mumkinligi uchun darsda Secure Boot va chuqur zararlanishda OT ni qayta oʻrnatish ishonchliroq deb koʻrsatilgan.",
+            "ru": "Поскольку руткит может долго оставаться незамеченным, в занятии названы Secure Boot и, при глубоком поражении, переустановка ОС как более надёжный путь.",
+            "en": "Since a rootkit can stay unnoticed for a long time, the lesson names Secure Boot and, with a deep infection, reinstalling the OS as the more reliable route."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Dars tavsiyasiga koʻra, yangi oʻrnatilgan IPS darhol toʻxtatish rejimida yoqilishi kerak.",
+            "ru": "По совету занятия только что установленный IPS нужно сразу включать в режим блокировки.",
+            "en": "The lesson advises turning a newly installed IPS into blocking mode right away."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Bu koʻp uchraydigan xato sifatida keltirilgan: avval IPS ni faqat aniqlash rejimida ishga tushirib, trafikni oʻrganish, keyin qoidalarni sozlash kerak.",
+            "ru": "Это приведено как частая ошибка: сначала нужно запустить IPS в режиме обнаружения, изучить трафик, и лишь потом настраивать правила.",
+            "en": "This is listed as a common mistake: first run the IPS in detection-only mode, study the traffic, and only then tune the rules."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Botnetlarga qarshi darsda qaysi choralar koʻrsatilgan?",
+            "ru": "Какие меры против ботнетов указаны в занятии?",
+            "en": "Which measures against botnets does the lesson list?"
+          },
+          "options": [
+            {
+              "uz": "Chiquvchi trafikni filtrlash",
+              "ru": "Фильтрация исходящего трафика",
+              "en": "Filtering outgoing traffic"
+            },
+            {
+              "uz": "IoT qurilmalarini segmentlash",
+              "ru": "Сегментация IoT-устройств",
+              "en": "Segmenting IoT devices"
+            },
+            {
+              "uz": "Zaxira nusxalarni shu serverning ikkinchi diskida saqlash",
+              "ru": "Хранить резервные копии на втором диске того же сервера",
+              "en": "Keeping backups on the second disk of the same server"
+            },
+            {
+              "uz": "Barcha xodimlarga qoʻshimcha monitor ulash",
+              "ru": "Подключить каждому сотруднику дополнительный монитор",
+              "en": "Adding a second monitor for every employee"
+            }
+          ],
+          "correct": [0, 1],
+          "explanation": {
+            "uz": "Botnet — masofadan boshqariladigan zararlangan qurilmalar tarmogʻi; darsda unga qarshi chiquvchi trafikni filtrlash va IoT qurilmalarini segmentlash koʻrsatilgan.",
+            "ru": "Ботнет — сеть заражённых устройств под удалённым управлением; против него в занятии названы фильтрация исходящего трафика и сегментация IoT-устройств.",
+            "en": "A botnet is a network of remotely controlled infected devices; the lesson lists filtering outgoing traffic and segmenting IoT devices against it."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Himoya vositasi nosoz boʻlganda trafikni butunlay toʻxtatuvchi xatti-harakatning inglizcha terminini yozing.",
+            "ru": "Запишите английский термин для поведения средства защиты при отказе, полностью останавливающего трафик.",
+            "en": "Write the English term for the protection tool's on-failure behaviour that stops traffic entirely."
+          },
+          "answers": ["fail-closed", "fail closed", "failclosed", "Fail-closed"],
+          "explanation": {
+            "uz": "Fail-closed nosozlikda trafikni toʻxtatadi: himoya saqlanadi, lekin xizmat uziladi; darsda bu tanlov risk baholashga bogʻliq deyilgan.",
+            "ru": "Fail-closed при отказе останавливает трафик: защита сохраняется, но сервис прерывается; в занятии этот выбор связывается с оценкой риска.",
+            "en": "Fail-closed stops the traffic on failure: protection is kept but the service is interrupted; the lesson ties this choice to the risk assessment."
+          }
+        }
+      ]
+    }
+  }
+}

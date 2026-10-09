@@ -1,0 +1,273 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "*n* ta elementli massivda indekslar qaysi qiymatdan qaysi qiymatgacha boradi?",
+          "ru": "Какие значения принимает индекс в массиве из *n* элементов?",
+          "en": "In an array of *n* elements, what range of index values is valid?"
+        },
+        "options": [
+          {
+            "uz": "0 dan *n* − 1 gacha",
+            "ru": "От 0 до *n* − 1",
+            "en": "From 0 to *n* − 1"
+          },
+          {
+            "uz": "1 dan *n* gacha",
+            "ru": "От 1 до *n*",
+            "en": "From 1 to *n*"
+          },
+          {
+            "uz": "0 dan *n* gacha",
+            "ru": "От 0 до *n*",
+            "en": "From 0 to *n*"
+          },
+          {
+            "uz": "1 dan *n* − 1 gacha",
+            "ru": "От 1 до *n* − 1",
+            "en": "From 1 to *n* − 1"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilganidek, indekslar 0 dan *n* − 1 gacha; oxirgi element `a[n - 1]`, `a[n]` ga murojaat esa chegaradan chiqish.",
+          "ru": "Как сказано в занятии, индексы идут от 0 до *n* − 1; последний элемент — `a[n - 1]`, а обращение к `a[n]` — выход за границы.",
+          "en": "As the lesson states, indices run from 0 to *n* − 1; the last element is `a[n - 1]`, and `a[n]` is out of bounds."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Massivni *n* qadamga siklik siljitish massivni oʻzgarmagan holiga qaytaradi.",
+          "ru": "Циклический сдвиг массива на *n* позиций возвращает массив в исходное состояние.",
+          "en": "A cyclic shift of an array by *n* places brings the array back to where it started."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Yangi oʻrin — (*i* + *k*) mod *n*; *k* = *n* boʻlsa, (*i* + *n*) mod *n* = *i*, yaʼni massiv oʻzgarmaydi.",
+          "ru": "Новая позиция — (*i* + *k*) mod *n*; при *k* = *n* имеем (*i* + *n*) mod *n* = *i*, то есть массив не меняется.",
+          "en": "The new position is (*i* + *k*) mod *n*; with *k* = *n* it equals *i*, so the array stays the same."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Massivda elementlar oʻrni bilan ishlovchi masala uchun testlar qanday holatlarni albatta qamrab olishi kerak?",
+          "ru": "Какие случаи обязательно должны быть в тестах для задачи, меняющей позиции элементов массива?",
+          "en": "Which cases must the tests cover for a problem that moves array elements?"
+        },
+        "options": [
+          { "uz": "1 ta element", "ru": "1 элемент", "en": "One element" },
+          { "uz": "Juft uzunlik", "ru": "Чётная длина", "en": "An even length" },
+          { "uz": "Toq uzunlik", "ru": "Нечётная длина", "en": "An odd length" },
+          {
+            "uz": "Faqat musbat sonlar, manfiy sonlar shart emas",
+            "ru": "Только положительные числа, отрицательные не обязательны",
+            "en": "Only positive numbers; negatives are not required"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Dars boʻyicha testlarda 1 ta element, juft va toq uzunliklar albatta boʻlishi kerak; topshiriqda bundan tashqari manfiy sonlar ham talab qilinadi.",
+          "ru": "По занятию в тестах обязательны 1 элемент, чётная и нечётная длина; в задании требуются ещё и отрицательные числа.",
+          "en": "The lesson requires one element and both an even and an odd length; the task also asks for negative numbers."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Massivni teskari tartibga keltirganda *i*-element qaysi oʻringa boradi?",
+          "ru": "На какую позицию попадает *i*-й элемент при обращении массива?",
+          "en": "When an array is reversed, to which position does element *i* go?"
+        },
+        "options": [
+          { "uz": "*n* − 1 − *i*", "ru": "*n* − 1 − *i*", "en": "*n* − 1 − *i*" },
+          { "uz": "*n* − *i*", "ru": "*n* − *i*", "en": "*n* − *i*" },
+          { "uz": "*i* + 1", "ru": "*i* + 1", "en": "*i* + 1" },
+          { "uz":"(*i* + 1) mod *n*", "ru": "(*i* + 1) mod *n*", "en": "(*i* + 1) mod *n*" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars formulasi: teskari tartibda *i*-element *n* − 1 − *i* oʻringa boradi (masalan, 0-element *n* − 1-oʻringa).",
+          "ru": "Формула из занятия: при обращении *i*-й элемент идёт на позицию *n* − 1 − *i* (например, элемент 0 — на *n* − 1).",
+          "en": "The lesson's formula: reversing sends element *i* to position *n* − 1 − *i* (element 0 goes to *n* − 1)."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "6 ta elementli massivni oʻngga 8 qadam siklik siljitsak, boshida 0-oʻrinda turgan element qaysi yangi oʻringa boradi?",
+          "ru": "При циклическом сдвиге массива из 6 элементов вправо на 8 позиций — на какую новую позицию попадёт элемент, стоявший на позиции 0?",
+          "en": "Shift an array of 6 elements cyclically right by 8 places: to which new position does the element that was at position 0 go?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Yangi oʻrin — (0 + 8) mod 6 = 8 mod 6 = 2.",
+          "ru": "Новая позиция — (0 + 8) mod 6 = 8 mod 6 = 2.",
+          "en": "The new position is (0 + 8) mod 6 = 8 mod 6 = 2."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Massivni aylana boʻylab siljitishda (oxiridan chiqqan element boshiga qaytadi) indeksni doira ichida ushlab turish uchun qaysi amaldan foydalaniladi? Amal belgisini yozing.",
+          "ru": "Какая операция удерживает индекс «по кругу» при циклическом сдвиге массива (вышедший с конца элемент возвращается в начало)? Напишите символ операции.",
+          "en": "Which operator keeps the index “around the circle” in a cyclic shift (an element leaving the end returns to the start)? Write the operator symbol."
+        },
+        "answers": ["%", "mod"],
+        "explanation": {
+          "uz": "Darsda „aylana“ indekslar `%` amali bilan olinadi: yangi oʻrin — (*i* + *k*) mod *n*.",
+          "ru": "«Кольцевые» индексы в занятии получают операцией `%`: новая позиция — (*i* + *k*) mod *n*.",
+          "en": "The lesson gets circular indices with the `%` operator: the new position is (*i* + *k*) mod *n*."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Namunaviy masalada *k* (0 ≤ *k* ≤ 10⁹) qanday turda oʻqiladi va nega?",
+          "ru": "В каком типе в задаче-образце читается *k* (0 ≤ *k* ≤ 10⁹) и почему?",
+          "en": "In the sample problem, in which type is *k* (0 ≤ *k* ≤ 10⁹) read, and why?"
+        },
+        "options": [
+          {
+            "uz": "long, chunki 10⁹ + *i* int chegarasiga yaqin",
+            "ru": "Как `long`, потому что 10⁹ + *i* близко к границе `int`",
+            "en": "As `long`, because 10⁹ + *i* is close to the `int` limit"
+          },
+          {
+            "uz": "`int`, chunki *k* hech qachon katta boʻlmaydi",
+            "ru": "Как `int`, потому что *k* никогда не бывает большим",
+            "en": "As `int`, because *k* is never large"
+          },
+          {
+            "uz": "`double`, chunki qiymat kasrli",
+            "ru": "Как `double`, потому что значение дробное",
+            "en": "As `double`, because the value is fractional"
+          },
+          {
+            "uz": "`short`, chunki xotira tejash kerak",
+            "ru": "Как `short`, чтобы экономить память",
+            "en": "As `short`, to save memory"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda *k* long turida oʻqiladi, chunki 10⁹ + *i* int chegarasiga yaqin va int toʻlib ketishi mumkin.",
+          "ru": "В занятии *k* читается как `long`, потому что 10⁹ + *i* близко к границе `int`, и `int` может переполниться.",
+          "en": "The lesson reads *k* as `long`, because 10⁹ + *i* is close to the `int` limit and `int` could overflow."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Massivni joyida (yangi massiv yaratmasdan, ikki koʻrsatkich bilan) teskari qilish haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны об обращении массива на месте (без нового массива, двумя указателями)?",
+          "en": "Which statements are correct about reversing an array in place (no new array, two pointers)?"
+        },
+        "options": [
+          {
+            "uz": "Sikl *n* marta emas, *n*/2 marta ishlashi kerak",
+            "ru": "Цикл должен выполняться *n*/2 раз, а не *n*",
+            "en": "The loop must run *n*/2 times, not *n*"
+          },
+          {
+            "uz": "Bu usul butunlay yangi massiv talab qilmaydi",
+            "ru": "Этот способ не требует отдельного нового массива",
+            "en": "This method needs no separate new array"
+          },
+          {
+            "uz": "Oxirgi elementga `a[n]` orqali murojaat qilish kerak",
+            "ru": "К последнему элементу нужно обращаться как к `a[n]`",
+            "en": "The last element must be accessed as `a[n]`"
+          },
+          {
+            "uz": "Har bir element *i* → 2·*i* oʻringa oʻtkaziladi",
+            "ru": "Каждый элемент переносится на позицию 2·*i*",
+            "en": "Each element moves to position 2·*i*"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Joyida almashtirishda juftlar bir marta almashadi, shuning uchun sikl *n*/2 marta yuradi va qoʻshimcha massiv kerak emas. `a[n]` esa chegaradan chiqish.",
+          "ru": "При обмене на месте пары меняются один раз, поэтому цикл идёт *n*/2 раз и новый массив не нужен. Обращение к `a[n]` — выход за границы.",
+          "en": "Swapping in place pairs each element once, so the loop runs *n*/2 times and no new array is needed. `a[n]` would be out of bounds."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Teskari qilishda 7 ta elementli massivning 2-indeksli elementi 4-oʻringa boradi.",
+          "ru": "При обращении массива из 7 элементов элемент с индексом 2 попадает на позицию 4.",
+          "en": "When reversing an array of 7 elements, the element at index 2 goes to position 4."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Formula boʻyicha: 7 − 1 − 2 = 4, demak 2-indeksli element 4-oʻringa boradi.",
+          "ru": "По формуле: 7 − 1 − 2 = 4, значит элемент с индексом 2 идёт на позицию 4.",
+          "en": "By the formula 7 − 1 − 2 = 4, so the element at index 2 goes to position 4."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Aylana boʻylab qoʻshni yigʻindi",
+      "ru": "Сумма соседей по кругу",
+      "en": "The circular neighbour sum"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda *n* (1 ≤ *n* ≤ 1000), ikkinchi qatorda boʻsh joy bilan ajratilgan *n* ta butun son (|qiymat| ≤ 10⁶) beriladi. Yangi qator tuzing: *i*-oʻrindagi son *a[i]* va uning oʻng qoʻshnisi *a[(i + 1) mod n]* yigʻindisi boʻlsin — yaʼni oxirgi element boshlangʻich element bilan qoʻshiladi. Natijani bitta qatorda, elementlarni bitta boʻsh joy bilan ajratib chiqaring. Masalan, *n* = 5 va massiv 1 2 3 4 5 boʻlsa, chiqish 3 5 7 9 6 boʻladi (5 + 1 = 6).",
+      "ru": "В первой строке дано *n* (1 ≤ *n* ≤ 1000), во второй — *n* целых чисел через пробел (|значение| ≤ 10⁶). Постройте новую строку: на позиции *i* стоит сумма *a[i]* и его правого соседа *a[(i + 1) mod n]*, то есть последний элемент складывается с первым. Выведите результат одной строкой, разделив элементы одним пробелом. Например, *n* = 5 и массив 1 2 3 4 5 дают 3 5 7 9 6 (5 + 1 = 6).",
+      "en": "The first line holds *n* (1 ≤ *n* ≤ 1000), the second *n* integers separated by spaces (|value| ≤ 10⁶). Build a new line where position *i* is the sum of *a[i]* and its right-hand neighbour *a[(i + 1) mod n]*, so the last element pairs with the first. Print the result on one line with elements separated by a single space. For example, *n* = 5 and the array 1 2 3 4 5 give 3 5 7 9 6 (5 + 1 = 6)."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\nres = []\nfor i in range(n - 1):\n    res.append(a[i] + a[i + 1])\nprint(*res)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n - 1; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(a[i] + a[i + 1]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    for (int i = 0; i < n - 1; i++) {\n        if (i > 0) cout << ' ';\n        cout << a[i] + a[i + 1];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\nres = []\nfor i in range(n):\n    res.append(a[i] + a[(i + 1) % n])\nprint(*res)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(a[i] + a[(i + 1) % n]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    for (int i = 0; i < n; i++) {\n        if (i > 0) cout << ' ';\n        cout << a[i] + a[(i + 1) % n];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5\n1 2 3 4 5\n", "expected": "3 5 7 9 6", "hidden": false },
+        { "input": "1\n7\n", "expected": "14", "hidden": false },
+        { "input": "3\n-1 2 -3\n", "expected": "1 -1 -4", "hidden": true },
+        { "input": "4\n1 1 1 1\n", "expected": "2 2 2 2", "hidden": true },
+        { "input": "6\n1 2 3 4 5 6\n", "expected": "3 5 7 9 11 7", "hidden": true }
+      ]
+    }
+  }
+}

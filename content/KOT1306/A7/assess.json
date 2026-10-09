@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi son maska okteti boʻla olmaydi?",
+          "ru": "Какое число не может быть октетом маски?",
+          "en": "Which number cannot be an octet of a mask?"
+        },
+        "options": [
+          {
+            "uz": "224",
+            "ru": "224",
+            "en": "224"
+          },
+          {
+            "uz": "240",
+            "ru": "240",
+            "en": "240"
+          },
+          {
+            "uz": "250",
+            "ru": "250",
+            "en": "250"
+          },
+          {
+            "uz": "128",
+            "ru": "128",
+            "en": "128"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Darsda maska oktetlarining qiymatlari keltirilgan: 0, 128, 192, 224, 240, 248, 252, 254, 255. 250 bu roʻyxatda yoʻq.",
+          "ru": "В занятии приведён список значений октета маски: 0, 128, 192, 224, 240, 248, 252, 254, 255. Числа 250 в нём нет.",
+          "en": "The lesson lists the values a mask octet can take: 0, 128, 192, 224, 240, 248, 252, 254, 255. 250 is not in that list."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ikki marshrutizator orasidagi kanal uchun /24 berish tejamkor hisoblanadi.",
+          "ru": "Выдать каналу между двумя маршрутизаторами /24 — экономное решение.",
+          "en": "Giving a link between two routers a /24 is the economical choice."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Kanalga /30 (2 xost) yoki /31 yetarli; /24 berish 252 ta manzilni isrof qiladi.",
+          "ru": "Для канала достаточно /30 (2 хоста) или /31; /24 тратит 252 адреса впустую.",
+          "en": "A link needs only /30 (2 hosts) or /31; a /24 wastes 252 addresses."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Prefiks, blok oʻlchami va xostlar soni boʻyicha qaysi juftliklar toʻgʻri?",
+          "ru": "Какие пары «префикс — размер блока — число хостов» верны?",
+          "en": "Which pairs of prefix, block size and number of hosts are correct?"
+        },
+        "options": [
+          {
+            "uz": "/26 — 64 manzil, 62 xost",
+            "ru": "/26 — 64 адреса, 62 хоста",
+            "en": "/26 — 64 addresses, 62 hosts"
+          },
+          {
+            "uz": "/27 — 32 manzil, 32 xost",
+            "ru": "/27 — 32 адреса, 32 хоста",
+            "en": "/27 — 32 addresses, 32 hosts"
+          },
+          {
+            "uz": "/28 — 16 manzil, 14 xost",
+            "ru": "/28 — 16 адресов, 14 хостов",
+            "en": "/28 — 16 addresses, 14 hosts"
+          },
+          {
+            "uz": "/30 — 4 manzil, 2 xost",
+            "ru": "/30 — 4 адреса, 2 хоста",
+            "en": "/30 — 4 addresses, 2 hosts"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "Jadvalda /27 — 32 manzil, lekin 30 xost: blokdan ikki manzil (tarmoq va broadkast) xost boʻla olmaydi.",
+          "ru": "По таблице /27 — это 32 адреса, но 30 хостов: два адреса из блока (сеть и широковещательный) хостами быть не могут.",
+          "en": "In the table /27 is 32 addresses but 30 hosts: two addresses of the block (network and broadcast) cannot be hosts."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "210 sonini ikkilik koʻrinishga oʻgirsangiz, qanday natija olinadi?",
+          "ru": "Какой получится двоичный вид числа 210?",
+          "en": "What is the binary form of the number 210?"
+        },
+        "options": [
+          {
+            "uz": "11010010",
+            "ru": "11010010",
+            "en": "11010010"
+          },
+          {
+            "uz": "11010011",
+            "ru": "11010011",
+            "en": "11010011"
+          },
+          {
+            "uz": "11011010",
+            "ru": "11011010",
+            "en": "11011010"
+          },
+          {
+            "uz": "11001010",
+            "ru": "11001010",
+            "en": "11001010"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ogʻirliklar 128 64 32 16 8 4 2 1: 128 va 64 ni ayirsak 192, 32 sigʻmaydi, 16 sigʻadi (208), 8 va 4 sigʻmaydi, 2 sigʻadi (210), 1 qolmaydi — 11010010.",
+          "ru": "Вес разрядов 128 64 32 16 8 4 2 1: 128 и 64 дают 192, 32 не помещается, 16 помещается (208), 8 и 4 — нет, 2 помещается (210), 1 — нет: 11010010.",
+          "en": "The weights are 128 64 32 16 8 4 2 1: 128 and 64 give 192, 32 does not fit, 16 fits (208), 8 and 4 do not, 2 fits (210), 1 does not — 11010010."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "63 ta xost sigʻadigan eng kichik blok nechta manzilni egallaydi?",
+          "ru": "Сколько адресов занимает наименьший блок, вмещающий 63 хоста?",
+          "en": "How many addresses does the smallest block that holds 63 hosts take?"
+        },
+        "answers": [128],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Blok — *H* + 2 dan kichik boʻlmagan eng kichik 2 ning darajasi: 63 + 2 = 65, demak 128 (64 yetmaydi).",
+          "ru": "Блок — наименьшая степень двойки не меньше *H* + 2: 63 + 2 = 65, значит 128 (64 не хватает).",
+          "en": "The block is the smallest power of two not below *H* + 2: 63 + 2 = 65, so 128 — 64 is not enough."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "120 ta xost uchun eng kichik quyi tarmoq prefiksini yozing (masalan, /24 koʻrinishida).",
+          "ru": "Запишите наименьший префикс подсети для 120 хостов (в виде, например, /24).",
+          "en": "Write the smallest subnet prefix for 120 hosts (in the form /24, for example)."
+        },
+        "answers": ["/25", "25"],
+        "explanation": {
+          "uz": "120 + 2 = 122 → eng kichik mos daraja 128 manzil → /25, unda 126 ta xost.",
+          "ru": "120 + 2 = 122 → подходящая степень двойки — 128 адресов → /25, в ней 126 хостов.",
+          "en": "120 + 2 = 122 → the fitting power of two is 128 addresses → /25, which gives 126 hosts."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "192.168.1.0/24 va 192.168.2.0/24 tarmoqlarini bitta marshrutga umumlashtirsangiz, qaysi yozuv chiqadi va nimaga ehtiyot boʻlish kerak?",
+          "ru": "Какая запись получится при обобщении сетей 192.168.1.0/24 и 192.168.2.0/24 в один маршрут и чего остерегаться?",
+          "en": "Summarising the networks 192.168.1.0/24 and 192.168.2.0/24 into one route gives which entry, and what must you watch out for?"
+        },
+        "options": [
+          {
+            "uz": "192.168.0.0/22 — u 192.168.0.0 va 192.168.3.0 tarmoqlarini ham qamrab oladi",
+            "ru": "192.168.0.0/22 — она захватывает также сети 192.168.0.0 и 192.168.3.0",
+            "en": "192.168.0.0/22 — it also covers the networks 192.168.0.0 and 192.168.3.0"
+          },
+          {
+            "uz": "192.168.1.0/23 — faqat berilgan ikki tarmoqni qamraydi",
+            "ru": "192.168.1.0/23 — охватывает только две заданные сети",
+            "en": "192.168.1.0/23 — it covers only the two given networks"
+          },
+          {
+            "uz": "192.168.0.0/23 — qoʻshimcha tarmoq qamrab olinmaydi",
+            "ru": "192.168.0.0/23 — лишних сетей не захватывается",
+            "en": "192.168.0.0/23 — no extra network is covered"
+          },
+          {
+            "uz": "192.168.1.0/22 — u 192.168.4.0 tarmogʻini ham qamraydi",
+            "ru": "192.168.1.0/22 — она захватывает также сеть 192.168.4.0",
+            "en": "192.168.1.0/22 — it also covers the network 192.168.4.0"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Umumiy boshlangʻich bitlar — 22 ta, shuning uchun yozuv 192.168.0.0/22. U 192.168.0.0 va 192.168.3.0 ni ham qamrab oladi; ular boshqa joyda boʻlsa, trafik notoʻgʻri yoʻnaladi.",
+          "ru": "Общих начальных битов — 22, поэтому запись 192.168.0.0/22. Она захватывает и сети 192.168.0.0, и 192.168.3.0; если они в другом направлении, трафик пойдёт неверно.",
+          "en": "There are 22 common leading bits, so the entry is 192.168.0.0/22. It also covers 192.168.0.0 and 192.168.3.0, and if those lie elsewhere, traffic goes the wrong way."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "VLSM bilan manzil maydonini taqsimlash haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о распределении адресного пространства методом VLSM верны?",
+          "en": "Which statements about distributing an address space with VLSM are correct?"
+        },
+        "options": [
+          {
+            "uz": "Boʻlimlar xostlar soni boʻyicha kamayish tartibida saralanadi",
+            "ru": "Подразделения сортируют по убыванию числа хостов",
+            "en": "The departments are sorted by decreasing number of hosts"
+          },
+          {
+            "uz": "Har bir yangi quyi tarmoq oldingisi tugagan manzildan boshlanadi",
+            "ru": "Каждая новая подсеть начинается там, где закончилась предыдущая",
+            "en": "Each new subnet starts where the previous one ended"
+          },
+          {
+            "uz": "Kichik boʻlimlardan boshlansa, katta bloklar tekislanmaydi va manzil maydonida boʻshliq qoladi",
+            "ru": "Если начать с мелких подразделений, крупные блоки не выравниваются и в адресном пространстве остаются пробелы",
+            "en": "Starting from the small departments leaves the large blocks unaligned and gaps in the address space"
+          },
+          {
+            "uz": "Blok oʻlchani har doim xostlar soniga teng boʻladi",
+            "ru": "Размер блока всегда равен числу хостов",
+            "en": "The block size is always equal to the number of hosts"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Blok oʻlchani xostlar soniga emas, *H* + 2 ga qarab tanlanadi: 20 xostga 32 manzil (2 ning darajasi) kerak, 20 emas.",
+          "ru": "Размер блока выбирают по *H* + 2, а не по числу хостов: на 20 хостов нужно 32 адреса (степень двойки), а не 20.",
+          "en": "The block size comes from *H* + 2, not from the host count: 20 hosts need 32 addresses (a power of two), not 20."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Umumlashtirilgan marshrut faqat u qamrab oladigan barcha tarmoqlar haqiqatan ham shu yoʻnalishda boʻlsa toʻgʻri boʻladi.",
+          "ru": "Обобщённый маршрут верен только в том случае, если все попадающие под него сети действительно находятся в этом направлении.",
+          "en": "A summarised route is correct only if all the networks it covers really lie in that direction."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Umumlashtirish ortiqcha tarmoqlarni ham qamrab olishi mumkin: ular boshqa yoʻnalishda boʻlsa, paketlar notoʻgʻri routerga boradi.",
+          "ru": "Обобщение может захватить лишние сети: если они в другом направлении, пакеты придут не тому маршрутизатору.",
+          "en": "Summarisation may cover extra networks: if those lie elsewhere, their packets arrive at the wrong router."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Xostlar soni boʻyicha blok va prefiks",
+      "ru": "Блок и префикс по числу хостов",
+      "en": "Block and prefix from the number of hosts"
+    },
+    "statement": {
+      "uz": "Tarmoqni quyi tarmoqlarga boʻlganda avval xostlar soniga qarab blok oʻlchami tanlanadi: blokdagi manzillar soni — *H* + 2 dan kichik boʻlmagan eng kichik 2 ning darajasi. Dasturingiz birinchi satrda boʻlimlar soni *n* ni (1 ≤ *n* ≤ 20), keyingi *n* satrning har birida boʻlim nomini va kerakli xostlar soni *H* ni (1 ≤ *H* ≤ 1000) oʻqisin. Har bir boʻlim uchun alohida satrda uchta qiymat chiqaring: boʻlim nomi, blok oʻlchami va prefiks — prefiks oldida `/` belgisi boʻladi. Masalan, `Kutubxona 50` uchun satr `Kutubxona 64 /26` boʻladi, chunki 50 + 2 = 52 va eng yaqin 2 ning darajasi 64. Boʻlim nomida boʻshliq yoʻq.",
+      "ru": "При разбиении сети сначала выбирают размер блока по числу хостов: число адресов в блоке — наименьшая степень двойки не меньше *H* + 2. Ваша программа читает в первой строке число подразделений *n* (1 ≤ *n* ≤ 20), а в следующих *n* строках — имя подразделения и нужное число хостов *H* (1 ≤ *H* ≤ 1000). Для каждого подразделения выведите отдельной строкой три значения: имя, размер блока и префикс со знаком `/` перед ним. Например, для `Kutubxona 50` получится `Kutubxona 64 /26`, так как 50 + 2 = 52, а ближайшая подходящая степень двойки — 64. В имени подразделения пробелов нет.",
+      "en": "When splitting a network, the block size comes first from the host count: the number of addresses in the block is the smallest power of two not smaller than *H* + 2. Your program reads *n* in the first line (1 ≤ *n* ≤ 20) and, in each of the next *n* lines, a department name and the number of hosts *H* it needs (1 ≤ *H* ≤ 1000). For every department print one line with three values: the name, the block size and the prefix with a `/` in front. For `Kutubxona 50` the line is `Kutubxona 64 /26`, because 50 + 2 = 52 and the nearest power of two is 64. A department name has no spaces."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nfor _ in range(n):\n    nom, h = input().split()\n    blok = 4\n    while blok < int(h):\n        blok *= 2\n    print(nom, blok, \"/\" + str(32 - (blok.bit_length() - 1)))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            String nom = in.next();\n            int h = in.nextInt();\n            int blok = 4;\n            while (blok < h) {\n                blok *= 2;\n            }\n            System.out.println(nom + \" \" + blok + \" /\" + (32 - Integer.numberOfTrailingZeros(blok)));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string nom;\n        int h;\n        cin >> nom >> h;\n        int blok = 4;\n        while (blok < h) {\n            blok *= 2;\n        }\n        int p = 0;\n        int t = blok;\n        while (t > 1) {\n            t /= 2;\n            p += 1;\n        }\n        cout << nom << \" \" << blok << \" /\" << 32 - p << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nfor _ in range(n):\n    nom, h = input().split()\n    blok = 4\n    while blok < int(h) + 2:\n        blok *= 2\n    print(nom, blok, \"/\" + str(32 - (blok.bit_length() - 1)))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            String nom = in.next();\n            int h = in.nextInt();\n            int blok = 4;\n            while (blok < h + 2) {\n                blok *= 2;\n            }\n            System.out.println(nom + \" \" + blok + \" /\" + (32 - Integer.numberOfTrailingZeros(blok)));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string nom;\n        int h;\n        cin >> nom >> h;\n        int blok = 4;\n        while (blok < h + 2) {\n            blok *= 2;\n        }\n        int p = 0;\n        int t = blok;\n        while (t > 1) {\n            t /= 2;\n            p += 1;\n        }\n        cout << nom << \" \" << blok << \" /\" << 32 - p << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\nKutubxona 50\nDekanat 20\nKanal 2\n", "expected": "Kutubxona 64 /26\nDekanat 32 /27\nKanal 4 /30", "hidden": false },
+        { "input": "2\nLaboratoriya 100\nKichik 4\n", "expected": "Laboratoriya 128 /25\nKichik 8 /29", "hidden": false },
+        { "input": "1\nTarmoq 62\n", "expected": "Tarmoq 64 /26", "hidden": true },
+        { "input": "1\nTarmoq 63\n", "expected": "Tarmoq 128 /25", "hidden": true },
+        { "input": "2\nServer 10\nSimsiz 200\n", "expected": "Server 16 /28\nSimsiz 256 /24", "hidden": true }
+      ]
+    }
+  }
+}

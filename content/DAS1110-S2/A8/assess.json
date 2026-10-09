@@ -1,0 +1,283 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Oqim (stream) deganda nima tushuniladi?",
+          "ru": "Что понимается под потоком (stream)?",
+          "en": "What is a stream?"
+        },
+        "options": [
+          {
+            "uz": "Baytlar yoki belgilar ketma-ket keladigan „quvur“: maʼlumot manbayidan qatʼiy, bir xil usulda oʻqiladi",
+            "ru": "«Труба», по которой байты или символы идут последовательно: данные читаются одинаково независимо от источника",
+            "en": "A “pipe” through which bytes or characters arrive one after another: data is read the same way whatever its source"
+          },
+          {
+            "uz": "Faylning diskdagi joylashgan oʻrni",
+            "ru": "Местоположение файла на диске",
+            "en": "The place of a file on the disk"
+          },
+          {
+            "uz": "Xotirada saqlanadigan vaqtinchalik jadval",
+            "ru": "Временная таблица, хранящаяся в памяти",
+            "en": "A temporary table kept in memory"
+          },
+          {
+            "uz": "Dastur xatolari roʻyxati",
+            "ru": "Список ошибок программы",
+            "en": "The list of a program's errors"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars taʼrifi: oqim — maʼlumot ketma-ket keladigan „quvur“; klaviatura, ekran va fayllar bir xil usulda ishlanadi.",
+          "ru": "Определение из занятия: поток — «труба», по которой данные идут последовательно; клавиатура, экран и файлы обрабатываются одинаково.",
+          "en": "The lesson's definition: a stream is a “pipe” through which data arrives in sequence; keyboard, screen and files are handled the same way."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Klaviaturadan EOF — Windowsʼda Ctrl+Z va Enter, Linuxʼda Ctrl+D bilan beriladi.",
+          "ru": "С клавиатуры EOF задаётся в Windows сочетанием Ctrl+Z и Enter, а в Linux — Ctrl+D.",
+          "en": "From the keyboard, EOF is given with Ctrl+Z and Enter on Windows and with Ctrl+D on Linux."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda shunday: oqim tugashi EOF deyiladi, klaviaturadan u Windowsʼda Ctrl+Z va Enter, Linux/macOSʼda Ctrl+D bilan beriladi.",
+          "ru": "По занятию: конец потока называется EOF; с клавиатуры он даётся в Windows через Ctrl+Z и Enter, в Linux/macOS — Ctrl+D.",
+          "en": "As in the lesson: the end of a stream is EOF, given from the keyboard with Ctrl+Z and Enter on Windows, Ctrl+D on Linux/macOS."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Oqimlar jadvaliga koʻra, qaysilari standart oqim hisoblanadi?",
+          "ru": "Какие из перечисленного, согласно таблице потоков, являются стандартными потоками?",
+          "en": "According to the streams table, which of these are standard streams?"
+        },
+        "options": [
+          {
+            "uz": "Standart kirish oqimi (klaviatura yoki yoʻnaltirilgan fayl)",
+            "ru": "Стандартный ввод (клавиатура или перенаправленный файл)",
+            "en": "The standard input stream (keyboard or a redirected file)"
+          },
+          {
+            "uz": "Standart chiqish oqimi (ekran)",
+            "ru": "Стандартный вывод (экран)",
+            "en": "The standard output stream (the screen)"
+          },
+          {
+            "uz": "Xatolar oqimi (xabarlar, tuzatuv maʼlumoti)",
+            "ru": "Поток ошибок (сообщения, отладочные данные)",
+            "en": "The error stream (messages, debug information)"
+          },
+          {
+            "uz": "Faylga yozish oqimi (`ofstream`)",
+            "ru": "Поток записи в файл (`ofstream`)",
+            "en": "The file-writing stream (`ofstream`)"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "`ifstream` va `ofstream` — fayl oqimlari, ular standart emas; standartlari — kirish, chiqish va xatolar oqimi.",
+          "ru": "`ifstream` и `ofstream` — потоки файла, они не стандартные; стандартные — ввод, вывод и поток ошибок.",
+          "en": "`ifstream` and `ofstream` are file streams, not standard ones; the standard streams are input, output and error."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oqim maʼlumotni diskka yozishdan oldin vaqtincha toʻplaydigan xotiradagi oraliq joylama nima deyiladi? Bir soʻz bilan yozing.",
+          "ru": "Как называется временная область в памяти, где поток собирает данные перед записью на диск? Ответьте одним словом.",
+          "en": "What is the temporary in-memory area where a stream collects data before writing it to disk? Answer in one word."
+        },
+        "answers": ["bufer", "Bufer", "buffer", "Buffer"],
+        "explanation": {
+          "uz": "Har belgini alohida yozish juda sekin, shuning uchun oqim avval maʼlumotni buferga yigʻadi va u toʻlganda (yoki yopilganda) bir yoʻla yozadi.",
+          "ru": "Писать каждый символ отдельно очень медленно, поэтому поток сначала собирает данные в буфер и записывает их разом при заполнении (или при закрытии).",
+          "en": "Writing every character separately is very slow, so a stream first collects data in a buffer and writes it all at once when it fills up (or when the stream closes)."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oqimni oxirigacha oʻqish uchun C++ʼda `while (!cin.eof())` yozish tavsiya etiladi.",
+          "ru": "Для чтения потока до конца в C++ рекомендуется писать `while (!cin.eof())`.",
+          "en": "To read a stream to its end in C++ one should write `while (!cin.eof())`."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bu yozish oxirgi muvaffaqiyatsiz oʻqishni kech sezadi va oxirgi qiymat ikki marta ishlanadi; `while (cin >> x)` yozish kerak.",
+          "ru": "Такая запись поздно замечает неудачное последнее чтение, и последнее значение обрабатывается дважды; надо писать `while (cin >> x)`.",
+          "en": "It notices the failed last read too late and the last value is processed twice; write `while (cin >> x)`."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi „oqimdagi barcha sonlar“ dasturi sonlar soni, yigʻindisi va eng kattasini chiqaradi. Oqimga toʻrt son kiritildi: 8, -15, 22, 7. Uchinchi chiqish — eng katta son — nechaga teng?",
+          "ru": "Программа «все числа в потоке» из занятия выводит количество, сумму и максимальное число. В поток подали четыре числа: 8, -15, 22, 7. Чему равно третье число в выводе — максимум?",
+          "en": "The lesson program “all numbers in a stream” prints the count, the sum and the largest value. The stream holds four numbers: 8, -15, 22, 7. What is the third printed value — the maximum?"
+        },
+        "answers": [22],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Dastur oqim boʻylab eng katta qiymatni saqlab boradi: 8, 8, 22, 22 — natija 22.",
+          "ru": "Программа ведёт максимум по потоку: 8, 8, 22, 22 — итог 22.",
+          "en": "The program tracks the maximum along the stream: 8, 8, 22, 22 — the result is 22."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`program < a.txt > b.txt` buyrugʻi nima qiladi?",
+          "ru": "Что делает команда `program < a.txt > b.txt`?",
+          "en": "What does the command `program < a.txt > b.txt` do?"
+        },
+        "options": [
+          {
+            "uz": "Dasturning standart kirishini `a.txt` dan oladi, standart chiqishini `b.txt` ga yoʻnaltiradi",
+            "ru": "Берёт стандартный ввод программы из `a.txt` и направляет стандартный вывод в `b.txt`",
+            "en": "Takes the program's standard input from `a.txt` and sends its standard output to `b.txt`"
+          },
+          {
+            "uz": "Dastur avval `a.txt` ga, keyin `b.txt` ga yozadi",
+            "ru": "Программа сначала пишет в `a.txt`, а затем в `b.txt`",
+            "en": "The program writes first to `a.txt` and then to `b.txt`"
+          },
+          {
+            "uz": "Ikkala faylning mazmuni ekranga chiqariladi",
+            "ru": "Содержимое обоих файлов выводится на экран",
+            "en": "The contents of both files are printed to the screen"
+          },
+          {
+            "uz": "Xatolar oqimi `b.txt` ga yoʻnaltiriladi",
+            "ru": "Поток ошибок направляется в `b.txt`",
+            "en": "The error stream is redirected to `b.txt`"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "`<` standart kirishni fayldan oladi, `>` standart chiqishni faylga yozadi; dastur bundan bexabar, baribir `cin`/`input()` dan oʻqiydi.",
+          "ru": "`<` берёт стандартный ввод из файла, `>` направляет стандартный вывод в файл; программа об этом не знает и читает всё так же из `cin`/`input()`.",
+          "en": "`<` takes standard input from a file and `>` sends standard output to a file; the program does not know — it still reads from `cin`/`input()`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Oqimni oxirigacha oʻqish haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о чтении потока до конца верны?",
+          "en": "Which statements about reading a stream to its end are correct?"
+        },
+        "options": [
+          {
+            "uz": "C++ʼda `cin >> x` ifodasi oʻqish muvaffaqiyatli boʻlsa `true`, EOF yoki xato boʻlsa `false` beradi",
+            "ru": "В C++ выражение `cin >> x` даёт `true` при удачном чтении и `false` при EOF или ошибке",
+            "en": "In C++ the expression `cin >> x` gives `true` when reading succeeds and `false` at EOF or on an error"
+          },
+          {
+            "uz": "Javaʼda `readLine()` oqim tugaganda `null` qaytaradi",
+            "ru": "В Java `readLine()` возвращает `null`, когда поток закончился",
+            "en": "In Java `readLine()` returns `null` when the stream has ended"
+          },
+          {
+            "uz": "Pythonʼda `sys.stdin` dan oʻqilgan har bir qator oxirida `\\n` qoladi",
+            "ru": "В Python каждая строка, прочитанная из `sys.stdin`, заканчивается символом `\\n`",
+            "en": "In Python every line read from `sys.stdin` keeps `\\n` at its end"
+          },
+          {
+            "uz": "Sonlarni oʻqiganda `while (cin >> x)` faqat EOF da toʻxtaydi, son boʻlmagan maʼlumot uni toʻxtata olmaydi",
+            "ru": "При чтении чисел `while (cin >> x)` останавливается только на EOF, а нечисловые данные его не останавливают",
+            "en": "When reading numbers, `while (cin >> x)` stops only at EOF; non-numeric data does not stop it"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Son boʻlmagan maʼlumotda ham oʻqish muvaffaqiyatsiz boʻladi va sikl toʻxtaydi — shuning uchun toʻrtinchi ifoda notoʻgʻri.",
+          "ru": "На нечисловых данных чтение тоже завершается неудачей, и цикл останавливается, поэтому четвёртое утверждение неверно.",
+          "en": "Non-numeric data also makes the read fail and the loop stops, so the fourth statement is wrong."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qatorlarni raqamlash misolida raqam ustunining kengligi birinchi qatorni oʻqishdan oldin maʼlum boʻladi.",
+          "ru": "В примере с нумерацией строк ширина колонки чисел известна ещё до чтения первой строки.",
+          "en": "In the line-numbering example the width of the number column is known before the first line is read."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Kenglik — eng katta raqam uzunligi, u faqat barcha qatorlar oʻqilgach maʼlum boʻladi; shuning uchun qatorlar avval xotiraga yigʻiladi.",
+          "ru": "Ширина равна длине наибольшего номера и узнаётся только после чтения всех строк, поэтому строки сначала собирают в памяти.",
+          "en": "The width is the length of the largest number and is known only after all lines are read, so the lines are first collected in memory."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Oqimdagi eng uzun soʻz",
+      "ru": "Самое длинное слово в потоке",
+      "en": "The longest word in the stream"
+    },
+    "statement": {
+      "uz": "Standart kirishga bir yoki bir nechta qator matn beriladi (lotin harflari, raqamlar va boʻsh joylar); qatorlar soni oldindan berilmaydi. Oqimni oxirigacha (EOF) oʻqing va eng uzun soʻzni chiqaring. Uzunligi teng boʻlgan bir nechta soʻz boʻlsa, birinchi boʻlib uchragani chiqariladi. Kirish butunlay boʻsh boʻlsa, `-` chiqaring. Masalan, `alma olcha nok` kiritilsa, chiqish: `olcha`.",
+      "ru": "На стандартный ввод подаётся одна или несколько строк текста (латинские буквы, цифры и пробелы); их количество заранее не задано. Читайте поток до конца (EOF) и выведите самое длинное слово. Если самых длинных несколько, выведите первое из них. Если ввод совсем пуст, выведите `-`. Например, для `alma olcha nok` вывод: `olcha`.",
+      "en": "The standard input holds one or more lines of text (Latin letters, digits and spaces); how many there are is not given in advance. Read the stream to its end (EOF) and print the longest word. If several words share the longest length, print the first of them. If the input is completely empty, print `-`. For example, the input `alma olcha nok` gives the output `olcha`."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nsozlar = sys.stdin.read().split()\neng_uzun = \"\"\nfor soz in sozlar:\n    if len(soz) > len(eng_uzun):\n        eng_uzun = soz\nprint(eng_uzun)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String engUzun = \"\";\n        while (in.hasNext()) {\n            String soz = in.next();\n            if (soz.length() > engUzun.length()) engUzun = soz;\n        }\n        System.out.println(engUzun);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string soz, engUzun;\n    while (cin >> soz) {\n        if (soz.size() > engUzun.size()) engUzun = soz;\n    }\n    cout << engUzun << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nsozlar = sys.stdin.read().split()\neng_uzun = \"\"\nfor soz in sozlar:\n    if len(soz) > len(eng_uzun):\n        eng_uzun = soz\nprint(eng_uzun if eng_uzun else \"-\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String engUzun = \"\";\n        while (in.hasNext()) {\n            String soz = in.next();\n            if (soz.length() > engUzun.length()) engUzun = soz;\n        }\n        System.out.println(engUzun.isEmpty() ? \"-\" : engUzun);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string soz, engUzun;\n    while (cin >> soz) {\n        if (soz.size() > engUzun.size()) engUzun = soz;\n    }\n    cout << (engUzun.empty() ? \"-\" : engUzun) << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "alma olcha nok\n", "expected": "olcha", "hidden": false },
+        { "input": "", "expected": "-", "hidden": false },
+        { "input": "a\nbb\ncccc\ndd\n", "expected": "cccc", "hidden": true },
+        { "input": "salom hello\n", "expected": "salom", "hidden": true },
+        { "input": " \n \n", "expected": "-", "hidden": true }
+      ]
+    }
+  }
+}

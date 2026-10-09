@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "javac vositasi nimani qiladi?",
+          "ru": "Что делает инструмент javac?",
+          "en": "What does the tool javac do?"
+        },
+        "options": [
+          {
+            "uz": "Java dasturini bayt-kodga kompilyatsiya qiladi",
+            "ru": "Компилирует программу на Java в байт-код",
+            "en": "Compiles a Java program into bytecode"
+          },
+          {
+            "uz": "C++ dasturini mashina kodiga oʻtkazadi",
+            "ru": "Превращает программу на C++ в машинный код",
+            "en": "Turns a C++ program into machine code"
+          },
+          {
+            "uz": "Python dasturini qatorma-qator bajaradi",
+            "ru": "Выполняет программу на Python строка за строкой",
+            "en": "Runs a Python program line by line"
+          },
+          {
+            "uz": "Java bayt-kodini bajaradi",
+            "ru": "Выполняет байт-код Java",
+            "en": "Executes Java bytecode"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "javac Java dasturini bayt-kodga kompilyatsiya qiladi; bayt-kodni esa JVM bajaradi. C++ uchun GCC, Clang va MSVC ishlatiladi.",
+          "ru": "javac компилирует программу на Java в байт-код, а выполняет байт-код JVM. Для C++ служат GCC, Clang и MSVC.",
+          "en": "javac compiles a Java program into bytecode, and the JVM executes that bytecode. C++ uses GCC, Clang or MSVC."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python dasturini ishga tushirishdan oldin uni kompilyatsiya qilish shart.",
+          "ru": "Программу на Python обязательно компилировать перед запуском.",
+          "en": "A Python program must be compiled before it is run."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Amaliy mashgʻulotdagi jadvalda Python uchun kompilyatsiya ustuni boʻsh: dasturni CPython interpretatori ishga tushiradi, masalan python main.py.",
+          "ru": "В таблице занятия для Python графа компиляции пуста: программу запускает интерпретатор CPython, например python main.py.",
+          "en": "In the table of the session the compile column for Python is empty: the CPython interpreter runs the program, for example python main.py."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Uchala tilda ham oʻzgarmas nomi qanday uslubda yoziladi?",
+          "ru": "В каком стиле во всех трёх языках записывается имя константы?",
+          "en": "Which naming style is used for a constant in all three languages?"
+        },
+        "options": [
+          {
+            "uz": "UPPER_CASE",
+            "ru": "UPPER_CASE",
+            "en": "UPPER_CASE"
+          },
+          {
+            "uz": "camelCase",
+            "ru": "camelCase",
+            "en": "camelCase"
+          },
+          {
+            "uz": "PascalCase",
+            "ru": "PascalCase",
+            "en": "PascalCase"
+          },
+          {
+            "uz": "snake_case",
+            "ru": "snake_case",
+            "en": "snake_case"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Oʻzgarmas nomi UPPER_CASE uslubida yoziladi, masalan MAX_BALL. Funksiya nomi camelCase yoki snake_case, klass nomi PascalCase boʻladi.",
+          "ru": "Имя константы пишется в стиле UPPER_CASE, например MAX_BALL. Имя функции — camelCase или snake_case, имя класса — PascalCase.",
+          "en": "A constant name is written in UPPER_CASE, for example MAX_BALL. A function name is camelCase or snake_case, a class name is PascalCase."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "C++ dasturini kompilyatsiya qilishning qaysi bosqichlari mavjud?",
+          "ru": "Какие этапы проходит компиляция программы на C++?",
+          "en": "Which stages does compiling a C++ program go through?"
+        },
+        "options": [
+          {
+            "uz": "Preprotsessor",
+            "ru": "Препроцессор",
+            "en": "Preprocessor"
+          },
+          {
+            "uz": "Kompilyatsiya",
+            "ru": "Компиляция",
+            "en": "Compilation"
+          },
+          {
+            "uz": "Bogʻlash (linking)",
+            "ru": "Компоновка (linking)",
+            "en": "Linking"
+          },
+          {
+            "uz": "Tarmoqqa ulash",
+            "ru": "Подключение к сети",
+            "en": "Network connection"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda uch bosqich sanaladi: preprotsessor, kompilyatsiya va bogʻlash. Tarmoqqa ulash shu bosqichlardan biri emas.",
+          "ru": "В занятии названы три этапа: препроцессор, компиляция и компоновка. Подключение к сети к этим этапам не относится.",
+          "en": "The lesson names three stages: the preprocessor, compilation and linking. A network connection is not one of them."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Main.java:5: error: cannot find symbol xabari nimani anglatadi?",
+          "ru": "Что означает сообщение Main.java:5: error: cannot find symbol?",
+          "en": "What does the message Main.java:5: error: cannot find symbol mean?"
+        },
+        "options": [
+          {
+            "uz": "5-qatordagi nom eʼlon qilinmagan yoki notoʻgʻri yozilgan",
+            "ru": "Имя в строке 5 не объявлено или написано с ошибкой",
+            "en": "A name on line 5 is not declared or is misspelt"
+          },
+          {
+            "uz": "5-qatorda nuqtali vergul tushib qolgan",
+            "ru": "В строке 5 пропущена точка с запятой",
+            "en": "A semicolon is missing on line 5"
+          },
+          {
+            "uz": "Fayl topilmadi",
+            "ru": "Файл не найден",
+            "en": "The file was not found"
+          },
+          {
+            "uz": "Dastur juda sekin ishlaydi",
+            "ru": "Программа работает слишком медленно",
+            "en": "The program runs too slowly"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Xabar fayl nomini, qator raqami va tavsifni beradi: cannot find symbol degani nom eʼlon qilinmagan yoki xato yozilgan.",
+          "ru": "Сообщение даёт имя файла, номер строки и описание: cannot find symbol означает, что имя не объявлено или написано с ошибкой.",
+          "en": "The message gives the file name, the line number and a description: cannot find symbol means the name is not declared or is misspelt."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ogohlantirish (warning) boʻlgan dastur kompilyatsiya qilinmaydi.",
+          "ru": "Программа с предупреждением (warning) не компилируется.",
+          "en": "A program that produces a warning does not compile."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Ogohlantirishda dastur kompilyatsiya qilinadi, lekin kompilyator shubhali joyni koʻrsatadi. Kompilyatsiya qilinmaydigan holat — bu xato (error).",
+          "ru": "При предупреждении программа компилируется, но компилятор указывает на подозрительное место. Не компилируется программа только при ошибке (error).",
+          "en": "With a warning the program does compile, but the compiler points at a suspicious place. Only an error stops the compilation."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "C++ tilida oʻzgarmasni eʼlon qilish uchun ishlatiladigan kalit soʻzni yozing.",
+          "ru": "Напишите ключевое слово, которым в C++ объявляется константа.",
+          "en": "Write the keyword used to declare a constant in C++."
+        },
+        "answers": ["const"],
+        "explanation": {
+          "uz": "C++ʼda oʻzgarmas const bilan, Javaʼda final bilan eʼlon qilinadi; Pythonʼda esa faqat kelishuv boʻyicha — nom katta harflarda yoziladi.",
+          "ru": "В C++ константа объявляется через const, в Java — через final; в Python действует только соглашение: имя пишется заглавными буквами.",
+          "en": "In C++ a constant is declared with const, in Java with final; in Python only a convention applies — the name is written in capitals."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "a = 7 va b = 4 boʻlsa, 2 * a + b ifodasi nechaga teng?",
+          "ru": "Чему равно выражение 2 * a + b, если a = 7 и b = 4?",
+          "en": "What is the value of 2 * a + b when a = 7 and b = 4?"
+        },
+        "answers": [18],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Avval koʻpaytirish: 2 * 7 = 14, soʻng qoʻshish: 14 + 4 = 18. Perimetr uchun qavs shart: 2 * (a + b) = 22.",
+          "ru": "Сначала умножение: 2 * 7 = 14, затем сложение: 14 + 4 = 18. Для периметра нужны скобки: 2 * (a + b) = 22.",
+          "en": "The multiplication comes first: 2 * 7 = 14, then the addition: 14 + 4 = 18. The perimeter needs brackets: 2 * (a + b) = 22."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nomlash kelishuvlari boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о соглашениях об именовании верны?",
+          "en": "Which statements about naming conventions are correct?"
+        },
+        "options": [
+          {
+            "uz": "Klass nomi PascalCase bilan yoziladi, masalan Talaba",
+            "ru": "Имя класса пишется в стиле PascalCase, например Talaba",
+            "en": "A class name is written in PascalCase, for example Talaba"
+          },
+          {
+            "uz": "Pythonʼda oʻzgaruvchi nomi talaba_soni koʻrinishida yoziladi",
+            "ru": "В Python имя переменной записывают как talaba_soni",
+            "en": "In Python a variable name is written as talaba_soni"
+          },
+          {
+            "uz": "UPPER_CASE uslubi funksiya nomlari uchun xizmat qiladi",
+            "ru": "Стиль UPPER_CASE служит для имён функций",
+            "en": "The UPPER_CASE style is used for function names"
+          },
+          {
+            "uz": "Uslubni kompilyator tekshiradi va buzilganda xato beradi",
+            "ru": "Стиль проверяет компилятор и при нарушении выдаёт ошибку",
+            "en": "The compiler checks the style and reports an error when it is broken"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "UPPER_CASE oʻzgarmas nomlari uchun; kompilyator uslubni tekshirmaydi, lekin jamoada hamma bir xil yozadi.",
+          "ru": "UPPER_CASE служит для имён констант; компилятор стиль не проверяет, но в команде все пишут одинаково.",
+          "en": "UPPER_CASE is for constant names; the compiler does not check the style, but in a team everyone writes the same way."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Uchta qiymatni bir oʻringa siljitish",
+      "ru": "Сдвинуть значения трёх переменных на одну позицию",
+      "en": "Shift the values of three variables by one place"
+    },
+    "statement": {
+      "uz": "Dastur uchta butun sonni oʻqiydi: a, b va c — har biri alohida qatorda. Qiymatlarni bir oʻringa siljiting: a ga b ning, b ga c ning, c ga esa a ning eski qiymati oʻtsin. Yangi a, b, c qiymatlarini shu tartibda, uchta qatorda chiqaring — har qatorda faqat son. Hech bir qiymat yoʻqolmasligi kerak, shuning uchun birinchi qiymatni avval vaqtinchalik oʻzgaruvchiga saqlab qoʻying. Masalan, 1, 2, 3 kirilsa, dastur 2, soʻng 3, soʻng 1 chiqaradi. Sonlar -1000000 dan 1000000 gacha.",
+      "ru": "Программа читает три целых числа: a, b и c, каждое на отдельной строке. Сдвиньте значения на одну позицию: в a должно попасть значение b, в b — значение c, в c — прежнее значение a. Выведите новые значения a, b, c в этом порядке, по числу в каждой из трёх строк. Ни одно значение не должно потеряться, поэтому сначала сохраните первое значение во временной переменной. Например, при вводе 1, 2, 3 программа выведет 2, затем 3, затем 1. Числа от -1000000 до 1000000.",
+      "en": "Your program reads three integers: a, b and c, each on its own line. Shift the values by one place: a takes the value of b, b takes the value of c, and c takes the old value of a. Print the new values of a, b and c in that order, one number per line. No value may be lost, so first save the value of a in a temporary variable. For example, the input 1, 2, 3 makes the program print 2, then 3, then 1. The numbers are between -1000000 and 1000000."
+    },
+    "code": {
+      "starter": {
+        "python": "a = int(input())\nb = int(input())\nc = int(input())\n\na = b\nb = c\nc = a\n\nprint(a)\nprint(b)\nprint(c)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int a = in.nextInt();\n        int b = in.nextInt();\n        int c = in.nextInt();\n        a = b;\n        b = c;\n        c = a;\n        System.out.println(a);\n        System.out.println(b);\n        System.out.println(c);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b, c;\n    cin >> a >> b >> c;\n    a = b;\n    b = c;\n    c = a;\n    cout << a << endl;\n    cout << b << endl;\n    cout << c << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "a = int(input())\nb = int(input())\nc = int(input())\n\nt = a\na = b\nb = c\nc = t\n\nprint(a)\nprint(b)\nprint(c)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int a = in.nextInt();\n        int b = in.nextInt();\n        int c = in.nextInt();\n        int t = a;\n        a = b;\n        b = c;\n        c = t;\n        System.out.println(a);\n        System.out.println(b);\n        System.out.println(c);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b, c;\n    cin >> a >> b >> c;\n    int t = a;\n    a = b;\n    b = c;\n    c = t;\n    cout << a << endl;\n    cout << b << endl;\n    cout << c << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "1\n2\n3\n", "expected": "2\n3\n1", "hidden": false },
+        { "input": "5\n9\n7\n", "expected": "9\n7\n5", "hidden": false },
+        { "input": "4\n4\n4\n", "expected": "4\n4\n4", "hidden": true },
+        { "input": "-3\n8\n0\n", "expected": "8\n0\n-3", "hidden": true },
+        { "input": "1000000\n-1000000\n0\n", "expected": "-1000000\n0\n1000000", "hidden": true }
+      ]
+    }
+  }
+}

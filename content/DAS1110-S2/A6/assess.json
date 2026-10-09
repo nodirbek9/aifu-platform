@@ -1,0 +1,323 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "ASCII jadvalida boʻsh joyning kodi nechiga teng?",
+          "ru": "Чему равен код пробела в таблице ASCII?",
+          "en": "In the ASCII table, what is the code of the space?"
+        },
+        "options": [
+          {
+            "uz": "0",
+            "ru": "0",
+            "en": "0"
+          },
+          {
+            "uz": "32",
+            "ru": "32",
+            "en": "32"
+          },
+          {
+            "uz": "48",
+            "ru": "48",
+            "en": "48"
+          },
+          {
+            "uz": "65",
+            "ru": "65",
+            "en": "65"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi jadval: boshqaruv belgilari 0–31, boʻsh joy — 32, raqamlar 48–57, katta harflar 65–90.",
+          "ru": "Таблица из занятия: управляющие символы 0–31, пробел — 32, цифры 48–57, заглавные буквы 65–90.",
+          "en": "The lesson table: control characters 0–31, space — 32, digits 48–57, uppercase letters 65–90."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Pythonda belgi — bu son, shuning uchun raqam qiymatini olish uchun c - '0' toʻgʻridan-toʻgʻri yoziladi.",
+          "ru": "В Python символ — это число, поэтому для получения цифры можно напрямую написать c - '0'.",
+          "en": "In Python a character is a number, so for a digit's value one can write c - '0' directly."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Pythonda belgi — uzunligi 1 boʻlgan satr, son emas: arifmetika uchun ord va chr kerak, yaʼni ord(c) - ord('0').",
+          "ru": "В Python символ — это строка длиной 1, а не число: для арифметики нужны ord и chr, то есть ord(c) - ord('0').",
+          "en": "In Python a character is a string of length 1, not a number: arithmetic needs ord and chr, i.e. ord(c) - ord('0')."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "ASCII jadvalida '5' - '0' ifodaning qiymati nechiga teng?",
+          "ru": "Чему равно значение выражения '5' - '0' в таблице ASCII?",
+          "en": "What is the value of the expression '5' - '0' in the ASCII table?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "'5' belgisining kodi 53, '0' niki 48: farqi 5. Darsda aytilganidek, raqam belgisi qiymati c - '0' ga teng.",
+          "ru": "Код символа '5' — 53, символа '0' — 48, разность равна 5. Как сказано в занятии, значение цифры равно c - '0'.",
+          "en": "The code of '5' is 53 and of '0' is 48: the difference is 5. As the lesson says, a digit character's value is c - '0'."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Javaʼda System.out.println('a' + 1); buyrugʻi nima chiqaradi?",
+          "ru": "Что выведет в Java команда System.out.println('a' + 1);?",
+          "en": "What does System.out.println('a' + 1); print in Java?"
+        },
+        "options": [
+          {
+            "uz": "b harfi",
+            "ru": "букву b",
+            "en": "the letter b"
+          },
+          {
+            "uz": "a1 matni",
+            "ru": "текст a1",
+            "en": "the text a1"
+          },
+          {
+            "uz": "98 soni",
+            "ru": "число 98",
+            "en": "the number 98"
+          },
+          {
+            "uz": "Dastur kompilyatsiya boʻlmaydi",
+            "ru": "Программа не скомпилируется",
+            "en": "The program will not compile"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Javaʼda char va int yigʻindisi int boʻladi: 97 + 1 = 98. Belgini 98 emas, b deb chiqarish uchun (char) ('a' + 1) kerak.",
+          "ru": "В Java сумма char и int даёт int: 97 + 1 = 98. Чтобы вывести именно символ b, нужно (char) ('a' + 1).",
+          "en": "In Java the sum of a char and an int is an int: 97 + 1 = 98. To print the character itself, (char) ('a' + 1) is needed."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "ASCII jadvalidagi oraliqlar haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об интервалах таблицы ASCII верны?",
+          "en": "Which statements about the ranges of the ASCII table are correct?"
+        },
+        "options": [
+          {
+            "uz": "Raqam belgilari 48–57 kodlar oraligʻida joylashgan",
+            "ru": "Цифры расположены в интервале кодов 48–57",
+            "en": "The digits sit in the code range 48–57"
+          },
+          {
+            "uz": "Katta harflar A–Z 97–122 oraligʻida joylashgan",
+            "ru": "Заглавные буквы A–Z расположены в интервале 97–122",
+            "en": "The uppercase letters A–Z sit in the range 97–122"
+          },
+          {
+            "uz": "Katta va kichik harflarning kodlari 32 ga farq qiladi",
+            "ru": "Коды заглавных и строчных букв отличаются на 32",
+            "en": "The codes of an uppercase and a lowercase letter differ by 32"
+          },
+          {
+            "uz": "Boshqaruv belgilari (0–31) chiqarilmaydi",
+            "ru": "Управляющие символы (0–31) не печатаются",
+            "en": "Control characters (0–31) are not printed"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "97–122 — kichik harflar a–z oraligʻi; katta harflar esa 65–90 da turadi. Qolgan uch ifoda darsdagi jadvalga mos.",
+          "ru": "97–122 — это интервал строчных букв a–z; заглавные стоят в 65–90. Остальные три утверждения соответствуют таблице занятия.",
+          "en": "97–122 is the range of the lowercase letters a–z; uppercase letters sit at 65–90. The other three statements match the lesson's table."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Raqamlar satrini songa aylantirishda darsda qoʻllangan son = son * 10 + raqam sxemasiga qanday nom berilgan?",
+          "ru": "Как называется схема son = son * 10 + raqam, которой в занятии строку цифр превращают в число?",
+          "en": "What name does the lesson give to the scheme son = son * 10 + raqam that turns a string of digits into a number?"
+        },
+        "answers": [
+          "Horner",
+          "Horner sxemasi",
+          "Horner's scheme",
+          "Gorner",
+          "Gorner sxemasi"
+        ],
+        "explanation": {
+          "uz": "Bu — Horner sxemasi: 407 uchun qiymat 0 → 4 → 40 → 407 boʻylab oʻsadi. Tayyor int() funksiyalari ichida aynan shu jarayon bajariladi.",
+          "ru": "Это схема Горнера: для 407 значение растёт 0 → 4 → 40 → 407. Внутри готовых функций int() выполняется ровно этот процесс.",
+          "en": "It is Horner's scheme: for 407 the value grows 0 → 4 → 40 → 407. The ready int() functions do exactly this inside."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Harflar chastotasini sanovchi dasturda harflar matnda birinchi marta uchragan tartibida chiqadi.",
+          "ru": "В программе подсчёта частот букв они выводятся в порядке их первой встречи в тексте.",
+          "en": "The letter-frequency program prints the letters in the order of their first appearance in the text."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Harf kodi c - 'a' toʻgʻridan-toʻgʻri indeks boʻlgani uchun massiv 0 dan 25 gacha aylaniladi va harflar avtomatik alifbo tartibida chiqadi.",
+          "ru": "Поскольку код буквы c - 'a' становится индексом напрямую, массив обходят от 0 до 25 — и буквы выходят в алфавитном порядке автоматически.",
+          "en": "Because the letter's code c - 'a' becomes the index directly, the array is walked from 0 to 25, so the letters come out in alphabetical order automatically."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nima uchun soni[c - 'a'] dan oldin belgining harf ekanini tekshirish kerak? Qaysi ifodalar toʻgʻri?",
+          "ru": "Почему перед soni[c - 'a'] нужно проверять, что символ — буква? Какие утверждения верны?",
+          "en": "Why must a character be checked to be a letter before soni[c - 'a']? Which statements are correct?"
+        },
+        "options": [
+          {
+            "uz": "Harf boʻlmagan belgilar uchun c - 'a' manfiy yoki 25 dan katta boʻlib, massiv chegarasidan chiqadi",
+            "ru": "Для не-букв выражение c - 'a' получается отрицательным или больше 25 и выходит за границы массива",
+            "en": "For a non-letter, c - 'a' is negative or greater than 25 and goes outside the array"
+          },
+          {
+            "uz": "Oʻzbekcha ʻ belgisi va kirill harflarining kodi 127 dan katta — ASCII usuli ularga yaramaydi",
+            "ru": "Узбекский знак ʻ и кириллические буквы имеют коды больше 127 — метод ASCII на них не распространяется",
+            "en": "The Uzbek sign ʻ and Cyrillic letters have codes above 127 — the ASCII method does not apply to them"
+          },
+          {
+            "uz": "Tekshir dasturning ishlash tezligini oshiradi",
+            "ru": "Проверка нужна, чтобы ускорить работу программы",
+            "en": "The check is there to speed the program up"
+          },
+          {
+            "uz": "Tekshir faqat kodni yod olishni osonlashtiradi",
+            "ru": "Проверка нужна лишь для того, чтобы не запоминать коды",
+            "en": "The check only makes memorising the codes easier"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Darsning ogohlantirishida aytilishicha, ASCII usuli 127 dan katta belgilarga yaramaydi va ular uchun c - 'a' massivdan chiqib ketadi — xavfsizlik uchun tekshir shart.",
+          "ru": "В предупреждении занятия сказано, что метод ASCII не годится для символов выше 127 и что их c - 'a' выходит за массив — проверка нужна ради безопасности.",
+          "en": "The lesson's warning says the ASCII method fails for characters above 127 and their c - 'a' leaves the array — the check is there for safety."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi jadvalga koʻra, Pythonʼda belgi kiritilib, uning raqam qiymatini olish uchun qaysi ifoda yoziladi?",
+          "ru": "Согласно таблице занятия, какое выражение в Python даёт цифровое значение введённого символа?",
+          "en": "Per the lesson's table, which Python expression gives the digit value of a character read in?"
+        },
+        "options": [
+          {
+            "uz": "c - 48",
+            "ru": "c - 48",
+            "en": "c - 48"
+          },
+          {
+            "uz": "ord(c) - ord('0')",
+            "ru": "ord(c) - ord('0')",
+            "en": "ord(c) - ord('0')"
+          },
+          {
+            "uz": "chr(c - 48)",
+            "ru": "chr(c - 48)",
+            "en": "chr(c - 48)"
+          },
+          {
+            "uz": "int(c + 0)",
+            "ru": "int(c + 0)",
+            "en": "int(c + 0)"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Pythonda belgi — satr, shuning uchun avval ord(c) bilan kodga oʻtiladi va ord('0') ayiriladi. c - 48 yoki c - '0' xato beradi.",
+          "ru": "В Python символ — строка, поэтому сначала переходят к коду через ord(c) и вычитают ord('0'). Записи c - 48 и c - '0' дают ошибку.",
+          "en": "In Python a character is a string, so one first moves to the code with ord(c) and subtracts ord('0'); writing c - 48 or c - '0' fails."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Harflar, raqamlar va boʻsh joylar",
+      "ru": "Буквы, цифры и пробелы",
+      "en": "Letters, digits and spaces"
+    },
+    "statement": {
+      "uz": "Bitta satr matn kiritiladi (faqat ASCII belgilar, satr uzunligi 1 dan 200 gacha). Uning lotin harflarini (katta va kichik registr ikkalasini), raqam belgilari hamda boʻsh joylar sonini sanang. Uch sonni bitta qatorda, bitta boʻsh joy bilan ajratib chiqaring: avval harflar, soʻng raqamlar, oxirida boʻsh joylar soni. Boshqa belgilar hisobga olinmaydi. Masalan, Salom, Dunyo! 2024 satrida 10 ta harf, 4 ta raqam va 2 ta boʻsh joy bor — chiqish: 10 4 2.",
+      "ru": "Вводится одна строка текста (только символы ASCII, длина от 1 до 200). Посчитайте в ней латинские буквы (обеих регистров), цифровые символы и пробелы. Выведите три числа в одной строке через один пробел: сначала число букв, затем цифр, затем пробелов. Остальные символы не учитываются. Например, в строке Salom, Dunyo! 2024 — 10 букв, 4 цифры и 2 пробела, вывод: 10 4 2.",
+      "en": "One line of text is given (ASCII characters only, its length from 1 to 200). Count its Latin letters (both cases), digit characters and spaces. Print the three numbers on one line, separated by a single space: first the letters, then the digits, then the spaces. Other characters are not counted. For example, the line Salom, Dunyo! 2024 holds 10 letters, 4 digits and 2 spaces, so the output is 10 4 2."
+    },
+    "code": {
+      "starter": {
+        "python": "satr = input()\nharf = 0\nraqam = 0\njoy = 0\nfor c in satr:\n    if \"a\" <= c <= \"z\":\n        harf += 1\n    elif \"0\" <= c <= \"9\":\n        raqam += 1\n    elif c == \" \":\n        joy += 1\nprint(harf, raqam, joy)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        String satr = new Scanner(System.in).nextLine();\n        int harf = 0, raqam = 0, joy = 0;\n        for (char c : satr.toCharArray()) {\n            if (c >= 'a' && c <= 'z') harf++;\n            else if (c >= '0' && c <= '9') raqam++;\n            else if (c == ' ') joy++;\n        }\n        System.out.println(harf + \" \" + raqam + \" \" + joy);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    int harf = 0, raqam = 0, joy = 0;\n    for (char c : satr) {\n        if (c >= 'a' && c <= 'z') harf++;\n        else if (c >= '0' && c <= '9') raqam++;\n        else if (c == ' ') joy++;\n    }\n    cout << harf << \" \" << raqam << \" \" << joy << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "satr = input()\nharf = 0\nraqam = 0\njoy = 0\nfor c in satr:\n    if \"A\" <= c <= \"Z\":\n        c = chr(ord(c) + 32)\n    if \"a\" <= c <= \"z\":\n        harf += 1\n    elif \"0\" <= c <= \"9\":\n        raqam += 1\n    elif c == \" \":\n        joy += 1\nprint(harf, raqam, joy)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        String satr = new Scanner(System.in).nextLine();\n        int harf = 0, raqam = 0, joy = 0;\n        for (char c : satr.toCharArray()) {\n            if (c >= 'A' && c <= 'Z') c = (char) (c + 32);\n            if (c >= 'a' && c <= 'z') harf++;\n            else if (c >= '0' && c <= '9') raqam++;\n            else if (c == ' ') joy++;\n        }\n        System.out.println(harf + \" \" + raqam + \" \" + joy);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    int harf = 0, raqam = 0, joy = 0;\n    for (char c : satr) {\n        if (c >= 'A' && c <= 'Z') c = c + 32;\n        if (c >= 'a' && c <= 'z') harf++;\n        else if (c >= '0' && c <= '9') raqam++;\n        else if (c == ' ') joy++;\n    }\n    cout << harf << \" \" << raqam << \" \" << joy << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "Salom, Dunyo! 2024\n", "expected": "10 4 2", "hidden": false },
+        { "input": "abc\n", "expected": "3 0 0", "hidden": false },
+        { "input": "2026 yil 5 oy\n", "expected": "5 5 3", "hidden": true },
+        { "input": "Hello World 123\n", "expected": "10 3 2", "hidden": true },
+        { "input": "   \n", "expected": "0 0 3", "hidden": true }
+      ]
+    }
+  }
+}

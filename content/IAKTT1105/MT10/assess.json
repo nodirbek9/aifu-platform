@@ -1,0 +1,346 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Algoritm atamasi kimning nomidan kelib chiqqan?",
+          "ru": "От чьего имени произошло слово алгоритм?",
+          "en": "From whose name did the word algorithm come?"
+        },
+        "options": [
+          {
+            "uz": "Muhammad ibn Muso al-Xorazmiy",
+            "ru": "Мухаммада ибн Мусы аль-Хорезми",
+            "en": "Muhammad ibn Musa al-Khwarizmi"
+          },
+          {
+            "uz": "Mirzo Ulugʻbek",
+            "ru": "Мирзо Улугбека",
+            "en": "Mirzo Ulugbek"
+          },
+          {
+            "uz": "Abu Ali ibn Sino",
+            "ru": "Абу Али ибн Сины",
+            "en": "Abu Ali ibn Sina"
+          },
+          {
+            "uz": "Abu Rayhon Beruniy",
+            "ru": "Абу Райхана Беруни",
+            "en": "Abu Rayhan Beruni"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Soʻz IX asrda yashagan buyuk olim al-Xorazmiy nomidan kelib chiqqan.",
+          "ru": "Слово происходит от имени великого ученого IX века аль-Хорезми.",
+          "en": "The word comes from the name of the great 9th-century scholar al-Khwarizmi."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Algoritmning natijaviylik xossasi uning har doim chekli qadamdan soʻng natija berishini anglatadi.",
+          "ru": "Свойство результативности алгоритма означает, что он всегда даёт результат за конечное число шагов.",
+          "en": "The effectiveness property of an algorithm means it always gives a result after a finite number of steps."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Natijaviylik (chekli) xossasiga koʻra, algoritm cheklangan qadamlardan soʻng albatta natija berishi kerak.",
+          "ru": "Согласно свойству результативности (конечности), алгоритм должен обязательно дать результат за конечное число шагов.",
+          "en": "According to the effectiveness (finiteness) property, an algorithm must necessarily give a result after a finite number of steps."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Har qanday algoritmni qurish uchun qanday asosiy tuzilmalar ishlatiladi?",
+          "ru": "Какие базовые структуры используются для построения любого алгоритма?",
+          "en": "What basic structures are used to build any algorithm?"
+        },
+        "options": [
+          {
+            "uz": "Chiziqli (ketma-ketlik)",
+            "ru": "Линейная (следование)",
+            "en": "Sequence (linear)"
+          },
+          {
+            "uz": "Tarmoqlanuvchi (shart)",
+            "ru": "Разветвляющаяся (условие)",
+            "en": "Branching (condition)"
+          },
+          {
+            "uz": "Takrorlanuvchi (sikl)",
+            "ru": "Циклическая (повторение)",
+            "en": "Loop (repetition)"
+          },
+          {
+            "uz": "Tasodifiy (ixtiyoriy)",
+            "ru": "Случайная (произвольная)",
+            "en": "Random (arbitrary)"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Böhm–Jacopini teoremasiga koʻra har qanday algoritm uchta tuzilma (chiziqli, tarmoqlanuvchi, takrorlanuvchi) bilan quriladi.",
+          "ru": "По теореме Бёма — Якопини любой алгоритм можно построить из трёх структур (линейная, разветвляющаяся, циклическая).",
+          "en": "According to the Böhm–Jacopini theorem, any algorithm can be built from three structures (sequence, branching, loop)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tartiblanmagan roʻyxatdan kerakli elementni izlash uchun qaysi usuldan foydalanish mumkin?",
+          "ru": "Какой метод можно использовать для поиска нужного элемента в неупорядоченном списке?",
+          "en": "Which method can be used to search for a required element in an unsorted list?"
+        },
+        "options": [
+          {
+            "uz": "Faqat chiziqli qidiruv",
+            "ru": "Только линейный поиск",
+            "en": "Only linear search"
+          },
+          {
+            "uz": "Faqat ikkilik qidiruv",
+            "ru": "Только двоичный поиск",
+            "en": "Only binary search"
+          },
+          {
+            "uz": "Ikkalasidan ham",
+            "ru": "Обоими методами",
+            "en": "Both methods"
+          },
+          {
+            "uz": "Hech qaysi",
+            "ru": "Ни одним из них",
+            "en": "None of them"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ikkilik qidiruv faqat tartiblangan roʻyxatda ishlaydi, shuning uchun tartiblanmagan roʻyxatda faqat chiziqli qidiruvdan foydalanish mumkin.",
+          "ru": "Двоичный поиск работает только в упорядоченном списке, поэтому в неупорядоченном списке возможен только линейный поиск.",
+          "en": "Binary search works only in a sorted list, so in an unsorted list only linear search can be used."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tartiblangan roʻyxatda oʻrtadagi elementni tekshirish va qidiruv maydonini yarmiga boʻlish orqali ishlaydigan tez qidiruv algoritmi qanday ataladi?",
+          "ru": "Как называется быстрый алгоритм поиска, работающий путём проверки среднего элемента и деления области поиска пополам в упорядоченном списке?",
+          "en": "What is the fast search algorithm called that works by checking the middle element and halving the search area in a sorted list?"
+        },
+        "answers": [
+          "ikkilik",
+          "ikkilik qidiruv",
+          "binary",
+          "binary search",
+          "двоичный",
+          "двоичный поиск"
+        ],
+        "explanation": {
+          "uz": "Bu ikkilik qidiruv (O(log n) murakkablik) boʻlib, u har qadamda qidiriladigan elementlar sonini ikki barobar qisqartiradi.",
+          "ru": "Это двоичный поиск (сложность O(log n)), который на каждом шаге сокращает количество элементов для поиска в два раза.",
+          "en": "This is binary search (O(log n) complexity), which halves the number of elements to search at each step."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "O(n²) murakkablikdagi algoritm O(n) murakkablikdagiga qaraganda katta maʼlumotlarda samaraliroq (tezroq) ishlaydi.",
+          "ru": "Алгоритм со сложностью O(n²) работает эффективнее (быстрее) на больших данных, чем алгоритм со сложностью O(n).",
+          "en": "An algorithm with O(n²) complexity works more efficiently (faster) on large data than one with O(n) complexity."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "O(n²) murakkablikdagi algoritm juda sekin ishlaydi, chunki maʼlumot hajmi 1000 marta oshsa, vaqt 1 000 000 marta oshadi.",
+          "ru": "Алгоритм со сложностью O(n²) работает очень медленно, так как при увеличении объёма данных в 1000 раз время вырастает в 1 000 000 раз.",
+          "en": "An algorithm with O(n²) complexity is very slow, because if the data volume increases by 1,000 times, the time grows by 1,000,000 times."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "1 000 000 ta elementli tartiblangan roʻyxatda ikkilik qidiruv eng yomon holatda koʻpi bilan nechta taqqoslash qiladi?",
+          "ru": "Сколько сравнений максимум (в худшем случае) сделает двоичный поиск в упорядоченном списке из 1 000 000 элементов?",
+          "en": "At most how many comparisons (in the worst case) will binary search make in a sorted list of 1,000,000 elements?"
+        },
+        "answers": [
+          20
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "2^20 taxminan 1 000 000 ga teng boʻlgani uchun, qidiruv maydoni eng koʻpi bilan ~20 marta yarmiga boʻlinadi.",
+          "ru": "Так как 2^20 примерно равно 1 000 000, область поиска делится пополам максимум ~20 раз.",
+          "en": "Since 2^20 is approximately 1,000,000, the search area is halved at most ~20 times."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Algoritmning ommaviylik xossasi nimani anglatadi?",
+          "ru": "Что означает свойство массовости алгоритма?",
+          "en": "What does the generality property of an algorithm mean?"
+        },
+        "options": [
+          {
+            "uz": "Algoritm bir turdagi masalalarning butun sinfiga va turli kirish maʼlumotlariga yaroqli boʻlishini",
+            "ru": "Что алгоритм применим к целому классу однотипных задач и к разным входным данным",
+            "en": "That the algorithm works for a whole class of problems of one type and for different input data"
+          },
+          {
+            "uz": "Algoritm hamma odamlarga tushunarli boʻlishini",
+            "ru": "Что алгоритм должен быть понятен всем людям",
+            "en": "That the algorithm must be understandable to all people"
+          },
+          {
+            "uz": "Algoritmning qadamlari birin-ketin bajarilishini",
+            "ru": "Что шаги алгоритма выполняются друг за другом",
+            "en": "That the steps of the algorithm are executed one after another"
+          },
+          {
+            "uz": "Algoritmning har doim bitta aniq mijoz uchun ishlashini",
+            "ru": "Что алгоритм всегда работает только для одного конкретного клиента",
+            "en": "That the algorithm always works for only one specific customer"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ommaviylik xossasi (masalan, maoshni hisoblash) algoritm faqat bitta maʼlumot uchun emas, balki istalgan turdosh parametrlar uchun ishlashini bildiradi.",
+          "ru": "Свойство массовости (например, расчёт зарплаты) означает, что алгоритм работает не для одних конкретных данных, а для любых однотипных параметров.",
+          "en": "The generality property (e.g. payroll calculation) means the algorithm works not just for one specific set of data, but for any parameters of the same type."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qaysi holatlar algoritm xossalarining buzilishiga misol boʻladi?",
+          "ru": "Какие случаи являются примерами нарушения свойств алгоритма?",
+          "en": "Which cases are examples of violating the properties of an algorithm?"
+        },
+        "options": [
+          {
+            "uz": "Toʻxtash shartisiz yozilgan sikl",
+            "ru": "Цикл, написанный без условия остановки",
+            "en": "A loop written without a stopping condition"
+          },
+          {
+            "uz": "\"Taxminan shuncha qoʻshing\" kabi noaniq koʻrsatmalar",
+            "ru": "Неточные указания вроде \"прибавьте примерно столько\"",
+            "en": "Vague instructions like \"add approximately this much\""
+          },
+          {
+            "uz": "Algoritmni butun sinf masalalari uchun emas, faqat bitta misol uchun yozish",
+            "ru": "Написание алгоритма только для одного примера, а не для целого класса задач",
+            "en": "Writing an algorithm only for one example, not for a whole class of problems"
+          },
+          {
+            "uz": "Algoritmni psevdokod oʻrniga dasturlash tilida yozish",
+            "ru": "Написание алгоритма на языке программирования вместо псевдокода",
+            "en": "Writing an algorithm in a programming language instead of pseudocode"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Birinchi uchtasi natijaviylik, aniqlik va ommaviylik xossalarini buzadi. Algoritmni qaysi usulda yozish (dastur, psevdokod) uning xossalariga taʼsir qilmaydi.",
+          "ru": "Первые три нарушают свойства результативности, определённости и массовости. Способ записи алгоритма (программа, псевдокод) не влияет на его свойства.",
+          "en": "The first three violate the effectiveness, definiteness, and generality properties. The way an algorithm is written (program, pseudocode) does not affect its properties."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Ombordagi zaxira buyurtmasi",
+      "ru": "Заказ запаса на складе",
+      "en": "Warehouse stock order"
+    },
+    "statement": {
+      "uz": "Omborda qoldiq (stock) va minimal zaxira (min_reserve) miqdorlari berilgan. Agar qoldiq minimal zaxiradan kam boʻlsa, yetkazib beruvchiga buyurtma berish kerak. Buyurtma miqdori: min_reserve * 2 - stock. Agar qoldiq yetarli boʻlsa (yaʼni minimal zaxiradan kichik boʻlmasa), 0 chiqarish kerak. Dastur ikkita butun sonni alohida qatorlarda oʻqiydi: birinchi qatorda qoldiq, ikkinchi qatorda minimal zaxira. Natijani (buyurtma miqdori yoki 0) faqat son koʻrinishida bitta qatorda chiqaring.",
+      "ru": "На складе заданы остаток (stock) и минимальный запас (min_reserve). Если остаток меньше минимального запаса, нужно сделать заказ поставщику. Объем заказа: min_reserve * 2 - stock. Если остатка достаточно (не меньше min_reserve), нужно вывести 0. Программа читает два целых числа на отдельных строках: на первой строке остаток, на второй минимальный запас. Выведите результат (объем заказа или 0) на одной строке.",
+      "en": "The warehouse has a stock and a minimum reserve (min_reserve). If the stock is below the minimum reserve, an order must be placed with the supplier. The order amount is: min_reserve * 2 - stock. If the stock is sufficient (not less than min_reserve), it must output 0. The program reads two integers on separate lines: the stock on the first line, and the minimum reserve on the second line. Output the result (the order amount or 0) on a single line."
+    },
+    "code": {
+      "starter": {
+        "python": "stock = int(input())\nmin_reserve = int(input())\n\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int stock = in.nextInt();\n        int minReserve = in.nextInt();\n        \n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int stock, min_reserve;\n    cin >> stock >> min_reserve;\n    \n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "stock = int(input())\nmin_reserve = int(input())\nif stock < min_reserve:\n    print(min_reserve * 2 - stock)\nelse:\n    print(0)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int stock = in.nextInt();\n        int minReserve = in.nextInt();\n        if (stock < minReserve) {\n            System.out.println(minReserve * 2 - stock);\n        } else {\n            System.out.println(0);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int stock, min_reserve;\n    cin >> stock >> min_reserve;\n    if (stock < min_reserve) {\n        cout << min_reserve * 2 - stock << \"\\n\";\n    } else {\n        cout << 0 << \"\\n\";\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "10\n15\n",
+          "expected": "20",
+          "hidden": false
+        },
+        {
+          "input": "20\n15\n",
+          "expected": "0",
+          "hidden": false
+        },
+        {
+          "input": "15\n15\n",
+          "expected": "0",
+          "hidden": true
+        },
+        {
+          "input": "0\n10\n",
+          "expected": "20",
+          "hidden": true
+        },
+        {
+          "input": "100\n50\n",
+          "expected": "0",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

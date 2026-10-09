@@ -1,0 +1,221 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda matnni qayta ishlashning asosiy sxemasi qanday berilgan?",
+          "ru": "Как в занятии дана основная схема обработки текста?",
+          "en": "What is the main text-processing scheme given in the lesson?"
+        },
+        "options": [
+          { "uz": "soʻzlarga ajratish → har bir soʻzni qayta ishlash → qayta yigʻish", "ru": "разбить на слова → обработать каждое слово → собрать обратно", "en": "split into words → process each word → join back" },
+          { "uz": "satrni belgima-belgi oʻqish → har bir belgini sanash → natijani chiqarish", "ru": "читать строку посимвольно → подсчитать каждый символ → вывести результат", "en": "read the string character by character → count each character → print the result" },
+          { "uz": "soʻzlarni saralash → takrorlarni oʻchirish → alifbo boʻyicha chiqarish", "ru": "отсортировать слова → удалить повторы → вывести по алфавиту", "en": "sort the words → remove duplicates → print them alphabetically" },
+          { "uz": "bir nechta satrni oʻqish → ularni solishtirish → eng uzunini tanlash", "ru": "прочитать несколько строк → сравнить их → выбрать самую длинную", "en": "read several lines → compare them → pick the longest" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Xulosa boʻlimida: matnni qayta ishlashning asosiy sxemasi — soʻzlarga ajratish, har bir soʻzni qayta ishlash, qayta yigʻish.",
+          "ru": "В итогах: основная схема обработки текста — разбить на слова, обработать каждое слово, собрать обратно.",
+          "en": "The summary states the basic scheme: split into words, process every word, join back."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "C++ʼda `>>` operatori satrni soʻzlarga ajratishda boʻsh joylarni oʻzi tashlab ketadi.",
+          "ru": "В C++ оператор `>>` при разбиении строки на слова сам пропускает пробелы.",
+          "en": "In C++ the `>>` operator skips spaces by itself when splitting a string into words."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Uchinchi noziklik shunday: `>>` boʻsh joylarni oʻzi tashlaydi — bu soʻzlarga ajratishning eng oddiy usuli.",
+          "ru": "Третья тонкость именно такова: `>>` сам пропускает пробелы — это самый простой способ разбиения.",
+          "en": "The third subtlety says exactly this: `>>` skips spaces on its own — the simplest way of splitting."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Namunaviy masala (soʻzlar tartibini teskari aylantirish) uchta mustaqil qismga boʻlingan. Qaysilari?",
+          "ru": "Разобранная задача (обратный порядок слов) разбита на три независимые части. На какие?",
+          "en": "The sample problem (reversing the word order) is split into three independent parts. Which ones?"
+        },
+        "options": [
+          { "uz": "ajratish (`sozlarga_ajrat`)", "ru": "разбиение (`sozlarga_ajrat`)", "en": "splitting (`sozlarga_ajrat`)" },
+          { "uz": "eng uzun soʻzni topish (`eng_uzun`)", "ru": "поиск самого длинного слова (`eng_uzun`)", "en": "finding the longest word (`eng_uzun`)" },
+          { "uz": "soʻzlarni teskari tartibda yigʻish", "ru": "сборка слов в обратном порядке", "en": "joining the words in reverse order" },
+          { "uz": "soʻzlarni alifbo boʻyicha saralash", "ru": "сортировка слов по алфавиту", "en": "sorting the words alphabetically" }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Uchala tilda ham masala ajratish, eng uzunini topish va teskari tartibda yigʻish qismlariga boʻlingan; saralash unda yoʻq.",
+          "ru": "Во всех трёх языках задача разбита на разбиение, поиск самого длинного и сборку в обратном порядке; сортировки там нет.",
+          "en": "In all three languages the problem is split into splitting, finding the longest and joining in reverse; there is no sorting."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Javaʼda `split` bilan ajratishdan oldin nima uchun `trim()` chaqiriladi?",
+          "ru": "Зачем в Java вызывать `trim()` перед разбиением через `split`?",
+          "en": "Why is `trim()` called before splitting with `split` in Java?"
+        },
+        "options": [
+          { "uz": "satr boʻsh joy bilan boshlansa, `split` birinchi element sifatida boʻsh satr qaytargani uchun", "ru": "если строка начинается с пробела, `split` вернёт пустую строку первым элементом", "en": "because if the string starts with a space, `split` returns an empty string as its first element" },
+          { "uz": "`trim()` ajratgich belgisini oʻzgartirgani uchun", "ru": "потому что `trim()` меняет символ разделителя", "en": "because `trim()` changes the separator character" },
+          { "uz": "`split` faqat bittadan boʻsh joyda ishlagani uchun", "ru": "потому что `split` работает только с одиночным пробелом", "en": "because `split` only works on a single space" },
+          { "uz": "`trim()` satrni kichik harfga aylantirgani uchun", "ru": "потому что `trim()` переводит строку в нижний регистр", "en": "because `trim()` turns the string to lowercase" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ikkinchi noziklik: satr boʻsh joy bilan boshlansa, birinchi element boʻsh satr boʻladi — shuning uchun avval `trim()`.",
+          "ru": "Вторая тонкость: при начале с пробела первым элементом идёт пустая строка — поэтому сначала `trim()`.",
+          "en": "The second subtlety: a leading space makes the first element an empty string, hence `trim()` first."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Pythonʼda `\"  a  b \".split(\" \")` qancha elementli roʻyxat qaytaradi?",
+          "ru": "Сколько элементов вернёт `\"  a  b \".split(\" \")` в Python?",
+          "en": "How many elements does `\"  a  b \".split(\" \")` return in Python?"
+        },
+        "answers": [6],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Natija `\"\", \"\", \"a\", \"\", \"b\", \"\"` — olti element; `split(\" \")` boʻsh soʻzlar beradi.",
+          "ru": "Результат `\"\", \"\", \"a\", \"\", \"b\", \"\"` — шесть элементов: `split(\" \")` даёт пустые слова.",
+          "en": "The result is `\"\", \"\", \"a\", \"\", \"b\", \"\"` — six elements, since `split(\" \")` gives empty words."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Namunada eng uzun soʻzni topuvchi funksiya qanday nomlangan? Nomini yozing.",
+          "ru": "Как в образце названа функция, находящая самое длинное слово? Напишите её имя.",
+          "en": "What is the name of the function that finds the longest word in the sample? Write its name."
+        },
+        "answers": ["eng_uzun", "engUzun", "eng uzun"],
+        "explanation": {
+          "uz": "`eng_uzun` birinchi soʻzni oladi va qatʼiy `>` bilan solishtiradi, shuning uchun teng uzunlikda birinchisi qoladi.",
+          "ru": "`eng_uzun` берёт первое слово и сравнивает строгим `>`, поэтому при равной длине остаётся первое.",
+          "en": "`eng_uzun` starts with the first word and compares with a strict `>`, so the first one stays on a tie."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nima uchun topshiriqda Pythonʼning tayyor `str.title()` funksiyasidan foydalanish tavsiya etilmaydi?",
+          "ru": "Почему в задании не советуют использовать готовую функцию `str.title()` в Python?",
+          "en": "Why does the assignment advise against Python's ready `str.title()`?"
+        },
+        "options": [
+          { "uz": "u apostrof va raqamlardan keyin ham bosh harf qoʻyadi, maqsad esa formatlashni oʻzingiz yozish", "ru": "он ставит заглавную букву и после апострофов, и после цифр, а цель — написать форматирование самому", "en": "it also capitalises after apostrophes and digits, while the point is to write the formatting yourself" },
+          { "uz": "u faqat toʻliq katta harfli soʻzlar bilan ishlaydi", "ru": "он работает только со словами целиком из заглавных букв", "en": "it only works with words written entirely in capitals" },
+          { "uz": "u takroriy boʻsh joylarni oʻchirib yuboradi", "ru": "он удаляет повторяющиеся пробелы", "en": "it deletes repeated spaces" },
+          { "uz": "u juda sekin ishlaydi va testlardan oʻtmaydi", "ru": "он работает слишком медленно и не проходит тесты", "en": "it is too slow and does not pass the tests" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Baholash mezonlaridagi ogohlantirish: `str.title()` apostrof va raqamlardan keyin ham bosh harf qoʻyadi, vazifa esa formatlashni oʻzingiz yozish.",
+          "ru": "Предупреждение из критериев: `str.title()` ставит заглавную и после апострофов, и после цифр, а задача — написать форматирование самому.",
+          "en": "The grading warning says `str.title()` capitalises after apostrophes and digits too, while the task is to write the formatting yourself."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Topshiriqning baholash mezonlari va ogohlantirishlariga koʻra qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны согласно критериям оценки и предупреждениям задания?",
+          "en": "According to the grading criteria and the warnings, which statements are correct?"
+        },
+        "options": [
+          { "uz": "bitta harfli soʻz uchun `soz[1:]` boʻsh satr beradi — bu xato emas, lekin tekshirib koʻrish kerak", "ru": "для однобуквенного слова `soz[1:]` даёт пустую строку — это не ошибка, но стоит проверить", "en": "for a one-letter word `soz[1:]` gives an empty string — not a mistake, but worth testing" },
+          { "uz": "natija oxirida ortiqcha boʻsh joy qolmasligi kerak", "ru": "в конце результата не должно оставаться лишнего пробела", "en": "no extra space may remain at the end of the result" },
+          { "uz": "testlar jadvalida kamida 5 ta test boʻlishi shart", "ru": "таблица тестов должна содержать не менее 5 тестов", "en": "the table of tests must contain at least 5 tests" },
+          { "uz": "kiritish satrida boʻsh joylar boʻlmasligi kafolatlangan", "ru": "гарантировано, что во входной строке нет пробелов", "en": "the input line is guaranteed to have no spaces" }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda kamida bitta soʻz borligi kafolatlangan, lekin satr boʻsh joy bilan boshlanishi mumkin — shuning uchun soʻnggi ifoda notoʻgʻri.",
+          "ru": "В занятии гарантировано хотя бы одно слово, но строка может начинаться с пробела — поэтому последнее утверждение неверно.",
+          "en": "The lesson guarantees at least one word but says the line may start with a space, so the last statement is wrong."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Testlar jadvaliga koʻra, `␣␣salom dunyo␣` kiritilganda eng uzun soʻz boʻlib *dunyo* chiqadi.",
+          "ru": "Согласно таблице тестов, при вводе `␣␣salom dunyo␣` самым длинным словом выводится `dunyo`.",
+          "en": "According to the table of tests, the input `␣␣salom dunyo␣` makes the longest word `dunyo`."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Ikkala soʻz ham besh harfli: jadvalda eng uzuni `salom`, chunki qatʼiy `>` birinchisini saqlaydi.",
+          "ru": "Оба слова по пять букв: в таблице самое длинное — `salom`, так как строгое `>` сохраняет первое.",
+          "en": "Both words have five letters: the table gives `salom`, because the strict `>` keeps the first one."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Katta harfli soʻzlar va dehis",
+      "ru": "Заглавные слова и дефис",
+      "en": "Uppercase words joined by a hyphen"
+    },
+    "statement": {
+      "uz": "Bitta satr matn kiritiladi: soʻzlar lotin harflaridan iborat, oralarida bir yoki bir nechta boʻsh joy bor, satrning boshida va oxirida ham boʻsh joylar boʻlishi mumkin; kamida bitta soʻz bor. Har bir soʻzni toʻliq katta harfga aylantiring va soʻzlarni bittadan dehis (`-`) bilan ulab, bitta qatorda chiqaring — oxirida dehis qolmasligi kerak. Masalan, `dasturlash   tili` uchun dastur `DASTURLASH-TILI` chiqaradi. Ortiqcha boʻsh joylarni oʻz tilingizdagi usul bilan tashlab yuboring (`split()`, `trim()`dan keyin `split`, `>>`).",
+      "ru": "Вводится одна строка текста: слова состоят из латинских букв, между ними один или несколько пробелов, пробелы возможны в начале и в конце строки; хотя бы одно слово есть. Переведите каждое слово в верхний регистр и соедините слова одной дефисной чертой (`-`), выведя результат одной строкой — дефис в конце не ставится. Например, `dasturlash   tili` даёт `DASTURLASH-TILI`. Лишние пробелы отбросьте способом, принятым в вашем языке (`split()`, `split` после `trim()`, оператор `>>`).",
+      "en": "The input is one line of text: the words consist of Latin letters, separated by one or more spaces, and there may be spaces at the start and at the end; at least one word is present. Turn every word into upper case and join the words with a single hyphen (`-`), printing the result on one line — with no hyphen at the end. For example, `dasturlash   tili` gives `DASTURLASH-TILI`. For splitting, drop the extra spaces the way your own language does it: `split()`, `split` after `trim()`, or `>>`."
+    },
+    "code": {
+      "starter": {
+        "python": "sozlar = input().split(\" \")\nprint(\"-\".join(soz.upper() for soz in sozlar))\n",
+        "java": "import java.util.Locale;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] sozlar = in.nextLine().split(\" +\");\n        StringBuilder natija = new StringBuilder();\n        for (String soz : sozlar) {\n            natija.append(soz.toUpperCase(Locale.ROOT)).append('-');\n        }\n        System.out.println(natija);\n    }\n}\n",
+        "cpp": "#include <cctype>\n#include <iostream>\n#include <string>\nusing namespace std;\n\nstring katta(const string& soz) {\n    string natija;\n    for (char c : soz) natija += char(toupper(static_cast<unsigned char>(c)));\n    return natija;\n}\n\nint main() {\n    string soz;\n    while (cin >> soz) cout << katta(soz) << '-';\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "sozlar = input().split()\nprint(\"-\".join(soz.upper() for soz in sozlar))\n",
+        "java": "import java.util.Locale;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] sozlar = in.nextLine().trim().split(\" +\");\n        StringBuilder natija = new StringBuilder();\n        for (int i = 0; i < sozlar.length; i++) {\n            if (i > 0) natija.append('-');\n            natija.append(sozlar[i].toUpperCase(Locale.ROOT));\n        }\n        System.out.println(natija);\n    }\n}\n",
+        "cpp": "#include <cctype>\n#include <iostream>\n#include <string>\nusing namespace std;\n\nstring katta(const string& soz) {\n    string natija;\n    for (char c : soz) natija += char(toupper(static_cast<unsigned char>(c)));\n    return natija;\n}\n\nint main() {\n    string natija;\n    string soz;\n    while (cin >> soz) {\n        if (!natija.empty()) natija += '-';\n        natija += katta(soz);\n    }\n    cout << natija << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "dasturlash   tili\n", "expected": "DASTURLASH-TILI", "hidden": false },
+        { "input": "  salom dunyo \n", "expected": "SALOM-DUNYO", "hidden": false },
+        { "input": "yolgiz\n", "expected": "YOLGIZ", "hidden": true },
+        { "input": "a b c\n", "expected": "A-B-C", "hidden": true },
+        { "input": "   ONE  two   THREE\n", "expected": "ONE-TWO-THREE", "hidden": true }
+      ]
+    }
+  }
+}

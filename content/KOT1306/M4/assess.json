@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Uzatish rejimlaridan qaysi birida maʼlumot ikki yoʻnalishda bir vaqtda uzatiladi?",
+          "ru": "В каком из режимов передачи данные идут в двух направлениях одновременно?",
+          "en": "In which transmission mode does data flow in both directions at the same time?"
+        },
+        "options": [
+          {
+            "uz": "Simpleks",
+            "ru": "Простой (simplex)",
+            "en": "Simplex"
+          },
+          {
+            "uz": "Yarim dupleks",
+            "ru": "Полудуплекс",
+            "en": "Half duplex"
+          },
+          {
+            "uz": "Toʻliq dupleks",
+            "ru": "Дуплекс",
+            "en": "Full duplex"
+          },
+          {
+            "uz": "Asinxron uzatish",
+            "ru": "Асинхронная передача",
+            "en": "Asynchronous transmission"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Telefon suhbati va kommutatorli Ethernet — toʻliq dupleks; yarim dupleksda esa ikki yoʻnalish navbat bilan ishlaydi.",
+          "ru": "Разговор по телефону и коммутируемый Ethernet — дуплекс; в полудуплексе два направления работают по очереди.",
+          "en": "A phone call and switched Ethernet are full duplex; in half duplex the two directions take turns."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Barcha zamonaviy tarmoqlar (Ethernet, USB, SATA) parallel uzatishdan foydalanadi.",
+          "ru": "Все современные сети (Ethernet, USB, SATA) используют параллельную передачу.",
+          "en": "All modern networks (Ethernet, USB, SATA) use parallel transmission."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Barcha zamonaviy tarmoqlar ketma-ket ishlaydi: bitlar bitta liniya orqali birin-ketin uzatiladi. Parallel uzatish uzun masofada bitlarning orqada qolishi (skew) tufayli chetlashtirilgan.",
+          "ru": "Все современные сети работают последовательно: биты идут один за другим по одной линии. Параллельная передача ушла из-за рассогласования (skew) битов на длинных дистанциях.",
+          "en": "All modern networks are serial: bits go one after another over a single line. Parallel transmission was dropped because of bit skew over long distances."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Modulyatsiya turi va oʻzgaruvchi parametr juftliklaridan qaysilari toʻgʻri?",
+          "ru": "Какие из пар «вид модуляции — что изменяется» верны?",
+          "en": "Which pairs of modulation type and what it changes are correct?"
+        },
+        "options": [
+          {
+            "uz": "AM / ASK — toʻlqin amplitudasi",
+            "ru": "AM / ASK — амплитуда волны",
+            "en": "AM / ASK — the amplitude of the wave"
+          },
+          {
+            "uz": "FM / FSK — toʻlqin fazasi",
+            "ru": "FM / FSK — фаза волны",
+            "en": "FM / FSK — the phase of the wave"
+          },
+          {
+            "uz": "PM / PSK — toʻlqin chastotasi",
+            "ru": "PM / PSK — частота волны",
+            "en": "PM / PSK — the frequency of the wave"
+          },
+          {
+            "uz": "QAM — amplituda va faza birga",
+            "ru": "QAM — амплитуда и фаза вместе",
+            "en": "QAM — amplitude and phase together"
+          }
+        ],
+        "correct": [0, 3],
+        "explanation": {
+          "uz": "FM chastotani, PM fazani oʻzgartiradi — ularning juftliklari almashtirilgan. AM amplitudani, QAM esa amplituda va fazani birga oʻzgartiradi.",
+          "ru": "FM меняет частоту, а PM — фазу: эти пары перепутаны. AM меняет амплитуду, QAM — амплитуду и фазу вместе.",
+          "en": "FM changes the frequency and PM the phase — those pairs are swapped. AM changes the amplitude; QAM changes amplitude and phase together."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Shennon formulasi nimani beradi?",
+          "ru": "Что даёт формула Шеннона?",
+          "en": "What does the Shannon formula give?"
+        },
+        "options": [
+          {
+            "uz": "Shovqinli kanalda xatosiz uzatishning nazariy chegarasi",
+            "ru": "Теоретический предел безошибочной передачи в шумном канале",
+            "en": "The theoretical limit of error-free transmission on a noisy channel"
+          },
+          {
+            "uz": "Kenglik va sathlar soni boʻyicha shovqinsiz kanal chegarasi",
+            "ru": "Предел бесшумного канала по ширине и числу уровней",
+            "en": "The limit of a noiseless channel from bandwidth and number of levels"
+          },
+          {
+            "uz": "Paketning kanaldan uzatilish vaqtini",
+            "ru": "Время передачи пакета по каналу",
+            "en": "The time to transmit a packet over the channel"
+          },
+          {
+            "uz": "Signalning muhitdagi tarqalish tezligini",
+            "ru": "Скорость распространения сигнала в среде",
+            "en": "The speed of the signal through the medium"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shennon — shovqinli kanal: C = B log₂(1 + S/N). Ikkinchi variant — Naykvist formulasi; vaqt va tezlik formulalarga emas, kechikish boʻlimiga tegishli.",
+          "ru": "Шеннон — про шумный канал: C = B log₂(1 + S/N). Второй вариант — формула Найквиста; время и скорость относятся к разделу задержек.",
+          "en": "Shannon is about the noisy channel: C = B log₂(1 + S/N). The second option is the Nyquist formula; time and speed belong to the delays section."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kengligi 4000 Hz boʻlgan shovqinsiz kanalda 8 sathli signal bilan eng katta tezlik necha bit/s? Naykvist formulasidan foydalaning.",
+          "ru": "Какая максимальная скорость (в бит/с) достижима на бесшумном канале шириной 4000 Гц с 8-уровневым сигналом? Используйте формулу Найквиста.",
+          "en": "What is the highest rate in bit/s on a noiseless 4000 Hz channel with an 8-level signal, by the Nyquist formula?"
+        },
+        "answers": [24000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "C = 2 × 4000 × log₂ 8 = 2 × 4000 × 3 = 24 000 bit/s.",
+          "ru": "C = 2 × 4000 × log₂ 8 = 2 × 4000 × 3 = 24 000 бит/с.",
+          "en": "C = 2 × 4000 × log₂ 8 = 2 × 4000 × 3 = 24 000 bit/s."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Modulyatsiya va demodulyatsiyaning ikkalasini bajaradigan qurilma qanday ataladi?",
+          "ru": "Как называется устройство, выполняющее и модуляцию, и демодуляцию?",
+          "en": "What is a device that both modulates and demodulates called?"
+        },
+        "answers": ["modem", "Modem"],
+        "explanation": {
+          "uz": "Nomi shu ikki soʻzning qisqartmasi: modulyator–demodulyator → modem.",
+          "ru": "Название — сокращение этих двух слов: модулятор–демодулятор → modem.",
+          "en": "Its name is the blend of the two words: modulator–demodulator → modem."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "1500 baytli paket 100 Mbit/s kanalda uzatilishi uchun qancha mikrosekund ketadi? Faqat uzatish kechikishini hisoblang.",
+          "ru": "Сколько микросекунд занимает передача пакета в 1500 байт по каналу 100 Мбит/с? Считайте только задержку передачи.",
+          "en": "How many microseconds does it take to transmit a 1500-byte packet over a 100 Mbit/s channel? Count only the transmission delay."
+        },
+        "answers": [120],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Uzatish kechikishi = L / R: 1500 × 8 = 12 000 bit, 12 000 / (100 × 10⁶) s = 120 mks.",
+          "ru": "Задержка передачи = L / R: 1500 × 8 = 12 000 бит; 12 000 / (100 × 10⁶) с = 120 мкс.",
+          "en": "Transmission delay = L / R: 1500 × 8 = 12 000 bits; 12 000 / (100 × 10⁶) s = 120 microseconds."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Juft juftlik biti bilan uzatilayotgan 8 bitli soʻzda ikkita bit buzilsa, xato baribir aniqlanadi.",
+          "ru": "Если в 8-битном слове с чётным битом чётности испорчены два бита, ошибка всё равно будет обнаружена.",
+          "en": "With even parity, if two bits of the transmitted 8-bit word are corrupted, the error is still detected."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Ikkita bit buzilganda birlar soni yana juft boʻlib qoladi va xato aniqlanmaydi. Shuning uchun tarmoqlarda juftlik biti emas, CRC ishlatiladi.",
+          "ru": "При двух испорченных битах число единиц снова чётное — ошибка не обнаруживается. Поэтому в сетях используют не бит чётности, а CRC.",
+          "en": "With two corrupted bits the number of ones is even again, so the error is not detected. That is why networks use CRC, not a parity bit."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tezlik, kechikish va fizik muhitlar haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о скорости, задержках и физических средах верны?",
+          "en": "Which statements about rate, delays and physical media are correct?"
+        },
+        "options": [
+          {
+            "uz": "16-QAM da bit/s tezlik bod sonidan 4 marta katta",
+            "ru": "В 16-QAM скорость в бит/с в 4 раза больше числа бод",
+            "en": "In 16-QAM the bit/s rate is four times the baud"
+          },
+          {
+            "uz": "Kanal tezligini oshirish tarqalish kechikishini ham kamaytiradi",
+            "ru": "Увеличение скорости канала уменьшает и задержку распространения",
+            "en": "Raising the channel rate also lowers the propagation delay"
+          },
+          {
+            "uz": "Oʻralgan juftlikda Ethernet segmenti uzunligi 100 m bilan cheklangan",
+            "ru": "Длина сегмента Ethernet на витой паре ограничена 100 м",
+            "en": "An Ethernet segment on twisted pair is limited to 100 m"
+          },
+          {
+            "uz": "Optik tola elektromagnit shovqinga oʻralgan juftlikdan sezgirroq",
+            "ru": "Оптоволокно чувствительнее к электромагнитным помехам, чем витая пара",
+            "en": "Optical fibre is more sensitive to electromagnetic noise than twisted pair"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Tezlik faqat uzatish kechikishini kamaytiradi — tarqalish kechikishi masofa va signal tezligiga bogʻliq. Optik tola shovqinga immun, sezgir boʻlgani — oʻralgan juftlik.",
+          "ru": "Скорость уменьшает только задержку передачи — задержка распространения зависит от расстояния и скорости сигнала. Оптоволокно невосприимчиво к помехам, чувствительна — витая пара.",
+          "en": "Rate lowers only the transmission delay — propagation delay depends on distance and signal speed. Fibre is immune to noise; it is twisted pair that is sensitive."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Boddan bit/s tezlikka",
+      "ru": "От бод к бит/с",
+      "en": "From baud to bit/s"
+    },
+    "statement": {
+      "uz": "Bod — sekundiga signal oʻzgarishlari (belgilar) soni, bit/s esa sekundiga bitlar soni. Agar bitta belgi M xil holatdan birini olsa, u log₂ M bit tashiydi: bit/s = bod × log₂ M. Dasturingiz bitta satrdan ikkita butun sonni oʻqisin: bod va M (M — 2 ning darajasi, 2 dan 256 gacha). Sekundiga bitlar sonini keyingi qatorda, faqat butun son koʻrinishida chiqaring — hech qanday qoʻshimcha soʻz yozmang. Masalan, 4000 16 kiritsa, dastur 16000 chiqaradi (16 sath → har belgi 4 bit).",
+      "ru": "Бод — число изменений сигнала (символов) в секунду, бит/с — число бит в секунду. Если каждый символ принимает одну из M состояний, он несёт log₂ M бит: бит/с = бод × log₂ M. Ваша программа должна прочитать из одной строки два целых числа: бод и M (M — степень двойки от 2 до 256) и вывести число бит в секунду следующей строкой — только целое число, без слов и пояснений. Например, при вводе 4000 16 программа выводит 16000 (16 уровней → 4 бита на символ).",
+      "en": "Baud is the number of signal changes (symbols) per second; bit/s is the number of bits per second. If each symbol takes one of M states, it carries log₂ M bits: bit/s = baud × log₂ M. Your program must read two integers from one line, baud and M (M is a power of two, from 2 to 256), and print the number of bits per second on the next line — only the integer, with no words or label. For example, the input 4000 16 makes the program print 16000 (16 levels → 4 bits per symbol)."
+    },
+    "code": {
+      "starter": {
+        "python": "baud, m = map(int, input().split())\nbits = 0\nwhile m > 1:\n    m //= 2\n    bits += 1\nprint(baud)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long baud = in.nextLong();\n        int m = in.nextInt();\n        int bits = 0;\n        while (m > 1) {\n            m /= 2;\n            bits++;\n        }\n        System.out.println(baud);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long baud;\n    int m;\n    cin >> baud >> m;\n    int bits = 0;\n    while (m > 1) {\n        m /= 2;\n        bits++;\n    }\n    cout << baud << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "baud, m = map(int, input().split())\nbits = 0\nwhile m > 1:\n    m //= 2\n    bits += 1\nprint(baud * bits)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long baud = in.nextLong();\n        int m = in.nextInt();\n        int bits = 0;\n        while (m > 1) {\n            m /= 2;\n            bits++;\n        }\n        System.out.println(baud * bits);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long baud;\n    int m;\n    cin >> baud >> m;\n    int bits = 0;\n    while (m > 1) {\n        m /= 2;\n        bits++;\n    }\n    cout << baud * bits << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4000 16\n", "expected": "16000", "hidden": false },
+        { "input": "2400 2\n", "expected": "2400", "hidden": false },
+        { "input": "250000 8\n", "expected": "750000", "hidden": true },
+        { "input": "1000000 256\n", "expected": "8000000", "hidden": true },
+        { "input": "7 4\n", "expected": "14", "hidden": true }
+      ]
+    }
+  }
+}

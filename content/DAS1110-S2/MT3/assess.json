@@ -1,0 +1,301 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Dinamik massiv qanday massiv?",
+          "ru": "Что такое динамический массив?",
+          "en": "What is a dynamic array?"
+        },
+        "options": [
+          {
+            "uz": "Dastur ishlayotganda kerakli oʻlchamda yaratiladigan massiv",
+            "ru": "Массив, который создаётся нужного размера во время работы программы",
+            "en": "An array created at the needed size while the program runs"
+          },
+          {
+            "uz": "Oʻlchami dastur yozilganda belgilanib, keyin oʻzgarmaydigan massiv",
+            "ru": "Массив, размер которого задаётся при написании программы и не меняется",
+            "en": "An array whose size is set when the program is written and never changes"
+          },
+          {
+            "uz": "Faqat matnlarni saqlaydigan massiv",
+            "ru": "Массив, который хранит только тексты",
+            "en": "An array that stores only text"
+          },
+          {
+            "uz": "Koʻrsatkichi boʻlmagan massiv",
+            "ru": "Массив, у которого нет указателя",
+            "en": "An array that has no pointer"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Natija massivi oʻlchami oldindan nomaʼlum boʻlganda, u dastur ishlayotganda, kerakli oʻlchamda yaratiladi.",
+          "ru": "Когда размер результата заранее неизвестен, массив создаётся во время работы программы — нужного размера.",
+          "en": "When the size of the result is not known in advance, the array is created while the program runs, at the size needed."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "C++ʼda `new[]` bilan ajratilgan xotira `delete[]` bilan boʻshatiladi.",
+          "ru": "В C++ память, выделенная через new[], освобождается с помощью delete[].",
+          "en": "In C++, memory allocated with new[] is freed with delete[]."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsning xulosasi shunday: `new[]` bilan ajratilgan xotira `delete[]` bilan boʻshatiladi.",
+          "ru": "Так сказано в выводе занятия: память, выделенная new[], освобождается через delete[].",
+          "en": "The lesson's summary says exactly this: memory allocated with new[] is freed with delete[]."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Dars jadvalidagi dinamik massiv yaratish usullaridan qaysilari toʻgʻri?",
+          "ru": "Какие из способов создания динамического массива из таблицы занятия верны?",
+          "en": "Which ways of creating a dynamic array from the lesson's table are correct?"
+        },
+        "options": [
+          {
+            "uz": "Python: `[0] * k` yoki `append`",
+            "ru": "Python: [0] * k или append",
+            "en": "Python: [0] * k or append"
+          },
+          {
+            "uz": "Java: `new int[k]`",
+            "ru": "Java: new int[k]",
+            "en": "Java: new int[k]"
+          },
+          {
+            "uz": "C++ (vector): `vector<int> v(k);`",
+            "ru": "C++ (vector): vector<int> v(k);",
+            "en": "C++ (vector): vector<int> v(k);"
+          },
+          {
+            "uz": "C++ (new): `int p = new int[k];`",
+            "ru": "C++ (new): int p = new int[k];",
+            "en": "C++ (new): int p = new int[k];"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "`new int[k]` koʻrsatkich qaytaradi, shuning uchun toʻgʻri yozuv `int* p = new int[k];` — oddiy `int p` emas.",
+          "ru": "new int[k] возвращает указатель, поэтому правильная запись — int* p = new int[k];, а не просто int p.",
+          "en": "new int[k] returns a pointer, so the correct form is int* p = new int[k];, not a plain int p."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ikki oʻtishli usulning birinchi oʻtishida nima qilinadi?",
+          "ru": "Что делается на первом проходе метода двух проходов?",
+          "en": "What is done on the first pass of the two-pass method?"
+        },
+        "options": [
+          {
+            "uz": "Natijaga nechta element kerakligi sanaladi",
+            "ru": "Подсчитывается, сколько элементов понадобится",
+            "en": "It counts how many elements will be needed"
+          },
+          {
+            "uz": "Natija massivi elementlar bilan toʻldiriladi",
+            "ru": "Массив-результат заполняется элементами",
+            "en": "The result array is filled with the elements"
+          },
+          {
+            "uz": "Boshlangʻich massiv saralanadi",
+            "ru": "Исходный массив сортируется",
+            "en": "The original array is sorted"
+          },
+          {
+            "uz": "Ajratilgan xotira boʻshatiladi",
+            "ru": "Освобождается выделенная память",
+            "en": "The allocated memory is freed"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Birinchisi sanash, keyin xotira ajratiladi, ikkinchi oʻtishda toʻldiriladi.",
+          "ru": "Сначала подсчёт, затем выделение памяти, и только второй проход заполняет массив.",
+          "en": "First counting, then allocation; only the second pass fills the array."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Namunaviy masalada n = 6, massiv `4 9 1 7 3 9` va x = 4 boʻlsa, yangi massivda nechta element boʻladi?",
+          "ru": "В задаче-образце: n = 6, массив 4 9 1 7 3 9, x = 4. Сколько элементов будет в новом массиве?",
+          "en": "In the sample problem: n = 6, the array 4 9 1 7 3 9, x = 4. How many elements does the new array have?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "4 dan qatʼiy katta elementlar 9, 7, 9 — uchta; bu darsdagi testlar jadvalining birinchi satri.",
+          "ru": "Элементы строго больше 4 — это 9, 7, 9: три штуки; первая строка таблицы тестов из занятия.",
+          "en": "The elements strictly greater than 4 are 9, 7, 9 — three of them; the first row of the lesson's test table."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Javaʼda massivning uzunligi qaysi maydonda saqlanadi?",
+          "ru": "В каком поле хранится длина массива в Java?",
+          "en": "In which field does a Java array keep its length?"
+        },
+        "answers": ["length"],
+        "explanation": {
+          "uz": "Dars jadvoli: Javaʼda massiv qaytariladi, uning uzunligi `length` da.",
+          "ru": "Таблица занятия: массив в Java возвращается, его длина хранится в length.",
+          "en": "The lesson's table: the array is returned and its length lives in length."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`*q++ = *p` qanday amal bajaradi?",
+          "ru": "Что делает выражение *q++ = *p?",
+          "en": "What does the expression *q++ = *p do?"
+        },
+        "options": [
+          {
+            "uz": "`q` koʻrsatgan joyga `p` koʻrsatgan qiymatni yozadi, soʻng `q` ni keyingi elementga suradi",
+            "ru": "Записывает значение, на которое указывает p, в место, указанное q, затем сдвигает q к следующему элементу",
+            "en": "Writes the value p points to into the place q points to, then moves q to the next element"
+          },
+          {
+            "uz": "Avval `p` ni keyingi elementga suradi, soʻng qiymatni `q` ga yozadi",
+            "ru": "Сначала сдвигает p к следующему элементу, затем записывает значение в q",
+            "en": "First moves p to the next element, then writes the value into q"
+          },
+          {
+            "uz": "Ikkala koʻrsatkichni solishtiradi",
+            "ru": "Сравнивает два указателя",
+            "en": "Compares the two pointers"
+          },
+          {
+            "uz": "Ajratilgan xotirani boʻshatadi",
+            "ru": "Освобождает выделенную память",
+            "en": "Frees the allocated memory"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda shunday izohlangan: yoz, keyin sur — shu bilan massiv elementlari birma-bir natijaga oʻtadi.",
+          "ru": "В занятии так: записать, затем сдвинуть — так элементы массива переносятся в результат по одному.",
+          "en": "The lesson explains it as: write, then move — that is how the elements are copied into the result one by one."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dars xulosasiga koʻra qaysi gaplar toʻgʻri?",
+          "ru": "Какие утверждения верны согласно выводу занятия?",
+          "en": "Which statements are correct according to the lesson's summary?"
+        },
+        "options": [
+          {
+            "uz": "Natija oʻlchami nomaʼlum boʻlsa, ikki oʻtish yoki oʻsuvchi massiv usulidan foydalanish mumkin",
+            "ru": "Если размер результата неизвестен, можно использовать два прохода или растущий массив",
+            "en": "If the result's size is unknown, use either the two-pass method or a growing array"
+          },
+          {
+            "uz": "C++ʼda funksiya `new` bilan ajratilgan massivni qaytarsa, uni chaqiruvchi boʻshatadi",
+            "ru": "В C++ если функция возвращает массив, выделенный new, освобождает его вызывающий",
+            "en": "In C++, if a function returns an array allocated with new, the caller frees it"
+          },
+          {
+            "uz": "C++ koʻrsatkichi massiv uzunligini oʻzida saqlaydi",
+            "ru": "Указатель в C++ хранит длину массива в себе",
+            "en": "A C++ pointer stores the array's length inside itself"
+          },
+          {
+            "uz": "Javaʼda funksiya qaytargan massiv uchun `delete[]` shart",
+            "ru": "Для массива, возвращённого функцией в Java, обязателен delete[]",
+            "en": "An array returned by a function in Java requires delete[]"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Koʻrsatkich uzunlikni saqlamaydi — shuning uchun u alohida qaytariladi; Java va Pythonʼda esa xotira avtomatik boʻshatiladi, uzunlik massivning oʻzida.",
+          "ru": "Указатель не хранит длину — поэтому её возвращают отдельно; в Java и Python память освобождается автоматически, а длина есть у самого массива.",
+          "en": "A pointer keeps no length — it is returned separately; in Java and Python memory is freed automatically and the length belongs to the array itself."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Birlashtirish (merge) topshirigʻida ikkala massivning teng elementlaridan faqat bittasi natijaga tushadi.",
+          "ru": "В задании на слияние из равных элементов двух массивов в результат попадает только один.",
+          "en": "In the merge assignment, of two equal elements only one goes into the result."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dars ogohlantirishida yozilgan: teng elementlar ikkalasi ham natijaga tushadi, hech biri yoʻqolmasligi kerak.",
+          "ru": "В предупреждении занятия: равные элементы входят в результат оба, ни один не должен потеряться.",
+          "en": "The lesson's warning says: both equal elements go into the result; neither may be lost."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Massivlarni navbatma-navbat birlashtirish",
+      "ru": "Соединение массивов по очереди",
+      "en": "Combining two arrays turn by turn"
+    },
+    "statement": {
+      "uz": "Ikkita massivni yangi massivga navbatma-navbat koʻchiring: avval a[0], soʻng b[0], soʻng a[1], b[1] va hokazo. Bir massiv tugasa, ikkinchisining qolgan elementlarini oʻz tartibida natijaga qoʻshing. Qiymatlarni solishtirmang — bu saralangan merge emas. Kirish: birinchi satrda n, ikkinchisida n ta butun son boʻsh joy bilan, uchinchisida m, toʻrtinchisida m ta butun son. Chiqish: bitta satrda natija massivi, qoʻshni elementlar orasida bittadan boʻsh joy. Masalan, 3 / 1 4 9 / 4 / 2 5 3 8 kirilsa, dastur 1 2 4 5 9 3 8 chiqaradi. 1 ≤ n, m ≤ 100, elementlarning moduli 1000 dan oshmaydi.",
+      "ru": "Перенесите два массива в новый по очереди: сначала a[0], затем b[0], затем a[1], b[1] и так далее. Когда один массив закончится, допишите остаток другого в его исходном порядке. Значения не сравнивайте — это не слияние отсортированных массивов. Ввод: в первой строке n, во второй — n целых чисел через пробел, в третьей — m, в четвёртой — m целых чисел. Вывод: одна строка — элементы результата, разделённые одним пробелом. Например, на ввод 3 / 1 4 9 / 4 / 2 5 3 8 программа выводит 1 2 4 5 9 3 8. 1 ≤ n, m ≤ 100, модуль элементов не превосходит 1000.",
+      "en": "Copy the two arrays into a new one taking turns: first a[0], then b[0], then a[1], b[1], and so on. When one array runs out, append the rest of the other in its original order. Do not compare values — this is not a sorted merge. Input: the first line holds n, the second n integers separated by spaces, the third m, the fourth m integers. Output: one line with the result elements, neighbours separated by a single space. For example, the input 3 / 1 4 9 / 4 / 2 5 3 8 makes the program print 1 2 4 5 9 3 8. 1 ≤ n, m ≤ 100, elements at most 1000 in absolute value."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\nm = int(input())\nb = list(map(int, input().split()))\nres = []\nfor i in range(min(n, m)):\n    res.append(a[i])\n    res.append(b[i])\nprint(*res)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n        int m = in.nextInt();\n        int[] b = new int[m];\n        for (int i = 0; i < m; i++) b[i] = in.nextInt();\n        int[] res = new int[n + m];\n        int j = 0;\n        for (int i = 0; i < Math.min(n, m); i++) {\n            res[j++] = a[i];\n            res[j++] = b[i];\n        }\n        for (int i = 0; i < j; i++) {\n            if (i > 0) System.out.print(\" \");\n            System.out.print(res[i]);\n        }\n        System.out.println();\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int* a = new int[n];\n    for (int i = 0; i < n; i++) cin >> a[i];\n    int m;\n    cin >> m;\n    int* b = new int[m];\n    for (int i = 0; i < m; i++) cin >> b[i];\n    int* res = new int[n + m];\n    int j = 0;\n    int k = n < m ? n : m;\n    for (int i = 0; i < k; i++) {\n        res[j++] = a[i];\n        res[j++] = b[i];\n    }\n    for (int i = 0; i < j; i++) {\n        if (i > 0) cout << ' ';\n        cout << res[i];\n    }\n    cout << endl;\n    delete[] a;\n    delete[] b;\n    delete[] res;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\nm = int(input())\nb = list(map(int, input().split()))\nres = []\nfor i in range(min(n, m)):\n    res.append(a[i])\n    res.append(b[i])\nfor i in range(min(n, m), n):\n    res.append(a[i])\nfor i in range(min(n, m), m):\n    res.append(b[i])\nprint(*res)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n        int m = in.nextInt();\n        int[] b = new int[m];\n        for (int i = 0; i < m; i++) b[i] = in.nextInt();\n        int[] res = new int[n + m];\n        int j = 0;\n        for (int i = 0; i < n || i < m; i++) {\n            if (i < n) res[j++] = a[i];\n            if (i < m) res[j++] = b[i];\n        }\n        for (int i = 0; i < j; i++) {\n            if (i > 0) System.out.print(\" \");\n            System.out.print(res[i]);\n        }\n        System.out.println();\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int* a = new int[n];\n    for (int i = 0; i < n; i++) cin >> a[i];\n    int m;\n    cin >> m;\n    int* b = new int[m];\n    for (int i = 0; i < m; i++) cin >> b[i];\n    int* res = new int[n + m];\n    int j = 0;\n    for (int i = 0; i < n || i < m; i++) {\n        if (i < n) res[j++] = a[i];\n        if (i < m) res[j++] = b[i];\n    }\n    for (int i = 0; i < j; i++) {\n        if (i > 0) cout << ' ';\n        cout << res[i];\n    }\n    cout << endl;\n    delete[] a;\n    delete[] b;\n    delete[] res;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\n1 4 9\n4\n2 5 3 8\n", "expected": "1 2 4 5 9 3 8", "hidden": false },
+        { "input": "2\n5 6\n2\n7 8\n", "expected": "5 7 6 8", "hidden": false },
+        { "input": "1\n10\n3\n1 2 3\n", "expected": "10 1 2 3", "hidden": true },
+        { "input": "4\n4 3 2 1\n1\n9\n", "expected": "4 9 3 2 1", "hidden": true },
+        { "input": "3\n-1 -2 -3\n3\n5 6 7\n", "expected": "-1 5 -2 6 -3 7", "hidden": true }
+      ]
+    }
+  }
+}

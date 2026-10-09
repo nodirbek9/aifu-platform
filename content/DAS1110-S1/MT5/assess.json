@@ -1,0 +1,279 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Dasturda matematik vektor odatda qanday saqlanadi?",
+          "ru": "Как в программе обычно хранят математический вектор?",
+          "en": "How is a mathematical vector usually kept in a program?"
+        },
+        "options": [
+          {
+            "uz": "Oddiy bir oʻlchovli massiv sifatida",
+            "ru": "Как обычный одномерный массив",
+            "en": "As an ordinary one-dimensional array"
+          },
+          {
+            "uz": "Ikki oʻlchovli matritsa koʻrinishida",
+            "ru": "В виде двумерной матрицы",
+            "en": "As a two-dimensional matrix"
+          },
+          {
+            "uz": "Faqat matn faylida",
+            "ru": "Только в текстовом файле",
+            "en": "Only in a text file"
+          },
+          {
+            "uz": "Dasturda saqlanmaydi, faqat qogʻozda yoziladi",
+            "ru": "Не хранится в программе, только на бумаге",
+            "en": "Not stored in the program at all, only on paper"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars: „Dasturda vektor oddiy bir oʻlchovli massiv sifatida saqlanadi“, *n* oʻlchamli vektor — uzunligi *n* boʻlgan massiv.",
+          "ru": "В занятии: «в программе вектор хранится как обычный одномерный массив», n-мерный вектор — массив длины n.",
+          "en": "The lesson: in a program a vector is kept as an ordinary one-dimensional array; an n-dimensional vector is an array of length n."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ikki vektor ustida amal bajarish uchun ularning oʻlchamlari bir xil boʻlishi shart.",
+          "ru": "Для операции над двумя векторами их размеры должны быть одинаковы.",
+          "en": "For an operation on two vectors, the two vectors must have the same dimension."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: amallarning hammasi bitta sikl bilan bajariladi va ikki vektor oʻlchami bir xil boʻlishi shart.",
+          "ru": "В занятии: все операции выполняются одним циклом, и размеры двух векторов должны совпадать.",
+          "en": "The lesson: all the operations take one loop, and the two vectors must have the same dimension."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "C++ tilida std::vector nima?",
+          "ru": "Что такое std::vector на C++?",
+          "en": "What is std::vector in C++?"
+        },
+        "options": [
+          {
+            "uz": "Hajmi oʻzgaruvchan massiv",
+            "ru": "Массив с изменяемым размером",
+            "en": "A resizable array"
+          },
+          {
+            "uz": "Faqat matematik vektor uchun alohida tur",
+            "ru": "Отдельный тип только для математического вектора",
+            "en": "A separate type only for the mathematical vector"
+          },
+          {
+            "uz": "Ikki oʻlchovli matritsa",
+            "ru": "Двумерная матрица",
+            "en": "A two-dimensional matrix"
+          },
+          {
+            "uz": "Skalyar koʻpaytma hisoblovchi funksiya",
+            "ru": "Функция для скалярного произведения",
+            "en": "A function that computes the dot product"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "C++ʼda „vektor“ soʻzi ikki maʼnoda: matematik vektor va std::vector — hajmi oʻzgaruvchan massiv; ikkinchisi birinchisini saqlash uchun qulay.",
+          "ru": "На C++ слово «вектор» имеет два смысла: математический вектор и std::vector — массив с изменяемым размером; второй удобен для хранения первого.",
+          "en": "In C++ the word vector has two meanings: the mathematical vector and std::vector, a resizable array — the second is handy for keeping the first."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "(3, 4) vektorining uzunligi nechaga teng?",
+          "ru": "Чему равна длина вектора (3, 4)?",
+          "en": "What is the length of the vector (3, 4)?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Uzunlik — kvadratlari yigʻindisining ildizi: √(9 + 16) = √25 = 5.",
+          "ru": "Длина — корень из суммы квадратов: √(9 + 16) = √25 = 5.",
+          "en": "The length is the root of the sum of the squares: √(9 + 16) = √25 = 5."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "a = (1, -2, 3) va b = (4, 0, -1) vektorlarining skalyar koʻpaytmasi nechaga teng?",
+          "ru": "Чему равно скалярное произведение векторов a = (1, -2, 3) и b = (4, 0, -1)?",
+          "en": "What is the dot product of a = (1, -2, 3) and b = (4, 0, -1)?"
+        },
+        "answers": [1],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Juftlab koʻpaytirib qoʻshiladi: 1·4 + (-2)·0 + 3·(-1) = 4 + 0 - 3 = 1.",
+          "ru": "Перемножаем попарно и складываем: 1·4 + (-2)·0 + 3·(-1) = 4 + 0 - 3 = 1.",
+          "en": "Multiply pair by pair and add up: 1·4 + (-2)·0 + 3·(-1) = 4 + 0 - 3 = 1."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Skalyar koʻpaytmani hisoblaganda yigʻuvchi (akkumulyator) siklning har bir qadamida, sikl ichida nolga tenglanadi.",
+          "ru": "При вычислении скалярного произведения аккумулятор обнуляется на каждом шаге цикла, внутри цикла.",
+          "en": "When computing a dot product, the accumulator is reset to zero on every step, inside the loop."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda ogohlantirish: akkumulyator sikl OLDIDA 0 qilib qoʻyiladi, ichida emas — aks holda qoʻshilgan qiymatlar yoʻqoladi.",
+          "ru": "Предупреждение из занятия: аккумулятор зануляется ДО цикла, а не внутри — иначе накопленные значения потеряются.",
+          "en": "The lesson warns: the accumulator is set to 0 before the loop, not inside it — otherwise the values already added are lost."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Namunaviy masala dasturi ikkinchi qatorda masofani qanday koʻrinishda chiqaradi?",
+          "ru": "В каком виде программа из образца печатает расстояние второй строкой?",
+          "en": "In what form does the sample program print the distance on the second line?"
+        },
+        "options": [
+          {
+            "uz": "Ikki kasr xona bilan, masalan 5.00",
+            "ru": "С двумя знаками после запятой, например 5.00",
+            "en": "With two decimal places, for example 5.00"
+          },
+          {
+            "uz": "Butun songa yaxlitlab, masalan 5",
+            "ru": "Округлённым до целого, например 5",
+            "en": "Rounded to an integer, for example 5"
+          },
+          {
+            "uz": "Ildiz ostida yozib, masalan sqrt(25)",
+            "ru": "Записью под корнем, например sqrt(25)",
+            "en": "Written under a root, for example sqrt(25)"
+          },
+          {
+            "uz": "Kvadrati koʻrinishida, masalan 25",
+            "ru": "В виде квадрата, например 25",
+            "en": "As the square, for example 25"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shart: masofa ikki kasr xonada beriladi; Pythonʼda f-string f\"{masofa:.2f}\", Javaʼda %.2f, C++ʼda fixed va setprecision(2).",
+          "ru": "Условие: расстояние с двумя знаками после запятой; в Python — f\"{masofa:.2f}\", в Java — %.2f, в C++ — fixed и setprecision(2).",
+          "en": "The task asks two decimal places: f\"{masofa:.2f}\" in Python, %.2f in Java, fixed and setprecision(2) in C++."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Vektorlar amallari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об операциях над векторами верны?",
+          "en": "Which statements about operations on vectors are correct?"
+        },
+        "options": [
+          {
+            "uz": "Katta qiymatlarda kvadratlar va koʻpaytmalar int doirasidan chiqishi mumkin — long / long long olinadi",
+            "ru": "При больших значениях квадраты и произведения выходят за пределы int — берут long / long long",
+            "en": "With large values the squares and products can exceed an int — use long / long long"
+          },
+          {
+            "uz": "Agar ikki vektorning skalyar koʻpaytmasi 0 ga teng boʻlsa, ular oʻzaro perpendikulyar",
+            "ru": "Если скалярное произведение двух векторов равно 0, они взаимно перпендикулярны",
+            "en": "If the dot product of two vectors is 0, the vectors are perpendicular"
+          },
+          {
+            "uz": "Vektorni songa koʻpaytirish bitta sikl bilan bajariladi",
+            "ru": "Умножение вектора на число выполняется одним циклом",
+            "en": "Multiplying a vector by a number takes one loop"
+          },
+          {
+            "uz": "Masofa — koordinatalar yigʻindisining ildizi: √(a₁ + b₁ + …)",
+            "ru": "Расстояние — корень из суммы координат: √(a₁ + b₁ + …)",
+            "en": "The distance is the root of the sum of the coordinates: √(a₁ + b₁ + …)"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Masofa — ayirmalar kvadratlari yigʻindisining ildizi: √((a₁ - b₁)² + …), oddiy yigʻindi emas.",
+          "ru": "Расстояние — корень из суммы квадратов разностей: √((a₁ - b₁)² + …), а не из простой суммы.",
+          "en": "The distance is the root of the sum of the squared differences: √((a₁ - b₁)² + …), not of a plain sum."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dars namunasidagi Python kodida kvadrat ildizni hisoblash uchun ishlatiladigan funksiyaning nomini yozing.",
+          "ru": "Напишите имя функции, которая в Python-программе из занятия вычисляет квадратный корень.",
+          "en": "Write the name of the function the lesson's Python program uses to take the square root."
+        },
+        "answers": ["sqrt", "math.sqrt", "math.sqrt()"],
+        "explanation": {
+          "uz": "Uzunlik va masofada ayirmalar kvadratlari yigʻindisining ildizi kerak: import math dan keyin math.sqrt ishlatiladi.",
+          "ru": "Для длины и расстояния нужен корень из суммы квадратов разностей: после import math используется math.sqrt.",
+          "en": "The length and the distance need the root of the sum of squared differences: after import math the program uses math.sqrt."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Vektorni songa koʻpaytirish",
+      "ru": "Умножение вектора на число",
+      "en": "Multiplying a vector by a number"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda n va k butun sonlari, ikkinchi qatorda n ta butun son — vektor koordinatalari berilgan. Dasturingiz natijani bitta qatorda chiqarsin: (k·a₁, …, k·aₙ) sonlari boʻsh joy bilan ajratilsin. Masalan, 3 2 va 1 2 3 kirilsa, 2 4 6 chiqadi. Hech qanday qoʻshimcha soʻz yozmang. 1 ≤ n ≤ 1000, |aᵢ| ≤ 10000, |k| ≤ 100.",
+      "ru": "В первой строке даны целые n и k, во второй — n целых чисел: координаты вектора. Программа должна вывести одной строкой числа (k·a₁, …, k·aₙ), разделённые пробелом. Например, при вводе 3 2 и 1 2 3 получится 2 4 6. Никаких лишних слов не выводите. 1 ≤ n ≤ 1000, |aᵢ| ≤ 10000, |k| ≤ 100.",
+      "en": "The first line holds the integers n and k, the second line n integers: the coordinates of the vector. Your program must print on one line the numbers (k·a₁, …, k·aₙ), separated by spaces. For example, the input 3 2 and 1 2 3 gives 2 4 6. Print no extra words. 1 ≤ n ≤ 1000, |aᵢ| ≤ 10000, |k| ≤ 100."
+    },
+    "code": {
+      "starter": {
+        "python": "n, k = map(int, input().split())\na = list(map(int, input().split()))\nprint(*a)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int k = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(a[i]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    for (int i = 0; i < n; i++) {\n        if (i > 0) cout << \" \";\n        cout << a[i];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n, k = map(int, input().split())\na = list(map(int, input().split()))\nprint(*[k * x for x in a])\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int k = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(k * a[i]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    for (int i = 0; i < n; i++) {\n        if (i > 0) cout << \" \";\n        cout << k * a[i];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3 2\n1 2 3\n", "expected": "2 4 6", "hidden": false },
+        { "input": "1 0\n5\n", "expected": "0", "hidden": false },
+        { "input": "4 -1\n1 -2 0 3\n", "expected": "-1 2 0 -3", "hidden": true },
+        { "input": "3 100\n-5 0 7\n", "expected": "-500 0 700", "hidden": true }
+      ]
+    }
+  }
+}

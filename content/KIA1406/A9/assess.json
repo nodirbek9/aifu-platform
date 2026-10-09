@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Brauzerdagi qulf belgisi (Connection is secure) nimani anglatadi?",
+          "ru": "Что означает значок замка в браузере (Connection is secure)?",
+          "en": "What does the padlock icon in the browser (Connection is secure) mean?"
+        },
+        "options": [
+          {
+            "uz": "Maʼlumot shu domen bilan shifrlangan kanalda uzatilmoqda, lekin bu sayt ishonchli degani emas",
+            "ru": "Данные идут в зашифрованном канале с этим доменом, но это не значит, что сайт надёжный",
+            "en": "Data travels over an encrypted channel with this domain, but that does not mean the site is trustworthy"
+          },
+          {
+            "uz": "Sayt ishonchli tashkilotga tegishli",
+            "ru": "Сайт принадлежит надёжной организации",
+            "en": "The site belongs to a trustworthy organisation"
+          },
+          {
+            "uz": "Sayt parolini toʻgʻri saqlaydi",
+            "ru": "Сайт правильно хранит пароли",
+            "en": "The site stores passwords correctly"
+          },
+          {
+            "uz": "Server 2048 bitli kalit ishlatadi",
+            "ru": "Сервер использует 2048-битный ключ",
+            "en": "The server uses a 2048-bit key"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: DV sertifikat faqat «siz shu domen bilan shifrlangan kanaldasiz» deydi; fishing saytlarining aksariyati ham HTTPS ishlatadi.",
+          "ru": "В занятии: сертификат DV говорит лишь «вы в зашифрованном канале с этим доменом»; большинство фишинговых сайтов тоже используют HTTPS.",
+          "en": "The lesson: a DV certificate only says \"you are on an encrypted channel with this domain\"; most phishing sites use HTTPS too."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Letʼs Encrypt sertifikat berish uchun hujatlarni qoʻlda tekshiradi va har bir sertifikat pullik.",
+          "ru": "Letʼs Encrypt для выдачи сертификата вручную проверяет документы, и каждый сертификат платный.",
+          "en": "Let's Encrypt checks the paperwork by hand before issuing a certificate, and every certificate costs money."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: Letʼs Encrypt — DV, yaʼni faqat domen egaligi tekshiriladi, jarayon avtomatik va bepul. Hujatni qoʻlda koʻrish OV va EV ga xos.",
+          "ru": "В занятии: Letʼs Encrypt — это DV, то есть проверяется только владение доменом, процесс автоматический и бесплатный. Документы вручную рассматривают в OV и EV.",
+          "en": "The lesson: Let's Encrypt issues DV certificates — only domain ownership is checked, automatically and for free. Documents are reviewed by hand only for OV and EV."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Sertifikatni koʻrayotganda darsdagi jadval boʻyicha qaysi maydonlar tekshiriladi?",
+          "ru": "Какие поля просматривают у сертификата согласно таблице из занятия?",
+          "en": "According to the table in the lesson, which certificate fields do you look at?"
+        },
+        "options": [
+          {
+            "uz": "Subject Alternative Name — sertifikat amal qiladigan barcha domenlar",
+            "ru": "Subject Alternative Name — все домены, для которых действует сертификат",
+            "en": "Subject Alternative Name — all domains the certificate is valid for"
+          },
+          {
+            "uz": "Issued By — sertifikatni bergan CA",
+            "ru": "Issued By — центр сертификации, выдавший сертификат",
+            "en": "Issued By — the CA that issued the certificate"
+          },
+          {
+            "uz": "Validity — Not Before va Not After sanalari",
+            "ru": "Validity — даты Not Before и Not After",
+            "en": "Validity — the Not Before and Not After dates"
+          },
+          {
+            "uz": "Serverning IP manzili va unning joylashgan shahri",
+            "ru": "IP-адрес сервера и город его расположения",
+            "en": "The server's IP address and the city it is located in"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalda: Issued To (Subject, CN), SAN, Issued By, Validity, Public Key (algoritm va uzunlik) va Fingerprint (SHA-256). IP manzili va shahar unda yoʻq.",
+          "ru": "В таблице: Issued To (Subject, CN), SAN, Issued By, Validity, Public Key (алгоритм и длина) и Fingerprint (SHA-256). IP-адреса и города там нет.",
+          "en": "The table lists Issued To (Subject, CN), SAN, Issued By, Validity, the Public Key (algorithm and length) and the SHA-256 fingerprint — not an IP address or a city."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "CA/Browser Forum qaroriga koʻra, 2026-yil martdan sertifikatning umumiy maksimal amal qilish muddati necha kun?",
+          "ru": "Сколько дней составляет общий максимальный срок действия сертификата с марта 2026 года по решению CA/Browser Forum?",
+          "en": "Under the CA/Browser Forum decision, from March 2026 what is the general maximum certificate lifetime in days?"
+        },
+        "answers": [200],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda: Letʼs Encrypt — 90 kun; umumiy maksimal muddat 2026-yil martdan 200 kun, 2029-yilga kelib 47 kun.",
+          "ru": "В занятии: Letʼs Encrypt — 90 дней; общий максимум — 200 дней с марта 2026 года и 47 дней к 2029 году.",
+          "en": "The lesson: Let's Encrypt uses 90 days; the general maximum is 200 days from March 2026 and 47 days by 2029."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "wrong.host.badssl.com sayti NET::ERR_CERT_COMMON_NAME_INVALID xatosini beradi. Sababi nima?",
+          "ru": "Сайт wrong.host.badssl.com выдаёт ошибку NET::ERR_CERT_COMMON_NAME_INVALID. В чём причина?",
+          "en": "wrong.host.badssl.com shows NET::ERR_CERT_COMMON_NAME_INVALID. What is the cause?"
+        },
+        "options": [
+          {
+            "uz": "Sertifikatning muddati tugagan",
+            "ru": "Срок действия сертификата истёк",
+            "en": "The certificate has expired"
+          },
+          {
+            "uz": "Ildiz CA ishonchli roʻyxatda yoʻq",
+            "ru": "Корневой CA отсутствует в списке доверенных",
+            "en": "The root CA is not in the trusted list"
+          },
+          {
+            "uz": "Sertifikat bekor qilingan",
+            "ru": "Сертификат отозван",
+            "en": "The certificate has been revoked"
+          },
+          {
+            "uz": "Domen nomi sertifikatdagi SAN roʻyxatiga mos emas",
+            "ru": "Имя домена не совпадает со списком SAN в сертификате",
+            "en": "The domain name does not match the certificate's SAN list"
+          }
+        ],
+        "correct": [3],
+        "explanation": {
+          "uz": "Darsdagi jadval: muddati oʻtgan — ERR_CERT_DATE_INVALID, ishonchsiz ildiz yoki oʻz-oʻzini imzolagan sertifikat — ERR_CERT_AUTHORITY_INVALID, bekor qilingan — ERR_CERT_REVOKED.",
+          "ru": "Таблица из занятия: истёкший срок — ERR_CERT_DATE_INVALID, недоверенный корень или самоподписанный сертификат — ERR_CERT_AUTHORITY_INVALID, отозванный — ERR_CERT_REVOKED.",
+          "en": "The lesson's table: an expired certificate gives ERR_CERT_DATE_INVALID, an untrusted root or a self-signed one gives ERR_CERT_AUTHORITY_INVALID, a revoked one gives ERR_CERT_REVOKED."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Brauzerni doimo HTTPS ishlatishga majburlovchi HTTP sarlavha qisqartmasini yozing.",
+          "ru": "Напишите сокращение HTTP-заголовка, который обязывает браузер всегда использовать HTTPS.",
+          "en": "Write the abbreviation of the HTTP header that forces the browser to always use HTTPS."
+        },
+        "answers": ["HSTS", "hsts", "Hsts"],
+        "explanation": {
+          "uz": "HSTS — SSL Labs tahlilida tekshiriladigan sarlavha; u brauzerga doim HTTPS orqali borishni buyuradi.",
+          "ru": "HSTS — заголовок, который проверяет SSL Labs; он предписывает браузеру всегда идти через HTTPS.",
+          "en": "HSTS is the header SSL Labs reports on; it tells the browser to always use HTTPS."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "*.example.uz yozuvidagi sertifikat darsdagi qoidaga koʻra qaysi nom uchun amal qiladi?",
+          "ru": "Для какого имени действует сертификат вида *.example.uz согласно правилу из занятия?",
+          "en": "Per the lesson's rule, which name does a *.example.uz certificate cover?"
+        },
+        "options": [
+          {
+            "uz": "example.uz",
+            "ru": "example.uz",
+            "en": "example.uz"
+          },
+          {
+            "uz": "a.b.example.uz",
+            "ru": "a.b.example.uz",
+            "en": "a.b.example.uz"
+          },
+          {
+            "uz": "www.example.uz",
+            "ru": "www.example.uz",
+            "en": "www.example.uz"
+          },
+          {
+            "uz": "example.uz.evil.com",
+            "ru": "example.uz.evil.com",
+            "en": "example.uz.evil.com"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Wildcard faqat chapdagi bitta qism oʻrniga turadi va aynan bitta qismga mos keladi: www.example.uz — ha, example.uz va a.b.example.uz — yoʻq.",
+          "ru": "Маска стоит только на месте самой левой части и совпадает ровно с одной частью: www.example.uz — да, example.uz и a.b.example.uz — нет.",
+          "en": "A wildcard stands only in place of the single leftmost label and matches exactly one label: www.example.uz yes, example.uz and a.b.example.uz no."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Sertifikat zanjiri va ishonch haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о цепочке сертификатов и доверии верны?",
+          "en": "Which statements about the certificate chain and trust are correct?"
+        },
+        "options": [
+          {
+            "uz": "Oʻz-oʻzini imzolagan sertifikat ham ishonchli CA tomonidan imzolangan boʻladi",
+            "ru": "Самоподписанный сертификат тоже подписан доверенным центром",
+            "en": "A self-signed certificate is also signed by a trusted CA"
+          },
+          {
+            "uz": "Zanjir: sayt sertifikati → oraliq CA → ildiz CA",
+            "ru": "Цепочка: сертификат сайта → промежуточный CA → корневой CA",
+            "en": "The chain: site certificate → intermediate CA → root CA"
+          },
+          {
+            "uz": "Ildiz sertifikat operatsion tizim yoki brauzerning ishonchli roʻyxatida saqlanadi",
+            "ru": "Корневой сертификат хранится в списке доверенных ОС или браузера",
+            "en": "The root certificate is kept in the trusted list of the operating system or the browser"
+          },
+          {
+            "uz": "Server oraliq CA sertifikatini yubormasa, baʼzi qurilmalar xato koʻrsatadi",
+            "ru": "Если сервер не отправляет сертификат промежуточного CA, часть устройств показывает ошибку",
+            "en": "If the server does not send the intermediate CA certificate, some devices show an error"
+          }
+        ],
+        "correct": [1, 2, 3],
+        "explanation": {
+          "uz": "Oʻz-oʻzini imzolagan sertifikatda CA imzosi yoʻq — brauzer ERR_CERT_AUTHORITY_INVALID beradi. Zanjir toʻliqligini SSL Labs koʻrsatadi.",
+          "ru": "У самоподписанного сертификата нет подписи CA — браузер даёт ERR_CERT_AUTHORITY_INVALID. Полноту цепочки показывает SSL Labs.",
+          "en": "A self-signed certificate has no CA signature, so the browser reports ERR_CERT_AUTHORITY_INVALID. SSL Labs shows whether the chain is complete."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Agar brauzer deyarli barcha saytlarda sertifikat muddati tugaganini aytasa, avval kompyuterning sana va vaqtini tekshirish kerak.",
+          "ru": "Если браузер сообщает об истёкшем сертификате почти на всех сайтах, в первую очередь стоит проверить дату и время на компьютере.",
+          "en": "If the browser reports an expired certificate on almost every site, check the computer's date and time first."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: notoʻgʻri sana barcha saytlarni «muddati oʻtgan» deb koʻrsatadi, chunki brauzer sanani Not Before va Not After bilan solishtiradi — xuddi ishlangan misoldagi dastur kabi.",
+          "ru": "В занятии: неверная дата показывает «срок истёк» на всех сайтах, потому что браузер сравнивает дату с Not Before и Not After — так же, как программа из разобранного примера.",
+          "en": "The lesson says a wrong date makes every site look expired, because the browser compares the date with Not Before and Not After — exactly as the program in the worked example does."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Manzil nomini oʻngdan oʻqish",
+      "ru": "Чтение имени справа",
+      "en": "Reading the name from the right"
+    },
+    "statement": {
+      "uz": "Fishing saytlar nomning boshiga tanish qismni yopishtiradi: example.uz.evil.com aslida evil.com domeniga tegishli, shuning uchun domenni oʻngdan oʻqish kerak. Kirish: 1-satrda ishonchli domen T; keyingi satrlarda tekshiriladigan nomlar (har biri alohida satrda, kamida ikki qismdan iborat, qismlar nuqta bilan ajratilgan). Agar nom T ning oʻzi bilan teng yoki nuqta va T bilan tugasa — nom haqiqiy: ok deb chiqaring. Aks holda nomning haqiqiy egasini — oxirgi ikki qismini nuqta bilan ulagan holda chiqaring (example.uz.evil.com uchun evil.com). Solishtirishda katta-kichik harf farq qilmaydi (WWW.Example.UZ = www.example.uz), egani esa kiritilgandagi harflar bilan chiqaring. Har bir nomga bitta chiqish satri toʻgʻri keladi; izoh yozmang.",
+      "ru": "Фишинговые сайты приклеивают знакомое начало к имени: example.uz.evil.com на самом деле принадлежит домену evil.com, поэтому имя нужно читать справа. Ввод: в первой строке доверенный домен T; далее — проверяемые имена, по одному в строке (каждое состоит минимум из двух частей, разделённых точкой). Если имя совпадает с T целиком или оканчивается на точку плюс T — это настоящее имя: выведите ok. Иначе выведите настоящего владельца имени — его последние две части через точку (для example.uz.evil.com это evil.com). Регистр букв при сравнении не учитывается (WWW.Example.UZ = www.example.uz), но владельца выводите в том регистре, в котором он дан во вводе. На каждое имя — одна строка вывода, без пояснений.",
+      "en": "Phishing sites glue a familiar beginning onto a name: example.uz.evil.com actually belongs to the domain evil.com, so a domain must be read from the right. Input: the trusted domain T on the first line; then the names to check, one per line (each has at least two dot-separated labels). If a name is exactly T or ends with a dot followed by T, it is genuine: print ok. Otherwise print the real owner of the name — its last two labels joined by a dot (for example.uz.evil.com that is evil.com). Comparing ignores letter case (WWW.Example.UZ = www.example.uz), but print the owner in the case it has in the input. One output line per name, no explanations."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nsatrlar = sys.stdin.read().split()\nt = satrlar[0].lower()\nfor nom in satrlar[1:]:\n    k = nom.lower()\n    if k == t or k.startswith(t):\n        print(\"ok\")\n    else:\n        qism = nom.split(\".\")\n        print(\".\".join(qism[-2:]))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String t = in.next().toLowerCase();\n        while (in.hasNext()) {\n            String nom = in.next();\n            String k = nom.toLowerCase();\n            if (k.equals(t) || k.startsWith(t)) {\n                System.out.println(\"ok\");\n            } else {\n                int oxirgi = nom.lastIndexOf('.');\n                int oldi = nom.lastIndexOf('.', oxirgi - 1);\n                System.out.println(nom.substring(oldi + 1));\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <cctype>\n#include <iostream>\n#include <string>\nusing namespace std;\n\nstring kichik(string s) {\n    for (char& c : s) c = (char)tolower((unsigned char)c);\n    return s;\n}\n\nstring soha(const string& nom) {\n    size_t oxirgi = nom.rfind('.');\n    if (oxirgi == string::npos) return nom;\n    size_t oldi = nom.rfind('.', oxirgi - 1);\n    if (oldi == string::npos) return nom;\n    return nom.substr(oldi + 1);\n}\n\nint main() {\n    string t, nom;\n    cin >> t;\n    t = kichik(t);\n    while (cin >> nom) {\n        string k = kichik(nom);\n        if (k == t || k.rfind(t, 0) == 0) cout << \"ok\" << endl;\n        else cout << soha(nom) << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nsatrlar = sys.stdin.read().split()\nt = satrlar[0].lower()\ndum = \".\" + t\nfor nom in satrlar[1:]:\n    k = nom.lower()\n    if k == t or k.endswith(dum):\n        print(\"ok\")\n    else:\n        qism = nom.split(\".\")\n        print(\".\".join(qism[-2:]))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String t = in.next().toLowerCase();\n        String dum = \".\" + t;\n        while (in.hasNext()) {\n            String nom = in.next();\n            String k = nom.toLowerCase();\n            if (k.equals(t) || k.endsWith(dum)) {\n                System.out.println(\"ok\");\n            } else {\n                int oxirgi = nom.lastIndexOf('.');\n                int oldi = nom.lastIndexOf('.', oxirgi - 1);\n                System.out.println(nom.substring(oldi + 1));\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <cctype>\n#include <iostream>\n#include <string>\nusing namespace std;\n\nstring kichik(string s) {\n    for (char& c : s) c = (char)tolower((unsigned char)c);\n    return s;\n}\n\nbool oxirida(const string& s, const string& dum) {\n    return s.size() >= dum.size() && s.compare(s.size() - dum.size(), dum.size(), dum) == 0;\n}\n\nstring soha(const string& nom) {\n    size_t oxirgi = nom.rfind('.');\n    if (oxirgi == string::npos) return nom;\n    size_t oldi = nom.rfind('.', oxirgi - 1);\n    if (oldi == string::npos) return nom;\n    return nom.substr(oldi + 1);\n}\n\nint main() {\n    string t, nom;\n    cin >> t;\n    t = kichik(t);\n    string dum = \".\" + t;\n    while (cin >> nom) {\n        string k = kichik(nom);\n        if (k == t || oxirida(k, dum)) cout << \"ok\" << endl;\n        else cout << soha(nom) << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "example.uz\nwww.example.uz\nexample.uz\nexample.uz.evil.com\nshop.example.uz\nbad-act.uz\n", "expected": "ok\nok\nevil.com\nok\nbad-act.uz", "hidden": false },
+        { "input": "my.gov.uz\nmy.gov.uz\ndepartament.my.gov.uz\nmy.gov.uz.attacker.net\n", "expected": "ok\nok\nattacker.net", "hidden": false },
+        { "input": "Example.uz\nWWW.EXAMPLE.UZ\nweb.Example.uz\ncase.example.uz.evil.com\n", "expected": "ok\nok\nevil.com", "hidden": true },
+        { "input": "bank.uz\nbank.uz.com\nmybank.uz\nonline.bank.uz\n", "expected": "uz.com\nmybank.uz\nok", "hidden": true },
+        { "input": "shop.uz\nshop.uz\ndev.shop.uz\nu.shop.uz.evil.net\n", "expected": "ok\nok\nevil.net", "hidden": true }
+      ]
+    }
+  }
+}

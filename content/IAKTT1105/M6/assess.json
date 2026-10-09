@@ -1,0 +1,406 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 10,
+        "prompt": {
+          "uz": "DNS nima vazifani bajaradi?",
+          "ru": "Что делает DNS?",
+          "en": "What does DNS do?"
+        },
+        "explanation": {
+          "uz": "DNS domen nomini (masalan, soliq.uz) IP manzilga aylantiradi.",
+          "ru": "DNS превращает доменное имя (например, soliq.uz) в IP-адрес.",
+          "en": "DNS turns a domain name (for example, soliq.uz) into an IP address."
+        },
+        "options": [
+          {
+            "uz": "Domen nomini IP manzilga aylantiradi",
+            "ru": "Превращает доменное имя в IP-адрес",
+            "en": "Turns a domain name into an IP address"
+          },
+          {
+            "uz": "Parollarni shifrlaydi",
+            "ru": "Шифрует пароли",
+            "en": "Encrypts passwords"
+          },
+          {
+            "uz": "Qurilmani tarmoqqa ulaydi",
+            "ru": "Подключает устройство к сети",
+            "en": "Connects a device to the network"
+          },
+          {
+            "uz": "Veb-sayt yaratadi",
+            "ru": "Создает веб-сайт",
+            "en": "Creates a website"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 10,
+        "prompt": {
+          "uz": "Qaysilar kompyuter tarmogʻi turlariga kiradi?",
+          "ru": "Какие существуют виды компьютерных сетей?",
+          "en": "Which are types of computer networks?"
+        },
+        "explanation": {
+          "uz": "PAN, LAN, MAN, WAN va Internet kompyuter tarmogʻi turlaridir. HTTP esa protokoldir.",
+          "ru": "PAN, LAN, MAN, WAN и интернет — это виды компьютерных сетей. HTTP — это протокол.",
+          "en": "PAN, LAN, MAN, WAN and the Internet are types of computer networks. HTTP is a protocol."
+        },
+        "options": [
+          {
+            "uz": "LAN",
+            "ru": "LAN",
+            "en": "LAN"
+          },
+          {
+            "uz": "WAN",
+            "ru": "WAN",
+            "en": "WAN"
+          },
+          {
+            "uz": "PAN",
+            "ru": "PAN",
+            "en": "PAN"
+          },
+          {
+            "uz": "HTTP",
+            "ru": "HTTP",
+            "en": "HTTP"
+          }
+        ],
+        "correct": [0, 1, 2]
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 10,
+        "prompt": {
+          "uz": "Kommutator (switch) turli tarmoqlarni (masalan, ofis tarmogʻini Internet bilan) bogʻlash uchun ishlatiladi.",
+          "ru": "Коммутатор (switch) используется для соединения разных сетей (например, офисной сети с интернетом).",
+          "en": "A switch is used to connect different networks (for example, the office network with the Internet)."
+        },
+        "explanation": {
+          "uz": "Notoʻgʻri. Router turli tarmoqlarni bogʻlaydi, kommutator esa bitta lokal tarmoq ichida qurilmalarni bogʻlaydi.",
+          "ru": "Неверно. Маршрутизатор соединяет разные сети, а коммутатор — устройства внутри локальной сети.",
+          "en": "False. A router connects different networks, while a switch connects devices within a local network."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1]
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 10,
+        "prompt": {
+          "uz": "Agar doʻkon kuniga 5 000 000 soʻm savdo qilsa va zaxira kanalsiz qolib, Internet yiliga 2 kun ishlamasa, qancha (million soʻmda) zarar koʻradi? Raqamda yozing.",
+          "ru": "Если магазин продает на 5 000 000 сумов в день и без резервного канала интернет не работает 2 дня в году, сколько (в миллионах сумов) составит потеря? Напишите число.",
+          "en": "If a shop sells 5,000,000 soums a day and without a backup channel the Internet is down for 2 days a year, how much (in million soums) is the loss? Write the number."
+        },
+        "explanation": {
+          "uz": "5 mln * 2 kun = 10 mln.",
+          "ru": "5 млн * 2 дня = 10 млн.",
+          "en": "5 mln * 2 days = 10 mln."
+        },
+        "answers": [10],
+        "tolerance": 0
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 10,
+        "prompt": {
+          "uz": "Veb-sahifalarni shifrlangan tarzda uzatish uchun qaysi protokol ishlatiladi?",
+          "ru": "Какой протокол используется для зашифрованной передачи веб-страниц?",
+          "en": "Which protocol is used to transmit encrypted web pages?"
+        },
+        "explanation": {
+          "uz": "HTTP/HTTPS protokollari veb-sahifalar uchun ishlatiladi, bunda HTTPS shifrlangan.",
+          "ru": "Протоколы HTTP/HTTPS используются для веб-страниц, при этом HTTPS — зашифрованный.",
+          "en": "HTTP/HTTPS protocols are used for web pages, with HTTPS being encrypted."
+        },
+        "answers": ["HTTPS", "https"]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 10,
+        "prompt": {
+          "uz": "Faqat xodimlar uchun moʻljallangan, hujjatlar va yangiliklar kabi ichki resurslarni oʻz ichiga olgan korporativ tarmoq qanday ataladi?",
+          "ru": "Как называется корпоративная сеть, предназначенная только для сотрудников и содержащая внутренние ресурсы, такие как документы и новости?",
+          "en": "What is the corporate network called that is intended only for staff and contains internal resources such as documents and news?"
+        },
+        "explanation": {
+          "uz": "Intranet — bu faqat xodimlar uchun moʻljallangan ichki portal.",
+          "ru": "Интранет — это внутренний портал только для сотрудников.",
+          "en": "An intranet is an internal portal for staff only."
+        },
+        "options": [
+          {
+            "uz": "Intranet",
+            "ru": "Интранет",
+            "en": "Intranet"
+          },
+          {
+            "uz": "Ekstranet",
+            "ru": "Экстранет",
+            "en": "Extranet"
+          },
+          {
+            "uz": "Internet",
+            "ru": "Интернет",
+            "en": "Internet"
+          },
+          {
+            "uz": "PAN",
+            "ru": "PAN",
+            "en": "PAN"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 10,
+        "prompt": {
+          "uz": "Kanalni tanlashda qaysi iqtisodiy mezonlar hisobga olinishi kerak? (Darslikka asosan)",
+          "ru": "Какие экономические критерии следует учитывать при выборе канала? (Согласно уроку)",
+          "en": "Which economic criteria should be considered when choosing a channel? (According to the lesson)"
+        },
+        "explanation": {
+          "uz": "Kanalni tanlashda tezlik, ishonchlilik (SLA), narx, zaxira kanal va qoʻllab-quvvatlash kabi mezonlar muhim.",
+          "ru": "При выборе канала важны такие критерии, как скорость, надежность (SLA), цена, резервный канал и поддержка.",
+          "en": "Criteria such as speed, reliability (SLA), price, a backup channel, and support are important when choosing a channel."
+        },
+        "options": [
+          {
+            "uz": "Tezlik",
+            "ru": "Скорость",
+            "en": "Speed"
+          },
+          {
+            "uz": "Ishonchlilik (SLA)",
+            "ru": "Надежность (SLA)",
+            "en": "Reliability (SLA)"
+          },
+          {
+            "uz": "Narx",
+            "ru": "Цена",
+            "en": "Price"
+          },
+          {
+            "uz": "Kompyuterning rangi",
+            "ru": "Цвет компьютера",
+            "en": "Computer colour"
+          }
+        ],
+        "correct": [0, 1, 2]
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 10,
+        "prompt": {
+          "uz": "100 Mbit/s tezlik taxminan 100 Megabayt/sekund (MB/s) ni tashkil etadi.",
+          "ru": "Скорость 100 Мбит/с составляет примерно 100 мегабайт в секунду (МБ/с).",
+          "en": "A speed of 100 Mbit/s is approximately 100 Megabytes per second (MB/s)."
+        },
+        "explanation": {
+          "uz": "Notoʻgʻri. 100 Mbit/s taxminan 12,5 MB/s ni tashkil etadi.",
+          "ru": "Неверно. 100 Мбит/с ≈ 12,5 МБ/с.",
+          "en": "False. 100 Mbit/s is approximately 12.5 MB/s."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 10,
+        "prompt": {
+          "uz": "Bugungi kunda korxonalar va uylar uchun eng tez va barqaror aloqa kanali qaysi?",
+          "ru": "Какой канал связи сегодня является самым быстрым и стабильным для предприятий и домов?",
+          "en": "Which communication channel is the fastest and most stable for businesses and homes today?"
+        },
+        "explanation": {
+          "uz": "Optik tola eng tez va barqaror kanal boʻlib, u korxonalar va uylar uchun mos keladi.",
+          "ru": "Оптоволокно является самым быстрым и стабильным каналом, подходящим для предприятий и домов.",
+          "en": "Optical fibre is the fastest and most stable channel, suitable for businesses and homes."
+        },
+        "options": [
+          {
+            "uz": "Optik tola",
+            "ru": "Оптоволокно",
+            "en": "Optical fibre"
+          },
+          {
+            "uz": "Mis kabel (ADSL)",
+            "ru": "Медный кабель (ADSL)",
+            "en": "Copper cable (ADSL)"
+          },
+          {
+            "uz": "Sunʼiy yoʻldosh",
+            "ru": "Спутник",
+            "en": "Satellite"
+          },
+          {
+            "uz": "Wi-Fi",
+            "ru": "Wi-Fi",
+            "en": "Wi-Fi"
+          }
+        ],
+        "correct": [0]
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Mavzu boʻyicha amaliyot",
+      "ru": "Практика по теме",
+      "en": "Practice on the topic"
+    },
+    "statement": {
+      "uz": "Olingan bilimlarni tekshirish uchun quyidagi savollarga javob bering.",
+      "ru": "Ответьте на следующие вопросы, чтобы проверить полученные знания.",
+      "en": "Answer the following questions to check the acquired knowledge."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 10,
+          "prompt": {
+            "uz": "Shaharlar va mamlakatlarni qamrab oluvchi global tarmoq turi qanday ataladi?",
+            "ru": "Как называется тип глобальной сети, охватывающей города и страны?",
+            "en": "What is the type of wide network covering cities and countries called?"
+          },
+          "explanation": {
+            "uz": "WAN — shaharlar va mamlakatlarni qamrab oluvchi global tarmoq.",
+            "ru": "WAN — глобальная сеть, охватывающая города и страны.",
+            "en": "A WAN is a wide network covering cities and countries."
+          },
+          "options": [
+            {
+              "uz": "WAN",
+              "ru": "WAN",
+              "en": "WAN"
+            },
+            {
+              "uz": "LAN",
+              "ru": "LAN",
+              "en": "LAN"
+            },
+            {
+              "uz": "PAN",
+              "ru": "PAN",
+              "en": "PAN"
+            },
+            {
+              "uz": "MAN",
+              "ru": "MAN",
+              "en": "MAN"
+            }
+          ],
+          "correct": [0]
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 10,
+          "prompt": {
+            "uz": "Jamoat Wi-Fi tarmogʻida VPN va HTTPS siz maxfiy ish qilish xavfsiz hisoblanadi.",
+            "ru": "Выполнять конфиденциальную работу в публичном Wi-Fi без VPN и HTTPS считается безопасным.",
+            "en": "Doing confidential work on public Wi-Fi without VPN and HTTPS is considered safe."
+          },
+          "explanation": {
+            "uz": "Jamoat Wi-Fi tarmogʻida maʼlumotlar HTTPS va VPN siz oʻgʻirlanishi mumkin.",
+            "ru": "В публичном Wi-Fi данные могут перехватить без HTTPS и VPN.",
+            "en": "On public Wi-Fi, data can be intercepted without HTTPS and a VPN."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1]
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "HARD",
+          "points": 10,
+          "prompt": {
+            "uz": "Darsda sanab oʻtilgan Internet xizmatlarini belgilang.",
+            "ru": "Отметьте интернет-сервисы, перечисленные в уроке.",
+            "en": "Select the Internet services listed in the lesson."
+          },
+          "explanation": {
+            "uz": "Veb, pochta, bulut, messenjerlar, videokonferensiyalar — bular Internet xizmatlari.",
+            "ru": "Веб, почта, облако, мессенджеры, видеоконференции — это интернет-сервисы.",
+            "en": "The web, mail, cloud, messengers, video conferencing are Internet services."
+          },
+          "options": [
+            {
+              "uz": "Bulutli saqlash va ofis",
+              "ru": "Облачное хранилище и офис",
+              "en": "Cloud storage and office"
+            },
+            {
+              "uz": "Elektron pochta",
+              "ru": "Электронная почта",
+              "en": "Email"
+            },
+            {
+              "uz": "Videokonferensiyalar",
+              "ru": "Видеоконференции",
+              "en": "Video conferencing"
+            },
+            {
+              "uz": "Operatsion tizim oʻrnatish",
+              "ru": "Установка операционной системы",
+              "en": "Operating system installation"
+            }
+          ],
+          "correct": [0, 1, 2]
+        }
+      ]
+    }
+  }
+}

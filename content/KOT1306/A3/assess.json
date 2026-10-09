@@ -1,0 +1,460 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Simulyator emulyatordan nimasi bilan farq qiladi?",
+          "ru": "Чем симулятор отличается от эмулятора?",
+          "en": "How does a simulator differ from an emulator?"
+        },
+        "options": [
+          {
+            "uz": "Qurilma xatti-harakatini soddalashtirilgan dastur bilan modellashtiradi",
+            "ru": "Моделирует поведение устройства упрощённой программой",
+            "en": "It models the device behaviour with a simplified program"
+          },
+          {
+            "uz": "Haqiqiy qurilmaning operatsion tizimini virtual mashinada ishga tushiradi",
+            "ru": "Запускает настоящую операционную систему устройства на виртуальной машине",
+            "en": "It runs the real operating system of the device in a virtual machine"
+          },
+          {
+            "uz": "Haqiqiy qurilmadagi barcha buyruqlarni qoʻllab-quvvatlaydi",
+            "ru": "Поддерживает все команды настоящего устройства",
+            "en": "It supports all the commands of the real device"
+          },
+          {
+            "uz": "Har bir qurilma uchun alohida virtual mashina talab qiladi",
+            "ru": "Требует отдельную виртуальную машину для каждого устройства",
+            "en": "It needs a separate virtual machine for every device"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Modellashtirish — simulyatorga (Cisco Packet Tracer) xos, haqiqiy IOS obrazini ishga tushirish esa emulyatorlarga (GNS3, EVE-NG) xos.",
+          "ru": "Моделирование свойственно симулятору (Cisco Packet Tracer), запуск настоящего образа IOS — эмуляторам (GNS3, EVE-NG).",
+          "en": "Modelling belongs to the simulator (Cisco Packet Tracer); running a real IOS image belongs to the emulators (GNS3, EVE-NG)."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Packet Tracer da Realtime rejimi vaqtni toʻxtatib, har bir paketni konvert sifatida qadamma-qadam yuritadi.",
+          "ru": "В Packet Tracer режим Realtime останавливает время и пошагово продвигает каждый пакет в виде конверта.",
+          "en": "In Packet Tracer the Realtime mode stops time and steps through each packet as an envelope."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Vaqtni toʻxtatadi va paketni qadamma-qadam yuritadi Simulation rejimi; Realtime da tarmoq real vaqtda ishlaydi.",
+          "ru": "Время останавливает и пакет продвигает пошагово режим Simulation; в Realtime сеть работает в реальном времени.",
+          "en": "It is the Simulation mode that stops time and steps the packets through; in Realtime the network runs in real time."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Packet Tracer qurilmalar panelida End Devices guruhiga qaysilari kiradi?",
+          "ru": "Что входит в группу End Devices на панели устройств Packet Tracer?",
+          "en": "Which of these belong to the End Devices group in the Packet Tracer device panel?"
+        },
+        "options": [
+          {
+            "uz": "PC",
+            "ru": "ПК",
+            "en": "PC"
+          },
+          {
+            "uz": "Server",
+            "ru": "Сервер",
+            "en": "Server"
+          },
+          {
+            "uz": "Marshrutizator",
+            "ru": "Маршрутизатор",
+            "en": "Router"
+          },
+          {
+            "uz": "Printer",
+            "ru": "Принтер",
+            "en": "Printer"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "End Devices — PC, Laptop, Server, Printer; marshrutizator, kommutator va konsentrator Network Devices guruhiga kiradi.",
+          "ru": "В End Devices входят PC, Laptop, Server, Printer; маршрутизатор, коммутатор и концентратор — это Network Devices.",
+          "en": "End Devices holds PC, Laptop, Server and Printer; routers, switches and hubs are in Network Devices."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Emulyatordan foydalanish qachon afzal koʻriladi?",
+          "ru": "Когда предпочтительно пользоваться эмулятором?",
+          "en": "When is an emulator the preferred choice?"
+        },
+        "options": [
+          {
+            "uz": "Sertifikatlashga tayyorlanishda va real loyihani sinashda",
+            "ru": "При подготовке к сертификации и проверке реального проекта",
+            "en": "For certification preparation and for testing a real project"
+          },
+          {
+            "uz": "Tarmoq tushunchalarini birinchi marta oʻrganishda",
+            "ru": "При первом изучении сетевых понятий",
+            "en": "When network concepts are being learned for the first time"
+          },
+          {
+            "uz": "Ish oddiy noutbukda bajarilganda",
+            "ru": "Когда работа идёт на обычном ноутбуке",
+            "en": "When the work is done on an ordinary laptop"
+          },
+          {
+            "uz": "Tarmoq trafigi ushlanib tahlil qilinganda",
+            "ru": "Когда трафик сети перехватывается и анализируется",
+            "en": "When network traffic is captured and analysed"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadvalda oʻqish va tushunchalarni oʻrganish simulyatorga, sertifikatlashga tayyorgarlik va real loyihani sinash emulyatorga tegishli. Emulyator har bir qurilma uchun alohida virtual mashina talab qilgani uchun oddiy noutbukda qiyin ishlaydi.",
+          "ru": "По таблице занятия: обучение и изучение понятий — симулятор, подготовка к сертификации и проверка реального проекта — эмулятор. Эмулятору на обычном ноутбуке тяжело: каждое устройство требует отдельной виртуальной машины.",
+          "en": "In the lesson table, learning and concepts belong to the simulator, certification preparation and testing a real project to the emulator. An emulator is heavy on an ordinary laptop because every device needs its own virtual machine."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Amaliy ishda PC0 dan PC2 ga berilgan ping soʻrovi necha baytli maʼlumot bilan yuboriladi?",
+          "ru": "Сколько байт данных передаёт в практической работе ping-запрос с PC0 на PC2?",
+          "en": "How many bytes of data does the ping from PC0 to PC2 carry in the practical work?"
+        },
+        "answers": [32],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Chiqishda with 32 bytes of data yozilgan va javoblarda bytes=32 koʻrsatilgan.",
+          "ru": "В выводе написано with 32 bytes of data, а в ответах стоит bytes=32.",
+          "en": "The output says with 32 bytes of data and the replies show bytes=32."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kommutatorning joriy sozlamalarini koʻrsatuvchi CLI buyrugʻini yozing.",
+          "ru": "Запишите команду CLI, показывающую текущие настройки коммутатора.",
+          "en": "Write the CLI command that displays the switch's current configuration."
+        },
+        "answers": ["show running-config", "sh run"],
+        "explanation": {
+          "uz": "Buyruqlarni toʻliq yozish shart emas — darsda conf t va sh run kabi qisqartmalar ishlaydi, Tab esa buyruqni toʻldiradi.",
+          "ru": "Команды не обязательно писать целиком: в занятии работают сокращения вроде conf t и sh run, а Tab дополняет команду.",
+          "en": "Commands need not be written in full — the lesson shows that abbreviations such as conf t and sh run work, and Tab completes a command."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Cisco qurilmalaridagi rejimlar va CLI imkoniyatlari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о режимах Cisco-устройств и возможностях CLI верны?",
+          "en": "Which statements about the modes of Cisco devices and the CLI are correct?"
+        },
+        "options": [
+          {
+            "uz": "Foydalanuvchi rejimida soʻrov belgisi > boʻladi",
+            "ru": "В пользовательском режиме приглашение заканчивается знаком >",
+            "en": "The user mode shows the prompt marker >"
+          },
+          {
+            "uz": "Imtiyozli rejimda soʻrov belgisi # boʻladi",
+            "ru": "В привилегированном режиме приглашение заканчивается знаком #",
+            "en": "The privileged mode shows the prompt marker #"
+          },
+          {
+            "uz": "Global sozlash rejimining soʻrov belgisi (config-if)# boʻladi",
+            "ru": "Режим глобальной настройки имеет приглашение (config-if)#",
+            "en": "Global configuration mode has the prompt (config-if)#"
+          },
+          {
+            "uz": "Buyruqni toʻliq yozish shart emas, ? esa yordam koʻrsatadi",
+            "ru": "Команду не обязательно писать целиком, а ? показывает справку",
+            "en": "A command need not be typed in full, and ? gives help"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Global sozlash — (config)#, interfeysni sozlash esa (config-if)# rejimida bajariladi.",
+          "ru": "Глобальная настройка — это (config)#, настройка интерфейса — режим (config-if)#.",
+          "en": "Global configuration is (config)#; configuring an interface happens in (config-if)# mode."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Birinchi ping soʻrovi baʼzan Request timed out bilan tugaydi. Darsda buning sababi nimada deb tushuntiriladi?",
+          "ru": "Первый ping-запрос иногда завершается сообщением Request timed out. Чем занятие объясняет причину?",
+          "en": "The first ping sometimes ends with Request timed out. What does the lesson give as the reason?"
+        },
+        "options": [
+          {
+            "uz": "Kompyuter shu vaqtda ARP orqali qabul qiluvchining MAC manzilini aniqlamoqda",
+            "ru": "В это время компьютер по ARP определяет MAC-адрес получателя",
+            "en": "The computer is resolving the receiver's MAC address through ARP"
+          },
+          {
+            "uz": "Kommutator portni STP bilan bloklab qoʻygan",
+            "ru": "Коммутатор заблокировал порт с помощью STP",
+            "en": "The switch has blocked the port with STP"
+          },
+          {
+            "uz": "Ikki kompyuter turli quyi tarmoqda manzillangan",
+            "ru": "Два компьютера адресованы в разных подсетях",
+            "en": "The two computers are addressed in different subnets"
+          },
+          {
+            "uz": "Kross kabel oʻrniga toʻgʻri kabel ishlatilgan",
+            "ru": "Вместо перекрёстного кабеля применён прямой",
+            "en": "A straight-through cable was used instead of a crossover cable"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Yuboruvchi avval ARP orqali qabul qiluvchining MAC manzilini izlaydi, shu vaqt ichida birinchi soʻrov kechikadi.",
+          "ru": "Отправитель сначала ищет MAC-адрес получателя через ARP, и за это время первый запрос запаздывает.",
+          "en": "The sender first looks up the receiver MAC address with ARP, and during that time the first request is delayed."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Sxema .pkt fayl sifatida saqlangan boʻlsa, qurilma ichidagi sozlamalar ham qurilma qayta yuklangandan keyin saqlanib qoladi.",
+          "ru": "Если схема сохранена как файл .pkt, настройки внутри устройства тоже останутся после его перезагрузки.",
+          "en": "If the diagram is saved as a .pkt file, the settings inside a device survive a reload of that device."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Qurilma ichidagi sozlamalar copy running-config startup-config buyrugʻi bilan saqlanadi; bu qilinmasa, qurilma qayta yuklanganda ular yoʻqoladi.",
+          "ru": "Настройки внутри устройства сохраняются командой copy running-config startup-config; без неё они пропадают при перезагрузке устройства.",
+          "en": "The settings inside a device are saved by copy running-config startup-config; without it they are lost when the device reloads."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Packet Tracer vositalari va interfeysi boʻyicha nazorat savollari",
+      "ru": "Проверочные вопросы по средствам и интерфейсу Packet Tracer",
+      "en": "Check questions on Packet Tracer tools and interface"
+    },
+    "statement": {
+      "uz": "Amaliy ishni bajarishdan oldin besh savolga javob bering: vositalar turi, Packet Tracer interfeysi, ulanish chiroqlari va birinchi CLI buyruqlari. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Прежде чем выполнять практическую работу, ответьте на пять вопросов: виды средств, интерфейс Packet Tracer, индикаторы связи и первые команды CLI. Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before doing the practical work, answer five questions: the kinds of tools, the Packet Tracer interface, the link lights and the first CLI commands. The answers are checked at once and the number of attempts is not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Qaysi vosita Linux da yuzlab virtual host va kommutatorni bitta tarmoqda yigʻishga imkon beradi?",
+            "ru": "Какой инструмент позволяет собрать в Linux сотни виртуальных хостов и коммутаторов в одной сети?",
+            "en": "Which tool lets you build hundreds of virtual hosts and switches in one network on Linux?"
+          },
+          "options": [
+            {
+              "uz": "Mininet",
+              "ru": "Mininet",
+              "en": "Mininet"
+            },
+            {
+              "uz": "EVE-NG",
+              "ru": "EVE-NG",
+              "en": "EVE-NG"
+            },
+            {
+              "uz": "Cisco Packet Tracer",
+              "ru": "Cisco Packet Tracer",
+              "en": "Cisco Packet Tracer"
+            },
+            {
+              "uz": "Wireshark",
+              "ru": "Wireshark",
+              "en": "Wireshark"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda Mininet — Linux da yuzlab virtual host va kommutator, SDN tadqiqotlari uchun emulyator deb berilgan.",
+            "ru": "В занятии Mininet — эмулятор на Linux со сотнями виртуальных хостов и коммутаторов, для исследований SDN.",
+            "en": "The lesson lists Mininet as the Linux emulator with hundreds of virtual hosts and switches, for SDN research."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "EVE-NG — brauzer orqali ishlaydigan laboratoriya serveri.",
+            "ru": "EVE-NG — это лабораторный сервер с доступом через браузер.",
+            "en": "EVE-NG is a lab server used through a browser."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "EVE-NG emulyatori koʻp ishlab chiqaruvchilar obrazlari bilan brauzer orqali ishlaydigan laboratoriya serveri deb tavsiflangan.",
+            "ru": "Эмулятор EVE-NG описан как лабораторный сервер с доступом через браузер и образами многих производителей.",
+            "en": "The EVE-NG emulator is described as a lab server reached through a browser, with images of many vendors."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Packet Tracer da kompyuterga IP manzil berish uchun qurilma oynasining qaysi varagʻi ochiladi?",
+            "ru": "В какой вкладке окна устройства в Packet Tracer задают IP-адрес компьютера?",
+            "en": "In which tab of the Packet Tracer device window do you set a computer's IP address?"
+          },
+          "options": [
+            {
+              "uz": "Desktop — IP Configuration",
+              "ru": "Desktop — IP Configuration",
+              "en": "Desktop — IP Configuration"
+            },
+            {
+              "uz": "Physical — modullar qoʻshiladi",
+              "ru": "Physical — добавление модулей",
+              "en": "Physical — adding modules"
+            },
+            {
+              "uz": "CLI — buyruqlar satri",
+              "ru": "CLI — командная строка",
+              "en": "CLI — the command line"
+            },
+            {
+              "uz": "Config — grafik sozlash",
+              "ru": "Config — графическая настройка",
+              "en": "Config — graphical configuration"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Desktop varagʻi kompyuter uchun: IP Configuration, Command Prompt va Web Browser.",
+            "ru": "Вкладка Desktop для компьютера: IP Configuration, Command Prompt и Web Browser.",
+            "en": "The Desktop tab of a computer holds IP Configuration, Command Prompt and Web Browser."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Ulanish chirogʻi toʻq sariq boʻlsa, darsda bu nimani bildiradi?",
+            "ru": "Что, по занятию, означает оранжевый индикатор соединения?",
+            "en": "According to the lesson, what does an orange link light mean?"
+          },
+          "options": [
+            {
+              "uz": "Port ishga tushmoqda yoki uni STP bloklagan",
+              "ru": "Порт запускается или заблокирован протоколом STP",
+              "en": "The port is coming up or STP has blocked it"
+            },
+            {
+              "uz": "Aloqa yoʻq: port oʻchirilgan yoki kabel notoʻgʻri tanlangan",
+              "ru": "Связи нет: порт выключен или выбран неправильный кабель",
+              "en": "There is no link: the port is shut or the cable is wrong"
+            },
+            {
+              "uz": "Aloqa bor va normal ishlayapti",
+              "ru": "Связь есть и работает нормально",
+              "en": "The link is up and working normally"
+            },
+            {
+              "uz": "Qabul qiluvchi ARP orqali aniqlanmoqda",
+              "ru": "Получатель определяется по ARP",
+              "en": "The receiver is being resolved with ARP"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsdagi chiroqlar: yashil — aloqa bor, toʻq sariq — port ishga tushmoqda yoki STP bloklagan, qizil — aloqa yoʻq.",
+            "ru": "Индикаторы из занятия: зелёный — связь есть, оранжевый — порт запускается или заблокирован STP, красный — связи нет.",
+            "en": "The lesson's lights: green means a link, orange means the port is coming up or STP blocked it, red means no link."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Kommutatorning MAC jadvalini koʻrsatuvchi CLI buyrugʻini yozing.",
+            "ru": "Запишите команду CLI, показывающую MAC-таблицу коммутатора.",
+            "en": "Write the CLI command that shows the switch's MAC table."
+          },
+          "answers": ["show mac-address-table"],
+          "explanation": {
+            "uz": "Buyruq imtiyozli rejimda (soʻrov belgisi #) bajariladi va ping dan keyin toʻlgan MAC jadvalini chiqaradi.",
+            "ru": "Команда выполняется в привилегированном режиме (приглашение #) и выводит MAC-таблицу, которая заполняется после ping.",
+            "en": "The command runs in privileged mode (the # prompt) and prints the MAC table, which fills up after a ping."
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,318 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Massivning birinchi elementiga qanday indeks bilan murojaat qilinadi?",
+          "ru": "По какому индексу обращаются к первому элементу массива?",
+          "en": "Which index is used for the first element of an array?"
+        },
+        "options": [
+          {
+            "uz": "a[0]",
+            "ru": "a[0]",
+            "en": "a[0]"
+          },
+          {
+            "uz": "a[1]",
+            "ru": "a[1]",
+            "en": "a[1]"
+          },
+          {
+            "uz": "a[n]",
+            "ru": "a[n]",
+            "en": "a[n]"
+          },
+          {
+            "uz": "a[n - 1]",
+            "ru": "a[n - 1]",
+            "en": "a[n - 1]"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Indeks — massiv boshidan siljish, birinchi element boshidan 0 qadam uzoqlikda. a[n] massivda yoʻq element, a[n - 1] esa oxirgi element.",
+          "ru": "Индекс — это смещение от начала массива, первый элемент находится на нулевом шаге. a[n] — элемента, которого в массиве нет, a[n - 1] — последний элемент.",
+          "en": "An index is an offset from the start of the array, so the first element sits 0 steps away. a[n] is an element the array does not have, a[n - 1] is the last one."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Massivning elementlari xotirada ketma-ket joylashadi.",
+          "ru": "Элементы массива располагаются в памяти подряд.",
+          "en": "The elements of an array lie one after another in memory."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Elementlar xotirada ketma-ket joylashgani uchun a[i] ga murojaat bir xil tez: manzil = boshlangʻich manzil + i · element oʻlchami. Qaysi elementga murojaat qilishning farqi yoʻq.",
+          "ru": "Благодаря последовательному расположению обращение к a[i] одинаково быстрое: адрес = начальный адрес + i · размер элемента. Неважно, к какому именно элементу мы обращаемся.",
+          "en": "Because the elements are contiguous, a[i] is equally fast to reach: address = start address + i · element size. It makes no difference which element is accessed."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Massiv haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о массиве верны?",
+          "en": "Which statements about an array are correct?"
+        },
+        "options": [
+          {
+            "uz": "Bir xil turdagi elementlarning nomlangan, tartiblangan toʻplami",
+            "ru": "Это именованная упорядоченная совокупность элементов одного типа",
+            "en": "It is a named, ordered collection of elements of one type"
+          },
+          {
+            "uz": "Indeks 0 dan boshlanadi",
+            "ru": "Индексация начинается с 0",
+            "en": "Indexing starts at 0"
+          },
+          {
+            "uz": "Oxirgi element a[n - 1] bilan olinadi",
+            "ru": "Последний элемент получают как a[n - 1]",
+            "en": "The last element is reached as a[n - 1]"
+          },
+          {
+            "uz": "Python roʻyxatining uzunligi yaratilganda belgilanadi va oʻzgarmaydi",
+            "ru": "Длина списка в Python задаётся при создании и не меняется",
+            "en": "The length of a Python list is fixed when it is created"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Python roʻyxatining hajmi oʻzgaruvchan: append bilan oxiriga element qoʻshiladi. Uzunligi yaratilganda belgilanadigani — Java massivi.",
+          "ru": "Длина списка в Python меняется: append добавляет элемент в конец. Неизменная при создании длина — это свойство массива в Java.",
+          "en": "A Python list changes size: append adds an element at its end. The one with a length fixed at creation is the Java array."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Python tilida roʻyxatning uzunligi qanday olinadi?",
+          "ru": "Как в Python получить длину списка?",
+          "en": "How do you get the length of a list in Python?"
+        },
+        "options": [
+          {
+            "uz": "len(a)",
+            "ru": "len(a)",
+            "en": "len(a)"
+          },
+          {
+            "uz": "a.length",
+            "ru": "a.length",
+            "en": "a.length"
+          },
+          {
+            "uz": "a.size()",
+            "ru": "a.size()",
+            "en": "a.size()"
+          },
+          {
+            "uz": "a.count()",
+            "ru": "a.count()",
+            "en": "a.count()"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Uch tilda uzunlik turlicha: Python tilida len(a), Java tilida a.length, C++ tilida a.size().",
+          "ru": "Длина пишется по-разному: на Python len(a), на Java a.length, на C++ a.size().",
+          "en": "The length is written differently in the three languages: len(a) in Python, a.length in Java, a.size() in C++."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "a = [4, 8, 15, 16, 23, 42] boʻlsa, a[2] + a[5] nimaga teng?",
+          "ru": "Если a = [4, 8, 15, 16, 23, 42], чему равно a[2] + a[5]?",
+          "en": "If a = [4, 8, 15, 16, 23, 42], what is the value of a[2] + a[5]?"
+        },
+        "answers": [57],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Indeks 0 dan boshlanadi: a[2] — uchinchi element 15, a[5] — oltinchi element 42. Yigʻindisi 57.",
+          "ru": "Индексация с нуля: a[2] — третий элемент, 15, a[5] — шестой элемент, 42. Сумма равна 57.",
+          "en": "Indexing starts at 0: a[2] is the third element, 15, and a[5] is the sixth, 42. Their sum is 57."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Java tilida massivning uzunligi a.length() deb yoziladi.",
+          "ru": "Длина массива в Java записывается как a.length().",
+          "en": "In Java the length of an array is written as a.length()."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Massiv uchun length qavssiz yoziladi, length() esa satrlar uchun ishlatiladi.",
+          "ru": "Для массива пишется length без скобок, а length() — это для строк.",
+          "en": "For an array it is length without brackets; length() belongs to strings."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Python tilida roʻyxatni joyida teskari tartibga keltiradigan metodni yozing.",
+          "ru": "Напишите метод, который разворачивает список в Python на месте.",
+          "en": "Write the Python method that reverses a list in place."
+        },
+        "answers": ["a.reverse()", "reverse()", "a.reverse", "reverse", "a[::-1]"],
+        "explanation": {
+          "uz": "Darsda massivni teskari qilishning ikki qisqa yoʻli berilgan: a.reverse() va a[::-1]. Yuqoridagi dastur esa ikki koʻrsatkich usuli bilan yangi massiv yaratmasdan ishlaydi.",
+          "ru": "В занятии даны два коротких способа: a.reverse() и a[::-1]. Приведённая же программа разворачивает массив на месте методом двух указателей, не создавая нового.",
+          "en": "The lesson gives two short ways: a.reverse() and a[::-1]. The program itself reverses the array in place with the two-pointer method, creating no new array."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Chegaradan chiqishga, yaʼni a[n] ga murojaat qilishga oid qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о выходе за границы, то есть об обращении к a[n], верны?",
+          "en": "Which statements about going out of bounds, that is accessing a[n], are correct?"
+        },
+        "options": [
+          {
+            "uz": "Python tilida IndexError xatosi chiqadi",
+            "ru": "В Python возникает ошибка IndexError",
+            "en": "In Python an IndexError is raised"
+          },
+          {
+            "uz": "Java tilida ArrayIndexOutOfBoundsException xatosi chiqadi",
+            "ru": "В Java возникает ArrayIndexOutOfBoundsException",
+            "en": "In Java an ArrayIndexOutOfBoundsException is thrown"
+          },
+          {
+            "uz": "C++ tilida xato xabari berilmaydi — begona xotira oʻqiladi yoki buziladi",
+            "ru": "В C++ сообщения об ошибке нет: читается или портится чужая память",
+            "en": "In C++ there is no error message: someone else's memory is read or damaged"
+          },
+          {
+            "uz": "Uchala tilda ham dastur darhol toʻxtaydi",
+            "ru": "Во всех трёх языках программа немедленно останавливается",
+            "en": "In all three languages the program stops at once"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "C++ tilida xato xabari boʻlmagani uchun bu eng xavfli xatolardan biri: dastur baʼzan ishlaydi, baʼzan qulaydi. Shuning uchun sikl sharti doim i < n deb yoziladi, i <= n emas.",
+          "ru": "Именно из-за отсутствия сообщения об ошибке в C++ это один из самых опасных дефектов: программа то работает, то падает. Поэтому условие цикла всегда пишут как i < n, а не i <= n.",
+          "en": "Because C++ gives no message, this is one of the most dangerous bugs: the program sometimes works and sometimes crashes. That is why the loop condition is always written i < n, not i <= n."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Massivni joyida teskari tartibga keltirishda nega n marta emas, n/2 marta almashtirish bajariladi?",
+          "ru": "Почему при развороте массива на месте выполняется n/2 обменов, а не n?",
+          "en": "Why does reversing an array in place take n/2 swaps instead of n?"
+        },
+        "options": [
+          {
+            "uz": "n marta almashtirilsa, massiv ikki marta aylanib, avvalgi holiga qaytadi",
+            "ru": "При n обменах массив повернётся дважды и вернётся в исходное состояние",
+            "en": "With n swaps the array is reversed twice and returns to where it started"
+          },
+          {
+            "uz": "Oʻrtadagi element ikki marta almashtirilishi kerak",
+            "ru": "Средний элемент нужно обменять дважды",
+            "en": "The middle element has to be swapped twice"
+          },
+          {
+            "uz": "Chap koʻrsatkich doim 1 dan boshlanadi",
+            "ru": "Левый указатель всегда начинается с 1",
+            "en": "The left pointer always starts at 1"
+          },
+          {
+            "uz": "Massivning yarmini almashtirish yetarli emas",
+            "ru": "Половины массива для обмена недостаточно",
+            "en": "Half of the array is not enough for swapping"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Chap va oʻng koʻrsatkichlar uchrashguncha ishlaydi: 7 ta elementli massivda 3 ta almashtirish (7 // 2) bajariladi va oʻrtadagi element joyida qoladi.",
+          "ru": "Левый и правый указатели работают до встречи: в массиве из 7 элементов будет 3 обмена (7 // 2), а средний элемент останется на месте.",
+          "en": "The left and right pointers run until they meet: an array of 7 elements takes 3 swaps (7 // 2) and the middle element stays in place."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Eng katta va eng kichik elementlarning yigʻindisi",
+      "ru": "Сумма наибольшего и наименьшего элементов",
+      "en": "The sum of the largest and the smallest element"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda butun son n (1 dan 1000 gacha), ikkinchi qatorda boʻsh joy bilan ajratilgan n ta butun son (har biri -1000000 dan 1000000 gacha) beriladi. Massivning eng katta va eng kichik elementini toping va ularning yigʻindisini bitta qatorda, faqat son koʻrinishida chiqaring — hech qanday qoʻshimcha soʻz yozmang. Masalan, 5 va 78 92 65 88 70 kiritsa, dastur 157 chiqaradi (92 va 65 yigʻindisi). Qidiruvni birinchi elementdan boshlang: 0 dan boshlasangiz, barcha sonlar manfiy boʻlganda javob notoʻgʻri chiqadi.",
+      "ru": "В первой строке задаётся целое число n (от 1 до 1000), во второй строке — n целых чисел через пробел (каждое от -1000000 до 1000000). Найдите наибольший и наименьший элемент массива и выведите их сумму одной строкой — только число, без дополнительных слов. Например, ввод 5 и чисел 78 92 65 88 70 даёт 157 (сумму 92 и 65). Начинайте поиск с первого элемента: если начать с 0, при всех отрицательных числах ответ будет неверным.",
+      "en": "The first line contains an integer n (1 to 1000) and the second line n integers separated by spaces (each from -1000000 to 1000000). Find the largest and the smallest element of the array and print their sum on one line — only the number, with no extra words. For example, the input 5 followed by 78 92 65 88 70 gives 157 (the sum of 92 and 65). Start the search from the first element: starting from 0 gives a wrong answer when all the numbers are negative."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\n\nmn = 0\nmx = 0\nfor x in a:\n    if x < mn:\n        mn = x\n    if x > mx:\n        mx = x\nprint(mn + mx)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n        int mn = 0;\n        int mx = 0;\n        for (int x : a) {\n            if (x < mn) {\n                mn = x;\n            }\n            if (x > mx) {\n                mx = x;\n            }\n        }\n        System.out.println(mn + mx);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    int mn = 0;\n    int mx = 0;\n    for (int x : a) {\n        if (x < mn) {\n            mn = x;\n        }\n        if (x > mx) {\n            mx = x;\n        }\n    }\n    cout << mn + mx << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\n\nmn = a[0]\nmx = a[0]\nfor x in a:\n    if x < mn:\n        mn = x\n    if x > mx:\n        mx = x\nprint(mn + mx)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n        int mn = a[0];\n        int mx = a[0];\n        for (int i = 1; i < n; i++) {\n            if (a[i] < mn) {\n                mn = a[i];\n            }\n            if (a[i] > mx) {\n                mx = a[i];\n            }\n        }\n        System.out.println(mn + mx);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    int mn = a[0];\n    int mx = a[0];\n    for (int i = 1; i < n; i++) {\n        if (a[i] < mn) {\n            mn = a[i];\n        }\n        if (a[i] > mx) {\n            mx = a[i];\n        }\n    }\n    cout << mn + mx << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5\n78 92 65 88 70\n", "expected": "157", "hidden": false },
+        { "input": "3\n-5 -2 -9\n", "expected": "-11", "hidden": false },
+        { "input": "1\n7\n", "expected": "14", "hidden": false },
+        { "input": "4\n0 0 0 0\n", "expected": "0", "hidden": true },
+        { "input": "6\n-1 -2 -3 -4 -5 -6\n", "expected": "-7", "hidden": true },
+        { "input": "4\n1000000 -1000000 5 7\n", "expected": "0", "hidden": true }
+      ]
+    }
+  }
+}

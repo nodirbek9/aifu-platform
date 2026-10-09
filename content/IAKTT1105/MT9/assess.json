@@ -1,0 +1,340 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Katta maʼlumotlar (Big Data) atamasi asosan nimani anglatadi?",
+          "ru": "Что в основном означает термин Большие данные (Big Data)?",
+          "en": "What does the term Big Data mainly refer to?"
+        },
+        "options": [
+          {
+            "uz": "Hajmi, tezligi va xilma-xilligi bilan ajralib turadigan, anʼanaviy usullar bilan qayta ishlash qiyin boʻlgan maʼlumotlar",
+            "ru": "Данные, отличающиеся объемом, скоростью и разнообразием, которые трудно обработать традиционными методами",
+            "en": "Data characterized by volume, velocity, and variety, which are difficult to process using traditional methods"
+          },
+          {
+            "uz": "Faqat kompyuterning operativ xotirasiga sigʻadigan maʼlumotlar",
+            "ru": "Данные, которые помещаются только в оперативную память компьютера",
+            "en": "Data that fits only in the computer's random access memory"
+          },
+          {
+            "uz": "Faqat qogʻozda saqlanadigan maʼlumotlar arxivlari",
+            "ru": "Архивы данных, хранящиеся только на бумаге",
+            "en": "Data archives stored only on paper"
+          },
+          {
+            "uz": "Kichik hajmdagi raqamli matn fayllari",
+            "ru": "Небольшие цифровые текстовые файлы",
+            "en": "Small-sized digital text files"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Katta maʼlumotlar oʻta katta, tez oʻsib boruvchi va turli formatdagi maʼlumotlardir.",
+          "ru": "Большие данные — это огромные, быстрорастущие данные различных форматов.",
+          "en": "Big Data is extremely large, fast-growing data in various formats."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Katta maʼlumotlarning (Big Data) klassik \"3V\" xususiyatlariga qaysilar kiradi?",
+          "ru": "Какие из перечисленного относятся к классическим \"3V\" характеристикам Больших данных?",
+          "en": "Which of the following are included in the classic \"3V\" characteristics of Big Data?"
+        },
+        "options": [
+          {
+            "uz": "Hajm (Volume)",
+            "ru": "Объем (Volume)",
+            "en": "Volume"
+          },
+          {
+            "uz": "Tezlik (Velocity)",
+            "ru": "Скорость (Velocity)",
+            "en": "Velocity"
+          },
+          {
+            "uz": "Xilma-xillik (Variety)",
+            "ru": "Разнообразие (Variety)",
+            "en": "Variety"
+          },
+          {
+            "uz": "Rang (Color)",
+            "ru": "Цвет (Color)",
+            "en": "Color"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "\"3V\" qoidasi Volume (hajm), Velocity (tezlik) va Variety (xilma-xillik) dan iborat.",
+          "ru": "Правило \"3V\" состоит из Volume (объем), Velocity (скорость) и Variety (разнообразие).",
+          "en": "The \"3V\" rule consists of Volume, Velocity, and Variety."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Katta maʼlumotlar (Big Data) faqat tizimlashtirilgan va jadvallashgan maʼlumotlardan iborat.",
+          "ru": "Большие данные (Big Data) состоят только из структурированных и табличных данных.",
+          "en": "Big Data consists only of structured and tabular data."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Katta maʼlumotlar tarkibiga tizimlashtirilmagan maʼlumotlar (matnlar, videolar, ijtimoiy tarmoq xabarlari) ham kiradi.",
+          "ru": "Большие данные также включают неструктурированные данные (тексты, видео, сообщения в социальных сетях).",
+          "en": "Big Data also includes unstructured data (texts, videos, social media posts)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Katta maʼlumotlarni taqsimlangan holda saqlash va qayta ishlash uchun moʻljallangan eng mashhur ochiq kodli freymvork qaysi?",
+          "ru": "Какой самый популярный фреймворк с открытым исходным кодом предназначен для распределенного хранения и обработки Больших данных?",
+          "en": "What is the most popular open-source framework designed for distributed storage and processing of Big Data?"
+        },
+        "options": [
+          {
+            "uz": "Apache Hadoop",
+            "ru": "Apache Hadoop",
+            "en": "Apache Hadoop"
+          },
+          {
+            "uz": "Microsoft Word",
+            "ru": "Microsoft Word",
+            "en": "Microsoft Word"
+          },
+          {
+            "uz": "Adobe Photoshop",
+            "ru": "Adobe Photoshop",
+            "en": "Adobe Photoshop"
+          },
+          {
+            "uz": "Linux Kernel",
+            "ru": "Linux Kernel",
+            "en": "Linux Kernel"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Hadoop - katta maʼlumotlarni klasterlar orqali taqsimlangan holda qayta ishlash vositasidir.",
+          "ru": "Hadoop — это инструмент для распределенной обработки больших данных через кластеры.",
+          "en": "Hadoop is a tool for distributed processing of big data across clusters."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Katta maʼlumotlar (Big Data) tushunchasidagi klassik \"V\" lar soni nechta (dastlabki taʼrifga koʻra)?",
+          "ru": "Сколько классических \"V\" в концепции Больших данных (Big Data) согласно первоначальному определению?",
+          "en": "How many classic \"V\"s are there in the Big Data concept according to the original definition?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Dastlabki taʼrifda 3 ta V (Volume, Velocity, Variety) mavjud edi.",
+          "ru": "В первоначальном определении было 3 V (Volume, Velocity, Variety).",
+          "en": "The original definition had 3 Vs (Volume, Velocity, Variety)."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Katta hajmdagi maʼlumotlarni qayta ishlashda katta ahamiyatga ega boʻlgan va asosan \"Map...\" deb boshlanadigan Hadoop dasturlash modelining toʻliq nomini yozing.",
+          "ru": "Напишите полное название модели программирования Hadoop, которая имеет большое значение при обработке больших объемов данных и начинается с \"Map...\".",
+          "en": "Write the full name of the Hadoop programming model that is of great importance in processing large amounts of data and begins with \"Map...\"."
+        },
+        "answers": ["MapReduce", "mapreduce", "Mapreduce", "MAPREDUCE"],
+        "explanation": {
+          "uz": "MapReduce - taqsimlangan hisoblashlarni amalga oshirish modelidir.",
+          "ru": "MapReduce — это модель для выполнения распределенных вычислений.",
+          "en": "MapReduce is a model for performing distributed computing."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Big Data texnologiyalaridan tijorat va iqtisodiyotda qanday maqsadlarda foydalaniladi?",
+          "ru": "В каких целях технологии Big Data используются в коммерции и экономике?",
+          "en": "For what purposes are Big Data technologies used in commerce and economics?"
+        },
+        "options": [
+          {
+            "uz": "Mijozlarning xulq-atvorini tahlil qilish va bashorat qilish",
+            "ru": "Анализ и прогнозирование поведения клиентов",
+            "en": "Analyzing and predicting customer behavior"
+          },
+          {
+            "uz": "Yangi mahsulotlar yaratishda bozor ehtiyojlarini oʻrganish",
+            "ru": "Изучение потребностей рынка при создании новых продуктов",
+            "en": "Studying market needs when creating new products"
+          },
+          {
+            "uz": "Tovarlar zaxirasini optimallashtirish",
+            "ru": "Оптимизация запасов товаров",
+            "en": "Optimizing inventory of goods"
+          },
+          {
+            "uz": "Faqatgina ofis xodimlarining qogʻoz hujjatlarini chop etish",
+            "ru": "Только для печати бумажных документов офисных сотрудников",
+            "en": "Only for printing paper documents of office employees"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Katta maʼlumotlar iqtisodiyotda tahlil, bashorat va optimallashtirish uchun keng qoʻllaniladi.",
+          "ru": "Большие данные широко используются в экономике для анализа, прогнозирования и оптимизации.",
+          "en": "Big Data is widely used in economics for analysis, prediction, and optimization."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Hadoop ekotizimida maʼlumotlarni taqsimlangan fayl tizimida saqlash uchun qaysi komponent javob beradi?",
+          "ru": "Какой компонент в экосистеме Hadoop отвечает за хранение данных в распределенной файловой системе?",
+          "en": "Which component in the Hadoop ecosystem is responsible for storing data in a distributed file system?"
+        },
+        "options": [
+          {
+            "uz": "HDFS (Hadoop Distributed File System)",
+            "ru": "HDFS (Hadoop Distributed File System)",
+            "en": "HDFS (Hadoop Distributed File System)"
+          },
+          {
+            "uz": "YARN",
+            "ru": "YARN",
+            "en": "YARN"
+          },
+          {
+            "uz": "MapReduce",
+            "ru": "MapReduce",
+            "en": "MapReduce"
+          },
+          {
+            "uz": "Hive",
+            "ru": "Hive",
+            "en": "Hive"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "HDFS maʼlumotlarni klasterdagi tugunlar boʻylab taqsimlangan holda saqlashni taʼminlaydi.",
+          "ru": "HDFS обеспечивает хранение данных в распределенном виде по узлам кластера.",
+          "en": "HDFS provides distributed data storage across nodes in the cluster."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Katta maʼlumotlar",
+      "ru": "Большие данные",
+      "en": "Big Data"
+    },
+    "statement": {
+      "uz": "Mavzu boʻyicha amaliy savollar. Toʻgʻri javoblarni belgilang.",
+      "ru": "Практические вопросы по теме. Отметьте правильные ответы.",
+      "en": "Practice questions on the topic. Mark the correct answers."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Katta maʼlumotlar (Big Data) tahlili biznesda qanday afzallik beradi?",
+            "ru": "Какое преимущество дает анализ больших данных (Big Data) в бизнесе?",
+            "en": "What advantage does Big Data analytics provide in business?"
+          },
+          "options": [
+            {
+              "uz": "Qaror qabul qilish tezligi va aniqligini oshirish",
+              "ru": "Повышение скорости и точности принятия решений",
+              "en": "Increasing the speed and accuracy of decision-making"
+            },
+            {
+              "uz": "Barcha kompyuterlarning ishlash tezligini jismonan oshirish",
+              "ru": "Физическое увеличение скорости работы всех компьютеров",
+              "en": "Physically increasing the processing speed of all computers"
+            },
+            {
+              "uz": "Soliq toʻlashdan butunlay ozod boʻlish",
+              "ru": "Полное освобождение от уплаты налогов",
+              "en": "Complete exemption from paying taxes"
+            },
+            {
+              "uz": "Faqat bitta mijoz haqida maʼlumot yigʻish",
+              "ru": "Сбор информации только об одном клиенте",
+              "en": "Collecting information about only one customer"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Katta maʼlumotlar toʻgʻri qabul qilingan strategik qarorlarni taʼminlaydi.",
+            "ru": "Большие данные обеспечивают правильные стратегические решения.",
+            "en": "Big Data provides correct strategic decisions."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Bulutli texnologiyalar katta maʼlumotlarni qayta ishlashda muhim infratuzilma hisoblanadi.",
+            "ru": "Облачные технологии являются важной инфраструктурой при обработке больших данных.",
+            "en": "Cloud technologies are an important infrastructure in big data processing."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Bulutli xizmatlar katta hajmdagi maʼlumotlarni arzon va tez qabul qilish hamda saqlash imkonini beradi.",
+            "ru": "Облачные сервисы позволяют дешево и быстро получать и хранить большие объемы данных.",
+            "en": "Cloud services allow cheap and fast acquisition and storage of large volumes of data."
+          }
+        }
+      ]
+    }
+  }
+}

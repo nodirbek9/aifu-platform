@@ -1,0 +1,318 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tarmoqlanuvchi algoritm chiziqli algoritmdan nima bilan farq qiladi?",
+          "ru": "Чем разветвляющийся алгоритм отличается от линейного?",
+          "en": "How does a branching algorithm differ from a linear one?"
+        },
+        "options": [
+          {
+            "uz": "Shartga qarab ikki yoki undan ortiq yoʻldan biri tanlanadi",
+            "ru": "В зависимости от условия выбирается один из двух или более путей",
+            "en": "Depending on a condition, one of two or more paths is chosen"
+          },
+          {
+            "uz": "Qadamlari har doim bir xil tartibda, hech biri tashlab ketilmasdan bajariladi",
+            "ru": "Его шаги всегда выполняются в одном порядке и ни один не пропускается",
+            "en": "Its steps are always carried out in the same order, with none skipped"
+          },
+          {
+            "uz": "Takrorlanadigan qadamlardan tuzilgan algoritm",
+            "ru": "Алгоритм, построенный из повторяющихся шагов",
+            "en": "An algorithm built from repeating steps"
+          },
+          {
+            "uz": "Kiritish va chiqarish amallari boʻlmagan algoritm",
+            "ru": "Алгоритм без операций ввода и вывода",
+            "en": "An algorithm without input and output operations"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Tarmoqlanuvchi algoritmda yoʻl shartga qarab tanlanadi. Qadamlar har doim bir xil tartibda bajarilsa, algoritm chiziqli boʻladi.",
+          "ru": "В разветвляющемся алгоритме путь выбирается по условию. Если шаги всегда идут в одном порядке, алгоритм линейный.",
+          "en": "A branching algorithm chooses its path by a condition. When the steps always run in the same order, the algorithm is linear."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blok-sxemada shart romb bilan tasvirlanadi.",
+          "ru": "На блок-схеме условие изображается ромбом.",
+          "en": "On a flowchart a condition is drawn as a diamond."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Rombdan ikkita chiziq chiqadi: ha (rost) va yoʻq (yolgʻon). Ikki tarmoq keyin yana bitta nuqtada birlashadi va algoritm davom etadi.",
+          "ru": "Из ромба выходят две линии: да (истина) и нет (ложь). Затем две ветви снова сходятся в одной точке, и алгоритм продолжается.",
+          "en": "Two lines leave the diamond: yes (true) and no (false). The two branches then meet again at one point and the algorithm continues."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python tilida koʻp shartli zanjirda ishlatiladigan kalit soʻzni yozing.",
+          "ru": "Напишите ключевое слово, которое в Python используется в цепочке из многих условий.",
+          "en": "Write the keyword Python uses in a chain of several conditions."
+        },
+        "answers": ["elif"],
+        "explanation": {
+          "uz": "Pythonʼda bu elif, Java va C++ tilida esa else if deb yoziladi.",
+          "ru": "В Python это elif, на Java и C++ пишется else if.",
+          "en": "Python uses elif; Java and C++ write else if."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Baholash dasturidagi shartlar zanjiri ball >= 56 bilan boshlansa, 95 ball uchun qanday natija chiqadi?",
+          "ru": "Если цепочка условий в программе перевода балла в оценку начинается с ball >= 56, что получится для 95 баллов?",
+          "en": "If the chain of conditions in the grading program starts with ball >= 56, what comes out for 95 points?"
+        },
+        "options": [
+          {
+            "uz": "3",
+            "ru": "3",
+            "en": "3"
+          },
+          {
+            "uz": "5",
+            "ru": "5",
+            "en": "5"
+          },
+          {
+            "uz": "4",
+            "ru": "4",
+            "en": "4"
+          },
+          {
+            "uz": "2",
+            "ru": "2",
+            "en": "2"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Zanjirda shartlar yuqoridan pastga tekshiriladi va birinchi rost shartning bloki bajariladi. 95 >= 56 rost, shuning uchun qolgan shartlar tekshirilmaydi va baho 3 boʻladi.",
+          "ru": "Условия в цепочке проверяются сверху вниз, выполняется блок первого истинного условия. 95 >= 56 истинно, поэтому остальные условия не проверяются, и оценка будет 3.",
+          "en": "The chain checks conditions from top to bottom and runs the block of the first true one. 95 >= 56 is true, so the rest are not checked and the grade becomes 3."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "if-else haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об if-else верны?",
+          "en": "Which statements about if-else are correct?"
+        },
+        "options": [
+          {
+            "uz": "Shart rost boʻlsa birinchi blok, yolgʻon boʻlsa ikkinchi blok bajariladi",
+            "ru": "Если условие истинно, выполняется первый блок, если ложно — второй",
+            "en": "If the condition is true the first block runs, if it is false the second"
+          },
+          {
+            "uz": "Ikkala blok bir vaqtda bajarilishi mumkin",
+            "ru": "Оба блока могут выполниться одновременно",
+            "en": "Both blocks can run at the same time"
+          },
+          {
+            "uz": "Ikkalasidan biri albatta bajariladi",
+            "ru": "Один из них выполняется обязательно",
+            "en": "One of them is always executed"
+          },
+          {
+            "uz": "else blokiga shart yozish mumkin",
+            "ru": "К блоку else можно дописать условие",
+            "en": "You can write a condition on the else block"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Ikkalasidan biri, albatta, bajariladi, ikkalasi birga esa hech qachon. else ga shart yozib boʻlmaydi — shart kerak boʻlsa, else if yoki elif ishlatiladi.",
+          "ru": "Один из блоков выполняется обязательно, оба вместе — никогда. Условие к else писать нельзя: если нужно условие, берут else if или elif.",
+          "en": "One of the two always runs, never both. A condition cannot sit on else — when a condition is needed, use else if or elif."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi baholash dasturiga 71 ball kiritilsa, qanday baho chiqadi?",
+          "ru": "Какую оценку выдаст программа перевода балла в оценку из занятия, если ввести 71 балл?",
+          "en": "What grade does the lesson program print when 71 points are entered?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "71 >= 86 yolgʻon, keyingi shartga oʻtiladi; 71 >= 71 rost, shuning uchun baho 4 boʻladi.",
+          "ru": "71 >= 86 ложно, переходим к следующему условию; 71 >= 71 истинно, поэтому оценка 4.",
+          "en": "71 >= 86 is false, so the next condition is checked; 71 >= 71 is true, so the grade is 4."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Java va C++ tilida if (x > 0); deb yozilsa, undan keyingi blok faqat shart rost boʻlganda bajariladi.",
+          "ru": "Если на Java и C++ написать if (x > 0);, то идущий следом блок выполнится только при истинном условии.",
+          "en": "In Java and C++, if you write if (x > 0);, the block that follows runs only when the condition is true."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Nuqtali vergul boʻsh operatorni boshqaradi, shuning uchun keyingi blok shartga bogʻliq emas va har doim bajariladi.",
+          "ru": "Точка с запятой — пустой оператор, который и подчиняется условию, поэтому следующий блок от условия не зависит и выполняется всегда.",
+          "en": "The semicolon is an empty statement and that is what the condition controls, so the block after it does not depend on the condition and always runs."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Blok va chekinish haqida qaysi ifoda toʻgʻri?",
+          "ru": "Какое утверждение о блоке и отступе верно?",
+          "en": "Which statement about the block and indentation is correct?"
+        },
+        "options": [
+          {
+            "uz": "Pythonʼda blok chekinish bilan belgilanadi, Java va C++ da esa jingalak qavs bilan",
+            "ru": "В Python блок задаётся отступом, в Java и C++ — фигурными скобками",
+            "en": "In Python a block is marked by indentation, in Java and C++ by braces"
+          },
+          {
+            "uz": "Java va C++ da chekinish tashlab ketilgan qatorni belgilaydi",
+            "ru": "В Java и C++ отступ определяет пропускаемую строку",
+            "en": "In Java and C++ indentation marks the skipped line"
+          },
+          {
+            "uz": "Pythonʼda tab va probelni aralashtirish mumkin, xato chiqmaydi",
+            "ru": "В Python можно смешивать табуляцию и пробелы, ошибки не будет",
+            "en": "In Python you may mix tabs and spaces without an error"
+          },
+          {
+            "uz": "Java va C++ da chekinish umuman hech narsaga taʼsir qilmaydi, uni toʻgʻri qoʻyish shart emas",
+            "ru": "В Java и C++ отступ ни на что не влияет, его можно не ставить",
+            "en": "In Java and C++ indentation affects nothing and can be left out"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Pythonʼda bir xil chekinishli qatorlar bitta blokni tashkil qiladi, tab va probel aralashsa IndentationError chiqadi. Java va C++ da blok — { va } orasidagi kod, chekinish esa faqat oʻqish uchun, lekin uni ham toʻgʻri qoʻyish kerak.",
+          "ru": "В Python строки с одинаковым отступом образуют один блок, а смешение табов и пробелов даёт IndentationError. В Java и C++ блок — это код между { и }, отступ нужен для чтения, но и его надо ставить правильно.",
+          "en": "In Python lines with the same indentation form one block, and mixing tabs and spaces gives IndentationError. In Java and C++ the block is the code between { and }; indentation is only for reading, but it still has to be right."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Shartlar va ularni tekshirish haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об условиях и их проверке верны?",
+          "en": "Which statements about conditions and testing them are correct?"
+        },
+        "options": [
+          {
+            "uz": "Zanjirda shartlar yuqoridan pastga tekshiriladi va birinchi rost shartning bloki bajariladi",
+            "ru": "Условия в цепочке проверяются сверху вниз, выполняется блок первого истинного условия",
+            "en": "In a chain the conditions are checked from top to bottom and the block of the first true one runs"
+          },
+          {
+            "uz": "Ichma-ich shartlarni koʻpincha mantiqiy amallar bilan soddalashtirish mumkin",
+            "ru": "Вложенные условия часто можно упростить логическими операциями",
+            "en": "Nested conditions can often be simplified with logical operations"
+          },
+          {
+            "uz": "Har bir tarmoq uchun kamida bitta test kerak, chegaraviy qiymatlar alohida tekshiriladi",
+            "ru": "Для каждой ветви нужен хотя бы один тест, граничные значения проверяются отдельно",
+            "en": "Every branch needs at least one test, and boundary values are checked separately"
+          },
+          {
+            "uz": "Shartlarning tartibini oʻzgartirish natijaga taʼsir qilmaydi",
+            "ru": "Порядок условий не влияет на результат",
+            "en": "The order of the conditions does not affect the result"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Tartib muhim: shartlar kattadan kichikka yozilsa, har birida faqat quyi chegarani tekshirish kifoya. Chuqurligi uchtadan oshgan ichma-ich shartlar oʻqishni qiyinlashtiradi — ularni soddalashtirish yoki zanjirga aylantirish tavsiya etiladi.",
+          "ru": "Порядок важен: если условия писать от большего к меньшему, в каждом достаточно проверить нижнюю границу. Вложенность глубже трёх уровней затрудняет чтение — такие условия упрощают или превращают в цепочку.",
+          "en": "Order matters: written from the highest down, each condition only needs its lower bound. Nesting deeper than three levels is hard to read, so such conditions are simplified or turned into a chain."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Elektr energiyasi toʻlovi",
+      "ru": "Оплата электроэнергии",
+      "en": "The electricity payment"
+    },
+    "statement": {
+      "uz": "Oila oylik elektr energiyasi uchun toʻlovni hisoblaydi. Dasturingiz bitta butun sonni oʻqisin — oyda isteʼmol qilingan kilovatt-soat miqdori (0 dan 1000 gacha). Birinchi 100 kilovatt-soatning har biri 500 soʻm, 100 dan oshgan har bir kilovatt-soat esa 800 soʻm turadi. Umumiy toʻlovni bitta qatorda, faqat son koʻrinishida chiqaring — hech qanday qoʻshimcha soʻz yozmang. Masalan, 150 kiritsa, dastur 90000 chiqaradi: birinchi 100 kilovatt-soat 500 soʻmdan, qolgan 50 kilovatt-soat 800 soʻmdan. Bu yerda tarmoqlanish kerak: isteʼmol 100 dan oshmasa, ikkinchi tarif ishlatilmaydi.",
+      "ru": "Семья считает оплату за электричество за месяц. Ваша программа читает одно целое число — количество киловатт-часов за месяц (от 0 до 1000). Первые 100 киловатт-часов стоят по 500 сум за киловатт-час, каждый киловатт-час сверх 100 — по 800 сум. Выведите общую сумму одной строкой, только число, без дополнительных слов. Например, при вводе 150 программа выводит 90000: 100 на 500 плюс ещё 50 на 800. Здесь нужно ветвление: пока потребление не больше 100, второй тариф не применяется.",
+      "en": "A family works out its monthly electricity payment. Your program reads one integer — the kilowatt-hours used in the month (0 to 1000). The first 100 kilowatt-hours cost 500 som each, and every kilowatt-hour above 100 costs 800 som. Print the total on one line, only the number, with no extra words. For example, the input 150 makes the program print 90000: 100 times 500 plus another 50 times 800. This needs branching: while the consumption is not above 100, the second rate is not used."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\n\nprint(n * 500)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        System.out.println(n * 500);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    cout << n * 500 << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\n\nif n <= 100:\n    print(n * 500)\nelse:\n    print(100 * 500 + (n - 100) * 800)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int total;\n        if (n <= 100) {\n            total = n * 500;\n        } else {\n            total = 100 * 500 + (n - 100) * 800;\n        }\n        System.out.println(total);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int total;\n    if (n <= 100) {\n        total = n * 500;\n    } else {\n        total = 100 * 500 + (n - 100) * 800;\n    }\n    cout << total << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "150\n", "expected": "90000", "hidden": false },
+        { "input": "0\n", "expected": "0", "hidden": false },
+        { "input": "100\n", "expected": "50000", "hidden": false },
+        { "input": "37\n", "expected": "18500", "hidden": true },
+        { "input": "101\n", "expected": "50800", "hidden": true },
+        { "input": "1000\n", "expected": "770000", "hidden": true }
+      ]
+    }
+  }
+}

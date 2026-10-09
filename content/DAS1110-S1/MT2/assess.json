@@ -1,0 +1,285 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Takrorlar soni oldindan maʼlum boʻlsa, dars boʻyicha qaysi sikl tanlanadi?",
+          "ru": "Если число повторений заранее известно, какой цикл, по занятию, выбирают?",
+          "en": "If the number of repetitions is known in advance, which loop does the lesson choose?"
+        },
+        "options": [
+          { "uz": "`for`", "ru": "`for`", "en": "`for`" },
+          { "uz": "`while`", "ru": "`while`", "en": "`while`" },
+          { "uz": "Ikkalasi ham yaramaydi", "ru": "Ни один не подходит", "en": "Neither one works" },
+          { "uz": "Faqat rekursiya", "ru": "Только рекурсия", "en": "Recursion only" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: takrorlar soni maʼlum boʻlsa — `for`, hodisa roʻy berguncha boʻlsa — `while`.",
+          "ru": "В занятии: если число повторений известно — `for`, если «пока не произойдёт событие» — `while`.",
+          "en": "The lesson says: if the count is known — `for`, if it runs “until something happens” — `while`."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Yigʻindi uchun yigʻuvchi 1 dan, koʻpaytma uchun esa 0 dan boshlanadi.",
+          "ru": "Накопитель для суммы начинается с 1, а для произведения — с 0.",
+          "en": "The accumulator starts at 1 for a sum and at 0 for a product."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda teskarisi aytilgan: yigʻindi uchun yigʻuvchi 0 dan, koʻpaytma uchun 1 dan boshlanadi.",
+          "ru": "В занятии сказано обратное: накопитель суммы начинается с 0, произведения — с 1.",
+          "en": "The lesson states the opposite: the accumulator of a sum starts at 0, of a product at 1."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Siklni toʻgʻri tuzish uchun javob beriladigan uch savol qaysilar?",
+          "ru": "Какие три вопроса нужно задать себе, чтобы правильно построить цикл?",
+          "en": "Which three questions must you answer to build a loop correctly?"
+        },
+        "options": [
+          {
+            "uz": "Sikl nimadan boshlanadi?",
+            "ru": "С чего начинается цикл?",
+            "en": "Where does the loop start?"
+          },
+          {
+            "uz": "Har bir qadamda nima oʻzgaradi?",
+            "ru": "Что меняется на каждом шаге?",
+            "en": "What changes at each step?"
+          },
+          {
+            "uz": "Sikl qachon toʻxtaydi?",
+            "ru": "Когда цикл останавливается?",
+            "en": "When does the loop stop?"
+          },
+          {
+            "uz": "Sikl qancha qoʻshimcha xotira oladi?",
+            "ru": "Сколько дополнительной памяти занимает цикл?",
+            "en": "How much extra memory does the loop use?"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda uch savol: nimadan boshlanadi, har qadamda nima oʻzgaradi, qachon toʻxtaydi. Xotira miqdori bu uch savolga kirmaydi.",
+          "ru": "В занятии три вопроса: с чего начинается, что меняется на каждом шаге, когда останавливается. Объём памяти в эти три вопроса не входит.",
+          "en": "The lesson lists three questions: where it starts, what changes each step, when it stops. Memory size is not one of them."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Namunaviy omonat masalasida nega `for` emas, `while` tanlandi?",
+          "ru": "Почему в задаче-образце про вклад выбран `while`, а не `for`?",
+          "en": "In the sample deposit problem, why is a `while` loop chosen rather than a `for` loop?"
+        },
+        "options": [
+          {
+            "uz": "Necha yil kerakligi oldindan nomaʼlum: sikl summa maqsadga yetguncha davom etadi",
+            "ru": "Сколько лет понадобится, заранее неизвестно: цикл идёт, пока сумма не достигнет цели",
+            "en": "The number of years needed is not known in advance: the loop runs until the amount reaches the goal"
+          },
+          {
+            "uz": "`for` sikli Python tilida umuman mavjud emas",
+            "ru": "Цикл `for` вообще отсутствует в языке Python",
+            "en": "A `for` loop does not exist in Python at all"
+          },
+          {
+            "uz": "Foiz har yili kamayib boradi",
+            "ru": "Процентная ставка с каждым годом уменьшается",
+            "en": "The interest rate falls every year"
+          },
+          {
+            "uz": "Sikl cheksiz ishlashi kerak boʻlgani uchun",
+            "ru": "Потому что цикл должен работать бесконечно",
+            "en": "Because the loop is meant to run forever"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Takrorlar soni oldindan nomaʼlum — sikl `summa >= M` sharti bajarilguncha yuradi, shuning uchun `while`.",
+          "ru": "Число повторений заранее неизвестно — цикл идёт до выполнения условия `summa >= M`, поэтому `while`.",
+          "en": "The count is unknown in advance — the loop runs until `summa >= M` holds, so a `while` is used."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qiymatlar jadvaliga koʻra (kirish `1000000 20 2000000`), dastur nechchi yil chiqaradi?",
+          "ru": "Сколько лет выведет программа согласно таблице значений (ввод `1000000 20 2000000`)?",
+          "en": "How many years does the program print, according to the table of values (input `1000000 20 2000000`)?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "4-yil oxirida summa 2 073 600 boʻladi va `summa < M` sharti yolgʻonlashadi — sikl toʻxtaydi, javob 4.",
+          "ru": "К концу 4-го года сумма равна 2 073 600, условие `summa < M` становится ложным — цикл останавливается, ответ 4.",
+          "en": "At the end of year 4 the amount is 2 073 600, the condition `summa < M` turns false and the loop stops: the answer is 4."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Java va C++ tillarida `1 / k` butun boʻlish beradi (0). Haqiqiy (kasrli) boʻlish uchun ifodani qanday yozish kerak?",
+          "ru": "В Java и C++ выражение `1 / k` даёт целочисленное деление (0). Как его записать, чтобы деление было вещественным?",
+          "en": "In Java and C++ the expression `1 / k` gives integer division (0). How must you write it so the division is floating-point?"
+        },
+        "answers": ["1.0 / k", "1.0/k"],
+        "explanation": {
+          "uz": "Darsda haqiqiy boʻlish uchun `1.0 / k` yoziladi deyilgan: 1.0 haqiqiy son boʻlgani uchun butun boʻlishdan saqlanadi.",
+          "ru": "В занятии для вещественного деления пишут `1.0 / k`: так как 1.0 — вещественное число, целочисленного деления не возникает.",
+          "en": "The lesson writes `1.0 / k` for the real division: since 1.0 is a floating-point number, integer division is avoided."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Agar omonat masalasida *p* = 0 boʻlsa, namunaviy dastur nima qiladi?",
+          "ru": "Что сделает программа-образец задачи про вклад, если *p* = 0?",
+          "en": "What does the sample deposit program do if *p* = 0?"
+        },
+        "options": [
+          {
+            "uz": "Summa oʻzgarmaydi va sikl hech qachon tugamaydi",
+            "ru": "Сумма не меняется, и цикл никогда не завершится",
+            "en": "The amount never changes and the loop never ends"
+          },
+          {
+            "uz": "Dastur 0 chiqarib, tugaydi",
+            "ru": "Программа выведет 0 и завершится",
+            "en": "The program prints 0 and finishes"
+          },
+          {
+            "uz": "Bir yildan keyin toʻxtaydi",
+            "ru": "Остановится через один год",
+            "en": "It stops after one year"
+          },
+          {
+            "uz": "Nolga boʻlish xatosini beradi",
+            "ru": "Выдаёт ошибку деления на ноль",
+            "en": "It raises a division-by-zero error"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "p = 0 da koʻpaytuvchi (1 + p / 100) = 1, summa oʻzgarmaydi va `summa < M` doim oʻrinli qoladi. Shuning uchun shartda p > 0 talab qilingan.",
+          "ru": "При p = 0 множитель (1 + p / 100) равен 1, сумма не меняется, и `summa < M` остаётся истинным. Поэтому в условии требуется p > 0.",
+          "en": "With p = 0 the factor (1 + p / 100) is 1, so the amount never changes and `summa < M` stays true. That is why the statement requires p > 0."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Garmonik qator yigʻindisi va sikllar haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о сумме гармонического ряда и о циклах верны?",
+          "en": "Which statements about the harmonic series and about loops are correct?"
+        },
+        "options": [
+          {
+            "uz": "Yigʻindi n oshganda cheksiz oʻsadi (taxminan ln n + 0.577)",
+            "ru": "Сумма растёт неограниченно с ростом n (примерно ln n + 0,577)",
+            "en": "The sum grows without bound as n grows (roughly ln n + 0.577)"
+          },
+          {
+            "uz": "Sikl 1 dan boshlanishi shart, aks holda 1 / 0 — nolga boʻlish boʻladi",
+            "ru": "Цикл должен начинаться с 1, иначе 1 / 0 — это деление на ноль",
+            "en": "The loop must start at 1, otherwise 1 / 0 is a division by zero"
+          },
+          {
+            "uz": "Yigʻindi hisoblaganda yigʻuvchi 1 dan boshlanadi",
+            "ru": "При вычислении суммы накопитель начинается с 1",
+            "en": "When computing a sum the accumulator starts at 1"
+          },
+          {
+            "uz": "Natijani shartda kerakli aniqlikda emas, istalgancha chiqarish mumkin",
+            "ru": "Результат можно выводить с любой точностью, а не указанной в условии",
+            "en": "The result may be printed to any precision, not the one the statement asks for"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Yigʻuvchi yigʻindi uchun 0 dan boshlanadi va natija shartdagi aniqlikda (4 kasr xona) chiqariladi — shuning uchun oxirgi ikki ifoda notoʻgʻri.",
+          "ru": "Накопитель суммы начинается с 0, а результат выводится с точностью из условия (4 знака) — поэтому последние два утверждения неверны.",
+          "en": "A sum's accumulator starts at 0 and the result is printed to the statement's precision (4 decimals), so the last two statements are wrong."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`while` sikli uning sharti yolgʻon boʻlganda toʻxtaydi.",
+          "ru": "Цикл `while` останавливается, когда его условие становится ложным.",
+          "en": "A `while` loop stops when its condition becomes false."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadvalga koʻra: `while` sikli shart yolgʻon boʻlganda toʻxtaydi, `for` esa hisoblagich chegaraga yetganda.",
+          "ru": "Согласно таблице из занятия: `while` останавливается, когда условие ложно, а `for` — когда счётчик достигает границы.",
+          "en": "By the lesson's table, a `while` stops when the condition is false, while a `for` stops when the counter reaches its bound."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Birinchi n ta sonning kvadratlar yigʻindisi",
+      "ru": "Сумма квадратов первых n чисел",
+      "en": "The sum of squares of the first n numbers"
+    },
+    "statement": {
+      "uz": "Bitta butun son *n* (1 ≤ *n* ≤ 10000) kiritiladi. 1² + 2² + 3² + … + *n*² yigʻindini hisoblang va bitta qatorda, faqat son koʻrinishida chiqaring. Masalan, *n* = 4 boʻlsa 1 + 4 + 9 + 16 = 30 chiqadi; *n* = 1 boʻlsa 1 chiqadi. Yigʻuvchini 0 dan boshlang.",
+      "ru": "Вводится одно целое число *n* (1 ≤ *n* ≤ 10000). Вычислите сумму 1² + 2² + 3² + … + *n*² и выведите её одной строкой — только число. Например, при *n* = 4 получается 1 + 4 + 9 + 16 = 30, при *n* = 1 получается 1. Накопитель начинайте с 0.",
+      "en": "A single integer *n* (1 ≤ *n* ≤ 10000) is given. Compute the sum 1² + 2² + 3² + … + *n*² and print it on one line — only the number. For example, *n* = 4 gives 1 + 4 + 9 + 16 = 30, and *n* = 1 gives 1. Start the accumulator at 0."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\ns = 0\nfor i in range(1, n + 1):\n    s = s + i\nprint(s)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long s = 0;\n        for (int i = 1; i <= n; i++) {\n            s = s + i;\n        }\n        System.out.println(s);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    long long s = 0;\n    for (int i = 1; i <= n; i++) {\n        s = s + i;\n    }\n    cout << s << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\ns = 0\nfor i in range(1, n + 1):\n    s = s + i * i\nprint(s)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long s = 0;\n        for (int i = 1; i <= n; i++) {\n            s = s + (long) i * i;\n        }\n        System.out.println(s);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    long long s = 0;\n    for (int i = 1; i <= n; i++) {\n        s = s + (long long) i * i;\n    }\n    cout << s << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "1\n", "expected": "1", "hidden": false },
+        { "input": "2\n", "expected": "5", "hidden": false },
+        { "input": "4\n", "expected": "30", "hidden": false },
+        { "input": "10\n", "expected": "385", "hidden": true },
+        { "input": "100\n", "expected": "338350", "hidden": true }
+      ]
+    }
+  }
+}

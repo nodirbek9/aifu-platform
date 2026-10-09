@@ -1,0 +1,444 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Parol menejeri darsda qanday tavsiflangan?",
+          "ru": "Как менеджер паролей описан в занятии?",
+          "en": "How does the lesson describe a password manager?"
+        },
+        "options": [
+          {
+            "uz": "Barcha parollarni shifrlangan seyfda saqlovchi dastur; siz faqat bitta kuchli asosiy parolni eslab qolasiz",
+            "ru": "Программа, хранящая все пароли в зашифрованном сейфе; вы запоминаете только один сильный мастер-пароль",
+            "en": "A program that stores all your passwords in an encrypted vault; you remember only one strong master password"
+          },
+          {
+            "uz": "Parollarni brauzer tarixida saqlovchi fayl",
+            "ru": "Файл, хранящий пароли в истории браузера",
+            "en": "A file that keeps passwords in the browser history"
+          },
+          {
+            "uz": "Parolni har oy almashtirib turuvchi virusdan himoya dasturi",
+            "ru": "Антивирус, который сам меняет пароль каждый месяц",
+            "en": "An antivirus that changes your password every month"
+          },
+          {
+            "uz": "Parollarni xotirangizga yozib qoʻyuvchi daftarcha ilovasi",
+            "ru": "Приложение-блокнот, куда вы записываете пароли на память",
+            "en": "A notepad app where you write passwords down to memorize them"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda asosiy savol ham shu: ishonch nimaga asoslanadi — menejerning kriptografiyasi va ishlab chiqaruvchining xavfsizlik amaliyotiga.",
+          "ru": "Главный вопрос занятия тоже этот: на чём основано доверие — на криптографии менеджера и практике безопасности производителя.",
+          "en": "The lesson's key question is the same: what is trust based on — the manager's cryptography and the vendor's security practice."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "CompTIA Security+, ISC2 CC va Cisco CyberOps Associate — darsdagi jadvalda yuqori darajadagi sertifikatlar deb belgilangan.",
+          "ru": "CompTIA Security+, ISC2 CC и Cisco CyberOps Associate обозначены в таблице занятия как сертификации высшего уровня.",
+          "en": "CompTIA Security+, ISC2 CC and Cisco CyberOps Associate are marked in the lesson's table as advanced certifications."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Uchala ham boshlangʻich darajada; yuqori darajaga CISSP, CISM va CISA kiritilgan.",
+          "ru": "Все три относятся к начальному уровню; к высшему отнесены CISSP, CISM и CISA.",
+          "en": "All three are entry level; the advanced band holds CISSP, CISM and CISA."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda parol menejerining afzalliklari qatorsiga nimalar kiritilgan?",
+          "ru": "Что из перечислено в занятии как достоинства менеджера паролей?",
+          "en": "Which of these does the lesson list as advantages of a password manager?"
+        },
+        "options": [
+          {
+            "uz": "Har bir sayt uchun 20+ belgili tasodifiy parol",
+            "ru": "Случайный пароль из 20+ символов для каждого сайта",
+            "en": "A random password of 20+ characters for every site"
+          },
+          {
+            "uz": "Parollarni qayta ishlatmaslik — credential stuffing ga qarshi",
+            "ru": "Отказ от повторного использования паролей — против credential stuffing",
+            "en": "No password reuse — against credential stuffing"
+          },
+          {
+            "uz": "Avtotoʻldirish orqali fishingdan himoya: menejer soxta domenda parolni taklif qilmaydi",
+            "ru": "Защита от фишинга через автозаполнение: менеджер не предложит пароль на поддельном домене",
+            "en": "Phishing protection through autofill: the manager does not offer the password on a fake domain"
+          },
+          {
+            "uz": "Barcha parollarni serverda asosiy parol bilan birga saqlash",
+            "ru": "Хранение всех паролей на сервере вместе с мастер-паролем",
+            "en": "Storing all passwords on the server together with the master password"
+          },
+          {
+            "uz": "Parolni xotirada saqlashni talab qilishi",
+            "ru": "Требование держать все пароли в памяти",
+            "en": "Requiring you to keep every password in memory"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Serverga faqat shifrlangan seyf yuboriladi, provayder asosiy parolni bilmaydi; boshqa ogʻir tomoni esa xavflar boʻlimida — barcha parollar bitta joyda.",
+          "ru": "На сервер уходит только зашифрованный сейф, и поставщик не знает мастер-пароль; другая сторона — риск: все пароли в одном месте.",
+          "en": "Only the encrypted vault goes to the server and the provider never knows the master password; the other side of it is the risk: all passwords in one place."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Nol bilim arxitekturasi darsda qanday izohlangan?",
+          "ru": "Как архитектура нулевого знания объясняется в занятии?",
+          "en": "How does the lesson explain zero-knowledge architecture?"
+        },
+        "options": [
+          {
+            "uz": "Seyf qurilmaning oʻzida asosiy paroldan olingan kalit bilan shifrlanadi; xizmat koʻrsatuvchi asosiy parolni ham, parollaringizni ham bilmaydi",
+            "ru": "Сейф шифруется на самом устройстве ключом из мастер-пароля; поставщик не знает ни мастер-пароля, ни ваших паролей",
+            "en": "The vault is encrypted on the device with a key derived from the master password; the provider knows neither the master password nor your passwords"
+          },
+          {
+            "uz": "Xizmat koʻrsatuvchi parollarni biladi, lekin sizga aytmaydi",
+            "ru": "Поставщик знает пароли, но не сообщает их вам",
+            "en": "The provider knows your passwords but does not tell you"
+          },
+          {
+            "uz": "Parollar qurilmada shifrlanmay, faqat serverda shifrlanadi",
+            "ru": "Пароли шифруются не на устройстве, а только на сервере",
+            "en": "Passwords are encrypted not on the device but only on the server"
+          },
+          {
+            "uz": "Menejerning kaliti ilova ichida ochiq holda yozilgan",
+            "ru": "Ключ менеджера открыто записан внутри приложения",
+            "en": "The manager's key is written in plain text inside the app"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Uch qadamli tavsifda kalit qurilmaning oʻzida sekin kalit hosil qilish funksiyasi bilan olinadi va serverga faqat shifrlangan seyf yuboriladi.",
+          "ru": "В описании из трёх шагов ключ получается на самом устройстве медленной функцией выработки ключа, а на сервер отправляется только зашифрованный сейф.",
+          "en": "In the three-step description the key is produced on the device by a slow key derivation function, and only the encrypted vault is sent to the server."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi jadvalga koʻra, CISSP sertifikati nechta yillik amaliy tajriba talab qiladi?",
+          "ru": "Согласно таблице занятия, сколько лет практического опыта требует сертификация CISSP?",
+          "en": "According to the lesson's table, how many years of experience does the CISSP certification require?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "CISSP — yuqori daraja, tajribali mutaxassislar va rahbarlar uchun, jadvalda 5 yil tajriba talab qilinishi koʻrsatilgan.",
+          "ru": "CISSP — высший уровень для опытных специалистов и руководителей; в таблице указан требуемый опыт в 5 лет.",
+          "en": "CISSP is an advanced certification for experienced specialists and managers; the table states 5 years of experience."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda asosiy paroldan shifrlash kalitini olish uchun ishlatiladigan sekin kalit hosil qilish funksiyalaridan birining nomini yozing.",
+          "ru": "Запишите название одной из медленных функций выработки ключа из занятия, которой из мастер-пароля получают ключ шифрования.",
+          "en": "Write the name of one of the slow key derivation functions the lesson says turn the master password into the encryption key."
+        },
+        "answers": ["PBKDF2", "Argon2", "pbkdf2", "argon2"],
+        "explanation": {
+          "uz": "Darsda PBKDF2 yoki Argon2 deb berilgan; ular kalitni qurilmaning oʻzida va sekin hosil qiladi.",
+          "ru": "В занятии названы PBKDF2 или Argon2; они получают ключ на устройстве и медленно.",
+          "en": "The lesson names PBKDF2 or Argon2; they derive the key on the device and slowly."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "LastPass hodisasida seyflar shifrlangan boʻlsa-da, hujumchilar nimani koʻra olgan edi?",
+          "ru": "Что смогли увидеть злоумышленники в инциденте LastPass, хотя сейфы были зашифрованы?",
+          "en": "In the LastPass incident the vaults were encrypted — what could the attackers still see?"
+        },
+        "options": [
+          {
+            "uz": "Baʼzi shifrlanmagan maydonlarni, masalan sayt manzillarini — kim qaysi saytlardan foydalanishini",
+            "ru": "Некоторые незашифрованные поля, например адреса сайтов — кто какими сайтами пользуется",
+            "en": "Some unencrypted fields, for example website addresses — who used which sites"
+          },
+          {
+            "uz": "Barcha foydalanuvchilarning asosiy parollarini",
+            "ru": "Мастер-пароли всех пользователей",
+            "en": "The master passwords of all users"
+          },
+          {
+            "uz": "Har bir sayt uchun yaratilgan 20 belgili parollarni ochiq holda",
+            "ru": "Случайные 20-символьные пароли каждого сайта в открытом виде",
+            "en": "The random 20-character passwords of every site in plain text"
+          },
+          {
+            "uz": "Foydalanuvchilarning bank toʻlovlarini",
+            "ru": "Банковские платежи пользователей",
+            "en": "Users' bank payments"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi sabablardan biri shu: metamaʼlumotlar ham shifrlanishi kerak; qolganlari — eski hisoblardagi past PBKDF2 takrorlash soni.",
+          "ru": "Одна из причин в занятии именно эта: метаданные тоже должны шифроваться; ещё одна — малое число итераций PBKDF2 у старых учётных записей.",
+          "en": "One of the lesson's reasons is exactly this: metadata must be encrypted too; another is the low PBKDF2 iteration count of old accounts."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi koʻp uchraydigan xatolar roʻyxatiga parol menejeri boʻyicha qaysilari kiritilgan?",
+          "ru": "Что из перечисленного по менеджерам паролей входит в список частых ошибок занятия?",
+          "en": "Which of these password-manager practices are in the lesson's list of common mistakes?"
+        },
+        "options": [
+          {
+            "uz": "Asosiy parolni boshqa joyda ham ishlatish",
+            "ru": "Использовать мастер-пароль где-то ещё",
+            "en": "Using the master password elsewhere"
+          },
+          {
+            "uz": "Norasmiy manbadan oʻrnatish — soxta menejer parollarni oʻgʻirlashning eng toʻgʻri yoʻli",
+            "ru": "Установка из неофициального источника: поддельный менеджер — самый прямой путь кражи паролей",
+            "en": "Installing from an unofficial source: a fake manager is the most direct way to steal passwords"
+          },
+          {
+            "uz": "Avtotoʻldirish ishlamaganda domenni tekshirmasdan parolni qoʻlda koʻchirib kiritish",
+            "ru": "Копировать пароль вручную без проверки домена, когда автозаполнение не работает",
+            "en": "Pasting the password by hand without checking the domain when autofill fails"
+          },
+          {
+            "uz": "Parol menejeri hisobiga MFA yoqish",
+            "ru": "Включить MFA для учётной записи менеджера паролей",
+            "en": "Enabling MFA on the password manager account"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "MFA ni yoqish aksincha tavsiya: seyfga kirish — barcha hisoblarga kirish, shuning uchun xatolar qatorsiga MFA yoqmaslik kiritilgan.",
+          "ru": "Включение MFA, наоборот, рекомендация: доступ к сейфу — это доступ ко всем учётным записям, поэтому в ошибки входит «не включать MFA».",
+          "en": "Enabling MFA is a recommendation instead: access to the vault is access to every account, so the mistake listed is not enabling it."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, sertifikat amaliy tajribani toʻliq almashtiradi.",
+          "ru": "Согласно занятию, сертификация полностью заменяет практический опыт.",
+          "en": "According to the lesson, a certification completely replaces practical experience."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Sertifikat bilimni tasdiqlaydi, lekin tajribani almashtirmaydi; sertifikatni bilim bilan tenglashtirish xato deb koʻrsatilgan, amaliy tajriba esa alohida talab qilinadi.",
+          "ru": "Сертификат подтверждает знания, но не заменяет опыт; приравнивать сертификат к знаниям названо ошибкой, а практический опыт требуется отдельно.",
+          "en": "A certification confirms knowledge but does not replace experience; the lesson calls equating it with knowledge a mistake and requires practical experience separately."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Parol menejerini xavfsiz sozlash boʻyicha nazorat savollari",
+      "ru": "Проверочные вопросы о безопасной настройке менеджера паролей",
+      "en": "Check questions on setting up a password manager securely"
+    },
+    "statement": {
+      "uz": "Amaliy ishni bajarishdan oldin darsning «Professional sertifikatlar», «Parol menejerlari» va «Amaliy ish: parol menejerini sozlash» boʻlimlariga asoslangan besh savolga javob bering. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Прежде чем выполнять практическую работу, ответьте на пять вопросов по разделам «Профессиональные сертификации», «Менеджеры паролей» и «Практическая работа: настройка менеджера паролей». Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before you start the practical work, answer five questions based on the lesson's sections \"Professional certifications\", \"Password managers\" and \"Practical work: setting up a password manager\". The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Amaliy ish boʻyicha dars qaysi menejerni tanlashni tavsiya qiladi?",
+            "ru": "Какой менеджер занятие советует выбрать для практической работы?",
+            "en": "Which manager does the lesson tell you to choose for the practical work?"
+          },
+          "options": [
+            {
+              "uz": "Ochiq kodli menejerni — Bitwarden yoki KeePassXC — va rasmiy saytdan oʻrnatishni",
+              "ru": "Менеджер с открытым кодом — Bitwarden или KeePassXC — и установить с официального сайта",
+              "en": "An open-source one — Bitwarden or KeePassXC — installed from the official website"
+            },
+            {
+              "uz": "Telefon doʻkonidagi birinchi chiqqan bepul menejerni",
+              "ru": "Первое бесплатное приложение из магазина телефона",
+              "en": "The first free app that appears in the phone store"
+            },
+            {
+              "uz": "Parollarni oddiy matn faylida saqlashni",
+              "ru": "Хранить пароли в простом текстовом файле",
+              "en": "Keeping the passwords in a plain text file"
+            },
+            {
+              "uz": "Barcha parollarni xotirangizga yozib qoʻyishni",
+              "ru": "Записать все пароли в память",
+              "en": "Memorising all the passwords"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Bitwarden ochiq kodli, mustaqil auditlardan oʻtgan va bepul tarifi bor; KeePassXC ham ochiq kodli, lekin oflayn — seyf fayli faqat qurilmangizda qoladi.",
+            "ru": "Bitwarden — открытый код, независимые аудиты и бесплатный тариф; KeePassXC тоже с открытым кодом, но офлайн: файл сейфа остаётся только на устройстве.",
+            "en": "Bitwarden is open source, independently audited and has a free plan; KeePassXC is also open source but offline — the vault file stays only on your device."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsda generatorning uzunlik sozlamasi kamida nechta belgi deb berilgan?",
+            "ru": "Какую минимальную длину в символах занятие задаёт для настроек генератора?",
+            "en": "What minimum length in characters does the lesson give for the generator settings?"
+          },
+          "answers": [20],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Uzunlik 20+ va barcha belgi turlari; bundan tashqari 3 eng muhim hisobning parolini menejer yaratgan noyob parolga almashtirish aytilgan.",
+            "ru": "Длина 20+ и все типы символов; кроме того, советует сменить пароли 3 самых важных учётных записей на уникальные, созданные менеджером.",
+            "en": "Length 20+ with all character types; the lesson also says to replace the passwords of your 3 most important accounts with unique ones from the manager."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Asosiy iborani telefonda yoki bulutdagi nota ilovasida saqlash darsdagi tavsiyaga mos keladi.",
+            "ru": "Хранить мастер-фразу в телефоне или облачной заметке — это соответствует совету занятия.",
+            "en": "Keeping the master passphrase in your phone or a cloud note matches the lesson's advice."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Darsda kamida 4–5 tasodifiy soʻzdan iborat asosiy ibora yaratish, uni hech qayerda raqamli saqlamaslik va faqat qogʻozda xavfsiz joyda zaxira sifatida tutish aytilgan.",
+            "ru": "В занятии сказано создать мастер-фразу не менее чем из 4–5 случайных слов, не хранить её в цифровом виде и держать только на бумаге в надёжном месте как резерв.",
+            "en": "The lesson says to create a master passphrase of at least 4–5 random words, never store it digitally, and keep it only on paper in a safe place as a backup."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Amaliy ish hisobotida nimani koʻrsatish mumkin deb berilgan?",
+            "ru": "Что разрешено показать в отчёте по практической работе?",
+            "en": "What is the report for the practical work allowed to show?"
+          },
+          "options": [
+            {
+              "uz": "Faqat sozlamalar skrinshotlarini",
+              "ru": "Только скриншоты настроек",
+              "en": "Only screenshots of the settings"
+            },
+            {
+              "uz": "Seyfning toʻliq mazmunini",
+              "ru": "Полное содержимое сейфа",
+              "en": "The full contents of the vault"
+            },
+            {
+              "uz": "Asosiy parolni matn koʻrinishida",
+              "ru": "Мастер-пароль в виде текста",
+              "en": "The master password as text"
+            },
+            {
+              "uz": "Barcha hisoblarning roʻyxatini parollari bilan",
+              "ru": "Список всех учётных записей с паролями",
+              "en": "A list of all accounts with their passwords"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda parollar va seyf mazmunini koʻrsatmaslik, favqulodda kirish yoki tiklash kodlarini esa xavfsiz joyda saqlash aytilgan.",
+            "ru": "В занятии сказано не показывать пароли и содержимое сейфа, а коды экстренного доступа или восстановления хранить в надёжном месте.",
+            "en": "The lesson says not to show passwords or vault contents, and to keep emergency access or recovery codes in a safe place."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "1Password asosiy paroldan tashqari yana qanday kalitni ishlatadi? Darsda berilgan inglizcha nomini yozing.",
+            "ru": "Какой ключ 1Password использует кроме мастер-пароля? Запишите английское название из занятия.",
+            "en": "Besides the master password, what other key does 1Password use? Write the English name given in the lesson."
+          },
+          "answers": ["Secret Key", "secret key", "Secretkey", "maxfiy kalit"],
+          "explanation": {
+            "uz": "Dars jadvalida 1Password tijoriy menejer boʻlib, asosiy paroldan tashqari maxfiy kalit (Secret Key) ham ishlatishi yozilgan.",
+            "ru": "В таблице занятия 1Password — коммерческий менеджер, который кроме мастер-пароля использует секретный ключ (Secret Key).",
+            "en": "The lesson's table lists 1Password as commercial and using a Secret Key in addition to the master password."
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,344 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "IaaS modelida provayder mijozga tayyor dasturiy taʼminotni (masalan, CRM yoki pochtani) taqdim etadi.",
+          "ru": "В модели IaaS провайдер предоставляет клиенту готовое программное обеспечение (например, CRM или почту).",
+          "en": "In the IaaS model, the provider gives the customer ready-made software (for example, CRM or email)."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Tayyor dasturiy taʼminotni (SaaS) emas, IaaS modelida provayder mijozga virtual serverlar va tarmoqni beradi.",
+          "ru": "В модели IaaS провайдер предоставляет клиенту виртуальные серверы и сеть, а не готовое программное обеспечение (это SaaS).",
+          "en": "In the IaaS model, the provider gives the customer virtual servers and networking, not ready-made software (which is SaaS)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi narx modelida 1-3 yillik majburiyat evaziga katta chegirma beriladi?",
+          "ru": "В какой модели цен предоставляется большая скидка за обязательство на 1–3 года?",
+          "en": "Which pricing model provides a large discount in exchange for a 1-3 year commitment?"
+        },
+        "options": [
+          {
+            "uz": "Rezerv",
+            "ru": "Резерв",
+            "en": "Reserved"
+          },
+          {
+            "uz": "Talab boʻyicha",
+            "ru": "По требованию",
+            "en": "On-demand"
+          },
+          {
+            "uz": "Spot",
+            "ru": "Spot",
+            "en": "Spot"
+          },
+          {
+            "uz": "Serversiz",
+            "ru": "Бессерверная",
+            "en": "Serverless"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Rezerv (1-3 yilga band qilish) modelida oldindan majburiyat olingani uchun katta chegirma beriladi.",
+          "ru": "В модели резервирования (бронирование на 1–3 года) предоставляется большая скидка за предварительное обязательство.",
+          "en": "The reserved model (a 1-3 year commitment) provides a large discount in exchange for an advance commitment."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Konteynerlar va virtual mashinalar oʻrtasidagi farqlar qaysilar?",
+          "ru": "Какие из перечисленных являются отличиями между контейнерами и виртуальными машинами?",
+          "en": "Which of the following are differences between containers and virtual machines?"
+        },
+        "options": [
+          {
+            "uz": "Konteynerlar umumiy OT yadrosidan foydalanadi",
+            "ru": "Контейнеры используют общее ядро ОС",
+            "en": "Containers share the OS kernel"
+          },
+          {
+            "uz": "Konteynerlar soniyalar ichida ishga tushadi",
+            "ru": "Контейнеры запускаются за секунды",
+            "en": "Containers start in seconds"
+          },
+          {
+            "uz": "Virtual mashinalar gigabaytlab joy egallaydi",
+            "ru": "Виртуальные машины занимают гигабайты",
+            "en": "Virtual machines take up gigabytes"
+          },
+          {
+            "uz": "Virtual mashinalar faqat bitta operatsion tizimda ishlaydi",
+            "ru": "Виртуальные машины работают только на одной операционной системе",
+            "en": "Virtual machines run only on a single operating system"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Virtual mashinada alohida OT bor va u turli operatsion tizimlarda ishlashi mumkin, konteynerlar esa yengil va tez boʻlib, bitta umumiy yadrodan foydalanadi.",
+          "ru": "Виртуальная машина имеет отдельную ОС и может работать на разных системах, тогда как контейнеры лёгкие и используют общее ядро.",
+          "en": "A virtual machine has a separate OS and can run on different operating systems, while containers are lightweight and use a shared kernel."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Zaxira nusxalar, arxivlar, rasm va videolar kabi katta hajmdagi maʼlumotlarni saqlash uchun qaysi saqlash turi mos keladi?",
+          "ru": "Какой вид хранения лучше всего подходит для больших объёмов данных, таких как резервные копии, архивы, фото и видео?",
+          "en": "Which storage type is best for storing large amounts of data such as backups, archives, photos, and videos?"
+        },
+        "options": [
+          {
+            "uz": "Obyektli saqlash",
+            "ru": "Объектное хранение",
+            "en": "Object storage"
+          },
+          {
+            "uz": "Blokli saqlash",
+            "ru": "Блочное хранение",
+            "en": "Block storage"
+          },
+          {
+            "uz": "Faylli saqlash",
+            "ru": "Файловое хранение",
+            "en": "File storage"
+          },
+          {
+            "uz": "Relyatsion saqlash",
+            "ru": "Реляционное хранение",
+            "en": "Relational storage"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Obyektli saqlash katta hajmdagi maʼlumotlarni arzon va cheksiz masshtabda saqlash imkonini beradi.",
+          "ru": "Объектное хранение позволяет дёшево и с неограниченным масштабом хранить большие объёмы данных.",
+          "en": "Object storage allows storing large amounts of data cheaply and with unlimited scale."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Minglab konteynerlarni avtomatik boshqarish (ishga tushirish, masshtablash, nosozlikda qayta tiklash) uchun ishlatiladigan tizim nomini yozing.",
+          "ru": "Напишите название системы для автоматического управления тысячами контейнеров (запуск, масштабирование, восстановление).",
+          "en": "Write the name of the system used to automatically manage thousands of containers (starting, scaling, recovering)."
+        },
+        "answers": [
+          "Kubernetes",
+          "kubernetes",
+          "K8s",
+          "k8s"
+        ],
+        "explanation": {
+          "uz": "Docker konteynerlarni yaratish uchun, Kubernetes esa ularni klasterda boshqarish uchun ishlatiladi.",
+          "ru": "Docker используется для создания контейнеров, а Kubernetes — для управления ими в кластере.",
+          "en": "Docker is used to create containers, while Kubernetes is used to manage them in a cluster."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Virtual server talab boʻyicha soatiga 1500 soʻm, rezerv bilan esa oyiga 750000 soʻm turadi. Zararsizlik nuqtasi necha soatda yuz beradi (yuqoriga yaxlitlaganda)?",
+          "ru": "Виртуальный сервер стоит 1500 сумов в час по требованию и 750000 сумов в месяц по резерву. На скольких часах достигается точка безубыточности (при округлении вверх)?",
+          "en": "A virtual server costs 1500 soums per hour on-demand and 750,000 soums per month reserved. At how many hours does the break-even point occur (rounding up)?"
+        },
+        "answers": [
+          500
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Zararsizlik nuqtasi 750000 / 1500 = 500 soat. 500 soatdan koʻp ishlaganda rezerv arzonroq boʻladi.",
+          "ru": "Точка безубыточности 750000 / 1500 = 500 часов. При работе более 500 часов резерв становится выгоднее.",
+          "en": "The break-even point is 750000 / 1500 = 500 hours. Working more than 500 hours makes a reservation cheaper."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Chekka hisoblash (edge computing) kechikishni kamaytirish uchun maʼlumotlarni faqat markaziy bulut serverlarida qayta ishlashni anglatadi.",
+          "ru": "Периферийные вычисления (edge computing) означают обработку данных исключительно на центральных облачных серверах для снижения задержки.",
+          "en": "Edge computing means processing data exclusively in central cloud servers to reduce latency."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Notoʻgʻri. Chekka hisoblash maʼlumotlarni markaziy serverda emas, manbaga (masalan, zavod yoki doʻkonga) yaqin joyda qayta ishlashdir.",
+          "ru": "Неверно. Периферийные вычисления — это обработка данных не на центральном сервере, а рядом с источником (например, на заводе или в магазине).",
+          "en": "False. Edge computing is the processing of data not on a central server, but close to its source (for example, in a factory or a shop)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "FaaS (serversiz) va Spot narx modellari haqida qaysi tasdiqlar toʻgʻri?",
+          "ru": "Какие из следующих утверждений точно описывают модели цен FaaS (бессерверная) и Spot?",
+          "en": "Which of the following accurately describe the FaaS (serverless) and Spot pricing models?"
+        },
+        "options": [
+          {
+            "uz": "FaaS modelida mijoz faqat bajarilgan funksiyalar va ularning ishlash vaqti uchun pul toʻlaydi",
+            "ru": "В модели FaaS клиент платит только за выполненные функции и время их работы",
+            "en": "In the FaaS model, the customer pays only for the executed functions and their running time"
+          },
+          {
+            "uz": "Spot modelida provayder serverni istalgan vaqtda toʻxtatishi mumkin",
+            "ru": "В модели Spot провайдер может остановить сервер в любой момент",
+            "en": "In the Spot model, the provider can stop the server at any moment"
+          },
+          {
+            "uz": "Spot modeli toʻxtatilsa zarar qilmaydigan hisob-kitoblar uchun arzon variant hisoblanadi",
+            "ru": "Модель Spot — это дешёвый вариант для расчётов, которым не вредит остановка",
+            "en": "The Spot model is a cheap option for calculations that tolerate interruption"
+          },
+          {
+            "uz": "FaaS modelida foydalanuvchi doimiy ishlaydigan server uchun oylik toʻlov qiladi",
+            "ru": "В модели FaaS пользователь платит ежемесячно за постоянно работающий сервер",
+            "en": "In the FaaS model, the user pays a monthly fee for a constantly running server"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "FaaS faqat soʻrovlar boʻyicha hisoblanadi, oylik qatʼiy toʻlov emas. Spot esa ortiqcha quvvatni arzon narxda beradi, lekin kutilmaganda toʻxtatilishi mumkin.",
+          "ru": "FaaS оплачивается только по запросам, а не фиксированной суммой за месяц. Spot предоставляет избыточные мощности дёшево, но может быть остановлен без предупреждения.",
+          "en": "FaaS is paid only per request, not a fixed monthly fee. Spot provides excess capacity cheaply but can be stopped at any time."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Mijoz faqat sozlamalar va maʼlumotlarni boshqaradigan tayyor dasturni (masalan, Microsoft 365, bulutli CRM) taqdim etuvchi bulut xizmati modeli qanday ataladi?",
+          "ru": "Как называется модель облачных услуг, предоставляющая готовую программу (например, Microsoft 365, облачная CRM), где клиент управляет только настройками и данными?",
+          "en": "What is the cloud service model called that provides a ready-made program (e.g. Microsoft 365, cloud CRM) where the customer only manages settings and data?"
+        },
+        "options": [
+          {
+            "uz": "SaaS",
+            "ru": "SaaS",
+            "en": "SaaS"
+          },
+          {
+            "uz": "IaaS",
+            "ru": "IaaS",
+            "en": "IaaS"
+          },
+          {
+            "uz": "PaaS",
+            "ru": "PaaS",
+            "en": "PaaS"
+          },
+          {
+            "uz": "CaaS",
+            "ru": "CaaS",
+            "en": "CaaS"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "SaaS (Software as a Service) modelida hamma texnik ishlarni provayder bajaradi, foydalanuvchi esa tayyor dasturdan foydalanadi.",
+          "ru": "В модели SaaS (Software as a Service) всю техническую работу выполняет провайдер, а пользователь использует готовую программу.",
+          "en": "In the SaaS (Software as a Service) model, all technical work is handled by the provider, and the user simply uses the ready-made program."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "FaaS narxini hisoblash",
+      "ru": "Расчёт стоимости FaaS",
+      "en": "Calculating the cost of FaaS"
+    },
+    "statement": {
+      "uz": "Bulut provayderi serversiz (FaaS) hisoblashlar uchun quyidagicha narx belgilagan: har bir funksiya chaqiruvi uchun 5 soʻm va bajarilishning har bir soniyasi uchun 2 soʻm. Dastur ikkita butun sonni alohida qatorlarda oʻqishi kerak: birinchisi funksiya chaqiruvlari soni, ikkinchisi jami bajarilish vaqti (soniyalarda). Dastur jami narxni bitta qatorda, faqat son koʻrinishida chiqarishi kerak. Masalan, 10 va 15 kiritilsa, dastur 80 (yaʼni 10 * 5 + 15 * 2) chiqaradi.",
+      "ru": "Облачный провайдер установил следующие цены для бессерверных (FaaS) вычислений: 5 сумов за каждый вызов функции и 2 сума за каждую секунду выполнения. Программа должна прочитать два целых числа на отдельных строках: первое — количество вызовов функции, второе — общее время выполнения (в секундах). Программа должна вывести общую стоимость одной строкой, только число. Например, при вводе 10 и 15 программа выводит 80 (то есть 10 * 5 + 15 * 2).",
+      "en": "A cloud provider has set the following prices for serverless (FaaS) computing: 5 soums for each function call and 2 soums for each second of execution. The program must read two integers on separate lines: the first is the number of function calls, the second is the total execution time (in seconds). The program must output the total cost on a single line, as just the number. For example, for an input of 10 and 15, the program outputs 80 (which is 10 * 5 + 15 * 2)."
+    },
+    "code": {
+      "starter": {
+        "python": "calls = int(input())\nseconds = int(input())\n\nprint(0)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int calls = in.nextInt();\n        int seconds = in.nextInt();\n        System.out.println(0);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int calls, seconds;\n    cin >> calls >> seconds;\n    cout << 0 << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "calls = int(input())\nseconds = int(input())\n\nprint(calls * 5 + seconds * 2)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int calls = in.nextInt();\n        int seconds = in.nextInt();\n        System.out.println(calls * 5 + seconds * 2);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int calls, seconds;\n    cin >> calls >> seconds;\n    cout << calls * 5 + seconds * 2 << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "10\n15\n",
+          "expected": "80",
+          "hidden": false
+        },
+        {
+          "input": "0\n0\n",
+          "expected": "0",
+          "hidden": false
+        },
+        {
+          "input": "100\n50\n",
+          "expected": "600",
+          "hidden": true
+        },
+        {
+          "input": "1\n1\n",
+          "expected": "7",
+          "hidden": true
+        },
+        {
+          "input": "1000\n2000\n",
+          "expected": "9000",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Shell saralashi qaysi algoritmning umumlashmasi hisoblanadi?",
+          "ru": "Обобщением какого алгоритма считается сортировка Шелла?",
+          "en": "Shell sort is a generalisation of which algorithm?"
+        },
+        "options": [
+          {
+            "uz": "Qoʻyib saralash",
+            "ru": "Сортировка вставками",
+            "en": "Insertion sort"
+          },
+          {
+            "uz": "Pufaksimon saralash",
+            "ru": "Сортировка пузырьком",
+            "en": "Bubble sort"
+          },
+          {
+            "uz": "Birlashtirib saralash",
+            "ru": "Сортировка слиянием",
+            "en": "Merge sort"
+          },
+          {
+            "uz": "Piramidal saralash",
+            "ru": "Пирамидальная сортировка",
+            "en": "Heap sort"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shell gʻoyasi: avval bir-biridan h masofada turgan elementlarni saralash, keyin h ni kamaytirib, oxirida h = 1 bilan oddiy qoʻyib saralashni bajarish.",
+          "ru": "Идея Шелла: сначала сортировать элементы, стоящие на расстоянии h, затем уменьшать h, закончив обычным h = 1 — сортировкой вставками.",
+          "en": "Shell's idea: first sort the elements standing h apart, then decrease h, finishing with h = 1 — an ordinary insertion sort."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Pufaksimon saralashning yaxshilangan varianti birorta almashtirish boʻlmagan oʻtishda toʻxtaydi, shuning uchun allaqachon saralangan massiv uchun atigi bitta oʻtish — O(n) — kifoya boʻladi.",
+          "ru": "Улучшенный вариант пузырьковой сортировки останавливается на проходе без единого обмена, поэтому для уже отсортированного массива достаточно одного прохода — O(n).",
+          "en": "The improved bubble sort stops after a pass with no swaps, so an already sorted array needs only one pass — O(n)."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Oʻtishda bitta ham almashtirish boʻlmasa, massiv saralangan boʻladi va sikl toʻxtatiladi. Eng yomon holat esa baribir O(n²) va n − 1 oʻtish kerak.",
+          "ru": "Если за проход не было ни одного обмена, массив отсортирован, и цикл прерывается. В худшем случае же по-прежнему нужны n − 1 проходов и O(n²).",
+          "en": "If a pass makes no swap at all, the array is sorted and the loop stops. The worst case still needs n − 1 passes and stays O(n²)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Maks-piramida massivda 0 dan sanalgan indekslarda saqlanadi. Qaysi ifodalar toʻgʻri?",
+          "ru": "Макс-куча хранится в массиве с индексами от 0. Какие утверждения верны?",
+          "en": "A max-heap is kept in an array with indices counted from 0. Which statements are correct?"
+        },
+        "options": [
+          {
+            "uz": "Ildizning indeksi 0 ga teng",
+            "ru": "Корень стоит под индексом 0",
+            "en": "The root is at index 0"
+          },
+          {
+            "uz": "i tugunning chap bolasi 2i + 1 indeksda",
+            "ru": "Левый ребёнок узла i — под индексом 2i + 1",
+            "en": "The left child of node i is at index 2i + 1"
+          },
+          {
+            "uz": "i tugunning oʻng bolasi 2i + 1 indeksda",
+            "ru": "Правый ребёнок узла i — под индексом 2i + 1",
+            "en": "The right child of node i is at index 2i + 1"
+          },
+          {
+            "uz": "i tugunning otasi (i − 1) / 2 indeksda",
+            "ru": "Родитель узла i — под индексом (i − 1) / 2",
+            "en": "The parent of node i is at index (i − 1) / 2"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Oʻng bola 2i + 2 indeksda turadi. Indekslar 1 dan sanalganda bolalar 2i va 2i + 1 boʻladi — darsda aynan shu ikki hisobni aralashtirmaslik kerakligi aytilgan.",
+          "ru": "Правый ребёнок находится под индексом 2i + 2. При отсчёте индексов от 1 дети будут 2i и 2i + 1 — лекция предупреждает не смешивать эти две схемы.",
+          "en": "The right child sits at index 2i + 2. With indices counted from 1 the children are 2i and 2i + 1 — the lesson warns against mixing the two."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Maks-piramidada indeksi 4 boʻlgan tugunning chap bolasining indeksi nechaga teng?",
+          "ru": "В макс-куче чему равен индекс левого ребёнка узла с индексом 4?",
+          "en": "In a max-heap, what is the index of the left child of the node at index 4?"
+        },
+        "answers": [9],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Chap bola 2i + 1 = 2 · 4 + 1 = 9 indeksda; oʻng bolasi 2 · 4 + 2 = 10.",
+          "ru": "Левый ребёнок под индексом 2i + 1 = 2 · 4 + 1 = 9, правый — 2 · 4 + 2 = 10.",
+          "en": "The left child is at 2i + 1 = 2 · 4 + 1 = 9 and the right child at 2 · 4 + 2 = 10."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Nima uchun allaqachon saralangan massivda birinchi elementni tayanch qilib olish tez saralashni sekinlashtiradi?",
+          "ru": "Почему выбор первого элемента в качестве опорного на уже отсортированном массиве замедляет быструю сортировку?",
+          "en": "Why does taking the first element as the pivot slow quick sort down on an already sorted array?"
+        },
+        "options": [
+          {
+            "uz": "Birinchi element har doim eng kichik boʻladi va ajratish massivni 1 hamda n − 1 uzunlikdagi qismlarga boʻladi",
+            "ru": "Первый элемент всегда оказывается наименьшим, и разделение делит массив на части длины 1 и n − 1",
+            "en": "The first element is always the smallest, and partitioning splits the array into parts of length 1 and n − 1"
+          },
+          {
+            "uz": "Birinchi element har doim eng katta boʻladi va ajratish uni umuman koʻrib chiqmaydi",
+            "ru": "Первый элемент всегда оказывается наибольшим, и разделение его вовсе не рассматривает",
+            "en": "The first element is always the largest, and partitioning ignores it"
+          },
+          {
+            "uz": "Tayanch elementni qidirish O(n log n) vaqt oladi",
+            "ru": "Поиск опорного элемента занимает O(n log n) времени",
+            "en": "Looking for the pivot itself takes O(n log n) time"
+          },
+          {
+            "uz": "Birinchi element tez-tez almashtiriladi va qoʻshimcha xotira kerak boʻladi",
+            "ru": "Первый элемент часто переставляется, из-за чего требуется дополнительная память",
+            "en": "The first element is swapped often, which needs extra memory"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shuning uchun massiv O(n²) ga choʻziladi. Darsda eng yomon holatdan qochish uchun tayanchni oʻrtadan, tasodifiy yoki uchtadan oʻrtachasi qilib olish maslahati berilgan.",
+          "ru": "Из-за этого массив выходит на O(n²). В лекции советуют избегать худшего случая, беря опору из середины, случайно или как медиану трёх.",
+          "en": "That drives the array to O(n²). The lesson advises avoiding the worst case by taking the pivot from the middle, at random, or as the median of three."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tez (Xoar) saralashning oʻrtacha holatdagi murakkabligini O belgisi bilan yozing (masalan, O(n)).",
+          "ru": "Запишите среднюю сложность быстрой сортировки Хоора в обозначении O (например, O(n)).",
+          "en": "Write the average-case complexity of Hoare's quick sort using the O notation (for example, O(n))."
+        },
+        "answers": ["O(n log n)", "O(nlogn)", "O(n*log n)"],
+        "explanation": {
+          "uz": "Tayanch massivni qariyb teng ikki qismga boʻlganda oʻrtacha O(n log n); eng yomon holat — O(n²).",
+          "ru": "Когда опора делит части примерно равными, в среднем получается O(n log n); худший случай — O(n²).",
+          "en": "When the pivot splits the parts roughly equally the average is O(n log n); the worst case is O(n²)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Knut qadamlari ketma-ketligi (3ᵏ − 1) / 2 boʻyicha n = 100 uchun Shell saralash qaysi qadamlar bilan ishlaydi?",
+          "ru": "Какие шаги использует сортировка Шелла при n = 100 по последовательности Кнута (3ᵏ − 1) / 2?",
+          "en": "Which gaps does Shell sort use for n = 100 with Knuth's sequence (3ᵏ − 1) / 2?"
+        },
+        "options": [
+          {
+            "uz": "50, 25, 12, 6, 3, 1",
+            "ru": "50, 25, 12, 6, 3, 1",
+            "en": "50, 25, 12, 6, 3, 1"
+          },
+          {
+            "uz": "40, 13, 4, 1",
+            "ru": "40, 13, 4, 1",
+            "en": "40, 13, 4, 1"
+          },
+          {
+            "uz": "1, 4, 13, 40",
+            "ru": "1, 4, 13, 40",
+            "en": "1, 4, 13, 40"
+          },
+          {
+            "uz": "40, 20, 10, 5, 1",
+            "ru": "40, 20, 10, 5, 1",
+            "en": "40, 20, 10, 5, 1"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Knut qadamlari — 1, 4, 13, 40, … sonlari, ular kattasidan kichigiga qarab olinadi: jadvalda n = 100 uchun 40, 13, 4, 1 berilgan. Birinchi variant — bu Shellning oʻzi taklif qilgan n/2, n/4, … ketma-ketligi.",
+          "ru": "Числа Кнута — 1, 4, 13, 40, …, и берутся от большего к меньшему: в таблице для n = 100 указано 40, 13, 4, 1. Первый вариант — это последовательность самого Шелла n/2, n/4, …",
+          "en": "Knuth's numbers are 1, 4, 13, 40, … taken from the largest down: the table gives 40, 13, 4, 1 for n = 100. The first option is Shell's own n/2, n/4, … sequence."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Piramidal va tez saralash haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о пирамидальной и быстрой сортировке верны?",
+          "en": "Which statements about heap sort and quick sort are correct?"
+        },
+        "options": [
+          {
+            "uz": "Piramidal saralash eng yomon holatda ham O(n log n) beradi va qoʻshimcha xotirasi O(1)",
+            "ru": "Пирамидальная сортировка даёт O(n log n) даже в худшем случае, а дополнительной памяти требует O(1)",
+            "en": "Heap sort gives O(n log n) even in the worst case and needs O(1) extra memory"
+          },
+          {
+            "uz": "Tez saralash eng yomon holatda O(n²) boʻlishi mumkin",
+            "ru": "Быстрая сортировка в худшем случае может дать O(n²)",
+            "en": "Quick sort can degrade to O(n²) in the worst case"
+          },
+          {
+            "uz": "Piramidal saralash barqaror, tez saralash esa barqaror emas",
+            "ru": "Пирамидальная сортировка устойчива, а быстрая — нет",
+            "en": "Heap sort is stable while quick sort is not"
+          },
+          {
+            "uz": "C++ da std::sort kerak boʻlganda tez saralashni piramidal saralash bilan himoyalaydi",
+            "ru": "В C++ std::sort при необходимости защищает быструю сортировку пирамидальной (интросортировка)",
+            "en": "In C++, std::sort protects quick sort with heap sort when needed (introsort)"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Piramidal saralash barqaror emas — darsdagi jadvalda ham shunday deyilgan. Uning kafolatlangan O(n log n) natijasi va O(1) qoʻshimcha xotirasi ustunlik tomoni, lekin amalda tez saralashdan biroz sekinroq ishlaydi.",
+          "ru": "Пирамидальная сортировка неустойчива — так и сказано в таблице лекции. Её преимущества — гарантированные O(n log n) и O(1) дополнительной памяти, но на практике она чуть медленнее быстрой.",
+          "en": "Heap sort is not stable — the lesson's table says so. Its strengths are the guaranteed O(n log n) and O(1) extra memory, yet in practice it is a little slower than quick sort."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Shell saralashida qadamlar ketma-ketligining oxirgi qadami 1 ga teng boʻlmasa ham massiv baribir toʻliq saralanadi.",
+          "ru": "В сортировке Шелла последний шаг последовательности может быть не равен 1 — массив всё равно окажется полностью отсортированным.",
+          "en": "In Shell sort the last gap of the sequence does not have to be 1 — the array still ends up fully sorted."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Oxirgi qadam h = 1 boʻlishi shart: shunda oddiy qoʻyib saralash bajariladi. Unday boʻlmasa, massiv saralanmagan holda qoladi.",
+          "ru": "Последний шаг обязан быть равен 1: именно тогда выполняется обычная сортировка вставками. Иначе массив останется несортированным.",
+          "en": "The last gap must be 1: that is when an ordinary insertion sort runs. Otherwise the array is left unsorted."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Knut qadamlari ketma-ketligi",
+      "ru": "Последовательность шагов Кнута",
+      "en": "Knuth's gap sequence"
+    },
+    "statement": {
+      "uz": "Shell saralashi uchun Knut qadamlari ketma-ketligini chiqaring. Qadamlar — 1, 4, 13, 40, 121, … sonlari (umumiy hadi (3ᵏ − 1) / 2). Ketma-ketlik quyidagi qoida bilan aniqlanadi: h = 1 dan boshlab, h < n/3 shart bajarilayotgan har bir qadamda h ← 3h + 1 qilinadi (bu yerda n/3 — butun boʻlinish); soʻng h 1 dan kichik boʻlguncha h chiqariladi va h ← h / 3 (butun boʻlinish) qilinadi. Kirish: bitta satrda bitta butun son n (1 ≤ n ≤ 10⁶). Chiqish: bitta qatorda, kattasidan kichigiga qarab, boʻsh joy bilan ajratib qadamlarni chiqaring; oxirida qoʻshimcha boʻsh joy boʻlmasin. Masalan, n = 100 boʻlsa chiqish: 40 13 4 1, n = 10 boʻlsa: 4 1, n = 1 boʻlsa: 1.",
+      "ru": "Выведите последовательность шагов Кнута для сортировки Шелла. Шаги — это числа 1, 4, 13, 40, 121, … (общий член (3ᵏ − 1) / 2). Используемая последовательность задаётся правилом: начиная с h = 1, пока выполняется h < n/3, делать h ← 3h + 1 (здесь n/3 — целочисленное деление); затем, пока h ≥ 1, выводить h и делать h ← h / 3 (целочисленное деление). Вход: одна строка с одним целым числом n (1 ≤ n ≤ 10⁶). Выход: в одной строке через пробел, от большего к меньшему, без пробела в конце. Например, при n = 100 вывод «40 13 4 1», при n = 10 — «4 1», при n = 1 — «1».",
+      "en": "Print Knuth's gap sequence for Shell sort. The gaps are the numbers 1, 4, 13, 40, 121, … (general term (3ᵏ − 1) / 2). The sequence to use is defined by this rule: start with h = 1 and while h < n/3 holds, set h ← 3h + 1 (here n/3 is integer division); then while h ≥ 1, print h and set h ← h / 3 (integer division). Input: one line with a single integer n (1 ≤ n ≤ 10⁶). Output: one line with the gaps separated by a single space, from the largest down, with no trailing space. For example, n = 100 gives 40 13 4 1, n = 10 gives 4 1, n = 1 gives 1."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nh = 1\nwhile h < n // 3:\n    h = 3 * h + 1\nprint(h)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int h = 1;\n        while (h < n / 3) {\n            h = 3 * h + 1;\n        }\n        System.out.println(h);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int h = 1;\n    while (h < n / 3) {\n        h = 3 * h + 1;\n    }\n    cout << h << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nh = 1\nwhile h < n // 3:\n    h = 3 * h + 1\nqadamlar = []\nwhile h >= 1:\n    qadamlar.append(str(h))\n    h //= 3\nprint(\" \".join(qadamlar))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int h = 1;\n        while (h < n / 3) {\n            h = 3 * h + 1;\n        }\n        StringBuilder sb = new StringBuilder();\n        while (h >= 1) {\n            if (sb.length() > 0) {\n                sb.append(' ');\n            }\n            sb.append(h);\n            h /= 3;\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int h = 1;\n    while (h < n / 3) {\n        h = 3 * h + 1;\n    }\n    while (h >= 1) {\n        cout << h;\n        h /= 3;\n        if (h >= 1) {\n            cout << \" \";\n        }\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "100\n", "expected": "40 13 4 1", "hidden": false },
+        { "input": "10\n", "expected": "4 1", "hidden": false },
+        { "input": "1\n", "expected": "1", "hidden": false },
+        { "input": "1000\n", "expected": "364 121 40 13 4 1", "hidden": true },
+        { "input": "40\n", "expected": "13 4 1", "hidden": true }
+      ]
+    }
+  }
+}

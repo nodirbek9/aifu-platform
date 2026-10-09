@@ -1,0 +1,286 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Oraliqli masalada son oʻqi bilan nima qilinadi?",
+          "ru": "Что делают с числовой осью в задаче с диапазонами?",
+          "en": "What happens to the number line in a range problem?"
+        },
+        "options": [
+          {
+            "uz": "Bir nechta boʻlakka boʻlinadi va har bir boʻlakda oʻz qoidasi ishlaydi",
+            "ru": "Разбивается на несколько частей, и в каждой действует своё правило",
+            "en": "It is split into several parts, each with its own rule"
+          },
+          {
+            "uz": "Barcha qiymatlar uchun bitta qoida qoʻllanadi",
+            "ru": "Для всех значений применяется одно правило",
+            "en": "One rule applies to all values"
+          },
+          {
+            "uz": "Faqat manfiy sonlarga boʻlinadi",
+            "ru": "Разбивается только для отрицательных чисел",
+            "en": "It is split only for negative numbers"
+          },
+          {
+            "uz": "Chegaralar har doim natijaga taʼsir qilmaydi",
+            "ru": "Границы никогда не влияют на результат",
+            "en": "Boundaries never affect the result"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilishicha, oraliqli masalada son oʻqi bir nechta boʻlakka boʻlinadi va har bir boʻlakda oʻz qoidasi ishlaydi.",
+          "ru": "Как сказано в занятии, в задаче с диапазонами числовая ось разбита на части, и в каждой действует своё правило.",
+          "en": "As the lesson says, a range problem splits the number line into parts, and each part has its own rule."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Namunaviy masalada 100 kVt·soat birinchi tarif (450 soʻm) boʻyicha hisoblanadi.",
+          "ru": "В задаче-образце 100 кВт·ч считаются по первому тарифу (450 сумов).",
+          "en": "In the sample problem, 100 kWh is charged at the first tariff (450 sum)."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Chegara `q <= 100` sharti bilan birinchi oraliqqa oladi, shuning uchun 100 kVt·soat uchun natija 100 · 450 = 45 000 soʻm.",
+          "ru": "Граница входит в первый диапазон по условию `q <= 100`, поэтому для 100 кВт·ч результат 100 · 450 = 45 000 сумов.",
+          "en": "The boundary belongs to the first range via `q <= 100`, so 100 kWh gives 100 · 450 = 45 000 sum."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Oraliqli masalani yechish tartibiga nimalar kiradi?",
+          "ru": "Что входит в порядок решения задачи с диапазонами?",
+          "en": "Which steps belong to solving a range problem?"
+        },
+        "options": [
+          {
+            "uz": "Chegaralar qaysi oraliqqa tegishli ekanini aniqlash (`<` yoki `<=`)",
+            "ru": "Определить, к какому диапазону относятся границы (`<` или `<=`)",
+            "en": "Decide which range each boundary belongs to (`<` or `<=`)"
+          },
+          {
+            "uz": "Shartlarni bir tomondan tartiblab zanjir tuzish (`if` … `elif` … `else`)",
+            "ru": "Построить цепочку условий с одной стороны (`if` … `elif` … `else`)",
+            "en": "Build a condition chain ordered from one side (`if` … `elif` … `else`)"
+          },
+          {
+            "uz": "Har bir oraliq ichidan va har bir chegara atrofidan test olish",
+            "ru": "Взять по тесту изнутри каждого диапазона и около каждой границы",
+            "en": "Take one test from inside each range and around each boundary"
+          },
+          {
+            "uz": "Barcha shartlarni tartibidan qatʼi nazar bir xil natija beradi deb hisoblash",
+            "ru": "Считать, что порядок условий никогда не влияет на результат",
+            "en": "Assume the order of conditions never changes the result"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Uch qadam: chegaralarni aniqlash, shartlarni bir tomondan tartiblash va testlar. Tartib buzilsa, keng shart tor shartni yutib yuboradi.",
+          "ru": "Три шага: определить границы, упорядочить условия с одной стороны и взять тесты. Если порядок нарушен, широкое условие поглощает узкое.",
+          "en": "Three steps: fix the boundaries, order conditions from one side, and add tests. If the order is broken, a wide condition swallows a narrow one."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Agar `elif q <= 300` sharti `if q <= 100` shartidan oldin qoʻyilsa, nima sodir boʻladi?",
+          "ru": "Что произойдёт, если условие `elif q <= 300` поставить раньше `if q <= 100`?",
+          "en": "What happens if the `elif q <= 300` condition is placed before `if q <= 100`?"
+        },
+        "options": [
+          {
+            "uz": "100 dan kichik isteʼmol ham ikkinchi tarif boʻyicha hisoblanadi: keng shart tor shartni yutib yuboradi",
+            "ru": "Потребление меньше 100 тоже посчитается по второму тарифу: широкое условие поглотит узкое",
+            "en": "Consumption below 100 is also charged at the second tariff: the wide condition swallows the narrow one"
+          },
+          {
+            "uz": "Dastur sintaksis xatosi bilan umuman ishga tushmaydi",
+            "ru": "Программа вообще не запустится из-за синтаксической ошибки",
+            "en": "The program will not start at all due to a syntax error"
+          },
+          {
+            "uz": "Hech qanday oʻzgarish boʻlmaydi, natija avvalgidek boʻladi",
+            "ru": "Ничего не изменится, результат останется прежним",
+            "en": "Nothing changes and the result stays the same"
+          },
+          {
+            "uz": "Faqat 300 dan yuqori isteʼmol notoʻgʻri hisoblanadi",
+            "ru": "Неверно посчитается только потребление свыше 300",
+            "en": "Only consumption above 300 would be wrong"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Kengroq shart birinchi kelib, kichik qiymatlarni oʻz ichiga oladi. Darsda aynan shu „keng shart tor shartni yutadi“ xatosi misol keltirilgan.",
+          "ru": "Более широкое условие идёт первым и забирает малые значения. Именно эта ошибка «широкое условие поглощает узкое» приведена в занятии.",
+          "en": "The wider condition comes first and captures the small values. This is exactly the “wide swallows narrow” mistake given in the lesson."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Namunaviy masalada oylik isteʼmol 250 kVt·soat boʻlsa, tolov nechchi soʻm boʻladi?",
+          "ru": "Сколько сумов составит плата при потреблении 250 кВт·ч в задаче-образце?",
+          "en": "In the sample problem, what is the bill for a monthly consumption of 250 kWh?"
+        },
+        "answers": [180000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "250 ikkinchi oraliqqa (`q <= 300`) kiradi: 100 · 450 + (250 − 100) · 900 = 45 000 + 135 000 = 180 000 soʻm.",
+          "ru": "250 попадает во второй диапазон (`q <= 300`): 100 · 450 + (250 − 100) · 900 = 45 000 + 135 000 = 180 000 сумов.",
+          "en": "250 falls in the second range (`q <= 300`): 100 · 450 + (250 − 100) · 900 = 45 000 + 135 000 = 180 000 sum."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Python tilida birinchi `if` dan keyin keladigan qoʻshimcha shart uchun qoʻllaniladigan kalit soʻzni yozing.",
+          "ru": "Напишите ключевое слово Python для дополнительного условия, идущего после первого `if`.",
+          "en": "Write the Python keyword used for the extra condition that comes after the first `if`."
+        },
+        "answers": ["elif"],
+        "explanation": {
+          "uz": "Zanjir `if` … `elif` … `else` koʻrinishida quriladi; `elif` — „aks holda agar“ degani.",
+          "ru": "Цепочка строится как `if` … `elif` … `else`; `elif` означает «иначе если».",
+          "en": "The chain is built as `if` … `elif` … `else`; `elif` means “else if”."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Blok-sxemada tarmoqlanishdagi shartni tekshirish qaysi shakl bilan belgilanadi?",
+          "ru": "Какой фигурой на блок-схеме обозначается проверка условия при ветвлении?",
+          "en": "On a flowchart, which shape marks the condition check in branching?"
+        },
+        "options": [
+          { "uz": "Oval", "ru": "Овал", "en": "An oval" },
+          { "uz": "Toʻrtburchak", "ru": "Прямоугольник", "en": "A rectangle" },
+          { "uz": "Romb", "ru": "Ромб", "en": "A diamond" },
+          { "uz": "Parallelogramm", "ru": "Параллелограмм", "en": "A parallelogram" }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Darsda namunaviy algoritm „ikki ketma-ket romb: `q <= 100?` va `q <= 300?`“ deb tushuntirilgan; shart romblar bilan belgilanadi.",
+          "ru": "В занятии алгоритм описан как «два последовательных ромба: `q <= 100?` и `q <= 300?`»; условия обозначаются ромбами.",
+          "en": "The lesson describes the algorithm as “two diamonds in a row: `q <= 100?` and `q <= 300?`”; conditions are marked by diamonds."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Testlar jadvaliga koʻra qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны согласно таблице тестов?",
+          "en": "According to the table of tests, which statements are correct?"
+        },
+        "options": [
+          {
+            "uz": "350 kVt·soat uchun kutilgan natija 292 500 soʻm",
+            "ru": "Для 350 кВт·ч ожидаемый результат 292 500 сумов",
+            "en": "For 350 kWh the expected result is 292 500 sum"
+          },
+          {
+            "uz": "300 kVt·soat ikkinchi oraliqqa kiradi va 225 000 soʻm beradi",
+            "ru": "300 кВт·ч относится ко второму диапазону и даёт 225 000 сумов",
+            "en": "300 kWh falls in the second range and gives 225 000 sum"
+          },
+          {
+            "uz": "0 kVt·soat uchun hech qanday natija mavjud emas",
+            "ru": "Для 0 кВт·ч результат отсутствует",
+            "en": "There is no result for 0 kWh"
+          },
+          {
+            "uz": "150 kVt·soat birinchi tarif boʻyicha hisoblanadi",
+            "ru": "150 кВт·ч считается по первому тарифу",
+            "en": "150 kWh is charged at the first tariff"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Jadvalda 0 → 0 (quyi chegara mavjud), 150 → 90 000 (ikkinchi oraliq), 300 → 225 000, 350 → 292 500.",
+          "ru": "В таблице: 0 → 0 (нижняя граница есть), 150 → 90 000 (второй диапазон), 300 → 225 000, 350 → 292 500.",
+          "en": "The table gives 0 → 0 (the lower bound exists), 150 → 90 000 (second range), 300 → 225 000, 350 → 292 500."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Mustaqil ishda kutilgan natijalarni dasturning chiqarishidan koʻchirish mumkin.",
+          "ru": "В самостоятельной работе ожидаемые результаты можно скопировать из вывода программы.",
+          "en": "In the independent work you may copy the expected results from the program's output."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Baholash mezoniga koʻra kutilgan natijalar dasturdan koʻchirilmasdan, qoʻlda hisoblangan boʻlishi shart.",
+          "ru": "По критерию оценки ожидаемые результаты должны считаться вручную, а не копироваться из программы.",
+          "en": "The criteria require the expected results to be worked out by hand, not copied from the program."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Imtihon balli boʻyicha guruh",
+      "ru": "Группа по экзаменационному баллу",
+      "en": "Band by exam score"
+    },
+    "statement": {
+      "uz": "Talabaning imtihon balli (butun son, 0 dan 100 gacha) kiritiladi. Ball qaysi guruhga tegishli ekanini chiqaring: agar ball 60 dan kichik boʻlsa 1, 60 dan 74 gacha (60 kiradi, 75 kirmaydi) boʻlsa 2, 75 dan 89 gacha boʻlsa 3, 90 va undan yuqori boʻlsa 4 chiqaring. Natijani bitta qatorda, faqat son koʻrinishida yozing. Masalan, 60 kirsa 2, 89 kirsa 3, 90 kirsa 4 chiqishi kerak.",
+      "ru": "Вводится экзаменационный балл студента (целое число от 0 до 100). Выведите группу: если балл меньше 60 — 1, от 60 до 74 включительно — 2, от 75 до 89 — 3, от 90 и выше — 4. Результат выводите одной строкой, только число. Например, 60 даёт 2, 89 даёт 3, а 90 даёт 4.",
+      "en": "An exam score (an integer from 0 to 100) is given. Print the band: below 60 is band 1, from 60 to 74 (60 included, 75 not) is band 2, from 75 to 89 is band 3, 90 and above is band 4. Print only the number on one line. For example, 60 gives 2, 89 gives 3, and 90 gives 4."
+    },
+    "code": {
+      "starter": {
+        "python": "p = int(input())\nif p <= 60:\n    print(1)\nelif p <= 75:\n    print(2)\nelif p <= 90:\n    print(3)\nelse:\n    print(4)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int p = in.nextInt();\n        if (p <= 60) {\n            System.out.println(1);\n        } else if (p <= 75) {\n            System.out.println(2);\n        } else if (p <= 90) {\n            System.out.println(3);\n        } else {\n            System.out.println(4);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int p;\n    cin >> p;\n    if (p <= 60) {\n        cout << 1 << endl;\n    } else if (p <= 75) {\n        cout << 2 << endl;\n    } else if (p <= 90) {\n        cout << 3 << endl;\n    } else {\n        cout << 4 << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "p = int(input())\nif p < 60:\n    print(1)\nelif p < 75:\n    print(2)\nelif p < 90:\n    print(3)\nelse:\n    print(4)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int p = in.nextInt();\n        if (p < 60) {\n            System.out.println(1);\n        } else if (p < 75) {\n            System.out.println(2);\n        } else if (p < 90) {\n            System.out.println(3);\n        } else {\n            System.out.println(4);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int p;\n    cin >> p;\n    if (p < 60) {\n        cout << 1 << endl;\n    } else if (p < 75) {\n        cout << 2 << endl;\n    } else if (p < 90) {\n        cout << 3 << endl;\n    } else {\n        cout << 4 << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "59\n", "expected": "1", "hidden": false },
+        { "input": "60\n", "expected": "2", "hidden": false },
+        { "input": "74\n", "expected": "2", "hidden": false },
+        { "input": "75\n", "expected": "3", "hidden": true },
+        { "input": "90\n", "expected": "4", "hidden": true },
+        { "input": "100\n", "expected": "4", "hidden": true }
+      ]
+    }
+  }
+}

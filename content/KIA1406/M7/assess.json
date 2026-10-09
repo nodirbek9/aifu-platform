@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ochiq kalitli kriptografiya qaysi asosiy muammoni hal qiladi?",
+          "ru": "Какую главную проблему решает криптография с открытым ключом?",
+          "en": "What main problem does public key cryptography solve?"
+        },
+        "options": [
+          {
+            "uz": "Kalit tarqatish muammosini: hech qachon uchrashmagan tomonlar ochiq tarmoqda umumiy maxfiy kalitni kelishadi",
+            "ru": "Проблему распределения ключей: незнакомые стороны согласуют общий секретный ключ по открытой сети",
+            "en": "The key distribution problem: parties who have never met agree on a shared secret key over an open network"
+          },
+          {
+            "uz": "Shifrlash tezligini oshirish muammosini",
+            "ru": "Проблему скорости шифрования",
+            "en": "The problem of making encryption faster"
+          },
+          {
+            "uz": "Katta hajmdagi maʼlumotni arzon saqlash muammosini",
+            "ru": "Проблему дешёвого хранения больших объёмов данных",
+            "en": "The problem of storing large amounts of data cheaply"
+          },
+          {
+            "uz": "Fayllarni siqish muammosini",
+            "ru": "Проблему сжатия файлов",
+            "en": "The problem of compressing files"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Simmetrik shifrlash tez, lekin kalitni ochiq tarmoq orqali yuborib boʻlmaydi; ochiq kalitli kriptografiya aynan shu kalit tarqatish muammosini hal qiladi.",
+          "ru": "Симметричное шифрование быстрое, но ключ нельзя отправить по открытой сети — криптография с открытым ключом решает именно проблему распределения ключей.",
+          "en": "Symmetric encryption is fast, but a key cannot be sent over an open network; public key cryptography solves exactly this key distribution problem."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ochiq kalit bilan shifrlangan xabarni shu ochiq kalitning oʻzi bilan ochish mumkin.",
+          "ru": "Сообщение, зашифрованное открытым ключом, можно открыть этим же открытым ключом.",
+          "en": "A message encrypted with the public key can be opened with that same public key."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Ochiq kalit bilan shifrlangan xabarni faqat yopiq kalit ochadi: pochta qutisiga tashlangan xatni ham faqat kalit egasi olishi mumkin.",
+          "ru": "Сообщение, зашифрованное открытым ключом, открывается только закрытым ключом: письмо в почтовый ящик бросает любой, а откроет ящик только владелец ключа.",
+          "en": "A message encrypted with the public key opens only with the private key: anyone can drop a letter into the mailbox, but only the key holder can open it."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi afzalliklar jadvaliga koʻra, ochiq kalitli tizimlarning qaysi afzalliklari toʻgʻri?",
+          "ru": "Согласно таблице преимуществ из урока, какие достоинства систем с открытым ключом верны?",
+          "en": "According to the advantages table in the lesson, which strengths of public key systems are correct?"
+        },
+        "options": [
+          {
+            "uz": "Kalit tarqatish muammosini hal qiladi",
+            "ru": "Решает проблему распределения ключей",
+            "en": "It solves the key distribution problem"
+          },
+          {
+            "uz": "Raqamli imzo va rad etib boʻlmaslikni taʼminlaydi",
+            "ru": "Даёт цифровую подпись и неотказуемость",
+            "en": "It enables digital signatures and non-repudiation"
+          },
+          {
+            "uz": "Simmetrik shifrlardan yuzlab marta tezroq ishlaydi",
+            "ru": "Работает в сотни раз быстрее симметричных шифров",
+            "en": "It runs hundreds of times faster than symmetric ciphers"
+          },
+          {
+            "uz": "Qisqa kalitlar bilan ishlaydi",
+            "ru": "Работает с короткими ключами",
+            "en": "It works with short keys"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Muammolar ustunida «simmetrik shifrlardan yuzlab–minglab marta sekin» va «uzun kalitlar» yozilgan — demak, tezlik va qisqa kalit afzallik emas.",
+          "ru": "В столбце проблем указаны «в сотни–тысячи раз медленнее симметричных шифров» и «длинные ключи» — значит, скорость и короткие ключи не являются преимуществами.",
+          "en": "The problems column lists 'hundreds to thousands of times slower than symmetric ciphers' and 'long keys' — so speed and short keys are not advantages."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Modul boʻyicha teskari element qachon mavjud boʻladi?",
+          "ru": "Когда существует обратный элемент по модулю?",
+          "en": "When does the modular inverse exist?"
+        },
+        "options": [
+          {
+            "uz": "Har qanday a va n uchun mavjud",
+            "ru": "Существует при любых a и n",
+            "en": "It exists for any a and n"
+          },
+          {
+            "uz": "Faqat EKUB(a, n) = 1 boʻlsa mavjud",
+            "ru": "Только если НОД(a, n) = 1",
+            "en": "Only if GCD(a, n) = 1"
+          },
+          {
+            "uz": "Faqat a tub son boʻlsa mavjud",
+            "ru": "Только если a — простое число",
+            "en": "Only if a is a prime number"
+          },
+          {
+            "uz": "Faqat n juft son boʻlsa mavjud",
+            "ru": "Только если n — чётное число",
+            "en": "Only if n is an even number"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dars taʼrifiga koʻra a·x ≡ 1 (mod n) yechimi faqat EKUB(a, n) = 1 boʻlsa mavjud va u kengaytirilgan Evklid algoritmi bilan topiladi; masalan, 3·7 ≡ 1 (mod 10).",
+          "ru": "По определению из урока a·x ≡ 1 (mod n) существует только при НОД(a, n) = 1 и ищется расширенным алгоритмом Евклида; пример: 3·7 ≡ 1 (mod 10).",
+          "en": "By the lesson's definition, a·x ≡ 1 (mod n) exists only when GCD(a, n) = 1 and is found with the extended Euclidean algorithm; for example, 3·7 ≡ 1 (mod 10)."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "RSA da kalit yaratishda p = 11 va q = 13 tanlandi. Modul n = p·q nechaga teng?",
+          "ru": "При генерации ключей RSA выбрали p = 11 и q = 13. Чему равен модуль n = p·q?",
+          "en": "RSA key generation chose p = 11 and q = 13. What is the modulus n = p·q?"
+        },
+        "answers": [143],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "n = p·q = 11 · 13 = 143; φ(n) = 10 · 12 = 120.",
+          "ru": "n = p·q = 11 · 13 = 143; φ(n) = 10 · 12 = 120.",
+          "en": "n = p·q = 11 · 13 = 143; φ(n) = 10 · 12 = 120."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kvadratga koʻtarib koʻpaytirish usulida 2048 bitli koʻrsatkich uchun a^b mod n hisobi taxminan 2^2048 ta qadam talab qiladi.",
+          "ru": "Метод «возведи в квадрат и умножь» требует примерно 2^2048 шагов для вычисления a^b mod n при 2048-битном показателе.",
+          "en": "The square-and-multiply method needs about 2^2048 steps to compute a^b mod n for a 2048-bit exponent."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Usul b ning ikkilik yozuvi boʻyicha har qadamda asosni kvadratga koʻtaradi: 2048 bitli koʻrsatkich uchun ~2048 qadam, 2^2048 emas.",
+          "ru": "Метод идёт по двоичной записи b, возводя основание в квадрат на каждом шаге: для 2048-битного показателя ~2048 шагов, а не 2^2048.",
+          "en": "The method walks the binary form of b, squaring the base at each step: about 2048 steps for a 2048-bit exponent, not 2^2048."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Diffie–Hellman almashinuvida tinglovchi umumiy kalit s ni topish uchun qaysi masalani yechishi kerak?",
+          "ru": "Какую задачу должен решить подслушивающий в обмене Диффи–Хеллмана, чтобы найти общий ключ s?",
+          "en": "Which problem must an eavesdropper solve in Diffie–Hellman to find the shared key s?"
+        },
+        "options": [
+          {
+            "uz": "Katta sonni tub koʻpaytuvchilarga ajratish (faktorizatsiya) masalasini",
+            "ru": "Задачу разложения числа на простые множители (факторизации)",
+            "en": "The integer factorization problem"
+          },
+          {
+            "uz": "Diskret logarifm masalasini: A = g^a mod p dan maxfiy a ni topishni",
+            "ru": "Задачу дискретного логарифма: найти секретное a по A = g^a mod p",
+            "en": "The discrete logarithm problem: finding the secret a from A = g^a mod p"
+          },
+          {
+            "uz": "Tugʻilgan kun paradoksi masalasini",
+            "ru": "Задачу парадокса дней рождения",
+            "en": "The birthday paradox problem"
+          },
+          {
+            "uz": "Eyler funksiyasi φ(n) ni hisoblash masalasini",
+            "ru": "Задачу вычисления функции Эйлера φ(n)",
+            "en": "The problem of computing Euler's function φ(n)"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Tinglovchi p, g, A, B ni koʻradi, lekin s = B^a mod p ekanini bilsa ham, maxfiy a ni topish uchun diskret logarifm masalasini yechishi kerak — katta p da amalda imkonsiz.",
+          "ru": "Подслушивающий видит p, g, A, B, но чтобы найти секретное a, должен решить задачу дискретного логарифма — практически невозможно при большом p.",
+          "en": "The eavesdropper sees p, g, A, B, but finding the secret a means solving the discrete logarithm problem — practically impossible for a large p."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "RSA haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о RSA верны?",
+          "en": "Which statements about RSA are correct?"
+        },
+        "options": [
+          {
+            "uz": "Ochiq kalit — (e, n), yopiq kalit — (d, n) juftligi",
+            "ru": "Открытый ключ — это (e, n), закрытый — (d, n)",
+            "en": "The public key is (e, n) and the private key is (d, n)"
+          },
+          {
+            "uz": "Yopiq daraja d = e⁻¹ mod φ(n) dan topiladi",
+            "ru": "Закрытая экспонента находится как d = e⁻¹ mod φ(n)",
+            "en": "The private exponent is found as d = e⁻¹ mod φ(n)"
+          },
+          {
+            "uz": "Shifrlash c = m^e mod n, deshifrlash m = c^d mod n",
+            "ru": "Шифрование c = m^e mod n, расшифрование m = c^d mod n",
+            "en": "Encryption is c = m^e mod n, decryption is m = c^d mod n"
+          },
+          {
+            "uz": "Amalda toʻldirishsiz «sof» RSA tavsiya etiladi",
+            "ru": "На практике рекомендуется «голый» RSA без дополнения",
+            "en": "In practice, raw RSA without padding is recommended"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Amalda «sof» RSA ishlatilmaydi: xabar toʻldiriladi (OAEP — shifrlash, PSS — imzo), aks holda bir xil xabar bir xil shifrmatn beradi va matematik hujumlar mumkin.",
+          "ru": "«Голый» RSA на практике не используется: сообщение дополняется (OAEP для шифрования, PSS для подписи), иначе одинаковое сообщение даёт одинаковый шифртекст и возможны атаки.",
+          "en": "Raw RSA is not used in practice: the message is padded (OAEP for encryption, PSS for signatures), otherwise the same message gives the same ciphertext and attacks become possible."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kvant kompyuterida RSA va ECC ni buzishi mumkin boʻlgan algoritm qaysi olim nomi bilan ataladi?",
+          "ru": "Какое имя учёного носит алгоритм, способный взломать RSA и ECC на квантовом компьютере?",
+          "en": "Which scientist's name does the algorithm that could break RSA and ECC on a quantum computer carry?"
+        },
+        "answers": ["Shor", "shor", "Shor algoritmi", "алгоритм Шора", "Шор"],
+        "explanation": {
+          "uz": "Darsda Shor algoritmi kvant kompyuterlarda RSA va ECC ni buzishi mumkinligi, shuning uchun postkvant algoritmlarga (ML-KEM, ML-DSA) oʻtish boshlangani aytilgan.",
+          "ru": "В уроке сказано, что алгоритм Шора на квантовых компьютерах может взломать RSA и ECC, поэтому начался переход на постквантовые алгоритмы (ML-KEM, ML-DSA).",
+          "en": "The lesson says Shor's algorithm on quantum computers could break RSA and ECC, so the move to post-quantum algorithms (ML-KEM, ML-DSA) has begun."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Modul boʻyicha teskari elementni topish",
+      "ru": "Поиск обратного элемента по модулю",
+      "en": "Finding the modular inverse"
+    },
+    "statement": {
+      "uz": "Bitta qatorda ikkita butun son beriladi: a va n (EKUB(a, n) = 1 kafolatlanadi). Dasturingiz a·x ≡ 1 (mod n) shartni qanoatlantiruvchi eng kichik musbat x ni topib, bitta qatorda, faqat son koʻrinishida chiqarsin. Masalan, «3 10» kiritsa, javob 7, chunki 3·7 = 21 va 21 mod 10 = 1. Cheklar: 2 ≤ n ≤ 100000, 1 ≤ a < n. Berilgan dastur notoʻgʻri amal bilan hisoblaydi — uni tuzating.",
+      "ru": "В одной строке заданы два целых числа a и n (гарантируется, что НОД(a, n) = 1). Ваша программа должна найти наименьшее положительное x, удовлетворяющее a·x ≡ 1 (mod n), и вывести его одной строкой — только число. Например, для ввода «3 10» ответ 7, так как 3·7 = 21, а 21 mod 10 = 1. Ограничения: 2 ≤ n ≤ 100000, 1 ≤ a < n. Приведённая программа вычисляет с неверной операцией — исправьте её.",
+      "en": "One line holds two integers a and n (it is guaranteed that GCD(a, n) = 1). Your program must find the smallest positive x satisfying a·x ≡ 1 (mod n) and print it on one line — only the number. For example, the input '3 10' gives 7, because 3·7 = 21 and 21 mod 10 = 1. Limits: 2 ≤ n ≤ 100000, 1 ≤ a < n. The given program computes with the wrong operation — fix it."
+    },
+    "code": {
+      "starter": {
+        "python": "a, n = map(int, input().split())\nx = 1\nwhile (a + x) % n != 1:\n    x += 1\nprint(x)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong();\n        long n = in.nextLong();\n        long x = 1;\n        while ((a + x) % n != 1) {\n            x++;\n        }\n        System.out.println(x);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long a, n;\n    cin >> a >> n;\n    long long x = 1;\n    while ((a + x) % n != 1) {\n        x++;\n    }\n    cout << x << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "a, n = map(int, input().split())\nx = 1\nwhile (a * x) % n != 1:\n    x += 1\nprint(x)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong();\n        long n = in.nextLong();\n        long x = 1;\n        while ((a * x) % n != 1) {\n            x++;\n        }\n        System.out.println(x);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long a, n;\n    cin >> a >> n;\n    long long x = 1;\n    while ((a * x) % n != 1) {\n        x++;\n    }\n    cout << x << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3 10\n", "expected": "7", "hidden": false },
+        { "input": "2 15\n", "expected": "8", "hidden": false },
+        { "input": "7 120\n", "expected": "103", "hidden": true },
+        { "input": "17 3120\n", "expected": "2753", "hidden": true },
+        { "input": "5 72\n", "expected": "29", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "3-2-1 qoidasi nimani anglatadi?",
+          "ru": "Что означает правило 3-2-1?",
+          "en": "What does the 3-2-1 rule mean?"
+        },
+        "options": [
+          {
+            "uz": "Maʼlumotning kamida 3 nusxasi, 2 xil tashuvchida, 1 tasi boshqa joyda",
+            "ru": "Не менее 3 копий данных, на 2 разных носителях, 1 из них в другом месте",
+            "en": "At least 3 copies of the data, on 2 different media, 1 of them in another location"
+          },
+          {
+            "uz": "Nusxa har 3 soatda olinadi, 2 daqiqa davom etadi va 1 hafta saqlanadi",
+            "ru": "Копия снимается каждые 3 часа, длится 2 минуты и хранится 1 неделю",
+            "en": "A copy is taken every 3 hours, lasts 2 minutes and is kept for 1 week"
+          },
+          {
+            "uz": "3 tashuvchiga 2 tadan nusxa, ulardan 1 tasi shifrlangan",
+            "ru": "По 2 копии на 3 носителях, из них 1 зашифрована",
+            "en": "2 copies on each of 3 media, 1 of them encrypted"
+          },
+          {
+            "uz": "Asosiy tizimdan 3 metr uzoqda 2 ta disk, 1 ta nusxa bulutda",
+            "ru": "2 диска в 3 метрах от основной системы, 1 копия в облаке",
+            "en": "2 disks three metres from the main system, 1 copy in the cloud"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars: kamida 3 nusxa, 2 xil tashuvchi, 1 tasi boshqa joyda (boshqa bino yoki bulut); shifrlovchilarga qarshi zamonaviy tavsiya — 3-2-1-1-0.",
+          "ru": "В занятии: не менее 3 копий, 2 разных носителя, 1 в другом месте (другое здание или облако); современная рекомендация против шифровальщиков — 3-2-1-1-0.",
+          "en": "The lesson: at least 3 copies, 2 kinds of media, 1 in another location (another building or the cloud); the modern recommendation against ransomware is 3-2-1-1-0."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tiklash nuqtalari (System Restore) shaxsiy fayllarni ham saqlaydi.",
+          "ru": "Точки восстановления (System Restore) сохраняют также личные файлы.",
+          "en": "Restore points (System Restore) also save personal files."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dars jadvali: tiklash nuqtalari tizim fayllari va reestrni saqlaydi, shaxsiy fayllar emas; tiklash nuqtasini zaxira nusxa deb hisoblash — keng tarqalgan xato.",
+          "ru": "Таблица занятия: точки восстановления сохраняют системные файлы и реестр, а не личные файлы; считать точку восстановления резервной копией — частая ошибка.",
+          "en": "The lesson's table: restore points keep system files and the registry, not personal files; treating a restore point as a backup is a common mistake."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysilari darsda sanab oʻtilgan NTFS asosiy ruxsatlari?",
+          "ru": "Что из перечисленного — основные разрешения NTFS, названные в занятии?",
+          "en": "Which of these are the basic NTFS permissions listed in the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Full control",
+            "ru": "Full control (полный доступ)",
+            "en": "Full control"
+          },
+          {
+            "uz": "Modify",
+            "ru": "Modify (изменение)",
+            "en": "Modify"
+          },
+          {
+            "uz": "Read & execute",
+            "ru": "Read & execute (чтение и выполнение)",
+            "en": "Read & execute"
+          },
+          {
+            "uz": "Compact",
+            "ru": "Compact (сжатие)",
+            "en": "Compact"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi asosiy ruxsatlar: Full control, Modify, Read & execute, List folder contents, Read, Write. Compact — bu roʻyxatda yoʻq.",
+          "ru": "Основные разрешения из занятия: Full control, Modify, Read & execute, List folder contents, Read, Write. Compact в этом списке нет.",
+          "en": "The lesson's basic permissions: Full control, Modify, Read & execute, List folder contents, Read, Write. Compact is not in that list."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Differensial zaxira nusxa nimani saqlaydi?",
+          "ru": "Что сохраняет дифференциальная резервная копия?",
+          "en": "What does a differential backup save?"
+        },
+        "options": [
+          {
+            "uz": "Oxirgi toʻliq nusxadan beri oʻzgarganlarni",
+            "ru": "Изменившееся с момента последней полной копии",
+            "en": "What changed since the last full backup"
+          },
+          {
+            "uz": "Oxirgi har qanday nusxadan beri oʻzgarganlarni",
+            "ru": "Изменившееся с момента последней копии любого типа",
+            "en": "What changed since the last backup of any type"
+          },
+          {
+            "uz": "Faqat oxirgi kuni yaratilgan yangi fayllarni",
+            "ru": "Только новые файлы, созданные за последний день",
+            "en": "Only the new files created during the last day"
+          },
+          {
+            "uz": "Butun diskni operatsion tizim bilan birga",
+            "ru": "Весь диск вместе с операционной системой",
+            "en": "The whole disk together with the operating system"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvali: inkremental oxirgi har qanday nusxadan beri oʻzgarganlarni, differensial esa oxirgi toʻliq nusxadan beri oʻzgarganlarni saqlaydi; differensial tiklash uchun 2 ta nusxa yetarli.",
+          "ru": "Таблица занятия: инкрементная копия сохраняет изменившееся с момента последней копии любого типа, дифференциальная — с момента последней полной; для восстановления дифференциальной достаточно 2 копий.",
+          "en": "The lesson's table: incremental saves what changed since the last backup of any type, differential since the last full backup; restoring a differential needs only 2 backups."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Bitta toʻliq nusxa va undan keyin 4 ta inkremental nusxa olindi. Eng soʻnggi holatga tiklash uchun nechta nusxa kerak boʻladi?",
+          "ru": "Сделаны одна полная копия и затем 4 инкрементные. Сколько копий понадобится для восстановления до последнего состояния?",
+          "en": "One full backup and then 4 incremental backups were made. How many backups are needed to restore to the latest state?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda inkrementalning kamchiligi: tiklash uchun butun zanjir kerak. Demak, toʻliq nusxa + 4 ta inkremental = 5 nusxa.",
+          "ru": "В занятии указано, что недостаток инкрементных копий — для восстановления нужна вся цепочка: полная копия + 4 инкрементных = 5 копий.",
+          "en": "The lesson lists the drawback of incrementals: the whole chain is needed to restore, so the full backup plus 4 incrementals = 5 backups."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "NTFS ruxsatlarini buyruq satrida koʻrish, berish, rad etish va faylga saqlash uchun qaysi dastur ishlatiladi?",
+          "ru": "Какая программа используется в занятии для просмотра, предоставления, запрета и сохранения NTFS-разрешений в командной строке?",
+          "en": "Which command-line tool does the lesson use for viewing, granting, denying and saving NTFS permissions?"
+        },
+        "answers": ["icacls", "ICACLS", "icacls.exe"],
+        "explanation": {
+          "uz": "Dars misollari: icacls papka, /grant, /deny, /inheritance:d va /save bilan huquqlarni faylga saqlash — oʻzgartirishdan oldin zaxira.",
+          "ru": "Примеры из занятия: icacls folder, /grant, /deny, /inheritance:d и /save для сохранения прав в файл — резервная копия перед изменениями.",
+          "en": "The lesson's examples: icacls folder, /grant, /deny, /inheritance:d and /save to keep the permissions in a file — a backup before changes."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Talaba tarmoq orqali papkaga kiradi: ulashish (Share) ruxsati — Read, NTFS ruxsati — Modify. Samarali huquq qanday?",
+          "ru": "Студент обращается к папке по сети: разрешение расшаривания — Read, разрешение NTFS — Modify. Какое право действует?",
+          "en": "A student reaches a folder over the network: the share permission is Read and the NTFS permission is Modify. Which right applies?"
+        },
+        "options": [
+          {
+            "uz": "Read — ikkala ruxsatning eng cheklovchisi",
+            "ru": "Read — наиболее ограничивающее из двух разрешений",
+            "en": "Read — the more restrictive of the two permissions"
+          },
+          {
+            "uz": "Modify — NTFS ulashish ruxsatidan ustun",
+            "ru": "Modify — NTFS важнее разрешения расшаривания",
+            "en": "Modify — NTFS overrides the share permission"
+          },
+          {
+            "uz": "Full control — ikkala ruxsat yigʻindisi",
+            "ru": "Full control — объединение обоих разрешений",
+            "en": "Full control — the union of both permissions"
+          },
+          {
+            "uz": "Ruxsat yoʻq — ruxsatlar mos kelmadi",
+            "ru": "Доступа нет — разрешения не совпадают",
+            "en": "No access — the permissions do not match"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars qoidasi: tarmoq orqali kirishda ulashish va NTFS ruxsatlarining eng cheklovchisi amal qiladi.",
+          "ru": "Правило занятия: при сетевом доступе действует более ограничивающее из разрешений Share и NTFS.",
+          "en": "The lesson's rule: for network access the more restrictive of the share and NTFS permissions applies."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Windows hisoblari va UAC haqida darsga koʻra qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об учётных записях Windows и UAC верны по занятию?",
+          "en": "Which statements about Windows accounts and UAC are correct according to the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Administrator ham odatda cheklangan token bilan ishlaydi, imtiyozli amal uchun tasdiq soʻraladi",
+            "ru": "Даже администратор обычно работает с ограниченным токеном; привилегированное действие требует подтверждения",
+            "en": "Even an administrator usually works with a restricted token; a privileged action asks for confirmation"
+          },
+          {
+            "uz": "Kundalik ish uchun standart hisob tavsiya etiladi",
+            "ru": "Для повседневной работы рекомендуется стандартная учётная запись",
+            "en": "A standard account is recommended for everyday work"
+          },
+          {
+            "uz": "Mehmon hisobi oʻchirilgan boʻlishi kerak",
+            "ru": "Учётная запись Гость должна быть отключена",
+            "en": "The Guest account should be disabled"
+          },
+          {
+            "uz": "Standart foydalanuvchi UAC orqali tizim sozlamalarini oʻzgartira oladi",
+            "ru": "Стандартный пользователь через UAC может менять системные настройки",
+            "en": "A standard user can change system settings through UAC"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda standart hisob tizim sozlamalarini oʻzgartira olmaydi deyilgan; UAC esa administratorning imtiyozli amallarini tasdiqlaydi. Kundalik ishni administrator hisobida bajarish — xato: zararli dastur ham administrator huquqi bilan ishlaydi.",
+          "ru": "В занятии стандартная учётная запись не может менять системные настройки; UAC подтверждает привилегированные действия администратора. Повседневная работа под администратором — ошибка: вредоносная программа тоже получит права администратора.",
+          "en": "The lesson says a standard account cannot change system settings; UAC confirms an administrator's privileged actions. Everyday work in an administrator account is a mistake: malware then also runs with administrator rights."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Zaxira disk doimiy ulangan holda qoldirilsa, shifrlovchi virus uni ham shifrlaydi, shuning uchun nusxalashdan keyin uzish yoki oflayn/immutable nusxa tavsiya etiladi.",
+          "ru": "Если резервный диск постоянно подключён, шифровальщик зашифрует и его, поэтому рекомендуется отключать его после копирования или хранить офлайн/неизменяемую копию.",
+          "en": "If the backup disk stays permanently connected, ransomware encrypts it too, so the lesson advises disconnecting it after copying or keeping an offline/immutable copy."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars eslatmasi: zaxira disk doimiy ulangan boʻlsa, shifrlovchi virus uni ham shifrlaydi; 3-2-1-1-0 qoidasi bitta oflayn yoki oʻzgartirib boʻlmaydigan nusxa va 0 ta xatoli tiklash sinovini qoʻshadi.",
+          "ru": "Заметка занятия: постоянно подключённый резервный диск шифровальщик шифрует тоже; правило 3-2-1-1-0 добавляет одну офлайн или неизменяемую копию и 0 ошибок при проверке восстановления.",
+          "en": "The lesson's note: ransomware encrypts a permanently connected backup disk as well; the 3-2-1-1-0 rule adds one offline or immutable copy and 0 errors in restore testing."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Ulashish va NTFS: tarmoqdagi samarali huquq",
+      "ru": "Share и NTFS: эффективное право в сети",
+      "en": "Share and NTFS: the effective network right"
+    },
+    "statement": {
+      "uz": "Dars qoidasiga koʻra tarmoq orqali kirishda ulashish (Share) va NTFS ruxsatlarining eng cheklovchisi amal qiladi: foydalanuvchi faqat har ikkala ruxsatda ham mavjud boʻlgan huquqlardan foydalana oladi. Dasturingiz har bir foydalanuvchi uchun shu umumiy huquqlarni hisoblab chiqaradi.\n\nHuquqlar R (oʻqish), W (yozish), X (bajarish), D (oʻchirish) harflari bilan belgilanadi; kirishda ular istalgan tartibda kelishi mumkin.\nKirish: birinchi qatorda n — foydalanuvchilar soni. Keyingi n ta qatorda uchta qiymat: foydalanuvchi nomi (boʻshliqsiz), ulashish ruxsati va NTFS ruxsati (har biri kamida bitta belgi, faqat R, W, X, D harflari).\nChiqish: har foydalanuvchi uchun bitta qator: nom: huquqlar — umumiy harflar R, W, X, D tartibida; agar umumiy huquq boʻlmasa, nom: - deb chiqaring. Hech qanday qoʻshimcha soʻz yozmang.\n\nMasalan, olim uchun ulashish R, NTFS RWXD boʻlsa, samarali huquq R boʻladi; kamol uchun RW va XD boʻlsa, umumiy huquq yoʻq va dastur kamol: - chiqaradi.",
+      "ru": "По правилу из занятия при сетевом доступе действует более ограничивающее из разрешений Share и NTFS: пользователь сохраняет только те права, которые присутствуют в обоих разрешениях. Ваша программа должна вычислить эти общие права для каждого пользователя.\n\nПрава обозначаются буквами R (чтение), W (запись), X (выполнение), D (удаление); во входе они могут идти в любом порядке.\nВвод: первая строка — n, число пользователей. В каждой из следующих n строк три значения: имя пользователя (без пробелов), разрешение Share и разрешение NTFS (каждое — не менее одного символа, только буквы R, W, X, D).\nВывод: по одной строке на пользователя: имя: права — только общие буквы в порядке R, W, X, D; если общих прав нет, выведите имя: -. Никаких дополнительных слов.\n\nНапример, для пользователя olim Share R и NTFS RWXD дают R; для kamol разрешения RW и XD не имеют общих прав, и программа выводит kamol: -.",
+      "en": "By the lesson's rule, over the network the more restrictive of the share and NTFS permissions applies: a user keeps only the rights that are present in both permissions. Your program must compute these common rights for each user.\n\nThe rights are written with the letters R (read), W (write), X (execute), D (delete); in the input they may come in any order.\nInput: the first line is n, the number of users. Each of the next n lines holds three values: a user name (no spaces), the share permission and the NTFS permission (each at least one letter, only the letters R, W, X, D).\nOutput: one line per user: name: rights — only the shared letters in the order R, W, X, D; when there is no shared right, print name: -. Do not write any extra words.\n\nFor example, for the user olim the share R and NTFS RWXD give R; for kamol the permissions RW and XD share nothing, so the program prints kamol: -."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nsatrlar = [s.split() for s in sys.stdin.read().split(\"\\n\") if s.strip()]\nn = int(satrlar[0][0])\nfor qator in satrlar[1:1 + n]:\n    print(f\"{qator[0]}: {qator[1]}\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.next());\n        for (int i = 0; i < n; i++) {\n            String name = in.next();\n            String share = in.next();\n            in.next();\n            System.out.println(name + \": \" + share);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string name, share, ntfs;\n        cin >> name >> share >> ntfs;\n        cout << name << \": \" << share << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nTARTIB = \"RWXD\"\nsatrlar = [s.split() for s in sys.stdin.read().split(\"\\n\") if s.strip()]\nn = int(satrlar[0][0])\nfor qator in satrlar[1:1 + n]:\n    kim, ulashish, ntfs = qator\n    samarali = \"\".join(h for h in TARTIB if h in ulashish and h in ntfs)\n    print(f\"{kim}: \" + (samarali if samarali else \"-\"))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String TARTIB = \"RWXD\";\n        int n = Integer.parseInt(in.next());\n        for (int i = 0; i < n; i++) {\n            String name = in.next();\n            String share = in.next();\n            String ntfs = in.next();\n            StringBuilder eff = new StringBuilder();\n            for (char c : TARTIB.toCharArray()) {\n                if (share.indexOf(c) >= 0 && ntfs.indexOf(c) >= 0) {\n                    eff.append(c);\n                }\n            }\n            System.out.println(name + \": \" + (eff.length() > 0 ? eff : \"-\"));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string TARTIB = \"RWXD\";\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string name, share, ntfs;\n        cin >> name >> share >> ntfs;\n        string eff;\n        for (char c : TARTIB) {\n            if (share.find(c) != string::npos && ntfs.find(c) != string::npos) {\n                eff += c;\n            }\n        }\n        cout << name << \": \" << (eff.empty() ? \"-\" : eff) << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4\nolim R RWXD\nvali RW RX\nsardor RWD R\nkamol RW XD\n", "expected": "olim: R\nvali: R\nsardor: R\nkamol: -", "hidden": false },
+        { "input": "1\nbux RWX RWX\n", "expected": "bux: RWX", "hidden": false },
+        { "input": "2\na RXD DXRW\nb W RW\n", "expected": "a: RXD\nb: W", "hidden": true },
+        { "input": "3\nx R R\ny RD RX\nz WX RD\n", "expected": "x: R\ny: R\nz: -", "hidden": true },
+        { "input": "1\nq RWXD RWXD\n", "expected": "q: RWXD", "hidden": true }
+      ]
+    }
+  }
+}

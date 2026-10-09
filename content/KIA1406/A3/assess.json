@@ -1,0 +1,460 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Cyber Kill Chain modeli hujumni nechta bosqichga ajratadi?",
+          "ru": "На сколько этапов модель Cyber Kill Chain делит атаку?",
+          "en": "Into how many stages does the Cyber Kill Chain model split an attack?"
+        },
+        "answers": [7],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Model yetti bosqichli: razvedka, qurollanish, yetkazish, ekspluatatsiya, oʻrnatish, boshqaruv (C2) va maqsadga erishish.",
+          "ru": "Модель семиступенчатая: разведка, вооружение, доставка, эксплуатация, установка, управление (C2) и действия по цели.",
+          "en": "The model has seven stages: reconnaissance, weaponisation, delivery, exploitation, installation, command and control (C2) and actions on objectives."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Himoyachi Cyber Kill Chain zanjirini istalgan bosqichida uzishi mumkin.",
+          "ru": "Защитник может разорвать цепочку Cyber Kill Chain на любом её этапе.",
+          "en": "The defender can break the Cyber Kill Chain at any of its stages."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda himoyachi har bir bosqichda zanjirni uzishi mumkin deyiladi va har bir bosqichga oʻz himoya imkoniyati berilgan.",
+          "ru": "В занятии сказано, что защитник может разорвать цепочку на каждом этапе, и к каждому этапу своя возможность защиты.",
+          "en": "The lesson says the defender can break the chain at every stage, and each stage has its own defensive opportunity."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Cyber Kill Chain modelini taklif qilgan tashkilot qaysi?",
+          "ru": "Какая организация предложила модель Cyber Kill Chain?",
+          "en": "Which organisation proposed the Cyber Kill Chain model?"
+        },
+        "options": [
+          {
+            "uz": "Lockheed Martin",
+            "ru": "Lockheed Martin",
+            "en": "Lockheed Martin"
+          },
+          {
+            "uz": "Microsoft",
+            "ru": "Microsoft",
+            "en": "Microsoft"
+          },
+          {
+            "uz": "CISA",
+            "ru": "CISA",
+            "en": "CISA"
+          },
+          {
+            "uz": "Equifax",
+            "ru": "Equifax",
+            "en": "Equifax"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Modelni Lockheed Martin taklif qilgani darsda aytilgan; Microsoft esa WannaCry keysida tuzatishni hodisadan ikki oy oldin chiqargan tomon sifatida tilga olinadi.",
+          "ru": "В занятии указано, что модель предложила Lockheed Martin; Microsoft в кейсе WannaCry — сторона, выпустившая исправление за два месяца до инцидента.",
+          "en": "The lesson states that Lockheed Martin proposed the model; Microsoft appears in the WannaCry case as the side that released the fix two months earlier."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Cyber Kill Chain bosqichlari roʻyxatiga qaysilari kiradi?",
+          "ru": "Что из перечисленного входит в список этапов Cyber Kill Chain?",
+          "en": "Which of these are stages of the Cyber Kill Chain?"
+        },
+        "options": [
+          {
+            "uz": "Razvedka",
+            "ru": "Разведка",
+            "en": "Reconnaissance"
+          },
+          {
+            "uz": "Yetkazish",
+            "ru": "Доставка",
+            "en": "Delivery"
+          },
+          {
+            "uz": "Boshqaruv (C2)",
+            "ru": "Управление (C2)",
+            "en": "Command and control (C2)"
+          },
+          {
+            "uz": "Zaxira nusxalash",
+            "ru": "Резервное копирование",
+            "en": "Backups"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Zaxira nusxalash — hujum bosqichi emas, u yettinchi bosqichdagi himoya imkoniyati sifatida berilgan.",
+          "ru": "Резервное копирование — не этап атаки, оно указано как возможность защиты на седьмом этапе.",
+          "en": "Backups are not an attack stage; they are given as a defensive opportunity of the seventh stage."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "WannaCry qaysi protokol zaifligidan foydalanib, tarmoq orqali oʻz-oʻzidan tarqalgan?",
+          "ru": "Уязвимостью какого протокола воспользовался WannaCry для самораспространения по сетям?",
+          "en": "The vulnerability of which protocol did WannaCry use to spread by itself across networks?"
+        },
+        "options": [
+          {
+            "uz": "Windows dagi SMBv1",
+            "ru": "SMBv1 в Windows",
+            "en": "SMBv1 in Windows"
+          },
+          {
+            "uz": "Apache Struts freymvorki",
+            "ru": "Фреймворк Apache Struts",
+            "en": "The Apache Struts framework"
+          },
+          {
+            "uz": "VPN hisobiga kirish protokoli",
+            "ru": "Протокол входа в учётную запись VPN",
+            "en": "The sign-in mechanism of a VPN account"
+          },
+          {
+            "uz": "Ichki boshqaruv paneli",
+            "ru": "Внутренняя панель управления",
+            "en": "An internal admin panel"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "EternalBlue ekspluatatsiyasi SMBv1 zaifligidan foydalangan; tuzatish chiqqan boʻlsa-da, sistemalar yangilanmagan edi.",
+          "ru": "Эксплойт EternalBlue использовал уязвимость SMBv1; хотя исправление вышло, системы не были обновлены.",
+          "en": "The EternalBlue exploit used the SMBv1 vulnerability; the fix existed, but the systems had not been updated."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Twitter hodisasida xodimlarni telefon orqali aldashga qanday nom berilgan? Qisqa javob yozing.",
+          "ru": "Как в занятии называется обман сотрудников по телефону в случае Twitter? Запишите короткий ответ.",
+          "en": "What term does the lesson use for deceiving employees by phone in the Twitter case? Write a short answer."
+        },
+        "answers": ["vishing", "Vishing"],
+        "explanation": {
+          "uz": "Hujumchilar texnik yordam xizmati nomidan qoʻngʻiroq qilishgan — bu vishing, yaʼni ijtimoiy muhandislikning telefon koʻrinishi.",
+          "ru": "Злоумышленники звонили от имени службы техподдержки — это вишинг, то есть социальная инженерия по телефону.",
+          "en": "The attackers phoned posing as the help desk — that is vishing, social engineering carried out over the phone."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Equifax da hujumning taxminan 76 kun sezilmas qolgani nima bilan izohlangan?",
+          "ru": "Чем объясняется, что атака на Equifax около 76 дней оставалась незамеченной?",
+          "en": "What explains that the attack on Equifax went unnoticed for about 76 days?"
+        },
+        "options": [
+          {
+            "uz": "Trafikni tekshiruvchi qurilmaning sertifikati muddati oʻtgan va u ishlamagan",
+            "ru": "У устройства проверки трафика истёк сертификат, и оно не работало",
+            "en": "The traffic inspection device had an expired certificate and was not working"
+          },
+          {
+            "uz": "Kompaniyada umuman monitoring vositasi boʻlmagan",
+            "ru": "В компании вообще не было средств мониторинга",
+            "en": "The company had no monitoring tool at all"
+          },
+          {
+            "uz": "Hujumchilar faqat qogʻoz hujjatlar bilan ishlagan",
+            "ru": "Злоумышленники работали только с бумажными документами",
+            "en": "The attackers worked only with paper documents"
+          },
+          {
+            "uz": "Zaxira nusxa yoʻqligi sababli jurnallar yozilmagan",
+            "ru": "Из-за отсутствия резервных копий журналы не записывались",
+            "en": "Journals were not written because there were no backups"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda monitoring vositasi mavjudligi, lekin ishlamay turgani aytiladi; shu sababli darslardan biri — monitoringning ishlashini tekshirish.",
+          "ru": "В занятии сказано, что средство мониторинга было, но не работало; поэтому один из уроков — проверять работоспособность средств мониторинга.",
+          "en": "The lesson says the monitoring tool existed but did not work, so one of the lessons is to check that monitoring tools actually work."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Umumiy xulosalar jadvalidagi kuzatuv, keys va arzon chora juftliklaridan qaysilari toʻgʻri berilgan?",
+          "ru": "Какие тройки «наблюдение — кейс — недорогая мера» из таблицы общих выводов верны?",
+          "en": "Which observation–case–cheap measure triples from the general conclusions table are given correctly?"
+        },
+        "options": [
+          {
+            "uz": "Maʼlum zaiflik oʻz vaqtida yopilmagan — WannaCry va Equifax — tuzatishlarni boshqarish jarayoni",
+            "ru": "Известная уязвимость не закрыта вовремя — WannaCry и Equifax — процесс управления исправлениями",
+            "en": "A known vulnerability was not closed in time — WannaCry and Equifax — a patch management process"
+          },
+          {
+            "uz": "Bitta parol hamma narsani ochgan — Colonial Pipeline — MFA",
+            "ru": "Один пароль открыл всё — Colonial Pipeline — MFA",
+            "en": "One password opened everything — Colonial Pipeline — MFA"
+          },
+          {
+            "uz": "Hujum uzoq sezilmagan — Equifax — monitoringni sinash va jurnallarni tahlil qilish",
+            "ru": "Атаку долго не замечали — Equifax — проверка мониторинга и анализ журналов",
+            "en": "The attack went unnoticed for a long time — Equifax — testing monitoring and analysing logs"
+          },
+          {
+            "uz": "Odamlar aldangan — Twitter — oflayn zaxira nusxa",
+            "ru": "Людей обманули — Twitter — офлайн-резервные копии",
+            "en": "People were deceived — Twitter — offline backups"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "«Odamlar aldangan» qatoriga Twitter keysida trening va apparat kalitlar mos berilgan, oflayn zaxira esa tiklash qiyin boʻlgan keyslarga tegishli.",
+          "ru": "К строке «людей обманули» в кейсе Twitter отнесены тренинги и аппаратные ключи, а офлайн-копии относятся к кейсам с трудным восстановлением.",
+          "en": "The row about deceived people is matched in the lesson with training and hardware keys; offline backups belong to the cases where recovery was hard."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dars koʻp uchraydigan xatolar boʻlimida toʻlov toʻlash maʼlumot qaytib kelishini kafolatlaydigan yechim deb hisoblanadi.",
+          "ru": "В разделе частых ошибок занятие считает уплату выкупа решением, гарантирующим возврат данных.",
+          "en": "In the common mistakes section the lesson treats paying the ransom as a solution that guarantees the data comes back."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda teskari aytilgan: toʻlov maʼlumot qaytishini kafolatlamaydi va jinoyatchilarni ragʻbatlantiradi. Colonial Pipeline da toʻlovning bir qismi keyinchalik qaytarilgan.",
+          "ru": "В занятии сказано обратное: платеж не гарантирует возврат данных и поощряет преступников. В случае Colonial Pipeline часть выкупа позже вернули.",
+          "en": "The lesson says the opposite: payment does not guarantee that the data comes back and encourages criminals. In the Colonial Pipeline case part of the ransom was later recovered."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Hujum zanjiri va toʻrt keys boʻyicha nazorat savollari",
+      "ru": "Проверочные вопросы по цепочке атаки и четырём кейсам",
+      "en": "Check questions on the attack chain and the four cases"
+    },
+    "statement": {
+      "uz": "Mustaqil tahlil uchun NotPetya, SolarWinds, Log4Shell yoki MOVEit hodisalaridan birini tanlashdan oldin besh savolga javob bering. Savollar Cyber Kill Chain bosqichlariga va darsdagi toʻrt keysning tahliliga asoslangan. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Прежде чем выбирать для самостоятельного анализа NotPetya, SolarWinds, Log4Shell или MOVEit, ответьте на пять вопросов. Они опираются на этапы Cyber Kill Chain и на разбор четырёх кейсов занятия. Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before choosing NotPetya, SolarWinds, Log4Shell or MOVEit for the independent analysis, answer five questions. They rest on the stages of the Cyber Kill Chain and on the four cases analysed in the lesson. The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Yetkazish bosqichiga darsda qaysi himoya imkoniyati berilgan?",
+            "ru": "Какая возможность защиты указана в занятии для этапа доставки?",
+            "en": "Which defensive opportunity does the lesson give for the delivery stage?"
+          },
+          "options": [
+            {
+              "uz": "Pochta filtri va veb-filtr",
+              "ru": "Фильтрация почты и веб-фильтр",
+              "en": "Mail filtering and a web filter"
+            },
+            {
+              "uz": "Yangilanishlar va EDR",
+              "ru": "Обновления и EDR",
+              "en": "Updates and EDR"
+            },
+            {
+              "uz": "Chiquvchi trafikni filtrlash va IDS",
+              "ru": "Фильтрация исходящего трафика и IDS",
+              "en": "Outbound traffic filtering and an IDS"
+            },
+            {
+              "uz": "Segmentlash, DLP va zaxira nusxa",
+              "ru": "Сегментация, DLP и резервные копии",
+              "en": "Segmentation, DLP and backups"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Yetkazish xat, sayt yoki USB orqali boʻladi, shuning uchun unga pochta va veb-filtr mos qoʻyilgan.",
+            "ru": "Доставка идёт по почте, через сайт или USB, поэтому к ней отнесены фильтрация почты и веб-фильтр.",
+            "en": "Delivery happens by e-mail, website or USB, so mail filtering and a web filter are matched to it."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Colonial Pipeline da hujumchilarning boshlangʻich kirishi qanday boʻlgani aytiladi?",
+            "ru": "Как описан первоначальный доступ злоумышленников в кейсе Colonial Pipeline?",
+            "en": "How is the attackers' initial access described in the Colonial Pipeline case?"
+          },
+          "options": [
+            {
+              "uz": "Sizib chiqqan parol bilan, MFA yoqilmagan VPN hisobiga kirish",
+              "ru": "Вход в VPN по утёкшему паролю, где многофакторная аутентификация не была включена",
+              "en": "Logging in to a VPN with a leaked password on an account without MFA"
+            },
+            {
+              "uz": "Tarmoq orqali oʻz-oʻzidan tarqaluvchi qurt orqali",
+              "ru": "Червь, самостоятельно распространявшийся по сети",
+              "en": "A worm that spread across the network by itself"
+            },
+            {
+              "uz": "Veb-ilovadagi freymvork zaifligi orqali",
+              "ru": "Через уязвимость фреймворка в веб-приложении",
+              "en": "Through a framework vulnerability in a web application"
+            },
+            {
+              "uz": "Texnik yordam xizmati nomidan qilingan qoʻngʻiroq orqali",
+              "ru": "Через звонок от имени службы техподдержки",
+              "en": "Through a phone call posing as the help desk"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Zaiflik sifatida MFA yoʻqligi va ishlatilmayotgan hisobning faol qolgani koʻrsatilgan.",
+            "ru": "Уязвимостями названы отсутствие MFA и то, что неиспользуемая учётная запись осталась активной.",
+            "en": "The vulnerabilities named are the missing MFA and the fact that the unused account stayed active."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "WannaCry tarqalishi «oʻchirish kaliti» (kill switch) domeni roʻyxatdan oʻtkazilgach, tasodifan sekinlashgan.",
+            "ru": "Распространение WannaCry случайно замедлилось после регистрации домена-«рубильника» (kill switch).",
+            "en": "The spread of WannaCry slowed by chance once the kill switch domain was registered."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda bu tasodifan yuz bergan hol deb aytilgan; asosiy darslar esa oʻz vaqtidagi yangilanish, SMBv1 ni oʻchirish va 445-portni yopish.",
+            "ru": "В занятии это названо случившимся случайно; основные уроки — обновления, отключение SMBv1 и закрытие порта 445.",
+            "en": "The lesson calls this something that happened by chance; its main lessons are updates, turning off SMBv1 and closing port 445."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Twitter (2020) keysida zaiflik sifatida qaysilari koʻrsatilgan?",
+            "ru": "Что названо уязвимостями в кейсе Twitter (2020)?",
+            "en": "Which items are named as vulnerabilities in the Twitter (2020) case?"
+          },
+          "options": [
+            {
+              "uz": "Ichki vositalarga keng kirish huquqi",
+              "ru": "Широкий доступ к внутренним инструментам",
+              "en": "Broad access to internal tools"
+            },
+            {
+              "uz": "Xodimlarning bunday hujumlarga tayyor emasligi",
+              "ru": "Неготовность сотрудников к таким атакам",
+              "en": "Staff who were unprepared for such attacks"
+            },
+            {
+              "uz": "Xodimlarga berilgan keng imtiyozlar tamoyiliga zid holat",
+              "ru": "Нарушение принципа наименьших привилегий для сотрудников",
+              "en": "A breach of least privilege for staff"
+            },
+            {
+              "uz": "Ichki tarmoqda segmentlash va shifrlash yetishmasligi",
+              "ru": "Недостаток сегментации и шифрования внутри сети",
+              "en": "A lack of segmentation and encryption inside the network"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Segmentlash va shifrlash yetishmasligi Equifax keysida zaiflik sifatida berilgan; darslardan biri ichki vositalarga eng kam imtiyoz.",
+            "ru": "Недостаток сегментации и шифрования назван уязвимостью в кейсе Equifax; один из уроков Twitter — наименьшие привилегии для внутренних инструментов.",
+            "en": "The lack of segmentation and encryption is named in the Equifax case; one Twitter lesson is least privilege for internal tools."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "WannaCry da SMBv1 zaifligidan foydalangan ekspluatatsiyaning nomini yozing.",
+            "ru": "Запишите название эксплойта, который в WannaCry использовал уязвимость SMBv1.",
+            "en": "Write the name of the exploit WannaCry used against the SMBv1 vulnerability."
+          },
+          "answers": ["EternalBlue", "eternalblue", "Eternalblue"],
+          "explanation": {
+            "uz": "Darsda ekspluatatsiya nomi EternalBlue deb berilgan; u tarmoq orqali oʻz-oʻzidan tarqalishni taʼminlagan.",
+            "ru": "В занятии эксплойт назван EternalBlue; именно он обеспечил самораспространение по сетям.",
+            "en": "The lesson names the exploit EternalBlue; it is what let the worm spread across networks by itself."
+          }
+        }
+      ]
+    }
+  }
+}

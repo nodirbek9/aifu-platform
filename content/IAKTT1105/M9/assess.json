@@ -1,0 +1,426 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Axborot tizimi nima?",
+          "ru": "Что такое информационная система?",
+          "en": "What is an information system?"
+        },
+        "options": [
+          {
+            "uz": "Umumiy maqsad uchun axborotni yigʻish, saqlash, qayta ishlash va tarqatishni taʼminlovchi odamlar, jarayonlar, maʼlumotlar va axborot texnologiyalari majmui",
+            "ru": "Совокупность людей, процессов, данных и информационных технологий, обеспечивающая сбор, хранение, обработку и распространение информации для целей организации",
+            "en": "A set of people, processes, data and information technology that collects, stores, processes and distributes information for an organization's goals"
+          },
+          {
+            "uz": "Kompyuterda saqlanadigan katta hajmdagi maʼlumotlar bazasi fayli",
+            "ru": "Большой файл базы данных, хранящийся на компьютере",
+            "en": "A large database file stored on a computer"
+          },
+          {
+            "uz": "Kassada har bir sotuv uchun chiqariladigan chek",
+            "ru": "Чек, выдаваемый на кассе при каждой продаже",
+            "en": "A receipt printed at the till for every sale"
+          },
+          {
+            "uz": "Dasturchilar uchun ish haqi fondi",
+            "ru": "Фонд оплаты труда программистов",
+            "en": "A payroll fund for programmers"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi taʼrif: axborot tizimi — odamlar, jarayonlar, maʼlumotlar va axborot texnologiyalari majmui; apparat yoki dastur uning faqat bir qismi.",
+          "ru": "Определение из урока: информационная система — совокупность людей, процессов, данных и ИТ; оборудование или программа — лишь её часть.",
+          "en": "The lesson's definition: an information system is a set of people, processes, data and information technology; the hardware or a program is only one part of it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Doʻkonda kassada tovarning skanerlanishi axborot tizimining qaysi funksiyasiga misol?",
+          "ru": "Сканирование товара на кассе магазина — пример какой функции информационной системы?",
+          "en": "Scanning a product at a shop till is an example of which function of an information system?"
+        },
+        "options": [
+          { "uz": "Kiritish", "ru": "Ввод", "en": "Input" },
+          { "uz": "Chiqarish", "ru": "Вывод", "en": "Output" },
+          { "uz": "Qayta aloqa", "ru": "Обратная связь", "en": "Feedback" },
+          { "uz": "Saqlash", "ru": "Хранение", "en": "Storage" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Funksiyalar jadvali: kiritish — kassada tovar skanerlanadi; qayta ishlash — summa, chegirma va soliq hisoblanadi; saqlash — sotuv maʼlumotlar bazasiga yoziladi; chiqarish — chek va kunlik hisobot; qayta aloqa — qoldiq kamaysa buyurtma tavsiyasi.",
+          "ru": "Таблица функций: ввод — на кассе сканируют товар; обработка — рассчитывают сумму, скидку и налог; хранение — продажа записывается в базу данных; вывод — чек и дневной отчёт; обратная связь — рекомендация заказать при низком остатке.",
+          "en": "The functions table: input — a product is scanned at the till; processing — the amount, discount and tax are calculated; storage — the sale is written to the database; output — a receipt and a daily report; feedback — a reorder suggestion when stock runs low."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Axborot tizimi — bu faqat dastur, odamlar va jarayonlar unga kirmaydi.",
+          "ru": "Информационная система — это только программа, люди и процессы в неё не входят.",
+          "en": "An information system is just a program; people and processes are not part of it."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dars buni birinchi koʻp uchraydigan xato deb ogohlantiradi: odamlar va jarayonlarsiz tizim ishlamaydi — tarkibiga apparat, dasturiy taʼminot, maʼlumotlar, tarmoqlar, odamlar va jarayonlar kiradi.",
+          "ru": "Урок ставит это первой частой ошибкой: без людей и процессов система не работает — в состав входят оборудование, ПО, данные, сети, люди и процессы.",
+          "en": "The lesson lists this as its first common mistake: without people and processes the system does not work — the components are hardware, software, data, networks, people and processes."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Muntazam hisobotlarni — oylik savdo hisoboti va reja bajarilishi kabi — tayyorlovchi tizim boshqaruv darajasi boʻyicha qaysi turga kiradi?",
+          "ru": "К какому виду по уровню управления относится система, готовящая регулярные отчёты — месячный отчёт о продажах, выполнение плана?",
+          "en": "By management level, which type is the system that prepares regular reports, such as a monthly sales report and plan fulfilment?"
+        },
+        "options": [
+          {
+            "uz": "MIS — boshqaruv axborot tizimi (oʻrta boshqaruv)",
+            "ru": "MIS — управленческая информационная система (среднее управление)",
+            "en": "MIS — management information system (middle management)"
+          },
+          {
+            "uz": "TPS — tranzaksiyalarni qayta ishlash tizimi",
+            "ru": "TPS — система обработки транзакций",
+            "en": "TPS — transaction processing system"
+          },
+          {
+            "uz": "EIS — rahbariyat axborot tizimi, dashbord",
+            "ru": "EIS — информационная система руководителя, дашборд",
+            "en": "EIS — executive information system, dashboard"
+          },
+          {
+            "uz": "CRM — mijozlar bilan munosabatlar tizimi",
+            "ru": "CRM — система управления отношениями с клиентами",
+            "en": "CRM — customer relationship management system"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darajalar jadvali: TPS — kundalik operatsiyalarni hisobga olish, MIS — oʻrta boshqaruv uchun muntazam hisobotlar, DSS — modellar va «agar … boʻlsa» tahlili, EIS — yuqori rahbariyat uchun KPI paneli.",
+          "ru": "Таблица уровней: TPS — учёт ежедневных операций, MIS — регулярные отчёты для среднего управления, DSS — модели и анализ «что, если», EIS — панель KPI для высшего руководства.",
+          "en": "The levels table: TPS records daily operations, MIS gives regular reports for middle management, DSS provides models and what-if analysis, EIS gives a KPI panel for top management."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda keltirilgan axborot tizimining hayot sikli necha bosqichdan iborat?",
+          "ru": "Сколько этапов в жизненном цикле информационной системы, приведённом в уроке?",
+          "en": "How many stages does the information system life cycle given in the lesson have?"
+        },
+        "answers": [7],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Bosqichlar: rejalashtirish, tahlil, loyihalash, yaratish yoki sotib olish, sinov va joriy etish, foydalanish va qoʻllab-quvvatlash, almashtirish yoki toʻxtatish — jami yetti.",
+          "ru": "Этапы: планирование, анализ, проектирование, создание или покупка, тестирование и внедрение, эксплуатация и поддержка, замена или вывод из эксплуатации — всего семь.",
+          "en": "Planning, analysis, design, building or buying, testing and implementation, operation and support, replacement or retirement — seven in all."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Axborot tizimining tarkibiy qismlariga qaysilari kiradi?",
+          "ru": "Что из перечисленного входит в составные части информационной системы?",
+          "en": "Which of these are components of an information system?"
+        },
+        "options": [
+          {
+            "uz": "Apparat va dasturiy taʼminot",
+            "ru": "Оборудование и программное обеспечение",
+            "en": "Hardware and software"
+          },
+          {
+            "uz": "Maʼlumotlar va tarmoqlar",
+            "ru": "Данные и сети",
+            "en": "Data and networks"
+          },
+          {
+            "uz": "Odamlar va jarayonlar",
+            "ru": "Люди и процессы",
+            "en": "People and processes"
+          },
+          {
+            "uz": "Tizimni sotib olish uchun oladigan bank krediti",
+            "ru": "Банковский кредит, берущийся для покупки системы",
+            "en": "A bank loan taken to purchase the system"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Tarkibiy qismlar roʻyxati (S9 da batafsil): apparat, dasturiy taʼminot, maʼlumotlar, tarmoqlar, odamlar, jarayonlar. Kredit — moliya operatsiyasi, u tizimning tarkibiy qismi emas.",
+          "ru": "Список составных частей (подробно в S9): оборудование, ПО, данные, сети, люди, процессы. Кредит — финансовая операция, а не составная часть системы.",
+          "en": "The component list (detailed in S9): hardware, software, data, networks, people, processes. A loan is a financial transaction, not a component of the system."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "DSS ning MIS dan asosiy farqi nimada?",
+          "ru": "В чём главное отличие DSS от MIS?",
+          "en": "What is the main difference between a DSS and an MIS?"
+        },
+        "options": [
+          {
+            "uz": "MIS muntazam hisobotlar beradi, DSS esa modellar va «agar … boʻlsa» tahlili bilan qaror qabul qilishni qoʻllab-quvvatlaydi",
+            "ru": "MIS даёт регулярные отчёты, а DSS поддерживает принятие решений моделями и анализом «что, если»",
+            "en": "An MIS gives regular reports, while a DSS supports decision-making with models and what-if analysis"
+          },
+          {
+            "uz": "MIS katta hajmdagi maʼlumotlarni saqlaydi, DSS esa ularni butunlay oʻchiradi",
+            "ru": "MIS хранит большие объёмы данных, а DSS их полностью удаляет",
+            "en": "An MIS stores large amounts of data, while a DSS deletes them entirely"
+          },
+          {
+            "uz": "DSS faqat kassa operatsiyalari uchun, MIS esa faqat rahbar paneli uchun ishlaydi",
+            "ru": "DSS служит только кассовым операциям, а MIS — только панели руководителя",
+            "en": "A DSS is only for till operations and an MIS only for the manager's dashboard"
+          },
+          {
+            "uz": "Farq yoʻq — ikkalasi bir xil tizimning boshqacha nomi",
+            "ru": "Различия нет — это два названия одной и той же системы",
+            "en": "There is no difference — they are two names for the same system"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darajalar jadvali va «Oʻzingizni tekshiring» boʻlimi aynan shu farqni beradi: DSS kredit berish qarori va narx ssenariylari kabi tahliliy vazifalar uchun moʻljallangan.",
+          "ru": "Таблица уровней и раздел «Проверьте себя» дают именно это различие: DSS предназначен для аналитических задач — решения о выдаче кредита, ценовых сценариев.",
+          "en": "The levels table and the Check yourself section give exactly this difference: a DSS is built for analytical tasks such as a lending decision or price scenarios."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "SCM tizimi mijozlar bilan munosabatlarni boshqaradi.",
+          "ru": "Система SCM управляет отношениями с клиентами.",
+          "en": "An SCM system manages customer relationships."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Korporativ tizimlar jadvali: SCM — taʼminot zanjiri, yaʼni yetkazib beruvchilar, omborlar va logistika; mijozlar bilan munosabatlarni esa CRM boshqaradi.",
+          "ru": "Таблица корпоративных систем: SCM — цепочка поставок, то есть поставщики, склады и логистика; отношениями с клиентов управляет CRM.",
+          "en": "The enterprise systems table: SCM is the supply chain — suppliers, warehouses and logistics; customer relationships are managed by CRM."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Barcha funksional tizimlarni yagona maʼlumotlar bazasida birlashtiruvchi korporativ axborot tizimining qisqartmasini yozing.",
+          "ru": "Напишите аббревиатуру корпоративной информационной системы, объединяющей все функциональные системы в единой базе данных.",
+          "en": "Write the abbreviation of the enterprise information system that combines all functional systems in a single database."
+        },
+        "answers": ["ERP", "erp", "ERP system", "ERP-system"],
+        "explanation": {
+          "uz": "Jadvalda ERP «barcha funksiyalarni yagona maʼlumotlar bazasida birlashtiradi» deb berilgan (batafsil M3); CRM — mijozlar, SCM — taʼminot zanjiri.",
+          "ru": "В таблице ERP описан как «объединяет все функции в единой базе данных» (подробно M3); CRM — клиенты, SCM — цепочка поставок.",
+          "en": "The table describes ERP as combining all functions in a single database (details in M3); CRM is for customers and SCM for the supply chain."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Axborot tizimlari: funksiyalar, darajalar va hayot sikli",
+      "ru": "Информационные системы: функции, уровни и жизненный цикл",
+      "en": "Information systems: functions, levels and life cycle"
+    },
+    "statement": {
+      "uz": "Darsda oʻrganilgan axborot tizimining funksiyalari, boshqaruv darajalari, korporativ tizimlar, hayot sikli va joriy etish xavflari boʻyicha quyidagi savollarga javob bering.",
+      "ru": "Ответьте на вопросы о функциях информационных систем, уровнях управления, корпоративных системах, жизненном цикле и рисках внедрения, разобранные на уроке.",
+      "en": "Answer the questions below on the functions of information systems, the management levels, the enterprise systems, the life cycle and the implementation risks covered in the lesson."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Ombordagi qoldiq kamayganda tizimning yangi buyurtma tavsiya qilishi qaysi funksiyaga kiradi?",
+            "ru": "К какой функции относится то, что при уменьшении складского остатка система рекомендует новый заказ?",
+            "en": "Which function is it when the system suggests a new order because the stock balance runs low?"
+          },
+          "options": [
+            { "uz": "Qayta aloqa", "ru": "Обратная связь", "en": "Feedback" },
+            { "uz": "Kiritish", "ru": "Ввод", "en": "Input" },
+            { "uz": "Saqlash", "ru": "Хранение", "en": "Storage" },
+            { "uz": "Chiqarish", "ru": "Вывод", "en": "Output" }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Funksiyalar jadvalida qayta aloqaga misol: qoldiq kamaysa — yangi buyurtma tavsiyasi.",
+            "ru": "В таблице функций пример обратной связи: при уменьшении остатка — рекомендация заказать.",
+            "en": "The functions table gives feedback's example: when stock runs low, a recommendation to reorder."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Hayot siklida tahlil bosqichi loyihalash bosqichidan keyin bajariladi.",
+            "ru": "Этап анализа в жизненном цикле выполняется после этапа проектирования.",
+            "en": "In the life cycle, the analysis stage is carried out after the design stage."
+          },
+          "options": [
+            { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+            { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Ketma-ketlik teskari: rejalashtirish → tahlil → loyihalash → yaratish yoki sotib olish → sinov va joriy etish → foydalanish → almashtirish.",
+            "ru": "Последовательность обратная: планирование → анализ → проектирование → создание или покупка → тестирование и внедрение → эксплуатация → замена.",
+            "en": "The order is the other way round: planning → analysis → design → building or buying → testing and implementation → operation → replacement."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Eski tizimdan maʼlumotlarni koʻchirish va foydalanuvchilarni oʻqitish hayot siklining qaysi bosqichiga tegishli?",
+            "ru": "На каком этапе жизненного цикла переносят данные из старой системы и обучают пользователей?",
+            "en": "At which life cycle stage is data migrated from the old system and users trained?"
+          },
+          "options": [
+            {
+              "uz": "Sinov va joriy etish",
+              "ru": "Тестирование и внедрение",
+              "en": "Testing and implementation"
+            },
+            {
+              "uz": "Rejalashtirish",
+              "ru": "Планирование",
+              "en": "Planning"
+            },
+            {
+              "uz": "Loyihalash",
+              "ru": "Проектирование",
+              "en": "Design"
+            },
+            {
+              "uz": "Almashtirish yoki toʻxtatish",
+              "ru": "Замена или вывод из эксплуатации",
+              "en": "Replacement or retirement"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Beshinchi bosqich «Sinov va joriy etish»: maʼlumotlarni koʻchirish, oʻqitish, ishga tushirish. Oʻqitish boʻlmasa, darsning ogohlantirishicha, ish eski usulda davom etadi.",
+            "ru": "Пятый этап «Тестирование и внедрение»: перенос данных, обучение, запуск. Без обучения, по предупреждению урока, работа продолжается по-старому.",
+            "en": "The fifth stage, testing and implementation: data migration, training and go-live. Without training, the lesson warns, people keep working the old way."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Axborot tizimini joriy etishning darsda sanab oʻtilgan xavflariga qaysilari kiradi?",
+            "ru": "Что из перечисленного входит в названные в уроке риски внедрения информационной системы?",
+            "en": "Which of these are the risks of implementing an information system named in the lesson?"
+          },
+          "options": [
+            {
+              "uz": "Muddat va byudjetning oshib ketishi",
+              "ru": "Превышение сроков и бюджета",
+              "en": "Exceeding the schedule and the budget"
+            },
+            {
+              "uz": "Foydalanuvchilarning qarshiligi",
+              "ru": "Сопротивление пользователей",
+              "en": "Resistance from users"
+            },
+            {
+              "uz": "Sifatsiz maʼlumot va yetkazib beruvchiga bogʻliqlik",
+              "ru": "Некачественные данные и зависимость от поставщика",
+              "en": "Poor-quality data and dependence on the supplier"
+            },
+            {
+              "uz": "Tizimning apparat qismlaridan birining katalogda koʻrsatilgan narxi",
+              "ru": "Указанная в каталоге цена одной из аппаратных частей системы",
+              "en": "The catalogue price of one hardware component of the system"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Dars xavflar roʻyxati: muddat va byudjetning oshib ketishi, foydalanuvchilarning qarshiligi, sifatsiz maʼlumot, yetkazib beruvchiga bogʻliqlik, xavfsizlik. Katalog narxi — maʼlumot, xavf emas.",
+            "ru": "Список рисков урока: превышение сроков и бюджета, сопротивление пользователей, некачественные данные, зависимость от поставщика, безопасность. Цена по каталогу — это данные, а не риск.",
+            "en": "The lesson's risk list: exceeding schedule and budget, user resistance, poor-quality data, dependence on the supplier, security. A catalogue price is data, not a risk."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Talablar aniqlanmasidan tizim tanlash nega koʻp uchraydigan xato hisoblanadi?",
+            "ru": "Почему выбор системы без определения требований считается частой ошибкой?",
+            "en": "Why is choosing a system without defining the requirements a common mistake?"
+          },
+          "options": [
+            {
+              "uz": "Natijada korxonaga keraksiz yoki yetarli boʻlmagan tizim sotib olinadi",
+              "ru": "В результате покупается ненужная или недостаточная система",
+              "en": "The result is a system that is unnecessary or insufficient"
+            },
+            {
+              "uz": "Chunki tizimning narxi darhol ikki baravar oshadi",
+              "ru": "Потому что цена системы сразу удваивается",
+              "en": "Because the price of the system immediately doubles"
+            },
+            {
+              "uz": "Chunki maʼlumotlar bazasi avtomatik ravishda oʻchib ketadi",
+              "ru": "Потому что база данных автоматически удаляется",
+              "en": "Because the database is deleted automatically"
+            },
+            {
+              "uz": "Chunki dasturiy taʼminot litsenziyasi talabnomasiz berilmaydi",
+              "ru": "Потому что лицензия на ПО выдаётся только по заявке",
+              "en": "Because a software licence is issued only on application"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsning ikkinchi ogohlantirishi shu: talablarsiz tanlov keraksiz yoki yetarli boʻlmagan tizimga olib keladi; iqtisodchi aynan tizimning buyurtmachisi sifatida talablarni aniqlaydi.",
+            "ru": "Об этом второе предупреждение урока: выбор без требований ведёт к ненужной или недостаточной системе; экономист как раз заказчик системы и определяет требования.",
+            "en": "This is the lesson's second warning: choosing without requirements buys a system that is unnecessary or insufficient; the economist is the system's customer and defines those requirements."
+          }
+        }
+      ]
+    }
+  }
+}

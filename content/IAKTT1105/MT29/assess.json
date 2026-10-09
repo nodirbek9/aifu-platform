@@ -1,0 +1,268 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Axborotni tasniflash barcha maʼlumotlarni bir xil darajada kuchli himoya qilishni taʼminlash uchun kerak.",
+          "ru": "Классификация информации нужна для того, чтобы обеспечить одинаково сильную защиту для всех данных.",
+          "en": "Information classification is necessary to ensure that all data is protected equally strongly."
+        },
+        "explanation": {
+          "uz": "Notoʻgʻri. Tasniflash har bir maʼlumot turiga mos darajada himoya qoʻllash uchun kerak, hamma narsani bir xil himoya qilish qimmat va keraksiz.",
+          "ru": "Неверно. Классификация определяет, сколько защиты нужно каждой информации — защищать всё одинаково сильно дорого и не нужно.",
+          "en": "False. Classification determines how much protection each piece of information needs — protecting everything equally strongly is expensive and unnecessary."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "Tashkilotlar axborot xavfsizligiga yetarlicha mablagʻ ajratmasligining asosiy iqtisodiy va psixologik sabablari nimalardan iborat?",
+          "ru": "Каковы основные экономические и психологические причины недоинвестирования организаций в информационную безопасность?",
+          "en": "What are the main economic and psychological reasons for organizations underinvesting in information security?"
+        },
+        "explanation": {
+          "uz": "Tashqi effektlar, axborot assimetriyasi, qisqa muddatli fikrlash va koʻrinmas natija xavfsizlikka kam sarflash sabablaridir. Byudjetning ortiqligi bu roʻyxatga kirmaydi.",
+          "ru": "Внешние эффекты, информационная асимметрия, краткосрочное мышление и невидимый результат — причины недоинвестирования. Избыток бюджета в этот список не входит.",
+          "en": "Externalities, information asymmetry, short-term thinking, and an invisible result are reasons for underinvestment. An excess budget is not on this list."
+        },
+        "options": [
+          { "uz": "Tashqi effektlar", "ru": "Внешние эффекты", "en": "Externalities" },
+          { "uz": "Koʻrinmas natija", "ru": "Невидимый результат", "en": "An invisible result" },
+          { "uz": "Axborot assimetriyasi", "ru": "Информационная асимметрия", "en": "Information asymmetry" },
+          { "uz": "Xavfsizlik byudjetining doimiy ortiqligi", "ru": "Постоянный избыток бюджета на безопасность", "en": "A constant excess of security budget" }
+        ],
+        "correct": [0, 1, 2]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Gordon–Loeb modeliga koʻra, maʼlum axborot toʻplamini himoya qilishga optimal investitsiya kutilgan yoʻqotishning taxminan qancha foizidan oshmasligi kerak?",
+          "ru": "Согласно модели Гордона–Лёба, оптимальные вложения в защиту определённого набора информации не должны превышать примерно какой процент от ожидаемых потерь?",
+          "en": "According to the Gordon-Loeb model, the optimal investment in protecting a given set of information should not exceed approximately what percentage of the expected loss?"
+        },
+        "explanation": {
+          "uz": "Gordon–Loeb modeli optimal investitsiya kutilgan yoʻqotishning taxminan 37% (1/e) idan oshmasligini koʻrsatadi.",
+          "ru": "Модель Гордона–Лёба показывает, что оптимальные вложения не превышают примерно 37% (1/e) ожидаемых потерь.",
+          "en": "The Gordon-Loeb model shows that optimal investment does not exceed about 37% (1/e) of the expected loss."
+        },
+        "options": [
+          { "uz": "10%", "ru": "10%", "en": "10%" },
+          { "uz": "37%", "ru": "37%", "en": "37%" },
+          { "uz": "50%", "ru": "50%", "en": "50%" },
+          { "uz": "100%", "ru": "100%", "en": "100%" }
+        ],
+        "correct": [1]
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 1,
+        "prompt": {
+          "uz": "Kompaniyaning mijozlar bazasi sizib chiqsa, zarar 500 million soʻmni tashkil qiladi. Yiliga sizish ehtimoli 20% ga teng. Gordon–Loeb modeli boʻyicha (37% yoki 0,37 koeffitsientidan foydalangan holda) ushbu bazani himoya qilishga yiliga koʻpi bilan necha million soʻm sarflash iqtisodiy jihatdan oqlanadi? (Faqat raqam kiriting)",
+          "ru": "При утечке клиентской базы компании ущерб составит 500 миллионов сумов. Вероятность утечки — 20% в год. По модели Гордона–Лёба (используя коэффициент 37% или 0,37), максимум сколько миллионов сумов в год экономически оправдано тратить на защиту этой базы? (Введите только число)",
+          "en": "If a company's customer base leaks, the damage will be 500 million soums. The annual probability of a leak is 20%. According to the Gordon-Loeb model (using a coefficient of 37% or 0.37), at most how many million soums a year is it economically justified to spend on protecting this base? (Enter a number only)"
+        },
+        "explanation": {
+          "uz": "Kutilgan yillik yoʻqotish = 500 mln × 0,2 = 100 mln soʻm. Optimal investitsiya chegarasi = 100 mln × 0,37 = 37 mln soʻm.",
+          "ru": "Ожидаемые годовые потери = 500 млн × 0,2 = 100 млн сумов. Верхняя граница инвестиций = 100 млн × 0,37 = 37 млн сумов.",
+          "en": "Expected annual loss = 500 million × 0.2 = 100 million soums. Upper bound of investment = 100 million × 0.37 = 37 million soums."
+        },
+        "answers": [37],
+        "tolerance": 0.1
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "Xavfsizlikka kiritilgan investitsiyalar qaytimini baholash uchun ishlatiladigan qisqartmani kiriting (inglizcha harflar bilan 4 ta harf).",
+          "ru": "Введите аббревиатуру, используемую для оценки окупаемости инвестиций в безопасность (4 английские буквы).",
+          "en": "Enter the acronym used to assess the return on security investment (4 letters)."
+        },
+        "explanation": {
+          "uz": "ROSI (Return on Security Investment) xavfsizlik choralarining iqtisodiy samaradorligini oʻlchash uchun ishlatiladi.",
+          "ru": "ROSI (Return on Security Investment) используется для измерения экономической эффективности мер безопасности.",
+          "en": "ROSI (Return on Security Investment) is used to measure the economic efficiency of security measures."
+        },
+        "answers": ["ROSI", "rosi"]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi axborot toifasiga tijorat siri, kalitlar va birlashish rejalari kiradi?",
+          "ru": "К какой категории информации относятся коммерческая тайна, ключи и планы слияний?",
+          "en": "Which category of information includes trade secrets, keys, and merger plans?"
+        },
+        "explanation": {
+          "uz": "Bu maʼlumotlar eng kuchli himoyani talab qiluvchi qatʼiy maxfiy toifaga kiradi.",
+          "ru": "Эти данные относятся к строго конфиденциальной категории, требующей сильнейших мер защиты.",
+          "en": "These data belong to the strictly confidential category, requiring the strongest protection measures."
+        },
+        "options": [
+          { "uz": "Ochiq", "ru": "Открытая", "en": "Public" },
+          { "uz": "Ichki", "ru": "Внутренняя", "en": "Internal" },
+          { "uz": "Maxfiy", "ru": "Конфиденциальная", "en": "Confidential" },
+          { "uz": "Qatʼiy maxfiy", "ru": "Строго конфиденциальная", "en": "Strictly confidential" }
+        ],
+        "correct": [3]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 1,
+        "prompt": {
+          "uz": "Xavfsizlik hodisasining umumiy narxi (zarari) odatda quyidagilardan qaysilarini oʻz ichiga oladi?",
+          "ru": "Из чего обычно складывается общая стоимость (ущерб) инцидента безопасности?",
+          "en": "What does the total cost of a security incident typically include?"
+        },
+        "explanation": {
+          "uz": "Hodisa narxi bevosita yoʻqotishlar, toʻxtab qolish, huquqiy xarajatlar, xabardor qilish va obroʻ yoʻqotishdan tashkil topadi. Uskunalarni ijaraga berishdan olinadigan daromad unga kirmaydi.",
+          "ru": "Стоимость инцидента состоит из прямых потерь, простоя, правовых расходов, затрат на уведомление и потери репутации. Доход от аренды оборудования в неё не входит.",
+          "en": "The cost of an incident consists of direct losses, downtime, legal costs, notification costs, and reputational loss. Income from leasing equipment is not included."
+        },
+        "options": [
+          { "uz": "Bevosita moliyaviy yoʻqotishlar", "ru": "Прямые финансовые потери", "en": "Direct financial losses" },
+          { "uz": "Biznesning toʻxtab qolishi", "ru": "Простой бизнеса", "en": "Business downtime" },
+          { "uz": "Huquqiy xarajatlar va jarimalar", "ru": "Правовые расходы и штрафы", "en": "Legal costs and fines" },
+          { "uz": "Obroʻ va mijozlar ishonchining yoʻqotilishi", "ru": "Потеря репутации и доверия клиентов", "en": "Loss of reputation and customer trust" },
+          { "uz": "Uskunalarni ijaraga berishdan tushadigan qoʻshimcha daromad", "ru": "Дополнительный доход от аренды оборудования", "en": "Additional income from leasing equipment" }
+        ],
+        "correct": [0, 1, 2, 3]
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kiber-sugʻurta hodisa tufayli yoʻqotilgan obroʻ va mijozlar ishonchini har doim toʻliq tiklab beradi.",
+          "ru": "Киберстрахование всегда полностью восстанавливает утраченную из-за инцидента репутацию и доверие клиентов.",
+          "en": "Cyber insurance always fully restores the reputation and customer trust lost due to an incident."
+        },
+        "explanation": {
+          "uz": "Notoʻgʻri. Sugʻurta asosan moliyaviy zararning bir qismini qoplaydi, ammo yoʻqotilgan obroʻni toʻliq qaytara olmaydi.",
+          "ru": "Неверно. Страховка в основном покрывает часть финансового ущерба, но не может полностью вернуть утраченную репутацию.",
+          "en": "False. Insurance mainly covers part of the financial damage, but cannot fully restore lost reputation."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 1,
+        "prompt": {
+          "uz": "Bitta xodim toʻlovni ham yaratib, ham tasdiqlay olmasligi xavfsizlikning qaysi tamoyiliga misol boʻladi?",
+          "ru": "Примером какого принципа безопасности является то, что один сотрудник не может и создать, и утвердить платёж?",
+          "en": "The fact that one employee cannot both create and approve a payment is an example of which security principle?"
+        },
+        "explanation": {
+          "uz": "Bu vazifalarni ajratish tamoyili boʻlib, xatolik yoki firibgarlik xavfini kamaytirish uchun xizmat qiladi.",
+          "ru": "Это принцип разделения обязанностей, который служит для снижения риска ошибок или мошенничества.",
+          "en": "This is the principle of separation of duties, which serves to reduce the risk of error or fraud."
+        },
+        "options": [
+          { "uz": "Chuqur himoya", "ru": "Эшелонированная защита", "en": "Defence in depth" },
+          { "uz": "Minimal imtiyoz", "ru": "Минимальные привилегии", "en": "Least privilege" },
+          { "uz": "Loyihalashdan xavfsizlik", "ru": "Безопасность при проектировании", "en": "Security by design" },
+          { "uz": "Vazifalarni ajratish", "ru": "Разделение обязанностей", "en": "Separation of duties" }
+        ],
+        "correct": [3]
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Amaliy topshiriq: Axborotni himoyalash va baholash",
+      "ru": "Практическое задание: Защита и оценка информации",
+      "en": "Practice assignment: Protecting and evaluating information"
+    },
+    "statement": {
+      "uz": "Ushbu topshiriqda siz haqiqiy tashkilot misolida axborot aktivlarini tasniflash, zararni baholash va xavfsizlik madaniyatini oshirish choralarini tahlil qilasiz.",
+      "ru": "В этом задании вы на примере реальной организации проанализируете классификацию информационных активов, оценку ущерба и меры по повышению культуры безопасности.",
+      "en": "In this assignment, using a real organization as an example, you will analyze the classification of information assets, damage assessment, and measures to improve security culture."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Tasavvur qiling, siz oliygohning axborot xavfsizligi boʻyicha mutaxassisisiz. Oʻqituvchilarning maoshlari toʻgʻrisidagi roʻyxat qaysi axborot toifasiga kiradi va uni qanday himoyalash kerak?",
+            "ru": "Представьте, что вы специалист по информационной безопасности университета. К какой категории информации относится список зарплат преподавателей и как его следует защищать?",
+            "en": "Imagine you are a university's information security specialist. Which information category does the list of teachers' salaries belong to, and how should it be protected?"
+          },
+          "explanation": {
+            "uz": "Maoshlar roʻyxati maxfiy maʼlumot hisoblanadi va unga kirish huquqlarini cheklash hamda shifrlash kerak.",
+            "ru": "Список зарплат является конфиденциальной информацией, и к нему следует ограничить права доступа, а также использовать шифрование.",
+            "en": "The salary list is confidential information, and its access rights should be restricted and encryption used."
+          },
+          "options": [
+            { "uz": "Ochiq maʼlumot — uni eʼlon qilish kerak", "ru": "Открытая информация — её следует опубликовать", "en": "Public information — it should be published" },
+            { "uz": "Maxfiy maʼlumot", "ru": "Конфиденциальная информация", "en": "Confidential information" },
+            { "uz": "Kirish huquqlarini cheklash va shifrlash qoʻllash kerak", "ru": "Необходимо ограничить права доступа и применять шифрование", "en": "Access rights must be restricted and encryption applied" },
+            { "uz": "Qatʼiy maxfiy maʼlumot — uni oflayn seyfda saqlash shart", "ru": "Строго конфиденциальная информация — её обязательно хранить в офлайн-сейфе", "en": "Strictly confidential information — it must be kept in an offline safe" }
+          ],
+          "correct": [1, 2]
+        },
+        {
+          "type": "NUM",
+          "difficulty": "HARD",
+          "points": 1,
+          "prompt": {
+            "uz": "Siz tanlagan aktiv (masalan, talabalar shaxsiy maʼlumotlar bazasi) sizib chiqqanda, obroʻ yoʻqotilishi va jarimalar tufayli kutilayotgan yillik zarar 40 million soʻmni tashkil etadi. Gordon–Loeb modeli boʻyicha ushbu aktivni himoya qilish uchun ajratilishi mumkin boʻlgan maksimal yillik byudjet (million soʻmda) qancha? (37% yoki 0,37 ni ishlating)",
+            "ru": "Выбранный вами актив (например, база персональных данных студентов) при утечке принесёт ожидаемый годовой ущерб в 40 миллионов сумов из-за потери репутации и штрафов. По модели Гордона–Лёба, каков максимальный годовой бюджет (в миллионах сумов), который можно выделить на защиту этого актива? (Используйте 37% или 0,37)",
+            "en": "The expected annual damage from the leak of your chosen asset (e.g., students' personal data base) is 40 million soums due to reputational loss and fines. According to the Gordon-Loeb model, what is the maximum annual budget (in million soums) that can be allocated to protect this asset? (Use 37% or 0.37)"
+          },
+          "explanation": {
+            "uz": "40 mln × 0,37 = 14,8 mln soʻm. Optimal himoya byudjeti 14,8 million soʻmdan oshmasligi kerak.",
+            "ru": "40 млн × 0,37 = 14,8 млн сумов. Оптимальный бюджет на защиту не должен превышать 14,8 млн сумов.",
+            "en": "40 million × 0.37 = 14.8 million soums. The optimal protection budget should not exceed 14.8 million soums."
+          },
+          "answers": [14.8],
+          "tolerance": 0.1
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Tashkilotingizda xavfsizlik madaniyatini oshirish uchun qanday aniq choralarni qoʻllash tavsiya etiladi?",
+            "ru": "Какие конкретные меры рекомендуется применять для повышения культуры безопасности в вашей организации?",
+            "en": "What specific measures are recommended to increase the security culture in your organization?"
+          },
+          "explanation": {
+            "uz": "Qisqa treninglar, fishing mashqlari va xato haqida xabar berganni jazolamaslik xavfsizlik madaniyatini mustahkamlaydi. Faqat bitta boʻlimni ayblash esa madaniyatga zarar yetkazadi.",
+            "ru": "Короткие тренинги, фишинговые учения и отказ от наказания за сообщение об ошибке укрепляют культуру. Обвинение только одного отдела вредит ей.",
+            "en": "Short trainings, phishing exercises, and not punishing those who report errors strengthen the culture. Blaming only one department harms it."
+          },
+          "options": [
+            { "uz": "Muntazam qisqa treninglar oʻtkazish", "ru": "Проведение регулярных коротких тренингов", "en": "Conducting regular short training sessions" },
+            { "uz": "Tajribasiz xodimlarni darhol ishdan boʻshatish", "ru": "Немедленное увольнение неумелых сотрудников", "en": "Immediate dismissal of unskilled employees" },
+            { "uz": "Xato haqida zudlik bilan xabar bergan xodimni jazolamaslik", "ru": "Отказ от наказания сотрудника, который сразу сообщил об ошибке", "en": "Not punishing an employee who immediately reports an error" },
+            { "uz": "Oʻquv maqsadida fishing xabarlari joʻnatib mashq qildirish", "ru": "Проведение учений с отправкой фишинговых писем", "en": "Conducting exercises by sending phishing emails" }
+          ],
+          "correct": [0, 2, 3]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Java va C++ dillerida VA (AND) mantiqiy amali qaysi belgi bilan yoziladi?",
+          "ru": "Каким символом в Java и C++ записывается логическая операция И (AND)?",
+          "en": "Which symbol writes the AND operation in Java and C++?"
+        },
+        "options": [
+          { "uz": "&&", "ru": "&&", "en": "&&" },
+          { "uz": "and", "ru": "and", "en": "and" },
+          { "uz": "||", "ru": "||", "en": "||" },
+          { "uz": "!", "ru": "!", "en": "!" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvalida: VA — Python da and, Java va C++ da &&. ! — EMAS amalining belgisi.",
+          "ru": "В таблице из занятия: И — это and в Python и && в Java и C++; ! — символ операции НЕ.",
+          "en": "In the lesson's table AND is and in Python and && in Java and C++; ! is the symbol of NOT."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qisqa tutashuvga koʻra, A VA B ifodasida A yolgʻon boʻlsa, B qismi ham tekshiriladi.",
+          "ru": "Согласно сокращённому вычислению, если A в выражении A И B ложно, часть B тоже проверяется.",
+          "en": "By short-circuit evaluation, if A in A AND B is false, B is still checked."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "A yolgʻon boʻlsa B tekshirilmaydi — shuning uchun daromad > 0 and ... yozuvi nolga boʻlishdan himoya qiladi.",
+          "ru": "Если A ложно, B не проверяется — поэтому запись income > 0 and ... защищает от деления на ноль.",
+          "en": "If A is false, B is not evaluated — that is why income > 0 and ... guards against division by zero."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Rostlik jadvaliga koʻra, A rost va B yolgʻon boʻlsa, qaysi ifodalar rost boʻladi?",
+          "ru": "Согласно таблице истинности, если A — истина, а B — ложь, какие выражения истинны?",
+          "en": "According to the truth table, if A is true and B is false, which expressions are true?"
+        },
+        "options": [
+          { "uz": "A YOKI B", "ru": "A ИЛИ B", "en": "A OR B" },
+          { "uz": "EMAS B", "ru": "НЕ B", "en": "NOT B" },
+          { "uz": "A VA B", "ru": "A И B", "en": "A AND B" },
+          { "uz": "EMAS A", "ru": "НЕ A", "en": "NOT A" }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Jadvalning bu satrida: A YOKI B — rost, EMAS B — rost; A VA B va EMAS A esa yolgʻon.",
+          "ru": "В этой строке таблицы: A ИЛИ B — истина, НЕ B — истина; A И B и НЕ A — ложь.",
+          "en": "In that row: A OR B is true and NOT B is true; A AND B and NOT A are false."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "if-elif-else zanjirida shartlar qanday tekshiriladi?",
+          "ru": "Как проверяются условия в цепочке if-elif-else?",
+          "en": "How are conditions checked in an if-elif-else chain?"
+        },
+        "options": [
+          {
+            "uz": "Yuqoridan pastga: birinchi rost shartdan keyin qolganlari tekshirilmaydi",
+            "ru": "Сверху вниз: после первого истинного остальные не проверяются",
+            "en": "Top to bottom: after the first true one the rest are not checked"
+          },
+          {
+            "uz": "Pastdan yuqoriga: oxirgi rost shart tanlanadi",
+            "ru": "Снизу вверх: выбирается последнее истинное условие",
+            "en": "Bottom to top: the last true condition is chosen"
+          },
+          {
+            "uz": "Barcha shartlar tekshiriladi va rostlari birga bajariladi",
+            "ru": "Проверяются все условия, и все истинные выполняются вместе",
+            "en": "All conditions are checked and all true ones run together"
+          },
+          {
+            "uz": "Tartib ahamiyatsiz: til oʻzi eng tor shartni topadi",
+            "ru": "Порядок не важен: язык сам находит самое узкое условие",
+            "en": "Order does not matter: the language finds the narrowest condition itself"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Zanjirda tartib mantiqning bir qismi: shartlar yuqoridan pastga tekshiriladi, shuning uchun eng tor shartlar birinchi yoziladi.",
+          "ru": "Порядок цепочки — часть логики: условия проверяются сверху вниз, поэтому самые узкие пишутся первыми.",
+          "en": "The order of the chain is part of the logic: conditions run top to bottom, so the narrowest are written first."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi kredit arizasi dasturida skoring boʻyicha tasdiqlash chegarasi — nechta ball?",
+          "ru": "Какой балл скоринга является порогом одобрения в программе о кредитной заявке из занятия?",
+          "en": "What scoring score is the approval threshold in the lesson's loan application program?"
+        },
+        "answers": [600],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "MIN_BALL = 600: ball ≥ 600 va yuk mos boʻlsa — tasdiqlash; aynan 600 chegarada ham tasdiqlanadi.",
+          "ru": "MIN_BALL = 600: при балле ≥ 600 и допустимой нагрузке — одобрить; ровно 600 на границе тоже одобрено.",
+          "en": "MIN_BALL = 600: a score of at least 600 with an acceptable burden is approved; exactly 600 is approved too."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Bitta oʻzgaruvchining bir nechta aniq qiymati boʻyicha tanlash uchun Python 3.10+ da qaysi konstruksiyadan foydalaniladi?",
+          "ru": "Какая конструкция в Python 3.10+ используется для выбора по нескольким точным значениям одной переменной?",
+          "en": "Which construct in Python 3.10+ selects among several exact values of one variable?"
+        },
+        "answers": ["match", "match-case", "case"],
+        "explanation": {
+          "uz": "Bu shakl darsda «tanlash» deb ataladi: match (Python 3.10+) yoki switch (Java, C++).",
+          "ru": "В занятии это форма «выбор»: match (Python 3.10+) или switch (Java, C++).",
+          "en": "The lesson calls this form selection: match (Python 3.10+) or switch (Java, C++)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsda koʻp uchraydigan xatolar roʻyxatiga nimalar kirgan?",
+          "ru": "Что входит в перечень частых ошибок из занятия?",
+          "en": "Which items are in the lesson's list of common mistakes?"
+        },
+        "options": [
+          {
+            "uz": "Qiymat berish (=) bilan taqqoslash (==) ni adashtirish",
+            "ru": "Путать присваивание (=) и сравнение (==)",
+            "en": "Confusing assignment (=) with comparison (==)"
+          },
+          {
+            "uz": "Kirish maʼlumotini dastur boshida tekshirish",
+            "ru": "Проверять входные данные в начале программы",
+            "en": "Validating the input data at the start of the program"
+          },
+          {
+            "uz": "Haqiqiy sonlarni == bilan taqqoslash",
+            "ru": "Сравнивать вещественные числа через ==",
+            "en": "Comparing floating-point numbers with =="
+          },
+          {
+            "uz": "Java va C++ da if dan keyin qavslarsiz bir nechta qator yozish",
+            "ru": "Писать несколько строк после if без фигурных скобок в Java и C++",
+            "en": "Writing several lines after if without braces in Java and C++"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "Kirishni avval tekshirish — xato emas, balki qoida. Xatolar: =/==, notoʻgʻri tartib, oraliklarning kesishishi, haqiqiy sonlarni == bilan solishtirish, qavslarsiz qatorlar.",
+          "ru": "Проверка ввода — не ошибка, а правило. Ошибки: =/==, неверный порядок, пересечение диапазонов, == для вещественных чисел, строки без скобок.",
+          "en": "Checking input is a rule, not a mistake. The mistakes: = versus ==, wrong order, overlapping ranges, == on floats, lines without braces."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Java va C++ da if dan keyin figurali qavslarsiz bir nechta qator yozilsa, ularning barchasi shartga bogʻlanadi.",
+          "ru": "Если в Java и C++ после if без фигурных скобок написано несколько строк, к условию относятся все они.",
+          "en": "In Java and C++, several lines written after if without braces all belong to the condition."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Qavslarsiz faqat birinchi qator shartga bogʻlanadi, qolganlari shartdan tashqarida bajariladi.",
+          "ru": "Без скобок к условию относится только первая строка, остальные выполняются независимо от него.",
+          "en": "Without braces only the first line belongs to if; the others run whatever the condition says."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dasturda toʻlov ulushi nega tolov * 100 <= daromad * 50 koʻrinishida butun sonlarda taqqoslanadi?",
+          "ru": "Почему доля платежа в программе сравнивается в целых числах: платёж * 100 <= доход * 50?",
+          "en": "Why does the program compare the payment share in integers, as payment * 100 <= income * 50?"
+        },
+        "options": [
+          {
+            "uz": "Haqiqiy sonlar xatosi chegaraviy holatni notoʻgʻri baholamasligi uchun",
+            "ru": "Чтобы погрешность вещественных чисел не исказила граничный случай",
+            "en": "So that floating-point error does not misjudge the boundary case"
+          },
+          {
+            "uz": "Butun son amallari har doim tezroq ishlagani uchun",
+            "ru": "Потому что целочисленные операции всегда работают быстрее",
+            "en": "Because integer operations always run faster"
+          },
+          {
+            "uz": "Daromad va toʻlov har doim oʻzaro teng boʻlgani uchun",
+            "ru": "Потому что доход и платёж всегда равны между собой",
+            "en": "Because income and payment are always equal to each other"
+          },
+          {
+            "uz": "Foizni hisoblashning boshqa yoʻli boʻlmagani uchun",
+            "ru": "Потому что другого способа посчитать процент нет",
+            "en": "Because there is no other way to compute a percentage"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Haqiqiy sonlar xatolaridan (MT12) qochish uchun ulush butun sonlarda solishtiriladi — aks holda aynan 50% lik chegara adashishi mumkin.",
+          "ru": "Чтобы уйти от ошибок вещественных чисел (MT12), доля сравнивается в целых: иначе граница ровно 50% могла бы быть оценена неверно.",
+          "en": "To avoid floating-point errors (MT12) the share is compared in integers; otherwise the exact 50% boundary could be misjudged."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Xizmat darajasi zanjiri",
+      "ru": "Цепочка уровня обслуживания",
+      "en": "The service tier chain"
+    },
+    "statement": {
+      "uz": "Bank mijozning skoring balliga qarab xizmat darajasini belgilaydi: ball 800 va undan yuqori boʻlsa — 3-daraja; ball 600 dan 800 gacha (800dan kam) boʻlsa — 2-daraja; 600dan past boʻlsa — 1-daraja. Dasturingiz bitta butun sonni — skoring ballini — oʻqib, daraja raqamini bitta qatorda, faqat son koʻrinishida chiqarsin. Darsdagi misolda zanjir keng shartdan boshlansa, tor shartlarga navbat kelmasligi aytilgan edi: berilgan kodda xuddi shu xato. Shartlar tartibini toʻgʻrilang.",
+      "ru": "Банк назначает уровень обслуживания по баллу скоринга: 800 и выше — уровень 3; от 600 до 800 (меньше 800) — уровень 2; ниже 600 — уровень 1. Ваша программа читает одно целое число — балл скоринга — и выводит номер уровня одной строкой, только число. В занятии сказано: если цепочка начинается с широкого условия, до узких очередь не дойдёт — именно эта ошибка и в данном коде. Исправьте порядок условий.",
+      "en": "A bank sets a service tier from a customer's scoring score: 800 or above — tier 3; from 600 up to 800 (below 800) — tier 2; below 600 — tier 1. Your program reads one integer — the scoring score — and prints the tier number on one line, only the number. The lesson warns that a chain starting with a broad condition never reaches the narrow ones — that is the mistake in the given code. Fix the order of the conditions."
+    },
+    "code": {
+      "starter": {
+        "python": "score = int(input())\nif score >= 600:\n    tier = 2\nelif score >= 800:\n    tier = 3\nelse:\n    tier = 1\nprint(tier)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int score = in.nextInt();\n        int tier;\n        if (score >= 600) {\n            tier = 2;\n        } else if (score >= 800) {\n            tier = 3;\n        } else {\n            tier = 1;\n        }\n        System.out.println(tier);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score;\n    cin >> score;\n    int tier;\n    if (score >= 600) {\n        tier = 2;\n    } else if (score >= 800) {\n        tier = 3;\n    } else {\n        tier = 1;\n    }\n    cout << tier << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "score = int(input())\nif score >= 800:\n    tier = 3\nelif score >= 600:\n    tier = 2\nelse:\n    tier = 1\nprint(tier)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int score = in.nextInt();\n        int tier;\n        if (score >= 800) {\n            tier = 3;\n        } else if (score >= 600) {\n            tier = 2;\n        } else {\n            tier = 1;\n        }\n        System.out.println(tier);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int score;\n    cin >> score;\n    int tier;\n    if (score >= 800) {\n        tier = 3;\n    } else if (score >= 600) {\n        tier = 2;\n    } else {\n        tier = 1;\n    }\n    cout << tier << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "850\n", "expected": "3", "hidden": false },
+        { "input": "750\n", "expected": "2", "hidden": false },
+        { "input": "800\n", "expected": "3", "hidden": true },
+        { "input": "600\n", "expected": "2", "hidden": true },
+        { "input": "599\n", "expected": "1", "hidden": true }
+      ]
+    }
+  }
+}

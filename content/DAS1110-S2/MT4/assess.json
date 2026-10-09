@@ -1,0 +1,264 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Rekursiv funksiyani loyihalashning birinchi qadami qaysi?",
+          "ru": "Какой шаг первый при проектировании рекурсивной функции?",
+          "en": "What is the first step in designing a recursive function?"
+        },
+        "options": [
+          {
+            "uz": "Bazaviy holatni topish",
+            "ru": "Найти базовый случай",
+            "en": "Finding the base case"
+          },
+          {
+            "uz": "Masalani kichraytirish",
+            "ru": "Уменьшить задачу",
+            "en": "Shrinking the problem"
+          },
+          {
+            "uz": "Natijani yigʻish",
+            "ru": "Собрать результат",
+            "en": "Combining the result"
+          },
+          {
+            "uz": "Chaqiruvlar sonini sanash",
+            "ru": "Подсчитать число вызовов",
+            "en": "Counting the calls"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi tartib: bazaviy holat → kichraytirish → natijani yigʻish.",
+          "ru": "Порядок из занятия: базовый случай → уменьшение → сборка результата.",
+          "en": "The lesson's order: base case → shrinking → combining the result."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Rekursiya masalani oʻzining kichikroq nusxasi orqali yechadi.",
+          "ru": "Рекурсия решает задачу через её уменьшенную копию.",
+          "en": "Recursion solves a problem through a smaller copy of itself."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsning birinchi gapi shunday: masala kichikroq nusxasi orqali yechiladi, bazaviy holat esa rekursiyasiz javob beradi.",
+          "ru": "Первая фраза занятия именно такова: задача решается через уменьшенную копию, а базовый случай отвечает без рекурсии.",
+          "en": "The lesson opens with exactly this: the problem is solved through a smaller copy of itself, while the base case answers without recursion."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi tushunchalar jadvaliga koʻra qaysi taʼriflar toʻgʻri?",
+          "ru": "Какие определения верны согласно таблице понятий занятия?",
+          "en": "Which definitions are correct according to the lesson's table of concepts?"
+        },
+        "options": [
+          {
+            "uz": "Rekursiya chuqurligi — bir vaqtda stekda turgan chaqiruvlarning eng koʻp soni",
+            "ru": "Глубина рекурсии — наибольшее число вызовов, одновременно находящихся в стеке",
+            "en": "Recursion depth — the largest number of calls on the stack at the same time"
+          },
+          {
+            "uz": "Chaqiruvlar soni — funksiyaning jami nechta marta chaqirilgani",
+            "ru": "Число вызовов — сколько всего раз была вызвана функция",
+            "en": "Number of calls — how many times in total the function was called"
+          },
+          {
+            "uz": "Chiqarish tartibi chaqiruvdan oldin yoki keyin turganiga bogʻliq emas",
+            "ru": "Порядок вывода не зависит от того, до или после вызова стоит вывод",
+            "en": "The order of output does not depend on whether it stands before or after the call"
+          },
+          {
+            "uz": "Bazaviy holat — rekursiyasiz javob beriladigan eng kichik holat",
+            "ru": "Базовый случай — наименьший случай, ответ на который даётся без рекурсии",
+            "en": "The base case — the smallest case answered without recursion"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Chiqarish rekursiv chaqiruvdan oldin tursa — bir tartib, keyin tursa — teskari tartib chiqadi.",
+          "ru": "Если вывод стоит до рекурсивного вызова — порядок один, после — обратный.",
+          "en": "Printing before the recursive call gives one order, printing after it the reverse order."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Agar `teskari` funksiyasidagi `print` rekursiv chaqiruvdan keyin tursa, `123` uchun nima chiqadi?",
+          "ru": "Если в функции teskari оператор print стоит после рекурсивного вызова, что выведется для 123?",
+          "en": "If in teskari the print stands after the recursive call, what is printed for 123?"
+        },
+        "options": [
+          { "uz": "123", "ru": "123", "en": "123" },
+          { "uz": "321", "ru": "321", "en": "321" },
+          { "uz": "1", "ru": "1", "en": "1" },
+          { "uz": "Hech narsa chiqmaydi", "ru": "Ничего не выведется", "en": "Nothing is printed" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Chaqiruvdan keyingi chiqarish raqamlarni asl tartibda qaytaradi; namunadagi dasturda `print` chaqiruvdan oldin turgani uchun oxirgi raqam birinchi chiqadi.",
+          "ru": "Вывод после вызова даёт цифры в исходном порядке; в программе-образце print стоит до вызова, поэтому последняя цифра появляется первой.",
+          "en": "Printing after the call gives the digits in their original order; in the sample the print stands before the call, which is why the last digit comes out first."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`raqamlar_soni(5000)` funksiyasi jami necha marta chaqiriladi (birinchi chaqiruv bilan)?",
+          "ru": "Сколько раз всего вызывается функция raqamlar_soni(5000) (включая первый вызов)?",
+          "en": "How many times in total is raqamlar_soni(5000) called (counting the first call)?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Zanjir: 5000, 500, 50, 5 — toʻrt chaqiruv; oxirgi chaqiruv bazaviy holatga tushadi.",
+          "ru": "Цепочка: 5000, 500, 50, 5 — четыре вызова; последний попадает в базовый случай.",
+          "en": "The chain is 5000, 500, 50, 5 — four calls; the last one is the base case."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Namunaviy dasturda sonning raqamlarini oxirisidan boshlab chiqaruvchi funksiya qanday nomlangan?",
+          "ru": "Как называется функция в программе-образце, которая печатает цифры числа, начиная с последней?",
+          "en": "What is the name of the sample program's function that prints a number's digits starting from the last?"
+        },
+        "answers": ["teskari", "teskari()"],
+        "explanation": {
+          "uz": "`teskari(n)` avval oxirgi raqamni chiqaradi, soʻng oʻzini `n // 10` bilan chaqiradi; raqamlar sonini esa `raqamlar_soni` qaytaradi.",
+          "ru": "teskari(n) сначала печатает последнюю цифру, затем вызывает себя с n // 10; число цифр возвращает raqamlar_soni.",
+          "en": "teskari(n) prints the last digit first, then calls itself with n // 10; the digit count is returned by raqamlar_soni."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Xanoy minoralarida 4 ta disk nechta harakatni talab qiladi?",
+          "ru": "Сколько ходов требуется для 4 дисков в Ханойских башнях?",
+          "en": "How many moves do 4 disks need in the Towers of Hanoi?"
+        },
+        "answers": [15],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Harakatlar soni 2ⁿ − 1: 2⁴ − 1 = 15.",
+          "ru": "Число ходов равно 2ⁿ − 1: 2⁴ − 1 = 15.",
+          "en": "The number of moves is 2ⁿ − 1: here 2⁴ − 1 = 15."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Xanoy minoralari topshirigʻi boʻyicha qaysi gaplar toʻgʻri?",
+          "ru": "Какие утверждения о задании «Ханойские башни» верны?",
+          "en": "Which statements about the Towers of Hanoi assignment are correct?"
+        },
+        "options": [
+          {
+            "uz": "n − 1 ta disk avval yordamchi qoziqqa oʻtkaziladi",
+            "ru": "n − 1 диск сначала переносится на вспомогательный стержень",
+            "en": "The n − 1 disks first go to the spare peg"
+          },
+          {
+            "uz": "Harakatlar soni harakatlarni chiqarishdan oldin, birinchi satrda chiqariladi",
+            "ru": "Число ходов выводится первой строкой — до вывода самих ходов",
+            "en": "The number of moves is printed on the first line, before the moves themselves"
+          },
+          {
+            "uz": "Katta diskni kichik diskning ustiga qoʻyish mumkin",
+            "ru": "Больший диск можно класть на меньший",
+            "en": "A larger disk may be placed on top of a smaller one"
+          },
+          {
+            "uz": "Faqat formula bilan hisoblangan dastur ham qabul qilinadi",
+            "ru": "Программа, считающая только по формуле, тоже принимается",
+            "en": "A program that only applies the formula is also accepted"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Qoida: katta disk kichigining ustiga qoʻyilmaydi; yechim rekursiv boʻlishi shart, formula yoki qoʻlda yozilgan roʻyxat qabul qilinmaydi.",
+          "ru": "Правило: больший диск на меньший нельзя; решение обязано быть рекурсивным — формула или переписанный вручную список не принимается.",
+          "en": "The rule: a larger disk never goes on a smaller one; the solution must be recursive — a bare formula or a hand-written list is not accepted."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bazaviy holat sifatida n = 0 (hech narsa qilinmaydi) yoki n = 1 (bitta harakat) tanlanishi mumkin.",
+          "ru": "В качестве базового случая можно выбрать n = 0 (ничего не делается) или n = 1 (один ход).",
+          "en": "The base case may be chosen as n = 0 (nothing is done) or n = 1 (one move)."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars ikkitasidan birining aniq boʻlishini talab qiladi — tanlov sizda, lekin bazaviy holat aniq koʻrsatilishi shart.",
+          "ru": "Занятие требует, чтобы один из двух был явно указан — выбирать вам, но базовый случай должен быть явным.",
+          "en": "The lesson requires one of the two to be explicit — the choice is yours, but the base case must be stated clearly."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Soʻzni rekursiya bilan teskarisiga yozish",
+      "ru": "Разворот слова рекурсией",
+      "en": "Writing a word backwards with recursion"
+    },
+    "statement": {
+      "uz": "Bitta satrda soʻz kiritiladi: lotin harflari va raqamlar, uzunligi 1 dan 100 gacha. Soʻzni rekursiv funksiya yordamida teskarisiga chiqaring: masalan, dastur kiritilsa, rutsad chiqadi. Sikl va tilning tayyor teskarilash funksiyalaridan foydalanmang — yechim faqat rekursiyadan iborat boʻlsin: bazaviy holat — bir belgili (yoki boʻsh) satr, kichraytirish — birinchi belgini olish yoki qolganini chaqiruvga berish. Chiqishda faqat teskarisiga yozilgan soʻzni bitta satrda chiqaring, qoʻshimcha soʻz yozmang.",
+      "ru": "В одной строке даётся слово: латинские буквы и цифры, длина от 1 до 100. Выведите его наоборот с помощью рекурсивной функции: например, на dastur программа выводит rutsad. Не используйте циклы и готовые функции разворота языка — решение должно быть чисто рекурсивным: базовый случай — строка не длиннее одного символа, уменьшение — отделить первый символ или передать остальное в вызов. Выведите только перевёрнутое слово одной строкой, без дополнительных слов.",
+      "en": "One line holds a word: Latin letters and digits, 1 to 100 characters long. Print it reversed using a recursive function: the input dastur makes the program print rutsad. Do not use loops or the language's built-in reverse functions — the solution must be purely recursive: the base case is a string no longer than one character, the shrinking step takes the first character apart or passes the rest into the call. Print only the reversed word on one line, with no extra words."
+    },
+    "code": {
+      "starter": {
+        "python": "def teskari(s):\n    if len(s) <= 1:\n        return s\n    return s[0] + teskari(s[1:])\n\n\nprint(teskari(input()))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static String teskari(String s) {\n        if (s.length() <= 1) return s;\n        return s.charAt(0) + teskari(s.substring(1));\n    }\n\n    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine();\n        System.out.println(teskari(s));\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nstring teskari(const string& s) {\n    if (s.size() <= 1) return s;\n    return s[0] + teskari(s.substr(1));\n}\n\nint main() {\n    string s;\n    cin >> s;\n    cout << teskari(s) << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "def teskari(s):\n    if len(s) <= 1:\n        return s\n    return teskari(s[1:]) + s[0]\n\n\nprint(teskari(input()))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static String teskari(String s) {\n        if (s.length() <= 1) return s;\n        return teskari(s.substring(1)) + s.charAt(0);\n    }\n\n    public static void main(String[] args) {\n        String s = new Scanner(System.in).nextLine();\n        System.out.println(teskari(s));\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nstring teskari(const string& s) {\n    if (s.size() <= 1) return s;\n    return teskari(s.substr(1)) + s[0];\n}\n\nint main() {\n    string s;\n    cin >> s;\n    cout << teskari(s) << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "dastur\n", "expected": "rutsad", "hidden": false },
+        { "input": "abc\n", "expected": "cba", "hidden": false },
+        { "input": "a\n", "expected": "a", "hidden": true },
+        { "input": "mississippi\n", "expected": "ippississim", "hidden": true },
+        { "input": "12345\n", "expected": "54321", "hidden": true }
+      ]
+    }
+  }
+}

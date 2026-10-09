@@ -1,0 +1,221 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Bulut xizmat modellari qaysi birida operatsion tizim va uning yangilanishlari uchun mijoz javobgar?",
+          "ru": "В какой модели облачных сервисов за операционную систему и её обновления отвечает клиент?",
+          "en": "In which cloud service model is the customer responsible for the operating system and its updates?"
+        },
+        "options": [
+          { "uz": "IaaS", "ru": "IaaS", "en": "IaaS" },
+          { "uz": "PaaS", "ru": "PaaS", "en": "PaaS" },
+          { "uz": "SaaS", "ru": "SaaS", "en": "SaaS" },
+          { "uz": "Xususiy bulutda ham, ommaviy bulutda ham — har doim provayder", "ru": "И в частном, и в публичном облаке — всегда провайдер", "en": "In both private and public cloud — always the provider" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Umumiy javobgarlik jadvali boʻyicha: operatsion tizim va yangilanishlar IaaS da mijoz, PaaS va SaaS da provayder zimmasida.",
+          "ru": "По таблице общей ответственности: ОС и обновления в IaaS — на клиенте, в PaaS и SaaS — на провайпере.",
+          "en": "Per the shared responsibility table: the OS and updates are the customer's in IaaS, the provider's in PaaS and SaaS."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "SaaS modelida maʼlumotlar, hisoblar va sozlamalar provayder javobgarligida qoladi.",
+          "ru": "В модели SaaS данные, учётные записи и настройки остаются ответственностью провайдера.",
+          "en": "In the SaaS model, data, accounts and settings remain the provider's responsibility."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsning asosiy qoidasi: har qanday modelda maʼlumot, hisoblar va sozlamalar mijoz javobgarligida qoladi.",
+          "ru": "Главное правило из занятия: в любой модели данные, учётные записи и настройки остаются за клиентом.",
+          "en": "The lesson's basic rule: in every model, data, accounts and settings stay with the customer."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "IoT arxitekturasining darsda keltirilgan qatlamlari qaysilar?",
+          "ru": "Какие из перечисленного — уровни IoT-архитектуры из занятия?",
+          "en": "Which of these are the IoT architecture layers from the lesson?"
+        },
+        "options": [
+          { "uz": "Qurilma (sezish) qatlami", "ru": "Устройство (уровень восприятия)", "en": "Device (sensing) layer" },
+          { "uz": "Shlyuz va tarmoq", "ru": "Шлюз и сеть", "en": "Gateway and network" },
+          { "uz": "Bulut platformasi", "ru": "Облачная платформа", "en": "Cloud platform" },
+          { "uz": "Moliyaviy hisobot qatlami", "ru": "Уровень финансовой отчётности", "en": "Financial reporting layer" },
+          { "uz": "Ilova", "ru": "Приложение", "en": "Application" }
+        ],
+        "correct": [0, 1, 2, 4],
+        "explanation": {
+          "uz": "Toʻrt qatlam: qurilma (sezish), shlyuz va tarmoq, bulut platformasi, ilova — har birida oʻz himoya chorasi.",
+          "ru": "Четыре уровня: устройство (восприятие), шлюз и сеть, облачная платформа, приложение — на каждом свои меры защиты.",
+          "en": "The four layers: device (sensing), gateway and network, cloud platform, application — each with its own protective measures."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Mirai hodisasining asosiy sababi nima edi?",
+          "ru": "Какова была главная причина инцидента Mirai?",
+          "en": "What was the main cause of the Mirai incident?"
+        },
+        "options": [
+          { "uz": "Qurilmalarda oʻzgartirilmagan zavod (standart) parollari", "ru": "Неизменённые заводские (стандартные) пароли на устройствах", "en": "Factory default passwords that had not been changed on the devices" },
+          { "uz": "Murakkab zero-day zaifliklardan foydalanish", "ru": "Использование сложных zero-day уязвимостей", "en": "The use of sophisticated zero-day vulnerabilities" },
+          { "uz": "Shifrlash algoritmlarining buzilishi", "ru": "Взлом алгоритмов шифрования", "en": "The breaking of encryption algorithms" },
+          { "uz": "Internet provayderlari jihozi xatosi", "ru": "Ошибка оборудования интернет-провайдеров", "en": "A fault in the Internet providers' equipment" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda taʼkidlanicha, asosiy sabab murakkab texnologiya emas, balki oʻzgartirilmagan zavod parollari edi.",
+          "ru": "Как отмечено в занятии, главной причиной были не сложные технологии, а неизменённые заводские пароли.",
+          "en": "As the lesson states, the main cause was not sophisticated technology but unchanged factory passwords."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "CSPM nima qiladi?",
+          "ru": "Что делает CSPM?",
+          "en": "What does CSPM do?"
+        },
+        "options": [
+          { "uz": "Bulut sozlamalarini xavfsizlik siyosati bilan doimiy solishtirib, chetga chiqishlarni koʻrsatadi", "ru": "Постоянно сравнивает облачные настройки с политикой безопасности и показывает отклонения", "en": "It continuously compares cloud settings with the security policy and shows deviations" },
+          { "uz": "Xodimlarning bulut xizmatlaridan foydalanishini nazorat qilib, soya IT ni aniqlaydi", "ru": "Контролирует использование облачных сервисов сотрудниками и выявляет теневое IT", "en": "It monitors employees' use of cloud services and detects shadow IT" },
+          { "uz": "Kalitlarni saqlaydigan maxsus xizmat", "ru": "Служба, которая хранит ключи", "en": "A service that stores keys" },
+          { "uz": "Bulutdagi zararli dasturlarni oʻchiradi", "ru": "Удаляет вредоносные программы в облаке", "en": "It removes malware from the cloud" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ikkinchi variant — CASB vazifasi, uchinchisi — KMS. CSPM notoʻgʻri sozlamalar xavfiga qarshi chora.",
+          "ru": "Второй вариант — задача CASB, третий — KMS. CSPM — мера против риска неверных настроек.",
+          "en": "The second option is CASB's job, the third is KMS. CSPM is the measure against the misconfiguration risk."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi audit misoliga koʻra (standart parol +5, eskirgan proshivka +3, 23-port +4, 80-port +2): joriy proshivkasi 1.9, oxirgisi 2.0 boʻlgan, standart paroli yoʻq, 22 va 443-portlari ochiq router-gw qurilmasining xavf balli nechga teng?",
+          "ru": "По примеру аудита из занятия (пароль по умолчанию +5, устаревшая прошивка +3, порт 23 +4, порт 80 +2): каков риск-балл router-gw с прошивкой 1.9 при последней 2.0, без пароля по умолчанию и с открытыми портами 22 и 443?",
+          "en": "Per the lesson's audit example (default password +5, outdated firmware +3, port 23 +4, port 80 +2): what is the risk score of router-gw, with firmware 1.9 against the latest 2.0, no default password and ports 22 and 443 open?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Faqat proshivka eskirgan: +3. Standart parol yoʻq, 23 va 80-portlar ochiq emas. 3 ball — oʻrta xavf.",
+          "ru": "Устарела только прошивка: +3. Пароля по умолчанию нет, порты 23 и 80 не открыты. Три балла — средний риск.",
+          "en": "Only the firmware is outdated: +3. There is no default password and ports 23 and 80 are not open. Three points is medium risk."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Isteʼmolchi IoT qurilmalari uchun Yevropa bazaviy xavfsizlik standarti nomini yozing (masalan, `EN ...` koʻrinishida).",
+          "ru": "Запишите название европейского базового стандарта безопасности для потребительских IoT-устройств (например, в виде `EN ...`).",
+          "en": "Write the name of the European baseline security standard for consumer IoT devices (for example, as `EN ...`)."
+        },
+        "answers": ["ETSI EN 303 645", "EN 303 645", "303 645"],
+        "explanation": {
+          "uz": "ETSI EN 303 645 — isteʼmolchi IoT qurilmalari uchun Yevropa standarti; birinchi talabi — universal standart parollarning yoʻqligi.",
+          "ru": "ETSI EN 303 645 — европейский стандарт для потребительских IoT-устройств; первое требование — отсутствие универсальных паролей по умолчанию.",
+          "en": "ETSI EN 303 645 is the European standard for consumer IoT devices; its first requirement is no universal default passwords."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bulutni himoya qilish choralari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о мерах защиты облака верны?",
+          "en": "Which statements about cloud protection measures are correct?"
+        },
+        "options": [
+          { "uz": "Zaxiraning kamida bitta nusxasi boshqa hisob yoki mintaqada saqlanadi va tiklash muntazam sinaladi", "ru": "Хотя бы одна копия резервной копии хранится в другом аккаунте или регионе, а восстановление регулярно проверяется", "en": "At least one backup copy is kept in another account or region, and recovery is tested regularly" },
+          { "uz": "BYOK — mijozning oʻzi taqdim etadigan kaliti", "ru": "BYOK — это ключ, который предоставляет сам клиент", "en": "BYOK means the customer supplies its own key" },
+          { "uz": "CASB ruxsatsiz bulut xizmatlarini (soya IT) aniqlaydi va DLP siyosatlarini qoʻllaydi", "ru": "CASB обнаруживает несанкционированные облачные сервисы (теневое IT) и применяет политики DLP", "en": "CASB detects unauthorized cloud services (shadow IT) and applies DLP policies" },
+          { "uz": "Ishdan ketgan xodimning hisobi tarix saqlanishi uchun bir necha oy ochiq qoldiriladi", "ru": "Учётная запись уволенного сотрудника остаётся открытой несколько месяцев для сохранения истории", "en": "The account of a departed employee stays open for several months to preserve history" }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "IAM boʻyicha talab — ishdan ketganda hisobni darhol yopish; qolgan uch choralar darsda keltirilgan.",
+          "ru": "Требование IAM — закрывать счёт уволившегося сразу; три остальные меры приведены в занятии.",
+          "en": "The IAM rule is to close the account immediately when someone leaves; the other three measures are given in the lesson."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Segmentlangan tarmoqda IoT qurilmalari yangilanishni yuklab olish uchun ichki tarmoq resurslariga kira oladi.",
+          "ru": "В сегментированной сети IoT-устройства могут заходить во внутреннюю сеть, чтобы скачать обновления.",
+          "en": "In a segmented network IoT devices may enter the internal network in order to download updates."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi qoida: qurilmalar faqat oʻz bulut xizmatiga chiqa oladi, ichki tarmoqqa kira olmaydi.",
+          "ru": "Правило из занятия: устройства могут выходить только к своему облачному сервису и не заходят во внутреннюю сеть.",
+          "en": "The lesson's rule: the devices can reach only their own cloud service and cannot enter the internal network."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Umumiy zavod parolini aniqlash",
+      "ru": "Поиск общих заводских паролей",
+      "en": "Finding shared factory passwords"
+    },
+    "statement": {
+      "uz": "ETSI EN 303 645 standartining birinchi talabi — barcha qurilmalarda bir xil boʻlgan universal standart parol taqiqlanadi. Shuning uchun bir parol ikki yoki undan ortiq qurilmada ishlatilsa — bu zavod paroli belgisi. Kirish: birinchi satrda qurilmalar soni n; keyingi n satrning har birida qurilma nomi va paroli, bitta boʻshliq bilan ajratilgan. Har bir qurilma uchun kirish tartibida natija chiqaring: agar paroli yana bir qurilmada uchrasa `nom: replace`, aks holda `nom: ok`. Oxirgi satrda `replaced: X` — almashtirish kerak boʻlgan qurilmalar soni. 1 ≤ n ≤ 100.",
+      "ru": "Первое требование стандарта ETSI EN 303 645 — запрет универсального пароля по умолчанию, одинакового на всех устройствах. Если один пароль используется на двух и более устройствах, это признак заводского пароля. Вход: в первой строке число устройств n, далее n строк — имя устройства и пароль, разделённые одним пробелом. Для каждого устройства в порядке входа выведите: `имя: replace`, если этот пароль встречается ещё где-нибудь, иначе `имя: ok`. Последней строкой выведите `replaced: X` — число устройств, которым нужна смена пароля. 1 ≤ n ≤ 100.",
+      "en": "The first requirement of ETSI EN 303 645 bans a universal default password shared by all devices. So if one password is used on two or more devices, it is a sign of a factory password. Input: the first line holds the number of devices n; each of the next n lines holds a device name and its password, separated by one space. For each device, in input order, print `name: replace` if its password appears on another device, and `name: ok` otherwise. On the last line print `replaced: X` — the number of devices that need a new password. 1 ≤ n ≤ 100."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nqatorlar = [s.split() for s in sys.stdin.read().split(\"\\n\") if s.strip()]\nn = int(qatorlar[0][0])\nqurilmalar = [(q[0], q[1]) for q in qatorlar[1:1 + n]]\nalmashtirish = 0\nfor nom, parol in qurilmalar:\n    if parol == \"admin123\":\n        print(f\"{nom}: replace\")\n        almashtirish += 1\n    else:\n        print(f\"{nom}: ok\")\nprint(f\"replaced: {almashtirish}\")\n",
+        "java": "import java.util.ArrayList;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        List<String> ismlar = new ArrayList<>();\n        List<String> parollar = new ArrayList<>();\n        for (int i = 0; i < n; i++) {\n            ismlar.add(in.next());\n            parollar.add(in.next());\n        }\n        int almashtirish = 0;\n        for (int i = 0; i < n; i++) {\n            if (parollar.get(i).equals(\"admin123\")) {\n                System.out.println(ismlar.get(i) + \": replace\");\n                almashtirish++;\n            } else {\n                System.out.println(ismlar.get(i) + \": ok\");\n            }\n        }\n        System.out.println(\"replaced: \" + almashtirish);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<string> ismlar, parollar;\n    for (int i = 0; i < n; i++) {\n        string nom, parol;\n        cin >> nom >> parol;\n        ismlar.push_back(nom);\n        parollar.push_back(parol);\n    }\n    int almashtirish = 0;\n    for (int i = 0; i < n; i++) {\n        if (parollar[i] == \"admin123\") {\n            cout << ismlar[i] << \": replace\" << endl;\n            almashtirish++;\n        } else {\n            cout << ismlar[i] << \": ok\" << endl;\n        }\n    }\n    cout << \"replaced: \" << almashtirish << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nqatorlar = [s.split() for s in sys.stdin.read().split(\"\\n\") if s.strip()]\nn = int(qatorlar[0][0])\nqurilmalar = [(q[0], q[1]) for q in qatorlar[1:1 + n]]\nsoni = {}\nfor _, parol in qurilmalar:\n    soni[parol] = soni.get(parol, 0) + 1\nalmashtirish = 0\nfor nom, parol in qurilmalar:\n    if soni[parol] > 1:\n        print(f\"{nom}: replace\")\n        almashtirish += 1\n    else:\n        print(f\"{nom}: ok\")\nprint(f\"replaced: {almashtirish}\")\n",
+        "java": "import java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        List<String> ismlar = new ArrayList<>();\n        List<String> parollar = new ArrayList<>();\n        Map<String, Integer> soni = new HashMap<>();\n        for (int i = 0; i < n; i++) {\n            String nom = in.next();\n            String parol = in.next();\n            ismlar.add(nom);\n            parollar.add(parol);\n            soni.merge(parol, 1, Integer::sum);\n        }\n        int almashtirish = 0;\n        for (int i = 0; i < n; i++) {\n            if (soni.get(parollar.get(i)) > 1) {\n                System.out.println(ismlar.get(i) + \": replace\");\n                almashtirish++;\n            } else {\n                System.out.println(ismlar.get(i) + \": ok\");\n            }\n        }\n        System.out.println(\"replaced: \" + almashtirish);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<string> ismlar, parollar;\n    map<string, int> soni;\n    for (int i = 0; i < n; i++) {\n        string nom, parol;\n        cin >> nom >> parol;\n        ismlar.push_back(nom);\n        parollar.push_back(parol);\n        soni[parol]++;\n    }\n    int almashtirish = 0;\n    for (int i = 0; i < n; i++) {\n        if (soni[parollar[i]] > 1) {\n            cout << ismlar[i] << \": replace\" << endl;\n            almashtirish++;\n        } else {\n            cout << ismlar[i] << \": ok\" << endl;\n        }\n    }\n    cout << \"replaced: \" << almashtirish << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5\ncamera-01 admin123\ncamera-02 admin123\nlock-01 p4ssw0rd\ntv-01 tvadmin\nrouter-01 admin123\n", "expected": "camera-01: replace\ncamera-02: replace\nlock-01: ok\ntv-01: ok\nrouter-01: replace\nreplaced: 3", "hidden": false },
+        { "input": "1\nsensor-01 abc9\n", "expected": "sensor-01: ok\nreplaced: 0", "hidden": false },
+        { "input": "4\ncam1 1111\ncam2 2222\nhub1 2222\nhub2 1111\n", "expected": "cam1: replace\ncam2: replace\nhub1: replace\nhub2: replace\nreplaced: 4", "hidden": true },
+        { "input": "3\ntv-01 abc\ntv-02 def\ntv-03 ghi\n", "expected": "tv-01: ok\ntv-02: ok\ntv-03: ok\nreplaced: 0", "hidden": true }
+      ]
+    }
+  }
+}

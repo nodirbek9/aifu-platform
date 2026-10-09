@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Matnda bitta belgi oʻzgartirilsa, SHA-256 qiymati bilan nima sodir boʻladi?",
+          "ru": "Что происходит со значением SHA-256, если в тексте изменить один символ?",
+          "en": "What happens to the SHA-256 value when one character of the text is changed?"
+        },
+        "options": [
+          {
+            "uz": "Qiymat butunlay boshqacha boʻladi (koʻchki effekti)",
+            "ru": "Значение становится совсем другим (лавинный эффект)",
+            "en": "The value becomes completely different (the avalanche effect)"
+          },
+          {
+            "uz": "Faqat oxirgi bir necha belgi oʻzgaradi",
+            "ru": "Меняются только несколько последних символов",
+            "en": "Only a few of the last characters change"
+          },
+          {
+            "uz": "Qiymatning uzunligi kamayadi",
+            "ru": "Уменьшается длина значения",
+            "en": "The value becomes shorter"
+          },
+          {
+            "uz": "Qiymat oʻzgarmaydi, chunki oʻzgarish kichik",
+            "ru": "Значение не меняется, так как изменение незначительно",
+            "en": "The value does not change, because the change is small"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "1-qadamda «salom», «Salom» va oxirida boʻshliq boʻlgan «salom » matnlarining xeshlari solishtiriladi — ular butunlay boshqa.",
+          "ru": "В шаге 1 сравниваются хеши текстов «salom», «Salom» и «salom » с пробелом в конце — они совсем разные.",
+          "en": "Step 1 compares the hashes of \"salom\", \"Salom\" and \"salom \" with a trailing space — they are completely different."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Barcha foydalanuvchilar uchun bitta umumiy tuz yetarli, chunki tuz faqat xeshlashni sekinlatadi.",
+          "ru": "Достаточно одной общей соли для всех пользователей, так как соль лишь замедляет хеширование.",
+          "en": "One common salt for all users is enough, because a salt only slows the hashing down."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi xatolar roʻyxati: tuz har bir foydalanuvchi uchun alohida va tasodifiy boʻlishi kerak. Bitta tuzda bir xil parollar yana bir xil xeshga ega boʻladi va tayyor jadval ishlay beradi.",
+          "ru": "Список ошибок из занятия: соль должна быть отдельной и случайной для каждого пользователя. При одной соли одинаковые пароли дают одинаковый хеш, и готовая таблица продолжает работать.",
+          "en": "The lesson's mistake list: the salt must be separate and random for each user. With one salt, identical passwords get identical hashes and a ready table still works."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Yuklab olingan faylning xeshini hisoblash uchun darsda qaysi buyruqlar keltirilgan?",
+          "ru": "Какие команды для вычисления хеша файла приведены в занятии?",
+          "en": "Which commands for computing a file's hash does the lesson list?"
+        },
+        "options": [
+          {
+            "uz": "certutil -hashfile fayl.exe SHA256 (Windows cmd)",
+            "ru": "certutil -hashfile file.exe SHA256 (Windows cmd)",
+            "en": "certutil -hashfile file.exe SHA256 (Windows cmd)"
+          },
+          {
+            "uz": "Get-FileHash fayl.exe -Algorithm SHA256 (PowerShell)",
+            "ru": "Get-FileHash file.exe -Algorithm SHA256 (PowerShell)",
+            "en": "Get-FileHash file.exe -Algorithm SHA256 (PowerShell)"
+          },
+          {
+            "uz": "sha256sum fayl.exe (Linux / macOS)",
+            "ru": "sha256sum file.exe (Linux / macOS)",
+            "en": "sha256sum file.exe (Linux / macOS)"
+          },
+          {
+            "uz": "chkdsk C: /f",
+            "ru": "chkdsk C: /f",
+            "en": "chkdsk C: /f"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "2-qadamda uchta xesh hisoblash buyruqlari keltirilgan; chkdsk — diskni tekshirish vositasi boʻlib, xesh bermaydi.",
+          "ru": "В шаге 2 приведены три команды вычисления хеша; chkdsk — проверка диска, хеша она не даёт.",
+          "en": "Step 2 lists three hash commands; chkdsk checks the disk and produces no hash."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi sekin xeshlash misolida tuzli xesh nechta marta qaytadan xeshlanadi?",
+          "ru": "Сколько раз в примере из занятия медленный хеш заново хеширует значение?",
+          "en": "How many times does the slow hash of the lesson's example re-hash the salted value?"
+        },
+        "answers": [100000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "100 000 marta (kalitni choʻzish). Foydalanuvchi bitta kirishda sekinlikni sezmaydi, hujumchi uchun esa har bir sinov 100 000 marta qimmatlashadi.",
+          "ru": "100 000 раз (растяжение ключа). Пользователь не замечает задержку при одном входе, а для атакующего каждая из миллиардов попыток дорожает в 100 000 раз.",
+          "en": "100,000 times (key stretching). One login does not feel the delay, but each of the attacker's billions of tries becomes 100,000 times more expensive."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qachon sayt eʼlon qilgan xesh qiymatiga ishonish yetarli emas?",
+          "ru": "Когда доверять хешу, опубликованному на сайте, недостаточно?",
+          "en": "When is the hash published on a site not trustworthy enough?"
+        },
+        "options": [
+          {
+            "uz": "Fayl 1 GB dan katta boʻlsa",
+            "ru": "Если файл больше 1 ГБ",
+            "en": "If the file is larger than 1 GB"
+          },
+          {
+            "uz": "Saytning oʻzi buzilgan boʻlsa — hujumchi xesh qiymatini ham almashtiradi, shuning uchun roʻyxat ERI bilan ham beriladi",
+            "ru": "Если скомпрометирован сам сайт — атакующий заменит и хеш, поэтому список дают и с цифровой подписью",
+            "en": "If the site itself is compromised — the attacker replaces the hash too, which is why the list is also published with a digital signature"
+          },
+          {
+            "uz": "Xesh katta harflar bilan yozilgan boʻlsa",
+            "ru": "Если хеш заглавными буквами",
+            "en": "If the hash is written in upper-case letters"
+          },
+          {
+            "uz": "Fayl rasmiy saytdan yuklab olinsa",
+            "ru": "Если файл скачан с официального сайта",
+            "en": "If the file was downloaded from the official site"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: sayt buzilgan boʻlsa, hujumchi xesh qiymatini ham almashtirishi mumkin — shu bois ishlab chiquvchilar roʻyxatni GPG imzosi bilan ham taqdim etadi.",
+          "ru": "В занятии: при взломе сайта атакующий может заменить и хеш, поэтому разработчики публикуют список вместе с подписью GPG.",
+          "en": "The lesson notes that a compromised site lets the attacker replace the hash too, which is why developers ship the list with a GPG signature."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Haqiqiy tizimlarda parolni saqlash uchun darsda keltirilgan sekin xeshlash algoritmlaridan birining nomini yozing.",
+          "ru": "Напишите имя любого алгоритма медленного хеширования паролей, названного в занятии для реальных систем.",
+          "en": "Write the name of one of the slow password-hashing algorithms the lesson names for real systems."
+        },
+        "answers": ["bcrypt", "BCrypt", "scrypt", "SCrypt", "argon2", "Argon2", "pbkdf2", "PBKDF2"],
+        "explanation": {
+          "uz": "Darsda haqiqiy tizimlar uchun bcrypt, scrypt, Argon2 va PBKDF2 keltirilgan; oʻquv misolida esa 32 bitli FNV-1a ishlatilgan.",
+          "ru": "В занятии для реальных систем названы bcrypt, scrypt, Argon2 и PBKDF2; в учебном примере использован 32-битный FNV-1a.",
+          "en": "The lesson names bcrypt, scrypt, Argon2 and PBKDF2 for real systems; the teaching example uses the 32-bit FNV-1a."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "HMAC ni oddiy xeshdan nima ajratib turadi?",
+          "ru": "Чем HMAC отличается от обычного хеша?",
+          "en": "What distinguishes an HMAC from a plain hash?"
+        },
+        "options": [
+          {
+            "uz": "HMAC har doim uzunroq qatʼiy uzunlikdagi natija beradi",
+            "ru": "HMAC всегда даёт результат большей фиксированной длины",
+            "en": "An HMAC always gives a longer fixed-size result"
+          },
+          {
+            "uz": "HMAC faqat fayllar uchun ishlatiladi, matn uchun emas",
+            "ru": "HMAC применяется только к файлам, а не к тексту",
+            "en": "An HMAC is used only for files, not for text"
+          },
+          {
+            "uz": "HMAC maxfiy kalit bilan hisoblanadi — kalitni bilmagan odam toʻgʻri MAC hosil qila olmaydi",
+            "ru": "HMAC вычисляется с секретным ключом — без ключа правильный MAC не получить",
+            "en": "An HMAC is computed with a secret key — without the key no one can produce a correct MAC"
+          },
+          {
+            "uz": "HMAC parolni qayta xeshlab, uni sekinlashtiradi",
+            "ru": "HMAC повторно хеширует пароль и замедляет его",
+            "en": "An HMAC re-hashes the password and slows it down"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "3-qadam: kalitni bitta harfga oʻzgartirsak MAC butunlay oʻzgaradi, kalitni bilmaydigan odam esa toʻgʻri MAC hosil qila olmaydi.",
+          "ru": "Шаг 3: если изменить ключ на одну букву, MAC меняется полностью, а без знания ключа правильный MAC получить нельзя.",
+          "en": "Step 3: changing the key by one letter changes the MAC completely, and someone who does not know the key cannot produce a correct MAC."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Merkle daraxti haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о дереве Меркла верны?",
+          "en": "Which statements about a Merkle tree are correct?"
+        },
+        "options": [
+          {
+            "uz": "Barglar — har bir yozuvning xeshi, ota-ona tuguni — ikki farzand xeshi birlashtirilgan satrning xeshi",
+            "ru": "Листья — хеши каждой записи, родительский узел — хеш конкатенации хешей двух детей",
+            "en": "The leaves are the hashes of each record, a parent node is the hash of its two children's hashes concatenated"
+          },
+          {
+            "uz": "Ildizni saqlash uchun butun blokni saqlash shart",
+            "ru": "Чтобы сохранить корень, нужно хранить весь блок",
+            "en": "Storing the root requires storing the whole block"
+          },
+          {
+            "uz": "Darajada elementlar soni toq boʻlsa, oxirgi element takrorlanadi",
+            "ru": "Если на уровне нечётное число элементов, последний дублируется",
+            "en": "If a level has an odd number of elements, the last one is duplicated"
+          },
+          {
+            "uz": "Bitta yozuv oʻzgarsa, oʻsha bargdan ildizgacha boʻlgan yoʻldagi xeshlar va ildiz oʻzgaradi",
+            "ru": "При изменении одной записи меняются хеши на пути от этого листа до корня и сам корень",
+            "en": "If one record changes, the hashes on the path from that leaf to the root and the root itself change"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "Darsda: ildiz bitta xesh sifatida saqlanadi, bir yozuv blokda borligini isbotlash uchun esa yoʻldagi qoʻshni xeshlar — n ta yozuv uchun log₂ n dona — yetarli.",
+          "ru": "В занятии: корень хранится как один хеш, а чтобы доказать наличие записи в блоке, достаточно соседних хешей по пути — log₂ n для n записей.",
+          "en": "The lesson: the root is kept as one hash, and proving that a record is in the block needs only the neighbour hashes along the path — log₂ n hashes for n records."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "E-IMZO kalit faylini va uning parolini hamkasbga berish xavfsiz emas, chunki u qonunan qoʻl imzo bilan teng.",
+          "ru": "Передавать файл ключа E-IMZO и его пароль коллеге небезопасно, потому что юридически это равно подписи от руки.",
+          "en": "Handing over the E-IMZO key file and its password to a colleague is not safe, because legally it equals your handwritten signature."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda ogohlantirish bor: ERI kaliti va uning parolini hech kimga bermang — u qonunan qoʻl imzongizga teng.",
+          "ru": "В занятии есть предупреждение: ключ и пароль ЭЦП никому не передают — юридически это равно подписи от руки.",
+          "en": "The lesson warns: never give your digital signature key or its password to anyone — legally it equals your handwritten signature."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Takrorlangan tuzlarni topish",
+      "ru": "Поиск повторяющихся солей",
+      "en": "Finding repeated salts"
+    },
+    "statement": {
+      "uz": "Parollar bazasida har bir foydalanuvchining tuzi alohida va tasodifiy boʻlishi shart — darsda bunga qarshi xato «bitta tuz — barcha uchun» deb atalgan. Dasturingiz bazadagi takrorlangan tuzlarni topsin. Kirish: 1-satrda n (1 ≤ n ≤ 100); keyingi n satrning har birida boʻshliq bilan ajratilgan login va tuz. Chiqish: bir nechta login ishlatgan har bir tuzni alohida satrda «tuz son» koʻrinishida (tuz va son orasida bitta boʻshliq), kiritishda birinchi marta uchragan tartibda chiqaring. Agar hamma tuzlar takrorsiz boʻlsa, faqat ok deb yozing. Sarlavha va izoh yozmang.",
+      "ru": "В базе паролей у каждого пользователя должна быть своя отдельная случайная соль — в занятии противоположное названо ошибкой «одна соль на всех». Ваша программа находит повторяющиеся соли. Ввод: в первой строке n (1 ≤ n ≤ 100); далее n строк, в каждой логин и соль через пробел. Вывод: для каждой соли, которую использовал больше одного логина, отдельной строкой «соль количество» через один пробел, в порядке первого появления соли во вводе. Если все соли уникальны, выведите только ok. Заголовков и пояснений не выводите.",
+      "en": "In a password database every user must have their own separate random salt — the lesson calls the opposite the \"one salt for all users\" mistake. Your program finds the repeated salts. Input: n (1 ≤ n ≤ 100) on the first line; then n lines, each holding a login and a salt separated by a space. Output: for every salt used by more than one login, one line with the salt and the count separated by one space, in the order in which the salt first appears in the input. If all salts are unique, print only ok. Print no titles or explanations."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\ntartib = []\nsoni = {}\nfor _ in range(n):\n    login, tuz = input().split()\n    if tuz not in soni:\n        soni[tuz] = 0\n        tartib.append(tuz)\n    soni[tuz] += 1\njavob = [t for t in tartib if soni[t] >= 1]\nif javob:\n    for t in javob:\n        print(t, soni[t])\nelse:\n    print(\"ok\")\n",
+        "java": "import java.util.LinkedHashMap;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        Map<String, Integer> soni = new LinkedHashMap<>();\n        for (int i = 0; i < n; i++) {\n            in.next();\n            String tuz = in.next();\n            soni.put(tuz, soni.getOrDefault(tuz, 0) + 1);\n        }\n        boolean bor = false;\n        for (Map.Entry<String, Integer> e : soni.entrySet()) {\n            if (e.getValue() >= 1) {\n                System.out.println(e.getKey() + \" \" + e.getValue());\n                bor = true;\n            }\n        }\n        if (!bor) {\n            System.out.println(\"ok\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<string> tartib;\n    map<string, int> soni;\n    for (int i = 0; i < n; i++) {\n        string login, tuz;\n        cin >> login >> tuz;\n        if (soni[tuz] == 0) {\n            tartib.push_back(tuz);\n        }\n        soni[tuz]++;\n    }\n    bool bor = false;\n    for (const string& t : tartib) {\n        if (soni[t] >= 1) {\n            cout << t << \" \" << soni[t] << endl;\n            bor = true;\n        }\n    }\n    if (!bor) {\n        cout << \"ok\" << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\ntartib = []\nsoni = {}\nfor _ in range(n):\n    login, tuz = input().split()\n    if tuz not in soni:\n        soni[tuz] = 0\n        tartib.append(tuz)\n    soni[tuz] += 1\njavob = [t for t in tartib if soni[t] > 1]\nif javob:\n    for t in javob:\n        print(t, soni[t])\nelse:\n    print(\"ok\")\n",
+        "java": "import java.util.LinkedHashMap;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        Map<String, Integer> soni = new LinkedHashMap<>();\n        for (int i = 0; i < n; i++) {\n            in.next();\n            String tuz = in.next();\n            soni.put(tuz, soni.getOrDefault(tuz, 0) + 1);\n        }\n        boolean bor = false;\n        for (Map.Entry<String, Integer> e : soni.entrySet()) {\n            if (e.getValue() > 1) {\n                System.out.println(e.getKey() + \" \" + e.getValue());\n                bor = true;\n            }\n        }\n        if (!bor) {\n            System.out.println(\"ok\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<string> tartib;\n    map<string, int> soni;\n    for (int i = 0; i < n; i++) {\n        string login, tuz;\n        cin >> login >> tuz;\n        if (soni[tuz] == 0) {\n            tartib.push_back(tuz);\n        }\n        soni[tuz]++;\n    }\n    bool bor = false;\n    for (const string& t : tartib) {\n        if (soni[t] > 1) {\n            cout << t << \" \" << soni[t] << endl;\n            bor = true;\n        }\n    }\n    if (!bor) {\n        cout << \"ok\" << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4\nali x7Kp\nvali x7Kp\nsardor b9Lr\nolim b9Lr\n", "expected": "x7Kp 2\nb9Lr 2", "hidden": false },
+        { "input": "3\na k1\nb k2\nc k3\n", "expected": "ok", "hidden": false },
+        { "input": "5\nali s\nvali s\nsardor s\nolim t\ngulnora u\n", "expected": "s 3", "hidden": true },
+        { "input": "1\nsolo qz9\n", "expected": "ok", "hidden": true },
+        { "input": "6\na Z\nb Y\nc Z\nd X\ne Y\nf Z\n", "expected": "Z 3\nY 2", "hidden": true }
+      ]
+    }
+  }
+}

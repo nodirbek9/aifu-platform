@@ -1,0 +1,460 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tahdidlarni manba boʻyicha tasnifda qaysi uch tur keltiriladi?",
+          "ru": "Какие три вида выделяются в классификации угроз по источнику?",
+          "en": "Which three types does the classification of threats by source list?"
+        },
+        "options": [
+          {
+            "uz": "Tabiiy, texnogen, inson",
+            "ru": "Природные, техногенные, человеческие",
+            "en": "Natural, technological, human"
+          },
+          {
+            "uz": "Ichki, tashqi, aralash",
+            "ru": "Внутренние, внешние, смешанные",
+            "en": "Internal, external, mixed"
+          },
+          {
+            "uz": "Tasodifiy, qasddan, takroriy",
+            "ru": "Случайные, умышленные, повторяющиеся",
+            "en": "Accidental, deliberate, repeated"
+          },
+          {
+            "uz": "Konfidensiallik, yaxlitlik, foydalanish mumkinligi",
+            "ru": "Конфиденциальность, целостность, доступность",
+            "en": "Confidentiality, integrity, availability"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: manba boʻyicha — tabiiy (zilzila), texnogen (elektr uzilishi), inson (hujumchi yoki xato qilgan xodim). Joylashuv boʻyicha tasnif — ichki/tashqi, niyat boʻyicha — tasodifiy/qasddan.",
+          "ru": "Таблица из занятия: по источнику — природные (землетрясение), техногенные (отключение электричества), человеческие (злоумышленник или ошибшийся сотрудник). По расположению — внутренние/внешние, по намерению — случайные/умышленные.",
+          "en": "The lesson table: by source — natural (an earthquake), technological (a power outage), human (an attacker or an employee who erred). By location it is internal/external, by intent accidental/deliberate."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda insayderlarning imkoniyati sifatida tizimlarga qonuniy kirish huquqiga ega boʻlishi taʼkidlanadi.",
+          "ru": "В занятии способность инсайдеров описывается как наличие законного доступа к системам.",
+          "en": "The lesson describes insiders' capability as having legitimate access to systems."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Insayderlar — qasos, pul yoki beparvolik bilan harakat qiluvchi aktorlar; ularning farqi shundaki, tizimlarga qonuniy kirish huquqi bor.",
+          "ru": "Инсайдеры действуют из мести, ради денег или по небрежности; их особенность — законный доступ к системам.",
+          "en": "Insiders act from revenge, for money or out of negligence; their distinguishing feature is legitimate access to systems."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "ENISA tahdidlar landshaftiga qaysi tahdidlar kiritilgan?",
+          "ru": "Какие угрозы входят в ландшафт угроз ENISA?",
+          "en": "Which threats are part of the ENISA threat landscape?"
+        },
+        "options": [
+          {
+            "uz": "Shifrlovchilar (ransomware)",
+            "ru": "Шифровальщики (ransomware)",
+            "en": "Ransomware"
+          },
+          {
+            "uz": "Ijtimoiy muhandislik",
+            "ru": "Социальная инженерия",
+            "en": "Social engineering"
+          },
+          {
+            "uz": "Taʼminot zanjiri hujumlari",
+            "ru": "Атаки на цепочку поставок",
+            "en": "Supply chain attacks"
+          },
+          {
+            "uz": "Kadrlar tanqisligi",
+            "ru": "Нехватка кадров",
+            "en": "Staff shortage"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "ENISA roʻyxati: shifrlovchilar, zararli dasturlar, ijtimoiy muhandislik, maʼlumotlarga tahdidlar, foydalanish mumkinligiga tahdidlar, axborot manipulyatsiyasi, taʼminot zanjiri hujumlari. Kadrlar tanqisligi unda yoʻq.",
+          "ru": "Список ENISA: шифровальщики, вредоносные программы, социальная инженерия, угрозы данным и доступности, манипулирование информацией, цепочка поставок. Нехватка кадров там отсутствует.",
+          "en": "The ENISA list: ransomware, malware, social engineering, threats against data and availability, information manipulation, supply chain attacks. Staff shortage is not on it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Taʼminot zanjiri hujumi (masalan, SolarWinds, 2020) qanday amalga oshiriladi?",
+          "ru": "Как реализуется атака на цепочку поставок (например, SolarWinds, 2020)?",
+          "en": "How is a supply chain attack (for example SolarWinds, 2020) carried out?"
+        },
+        "options": [
+          {
+            "uz": "Yetkazib beruvchi yoki dastur yangilanishini buzib, uning koʻplab mijozlariga kirish orqali",
+            "ru": "Через взлом поставщика или обновления программы и вход к его множеству клиентов",
+            "en": "By compromising a supplier or a software update and reaching its many customers"
+          },
+          {
+            "uz": "Har bir nishonga alohida, mustaqil vositalar bilan hujum qilish orqali",
+            "ru": "Посредством отдельной атаки на каждую цель собственными инструментами",
+            "en": "By attacking each target separately with its own tools"
+          },
+          {
+            "uz": "Nishon tarmogʻini DoS bilan yuklab, xizmatni toʻxtatish orqali",
+            "ru": "Через перегрузку сети цели DoS-атакой и остановку сервиса",
+            "en": "By overloading the target's network with a DDoS and stopping the service"
+          },
+          {
+            "uz": "Faqat nishonga jismoniy kirib, qurilmalarni oʻgʻirlash orqali",
+            "ru": "Только через физический вход в цель и кражу устройств",
+            "en": "Only by physically entering the target and stealing devices"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda taʼminot zanjiri hujumi yetkazib beruvchi yoki dastur yangilanishi orqali koʻplab mijozlarga kirish deb taʼriflangan; shu sababli yetkazib beruvchilarga koʻr-koʻrona ishonish xato deb koʻrsatilgan.",
+          "ru": "В занятии атака на цепочку поставок определена как вход к многим клиентам через поставщика или обновление программы; потому слепое доверие поставщикам названо ошибкой.",
+          "en": "The lesson defines a supply chain attack as reaching many customers through a supplier or a software update, which is why blind trust in suppliers is called a mistake."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "STRIDE tahdidlar modelida nechta harf (tahdid turi) keltirilgan?",
+          "ru": "Сколько букв (видов угроз) приведено в модели угроз STRIDE?",
+          "en": "How many letters (threat types) does the STRIDE threat model list?"
+        },
+        "answers": [6],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "STRIDE olti harfdan iborat: Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege.",
+          "ru": "STRIDE состоит из шести букв: Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege.",
+          "en": "STRIDE has six letters: Spoofing, Tampering, Repudiation, Information disclosure, Denial of service, Elevation of privilege."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Davlat bilan bogʻliq, uzoq muddatli maqsadli hujumlar oʻtkazuvchi va juda yuqori imkoniyatli guruhlarning qisqartmasini yozing.",
+          "ru": "Запишите аббревиатуру связанных с государством групп, ведущих долгосрочные целевые атаки и обладающих очень высокими возможностями.",
+          "en": "Write the abbreviation of the state-linked groups with very high capabilities that run long-term targeted attacks."
+        },
+        "answers": ["APT", "apt", "Advanced Persistent Threat", "advanced persistent threat"],
+        "explanation": {
+          "uz": "Darsda davlat bilan bogʻliq guruhlar APT deb yuritiladi: josuslik, sabotaj, siyosiy taʼsir; ular uzoq muddatli, maqsadli hujumlar oʻtkazadi va oʻz vositalariga ega.",
+          "ru": "В занятии связанные с государством группы обозначены как APT: шпионаж, саботаж, политическое влияние; они ведут долгосрочные целевые атаки и имеют собственные инструменты.",
+          "en": "The lesson marks state-linked groups as APT: espionage, sabotage, political influence; they conduct long-term targeted attacks and have their own tools."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "STRIDE modelida «harakatni inkor etish» tahdidiga qaysi harf va qanday himoya mos keladi?",
+          "ru": "Какая буква STRIDE соответствует угрозе отрицания действия и какая защита ей противопоставляется?",
+          "en": "Which STRIDE letter stands for denying an action, and what protection counters it?"
+        },
+        "options": [
+          {
+            "uz": "R — Repudiation; jurnallar va ERI",
+            "ru": "R — Repudiation; журналы и ЭЦП",
+            "en": "R — Repudiation; logs and digital signatures"
+          },
+          {
+            "uz": "T — Tampering; xesh va MAC",
+            "ru": "T — Tampering; хеш и MAC",
+            "en": "T — Tampering; hash and MAC"
+          },
+          {
+            "uz": "S — Spoofing; MFA va sertifikatlar",
+            "ru": "S — Spoofing; MFA и сертификаты",
+            "en": "S — Spoofing; MFA and certificates"
+          },
+          {
+            "uz": "D — Denial of service; zaxira va tezlikni cheklash",
+            "ru": "D — Denial of service; избыточность и ограничение скорости",
+            "en": "D — Denial of service; redundancy and rate limiting"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Repudiation — harakatni inkor etish, buziladigan xossa — rad etib boʻlmaslik; himoya sifatida jurnallar va ERI koʻrsatilgan. Qolgan variantlar boshqa harflarga tegishli.",
+          "ru": "Repudiation — отрицание действия, нарушаемое свойство — неотказуемость; в качестве защиты названы журналы и ЭЦП. Остальные варианты относятся к другим буквам.",
+          "en": "Repudiation is denying an action, the violated property is non-repudiation; the lesson counters it with logs and digital signatures. The other options belong to other letters."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Zararkunanda dasturlarni maqsadi boʻyicha guruhlashda «nazoratni egallash» maqsadiga qaysi turlar kiritilgan?",
+          "ru": "Какие виды вредоносных программ отнесены в занятии к цели «захват контроля»?",
+          "en": "Which kinds of malicious programs does the lesson group under the purpose of taking control?"
+        },
+        "options": [
+          {
+            "uz": "Masofaviy kirish troyanlari",
+            "ru": "Трояны удалённого доступа",
+            "en": "Remote access Trojans"
+          },
+          {
+            "uz": "Botlar",
+            "ru": "Боты",
+            "en": "Bots"
+          },
+          {
+            "uz": "Rootkitlar",
+            "ru": "Руткиты",
+            "en": "Rootkits"
+          },
+          {
+            "uz": "Wiperlar",
+            "ru": "Wiper-программы",
+            "en": "Wipers"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi jadval: nazoratni egallash — masofaviy kirish troyanlari, botlar, rootkitlar; wiperlar esa buzish va sabotaj maqsadiga kiritilgan.",
+          "ru": "Таблица из занятия: захват контроля — трояны удалённого доступа, боты, руткиты; wiper-программы относятся к уничтожению и саботажу.",
+          "en": "The lesson table puts taking control as remote access Trojans, bots and rootkits; wipers belong to destruction and sabotage."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, mobil qurilmalarni alohida himoya qilish shart emas, chunki ular asosiy tizimlarga ulanmaydi.",
+          "ru": "По занятию мобильные устройства не нуждаются в особой защите, так как не подключены к основным системам.",
+          "en": "According to the lesson, mobile devices need no special protection because they are not connected to the main systems."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda mobil qurilmalarni himoyasiz qoldirish koʻp uchraydigan xato deb koʻrsatilgan: telefon — bank, pochta va MFA kalitlari joylashgan qurilma.",
+          "ru": "В занятии оставление мобильных устройств без защиты названо частой ошибкой: телефон — устройство, где лежат банк, почта и ключи MFA.",
+          "en": "The lesson calls leaving mobile devices unprotected a common mistake: a phone holds banking, mail and MFA keys."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "STRIDE mashqini bajarishdan oldingi nazorat savollari",
+      "ru": "Проверочные вопросы перед выполнением упражнения по STRIDE",
+      "en": "Check questions before doing the STRIDE exercise"
+    },
+    "statement": {
+      "uz": "Darsdagi amaliy mashqni — universitet platformasining «baholarni koʻrish» funksiyasi uchun har bir STRIDE harfi boʻyicha tahdid va himoya chorasini yozishni — bajarishdan oldin besh savolga javob bering. Savollar tahdidlar tasnifi, STRIDE jadvali va mobil zararli dasturlar boʻlimlariga asoslangan. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Перед выполнением практического упражнения занятия — записать для функции «просмотр оценок» университетской платформы по одной угрозе и мере защиты на каждую букву STRIDE — ответьте на пять вопросов. Они опираются на классификацию угроз, таблицу STRIDE и раздел о мобильных вредоносных программах. Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before doing the lesson's practical exercise — writing, for the university platform's \"view grades\" function, one threat and one protective measure for each STRIDE letter — answer five questions. They rest on the threat classification, the STRIDE table and the mobile malware section. The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Darsdagi amaliy mashqda STRIDE boʻyicha tahdidlarni qaysi funksiya uchun yozish taklif qilingan?",
+            "ru": "Для какой функции предлагается записать угрозы по STRIDE в практическом упражнении занятия?",
+            "en": "For which function does the lesson's practical exercise ask you to write threats with STRIDE?"
+          },
+          "options": [
+            {
+              "uz": "Universitet platformasidagi «baholarni koʻrish» funksiyasi",
+              "ru": "«Просмотр оценок» на университетской платформе",
+              "en": "The \"view grades\" function of the university platform"
+            },
+            {
+              "uz": "Kutubxona katalogidagi kitob qidiruvi",
+              "ru": "Поиск книг в каталоге библиотеки",
+              "en": "Book search in the library catalogue"
+            },
+            {
+              "uz": "Talabalar yurtoqidagi kirish nazorati",
+              "ru": "Контроль доступа в студенческом общежитии",
+              "en": "Access control in the student dormitory"
+            },
+            {
+              "uz": "Ovqatlanish nuqtasidagi toʻlov terminali",
+              "ru": "Платёжный терминал в столовой",
+              "en": "The payment terminal in the canteen"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Mashq shartida aynan universitet platformasining «baholarni koʻrish» funksiyasi berilgan: har bir STRIDE harfi uchun bittadan tahdid va himoya chorasi yoziladi.",
+            "ru": "В условии упражнения названа именно функция «просмотр оценок» университетской платформы: по одной угрозе и мере на каждую букву STRIDE.",
+            "en": "The exercise names exactly the \"view grades\" function of the university platform: one threat and one measure for each STRIDE letter."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "STRIDE jadvalida maʼlumotni oʻzgartirish tahdidi va yaxlitlik xossasi qaysi harf bilan belgilangan?",
+            "ru": "Какой буквой в таблице STRIDE обозначены угроза модификации данных и свойство целостности?",
+            "en": "Which letter of the STRIDE table marks modifying data and the integrity property?"
+          },
+          "options": [
+            {
+              "uz": "T — Tampering",
+              "ru": "T — Tampering",
+              "en": "T — Tampering"
+            },
+            {
+              "uz": "I — Information disclosure",
+              "ru": "I — Information disclosure",
+              "en": "I — Information disclosure"
+            },
+            {
+              "uz": "E — Elevation of privilege",
+              "ru": "E — Elevation of privilege",
+              "en": "E — Elevation of privilege"
+            },
+            {
+              "uz": "S — Spoofing",
+              "ru": "S — Spoofing",
+              "en": "S — Spoofing"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Tampering — maʼlumotni oʻzgartirish, buziladigan xossa — yaxlitlik; himoya misoli sifatida xesh, ERI va MAC keltirilgan.",
+            "ru": "Tampering — изменение данных, нарушаемое свойство — целостность; в качестве защиты названы хеш, ЭЦП и MAC.",
+            "en": "Tampering is modifying data, the violated property is integrity; the protection examples are hash, digital signature and MAC."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Mobil zararli dasturlardan himoya boʻyicha darsda qaysi choralar koʻrsatilgan?",
+            "ru": "Какие меры против мобильной вредоносной программы указаны в занятии?",
+            "en": "Which measures against mobile malware does the lesson list?"
+          },
+          "options": [
+            {
+              "uz": "Ilovalarni faqat rasmiy doʻkonlardan oʻrnatish",
+              "ru": "Устанавливать приложения только из официальных магазинов",
+              "en": "Installing apps only from official stores"
+            },
+            {
+              "uz": "Ilova ruxsatlarini tekshirish",
+              "ru": "Проверять разрешения приложения",
+              "en": "Checking the app's permissions"
+            },
+            {
+              "uz": "Notanish havolalar orqali ilova oʻrnatmaslik",
+              "ru": "Не устанавливать приложения по незнакомым ссылкам",
+              "en": "Not installing apps from unknown links"
+            },
+            {
+              "uz": "SMS kodlarni suhbatdoshga uzatishga ruxsat berish",
+              "ru": "Разрешить передачу SMS-кодов собеседнику",
+              "en": "Allowing SMS codes to be passed to a correspondent"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Darsdagi himoya: faqat rasmiy doʻkonlar, ilova ruxsatlarini tekshirish, OT yangilanishlari, notanish havolalardan ilova oʻrnatmaslik. SMS kodlarni uzatish esa bank troyanlarining maqsadi.",
+            "ru": "Защита из занятия: только официальные магазины, проверка разрешений, обновления ОС, отказ от установки по неизвестным ссылкам. Передача SMS-кодов — как раз цель банковских троянов.",
+            "en": "The lesson's protection: official stores only, checking permissions, OS updates, no installs from unknown links. Passing SMS codes on is exactly the banking Trojans' goal."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Darsga koʻra, oddiy tashkilot uchun eng ehtimoliy tahdid — maqsadli APT hujumlaridir.",
+            "ru": "По занятию наиболее вероятная угроза для обычной организации — целевые APT-атаки.",
+            "en": "According to the lesson, the most likely threat for an ordinary organization is a targeted APT attack."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Darsda oddiy tashkilot uchun eng ehtimoliy tahdid — maqsadsiz ommaviy hujumlar va firibgarlik; maqsadli APT esa muhim infratuzilma uchun xarakterlanadi.",
+            "ru": "В занятии для обычной организации наиболее вероятны массовые нецелевые атаки и мошенничество; целевые APT характерны для критической инфраструктуры.",
+            "en": "For an ordinary organization the lesson names untargeted mass attacks and fraud as the most likely threats; targeted APTs characterize critical infrastructure."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "«Josuslik va maʼlumot oʻgʻirlash» guruhiga kiritilgan, maʼlumot oʻgʻirlovchi zararli dasturning inglizcha nomini yozing.",
+            "ru": "Запишите английское название вредоносной программы — похитителя информации из группы «шпионаж и кража данных».",
+            "en": "Write the English name of the information-stealing malicious program in the espionage and data-theft group."
+          },
+          "answers": ["infostealer", "Infostealer", "infostealers", "info-stealer"],
+          "explanation": {
+            "uz": "Darsdagi jadval: josuslik va maʼlumot oʻgʻirlash maqsadiga josus dasturlar, kalit yozuvchilar va maʼlumot oʻgʻiruvchilar — infostealerlar — kiritilgan.",
+            "ru": "Таблица из занятия: в группу шпионажа и кражи данных отнесены шпионские программы, кейлоггеры и похитители информации — infostealer-программы.",
+            "en": "The lesson table places spyware, keyloggers and information stealers — infostealers — in the espionage and data-theft group."
+          }
+        }
+      ]
+    }
+  }
+}

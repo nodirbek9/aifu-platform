@@ -1,0 +1,301 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi konteyner takrorlanmaydigan elementlarni saqlaydi va „element bormi?“ savoliga tez javob beradi, tartib esa muhim emas?",
+          "ru": "Какой контейнер хранит неповторяющиеся элементы и быстро отвечает на вопрос «есть ли элемент?», а порядок при этом не важен?",
+          "en": "Which container keeps elements without duplicates and answers the question \"is the element there?\" quickly, with order unimportant?"
+        },
+        "options": [
+          {
+            "uz": "Toʻplam (set)",
+            "ru": "Множество (set)",
+            "en": "A set"
+          },
+          {
+            "uz": "Roʻyxat (list, ArrayList, vector)",
+            "ru": "Список (list, ArrayList, vector)",
+            "en": "A list (list, ArrayList, vector)"
+          },
+          {
+            "uz": "Navbat (queue)",
+            "ru": "Очередь (queue)",
+            "en": "A queue"
+          },
+          {
+            "uz": "Stek (stack)",
+            "ru": "Стек (stack)",
+            "en": "A stack"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi taʼrif: toʻplam — takrorsiz elementlar va „bormi?“ savoli. Roʻyxatda bu savol *O*(*n*), toʻplamda — *O*(1), oʻrtacha.",
+          "ru": "Определение из занятия: множество — элементы без повторов и вопрос «есть ли?». В списке это O(n), в множестве — O(1) в среднем.",
+          "en": "The lesson defines a set as elements without duplicates and the \"is it there?\" question: *O*(*n*) in a list, *O*(1) on average in a set."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Navbatda (queue) oxirgi kirgan element birinchi chiqadi.",
+          "ru": "В очереди первым выходит элемент, вошедший последним.",
+          "en": "In a queue the last element to enter is the first to leave."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Navbat — FIFO: birinchi kirgan birinchi chiqadi. „Oxirgi kirgan birinchi chiqadi“ (LIFO) — stekning tamoyili.",
+          "ru": "Очередь работает по FIFO: первым выходит вошедший первым. LIFO — это принцип стека.",
+          "en": "A queue is FIFO: the first in is the first out. \"Last in, first out\" (LIFO) is the stack's principle."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Konteynerning til boʻyicha nomlari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о названиях контейнеров в разных языках верны?",
+          "en": "Which statements about container names in the three languages are correct?"
+        },
+        "options": [
+          {
+            "uz": "Javaʼda roʻyxat `ArrayList` deb ataladi",
+            "ru": "В Java список называется ArrayList",
+            "en": "In Java the list is called `ArrayList`"
+          },
+          {
+            "uz": "C++ʼda lugʻat `vector` deb ataladi",
+            "ru": "В C++ словарь называется vector",
+            "en": "In C++ the dictionary is called `vector`"
+          },
+          {
+            "uz": "Pythonʼda lugʻat — `dict`",
+            "ru": "В Python словарь — это dict",
+            "en": "In Python the dictionary is `dict`"
+          },
+          {
+            "uz": "Pythonʼda toʻplam navbat uchun ishlatiladi",
+            "ru": "В Python множество используют как очередь",
+            "en": "In Python a set is used as the queue"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "`vector` — C++ʼdagi roʻyxat, lugʻat esa `map`/`unordered_map`. Pythonʼda navbat `collections.deque` bilan quriladi, `set` — toʻplam.",
+          "ru": "vector — это список в C++, а словарь — map/unordered_map. Очередь в Python строится на collections.deque, set — это множество.",
+          "en": "`vector` is C++'s list, and its dictionary is `map`/`unordered_map`. Python's queue is `collections.deque`; `set` is the set."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "C++ʼda lugʻatda boʻlmagan kalitni `m[k]` deb faqat oʻqish uchun ishlatilsa nima sodir boʻladi?",
+          "ru": "Что произойдёт, если в C++ обратиться к отсутствующему ключу через m[k] только для чтения?",
+          "en": "In C++, what happens if you read a missing key with `m[k]`, meaning only to look at it?"
+        },
+        "options": [
+          {
+            "uz": "Kalit qiymati 0 bilan yaratiladi va lugʻatga qoʻshiladi",
+            "ru": "Ключ создаётся со значением 0 и добавляется в словарь",
+            "en": "The key is created with the value 0 and added to the dictionary"
+          },
+          {
+            "uz": "Faqat oʻqish boʻlgani uchun hech narsa oʻzgarmaydi",
+            "ru": "Раз это только чтение, ничего не меняется",
+            "en": "Nothing changes, because it is only a read"
+          },
+          {
+            "uz": "Bajarilish vaqtida xato yuz beradi",
+            "ru": "Во время выполнения происходит ошибка",
+            "en": "A run-time error occurs"
+          },
+          {
+            "uz": "Kalit lugʻatdan oʻchiriladi",
+            "ru": "Ключ удаляется из словаря",
+            "en": "The key is removed from the dictionary"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shuning uchun darsda tekshirish uchun `m.count(k)` yoki `m.find(k) != m.end()` ishlatish tavsiya etiladi.",
+          "ru": "Поэтому для проверки занятие советует использовать m.count(k) или m.find(k) != m.end().",
+          "en": "That is why the lesson checks presence with `m.count(k)` or `m.find(k) != m.end()` instead."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi sanoq oʻyinida (navbat, *n* = 7, *k* = 3) chiqish tartibi `3 6 2 7 5 1 4` edi. Uchinchi boʻlib qaysi raqamli kishi chiqadi?",
+          "ru": "В игре из занятия (очередь, n = 7, k = 3) порядок выбывания: 3 6 2 7 5 1 4. Человек с каким номером выбывает третьим?",
+          "en": "In the lesson's counting-out game (queue, *n* = 7, *k* = 3) people leave in the order `3 6 2 7 5 1 4`. Which numbered person leaves third?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Chiqish tartibining uchinchi elementi: 2. Navbatda har *k* − 1 kishi oldindan oxirga oʻtkaziladi, keyin boshidagi kishi chiqadi.",
+          "ru": "Третий элемент порядка выбывания — 2. В очереди k−1 человек переносятся из начала в конец, затем первый выбывает.",
+          "en": "The third element of that order is 2. In the queue k − 1 people move from the front to the back, then the first one leaves."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Pythonʼda `deque` boshidagi elementni *O*(1) vaqtda olib tashlovchi metodning nomini yozing.",
+          "ru": "Напишите имя метода дека (deque) в Python, который за O(1) удаляет элемент из начала.",
+          "en": "Write the name of the Python deque method that removes the front element in *O*(1)."
+        },
+        "answers": ["popleft", "popleft()", "deque.popleft()", "deque.popleft"],
+        "explanation": {
+          "uz": "`deque.popleft()` — *O*(1); roʻyxatning `pop(0)` metodi esa *O*(*n*), chunki qolgan elementlar siljiydi.",
+          "ru": "deque.popleft() — это O(1), а pop(0) у списка — O(n): остальные элементы сдвигаются.",
+          "en": "`deque.popleft()` is *O*(1); `pop(0)` on a list is *O*(*n*), because the remaining elements shift."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Amallar murakkabligi jadvali boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны согласно таблице сложности операций?",
+          "en": "According to the complexity table, which statements are correct?"
+        },
+        "options": [
+          {
+            "uz": "Roʻyxatdan indeks boʻyicha olish — *O*(1)",
+            "ru": "Взятие из списка по индексу — O(1)",
+            "en": "Getting by index from a list is *O*(1)"
+          },
+          {
+            "uz": "Roʻyxatning boshiga qoʻshish — *O*(1)",
+            "ru": "Добавление в начало списка — O(1)",
+            "en": "Adding to the front of a list is *O*(1)"
+          },
+          {
+            "uz": "„Element bormi?“ savoli xeshli toʻplamda oʻrtacha *O*(1)",
+            "ru": "Вопрос «есть ли элемент?» в хеш-множестве — в среднем O(1)",
+            "en": "The \"is the element there?\" question is *O*(1) on average in a hashed set"
+          },
+          {
+            "uz": "Tartiblangan toʻplamda qoʻshish/oʻchirish (kalit boʻyicha) — *O*(1)",
+            "ru": "В упорядоченном множестве добавление/удаление по ключу — O(1)",
+            "en": "Adding and removing by key in an ordered set is *O*(1)"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Roʻyxatning boshiga qoʻshish *O*(*n*), tartiblangan toʻplam/lugʻatda qoʻshish-oʻchirish esa *O*(log *n*) — jadvalda shunday.",
+          "ru": "По таблице: добавление в начало списка — O(n), а добавление/удаление в упорядоченном множестве — O(log n).",
+          "en": "The table gives *O*(*n*) for adding at a list's front and *O*(log *n*) for add/remove in an ordered set."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Pythonʼda navbat nega roʻyxat emas, `deque` bilan quriladi?",
+          "ru": "Почему очередь в Python строят на deque, а не на списке?",
+          "en": "Why is a queue in Python built on a `deque` rather than a list?"
+        },
+        "options": [
+          {
+            "uz": "Roʻyxatdan boshini olish `pop(0)` *O*(*n*) — qolgan elementlar siljiydi; dekada ikkala uch ham *O*(1)",
+            "ru": "pop(0) у списка — это O(n): остальные элементы сдвигаются; у дека оба конца работают за O(1)",
+            "en": "`pop(0)` on a list is *O*(*n*) because the remaining elements shift; a deque takes *O*(1) at both ends"
+          },
+          {
+            "uz": "Roʻyxatda umuman `pop` metodi yoʻq",
+            "ru": "У списка вообще нет метода pop",
+            "en": "A list has no pop method at all"
+          },
+          {
+            "uz": "Roʻyxat elementlarni tartibda saqlamaydi",
+            "ru": "Список не сохраняет элементы по порядку",
+            "en": "A list does not keep elements in order"
+          },
+          {
+            "uz": "`deque` kamroq xotira egallaydi",
+            "ru": "Deque занимает меньше памяти",
+            "en": "A deque uses less memory"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi xatolar roʻyxatida ham bu aytilgan: navbat uchun `list.pop(0)` emas, `deque.popleft()` ishlatiladi.",
+          "ru": "Об этом сказано и в списке типичных ошибок занятия: для очереди используют deque.popleft(), а не list.pop(0).",
+          "en": "The lesson's common mistakes say the same: use `deque.popleft()`, not `list.pop(0)`, for a queue."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`HashMap` va `unordered_map` elementlarni saralangan tartibda beradi.",
+          "ru": "HashMap и unordered_map выдают элементы в отсортированном порядке.",
+          "en": "`HashMap` and `unordered_map` give elements in sorted order."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Xeshli konteynerlar ixtiyoriy tartibda beradi; tartib kerak boʻlsa — `TreeMap`, `map` yoki qoʻshimcha saralash.",
+          "ru": "Хеш-контейнеры дают произвольный порядок; если нужен порядок — TreeMap, map или сортировка.",
+          "en": "Hashed containers give an arbitrary order; when order matters, use `TreeMap`, `map`, or sort."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Bir marta uchragan birinchi soʻz",
+      "ru": "Первое слово, встретившееся один раз",
+      "en": "The first word that occurs once"
+    },
+    "statement": {
+      "uz": "Bitta satrda boʻsh joy bilan ajratilgan soʻzlar berilgan (kichik lotin harflari, kamida bitta soʻz). Xuddi darsdagi kabi lugʻatdan foydalanib har bir soʻz necha marta uchraganini sanang va aynan bir marta uchragan BIRINCHI soʻzni chiqaring — bunday soʻz boʻlmasa `-` chiqaring. Masalan, `olma nok olma uzum nok anor` kirilsa javob `uzum`, `bir bir ikki` kirilsa `ikki`. Soʻzlar sanalgan ketma-ketlikda birinchi marta uchraganligi hisobga olinadi, alifbo tartibi emas.",
+      "ru": "В одной строке заданы слова, разделённые пробелами (строчные латинские буквы, хотя бы одно слово). Как в занятии, посчитайте с помощью словаря, сколько раз встретилось каждое слово, и выведите ПЕРВОЕ слово, встретившееся ровно один раз; если таких слов нет, выведите `-`. Например, `olma nok olma uzum nok anor` даёт `uzum`, а `bir bir ikki` даёт `ikki`. Порядок определяется порядком ввода слов, а не алфавитом.",
+      "en": "One line holds words separated by spaces (lowercase Latin letters, at least one word). As in the lesson, use a dictionary to count how many times each word occurs, then print the FIRST word that occurs exactly once, or `-` if there is no such word. For example, `olma nok olma uzum nok anor` gives `uzum`, and `bir bir ikki` gives `ikki`. The order is the order of the words in the input, not alphabetical."
+    },
+    "code": {
+      "starter": {
+        "python": "sozlar = input().split()\n\nchastota = {}\nfor soz in sozlar:\n    chastota[soz] = chastota.get(soz, 0) + 1\n\njavob = \"-\"\nfor soz in sozlar:\n    if chastota[soz] == 1:\n        javob = soz\n\nprint(javob)\n",
+        "java": "import java.util.ArrayList;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        List<String> sozlar = new ArrayList<>();\n        for (String s : in.nextLine().trim().split(\"\\\\s+\")) sozlar.add(s);\n\n        Map<String, Integer> chastota = new HashMap<>();\n        for (String soz : sozlar) chastota.merge(soz, 1, Integer::sum);\n\n        String javob = \"-\";\n        for (String soz : sozlar) {\n            if (chastota.get(soz) == 1) javob = soz;\n        }\n        System.out.println(javob);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    istringstream oqim(satr);\n\n    vector<string> sozlar;\n    map<string, int> chastota;\n    string soz;\n    while (oqim >> soz) {\n        sozlar.push_back(soz);\n        chastota[soz]++;\n    }\n\n    string javob = \"-\";\n    for (const string& s : sozlar) {\n        if (chastota[s] == 1) javob = s;\n    }\n    cout << javob << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "sozlar = input().split()\n\nchastota = {}\nfor soz in sozlar:\n    chastota[soz] = chastota.get(soz, 0) + 1\n\njavob = \"-\"\nfor soz in sozlar:\n    if chastota[soz] == 1:\n        javob = soz\n        break\n\nprint(javob)\n",
+        "java": "import java.util.HashMap;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] sozlar = in.nextLine().trim().split(\"\\\\s+\");\n\n        Map<String, Integer> chastota = new HashMap<>();\n        for (String soz : sozlar) chastota.merge(soz, 1, Integer::sum);\n\n        String javob = \"-\";\n        for (String soz : sozlar) {\n            if (chastota.get(soz) == 1) {\n                javob = soz;\n                break;\n            }\n        }\n        System.out.println(javob);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    istringstream oqim(satr);\n\n    vector<string> sozlar;\n    map<string, int> chastota;\n    string soz;\n    while (oqim >> soz) {\n        sozlar.push_back(soz);\n        chastota[soz]++;\n    }\n\n    string javob = \"-\";\n    for (const string& s : sozlar) {\n        if (chastota[s] == 1) {\n            javob = s;\n            break;\n        }\n    }\n    cout << javob << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "olma nok olma uzum nok anor\n", "expected": "uzum", "hidden": false },
+        { "input": "bir bir ikki\n", "expected": "ikki", "hidden": false },
+        { "input": "a a a\n", "expected": "-", "hidden": true },
+        { "input": "z y x\n", "expected": "z", "hidden": true },
+        { "input": "one two one three two three\n", "expected": "-", "hidden": true }
+      ]
+    }
+  }
+}

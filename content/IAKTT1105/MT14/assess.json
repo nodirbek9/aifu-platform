@@ -1,0 +1,320 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kundalik operatsiyalarni tez, aniq va arzon bajarish — axborot tizimining qaysi darajadagi vazifasi?",
+          "ru": "Быстрое, точное и дешёвое выполнение ежедневных операций — это задача информационной системы на каком уровне?",
+          "en": "Performing daily operations quickly, accurately and cheaply is the task of an information system at which level?"
+        },
+        "options": [
+          { "uz": "Boshqaruv", "ru": "Управленческий", "en": "Managerial" },
+          { "uz": "Operatsion", "ru": "Операционный", "en": "Operational" },
+          { "uz": "Strategik", "ru": "Стратегический", "en": "Strategic" },
+          { "uz": "Yordamchi", "ru": "Вспомогательный", "en": "Support" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Operatsion daraja — kassa, ombor hisobi, toʻlovlar; boshqaruv darajasi nazorat va rejalashtirish uchun axborot beradi.",
+          "ru": "Операционный уровень — касса, складской учёт, платежи; управленческий даёт информацию для контроля и планирования.",
+          "en": "The operational level is cash registers, warehouse accounting, payments; the managerial level gives information for control and planning."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kompaniya rivojlanishida axborot tizimining roli odatda yuqoridan pastga oʻsadi: avval strategik vosita, keyin hisobni avtomatlashtirish.",
+          "ru": "По мере развития компании роль информационной системы обычно растёт сверху вниз: сначала стратегический инструмент, затем автоматизация учёта.",
+          "en": "As a company develops, the role of its information system usually grows from the top down: first a strategic tool, then automating the books."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsga koʻra rol pastdan yuqoriga oʻsadi: avval hisobni avtomatlashtirish, keyin boshqaruv axboroti, soʻng strategik vosita.",
+          "ru": "По занятии роль растёт снизу вверх: сначала автоматизация учёта, затем управленческая информация, потом стратегический инструмент.",
+          "en": "In the lesson the role grows from the bottom up: first automating bookkeeping, then management information, then a strategic tool."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qiymat zanjirining asosiy (yordamchi boʻlmagan) boʻgʻinlari qaysilar?",
+          "ru": "Какие звенья цепочки ценности являются основными (не вспомогательными)?",
+          "en": "Which links of the value chain are primary rather than support links?"
+        },
+        "options": [
+          { "uz": "Xizmat koʻrsatish", "ru": "Сервис", "en": "Service" },
+          { "uz": "Kadrlar", "ru": "Персонал", "en": "Human resources" },
+          { "uz": "Chiquvchi logistika", "ru": "Исходящая логистика", "en": "Outbound logistics" },
+          { "uz": "Texnologiya", "ru": "Технологии", "en": "Technology" }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Asosiy boʻgʻinlar: kiruvchi logistika, ishlab chiqarish, chiquvchi logistika, marketing va sotuv, xizmat koʻrsatish. Kadrlar va texnologiya — yordamchi boʻgʻinlar.",
+          "ru": "Основные звенья: входящая логистика, производство, исходящая логистика, маркетинг и продажи, сервис. Персонал и технологии — вспомогательные.",
+          "en": "Primary links: inbound logistics, operations, outbound logistics, marketing and sales, service. Human resources and technology are support links."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Diskaunter savdo tarmoqlari va avtomatlashtirilgan omborlar qaysi raqobat strategiyasiga misol?",
+          "ru": "Какой конкурентной стратегии пример — сети дискаунтеров и автоматизированные склады?",
+          "en": "Which competitive strategy do discount retail chains and automated warehouses exemplify?"
+        },
+        "options": [
+          { "uz": "Farqlash", "ru": "Дифференциация", "en": "Differentiation" },
+          { "uz": "Xarajatlar boʻyicha yetakchilik", "ru": "Лидерство по издержкам", "en": "Cost leadership" },
+          { "uz": "Tor yoʻnalish (fokus)", "ru": "Фокусирование", "en": "Focus" },
+          { "uz": "Mijozga yaqinlik", "ru": "Близость к клиенту", "en": "Customer intimacy" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Jarayonlarni avtomatlashtirish va zaxirani kamaytirish — xarajatlar boʻyicha yetakchilik strategiyasining roli.",
+          "ru": "Автоматизация процессов и снижение запасов — роль ИС в стратегии лидерства по издержкам.",
+          "en": "Automating processes and cutting stock is the role of information systems in the cost leadership strategy."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Jarayonni texnologiya imkoniyatlaridan kelib chiqib tubdan qayta qurish amaliyotining qisqartmasini yozing.",
+          "ru": "Напишите сокращение для практики коренной перестройки процесса исходя из возможностей технологий.",
+          "en": "Write the abbreviation for the practice of radically rebuilding a process starting from what technology makes possible."
+        },
+        "answers": ["BPR"],
+        "explanation": {
+          "uz": "BPR — biznes-jarayonlarni qayta loyihalash: eski jarayonni elektron qilish emas, tubdan qayta qurish.",
+          "ru": "BPR — реинжиниринг бизнес-процессов: не перевод старого процесса в электронный вид, а его коренная перестройка.",
+          "en": "BPR is business process reengineering: not making the old process electronic but rebuilding it radically."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi misolda qayta loyihalashdan oldin kredit arizasi nechta boʻlimdan qogʻoz holida oʻtardi?",
+          "ru": "Сколько отделов на бумаге проходила кредитная заявка до реинжиниринга в примере из занятия?",
+          "en": "In the lesson's example, how many departments did the loan application pass on paper before reengineering?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Ariza 5 ta boʻlimdan oʻtib, 2 hafta koʻrib chilar edi; skoring, elektron hujjatlar va parallel tekshiruv bilan qaror bir necha daqiqada chiqadi.",
+          "ru": "Заявка проходила 5 отделов и рассматривалась 2 недели; со скорингом, электронными документами и параллельными проверками решение занимает минуты.",
+          "en": "The application passed 5 departments and took 2 weeks; with scoring, electronic documents and parallel checks the decision takes minutes."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsda koʻp uchraydigan xatolar roʻyxatiga nimalar kirgan?",
+          "ru": "Что входит в перечень частых ошибок из занятия?",
+          "en": "Which items are in the lesson's list of common mistakes?"
+        },
+        "options": [
+          {
+            "uz": "Tizimni sotib olish muammoni hal qiladi deb hisoblash",
+            "ru": "Думать, что покупка системы = решение проблемы",
+            "en": "Thinking that buying a system solves the problem"
+          },
+          {
+            "uz": "IT strategiyasini biznes strategiyasidan kelib chiqib tuzish",
+            "ru": "Составлять ИТ-стратегию, выводя её из бизнес-стратегии",
+            "en": "Deriving the IT strategy from the business strategy"
+          },
+          {
+            "uz": "Samarani oʻlchashda faqat xarajatga qarash",
+            "ru": "Измерять эффект только по затратам",
+            "en": "Measuring the impact only by costs"
+          },
+          {
+            "uz": "Eski tartibsiz jarayonni avtomatlashtirish",
+            "ru": "Автоматизировать старый хаотичный процесс",
+            "en": "Automating an old chaotic process"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "IT strategiyasining biznes strategiyasidan kelib chiqishi — norma; xato esa uni biznes strategiyasisiz tuzish. Tezlik, sifat va mijoz qoniqishi ham qiymat.",
+          "ru": "Выводить ИТ-стратегию из бизнес-стратегии — это норма; ошибка — строить её без бизнес-стратегии. Скорость, качество и удовлетворённость — тоже ценность.",
+          "en": "Deriving IT strategy from business strategy is the rule; the mistake is building it without one. Speed, quality and satisfaction are value too."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Faqat dasturga asoslangan strategik ustunlik uzoq saqlanadi, chunki raqobatchilar uni sotib ola olmaydi.",
+          "ru": "Стратегическое преимущество, основанное только на программе, сохраняется надолго, поскольку конкуренты не могут её купить.",
+          "en": "An advantage based on software alone lasts long, because competitors cannot buy it."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Raqobatchilar ham xuddi shu dasturni sotib olishi mumkin; uzoq ustunlik maʼlumotlar, jarayonlar va odamlarning noyob birikmasidan keladi.",
+          "ru": "Конкуренты могут купить ту же программу; долгосрочное преимущество даёт сочетание данных, процессов и людей.",
+          "en": "Competitors can buy the same software; a lasting advantage comes from the combination of data, processes and people."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Samarani oʻlchashda «qoniqish darajasi», «qayta xaridlar» va «ilova reytingi» qaysi koʻrsatkichlar guruhiga kiradi?",
+          "ru": "К какой группе показателей относятся удовлетворённость, повторные покупки и рейтинг приложения?",
+          "en": "Which group of indicators do satisfaction, repeat purchases and app rating belong to?"
+        },
+        "options": [
+          { "uz": "Moliyaviy", "ru": "Финансовые", "en": "Financial" },
+          { "uz": "Operatsion", "ru": "Операционные", "en": "Operational" },
+          { "uz": "Mijoz", "ru": "Клиентские", "en": "Customer" },
+          { "uz": "Strategik", "ru": "Стратегические", "en": "Strategic" }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Bu uchtasi — mijoz koʻrsatkichlari; xatolar soni — operatsion, bozor ulushi — strategik, ROI — moliyaviy guruhga kiradi.",
+          "ru": "Это клиентские показатели; число ошибок — операционный, доля рынка — стратегический, ROI — финансовый показатель.",
+          "en": "These three are customer indicators; errors are operational, market share is strategic, ROI is financial."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Axborot tizimlari va raqobat: amaliy savollar",
+      "ru": "Информационные системы и конкуренция: практические вопросы",
+      "en": "Information systems and competition: practice questions"
+    },
+    "statement": {
+      "uz": "Dars matniga asoslangan toʻrt savol: qiymat zanjiri boʻgʻinlari, beshta kuch, samara koʻrsatkichlari va IT boshqaruvi. Har bir savolni diqqat bilan oʻqing; bir nechta toʻgʻri javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "ru": "Четыре вопроса по тексту занятия: звенья цепочки ценности, пять сил, показатели эффекта и управление ИТ. Читайте каждый вопрос внимательно; в вопросах с несколькими ответами отметьте все верные варианты.",
+      "en": "Four questions from the lesson text: value chain links, the five forces, impact indicators and IT governance. Read each question carefully; for multi-answer questions mark every correct option."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Ombor tizimi (WMS) va yetkazib beruvchilar portali qiymat zanjirining qaysi boʻgʻinini qoʻllab-quvvatlaydi?",
+            "ru": "Какое звено цепочки ценности поддерживают складская система (WMS) и портал поставщиков?",
+            "en": "Which link of the value chain do a warehouse system (WMS) and a supplier portal support?"
+          },
+          "options": [
+            { "uz": "Chiquvchi logistika", "ru": "Исходящая логистика", "en": "Outbound logistics" },
+            { "uz": "Kiruvchi logistika", "ru": "Входящая логистика", "en": "Inbound logistics" },
+            { "uz": "Ishlab chiqarish", "ru": "Производство", "en": "Operations" },
+            { "uz": "Xizmat koʻrsatish", "ru": "Сервис", "en": "Service" }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Kiruvchi logistika — xomashyo qabul qilish va saqlash; uni WMS va yetkazib beruvchilar portali qoʻllab-quvvatlaydi.",
+            "ru": "Входящая логистика — приёмка и хранение сырья; её поддерживают WMS и портал поставщиков.",
+            "en": "Inbound logistics is receiving and storing raw materials; the WMS and supplier portal support it."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Yetkazib beruvchilar kuchiga qarshi darsda qaysi vosita koʻrsatilgan?",
+            "ru": "Какое средство против силы поставщиков указано в занятии?",
+            "en": "Which tool against supplier power does the lesson name?"
+          },
+          "options": [
+            {
+              "uz": "Sodiqlik dasturlari va shaxsiy takliflar",
+              "ru": "Программы лояльности и персональные предложения",
+              "en": "Loyalty programmes and personal offers"
+            },
+            {
+              "uz": "Elektron xaridlar va koʻp yetkazib beruvchilarni solishtirish",
+              "ru": "Электронные закупки и сравнение многих поставщиков",
+              "en": "Electronic procurement and comparing many suppliers"
+            },
+            {
+              "uz": "Murakkab tizim va maʼlumotlar bazasi",
+              "ru": "Сложная система и база данных",
+              "en": "A complex system and database"
+            },
+            {
+              "uz": "Onlayn kanal ochish",
+              "ru": "Открытие онлайн-канала",
+              "en": "Opening an online channel"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Elektron xaridlar va koʻp yetkazib beruvchilarni solishtirish yetkazib beruvchilar kuchini kamaytiradi; sodiqlik dasturlari — xaridorlar kuchiga qarshi.",
+            "ru": "Электронные закупки и сравнение поставщиков снижают их силу; программы лояльности действуют против силы покупателей.",
+            "en": "Electronic procurement and supplier comparison weaken supplier power; loyalty programmes work against buyer power."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Samarani oʻlchash jadvalida qaysilari mijoz koʻrsatkichlariga kiradi?",
+            "ru": "Что из перечисленного входит в клиентские показатели в таблице измерения эффекта?",
+            "en": "Which of these are customer indicators in the lesson's table of measuring impact?"
+          },
+          "options": [
+            { "uz": "Qoniqish darajasi", "ru": "Удовлетворённость", "en": "Satisfaction level" },
+            { "uz": "Ilova reytingi", "ru": "Рейтинг приложения", "en": "App rating" },
+            { "uz": "Xodim boshiga operatsiyalar", "ru": "Операций на сотрудника", "en": "Operations per employee" },
+            { "uz": "Bozor ulushi", "ru": "Доля рынка", "en": "Market share" }
+          ],
+          "correct": [0, 1],
+          "explanation": {
+            "uz": "Mijoz koʻrsatkichlari: qoniqish darajasi, qayta xaridlar, ilova reytingi. Xodim boshiga operatsiyalar — operatsion, bozor ulushi — strategik.",
+            "ru": "Клиентские показатели: удовлетворённость, повторные покупки, рейтинг приложения. Операций на сотрудника — операционный, доля рынка — стратегический.",
+            "en": "Customer indicators: satisfaction, repeat purchases, app rating. Operations per employee is operational, market share is strategic."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "IT xizmatlarini boshqarish amaliyotlari qaysi qisqartma bilan belgilanadi?",
+            "ru": "Какой аббревиатурой обозначаются практики управления ИТ-услугами?",
+            "en": "Which abbreviation marks the practices of IT service management?"
+          },
+          "answers": ["ITIL"],
+          "explanation": {
+            "uz": "ITIL — IT xizmatlarini boshqarish amaliyotlari; COBIT esa IT boshqaruvi va nazoratining xalqaro asosi.",
+            "ru": "ITIL — практики управления ИТ-услугами; COBIT — международная основа управления и контроля ИТ.",
+            "en": "ITIL is IT service management practice; COBIT is the international framework for IT governance and control."
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kriptografik xesh-funksiya nima qiladi?",
+          "ru": "Что делает криптографическая хеш-функция?",
+          "en": "What does a cryptographic hash function do?"
+        },
+        "options": [
+          {
+            "uz": "Istalgan uzunlikdagi maʼlumotdan qatʼiy uzunlikdagi qiymat (xesh, «barmoq izi») hosil qiladi",
+            "ru": "Превращает данные любой длины в значение фиксированной длины (хеш, «отпечаток пальца»)",
+            "en": "Turns data of any length into a fixed-length value (the hash, a fingerprint)"
+          },
+          {
+            "uz": "Xabarni kalit bilan shifrlab, keyin deshifrlaydi",
+            "ru": "Шифрует сообщение ключом и затем расшифровывает его",
+            "en": "Encrypts a message with a key and later decrypts it"
+          },
+          {
+            "uz": "Yangi tasodifiy ochiq kalit yaratadi",
+            "ru": "Создаёт новый случайный открытый ключ",
+            "en": "Generates a new random public key"
+          },
+          {
+            "uz": "Maʼlumotni ikki baravar qisqartiradi",
+            "ru": "Сжимает данные вдвое",
+            "en": "Compresses the data to half its size"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Xesh — istalgan uzunlikdagi maʼlumotning qatʼiy uzunlikdagi «barmoq izi»; bu bir tomonlama amal, kalit unda qatnashmaydi.",
+          "ru": "Хеш — это «отпечаток пальца» данных любой длины, имеющий фиксированную длину; это односторонняя операция, ключ в ней не участвует.",
+          "en": "A hash is a fixed-length fingerprint of data of any length; it is a one-way operation with no key involved."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Xeshni maxsus kalit yordamida orqaga qaytarib, «deshifrlash» mumkin.",
+          "ru": "Хеш можно обратить обратно, «расшифровав» его специальным ключом.",
+          "en": "A hash can be reversed and 'decrypted' with a special key."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda ogohlantirilgan xato: xesh bir tomonlama — uni deshifrlab boʻlmaydi va kaliti ham yoʻq.",
+          "ru": "Типичная ошибка из урока: хеш односторонний — его нельзя «расшифровать», и ключа у него тоже нет.",
+          "en": "A common mistake warned about in the lesson: a hash is one-way, it cannot be decrypted, and it has no key."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi jadvalga koʻra, qaysilar xesh-funksiyaning xossalaridir?",
+          "ru": "Что из перечисленного, согласно таблице урока, является свойством хеш-функции?",
+          "en": "According to the lesson's table, which of these are properties of a hash function?"
+        },
+        "options": [
+          {
+            "uz": "Deterministiklik: bir xil kirish doim bir xil xesh beradi",
+            "ru": "Детерминированность: одинаковый вход даёт одинаковый хеш",
+            "en": "Determinism: the same input always gives the same hash"
+          },
+          {
+            "uz": "Kolliziyaga bardoshlilik",
+            "ru": "Стойкость к коллизиям",
+            "en": "Collision resistance"
+          },
+          {
+            "uz": "Koʻchki effekti: bitta bit oʻzgarishi xeshning ~yarim bitini oʻzgartiradi",
+            "ru": "Лавинный эффект: изменение одного бита меняет около половины битов хеша",
+            "en": "Avalanche effect: changing one bit changes about half of the hash bits"
+          },
+          {
+            "uz": "Qaytariluvchanlik: xeshdan kirishni tiklash mumkin",
+            "ru": "Обратимость: по хешу можно восстановить вход",
+            "en": "Reversibility: the input can be restored from the hash"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvaldagi xossalar: deterministiklik, bir tomonlamalik, ikkinchi asosga bardoshlilik, kolliziyaga bardoshlilik, koʻchki effekti. Qaytariluvchanlik ular orasida yoʻq.",
+          "ru": "Свойства из таблицы: детерминированность, односторонность, стойкость ко второму прообразу, стойкость к коллизиям, лавинный эффект. Обратимости там нет.",
+          "en": "The table lists determinism, one-wayness, second preimage resistance, collision resistance and the avalanche effect. Reversibility is not one of them."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tugʻilgan kun paradoksiga koʻra, b bitli xesh uchun kolliziyani topish taxminan nechta urinish talab qiladi?",
+          "ru": "Согласно парадоксу дней рождения, сколько примерно попыток нужно для поиска коллизии в b-битном хеше?",
+          "en": "By the birthday paradox, roughly how many attempts find a collision in a b-bit hash?"
+        },
+        "options": [
+          {
+            "uz": "2^(b/2)",
+            "ru": "2^(b/2)",
+            "en": "2^(b/2)"
+          },
+          {
+            "uz": "2^b",
+            "ru": "2^b",
+            "en": "2^b"
+          },
+          {
+            "uz": "b^2",
+            "ru": "b^2",
+            "en": "b^2"
+          },
+          {
+            "uz": "b/2",
+            "ru": "b/2",
+            "en": "b/2"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Kolliziya ~2^(b/2) urinishda topiladi, shuning uchun zamonaviy talab — kamida 256 bitli xesh (128 bitli xavfsizlik).",
+          "ru": "Коллизия находится примерно за 2^(b/2) попыток, поэтому современное требование — хеш не менее 256 бит (128-битная стойкость).",
+          "en": "A collision can be found in about 2^(b/2) attempts, which is why the modern requirement is a hash of at least 256 bits (128-bit security)."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "MD5 algoritmi qancha bitli xesh hosil qiladi?",
+          "ru": "Сколько бит в хеше, который выдаёт алгоритм MD5?",
+          "en": "How many bits is the hash produced by MD5?"
+        },
+        "answers": [128],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "MD5 — 128 bit va kolliziyalar boʻyicha buzilgan; SHA-1 — 160 bit (2017-yil SHAttered), xavfsiz algoritmlar — SHA-256, SHA-512 va SHA-3.",
+          "ru": "MD5 — 128 бит, он взломан по коллизиям; SHA-1 — 160 бит (коллизия SHAttered, 2017); надёжны SHA-256, SHA-512 и SHA-3.",
+          "en": "MD5 is 128 bits and is broken with respect to collisions; SHA-1 is 160 bits (the 2017 SHAttered collision); SHA-256, SHA-512 and SHA-3 are secure."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "MAC raqamli imzo kabi rad etib boʻlmaslikni (non-repudiation) taʼminlaydi.",
+          "ru": "MAC, как и цифровая подпись, обеспечивает неотказуемость.",
+          "en": "A MAC provides non-repudiation, just like a digital signature."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "MAC maxfiy kalit bilan hisoblanadi va kalit ikkala tomonda bor — kim yaratganini isbotlab boʻlmaydi. Rad etib boʻlmaslikni faqat yopiq kalit bilan yaratiladigan raqamli imzo beradi.",
+          "ru": "MAC вычисляется с секретным ключом, а ключ есть у обеих сторон — поэтому нельзя доказать, кто создал MAC. Неотказуемость даёт только цифровая подпись, созданная закрытым ключом.",
+          "en": "A MAC is computed with a secret key that both sides hold, so one cannot prove who created it. Only a digital signature made with a private key gives non-repudiation."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Parollarni saqlashning darsda tavsiya etilgan toʻgʻri usuli qaysi?",
+          "ru": "Какой способ хранения паролей рекомендует урок?",
+          "en": "Which way of storing passwords does the lesson recommend?"
+        },
+        "options": [
+          {
+            "uz": "Parolni hech qanday oʻzgartirishsiz bazada saqlash",
+            "ru": "Хранить пароль в базе без изменений",
+            "en": "Store the password in the database unchanged"
+          },
+          {
+            "uz": "Faqat MD5 yoki tuzsiz SHA-256 xeshi",
+            "ru": "Только MD5 или SHA-256 без соли",
+            "en": "Only MD5 or unsalted SHA-256"
+          },
+          {
+            "uz": "Har foydalanuvchiga tasodifiy tuz (salt) va ataylab sekin algoritm — bcrypt, scrypt, Argon2 yoki PBKDF2",
+            "ru": "Случайная соль для каждого пользователя и намеренно медленный алгоритм — bcrypt, scrypt, Argon2 или PBKDF2",
+            "en": "A random salt per user and a deliberately slow algorithm — bcrypt, scrypt, Argon2 or PBKDF2"
+          },
+          {
+            "uz": "Parolni ochiq kalit bilan shifrlab saqlash",
+            "ru": "Хранить пароль, зашифровав его открытым ключом",
+            "en": "Store the password encrypted with a public key"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Oddiy SHA-256 yetarli emas: hujumchi tayyor jadvallar (rainbow tables) va sekundiga milliardlab urinish bilan oddiy parollarni topadi; tuz va sekin algoritm buni samarasiz qiladi.",
+          "ru": "Простого SHA-256 недостаточно: злоумышленник находит простые пароли готовыми таблицами (rainbow tables) и миллиардами попыток в секунду; соль и медленный алгоритм делают это неэффективным.",
+          "en": "Plain SHA-256 is not enough: an attacker finds simple passwords with precomputed tables (rainbow tables) and billions of attempts per second; a salt and a slow algorithm make this ineffective."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Elektron raqamli imzo (ERI) haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об электронной цифровой подписи (ЭЦП) верны?",
+          "en": "Which statements about a digital signature are correct?"
+        },
+        "options": [
+          {
+            "uz": "Imzoni faqat yopiq kalit egasi yaratadi",
+            "ru": "Подпись создаёт только владелец закрытого ключа",
+            "en": "Only the owner of the private key can create the signature"
+          },
+          {
+            "uz": "Tekshirish yuboruvchining ochiq kaliti bilan bajariladi va uni har kim qilishi mumkin",
+            "ru": "Проверка выполняется открытым ключом отправителя, и её может сделать каждый",
+            "en": "Verification uses the sender's public key and anyone can perform it"
+          },
+          {
+            "uz": "Imzo yaxlitlik, autentiklik va rad etib boʻlmaslikni beradi",
+            "ru": "Подпись даёт целостность, подлинность и неотказуемость",
+            "en": "The signature provides integrity, authenticity and non-repudiation"
+          },
+          {
+            "uz": "Imzo, MAC kabi, ikkala tomonda boʻlgan simmetrik maxfiy kalit bilan yaratiladi",
+            "ru": "Подпись, как и MAC, создаётся симметричным секретным ключом, который есть у обеих сторон",
+            "en": "The signature, like a MAC, is created with a symmetric secret key both sides hold"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "ERI asimmetrik kriptografiyaga asoslanadi: imzo yopiq kalit bilan yaratiladi (avval hujjat xeshi hisoblanadi), ochiq kalit bilan tekshiriladi; simmetrik maxfiy kalit — MACning ishlash tartibi.",
+          "ru": "ЭЦП основана на асимметричной криптографии: подпись создаётся закрытым ключом (предварительно вычисляется хеш документа) и проверяется открытым ключом; симметричный секретный ключ — это способ работы MAC.",
+          "en": "A digital signature is based on asymmetric cryptography: it is created with the private key (after computing the document hash) and verified with the public key; a shared symmetric secret key is how a MAC works."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "X.509 sertifikatining qaysi maydoni sertifikat qaysi domenlar uchun amal qilishini koʻrsatadi?",
+          "ru": "Какое поле сертификата X.509 показывает, для каких доменов он действует?",
+          "en": "Which field of an X.509 certificate shows which domains the certificate is valid for?"
+        },
+        "answers": ["Subject Alternative Name", "SAN"],
+        "explanation": {
+          "uz": "Bu — Extensions jadvalidagi Subject Alternative Name (SAN) kengaytmasi.",
+          "ru": "Это расширение Subject Alternative Name (SAN) из поля Extensions.",
+          "en": "It is the Subject Alternative Name (SAN) extension listed under Extensions."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Ikki xeshning bit farqi",
+      "ru": "Разница битов двух хешей",
+      "en": "The bit difference of two hashes"
+    },
+    "statement": {
+      "uz": "Koʻchki effektini oʻlchash uchun ikki xeshning nechta biti farq qilishini sanash kerak. Bitta qatorda ikkita 32 bitli xesh beriladi, har biri 8 ta heksadecimal belgi bilan yozilgan va boʻshliq bilan ajratilgan (masalan, 6883e297 va 10b9bd37 — darsdagi FNV-1a misolidan). Ikkala sonni ikkilik koʻrinishga oʻtkazib, bitlari har xil boʻlgan pozitsiyalar sonini toping va bitta qatorda, faqat son koʻrinishida chiqaring. 6883e297 va 10b9bd37 uchun javob 16. Berilgan dastur notoʻgʻri bitli amal bilan hisoblaydi — uni tuzating.",
+      "ru": "Чтобы измерить лавинный эффект, нужно посчитать, сколько битов различаются в двух хешах. В одной строке заданы два 32-битных хеша по 8 шестнадцатеричных цифр (например, 6883e297 и 10b9bd37 — из примера FNV-1a в уроке). Переведите оба числа в двоичную форму и подсчитайте, на каких позициях биты различаются: выведите это количество одной строкой — только число. Для 6883e297 и 10b9bd37 ответ 16. Приведённая программа вычисляет с неверной операцией — исправьте её.",
+      "en": "To measure the avalanche effect you must count how many bits differ between two hashes. One line holds two 32-bit hashes of 8 hexadecimal digits each (for example, 6883e297 and 10b9bd37 — from the lesson's FNV-1a example). Convert both numbers to binary and count the positions where the bits differ; print that count on one line — only the number. For 6883e297 and 10b9bd37 the answer is 16. The given program computes with the wrong operation — fix it."
+    },
+    "code": {
+      "starter": {
+        "python": "a, b = input().split()\nx = int(a, 16) | int(b, 16)\nprint(bin(x).count(\"1\"))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(16);\n        long b = in.nextLong(16);\n        System.out.println(Long.bitCount(a | b));\n    }\n}\n",
+        "cpp": "#include <bitset>\n#include <iostream>\nusing namespace std;\n\nint main() {\n    unsigned long long a, b;\n    cin >> hex >> a >> b;\n    cout << bitset<64>(a | b).count() << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "a, b = input().split()\nx = int(a, 16) ^ int(b, 16)\nprint(bin(x).count(\"1\"))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long a = in.nextLong(16);\n        long b = in.nextLong(16);\n        System.out.println(Long.bitCount(a ^ b));\n    }\n}\n",
+        "cpp": "#include <bitset>\n#include <iostream>\nusing namespace std;\n\nint main() {\n    unsigned long long a, b;\n    cin >> hex >> a >> b;\n    cout << bitset<64>(a ^ b).count() << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "6883e297 6883e297\n", "expected": "0", "hidden": false },
+        { "input": "6883e297 10b9bd37\n", "expected": "16", "hidden": false },
+        { "input": "1e16e5c5 3d9de482\n", "expected": "12", "hidden": true },
+        { "input": "00000000 ffffffff\n", "expected": "32", "hidden": true },
+        { "input": "deadbeef 0000ffff\n", "expected": "14", "hidden": true }
+      ]
+    }
+  }
+}

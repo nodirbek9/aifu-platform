@@ -1,0 +1,306 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Cheklilikni koʻrsatishning odatiy usuli nimani topishdir?",
+          "ru": "Что обычно находят, чтобы показать конечность?",
+          "en": "What is the usual way to show finiteness?"
+        },
+        "options": [
+          {
+            "uz": "Har qadamda qatʼiy kamayadigan va pastdan chegaralangan miqdor",
+            "ru": "Величину, которая строго убывает на каждом шаге и ограничена снизу",
+            "en": "A quantity that strictly decreases at every step and is bounded from below"
+          },
+          {
+            "uz": "Qadamlar jadvalidagi oxirgi qatorni",
+            "ru": "Последнюю строку таблицы шагов",
+            "en": "The last row of the table of steps"
+          },
+          {
+            "uz": "Eng katta kirish qiymatini",
+            "ru": "Наибольшее значение входа",
+            "en": "The largest input value"
+          },
+          {
+            "uz": "Hisoblagichning boshlangʻich qiymatini",
+            "ru": "Начальное значение счётчика",
+            "en": "The initial value of the counter"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: a har qadamda ikki baravar kamaysa va a > 0 boʻlsa, qadamlar soni log₂ a dan oshmaydi.",
+          "ru": "В занятии: если a на каждом шаге уменьшается вдвое и a > 0, то шагов не больше log₂ a.",
+          "en": "In the lesson: if a halves at every step and a > 0, the number of steps does not exceed log₂ a."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Simulyator „toʻxtamadi“ deb yozsa, bu mashina hech qachon toʻxtamasligini isbotlaydi.",
+          "ru": "Если симулятор написал «не остановилась», это доказывает, что машина никогда не остановится.",
+          "en": "If the simulator prints \"did not halt\", that proves the machine never halts."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsga koʻra bu isbot emas, amaliy himoya: simulyator faqat 10 000 qadamdan keyin kutishni bas qiladi.",
+          "ru": "По занятию это не доказательство, а практическая защита: симулятор лишь перестал ждать после 10 000 шагов.",
+          "en": "The lesson calls it practical protection, not a proof: the simulator only gave up waiting after 10 000 steps."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Simulyatorda lentaning boʻsh katagi qanday belgi bilan beriladi?",
+          "ru": "Каким символом в симуляторе обозначена пустая ячейка ленты?",
+          "en": "Which symbol marks a blank cell of the tape in the simulator?"
+        },
+        "answers": ["_"],
+        "explanation": {
+          "uz": "Qoida satrida boʻsh katak _ ; lugʻatda yozilmagan kataklar ham avtomatik boʻsh hisoblanadi.",
+          "ru": "В строке правила пустая ячейка — _ ; незаписанные клетки словаря тоже считаются пустыми.",
+          "en": "In a rule line a blank cell is _ ; cells missing from the dictionary count as blank too."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "„Rus dehqoni“ usuli a = 100 boʻlganda nechta qadam bajaradi?",
+          "ru": "Сколько шагов делает способ «русского крестьянина» при a = 100?",
+          "en": "How many steps does the \"Russian peasant\" method take for a = 100?"
+        },
+        "answers": [7],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "100 → 50 → 25 → 12 → 6 → 3 → 1 → 0, yaʼni ⌊log₂ 100⌋ + 1 = 7 qadam.",
+          "ru": "100 → 50 → 25 → 12 → 6 → 3 → 1 → 0, то есть ⌊log₂ 100⌋ + 1 = 7 шагов.",
+          "en": "100 → 50 → 25 → 12 → 6 → 3 → 1 → 0, that is ⌊log₂ 100⌋ + 1 = 7 steps."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Simulyatorda mashina qachon toʻxtaydi?",
+          "ru": "Когда симулятор останавливает машину?",
+          "en": "When does the simulator stop the machine?"
+        },
+        "options": [
+          {
+            "uz": "stop holatiga kelganda yoki jadvalda mos qoida boʻlmaganda",
+            "ru": "При приходе в состояние stop или если в таблице нет подходящего правила",
+            "en": "When it reaches the stop state, or when the table has no matching rule"
+          },
+          {
+            "uz": "faqat 10 000 qadam toʻlganda",
+            "ru": "Только когда пройдут 10 000 шагов",
+            "en": "Only when 10 000 steps have passed"
+          },
+          {
+            "uz": "kallak lentaning chap chekkasiga yetganda",
+            "ru": "Когда головка дойдёт до левого края ленты",
+            "en": "When the head reaches the left end of the tape"
+          },
+          {
+            "uz": "lenta butunlay boʻsh qolganda",
+            "ru": "Когда лента целиком станет пустой",
+            "en": "When the tape becomes completely blank"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Qadamlar chegarasi — alohida amaliy himoya; oʻzi esa mashina stop holati yoki mos qoida yoʻqligida toʻxtaydi.",
+          "ru": "Предел шагов — отдельная практическая защита; сама машина останавливается в состоянии stop или при отсутствии подходящего правила.",
+          "en": "The step limit is separate practical protection; the machine itself stops at the stop state or when no rule matches."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Koʻrsatmalar algoritm ekani tekshiriladigan savollardan qaysilari dars jadvalida bor?",
+          "ru": "Какие из вопросов есть в таблице занятия для проверки указаний на алгоритмичность?",
+          "en": "Which of these questions are in the lesson's table for checking the instructions?"
+        },
+        "options": [
+          {
+            "uz": "Jarayon alohida qadamlarga ajratilganmi?",
+            "ru": "Разбит ли процесс на отдельные шаги?",
+            "en": "Is the process split into separate steps?"
+          },
+          {
+            "uz": "Har bir qadamda bajaruvchi nima qilishni bir maʼnoda biladimi?",
+            "ru": "Знает ли исполнитель на каждом шаге однозначно, что делать?",
+            "en": "At every step, does the executor know unambiguously what to do?"
+          },
+          {
+            "uz": "Koʻrsatmalar faqat bitta kirish uchunmi yoki butun sinf uchunmi?",
+            "ru": "Указания для одного входа или для целого класса?",
+            "en": "Are the instructions for one input only, or for a whole class?"
+          },
+          {
+            "uz": "Dastur qanchalik tez ishlaydi?",
+            "ru": "Насколько быстро работает программа?",
+            "en": "How fast does the program run?"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalda diskretlik, aniqlik, natijadorlik, ommaviylik va cheklilik tekshiriladi; tezlik bu roʻyxatda yoʻq.",
+          "ru": "В таблице проверяют дискретность, определённость, результативность, массовость и конечность; скорости там нет.",
+          "en": "The table checks discreteness, definiteness, effectiveness, generality and finiteness; speed is not on the list."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Jadvalda bir xil (holat, belgi) juftligi uchun ikki qoida boʻlsa, qaysi xossa buziladi?",
+          "ru": "Какое свойство нарушается, если в таблице два правила для одной пары (состояние, символ)?",
+          "en": "Which property is broken if the table has two rules for the same (state, symbol) pair?"
+        },
+        "options": [
+          {
+            "uz": "Diskretlik",
+            "ru": "Дискретность",
+            "en": "Discreteness"
+          },
+          {
+            "uz": "Aniqlik",
+            "ru": "Определённость",
+            "en": "Definiteness"
+          },
+          {
+            "uz": "Ommaviylik",
+            "ru": "Массовость",
+            "en": "Generality"
+          },
+          {
+            "uz": "Natijadorlik",
+            "ru": "Результативность",
+            "en": "Effectiveness"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi xatolar roʻyxati: ikki qoida aniqlikni buzadi va mashina deterministik boʻlmay qoladi.",
+          "ru": "Список ошибок из занятия: два правила нарушают определённость, и машина перестаёт быть детерминированной.",
+          "en": "The lesson's mistake list: two rules break definiteness, and the machine stops being deterministic."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Unar qoʻshish mashinasi 111+11 uchun 8 qadam sarflaydi. 1+1 uchun nechta qadam chiqadi?",
+          "ru": "Машина унарного сложения тратит на 111+11 восемь шагов. Сколько шагов даст 1+1?",
+          "en": "The unary addition machine takes 8 steps for 111+11. How many steps does 1+1 take?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsning tekshiruv savolida: 1+1 uchun natija 11 va 5 qadam.",
+          "ru": "В проверочном вопросе занятия: для 1+1 результат 11 и 5 шагов.",
+          "en": "The lesson's check question: 1+1 gives 11 and 5 steps."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qaysi ifodalar dars matniga mos keladi?",
+          "ru": "Какие утверждения соответствуют тексту занятия?",
+          "en": "Which statements match the text of the session?"
+        },
+        "options": [
+          {
+            "uz": "13 · 21 = 21 + 4 · 21 + 8 · 21 tengligi 13 = 1101₂ ikkilik yozuvidan chiqadi",
+            "ru": "Равенство 13 · 21 = 21 + 4 · 21 + 8 · 21 следует из двоичной записи 13 = 1101₂",
+            "en": "The equality 13 · 21 = 21 + 4 · 21 + 8 · 21 follows from the binary form 13 = 1101₂"
+          },
+          {
+            "uz": "Kompyuter protsessorlari koʻpaytirishni shunga oʻxshash usulda bajaradi",
+            "ru": "Процессоры компьютеров умножают похожим способом",
+            "en": "Computer processors multiply in a similar way"
+          },
+          {
+            "uz": "Cheksiz lenta simulyatorda lugʻat (pozitsiya → belgi) sifatida saqlanadi",
+            "ru": "Бесконечная лента хранится в симуляторе как словарь (позиция → символ)",
+            "en": "The infinite tape is kept in the simulator as a dictionary (position → symbol)"
+          },
+          {
+            "uz": "Cheklilik „bir necha marta sinab koʻrdim, toʻxtadi“ deb asoslanadi",
+            "ru": "Конечность обосновывают фразой «попробовал несколько раз — остановилась»",
+            "en": "Finiteness is justified by saying \"I tried it a few times and it stopped\""
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Dars cheklilikni kamayuvchi miqdor orqali asoslashni talab qiladi; „sinab koʻrdim“ — koʻp uchraydigan xato.",
+          "ru": "Занятие требует обосновывать конечность убывающей величиной; «попробовал и оно остановилось» — частая ошибка.",
+          "en": "The session requires a decreasing quantity as the justification; \"I tried it and it stopped\" is a common mistake."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Ikkilik yozuvdagi bittalar soni",
+      "ru": "Число единиц в двоичной записи",
+      "en": "The number of ones in the binary form"
+    },
+    "statement": {
+      "uz": "Darsda „rus dehqoni“ usuli aslida a sonining ikkilik yozuvi ekanligi aytiladi: 13 = 1101₂, yaʼni 13 · 21 = 21 + 4 · 21 + 8 · 21. Shu gʻoyani amalga oshiramiz. Dasturingiz bitta butun son n ni oʻqisin (1 ≤ n ≤ 10^6) va bitta qatorda ikki qiymatni chiqarsin: n ning ikkilik yozuvi (boshida ortiqcha nollar boʻlmasin) va shu yozuvdagi 1 raqamlari soni. Orada bitta probel boʻlsin, qoʻshimcha soʻz yozmang. Masalan, 13 uchun chiqish 1101 3, 1 uchun 1 1 boʻladi.",
+      "ru": "В занятии сказано, что метод «русского крестьянина» — это по сути двоичная запись числа a: 13 = 1101₂, то есть 13 · 21 = 21 + 4 · 21 + 8 · 21. Реализуем эту идею. Ваша программа читает одно целое число n (1 ≤ n ≤ 10^6) и выводит одной строкой два значения: двоичную запись n (без ведущих нулей) и число единиц в этой записи. Между значениями один пробел, никаких дополнительных слов. Например, для 13 вывод — 1101 3, для 1 — 1 1.",
+      "en": "The session says the \"Russian peasant\" method is really the binary form of a: 13 = 1101₂, that is, 13 · 21 = 21 + 4 · 21 + 8 · 21. Let us do the same idea. Your program reads one integer n (1 ≤ n ≤ 10^6) and prints on one line two values: the binary representation of n (no leading zeros) and the number of 1 digits in it. One space between the values, no extra words. For example, 13 gives 1101 3, and 1 gives 1 1."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\ns = bin(n)[2:]\nprint(s, len(s))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        String s = Integer.toBinaryString(n);\n        System.out.println(s + \" \" + s.length());\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    string s;\n    int t = n;\n    while (t > 0) {\n        s = char('0' + t % 2) + s;\n        t /= 2;\n    }\n    cout << s << \" \" << s.size() << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\ns = bin(n)[2:]\nprint(s, s.count(\"1\"))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        String s = Integer.toBinaryString(n);\n        int bittalar = 0;\n        for (int i = 0; i < s.length(); i++) {\n            if (s.charAt(i) == '1') bittalar++;\n        }\n        System.out.println(s + \" \" + bittalar);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    string s;\n    int t = n;\n    while (t > 0) {\n        s = char('0' + t % 2) + s;\n        t /= 2;\n    }\n    int bittalar = 0;\n    for (char c : s) {\n        if (c == '1') bittalar++;\n    }\n    cout << s << \" \" << bittalar << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "13\n", "expected": "1101 3", "hidden": false },
+        { "input": "1\n", "expected": "1 1", "hidden": false },
+        { "input": "100\n", "expected": "1100100 3", "hidden": true },
+        { "input": "255\n", "expected": "11111111 8", "hidden": true },
+        { "input": "1000000\n", "expected": "11110100001001000000 7", "hidden": true }
+      ]
+    }
+  }
+}

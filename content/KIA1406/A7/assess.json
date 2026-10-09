@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "1-qadamda p = 5 va q = 11 olingan edi. RSA bosqichlariga koʻra n va φ(n) nimaga teng?",
+          "ru": "В шаге 1 были взяты p = 5 и q = 11. Чему равны n и φ(n) по шагам RSA?",
+          "en": "In step 1 of the lesson p = 5 and q = 11 were taken. According to the RSA steps, what are n and φ(n)?"
+        },
+        "options": [
+          {
+            "uz": "n = 55, φ(n) = 40",
+            "ru": "n = 55, φ(n) = 40",
+            "en": "n = 55, φ(n) = 40"
+          },
+          {
+            "uz": "n = 55, φ(n) = 55",
+            "ru": "n = 55, φ(n) = 55",
+            "en": "n = 55, φ(n) = 55"
+          },
+          {
+            "uz": "n = 16, φ(n) = 40",
+            "ru": "n = 16, φ(n) = 40",
+            "en": "n = 16, φ(n) = 40"
+          },
+          {
+            "uz": "n = 5, φ(n) = 11",
+            "ru": "n = 5, φ(n) = 11",
+            "en": "n = 5, φ(n) = 11"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: n = 5 · 11 = 55, φ(n) = 4 · 10 = 40.",
+          "ru": "В занятии: n = 5 · 11 = 55, φ(n) = 4 · 10 = 40.",
+          "en": "The lesson computes n = 5 · 11 = 55 and φ(n) = 4 · 10 = 40."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "OAEP bilan shifrlanganda bir xil xabar har safar boshqa shifrmatn beradi.",
+          "ru": "При шифровании с OAEP одно и то же сообщение каждый раз даёт разные шифртексты.",
+          "en": "With OAEP the same message gives a different ciphertext every time."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "OAEP tasodifiy toʻldirish qoʻshadi, shuning uchun bir xil xabardan hosil boʻlgan fayllar har xil boʻladi — deterministiklik zaifligi shu yoʻl bilan yoʻqoladi.",
+          "ru": "OAEP добавляет случайное дополнение, поэтому файлы, полученные из одного сообщения, различаются — так устраняется уязвимость детерминистичности.",
+          "en": "OAEP adds random padding, so the files produced from one message differ — that is how the determinism weakness is removed."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Zaifliklar jadvaliga koʻra, qaysilari «darslik RSA» ning zaifliklaridan?",
+          "ru": "Что из перечисленного — уязвимости «учебного RSA» согласно таблице?",
+          "en": "According to the table of weaknesses, which are weaknesses of textbook RSA?"
+        },
+        "options": [
+          {
+            "uz": "Xesh funksiyasining koʻchki effekti",
+            "ru": "Лавинный эффект хеш-функции",
+            "en": "The avalanche effect of a hash function"
+          },
+          {
+            "uz": "Kichik e va qisqa xabar",
+            "ru": "Малое e и короткое сообщение",
+            "en": "A small e and a short message"
+          },
+          {
+            "uz": "Deterministiklik",
+            "ru": "Детерминистичность",
+            "en": "Determinism"
+          },
+          {
+            "uz": "Multiplikativlik",
+            "ru": "Мультипликативность",
+            "en": "Multiplicativity"
+          }
+        ],
+        "correct": [1, 2, 3],
+        "explanation": {
+          "uz": "Jadvalda besh zaiflik: kichik e va qisqa xabar, deterministiklik, multiplikativlik, kichik yoki yaqin p, q va toʻldirishsiz imzo. Koʻchki effekti — xesh xossasi, u bu jadvalda yoʻq.",
+          "ru": "В таблице пять уязвимостей: малое e и короткое сообщение, детерминистичность, мультипликативность, малые или близкие p, q и подпись без дополнения. Лавинный эффект — свойство хеша, его в таблице нет.",
+          "en": "The table lists five weaknesses: small e with a short message, determinism, multiplicativity, small or close p and q, and a signature without padding. The avalanche effect is a hash property and is not in the table."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi qoʻlda hisobda m = 7, e = 3, n = 55 boʻlsa, shifrmatn c nechaga teng?",
+          "ru": "В ручной прикидке из занятия m = 7, e = 3, n = 55. Чему равен шифртекст c?",
+          "en": "In the hand computation of the lesson m = 7, e = 3, n = 55. What is the ciphertext c?"
+        },
+        "answers": [13],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "7³ = 343, 343 mod 55 = 13, demak c = 13.",
+          "ru": "7³ = 343, 343 mod 55 = 13, значит c = 13.",
+          "en": "7³ = 343 and 343 mod 55 = 13, so c = 13."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Nima uchun EKUB(e, φ(n)) ≠ 1 boʻlgan e tanlanmaydi?",
+          "ru": "Почему нельзя выбрать e, для которого НОД(e, φ(n)) ≠ 1?",
+          "en": "Why must an e with gcd(e, φ(n)) ≠ 1 not be chosen?"
+        },
+        "options": [
+          {
+            "uz": "Shifrmatn n dan katta boʻlib ketadi",
+            "ru": "Шифртекст окажется больше n",
+            "en": "The ciphertext would come out larger than n"
+          },
+          {
+            "uz": "Bunday e uchun d = e⁻¹ mod φ(n) mavjud emas",
+            "ru": "Для такого e не существует d = e⁻¹ mod φ(n)",
+            "en": "For such an e the value d = e⁻¹ mod φ(n) does not exist"
+          },
+          {
+            "uz": "e katta boʻlgani uchun hisoblash juda sekinlaydi",
+            "ru": "Из-за большого e вычисления слишком замедляются",
+            "en": "A large e makes the computation far too slow"
+          },
+          {
+            "uz": "φ(n) notoʻgʻri hisoblanadi",
+            "ru": "φ(n) при этом вычисляется неверно",
+            "en": "φ(n) is then computed incorrectly"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi xatolar roʻyxati: EKUB(e, φ(n)) ≠ 1 boʻlgan e uchun d mavjud emas, yaʼni deshifrlash boʻlmaydi.",
+          "ru": "Список ошибок из занятия: для e с НОД(e, φ(n)) ≠ 1 значение d не существует, то есть расшифровать нельзя.",
+          "en": "The lesson's list of mistakes: for an e with gcd(e, φ(n)) ≠ 1 there is no d, so decryption is impossible."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Shifrlashda ishlatiladigan, xabarga tasodifiy toʻldirish qoʻshib, uni n oʻlchamigacha kengaytiruvchi sxemaning nomini yozing.",
+          "ru": "Напишите имя схемы дополнения для шифрования, которая добавляет к сообщению случайные байты и расширяет его до размера n.",
+          "en": "Name the padding scheme used for encryption that adds random bytes to the message and expands it to the size of n."
+        },
+        "answers": ["OAEP", "oaep", "RSA-OAEP", "rsa-oaep"],
+        "explanation": {
+          "uz": "OAEP — shifrlash uchun; imzo uchun PSS ishlatiladi.",
+          "ru": "OAEP — для шифрования; для подписи используется PSS.",
+          "en": "OAEP is for encryption; PSS is used for signatures."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "e = 3 bilan shifrlangan qisqa xabar nega yopiq kalitni bilmasdan ochiladi?",
+          "ru": "Почему короткое сообщение, зашифрованное при e = 3, вскрывается без закрытого ключа?",
+          "en": "Why can a short message encrypted with e = 3 be opened without the private key?"
+        },
+        "options": [
+          {
+            "uz": "Chunki e = 3 da d ham 3 ga teng",
+            "ru": "Потому что при e = 3 и d равно 3",
+            "en": "Because with e = 3 the value d is also 3"
+          },
+          {
+            "uz": "Chunki n har doim toq son boʻladi",
+            "ru": "Потому что n всегда нечётное число",
+            "en": "Because n is always an odd number"
+          },
+          {
+            "uz": "m³ < n boʻlsa, modul boʻyicha qoldiq olinmaydi va c = m³ boʻladi — oddiy butun kub ildiz m ni beradi",
+            "ru": "Если m³ < n, взятие остатка не происходит и c = m³ — обычный целочисленный кубический корень даёт m",
+            "en": "If m³ < n no reduction happens and c = m³ — a plain integer cube root gives m"
+          },
+          {
+            "uz": "Chunki shifrmatn har doim xabardan kichik boʻladi",
+            "ru": "Потому что шифртекст всегда меньше сообщения",
+            "en": "Because the ciphertext is always smaller than the message"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Birinchi ishlangan misol: 8364190790899 = 20299³, yaʼni modul boʻyicha qoldiq olinmagan va ildiz xabarni («OK» ni) berdi. Uzunroq xabarda m³ > n, shuning uchun oddiy ildiz ishlamaydi.",
+          "ru": "Первый разобранный пример: 8364190790899 = 20299³, остаток по модулю не брался, и корень выдал сообщение («OK»). Для более длинного сообщения m³ > n, и простой корень не работает.",
+          "en": "The first worked example: 8364190790899 = 20299³, no modular reduction happened, so the root gave the message (\"OK\"). For a longer message m³ > n and a plain root does not work."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "OpenSSL da yopiq kalit faylining tarkibini koʻrsatuvchi buyruq qaysilarni chiqaradi?",
+          "ru": "Что выводит команда OpenSSL, показывающая содержимое файла закрытого ключа?",
+          "en": "What does the OpenSSL command that shows the contents of a private key file print?"
+        },
+        "options": [
+          {
+            "uz": "modulus va publicExponent (65537)",
+            "ru": "modulus и publicExponent (65537)",
+            "en": "modulus and publicExponent (65537)"
+          },
+          {
+            "uz": "privateExponent, prime1 va prime2",
+            "ru": "privateExponent, prime1 и prime2",
+            "en": "privateExponent, prime1 and prime2"
+          },
+          {
+            "uz": "Tezlashtirish uchun exponent1, exponent2 va coefficient",
+            "ru": "exponent1, exponent2 и coefficient для ускорения",
+            "en": "exponent1, exponent2 and coefficient for speed-up"
+          },
+          {
+            "uz": "TLS sessiyasining kaliti va shifr toʻplami",
+            "ru": "Ключ TLS-сессии и набор шифров",
+            "en": "The TLS session key and the cipher suite"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi maslahat: buyruq modulus, publicExponent, privateExponent, prime1, prime2 va tezlashtirish parametrlarini (Xitoy qoldiqlar teoremasi) koʻrsatadi. Sessiya kaliti bu faylda yoʻq.",
+          "ru": "Совет из занятия: команда показывает modulus, publicExponent, privateExponent, prime1, prime2 и ускоряющие параметры (китайская теорема об остатках). Ключа сессии в файле нет.",
+          "en": "The lesson's tip: the command shows modulus, publicExponent, privateExponent, prime1, prime2 and the speed-up parameters (Chinese remainder theorem). A session key is not in that file."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kalitni 4096 bitga oshirish atigi toʻrt xil bahoni (2, 3, 4, 5) yuborishdagi lugʻat hujumini toʻxtatadi.",
+          "ru": "Увеличение ключа до 4096 бит останавливает атаку словарём при рассылке всего четырёх оценок (2, 3, 4, 5).",
+          "en": "Raising the key to 4096 bits stops the dictionary attack when only four grades (2, 3, 4, 5) are sent."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda aytilganidek, kalit uzunligi bu yerda yordam bermaydi: 4096 bitli n bilan ham natija shu, chunki xabarlar fazosi atigi 4 ta. Yechim — tasodifiy toʻldirish (OAEP).",
+          "ru": "Как сказано в занятии, длина ключа здесь не помогает: и при n в 4096 бит результат тот же, потому что пространство сообщений состоит всего из 4 элементов. Решение — случайное дополнение (OAEP).",
+          "en": "As the lesson says, the key length does not help here: with a 4096-bit n the result is the same, because the message space has only 4 elements. The solution is random padding (OAEP)."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Yaqin p va q ni topish",
+      "ru": "Поиск близких p и q",
+      "en": "Finding close p and q"
+    },
+    "statement": {
+      "uz": "Darsda taʼkidlanishicha, agar p va q bir-biriga yaqin boʻlsa, n ni koʻpaytuvchilarga ajratish oson. Dasturingiz shu zaiflikni Fermat usuli bilan koʻrsatsin. Kirish: bitta satrda toq son n = p·q (p va q — toq tub sonlar, p < q, n ≤ 10^9). a ni a² ≥ n shartni qanoatlantiruvchi eng kichik butun sondan boshlab bittadan oshiring va birinchi marta a² − n toʻliq kvadrat boʻladigan a ni toping; topilsa b = √(a² − n), p = a − b va q = a + b boʻladi. Chiqish: bitta satrda avval p, keyin q ni bitta boʻshliq bilan ajratib chiqaring — masalan, 55 kiritsa dastur 5 11 yozadi. Hech qanday soʻz yoki izoh yozmang.",
+      "ru": "В занятии отмечено: если p и q близки друг к другу, разложить n на множители легко. Ваша программа покажет это слабое место методом Ферма. Ввод: в одной строке нечётное число n = p·q (p и q — нечётные простые, p < q, n ≤ 10^9). Начинайте a с наименьшего целого, для которого a² ≥ n, и увеличивайте a по единице, пока a² − n не станет полным квадратом; тогда b = √(a² − n), p = a − b, q = a + b. Вывод: в одной строке сначала p, затем q через один пробел — при вводе 55 программа печатает 5 11. Никаких слов и пояснений выводить не нужно.",
+      "en": "The lesson notes that when p and q are close together, factoring n is easy. Your program shows this weakness with Fermat's method. Input: one line holding an odd number n = p·q (p and q are odd primes, p < q, n ≤ 10^9). Start a at the smallest integer with a² ≥ n and increase it by one until a² − n becomes a perfect square; then b = √(a² − n), p = a − b and q = a + b. Output: one line with p first and then q, separated by one space — the input 55 makes the program print 5 11. Print no words or labels."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = 0\nwhile a * a < n:\n    a += 1\nb = 0\nwhile b * b < a * a - n:\n    b += 1\nprint(a + b, a - b)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long n = in.nextLong();\n        long a = 0;\n        while (a * a < n) a++;\n        long b = 0;\n        while (b * b < a * a - n) b++;\n        System.out.println((a + b) + \" \" + (a - b));\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long n;\n    cin >> n;\n    long long a = 0;\n    while (a * a < n) a++;\n    long long b = 0;\n    while (b * b < a * a - n) b++;\n    cout << a + b << \" \" << a - b << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = 0\nwhile a * a < n:\n    a += 1\nb = 0\nwhile b * b < a * a - n:\n    b += 1\nprint(a - b, a + b)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long n = in.nextLong();\n        long a = 0;\n        while (a * a < n) a++;\n        long b = 0;\n        while (b * b < a * a - n) b++;\n        System.out.println((a - b) + \" \" + (a + b));\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long n;\n    cin >> n;\n    long long a = 0;\n    while (a * a < n) a++;\n    long long b = 0;\n    while (b * b < a * a - n) b++;\n    cout << a - b << \" \" << a + b << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "55\n", "expected": "5 11", "hidden": false },
+        { "input": "391\n", "expected": "17 23", "hidden": false },
+        { "input": "10403\n", "expected": "101 103", "hidden": true },
+        { "input": "100160063\n", "expected": "10007 10009", "hidden": true },
+        { "input": "64507\n", "expected": "251 257", "hidden": true }
+      ]
+    }
+  }
+}

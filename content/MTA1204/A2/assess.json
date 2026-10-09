@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Rekursiv algoritmni tahlil qilishda chaqiruvlar soni nimani belgilaydi?",
+          "ru": "Что определяет число вызовов при анализе рекурсивного алгоритма?",
+          "en": "What does the number of calls determine when analysing a recursive algorithm?"
+        },
+        "options": [
+          {
+            "uz": "Vaqtni",
+            "ru": "Время",
+            "en": "The time"
+          },
+          {
+            "uz": "Stek xotirasini",
+            "ru": "Память стека",
+            "en": "The stack memory"
+          },
+          {
+            "uz": "Kirishning hajmini",
+            "ru": "Размер входа",
+            "en": "The size of the input"
+          },
+          {
+            "uz": "Javobning aniqligini",
+            "ru": "Точность ответа",
+            "en": "The precision of the answer"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvaliga koʻra: chaqiruvlar soni vaqtni, rekursiya chuqurligi esa xotirani (stekni) belgilaydi.",
+          "ru": "По таблице занятия: число вызовов определяет время, а глубина рекурсии — память (стек).",
+          "en": "Per the lesson's table: the number of calls determines time, the recursion depth the memory (the stack)."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Rekursiya chuqurligi — bir vaqtda stekda turgan eng koʻp chaqiruvlar soni.",
+          "ru": "Глубина рекурсии — это наибольшее число вызовов, одновременно находящихся в стеке.",
+          "en": "Recursion depth is the most calls standing on the stack at the same time."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bu dars jadvalidagi taʼrif; shuning uchun chuqurlik stek xotirasini belgilaydi.",
+          "ru": "Это определение из таблицы занятия; потому глубина и определяет память стека.",
+          "en": "That is the definition from the lesson's table, which is why the depth determines stack memory."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi jadvalga koʻra, O(n²) murakkablikda n ikki baravar oshganda amallar soni necha baravar oshadi?",
+          "ru": "Согласно таблице занятия, во сколько раз растёт число операций при O(n²), если n удвоить?",
+          "en": "According to the lesson's table, how many times larger is the number of operations for O(n²) when n doubles?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Jadvalda O(n²) uchun × 4 — „toʻrt baravar“; bu kvadratik siklning n(n − 1)/2 formulasasidan ham koʻrinadi.",
+          "ru": "В таблице для O(n²) стоит × 4 — учетверение; это видно и по формуле n(n − 1)/2 квадратичного цикла.",
+          "en": "The table says × 4 for O(n²) — it quadruples; the quadratic loop's n(n − 1)/2 formula shows the same."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Nega murakkablikni sekundda oʻlchash oʻrniga hisoblagich ishlatiladi?",
+          "ru": "Почему вместо измерения времени в секундах берут счётчик?",
+          "en": "Why use a counter instead of measuring the time in seconds?"
+        },
+        "options": [
+          {
+            "uz": "Vaqt kompyuter yuklamasiga bogʻliq va kichik n da aniq emas, hisoblagich esa har doim bir xil natija beradi",
+            "ru": "Время зависит от загрузки компьютера и неточно при малых n, а счётчик всегда даёт один и тот же результат",
+            "en": "Time depends on the computer's load and is imprecise for small n, while a counter always gives the same result"
+          },
+          {
+            "uz": "Hisoblagich dasturni tezlashtiradi",
+            "ru": "Счётчик ускоряет программу",
+            "en": "A counter makes the program faster"
+          },
+          {
+            "uz": "Sekundda oʻlchash umuman mumkin emas",
+            "ru": "Измерять в секундах вообще нельзя",
+            "en": "Measuring in seconds is not allowed at all"
+          },
+          {
+            "uz": "Hisoblagich xotira sarfini ham oʻlchaydi",
+            "ru": "Счётчик измеряет и расход памяти",
+            "en": "A counter also measures memory use"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars aynan shuni deydi; bundan tashqari hisoblagich sanalayotgan amal yonida turishi kerak.",
+          "ru": "Об этом и говорит занятие; кроме того, счётчик должен стоять рядом с подсчитываемой операцией.",
+          "en": "That is exactly what the session says; besides, the counter must sit next to the operation being counted."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Massivni ikkiga boʻlib maksimum topishda T(n) = 2T(n/2) + 1, T(1) = 1. 16 element uchun jami nechta chaqiruv boʻladi?",
+          "ru": "При поиске максимума делением массива пополам T(n) = 2T(n/2) + 1, T(1) = 1. Сколько всего вызовов для 16 элементов?",
+          "en": "For finding the maximum by halving the array, T(n) = 2T(n/2) + 1 with T(1) = 1. How many calls in total for 16 elements?"
+        },
+        "answers": [31],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Yechim T(n) = 2n − 1: 2 · 16 − 1 = 31 chaqiruv; chuqurlik esa ⌈log₂ 16⌉ + 1 = 5 qavat.",
+          "ru": "Решение T(n) = 2n − 1: 2 · 16 − 1 = 31 вызов; глубина при этом ⌈log₂ 16⌉ + 1 = 5 уровней.",
+          "en": "The solution is T(n) = 2n − 1: 2 · 16 − 1 = 31 calls, with a depth of ⌈log₂ 16⌉ + 1 = 5 levels."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "n ikki baravar oshganda O(2ⁿ) algoritmning amallar soni bilan nima sodir boʻladi?",
+          "ru": "Что происходит с числом операций алгоритма O(2ⁿ) при удвоении n?",
+          "en": "What happens to the number of operations of an O(2ⁿ) algorithm when n doubles?"
+        },
+        "answers": ["kvadratga oshadi", "возводится в квадрат", "squares", "kvadratga"],
+        "explanation": {
+          "uz": "Dars jadvalida O(2ⁿ) uchun „kvadratga oshadi“ yozilgan: bunday algoritm n + 1 da ham ikki baravar oshadi.",
+          "ru": "В таблице занятия для O(2ⁿ) написано «возводится в квадрат»: такой алгоритм удваивается даже при n + 1.",
+          "en": "The lesson's table says it squares for O(2ⁿ): such an algorithm doubles even for n + 1."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "n ni ikki baravar oshirish usulidagi jadvalga koʻra qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения по таблице метода удвоения n верны?",
+          "en": "Which statements about the table of the doubling method are correct?"
+        },
+        "options": [
+          {
+            "uz": "O(log n) da amallar soni deyarli oʻzgarmaydi: +1",
+            "ru": "У O(log n) число операций почти не меняется: +1",
+            "en": "For O(log n) the number of operations barely changes: +1"
+          },
+          {
+            "uz": "O(n) da amallar soni ikki baravar oshadi",
+            "ru": "У O(n) число операций удваивается",
+            "en": "For O(n) the number of operations doubles"
+          },
+          {
+            "uz": "O(n²) da amallar soni toʻrt baravar oshadi",
+            "ru": "У O(n²) число операций учетверяется",
+            "en": "For O(n²) the number of operations quadruples"
+          },
+          {
+            "uz": "O(n log n) da amallar soni deyarli oʻzgarmaydi",
+            "ru": "У O(n log n) число операций почти не меняется",
+            "en": "For O(n log n) the number of operations barely changes"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "O(n log n) uchun jadvalda „× 2 dan biroz koʻp“ deyilgan; „deyarli oʻzgarmaydi“ — bu O(log n) belgisi.",
+          "ru": "Для O(n log n) в таблице указано «чуть больше × 2»; «почти не меняется» — это признак O(log n).",
+          "en": "For O(n log n) the table says \"a little more than × 2\"; \"barely changes\" is the sign of O(log n)."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "C++ tilida cout << fib(n) << chaqiruvlar yozuvida qaysi qism avval hisoblanishi C++17 dan oldin kafolatlangan edi.",
+          "ru": "В C++ в выражении cout << fib(n) << chaqiruvlar порядок вычисления частей до C++17 был гарантирован.",
+          "en": "In C++, the expression cout << fib(n) << chaqiruvlar had a guaranteed evaluation order before C++17."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi xatolar roʻyxati: tartib C++17 dan oldin kafolatlanmagan, shuning uchun natija oldin alohida oʻzgaruvchiga olinadi.",
+          "ru": "Список ошибок занятия: до C++17 порядок не был гарантирован, поэтому результат сначала берут в отдельную переменную.",
+          "en": "The lesson's mistake list: before C++17 the order was not guaranteed, so the result is taken into a variable first."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Oddiy rekursiv Fibonachchi nima uchun sekin ishlaydi?",
+          "ru": "Почему простая рекурсивная функция Фибоначчи работает медленно?",
+          "en": "Why is plain recursive Fibonacci slow?"
+        },
+        "options": [
+          {
+            "uz": "Bir xil kichik qiymatlar koʻp marta qayta hisoblanadi",
+            "ru": "Одни и те же малые значения вычисляются снова и снова",
+            "en": "The same small values are computed again and again"
+          },
+          {
+            "uz": "Rekursiya chuqurligi juda katta boʻladi",
+            "ru": "Глубина рекурсии становится слишком большой",
+            "en": "The recursion depth becomes too large"
+          },
+          {
+            "uz": "Funksiya stek xotirasini tugatadi",
+            "ru": "Функция исчерпывает память стека",
+            "en": "The function runs out of stack memory"
+          },
+          {
+            "uz": "n har doim toq qiymatda beriladi",
+            "ru": "n всегда задаётся нечётным числом",
+            "en": "n is always given as an odd number"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars: chaqiruvlar soni eksponensial oshadi — n har 5 ga oshganda ~11 baravar (φ⁵ ≈ 11); tuzatish usuli mustaqil topshiriqda.",
+          "ru": "Занятие: число вызовов растёт экспоненциально — при каждом +5 к n примерно в 11 раз (φ⁵ ≈ 11); способ исправить — в самостоятельном задании.",
+          "en": "The session: the calls grow exponentially — about 11 times for every +5 in n (φ⁵ ≈ 11); the fix is done in the independent assignment."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Chaqiruvlar soni va rekursiya chuqurligi",
+      "ru": "Число вызовов и глубина рекурсии",
+      "en": "The number of calls and the recursion depth"
+    },
+    "statement": {
+      "uz": "Darsda massivni ikkiga boʻlib maksimum topish uchun T(n) = 2T(n/2) + 1, T(1) = 1 rekurrent munosabati tuzildi va undan 2n − 1 chaqiruv hamda ⌈log₂ n⌉ + 1 chuqurlik kelib chiqishi koʻrsatildi. Endi bu ikki koʻrsatkichni massivning oʻzini oʻqimasdan, faqat uzunlik boʻyicha toping. Dasturingiz bitta butun son n ni oʻqisin (1 ≤ n ≤ 10^6) — bu massivning uzunligi, elementlar kiritilmaydi. Bitta qatorda ikki qiymatni chiqarsin: funksiyaning jami chaqirilishlari soni va rekursiyaning eng katta chuqurligini (bitta elementli chaqiruv ham bitta qavat). Orada bitta probel boʻlsin, qoʻshimcha soʻz yozmang. Masalan, n = 8 uchun javob 15 4, n = 1 uchun 1 1 boʻladi.",
+      "ru": "В занятии для поиска максимума делением массива пополам составлено соотношение T(n) = 2T(n/2) + 1, T(1) = 1, из которого получили 2n − 1 вызовов и глубину ⌈log₂ n⌉ + 1. Теперь найдите оба показателя только по длине массива, не читая сам массив. Ваша программа читает одно целое число n (1 ≤ n ≤ 10^6) — длину массива, его элементы не вводятся. Выведите одной строкой два значения: общее число вызовов функции и наибольшую глубину рекурсии (вызов с одним элементом тоже даёт уровень). Между значениями один пробел, без дополнительных слов. Например, для n = 8 ответ 15 4, для n = 1 — 1 1.",
+      "en": "The session derived T(n) = 2T(n/2) + 1, T(1) = 1 for finding the maximum by halving the array, and from it 2n − 1 calls and a depth of ⌈log₂ n⌉ + 1. Now find both measures from the length alone, without reading the array. Your program reads one integer n (1 ≤ n ≤ 10^6) — the length of the array; its elements are not given. Print on one line two values: the total number of function calls and the greatest recursion depth (the call on a single element counts as a level too). One space between them, no extra words. For example, n = 8 gives 15 4, and n = 1 gives 1 1."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nm = n\nqavat = 0\nwhile m > 1:\n    m = (m + 1) // 2\n    qavat += 1\nprint(n, qavat)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int m = n;\n        int qavat = 0;\n        while (m > 1) {\n            m = (m + 1) / 2;\n            qavat++;\n        }\n        System.out.println(n + \" \" + qavat);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int m = n;\n    int qavat = 0;\n    while (m > 1) {\n        m = (m + 1) / 2;\n        qavat++;\n    }\n    cout << n << \" \" << qavat << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nm = n\nqavat = 0\nwhile m > 1:\n    m = (m + 1) // 2\n    qavat += 1\nprint(2 * n - 1, qavat + 1)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int m = n;\n        int qavat = 0;\n        while (m > 1) {\n            m = (m + 1) / 2;\n            qavat++;\n        }\n        System.out.println((2 * n - 1) + \" \" + (qavat + 1));\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int m = n;\n    int qavat = 0;\n    while (m > 1) {\n        m = (m + 1) / 2;\n        qavat++;\n    }\n    cout << 2 * n - 1 << \" \" << qavat + 1 << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "8\n", "expected": "15 4", "hidden": false },
+        { "input": "1\n", "expected": "1 1", "hidden": false },
+        { "input": "3\n", "expected": "5 3", "hidden": true },
+        { "input": "100\n", "expected": "199 8", "hidden": true },
+        { "input": "1000000\n", "expected": "1999999 21", "hidden": true }
+      ]
+    }
+  }
+}

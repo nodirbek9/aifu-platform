@@ -1,0 +1,303 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blokcheyn nima?",
+          "ru": "Что такое блокчейн?",
+          "en": "What is a blockchain?"
+        },
+        "explanation": {
+          "uz": "Blokcheyn bu markazlashmagan, taqsimlangan maʼlumotlar bazasi.",
+          "ru": "Блокчейн — это децентрализованная распределенная база данных.",
+          "en": "Blockchain is a decentralized, distributed database."
+        },
+        "options": [
+          {
+            "uz": "Markazlashmagan maʼlumotlar bazasi",
+            "ru": "Децентрализованная база данных",
+            "en": "Decentralized database"
+          },
+          {
+            "uz": "Kompyuter virusi",
+            "ru": "Компьютерный вирус",
+            "en": "Computer virus"
+          },
+          {
+            "uz": "Oddiy veb-sayt",
+            "ru": "Обычный веб-сайт",
+            "en": "Simple website"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blokcheyn maʼlumotlari yagona markaziy serverda saqlanadi.",
+          "ru": "Данные блокчейна хранятся на одном центральном сервере.",
+          "en": "Blockchain data is stored on a single central server."
+        },
+        "explanation": {
+          "uz": "Blokcheyn maʼlumotlari tarmoqdagi barcha ishtirokchilarda saqlanadi.",
+          "ru": "Данные блокчейна хранятся у всех участников сети.",
+          "en": "Blockchain data is stored across all participants in the network."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blokcheyn texnologiyasi dastlab qaysi tizim uchun yaratilgan?",
+          "ru": "Для какой системы изначально была создана технология блокчейн?",
+          "en": "For which system was blockchain technology originally created?"
+        },
+        "explanation": {
+          "uz": "Blokcheyn dastlab Bitcoin kriptovalyutasi uchun ishlab chiqilgan.",
+          "ru": "Блокчейн изначально был разработан для криптовалюты Bitcoin.",
+          "en": "Blockchain was originally developed for the Bitcoin cryptocurrency."
+        },
+        "options": [
+          {
+            "uz": "Elektron pochta",
+            "ru": "Электронная почта",
+            "en": "Email"
+          },
+          {
+            "uz": "Bitcoin kriptovalyutasi",
+            "ru": "Криптовалюта Bitcoin",
+            "en": "Bitcoin cryptocurrency"
+          },
+          {
+            "uz": "Ijtimoiy tarmoqlar",
+            "ru": "Социальные сети",
+            "en": "Social networks"
+          }
+        ],
+        "correct": [1]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Blokcheynning asosiy xususiyatlarini koʻrsating.",
+          "ru": "Укажите основные особенности блокчейна.",
+          "en": "Select the key features of blockchain."
+        },
+        "explanation": {
+          "uz": "Markazlashmaganlik va oʻzgarmaslik uning asosiy xususiyatlaridir.",
+          "ru": "Децентрализация и неизменяемость являются его ключевыми особенностями.",
+          "en": "Decentralization and immutability are its key features."
+        },
+        "options": [
+          {
+            "uz": "Markazlashmaganlik",
+            "ru": "Децентрализация",
+            "en": "Decentralization"
+          },
+          {
+            "uz": "Oʻzgarmaslik (maʼlumotni oʻzgartirib boʻlmasligi)",
+            "ru": "Неизменяемость",
+            "en": "Immutability"
+          },
+          {
+            "uz": "Yuqori xavf va ishonchsizlik",
+            "ru": "Высокий риск и ненадежность",
+            "en": "High risk and unreliability"
+          }
+        ],
+        "correct": [0, 1]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "Blokcheyndagi \"blok\" nimani anglatadi?",
+          "ru": "Что означает «блок» в блокчейне?",
+          "en": "What does a 'block' mean in a blockchain?"
+        },
+        "explanation": {
+          "uz": "Blok bu tasdiqlangan tranzaksiyalar yozilgan va oldingi blok bilan bogʻlangan maʼlumotlar toʻplamidir.",
+          "ru": "Блок — это набор данных, содержащий подтвержденные транзакции и связанный с предыдущим блоком.",
+          "en": "A block is a set of data containing verified transactions and linked to the previous block."
+        },
+        "options": [
+          {
+            "uz": "Tasdiqlangan tranzaksiyalar toʻplami",
+            "ru": "Набор подтвержденных транзакций",
+            "en": "A set of verified transactions"
+          },
+          {
+            "uz": "Markaziy bankdagi hisob",
+            "ru": "Счет в центральном банке",
+            "en": "An account in a central bank"
+          },
+          {
+            "uz": "Faqat parollarni saqlaydigan fayl",
+            "ru": "Файл, хранящий только пароли",
+            "en": "A file that only stores passwords"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "Blokcheyndagi yozuvlarni xohlagan vaqtda oʻchirib yuborish mumkin.",
+          "ru": "Записи в блокчейне можно удалить в любое время.",
+          "en": "Records in a blockchain can be deleted at any time."
+        },
+        "explanation": {
+          "uz": "Blokcheynga kiritilgan yozuvlar oʻzgarmasdir va ularni oʻchirib boʻlmaydi.",
+          "ru": "Записи, внесенные в блокчейн, неизменяемы и не могут быть удалены.",
+          "en": "Records entered into a blockchain are immutable and cannot be deleted."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 2,
+        "prompt": {
+          "uz": "Konsensus algoritmining asosiy vazifasi nima?",
+          "ru": "Какова основная задача алгоритма консенсуса?",
+          "en": "What is the main task of a consensus algorithm?"
+        },
+        "explanation": {
+          "uz": "U tarmoq ishtirokchilari oʻrtasida maʼlumotlarning yagona va toʻgʻri holati boʻyicha kelishuvni taʼminlaydi.",
+          "ru": "Он обеспечивает согласованность между участниками сети относительно единственного правильного состояния данных.",
+          "en": "It ensures agreement among network participants on the single correct state of the data."
+        },
+        "options": [
+          {
+            "uz": "Tarmoq tugunlari oʻrtasida kelishuvni taʼminlash",
+            "ru": "Обеспечение согласия между узлами сети",
+            "en": "Ensuring agreement between network nodes"
+          },
+          {
+            "uz": "Internet tezligini oshirish",
+            "ru": "Увеличение скорости интернета",
+            "en": "Increasing internet speed"
+          },
+          {
+            "uz": "Foydalanuvchi parolini himoyalash",
+            "ru": "Защита пароля пользователя",
+            "en": "Protecting the user's password"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 2,
+        "prompt": {
+          "uz": "Eng mashhur konsensus algoritmlarini tanlang.",
+          "ru": "Выберите наиболее известные алгоритмы консенсуса.",
+          "en": "Select the most well-known consensus algorithms."
+        },
+        "explanation": {
+          "uz": "Proof of Work (PoW) va Proof of Stake (PoS) eng keng tarqalgan konsensus algoritmlari hisoblanadi.",
+          "ru": "Proof of Work (PoW) и Proof of Stake (PoS) являются наиболее распространенными алгоритмами консенсуса.",
+          "en": "Proof of Work (PoW) and Proof of Stake (PoS) are the most common consensus algorithms."
+        },
+        "options": [
+          {
+            "uz": "Proof of Work (PoW)",
+            "ru": "Proof of Work (PoW)",
+            "en": "Proof of Work (PoW)"
+          },
+          {
+            "uz": "Proof of Stake (PoS)",
+            "ru": "Proof of Stake (PoS)",
+            "en": "Proof of Stake (PoS)"
+          },
+          {
+            "uz": "Proof of Internet (PoI)",
+            "ru": "Proof of Internet (PoI)",
+            "en": "Proof of Internet (PoI)"
+          }
+        ],
+        "correct": [0, 1]
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Blokcheyn amaliyoti",
+      "ru": "Практика по блокчейну",
+      "en": "Blockchain practice"
+    },
+    "statement": {
+      "uz": "Iqtisodiyotda blokcheynni qanday qoʻllash mumkinligini tushuntiring.",
+      "ru": "Объясните, как можно применять блокчейн в экономике.",
+      "en": "Explain how blockchain can be applied in economics."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SHORT",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Blokcheyn texnologiyasi taqdim etadigan eng muhim moliyaviy afzallikni yozing.",
+            "ru": "Напишите самое важное финансовое преимущество, которое предоставляет технология блокчейн.",
+            "en": "Write the most important financial advantage provided by blockchain technology."
+          },
+          "explanation": {
+            "uz": "Tranzaksiyalarning shaffofligi moliyaviy sohada eng muhim jihatdir.",
+            "ru": "Прозрачность транзакций является важнейшим аспектом в финансовой сфере.",
+            "en": "Transparency of transactions is the most important aspect in the financial sector."
+          },
+          "answers": [
+            "shaffoflik",
+            "xavfsizlik",
+            "transparency",
+            "security",
+            "прозрачность",
+            "безопасность",
+            "tezlik",
+            "speed",
+            "скорость"
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kiberxavfsizlik nimani himoyalaydi?",
+          "ru": "Что защищает кибербезопасность?",
+          "en": "What does cybersecurity protect?"
+        },
+        "options": [
+          {
+            "uz": "Kompyuterlar, tarmoqlar, dasturlar va maʼlumotlarni kiberhujumlardan",
+            "ru": "Компьютеры, сети, программы и данные от кибератак",
+            "en": "Computers, networks, programs and data from cyberattacks"
+          },
+          {
+            "uz": "Faqat qogʻozdagi hujjatlarni oʻgʻirlik va yongʻindan",
+            "ru": "Только бумажные документы от кражи и пожара",
+            "en": "Only paper documents from theft and fire"
+          },
+          {
+            "uz": "Maʼlumotlarni zaxira nusxaga koʻchirib, kompyuterni oʻchirib qoʻyishni",
+            "ru": "Выключение компьютера после копирования данных в резервную копию",
+            "en": "Switching the computer off after copying data to a backup"
+          },
+          {
+            "uz": "Tarmoq trafigining tezligini oshirishni",
+            "ru": "Повышение скорости сетевого трафика",
+            "en": "Increasing the speed of network traffic"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Kiberxavfsizlik — axborot xavfsizligining raqamli qismi: u kompyuterlar, tarmoqlar, dasturlar va maʼlumotlarni kiberhujumlardan himoyalaydi.",
+          "ru": "Кибербезопасность — цифровая часть информационной безопасности: она защищает компьютеры, сети, программы и данные от кибератак.",
+          "en": "Cybersecurity is the digital part of information security: it protects computers, networks, programs and data from cyberattacks."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Axborot xavfsizligi faqat raqamli, yaʼni kompyuterda saqlanadigan maʼlumotlarga tegishli.",
+          "ru": "Информационная безопасность касается только цифровых данных, то есть хранимых на компьютере.",
+          "en": "Information security concerns only digital information, that is, information stored on a computer."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Axborot xavfsizligi axborotni har qanday shaklda himoyalaydi: qogʻozda, kompyuterda, odamlar xotirasida; raqamli qismi — kiberxavfsizlik.",
+          "ru": "Информационная безопасность защищает информацию в любой форме: на бумаге, в компьютере, в памяти людей; её цифровая часть — кибербезопасность.",
+          "en": "Information security protects information in any form — on paper, in a computer, in people's memory; its digital part is cybersecurity."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "CIA triadasiga qaysi xossalar kiradi?",
+          "ru": "Какие свойства входят в триаду CIA?",
+          "en": "Which properties belong to the CIA triad?"
+        },
+        "options": [
+          {
+            "uz": "Konfidensiallik",
+            "ru": "Конфиденциальность",
+            "en": "Confidentiality"
+          },
+          {
+            "uz": "Yaxlitlik",
+            "ru": "Целостность",
+            "en": "Integrity"
+          },
+          {
+            "uz": "Hisobdorlik",
+            "ru": "Подотчётность",
+            "en": "Accountability"
+          },
+          {
+            "uz": "Foydalanish mumkinligi",
+            "ru": "Доступность",
+            "en": "Availability"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "CIA — konfidensiallik, yaxlitlik, foydalanish mumkinligi; hisobdorlik esa qoʻshimcha xossa.",
+          "ru": "CIA — это конфиденциальность, целостность и доступность; подотчётность — дополнительное свойство.",
+          "en": "CIA is confidentiality, integrity and availability; accountability is an additional property."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Xodimlarni xavfsizlik boʻyicha oʻqitish nazorat vositalarining turi boʻyicha qaysi guruhga kiradi?",
+          "ru": "К какому виду мер защиты относится обучение сотрудников безопасности?",
+          "en": "Which kind of control is staff security training?"
+        },
+        "options": [
+          {
+            "uz": "Maʼmuriy",
+            "ru": "Административные",
+            "en": "Administrative"
+          },
+          {
+            "uz": "Texnik",
+            "ru": "Технические",
+            "en": "Technical"
+          },
+          {
+            "uz": "Fizik",
+            "ru": "Физические",
+            "en": "Physical"
+          },
+          {
+            "uz": "Kompensatsiyalovchi",
+            "ru": "Компенсирующие",
+            "en": "Compensating"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Siyosatlar, qoidalar va oʻqitish — maʼmuriy chora; kompensatsiyalovchi esa vazifasi boʻyicha guruh, turi boʻyicha emas.",
+          "ru": "Политики, правила и обучение — административная мера; компенсирующая — это группа по функции, а не по виду.",
+          "en": "Policies, rules and training are administrative controls; compensating is a function group, not a kind."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi soddalashtirilgan formula: Risk = Tahdid × Zaiflik × Taʼsir. Tizimda zaiflik boʻlmasa, risk nechchaga teng?",
+          "ru": "Упрощённая формула из занятия: Риск = Угроза × Уязвимость × Последствия. Чему равен риск, если в системе нет уязвимости?",
+          "en": "The simplified formula of the lesson: Risk = Threat × Vulnerability × Impact. If a system has no vulnerability, what is the risk?"
+        },
+        "answers": [0],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsga koʻra: zaiflik boʻlmasa yoki tahdid boʻlmasa — risk yoʻq, yaʼni 0.",
+          "ru": "По занятию: нет уязвимости или нет угрозы — нет риска, то есть 0.",
+          "en": "In the lesson: no vulnerability or no threat means no risk, that is 0."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Axborot xavfsizligining uchta asosiy xossasini birlashtiruvchi uch harfli xalqaro qisqartmani yozing.",
+          "ru": "Напишите трёхбуквенный международный термин, объединяющий три основных свойства информационной безопасности.",
+          "en": "Write the three-letter term that unites the three basic properties of information security."
+        },
+        "answers": ["CIA", "cia"],
+        "explanation": {
+          "uz": "Uch xossaning inglizcha nomlari birlashib CIA triadasini tashkil qiladi.",
+          "ru": "Английские названия трёх свойств образуют аббревиатуру CIA, отсюда и «триада CIA».",
+          "en": "The English names of the three properties form the abbreviation CIA — hence the CIA triad."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tahdid va zaiflik haqida qaysi ifoda toʻgʻri?",
+          "ru": "Какое утверждение об угрозе и уязвимости верно?",
+          "en": "Which statement about threat and vulnerability is correct?"
+        },
+        "options": [
+          {
+            "uz": "Xaker — tahdid, yangilanmagan dastur — zaiflik",
+            "ru": "Хакер — угроза, необновлённая программа — уязвимость",
+            "en": "A hacker is a threat; unpatched software is a vulnerability"
+          },
+          {
+            "uz": "Xaker — zaiflik, yangilanmagan dastur — tahdid",
+            "ru": "Хакер — уязвимость, необновлённая программа — угроза",
+            "en": "A hacker is a vulnerability; unpatched software is a threat"
+          },
+          {
+            "uz": "Tahdid va zaiflik — bir xil tushunchaning ikki nomi",
+            "ru": "Угроза и уязвимость — два названия одного понятия",
+            "en": "Threat and vulnerability are two names of the same concept"
+          },
+          {
+            "uz": "Yangilanmagan dastur — ekspluatatsiya, xaker — nazorat vositasi",
+            "ru": "Необновлённая программа — эксплойт, хакер — мера защиты",
+            "en": "Unpatched software is an exploit; a hacker is a control"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Tahdid — aktivga zarar yetkazishi mumkin boʻlgan hodisa yoki shaxs; zaiflik — undan tahdid foydalanadigan tizimdagi kamchilik.",
+          "ru": "Угроза — событие или субъект, способные навредить активу; уязвимость — недостаток системы, которым угроза пользуется.",
+          "en": "A threat is an event or actor that could harm an asset; a vulnerability is the system weakness a threat makes use of."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nazorat vositalari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о мерах защиты верны?",
+          "en": "Which statements about controls are correct?"
+        },
+        "options": [
+          {
+            "uz": "Brandmauer — turi boʻyicha texnik, vazifasi boʻyicha oldini oluvchi chora",
+            "ru": "Межсетевой экран — техническая мера по виду и предотвращающая по функции",
+            "en": "A firewall is a technical control by kind and a preventive one by function"
+          },
+          {
+            "uz": "Qulflar va kirish kartalari — fizik vositalar",
+            "ru": "Замки и карты доступа — физические меры",
+            "en": "Locks and access cards are physical controls"
+          },
+          {
+            "uz": "Parol qoidalari — texnik nazorat vositasi",
+            "ru": "Правила паролей — техническая мера защиты",
+            "en": "Password rules are a technical control"
+          },
+          {
+            "uz": "Zaxira nusxadan tiklash — tuzatuvchi (tiklovchi) chora",
+            "ru": "Восстановление из резервной копии — корректирующая (восстанавливающая) мера",
+            "en": "Restoring from backup is a corrective/recovery control"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Parol qoidalari darsda maʼmuriy choralar qatorida keltirilgan: ular siyosat va qoida, texnik vosita emas.",
+          "ru": "Правила паролей отнесены в занятии к административным мерам: это политика и правила, а не техническое средство.",
+          "en": "The lesson lists password rules among administrative controls: they are policy and rules, not a technical means."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Shifrlovchi virus maʼlumotni oʻgʻirlamagan taqdirda ham foydalanish mumkinligini butunlay yoʻq qilishi mumkin.",
+          "ru": "Вирус-шифровальщик может полностью уничтожить доступность, даже не похищая данные.",
+          "en": "Ransomware can destroy availability completely even without stealing data."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bu darsdagi “faqat konfidensiallikni oʻylash” xatosiga misol: shifrlovchi virus oʻgʻirlamasdan foydalanish mumkinligini yoʻq qiladi.",
+          "ru": "Это пример ошибки «думать только о конфиденциальности» из занятия: вирус-шифровальщик уничтожает доступность, ничего не похищая.",
+          "en": "This is the lesson's example of “thinking only of confidentiality”: ransomware destroys availability without stealing anything."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Asosiy tushunchalar va himoya qatlamlari",
+      "ru": "Основные понятия и слои защиты",
+      "en": "Key concepts and layers of protection"
+    },
+    "statement": {
+      "uz": "Darsdagi atamalar va tamoyillarni eslang: toʻrtta savolga javob bering, bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "ru": "Вспомните термины и принципы занятия: ответьте на четыре вопроса, в заданиях с несколькими ответами отметьте все верные варианты.",
+      "en": "Recall the terms and principles of the lesson: answer four questions, and in multiple-choice ones mark every correct option."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Ekspluatatsiya (exploit) nima?",
+            "ru": "Что такое эксплойт (exploit)?",
+            "en": "What is an exploit?"
+          },
+          "options": [
+            {
+              "uz": "Zaiflikdan foydalanish usuli yoki dasturi",
+              "ru": "Способ или программа использования уязвимости",
+              "en": "A way or program for using a vulnerability"
+            },
+            {
+              "uz": "Maʼlumotlarni zaxiralash vositasi",
+              "ru": "Средство резервного копирования данных",
+              "en": "A tool for backing up data"
+            },
+            {
+              "uz": "Xodimlarni oʻqitish dasturi",
+              "ru": "Программа обучения сотрудников",
+              "en": "A staff training program"
+            },
+            {
+              "uz": "Tarmoq trafigini oʻlchovchi asbob",
+              "ru": "Прибор для измерения сетевого трафика",
+              "en": "An instrument for measuring network traffic"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda ekspluatatsiya — zaiflikdan foydalanish usuli yoki dasturi, masalan, maʼlum zaiflik uchun tayyor hujum kodi.",
+            "ru": "В занятии эксплойт — способ или программа использования уязвимости, например готовый код атаки на известную уязвимость.",
+            "en": "In the lesson an exploit is a way or program for using a vulnerability, e.g. ready-made attack code for a known one."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Hisobdorlik (accountability) har bir harakatni aniq shaxsga bogʻlash imkoniyatini anglatadi.",
+            "ru": "Подотчётность (accountability) означает возможность связать каждое действие с конкретным лицом.",
+            "en": "Accountability means every action can be tied to a specific person."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Bu darsdagi qoʻshimcha xossalar roʻyxatidagi taʼrif; amalda u jurnallar orqali taʼminlanadi.",
+            "ru": "Это определение из списка дополнительных свойств занятия; на практике оно обеспечивается журналами.",
+            "en": "This is the definition from the lesson's list of additional properties; in practice logs provide it."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Tashqi tahdid manbalariga qaysilari kiradi?",
+            "ru": "Что относится к внешним источникам угроз?",
+            "en": "Which are external sources of threats?"
+          },
+          "options": [
+            {
+              "uz": "Xakerlar",
+              "ru": "Хакеры",
+              "en": "Hackers"
+            },
+            {
+              "uz": "Jinoiy guruhlar",
+              "ru": "Преступные группы",
+              "en": "Criminal groups"
+            },
+            {
+              "uz": "Ehtiyotsiz xodimlar",
+              "ru": "Небрежные сотрудники",
+              "en": "Careless employees"
+            },
+            {
+              "uz": "Raqobatchilar",
+              "ru": "Конкуренты",
+              "en": "Competitors"
+            }
+          ],
+          "correct": [0, 1, 3],
+          "explanation": {
+            "uz": "Darsga koʻra ehtiyotsiz xodimlar — ichki manba; xakerlar, jinoiy guruhlar, davlat tuzilmalari va raqobatchilar — tashqi.",
+            "ru": "По занятию небрежные сотрудники — внутренний источник; хакеры, преступные группы, госструктуры и конкуренты — внешние.",
+            "en": "In the lesson careless employees are an internal source; hackers, criminal groups, state actors and competitors are external."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Chuqur himoya (defense in depth) tamoyili nimani anglatadi?",
+            "ru": "Что означает принцип эшелонированной защиты (defense in depth)?",
+            "en": "What does the principle of defence in depth mean?"
+          },
+          "options": [
+            {
+              "uz": "Bir-birini toʻldiruvchi bir nechta mustaqil himoya qatlami: bitta vositaga tayanmaslik",
+              "ru": "Несколько независимых, взаимодополняющих слоёв защиты: не полагаться на одно средство",
+              "en": "Several independent, complementary layers of protection: not relying on a single means"
+            },
+            {
+              "uz": "Eng kuchli bitta vositani olish va shuning ustiga sarflash",
+              "ru": "Закупить одно самое мощное средство и вложить всё в него",
+              "en": "Buying one strongest tool and spending everything on it"
+            },
+            {
+              "uz": "Himoyani faqat tarmoq chegarasiga joylashtirish",
+              "ru": "Разместить защиту только на границе сети",
+              "en": "Placing protection only at the network edge"
+            },
+            {
+              "uz": "Maʼlumotlarni imkon qadar uzoqroq saqlash",
+              "ru": "Хранить данные как можно дольше",
+              "en": "Keeping data for as long as possible"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda: chegarada brandmauer, ichkarida segmentlash, kompyuterda antivirus, ilovada autentifikatsiya, maʼlumotda shifrlash, odamlarda xabardorlik — bir qatlam yengilsa, keyingisi ushlaydi.",
+            "ru": "В занятии: экран на границе, сегментация внутри, антивирус на компьютере, аутентификация в приложении, шифрование данных, осведомлённость людей — если один слой преодолён, следующий удержит.",
+            "en": "In the lesson: a firewall at the edge, segmentation inside, antivirus on the computer, authentication in the application, encryption of data, awareness in people — if one layer is overcome, the next holds."
+          }
+        }
+      ]
+    }
+  }
+}

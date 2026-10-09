@@ -1,0 +1,221 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Xavfsizlik devori qoidalari qanday tartibda tekshiriladi?",
+          "ru": "В каком порядке проверяются правила межсетевого экрана?",
+          "en": "In what order are firewall rules evaluated?"
+        },
+        "options": [
+          { "uz": "Yuqoridan pastga; birinchi mos kelgan qoida qoʻllanadi, hech biri mos kelmasa — standart rad etish", "ru": "Сверху вниз; применяется первое подходящее правило, если ни одно не подошло — запрет по умолчанию", "en": "Top to bottom; the first matching rule is applied, and if none matches — default deny" },
+          { "uz": "Pastdan yuqoriga; oxirgi mos kelgan qoida qoʻllanadi", "ru": "Снизу вверх; применяется последнее подходящее правило", "en": "Bottom to top; the last matching rule is applied" },
+          { "uz": "Barcha qoidalar parallel tekshirilib, eng qattiq qoidasi tanlanadi", "ru": "Все правила проверяются параллельно и выбирается самое строгое", "en": "All rules are checked in parallel and the strictest is chosen" },
+          { "uz": "Faqat eng aniq qoida hisobga olinadi, qolganlari eʼtiborga olinmaydi", "ru": "Учитывается только самое конкретное правило, остальные игнорируются", "en": "Only the most specific rule counts, the rest are ignored" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shuning uchun aniq qoidalar umumiylaridan yuqorida turishi kerak.",
+          "ru": "Поэтому конкретные правила должны стоять выше общих.",
+          "en": "That is why specific rules must sit above general ones."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "IDS paketlarni toʻxtatib hujumning oldini oladi; IPS esa faqat ogohlantirish beradi.",
+          "ru": "IDS останавливает атаку, отбрасывая пакеты; IPS только выдаёт предупреждения.",
+          "en": "An IDS stops attacks by dropping packets; an IPS only raises alerts."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Rollar almashgan: IDS trafik nusxasini tinglab ogohlantiradi, IPS trafik yoʻlida (inline) turib paketni toʻxtatadi va ulanishni uzadi.",
+          "ru": "Роли перепутаны: IDS слушает копию трафика и предупреждает, IPS стоит в разрыве трафика и отбрасывает пакеты, разрывая соединение.",
+          "en": "The roles are swapped: an IDS listens to a copy of the traffic and raises an alert, an IPS sits inline and drops packets, closing the connection."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda keltirilgan xavfsizlik devori turlari qaysilar?",
+          "ru": "Какие из перечисленного — типы межсетевых экранов из занятия?",
+          "en": "Which of these are firewall types from the lesson?"
+        },
+        "options": [
+          { "uz": "Paket filtri (stateless)", "ru": "Пакетный фильтр (stateless)", "en": "Packet filter (stateless)" },
+          { "uz": "Holatni kuzatuvchi devor (stateful)", "ru": "Экран с отслеживанием состояния (stateful)", "en": "Stateful firewall" },
+          { "uz": "WAF", "ru": "WAF", "en": "WAF" },
+          { "uz": "Honeypot", "ru": "Honeypot", "en": "Honeypot" },
+          { "uz": "Ilova darajasidagi proksi", "ru": "Прокси прикладного уровня", "en": "Application proxy" }
+        ],
+        "correct": [0, 1, 2, 4],
+        "explanation": {
+          "uz": "Honeypot — aldash vositasi, xavfsizlik devori turi emas. Darsdagi devor turlari: paket filtri, stateful, proksi, NGFW, WAF, xost devori.",
+          "ru": "Honeypot — средство обмана, а не тип межсетевого экрана. Типы из занятия: пакетный фильтр, stateful, прокси, NGFW, WAF, хостовый экран.",
+          "en": "A honeypot is a deception tool, not a firewall type. The lesson's firewall types: packet filter, stateful, proxy, NGFW, WAF, host firewall."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Holatni kuzatuvchi (stateful) devor oddiy paket filtridan nimasi bilan farq qiladi?",
+          "ru": "Чем межсетевой экран с отслеживанием состояния отличается от простого пакетного фильтра?",
+          "en": "How does a stateful firewall differ from a simple packet filter?"
+        },
+        "options": [
+          { "uz": "Ulanishlar jadvalini yuritadi va javob paketlarini faqat mavjud ulanishga tegishli boʻlsa oʻtkazadi", "ru": "Ведёт таблицу соединений и пропускает ответные пакеты, только если они относятся к существующему соединению", "en": "It keeps a connection table and passes reply packets only if they belong to an existing connection" },
+          { "uz": "U HTTP va SMTP mazmunini soʻzma-soʻz oʻqiy oladi", "ru": "Он умеет пословно читать содержимое HTTP и SMTP", "en": "It can read the content of HTTP and SMTP word by word" },
+          { "uz": "U faqat chiquvchi trafikni filtrlaydi", "ru": "Он фильтрует только исходящий трафик", "en": "It filters only outgoing traffic" },
+          { "uz": "U ilova darajasidagi hujumlarni toʻxtatgani uchun NGFW kerak emas", "ru": "Он останавливает атаки прикладного уровня, поэтому NGFW не нужен", "en": "It stops application-level attacks, so an NGFW is not needed" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Stateful devor soxta \"javob\"larni toʻxtatadi, lekin ilova mazmunini koʻrmaydi — mazmunni proksi va WAF tekshiradi.",
+          "ru": "Stateful-экран останавливает поддельные «ответы», но не видит содержимого приложений — его проверяют прокси и WAF.",
+          "en": "A stateful firewall stops fake \"replies\" but does not see application content — proxies and a WAF check that."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi misolda administrator 203.0.113.0/24 tarmogʻini butunlay bloklash uchun 5-qoidaga `deny any 203.0.113.0/24 any` yozdi, ammo 203.0.113.9 manzilidan 443-portga kirish oʻtdi. Nima uchun?",
+          "ru": "В примере из занятия администратор поставил правило `deny any 203.0.113.0/24 any` пятым, чтобы полностью заблокировать сеть 203.0.113.0/24, однако доступ с 203.0.113.9 на порт 443 прошёл. Почему?",
+          "en": "In the lesson's example the administrator put `deny any 203.0.113.0/24 any` as rule 5 to block the 203.0.113.0/24 network completely, yet traffic from 203.0.113.9 to port 443 got through. Why?"
+        },
+        "options": [
+          { "uz": "Yuqoridagi 3-qoida (`allow tcp any 443`) birinchi mos kelgan qoida boʻldi", "ru": "Правило 3, стоящее выше (`allow tcp any 443`), оказалось первым подходящим", "en": "The earlier rule 3 (`allow tcp any 443`) matched first" },
+          { "uz": "CIDR manzil yozuvida xato bor edi", "ru": "В записи CIDR-адреса была ошибка", "en": "The CIDR address was written incorrectly" },
+          { "uz": "Devor faqat kiruvchi trafikni tekshiradi", "ru": "Экран проверяет только входящий трафик", "en": "The firewall only checks incoming traffic" },
+          { "uz": "Standart rad etish qoidasi yoʻq edi", "ru": "Отсутствовало правило запрета по умолчанию", "en": "There was no default deny rule" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Birinchi mos qoida qoʻllanadi; bloklash qoidasini roʻyxatning boshiga koʻchirish kerak. Bunday tartib xatosi devor auditlarida eng koʻp uchraydigan muammo.",
+          "ru": "Применяется первое подходящее правило; правило блокировки нужно перенести в начало списка. Такие ошибки порядка — самая частая проблема в аудитах межсетевых экранов.",
+          "en": "The first matching rule wins; the blocking rule must move to the top of the list. Rule-order mistakes like this are the most common finding in firewall audits."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi misol qoidalari boʻyicha `udp 192.168.1.77 -> 53` paketiga qaysi tartib raqamli qoida qoʻllanadi?",
+          "ru": "Под каким по счёту правило из примера занятия подходит пакет `udp 192.168.1.77 -> 53`?",
+          "en": "Which numbered rule from the lesson's example matches the packet `udp 192.168.1.77 -> 53`?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "4-qoida `allow udp 192.168.1.0/24 53`; undan oldingi qoidalar udp va 53-portga mos kelmaydi.",
+          "ru": "Правило 4 — `allow udp 192.168.1.0/24 53`; предыдущие правила не подходят под udp и порт 53.",
+          "en": "Rule 4 is `allow udp 192.168.1.0/24 53`; the rules above it do not match udp on port 53."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Barcha manbalarining jurnallarini bir joyga yigʻib, bogʻlab, SOC uchun ogohlantirishlar hosil qiluvchi tizimning qisqartma nomini yozing.",
+          "ru": "Запишите аббревиатуру системы, которая собирает журналы всех источников в одном месте, связывает их и формирует оповещения для SOC.",
+          "en": "Write the abbreviation of the system that collects logs from all sources in one place, correlates them and generates alerts for the SOC."
+        },
+        "answers": ["SIEM"],
+        "explanation": {
+          "uz": "SIEM (Security Information and Event Management) devor, IDS, server va Active Directory jurnallarini korrelatsiya qilib, SOC uchun ogohlantiradi.",
+          "ru": "SIEM (Security Information and Event Management) собирает журналы экранов, IDS, серверов и Active Directory, коррелирует их и оповещает SOC.",
+          "en": "SIEM (Security Information and Event Management) gathers logs of firewalls, IDS, servers and Active Directory, correlates them and alerts the SOC."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны?",
+          "en": "Which statements are correct?"
+        },
+        "options": [
+          { "uz": "Honeypotda haqiqiy foydalanuvchi boʻlmagani uchun unga har qanday murojaat shubhali hisoblanadi va soxta signalar deyarli yoʻq", "ru": "В honeypot нет реальных пользователей, поэтому любое обращение к нему подозрительно, а ложных тревог почти нет", "en": "A honeypot has no real users, so any access to it is suspicious and false alerts are almost non-existent" },
+          { "uz": "Imzo asosidagi aniqlash yangi (zero-day) hujumlarni ham fosh qiladi", "ru": "Обнаружение по сигнатурам выявляет и новые (zero-day) атаки", "en": "Signature-based detection also exposes new (zero-day) attacks" },
+          { "uz": "Shifrlangan trafikda NIDS mazmunni koʻrmaydi, shuning uchun xost darajasidagi kuzatuv muhim", "ru": "В зашифрованном трафике NIDS не видит содержимого, поэтому важен контроль на уровне хоста", "en": "In encrypted traffic a NIDS does not see the content, so host-level monitoring matters" },
+          { "uz": "Devorda faqat kiruvchi trafikni filtrlash yetarli", "ru": "На экране достаточно фильтровать только входящий трафик", "en": "Filtering only incoming traffic on the firewall is enough" }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Imzo metodi faqat maʼlum hujumlarni koʻradi; chiquvchi trafikni ham filtrlash kerak — zararlangan kompyuter tashqariga ulanishga harakat qiladi.",
+          "ru": "Сигнатурный метод видит только известные атаки; исходящий трафик тоже нужно фильтровать — заражённый компьютер пытается подключиться наружу.",
+          "en": "Signature-based detection sees only known attacks; outgoing traffic must be filtered too — an infected computer tries to connect outward."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nol ishonch tamoyiliga koʻra, foydalanuvchining korporativ tarmoq ichida boʻlishi oʻz-oʻzidan ishonch sababi hisoblanadi.",
+          "ru": "Согласно принципу нулевого доверия, само нахождение пользователя внутри корпоративной сети является причиной доверять ему.",
+          "en": "According to the zero trust principle, a user being inside the corporate network is by itself a reason to trust them."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Nol ishonch: \"hech qachon ishonma, doim tekshir\" — har bir soʻrov foydalanuvchi, qurilma va kontekst boʻyicha tekshiriladi.",
+          "ru": "Нулевое доверие: «никогда не доверяй, всегда проверяй» — каждый запрос проверяется по пользователю, устройству и контексту.",
+          "en": "Zero trust means \"never trust, always verify\" — every request is checked by user, device and context."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "DLP: maxfiy soʻzlarni yashirish",
+      "ru": "DLP: сокрытие конфиденциальных слов",
+      "en": "DLP: masking forbidden words"
+    },
+    "statement": {
+      "uz": "DLP tizimi xodimlarning xabarlari ichida taqiqlangan soʻzlarni (masalan, `parol`, `karta`, `cvv`) yashiradi. Kirish: birinchi satrda taqiqlangan soʻzlar soni k; keyingi k satrning har birida bitta taqiqlangan soʻz; undan keyin xabarlar soni n va keyingi n satrning har birida bitta xabar (soʻzlar bitta boʻshliq bilan ajratilgan). Har bir xabarda taqiqlangan soʻz bilan aynan bir xil boʻlgan har bir soʻzni xuddi shuncha `*` belgisi bilan almashtirib, xabarni chiqaring. Barcha xabarlardan keyin `masked: X` satrida jami nechta soʻz yashirilganini koʻrsating. Soʻzlar katta-kichik harfga qarab farqlanadi.",
+      "ru": "Система DLP скрывает в сообщениях сотрудников запрещённые слова (например, `parol`, `karta`, `cvv`). Вход: в первой строке число запрещённых слов k, далее k строк — по одному слову, затем число сообщений n и следующие n строк — по одному сообщению (слова разделены одиночным пробелом). В каждом сообщении замените каждое слово, точно совпадающее с запрещённым, таким же количеством символов `*` и выведите сообщение. После всех сообщений выведите строку `masked: X` — сколько всего слов скрыто. Регистр слов учитывается.",
+      "en": "A DLP system hides forbidden words (for example, `parol`, `karta`, `cvv`) in employee messages. Input: the first line holds the number of forbidden words k; the next k lines hold one word each; then the number of messages n; the following n lines hold one message each (words separated by a single space). In each message replace every word exactly equal to a forbidden word with the same number of `*` characters and print the message. After all messages print a line `masked: X` — the total number of words hidden. Words are case-sensitive."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nqatorlar = sys.stdin.read().split(\"\\n\")\ni = 0\nk = int(qatorlar[i]); i += 1\ntaqiqlar = set(qatorlar[i:i + k]); i += k\nn = int(qatorlar[i]); i += 1\nfor _ in range(n):\n    sozlar = qatorlar[i].split(\" \"); i += 1\n    chiqish = [\"*\" * len(soz) if soz in taqiqlar else soz for soz in sozlar]\n    print(\" \".join(chiqish))\n\nprint(\"masked: 0\")\n",
+        "java": "import java.util.HashSet;\nimport java.util.Scanner;\nimport java.util.Set;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int k = Integer.parseInt(in.nextLine());\n        Set<String> taqiqlar = new HashSet<>();\n        for (int i = 0; i < k; i++) {\n            taqiqlar.add(in.nextLine());\n        }\n        int n = Integer.parseInt(in.nextLine());\n        for (int m = 0; m < n; m++) {\n            String[] sozlar = in.nextLine().split(\" \", -1);\n            StringBuilder chiqish = new StringBuilder();\n            for (int j = 0; j < sozlar.length; j++) {\n                if (j > 0) {\n                    chiqish.append(\" \");\n                }\n                if (taqiqlar.contains(sozlar[j])) {\n                    chiqish.append(\"*\".repeat(sozlar[j].length()));\n                } else {\n                    chiqish.append(sozlar[j]);\n                }\n            }\n            System.out.println(chiqish);\n        }\n        System.out.println(\"masked: 0\");\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <set>\n#include <sstream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    int k = stoi(satr);\n    set<string> taqiqlar;\n    for (int i = 0; i < k; i++) {\n        getline(cin, satr);\n        taqiqlar.insert(satr);\n    }\n    getline(cin, satr);\n    int n = stoi(satr);\n    for (int m = 0; m < n; m++) {\n        getline(cin, satr);\n        stringstream ss(satr);\n        string soz, chiqish;\n        bool birinchi = true;\n        while (ss >> soz) {\n            if (!birinchi) {\n                chiqish += \" \";\n            }\n            if (taqiqlar.count(soz)) {\n                chiqish += string(soz.size(), '*');\n            } else {\n                chiqish += soz;\n            }\n            birinchi = false;\n        }\n        cout << chiqish << endl;\n    }\n    cout << \"masked: 0\" << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nqatorlar = sys.stdin.read().split(\"\\n\")\ni = 0\nk = int(qatorlar[i]); i += 1\ntaqiqlar = set(qatorlar[i:i + k]); i += k\nn = int(qatorlar[i]); i += 1\njami = 0\nfor _ in range(n):\n    sozlar = qatorlar[i].split(\" \"); i += 1\n    chiqish = []\n    for soz in sozlar:\n        if soz in taqiqlar:\n            chiqish.append(\"*\" * len(soz))\n            jami += 1\n        else:\n            chiqish.append(soz)\n    print(\" \".join(chiqish))\n\nprint(f\"masked: {jami}\")\n",
+        "java": "import java.util.HashSet;\nimport java.util.Scanner;\nimport java.util.Set;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int k = Integer.parseInt(in.nextLine());\n        Set<String> taqiqlar = new HashSet<>();\n        for (int i = 0; i < k; i++) {\n            taqiqlar.add(in.nextLine());\n        }\n        int n = Integer.parseInt(in.nextLine());\n        int jami = 0;\n        for (int m = 0; m < n; m++) {\n            String[] sozlar = in.nextLine().split(\" \", -1);\n            StringBuilder chiqish = new StringBuilder();\n            for (int j = 0; j < sozlar.length; j++) {\n                if (j > 0) {\n                    chiqish.append(\" \");\n                }\n                if (taqiqlar.contains(sozlar[j])) {\n                    chiqish.append(\"*\".repeat(sozlar[j].length()));\n                    jami++;\n                } else {\n                    chiqish.append(sozlar[j]);\n                }\n            }\n            System.out.println(chiqish);\n        }\n        System.out.println(\"masked: \" + jami);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <set>\n#include <sstream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    int k = stoi(satr);\n    set<string> taqiqlar;\n    for (int i = 0; i < k; i++) {\n        getline(cin, satr);\n        taqiqlar.insert(satr);\n    }\n    getline(cin, satr);\n    int n = stoi(satr);\n    int jami = 0;\n    for (int m = 0; m < n; m++) {\n        getline(cin, satr);\n        stringstream ss(satr);\n        string soz, chiqish;\n        bool birinchi = true;\n        while (ss >> soz) {\n            if (!birinchi) {\n                chiqish += \" \";\n            }\n            if (taqiqlar.count(soz)) {\n                chiqish += string(soz.size(), '*');\n                jami++;\n            } else {\n                chiqish += soz;\n            }\n            birinchi = false;\n        }\n        cout << chiqish << endl;\n    }\n    cout << \"masked: \" << jami << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "2\nparol\nkarta\n2\nmijoz karta raqami va parol kiritdi\nxizmat faqat\n", "expected": "mijoz ***** raqami va ***** kiritdi\nxizmat faqat\nmasked: 2", "hidden": false },
+        { "input": "1\ncvv\n1\ncvv cvv cvv\n", "expected": "*** *** ***\nmasked: 3", "hidden": false },
+        { "input": "2\npin\ncvv\n2\nkarta raqami\npin kod\n", "expected": "karta raqami\n*** kod\nmasked: 1", "hidden": true },
+        { "input": "1\nserver\n3\nserver cpu\nram server disk\nserver\n", "expected": "****** cpu\nram ****** disk\n******\nmasked: 3", "hidden": true }
+      ]
+    }
+  }
+}

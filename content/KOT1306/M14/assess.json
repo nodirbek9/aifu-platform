@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Xavfsizlik uchligiga (CIA) koʻra «Mavjudlik» (Availability) talabi nimani anglatadi?",
+          "ru": "Что означает требование «доступность» (Availability) в триаде безопасности CIA?",
+          "en": "In the CIA triad, what does the Availability requirement mean?"
+        },
+        "options": [
+          {
+            "uz": "Xizmat kerak paytda ishlaydi",
+            "ru": "Служба работает, когда она нужна",
+            "en": "The service works when it is needed"
+          },
+          {
+            "uz": "Maʼlumotni faqat ruxsat etilgan odamlar koʻradi",
+            "ru": "Данные видят только разрешённые люди",
+            "en": "Only authorised people see the data"
+          },
+          {
+            "uz": "Maʼlumot ruxsatsiz oʻzgarmaydi",
+            "ru": "Данные не меняются без разрешения",
+            "en": "Data does not change without authorisation"
+          },
+          {
+            "uz": "Barcha parollar shifrlangan boʻladi",
+            "ru": "Все пароли зашифрованы",
+            "en": "All passwords are encrypted"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: mavjudlik — xizmat kerak paytda ishlaydi; buzilishi — DoS/DDoS va nosozliklar. Ikkinchi variant — maxfiylik, uchinchisi — yaxlitlik.",
+          "ru": "Таблица из занятия: доступность — служба работает, когда нужна; нарушение — DoS/DDoS и отказы. Второй вариант — конфиденциальность, третий — целостность.",
+          "en": "The lesson table: availability means the service works when needed; it is broken by DoS/DDoS and failures. The second option is confidentiality, the third integrity."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "IDS shubhali paketni trafik yoʻlida turib toʻsib qoʻyadi.",
+          "ru": "IDS стоит на пути трафика и блокирует подозрительные пакеты.",
+          "en": "An IDS sits in the traffic path and blocks suspicious packets."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "IDS trafik nusxasini tahlil qilib, faqat ogohlantiradi va jurnalga yozadi; toʻsish — IPS vazifasi (u inline turadi).",
+          "ru": "IDS анализирует копию трафика, только предупреждает и пишет в журнал; блокирует IPS — он стоит inline.",
+          "en": "An IDS analyses a copy of the traffic, alerting and logging only; blocking is the IPS's job — it sits inline."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны?",
+          "en": "Which statements are correct?"
+        },
+        "options": [
+          {
+            "uz": "DoS — xizmatni soʻrovlar toʻfoni bilan ishdan chiqarish",
+            "ru": "DoS — вывод службы из строя потоком запросов",
+            "en": "A DoS attack knocks a service out with a flood of requests"
+          },
+          {
+            "uz": "DDoS minglab zararlangan qurilmalardan (botnet) keladi",
+            "ru": "DDoS идёт от тысяч заражённых устройств (ботнет)",
+            "en": "A DDoS comes from thousands of infected devices (a botnet)"
+          },
+          {
+            "uz": "Fishing — soxta xat yoki sayt orqali foydalanuvchini aldab, parolni olish",
+            "ru": "Фишинг — выманивание пароля у пользователя поддельным письмом или сайтом",
+            "en": "Phishing tricks a user out of a password with a fake mail or site"
+          },
+          {
+            "uz": "Sniffing — SSH da parollarni ketma-ket sinash",
+            "ru": "Прослушивание — это перебор паролей на SSH",
+            "en": "Sniffing means trying passwords one after another on SSH"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Parollarni ketma-ket sinash — parol tanlash (brute force) hujumi. Sniffing esa shifrlanmagan trafikdan parol va maʼlumotlarni olish.",
+          "ru": "Перебор паролей подряд — это атака подбора пароля (brute force). Sniffing же — извлечение паролей и данных из незашифрованного трафика.",
+          "en": "Trying passwords one after another is a password-guessing (brute force) attack. Sniffing is taking passwords and data from unencrypted traffic."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Holatni kuzatuvchi (stateful) brandmauerning oddiy paket filtridan (stateless) afzalligi nimada?",
+          "ru": "В чём преимущество межсетевого экрана с отслеживанием состояния (stateful) перед простым пакетным фильтром (stateless)?",
+          "en": "What is the advantage of a stateful firewall over a plain packet filter (stateless)?"
+        },
+        "options": [
+          {
+            "uz": "Ulanishlar jadvalini yuritadi va ichkaridan boshlangan ulanishning javob paketlarini avtomatik oʻtkazadi",
+            "ru": "Ведёт таблицу соединений и автоматически пропускает ответные пакеты соединений, начатых изнутри",
+            "en": "It keeps a connection table and automatically passes reply packets of connections started from inside"
+          },
+          {
+            "uz": "Hech qanday qoida talab qilmaydi",
+            "ru": "Не требует никаких правил",
+            "en": "It requires no rules at all"
+          },
+          {
+            "uz": "HTTP soʻrov mazmunini oʻqib, SQL injection ni toʻsadi",
+            "ru": "Читает содержимое HTTP-запросов и блокирует SQL injection",
+            "en": "It reads HTTP request content and blocks SQL injection"
+          },
+          {
+            "uz": "Zararli dasturlarni avtomatik oʻchiradi",
+            "ru": "Автоматически удаляет вредоносные программы",
+            "en": "It deletes malware automatically"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Paket filtri har paketni alohida koʻradi, shuning uchun javob paketlari uchun ham qoida kerak. HTTP mazmunini tekshirish — WAF (ilova darajasidagi) brandmauer ishi.",
+          "ru": "Пакетный фильтр смотрит на каждый пакет отдельно, поэтому для ответов тоже нужны правила. Проверка содержимого HTTP — работа WAF (экрана прикладного уровня).",
+          "en": "A packet filter sees each packet on its own, so replies need their own rules too. Inspecting HTTP content is the WAF's (application-level firewall's) job."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "SSL/TLS VPN odatda qaysi port orqali ishlaydi — shu tufayli u brandmauerlardan oson oʻtadi?",
+          "ru": "Через какой порт обычно работает SSL/TLS VPN — поэтому он легко проходит межсетевые экраны?",
+          "en": "Through which port does an SSL/TLS VPN usually work, which is why it passes firewalls easily?"
+        },
+        "answers": [443],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsdagi jadval: SSL/TLS VPN (OpenVPN, AnyConnect) 443-port orqali ishlaydi.",
+          "ru": "Таблица из занятия: SSL/TLS VPN (OpenVPN, AnyConnect) работает через порт 443.",
+          "en": "The lesson table: SSL/TLS VPN (OpenVPN, AnyConnect) works over port 443."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Trafik yoʻlida (inline) turib, shubhali paketni toʻsib qoʻyuvchi tizimning qisqartma nomini yozing.",
+          "ru": "Напишите сокращённое имя системы, которая стоит на пути трафика (inline) и блокирует подозрительные пакеты.",
+          "en": "Write the short name of the system that sits in the traffic path (inline) and blocks suspicious packets."
+        },
+        "answers": ["IPS", "ips", "Intrusion Prevention System", "intrusion prevention system"],
+        "explanation": {
+          "uz": "IDS aniqlab ogohlantiradi, IPS esa toʻsadi — farqi shunda.",
+          "ru": "IDS обнаруживает и предупреждает, IPS блокирует — в этом их различие.",
+          "en": "An IDS detects and alerts; an IPS blocks — that is the difference."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Brandmauer qoidalari va siyosat haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о правилах и политике межсетевого экрана верны?",
+          "en": "Which statements about firewall rules and policy are correct?"
+        },
+        "options": [
+          {
+            "uz": "Qoidalar yuqoridan pastga tekshiriladi va birinchi mos kelgan qoida qoʻllanadi",
+            "ru": "Правила проверяются сверху вниз, применяется первое подходящее",
+            "en": "Rules are checked top to bottom and the first matching rule applies"
+          },
+          {
+            "uz": "Toʻgʻri standart siyosat — hammasini taqiqlab, faqat kerakli portlarni ochish",
+            "ru": "Верная политика по умолчанию — запретить всё и открыть только нужные порты",
+            "en": "The right default policy is to deny everything and open only what is needed"
+          },
+          {
+            "uz": "WAF HTTP soʻrov mazmunini tekshirib, SQL injection va XSS kabi hujumlarni toʻsadi",
+            "ru": "WAF проверяет содержимое HTTP-запросов и блокирует атаки вроде SQL injection и XSS",
+            "en": "A WAF inspects HTTP request content and blocks attacks such as SQL injection and XSS"
+          },
+          {
+            "uz": "Paket filtri (stateless) ulanishlar jadvalini yuritadi",
+            "ru": "Пакетный фильтр (stateless) ведёт таблицу соединений",
+            "en": "A packet filter (stateless) keeps a connection table"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Ulanishlar jadvalini holatni kuzatuvchi (stateful) brandmauer yuritadi; paket filtri har paketni alohida koʻradi.",
+          "ru": "Таблицу соединений ведёт экран с отслеживанием состояния (stateful); пакетный фильтр видит каждый пакет отдельно.",
+          "en": "The connection table belongs to a stateful firewall; a packet filter sees each packet separately."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Imzo boʻyicha ishlaydigan IDS bazada naqshi boʻlmagan yangi (nolinchi kun) hujumni ham aniqlaydi.",
+          "ru": "IDS, работающий по сигнатурам, обнаружит и новую атаку (нулевого дня), шаблона которой нет в базе.",
+          "en": "A signature-based IDS also detects a new (zero-day) attack whose pattern is not in the database."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Imzo usuli maʼlum hujum naqshlarini biladi, yangini koʻrmaydi. Yangi hujumlarni anomaliya usuli topadi, lekin notoʻgʻri signallar koʻproq boʻladi.",
+          "ru": "Сигнатурный метод знает шаблоны известных атак и не видит новую. Новые атаки находит метод аномалий, но ложных срабатываний при этом больше.",
+          "en": "Signature detection knows the patterns of known attacks and misses new ones. Anomaly detection finds new attacks too, but with more false alarms."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi port skanerlashni aniqlash misolida chegara: 10 soniya ichida 4 ta turli port. Jurnal: 1-soniyada 10.0.0.5 → 22-port, 2-da 10.0.0.5 → 23, 3-da 10.0.0.5 → 80, 5-da 10.0.0.5 → 443. Ogohlantirish qaysi soniyada chiqadi?",
+          "ru": "В примере занятия по обнаружению сканирования портов порог: 4 различных порта за 10 секунд. Журнал: 1-я секунда 10.0.0.5 → порт 22, 2-я → 23, 3-я → 80, 5-я → 443. На какой секунде появится предупреждение?",
+          "en": "In the lesson's port-scan example the threshold is 4 distinct ports within 10 seconds. The log: at second 1, 10.0.0.5 hits port 22; at 2, port 23; at 3, port 80; at 5, port 443. On which second does the alert appear?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "5-soniyada oynada (vaqti 5 − 10 = −5 dan katta) toʻrt turli port — 22, 23, 80, 443 — qoladi: chegara ayni shu urinishda bosib oʻtiladi.",
+          "ru": "На 5-й секунде в окне (время больше 5 − 10 = −5) остаются четыре различных порта — 22, 23, 80, 443: порог достигнут именно на этой попытке.",
+          "en": "At second 5 the window (times greater than 5 − 10 = −5) holds four distinct ports — 22, 23, 80, 443: the threshold is met on exactly this attempt."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Parolni qayta-qayta xato kiritgan manzillar",
+      "ru": "Адреса с повторяющимися ошибочными паролями",
+      "en": "Addresses with repeated wrong passwords"
+    },
+    "statement": {
+      "uz": "SSH va RDP-ga parol tanlash hujumi kuzatilmoqda. Birinchi satrda chegara *L* (butun son). Keyingi satrlarda kirish jurnali: har birida manzil va natija (`OK` yoki `FAIL`). Har bir manzilning jami `FAIL` urinishlari sonini sanang va *L* yoki undan koʻp marta `FAIL` qilgan manzillarni chiqaring: har biri alohida qatorda, birinchi `FAIL` yozuvi jurnalda koʻringan tartibda; hech qaysi manzil chegaraga yetmasa, bitta `NONE` satr chiqaring. Bir manzilning `FAIL` yozuvlari orasida vaqt boʻyicha katta boʻshliq boʻlishi ham mumkin — bu topshiriqda vaqt oynasi hisobga olinmaydi, jami son sanaladi. Jurnalda kamida bitta yozuv boʻladi.",
+      "ru": "На SSH и RDP наблюдается атака подбора паролей. В первой строке — порог *L* (целое число). В следующих строках — журнал входов: в каждой адрес и результат (`OK` или `FAIL`). Посчитайте для каждого адреса общее число попыток `FAIL` и выведите те, у которых `FAIL` не меньше *L*: по одному на строке, в порядке появления первой записи `FAIL` в журнале; если ни один адрес не достиг порога, выведите одну строку `NONE`. Попытки `FAIL` одного адреса могут стоять далеко друг от друга — окно не учитывайте, считайте общее число. В журнале минимум одна запись.",
+      "en": "A password-guessing attack is being watched on SSH and RDP. The first line holds the threshold *L* (an integer). The following lines are an access log: each has an address and a result (`OK` or `FAIL`). Count every address's total number of `FAIL` attempts and print the addresses with at least *L* `FAIL`s: one per line, in the order of each address's first `FAIL` record in the log; if no address reaches the threshold, print a single line `NONE`. One address's `FAIL` records may be far apart — ignore any window, count the total. The log has at least one record."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nlines = sys.stdin.read().split(\"\\n\")\nlimit = int(lines[0])\ncounts = {}\nfor line in lines[1:]:\n    if not line.strip():\n        continue\n    ip, res = line.split()\n    if res == \"FAIL\":\n        counts[ip] = counts.get(ip, 0) + 1\nsuspects = [ip for ip, c in counts.items() if c > limit]\nif suspects:\n    print(\"\\n\".join(suspects))\nelse:\n    print(\"NONE\")\n",
+        "java": "import java.util.LinkedHashMap;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int limit = in.nextInt();\n        Map<String, Integer> counts = new LinkedHashMap<>();\n        while (in.hasNext()) {\n            String ip = in.next();\n            String res = in.next();\n            if (res.equals(\"FAIL\")) {\n                counts.put(ip, counts.getOrDefault(ip, 0) + 1);\n            }\n        }\n        boolean found = false;\n        for (Map.Entry<String, Integer> e : counts.entrySet()) {\n            if (e.getValue() > limit) {\n                System.out.println(e.getKey());\n                found = true;\n            }\n        }\n        if (!found) {\n            System.out.println(\"NONE\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int limit;\n    cin >> limit;\n    map<string, int> counts;\n    vector<string> order;\n    string ip, res;\n    while (cin >> ip >> res) {\n        if (res == \"FAIL\") {\n            if (counts.find(ip) == counts.end()) order.push_back(ip);\n            counts[ip]++;\n        }\n    }\n    bool found = false;\n    for (const string& s : order) {\n        if (counts[s] > limit) {\n            cout << s << endl;\n            found = true;\n        }\n    }\n    if (!found) cout << \"NONE\" << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nlines = sys.stdin.read().split(\"\\n\")\nlimit = int(lines[0])\ncounts = {}\nfor line in lines[1:]:\n    if not line.strip():\n        continue\n    ip, res = line.split()\n    if res == \"FAIL\":\n        counts[ip] = counts.get(ip, 0) + 1\nsuspects = [ip for ip, c in counts.items() if c >= limit]\nif suspects:\n    print(\"\\n\".join(suspects))\nelse:\n    print(\"NONE\")\n",
+        "java": "import java.util.LinkedHashMap;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int limit = in.nextInt();\n        Map<String, Integer> counts = new LinkedHashMap<>();\n        while (in.hasNext()) {\n            String ip = in.next();\n            String res = in.next();\n            if (res.equals(\"FAIL\")) {\n                counts.put(ip, counts.getOrDefault(ip, 0) + 1);\n            }\n        }\n        boolean found = false;\n        for (Map.Entry<String, Integer> e : counts.entrySet()) {\n            if (e.getValue() >= limit) {\n                System.out.println(e.getKey());\n                found = true;\n            }\n        }\n        if (!found) {\n            System.out.println(\"NONE\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int limit;\n    cin >> limit;\n    map<string, int> counts;\n    vector<string> order;\n    string ip, res;\n    while (cin >> ip >> res) {\n        if (res == \"FAIL\") {\n            if (counts.find(ip) == counts.end()) order.push_back(ip);\n            counts[ip]++;\n        }\n    }\n    bool found = false;\n    for (const string& s : order) {\n        if (counts[s] >= limit) {\n            cout << s << endl;\n            found = true;\n        }\n    }\n    if (!found) cout << \"NONE\" << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\n203.0.113.7 FAIL\n203.0.113.7 FAIL\n192.168.1.20 FAIL\n203.0.113.7 FAIL\n203.0.113.7 OK\n192.168.1.20 OK\n", "expected": "203.0.113.7", "hidden": false },
+        { "input": "4\n203.0.113.7 FAIL\n203.0.113.7 FAIL\n192.168.1.20 FAIL\n203.0.113.7 FAIL\n203.0.113.7 OK\n192.168.1.20 OK\n", "expected": "NONE", "hidden": false },
+        { "input": "2\n8.8.4.4 OK\n1.1.1.1 FAIL\n9.9.9.9 FAIL\n1.1.1.1 FAIL\n9.9.9.9 FAIL\n", "expected": "1.1.1.1\n9.9.9.9", "hidden": true },
+        { "input": "2\n10.0.0.2 FAIL\n10.0.0.2 OK\n10.0.0.2 FAIL\n10.0.0.3 FAIL\n", "expected": "10.0.0.2", "hidden": true },
+        { "input": "1\n172.16.0.5 FAIL\n", "expected": "172.16.0.5", "hidden": true }
+      ]
+    }
+  }
+}

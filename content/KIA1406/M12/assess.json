@@ -1,0 +1,327 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Zilzila fizik tahdidlarning qaysi turiga kiradi?",
+          "ru": "К какому типу физических угроз относится землетрясение?",
+          "en": "Which type of physical threat is an earthquake?"
+        },
+        "options": [
+          {
+            "uz": "Tabiiy",
+            "ru": "Природная",
+            "en": "Natural"
+          },
+          {
+            "uz": "Texnogen",
+            "ru": "Техногенная",
+            "en": "Technological"
+          },
+          {
+            "uz": "Inson tomonidan",
+            "ru": "Со стороны человека",
+            "en": "Human-caused"
+          },
+          {
+            "uz": "Ichki tahdid",
+            "ru": "Инсайдерская угроза",
+            "en": "An insider threat"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra tabiiy tahdidlar: zilzila, suv toshqini, chaqmoq, haddan tashqari issiq yoki sovuq, chang. Elektr uzilishi, yongʻin, quvur yorilishi va konditsioner avariyasi — texnogen; oʻgʻirlik, buzgʻunchilik va ruxsatsiz kirish — inson tomonidan.",
+          "ru": "По занятию природные угрозы: землетрясение, наводнение, молния, сильная жара или холод, пыль. Отключения электричества, пожар, прорыв труб и отказ кондиционера — техногенные; кража, вандализм и несанкционированный вход — со стороны человека.",
+          "en": "In the lesson natural threats are earthquake, flood, lightning, extreme heat or cold and dust. Power outages, fire, burst pipes and air conditioning failure are technological; theft, vandalism and unauthorized entry are human."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Diskni tez formatlash undagi maʼlumotni yoʻq qiladi.",
+          "ru": "Быстрое форматирование диска уничтожает находящиеся на нём данные.",
+          "en": "A quick format of a disk destroys the data on it."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "«Oʻchirish» va formatlash maʼlumotni yoʻq qilmaydi — faqat joy «boʻsh» deb belgilanadi va maxsus dasturlar uni tiklaydi. Shuning uchun Clear, Purge yoki Destroy usullaridan biri qoʻllanadi.",
+          "ru": "«Удаление» и форматирование не уничтожают данные — место лишь помечается как свободное, и специальные программы восстанавливают их. Поэтому применяют один из методов: Clear, Purge или Destroy.",
+          "en": "Deleting and formatting do not destroy data — the space is only marked as free, and special software recovers it. That is why one of Clear, Purge or Destroy is applied."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Aniqlash (detect) vazifasiga qaysi choralar xizmat qiladi?",
+          "ru": "Какие меры служат цели обнаружения (detect)?",
+          "en": "Which measures serve the purpose of detection?"
+        },
+        "options": [
+          {
+            "uz": "Harakat va ochilish datchiklari",
+            "ru": "Датчики движения и открытия",
+            "en": "Motion and door sensors"
+          },
+          {
+            "uz": "CCTV (video kuzatuv)",
+            "ru": "Видеонаблюдение",
+            "en": "CCTV"
+          },
+          {
+            "uz": "Kirish jurnallari",
+            "ru": "Журналы доступа",
+            "en": "Access logs"
+          },
+          {
+            "uz": "Ogohlantiruvchi belgilar",
+            "ru": "Предупреждающие знаки",
+            "en": "Warning signs"
+          },
+          {
+            "uz": "Shlyuz kamerasi (mantrap)",
+            "ru": "Шлюзовая кабина (mantrap)",
+            "en": "A mantrap"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Aniqlash: datchiklar, CCTV, kirish jurnallari, signalizatsiya. Ogohlantiruvchi belgilar — toʻsiq (deter), devor, qulf, turniket va shlyuz kamerasi — toʻxtatish (delay) vazifasiga xizmat qiladi.",
+          "ru": "Обнаружение: датчики, видеонаблюдение, журналы доступа, сигнализация. Предупреждающие знаки — это сдерживание (deter), а стены, замки, турникеты и шлюзовые кабины — задержка (delay).",
+          "en": "Detection covers sensors, CCTV, access logs and alarms. Warning signs serve deterrence, while walls, locks, turnstiles and mantraps serve delay."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Server xonasidagi yongʻin nima uchun suv bilan emas, gaz bilan oʻchiriladi?",
+          "ru": "Почему пожар в серверной тушат газом, а не водой?",
+          "en": "Why is a fire in a server room put out with gas rather than water?"
+        },
+        "options": [
+          {
+            "uz": "Suv elektron uskunani buzadi, maxsus gazlar esa zarar yetkazmasdan oʻchiradi",
+            "ru": "Вода портит электронное оборудование, а специальные газы гасят пожар без повреждения",
+            "en": "Water damages electronic equipment, while special gases extinguish the fire without harming it"
+          },
+          {
+            "uz": "Gaz suvdan arzonroq va tezroq tarqaladi",
+            "ru": "Газ дешевле воды и быстрее распространяется",
+            "en": "Gas is cheaper than water and spreads faster"
+          },
+          {
+            "uz": "Server xonasiga suv quvuri olib kirish taqiqlanganligi uchun",
+            "ru": "Потому что заводить водопровод в серверную запрещено",
+            "en": "Because a water pipe may not be brought into the room"
+          },
+          {
+            "uz": "Gaz kislorodni butunlay yoʻq qiladi, shuning uchun yongʻin qayta alangalanmaydi",
+            "ru": "Газ полностью удаляет кислород, и пожар не может вспыхнуть снова",
+            "en": "Gas removes all oxygen, so the fire cannot restart"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: erta aniqlash (tutun datchiklari, VESDA) va suvsiz gaz bilan oʻchirish (FM-200, Novec 1230, inert gazlar) tavsiya etiladi, chunki suv uskunani buzadi.",
+          "ru": "В занятии: раннее обнаружение (датчики дыма, VESDA) и безводное газовое тушение (FM-200, Novec 1230, инертные газы), поскольку вода портит оборудование.",
+          "en": "The lesson recommends early detection (smoke detectors, VESDA) and waterless gas suppression (FM-200, Novec 1230, inert gases), because water damages equipment."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "ASHRAE tavsiya etgan kirish havosi haroratining yuqori chegarasi nechta °C?",
+          "ru": "Какова верхняя граница температуры входного воздуха по рекомендации ASHRAE (в °C)?",
+          "en": "What is the upper limit of the inlet air temperature in the ASHRAE recommendation, in °C?"
+        },
+        "answers": [27],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "ASHRAE tavsiyasi — 18–27 °C kirish havosi, issiq va soʻvuq yoʻlaklar. Ishlangan misolda 27 dan yuqori harorat OGOHLANTIRISH, 32 dan yuqori KRITIK hisoblanadi.",
+          "ru": "Рекомендация ASHRAE — 18–27 °C на входе, горячие и холодные коридоры. В разобранном примере температура выше 27 — предупреждение, выше 32 — критическая.",
+          "en": "ASHRAE recommends 18–27 °C inlet air with hot and cold aisles. In the worked example a temperature above 27 is a warning and above 32 is critical."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Eshikni ochgan xodim ortidan notanish odamning binoga kirishining inglizcha atamasini yozing.",
+          "ru": "Напишите английское название прохода незнакомца вслед за сотрудником, открывшим дверь.",
+          "en": "Write the English term for an outsider entering behind the employee who opened the door."
+        },
+        "answers": ["tailgating", "piggybacking", "tailgating (piggybacking)"],
+        "explanation": {
+          "uz": "Bu — tailgating (piggybacking), fizik himoyaning eng koʻp uchraydigan zaifligi. Himoyasi: turniket, shlyuz kamerasi (mantrap) va xodimlarning xabardorligi.",
+          "ru": "Это tailgating (piggybacking) — самая частая уязвимость физической защиты. Защита: турникеты, шлюзовые кабины и осведомлённость сотрудников.",
+          "en": "This is tailgating (piggybacking), the most common weakness of physical protection; turnstiles, mantraps and aware staff defend against it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nima uchun SSD va flesh-xotira uchun qayta yozish (overwrite) ishonchsiz usul hisoblanadi?",
+          "ru": "Почему перезапись считается ненадёжным методом для SSD и флеш-памяти?",
+          "en": "Why is overwriting an unreliable method for SSDs and flash memory?"
+        },
+        "options": [
+          {
+            "uz": "Kontroller yozuvlarni boshqa yacheykalarga taqsimlaydi (wear leveling) va zaxira bloklarni yashiradi",
+            "ru": "Контроллер распределяет записи по другим ячейкам (wear leveling) и прячет резервные блоки",
+            "en": "The controller spreads writes over other cells (wear leveling) and hides spare blocks"
+          },
+          {
+            "uz": "SSD hajmi kichik boʻlgani uchun bir marta qayta yozish yetarli emas",
+            "ru": "Из-за малого объёма SSD одной перезаписи недостаточно",
+            "en": "Because an SSD is small, one overwrite pass is not enough"
+          },
+          {
+            "uz": "SSD da shifrlash kaliti saqlanmaydi, shuning uchun crypto erase ishlamaydi",
+            "ru": "На SSD не хранится ключ шифрования, поэтому криптографическое стирание невозможно",
+            "en": "An SSD cannot hold the encryption key, so cryptographic erase is impossible"
+          },
+          {
+            "uz": "Degausser SSD ni ham, magnit disklarni ham bir xil yoʻq qiladi",
+            "ru": "Дегaussер одинаково уничтожает и SSD, и магнитные диски",
+            "en": "A degausser destroys SSDs and magnetic disks alike"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shuning uchun SSD uchun ishlab chiqaruvchining Sanitize buyrugʻi yoki kriptografik tozalash qoʻllanadi; degausser esa faqat magnit tashuvchilarga taʼsir qiladi va SSD ga taʼsir qilmaydi.",
+          "ru": "Поэтому для SSD применяют команду Sanitize производителя или криптографическое стирание; дегaussер действует только на магнитные носители и не влияет на SSD.",
+          "en": "For that reason an SSD is sanitised with the manufacturer's Sanitize command or by cryptographic erase; a degausser affects magnetic media only and does nothing to an SSD."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "NIST SP 800-88 boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о NIST SP 800-88 верны?",
+          "en": "Which statements about NIST SP 800-88 are correct?"
+        },
+        "options": [
+          {
+            "uz": "Clear — tashuvchi tashkilot ichida qayta ishlatilganda qoʻllanadi, masalan, bir marta toʻliq qayta yozish",
+            "ru": "Clear применяют, когда носитель повторно используется внутри организации, например однократную полную перезапись",
+            "en": "Clear applies when the medium is reused inside the organization, for example one full overwrite"
+          },
+          {
+            "uz": "Purge — tashuvchi tashkilotdan chiqqanda, laboratoriya usullaridan ham himoya qiladi",
+            "ru": "Purge применяют, когда носитель покидает организацию; он защищает даже от лабораторных методов",
+            "en": "Purge applies when the medium leaves the organization and protects even against laboratory methods"
+          },
+          {
+            "uz": "Destroy — tashuvchini endi ishlatib boʻlmaydigan holatga keltiradi: maydalash, parchalash, eritish, yoqish",
+            "ru": "Destroy приводит носитель в состояние, когда им нельзя воспользоваться: уничтожение в шредере, фрагментация, плавление, сжигание",
+            "en": "Destroy renders the medium unusable: shredding, disintegration, melting, incineration"
+          },
+          {
+            "uz": "Zamonaviy disklar uchun «7 marta qayta yozish» (DoD 5220.22-M) tavsiya etiladi",
+            "ru": "Для современных дисков рекомендуется «7 перезаписей» (DoD 5220.22-M)",
+            "en": "Modern disks are recommended the «seven passes» method (DoD 5220.22-M)"
+          },
+          {
+            "uz": "Yoʻq qilish dalolatnoma (sertifikat) bilan rasmiylashtirilmaydi",
+            "ru": "Уничтожение не оформляется сертификатом",
+            "en": "Destruction is not documented with a certificate"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda «7 marta» (DoD 5220.22-M) va «35 marta» (Gutmann) usullari zamonaviy disklar uchun keraksiz, vaqtni bekor sarflaydi deyilgan; har bir yoʻq qilish esa dalolatnoma bilan rasmiylashtiriladi.",
+          "ru": "В занятии сказано, что «7 проходов» (DoD 5220.22-M) и «35 проходов» (Gutmann) для современных дисков не нужны и лишь тратят время; каждое уничтожение оформляется сертификатом.",
+          "en": "The lesson states that the seven-pass (DoD 5220.22-M) and thirty-five-pass (Gutmann) methods are unnecessary for modern disks and only waste time, and that every destruction is documented with a certificate."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Zaxira nusxani asl tizim bilan bir xonada saqlash toʻgʻri amaliyot.",
+          "ru": "Хранить резервную копию в одном помещении с исходной системой — правильная практика.",
+          "en": "Keeping the backup in the same room as the original system is good practice."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Yongʻin yoki suv toshqini ikkalasini birga yoʻq qiladi; nusxa boshqa binoda saqlanishi kerak (3-2-1 qoidasi). Bu darsdagi koʻp uchraydigan xatolar roʻyxatida keltirilgan.",
+          "ru": "Пожар или вода уничтожат и систему, и копию; копию нужно хранить в другом здании (правило 3-2-1). Это указано в списке частых ошибок занятия.",
+          "en": "A fire or a flood would destroy both; a copy has to be kept in another building (the 3-2-1 rule). This is listed among the lesson's common mistakes."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Himoya choralarining vazifalari",
+      "ru": "Назначение мер физической защиты",
+      "en": "The purposes of the protection measures"
+    },
+    "statement": {
+      "uz": "Darsda fizik nazorat choralari toʻrt vazifaga boʻlinadi: toʻsiq (deter), toʻxtatish (delay), aniqlash (detect), javob (respond). Dasturingiz choralar nomlarini quyidagicha qabul qiladi (har biri alohida satrda, faqat kichik harflar bilan): sign, lighting, guard — toʻsiq; wall, lock, turnstile, mantrap — toʻxtatish; sensor, cctv, alarm — aniqlash; patrol, police — javob. Birinchi satrda choralar soni n (1 ≤ n ≤ 100), keyingi n satrda chora nomi beriladi. Toʻrt qator chiqaring — har bir vazifa va undagi choralar soni, nom bilan son orasida bitta boʻshliq, tartib shunday: deter, delay, detect, respond. Qoʻshimcha soʻz yozmang. Masalan, kirish 6 / lock / alarm / sign / sensor / guard / mantrap boʻlsa, chiqish deter 2, delay 2, detect 2, respond 0 boʻladi (har biri alohida qatorda).",
+      "ru": "В занятии меры физического контроля делятся на четыре назначения: сдерживание (deter), задержка (delay), обнаружение (detect), реагирование (respond). Ваша программа принимает названия мер так (каждое на отдельной строке, только строчными буквами): sign, lighting, guard — сдерживание; wall, lock, turnstile, mantrap — задержка; sensor, cctv, alarm — обнаружение; patrol, police — реагирование. В первой строке задано число мер n (1 ≤ n ≤ 100), далее n строк с названиями мер. Выведите четыре строки — назначение и количество мер этого назначения, имя и число разделены одним пробелом, в порядке: deter, delay, detect, respond. Никаких лишних слов не выводите. Например, ввод 6 / lock / alarm / sign / sensor / guard / mantrap даёт вывод deter 2, delay 2, detect 2, respond 0 (каждая строка отдельно).",
+      "en": "The lesson splits physical control measures into four purposes: deter, delay, detect and respond. Your program reads measure names as follows (one per line, lowercase only): sign, lighting, guard are deter; wall, lock, turnstile, mantrap are delay; sensor, cctv, alarm are detect; patrol, police are respond. The first line holds the number of measures n (1 ≤ n ≤ 100), followed by n lines with a measure name each. Print exactly four lines — the purpose and how many measures of that purpose were listed, the name and the number separated by one space, in the order deter, delay, detect, respond, with no extra words. For example, the input 6 / lock / alarm / sign / sensor / guard / mantrap gives the output deter 2, delay 2, detect 2, respond 0, one per line."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nvazifa = {\n    \"sign\": \"deter\", \"lighting\": \"deter\", \"guard\": \"deter\",\n    \"wall\": \"delay\", \"lock\": \"delay\", \"turnstile\": \"delay\", \"mantrap\": \"delay\",\n    \"sensor\": \"detect\", \"cctv\": \"detect\", \"alarm\": \"detect\",\n    \"patrol\": \"respond\", \"police\": \"respond\",\n}\nson = {\"deter\": 0, \"delay\": 0, \"detect\": 0, \"respond\": 0}\nsatrlar = [s.strip() for s in sys.stdin.read().split(\"\\n\") if s.strip()]\nn = int(satrlar[0])\nfor usul in satrlar[1:1 + n]:\n    son[\"detect\"] += 1\nfor turi in (\"deter\", \"delay\", \"detect\", \"respond\"):\n    print(turi, son[turi])\n",
+        "java": "import java.util.HashMap;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Map<String, String> vazifa = new HashMap<>();\n        vazifa.put(\"sign\", \"deter\");\n        vazifa.put(\"lighting\", \"deter\");\n        vazifa.put(\"guard\", \"deter\");\n        vazifa.put(\"wall\", \"delay\");\n        vazifa.put(\"lock\", \"delay\");\n        vazifa.put(\"turnstile\", \"delay\");\n        vazifa.put(\"mantrap\", \"delay\");\n        vazifa.put(\"sensor\", \"detect\");\n        vazifa.put(\"cctv\", \"detect\");\n        vazifa.put(\"alarm\", \"detect\");\n        vazifa.put(\"patrol\", \"respond\");\n        vazifa.put(\"police\", \"respond\");\n        String[] tartib = {\"deter\", \"delay\", \"detect\", \"respond\"};\n        Map<String, Integer> son = new HashMap<>();\n        for (String turi : tartib) son.put(turi, 0);\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n        for (int j = 0; j < n; j++) {\n            in.nextLine();\n            son.put(\"detect\", son.get(\"detect\") + 1);\n        }\n        for (String turi : tartib) System.out.println(turi + \" \" + son.get(turi));\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\nusing namespace std;\n\nint main() {\n    map<string, string> vazifa;\n    vazifa[\"sign\"] = \"deter\";\n    vazifa[\"lighting\"] = \"deter\";\n    vazifa[\"guard\"] = \"deter\";\n    vazifa[\"wall\"] = \"delay\";\n    vazifa[\"lock\"] = \"delay\";\n    vazifa[\"turnstile\"] = \"delay\";\n    vazifa[\"mantrap\"] = \"delay\";\n    vazifa[\"sensor\"] = \"detect\";\n    vazifa[\"cctv\"] = \"detect\";\n    vazifa[\"alarm\"] = \"detect\";\n    vazifa[\"patrol\"] = \"respond\";\n    vazifa[\"police\"] = \"respond\";\n    map<string, int> son;\n    son[\"deter\"] = 0;\n    son[\"delay\"] = 0;\n    son[\"detect\"] = 0;\n    son[\"respond\"] = 0;\n    int n;\n    cin >> n;\n    string usul;\n    for (int j = 0; j < n; j++) {\n        cin >> usul;\n        son[\"detect\"]++;\n    }\n    cout << \"deter \" << son[\"deter\"] << endl;\n    cout << \"delay \" << son[\"delay\"] << endl;\n    cout << \"detect \" << son[\"detect\"] << endl;\n    cout << \"respond \" << son[\"respond\"] << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nvazifa = {\n    \"sign\": \"deter\", \"lighting\": \"deter\", \"guard\": \"deter\",\n    \"wall\": \"delay\", \"lock\": \"delay\", \"turnstile\": \"delay\", \"mantrap\": \"delay\",\n    \"sensor\": \"detect\", \"cctv\": \"detect\", \"alarm\": \"detect\",\n    \"patrol\": \"respond\", \"police\": \"respond\",\n}\nson = {\"deter\": 0, \"delay\": 0, \"detect\": 0, \"respond\": 0}\nsatrlar = [s.strip() for s in sys.stdin.read().split(\"\\n\") if s.strip()]\nn = int(satrlar[0])\nfor usul in satrlar[1:1 + n]:\n    son[vazifa[usul]] += 1\nfor turi in (\"deter\", \"delay\", \"detect\", \"respond\"):\n    print(turi, son[turi])\n",
+        "java": "import java.util.HashMap;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Map<String, String> vazifa = new HashMap<>();\n        vazifa.put(\"sign\", \"deter\");\n        vazifa.put(\"lighting\", \"deter\");\n        vazifa.put(\"guard\", \"deter\");\n        vazifa.put(\"wall\", \"delay\");\n        vazifa.put(\"lock\", \"delay\");\n        vazifa.put(\"turnstile\", \"delay\");\n        vazifa.put(\"mantrap\", \"delay\");\n        vazifa.put(\"sensor\", \"detect\");\n        vazifa.put(\"cctv\", \"detect\");\n        vazifa.put(\"alarm\", \"detect\");\n        vazifa.put(\"patrol\", \"respond\");\n        vazifa.put(\"police\", \"respond\");\n        String[] tartib = {\"deter\", \"delay\", \"detect\", \"respond\"};\n        Map<String, Integer> son = new HashMap<>();\n        for (String turi : tartib) son.put(turi, 0);\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n        for (int j = 0; j < n; j++) {\n            String usul = vazifa.get(in.nextLine().trim());\n            son.put(usul, son.get(usul) + 1);\n        }\n        for (String turi : tartib) System.out.println(turi + \" \" + son.get(turi));\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\nusing namespace std;\n\nint main() {\n    map<string, string> vazifa;\n    vazifa[\"sign\"] = \"deter\";\n    vazifa[\"lighting\"] = \"deter\";\n    vazifa[\"guard\"] = \"deter\";\n    vazifa[\"wall\"] = \"delay\";\n    vazifa[\"lock\"] = \"delay\";\n    vazifa[\"turnstile\"] = \"delay\";\n    vazifa[\"mantrap\"] = \"delay\";\n    vazifa[\"sensor\"] = \"detect\";\n    vazifa[\"cctv\"] = \"detect\";\n    vazifa[\"alarm\"] = \"detect\";\n    vazifa[\"patrol\"] = \"respond\";\n    vazifa[\"police\"] = \"respond\";\n    map<string, int> son;\n    son[\"deter\"] = 0;\n    son[\"delay\"] = 0;\n    son[\"detect\"] = 0;\n    son[\"respond\"] = 0;\n    int n;\n    cin >> n;\n    string usul;\n    for (int j = 0; j < n; j++) {\n        cin >> usul;\n        son[vazifa[usul]]++;\n    }\n    cout << \"deter \" << son[\"deter\"] << endl;\n    cout << \"delay \" << son[\"delay\"] << endl;\n    cout << \"detect \" << son[\"detect\"] << endl;\n    cout << \"respond \" << son[\"respond\"] << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "6\nlock\nalarm\nsign\nsensor\nguard\nmantrap\n", "expected": "deter 2\ndelay 2\ndetect 2\nrespond 0", "hidden": false },
+        { "input": "3\npolice\npatrol\nalarm\n", "expected": "deter 0\ndelay 0\ndetect 1\nrespond 2", "hidden": false },
+        { "input": "1\nmantrap\n", "expected": "deter 0\ndelay 1\ndetect 0\nrespond 0", "hidden": true },
+        { "input": "8\nsign\nlighting\nguard\nwall\nlock\nturnstile\nmantrap\nsensor\n", "expected": "deter 3\ndelay 4\ndetect 1\nrespond 0", "hidden": true },
+        { "input": "4\ncctv\nalarm\nsensor\npolice\n", "expected": "deter 0\ndelay 0\ndetect 3\nrespond 1", "hidden": true }
+      ]
+    }
+  }
+}

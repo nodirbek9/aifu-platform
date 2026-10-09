@@ -1,0 +1,460 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda shaxsiy (tijoriy) VPN ning maqsadi qanday koʻrsatilgan?",
+          "ru": "Какая цель персонального (коммерческого) VPN указана в занятии?",
+          "en": "What does the lesson give as the purpose of a personal (commercial) VPN?"
+        },
+        "options": [
+          {
+            "uz": "Foydalanuvchi trafikini provayder serveri orqali Internetga chiqarish",
+            "ru": "Выпустить трафик пользователя в интернет через сервер провайдера",
+            "en": "Routing the user's traffic to the Internet through the provider's server"
+          },
+          {
+            "uz": "Xodimni tashkilot tarmogʻiga xavfsiz ulash",
+            "ru": "Безопасно подключить сотрудника к сети организации",
+            "en": "Connecting an employee securely to the organization's network"
+          },
+          {
+            "uz": "Tashkilotning ichki serverlarini antivirus bilan himoyalash",
+            "ru": "Защитить внутренние серверы организации антивирусом",
+            "en": "Protecting the organization's internal servers with an antivirus"
+          },
+          {
+            "uz": "Saytning HTTPS sertifikatini yangilash",
+            "ru": "Обновлять HTTPS-сертификат сайта",
+            "en": "Renewing a site's HTTPS certificate"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ikkinchi variant korporativ VPN ga tegishli; ularni dars jadvalda qiyosab koʻrsatgan.",
+          "ru": "Второй вариант относится к корпоративному VPN; занятие сравнивает их в таблице.",
+          "en": "The second option belongs to a corporate VPN; the lesson compares the two in a table."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsga koʻra, shaxsiy VPN ishlatganda trafikingizning metamaʼlumotlarini VPN provayderi koʻradi, chunki ishonch ISP dan provayderga oʻtadi.",
+          "ru": "Согласно занятию, при персональном VPN метаданные вашего трафика видит VPN-провайдер, поскольку доверие переходит от ISP к провайдеру.",
+          "en": "According to the lesson, with a personal VPN the provider sees your traffic metadata, because trust moves from the ISP to the provider."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Jadvalning ishonch satrida shaxsiy VPN uchun aynan bu yozilgan; shuning uchun VPN provayderining oʻzi ham tahdidlar roʻyxatida turadi.",
+          "ru": "Именно это записано в строке «Доверие» для персонального VPN; поэтому сам VPN-провайдер тоже стоит в списке угроз.",
+          "en": "That is exactly what the trust row says for a personal VPN, which is why the VPN provider itself stays in the list of threats."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsning qiyoslash jadvaliga koʻra, shaxsiy VPN qaysi tahdidlardan himoya qiladi?",
+          "ru": "От каких угроз, по таблице сравнения занятия, защищает персональный VPN?",
+          "en": "According to the lesson's comparison table, which threats does a personal VPN protect against?"
+        },
+        "options": [
+          {
+            "uz": "Jamoat Wi-Fi tarmogʻida (kafe, aeroport) mahalliy tarmoqdagilar trafikni tinglashidan",
+            "ru": "От прослушивания трафика соседями по публичной сети Wi-Fi (кафе, аэропорт)",
+            "en": "People on a public Wi-Fi network (café, airport) eavesdropping on your traffic"
+          },
+          {
+            "uz": "Internet provayderi qaysi saytlarga kirganingizni koʻrishidan",
+            "ru": "От того, что интернет-провайдер видит, какие сайты вы посещаете",
+            "en": "Your Internet provider seeing which sites you visit"
+          },
+          {
+            "uz": "Sayt sizning haqiqiy IP manzilingizni bilishidan",
+            "ru": "От того, что сайт узнаёт ваш настоящий IP-адрес",
+            "en": "A site learning your real IP address"
+          },
+          {
+            "uz": "Zararli dasturlardan",
+            "ru": "От вредоносных программ",
+            "en": "Malware"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda VPN antivirus emas deb alohida taʼkidlangan; u faqat kanalni himoyalaydi.",
+          "ru": "В занятии отдельно подчёркнуто, что VPN — не антивирус; он защищает только канал.",
+          "en": "The lesson states separately that a VPN is not an antivirus; it protects only the channel."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kill switch darsda qanday vazifani bajaradigan sozlama deb berilgan?",
+          "ru": "Какую задачу в занятии решает настройка kill switch?",
+          "en": "What job does the lesson give to the kill switch setting?"
+        },
+        "options": [
+          {
+            "uz": "VPN uzilsa, trafik ochiq kanalga chiqib ketmasligini taʼminlash",
+            "ru": "Не выпустить трафик в открытый канал, если VPN разорвался",
+            "en": "Keeping traffic from leaking into the open channel if the VPN drops"
+          },
+          {
+            "uz": "Parolni 20+ belgili qilib generatsiya qilish",
+            "ru": "Генерировать пароль длиной 20+ символов",
+            "en": "Generating a password of 20+ characters"
+          },
+          {
+            "uz": "Brauzer cookie larini tozalash",
+            "ru": "Очищать cookie браузера",
+            "en": "Clearing the browser's cookies"
+          },
+          {
+            "uz": "Tashkilot tarmogʻiga ikkita kanal orqali ulanish",
+            "ru": "Подключаться к сети организации по двум каналам",
+            "en": "Connecting to the organization's network over two channels"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars kill switch siz ishlatishni koʻp uchraydigan xato deb ham belgilagan: ulanish uzilganda trafik ochiq ketadi va siz buni sezmaysiz.",
+          "ru": "В занятии работа без kill switch названа частой ошибкой: при разрыве соединения трафик уходит открыто, и вы этого не замечаете.",
+          "en": "The lesson also lists using it without a kill switch as a common mistake: when the connection drops, traffic leaks in the open and you do not notice."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda VPN provayderini tanlash boʻyicha nechta mezon jadvalga kiritilgan?",
+          "ru": "Сколько критериев выбора VPN-провайдера внесено в таблицу занятия?",
+          "en": "How many criteria for choosing a VPN provider are in the lesson's table?"
+        },
+        "answers": [8],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Sakkiz mezon: jurnal yuritmaslik siyosati, yurisdiksiya, protokollar, kill switch, DNS va IPv6 sizishidan himoya, mustaqil auditlar va ochiq kodli ilovalar, shaffoflik, toʻlov va shaxsiy maʼlumot.",
+          "ru": "Восемь критериев: политика отсутствия журналов, юрисдикция, протоколы, kill switch, защита от утечек DNS и IPv6, независимые аудиты и открытый код, прозрачность, оплата и персональные данные.",
+          "en": "Eight: a no-logs policy, jurisdiction, protocols, kill switch, DNS and IPv6 leak protection, independent audits and open-source apps, transparency, and payment and personal data."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda eskirgan va zaif deb koʻrsatilgan VPN protokolining qisqartmasini yozing.",
+          "ru": "Запишите аббревиатуру VPN-протокола, который в занятии назван устаревшим и слабым.",
+          "en": "Write the abbreviation of the VPN protocol the lesson calls outdated and weak."
+        },
+        "answers": ["PPTP", "pptp"],
+        "explanation": {
+          "uz": "Zamonaviy va tekshirilgan protokollar — WireGuard, OpenVPN, IKEv2; PPTP esa eskirgan va zaif deb berilgan.",
+          "ru": "Современные и проверенные протоколы — WireGuard, OpenVPN, IKEv2; PPTP же указан как устаревший и слабый.",
+          "en": "The modern, proven protocols are WireGuard, OpenVPN and IKEv2; PPTP is given as outdated and weak."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Saytlarning aksariyati HTTPS ishlatganda ham, darsda VPN nimani qoʻshimcha yashirishi aytilgan?",
+          "ru": "Если большинство сайтов уже используют HTTPS, что, по занятию, дополнительно скрывает VPN?",
+          "en": "When most sites already use HTTPS, what does the lesson say a VPN additionally hides?"
+        },
+        "options": [
+          {
+            "uz": "Qaysi saytlarga ulanayotganingizni — DNS soʻrovlari va manzillarni",
+            "ru": "К каким сайтам вы подключаетесь — DNS-запросы и адреса",
+            "en": "Which sites you connect to — the DNS queries and addresses"
+          },
+          {
+            "uz": "Parollaringizni saytga kiritishni",
+            "ru": "Ввод ваших паролей на сайты",
+            "en": "Typing your passwords into sites"
+          },
+          {
+            "uz": "Brauzeringizdagi cookie larni",
+            "ru": "Cookie в вашем браузере",
+            "en": "The cookies in your browser"
+          },
+          {
+            "uz": "Qurilmangizdagi zararli dasturlarni",
+            "ru": "Вредоносные программы на вашем устройстве",
+            "en": "Malware on your device"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda mazmun HTTPS tufayli allaqachon shifrlangan deb izohlanadi va shu sababli 100% anonimlik vaʼdasi — reklama.",
+          "ru": "В занятии объясняется, что содержимое уже шифруется HTTPS, и потому обещание 100-процентной анонимности — это реклама.",
+          "en": "The lesson explains that the content is already encrypted by HTTPS, which is why a promise of 100% anonymity is advertising."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "VPN provayderining jurnal yuritmaslik daʼvostini tekshirishda darsda nimalar asosli deb koʻrsatilgan?",
+          "ru": "Что занятие считает обоснованным при проверке заявления провайдера об отсутствии журналов?",
+          "en": "What does the lesson treat as sound evidence for a provider's no-logs claim?"
+        },
+        "options": [
+          {
+            "uz": "Mustaqil audit hisobotlarining oʻzi va ularning sanasi",
+            "ru": "Сами отчёты независимого аудита и их даты",
+            "en": "The independent audit reports themselves and their dates"
+          },
+          {
+            "uz": "Real hodisalardagi tasdiqlar, masalan sud soʻrovlari",
+            "ru": "Подтверждения в реальных событиях, например судебные запросы",
+            "en": "Confirmation in real events, such as court requests"
+          },
+          {
+            "uz": "Kompaniya qaysi davlat qonunlariga boʻysunishi va maʼlumotlarni saqlash majburiyatlari bormi",
+            "ru": "Законам какой страны подчиняется компания и есть ли обязанности хранения данных",
+            "en": "Which country's laws the company follows and whether it has data retention duties"
+          },
+          {
+            "uz": "Reklama sahifasidagi toʻliq anonimlik haqidagi vaʼda",
+            "ru": "Обещание полной анонимности на рекламной странице",
+            "en": "The promise of complete anonymity on an advertising page"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda reklama sahifasi dalil emas deb alohida aytilgan; shuningdek bir nechta mashhur VPN brendi bitta yirik kompaniyaga tegishli boʻlishi mumkin.",
+          "ru": "В занятии отдельно сказано, что рекламная страница — не доказательство; также несколько известных VPN-брендов могут принадлежать одной крупной компании.",
+          "en": "The lesson states that an advertising page is not evidence, and that several well-known VPN brands may belong to one large company."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, bepul nomaʼlum VPN ilovasidan foydalanish xavfli, chunki xizmat qandaydir yoʻl bilan pul topishi kerak.",
+          "ru": "Согласно занятию, пользоваться бесплатным неизвестным VPN-приложением опасно, поскольку сервису нужно как-то зарабатывать.",
+          "en": "According to the lesson, using a free unknown VPN app is dangerous, because the service has to make money somehow."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda daromad manbai sifatida reklama, trafik maʼlumotlarini sotish yoki kuzatuv koʻrsatilgan; tadqiqotlar esa baʼzi bepul ilovalar trafikni shifrlamasligi, ortiqcha ruxsat soʻrashini va hatto zararli kod saqlashini koʻrsatgan.",
+          "ru": "Как источники дохода занятие называет рекламу, продажу данных о трафике или слежку; исследования показали, что часть бесплатных приложений не шифрует трафик, просит избыточные разрешения и даже содержит вредоносный код.",
+          "en": "The lesson names advertising, selling traffic data or tracking as income sources; studies showed that some free apps do not encrypt traffic, ask for excessive permissions and even contain malicious code."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "VPN ni sozlash va sizishlarni tekshirish boʻyicha nazorat savollari",
+      "ru": "Проверочные вопросы о настройке VPN и поиске утечек",
+      "en": "Check questions on configuring a VPN and checking for leaks"
+    },
+    "statement": {
+      "uz": "Amaliy ishni bajarishdan oldin darsning «Amaliy ish» boʻlimi va «Koʻp uchraydigan xatolar» roʻyxatiga asoslangan besh savolga javob bering. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Прежде чем выполнять практическую работу, ответьте на пять вопросов по разделу «Практическая работа» и списку «Частые ошибки». Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before you start the practical work, answer five questions based on the lesson's \"Practical work\" section and its list of common mistakes. The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Amaliy ishning birinchi qadamida nima qilinishi aytilgan?",
+            "ru": "Что делается на первом шаге практической работы?",
+            "en": "What is the first step of the practical work?"
+          },
+          "options": [
+            {
+              "uz": "VPN siz, ipleak.net yoki browserleaks.com da IP manzil, mamlakat va DNS serverlarini yozib olish",
+              "ru": "Без VPN зайти на ipleak.net или browserleaks.com и записать IP-адрес, страну и DNS-серверы",
+              "en": "Without the VPN, visit ipleak.net or browserleaks.com and record the IP address, country and DNS servers"
+            },
+            {
+              "uz": "VPN ni oʻchirib, uni qayta oʻrnatish",
+              "ru": "Удалить VPN и установить его заново",
+              "en": "Remove the VPN and install it again"
+            },
+            {
+              "uz": "Parolni yangilash va MFA yoqish",
+              "ru": "Обновить пароль и включить MFA",
+              "en": "Update the password and enable MFA"
+            },
+            {
+              "uz": "Tashkilot tarmogʻiga ruxsatsiz ulanish",
+              "ru": "Подключиться к сети организации без разрешения",
+              "en": "Connect to the organization's network without permission"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Bu asosiy holatni yozib olish qadami; keyin xuddi shu tekshov VPN yoqilgan holda qaytariladi.",
+            "ru": "Это фиксация исходного состояния; затем та же проверка повторяется с включённым VPN.",
+            "en": "This is recording the baseline; the same check is then repeated with the VPN on."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsda VPN ni sozlashda qaysi tavsiyalar berilgan?",
+            "ru": "Какие советы по настройке VPN даны в занятии?",
+            "en": "Which configuration settings does the lesson recommend?"
+          },
+          "options": [
+            {
+              "uz": "Protokol — WireGuard yoki OpenVPN",
+              "ru": "Протокол — WireGuard или OpenVPN",
+              "en": "The protocol — WireGuard or OpenVPN"
+            },
+            {
+              "uz": "Kill switch yoqilgan va DNS sizishidan himoya yoqilgan",
+              "ru": "Включённый kill switch и защита от утечек DNS",
+              "en": "Kill switch enabled and DNS leak protection enabled"
+            },
+            {
+              "uz": "Avtomatik ulanish jamoat Wi-Fi tarmoqlarida",
+              "ru": "Автоподключение в публичных сетях Wi-Fi",
+              "en": "Automatic connection on public Wi-Fi networks"
+            },
+            {
+              "uz": "Protokol — PPTP",
+              "ru": "Протокол — PPTP",
+              "en": "The protocol — PPTP"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "PPTP darsda eskirgan va zaif deb koʻrsatilgan; oʻrnatish esa faqat rasmiy saytdan yoki universitet bergan VPN orqali.",
+            "ru": "PPTP назван в занятии устаревшим и слабым; установка — только с официального сайта или через VPN, предоставленный университетом.",
+            "en": "The lesson calls PPTP outdated and weak; you install only from the official website, or use a VPN provided by the university."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Amaliy ishda faqat IP va DNS emas, WebRTC sizishini ham tekshirish koʻrsatilgan.",
+            "ru": "В практической работе проверяют не только утечки IP и DNS, но и WebRTC.",
+            "en": "The practical work says to check for WebRTC leaks, not only IP and DNS leaks."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Toʻrtinchi qadamda VPN yoqilganda IP va DNS VPN serveriga tegishli boʻlishi, haqiqiy IP va ISP DNS koʻrinmasligi, shuningdek WebRTC sizishi tekshiriladi.",
+            "ru": "На четвёртом шаге с включённым VPN проверяют, что IP и DNS принадлежат VPN-серверу, настоящий IP и DNS провайдера не видны, а также утечку WebRTC.",
+            "en": "Step four says that with the VPN on the IP and DNS must belong to the VPN server, your real IP and ISP DNS must not be visible, and WebRTC leaks must be checked too."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Kill switch sinovida VPN ulanishini uzib koʻrganda nima kuzatilishi kerak?",
+            "ru": "Что должно наблюдаться при проверке kill switch, когда разрывают VPN-подключение?",
+            "en": "In the kill switch test, what should happen when you disconnect the VPN?"
+          },
+          "options": [
+            {
+              "uz": "Internet vaqtincha toʻxtashi kerak — trafik ochiq kanalga chiqib ketmasligi kerak",
+              "ru": "Интернет должен временно остановиться — трафик не должен уйти в открытый канал",
+              "en": "The Internet should stop temporarily — traffic must not leak into the open channel"
+            },
+            {
+              "uz": "Trafik sekinroq, lekin uzluksiz ishlashni davom etishi kerak",
+              "ru": "Трафик должен продолжить работу медленнее, но без разрыва",
+              "en": "Traffic should keep flowing, only more slowly and without a break"
+            },
+            {
+              "uz": "Brauzer boʻsh sahifani oʻzi qayta ochishi kerak",
+              "ru": "Браузер должен сам открыть пустую страницу",
+              "en": "The browser should open a blank page by itself"
+            },
+            {
+              "uz": "DNS serverlar avtomatik ISP DNS ga qaytishi kerak",
+              "ru": "DNS-серверы должны автоматически вернуться на DNS провайдера",
+              "en": "The DNS servers should fall back to the ISP's DNS"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Beshinchi qadam shu; oltinchi qadamda esa speedtest bilan tezlik solishtiriladi va masofaviy serverlar sekinroq ekanini kuzatish aytilgan.",
+            "ru": "Это пятый шаг; на шестом сравнивают скорость через speedtest и отмечают, что далёкие серверы медленнее.",
+            "en": "That is step five; step six compares speed with a speed test and notes that distant servers are slower."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "VPN yoqilgan holda IP va DNS VPN serveriga tegishli ekanini tekshirish uchun qaysi test sahifasini qayta ochish koʻrsatilgan?",
+            "ru": "Какую тестовую страницу советуют снова открыть с включённым VPN, чтобы проверить, что IP и DNS принадлежат VPN-серверу?",
+            "en": "Which test page does the lesson say to open again with the VPN on to check that the IP and DNS belong to the VPN server?"
+          },
+          "answers": ["ipleak.net", "ipleak", "https://ipleak.net", "www.ipleak.net"],
+          "explanation": {
+            "uz": "Darsda ipleak.net yozilgan; u IP, DNS va WebRTC sizishini tekshirish uchun bepul test sahifasi sifatida ham berilgan. Hisobotda skrinshotlarda haqiqiy IP manzilni yashirish aytilgan.",
+            "ru": "В занятии указан ipleak.net — бесплатная страница для проверки утечек IP, DNS и WebRTC. В отчёте на скриншотах советуют скрывать настоящий IP-адрес.",
+            "en": "The lesson names ipleak.net, a free page for checking IP, DNS and WebRTC leaks, and says to hide your real IP address in the report's screenshots."
+          }
+        }
+      ]
+    }
+  }
+}

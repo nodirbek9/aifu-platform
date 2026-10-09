@@ -1,0 +1,322 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Sniffer tarmoq adapterini qaysi rejimga oʻtkazadi va bu nima beradi?",
+          "ru": "В какой режим sniffer переводит сетевой адаптер и что это даёт?",
+          "en": "Which mode does a sniffer put the network adapter into, and what does it give?"
+        },
+        "options": [
+          {
+            "uz": "Tinglash rejimiga (promiscuous) — adapter segmentdagi barcha kadrlarni qabul qiladi",
+            "ru": "В режим прослушивания (promiscuous) — адаптер принимает все кадры сегмента",
+            "en": "Promiscuous mode — the adapter accepts every frame in the segment"
+          },
+          {
+            "uz": "Filtr rejimiga — adapter faqat oʻziga yuborilgan kadrlarni oladi",
+            "ru": "В режим фильтра — адаптер берёт только кадры, адресованные ему",
+            "en": "Filter mode — the adapter takes only the frames sent to itself"
+          },
+          {
+            "uz": "Shifrlash rejimiga — adapter trafigini qayta ishlaydi",
+            "ru": "В режим шифрования — адаптер перешифровывает трафик",
+            "en": "Encryption mode — the adapter re-encrypts the traffic"
+          },
+          {
+            "uz": "Kuzatish rejimiga — adapter kadr tezligini oshiradi",
+            "ru": "В режим мониторинга — адаптер увеличивает скорость приёма кадров",
+            "en": "Monitoring mode — the adapter raises its frame receiving rate"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Odatda adapter faqat oʻziga, broadkast va obuna boʻlgan multicast manzillarga yuborilgan kadrlarni qabul qiladi; sniffer uni tinglash rejimiga oʻtkazadi.",
+          "ru": "Обычно адаптер принимает только кадры на себя, а также broadcast и подписанный multicast; sniffer переводит его в режим прослушивания.",
+          "en": "Normally an adapter accepts only frames addressed to itself plus broadcast and subscribed multicast; a sniffer switches it into promiscuous mode."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Port nusxalash (SPAN) sozlanmagan kommutatorli tarmoqda sniffer boshqa kompyuterning unicast kadrlarini ham koʻradi.",
+          "ru": "В коммутаторной сети без настроенного зеркалирования портов (SPAN) sniffer видит и unicast-кадры другого компьютера.",
+          "en": "In a switched network without port mirroring (SPAN) configured, a sniffer also sees another computer's unicast frames."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Kommutator boshqa kompyuterlarning unicast kadrlarini sizning portingizga yubormaydi: SPAN yoki TAP boʻlmasa, faqat oʻz trafigingiz, broadkast va multicast koʻrinadi.",
+          "ru": "Коммутатор не отправляет unicast-кадры других компьютеров на ваш порт: без SPAN или TAP видны только свой трафик, broadcast и multicast.",
+          "en": "The switch does not send other computers' unicast frames to your port: without SPAN or a TAP you see only your own traffic, broadcasts and multicasts."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "100BASE-TX (Fast Ethernet) haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о 100BASE-TX (Fast Ethernet) верны?",
+          "en": "Which statements about 100BASE-TX (Fast Ethernet) are correct?"
+        },
+        "options": [
+          {
+            "uz": "Cat5 kabel ishlatiladi",
+            "ru": "Используется кабель Cat5",
+            "en": "It uses Cat5 cable"
+          },
+          {
+            "uz": "Maʼlumot Manchester kodida uzatiladi",
+            "ru": "Данные передаются кодом Manchester",
+            "en": "Its data is carried by Manchester coding"
+          },
+          {
+            "uz": "Ikki juftlik ishlatiladi: 1-2 va 3-6",
+            "ru": "Используются две пары: 1-2 и 3-6",
+            "en": "It uses two pairs: 1-2 and 3-6"
+          },
+          {
+            "uz": "Liniya chastotasi 10 MHz",
+            "ru": "Частота линии — 10 МГц",
+            "en": "Its line rate is 10 MHz"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Jadval boʻyicha 100BASE-TX: Cat5, ikki juftlik (1-2, 3-6), 4B/5B + MLT-3, 125 Mbod, 100 m segment. Manchester va 10 MHz — 10BASE-T ga tegishli.",
+          "ru": "По таблице: 100BASE-TX — Cat5, две пары (1-2, 3-6), 4B/5B + MLT-3, 125 бод, сегмент 100 м. Manchester и 10 МГц относятся к 10BASE-T.",
+          "en": "The table gives 100BASE-TX as Cat5, two pairs (1-2, 3-6), 4B/5B + MLT-3, 125 Mbaud, 100 m segment. Manchester and 10 MHz belong to 10BASE-T."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Quyidagilardan qaysi biri Wireshark koʻrsatish filtri (display filter)?",
+          "ru": "Что из перечисленного является фильтром отображения (display filter) Wireshark?",
+          "en": "Which of these is a Wireshark display filter?"
+        },
+        "options": [
+          {
+            "uz": "`host 192.168.1.10`",
+            "ru": "`host 192.168.1.10`",
+            "en": "`host 192.168.1.10`"
+          },
+          {
+            "uz": "`ip.addr == 192.168.1.10`",
+            "ru": "`ip.addr == 192.168.1.10`",
+            "en": "`ip.addr == 192.168.1.10`"
+          },
+          {
+            "uz": "`tcp and port 443`",
+            "ru": "`tcp and port 443`",
+            "en": "`tcp and port 443`"
+          },
+          {
+            "uz": "`not port 22`",
+            "ru": "`not port 22`",
+            "en": "`not port 22`"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi roʻyxatda `ip.addr == 192.168.1.10` koʻrsatish filtrlari ustunida; `host`, `tcp and port`, `not port` — BPF ushlash filtrlari. Ushlash filtri yoziladigan paketlarni, koʻrsatish filtri koʻrsatiladiganlarini tanlaydi.",
+          "ru": "В списке занятия `ip.addr == 192.168.1.10` стоит в столбце фильтров отображения, а `host`, `tcp and port`, `not port` — фильтры захвата BPF. Фильтр захвата выбирает записываемые пакеты, фильтр отображения — показываемые.",
+          "en": "In the lesson's list `ip.addr == 192.168.1.10` sits in the display-filter column, while `host`, `tcp and port` and `not port` are BPF capture filters. A capture filter picks the packets recorded, a display filter the packets shown."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kadrda VLAN tegi boʻlsa, Ethernet sarlavhasi jami necha bayt boʻladi? (6 bayt qabul qiluvchi MAC + 6 bayt yuboruvchi MAC + VLAN tegi + 2 bayt EtherType)",
+          "ru": "Сколько всего байт занимает заголовок Ethernet, если в кадре есть VLAN-тег? (6 байт MAC получателя + 6 байт MAC отправителя + VLAN-тег + 2 байта EtherType)",
+          "en": "How many bytes does the Ethernet header occupy when the frame carries a VLAN tag? (6 bytes destination MAC + 6 bytes source MAC + the VLAN tag + 2 bytes EtherType)"
+        },
+        "answers": [18],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsdagi sarlavha: 6 + 6 bayt MAC, ixtiyoriy 4 baytli VLAN tegi, 2 bayt EtherType — jami 18 bayt. Tegi boʻlmagan kadrda 14 bayt.",
+          "ru": "Заголовок из занятия: 6 + 6 байт MAC, необязательный 4-байтный VLAN-тег, 2 байта EtherType — всего 18 байт. Без тега — 14 байт.",
+          "en": "The lesson's header: 6 + 6 bytes of MAC, an optional 4-byte VLAN tag, 2 bytes of EtherType — 18 bytes in all, 14 without the tag."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "tcpdump ushlangan trafikni qaysi fayl kengaytmasi bilan yozadi? Kengaytmani nuqtasiz yozing.",
+          "ru": "С каким расширением файла tcpdump записывает захваченный трафик? Расширение напишите без точки.",
+          "en": "Which file extension does tcpdump use when it writes the captured traffic? Write the extension without the dot."
+        },
+        "answers": ["pcap"],
+        "explanation": {
+          "uz": "Darsdagi vositalar jadvalida tcpdump `.pcap` faylga yozadi deyilgan.",
+          "ru": "В таблице инструментов занятия сказано, что tcpdump записывает в файл `.pcap`.",
+          "en": "The lesson's tool table says tcpdump writes to a `.pcap` file."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kadrda EtherType `0x0806` boʻlsa, maʼlumot qismi qaysi protokoldan?",
+          "ru": "Если в кадре EtherType равен `0x0806`, какому протоколу принадлежит данные?",
+          "en": "If the frame's EtherType is `0x0806`, which protocol does the payload belong to?"
+        },
+        "options": [
+          {
+            "uz": "IPv4",
+            "ru": "IPv4",
+            "en": "IPv4"
+          },
+          {
+            "uz": "ARP",
+            "ru": "ARP",
+            "en": "ARP"
+          },
+          {
+            "uz": "IPv6",
+            "ru": "IPv6",
+            "en": "IPv6"
+          },
+          {
+            "uz": "Bunday EtherType darsdagi nomlar jadvalida yoʻq",
+            "ru": "Такого EtherType нет в таблице имён занятия",
+            "en": "This EtherType is not in the lesson's name table"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dasturdagi nomlar: 0x0800 — IPv4, 0x0806 — ARP, 0x86DD — IPv6. Jadvalda boʻlmagan qiymat \"nomaʼlum\" deb chiqadi.",
+          "ru": "Имена из программы: 0x0800 — IPv4, 0x0806 — ARP, 0x86DD — IPv6. Значение не из таблицы печатается как «unknown».",
+          "en": "The program's names: 0x0800 — IPv4, 0x0806 — ARP, 0x86DD — IPv6. A value outside the table prints as \"unknown\"."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Sniffer bilan ishlash boʻyicha darsdagi qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения из занятия о работе со сниффером верны?",
+          "en": "Which statements from the lesson about working with a sniffer are correct?"
+        },
+        "options": [
+          {
+            "uz": "Snifferni faqat oʻz kompyuteringizda yoki laboratoriya tarmogʻida ishlatish mumkin",
+            "ru": "Сниффер можно использовать только на своём компьютере или в лабораторной сети",
+            "en": "A sniffer may be used only on your own computer or in a lab network"
+          },
+          {
+            "uz": "Tarmoq egasining yozma ruxsati boʻlsa, boshqa qurilma trafigini ushlash mumkin",
+            "ru": "С письменного разрешения владельца сети чужой трафик можно захватывать",
+            "en": "With the network owner's written permission other traffic may be captured"
+          },
+          {
+            "uz": "Ushlash filtri yoziladigan paketlarni, koʻrsatish filtri koʻrsatiladiganlarini tanlaydi",
+            "ru": "Фильтр захвата выбирает записываемые пакеты, фильтр отображения — показываемые",
+            "en": "A capture filter chooses the packets recorded, a display filter those shown"
+          },
+          {
+            "uz": "Tinglash rejimi yoqilsa, kommutator barcha portlarning unicast trafigini avtomatik yuboradi",
+            "ru": "Если включить режим прослушивания, коммутатор сам начнёт слать unicast-трафик всех портов",
+            "en": "Turning on promiscuous mode makes the switch send every port's unicast traffic automatically"
+          },
+          {
+            "uz": "Koʻrsatish filtri yoziladigan paketlarni cheklar, ushlash filtri esa faqat koʻrsatiladiganlarini tanlaydi",
+            "ru": "Фильтр отображения ограничивает записываемые пакеты, а фильтр захвата — показываемые",
+            "en": "A display filter limits the packets recorded and a capture filter the packets shown"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Boshqalarning trafigini ruxsatsiz ushlash qonun buzilishi boʻlishi mumkin. Kommutator port nusxalash (SPAN) sozlanmasa, boshqa portlarning unicast kadrlarini yubormaydi. Soʻnggi variantda ikki filtrning roli almashtirilgan.",
+          "ru": "Захват чужого трафика без разрешения может нарушать закон. Коммутатор не отправляет unicast-кадры других портов, пока не настроено зеркалирование (SPAN). В последнем варианте роли двух фильтров переставлены.",
+          "en": "Capturing other people's traffic without permission may break the law. A switch sends no unicast from other ports until port mirroring (SPAN) is set up. The last option swaps the roles of the two filters."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "1000BASE-T da maʼlumot uzatish uchun ikki juftlik ishlatiladi.",
+          "ru": "В 1000BASE-T для передачи данных используются две пары.",
+          "en": "1000BASE-T uses two pairs to carry its data."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Jadvalga koʻra 1000BASE-T toʻrt juftlikning hammasini, ikki yoʻnalishda ishlatadi va PAM-5 kodlash qoʻllaydi; ikki juftlik — 10BASE-T va 100BASE-TX ga xos.",
+          "ru": "По таблице 1000BASE-T использует все четыре пары в обоих направлениях и кодирование PAM-5; две пары характерны для 10BASE-T и 100BASE-TX.",
+          "en": "The table gives 1000BASE-T all four pairs, in both directions, with PAM-5 coding; two pairs belong to 10BASE-T and 100BASE-TX."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Avtomatik kelishuv: tezlik va dupleks",
+      "ru": "Автосогласование: скорость и дуплекс",
+      "en": "Autonegotiation: speed and duplex"
+    },
+    "statement": {
+      "uz": "Ulanish oʻrnatilganda adapter va kommutator porti oʻz imkoniyatlarini eʼlon qiladi va ikkalasi ham qoʻllaydigan eng yaxshi rejim tanlanadi. Shu tanlovni hisoblovchi dastur yozing. Kirish toʻrt satrdan iborat: 1-satrda adapter qoʻllaydigan tezliklar (`10`, `100`, `1000`, boʻshliq bilan ajratilgan, istalgan tartibda), 2-satrda kommutator portining tezliklari, 3-satrda adapter dupleks rejimlari (`half`, `full` yoki ikkalasi), 4-satrda portning dupleks rejimlari. Eng katta umumiy tezlikni tanlang. Dupleksda ikkala tomon `full` ni qoʻllasa `full`, aks holda `half` yoziladi — kirishda kamida bitta umumiy dupleks rejim boʻladi. Umumiy tezlik boʻlmasa, `no link` chiqaring. Chiqish — bitta qator: masalan `100 full` yoki `no link`. Boshqa soʻz yozmang.",
+      "ru": "При установлении соединения адаптер и порт коммутатора объявляют свои возможности, и выбирается лучший режим, который поддерживают оба. Напишите программу, считающую этот выбор. Вход состоит из четырёх строк: в 1-й строке скорости адаптера (`10`, `100`, `1000`, разделённые пробелом, в любом порядке), во 2-й — скорости порта коммутатора, в 3-й — дуплексные режимы адаптера (`half`, `full` или оба), в 4-й — режимы порта. Выберите наибольшую общую скорость. В дуплексе напишите `full`, если его поддерживают обе стороны, иначе `half` — по крайней мере один общий дуплексный режим во входе есть. Общей скорости нет — выведите `no link`. Вывод — одна строка, например `100 full` или `no link`. Других слов не выводите.",
+      "en": "When a link comes up, the adapter and the switch port advertise their capabilities and the best mode both support is chosen. Write the program that makes this choice. The input has four lines: line 1 the speeds the adapter supports (`10`, `100`, `1000`, space-separated, in any order), line 2 the speeds of the switch port, line 3 the duplex modes of the adapter (`half`, `full` or both), line 4 the modes of the port. Pick the greatest speed common to both lines. For duplex write `full` when both sides support it, otherwise `half` — the input always has at least one common duplex mode. If the two sides share no speed, print `no link`. The output is one line, for example `100 full` or `no link`, with no other words."
+    },
+    "code": {
+      "starter": {
+        "python": "adapter = set(input().split())\nport = set(input().split())\nadapterDuplex = set(input().split())\nportDuplex = set(input().split())\ntanlangan = \"no link\"\nfor tezlik in (\"10\", \"100\", \"1000\"):\n    if tezlik in adapter and tezlik in port:\n        tanlangan = tezlik\n        break\nif tanlangan == \"no link\":\n    print(tanlangan)\nelse:\n    rejim = \"full\" if \"full\" in adapterDuplex and \"full\" in portDuplex else \"half\"\n    print(tanlangan, rejim)\n",
+        "java": "import java.util.HashSet;\nimport java.util.Scanner;\nimport java.util.Set;\n\npublic class Main {\n    static Set<String> toplam(String satr) {\n        Set<String> toplam = new HashSet<>();\n        Scanner s = new Scanner(satr);\n        while (s.hasNext()) {\n            toplam.add(s.next());\n        }\n        return toplam;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        Set<String> adapter = toplam(in.nextLine());\n        Set<String> port = toplam(in.nextLine());\n        Set<String> adapterDuplex = toplam(in.nextLine());\n        Set<String> portDuplex = toplam(in.nextLine());\n        String tanlangan = \"no link\";\n        for (String tezlik : new String[] {\"10\", \"100\", \"1000\"}) {\n            if (adapter.contains(tezlik) && port.contains(tezlik)) {\n                tanlangan = tezlik;\n                break;\n            }\n        }\n        if (tanlangan.equals(\"no link\")) {\n            System.out.println(tanlangan);\n        } else {\n            String rejim = adapterDuplex.contains(\"full\") && portDuplex.contains(\"full\") ? \"full\" : \"half\";\n            System.out.println(tanlangan + \" \" + rejim);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <set>\n#include <sstream>\n#include <string>\nusing namespace std;\n\nset<string> toplam(const string& satr) {\n    set<string> toplam;\n    string soz;\n    stringstream oqim(satr);\n    while (oqim >> soz) {\n        toplam.insert(soz);\n    }\n    return toplam;\n}\n\nint main() {\n    string l1, l2, l3, l4;\n    getline(cin, l1);\n    getline(cin, l2);\n    getline(cin, l3);\n    getline(cin, l4);\n    set<string> adapter = toplam(l1);\n    set<string> port = toplam(l2);\n    set<string> adapterDuplex = toplam(l3);\n    set<string> portDuplex = toplam(l4);\n    string nomlar[] = {\"10\", \"100\", \"1000\"};\n    string tanlangan = \"no link\";\n    for (int i = 0; i < 3; i++) {\n        if (adapter.count(nomlar[i]) && port.count(nomlar[i])) {\n            tanlangan = nomlar[i];\n            break;\n        }\n    }\n    if (tanlangan == \"no link\") {\n        cout << tanlangan << endl;\n    } else {\n        string rejim = (adapterDuplex.count(\"full\") && portDuplex.count(\"full\")) ? \"full\" : \"half\";\n        cout << tanlangan << \" \" << rejim << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "adapter = set(input().split())\nport = set(input().split())\nadapterDuplex = set(input().split())\nportDuplex = set(input().split())\ntanlangan = \"no link\"\nfor tezlik in (\"1000\", \"100\", \"10\"):\n    if tezlik in adapter and tezlik in port:\n        tanlangan = tezlik\n        break\nif tanlangan == \"no link\":\n    print(tanlangan)\nelse:\n    rejim = \"full\" if \"full\" in adapterDuplex and \"full\" in portDuplex else \"half\"\n    print(tanlangan, rejim)\n",
+        "java": "import java.util.HashSet;\nimport java.util.Scanner;\nimport java.util.Set;\n\npublic class Main {\n    static Set<String> toplam(String satr) {\n        Set<String> toplam = new HashSet<>();\n        Scanner s = new Scanner(satr);\n        while (s.hasNext()) {\n            toplam.add(s.next());\n        }\n        return toplam;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        Set<String> adapter = toplam(in.nextLine());\n        Set<String> port = toplam(in.nextLine());\n        Set<String> adapterDuplex = toplam(in.nextLine());\n        Set<String> portDuplex = toplam(in.nextLine());\n        String tanlangan = \"no link\";\n        for (String tezlik : new String[] {\"1000\", \"100\", \"10\"}) {\n            if (adapter.contains(tezlik) && port.contains(tezlik)) {\n                tanlangan = tezlik;\n                break;\n            }\n        }\n        if (tanlangan.equals(\"no link\")) {\n            System.out.println(tanlangan);\n        } else {\n            String rejim = adapterDuplex.contains(\"full\") && portDuplex.contains(\"full\") ? \"full\" : \"half\";\n            System.out.println(tanlangan + \" \" + rejim);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <set>\n#include <sstream>\n#include <string>\nusing namespace std;\n\nset<string> toplam(const string& satr) {\n    set<string> toplam;\n    string soz;\n    stringstream oqim(satr);\n    while (oqim >> soz) {\n        toplam.insert(soz);\n    }\n    return toplam;\n}\n\nint main() {\n    string l1, l2, l3, l4;\n    getline(cin, l1);\n    getline(cin, l2);\n    getline(cin, l3);\n    getline(cin, l4);\n    set<string> adapter = toplam(l1);\n    set<string> port = toplam(l2);\n    set<string> adapterDuplex = toplam(l3);\n    set<string> portDuplex = toplam(l4);\n    string nomlar[] = {\"1000\", \"100\", \"10\"};\n    string tanlangan = \"no link\";\n    for (int i = 0; i < 3; i++) {\n        if (adapter.count(nomlar[i]) && port.count(nomlar[i])) {\n            tanlangan = nomlar[i];\n            break;\n        }\n    }\n    if (tanlangan == \"no link\") {\n        cout << tanlangan << endl;\n    } else {\n        string rejim = (adapterDuplex.count(\"full\") && portDuplex.count(\"full\")) ? \"full\" : \"half\";\n        cout << tanlangan << \" \" << rejim << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "10 100\n10 100 1000\nfull\nhalf full\n", "expected": "100 full", "hidden": false },
+        { "input": "10 100\n1000\nfull\nhalf full\n", "expected": "no link", "hidden": false },
+        { "input": "100\n10 100 1000\nhalf\nhalf full\n", "expected": "100 half", "hidden": true },
+        { "input": "1000 100\n100 1000\nfull half\nhalf\n", "expected": "1000 half", "hidden": true },
+        { "input": "10\n10\nfull\nfull\n", "expected": "10 full", "hidden": true }
+      ]
+    }
+  }
+}

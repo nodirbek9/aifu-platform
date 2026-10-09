@@ -1,0 +1,421 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Bitta slaydda imkon qadar koʻp fikr va maʼlumotlarni joylashtirish kerak.",
+          "ru": "На одном слайде нужно разместить как можно больше идей и данных.",
+          "en": "One slide should contain as many ideas and data as possible."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "\"Bitta slayd — bitta fikr\" qoidasiga koʻra bitta slaydda bitta asosiy fikr boʻlishi kerak.",
+          "ru": "Согласно правилу \"один слайд — одна мысль\", на одном слайде должна быть только одна ключевая идея.",
+          "en": "According to the \"one slide — one idea\" rule, a single slide should contain only one key idea."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Vaqt boʻyicha oʻzgarishni koʻrsatish uchun qaysi diagramma turidan foydalanish eng toʻgʻri?",
+          "ru": "Какой тип диаграммы лучше всего использовать для показа изменения во времени?",
+          "en": "Which chart type is best to use for showing change over time?"
+        },
+        "options": [
+          {
+            "uz": "Chiziqli",
+            "ru": "Линейная",
+            "en": "Line"
+          },
+          {
+            "uz": "Doiraviy",
+            "ru": "Круговая",
+            "en": "Pie"
+          },
+          {
+            "uz": "Nuqtali",
+            "ru": "Точечная",
+            "en": "Scatter"
+          },
+          {
+            "uz": "Ustunli",
+            "ru": "Столбчатая",
+            "en": "Column"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra, vaqt boʻyicha oʻzgarishni koʻrsatish uchun chiziqli diagramma eng mos keladi.",
+          "ru": "По уроку, линейная диаграмма лучше всего подходит для показа изменения во времени.",
+          "en": "According to the lesson, a line chart is best suited for showing change over time."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Gai Kavasakining biznes-pitch uchun tavsiya qilgan 10/20/30 qoidasi oʻz ichiga nimalarni oladi?",
+          "ru": "Что включает в себя правило 10/20/30 Гая Кавасаки, рекомендованное для бизнес-питчей?",
+          "en": "What does Guy Kawasaki's 10/20/30 rule, recommended for business pitches, include?"
+        },
+        "options": [
+          {
+            "uz": "10 ta slayd",
+            "ru": "10 слайдов",
+            "en": "10 slides"
+          },
+          {
+            "uz": "20 daqiqa",
+            "ru": "20 минут",
+            "en": "20 minutes"
+          },
+          {
+            "uz": "Har bir slayd uchun 30 soniya",
+            "ru": "30 секунд на слайд",
+            "en": "30 seconds per slide"
+          },
+          {
+            "uz": "Kamida 30 pt shrift oʻlchami",
+            "ru": "Шрифт не менее 30 пт",
+            "en": "A font of at least 30 pt"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "10/20/30 qoidasi: 10 ta slayd, 20 daqiqa va kamida 30 pt shrift oʻlchamini anglatadi.",
+          "ru": "Правило 10/20/30 означает: 10 слайдов, 20 минут и шрифт не менее 30 пт.",
+          "en": "The 10/20/30 rule means: 10 slides, 20 minutes, and a font size of at least 30 pt."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Barcha slaydlarda bir xil shrift, rang va logotipni bir joyda oʻrnatish uchun qaysi vositadan foydalaniladi?",
+          "ru": "Какой инструмент используется для настройки одинакового шрифта, цвета и логотипа для всех слайдов в одном месте?",
+          "en": "Which tool is used to set the same font, colours, and logo for all slides in one place?"
+        },
+        "options": [
+          {
+            "uz": "Namuna slayd (Slide Master)",
+            "ru": "Образец слайдов (Slide Master)",
+            "en": "Slide Master"
+          },
+          {
+            "uz": "SmartArt",
+            "ru": "SmartArt",
+            "en": "SmartArt"
+          },
+          {
+            "uz": "Animatsiya va oʻtishlar",
+            "ru": "Анимация и переходы",
+            "en": "Animations and transitions"
+          },
+          {
+            "uz": "Maket (Layout)",
+            "ru": "Макет (Layout)",
+            "en": "Layout"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Namuna slayd (Slide Master) barcha slaydlarda izchillikni taʼminlash uchun bir joyda oʻzgarishlarni amalga oshirishga imkon beradi.",
+          "ru": "Образец слайдов (Slide Master) позволяет вносить изменения в одном месте для обеспечения единообразия на всех слайдах.",
+          "en": "The Slide Master allows making changes in one place to ensure consistency across all slides."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Slaydlar namoyishini (taqdimotni) boshidan boshlash uchun moʻljallangan klaviatura tugmasini yozing.",
+          "ru": "Напишите клавишу на клавиатуре, предназначенную для запуска показа слайдов (презентации) с самого начала.",
+          "en": "Write the keyboard key intended to start the slide show (presentation) from the beginning."
+        },
+        "answers": [
+          "F5",
+          "f5"
+        ],
+        "explanation": {
+          "uz": "F5 tugmasi namoyishni boshidan, Shift + F5 esa joriy slayddan boshlaydi.",
+          "ru": "Клавиша F5 запускает показ с начала, а Shift + F5 — с текущего слайда.",
+          "en": "The F5 key starts the show from the beginning, while Shift + F5 starts from the current slide."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dizayn tamoyillariga koʻra, slaydning asosiy matni uchun shrift oʻlchami kamida necha punkt boʻlishi kerak?",
+          "ru": "Согласно принципам дизайна, каким должен быть минимальный размер шрифта в пунктах для основного текста слайда?",
+          "en": "According to design principles, what should be the minimum font size in points for the slide's body text?"
+        },
+        "answers": [
+          24
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Oʻqiladigan shrift boʻlishi uchun asosiy matn kamida 24 pt boʻlishi tavsiya etiladi.",
+          "ru": "Для удобочитаемости рекомендуется, чтобы основной текст был не менее 24 пт.",
+          "en": "For readability, it is recommended that the body text be at least 24 pt."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Taqdimot yaratish dasturlarini belgilang.",
+          "ru": "Отметьте программы для создания презентаций.",
+          "en": "Select the programs for creating presentations."
+        },
+        "options": [
+          {
+            "uz": "Microsoft PowerPoint",
+            "ru": "Microsoft PowerPoint",
+            "en": "Microsoft PowerPoint"
+          },
+          {
+            "uz": "Google Slides",
+            "ru": "Google Slides",
+            "en": "Google Slides"
+          },
+          {
+            "uz": "LibreOffice Impress",
+            "ru": "LibreOffice Impress",
+            "en": "LibreOffice Impress"
+          },
+          {
+            "uz": "Google Sheets",
+            "ru": "Google Sheets",
+            "en": "Google Sheets"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Microsoft PowerPoint, Google Slides va LibreOffice Impress — bu taqdimot tuzish uchun moʻljallangan dasturlardir.",
+          "ru": "Microsoft PowerPoint, Google Slides и LibreOffice Impress — это программы, предназначенные для создания презентаций.",
+          "en": "Microsoft PowerPoint, Google Slides, and LibreOffice Impress are programs designed for creating presentations."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nima uchun taqdimotda juda koʻp animatsiya va oʻtish effektlaridan foydalanish xato hisoblanadi?",
+          "ru": "Почему использование слишком большого количества анимаций и эффектов перехода в презентации считается ошибкой?",
+          "en": "Why is using too many animation and transition effects in a presentation considered a mistake?"
+        },
+        "options": [
+          {
+            "uz": "Ular tinglovchini asosiy mazmundan chalgʻitadi",
+            "ru": "Они отвлекают слушателей от основного содержания",
+            "en": "They distract the audience from the main content"
+          },
+          {
+            "uz": "Dasturning xato ishlashiga olib keladi",
+            "ru": "Это приводит к сбою программы",
+            "en": "It causes the program to crash"
+          },
+          {
+            "uz": "Slaydlar sonini avtomatik oshirib yuboradi",
+            "ru": "Автоматически увеличивает количество слайдов",
+            "en": "It automatically increases the number of slides"
+          },
+          {
+            "uz": "Matnni avtomatik ravishda oʻchirib tashlaydi",
+            "ru": "Автоматически удаляет текст",
+            "en": "It automatically deletes text"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ortiqcha animatsiya va effektlar vizual shovqin yaratadi va mazmundan chalgʻitadi.",
+          "ru": "Избыточная анимация и эффекты создают визуальный шум и отвлекают от содержания.",
+          "en": "Excessive animations and effects create visual noise and distract from the content."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Yaxshi slayd sarlavhasi asosiy fikrni toʻliq jumla bilan ifodalashi kerak, masalan, \"Savdo dinamikasi\" emas, balki \"Savdo 2025-yilda 18% oshdi\" deb yozilishi toʻgʻri.",
+          "ru": "Хороший заголовок слайда должен выражать главную мысль полным предложением, например, правильно писать «Продажи выросли на 18% в 2025 году», а не «Динамика продаж».",
+          "en": "A good slide title should express the main idea as a full sentence; for example, it is correct to write \"Sales grew by 18% in 2025\" instead of \"Sales dynamics\"."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "\"Bitta slayd — bitta fikr\" qoidasiga asosan, sarlavha toʻliq jumla koʻrinishida fikrni yetkazishi lozim.",
+          "ru": "Согласно правилу \"один слайд — одна мысль\", заголовок должен передавать идею в виде полного предложения.",
+          "en": "Based on the \"one slide — one idea\" rule, the title should convey the idea as a full sentence."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Taqdimot yaratish asoslari",
+      "ru": "Основы создания презентаций",
+      "en": "Basics of creating presentations"
+    },
+    "statement": {
+      "uz": "Taqdimotlarni samarali yaratish va namoyish etish boʻyicha bilimlaringizni tekshiring.",
+      "ru": "Проверьте свои знания по эффективному созданию и показу презентаций.",
+      "en": "Check your knowledge on effectively creating and showing presentations."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Maʼruzachi eslatmalari (Speaker notes) kimga koʻrinadi?",
+            "ru": "Кому видны заметки докладчика (Speaker notes)?",
+            "en": "Who sees the speaker notes?"
+          },
+          "options": [
+            {
+              "uz": "Faqat maʼruzachiga, taqdimot rejimida",
+              "ru": "Только докладчику — в режиме докладчика",
+              "en": "Only the speaker — in presenter mode"
+            },
+            {
+              "uz": "Barcha tinglovchilarga katta ekranda",
+              "ru": "Всем слушателям на большом экране",
+              "en": "All listeners on the big screen"
+            },
+            {
+              "uz": "Faqat hujjatni chop etganda",
+              "ru": "Только при распечатке документа",
+              "en": "Only when printing the document"
+            },
+            {
+              "uz": "Hech kimga, bu faqat tizim uchun kerak",
+              "ru": "Никому, это нужно только для системы",
+              "en": "No one, it is only needed for the system"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Eslatmalar slayd ostida yoziladi va taqdimot rejimida faqat ekran qarshisidagi maʼruzachiga koʻrinadi.",
+            "ru": "Заметки пишутся под слайдом и в режиме докладчика видны только спикеру перед экраном.",
+            "en": "Notes are written below the slide and are visible only to the speaker facing the screen in presenter mode."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Bitta butunning qismlarini (ulushlarini) koʻrsatish uchun qaysi diagramma eng mos keladi?",
+            "ru": "Какая диаграмма лучше всего подходит для показа частей (долей) целого?",
+            "en": "Which chart is best suited for showing parts of a whole?"
+          },
+          "options": [
+            {
+              "uz": "Doiraviy yoki halqasimon",
+              "ru": "Круговая или кольцевая",
+              "en": "Pie or doughnut"
+            },
+            {
+              "uz": "Chiziqli",
+              "ru": "Линейная",
+              "en": "Line"
+            },
+            {
+              "uz": "Nuqtali",
+              "ru": "Точечная",
+              "en": "Scatter"
+            },
+            {
+              "uz": "Gant diagrammasi",
+              "ru": "Диаграмма Ганта",
+              "en": "Gantt chart"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Butunning qismlarini koʻrsatish uchun odatda doiraviy, halqasimon yoki 100% ustunli diagrammalar ishlatiladi.",
+            "ru": "Для показа частей целого обычно используются круговые, кольцевые или нормированные столбчатые диаграммы.",
+            "en": "To show parts of a whole, pie, doughnut, or 100% stacked column charts are typically used."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Taqdimot yaratish va namoyish qilishda koʻp uchraydigan xatolarni belgilang.",
+            "ru": "Отметьте частые ошибки при создании и показе презентаций.",
+            "en": "Select common mistakes when creating and showing presentations."
+          },
+          "options": [
+            {
+              "uz": "Slaydni matn bilan toʻldirib, uni oʻqib berish",
+              "ru": "Заполнять слайд текстом и зачитывать его",
+              "en": "Filling a slide with text and reading it out"
+            },
+            {
+              "uz": "Oʻqib boʻlmaydigan diagrammalardan foydalanish",
+              "ru": "Использование нечитаемых диаграмм",
+              "en": "Using unreadable charts"
+            },
+            {
+              "uz": "Manbasiz statistik raqamlarni koʻrsatish",
+              "ru": "Показ статистики без указания источников",
+              "en": "Showing statistics without providing sources"
+            },
+            {
+              "uz": "Har bir slaydga 1-2 daqiqa vaqt ajratish",
+              "ru": "Выделение 1-2 минут на каждый слайд",
+              "en": "Allocating 1-2 minutes for each slide"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Har bir slaydga 1-2 daqiqa ajratish — toʻgʻri rejalashtirish, qolganlari esa darsda keltirilgan xatolardir.",
+            "ru": "Выделение 1-2 минут на слайд — это правильное планирование, а остальное — частые ошибки, указанные в уроке.",
+            "en": "Allocating 1-2 minutes per slide is proper planning, while the rest are common mistakes mentioned in the lesson."
+          }
+        }
+      ]
+    }
+  }
+}

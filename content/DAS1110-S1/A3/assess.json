@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "YOKI (OR, dizyunksiya) amali qachon rost qiymat beradi?",
+          "ru": "Когда операция ИЛИ (OR, дизъюнкция) даёт истину?",
+          "en": "When does the OR operation give a true value?"
+        },
+        "options": [
+          {
+            "uz": "Kamida bitta qism rost boʻlsa",
+            "ru": "Если истинна хотя бы одна часть",
+            "en": "When at least one part is true"
+          },
+          {
+            "uz": "Ikkala qism ham rost boʻlsa",
+            "ru": "Если истинны обе части",
+            "en": "When both parts are true"
+          },
+          {
+            "uz": "Faqat birinchi qism rost boʻlsa",
+            "ru": "Только когда истинна первая часть",
+            "en": "Only when the first part is true"
+          },
+          {
+            "uz": "Qism yolgʻon boʻlsa",
+            "ru": "Если часть ложна",
+            "en": "When a part is false"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Haqiqiylik jadvali: YOKI kamida bitta qism rost boʻlsa rost boʻladi. Ikkala qism rost boʻlishini talab qiluvchi amal — VA.",
+          "ru": "Таблица истинности: ИЛИ истинно, если истинна хотя бы одна часть. Требует истинности обеих частей операция И.",
+          "en": "The truth table: OR is true when at least one part is true. The operation that requires both parts is AND."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "A yolgʻon, B rost boʻlsa, A VA B ifodasi rost boʻladi.",
+          "ru": "Если A — ложь, а B — истина, выражение A И B истинно.",
+          "en": "If A is false and B is true, the expression A AND B is true."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Jadvalning shu satrida A VA B yolgʻon, A YOKI B esa rost. VA da birinchi qism yolgʻon boʻlsa, butun ifoda yolgʻon.",
+          "ru": "В этой строке таблицы A И B ложно, а A ИЛИ B истинно. В операции И при ложной первой части всё выражение ложно.",
+          "en": "In that row of the table A AND B is false while A OR B is true. With AND, a false first part makes the whole expression false."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Matematik funksiyalar haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о математических функциях верны?",
+          "en": "Which statements about the mathematical functions are correct?"
+        },
+        "options": [
+          {
+            "uz": "floor(3.7) sonni pastga yaxlitlab 3 beradi",
+            "ru": "floor(3.7) округляет вниз и даёт 3",
+            "en": "floor(3.7) rounds the number down and gives 3"
+          },
+          {
+            "uz": "ceil(3.2) sonni yuqoriga yaxlitlab 4 beradi",
+            "ru": "ceil(3.2) округляет вверх и даёт 4",
+            "en": "ceil(3.2) rounds the number up and gives 4"
+          },
+          {
+            "uz": "abs(-7) modul olib 7 beradi",
+            "ru": "abs(-7) берёт модуль и даёт 7",
+            "en": "abs(-7) takes the absolute value and gives 7"
+          },
+          {
+            "uz": "Pythonʼda round(2.5) natijasi 3 ga teng",
+            "ru": "В Python round(2.5) равно 3",
+            "en": "In Python round(2.5) equals 3"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Python teng masofadagi sonni juft songa yaxlitlaydi: round(2.5) = 2, round(3.5) = 4. Java va C++ʼda 2.5 → 3.",
+          "ru": "Python округляет число посередине к чётному: round(2.5) = 2, round(3.5) = 4. В Java и C++ 2.5 → 3.",
+          "en": "Python rounds a halfway number to the even neighbour: round(2.5) = 2, round(3.5) = 4. In Java and C++ 2.5 → 3."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi qoidaga koʻra 1900 yili kabisa yili emas. Buning sababi nima?",
+          "ru": "По правилу из занятия 1900-й год не високосный. Почему?",
+          "en": "By the rule in the lesson 1900 is not a leap year. What is the reason?"
+        },
+        "options": [
+          {
+            "uz": "U 100 ga boʻlinadi, lekin 400 ga boʻlinmaydi",
+            "ru": "Он делится на 100, но не делится на 400",
+            "en": "It is divisible by 100 but not by 400"
+          },
+          {
+            "uz": "U 4 ga boʻlinmaydi",
+            "ru": "Он не делится на 4",
+            "en": "It is not divisible by 4"
+          },
+          {
+            "uz": "Kabisa yili faqat 400 ga boʻlinadigan yil boʻladi",
+            "ru": "Високосным может быть только год, делящийся на 400",
+            "en": "Only a year divisible by 400 can be a leap year"
+          },
+          {
+            "uz": "U 4 ga boʻlinsa, shuning uchun kabisa yili boʻlishi kerak",
+            "ru": "Он делится на 4, а значит должен быть високосным",
+            "en": "It is divisible by 4, so it should be a leap year"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Qoida: yil 4 ga boʻlinadi va 100 ga boʻlinmaydi, YOKI 400 ga boʻlinadi. 1900 birinchi qismni buzadi, 400 ga ham boʻlinmaydi; 2000 esa kabisa.",
+          "ru": "Правило: год делится на 4 и не делится на 100, ЛИБО делится на 400. У 1900 первая часть нарушена, а на 400 он тоже не делится; 2000 — високосный.",
+          "en": "The rule: the year is divisible by 4 and not by 100, OR it is divisible by 400. For 1900 the first part fails and 400 does not divide it either; 2000 is a leap year."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "47 talabani 45 oʻrinli avtobuslarga joylashtirish uchun kamida nechta avtobus kerak?",
+          "ru": "Сколько как минимум нужно 45-местных автобусов, чтобы разместить 47 студентов?",
+          "en": "What is the minimum number of 45-seat buses needed to place 47 students?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsdagi kabi ceil(47 / 45) hisoblanadi — yuqoriga yaxlitlash: 2. Butun boʻlish 1 berar edi, bir talaba joyga sigʻmas qolardi.",
+          "ru": "Как в занятии: ceil(47 / 45) — округление вверх: 2. Целочисленное деление дало бы 1, и один студент не разместился бы.",
+          "en": "As in the lesson: ceil(47 / 45) rounds up and gives 2. Integer division would give 1 and one student would be left without a seat."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "not (a > 5) ifodasini not ishtirokisiz yozing.",
+          "ru": "Запишите выражение not (a > 5) без использования not.",
+          "en": "Write the expression not (a > 5) without using not."
+        },
+        "answers": ["a <= 5", "a<=5"],
+        "explanation": {
+          "uz": "Inkor solishtirish belgisini qarama-qarshisiga oʻzgartiradi: a > 5 ning inkori a <= 5.",
+          "ru": "Отрицание меняет знак сравнения на противоположный: отрицание a > 5 — это a <= 5.",
+          "en": "Negation flips the comparison sign to its opposite: the negation of a > 5 is a <= 5."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "C++ʼda x = 15 boʻlganda 10 < x < 20 yozuvi nimani beradi?",
+          "ru": "Что в C++ даёт запись 10 < x < 20, если x = 15?",
+          "en": "In C++, with x = 15, what does the writing 10 < x < 20 give?"
+        },
+        "options": [
+          {
+            "uz": "Rost, lekin natija aldov: avval 10 < x hisoblanadi, chiqqan 1 yoki 0 keyin 20 bilan solishtiriladi",
+            "ru": "Истина, но результат обманчив: сначала считается 10 < x, а полученная 1 или 0 сравнивается с 20",
+            "en": "True, but the result is misleading: first 10 < x is computed, and the 1 or 0 that comes out is compared with 20"
+          },
+          {
+            "uz": "Yolgʻon, chunki 15 berilgan chegaralarda emas",
+            "ru": "Ложь, потому что 15 не лежит в указанных границах",
+            "en": "False, because 15 is not inside the given bounds"
+          },
+          {
+            "uz": "Kompilyatsiya xatosi beradi",
+            "ru": "Выдаёт ошибку компиляции",
+            "en": "It produces a compile error"
+          },
+          {
+            "uz": "Ifoda umuman hisoblanmaydi",
+            "ru": "Выражение вовсе не вычисляется",
+            "en": "The expression is not evaluated at all"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "C++ʼda bu yozuv har doim rostga oʻxshash javob beradi. Toʻgʻrisi: x > 10 && x < 20. Pythonʼda 10 < x < 20 haqiqatan ishlaydi, Javaʼda esa kompilyatsiya xatosi.",
+          "ru": "В C++ такая запись даёт всегда похожий на истину ответ. Правильно: x > 10 && x < 20. В Python 10 < x < 20 действительно работает, а в Java — ошибка компиляции.",
+          "en": "In C++ this writing gives an answer that looks true all the time. The correct form is x > 10 && x < 20. In Python 10 < x < 20 really works, while in Java it is a compile error."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Mantiqiy amallar va haqiqiy sonlar haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о логических операциях и вещественных числах верны?",
+          "en": "Which statements about logical operations and floating-point numbers are correct?"
+        },
+        "options": [
+          {
+            "uz": "b != 0 and a / b > 2 ifodasi b = 0 boʻlganda nolga boʻlishga yetib bormaydi",
+            "ru": "Выражение b != 0 and a / b > 2 при b = 0 до деления на ноль не доходит",
+            "en": "The expression b != 0 and a / b > 2 never reaches the division by zero when b = 0"
+          },
+          {
+            "uz": "0.1 + 0.2 == 0.3 solishtiruvi yolgʻon",
+            "ru": "Сравнение 0.1 + 0.2 == 0.3 ложно",
+            "en": "The comparison 0.1 + 0.2 == 0.3 is false"
+          },
+          {
+            "uz": "& va && bir xil ishlaydi: ikkalasi ham qisqa tutashuvni beradi",
+            "ru": "& и && работают одинаково: оба дают короткое замыкание",
+            "en": "& and && work the same: both give short-circuit evaluation"
+          },
+          {
+            "uz": "sin(30) funksiyasi 0.5 ni qaytaradi",
+            "ru": "Функция sin(30) возвращает 0.5",
+            "en": "The function sin(30) returns 0.5"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "sin burchakni radianda oladi, 30 radian — 0.5 emas. & — bitli amal, u qisqa tutashmasdan ishlaydi.",
+          "ru": "sin принимает угол в радианах, а 30 радиан — это не 0.5. & — побитовая операция, она работает без короткого замыкания.",
+          "en": "sin takes the angle in radians, and 30 radians is not 0.5. The & operator is bitwise and works without short-circuiting."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qavs boʻlmaganda a or b and c ifodasi (a or b) and c kabi hisoblanadi.",
+          "ru": "Без скобок выражение a or b and c вычисляется как (a or b) and c.",
+          "en": "Without brackets the expression a or b and c is evaluated as (a or b) and c."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Ustuvorlik jadvalida VA YOKI dan oldin keladi: a or b and c — bu a or (b and c). Shubhada qavs qoʻying.",
+          "ru": "В таблице приоритета И стоит раньше ИЛИ: a or b and c — это a or (b and c). При сомнении ставьте скобки.",
+          "en": "In the precedence table AND comes before OR: a or b and c means a or (b and c). When in doubt, add brackets."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Ekskursiya uchun avtobuslar soni",
+      "ru": "Сколько автобусов нужно для экскурсии",
+      "en": "The number of buses for the trip"
+    },
+    "statement": {
+      "uz": "Fakultet ekskursiyasiga n ta talaba chiqadi, bitta avtobusda esa c ta oʻrin bor. Bir qatorda probel bilan ajratilgan ikkita butun son beriladi: avval n, soʻng c. Hamma talaba joylashishi uchun kerak boʻlgan eng kichik avtobuslar sonini bitta qatorda, faqat son koʻrinishida chiqaring — hech qanday qoʻshimcha soʻz yozmang. Masalan, 47 talaba va 45 oʻrin boʻlsa, javob 2: birinchi avtobus toʻladi, qolgan ikki talaba ikkinchisiga oʻtiradi. Boʻlish butun chiqmasa, avtobuslar soni yuqoriga yaxlitlanadi. Chegaralar: 1 ≤ n ≤ 1000000 va 1 ≤ c ≤ 1000000.",
+      "ru": "На экскурсию факультета выезжают n студентов, а в одном автобусе c мест. В одной строке через пробел даны два целых числа: сначала n, затем c. Выведите одной строкой наименьшее число автобусов, при котором разместятся все студенты — только число, без слов и пояснений. Например, при 47 студентах и 45 местах ответ 2: первый автобус заполняется, и оставшиеся двое садятся во второй. Если деление не выходит целым, число автобусов округляется вверх. Границы: 1 ≤ n ≤ 1000000 и 1 ≤ c ≤ 1000000.",
+      "en": "n students of a faculty go on a trip, and one bus has c seats. One line gives two integers separated by a space: first n, then c. Print on one line the smallest number of buses that seats every student — only the number, with no words or label. For example, with 47 students and 45 seats the answer is 2: the first bus fills up and the remaining two students take the second one. When the division is not a whole number, the count of buses is rounded up. Limits: 1 ≤ n ≤ 1000000 and 1 ≤ c ≤ 1000000."
+    },
+    "code": {
+      "starter": {
+        "python": "n, c = map(int, input().split())\n\nprint(n // c)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int c = in.nextInt();\n        System.out.println(n / c);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, c;\n    cin >> n >> c;\n    cout << n / c << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import math\n\nn, c = map(int, input().split())\n\nprint(math.ceil(n / c))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int c = in.nextInt();\n        System.out.println((int) Math.ceil((double) n / c));\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <cmath>\nusing namespace std;\n\nint main() {\n    int n, c;\n    cin >> n >> c;\n    cout << (int) ceil((double) n / c) << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "47 45\n", "expected": "2", "hidden": false },
+        { "input": "45 45\n", "expected": "1", "hidden": false },
+        { "input": "1 40\n", "expected": "1", "hidden": true },
+        { "input": "271 30\n", "expected": "10", "hidden": true },
+        { "input": "1000000 7\n", "expected": "142858", "hidden": true }
+      ]
+    }
+  }
+}

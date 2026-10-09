@@ -1,0 +1,384 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Fan tuzilishi jadvaliga koʻra, 2-modul qaysi mavzuga bagʻishlangan?",
+          "ru": "Какой теме, согласно таблице структуры курса, посвящён модуль 2?",
+          "en": "According to the course structure table, which topic is module 2 about?"
+        },
+        "options": [
+          {
+            "uz": "Asoslar, risklar va siyosat",
+            "ru": "Основы, риски и политика",
+            "en": "Foundations, risks and policy"
+          },
+          {
+            "uz": "Kriptografiya",
+            "ru": "Криптография",
+            "en": "Cryptography"
+          },
+          {
+            "uz": "Autentifikatsiya, foydalanishni boshqarish va fizik xavfsizlik",
+            "ru": "Аутентификация, управление доступом и физическая безопасность",
+            "en": "Authentication, access control and physical security"
+          },
+          {
+            "uz": "Tarmoq, bulut va IoT xavfsizligi",
+            "ru": "Безопасность сетей, облаков и IoT",
+            "en": "Network, cloud and IoT security"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Jadvalda 2-modul — kriptografiya: M5–M9 maʼruzalari va A5–A9 amaliyoti, natijasi klassik va simmetrik shifrlar, RSA, xesh, ERI, TLS.",
+          "ru": "В таблице модуль 2 — криптография: лекции M5–M9 и практика A5–A9, результат — классические и симметричные шифры, RSA, хеш, ЭЦП, TLS.",
+          "en": "The table makes module 2 Cryptography: lectures M5–M9 and practicals A5–A9, with classical and symmetric ciphers, RSA, hashes, digital signatures and TLS as the outcome."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsga koʻra, risk ehtimollik bilan taʼsirning yigʻindisiga teng.",
+          "ru": "По занятию, риск — это сумма вероятности и воздействия.",
+          "en": "According to the lesson, risk equals likelihood plus impact."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "1-modul natijasi sifatida risk = ehtimollik × taʼsir, yaʼni koʻpaytma berilgan.",
+          "ru": "В итоге модуля 1 указан риск = вероятность × воздействие, то есть произведение.",
+          "en": "The outcome of module 1 states risk = likelihood × impact, a product, not a sum."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Uyda amaliyot uchun vositalar jadvalida qaysi vositalar sanab oʻtilgan?",
+          "ru": "Какие средства перечислены в таблице средств для практики дома?",
+          "en": "Which tools are listed in the table of tools for practice at home?"
+        },
+        "options": [
+          {
+            "uz": "CyberChef",
+            "ru": "CyberChef",
+            "en": "CyberChef"
+          },
+          {
+            "uz": "OpenSSL",
+            "ru": "OpenSSL",
+            "en": "OpenSSL"
+          },
+          {
+            "uz": "VirtualBox va Linux (Ubuntu) virtual mashinasi",
+            "ru": "VirtualBox и виртуальная машина Linux (Ubuntu)",
+            "en": "VirtualBox and a Linux (Ubuntu) virtual machine"
+          },
+          {
+            "uz": "Bitwarden yoki KeePassXC parol menejeri",
+            "ru": "Менеджер паролей Bitwarden или KeePassXC",
+            "en": "A password manager, Bitwarden or KeePassXC"
+          },
+          {
+            "uz": "Toʻlovli bulut xizmati",
+            "ru": "Платный облачный сервис",
+            "en": "A paid cloud service"
+          }
+        ],
+        "correct": [0, 1, 2, 3],
+        "explanation": {
+          "uz": "Jadvalda bundan tashqari Windows sinov hisobi va platformadagi kod muharriri bor; toʻlovli bulut xizmati sanalmagan — barcha vositalar bepul.",
+          "ru": "В таблице есть также тестовая учётная запись Windows и редактор кода на платформе; платный облачный сервис не упомянут — все средства бесплатны.",
+          "en": "The table also names a Windows test account and the code editor on the platform; a paid cloud service is not listed — every tool there is free."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Haftalik rejada maʼruzadan keyingi 40 daqiqada nima bajariladi?",
+          "ru": "Что выполняется в 40 минут после лекции по недельному плану?",
+          "en": "What is done in the 40 minutes after the lecture in the weekly plan?"
+        },
+        "options": [
+          {
+            "uz": "Dars matniga koʻz yugurtirilib, notanish atamalar yozib olinadi",
+            "ru": "Текст урока просматривается бегло, выписываются незнакомые термины",
+            "en": "You skim the lesson text and note unfamiliar terms"
+          },
+          {
+            "uz": "Matn faol oʻqiladi va ishlangan misollar oʻz qoʻlingiz bilan bajariladi",
+            "ru": "Текст читается активно, а разобранные примеры выполняются своими руками",
+            "en": "You read the text actively and carry out the worked examples yourself"
+          },
+          {
+            "uz": "Buyruqlar uyda takrorlanib, dasturiy topshiriq yakunlanadi",
+            "ru": "Команды повторяются дома, завершается программное задание",
+            "en": "You repeat the commands at home and finish the programming task"
+          },
+          {
+            "uz": "Oʻzingizni tekshiring savollariga yozma javob beriladi va lugʻat toʻldiriladi",
+            "ru": "Письменно отвечают на вопросы самопроверки, дополняют словарь",
+            "en": "You answer the self-check questions in writing and update the glossary"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Rejaga koʻra: 20 daqiqa maʼruzadan oldin — koʻz yugurtirish, 40 daqiqa maʼruzadan keyin — faol oʻqish va misollar, 40 daqiqa amaliyotdan keyin — buyruqlar va topshiriq, 20 daqiqa hafta oxirida — javoblar va lugʻat.",
+          "ru": "По плану: 20 минут до лекции — просмотр, 40 минут после лекции — активное чтение и примеры, 40 минут после практики — команды и задание, 20 минут в конце недели — ответы и словарь.",
+          "en": "The plan is 20 minutes before the lecture to skim, 40 minutes after it for active reading and the worked examples, 40 minutes after the practical for commands and the task, and 20 minutes at the week's end for answers and the glossary."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Haftalik reja boʻyicha bitta mavzuga jami nechcha daqiqa ajratiladi?",
+          "ru": "Сколько минут всего по недельному плану уходит на одну тему?",
+          "en": "How many minutes in total does the weekly plan give to one topic?"
+        },
+        "answers": [120],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "20 + 40 + 40 + 20 = 120 daqiqa, yaʼni haftiga har mavzu uchun 2 soat.",
+          "ru": "20 + 40 + 40 + 20 = 120 минут, то есть 2 часа в неделю на каждую тему.",
+          "en": "20 + 40 + 40 + 20 = 120 minutes, that is two hours a week for each topic."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Brauzerda ishlaydigan, oʻrnatishni talab qilmaydigan, shifrlash, kodlash, xesh va HMAC bilan ishlash vositasining nomini yozing.",
+          "ru": "Напишите название средства в браузере, не требующего установки, для шифрования, кодирования, хеширования и HMAC.",
+          "en": "Write the name of the browser tool that needs no installation and works with encryption, encoding, hashing and HMAC."
+        },
+        "answers": ["CyberChef", "cyberchef"],
+        "explanation": {
+          "uz": "Vositalar jadvali: CyberChef brauzerda, oʻrnatishsiz ishlaydi va M5–M8, A5–A8 mavzulariga xizmat qiladi.",
+          "ru": "Таблица средств: CyberChef работает в браузере без установки и относится к темам M5–M8, A5–A8.",
+          "en": "The tools table gives CyberChef: it runs in the browser with no installation and serves the topics M5–M8 and A5–A8."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Virtual mashina jadvalda eng muhim vosita deb baholangan. Asosiy sababi qaysi?",
+          "ru": "В таблице виртуальная машина названа самым важным средством. Какова главная причина?",
+          "en": "The table calls the virtual machine the most important tool. What is the main reason?"
+        },
+        "options": [
+          {
+            "uz": "U OpenSSL oʻrnini toʻliq bosadi va alohida dasturlar kerak emas",
+            "ru": "Она полностью заменяет OpenSSL, и отдельные программы не нужны",
+            "en": "It replaces OpenSSL completely, so no other programs are needed"
+          },
+          {
+            "uz": "Unda parolni tiklash va tarmoq hujumlari tezroq ishlaydi",
+            "ru": "Восстановление паролей и сетевые атаки в ней работают быстрее",
+            "en": "Password recovery and network attacks run faster in it"
+          },
+          {
+            "uz": "U faqat oʻqituvchi koʻrsatgan laboratoriya kompyuterlarida ishlaydi",
+            "ru": "Она работает только на компьютерах лаборатории, указанных преподавателем",
+            "en": "It runs only on the laboratory computers named by the teacher"
+          },
+          {
+            "uz": "Sozlamalarni bemalol oʻzgartirsa boʻladi, xato qilsa snapshot dan qaytadi va asosiy kompyuterga zarar yetmaydi",
+            "ru": "Настройки можно менять смело, при ошибке можно вернуться к снимку, и основной компьютер не пострадает",
+            "en": "You can change settings freely, return to a snapshot after a mistake, and the main computer is not harmed"
+          }
+        ],
+        "correct": [3],
+        "explanation": {
+          "uz": "Darsda aynan shu aytilgan: virtual mashinada sozlamalarni bemalol oʻzgartirasiz, xatoda snapshot ga qaytasiz va asosiy kompyuteringizga zarar yetmaydi.",
+          "ru": "В занятии сказано именно это: в виртуальной машине можно смело менять настройки, при ошибке вернуться к снимку, и основной компьютер не пострадает.",
+          "en": "That is exactly the lesson's reason: in a virtual machine you change settings freely, fall back to a snapshot after a mistake, and the main computer stays unharmed."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Axloqiy va huquqiy chegaralar boʻlimida qaysi qoidalar majburiy deb belgilangan?",
+          "ru": "Какие правила раздел этических и правовых границ называет обязательными?",
+          "en": "Which rules does the section on ethical and legal boundaries mark as mandatory?"
+        },
+        "options": [
+          {
+            "uz": "Sinovni faqat oʻzingizga tegishli yoki yozma ruxsat berilgan tizimlarda oʻtkazish",
+            "ru": "Испытания только на принадлежащих вам системах или при письменном разрешении",
+            "en": "Testing only on systems that belong to you or where you have written permission"
+          },
+          {
+            "uz": "Zaiflik topsangiz, uni tarqatmasdan, tizim egasiga yoki oʻqituvchiga xabar qilish",
+            "ru": "Найденную уязвимость не распространять, а сообщить владельцу системы или преподавателю",
+            "en": "Reporting a found vulnerability to the system owner or the teacher instead of spreading it"
+          },
+          {
+            "uz": "Boshqalarning shaxsiy maʼlumotlari, parollari va yozishmalarini oʻqimaslik va saqlamaslik",
+            "ru": "Не читать и не хранить чужие персональные данные, пароли и переписку",
+            "en": "Not reading or keeping other people's personal data, passwords or correspondence"
+          },
+          {
+            "uz": "Niyati yaxshi boʻlsa, universitet tarmogʻida ruxsatsiz sinov oʻtkazishga ruxsat beriladi",
+            "ru": "При лучших побуждениях допускается испытание сети университета без разрешения",
+            "en": "Testing the university network without permission is allowed if the intentions are good"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Birovning tarmogʻi, sayti yoki hisobini tekshirish — ruxsatsiz kirish; Oʻzbekiston Jinoyat kodeksida kompyuter axboroti sohasidagi jinoyatlar uchun javobgarlik belgilangan, niyatning yaxshiligi buni oqlamaydi.",
+          "ru": "«Проверка» чужой сети, сайта или учётной записи — несанкционированный доступ; Уголовный кодекс Узбекистана устанавливает ответственность за преступления в сфере компьютерной информации, и лучшие побуждения не оправдывают этого.",
+          "en": "Checking someone else's network, website or account is unauthorized access; the Criminal Code of Uzbekistan sets liability for computer-information crimes, and good intentions do not excuse it."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tayanch tushunchalar lugʻatiga koʻra, ERI ochiq kalit bilan yaratiladi va yopiq kalit bilan tekshiriladi.",
+          "ru": "Согласно словарю, ЭЦП создаётся открытым ключом и проверяется закрытым.",
+          "en": "According to the glossary, a digital signature is created with the public key and verified with the private key."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Lugʻatda aksincha: ERI yopiq kalit bilan yaratiladigan, ochiq kalit bilan tekshiriladigan imzo.",
+          "ru": "В словаре наоборот: ЭЦП — подпись, создаваемая закрытым ключом и проверяемая открытым.",
+          "en": "The glossary says the opposite: a digital signature is created with a private key and verified with a public key."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Lugʻat va haftalik rejangizni tekshirish",
+      "ru": "Проверьте словарь и свой недельный план",
+      "en": "Check your glossary and your weekly plan"
+    },
+    "statement": {
+      "uz": "Barcha javoblar dars matnida: tayanch tushunchalar lugʻatida, fan tuzilishi jadvalida va axloqiy qoidalar boʻlimida. Variantni tanlang, sonni yoki atamani kiriting.",
+      "ru": "Все ответы — в тексте занятия: в словаре терминов, в таблице структуры курса и в разделе правил. Выберите вариант или введите число либо термин.",
+      "en": "Every answer is in the lesson text: the glossary, the course structure table and the section on the rules. Choose an option or type a number or a term."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Lugʻatga koʻra, avtorizatsiya nima?",
+            "ru": "Что, согласно словарю, означает авторизация?",
+            "en": "According to the glossary, what is authorization?"
+          },
+          "options": [
+            { "uz": "Kimligini aytish", "ru": "Назвать себя", "en": "Stating who you are" },
+            { "uz": "Kimlikni isbotlash", "ru": "Доказать свою личность", "en": "Proving who you are" },
+            { "uz": "Ruxsatlarni aniqlash", "ru": "Определение прав", "en": "Determining the permissions" },
+            { "uz": "Kamida ikki turli omilni kiritish", "ru": "Ввести не менее двух разных факторов", "en": "Providing at least two different factors" }
+          ],
+          "correct": [2],
+          "explanation": {
+            "uz": "Lugʻat qatori: identifikatsiya — kimligini aytish, autentifikatsiya — isbotlash, avtorizatsiya — ruxsatlarni aniqlash.",
+            "ru": "Строка словаря: идентификация — назвать себя, аутентификация — доказать, авторизация — определить права.",
+            "en": "The glossary row: identification is stating who you are, authentication is proving it, authorization is determining permissions."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Maʼruzani faol oʻqish usuliga qaysi amallar kiradi?",
+            "ru": "Какие приёмы входят в метод активного чтения лекции?",
+            "en": "Which techniques belong to the active reading method?"
+          },
+          "options": [
+            {
+              "uz": "Matnni bir necha marta ketma-ket, shunchaki oʻqib chiqish",
+              "ru": "Перечитать текст несколько раз подряд, просто читая",
+              "en": "Reading the text through several times in a row, plainly"
+            },
+            {
+              "uz": "Taqqoslash jadvallarini xotiradan daftarga yozib, keyin matn bilan solishtirish",
+              "ru": "Записать сравнительные таблицы по памяти в тетрадь и сверить с текстом",
+              "en": "Writing the comparison tables from memory and then checking them against the text"
+            },
+            {
+              "uz": "Ishlangan misolning kirish maʼlumotini oʻzgartirib, natijani oldindan taxmin qilish",
+              "ru": "Изменить входные данные примера, предсказать результат и проверить программой",
+              "en": "Changing the input of a worked example, predicting the result and checking it with the program"
+            },
+            {
+              "uz": "Mavzuni 3–4 jumlada, atamasiz, oila aʼzosiga tushuntirgandek yozish",
+              "ru": "Изложить тему в 3–4 предложениях без терминов, как для члена семьи",
+              "en": "Explaining the topic in 3–4 sentences without jargon, as if to a family member"
+            }
+          ],
+          "correct": [1, 2, 3],
+          "explanation": {
+            "uz": "Darsda besh usul sanalgan: savol bilan boshlash, jadvallarni qayta chizish, misolni oʻzgartirish, oʻz soʻzingiz bilan tushuntirish, mavzularni bogʻlash. Oddiy oʻqish esa tez unutiladi.",
+            "ru": "В занятии пять приёмов: начать с вопроса, перерисовать таблицы, изменить пример, объяснить своими словами, связывать темы. Обычное чтение, как сказано, быстро забывается.",
+            "en": "The lesson gives five techniques: start with a question, redraw the tables, change the example, explain in your own words, connect the topics; it says plain reading is quickly forgotten."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Lugʻatga koʻra, MFA deb atalishi uchun kamida nechta turli autentifikatsiya omili kerak?",
+            "ru": "Сколько минимум разных факторов аутентификации, по словарю, нужно, чтобы это называлось MFA?",
+            "en": "According to the glossary, at least how many different authentication factors make something MFA?"
+          },
+          "answers": [2],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Lugʻatda MFA — kamida ikki turli autentifikatsiya omili.",
+            "ru": "В словаре MFA — не менее двух разных факторов аутентификации.",
+            "en": "The glossary defines MFA as at least two different authentication factors."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 1,
+          "prompt": {
+            "uz": "Oʻzbekistonda kompyuter axboroti sohasidagi jinoyatlar uchun javobgarlik qaysi hujjatda belgilangan? Qisqa nomini yozing.",
+            "ru": "В каком документе Узбекистана установлена ответственность за преступления в сфере компьютерной информации? Напишите короткое название.",
+            "en": "Which Uzbek document establishes liability for crimes in the field of computer information? Write its short name."
+          },
+          "answers": ["Jinoyat kodeksi", "Jinoyat kodeksida", "Oʻzbekiston Jinoyat kodeksi", "Oʻzbekiston Jinoyat kodeksida"],
+          "explanation": {
+            "uz": "Axloqiy va huquqiy chegaralar boʻlimida: Oʻzbekiston Jinoyat kodeksida kompyuter axboroti sohasidagi jinoyatlar uchun javobgarlik belgilangan (M3).",
+            "ru": "В разделе этических и правовых границ: Уголовный кодекс Узбекистана устанавливает ответственность за преступления в сфере компьютерной информации (M3).",
+            "en": "The section on ethical and legal boundaries names the Criminal Code of Uzbekistan as the document that sets this liability (M3)."
+          }
+        }
+      ]
+    }
+  }
+}

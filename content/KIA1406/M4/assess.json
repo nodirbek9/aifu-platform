@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "«Har bir foydalanuvchiga faqat ishini bajarish uchun zarur huquqlar beriladi» — bu qaysi arxitektura tamoyili?",
+          "ru": "«Каждому пользователю выдаются только те права, которые необходимы для его работы» — это какой принцип архитектуры?",
+          "en": "“Everyone gets only the rights needed for their work” — which architecture principle is this?"
+        },
+        "options": [
+          {
+            "uz": "Eng kam imtiyoz (least privilege)",
+            "ru": "Принцип наименьших привилегий (least privilege)",
+            "en": "Least privilege"
+          },
+          {
+            "uz": "Sukut boʻyicha rad etish (default deny)",
+            "ru": "Запрет по умолчанию (default deny)",
+            "en": "Default deny"
+          },
+          {
+            "uz": "Vazifalarni ajratish (separation of duties)",
+            "ru": "Разделение обязанностей (separation of duties)",
+            "en": "Separation of duties"
+          },
+          {
+            "uz": "Chuqur himoya (defence in depth)",
+            "ru": "Эшелонированная защита (defence in depth)",
+            "en": "Defence in depth"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi izoh: eng kam imtiyoz boʻyicha buxgalter faqat moliya papkasiga kiradi — keraksiz huquq berilmaydi.",
+          "ru": "Пояснение из занятия: по принципу наименьших привилегий бухгалтер получает доступ только к папке финансов — лишних прав не выдаётся.",
+          "en": "The lesson's example: under least privilege an accountant gets into the finance folder only — no extra rights."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Nol ishonch (Zero Trust) — bitta xarid qilinadigan tayyor mahsulot.",
+          "ru": "Нулевое доверие (Zero Trust) — это один готовый продукт, который можно купить.",
+          "en": "Zero Trust is a single finished product you can buy."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda bu koʻp uchraydigan xato deb berilgan: Zero Trust — mahsulot emas, arxitektura yondashuvi; har bir soʻrov tekshiriladi.",
+          "ru": "В занятии это названо частой ошибкой: Zero Trust — не продукт, а архитектурный подход; каждый запрос проверяется.",
+          "en": "The lesson lists this as a common mistake: Zero Trust is an architectural approach, not a product; every request is checked."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Dars jadvalidagi arxitektura tamoyillari qaysilar?",
+          "ru": "Какие из перечисленного — принципы архитектуры безопасности из таблицы занятия?",
+          "en": "Which of these are architecture principles from the lesson's table?"
+        },
+        "options": [
+          {
+            "uz": "Chuqur himoya",
+            "ru": "Эшелонированная защита",
+            "en": "Defence in depth"
+          },
+          {
+            "uz": "Vazifalarni ajratish",
+            "ru": "Разделение обязанностей",
+            "en": "Separation of duties"
+          },
+          {
+            "uz": "Xavfsiz sukut",
+            "ru": "Безопасные настройки по умолчанию",
+            "en": "Secure by default"
+          },
+          {
+            "uz": "Tez ishlash",
+            "ru": "Быстрая работа",
+            "en": "Fast operation"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Tamoyillar: chuqur himoya, eng kam imtiyoz, vazifalarni ajratish, sukut boʻyicha rad etish, xavfsiz sukut, oddiylik, nol ishonch. Tez ishlash ular roʻyxatida yoʻq.",
+          "ru": "Принципы: эшелонированная защита, наименьшие привилегии, разделение обязанностей, запрет по умолчанию, безопасные настройки по умолчанию, простота, нулевое доверие. Быстрой работы в списке нет.",
+          "en": "The principles are defence in depth, least privilege, separation of duties, default deny, secure by default, simplicity and Zero Trust. Fast operation is not among them."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "«Shifrlashda AES-256 ishlatiladi, kalitlar har yili almashtiriladi» degan hujjat iyerarxiyaning qaysi darajasiga tegishli?",
+          "ru": "К какому уровню иерархии документов относится документ «Шифрование — AES-256, ключи меняются каждый год»?",
+          "en": "Which level of the document hierarchy does “Encryption — AES-256, keys rotated every year” belong to?"
+        },
+        "options": [
+          {
+            "uz": "Siyosat (policy)",
+            "ru": "Политика (policy)",
+            "en": "Policy"
+          },
+          {
+            "uz": "Standart (standard)",
+            "ru": "Стандарт (standard)",
+            "en": "Standard"
+          },
+          {
+            "uz": "Protsedura (procedure)",
+            "ru": "Процедура (procedure)",
+            "en": "Procedure"
+          },
+          {
+            "uz": "Yoʻriqnoma (guideline)",
+            "ru": "Руководство (guideline)",
+            "en": "Guideline"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Standart — majburiy aniq talablar; jadvalda aynan shunday misol keltirilgan. Siyosat «nima va nima uchun», protsedura — qadamma-qadam, yoʻriqnoma esa tavsiya.",
+          "ru": "Стандарт — обязательные конкретные требования; именно такой пример стоит в таблице. Политика — «что и зачем», процедура — шаги, руководство — рекомендация.",
+          "en": "A standard sets mandatory specific requirements, and the table gives exactly this example. A policy is what and why, a procedure is the steps, a guideline is a recommendation."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "ISO/IEC 27001 standartining Annex A ilovasida jami qancha nazorat vositasi keltirilgan?",
+          "ru": "Сколько всего средств контроля перечислено в Приложении A (Annex A) стандарта ISO/IEC 27001?",
+          "en": "How many controls in total are listed in Annex A of ISO/IEC 27001?"
+        },
+        "answers": [93],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "93 ta nazorat vositasi 4 guruhga boʻlingan: tashkiliy, odamlarga oid, fizik va texnologik.",
+          "ru": "93 средства контроля разделены на 4 группы: организационные, кадровые, физические и технологические.",
+          "en": "93 controls split into 4 groups: organisational, people, physical and technological."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tizimlarning minimal xavfsiz sozlamalari toʻplami (masalan, CIS Benchmark) darsda qanday atama bilan belgilanadi?",
+          "ru": "Каким термином в занятии обозначается набор минимальных безопасных настроек систем (например, CIS Benchmark)?",
+          "en": "What term in the lesson names the set of minimum secure settings of systems (for example, the CIS Benchmark)?"
+        },
+        "answers": ["asos", "baseline"],
+        "explanation": {
+          "uz": "Iyerarxiya jadvalida bu daraja «Asos (baseline)» deb berilgan: u yerda misol — Windows Server uchun CIS Benchmark.",
+          "ru": "В таблице иерархии этот уровень назван «Asos (baseline)»: пример — CIS Benchmark для Windows Server.",
+          "en": "The hierarchy table names it the baseline: its example is the CIS Benchmark for Windows Server."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ishlangan misolda (eng kam imtiyoz auditi) eng xavfli topilma qaysi foydalanuvchiga tegishli deb aytilgan?",
+          "ru": "В разобранном примере аудита наименьших привилегий какое нарушение названо самым опасным?",
+          "en": "In the worked least-privilege audit, which user's finding is called the most dangerous?"
+        },
+        "options": [
+          {
+            "uz": "aziz — talaba boʻlib, baholarni oʻzgartirish (grades_write) huquqiga ega",
+            "ru": "азиз: студент с правом изменять оценки (grades_write)",
+            "en": "aziz: a student holding the right to change grades (grades_write)"
+          },
+          {
+            "uz": "bobur — oqituvchida ortiqcha finance_read huquqi bor",
+            "ru": "бобур: у преподавателя лишнее право finance_read",
+            "en": "bobur: a teacher with the extra finance_read right"
+          },
+          {
+            "uz": "sardor — oqituvchiga grades_read va grades_write huquqlari yetishmaydi",
+            "ru": "сардор: преподавателю не хватает прав grades_read и grades_write",
+            "en": "sardor: a teacher missing the grades_read and grades_write rights"
+          },
+          {
+            "uz": "dilnoza — huquqlari roliga toʻliq mos",
+            "ru": "дилноза: её права полностью соответствуют роли",
+            "en": "dilnoza: her rights match her role exactly"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi izoh: eng xavfli topilma — aziz, chunki talaba baholarni oʻzgartira oladi; «huquq toʻplanishi» odatda boʻlim almashtirilganda eski huquqlar olib qoʻyilmaganda yuzaga keladi.",
+          "ru": "Пояснение из занятия: самая опасная находка — азиз, студент может менять оценки; «накопление прав» обычно возникает, когда при переводе в другой отдел старые права не отзывают.",
+          "en": "The lesson's note: the most dangerous finding is aziz, a student who can change grades; privilege creep usually happens when someone moves to another department and the old rights are not revoked."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Xavfsizlik hujjatlari va siyosatlari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о документах и политиках безопасности верны?",
+          "en": "Which statements about security documents and policies are correct?"
+        },
+        "options": [
+          {
+            "uz": "Protsedura siyosatda belgilangan talabni qadamma-qadam qanday bajarishni koʻrsatadi",
+            "ru": "Процедура описывает шаг за шагом, как выполнить требование, заданное политикой",
+            "en": "A procedure shows step by step how to carry out a requirement set by a policy"
+          },
+          {
+            "uz": "Yoʻriqnoma barcha xodimlar uchun majburiy talabdir",
+            "ru": "Руководство (guideline) обязательно для всех сотрудников",
+            "en": "A guideline is mandatory for all staff"
+          },
+          {
+            "uz": "Yaxshi siyosatda masʼul shaxs va qayta koʻrib chiqish muddati koʻrsatilgan, xodimlar uni imzo bilan tasdiqlaydi",
+            "ru": "В хорошей политике указаны ответственное лицо и срок пересмотра, а сотрудники подтверждают ознакомление подписью",
+            "en": "A good policy names an owner and a review date, and staff confirm they have read it with a signature"
+          },
+          {
+            "uz": "Zaxira nusxa siyosati tiklashni sinashni oʻz ichiga olmaydi",
+            "ru": "Политика резервного копирования не включает проверку восстановления",
+            "en": "A backup policy does not include testing restores"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Yoʻriqnoma — tavsiya, majburiy emas; zaxira siyosati esa nimani, qanchalik tez-tez, qayerda saqlashni va tiklashni sinashni ham belgilaydi.",
+          "ru": "Руководство — это рекомендация, а не обязательное требование; политика резервного копирования также задаёт, что, как часто и где хранить и как тестировать восстановление.",
+          "en": "A guideline is a recommendation, not a requirement; the backup policy also sets what to keep, how often and where, and includes testing restores."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Huquqlar faqat qoʻshib borilib, hech qachon olib qoʻyilmasa, vaqt oʻtishi bilan deyarli hamma kishi hamma narsaga kira oladigan holat yuzaga keladi — shuning uchun kirish siyosati huquqlarni kamida chorakda bir marta koʻrib chiqishni talab qiladi.",
+          "ru": "Если права только добавляются и никогда не отзываются, со временем почти каждый получает доступ почти ко всему — поэтому политика доступа требует пересматривать права не реже одного раза в квартал.",
+          "en": "If rights are only ever added and never removed, in time almost everyone can access almost everything — which is why an access policy requires rights to be reviewed at least once a quarter."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars buni «koʻp uchraydigan xato» deb beradi va ishlangan misolda choraklik qayta koʻrib chiqish talabini asoslaydi.",
+          "ru": "Занятие перечисляет это как частую ошибку и в разобранном примере обосновывает требование квартального пересмотра.",
+          "en": "The lesson gives this as a common mistake and its worked example justifies the quarterly review requirement."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Sukut boʻyicha rad etish: portlar roʻyxati",
+      "ru": "Запрет по умолчанию: список портов",
+      "en": "Default deny: the port allow-list"
+    },
+    "statement": {
+      "uz": "Brandmauer «sukut boʻyicha rad etish» tamoyili boʻyicha ishlaydi: aniq ruxsat berilmagan har qanday murojaat taqiqlanadi. Dasturingiz birinchi satrida ruxsat etilgan portlar soni n ni, keyingi n satrda port raqamlarini oʻqisin. Soʻng tekshiriladigan soʻrovlar soni m va keyingi m satrda soʻrov portlari beriladi. Har bir soʻrov uchun alohida satrda natijani chiqaring: port roʻyxatda boʻlsa allow, boʻlmasa deny (kichik harflar bilan, qoʻshimcha hech narsa yozmang). Port raqamlari 0 dan 65535 gacha; 1 ≤ n ≤ 100, 1 ≤ m ≤ 100. Masalan, roʻyxatda 80, 443, 22 boʻlsa, 8080 soʻrovi deny oladi.",
+      "ru": "Файрвол работает по принципу «запрет по умолчанию»: всё, что явно не разрешено, запрещено. Программа читает в первой строке число n — количество разрешённых портов, затем n строк с номерами портов. После них идёт число m — количество запросов, и далее m строк с номерами запрошенных портов. Для каждого запроса выведите отдельной строкой allow, если порт есть в списке, и deny в противном случае (строчными буквами, без лишнего текста). Номера портов от 0 до 65535; 1 ≤ n ≤ 100, 1 ≤ m ≤ 100. Например, если в списке есть 80, 443 и 22, запрос 8080 даст deny.",
+      "en": "The firewall follows the default-deny principle: anything not explicitly allowed is forbidden. Your program reads n on the first line — the number of allowed ports — then n lines with one port number each. Then comes m — the number of requests — and m lines with the requested ports. For each request print one line: allow if the port is on the list, otherwise deny (lowercase, nothing else). Ports are from 0 to 65535; 1 ≤ n ≤ 100, 1 ≤ m ≤ 100. For example, with 80, 443 and 22 on the list, the request 8080 gives deny."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nruxsat = []\nfor _ in range(n):\n    ruxsat.append(int(input()))\nm = int(input())\nfor _ in range(m):\n    q = int(input())\n    print(\"deny\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] ruxsat = new int[n];\n        for (int i = 0; i < n; i++) {\n            ruxsat[i] = in.nextInt();\n        }\n        int m = in.nextInt();\n        for (int i = 0; i < m; i++) {\n            int q = in.nextInt();\n            System.out.println(\"deny\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int ruxsat[105];\n    for (int i = 0; i < n; i++) {\n        cin >> ruxsat[i];\n    }\n    int m;\n    cin >> m;\n    for (int i = 0; i < m; i++) {\n        int q;\n        cin >> q;\n        cout << \"deny\" << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nruxsat = []\nfor _ in range(n):\n    ruxsat.append(int(input()))\nm = int(input())\nfor _ in range(m):\n    q = int(input())\n    if q in ruxsat:\n        print(\"allow\")\n    else:\n        print(\"deny\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] ruxsat = new int[n];\n        for (int i = 0; i < n; i++) {\n            ruxsat[i] = in.nextInt();\n        }\n        int m = in.nextInt();\n        for (int i = 0; i < m; i++) {\n            int q = in.nextInt();\n            boolean bor = false;\n            for (int p : ruxsat) {\n                if (p == q) {\n                    bor = true;\n                }\n            }\n            System.out.println(bor ? \"allow\" : \"deny\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int ruxsat[105];\n    for (int i = 0; i < n; i++) {\n        cin >> ruxsat[i];\n    }\n    int m;\n    cin >> m;\n    for (int i = 0; i < m; i++) {\n        int q;\n        cin >> q;\n        bool bor = false;\n        for (int j = 0; j < n; j++) {\n            if (ruxsat[j] == q) {\n                bor = true;\n            }\n        }\n        cout << (bor ? \"allow\" : \"deny\") << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\n80\n443\n22\n4\n80\n8080\n22\n4443\n", "expected": "allow\ndeny\nallow\ndeny", "hidden": false },
+        { "input": "1\n3000\n4\n3000\n3001\n2999\n3000\n", "expected": "allow\ndeny\ndeny\nallow", "hidden": false },
+        { "input": "2\n1024\n65535\n3\n65535\n1023\n1024\n", "expected": "allow\ndeny\nallow", "hidden": true },
+        { "input": "5\n21\n22\n23\n80\n443\n5\n443\n80\n23\n22\n21\n", "expected": "allow\nallow\nallow\nallow\nallow", "hidden": true },
+        { "input": "1\n0\n3\n0\n1\n65535\n", "expected": "allow\ndeny\ndeny", "hidden": true }
+      ]
+    }
+  }
+}

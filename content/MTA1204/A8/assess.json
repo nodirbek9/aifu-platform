@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Prefiks yigʻindilar massivida [*l*, *r*] oraliq yigʻindisi qanday hisoblanadi?",
+          "ru": "Как вычисляется сумма на отрезке [l, r] через массив префиксных сумм?",
+          "en": "How is the sum of the range [l, r] computed with the prefix-sum array?"
+        },
+        "options": [
+          {
+            "uz": "p[r] − p[l − 1]",
+            "ru": "p[r] − p[l − 1]",
+            "en": "p[r] − p[l − 1]"
+          },
+          {
+            "uz": "p[r] − p[l]",
+            "ru": "p[r] − p[l]",
+            "en": "p[r] − p[l]"
+          },
+          {
+            "uz": "p[l] − p[r]",
+            "ru": "p[l] − p[r]",
+            "en": "p[l] − p[r]"
+          },
+          {
+            "uz": "p[r − 1] − p[l]",
+            "ru": "p[r − 1] − p[l]",
+            "en": "p[r − 1] − p[l]"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "p[i] — birinchi i elementning yigʻindisi, shuning uchun [*l*, *r*] yigʻindisi p[r] dan p[l − 1] ni ayirishga teng. `p[l]` ni ayirsangiz, *l*-element ham ortiqcha ketadi.",
+          "ru": "p[i] — сумма первых i элементов, поэтому сумма [l, r] получается вычитанием p[l − 1] из p[r]. Если вычесть p[l], элемент l тоже уйдёт лишним.",
+          "en": "p[i] is the sum of the first i elements, so the sum of [l, r] is p[r] minus p[l − 1]. Subtracting p[l] instead removes element l as well."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kesmalar daraxtida har bir tugun massivning bir kesmasi uchun natijani (yigʻindi, minimum, maksimum) saqlaydi.",
+          "ru": "В дереве отрезков каждый узел хранит результат (сумму, минимум, максимум) для одного отрезка массива.",
+          "en": "In a segment tree every node keeps the result (sum, minimum, maximum) for one segment of the array."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ildiz butun massiv, barglar esa alohida elementlar uchun natijani saqlaydi — shu gʻoya kesmalar daraxtining taʼrifi.",
+          "ru": "Корень хранит результат для всего массива, листья — для отдельных элементов; в этом и состоит идея дерева отрезков.",
+          "en": "The root keeps the result for the whole array and the leaves for single elements — that is the idea of a segment tree."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "`a = 4 1 3 2` uchun prefiks yigʻindilar massivida `p[3]` nechaga teng?",
+          "ru": "Чему равен `p[3]` в массиве префиксных сумм для `a = 4 1 3 2`?",
+          "en": "What is `p[3]` in the prefix-sum array for `a = 4 1 3 2`?"
+        },
+        "answers": [8],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "p[3] = 4 + 1 + 3 = 8; toʻliq massiv `0 4 5 8 10` boʻladi.",
+          "ru": "p[3] = 4 + 1 + 3 = 8; весь массив выглядит как `0 4 5 8 10`.",
+          "en": "p[3] = 4 + 1 + 3 = 8; the whole array is `0 4 5 8 10`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kesmalar daraxti qaysi amallar bilan ishlay oladi?",
+          "ru": "С какими операциями работает дерево отрезков?",
+          "en": "Which operations can a segment tree work with?"
+        },
+        "options": [
+          {
+            "uz": "Yigʻindi",
+            "ru": "Сумма",
+            "en": "Sum"
+          },
+          {
+            "uz": "Minimum",
+            "ru": "Минимум",
+            "en": "Minimum"
+          },
+          {
+            "uz": "EKUB",
+            "ru": "НОД",
+            "en": "GCD"
+          },
+          {
+            "uz": "Mediana",
+            "ru": "Медиана",
+            "en": "Median"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda aytilishicha, kesmalar daraxti istalgan assotsiativ amal bilan ishlaydi: yigʻindi, min, max, EKUB. Mediana ikki qism natijadan oddiy birlashtirib hosil boʻlmaydi.",
+          "ru": "В занятии сказано, что дерево отрезков работает с любой ассоциативной операцией: сумма, min, max, НОД. Медиану из результатов двух частей просто не собрать.",
+          "en": "The lesson says a segment tree works with any associative operation: sum, min, max, GCD. A median cannot be merged from the results of two parts."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "BQD da ikki bolasi boʻlgan tugunni oʻchirganda qanday qilinishi kerak?",
+          "ru": "Что нужно сделать при удалении из двоичного дерева поиска узла с двумя детьми?",
+          "en": "What must be done when deleting a node with two children from a BST?"
+        },
+        "options": [
+          {
+            "uz": "Oʻng qism daraxtdagi eng kichik kalit tugun oʻrniga koʻchiriladi, soʻng u oʻsha oʻng qism daraxtdan oʻchiriladi",
+            "ru": "В узел копируется наименьший ключ из правого поддерева, затем этот ключ удаляется из правого поддерева",
+            "en": "The smallest key of the right subtree is copied into the node, then that key is deleted from the right subtree"
+          },
+          {
+            "uz": "Chap qism daraxtdagi eng kichik kalit tugun oʻrniga koʻchiriladi",
+            "ru": "В узел копируется наименьший ключ из левого поддерева",
+            "en": "The smallest key of the left subtree is copied into the node"
+          },
+          {
+            "uz": "Tugunning kaliti oʻzgarishsiz qoladi, faqat uning oʻng bolasi oʻchiriladi",
+            "ru": "Ключ узла остаётся прежним, удаляется только его правый ребёнок",
+            "en": "The node keeps its key and only its right child is deleted"
+          },
+          {
+            "uz": "Daraxt butunlay qaytadan quriladi",
+            "ru": "Дерево строится заново целиком",
+            "en": "The whole tree is rebuilt"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Keyingi element chapdagilarning hammasidan katta va oʻngdagilardan kichik yoki teng, shuning uchun BQD xossasi saqlanadi. Koʻchirilgan kalitning eski tuguni albatta oʻchiriladi, aks holda kalit ikki marta qoladi.",
+          "ru": "Преемник больше всех ключей слева и не больше всех справа, поэтому свойство двоичного дерева поиска сохраняется. Старый узел скопированного ключа обязательно удаляется, иначе ключ останется дважды.",
+          "en": "The successor is greater than every key on the left and no greater than those on the right, so the BST property holds. The old node of the copied key must be deleted too, otherwise the key stays twice."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yigʻindi va yangilashni O(log n) bajaruvchi, bitta massivdan iborat va `i & (−i)` bit amali bilan yuriladigan ixcham tuzilma qanday ataladi?",
+          "ru": "Как называется компактная структура для суммы и обновления за O(log n) — один массив и обход по bit-операции `i & (−i)`?",
+          "en": "What is the compact structure for sums and updates in O(log n) called — one array, walked with the bit operation `i & (−i)`?"
+        },
+        "answers": ["Fenvik", "Fenvik daraxti", "Fenwick", "Fenwick tree", "Fenwick Tree", "дерево Фенвика", "BIT"],
+        "explanation": {
+          "uz": "Bu Fenvik daraxti (binar indeksli daraxt): kodi kesmalar daraxtidan qisqa, lekin asosan yigʻindi kabi teskarilanadigan amallar uchun qulay.",
+          "ru": "Это дерево Фенвика (бинарное индексное дерево): код короче дерева отрезков, но удобен в основном для обратимых операций вроде суммы.",
+          "en": "It is the Fenwick tree (binary indexed tree): its code is shorter than a segment tree's, but it suits mostly invertible operations such as the sum."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kesmalar daraxtida yangilash bargni va uning barcha ota-bobolarini qayta hisoblaydi. Ikkining darajasiga yaxlitlangan hajmi 8 boʻlgan daraxtda nechta tugun oʻzgaradi?",
+          "ru": "Обновление в дереве отрезков пересчитывает лист и всех его предков. Сколько узлов изменится в дереве, чей округлённый до степени двойки размер равен 8?",
+          "en": "An update in a segment tree recomputes the leaf and all its ancestors. How many nodes change in a tree whose size rounded up to a power of two is 8?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "log₂ 8 + 1 = 4 tugun: barg va ildizgacha boʻlgan uch ota. Shuning uchun yangilashdan keyin ota-bobolarni qayta hisoblamasak, soʻrov eski qiymatni qaytaradi.",
+          "ru": "log₂ 8 + 1 = 4 узла: сам лист и три предка до корня. Поэтому если после обновления предков не пересчитать, запрос вернёт старое значение.",
+          "en": "log₂ 8 + 1 = 4 nodes: the leaf and its three ancestors up to the root. That is why skipping the ancestors after an update makes a query return the old value."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Daraxt hajmi *n* dan katta boʻlganda, kesmalar daraxtining ortiqcha barglarini 0 bilan toʻldirish oraliq minimumi uchun ham toʻgʻri.",
+          "ru": "Если округлённый размер дерева больше n, лишние листья можно заполнить нулями и для запроса минимума на отрезке.",
+          "en": "When the rounded tree size is larger than n, filling the extra leaves with 0 is also correct for a range minimum query."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Minimum uchun neytral element ∞, 0 esa natijani buzadi (massivda manfiy sonlar boʻlmasa ham, 0 eng kichik boʻlib qoladi). Yigʻindi uchun neytral element 0.",
+          "ru": "Для минимума нейтральный элемент — ∞, а нуль испортит результат: он сам окажется наименьшим значением. Для суммы нейтральный элемент — 0.",
+          "en": "For the minimum the neutral element is ∞; 0 spoils the result because it would itself become the smallest value. For the sum the neutral element is 0."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "BQD dan oʻchirishning uch holati haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны про три случая удаления из двоичного дерева поиска?",
+          "en": "Which statements are correct about the three cases of deleting from a BST?"
+        },
+        "options": [
+          {
+            "uz": "Tugun barg boʻlsa, u shunchaki olib tashlanadi",
+            "ru": "Если узел — лист, его просто убирают",
+            "en": "If the node is a leaf, it is simply removed"
+          },
+          {
+            "uz": "Bitta bolasi boʻlsa, bola tugun oʻrniga qoʻyiladi",
+            "ru": "Если у узла один ребёнок, ребёнок встаёт на его место",
+            "en": "If it has one child, the child takes its place"
+          },
+          {
+            "uz": "Ikki bolasi boʻlsa, oʻng qism daraxtning eng kichik kaliti koʻchiriladi va BQD xossasi saqlanadi",
+            "ru": "Если детей два, копируется наименьший ключ правого поддерева, и свойство двоичного дерева поиска сохраняется",
+            "en": "If it has two children, the smallest key of the right subtree is copied and the BST property is kept"
+          },
+          {
+            "uz": "Qaysi holatda boʻlmasin, daraxtning balandligi birga kamayadi",
+            "ru": "При любом из случаев высота дерева уменьшается на единицу",
+            "en": "In every case the height of the tree decreases by one"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Ikki bolali holatda tugun oʻz joyida qoladi — faqat kaliti almashtiriladi, shuning uchun balandlik oʻzgarmasligi mumkin.",
+          "ru": "В случае с двумя детьми узел остаётся на месте — меняется только его ключ, поэтому высота может не измениться.",
+          "en": "With two children the node itself stays where it is — only its key changes, so the height may not change at all."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Kesmalar daraxti: oraliq yigʻindisi va almashtirish",
+      "ru": "Дерево отрезков: сумма на отрезке и замена",
+      "en": "Segment tree: range sum and replacement"
+    },
+    "statement": {
+      "uz": "Savdo xisobotida kunlik natijalar *n* marta aniqlashtiriladi: biror kunning qiymati butunlay boshqa songa almashtiriladi, shundan keyin yana [*l*, *r*] oraligʻi yigʻindisi soʻraladi. Prefiks yigʻindilar har almashtirishdan keyin O(*n*) sarflaydi, daraxt tuzilmasi esa ikkala amalni ham tez bajaradi. Dasturingiz quyidagisini oʻqisin: birinchi satrda *n*; ikkinchi satrda *n* ta butun son; uchinchisida *q*; keyingi *q* satrda buyruq — `sum l r` yoki `set i x` (indekslar 1 dan). Har bir `sum` uchun [*l*, *r*] yigʻindisini alohida satrda chiqaring. `set i x` *i*-elementni *x* ga almashtiradi (unga qoʻshmaydi!). Qiymatlar manfiy boʻlishi mumkin. Masalan, `5 2 8 1 9 3` uchun `sum 1 3` javobi 15; `set 4 10` dan keyin `sum 3 6` javobi 8 + 10 + 9 + 3 = 30. Chegaralar: 1 ≤ *n*, *q* ≤ 1000, |qiymatlar| ≤ 1000.",
+      "ru": "В отчёте о продажах значения дней уточняются: значение одного дня полностью заменяется другим числом, после чего снова запрашивается сумма на отрезке [l, r]. Префиксные суммы после каждой замены требуют O(n), а древовидная структура выполняет обе операции быстро. Ваша программа читает: первая строка — n; вторая строка — n целых чисел; третья — q; затем q команд, `sum l r` или `set i x` (индексы с 1). Для каждой команды `sum` выведите сумму на [l, r] отдельной строкой. `set i x` заменяет элемент i значением x (а не прибавляет его!). Значения могут быть отрицательными. Например, для `5 2 8 1 9 3` команда `sum 1 3` даёт 15, а после `set 4 10` команда `sum 3 6` даёт 8 + 10 + 9 + 3 = 30. Ограничения: 1 ≤ n, q ≤ 1000, |значения| ≤ 1000.",
+      "en": "A sales report gets corrected: one day's value is replaced entirely by another number, and afterwards the sum of a range [l, r] is asked again. Prefix sums cost O(n) after every replacement, while a tree-based structure does both operations quickly. Your program reads: the first line holds *n*; the second line holds *n* integers; the third holds *q*; the next *q* lines hold one command each, `sum l r` or `set i x` (indices from 1). For every `sum` print the sum of [l, r] on its own line. `set i x` replaces element *i* with *x* (it does not add to it!). Values may be negative. For example, `5 2 8 1 9 3` makes `sum 1 3` print 15, and after `set 4 10` the command `sum 3 6` prints 8 + 10 + 9 + 3 = 30. Limits: 1 ≤ n, q ≤ 1000, |values| ≤ 1000."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nkirish = sys.stdin.read().split()\nn = int(kirish[0])\nolcham = 1\nwhile olcham < n:\n    olcham *= 2\nt = [0] * (2 * olcham)\nfor i in range(n):\n    t[olcham + i] = int(kirish[1 + i])\nfor i in range(olcham - 1, 0, -1):\n    t[i] = t[2 * i] + t[2 * i + 1]\n\nq = int(kirish[n + 1])\noqish = n + 2\nnatija = []\nfor _ in range(q):\n    buyruq = kirish[oqish]\n    x = int(kirish[oqish + 1])\n    y = int(kirish[oqish + 2])\n    oqish += 3\n    if buyruq == \"set\":\n        i = olcham + x - 1\n        t[i] = y\n        i //= 2\n        t[i] = t[2 * i] + t[2 * i + 1]\n    else:\n        l, r = olcham + x - 1, olcham + y\n        jam = 0\n        while l < r:\n            if l % 2 == 1:\n                jam += t[l]\n                l += 1\n            if r % 2 == 1:\n                r -= 1\n                jam += t[r]\n            l //= 2\n            r //= 2\n        natija.append(jam)\nprint(\"\\n\".join(map(str, natija)))\n",
+        "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.util.StringTokenizer;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader oquvchi = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(oquvchi.readLine().trim());\n        int olcham = 1;\n        while (olcham < n) olcham *= 2;\n        long[] t = new long[2 * olcham];\n        StringTokenizer st = new StringTokenizer(oquvchi.readLine());\n        for (int i = 0; i < n; i++) t[olcham + i] = Long.parseLong(st.nextToken());\n        for (int i = olcham - 1; i >= 1; i--) t[i] = t[2 * i] + t[2 * i + 1];\n\n        int q = Integer.parseInt(oquvchi.readLine().trim());\n        StringBuilder sb = new StringBuilder();\n        for (int k = 0; k < q; k++) {\n            st = new StringTokenizer(oquvchi.readLine());\n            String buyruq = st.nextToken();\n            int x = Integer.parseInt(st.nextToken());\n            int y = Integer.parseInt(st.nextToken());\n            if (buyruq.equals(\"set\")) {\n                int i = olcham + x - 1;\n                t[i] = y;\n                i /= 2;\n                t[i] = t[2 * i] + t[2 * i + 1];\n            } else {\n                int l = olcham + x - 1, r = olcham + y;\n                long jam = 0;\n                while (l < r) {\n                    if (l % 2 == 1) jam += t[l++];\n                    if (r % 2 == 1) jam += t[--r];\n                    l /= 2;\n                    r /= 2;\n                }\n                sb.append(jam).append('\\n');\n            }\n        }\n        System.out.print(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int olcham = 1;\n    while (olcham < n) olcham *= 2;\n    vector<long long> t(2 * olcham, 0);\n    for (int i = 0; i < n; i++) cin >> t[olcham + i];\n    for (int i = olcham - 1; i >= 1; i--) t[i] = t[2 * i] + t[2 * i + 1];\n\n    int q;\n    cin >> q;\n    while (q--) {\n        string buyruq;\n        long long x, y;\n        cin >> buyruq >> x >> y;\n        if (buyruq == \"set\") {\n            long long i = olcham + x - 1;\n            t[i] = y;\n            i /= 2;\n            t[i] = t[2 * i] + t[2 * i + 1];\n        } else {\n            long long l = olcham + x - 1, r = olcham + y;\n            long long jam = 0;\n            while (l < r) {\n                if (l % 2 == 1) jam += t[l++];\n                if (r % 2 == 1) jam += t[--r];\n                l /= 2;\n                r /= 2;\n            }\n            cout << jam << '\\n';\n        }\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nkirish = sys.stdin.read().split()\nn = int(kirish[0])\nolcham = 1\nwhile olcham < n:\n    olcham *= 2\nt = [0] * (2 * olcham)\nfor i in range(n):\n    t[olcham + i] = int(kirish[1 + i])\nfor i in range(olcham - 1, 0, -1):\n    t[i] = t[2 * i] + t[2 * i + 1]\n\nq = int(kirish[n + 1])\noqish = n + 2\nnatija = []\nfor _ in range(q):\n    buyruq = kirish[oqish]\n    x = int(kirish[oqish + 1])\n    y = int(kirish[oqish + 2])\n    oqish += 3\n    if buyruq == \"set\":\n        i = olcham + x - 1\n        t[i] = y\n        i //= 2\n        while i >= 1:\n            t[i] = t[2 * i] + t[2 * i + 1]\n            i //= 2\n    else:\n        l, r = olcham + x - 1, olcham + y\n        jam = 0\n        while l < r:\n            if l % 2 == 1:\n                jam += t[l]\n                l += 1\n            if r % 2 == 1:\n                r -= 1\n                jam += t[r]\n            l //= 2\n            r //= 2\n        natija.append(jam)\nprint(\"\\n\".join(map(str, natija)))\n",
+        "java": "import java.io.BufferedReader;\nimport java.io.IOException;\nimport java.io.InputStreamReader;\nimport java.util.StringTokenizer;\n\npublic class Main {\n    public static void main(String[] args) throws IOException {\n        BufferedReader oquvchi = new BufferedReader(new InputStreamReader(System.in));\n        int n = Integer.parseInt(oquvchi.readLine().trim());\n        int olcham = 1;\n        while (olcham < n) olcham *= 2;\n        long[] t = new long[2 * olcham];\n        StringTokenizer st = new StringTokenizer(oquvchi.readLine());\n        for (int i = 0; i < n; i++) t[olcham + i] = Long.parseLong(st.nextToken());\n        for (int i = olcham - 1; i >= 1; i--) t[i] = t[2 * i] + t[2 * i + 1];\n\n        int q = Integer.parseInt(oquvchi.readLine().trim());\n        StringBuilder sb = new StringBuilder();\n        for (int k = 0; k < q; k++) {\n            st = new StringTokenizer(oquvchi.readLine());\n            String buyruq = st.nextToken();\n            int x = Integer.parseInt(st.nextToken());\n            int y = Integer.parseInt(st.nextToken());\n            if (buyruq.equals(\"set\")) {\n                int i = olcham + x - 1;\n                t[i] = y;\n                for (i /= 2; i >= 1; i /= 2) t[i] = t[2 * i] + t[2 * i + 1];\n            } else {\n                int l = olcham + x - 1, r = olcham + y;\n                long jam = 0;\n                while (l < r) {\n                    if (l % 2 == 1) jam += t[l++];\n                    if (r % 2 == 1) jam += t[--r];\n                    l /= 2;\n                    r /= 2;\n                }\n                sb.append(jam).append('\\n');\n            }\n        }\n        System.out.print(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int olcham = 1;\n    while (olcham < n) olcham *= 2;\n    vector<long long> t(2 * olcham, 0);\n    for (int i = 0; i < n; i++) cin >> t[olcham + i];\n    for (int i = olcham - 1; i >= 1; i--) t[i] = t[2 * i] + t[2 * i + 1];\n\n    int q;\n    cin >> q;\n    while (q--) {\n        string buyruq;\n        long long x, y;\n        cin >> buyruq >> x >> y;\n        if (buyruq == \"set\") {\n            long long i = olcham + x - 1;\n            t[i] = y;\n            for (i /= 2; i >= 1; i /= 2) t[i] = t[2 * i] + t[2 * i + 1];\n        } else {\n            long long l = olcham + x - 1, r = olcham + y;\n            long long jam = 0;\n            while (l < r) {\n                if (l % 2 == 1) jam += t[l++];\n                if (r % 2 == 1) jam += t[--r];\n                l /= 2;\n                r /= 2;\n            }\n            cout << jam << '\\n';\n        }\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "6\n5 2 8 1 9 3\n5\nsum 1 3\nsum 4 4\nset 4 10\nsum 3 6\nsum 1 6\n", "expected": "15\n1\n30\n37", "hidden": false },
+        { "input": "1\n7\n3\nsum 1 1\nset 1 -4\nsum 1 1\n", "expected": "7\n-4", "hidden": false },
+        { "input": "5\n-1 -2 -3 -4 -5\n4\nsum 1 5\nsum 2 4\nset 3 10\nsum 1 5\n", "expected": "-15\n-9\n-2", "hidden": true },
+        { "input": "4\n0 0 0 0\n5\nset 1 5\nset 4 5\nsum 1 4\nset 2 -5\nsum 1 2\n", "expected": "10\n0", "hidden": true },
+        { "input": "8\n1 1 1 1 1 1 1 1\n4\nsum 1 8\nset 5 0\nsum 5 8\nsum 6 6\n", "expected": "8\n3\n1", "hidden": true }
+      ]
+    }
+  }
+}

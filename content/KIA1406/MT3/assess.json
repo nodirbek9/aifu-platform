@@ -1,0 +1,311 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Enigma nima?",
+          "ru": "Что такое Enigma?",
+          "en": "What is Enigma?"
+        },
+        "options": [
+          {
+            "uz": "Zararli dasturlarni aniqlaydigan dastur",
+            "ru": "Программа для обнаружения вредоносных программ",
+            "en": "A program that detects malware"
+          },
+          {
+            "uz": "Kalit yetkazib beruvchi tarmoq protokoli",
+            "ru": "Сетевой протокол распределения ключей",
+            "en": "A network protocol for distributing keys"
+          },
+          {
+            "uz": "Elektromexanik rotorli shifrlash mashinasi",
+            "ru": "Электромеханическая роторная шифровальная машина",
+            "en": "An electromechanical rotor cipher machine"
+          },
+          {
+            "uz": "Birinchi elektron kompyuter",
+            "ru": "Первый электронный компьютер",
+            "en": "The first electronic computer"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Darsda Enigma elektromexanik rotorli shifrlash mashinasi deb taʼriflangan: 1920-yillarda tijorat uchun ixtiro qilingan, keyin Germaniya qurolli kuchlari qabul qilgan.",
+          "ru": "В занятии Enigma определена как электромеханическая роторная шифровая машина: изобретена в 1920-х для коммерции, затем принята немецкими вооружёнными силами.",
+          "en": "The lesson defines Enigma as an electromechanical rotor cipher machine, invented in the 1920s for commercial use and then adopted by the German armed forces."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Enigma — bitta alifboli oddiy almashtirish shifri.",
+          "ru": "Enigma — простой шифр замены с одним алфавитом.",
+          "en": "Enigma is a simple substitution cipher with one alphabet."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Koʻp uchraydigan xatolar roʻyxatida bu birinchi xato: har bir harfda rotor buriladi, shuning uchun Enigma — juda uzun davrli koʻp alifboli almashtirish shifri.",
+          "ru": "Это первая из частых ошибок: ротор шагает на каждом символе, поэтому Enigma — полиалфавитная замена с очень длинным периодом.",
+          "en": "This is the first of the common mistakes listed: the rotor steps with every letter, so Enigma is a polyalphabetic substitution cipher with a very long period."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Enigma tuzilishi jadvalida qaysi qismlar sanalgan?",
+          "ru": "Какие узлы входят в таблицу устройства Enigma?",
+          "en": "Which parts appear in the table of Enigma's structure?"
+        },
+        "options": [
+          {
+            "uz": "Klaviatura va chiroqli panel",
+            "ru": "Клавиатура и панель ламп",
+            "en": "Keyboard and lampboard"
+          },
+          {
+            "uz": "Kommutatsiya paneli (Steckerbrett)",
+            "ru": "Коммутационная панель (Steckerbrett)",
+            "en": "Plugboard (Steckerbrett)"
+          },
+          {
+            "uz": "Bombe",
+            "ru": "Bombe",
+            "en": "Bombe"
+          },
+          {
+            "uz": "Rotorlar",
+            "ru": "Роторы",
+            "en": "Rotors"
+          },
+          {
+            "uz": "Reflektor",
+            "ru": "Рефлектор",
+            "en": "Reflector"
+          }
+        ],
+        "correct": [0, 1, 3, 4],
+        "explanation": {
+          "uz": "Jadvalda yana halqa sozlamasi (Ringstellung) bor. Bombe esa Enigmani ochish uchun qurilgan mashina, uni oʻzi Enigma tarkibiga kirmaydi.",
+          "ru": "В таблице есть также настройка кольца (Ringstellung). Bombe — машина, построенная для взлома Enigma, в её устройство не входит.",
+          "en": "The table also holds the ring setting (Ringstellung). The Bombe is the machine built to break Enigma, not a part of it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Har bir klavisha bosilganda mashinada nima sodir boʻladi?",
+          "ru": "Что происходит в машине при каждом нажатии клавиши?",
+          "en": "What happens in the machine every time a key is pressed?"
+        },
+        "options": [
+          {
+            "uz": "Uchala rotor bir vaqtda bir qadam buriladi",
+            "ru": "Все три ротора поворачиваются на один шаг одновременно",
+            "en": "All three rotors step one at the same time"
+          },
+          {
+            "uz": "Rotorlar qoʻlda, har soʻzda bir marta buriladi",
+            "ru": "Роторы поворачивают вручную, один раз на слово",
+            "en": "The rotors are turned by hand, once per word"
+          },
+          {
+            "uz": "Oʻng rotor bir qadam buriladi; toʻliq aylanishdan keyin oʻrtadagisi, soʻng chapdagisi buriladi",
+            "ru": "Правый ротор делает один шаг; после полного оборота шагает средний, затем левый",
+            "en": "The right rotor steps once; after a full revolution the middle one steps, then the left one"
+          },
+          {
+            "uz": "Kommutatsiya panelidagi juftliklar har bosishda oʻzgaradi",
+            "ru": "Пары на коммутационной панели меняются при каждом нажатии",
+            "en": "The plugboard pairs change with every press"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Darsdagi taʼrif: har bir bosishda oʻng rotor bir qadam buriladi, toʻliq aylanishdan keyin oʻrtadagisi, keyin chapdagisi — soat strelkalari kabi. Shuning uchun bir xil harf har safar boshqacha shifrlanadi.",
+          "ru": "Как в занятии: при каждом нажатии правый ротор шагает на один, после полного оборота — средний, затем левый, как стрелки часов. Поэтому одна и та же буква шифруется каждый раз иначе.",
+          "en": "As the lesson states, the right rotor steps once per press, after a full revolution the middle one steps and then the left one, like clock hands; that is why the same letter is encrypted differently each time."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kalit fazosi jadvalida 5 ta rotordan 3 tasini tartib bilan tanlash nechta variant berishi koʻrsatilgan?",
+          "ru": "Сколько вариантов выбора 3 роторов из 5 с учётом порядка указано в таблице пространства ключей?",
+          "en": "How many ways of choosing 3 of 5 rotors in order does the key space table give?"
+        },
+        "answers": [60],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Jadvalda 5 · 4 · 3 = 60. Bu birinchi qator; rotorlarning boshlangʻich holatlari 26³ = 17 576, kommutatsiya panelidagi 10 juftlik esa taxminan 1,5 · 10¹⁴ variant beradi.",
+          "ru": "В таблице: 5 · 4 · 3 = 60. Это первая строка; начальные положения роторов дают 26³ = 17 576, а 10 пар на коммутационной панели — около 1,5 · 10¹⁴.",
+          "en": "The table gives 5 · 4 · 3 = 60; the initial rotor positions add 26³ = 17,576 and the 10 plugboard pairs about 1.5 · 10¹⁴."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Shifrmatnda biror soʻz qayerda turishini taxmin qilish usulining xalqaro nomini yozing.",
+          "ru": "Напишите международное название метода, в котором предполагается, где в шифротексте стоит знакомое слово.",
+          "en": "Write the international name of the method that guesses where a known word stands in the ciphertext."
+        },
+        "answers": ["crib", "Crib", "crib usuli", "crib-based"],
+        "explanation": {
+          "uz": "Darsda bu crib deb atalgan: masalan, WETTERBERICHT — ob-havo hisoboti. Hech bir harf oʻziga shifrlanmasligi tufayli crib shifrmatn harfi bilan mos keladigan joylarda turolmaydi.",
+          "ru": "В занятии это называется crib: например, WETTERBERICHT — сводка погоды. Поскольку ни одна буква не шифруется в себя, crib не может стоять там, где совпадает с буквой шифротекста.",
+          "en": "The lesson calls this a crib, for example WETTERBERICHT, a weather report; because no letter encrypts to itself, the crib cannot stand where it matches a ciphertext letter."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Rotorlar simlarini matematik yoʻl bilan birinchi tiklagan kriptoanalitik va bu ish qayerda bajarilgan?",
+          "ru": "Какой криптоаналитик первым математически восстановил проводки роторов и где это было сделано?",
+          "en": "Which cryptanalyst first reconstructed the rotor wiring mathematically, and where was it done?"
+        },
+        "options": [
+          {
+            "uz": "Alan Turing, Bletchley Park (Buyuk Britaniya)",
+            "ru": "Алан Тьюринг, Блетчли-Парк (Великобритания)",
+            "en": "Alan Turing, Bletchley Park (Britain)"
+          },
+          {
+            "uz": "Marian Rejewski, Polsha (1932–1939)",
+            "ru": "Мариан Режевский, Польша (1932–1939)",
+            "en": "Marian Rejewski, Poland (1932–1939)"
+          },
+          {
+            "uz": "Gordon Welchman, AQSh",
+            "ru": "Гордон Уэлчман, США",
+            "en": "Gordon Welchman, United States"
+          },
+          {
+            "uz": "Germaniya armiyasi aloqa qoʻshimasi",
+            "ru": "Служба связи немецкой армии",
+            "en": "The signals branch of the German army"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Rejewski permutatsiyalar nazariyasi va takrorlangan xabar kalitidan foydalanib simlarni tiklagan; Zygalski va Różycki bilan bomba mashinalarini yaratgan; 1939-yil iyulda natijalar Britaniya va Fransiyaga topshirilgan. Koʻp uchraydigan xatolar roʻyxatida uni faqat Turing buzgan deb aytish ham xato deyiladi.",
+          "ru": "Режевский восстановил проводки, опираясь на теорию перестановок и повторяемый ключ сообщения, вместе с Ружицким и Зыгальским создал «бомбы»; в июле 1939 года результаты передали Великобритании и Франции. Утверждение, что Enigma взломал только Тьюринг, в занятии названо частой ошибкой.",
+          "en": "Rejewski rebuilt the wiring with permutation theory and the repeated message key, built the bomba machines with Różycki and Zygalski, and handed the results to Britain and France in July 1939. Saying that only Turing broke it is listed as a common mistake."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Enigma tajribasi zamonaviy kriptografiya uchun qaysi tamoyillarni koʻrsatadi?",
+          "ru": "Какие принципы современной криптографии иллюстрирует опыт Enigma?",
+          "en": "Which modern cryptographic principles does the Enigma experience illustrate?"
+        },
+        "options": [
+          {
+            "uz": "Kerkxofs tamoyili: xavfsizlik faqat kalitga bogʻliq boʻlishi kerak",
+            "ru": "Принцип Керкгоффса: безопасность должна зависеть только от ключа",
+            "en": "Kerckhoffs's principle: security must depend only on the key"
+          },
+          {
+            "uz": "Katta kalit fazosi — zarur, lekin yetarli shart emas",
+            "ru": "Большое пространство ключей необходимо, но не достаточно",
+            "en": "A large key space is necessary but not sufficient"
+          },
+          {
+            "uz": "Mashinaning tuzilishi sir saqlansa, kalit fazosi katta boʻlishi shart emas",
+            "ru": "Если устройство машины держать в секрете, большое пространство ключей не обязательно",
+            "en": "If the machine's design stays secret, a large key space is unnecessary"
+          },
+          {
+            "uz": "Shifr maʼlum ochiq matn hujumiga bardoshli boʻlishi kerak",
+            "ru": "Шифр должен быть стоек к атаке при известном открытом тексте",
+            "en": "A cipher must resist known-plaintext attacks"
+          },
+          {
+            "uz": "Protokol va foydalanish tartibi algoritm kabi muhim, kalitlar tasodifiy boʻlishi kerak",
+            "ru": "Протокол и порядок применения важны не меньше алгоритма, а ключи должны быть случайными",
+            "en": "The protocol and the operating procedures matter as much as the algorithm, and keys must be random"
+          }
+        ],
+        "correct": [0, 1, 3, 4],
+        "explanation": {
+          "uz": "Darsdagi saboqlar jadvali aynan shu toʻrt tamoyilni beradi; variantlardan biri esa Kerkxofs tamoyiliga zid — mashina va simlar dushmanga maʼlum boʻlib qolgan.",
+          "ru": "Таблица уроков из занятия называет именно эти четыре принципа; один из вариантов противоречит принципу Керкгоффса — машина и проводки стали известны противнику.",
+          "en": "The lesson's table of lessons names exactly those four principles; one of the other options contradicts Kerckhoffs's principle, since the machine and its wiring became known to the enemy."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "1-misoldagi soddalashtirilgan modelda ham SALOM DUNYO matnidagi ikkita O harfi turlicha harflarga shifrlanadi.",
+          "ru": "Даже в упрощённой модели из примера 1 две буквы O в тексте SALOM DUNYO шифруются по-разному.",
+          "en": "Even in the simplified model of worked example 1, the two letters O in SALOM DUNYO are encrypted to different letters."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi izoh: ikkala O harflari H va A ga shifrlangan, chunki har bir pozitsiyada rotor holati boshqacha — modelda ham rotor har harfdan oldin bir qadam buriladi.",
+          "ru": "Пояснение из занятия: буквы O дали H и A, потому что в каждой позиции ротор стоит по-разному — и в модели он шагает перед каждым символом.",
+          "en": "The lesson's note: the two O's became H and A because the rotor stands differently at each position; even in the model it steps before every letter."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Kalit fazosini hisoblash",
+      "ru": "Подсчёт пространства ключей",
+      "en": "Counting the key space"
+    },
+    "statement": {
+      "uz": "Darsda armiya Enigmasining kalit fazosi hisoblangan: 5 rotordan 3 tasini tartib bilan tanlash 5 · 4 · 3 = 60 variant, rotorlarning boshlangʻich holatlari esa 26³ = 17 576 variant beradi. Sizning dasturingiz shu hisobni ixtiyoriy r va k uchun bajaradi: bitta satrdan ikkita butun sonni oʻqisin — r (mavjud rotorlar soni) va k (tanlanadigan rotorlar soni). Uch qator chiqaring: 1-qatorda rotorlarni tartib bilan tanlash usullari soni r · (r − 1) · … · (r − k + 1); 2-qatorda boshlangʻich holatlar soni 26^k; 3-qatorda shu ikki sonning koʻpaytmasi. Har bir qatorda faqat son boʻlsin — nuqta, vergul, boʻsh joy yoki soʻz qoʻshmang. Masalan, 5 3 kirsa, dastur 60, keyin 17576, keyin 1054560 chiqaradi. Chegara: 1 ≤ k ≤ 3 va k ≤ r ≤ 26.",
+      "ru": "В занятии пространство ключей армейской Enigma посчитано: выбор 3 роторов из 5 с учётом порядка даёт 5 · 4 · 3 = 60 вариантов, а начальные положения роторов — 26³ = 17 576 вариантов. Ваша программа проделывает тот же расчёт для любых r и k: считывает одной строкой два целых числа — r (сколько роторов доступно) и k (сколько выбирается). Выведите три строки: 1) число способов выбрать роторы с учётом порядка, r · (r − 1) · … · (r − k + 1); 2) число начальных положений, 26^k; 3) произведение этих двух чисел. В каждой строке только число — без точек, запятых, пробелов и слов. Например, ввод 5 3 даёт 60, затем 17576, затем 1054560. Ограничение: 1 ≤ k ≤ 3 и k ≤ r ≤ 26.",
+      "en": "The lesson counts the key space of the army Enigma: choosing 3 of 5 rotors in order gives 5 · 4 · 3 = 60 variants and the initial rotor positions give 26³ = 17,576 variants. Your program does the same count for any r and k: it reads two integers from one line — r (rotors available) and k (rotors chosen). Print three lines: 1) the number of ways to choose the rotors in order, r · (r − 1) · … · (r − k + 1); 2) the number of initial positions, 26^k; 3) the product of those two numbers. Each line holds only the number — no dots, commas, spaces or words. For example, the input 5 3 makes the program print 60, then 17576, then 1054560. Constraint: 1 ≤ k ≤ 3 and k ≤ r ≤ 26."
+    },
+    "code": {
+      "starter": {
+        "python": "r, k = map(int, input().split())\n\ntanlov = 1\nfor i in range(k):\n    tanlov *= r - i\n\nholat = 26 ** k\n\nprint(tanlov)\nprint(holat)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long r = in.nextLong();\n        long k = in.nextLong();\n        long tanlov = 1;\n        for (long i = 0; i < k; i++) {\n            tanlov *= r - i;\n        }\n        long holat = 1;\n        for (long i = 0; i < k; i++) {\n            holat *= 26;\n        }\n        System.out.println(tanlov);\n        System.out.println(holat);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long r, k;\n    cin >> r >> k;\n    long long tanlov = 1;\n    for (long long i = 0; i < k; i++) {\n        tanlov *= r - i;\n    }\n    long long holat = 1;\n    for (long long i = 0; i < k; i++) {\n        holat *= 26;\n    }\n    cout << tanlov << endl << holat << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "r, k = map(int, input().split())\n\ntanlov = 1\nfor i in range(k):\n    tanlov *= r - i\n\nholat = 26 ** k\n\nprint(tanlov)\nprint(holat)\nprint(tanlov * holat)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long r = in.nextLong();\n        long k = in.nextLong();\n        long tanlov = 1;\n        for (long i = 0; i < k; i++) {\n            tanlov *= r - i;\n        }\n        long holat = 1;\n        for (long i = 0; i < k; i++) {\n            holat *= 26;\n        }\n        System.out.println(tanlov);\n        System.out.println(holat);\n        System.out.println(tanlov * holat);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long r, k;\n    cin >> r >> k;\n    long long tanlov = 1;\n    for (long long i = 0; i < k; i++) {\n        tanlov *= r - i;\n    }\n    long long holat = 1;\n    for (long long i = 0; i < k; i++) {\n        holat *= 26;\n    }\n    cout << tanlov << endl << holat << endl << tanlov * holat << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5 3\n", "expected": "60\n17576\n1054560", "hidden": false },
+        { "input": "3 1\n", "expected": "3\n26\n78", "hidden": false },
+        { "input": "5 1\n", "expected": "5\n26\n130", "hidden": true },
+        { "input": "8 2\n", "expected": "56\n676\n37856", "hidden": true },
+        { "input": "26 3\n", "expected": "15600\n17576\n274185600", "hidden": true }
+      ]
+    }
+  }
+}

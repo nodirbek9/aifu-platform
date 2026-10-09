@@ -1,0 +1,316 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Risk matritsasida risk darajasi qanday aniqlanadi?",
+          "ru": "Как в матрице рисков определяется уровень риска?",
+          "en": "In the risk matrix, how is the risk level determined?"
+        },
+        "options": [
+          {
+            "uz": "Ehtimollik × taʼsir",
+            "ru": "Вероятность × последствия",
+            "en": "Likelihood × impact"
+          },
+          {
+            "uz": "Ehtimollik + taʼsir",
+            "ru": "Вероятность + последствия",
+            "en": "Likelihood + impact"
+          },
+          {
+            "uz": "Taʼsir ÷ ehtimollik",
+            "ru": "Последствия ÷ вероятность",
+            "en": "Impact ÷ likelihood"
+          },
+          {
+            "uz": "Aktiv qiymati × EF",
+            "ru": "Стоимость актива × EF",
+            "en": "Asset value × EF"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra ehtimollik va taʼsir 1–5 shkalada baholanadi va risk darajasi ularning koʻpaytmasiga teng.",
+          "ru": "По занятию вероятность и последствия оцениваются по шкале 1–5, а уровень риска — их произведение.",
+          "en": "In the lesson likelihood and impact are rated on a 1–5 scale, and the risk level is their product."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kibersugʻurta riskka munosabatning oʻtkazish (transfer) strategiyasiga misol boʻladi.",
+          "ru": "Киберстрахование — пример стратегии передачи (transfer) риска.",
+          "en": "Cyber insurance is an example of the transfer risk-treatment strategy."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Oʻtkazish — moliyaviy oqibatni boshqaga yuklash; darsda kibersugʻurta va autsorsing shu strategiyaga misol.",
+          "ru": "Передача — переложить финансовые последствия на другого; в занятии примеры — киберстрахование и аутсорсинг.",
+          "en": "Transfer means shifting the financial consequence to someone else; the lesson's examples are cyber insurance and outsourcing."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Risklarni boshqarish jarayonining bosqichlari qaysilar?",
+          "ru": "Какие из перечисленного — этапы процесса управления рисками?",
+          "en": "Which of these are stages of the risk management process?"
+        },
+        "options": [
+          {
+            "uz": "Aktivlarni aniqlash",
+            "ru": "Выявление активов",
+            "en": "Identifying assets"
+          },
+          {
+            "uz": "Tahdid va zaifliklarni aniqlash",
+            "ru": "Выявление угроз и уязвимостей",
+            "en": "Identifying threats and vulnerabilities"
+          },
+          {
+            "uz": "Barcha tahdidlarni butunlay yoʻq qilish",
+            "ru": "Полное уничтожение всех угроз",
+            "en": "Eliminating every threat completely"
+          },
+          {
+            "uz": "Monitoring va qayta koʻrib chiqish",
+            "ru": "Мониторинг и пересмотр",
+            "en": "Monitoring and review"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Jarayon: kontekst → aktivlar → tahdid va zaifliklar → baholash → munosabat → monitoring → kommunikatsiya; hech bir tashkilot barcha tahdidlardan toʻliq himoyalana olmaydi.",
+          "ru": "Процесс: контекст → активы → угрозы и уязвимости → оценка → обработка → мониторинг → коммуникация; полностью защититься от всех угроз невозможно.",
+          "en": "The process is context → assets → threats and vulnerabilities → assessment → treatment → monitoring → communication; no organisation can eliminate every threat."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "SLE (bitta hodisadan kutiladigan zarar) qanday hisoblanadi?",
+          "ru": "Как вычисляется SLE (ожидаемый ущерб от одного инцидента)?",
+          "en": "How is SLE (Single Loss Expectancy) calculated?"
+        },
+        "options": [
+          {
+            "uz": "AV × EF",
+            "ru": "AV × EF",
+            "en": "AV × EF"
+          },
+          {
+            "uz": "AV ÷ EF",
+            "ru": "AV ÷ EF",
+            "en": "AV ÷ EF"
+          },
+          {
+            "uz": "ALE × ARO",
+            "ru": "ALE × ARO",
+            "en": "ALE × ARO"
+          },
+          {
+            "uz": "EF × ARO",
+            "ru": "EF × ARO",
+            "en": "EF × ARO"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: SLE = AV × EF; ALE esa SLE × ARO ga teng.",
+          "ru": "Таблица из занятия: SLE = AV × EF; а ALE = SLE × ARO.",
+          "en": "The lesson table: SLE = AV × EF, while ALE = SLE × ARO."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "AV = 80 mln soʻm, EF = 25% boʻlsa, SLE nechcha mln soʻm?",
+          "ru": "Если AV = 80 млн сумов, а EF = 25%, чему равен SLE в млн сумов?",
+          "en": "If AV = 80 million soʻm and EF = 25%, what is the SLE in million soʻm?"
+        },
+        "answers": [20],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "SLE = AV × EF = 80 × 0,25 = 20 mln soʻm.",
+          "ru": "SLE = AV × EF = 80 × 0,25 = 20 млн сумов.",
+          "en": "SLE = AV × EF = 80 × 0.25 = 20 million soʻm."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Choralar joriy etilgandan keyin ham qoladigan, rahbariyat rasman qabul qiladigan risk qanday ataladi?",
+          "ru": "Как называется риск, который остаётся после мер защиты и формально принимается руководством?",
+          "en": "What is the risk called that remains after controls are in place and is formally accepted by management?"
+        },
+        "answers": ["qoldiq risk", "qoldiq", "residual risk"],
+        "explanation": {
+          "uz": "Darsda bu qoldiq risk (residual risk) deb ataladi va uni rahbariyat rasman qabul qiladi.",
+          "ru": "В занятии это остаточный риск (residual risk), который руководство формально принимает.",
+          "en": "The lesson calls it residual risk, formally accepted by management."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Choragacha ALE = 12 mln, choradan keyin ALE = 4 mln, choraning yillik narxi = 10 mln. Qaysi xulosa toʻgʻri?",
+          "ru": "ALE до меры = 12 млн, после меры = 4 млн, годовая стоимость меры = 10 млн. Какой вывод верный?",
+          "en": "ALE before the control = 12 million, after it = 4 million, the control costs 10 million a year. Which conclusion is correct?"
+        },
+        "options": [
+          {
+            "uz": "Chora rad etiladi: foyda = 12 − 4 − 10 = −2 mln, oʻzini oqlamaydi",
+            "ru": "Меру следует отклонить: выгода = 12 − 4 − 10 = −2 млн, она не окупается",
+            "en": "Reject the control: benefit = 12 − 4 − 10 = −2 million; it does not pay for itself"
+          },
+          {
+            "uz": "Chora joriy etiladi: zarar 8 mln ga kamayadi",
+            "ru": "Меру следует внедрить: ущерб снижается на 8 млн",
+            "en": "Adopt the control: the loss drops by 8 million"
+          },
+          {
+            "uz": "Chora joriy etiladi: choraning narxi zarar kamayishidan kichik",
+            "ru": "Меру следует внедрить: её стоимость меньше ущерба",
+            "en": "Adopt the control: its cost is below the loss"
+          },
+          {
+            "uz": "Xulosa qilib boʻlmaydi: ARO ham kerak",
+            "ru": "Вывод сделать нельзя: нужен ещё и ARO",
+            "en": "No conclusion is possible without the ARO as well"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Foyda = ALE (oldin) − ALE (keyin) − narx; musbat boʻlgandagina chora oʻzini oqlaydi.",
+          "ru": "Выгода = ALE (до) − ALE (после) − стоимость; мера оправдана только при положительной выгоде.",
+          "en": "Benefit = ALE before − ALE after − cost; the control pays for itself only when the benefit is positive."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Miqdoriy baholash koʻrsatkichlari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о показателях количественной оценки верны?",
+          "en": "Which statements about the quantitative measures are correct?"
+        },
+        "options": [
+          {
+            "uz": "EF — bitta hodisada aktivning qancha qismi yoʻqolishini koʻrsatadi",
+            "ru": "EF показывает, какая доля актива теряется при одном инциденте",
+            "en": "EF states what share of the asset is lost in one incident"
+          },
+          {
+            "uz": "ARO — hodisaning yiliga necha marta sodir boʻlishi kutilishini koʻrsatadi",
+            "ru": "ARO показывает, сколько раз в год ожидается событие",
+            "en": "ARO states how many times a year the incident is expected"
+          },
+          {
+            "uz": "ALE = SLE × ARO",
+            "ru": "ALE = SLE × ARO",
+            "en": "ALE = SLE × ARO"
+          },
+          {
+            "uz": "ARO = 0,1 degani — hodisa yiliga 10 marta sodir boʻladi",
+            "ru": "ARO = 0,1 означает, что событие происходит 10 раз в год",
+            "en": "ARO = 0.1 means the incident happens 10 times a year"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsga koʻra 0,1 ARO — 10 yilda bir marta degani, yiliga oʻn marta emas.",
+          "ru": "По занятию 0,1 ARO — это раз в 10 лет, а не 10 раз в год.",
+          "en": "In the lesson ARO 0.1 means once in 10 years, not ten times a year."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Risklar reyestrini bir marta tuzib chiqish yetarli, uni endi yangilash shart emas.",
+          "ru": "Достаточно один раз составить реестр рисков, и дальше обновлять его не обязательно.",
+          "en": "It is enough to build the risk register once; it need not be updated afterwards."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi xatolar roʻyxatiga koʻra reyestr kamida yiliga bir marta va har katta oʻzgarishda yangilanadi.",
+          "ru": "Согласно списку частых ошибок, реестр обновляется минимум раз в год и при каждом крупном изменении.",
+          "en": "The lesson's list of mistakes says the register is updated at least once a year and with every major change."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "K dan kichik boʻlmagan risklar soni",
+      "ru": "Число рисков с уровнем не ниже порога",
+      "en": "Counting risks at or above a level"
+    },
+    "statement": {
+      "uz": "Risklar reyestri koʻrib chiqilayotgan: ehtimollik va taʼsir 1–5 shkalada baholanadi va risk darajasi = ehtimollik × taʼsir (risk matritsasidagidek). Birinchi satrda ikkita butun son beriladi: risklar soni n va chegaraviy qiymat K (1 ≤ n ≤ 100, 1 ≤ K ≤ 25). Keyingi n satrning har birida bitta riskning ehtimolligi va taʼsiri — 1 dan 5 gacha butun sonlar, boʻshliq bilan ajratilgan. Darajasi K ga teng yoki undan katta boʻlgan risklar sonini bitta butun son qilib chiqaring, hech qanday qoʻshimcha matn yozmang. Masalan, kirish: 5 10 va risklar (4 5), (2 3), (5 5), (1 2), (3 4) boʻlsa, darajalar 20, 6, 25, 2, 12 — javob: 3.",
+      "ru": "Идёт обзор реестра рисков: вероятность и последствия оцениваются по шкале 1–5, уровень риска = вероятность × последствия, как в матрице рисков. В первой строке два целых числа: количество рисков n и пороговое значение K (1 ≤ n ≤ 100, 1 ≤ K ≤ 25). Каждая из следующих n строк содержит вероятность и последствия одного риска — целые числа от 1 до 5 через пробел. Выведите одним целым числом количество рисков, чей уровень не меньше K, без какого-либо дополнительного текста. Например, при вводе 5 10 и рисках (4 5), (2 3), (5 5), (1 2), (3 4) уровни равны 20, 6, 25, 2, 12 — ответ: 3.",
+      "en": "A risk register is being reviewed: likelihood and impact are rated on the 1–5 scale and the risk level = likelihood × impact, as in the risk matrix. The first line holds two integers: the number of risks n and a cutoff K (1 ≤ n ≤ 100, 1 ≤ K ≤ 25). Each of the next n lines holds one risk's likelihood and impact — integers from 1 to 5 separated by a space. Print a single integer: how many risks have a level of at least K, with no extra text. For example, with the input 5 10 and risks (4 5), (2 3), (5 5), (1 2), (3 4) the levels are 20, 6, 25, 2, 12 — the answer is 3."
+    },
+    "code": {
+      "starter": {
+        "python": "n, k = map(int, input().split())\ncount = 0\nfor _ in range(n):\n    ehtimol, tair = map(int, input().split())\n    if ehtimol * tair > k:\n        count += 1\nprint(count)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int k = in.nextInt();\n        int count = 0;\n        for (int i = 0; i < n; i++) {\n            int ehtimol = in.nextInt();\n            int tair = in.nextInt();\n            if (ehtimol * tair > k) {\n                count++;\n            }\n        }\n        System.out.println(count);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    int count = 0;\n    for (int i = 0; i < n; i++) {\n        int ehtimol, tair;\n        cin >> ehtimol >> tair;\n        if (ehtimol * tair > k) {\n            count++;\n        }\n    }\n    cout << count << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n, k = map(int, input().split())\ncount = 0\nfor _ in range(n):\n    ehtimol, tair = map(int, input().split())\n    if ehtimol * tair >= k:\n        count += 1\nprint(count)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int k = in.nextInt();\n        int count = 0;\n        for (int i = 0; i < n; i++) {\n            int ehtimol = in.nextInt();\n            int tair = in.nextInt();\n            if (ehtimol * tair >= k) {\n                count++;\n            }\n        }\n        System.out.println(count);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, k;\n    cin >> n >> k;\n    int count = 0;\n    for (int i = 0; i < n; i++) {\n        int ehtimol, tair;\n        cin >> ehtimol >> tair;\n        if (ehtimol * tair >= k) {\n            count++;\n        }\n    }\n    cout << count << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5 10\n4 5\n2 3\n5 5\n1 2\n3 4\n", "expected": "3", "hidden": false },
+        { "input": "3 15\n5 5\n3 3\n4 4\n", "expected": "2", "hidden": false },
+        { "input": "1 1\n1 1\n", "expected": "1", "hidden": true },
+        { "input": "4 12\n4 3\n3 3\n5 2\n4 3\n", "expected": "2", "hidden": true }
+      ]
+    }
+  }
+}

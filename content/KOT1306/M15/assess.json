@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kompyuter 169.254.x.x manzilini olgan — eng ehtimoliy sabab qaysi?",
+          "ru": "Компьютер получил адрес 169.254.x.x — какая причина наиболее вероятна?",
+          "en": "A computer got the address 169.254.x.x — what is the most likely cause?"
+        },
+        "options": [
+          {
+            "uz": "DHCP serverga ulanib boʻlmadi (APIPA manzili)",
+            "ru": "Не удалось связаться с DHCP-сервером (адрес APIPA)",
+            "en": "The DHCP server could not be reached (an APIPA address)"
+          },
+          {
+            "uz": "DNS server oʻchiq",
+            "ru": "DNS-сервер выключен",
+            "en": "The DNS server is down"
+          },
+          {
+            "uz": "Foydalanuvchi parolini xato kiritdi",
+            "ru": "Пользователь ввёл неверный пароль",
+            "en": "The user typed the wrong password"
+          },
+          {
+            "uz": "Brandmauer ICMP ni toʻsib qoʻydi",
+            "ru": "Межсетевой экран заблокировал ICMP",
+            "en": "A firewall blocked ICMP"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra: 3-pogʻona belgisi 169.254.x.x — DHCP ishlamayapti; tekshirish — `ipconfig /all`.",
+          "ru": "По занятию: признак 3-го уровня 169.254.x.x — DHCP не работает; проверка — `ipconfig /all`.",
+          "en": "Per the lesson: 169.254.x.x is a layer-3 sign that DHCP is not working; check with `ipconfig /all`."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ping javob bermasa, xost oʻchiq degan xulosa qilish toʻgʻri.",
+          "ru": "Если `ping` не отвечает, правильно делать вывод, что хост выключен.",
+          "en": "If `ping` gives no answer, it is correct to conclude the host is down."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi koʻp uchraydigan xato: brandmauer ICMP ni toʻsishi mumkin. Portni `Test-NetConnection` bilan tekshiring.",
+          "ru": "Частая ошибка из занятия: межсетевой экран может блокировать ICMP. Проверяйте порт через `Test-NetConnection`.",
+          "en": "A common mistake from the lesson: a firewall may block ICMP. Check the port with `Test-NetConnection`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "DNS soʻrovlarini tekshirish uchun darsda qaysi buyruqlar keltirilgan?",
+          "ru": "Какие команды из занятия служат для проверки запросов DNS?",
+          "en": "Which of the lesson's commands are used to check DNS queries?"
+        },
+        "options": [
+          {
+            "uz": "`nslookup`",
+            "ru": "`nslookup`",
+            "en": "`nslookup`"
+          },
+          {
+            "uz": "dig",
+            "ru": "`dig`",
+            "en": "`dig`"
+          },
+          {
+            "uz": "`arp -a`",
+            "ru": "`arp -a`",
+            "en": "`arp -a`"
+          },
+          {
+            "uz": "netstat -ano",
+            "ru": "`netstat -ano`",
+            "en": "`netstat -ano`"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "DNS soʻrovlari — nslookup (Windows) va dig (Linux). `arp -a` ARP keshini, netstat -ano ochiq port va ulanishlarni koʻrsatadi.",
+          "ru": "Запросы DNS — `nslookup` (Windows) и `dig` (Linux). `arp -a` показывает кэш ARP, `netstat -ano` — открытые порты и соединения.",
+          "en": "DNS queries are checked with `nslookup` (Windows) and `dig` (Linux). `arp -a` shows the ARP cache, `netstat -ano` open ports and connections."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`ping 8.8.8.8` ishlayapti, `ping google.com` esa ishlamayapti. Qaysi pogʻona yoki xizmatda muammo?",
+          "ru": "`ping 8.8.8.8` работает, а `ping google.com` — нет. На каком уровне или в какой службе проблема?",
+          "en": "`ping 8.8.8.8` works but `ping google.com` does not. Which layer or service has the problem?"
+        },
+        "options": [
+          {
+            "uz": "DNS — 7-pogʻona (ilova)",
+            "ru": "DNS — уровень 7 (прикладной)",
+            "en": "DNS — layer 7 (application)"
+          },
+          {
+            "uz": "1-pogʻona: kabel yoki Wi-Fi",
+            "ru": "Уровень 1: кабель или Wi-Fi",
+            "en": "Layer 1: the cable or Wi-Fi"
+          },
+          {
+            "uz": "3-pogʻona: shlyuzga yetib boʻlmaydi",
+            "ru": "Уровень 3: не достаёшь шлюз",
+            "en": "Layer 3: the gateway is unreachable"
+          },
+          {
+            "uz": "4-pogʻona: port yopiq",
+            "ru": "Уровень 4: порт закрыт",
+            "en": "Layer 4: the port is closed"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Klassik ketma-ketlik: IP boʻyicha ping oʻtsa, nom boʻyicha — yoʻq, demak nom hal qilish (DNS) ishlamayapti. Bu 7-pogʻona belgisi: «IP bilan ishlaydi, nom bilan — yoʻq».",
+          "ru": "Классическая последовательность: если пинг по IP проходит, а по имени — нет, значит не работает разрешение имён (DNS). Это признак 7-го уровня: «по IP работает, по имени — нет».",
+          "en": "In the classic sequence, if the IP ping passes and the name ping fails, name resolution (DNS) is broken. That is the layer-7 sign: works by IP, not by name."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "«Boʻl va hukmronlik qil» yondashuvi nimadan boshlanadi?",
+          "ru": "С чего начинается подход «разделяй и властвуй»?",
+          "en": "Where does the divide-and-conquer approach start?"
+        },
+        "options": [
+          {
+            "uz": "Oʻrta pogʻonadan — odatda ping buyrugʻi (3-pogʻona) bilan; ishlasa yuqoriga, ishlamasa pastga",
+            "ru": "Со среднего уровня — обычно с `ping` (уровень 3): работает — вверх, нет — вниз",
+            "en": "From the middle layer — usually `ping` (layer 3): up if it works, down if it does not"
+          },
+          {
+            "uz": "Eng past pogʻonadan — kabel va chiroqlardan",
+            "ru": "С самого нижнего уровня — кабеля и индикаторов",
+            "en": "From the lowest layer — the cable and the lights"
+          },
+          {
+            "uz": "Eng yuqori pogʻonadan — brauzer bilan",
+            "ru": "С самого верхнего уровня — с браузера",
+            "en": "From the top layer — starting with the browser"
+          },
+          {
+            "uz": "Serverlarni qayta yuklashdan",
+            "ru": "С перезагрузки серверов",
+            "en": "From rebooting the servers"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvali: boʻl va hukmronlik qil — oʻrta pogʻonadan boshlash, tajribali muhandis uchun eng tez yondashuv.",
+          "ru": "Таблица занятия: разделяй и властвуй — начало со среднего уровня, самый быстрый подход для опытного инженера.",
+          "en": "The lesson table: divide and conquer starts at the middle layer — the fastest approach for an experienced engineer."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsga koʻra, ovoz va videoda jitter maksimal nechta ms dan oshmasligi kerak?",
+          "ru": "По занятию, джиттер при голосе и видео не должен превышать сколько миллисекунд?",
+          "en": "According to the lesson, voice and video jitter should not exceed how many milliseconds?"
+        },
+        "answers": [30],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Dars: jitter — ketma-ket RTT lar oʻzgaruvchanligi, ovoz va videoda muhim, 30 ms dan oshmasligi kerak.",
+          "ru": "Занятие: джиттер — изменчивость последовательных RTT, важен для голоса и видео, не должен превышать 30 мс.",
+          "en": "The lesson: jitter is the variability of successive RTTs; it matters for voice and video and should not exceed 30 ms."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ping RTT lari: 10, 12, 30, 11 ms. Jitter qancha ms? (Jitter — ketma-ket qabul qilingan javoblar RTT farqlari moduli oʻrtachasi.)",
+          "ru": "RTT ответов ping: 10, 12, 30, 11 мс. Чему равен джиттер в мс? (Джиттер — среднее модулей разностей последовательных принятых RTT.)",
+          "en": "Ping RTTs: 10, 12, 30, 11 ms. What is the jitter in ms? (Jitter is the mean of the absolute differences of successive received RTTs.)"
+        },
+        "answers": [13],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "|12 − 10| + |30 − 12| + |11 − 30| = 2 + 18 + 19 = 39; 39 / 3 = 13 ms.",
+          "ru": "|12 − 10| + |30 − 12| + |11 − 30| = 2 + 18 + 19 = 39; 39 / 3 = 13 мс.",
+          "en": "|12 − 10| + |30 − 12| + |11 − 30| = 2 + 18 + 19 = 39; 39 / 3 = 13 ms."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Pogʻonama-pogʻona tashxisda birinchi muvaffaqiyatsiz tekshiruvga qaraladi, chunki yuqori pogʻonalar pastkilarga bogʻliq.",
+          "ru": "При поуровневой диагностике смотрят на первую неудачную проверку, потому что верхние уровни зависят от нижних.",
+          "en": "In layer-by-layer diagnosis you look at the first failed check, because higher layers depend on lower ones."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi misolda toʻrtinchi kompyuterning beshta tekshiruvi ham muvaffaqiyatsiz, lekin sabab — bitta: kabel. Pastki muammo hamma narsani «sindiradi».",
+          "ru": "В примере из занятия у четвёртого компьютера провалились все пять проверок, но причина одна: кабель. Нижняя поломка «ломает» всё остальное.",
+          "en": "In the lesson's example the fourth computer failed all five checks, but the cause was one: the cable. A lower-layer failure breaks everything above it."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Yoʻldagi har bir sakrashda (router da) yoʻqotish va kechikishni koʻrsatuvchi Windows utilitasining nomini yozing.",
+          "ru": "Напишите имя утилиты Windows, которая показывает потери и задержку на каждом переходе (роутере) на пути.",
+          "en": "Write the name of the Windows utility that shows loss and delay at each hop (router) along the path."
+        },
+        "answers": ["pathping", "pathping.exe"],
+        "explanation": {
+          "uz": "pathping (Linux da `mtr`) — har bir sakrashdagi yoʻqotish va kechikish; `tracert` faqat routerlar roʻyxatini beradi.",
+          "ru": "`pathping` (в Linux — `mtr`) — потери и задержка на каждом переходе; `tracert` даёт только список маршрутизаторов.",
+          "en": "`pathping` (`mtr` on Linux) gives loss and delay per hop; `tracert` only lists the routers."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Chegaradan uzoq javob bergan pinglar",
+      "ru": "Пинги дольше порога",
+      "en": "Pings slower than the threshold"
+    },
+    "statement": {
+      "uz": "Tarmoq sekinlayotganda administrator ping natijalarini koʻrib chiqadi: faqat oʻrtachaga emas, eng yomon qiymatlarga ham qarash kerak. Kirish tokenlardan iborat (ular boʻshliq yoki qatorlar bilan ajratilgan): birinchi token — chegara *T* (ms, butun son), keyingi tokenlar — ping natijalari: RTT butun soni (ms) yoki `*` (javob kelmagan). Pinglar 1 dan boshlab raqamlanadi (birinchi natija — 1). RTT qiymati *T* dan qatʼiy katta boʻlgan pinglarning raqamlarini chiqaring: har biri alohida qatorda, oʻqish tartibida. Bunday ping boʻlmasa, bitta `OK` satr chiqaring. Kamida bitta ping natijasi beriladi.",
+      "ru": "При замедлении сети администратор смотрит не только на среднее, но и на худшие значения ping. Ввод состоит из токенов (разделённых пробелами или строками): первый токен — порог *T* (мс, целое число), дальше — результаты пингов: целое RTT (мс) или `*` (ответа нет). Пинги нумеруются с 1 (первый результат — 1). Выведите номера пингов, у которых RTT строго больше *T*: по одному на строке, в порядке чтения. Если таких нет, выведите одну строку `OK`. Хотя бы один результат пинга даётся.",
+      "en": "When a network slows down, an administrator looks not only at the average but at the worst ping values. The input is a sequence of tokens (separated by spaces or lines): the first token is the threshold *T* (ms, an integer), then the ping results: an integer RTT (ms) or `*` (no reply). Pings are numbered from 1 (the first result is 1). Print the numbers of the pings whose RTT is strictly greater than *T*: one per line, in reading order. If there are none, print a single line `OK`. At least one ping result is given."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\ntokens = sys.stdin.read().split()\nlimit = int(tokens[0])\nbad = [str(i) for i, x in enumerate(tokens[1:], 1) if x != \"*\" and int(x) >= limit]\nif bad:\n    print(\"\\n\".join(bad))\nelse:\n    print(\"OK\")\n",
+        "java": "import java.util.ArrayList;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int limit = in.nextInt();\n        List<String> bad = new ArrayList<>();\n        int i = 0;\n        while (in.hasNext()) {\n            String x = in.next();\n            i++;\n            if (!x.equals(\"*\") && Integer.parseInt(x) >= limit) {\n                bad.add(String.valueOf(i));\n            }\n        }\n        if (bad.isEmpty()) {\n            System.out.println(\"OK\");\n        } else {\n            for (String s : bad) {\n                System.out.println(s);\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    long long limit;\n    cin >> limit;\n    vector<string> bad;\n    string x;\n    int i = 0;\n    while (cin >> x) {\n        i++;\n        if (x != \"*\" && stoll(x) >= limit) {\n            bad.push_back(to_string(i));\n        }\n    }\n    if (bad.empty()) {\n        cout << \"OK\" << endl;\n    } else {\n        for (const string& s : bad) {\n            cout << s << endl;\n        }\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\ntokens = sys.stdin.read().split()\nlimit = int(tokens[0])\nbad = [str(i) for i, x in enumerate(tokens[1:], 1) if x != \"*\" and int(x) > limit]\nif bad:\n    print(\"\\n\".join(bad))\nelse:\n    print(\"OK\")\n",
+        "java": "import java.util.ArrayList;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int limit = in.nextInt();\n        List<String> bad = new ArrayList<>();\n        int i = 0;\n        while (in.hasNext()) {\n            String x = in.next();\n            i++;\n            if (!x.equals(\"*\") && Integer.parseInt(x) > limit) {\n                bad.add(String.valueOf(i));\n            }\n        }\n        if (bad.isEmpty()) {\n            System.out.println(\"OK\");\n        } else {\n            for (String s : bad) {\n                System.out.println(s);\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    long long limit;\n    cin >> limit;\n    vector<string> bad;\n    string x;\n    int i = 0;\n    while (cin >> x) {\n        i++;\n        if (x != \"*\" && stoll(x) > limit) {\n            bad.push_back(to_string(i));\n        }\n    }\n    if (bad.empty()) {\n        cout << \"OK\" << endl;\n    } else {\n        for (const string& s : bad) {\n            cout << s << endl;\n        }\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "50\n40\n*\n60\n120\n45\n*\n30\n", "expected": "3\n4", "hidden": false },
+        { "input": "50\n10 20 30\n", "expected": "OK", "hidden": false },
+        { "input": "100\n100\n101\n", "expected": "2", "hidden": true },
+        { "input": "0\n*\n*\n", "expected": "OK", "hidden": true },
+        { "input": "30\n31 29 30 100\n", "expected": "1\n4", "hidden": true }
+      ]
+    }
+  }
+}

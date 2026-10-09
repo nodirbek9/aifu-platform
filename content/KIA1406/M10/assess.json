@@ -1,0 +1,322 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Foydalanuvchi kimligini oʻzi daʼvo qiladigan bosqich qanday ataladi?",
+          "ru": "Как называется этап, на котором пользователь сам заявляет, кто он?",
+          "en": "Which stage is the one where the user claims who they are?"
+        },
+        "options": [
+          {
+            "uz": "Identifikatsiya",
+            "ru": "Идентификация",
+            "en": "Identification"
+          },
+          {
+            "uz": "Autentifikatsiya",
+            "ru": "Аутентификация",
+            "en": "Authentication"
+          },
+          {
+            "uz": "Avtorizatsiya",
+            "ru": "Авторизация",
+            "en": "Authorization"
+          },
+          {
+            "uz": "Hisobdorlik",
+            "ru": "Учёт",
+            "en": "Accounting"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra: identifikatsiya — kimlikni daʼvo qilish (login, email, ID-karta raqami), autentifikatsiya — buni isbotlash, avtorizatsiya — nimaga ruxsat borligini aniqlash, hisobdorlik — nima qilinganini yozish.",
+          "ru": "По занятию: идентификация — заявление личности (логин, email, номер ID-карты), аутентификация — её доказательство, авторизация — определение прав, учёт — запись того, что было сделано.",
+          "en": "In the lesson: identification is claiming an identity (login, email, ID card number), authentication is proving it, authorization is deciding what is allowed, accounting is recording what was done."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ikki xil paroldan foydalanish koʻp omilli autentifikatsiya (MFA) hisoblanadi.",
+          "ru": "Использование двух разных паролей считается многофакторной аутентификацией (MFA).",
+          "en": "Using two different passwords counts as multi-factor authentication (MFA)."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "MFA — kamida ikki turli omil (parol + telefon). Ikki parol ham bilim omiliga tegishli, shuning uchun MFA emas.",
+          "ru": "MFA — не менее двух разных факторов (пароль + телефон). Оба пароля относятся к фактору знания, поэтому это не MFA.",
+          "en": "MFA means at least two different factors (password + phone). Both passwords belong to the knowledge factor, so this is not MFA."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysilar egalik omiliga (something you have) misol boʻladi?",
+          "ru": "Что из перечисленного является примером фактора владения (something you have)?",
+          "en": "Which of these are examples of the possession factor (something you have)?"
+        },
+        "options": [
+          {
+            "uz": "Telefon",
+            "ru": "Телефон",
+            "en": "A phone"
+          },
+          {
+            "uz": "Apparat kaliti (masalan, YubiKey)",
+            "ru": "Аппаратный ключ (например, YubiKey)",
+            "en": "A hardware key (for example, a YubiKey)"
+          },
+          {
+            "uz": "Barmoq izi",
+            "ru": "Отпечаток пальца",
+            "en": "A fingerprint"
+          },
+          {
+            "uz": "Maxfiy savol",
+            "ru": "Секретный вопрос",
+            "en": "A secret question"
+          },
+          {
+            "uz": "Smart-karta",
+            "ru": "Смарт-карта",
+            "en": "A smart card"
+          }
+        ],
+        "correct": [0, 1, 4],
+        "explanation": {
+          "uz": "Egalik omili: telefon, apparat kalit, smart-karta, token. Barmoq izi — xususiyat omili, maxfiy savol va PIN — bilim omili.",
+          "ru": "Фактор владения: телефон, аппаратный ключ, смарт-карта, токен. Отпечаток пальца — фактор свойства, секретный вопрос и PIN — фактор знания.",
+          "en": "The possession factor covers a phone, a hardware key, a smart card, a token. A fingerprint is the inherence factor; a secret question and a PIN are the knowledge factor."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "NIST SP 800-63B tavsiyalariga koʻra qaysi ifoda toʻgʻri?",
+          "ru": "Какое утверждение соответствует рекомендациям NIST SP 800-63B?",
+          "en": "Which statement follows the NIST SP 800-63B recommendations?"
+        },
+        "options": [
+          {
+            "uz": "Parolni davriy ravishda majburiy almashtirish talab qilinmaydi",
+            "ru": "Обязательная периодическая смена пароля не требуется",
+            "en": "Mandatory periodic password changes are not required"
+          },
+          {
+            "uz": "Parol albatta katta harf, raqam va maxsus belgidan tuzilishi shart",
+            "ru": "Пароль обязан состоять из заглавной буквы, цифры и специального символа",
+            "en": "A password must consist of an uppercase letter, a digit and a special character"
+          },
+          {
+            "uz": "Parolda 8 tadan ortiq belgi ruxsat etilmaydi",
+            "ru": "В пароле разрешено не более 8 символов",
+            "en": "No more than 8 characters are allowed in a password"
+          },
+          {
+            "uz": "Parolni sizib chiqqanlar roʻyxati bilan tekshirish mumkin emas",
+            "ru": "Пароль нельзя проверять по спискам утечек",
+            "en": "A password must not be checked against breach lists"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "NIST: kamida 8 belgi (yaxshisi 15+), 64 tagacha belgi, boʻshliq va har qanday belgi mumkin; murakkablik qoidalari va majburiy davriy almashtirish talab qilinmaydi, parol sizganlar roʻyxatida tekshiriladi va urinishlar cheklanadi.",
+          "ru": "NIST: не менее 8 символов (лучше 15+), до 64 символов, пробелы и любые символы; правила сложности и обязательная периодическая смена не требуются, пароль проверяют по спискам утечек, а попытки ограничивают.",
+          "en": "NIST: at least 8 characters (better 15+), up to 64 characters, spaces and any symbols; composition rules and forced periodic changes are not required — instead the password is checked against breach lists and attempts are limited."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "TOTP (RFC 6238) da kod odatda nechta soniyalik oraliqda yangilanadi?",
+          "ru": "С каким обычно интервалом (в секундах) обновляется код в TOTP (RFC 6238)?",
+          "en": "In TOTP (RFC 6238), the code is usually renewed at an interval of how many seconds?"
+        },
+        "answers": [30],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "TOTP HOTP dagi hisoblagich oʻrniga vaqtni ishlatadi: odatda 30 soniyalik oraliq, kalit esa QR kod orqali bir marta beriladi.",
+          "ru": "TOTP использует вместо счётчика время: обычно интервал 30 секунд, а ключ передаётся один раз через QR-код.",
+          "en": "TOTP uses time instead of a counter, usually a 30-second interval; the key is provided once through a QR code."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Bitta mashhur parolni koʻp hisoblar boʻylab navbatma-navbat sinab koʻrish hujumining nomini yozing.",
+          "ru": "Напишите название атаки, при которой один популярный пароль проверяется на многих учётных записях.",
+          "en": "Write the name of the attack that tries one popular password across many accounts."
+        },
+        "answers": ["password spraying", "parol purkash", "password spraying hujumi"],
+        "explanation": {
+          "uz": "Parol purkash (password spraying) — bitta mashhur parol koʻp hisoblarga; credential stuffing esa boshqa saytdan sizgan login-parol juftlarini ishlatadi.",
+          "ru": "Распыление паролей (password spraying) — один популярный пароль на много учётных записей; credential stuffing использует пары логин–пароль, утёкшие с другого сайта.",
+          "en": "Password spraying applies one popular password to many accounts; credential stuffing uses login–password pairs leaked from another site."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Biometrik tizimda tekshiruv chegarasi (threshold) oshirilsa, FAR va FRR qanday oʻzgaradi?",
+          "ru": "Как изменятся FAR и FRR при повышении порога биометрической системы?",
+          "en": "How do FAR and FRR change when the threshold of a biometric system is raised?"
+        },
+        "options": [
+          {
+            "uz": "FAR kamayadi, FRR oshadi",
+            "ru": "FAR уменьшается, FRR растёт",
+            "en": "FAR decreases and FRR increases"
+          },
+          {
+            "uz": "FAR oshadi, FRR kamayadi",
+            "ru": "FAR растёт, FRR уменьшается",
+            "en": "FAR increases and FRR decreases"
+          },
+          {
+            "uz": "Ikkalasi ham kamayadi",
+            "ru": "Оба уменьшаются",
+            "en": "Both decrease"
+          },
+          {
+            "uz": "Ikkalasi ham oshadi",
+            "ru": "Оба растут",
+            "en": "Both increase"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Chegara oshsa begona odam qabul qilinishi kamayadi (FAR pasayadi), lekin haqiqiy eganing rad etilishi koʻpayadi (FRR oshadi). Ishlangan misol ham shuni koʻrsatadi: ikkalasini bir vaqtda nolga tushirib boʻlmaydi.",
+          "ru": "При росте порога посторонний реже принимается (FAR падает), но настоящий владелец чаще отклоняется (FRR растёт). Разобранный пример это показывает: одновременно свести оба к нулю нельзя.",
+          "en": "A higher threshold accepts fewer impostors (FAR falls) but rejects more genuine owners (FRR grows). The worked example shows it: both cannot be brought to zero at the same time."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qaysi ifodalar toʻgʻri?",
+          "ru": "Какие из утверждений верны?",
+          "en": "Which of the statements are correct?"
+        },
+        "options": [
+          {
+            "uz": "FIDO2 imzosi sayt domeniga bogʻlangani uchun soxta sayt uni ishlata olmaydi",
+            "ru": "Подпись FIDO2 привязана к домену сайта, поэтому поддельный сайт не может её использовать",
+            "en": "A FIDO2 signature is bound to the site's domain, so a fake site cannot use it"
+          },
+          {
+            "uz": "OpenID Connect — OAuth 2.0 ustidagi autentifikatsiya qatlami",
+            "ru": "OpenID Connect — слой аутентификации поверх OAuth 2.0",
+            "en": "OpenID Connect is an authentication layer on top of OAuth 2.0"
+          },
+          {
+            "uz": "Sizgan barmoq izini yangisiga almashtirsa boʻladi",
+            "ru": "Утёкший отпечаток пальца можно заменить новым",
+            "en": "A leaked fingerprint can be replaced with a new one"
+          },
+          {
+            "uz": "OAuth 2.0 ilovaga parolni uzatishni nazarda tutadi",
+            "ru": "OAuth 2.0 предполагает передачу приложению пароля пользователя",
+            "en": "OAuth 2.0 means handing the user's password to the application"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Biometrika parol kabi almashtirilmaydi — sizgan barmoq izi umrbod sizgan. OAuth 2.0 esa parolni bermasdan, faqat cheklangan huquqli token beradi.",
+          "ru": "Биометрию нельзя сменить, как пароль: утёкший отпечаток остаётся навсегда. OAuth 2.0 же не передаёт пароль, а выдаёт токен с ограниченными правами.",
+          "en": "Biometrics cannot be changed like a password — a leaked fingerprint stays leaked. OAuth 2.0 does not pass the password at all; it grants a token with limited rights."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ikkinchi omil sifatida SMS kod eng zaif tanlov hisoblanadi.",
+          "ru": "SMS-код — самый слабый выбор в качестве второго фактора.",
+          "en": "An SMS code is the weakest choice for a second factor."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda SMS kod qulay, lekin eng zaif ikkinchi omil deb ataladi: SIM almashtirish, SS7 zaifliklari va fishing. Shuning uchun imkon boʻlsa passkey yoki autentifikator ilovasi tavsiya etiladi.",
+          "ru": "В занятии SMS-код назван удобным, но самым слабым вторым фактором: подмена SIM, уязвимости SS7, фишинг. Поэтому по возможности рекомендуют passkey или приложение-аутентификатор.",
+          "en": "The lesson calls the SMS code convenient but the weakest second factor — SIM swap, SS7 vulnerabilities, phishing — which is why a passkey or an authenticator app is preferred where possible."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Ikki turli omil — MFA",
+      "ru": "Два разных фактора — это MFA",
+      "en": "Two different factors make MFA"
+    },
+    "statement": {
+      "uz": "Darsdagi omillar jadvali: bilim — parol, PIN, maxfiy savol; egalik — telefon, apparat kalit, smart-karta, token; xususiyat — barmoq izi, yuz, koʻz qorachigʻi, ovoz. Dasturingiz kirishda quyidagi nomlarni qabul qiladi (har biri alohida satrda, faqat kichik harflar bilan): password, pin, secret question — bilim omili; phone, hardware key, smart card, token — egalik omili; fingerprint, face, iris, voice — xususiyat omili. Birinchi satrda usullar soni n (1 ≤ n ≤ 10), keyingi n satrda usul nomi beriladi. Agar berilgan usullar kamida ikki turli omilga tegishli boʻlsa, MFA soʻzini; aks holda NO MFA soʻzini bitta qatorda chiqaring — qoʻshimcha hech narsa yozmang. Masalan, password va phone kirsa, chiqish MFA boʻladi; password va pin kirsa, NO MFA boʻladi, chunki ikkalasi ham bilim omili.",
+      "ru": "Таблица факторов из занятия: знание — пароль, PIN, секретный вопрос; владение — телефон, аппаратный ключ, смарт-карта, токен; свойство — отпечаток пальца, лицо, радужка, голос. Ваша программа принимает на вход следующие названия (каждое на отдельной строке, только строчными буквами): password, pin, secret question — фактор знания; phone, hardware key, smart card, token — фактор владения; fingerprint, face, iris, voice — фактор свойства. В первой строке задано число способов n (1 ≤ n ≤ 10), далее n строк с названиями способов. Если перечисленные способы относятся хотя бы к двум разным факторам, выведите на одной строке MFA, иначе — NO MFA, без каких-либо пояснений. Например, password и phone дают MFA; password и pin дают NO MFA, потому что оба — фактор знания.",
+      "en": "The factor table of the lesson: knowledge — password, PIN, secret question; possession — phone, hardware key, smart card, token; inherence — fingerprint, face, iris, voice. Your program reads the following names (one per line, lowercase only): password, pin, secret question are knowledge factors; phone, hardware key, smart card, token are possession factors; fingerprint, face, iris, voice are inherence factors. The first line holds the number of methods n (1 ≤ n ≤ 10), followed by n lines with a method name each. If the listed methods belong to at least two different factors, print MFA on one line, otherwise print NO MFA — with no extra text. For example, password and phone give MFA; password and pin give NO MFA, because both are knowledge factors."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nfaktor = {\n    \"password\": \"bilim\", \"pin\": \"bilim\", \"secret question\": \"bilim\",\n    \"phone\": \"egalik\", \"hardware key\": \"egalik\", \"smart card\": \"egalik\", \"token\": \"egalik\",\n    \"fingerprint\": \"xususiyat\", \"face\": \"xususiyat\", \"iris\": \"xususiyat\", \"voice\": \"xususiyat\",\n}\nsatrlar = [s.strip() for s in sys.stdin.read().split(\"\\n\") if s.strip()]\nn = int(satrlar[0])\nushlar = satrlar[1:1 + n]\nprint(\"MFA\" if len(ushlar) >= 2 else \"NO MFA\")\n",
+        "java": "import java.util.HashMap;\nimport java.util.HashSet;\nimport java.util.Map;\nimport java.util.Scanner;\nimport java.util.Set;\n\npublic class Main {\n    public static void main(String[] args) {\n        Map<String, String> faktor = new HashMap<>();\n        faktor.put(\"password\", \"bilim\");\n        faktor.put(\"pin\", \"bilim\");\n        faktor.put(\"secret question\", \"bilim\");\n        faktor.put(\"phone\", \"egalik\");\n        faktor.put(\"hardware key\", \"egalik\");\n        faktor.put(\"smart card\", \"egalik\");\n        faktor.put(\"token\", \"egalik\");\n        faktor.put(\"fingerprint\", \"xususiyat\");\n        faktor.put(\"face\", \"xususiyat\");\n        faktor.put(\"iris\", \"xususiyat\");\n        faktor.put(\"voice\", \"xususiyat\");\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n        int son = 0;\n        for (int j = 0; j < n; j++) {\n            in.nextLine();\n            son++;\n        }\n        System.out.println(son >= 2 ? \"MFA\" : \"NO MFA\");\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <set>\n#include <string>\nusing namespace std;\n\nint main() {\n    map<string, string> faktor;\n    faktor[\"password\"] = \"bilim\";\n    faktor[\"pin\"] = \"bilim\";\n    faktor[\"secret question\"] = \"bilim\";\n    faktor[\"phone\"] = \"egalik\";\n    faktor[\"hardware key\"] = \"egalik\";\n    faktor[\"smart card\"] = \"egalik\";\n    faktor[\"token\"] = \"egalik\";\n    faktor[\"fingerprint\"] = \"xususiyat\";\n    faktor[\"face\"] = \"xususiyat\";\n    faktor[\"iris\"] = \"xususiyat\";\n    faktor[\"voice\"] = \"xususiyat\";\n    string satr;\n    getline(cin, satr);\n    int n = stoi(satr);\n    int son = 0;\n    for (int j = 0; j < n; j++) {\n        getline(cin, satr);\n        son++;\n    }\n    cout << (son >= 2 ? \"MFA\" : \"NO MFA\") << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nfaktor = {\n    \"password\": \"bilim\", \"pin\": \"bilim\", \"secret question\": \"bilim\",\n    \"phone\": \"egalik\", \"hardware key\": \"egalik\", \"smart card\": \"egalik\", \"token\": \"egalik\",\n    \"fingerprint\": \"xususiyat\", \"face\": \"xususiyat\", \"iris\": \"xususiyat\", \"voice\": \"xususiyat\",\n}\nsatrlar = [s.strip() for s in sys.stdin.read().split(\"\\n\") if s.strip()]\nn = int(satrlar[0])\nushlar = satrlar[1:1 + n]\nomillar = {faktor[s] for s in ushlar}\nprint(\"MFA\" if len(omillar) >= 2 else \"NO MFA\")\n",
+        "java": "import java.util.HashMap;\nimport java.util.HashSet;\nimport java.util.Map;\nimport java.util.Scanner;\nimport java.util.Set;\n\npublic class Main {\n    public static void main(String[] args) {\n        Map<String, String> faktor = new HashMap<>();\n        faktor.put(\"password\", \"bilim\");\n        faktor.put(\"pin\", \"bilim\");\n        faktor.put(\"secret question\", \"bilim\");\n        faktor.put(\"phone\", \"egalik\");\n        faktor.put(\"hardware key\", \"egalik\");\n        faktor.put(\"smart card\", \"egalik\");\n        faktor.put(\"token\", \"egalik\");\n        faktor.put(\"fingerprint\", \"xususiyat\");\n        faktor.put(\"face\", \"xususiyat\");\n        faktor.put(\"iris\", \"xususiyat\");\n        faktor.put(\"voice\", \"xususiyat\");\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n        Set<String> omillar = new HashSet<>();\n        for (int j = 0; j < n; j++) {\n            omillar.add(faktor.get(in.nextLine().trim()));\n        }\n        System.out.println(omillar.size() >= 2 ? \"MFA\" : \"NO MFA\");\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <set>\n#include <string>\nusing namespace std;\n\nint main() {\n    map<string, string> faktor;\n    faktor[\"password\"] = \"bilim\";\n    faktor[\"pin\"] = \"bilim\";\n    faktor[\"secret question\"] = \"bilim\";\n    faktor[\"phone\"] = \"egalik\";\n    faktor[\"hardware key\"] = \"egalik\";\n    faktor[\"smart card\"] = \"egalik\";\n    faktor[\"token\"] = \"egalik\";\n    faktor[\"fingerprint\"] = \"xususiyat\";\n    faktor[\"face\"] = \"xususiyat\";\n    faktor[\"iris\"] = \"xususiyat\";\n    faktor[\"voice\"] = \"xususiyat\";\n    string satr;\n    getline(cin, satr);\n    int n = stoi(satr);\n    set<string> omillar;\n    for (int j = 0; j < n; j++) {\n        getline(cin, satr);\n        if (!satr.empty() && satr.back() == '\\r') satr.pop_back();\n        omillar.insert(faktor[satr]);\n    }\n    cout << (omillar.size() >= 2 ? \"MFA\" : \"NO MFA\") << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\npassword\nphone\nfingerprint\n", "expected": "MFA", "hidden": false },
+        { "input": "2\npassword\npin\n", "expected": "NO MFA", "hidden": false },
+        { "input": "3\npassword\nsecret question\ntoken\n", "expected": "MFA", "hidden": true },
+        { "input": "4\nfingerprint\nface\nvoice\niris\n", "expected": "NO MFA", "hidden": true },
+        { "input": "2\nhardware key\nvoice\n", "expected": "MFA", "hidden": true }
+      ]
+    }
+  }
+}

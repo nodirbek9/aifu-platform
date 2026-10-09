@@ -1,0 +1,290 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 5,
+        "prompt": {
+          "uz": "Soliq hisobotlarini yuborishning asosiy maqsadi nima?",
+          "ru": "Какова основная цель подачи налоговой отчетности?",
+          "en": "What is the main purpose of submitting tax reports?"
+        },
+        "explanation": {
+          "uz": "Soliq hisobotlari daromadlarni deklaratsiya qilish va soliqlarni hisoblash uchun xizmat qiladi.",
+          "ru": "Налоговая отчетность служит для декларирования доходов и расчета налогов.",
+          "en": "Tax reports serve to declare income and calculate taxes."
+        },
+        "options": [
+          {
+            "uz": "Daromadlarni deklaratsiya qilish va soliqlarni hisoblash",
+            "ru": "Декларирование доходов и расчет налогов",
+            "en": "To declare income and calculate taxes"
+          },
+          {
+            "uz": "Yangi xodimlarni ishga olish",
+            "ru": "Наем новых сотрудников",
+            "en": "To hire new employees"
+          },
+          {
+            "uz": "Ofis jihozlarini sotib olish",
+            "ru": "Покупка офисного оборудования",
+            "en": "To buy office equipment"
+          },
+          {
+            "uz": "Mahsulotlarni reklama qilish",
+            "ru": "Реклама продукции",
+            "en": "To advertise products"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 5,
+        "prompt": {
+          "uz": "Soliq hisobotlarini elektron shaklda yuborish mumkin.",
+          "ru": "Налоговую отчетность можно подавать в электронном виде.",
+          "en": "Tax reports can be submitted electronically."
+        },
+        "explanation": {
+          "uz": "Zamonaviy axborot tizimlari soliq hisobotlarini elektron shaklda yuborish imkonini beradi.",
+          "ru": "Современные информационные системы позволяют подавать налоговую отчетность в электронном виде.",
+          "en": "Modern information systems allow submitting tax reports electronically."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 5,
+        "prompt": {
+          "uz": "Elektron soliq hisobotlarini xavfsiz yuborish uchun qaysi raqamli kalitdan foydalaniladi?",
+          "ru": "Какой цифровой ключ используется для безопасной подачи электронной налоговой отчетности?",
+          "en": "Which digital key is used for secure electronic tax reporting?"
+        },
+        "explanation": {
+          "uz": "Elektron raqamli imzo (ERI) hujjatlarning haqiqiyligini va xavfsizligini taʼminlaydi.",
+          "ru": "Электронная цифровая подпись (ЭЦП) обеспечивает подлинность и безопасность документов.",
+          "en": "Electronic Digital Signature (EDS) ensures the authenticity and security of documents."
+        },
+        "options": [
+          {
+            "uz": "Elektron raqamli imzo (ERI)",
+            "ru": "Электронная цифровая подпись (ЭЦП)",
+            "en": "Electronic Digital Signature (EDS)"
+          },
+          {
+            "uz": "Ijtimoiy himoya raqami",
+            "ru": "Номер социального страхования",
+            "en": "Social Security Number"
+          },
+          {
+            "uz": "Pasport raqami",
+            "ru": "Номер паспорта",
+            "en": "Passport Number"
+          },
+          {
+            "uz": "Haydovchilik guvohnomasi",
+            "ru": "Водительские права",
+            "en": "Driver's License"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 5,
+        "prompt": {
+          "uz": "Quyidagilardan qaysilari hisobot qilinadigan soliq turlariga kiradi?",
+          "ru": "Какие из следующих видов налогов подлежат отчетности?",
+          "en": "Which of the following are types of taxes typically reported?"
+        },
+        "explanation": {
+          "uz": "Qoʻshilgan qiymat soligʻi va daromad soligʻi asosiy soliq turlaridan hisoblanadi.",
+          "ru": "Налог на добавленную стоимость и подоходный налог являются основными видами налогов.",
+          "en": "Value Added Tax and Income Tax are main types of taxes."
+        },
+        "options": [
+          {
+            "uz": "Qoʻshilgan qiymat soligʻi (QQS)",
+            "ru": "Налог на добавленную стоимость (НДС)",
+            "en": "Value Added Tax (VAT)"
+          },
+          {
+            "uz": "Daromad soligʻi",
+            "ru": "Подоходный налог",
+            "en": "Income Tax"
+          },
+          {
+            "uz": "Tarmoq soligʻi",
+            "ru": "Сетевой налог",
+            "en": "Network Tax"
+          },
+          {
+            "uz": "Dasturiy taʼminot soligʻi",
+            "ru": "Налог на программное обеспечение",
+            "en": "Software Tax"
+          }
+        ],
+        "correct": [0, 1]
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 5,
+        "prompt": {
+          "uz": "Oʻzbekistonda elektron soliq hisobotlarini topshirish uchun Soliq qoʻmitasining portali ishlatiladi.",
+          "ru": "В Узбекистане для подачи электронной налоговой отчетности используется портал Налогового комитета.",
+          "en": "In Uzbekistan, the tax committee's portal is used for electronic tax filing."
+        },
+        "explanation": {
+          "uz": "Soliq qoʻmitasining elektron xizmatlar portali orqali hisobotlar qabul qilinadi.",
+          "ru": "Отчеты принимаются через портал электронных услуг Налогового комитета.",
+          "en": "Reports are accepted through the electronic services portal of the Tax Committee."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 5,
+        "prompt": {
+          "uz": "Qoʻshilgan qiymat soligʻining qisqartmasi qanday?",
+          "ru": "Какова аббревиатура налога на добавленную стоимость?",
+          "en": "What is the acronym for Value Added Tax?"
+        },
+        "explanation": {
+          "uz": "Qoʻshilgan qiymat soligʻi qisqacha QQS deb ataladi.",
+          "ru": "Налог на добавленную стоимость кратко называется НДС.",
+          "en": "Value Added Tax is briefly called VAT."
+        },
+        "answers": [
+          "QQS",
+          "НДС",
+          "VAT"
+        ]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 5,
+        "prompt": {
+          "uz": "Soliq hisoboti muddatidan kechiktirib topshirilsa nima yuz beradi?",
+          "ru": "Что произойдет, если налоговая отчетность будет подана после крайнего срока?",
+          "en": "What happens if a tax report is submitted after the deadline?"
+        },
+        "explanation": {
+          "uz": "Muddatni oʻtkazib yuborish moliyaviy jarimalar qoʻllanilishiga olib keladi.",
+          "ru": "Пропуск срока приводит к применению финансовых штрафов.",
+          "en": "Missing the deadline leads to the application of financial penalties."
+        },
+        "options": [
+          {
+            "uz": "Moliyaviy jarimalar qoʻllaniladi",
+            "ru": "Применяются финансовые штрафы",
+            "en": "Financial penalties are applied"
+          },
+          {
+            "uz": "Soliqlar kechiriladi",
+            "ru": "Налоги прощаются",
+            "en": "Taxes are forgiven"
+          },
+          {
+            "uz": "Korxona darhol yopiladi",
+            "ru": "Предприятие немедленно закрывается",
+            "en": "The enterprise is immediately closed"
+          },
+          {
+            "uz": "Hisobot shunchaki eʼtiborsiz qoldiriladi",
+            "ru": "Отчет просто игнорируется",
+            "en": "The report is simply ignored"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 5,
+        "prompt": {
+          "uz": "Agar QQS stavkasi 12% boʻlsa va soliqqa tortiladigan baza 1000 ga teng boʻlsa, QQS summasi qancha boʻladi?",
+          "ru": "Если ставка НДС составляет 12%, а налогооблагаемая база равна 1000, какова будет сумма НДС?",
+          "en": "If the VAT rate is 12% and the taxable base is 1000, what is the VAT amount?"
+        },
+        "explanation": {
+          "uz": "QQS summasi: 1000 * 0.12 = 120.",
+          "ru": "Сумма НДС: 1000 * 0.12 = 120.",
+          "en": "VAT amount: 1000 * 0.12 = 120."
+        },
+        "answers": [
+          120
+        ],
+        "tolerance": 0.01
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Soliq hisobotini toʻldirish",
+      "ru": "Заполнение налоговой отчетности",
+      "en": "Filling out a tax report"
+    },
+    "statement": {
+      "uz": "Elektron soliq hisobotini qanday topshirish ketma-ketligini qisqacha tushuntiring.",
+      "ru": "Кратко объясните последовательность подачи электронной налоговой отчетности.",
+      "en": "Briefly explain the sequence of submitting an electronic tax report."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SHORT",
+          "difficulty": "MEDIUM",
+          "points": 5,
+          "prompt": {
+            "uz": "Hisobotni tasdiqlash uchun qanday elektron kalit kerak?",
+            "ru": "Какой электронный ключ нужен для подтверждения отчета?",
+            "en": "What electronic key is needed to confirm the report?"
+          },
+          "explanation": {
+            "uz": "Elektron raqamli imzo (ERI) hisobotni tasdiqlash uchun zarur.",
+            "ru": "Электронная цифровая подпись (ЭЦП) необходима для подтверждения отчета.",
+            "en": "An Electronic Digital Signature (EDS) is required to confirm the report."
+          },
+          "answers": [
+            "ERI",
+            "ЭЦП",
+            "EDS"
+          ]
+        }
+      ]
+    }
+  }
+}

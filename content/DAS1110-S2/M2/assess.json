@@ -1,0 +1,301 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Obyektga yoʻnaltirilgan dasturlashda sinf deganda nima tushuniladi?",
+          "ru": "Что понимается под классом в объектно-ориентированном программировании?",
+          "en": "In object-oriented programming, what is a class?"
+        },
+        "options": [
+          {
+            "uz": "Yangi tur tavsifi: bu turdagi qiymatlar qanday maʼlumotga ega va ular nima qila oladi",
+            "ru": "Описание нового типа: какими данными обладают его значения и что они умеют делать",
+            "en": "A description of a new type: what data its values hold and what they can do"
+          },
+          {
+            "uz": "Obyekt saqlaydigan maʼlumot",
+            "ru": "Данные, которые хранит объект",
+            "en": "The data an object stores"
+          },
+          {
+            "uz": "Obyekt yaratilganda avtomatik ishlaydigan maxsus metod",
+            "ru": "Специальный метод, который автоматически запускается при создании объекта",
+            "en": "The special method that runs automatically when an object is created"
+          },
+          {
+            "uz": "Obyektning oʻzi, yaʼni sinfning aniq nusxasi",
+            "ru": "Сам объект, то есть конкретный экземпляр класса",
+            "en": "The object itself, that is a concrete instance of a class"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra sinf — shablon, chizma; birinchi variyant — maydon, ikkinchisi — konstruktor, uchinchi — obyekt.",
+          "ru": "По занятию класс — шаблон, чертёж; вариант 1 — поле, вариант 2 — конструктор, вариант 3 — объект.",
+          "en": "In the lesson a class is the template, the blueprint; option 1 is a field, option 2 a constructor, option 3 an object."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Bitta sinfdan faqat bitta obyekt yaratish mumkin.",
+          "ru": "Из одного класса можно создать только один объект.",
+          "en": "Only one object can be created from a single class."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bitta sinfdan istalgancha obyekt yaratish mumkin: har birining maydonlari oʻziniki, metodlari esa umumiy.",
+          "ru": "Из одного класса можно создать сколько угодно объектов: поля у каждого свои, а методы общие.",
+          "en": "A class can produce any number of objects: each one has its own fields, while the methods are shared."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python tilida metod chaqirilgan obyektning oʻzini bildiruvchi va metodning birinchi parametri sifatida aniq yoziladigan soʻzni kiriting.",
+          "ru": "Введите слово в Python, которое обозначает сам объект, у которого вызван метод, и пишется первым параметром метода.",
+          "en": "Type the Python word that stands for the very object a method was called on and is written explicitly as the method's first parameter."
+        },
+        "answers": ["self"],
+        "explanation": {
+          "uz": "`self` — metod chaqirilgan obyektning oʻzi; Java va C++ tillarida shu rol `this` ga berilgan, lekin u yerda u yashirin.",
+          "ru": "`self` — это сам объект, у которого вызван метод; в Java и C++ ту же роль играет `this`, но там он скрыт.",
+          "en": "`self` is the very object the method was called on; in Java and C++ this role belongs to `this`, which stays implicit."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Java tilida `Tortburchak t;` deb yozilsa nima boʻladi?",
+          "ru": "Что происходит, если в Java написать `Tortburchak t;`?",
+          "en": "In Java, what happens when you write `Tortburchak t;`?"
+        },
+        "options": [
+          {
+            "uz": "Faqat obyektga havola eʼlon qilinadi, obyekt yaratilmaydi — uni `new` yaratadi",
+            "ru": "Объявляется только ссылка на объект, сам объект не создаётся — его создаёт `new`",
+            "en": "Only a reference to an object is declared; the object itself is created by `new`"
+          },
+          {
+            "uz": "Obyekt darhol yaratiladi, maydonlari 0 ga teng boʻladi",
+            "ru": "Объект сразу создаётся, а его поля равны 0",
+            "en": "The object is created at once and its fields become 0"
+          },
+          {
+            "uz": "Mavjud obyektning nusxasi yaratiladi",
+            "ru": "Создаётся копия существующего объекта",
+            "en": "A copy of an existing object is created"
+          },
+          {
+            "uz": "Dastur avtomatik ravishda yangi obyektga `null` beradi",
+            "ru": "Программа автоматически присваивает `null` новому объекту",
+            "en": "The program automatically gives `null` to a new object"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars ogohlantirishi: `Tortburchak t;` faqat havolani (`null`) eʼlon qiladi; obyekt `new` bilan yaratiladi.",
+          "ru": "Предупреждение из занятия: `Tortburchak t;` объявляет только ссылку (`null`); объект создаётся через `new`.",
+          "en": "The lesson warns that `Tortburchak t;` declares only a reference (`null`); the object is created with `new`."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi `Kasr` sinfida `soni` statik maydoni har bir yangi obyektda bittaga oshadi. `1 6` va `1 3` kiritilib, `x.qosh(y)` chaqirilgandan keyin `Kasr.soni` nechaga teng boʻladi?",
+          "ru": "В классе `Kasr` из занятия статическое поле `soni` увеличивается на единицу при создании каждого объекта. Чему будет равно `Kasr.soni` после ввода `1 6` и `1 3` и вызова `x.qosh(y)`?",
+          "en": "In the lesson's `Kasr` class the static field `soni` grows by one for every new object. After the input `1 6` and `1 3` and the call `x.qosh(y)`, what is `Kasr.soni`?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Ikkita kasr kiritilganda ikkita obyekt, `qosh` ichida yana bitta obyekt yaratiladi: 2 + 1 = 3. `soni` statik boʻlgani uchun uchala obyekt bitta hisoblagichni oshirdi.",
+          "ru": "При вводе создаются два объекта, ещё один — внутри `qosh`: 2 + 1 = 3. Поскольку `soni` статическое, все три объекта увеличили один счётчик.",
+          "en": "Reading the input creates two objects and `qosh` creates one more inside: 2 + 1 = 3. Because `soni` is static, all three objects raised one counter."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Python tilida `a = Talaba(\"Ali\", 1)`, `b = a` va `b.kurs = 2` dan keyin `a.kurs` qiymati 2 ga teng boʻladi.",
+          "ru": "В Python после `a = Talaba(\"Ali\", 1)`, `b = a` и `b.kurs = 2` значение `a.kurs` равно 2.",
+          "en": "In Python, after `a = Talaba(\"Ali\", 1)`, `b = a` and `b.kurs = 2`, the value of `a.kurs` is 2."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Python va Java tillarida oʻzgaruvchi obyektning oʻzini emas, unga havolani saqlaydi: `a` va `b` — bitta obyekt. Nusxa faqat C++ tilida yaratiladi.",
+          "ru": "В Python и Java переменная хранит не сам объект, а ссылку на него: `a` и `b` — один объект. Копия создаётся только в C++.",
+          "en": "In Python and Java a variable holds a reference, not the object: `a` and `b` are one object. A copy is made only in C++."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Uch tilda sinf yozish boʻyicha dars jadvaliga koʻra qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны согласно таблице из занятия о записи класса на трёх языках?",
+          "en": "According to the lesson's table on writing a class in three languages, which statements are correct?"
+        },
+        "options": [
+          {
+            "uz": "Python tilida konstruktor `def __init__(self, ...)` koʻrinishida yoziladi",
+            "ru": "В Python конструктор записывается как `def __init__(self, ...)`",
+            "en": "In Python the constructor is written as `def __init__(self, ...)`"
+          },
+          {
+            "uz": "Java va C++ tillarida konstruktor sinf nomi bilan ataladi",
+            "ru": "В Java и C++ конструктор называется именем класса",
+            "en": "In Java and C++ the constructor is named after the class"
+          },
+          {
+            "uz": "C++ tilida obyekt yaratish uchun `new` kalit soʻzi majburiy",
+            "ru": "В C++ для создания объекта обязателен `new`",
+            "en": "In C++ creating an object requires `new`"
+          },
+          {
+            "uz": "Maydonlar Python tilida konstruktorda, Java va C++ tillarida sinf tanasida eʼlon qilinadi",
+            "ru": "Поля в Python объявляются в конструкторе, а в Java и C++ — в теле класса",
+            "en": "Fields are declared in the constructor in Python and in the class body in Java and C++"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Uchinchi variyant notoʻgʻri: C++ tilida obyekt `new` siz ham yaratiladi — `Talaba t(\"Aziz\", 2);`.",
+          "ru": "Третье утверждение неверно: в C++ объект создаётся и без `new` — `Talaba t(\"Aziz\", 2);`.",
+          "en": "The third statement is wrong: C++ creates an object without `new` as well — `Talaba t(\"Aziz\", 2);`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Statik maydon haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о статическом поле верны?",
+          "en": "Which statements about a static field are correct?"
+        },
+        "options": [
+          {
+            "uz": "Statik maydon sinfga tegishli va barcha obyektlar uchun bitta",
+            "ru": "Статическое поле принадлежит классу и одно на все объекты",
+            "en": "A static field belongs to the class and is one for all objects"
+          },
+          {
+            "uz": "Java tilida statik maydon `static int soni = 0;` koʻrinishida eʼlon qilinadi",
+            "ru": "В Java статическое поле объявляется как `static int soni = 0;`",
+            "en": "In Java a static field is declared as `static int soni = 0;`"
+          },
+          {
+            "uz": "Unga Python tilida `Talaba.soni`, C++ tilida `Talaba::soni` koʻrinishida murojaat qilinadi",
+            "ru": "К нему обращаются как `Talaba.soni` в Python и `Talaba::soni` в C++",
+            "en": "It is reached as `Talaba.soni` in Python and `Talaba::soni` in C++"
+          },
+          {
+            "uz": "Oddiy maydon kabi statik maydon ham har bir obyektda alohida saqlanadi",
+            "ru": "Как и обычное поле, статическое поле хранится отдельно в каждом объекте",
+            "en": "Like an ordinary field, a static field is stored separately in every object"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Statik maydon bitta: darsdagi misolda uchala `Kasr` obyekti ham bitta `soni` hisoblagichini oshirdi. Har obyektda alohida saqlanadigi — oddiy maydon.",
+          "ru": "Статическое поле одно: в примере занятия все три объекта `Kasr` увеличивали один счётчик `soni`. Отдельно в каждом объекте хранится обычное поле.",
+          "en": "A static field is single: in the lesson's example all three `Kasr` objects raised the same counter `soni`. What every object keeps separately is an ordinary field."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Java yoki C++ tilida konstruktorda maydon va parametr bir xil nomda boʻlib, `en = en;` deb yozilsa nima boʻladi?",
+          "ru": "Что случится в Java или C++, если в конструкторе поле и параметр имеют одно имя и написано `en = en;`?",
+          "en": "In Java or C++, what happens in a constructor when the field and the parameter share a name and the code says `en = en;`?"
+        },
+        "options": [
+          {
+            "uz": "Parametr oʻziga oʻzlashtiriladi, maydon eski qiymatida (masalan, 0) qoladi",
+            "ru": "Параметр присваивается сам себе, поле остаётся со старым значением (например, 0)",
+            "en": "The parameter is assigned to itself and the field keeps its old value (0, say)"
+          },
+          {
+            "uz": "Maydon parametrning qiymatini oladi",
+            "ru": "Поле получает значение параметра",
+            "en": "The field receives the value of the parameter"
+          },
+          {
+            "uz": "Kompilyator nomlar chaqishuvini oʻzi hal qiladi",
+            "ru": "Компилятор сам разрешает путаницу имён",
+            "en": "The compiler resolves the clash of names on its own"
+          },
+          {
+            "uz": "Statik maydon yangilanadi",
+            "ru": "Обновляется статическое поле",
+            "en": "The static field gets updated"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ikkala nom ham parametrni bildiradi, shuning uchun maydon 0 boʻlib qoladi; dars maslahati — `this.en = en` yozish.",
+          "ru": "Оба имени означают параметр, поэтому поле остаётся 0; совет из занятия — писать `this.en = en`.",
+          "en": "Both names mean the parameter, so the field stays 0; the lesson says to write `this.en = en`."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Chiziqli funksiyaning qiymatlari",
+      "ru": "Значения линейной функции",
+      "en": "Values of a linear function"
+    },
+    "statement": {
+      "uz": "Sinf yozishni mashq qiling: `Funksiya` sinfini tuzing — uning konstruktori ikki butun son `k` va `b` ni maydonlarda saqlaydi, `qiymat(x)` metodi esa `k * x + b` ifodaning qiymatini qaytaradi. Kirish: birinchi qatorda `k` va `b` (bitta boʻsh joy bilan ajratilgan), ikkinchi qatorda `n`, soʻng `n` ta qatorda bittadan butun son `x`. Chiqish: har bir `x` uchun alohida qatorda funksiyaning qiymati — faqat son, hech qanday qoʻshimcha soʻz yozmang. Masalan, `2 3`, keyin `4`, keyin `1`, `2`, `3`, `10` kirilsa, dastur `5`, `7`, `9`, `23` chiqaradi. `k`, `b` va `x` -1000 dan 1000 gacha, `n` 1 dan 100 gacha boʻladi.",
+      "ru": "Потренируйтесь писать класс: создайте класс `Funksiya` — его конструктор сохраняет два целых числа `k` и `b` в полях, а метод `qiymat(x)` возвращает значение выражения `k * x + b`. Ввод: в первой строке `k` и `b` через один пробел, во второй строке `n`, далее в n строках по одному целому числу `x`. Вывод: для каждого `x` отдельная строка со значением функции — только число, без каких-либо пояснений. Например, при вводе `2 3`, затем `4`, затем `1`, `2`, `3`, `10` программа выведет `5`, `7`, `9`, `23`. `k`, `b` и `x` от -1000 до 1000, `n` от 1 до 100.",
+      "en": "Practise writing a class: build `Funksiya`, whose constructor keeps the two integers `k` and `b` in fields and whose method `qiymat(x)` returns the value of `k * x + b`. Input: the first line holds `k` and `b` separated by one space, the second line `n`, and the next n lines hold one integer `x` each. Output: for every `x` a separate line with the value of the function — only the number, with no extra words. For example, the input `2 3`, then `4`, then `1`, `2`, `3`, `10` makes the program print `5`, `7`, `9`, `23`. `k`, `b` and `x` range from -1000 to 1000, `n` from 1 to 100."
+    },
+    "code": {
+      "starter": {
+        "python": "class Funksiya:\n    def __init__(self, k, b):\n        self.k = k\n        self.b = b\n\n    def qiymat(self, x):\n        return self.k * x\n\n\nk, b = map(int, input().split())\nf = Funksiya(k, b)\nn = int(input())\nfor _ in range(n):\n    print(f.qiymat(int(input())))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static class Funksiya {\n        long k, b;\n\n        Funksiya(long k, long b) {\n            this.k = k;\n            this.b = b;\n        }\n\n        long qiymat(long x) {\n            return k * x;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        Funksiya f = new Funksiya(in.nextLong(), in.nextLong());\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            System.out.println(f.qiymat(in.nextLong()));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nclass Funksiya {\npublic:\n    long long k, b;\n\n    Funksiya(long long k, long long b) : k(k), b(b) {}\n\n    long long qiymat(long long x) const {\n        return k * x;\n    }\n};\n\nint main() {\n    long long k, b;\n    cin >> k >> b;\n    Funksiya f(k, b);\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        long long x;\n        cin >> x;\n        cout << f.qiymat(x) << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "class Funksiya:\n    def __init__(self, k, b):\n        self.k = k\n        self.b = b\n\n    def qiymat(self, x):\n        return self.k * x + self.b\n\n\nk, b = map(int, input().split())\nf = Funksiya(k, b)\nn = int(input())\nfor _ in range(n):\n    print(f.qiymat(int(input())))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static class Funksiya {\n        long k, b;\n\n        Funksiya(long k, long b) {\n            this.k = k;\n            this.b = b;\n        }\n\n        long qiymat(long x) {\n            return k * x + b;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        Funksiya f = new Funksiya(in.nextLong(), in.nextLong());\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            System.out.println(f.qiymat(in.nextLong()));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nclass Funksiya {\npublic:\n    long long k, b;\n\n    Funksiya(long long k, long long b) : k(k), b(b) {}\n\n    long long qiymat(long long x) const {\n        return k * x + b;\n    }\n};\n\nint main() {\n    long long k, b;\n    cin >> k >> b;\n    Funksiya f(k, b);\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        long long x;\n        cin >> x;\n        cout << f.qiymat(x) << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "2 3\n4\n1\n2\n3\n10\n", "expected": "5\n7\n9\n23", "hidden": false },
+        { "input": "-1 0\n3\n5\n0\n-7\n", "expected": "-5\n0\n7", "hidden": false },
+        { "input": "0 7\n2\n100\n0\n", "expected": "7\n7", "hidden": true },
+        { "input": "3 -4\n1\n0\n", "expected": "-4", "hidden": true },
+        { "input": "10 1\n3\n1\n2\n3\n", "expected": "11\n21\n31", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi soket turi ulanishsiz ishlaydi va har bir yuborilgan maʼlumotni alohida xabar (datagramma) sifatida saqlaydi?",
+          "ru": "Какой тип сокета работает без соединения и сохраняет каждую отправку как отдельное сообщение (датаграмму)?",
+          "en": "Which socket type works connectionless and keeps every send as a separate message (datagram)?"
+        },
+        "options": [
+          {
+            "uz": "`SOCK_DGRAM` — UDP",
+            "ru": "`SOCK_DGRAM` — UDP",
+            "en": "`SOCK_DGRAM` — UDP"
+          },
+          {
+            "uz": "`SOCK_STREAM` — TCP",
+            "ru": "`SOCK_STREAM` — TCP",
+            "en": "`SOCK_STREAM` — TCP"
+          },
+          {
+            "uz": "`AF_INET` — IPv4 manzil oilasi",
+            "ru": "`AF_INET` — семейство адресов IPv4",
+            "en": "`AF_INET` — the IPv4 address family"
+          },
+          {
+            "uz": "`listen()` — server navbati",
+            "ru": "`listen()` — очередь сервера",
+            "en": "`listen()` — the server's backlog"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: `SOCK_DGRAM` — UDP, ulanishsiz, har bir `sendto()` alohida xabar va u yoʻqolishi mumkin; `SOCK_STREAM` esa TCP — ishonchli bayt oqimi.",
+          "ru": "По таблице из занятия: `SOCK_DGRAM` — UDP, без соединения, каждый `sendto()` — отдельное сообщение, которое может потеряться; `SOCK_STREAM` — это TCP, надёжный поток байтов.",
+          "en": "In the lesson's table `SOCK_DGRAM` is UDP — connectionless, every `sendto()` a separate message that may be lost; `SOCK_STREAM` is TCP, a reliable byte stream."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Serverdagi `recv()` boʻsh natija qaytarsa, bu mijoz ulanishni yopganini bildiradi.",
+          "ru": "Если `recv()` на сервере вернул пустой результат, это значит, что клиент закрыл соединение.",
+          "en": "When `recv()` on the server returns an empty result, the client has closed the connection."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Echo server shu belgi bilan sikldan chiqadi: `if not malumot: break`.",
+          "ru": "Именно по этому признаку echo-сервер выходит из цикла: `if not malumot: break`.",
+          "en": "That is the signal the echo server uses to leave its loop: `if not malumot: break`."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "`https://aifu.uz/login` manziliga ulanayotgan mijoz, URL da port koʻrsatilmagan boʻlsa, qaysi portga ulanadi?",
+          "ru": "К какому порту подключится клиент для `https://aifu.uz/login`, если порт в URL не указан?",
+          "en": "Which port does a client connect to for `https://aifu.uz/login` when the URL gives no port?"
+        },
+        "options": [
+          {
+            "uz": "443",
+            "ru": "443",
+            "en": "443"
+          },
+          {
+            "uz": "80",
+            "ru": "80",
+            "en": "80"
+          },
+          {
+            "uz": "21",
+            "ru": "21",
+            "en": "21"
+          },
+          {
+            "uz": "5000",
+            "ru": "5000",
+            "en": "5000"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Port koʻrsatilmasa sxema boʻyicha standart port olinadi: http — 80, https — 443, ftp — 21. 5000 — bu darsdagi echo server porti.",
+          "ru": "Если порт не указан, берётся стандартный для схемы: http — 80, https — 443, ftp — 21. Порт 5000 — это echo-сервер из занятия.",
+          "en": "Without a port the scheme's default is used: http — 80, https — 443, ftp — 21. Port 5000 is the echo server of the session."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "TCP oqimida xabarlarni ajratishning qaysi usullari darsda keltirilgan?",
+          "ru": "Какие способы разделения сообщений в потоке TCP приведены в занятии?",
+          "en": "Which ways of separating messages in a TCP stream does the lesson give?"
+        },
+        "options": [
+          {
+            "uz": "Ajratuvchi belgi: har bir xabar yangi qator belgisi (\\n) bilan tugaydi (HTTP sarlavhalari, SMTP, Redis)",
+            "ru": "Разделитель: каждое сообщение оканчивается символом перевода строки (\\n) — заголовки HTTP, SMTP, Redis",
+            "en": "A delimiter: every message ends with the newline character (\\n) — HTTP headers, SMTP, Redis"
+          },
+          {
+            "uz": "Uzunlik prefiksi: xabar oldidan uning uzunligi yoziladi (`5:Salom3:Hey`)",
+            "ru": "Префикс длины: перед сообщением записывают его длину (`5:Salom3:Hey`)",
+            "en": "A length prefix: the message is preceded by its length (`5:Salom3:Hey`)"
+          },
+          {
+            "uz": "Belgilangan uzunlik: barcha xabarlar bir xil oʻlchamda",
+            "ru": "Фиксированная длина: все сообщения одного размера",
+            "en": "A fixed length: all messages have the same size"
+          },
+          {
+            "uz": "Har bir xabaga CRC kodi qoʻshiladi",
+            "ru": "К каждому сообщению добавляется код CRC",
+            "en": "A CRC code is added to every message"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda uch usul sanaladi: ajratuvchi belgi, uzunlik prefiksi va belgilangan uzunlik. CRC — xatolarni aniqlash vositasi, bu joyda xabar chegarasi usuli emas.",
+          "ru": "В занятии названы три способа: разделитель, префикс длины и фиксированная длина. CRC — способ обнаружения ошибок, а не способ разделения сообщений.",
+          "en": "The lesson names three: a delimiter, a length prefix and a fixed length. A CRC detects errors; it is not a way of separating messages here."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`Toʻqimachi` soʻzini uzunlik prefiksi bilan yuborish uchun prefiksda qaysi son turadi?",
+          "ru": "Какое число будет в префиксе длины при отправке слова `Toʻqimachi`?",
+          "en": "What number goes into the length prefix when sending the word `Toʻqimachi`?"
+        },
+        "answers": [11],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Uzunlik baytlarda hisoblanadi: `Toʻqimachi` da 10 ta belgi, lekin `ʻ` belgisi UTF-8 da 2 bayt — jami 11 bayt.",
+          "ru": "Длину считают в байтах: в `Toʻqimachi` 10 символов, но знак `ʻ` в UTF-8 занимает 2 байта — всего 11 байт.",
+          "en": "The length is counted in bytes: `Toʻqimachi` has 10 characters, but the `ʻ` takes 2 bytes in UTF-8 — 11 bytes in all."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Server qayta ishga tushirilganda `Address already in use` xatosi chiqmasin deb, soketga qaysi opsija qoʻyiladi?",
+          "ru": "Какую опцию сокета задают, чтобы при перезапуске сервера не было ошибки `Address already in use`?",
+          "en": "Which socket option is set so that restarting the server does not fail with `Address already in use`?"
+        },
+        "answers": ["SO_REUSEADDR", "socket.SO_REUSEADDR", "setsockopt(SO_REUSEADDR)"],
+        "explanation": {
+          "uz": "Oldingi ulanish TIME_WAIT holatida qolgan boʻladi; `setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)` manzilni qayta ishlatishga ruxsat beradi.",
+          "ru": "Прежнее соединение остаётся в состоянии TIME_WAIT; `setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)` позволяет использовать адрес снова.",
+          "en": "The previous connection is left in TIME_WAIT; `setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)` lets the address be used again."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`curl -v` da chiqishning qaysi qatori soketga yozilgan HTTP soʻrovini koʻrsatadi?",
+          "ru": "Какие строки вывода `curl -v` показывают HTTP-запрос, записанный в сокет?",
+          "en": "In `curl -v` output, which lines show the HTTP request written to the socket?"
+        },
+        "options": [
+          {
+            "uz": "`>` bilan boshlangan qatorlar",
+            "ru": "Строки, начинающиеся с `>`",
+            "en": "The lines starting with `>`"
+          },
+          {
+            "uz": "`<` bilan boshlangan qatorlar",
+            "ru": "Строки, начинающиеся с `<`",
+            "en": "The lines starting with `<`"
+          },
+          {
+            "uz": "`*` bilan boshlangan qatorlar",
+            "ru": "Строки, начинающиеся с `*`",
+            "en": "The lines starting with `*`"
+          },
+          {
+            "uz": "Boʻsh satrdan keyingi qatorlar",
+            "ru": "Строки после пустой строки",
+            "en": "The lines after the empty line"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilishicha, `>` bilan boshlanganlar — soketga yozilgan soʻrov, `<` bilan boshlanganlar — javob sarlavhalari.",
+          "ru": "В занятии сказано: строки с `>` — это запрос, записанный в сокет, а строки с `<` — заголовки ответа.",
+          "en": "The lesson says the lines starting with `>` are the request written to the socket, those with `<` the reply headers."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "TCP oqimi va soket bilan ishlash haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о потоке TCP и работе с сокетом верны?",
+          "en": "Which statements about the TCP stream and socket work are correct?"
+        },
+        "options": [
+          {
+            "uz": "Yuboruvchi ikkita `send()` qilsa, qabul qiluvchi ularni bitta `recv()` da birlashib olishi mumkin",
+            "ru": "Если отправитель сделал два вызова `send()`, получатель может взять их одним `recv()` слитно",
+            "en": "If the sender makes two `send()` calls, one `recv()` may return both joined"
+          },
+          {
+            "uz": "`send()` hamma maʼlumotni yubormasligi mumkin, shuning uchun Python da `sendall()` ishlatiladi",
+            "ru": "`send()` может отправить не все данные, поэтому в Python используют `sendall()`",
+            "en": "`send()` may not send all the data, so Python code uses `sendall()`"
+          },
+          {
+            "uz": "Uzunlik prefiksi baytlarda hisoblanadi, chunki matn soketga baytlar sifatida yuboriladi",
+            "ru": "Префикс длины считают в байтах, так как текст передаётся в сокет как байты",
+            "en": "The length prefix is counted in bytes, because text goes to the socket as bytes"
+          },
+          {
+            "uz": "Bitta `recv()` chaqiruvi har doim bitta butun xabarni qaytaradi",
+            "ru": "Один вызов `recv()` всегда возвращает одно целое сообщение",
+            "en": "One `recv()` call always returns exactly one whole message"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "TCP chegaralarni saqlamaydi: bitta `recv()` ikki xabarni yoki xabarning yarmini qaytishi mumkin — shuning uchun protokol (uzunlik prefiksi yoki ajratuvchi belgi) kerak.",
+          "ru": "TCP не хранит границ: один `recv()` может вернуть два сообщения или половину сообщения — поэтому и нужен протокол (префикс длины или разделитель).",
+          "en": "TCP keeps no boundaries: one `recv()` can return two messages or half of one, which is why a protocol — a length prefix or a delimiter — is needed."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`https://example.com:8443/api/v1/users#top` URL dagi `#top` fragmenti serverga yuboriladi.",
+          "ru": "Фрагмент `#top` из URL `https://example.com:8443/api/v1/users#top` отправляется на сервер.",
+          "en": "The fragment `#top` of the URL `https://example.com:8443/api/v1/users#top` is sent to the server."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Fragment brauzerda qoladi va serverga yuborilmaydi; shuning uchun birinchi misol dasturi ham `#` dan keyingisini tashlab yuboradi.",
+          "ru": "Фрагмент остаётся в браузере и на сервер не уходит, поэтому и программа из первого примера отбрасывает всё после `#`.",
+          "en": "The fragment stays in the browser and is not sent to the server, which is why the program of the first example drops everything after `#`."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Uzunlik prefiksi bilan oqim tuzish",
+      "ru": "Поток с префиксом длины",
+      "en": "Building a stream with a length prefix"
+    },
+    "statement": {
+      "uz": "TCP oqimida xabar chegaralari yoʻq, shuning uchun dastur oʻz protokolini tuzadi: uzunlik prefiksida har bir xabar oldidan uning uzunligi va `:` yoziladi. Dasturingiz birinchi satrda xabarlar soni *n* ni (1 ≤ *n* ≤ 10), keyingi *n* satrning har birida bittadan xabarni oʻqisin. Xabar — uzunligi 1 dan 20 gacha boʻlgan, faqat lotin harflari, raqamlar va `_` belgisidan iborat soʻz. Xabarlarni kirish tartibida, oraligʻida boʻshliqsiz, bitta oqimga joylang va shu oqimni bitta satrda chiqaring. Masalan, `Salom` va `Hey` uchun chiqish `5:Salom3:Hey` boʻladi.",
+      "ru": "В потоке TCP границ сообщений нет, поэтому программа строит свой протокол: перед каждым сообщением записывают его длину и `:`. Ваша программа читает в первой строке число сообщений *n* (1 ≤ *n* ≤ 10), а в следующих *n* строках — по одному сообщению. Сообщение — это слово длиной от 1 до 20 символов, состоящее только из латинских букв, цифр и `_`. Разместите сообщения в порядке входа в один поток, без пробелов между ними, и выведите этот поток одной строкой. Например, для `Salom` и `Hey` получится `5:Salom3:Hey`.",
+      "en": "A TCP stream has no message boundaries, so a program builds its own protocol: with a length prefix every message is preceded by its length and a `:`. Your program reads *n* in the first line (1 ≤ *n* ≤ 10) and, in each of the next *n* lines, one message. A message is a word of 1 to 20 characters made only of Latin letters, digits and `_`. Place the messages in input order into one stream, with no space between them, and print that stream on one line. For `Salom` and `Hey` the output is `5:Salom3:Hey`."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\noqim = \"\"\nfor _ in range(n):\n    oqim += input()\nprint(oqim)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        StringBuilder oqim = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            String xabar = in.next();\n            oqim.append(xabar);\n        }\n        System.out.println(oqim.toString());\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    string oqim;\n    for (int i = 0; i < n; i++) {\n        string xabar;\n        cin >> xabar;\n        oqim += xabar;\n    }\n    cout << oqim << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\noqim = \"\"\nfor _ in range(n):\n    xabar = input()\n    oqim += str(len(xabar)) + \":\" + xabar\nprint(oqim)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        StringBuilder oqim = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            String xabar = in.next();\n            oqim.append(xabar.length()).append(\":\").append(xabar);\n        }\n        System.out.println(oqim.toString());\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    string oqim;\n    for (int i = 0; i < n; i++) {\n        string xabar;\n        cin >> xabar;\n        oqim += to_string(xabar.size()) + \":\" + xabar;\n    }\n    cout << oqim << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "2\nSalom\nHey\n", "expected": "5:Salom3:Hey", "hidden": false },
+        { "input": "1\nay\n", "expected": "2:ay", "hidden": false },
+        { "input": "3\nping\npong\nok\n", "expected": "4:ping4:pong2:ok", "hidden": true },
+        { "input": "2\nKompyuter_tarmoq\na\n", "expected": "16:Kompyuter_tarmoq1:a", "hidden": true },
+        { "input": "4\nabcd\nabcdefghij\nxyz\nhello\n", "expected": "4:abcd10:abcdefghij3:xyz5:hello", "hidden": true }
+      ]
+    }
+  }
+}

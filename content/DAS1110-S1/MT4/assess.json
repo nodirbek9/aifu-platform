@@ -1,0 +1,245 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "n × n matritsada bosh diagonalning elementlari qaysi indeks sharti bilan tanlanadi?",
+          "ru": "Каким условием на индексы выбираются элементы главной диагонали матрицы n × n?",
+          "en": "Which condition on the indices selects the elements of the main diagonal of an n × n matrix?"
+        },
+        "options": [
+          { "uz": "i = j", "ru": "i = j", "en": "i = j" },
+          { "uz": "i + j = n - 1", "ru": "i + j = n - 1", "en": "i + j = n - 1" },
+          { "uz": "i < j", "ru": "i < j", "en": "i < j" },
+          { "uz": "i > j", "ru": "i > j", "en": "i > j" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvali: bosh diagonal — i = j, yordamchi diagonal — i + j = n - 1, bosh diagonaldan yuqoridagi qism — i < j.",
+          "ru": "По таблице занятия: главная диагональ — i = j, побочная — i + j = n - 1, область над главной — i < j.",
+          "en": "The lesson table: main diagonal i = j, secondary i + j = n - 1, the part above the main diagonal i < j."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Har satrda bittadan elementi bor qism (masalan, diagonal) uchun bitta sikl yetarli.",
+          "ru": "Для части, где на каждую строку приходится по одному элементу (например, диагонали), достаточно одного цикла.",
+          "en": "For a part with one element per row, such as a diagonal, a single loop is enough."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilishicha: har satrda bitta element boʻlsa — bitta sikl, koʻp boʻlsa — ichma-ich sikl va shart.",
+          "ru": "В занятии сказано: один элемент в строке — один цикл, много — вложенный цикл и условие.",
+          "en": "The lesson: one element per row — one loop; many — a nested loop with a condition."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "1 × 1 matritsadagi yagona element ikkala diagonalga ham kiradi.",
+          "ru": "Единственный элемент матрицы 1 × 1 входит в обе диагонали.",
+          "en": "The single element of a 1 × 1 matrix lies on both diagonals."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsning maslahatida: 1 × 1 matritsada bitta element ikkala diagonalda ham turadi — u i = j va i + j = n - 1 shartlarini bir vaqtda qanoatlantiradi.",
+          "ru": "В подсказке занятия: в матрице 1 × 1 единственный элемент стоит на обеих диагоналях — он удовлетворяет и i = j, и i + j = n - 1.",
+          "en": "The lesson tip: in a 1 × 1 matrix the single element lies on both diagonals — it satisfies i = j and i + j = n - 1 at once."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yordamchi diagonal uchun indekslar sharti: i + j = ____ (n — matritsaning oʻlchami).",
+          "ru": "Условие для побочной диагонали: i + j = ____ (n — размер матрицы).",
+          "en": "The condition for the secondary diagonal is i + j = ____ (n is the size of the matrix)."
+        },
+        "answers": ["n-1", "n - 1"],
+        "explanation": {
+          "uz": "Dars jadvali boʻyicha yordamchi diagonal: i + j = n - 1; 3 × 3 matritsada bu a[0][2], a[1][1], a[2][0].",
+          "ru": "По таблице занятия побочная диагональ: i + j = n - 1; в матрице 3 × 3 это a[0][2], a[1][1], a[2][0].",
+          "en": "Per the lesson table the secondary diagonal is i + j = n - 1; in a 3 × 3 these are a[0][2], a[1][1], a[2][0]."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "5 × 5 matritsaning bosh diagonaldan yuqorida (i < j) nechta element joylashgan?",
+          "ru": "Сколько элементов лежит над главной диагональю матрицы 5 × 5 (i < j)?",
+          "en": "How many elements lie above the main diagonal of a 5 × 5 matrix (i < j)?"
+        },
+        "answers": [10],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Jami 25 element, diagonalda 5 ta, qolgani ikki teng qismga boʻlinadi: (25 - 5) / 2 = 10.",
+          "ru": "Всего 25 элементов, 5 на диагонали, остальные делятся на две равные части: (25 - 5) / 2 = 10.",
+          "en": "25 cells in total, 5 on the diagonal, the rest split into two equal parts: (25 - 5) / 2 = 10."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Namunaviy masala dasturi ikkinchi qatorda nimani chiqaradi?",
+          "ru": "Что программа из образца печатает второй строкой?",
+          "en": "What does the sample program print on the second line?"
+        },
+        "options": [
+          {
+            "uz": "Yigʻindisi eng katta satrning raqami (1 dan boshlab; bir nechta boʻlsa — birinchisi)",
+            "ru": "Номер строки с наибольшей суммой (с 1; если таких несколько — первой)",
+            "en": "The number of the row with the largest sum (from 1; if several, the first one)"
+          },
+          {
+            "uz": "Har bir satrning eng katta elementi",
+            "ru": "Наибольший элемент каждой строки",
+            "en": "The largest element of every row"
+          },
+          {
+            "uz": "Matritsaning eng katta elementining oʻzi",
+            "ru": "Самый большой элемент всей матрицы",
+            "en": "The single largest element of the whole matrix"
+          },
+          {
+            "uz": "Yigʻindisi eng kichik satrning raqami",
+            "ru": "Номер строки с наименьшей суммой",
+            "en": "The number of the row with the smallest sum"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Birinchi qatorda har satrning maksimumi, ikkinchisida esa eng_katta_yigindi satrining raqami eng_yaxshi + 1 chiqariladi.",
+          "ru": "Первая строка — максимумы строк, вторая — номер строки с наибольшей суммой, eng_yaxshi + 1.",
+          "en": "The first line holds the row maxima, the second the row number with the largest sum, eng_yaxshi + 1."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "4 × 4 matritsada bosh va yordamchi diagonallar jami nechta xil elementni egallaydi?",
+          "ru": "Сколько различных ячеек суммарно занимают главная и побочная диагонали матрицы 4 × 4?",
+          "en": "How many distinct cells do the main and the secondary diagonals of a 4 × 4 matrix cover in total?"
+        },
+        "answers": [8],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "n toq boʻlganda diagonallar markaziy elementda kesishadi; n = 4 juft boʻlgani uchun kesishmaydi: 4 + 4 = 8.",
+          "ru": "При нечётном n диагонали пересекаются в центральном элементе; при n = 4 (чётном) пересечения нет: 4 + 4 = 8.",
+          "en": "For odd n the diagonals cross at the centre; for n = 4 (even) they do not share a cell: 4 + 4 = 8."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Matritsalar bilan ishlash haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о работе с матрицами верны?",
+          "en": "Which statements about working with matrices are correct?"
+        },
+        "options": [
+          {
+            "uz": "Namunadagi mx va s har bir satr uchun tashqi sikl ichida yangidan boshlanadi",
+            "ru": "В образце mx и s заново задаются внутри внешнего цикла — для каждой строки",
+            "en": "In the sample, mx and s restart inside the outer loop, for every row"
+          },
+          {
+            "uz": "Pythonʼda [[0] * n] * n bilan yaratilgan matritsaning satrlari bitta obyekt boʻlib qoladi",
+            "ru": "Матрица, созданная в Python как [[0] * n] * n, имеет строки, которые являются одним и тем же объектом",
+            "en": "A matrix built in Python as [[0] * n] * n ends up with rows that are one and the same object"
+          },
+          {
+            "uz": "n toq boʻlsa, ikki diagonal a[n // 2][n // 2] markaziy elementida kesishadi",
+            "ru": "При нечётном n обе диагонали пересекаются в центральном элементе a[n // 2][n // 2]",
+            "en": "For odd n the two diagonals cross at the centre element a[n // 2][n // 2]"
+          },
+          {
+            "uz": "Yigʻindisi eng katta bir nechta satr boʻlsa, namunaviy dastur ularning oxirgisining raqamini chiqaradi",
+            "ru": "Если строк с наибольшей суммой несколько, программа из образца выводит номер последней из них",
+            "en": "If several rows share the largest sum, the sample program prints the number of the last one"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Dars sharti: bir nechta teng satr boʻlsa — birinchisining raqami chiqariladi, chunki yangilash faqat s > eng_katta boʻlganda bajariladi.",
+          "ru": "Условие из занятия: при равенстве выводится номер первой строки, ведь обновление происходит только при s > eng_katta.",
+          "en": "The lesson says the first of tied rows is printed, because the update happens only when s > eng_katta."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Agar mx sikldan tashqarida bir marta boshlansa, har bir satr uchun oldingi satrlarning maksimumi ham hisobga qoʻshiladi.",
+          "ru": "Если mx задать один раз вне цикла, каждая строка будет учитывать максимумы и предыдущих строк.",
+          "en": "If mx is set only once outside the loop, each row also takes the maximum of the previous rows into account."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi „oʻzingizni tekshiring“ savoliga koʻra: mx tashqarida boshlansa, natija notoʻgʻri boʻladi — maksimum satrlar boʻylab oʻsib boradi.",
+          "ru": "Согласно вопросу «проверь себя» из занятия: если mx задан снаружи, результат неверен — максимум накапливается поперёк строк.",
+          "en": "Per the lesson's check-yourself question: with mx set outside, the result is wrong — the maximum accumulates across rows."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Matritsani transponlash",
+      "ru": "Транспонирование матрицы",
+      "en": "Transposing a matrix"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda n va m, keyingi n qatorda m tadan butun son berilgan. Dasturingiz har bir ustunni alohida qatorga chiqarsin: j-ustun elementlari yuqoridan pastga tartib bilan, boʻsh joy bilan ajratib. Masalan, 2 3; 1 2 3; 4 5 6 kirilsa, chiqadi: 1 4 keyin 2 5 keyin 3 6. Hech qanday qoʻshimcha soʻz yozmang. 1 ≤ n ≤ 100, 1 ≤ m ≤ 100.",
+      "ru": "В первой строке даны n и m, в следующих n строках — по m целых чисел. Программа должна вывести каждый столбец отдельной строкой: элементы j-го столбца сверху вниз, разделённые пробелом. Например, ввод 2 3; 1 2 3; 4 5 6 даёт 1 4, затем 2 5, затем 3 6. Никаких лишних слов не выводите. 1 ≤ n ≤ 100, 1 ≤ m ≤ 100.",
+      "en": "The first line gives n and m, the next n lines give m integers each. Your program must print every column as its own line: the elements of column j from top to bottom, separated by spaces. For example, the input 2 3; 1 2 3; 4 5 6 makes it print 1 4, then 2 5, then 3 6. Print no extra words. 1 ≤ n ≤ 100, 1 ≤ m ≤ 100."
+    },
+    "code": {
+      "starter": {
+        "python": "n, m = map(int, input().split())\na = [list(map(int, input().split())) for _ in range(n)]\nfor row in a:\n    print(*row)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int m = in.nextInt();\n        int[][] a = new int[n][m];\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < m; j++) {\n                a[i][j] = in.nextInt();\n            }\n        }\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < m; j++) {\n                if (j > 0) System.out.print(\" \");\n                System.out.print(a[i][j]);\n            }\n            System.out.println();\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> a(n, vector<int>(m));\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < m; j++) {\n            cin >> a[i][j];\n        }\n    }\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < m; j++) {\n            if (j > 0) cout << \" \";\n            cout << a[i][j];\n        }\n        cout << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n, m = map(int, input().split())\na = [list(map(int, input().split())) for _ in range(n)]\nfor j in range(m):\n    row = []\n    for i in range(n):\n        row.append(a[i][j])\n    print(*row)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int m = in.nextInt();\n        int[][] a = new int[n][m];\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < m; j++) {\n                a[i][j] = in.nextInt();\n            }\n        }\n        for (int j = 0; j < m; j++) {\n            for (int i = 0; i < n; i++) {\n                if (i > 0) System.out.print(\" \");\n                System.out.print(a[i][j]);\n            }\n            System.out.println();\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> a(n, vector<int>(m));\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < m; j++) {\n            cin >> a[i][j];\n        }\n    }\n    for (int j = 0; j < m; j++) {\n        for (int i = 0; i < n; i++) {\n            if (i > 0) cout << \" \";\n            cout << a[i][j];\n        }\n        cout << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "2 3\n1 2 3\n4 5 6\n", "expected": "1 4\n2 5\n3 6", "hidden": false },
+        { "input": "1 1\n7\n", "expected": "7", "hidden": false },
+        { "input": "3 2\n1 2\n3 4\n5 6\n", "expected": "1 3 5\n2 4 6", "hidden": true },
+        { "input": "2 2\n-5 -1\n-3 -4\n", "expected": "-5 -3\n-1 -4", "hidden": true }
+      ]
+    }
+  }
+}

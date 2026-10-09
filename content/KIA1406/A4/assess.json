@@ -1,0 +1,449 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsga koʻra, yozma xavfsizlik siyosati qoidalarni nimaga bogʻlaydi?",
+          "ru": "Согласно занятию, к чему письменная политика безопасности привязывает правила?",
+          "en": "According to the lesson, what does a written security policy tie the rules to?"
+        },
+        "options": [
+          {
+            "uz": "Tashkilotga, odamlarga emas",
+            "ru": "К организации, а не к людям",
+            "en": "To the organisation, not to people"
+          },
+          {
+            "uz": "IT mutaxassisning bilimiga",
+            "ru": "К знаниям ИТ-специалиста",
+            "en": "To what the IT specialist knows"
+          },
+          {
+            "uz": "Yillik byudjet miqdoriga",
+            "ru": "К сумме годового бюджета",
+            "en": "To the size of the yearly budget"
+          },
+          {
+            "uz": "Kompyuterlarning soniga",
+            "ru": "К количеству компьютеров",
+            "en": "To the number of computers"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilishicha, IT xodim ketib qolsa yoki kasal boʻlsa, parollar qayerda va zaxira nusxa olinadimi degan savollarga javob qolmaydi; yozma siyosat qoidalarni odamlarga emas, tashkilotga bogʻlaydi.",
+          "ru": "По занятию, если ИТ-специалист уволится или заболеет, никто не знает, где пароли и делаются ли резервные копии; письменная политика привязывает правила к организации, а не к людям.",
+          "en": "The lesson says that if the IT person leaves or falls ill, nobody knows where the passwords are or whether backups are taken; a written policy ties the rules to the organisation rather than to people."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Xavfsizlik siyosati asosan IT boʻlimi uchun yoziladi.",
+          "ru": "Политика безопасности пишется в основном для ИТ-отдела.",
+          "en": "A security policy is written mainly for the IT department."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Koʻp uchraydigan xatolar roʻyxatiga koʻra, siyosatni faqat IT uchun yozish xato: asosiy oʻquvchilar — oddiy xodimlar, shuning uchun tushunarli tilda yoziladi.",
+          "ru": "Согласно списку частых ошибок, писать политику только для ИТ — ошибка: главные читатели — обычные сотрудники, поэтому нужен понятный язык.",
+          "en": "The common-mistakes list calls writing the policy only for IT an error: the main readers are ordinary staff, so plain language is required."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "1-bosqichdagi tayyorgarlik jadvalida qaysi savollarga javob izlanadi?",
+          "ru": "Какие вопросы разбираются в таблице подготовки этапа 1?",
+          "en": "Which questions are answered in the stage 1 preparation table?"
+        },
+        "options": [
+          {
+            "uz": "Eng qimmatli aktivlar",
+            "ru": "Самые ценные активы",
+            "en": "The most valuable assets"
+          },
+          {
+            "uz": "Asosiy risklar",
+            "ru": "Основные риски",
+            "en": "The main risks"
+          },
+          {
+            "uz": "Qonun va shartnomalar",
+            "ru": "Законы и договоры",
+            "en": "Laws and contracts"
+          },
+          {
+            "uz": "Xodimlarning maosh miqdori",
+            "ru": "Размеры заработной платы сотрудников",
+            "en": "The salary levels of the staff"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalda toʻrt savol bor: eng qimmatli aktivlar, asosiy risklar, qonun va shartnomalar, mavjud choralar. Maosh haqidagi savol yoʻq.",
+          "ru": "В таблице четыре вопроса: активы, риски, законы и договоры, существующие меры. Вопроса о зарплате нет.",
+          "en": "The table has four questions: assets, risks, laws and contracts, existing measures. Salaries are not one of them."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "2-bosqichga koʻra, «Qamrov» boʻlimida nima yoziladi?",
+          "ru": "Согласно этапу 2, что записывается в разделе «Область действия»?",
+          "en": "According to stage 2, what does the Scope section state?"
+        },
+        "options": [
+          {
+            "uz": "Siyosat kimga va qaysi tizimlarga taalluqli ekanligi",
+            "ru": "На кого и на какие системы она распространяется",
+            "en": "Whom and which systems it covers"
+          },
+          {
+            "uz": "Siyosatni kim tasdiqlagani",
+            "ru": "Кто утвердил политику",
+            "en": "Who approved the policy"
+          },
+          {
+            "uz": "Qoida buzilganda qanday javobgarlik kelishi",
+            "ru": "Какая ответственность наступает за нарушение",
+            "en": "What liability follows a violation"
+          },
+          {
+            "uz": "Yiliga nechta trening oʻtkazilishi",
+            "ru": "Сколько тренингов проводить в год",
+            "en": "How many trainings to run each year"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Boʻlimlar tartibi: maqsad — nima uchun kerak; qamrov — kimga va qaysi tizimlarga; qoidalar — aniq, tekshiriladigan talablar.",
+          "ru": "Порядок разделов: цель — зачем нужна; область действия — на кого и на какие системы; правила — конкретные проверяемые требования.",
+          "en": "The order of sections: purpose — why it is needed; scope — whom and which systems it covers; rules — specific checkable requirements."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Klinika parol siyosatiga koʻra, parolda kamida nechta belgi boʻlishi kerak?",
+          "ru": "Сколько символов как минимум должно быть в пароле согласно политике паролей клиники?",
+          "en": "What is the minimum number of characters a password must have in the clinic's password policy?"
+        },
+        "answers": [12],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Parol kamida 12 belgi va boshqa xizmatlardagi parolni takrorlash taqiqlanadi; 5 ta notoʻgʻri urinishdan keyin hisob 15 daqiqaga bloklanadi.",
+          "ru": "Пароль — не менее 12 символов, повторять пароли других сервисов запрещается; после 5 неверных попыток учётная запись блокируется на 15 минут.",
+          "en": "At least 12 characters, and reusing a password from another service is prohibited; after five wrong attempts the account locks for fifteen minutes."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "AUP boʻyicha kompyuterdan uzoqlashganda ekran qaysi qisqa buyruq bilan bloklanadi?",
+          "ru": "Какой комбинацией клавиш блокируется экран при отходе от компьютера согласно AUP?",
+          "en": "Which key combination locks the screen when you leave the computer, according to the AUP?"
+        },
+        "answers": ["Win+L", "win+l", "Win + L", "Windows+L"],
+        "explanation": {
+          "uz": "Ekranni Win+L bilan bloklash kerak; qoʻshimcha ravishda 5 daqiqa harakatsizlikdan keyin avtomatik bloklash ishlaydi.",
+          "ru": "Отходя от компьютера, экран блокируют Win+L; дополнительно автоматическая блокировка срабатывает после 5 минут бездействия.",
+          "en": "You lock the screen with Win+L when leaving the computer; on top of that an automatic lock follows five minutes of inactivity."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi «koʻp uchraydigan xatolar» boʻlimiga koʻra, qaysi qoida tekshiriladigan qoida hisoblanadi?",
+          "ru": "Какой пункт, согласно разделу «Частые ошибки», является проверяемым правилом?",
+          "en": "According to the common-mistakes section, which statement is a checkable rule?"
+        },
+        "options": [
+          {
+            "uz": "«Kuchli parol ishlatilsin»",
+            "ru": "«Используйте надёжные пароли»",
+            "en": "Use strong passwords"
+          },
+          {
+            "uz": "Parol kamida 12 belgidan iborat va MFA yoqilgan",
+            "ru": "Пароль не менее 12 символов и включён MFA",
+            "en": "The password has at least 12 characters and MFA is enabled"
+          },
+          {
+            "uz": "Xavfsizlikni jiddiy qabul qiling",
+            "ru": "Относитесь к безопасности серьёзно",
+            "en": "Take security seriously"
+          },
+          {
+            "uz": "Bemorlar maʼlumotini asrang",
+            "ru": "Берегите данные пациентов",
+            "en": "Take care of patients' data"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda «Kuchli parol ishlatilsin» tekshirib boʻlmaydigan, «kamida 12 belgi va MFA» tekshiriladigan qoida deb keltirilgan.",
+          "ru": "В занятии сказано: «Используйте надёжные пароли» проверить нельзя, а «не менее 12 символов и MFA» — можно.",
+          "en": "The lesson contrasts \"use strong passwords\", which cannot be checked, with \"at least 12 characters and MFA\", which can."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Hodisaga javob boʻlimiga koʻra, qaysi harakatlar toʻgʻri aytilgan?",
+          "ru": "Что верно сказано о порядке реагирования на инциденты?",
+          "en": "Which statements about the incident-response steps are correct?"
+        },
+        "options": [
+          {
+            "uz": "Xodim hodisa haqida darhol IT mutaxassisga telefon orqali xabar qiladi",
+            "ru": "Сотрудник немедленно сообщает об инциденте ИТ-специалисту по телефону",
+            "en": "The employee reports the incident at once to the IT specialist by phone"
+          },
+          {
+            "uz": "IT mutaxassis zararlangan kompyuterni tarmoqdan uzadi va direktorga xabar beradi",
+            "ru": "ИТ-специалист отключает заражённый компьютер от сети и сообщает директору",
+            "en": "The IT specialist disconnects the infected computer from the network and informs the director"
+          },
+          {
+            "uz": "Shaxsiy maʼlumotlar sizgan boʻlsa, direktor vakolatli organga qonunda belgilangan tartibda xabar beradi",
+            "ru": "При утечке персональных данных директор уведомляет уполномоченный орган в установленном законом порядке",
+            "en": "If personal data has leaked, the director notifies the competent authority in the way the law requires"
+          },
+          {
+            "uz": "Hodisa yuz berganda IT mutaxassis oʻzi vakolatli organga xabar yuboradi",
+            "ru": "При инциденте ИТ-специалист сам отправляет уведомление в уполномоченный орган",
+            "en": "On an incident the IT specialist sends the notification to the authority himself"
+          },
+          {
+            "uz": "Tiklash va xulosalar jurnalga yoziladi",
+            "ru": "Восстановление и выводы заносятся в журнал",
+            "en": "The recovery and the conclusions are written into a log"
+          }
+        ],
+        "correct": [0, 1, 2, 4],
+        "explanation": {
+          "uz": "Toʻrt qadam: darhol xabar berish, zararlangan kompyuterni tarmoqdan uzish va direktorga xabar, direktorning vakolatli organga xabari, tiklash va xulosalarni jurnalga yozish.",
+          "ru": "Четыре шага: немедленное сообщение, отключение заражённого компьютера от сети и доклад директору, уведомление директор уполномоченного органа, запись восстановления и выводов в журнал.",
+          "en": "Four steps: report at once, disconnect the infected computer and inform the director, the director notifies the authority, and the recovery and conclusions are written into a log."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Umumiy siyosat yiliga bir marta qayta koʻrib chiqiladi, jiddiy hodisadan keyin esa qayta koʻrib chiqish shart emas.",
+          "ru": "Политика пересматривается раз в год, а после серьёзного инцидента пересмотр не обязателен.",
+          "en": "The policy is reviewed once a year, and after a serious incident a review is not required."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Umumiy siyosat matnida: yiliga bir marta va har bir jiddiy hodisadan keyin qayta koʻrib chiqiladi.",
+          "ru": "В тексте общей политики: пересмотр раз в год и после каждого серьёзного инцидента.",
+          "en": "The organisational policy text states: reviewed once a year and after every serious incident."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Siyosatni joriy etish va nazorat qilish",
+      "ru": "Внедрение и контроль политики",
+      "en": "Implementing and overseeing the policy"
+    },
+    "statement": {
+      "uz": "4-bosqichdagi kirishni boshqarish, 5-bosqichdagi joriy etish va nazorat hamda baholash mezonlari boʻyicha savollar. Javoblarda faqat shu mashgʻulotda aytilgan faktlar soʻraladi.",
+      "ru": "Вопросы по управлению доступом с этапа 4, внедрению и контролю с этапа 5 и критериям оценивания. Спрашивается только то, что говорилось на этом занятии.",
+      "en": "Questions on access control from stage 4, implementation and oversight from stage 5, and the assessment criteria. Only facts stated in this session are asked."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Yangi ishga qabul qilingan xodim siyosat bilan qachon tanishadi?",
+            "ru": "Когда с политикой знакомится новый сотрудник?",
+            "en": "When does a newly hired employee get acquainted with the policy?"
+          },
+          "options": [
+            {
+              "uz": "Ishga kirgan kuni",
+              "ru": "В день приёма на работу",
+              "en": "On their first day at work"
+            },
+            {
+              "uz": "Yillik treningda",
+              "ru": "На ежегодном тренинге",
+              "en": "At the yearly training"
+            },
+            {
+              "uz": "IT mutaxassis ruxsat bergach",
+              "ru": "После разрешения ИТ-специалиста",
+              "en": "Once the IT specialist allows it"
+            },
+            {
+              "uz": "Birinchi choraklik tekshiruvda",
+              "ru": "На первой квартальной проверке",
+              "en": "At the first quarterly check"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Barcha xodimlar siyosat bilan tanishib imzo qoʻyadi, yangi xodim — ishga kirgan kuni.",
+            "ru": "Все сотрудники знакомятся с политикой под подпись, новый сотрудник — в день приёма на работу.",
+            "en": "All staff read the policy and sign it; a new employee does so on their first day."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "IT mutaxassis har chorakda oʻtkazadigan tekshiruvga nimalar kiradi?",
+            "ru": "Что входит в ежеквартальную проверку ИТ-специалиста?",
+            "en": "What is included in the IT specialist's quarterly check?"
+          },
+          "options": [
+            {
+              "uz": "Hisoblar roʻyxati",
+              "ru": "Список учётных записей",
+              "en": "The list of accounts"
+            },
+            {
+              "uz": "Zaxira nusxa",
+              "ru": "Резервные копии",
+              "en": "The backups"
+            },
+            {
+              "uz": "Yangilanishlar",
+              "ru": "Обновления",
+              "en": "The updates"
+            },
+            {
+              "uz": "Kassa apparatining ishlatilish muddati",
+              "ru": "Срок службы кассового аппарата",
+              "en": "The service life of the cash register"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Darsda uchta tekshiriladigan narsa sanalgan: hisoblar roʻyxati, zaxira nusxa, yangilanishlar.",
+            "ru": "В занятии названы три предмета проверки: список учётных записей, резервные копии и обновления.",
+            "en": "The lesson names three items: the account list, the backups and the updates."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Kirishni boshqarish siyosatiga koʻra, ishdan boʻshagan xodimning hisobi qachon oʻchiriladi?",
+            "ru": "Когда удаляется учётная запись уволившегося сотрудника согласно политике доступа?",
+            "en": "When is the account of a departing employee deleted, according to the access control policy?"
+          },
+          "options": [
+            {
+              "uz": "Oxirgi ish kunida",
+              "ru": "В его последний рабочий день",
+              "en": "On their last working day"
+            },
+            {
+              "uz": "Bir oy oʻtgach",
+              "ru": "Через месяц",
+              "en": "One month later"
+            },
+            {
+              "uz": "Huquqlar navbatdagi chorakda koʻrib chiqilganda",
+              "ru": "При ближайшем квартальном пересмотре прав",
+              "en": "At the next quarterly review of rights"
+            },
+            {
+              "uz": "Oʻrniga yangi xodim kelgach",
+              "ru": "После выхода нового сотрудника на это место",
+              "en": "After a replacement is hired"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Hisob oxirgi ish kunida oʻchiriladi; huquqlarning har chorakda koʻrib chiqilishi esa alohida jarayon.",
+            "ru": "Учётная запись удаляется в последний рабочий день; ежеквартальный пересмотр прав — отдельный процесс.",
+            "en": "The account is deleted on the last working day; the quarterly review of rights is a separate process."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Baholash mezonlarida eng katta ulush qoidalarning aniqligi va tekshirilishiga berilgan.",
+            "ru": "В критериях оценивания наибольший вес имеет точность и проверяемость правил.",
+            "en": "In the assessment criteria the largest weight is given to the clarity and checkability of the rules."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Eng katta ulush — 30% — tashkilot risklariga moslikka berilgan; qoidalarning aniqligi va tekshirilishi — 25%.",
+            "ru": "Наибольший вес — 30% — у соответствия рискам организации; точность и проверяемость правил — 25%.",
+            "en": "The largest share, 30%, goes to fit to the organisation's risks; clarity and checkability of the rules is 25%."
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Dasturiy taʼminot tasnifida operatsion tizim qaysi guruhga kiradi?",
+          "ru": "К какой группе относится операционная система в классификации программного обеспечения?",
+          "en": "In the classification of software, which group does an operating system belong to?"
+        },
+        "options": [
+          {
+            "uz": "Tizim dasturlari",
+            "ru": "Системное программное обеспечение",
+            "en": "System software"
+          },
+          {
+            "uz": "Amaliy dasturlar",
+            "ru": "Прикладное программное обеспечение",
+            "en": "Application software"
+          },
+          {
+            "uz": "Instrumental dasturlar",
+            "ru": "Инструментальное программное обеспечение",
+            "en": "Development software"
+          },
+          {
+            "uz": "Bepul dasturlar (freeware)",
+            "ru": "Бесплатные программы (freeware)",
+            "en": "Freeware"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda tizim dasturlari kompyuter ishini taʼminlaydi va ularga operatsion tizimlar, drayverlar, antiviruslar, arxivatorlar kiradi deb aytilgan.",
+          "ru": "По занятию, системное обеспечение обеспечивает работу компьютера: операционные системы, драйверы, антивирусы, архиваторы.",
+          "en": "The lesson says system software keeps the computer running: operating systems, drivers, antivirus programs, archivers."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ochiq manba dasturlarning kodini oʻzgartirish va tarqatish mumkin.",
+          "ru": "Код программ с открытым исходным кодом можно изменять и распространять.",
+          "en": "The code of open source programs can be modified and distributed."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda ochiq manba modeli shunday izohlangan (GPL, MIT va boshqa litsenziyalar); misollar: Linux, LibreOffice, R, Python, Odoo Community.",
+          "ru": "В занятии модель open source описана именно так (лицензии GPL, MIT и другие); примеры: Linux, LibreOffice, R, Python, Odoo Community.",
+          "en": "The lesson describes the open source model exactly this way (GPL, MIT and other licences); examples: Linux, LibreOffice, R, Python, Odoo Community."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tizim dasturlariga qaysilari kiradi?",
+          "ru": "Что из перечисленного входит в системное программное обеспечение?",
+          "en": "Which of these belong to system software?"
+        },
+        "options": [
+          {
+            "uz": "Drayverlar",
+            "ru": "Драйверы",
+            "en": "Drivers"
+          },
+          {
+            "uz": "Antiviruslar",
+            "ru": "Антивирусы",
+            "en": "Antivirus programs"
+          },
+          {
+            "uz": "Arxivatorlar",
+            "ru": "Архиваторы",
+            "en": "Archivers"
+          },
+          {
+            "uz": "ERP tizimlari",
+            "ru": "ERP-системы",
+            "en": "ERP systems"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "ERP — amaliy dastur: u foydalanuvchining aniq vazifalarini hal qiladi, tizim dasturi emas.",
+          "ru": "ERP — прикладная программа: она решает конкретные задачи пользователя, а не обеспечивает работу компьютера.",
+          "en": "ERP is application software: it solves the user's specific tasks; it does not keep the computer running."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "ERP tizimining asosiy afzalligi nima?",
+          "ru": "В чём главное преимущество ERP-системы?",
+          "en": "What is the main advantage of an ERP system?"
+        },
+        "options": [
+          {
+            "uz": "Har bir operatsiya bir marta kiritiladi va barcha boʻlimlarga darhol taʼsir qiladi",
+            "ru": "Каждая операция вводится один раз и сразу влияет на все подразделения",
+            "en": "Each operation is entered once and immediately affects all departments"
+          },
+          {
+            "uz": "Faqat buxgalteriya boʻlimi uchun ishlaydi",
+            "ru": "Работает только для бухгалтерии",
+            "en": "It works only for the accounting department"
+          },
+          {
+            "uz": "Internet tezligini oshiradi",
+            "ru": "Увеличивает скорость Интернета",
+            "en": "It increases Internet speed"
+          },
+          {
+            "uz": "Taqdimot va matn hujjatlarini tayyorlaydi",
+            "ru": "Готовит презентации и текстовые документы",
+            "en": "It prepares presentations and text documents"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: alohida dasturlarda maʼlumot takror kiritiladi va mos kelmaydi; ERP da sotuv → ombordagi qoldiq → buxgalteriya yozuvi → moliyaviy hisobot zanjiri bir marta kiritishdan yuradi.",
+          "ru": "По занятию, в отдельных программах данные вводятся повторно и не совпадают; в ERP цепочка «продажа → остаток на складе → бухгалтерская запись → отчёт» работает от одного ввода.",
+          "en": "In the lesson, separate programs mean repeated, mismatching entries; in an ERP the chain sale → stock balance → accounting entry → financial report runs from one entry."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi litsenziyalash modellari jadvalida nechta model keltirilgan?",
+          "ru": "Сколько моделей лицензирования приведено в таблице из занятия?",
+          "en": "How many licensing models does the lesson's table list?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Jadvalda beshta model: tijoriy (proprietar), obuna / SaaS, ochiq manba, bepul (freeware), sinov (trial, shareware).",
+          "ru": "В таблице пять моделей: коммерческая (проприетарная), подписка / SaaS, открытое ПО, бесплатная (freeware), пробная (trial, shareware).",
+          "en": "The table has five: commercial (proprietary), subscription / SaaS, open source, freeware, trial (shareware)."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oʻzbekistonda keng tarqalgan buxgalteriya dasturining qisqartirilgan nomini yozing.",
+          "ru": "Напишите сокращённое название бухгалтерской программы, широко распространённой в Узбекистане.",
+          "en": "Write the short name of the accounting program widespread in Uzbekistan."
+        },
+        "answers": ["1C", "1c", "1C:Buxgalteriya", "1C:Accounting"],
+        "explanation": {
+          "uz": "Darsda 1C:Buxgalteriya Oʻzbekistonda keng tarqalgan buxgalteriya tizimi deb aytilgan.",
+          "ru": "В занятии 1C:Бухгалтерия названа широко распространённой в Узбекистане бухгалтерской системой.",
+          "en": "The lesson names 1C:Accounting as the accounting system widespread in Uzbekistan."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dasturiy mahsulotni joriy etish bosqichlarining birinchisi qaysi?",
+          "ru": "Какой этап внедрения программного продукта идёт первым?",
+          "en": "Which stage of implementing a software product comes first?"
+        },
+        "options": [
+          {
+            "uz": "Talablarni yigʻish",
+            "ru": "Сбор требований",
+            "en": "Collecting requirements"
+          },
+          {
+            "uz": "Ishga tushirish",
+            "ru": "Запуск в эксплуатацию",
+            "en": "Go-live"
+          },
+          {
+            "uz": "Foydalanuvchilarni oʻqitish",
+            "ru": "Обучение пользователей",
+            "en": "Training users"
+          },
+          {
+            "uz": "Maʼlumotlarni koʻchirish",
+            "ru": "Перенос данных",
+            "en": "Migrating data"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi tartib: talablarni yigʻish → variantlarni solishtirish va tanlash → sinov (pilot) → maʼlumotlarni koʻchirish → foydalanuvchilarni oʻqitish → ishga tushirish → qoʻllab-quvvatlash va takomillashtirish.",
+          "ru": "Порядок из занятия: сбор требований → сравнение и выбор → пилот → перенос данных → обучение → запуск → поддержка и развитие.",
+          "en": "The lesson's order: collecting requirements → comparing and choosing options → a trial (pilot) → migrating data → training users → go-live → support and improvement."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Litsenziyalash modellari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о моделях лицензирования верны?",
+          "en": "Which statements about licensing models are correct?"
+        },
+        "options": [
+          {
+            "uz": "Obuna / SaaS modelida oylik yoki yillik toʻlov, koʻpincha bulut orqali amalga oshiriladi",
+            "ru": "При подписке / SaaS платят ежемесячно или ежегодно, чаще всего через облако",
+            "en": "In the subscription / SaaS model the payment is monthly or yearly, often through the cloud"
+          },
+          {
+            "uz": "Freewareʼda foydalanish bepul, lekin kod yopiq",
+            "ru": "Freeware бесплатен для использования, но его код закрыт",
+            "en": "Freeware is free to use, but its code is closed"
+          },
+          {
+            "uz": "Tijoriy (proprietar) modelda foydalanish huquqi sotib olinadi, kod yopiq",
+            "ru": "В коммерческой (проприетарной) модели право использования покупается, код закрыт",
+            "en": "In the commercial (proprietary) model the right to use is purchased and the code is closed"
+          },
+          {
+            "uz": "Sinov versiyasi cheklovsiz va abadiy bepul toʻla imkoniyat beradi",
+            "ru": "Пробная версия даёт без ограничений и навсегда все возможности бесплатно",
+            "en": "A trial version gives full features free of charge and forever"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda sinov (trial, shareware) modeli cheklangan muddat yoki imkoniyat deb aytilgan.",
+          "ru": "В занятии пробная модель (trial, shareware) описана как ограниченная по сроку или возможностям.",
+          "en": "The lesson describes the trial (shareware) model as limited in time or features."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Litsenziyasiz dastur ishlatishning salobati faqat etiktir: qonuniy javobgarlik va xavfsizlik xavfi yoʻq.",
+          "ru": "Использование нелицензионных программ — лишь вопрос этики: юридической ответственности и рисков безопасности нет.",
+          "en": "Using unlicensed software is only an ethical matter: there is no legal liability or security risk."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda bu mualliflik huquqini buzish (jarima va javobgarlik) va xavfsizlik xavfi deb aytilgan: yangilanishlar yoʻq, \"buzilgan\" dasturlarda zararli kod boʻlishi mumkin.",
+          "ru": "По занятию это нарушение авторских прав (штраф и ответственность) и риск безопасности: нет обновлений, во «взломанных» программах возможен вредоносный код.",
+          "en": "The lesson calls it a copyright infringement (fines and liability) and a security risk: no updates, and \"cracked\" programs may contain malicious code."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Dasturlar turlari, ERP / CRM va tanlash mezonlari",
+      "ru": "Виды программ, ERP / CRM и критерии выбора",
+      "en": "Software types, ERP / CRM and selection criteria"
+    },
+    "statement": {
+      "uz": "Dars mazmuni boʻyicha toʻrt savol. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "ru": "Четыре вопроса по содержанию занятия. В вопросах с несколькими ответами отметьте все верные варианты.",
+      "en": "Four questions on the content of the lesson. In questions with several answers, mark every correct option."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Amaliy dasturlar nima qiladi?",
+            "ru": "Для чего предназначены прикладные программы?",
+            "en": "What do application programs do?"
+          },
+          "options": [
+            {
+              "uz": "Foydalanuvchining aniq vazifalarini hal qiladi",
+              "ru": "Решают конкретные задачи пользователя",
+              "en": "They solve the user's specific tasks"
+            },
+            {
+              "uz": "Kompyuter ishini taʼminlaydi",
+              "ru": "Обеспечивают работу компьютера",
+              "en": "They keep the computer running"
+            },
+            {
+              "uz": "Yangi dasturlar yaratish uchun xizmat qiladi",
+              "ru": "Служат для создания новых программ",
+              "en": "They serve for creating new programs"
+            },
+            {
+              "uz": "Faylarni arxivlaydi",
+              "ru": "Архивируют файлы",
+              "en": "They archive files"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda: amaliy dasturlar — ofis paketlari, buxgalteriya, ERP, CRM, brauzerlar; tizim dasturlari kompyuter ishini taʼminlaydi, instrumental dasturlar yangi dastur yaratish uchun.",
+            "ru": "По занятию: прикладные — офисные пакеты, бухгалтерия, ERP, CRM, браузеры; системные обеспечивают работу компьютера, инструментальные создают новые программы.",
+            "en": "In the lesson application software is office suites, accounting, ERP, CRM, browsers; system software keeps the computer running, development software creates new programs."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Mijozlar bilan barcha aloqalar tarixi, savdo bosqichlari va savdo voronkasi qaysi tizimga tegishli?",
+            "ru": "К какой системе относятся история всех контактов с клиентами, этапы и воронка продаж?",
+            "en": "Which system owns the history of all contacts with a customer, the sales stages and the sales funnel?"
+          },
+          "options": [
+            {
+              "uz": "ERP",
+              "ru": "ERP",
+              "en": "ERP"
+            },
+            {
+              "uz": "CRM",
+              "ru": "CRM",
+              "en": "CRM"
+            },
+            {
+              "uz": "BI dashbordi",
+              "ru": "BI-дашборд",
+              "en": "A BI dashboard"
+            },
+            {
+              "uz": "Buxgalteriya tizimi",
+              "ru": "Бухгалтерская система",
+              "en": "An accounting system"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Darsda CRM — mijozlar bazasi, savdo voronkasi va murojaatlar; takroriy savdo va mijozlarni saqlab qolish tahlili deb aytilgan.",
+            "ru": "В занятии CRM — это база клиентов, воронка продаж и обращения, анализ повторных продаж и удержания клиентов.",
+            "en": "The lesson gives CRM as the customer database, sales funnel and requests, with analysis of repeat sales and customer retention."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Dasturiy mahsulotni tanlashning qaysi mezonlari darsda keltirilgan?",
+            "ru": "Какие критерии выбора программного продукта названы в занятии?",
+            "en": "Which criteria for choosing a software product does the lesson give?"
+          },
+          "options": [
+            {
+              "uz": "Funksional moslik va mahalliy qonunchilikning qoʻllab-quvvatlanishi",
+              "ru": "Функциональное соответствие и поддержка местного законодательства",
+              "en": "Functional fit and support of local legislation"
+            },
+            {
+              "uz": "Narx va TCO",
+              "ru": "Цена и TCO",
+              "en": "Price and TCO"
+            },
+            {
+              "uz": "Integratsiya va masshtablilik",
+              "ru": "Интеграция и масштабируемость",
+              "en": "Integration and scalability"
+            },
+            {
+              "uz": "Interfeys rangining yoqimliligi",
+              "ru": "Приятный цвет интерфейса",
+              "en": "A pleasing interface colour"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Darsdagi mezonlar: funksional moslik, narx va TCO, integratsiya, masshtablilik, yetkazib beruvchi, xavfsizlik va maʼlumotlar.",
+            "ru": "Критерии из занятия: функциональное соответствие, цена и TCO, интеграция, масштабируемость, поставщик, безопасность и данные.",
+            "en": "The lesson lists functional fit, price and TCO, integration, scalability, the supplier, and security and data."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Darsda aytilganidek, joriy etish va oʻqitish xarajatlari koʻpincha litsenziya narxidan oshadi.",
+            "ru": "Как сказано в занятии, затраты на внедрение и обучение часто превышают цену лицензии.",
+            "en": "As the lesson states, implementation and training often cost more than the licence."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Bu darsdagi koʻp uchraydigan xato: faqat litsenziya narxini solishtirish. Joriy etish va oʻqitish xarajatlari koʻpincha litsenziyadan qimmat.",
+            "ru": "Это типичная ошибка из занятия — сравнивать только цену лицензии: внедрение и обучение часто дороже лицензии.",
+            "en": "This is a common mistake from the lesson — comparing only licence prices: implementation and training often cost more than the licence."
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,460 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ofis hujjatlaridagi makroslarni zararlaydigan virus turi darsda qaysi nom bilan keltirilgan?",
+          "ru": "Как в занятии называется вид вирусов, поражающих макросы в офисных документах?",
+          "en": "What does the lesson call the type of virus that infects macros in office documents?"
+        },
+        "options": [
+          {
+            "uz": "Makrovirus",
+            "ru": "Макровирус",
+            "en": "Macro virus"
+          },
+          {
+            "uz": "Yuklash virusi",
+            "ru": "Загрузочный вирус",
+            "en": "Boot virus"
+          },
+          {
+            "uz": "Fayl virusi",
+            "ru": "Файловый вирус",
+            "en": "File virus"
+          },
+          {
+            "uz": "Skript virusi",
+            "ru": "Скриптовый вирус",
+            "en": "Script virus"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Yashash muhiti boʻyicha tasnifda makroviruslar ofis hujjatlaridagi makroslarni zararlaydi; tarixiy misol — Melissa (1999).",
+          "ru": "В классификации по среде обитания макровирусы поражают макросы офисных документов; исторический пример — Melissa (1999).",
+          "en": "In the by-environment classification macro viruses infect macros in office documents; the historical example is Melissa (1999)."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsga koʻra, zamonaviy hujumlarda asosiy tahdid «klassik» viruslardir.",
+          "ru": "Согласно занятию, главная угроза современных атак — «классические» вирусы.",
+          "en": "According to the lesson, the main threat of modern attacks is the classic virus."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda «klassik» viruslar kam uchraydi deyiladi; bugungi asosiy tahdidlar — qurtlar, troyanlar, shifrlovchi viruslar va fayl yaratmasdan ishlaydigan zararli dasturlar.",
+          "ru": "В занятии сказано, что «классические» вирусы встречаются редко; сегодняшние главные угрозы — черви, трояны, шифровальщики и вредоносные программы, работающие без создания файлов.",
+          "en": "The lesson says classic viruses are rare today; the main threats now are worms, Trojans, ransomware and malware that works without creating files."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Zararlanish belgilari roʻyxatiga darsda qaysilari kiritilgan?",
+          "ru": "Что из перечисленного входит в занятии в список признаков заражения?",
+          "en": "Which of these does the lesson list as signs of infection?"
+        },
+        "options": [
+          {
+            "uz": "Antivirus oʻchib qoladi yoki yangilanmaydi",
+            "ru": "Антивирус отключается или перестаёт обновляться",
+            "en": "The antivirus turns off or stops updating"
+          },
+          {
+            "uz": "Fayllar oʻzgaradi yoki ochilmaydi",
+            "ru": "Файлы изменяются или не открываются",
+            "en": "Files change or no longer open"
+          },
+          {
+            "uz": "Doʻstlarga sizning nomingizdan xabarlar ketadi",
+            "ru": "Друзьям отправляются сообщения от вашего имени",
+            "en": "Messages go to friends in your name"
+          },
+          {
+            "uz": "Kompyuter avvalgidan ham tezkor ishlay boshlaydi",
+            "ru": "Компьютер начинает работать даже быстрее прежнего",
+            "en": "The computer starts running even faster than before"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi belgilar: keskin sekinlashish, notanish jarayonlar va kengaytmalar, antivirusning oʻchishi, oʻzgargan yoki ochilmaydigan fayllar, notanish tarmoq faolligi, nomingizdan ketgan xabarlar. Tezlashish roʻyxatda yoʻq.",
+          "ru": "Признаки из занятия: резкое замедление, незнакомые процессы и расширения, отключение антивируса, изменённые или не открывающиеся файлы, незнакомая сетевая активность, сообщения от вашего имени. Ускорение в списке отсутствует.",
+          "en": "The lesson lists sharp slowdown, unknown processes and extensions, an antivirus switching off, changed or unopenable files, unknown network activity and messages sent in your name. Getting faster is not on the list."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Himoya usullarining javob va tiklash bosqichiga qaysi chora kiritilgan?",
+          "ru": "Какая мера входит в этап реагирования и восстановления?",
+          "en": "Which measure belongs to the response and recovery stage?"
+        },
+        "options": [
+          {
+            "uz": "Zararlangan qurilmani tarmoqdan ajratish",
+            "ru": "Изолировать заражённое устройство от сети",
+            "en": "Isolating the infected device from the network"
+          },
+          {
+            "uz": "Operatsion tizim va dasturlarni oʻz vaqtida yangilash",
+            "ru": "Своевременно обновлять ОС и программы",
+            "en": "Updating the operating system and programs in time"
+          },
+          {
+            "uz": "Makroslarni standart holatda oʻchirilgan saqlash",
+            "ru": "Держать макросы отключёнными по умолчанию",
+            "en": "Keeping macros disabled by default"
+          },
+          {
+            "uz": "Jurnallarni kuzatib borish",
+            "ru": "Постоянно отслеживать журналы",
+            "en": "Continuously monitoring the logs"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Javob va tiklash bosqichi: qurilmani tarmoqdan ajratish, toʻliq tekshiruv, kerak boʻlsa OT ni qayta oʻrnatish, zaxira nusxadan tiklash, parollarni almashtirish. Yangilanish va makros cheklovi — profilaktika, jurnallar kuzatuvi — aniqlash.",
+          "ru": "Этап реагирования и восстановления: изоляция устройства, полная проверка, при необходимости переустановка ОС, восстановление из резервной копии, смена паролей. Обновления и ограничения макросов — профилактика, слежение за журналами — обнаружение.",
+          "en": "The response and recovery stage: isolating the device, a full scan, reinstalling the OS if needed, restoring from backup, changing passwords. Updates and macro limits are prevention, log monitoring is detection."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsga koʻra, 256 bitli ECDSA kaliti xavfsizlik darajasi boʻyicha nechta bitli RSA kalitiga teng?",
+          "ru": "Сколько бит, согласно занятию, имеет ключ RSA, равный по стойкости 256-битному ключу ECDSA?",
+          "en": "How many bits does an RSA key have that the lesson says matches a 256-bit ECDSA key in security?"
+        },
+        "answers": [3072],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda 256 bitli ECDSA kaliti 3072 bitli RSA kalitiga teng xavfsizlik beradi deyiladi — shuning uchun algoritmlarni faqat kalit uzunligi boʻyicha solishtirish xato.",
+          "ru": "В занятии сказано, что 256-битный ключ ECDSA даёт ту же стойкость, что 3072-битный ключ RSA, — поэтому сравнивать алгоритмы только по длине ключа ошибочно.",
+          "en": "The lesson states that a 256-bit ECDSA key gives the same security as a 3072-bit RSA key, which is why comparing algorithms by key length alone is a mistake."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Faqat xesh-funksiyalarga asoslangan, imzosi katta va sekin boʻlgan postkvant imzo standartining nomini yozing.",
+          "ru": "Запишите название постквантового стандарта подписи, основанного только на хеш-функциях и дающего большие и медленные подписи.",
+          "en": "Write the name of the post-quantum signature standard built on hash functions only, with large and slow signatures."
+        },
+        "answers": ["SLH-DSA", "slh-dsa", "FIPS 205"],
+        "explanation": {
+          "uz": "SLH-DSA (FIPS 205, 2024) faqat xesh-funksiyalarga asoslanadi: juda konservativ xavfsizlik, lekin imzo katta va sekin. ML-DSA esa modul panjaralarga asoslangan.",
+          "ru": "SLH-DSA (FIPS 205, 2024) основан только на хеш-функциях: очень консервативная стойкость, но подписи большие и медленные. ML-DSA же опирается на модульные решётки.",
+          "en": "SLH-DSA (FIPS 205, 2024) rests on hash functions alone: very conservative security, but large and slow signatures. ML-DSA is the one built on module lattices."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "EdDSA (Ed25519) ni ECDSA ga nisbatan amalga oshirish xatolariga chidamliroq qiladigan xususiyati qaysi?",
+          "ru": "Какое свойство делает EdDSA (Ed25519) более устойчивым к ошибкам реализации, чем ECDSA?",
+          "en": "Which property makes EdDSA (Ed25519) more robust against implementation mistakes than ECDSA?"
+        },
+        "options": [
+          {
+            "uz": "Deterministik: har bir imzo uchun tasodifiy son yaratish talab qilinmaydi",
+            "ru": "Детерминированность: для каждой подписи не нужно генерировать случайное число",
+            "en": "It is deterministic: no random number has to be generated for each signature"
+          },
+          {
+            "uz": "Kaliti RSA kalitidan uzunroq",
+            "ru": "Его ключ длиннее ключа RSA",
+            "en": "Its key is longer than an RSA key"
+          },
+          {
+            "uz": "Faqat xesh-funksiyalardan foydalanadi",
+            "ru": "Он использует только хеш-функции",
+            "en": "It uses only hash functions"
+          },
+          {
+            "uz": "Faqat davlat standartlarida tasdiqlangan",
+            "ru": "Он утверждён только в государственных стандартах",
+            "en": "It is approved only in state standards"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "EdDSA deterministik boʻlgani uchun tasodifiy son xatosi orqali kalit oshkor boʻlish xavfi yoʻq; ECDSA da esa tasodifiy sonni takrorlash yopiq kalitni ochadi — 2010-yilda Sony PlayStation 3 kaliti shunday sizib chiqqan.",
+          "ru": "Поскольку EdDSA детерминирован, риск утечки ключа из-за ошибки в случайном числе отсутствует; в ECDSA повтор случайного числа раскрывает закрытый ключ — так в 2010 году утёк ключ Sony PlayStation 3.",
+          "en": "Because EdDSA is deterministic, there is no risk of a key leaking through a random-number mistake; in ECDSA reusing the random number reveals the private key — that is how the Sony PlayStation 3 key leaked in 2010."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "ERI algoritmlari jadvali boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны по таблице алгоритмов ЭЦП?",
+          "en": "Which statements are correct according to the digital signature algorithms table?"
+        },
+        "options": [
+          {
+            "uz": "DSA FIPS 186-5 da yangi imzolar uchun endi tavsiya etilmaydi",
+            "ru": "DSA в FIPS 186-5 больше не рекомендуется для новых подписей",
+            "en": "FIPS 186-5 no longer recommends DSA for new signatures"
+          },
+          {
+            "uz": "GOST R 34.10-2012 elliptik egri chiziqqa asoslangan va 256 hamda 512 bitli variantlarga ega",
+            "ru": "GOST R 34.10-2012 основан на эллиптической кривой и имеет варианты 256 и 512 бит",
+            "en": "GOST R 34.10-2012 is based on an elliptic curve and has 256- and 512-bit variants"
+          },
+          {
+            "uz": "RSA-PSS elliptik egri chiziqdagi diskret logarifm masalasiga asoslanadi",
+            "ru": "RSA-PSS основан на задаче дискретного логарифма на эллиптической кривой",
+            "en": "RSA-PSS rests on the discrete logarithm problem on an elliptic curve"
+          },
+          {
+            "uz": "ML-DSA modul panjaralarga asoslangan postkvant standart",
+            "ru": "ML-DSA — постквантовый стандарт на основе модульных решёток",
+            "en": "ML-DSA is a post-quantum standard based on module lattices"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "RSA-PSS ning matematik asosi — katta sonlarni koʻpaytuvchilarga ajratish qiyinligi, diskret logarifm emas. Qolgan uch ifodalar jadvalga mos.",
+          "ru": "Математическая основа RSA-PSS — сложность разложения больших чисел на множители, а не дискретный логарифм. Остальные три утверждения соответствуют таблице.",
+          "en": "The mathematical basis of RSA-PSS is the difficulty of factoring large numbers, not a discrete logarithm. The other three statements match the table."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Shor algoritmi RSA va elliptik egri chiziqlarni buzishi mumkinligi uchun darsda postkvant algoritmlarga oʻtish rejalashtirilayotgani aytiladi.",
+          "ru": "В занятии говорится, что переход на постквантовые алгоритмы планируется, потому что алгоритм Шора может взломать RSA и эллиптические кривые.",
+          "en": "The lesson states that a transition to post-quantum algorithms is planned because Shor's algorithm could break RSA and elliptic curves."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda kvant kompyuterlar tahdidi solishtirish mezoni sifatida keltirilgan: Shor algoritmi RSA va elliptik egri chiziqlarni buzishi mumkin, shuning uchun ML-DSA va SLH-DSA kabi postkvant algoritmlarga oʻtiladi.",
+          "ru": "В занятии квантовая угроза приведена как критерий сравнения: алгоритм Шора может взломать RSA и эллиптические кривые, поэтому планируется переход на постквантовые алгоритмы — ML-DSA и SLH-DSA.",
+          "en": "The lesson lists the quantum threat as a comparison criterion: Shor's algorithm could break RSA and elliptic curves, so a move to post-quantum algorithms — ML-DSA and SLH-DSA — is being planned."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "ERI algoritmlarini solishtirish jadvalini tayyorlashdan oldingi nazorat savollari",
+      "ru": "Проверочные вопросы перед составлением таблицы сравнения алгоритмов ЭЦП",
+      "en": "Check questions before preparing the digital signature comparison table"
+    },
+    "statement": {
+      "uz": "Mustaqil topshiriqda ERI algoritmlarini xavfsizlik, kalit va imzo uzunligi, tezlik va boshqa mezonlar boʻyicha solishtiruvchi jadval tuzish taklif qilinadi. Jadvalni yozishdan oldin darsning viruslar tasnifi va ERI algoritmlari boʻlimlariga asoslangan besh savolga javob bering. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "В самостоятельном задании предлагается составить таблицу сравнения алгоритмов ЭЦП по стойкости, длине ключа и подписи, скорости и другим критериям. Перед её составлением ответьте на пять вопросов по классификации вирусов и алгоритмам ЭЦП из занятия. Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "The independent task asks you to build a table comparing digital signature algorithms by security, key and signature length, speed and other criteria. Before writing it, answer five questions drawn from the lesson's virus classification and signature algorithm sections. The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Darsdagi ERI algoritmlari jadvalida qaysi standart Xitoyga tegishli va uning xeshi SM3?",
+            "ru": "Какой из зарубежных стандартов ЭЦП принадлежит Китаю и использует хеш SM3?",
+            "en": "Which of the foreign digital signature standards belongs to China and uses the SM3 hash?"
+          },
+          "options": [
+            {
+              "uz": "SM2",
+              "ru": "SM2",
+              "en": "SM2"
+            },
+            {
+              "uz": "GOST R 34.10-2012",
+              "ru": "GOST R 34.10-2012",
+              "en": "GOST R 34.10-2012"
+            },
+            {
+              "uz": "EdDSA (Ed25519)",
+              "ru": "EdDSA (Ed25519)",
+              "en": "EdDSA (Ed25519)"
+            },
+            {
+              "uz": "DSA",
+              "ru": "DSA",
+              "en": "DSA"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Dars jadvali: SM2 — Xitoy tijorat kriptografiyasi standarti, elliptik egri chiziq, xeshi SM3. GOST R 34.10-2012 — Rossiya standarti.",
+            "ru": "Таблица занятия: SM2 — стандарт коммерческой криптографии Китая на эллиптической кривой с хешем SM3. GOST R 34.10-2012 — стандарт России.",
+            "en": "The lesson table: SM2 is China's commercial cryptography standard on an elliptic curve with the SM3 hash. GOST R 34.10-2012 is Russia's standard."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "RSA-PSS algoritmining matematik asosi nima?",
+            "ru": "Какова математическая основа алгоритма RSA-PSS?",
+            "en": "What is the mathematical basis of the RSA-PSS algorithm?"
+          },
+          "options": [
+            {
+              "uz": "Katta sonlarni koʻpaytuvchilarga ajratish qiyinligi",
+              "ru": "Сложность разложения больших чисел на множители",
+              "en": "The difficulty of factoring large numbers"
+            },
+            {
+              "uz": "Elliptik egri chiziqdagi diskret logarifm",
+              "ru": "Дискретный логарифм на эллиптической кривой",
+              "en": "The discrete logarithm on an elliptic curve"
+            },
+            {
+              "uz": "Faqat xesh-funksiyalar",
+              "ru": "Только хеш-функции",
+              "en": "Hash functions only"
+            },
+            {
+              "uz": "Modul panjaralar",
+              "ru": "Модульные решётки",
+              "en": "Module lattices"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "RSA-PSS (PKCS #1, RFC 8017) katta sonlarni koʻpaytuvchilarga ajratish qiyinligiga asoslanadi; elliptik egri chiziq ECDSA, GOST va SM2 ga xos, panjaralar — ML-DSA asosi.",
+            "ru": "RSA-PSS (PKCS #1, RFC 8017) основан на сложности разложения больших чисел; эллиптическая кривая свойственна ECDSA, GOST и SM2, решётки — основа ML-DSA.",
+            "en": "RSA-PSS (PKCS #1, RFC 8017) rests on the difficulty of factoring large numbers; the elliptic curve belongs to ECDSA, GOST and SM2, and lattices are the basis of ML-DSA."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsda ECDSA da tasodifiy sonni notoʻgʻri yaratish yopiq kalitni oshkor qilishi taʼkidlangan.",
+            "ru": "В занятии утверждается, что неверная генерация случайного числа в ECDSA раскрывает закрытый ключ.",
+            "en": "The lesson states that generating the random number incorrectly in ECDSA reveals the private key."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda bu koʻp uchraydigan xato sifatida keltirilgan: bitta xato yopiq kalitni oshkor qiladi, shuning uchun tekshirilgan kutubxonalardan foydalanish va deterministik EdDSA ni koʻrib chiqish maslahat berilgan.",
+            "ru": "В занятии это названо частой ошибкой: одна ошибка раскрывает закрытый ключ, поэтому советуется использовать проверенные библиотеки и рассмотреть детерминированный EdDSA.",
+            "en": "The lesson lists this as a common mistake: a single error reveals the private key, so it advises proven libraries and considering the deterministic EdDSA."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Viruslardan himoyaning profilaktika bosqichiga qaysi choralar kiritilgan?",
+            "ru": "Какие меры входят в этап профилактики защиты от вирусов?",
+            "en": "Which measures belong to the prevention stage of virus protection?"
+          },
+          "options": [
+            {
+              "uz": "Operatsion tizim va dasturlarni yangilash",
+              "ru": "Обновление ОС и программ",
+              "en": "Updating the operating system and programs"
+            },
+            {
+              "uz": "Dasturlarni faqat rasmiy manbalardan oʻrnatish",
+              "ru": "Установка программ только из официальных источников",
+              "en": "Installing programs only from official sources"
+            },
+            {
+              "uz": "Makroslarni standart holatda oʻchirilgan saqlash",
+              "ru": "Макросы отключены по умолчанию",
+              "en": "Keeping macros disabled by default"
+            },
+            {
+              "uz": "Zararlangan qurilmani tarmoqdan ajratish",
+              "ru": "Изоляция заражённого устройства от сети",
+              "en": "Isolating the infected device from the network"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Profilaktika: yangilanishlar, rasmiy manbalar, makroslarni cheklash, kundalik ish standart hisobda, olinadigan tashuvchilar nazorati, xabardorlik. Qurilmani ajratish esa javob va tiklash bosqichiga kiritilgan.",
+            "ru": "Профилактика: обновления, официальные источники, ограничения макросов, повседневная работа под стандартной учётной записью, контроль съёмных носителей, информированность. Изоляция устройства относится к реагированию и восстановлению.",
+            "en": "Prevention: updates, official sources, macro restrictions, everyday work in a standard account, control of removable media, awareness. Isolating the device belongs to response and recovery."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "GOST R 34.10-2012 ERI algoritmi bilan ishlatiladigan xesh-funksiyaning nomini (nomlanishini) yozing.",
+            "ru": "Запишите название хеш-функции, применяемой с алгоритмом ЭЦП GOST R 34.10-2012.",
+            "en": "Write the name of the hash function used with the GOST R 34.10-2012 signature algorithm."
+          },
+          "answers": ["Streebog", "streebog", "GOST R 34.11-2012", "gost r 34.11-2012"],
+          "explanation": {
+            "uz": "Dars jadvalida GOST R 34.10-2012 uchun xesh — GOST R 34.11-2012 (Streebog) deb koʻrsatilgan.",
+            "ru": "В таблице занятия для GOST R 34.10-2012 указан хеш GOST R 34.11-2012 (Стрибог).",
+            "en": "The lesson table gives the hash for GOST R 34.10-2012 as GOST R 34.11-2012 (Streebog)."
+          }
+        }
+      ]
+    }
+  }
+}

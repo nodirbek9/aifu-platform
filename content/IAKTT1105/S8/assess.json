@@ -1,0 +1,351 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blok-sxemada shart (qaror) qaysi shakl bilan belgilanadi?",
+          "ru": "Какой фигурой на блок-схеме обозначается условие (решение)?",
+          "en": "Which shape is used to mark a decision (condition) in a flowchart?"
+        },
+        "options": [
+          {
+            "uz": "Romb",
+            "ru": "Ромб",
+            "en": "A diamond"
+          },
+          {
+            "uz": "Oval",
+            "ru": "Овал",
+            "en": "An oval"
+          },
+          {
+            "uz": "Toʻrtburchak",
+            "ru": "Прямоугольник",
+            "en": "A rectangle"
+          },
+          {
+            "uz": "Parallelogramm",
+            "ru": "Параллелограмм",
+            "en": "A parallelogram"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra, shart (qaror) romb bilan belgilanadi.",
+          "ru": "Согласно занятию, условие (решение) обозначается ромбом.",
+          "en": "According to the lesson, a decision (condition) is marked with a diamond."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Shart (romb) blokidan doimo \"ha\" va \"yoʻq\" deb belgilangan ikkita yoʻl chiqadi.",
+          "ru": "Из блока условия (ромба) всегда выходят два пути, помеченные «да» и «нет».",
+          "en": "A decision block (diamond) always has two exits marked \"yes\" and \"no\"."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Rombdan aniq \"ha\" va \"yoʻq\" deb belgilangan ikkita chiqish boʻlishi blok-sxema qoidasidir.",
+          "ru": "Наличие двух выходов из ромба, чётко помеченных «да» и «нет», — правило построения блок-схем.",
+          "en": "Having two exits from a diamond clearly labelled \"yes\" and \"no\" is a flowchart drawing rule."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "ISO 5807 standartiga koʻra, qaysi shakllar blok-sxema belgilariga kiradi?",
+          "ru": "Какие фигуры входят в стандартные обозначения блок-схем (ISO 5807)?",
+          "en": "Which shapes are part of the standard flowchart symbols (ISO 5807)?"
+        },
+        "options": [
+          {
+            "uz": "Parallelogramm",
+            "ru": "Параллелограмм",
+            "en": "A parallelogram"
+          },
+          {
+            "uz": "Romb",
+            "ru": "Ромб",
+            "en": "A diamond"
+          },
+          {
+            "uz": "Oltiburchak",
+            "ru": "Шестиугольник",
+            "en": "A hexagon"
+          },
+          {
+            "uz": "Uchburchak",
+            "ru": "Треугольник",
+            "en": "A triangle"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Parallelogramm (kiritish/chiqarish), romb (shart) va oltiburchak (sikl) standart belgilar, uchburchak esa ishlatilmaydi.",
+          "ru": "Параллелограмм (ввод/вывод), ромб (условие) и шестиугольник (цикл) — стандартные обозначения, а треугольник не используется.",
+          "en": "A parallelogram (input/output), a diamond (decision), and a hexagon (loop) are standard symbols, but a triangle is not used."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kiritish va chiqarish jarayonlari blok-sxemada qanday shaklda chiziladi?",
+          "ru": "В какой фигуре на блок-схеме изображаются процессы ввода и вывода?",
+          "en": "In what shape are input and output processes drawn in a flowchart?"
+        },
+        "options": [
+          {
+            "uz": "Parallelogramm",
+            "ru": "Параллелограмм",
+            "en": "A parallelogram"
+          },
+          {
+            "uz": "Toʻrtburchak",
+            "ru": "Прямоугольник",
+            "en": "A rectangle"
+          },
+          {
+            "uz": "Doira",
+            "ru": "Круг",
+            "en": "A circle"
+          },
+          {
+            "uz": "Oltiburchak",
+            "ru": "Шестиугольник",
+            "en": "A hexagon"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Kiritish maʼlumotni qabul qilishni, chiqarish natijani koʻrsatishni bildiradi va parallelogramm shaklida chiziladi.",
+          "ru": "Ввод означает получение данных, вывод — показ результата; они изображаются в виде параллелограмма.",
+          "en": "Input means receiving data, output showing the result, and they are drawn as a parallelogram."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Katta sxemani qismlarga boʻlishda ularni bogʻlash uchun ishlatiladigan belgi (shakl) qanday nomlanadi?",
+          "ru": "Как называется фигура (знак), используемая для связи при разбиении большой схемы на части?",
+          "en": "What is the name of the shape (symbol) used for linking when a large chart is split into parts?"
+        },
+        "answers": [
+          "Ulagich",
+          "ulagich",
+          "Соединитель",
+          "соединитель",
+          "Connector",
+          "connector"
+        ],
+        "explanation": {
+          "uz": "Doira shaklidagi belgi \"ulagich\" deb ataladi va chiziqlar kesishib ketmasligi uchun ishlatiladi.",
+          "ru": "Фигура в виде круга называется «соединитель» и используется, чтобы линии не пересекались.",
+          "en": "The circle shape is called a \"connector\" and is used to avoid crossing lines."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi pogʻonali tarif misolida 201 kVt soat energiya uchun necha soʻm hisoblanadi?",
+          "ru": "Сколько сумов рассчитывается за 201 кВт·ч в учебном примере ступенчатого тарифа?",
+          "en": "How many soums are calculated for 201 kWh in the tiered tariff teaching example?"
+        },
+        "answers": [
+          121000
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "200 kVt gacha 600 soʻmdan (120000) va qolgan 1 kVt uchun 1000 soʻm; jami 121000 soʻm.",
+          "ru": "До 200 кВт·ч по 600 сумов (120000) и за оставшийся 1 кВт·ч — 1000 сумов; итого 121000 сумов.",
+          "en": "Up to 200 kWh at 600 soums (120000) and the remaining 1 kWh at 1000 soums; making 121000 soums in total."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Blok-sxema chizishning asosiy qoidalariga nimalar kiradi?",
+          "ru": "Что входит в основные правила построения блок-схем?",
+          "en": "What is included in the basic rules for drawing flowcharts?"
+        },
+        "options": [
+          {
+            "uz": "Bitta boshlanish va kamida bitta tugash bloki boʻlishi",
+            "ru": "Один блок начала и хотя бы один блок конца",
+            "en": "One start block and at least one end block"
+          },
+          {
+            "uz": "Har bir blokdan (shartdan tashqari) bitta chiqish boʻlishi",
+            "ru": "Из каждого блока (кроме решения) один выход",
+            "en": "Each block (except a decision) has one exit"
+          },
+          {
+            "uz": "Sikl oxir-oqibat tugashi kerakligi",
+            "ru": "Цикл обязательно должен завершаться",
+            "en": "A loop must eventually end"
+          },
+          {
+            "uz": "Oqim chiziqlarining bir-biri bilan kesishishiga ruxsat berilishi",
+            "ru": "Разрешается пересечение линий потока",
+            "en": "Flow lines are allowed to cross each other"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda aytilganidek, chiziqlar kesishmasligi kerak; agar zarur boʻlsa, ulagichdan foydalanish lozim.",
+          "ru": "Как сказано в занятии, линии не должны пересекаться; при необходимости следует использовать соединители.",
+          "en": "As stated in the lesson, lines should not cross; connectors must be used if necessary."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tarmoqlanuvchi algoritmlarda xatolarni topishning asosiy usuli chegaraviy qiymatlarni tekshirish hisoblanadi.",
+          "ru": "Проверка граничных значений — основной способ найти ошибки в разветвляющихся алгоритмах.",
+          "en": "Testing boundary values is the main way to find errors in branching algorithms."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Chegaraviy qiymatlarni (masalan, aynan 200) sinash mantiqiy xatolarni aniqlashning eng yaxshi yoʻlidir.",
+          "ru": "Тестирование граничных значений (например, ровно 200) — лучший способ выявить логические ошибки.",
+          "en": "Testing boundary values (for example, exactly 200) is the best way to detect logic errors."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Blok-sxemada oltiburchak (modifikatsiya) qanday maqsadlarda ishlatiladi?",
+          "ru": "Для каких целей на блок-схеме используется шестиугольник (модификация)?",
+          "en": "For what purposes is a hexagon (preparation) used in a flowchart?"
+        },
+        "options": [
+          {
+            "uz": "Siklning boshlanishi va takrorlash parametrlarini koʻrsatish uchun",
+            "ru": "Для показа начала цикла и параметров повторения",
+            "en": "To show the start of a loop and loop parameters"
+          },
+          {
+            "uz": "Hisoblash jarayonlari va qiymat berishni koʻrsatish uchun",
+            "ru": "Для показа процессов вычисления и присваивания",
+            "en": "To show calculation processes and assignments"
+          },
+          {
+            "uz": "Alohida tasvirlangan yordamchi algoritmni chaqirish uchun",
+            "ru": "Для вызова отдельно описанного вспомогательного алгоритма",
+            "en": "To call a predefined helper algorithm"
+          },
+          {
+            "uz": "Algoritmning qayerda tugashini aniqlash uchun",
+            "ru": "Для определения места завершения алгоритма",
+            "en": "To define where the algorithm ends"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Oltiburchak takrorlanuvchi jarayonning boshlanishi va parametrlarini bildiradi, jarayon uchun toʻrtburchak ishlatiladi.",
+          "ru": "Шестиугольник обозначает начало и параметры цикла; для процесса используется прямоугольник.",
+          "en": "A hexagon marks the start and parameters of a loop; a rectangle is used for a process."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Bagaj uchun toʻlov",
+      "ru": "Оплата за багаж",
+      "en": "Luggage fee"
+    },
+    "statement": {
+      "uz": "Aviakompaniya qoidasiga koʻra, 20 kg gacha boʻlgan bagaj bepul. Agar bagaj vazni 20 kg dan oshsa, har bir qoʻshimcha kilogramm uchun 15000 soʻm toʻlash kerak. Dasturingiz bagajning vaznini (butun son) oʻqisin va toʻlanishi kerak boʻlgan summani (butun son) chiqarsin. Faqat sonni chiqaring. Masalan, 15 kiritilsa, 0 chiqadi; 25 kiritilsa, 75000 chiqadi.",
+      "ru": "По правилам авиакомпании багаж до 20 кг включительно провозится бесплатно. Если вес багажа превышает 20 кг, за каждый дополнительный килограмм необходимо заплатить 15000 сумов. Ваша программа должна прочитать вес багажа (целое число) и вывести сумму к оплате (целое число). Выводите только число. Например, при вводе 15 программа выводит 0; при вводе 25 программа выводит 75000.",
+      "en": "According to airline rules, luggage up to 20 kg inclusive is free. If the luggage weight exceeds 20 kg, a fee of 15000 soums must be paid for each extra kilogram. Your program must read the luggage weight (an integer) and print the amount to pay (an integer). Print only the number. For example, for an input of 15, the output is 0; for an input of 25, the output is 75000."
+    },
+    "code": {
+      "starter": {
+        "python": "w = int(input())\n\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int w = in.nextInt();\n        \n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int w;\n    cin >> w;\n    \n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "w = int(input())\nif w <= 20:\n    print(0)\nelse:\n    print((w - 20) * 15000)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int w = in.nextInt();\n        if (w <= 20) {\n            System.out.println(0);\n        } else {\n            System.out.println((w - 20) * 15000);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int w;\n    cin >> w;\n    if (w <= 20) {\n        cout << 0 << endl;\n    } else {\n        cout << (w - 20) * 15000 << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "15\n",
+          "expected": "0",
+          "hidden": false
+        },
+        {
+          "input": "25\n",
+          "expected": "75000",
+          "hidden": false
+        },
+        {
+          "input": "20\n",
+          "expected": "0",
+          "hidden": false
+        },
+        {
+          "input": "0\n",
+          "expected": "0",
+          "hidden": true
+        },
+        {
+          "input": "21\n",
+          "expected": "15000",
+          "hidden": true
+        },
+        {
+          "input": "50\n",
+          "expected": "450000",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

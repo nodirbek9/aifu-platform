@@ -1,0 +1,460 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Keys tahlilining birinchi qadamida qaysi savolga javob izlanadi?",
+          "ru": "На какой вопрос ищут ответ на первом шаге анализа кейса?",
+          "en": "Which question is answered in the first step of the case analysis?"
+        },
+        "options": [
+          {
+            "uz": "Nima himoyalanishi kerak edi va uning qiymati qanday",
+            "ru": "Что нужно было защитить и какова его ценность",
+            "en": "What should have been protected and what is it worth"
+          },
+          {
+            "uz": "Kim yoki nima zarar keltirdi",
+            "ru": "Кто или что нанесло вред",
+            "en": "Who or what caused the harm"
+          },
+          {
+            "uz": "Qaysi kamchilik hodisaga yoʻl ochdi",
+            "ru": "Какой недостаток открыл путь инциденту",
+            "en": "Which weakness opened the way to the incident"
+          },
+          {
+            "uz": "Qanday choralar kerak",
+            "ru": "Какие меры нужны",
+            "en": "Which measures are needed"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Tartib birinchi qadamda aktivdan boshlanadi: aktiv → tahdid → zaiflik → buzilgan xossa → oqibat → choralar.",
+          "ru": "Порядок начинается с актива: актив → угроза → уязвимость → нарушенное свойство → последствия → меры.",
+          "en": "The order starts from the asset: asset → threat → vulnerability → violated property → consequence → measures."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Dars koʻp uchraydigan xatolarda «haker» — tahdid, «yangilanmagan server» — zaiflik deb taʼkidlaydi.",
+          "ru": "Среди частых ошибок занятие утверждает: «хакер» — угроза, а «необновлённый сервер» — уязвимость.",
+          "en": "Among the common mistakes the lesson states that a hacker is a threat while an unpatched server is a vulnerability."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Xato — zaiflik oʻrniga tahdidni yozish. Tahdid kim yoki nimadan kelishi, zaiflik esa qaysi kamchilik yoʻl ochishi.",
+          "ru": "Ошибка — писать угрозу вместо уязвимости. Угроза — это кто или что наносит вред, уязвимость — какой недостаток открыл путь.",
+          "en": "The mistake is writing a threat instead of a vulnerability. A threat is who or what causes harm; a vulnerability is the weakness that opened the way."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kasalxona keysida (Keys 3) bemorlar kartalari bilan ishlash necha kun toʻxtab turgani aytiladi?",
+          "ru": "Сколько дней, по кейсу 3 (больница), работа с картами пациентов была остановлена?",
+          "en": "For how many days did work with patient records stop in case 3 (the hospital)?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Shifrlovchi virus server fayllarini shifrlagach, ish 3 kun toʻxtagan; zaxira nusxalar ham shu serverning ikkinchi diskida shifrlangan.",
+          "ru": "После шифрования файлов сервера вирусом-шифровальщиком работа остановилась на 3 дня; резервные копии на втором диске того же сервера тоже были зашифрованы.",
+          "en": "After ransomware encrypted the server files, work stopped for 3 days; the backups on the second disk of the same server were encrypted too."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Choralar vazifasi boʻyicha qaysi uch turga ajraladi?",
+          "ru": "На какие три группы по задаче делятся меры защиты?",
+          "en": "Which three groups do measures form by their function?"
+        },
+        "options": [
+          {
+            "uz": "Oldini olish",
+            "ru": "Предотвращающие",
+            "en": "Prevention"
+          },
+          {
+            "uz": "Aniqlash",
+            "ru": "Обнаруживающие",
+            "en": "Detection"
+          },
+          {
+            "uz": "Tiklash",
+            "ru": "Восстанавливающие",
+            "en": "Recovery"
+          },
+          {
+            "uz": "Hisobot qilish",
+            "ru": "Отчётные",
+            "en": "Reporting"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Choralar uch vazifa (oldini olish, aniqlash, tiklash) va uch tur (maʼmuriy, texnik, fizik) boʻyicha muvozanatli tanlanadi.",
+          "ru": "Меры подбираются сбалансированно по трём задачам (предотвращение, обнаружение, восстановление) и трём видам (административные, технические, физические).",
+          "en": "Measures are chosen in a balance of the three functions (prevention, detection, recovery) and the three kinds (administrative, technical, physical)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Universitet keysida (Keys 1) tahdid qanday sifatlangan?",
+          "ru": "Как охарактеризована угроза в кейсе 1 (университет)?",
+          "en": "How is the threat characterised in case 1 (the university)?"
+        },
+        "options": [
+          {
+            "uz": "Ichki va tasodifiy — xodim xatosi",
+            "ru": "Внутренняя и случайная — ошибка сотрудника",
+            "en": "Internal and accidental — an employee's mistake"
+          },
+          {
+            "uz": "Tashqi va qasddan — hujumchi",
+            "ru": "Внешняя и умышленная — злоумышленник",
+            "en": "External and deliberate — an attacker"
+          },
+          {
+            "uz": "Tabiiy yoki texnik nosozlik",
+            "ru": "Природная или техническая неисправность",
+            "en": "A natural cause or a technical failure"
+          },
+          {
+            "uz": "Ichki va qasddan — insayder",
+            "ru": "Внутренняя и умышленная — инсайдер",
+            "en": "Internal and deliberate — an insider"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Oʻqituvchi manzilni adashtirib guruh roʻyxatiga yubordi — tahdid ichki va tasodifiy. Tashqi va qasddan tahdid Keys 2 va Keys 3 da.",
+          "ru": "Преподаватель ошибся адресом и отправил на список группы — угроза внутренняя и случайная. Внешняя и умышленная угроза — в кейсах 2 и 3.",
+          "en": "The teacher picked the wrong address and sent it to the group list — the threat is internal and accidental. External and deliberate threats appear in cases 2 and 3."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tashqi manzilga yuborishda ogohlantiruvchi texnik nazorat vositasining qisqartmasini yozing.",
+          "ru": "Запишите аббревиатуру технического средства, предупреждающего при отправке на внешний адрес.",
+          "en": "Write the abbreviation of the technical control that warns when data is sent to an external address."
+        },
+        "answers": ["DLP", "dlp"],
+        "explanation": {
+          "uz": "Keys 1 da texnik chora sifatida DLP tizimi va tashqi manzilga yuborishda ogohlantirish taklif qilingan.",
+          "ru": "В кейсе 1 среди технических мер предложены система DLP и предупреждение при отправке на внешний адрес.",
+          "en": "Case 1 lists a DLP system and a warning when sending to external addresses among the technical measures."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Onlayn doʻkon keysida (Keys 4) zaiflik nima deb koʻrsatilgan?",
+          "ru": "Что названо уязвимостью в кейсе 4 (интернет-магазин)?",
+          "en": "What is named as the vulnerability in case 4 (the online shop)?"
+        },
+        "options": [
+          {
+            "uz": "Kiritilgan maʼlumotni tekshirmaydigan dastur kodi",
+            "ru": "Программный код, не проверяющий введённые данные",
+            "en": "Program code that does not validate the input"
+          },
+          {
+            "uz": "Zaxira nusxaning ajratilmaganligi",
+            "ru": "Резервные копии не отделены",
+            "en": "Backups that are not kept separately"
+          },
+          {
+            "uz": "Xodimlarning oʻqitilmaganligi",
+            "ru": "Сотрудники не обучены",
+            "en": "Staff who have not been trained"
+          },
+          {
+            "uz": "DDoS himoyasining yoʻqligi",
+            "ru": "Отсутствие защиты от DDoS",
+            "en": "The lack of DDoS protection"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "SQL-inyeksiya aynan shu tekshirmaydigan kod orqali ishlagan; narxlar bazasida yaxlitlik buzilgan.",
+          "ru": "SQL-инъекция сработала именно через этот непроверяющий код; в базе цен нарушена целостность.",
+          "en": "The SQL injection worked through exactly that non-validating code; integrity of the price database was violated."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Keyslarning tahlili boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения по разбору кейсов верны?",
+          "en": "Which statements about the analysed cases are correct?"
+        },
+        "options": [
+          {
+            "uz": "Keys 3 da zaxira nusxalar shu serverning ikkinchi diskida saqlangani uchun ular ham shifrlangan",
+            "ru": "В кейсе 3 резервные копии хранились на втором диске того же сервера и тоже были зашифрованы",
+            "en": "In case 3 the backups were kept on the second disk of the same server and were encrypted too"
+          },
+          {
+            "uz": "Keys 5 da portal DDoS hujumi tufayli 6 soat ochilmagan",
+            "ru": "В кейсе 5 портал не открывался 6 часов из-за DDoS-атаки",
+            "en": "In case 5 the portal was unreachable for 6 hours because of a DDoS attack"
+          },
+          {
+            "uz": "Keys 6 da buzilgan xossalar orasida autentiklik ham koʻrsatilgan",
+            "ru": "В кейсе 6 среди нарушенных свойств названа и аутентичность",
+            "en": "In case 6 authenticity is listed among the violated properties"
+          },
+          {
+            "uz": "Keys 2 da faqat konfidensiallik buzilgan, yaxlitlik buzilmagan",
+            "ru": "В кейсе 2 нарушена только конфиденциальность, целостность не затронута",
+            "en": "In case 2 only confidentiality was violated, integrity was untouched"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Keys 2 da hisob holati ruxsatsiz oʻzgargani uchun yaxlitlik ham buzilgan deb koʻrsatilgan.",
+          "ru": "В кейсе 2 целостность также названа нарушенной: состояние счёта изменилось без разрешения.",
+          "en": "Case 2 names integrity as violated too: the account state changed without authorisation."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, oldini olish choralarini 100 foiz bajarib, hodisalarni butunlay yoʻq qilish mumkin.",
+          "ru": "По занятию, выполнив предотвращение на сто процентов, инциденты можно полностью исключить.",
+          "en": "According to the lesson, preventing everything perfectly makes incidents impossible."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda 100 foiz oldini olish imkonsiz deyiladi, shuning uchun aniqlash va tiklash rejasi ham kerak.",
+          "ru": "В занятии сказано, что стопроцентное предотвращение невозможно, поэтому нужны обнаружение и план восстановления.",
+          "en": "The lesson says that 100 percent prevention is impossible, so detection and a recovery plan are needed too."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Keys tahlilini bajarishdan oldingi nazorat savollari",
+      "ru": "Проверочные вопросы перед разбором кейсов",
+      "en": "Check questions before doing the case analysis"
+    },
+    "statement": {
+      "uz": "Mustaqil tahlil uchun berilgan uch keysni 6 qadamli jadval boʻyicha yozishdan oldin besh savolga javob bering. Savollar Keys tahlili usuli, choralar turlari va «Oʻzingizni tekshiring» boʻlimidagi vaziyatlarga asoslangan. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Прежде чем разбирать три кейса для самостоятельного анализа по таблице из 6 шагов, ответьте на пять вопросов. Они опираются на метод анализа, виды мер и ситуации из раздела «Проверьте себя». Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before writing up the three cases of the independent task with the 6-step table, answer five questions. They rest on the analysis method, the kinds of measures and the situations in the Check yourself section. The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Mustaqil tahlil topshirigʻida uchta keysni qanday koʻrinishda tahlil qilish soʻralgan?",
+            "ru": "В какой форме предлагается разобрать три кейса задания для самостоятельного анализа?",
+            "en": "In what form does the independent task ask you to analyse the three cases?"
+          },
+          "options": [
+            {
+              "uz": "Jadval koʻrinishida, olti qadam boʻyicha",
+              "ru": "В виде таблицы, по шести шагам",
+              "en": "As a table, following the six steps"
+            },
+            {
+              "uz": "Bitta umumiy xulosa koʻrinishida",
+              "ru": "В виде одного общего вывода",
+              "en": "As one general conclusion"
+            },
+            {
+              "uz": "Faqat tahdidlar roʻyxati koʻrinishida",
+              "ru": "Только как список угроз",
+              "en": "Only as a list of threats"
+            },
+            {
+              "uz": "Ikki variantli solishtirish koʻrinishida",
+              "ru": "В виде сравнения двух вариантов",
+              "en": "As a comparison of two variants"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Topshiriq: uchta keysni jadval shaklida, 6 qadam boʻyicha tahlil qilish.",
+            "ru": "Задание: разобрать три кейса в виде таблицы по 6 шагам.",
+            "en": "The task is to analyse the three cases in table form, following the 6 steps."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Ishdan boʻshagan xodim hisobi ikki oy oʻchirilmagani qaysi siyosat buzilishidir?",
+            "ru": "Нарушением какой политики является то, что учётную запись уволенного сотрудника не удаляли два месяца?",
+            "en": "Not deleting the account of an employee who left for two months breaks which policy?"
+          },
+          "options": [
+            {
+              "uz": "Kirishni boshqarish siyosati — huquqlarni oʻz vaqtida olib qoʻyish",
+              "ru": "Политика управления доступом — своевременный отзыв прав",
+              "en": "The access control policy — revoking rights in time"
+            },
+            {
+              "uz": "Maʼlumotlarni tasniflash siyosati",
+              "ru": "Политика классификации данных",
+              "en": "The data classification policy"
+            },
+            {
+              "uz": "Zaxira nusxalash siyosati",
+              "ru": "Политика резервного копирования",
+              "en": "The backup policy"
+            },
+            {
+              "uz": "Qabul qilinadigan foydalanish siyosati",
+              "ru": "Политика приемлемого использования",
+              "en": "The acceptable use policy"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Hisob faol qolgani uchun xodim uydan kirib, mijozlar bazasini nusxalab oldi — bu kirish huquqlarini oʻz vaqtida qaytarib olish tartozligi buzilishi.",
+            "ru": "Учётная запись осталась активной, и сотрудник из дома скопировал базу клиентов — нарушен порядок своевременного отзыва прав доступа.",
+            "en": "The account stayed active, so the employee logged in from home and copied the customer database — the rule of revoking access in time was broken."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Oʻqituvchi noutbukini avtobusda unutganda, diskdagi shifrlanmagan imtihon savollarini diskni toʻliq shifrlash himoya qilgan boʻlar edi.",
+            "ru": "Если бы преподаватель забыл ноутбук в автобусе, данные на диске защищало бы его полное шифрование.",
+            "en": "When a teacher leaves a laptop on a bus, full disk encryption is what would have protected the data on the disk."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda noutbuk yoʻqolganda maʼlumotni himoya qiluvchi chora sifatida diskni toʻliq shifrlash (masalan, BitLocker) koʻrsatilgan.",
+            "ru": "В занятии мерой защиты при потере ноутбука названо полное шифрование диска (например, BitLocker).",
+            "en": "The lesson names full disk encryption (for example BitLocker) as the measure that protects data when a laptop is lost."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Davlat xizmati portali keysida (Keys 5) taklif qilingan choralar qaysilari?",
+            "ru": "Какие меры предложены в кейсе 5 (портал государственных услуг)?",
+            "en": "Which measures are proposed in case 5 (the government services portal)?"
+          },
+          "options": [
+            {
+              "uz": "Provayder darajasida DDoS filtrlash",
+              "ru": "Фильтрация DDoS на уровне провайдера",
+              "en": "DDoS filtering at the provider level"
+            },
+            {
+              "uz": "CDN",
+              "ru": "CDN",
+              "en": "A CDN"
+            },
+            {
+              "uz": "Zaxira maʼlumotlar markazi",
+              "ru": "Резервный центр обработки данных",
+              "en": "A standby data centre"
+            },
+            {
+              "uz": "Barcha xodimlarni majburiy parol almashishga majburlash",
+              "ru": "Принудительная смена паролей всех сотрудников",
+              "en": "Forcing every employee to change their password"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Keys 5 da bu uch chora va muddatni uzaytirish tartibi (maʼmuriy kompensatsiya) koʻrsatilgan; parol almashish u yerda yoʻq.",
+            "ru": "В кейсе 5 названы эти три меры и порядок продления срока (административная компенсация); смена паролей там не предложена.",
+            "en": "Case 5 lists these three measures plus a procedure for extending the deadline; changing passwords is not among them."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Kichik forum maʼlumotlari sizgach, shu parolni boshqa saytlarda sinashga asoslangan hujumning inglizcha nomini yozing.",
+            "ru": "Запишите английское название атаки, которая использует повторное применение утёкшего пароля на других сайтах.",
+            "en": "Write the English name of the attack that tries a leaked password again on other sites."
+          },
+          "answers": ["credential stuffing", "Credential stuffing", "credential-stuffing"],
+          "explanation": {
+            "uz": "Keys 6 da tahdid shu nom bilan berilgan: sizib chiqqan login va parollarni boshqa saytlarda sinash.",
+            "ru": "В кейсе 6 угроза названа этим термином: проверка утёкших логинов и паролей на других сайтах.",
+            "en": "Case 6 names the threat by this term: trying leaked logins and passwords on other sites."
+          }
+        }
+      ]
+    }
+  }
+}

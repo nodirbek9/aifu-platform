@@ -1,0 +1,360 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Excel da jadval sifatida formatlash (Format as Table, Ctrl+T) qanday imkoniyat beradi?",
+          "ru": "Что даёт форматирование как таблицы (Format as Table, Ctrl+T) в Excel?",
+          "en": "What does Format as Table (Ctrl+T) give you in Excel?"
+        },
+        "options": [
+          {
+            "uz": "Avtomatik filtrlar, chiziqli ranglash va formulalarning yangi satrlarga oʻzi tarqalishi",
+            "ru": "Автоматические фильтры, чередование цвета строк и автоматическое распространение формул на новые строки",
+            "en": "Automatic filters, banded rows, and formulas that spread to new rows by themselves"
+          },
+          {
+            "uz": "Faqat jadvalni chiroyli koʻrinishga keltirish",
+            "ru": "Только красивое оформление таблицы",
+            "en": "Only a nice visual appearance for the table"
+          },
+          {
+            "uz": "Yigʻma jadval (PivotTable) yaratish",
+            "ru": "Создание сводной таблицы (PivotTable)",
+            "en": "Creating a pivot table (PivotTable)"
+          },
+          {
+            "uz": "Sarlavha satrini mahkamlash",
+            "ru": "Закрепление строки заголовка",
+            "en": "Freezing the header row"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Format as Table (Ctrl+T) jadvalga avtomatik filtrlar qoʻshadi, qatorlarni navbat bilan ranglab chiqaradi va formulalar yangi satrlarga oʻzi tarqaladi; shuningdek ustun nomi boʻyicha murojaat imkoni paydo boʻladi.",
+          "ru": "Format as Table (Ctrl+T) добавляет автоматические фильтры, чередует цвет строк, а формулы сами распространяются на новые строки; также появляется возможность ссылаться по имени столбца.",
+          "en": "Format as Table (Ctrl+T) adds automatic filters, alternates row colours, and lets formulas spread to new rows by themselves; it also enables references by column name."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Sarlavha satrini mahkamlash uchun View → Freeze Panes buyrugʻi ishlatiladi.",
+          "ru": "Для закрепления строки заголовка используется команда View → Freeze Panes.",
+          "en": "The command View → Freeze Panes is used to freeze the header row."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Ha, sarlavha satri (va kerak boʻlsa ustunlar) View → Freeze Panes orqali mahkamlanadi; bundan soʻng jadvalni aylantirsa ham sarlavha koʻrinib turadi.",
+          "ru": "Да, строка заголовка (а при необходимости и столбцы) закрепляется через View → Freeze Panes; после этого заголовок виден при прокрутке.",
+          "en": "Yes, the header row (and columns if needed) is frozen via View → Freeze Panes; after that the header stays visible when scrolling."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Quyidagilardan qaysilari katta jadvallarni koʻrish vositalari hisoblanadi?",
+          "ru": "Какие из перечисленного относятся к средствам просмотра больших таблиц?",
+          "en": "Which of the following are tools for viewing large tables?"
+        },
+        "options": [
+          {
+            "uz": "Satr va ustunlarni mahkamlash (Freeze Panes)",
+            "ru": "Закрепление строк и столбцов (Freeze Panes)",
+            "en": "Freezing rows and columns (Freeze Panes)"
+          },
+          {
+            "uz": "Guruhlash (Data → Group)",
+            "ru": "Группировка (Data → Group)",
+            "en": "Grouping (Data → Group)"
+          },
+          {
+            "uz": "Dublikatlarni olib tashlash (Remove Duplicates)",
+            "ru": "Удаление дубликатов (Remove Duplicates)",
+            "en": "Removing duplicates (Remove Duplicates)"
+          },
+          {
+            "uz": "Bitta faylning turli qismlarini yonma-yon koʻrish (New Window, Arrange All)",
+            "ru": "Просмотр разных частей файла рядом (New Window, Arrange All)",
+            "en": "Viewing different parts of the file side by side (New Window, Arrange All)"
+          }
+        ],
+        "correct": [
+          0,
+          1,
+          3
+        ],
+        "explanation": {
+          "uz": "Koʻrish vositalari: jadval formati, mahkamlash (Freeze Panes), guruhlash (Group) va bir nechta oyna (New Window). Remove Duplicates esa koʻrish emas, balki maʼlumotlarni tozalash vositasi.",
+          "ru": "К средствам просмотра относятся: формат таблицы, закрепление (Freeze Panes), группировка (Group) и несколько окон (New Window). Remove Duplicates — это средство очистки данных, а не просмотра.",
+          "en": "Viewing tools are: table format, freezing (Freeze Panes), grouping (Group) and several windows (New Window). Remove Duplicates is a data-cleaning tool, not a viewing tool."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yigʻma jadvalda (PivotTable) Values maydonida qaysi hisoblash amallari qoʻllaniladi?",
+          "ru": "Какие вычисления применяются в поле Values сводной таблицы (PivotTable)?",
+          "en": "Which calculations are used in the Values field of a PivotTable?"
+        },
+        "options": [
+          {
+            "uz": "Faqat yigʻindi (Sum)",
+            "ru": "Только сумма (Sum)",
+            "en": "Only sum (Sum)"
+          },
+          {
+            "uz": "Sum, Count, Average, Max va boshqa agregatlar",
+            "ru": "Sum, Count, Average, Max и другие агрегаты",
+            "en": "Sum, Count, Average, Max and other aggregates"
+          },
+          {
+            "uz": "Faqat sana boʻyicha guruhlash",
+            "ru": "Только группировка по дате",
+            "en": "Only date grouping"
+          },
+          {
+            "uz": "Faqat filtr qoʻllash",
+            "ru": "Только применение фильтра",
+            "en": "Only applying a filter"
+          }
+        ],
+        "correct": [
+          1
+        ],
+        "explanation": {
+          "uz": "PivotTable ning Values maydoni Sum, Count, Average, Max, Min va boshqa agregatlarni qoʻllaydi. Guruhlash Rows/Columns maydonlarida, filtr esa Filters maydonida amalga oshiriladi.",
+          "ru": "Поле Values сводной таблицы поддерживает Sum, Count, Average, Max, Min и другие агрегаты. Группировка выполняется в полях Rows/Columns, а фильтр — в поле Filters.",
+          "en": "The Values field of a PivotTable supports Sum, Count, Average, Max, Min and other aggregates. Grouping is done in the Rows/Columns fields, and filtering in the Filters field."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Excel da namuna boʻyicha avtomatik toʻldirish (Flash Fill) klaviatura yorligʻini yozing.",
+          "ru": "Напишите клавиатурное сочетание для мгновенного заполнения (Flash Fill) в Excel.",
+          "en": "Write the keyboard shortcut for Flash Fill in Excel."
+        },
+        "answers": [
+          "Ctrl+E",
+          "Ctrl + E"
+        ],
+        "explanation": {
+          "uz": "Flash Fill — namuna boʻyicha avtomatik toʻldirish vositasi; uning klaviatura yorligʻi Ctrl+E.",
+          "ru": "Flash Fill — средство автозаполнения по образцу; его клавиатурное сочетание — Ctrl+E.",
+          "en": "Flash Fill is the automatic fill-by-example tool; its keyboard shortcut is Ctrl+E."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda koʻrilgan savdo maʼlumotlarida Toshkent hududi uchun uchta yozuv mavjud: 1 200 000, 900 000 va 300 000 soʻm. Toshkent yigʻindisi qancha?",
+          "ru": "В данных о продажах из занятия по региону Toshkent есть три записи: 1 200 000, 900 000 и 300 000 сумов. Чему равна сумма по Toshkent?",
+          "en": "In the sales data from the lesson, the region Toshkent has three records: 1 200 000, 900 000 and 300 000 soums. What is the total for Toshkent?"
+        },
+        "answers": [
+          2400000
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "1 200 000 + 900 000 + 300 000 = 2 400 000. Darsning chiqish natijasida ham xuddi shu qiymat — «Toshkent: 2400000» — ko rsatilgan.",
+          "ru": "1 200 000 + 900 000 + 300 000 = 2 400 000. В выводе из занятия также показано это значение — «Toshkent: 2400000».",
+          "en": "1 200 000 + 900 000 + 300 000 = 2 400 000. The lesson output also shows this value — «Toshkent: 2400000»."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Yigʻma jadval bilan ishlashda qaysi xatolar notoʻgʻri natijalarga olib keladi?",
+          "ru": "Какие ошибки при работе со сводными таблицами приводят к неверным результатам?",
+          "en": "Which mistakes when working with pivot tables lead to wrong results?"
+        },
+        "options": [
+          {
+            "uz": "Manba jadvalda boʻsh satrlar qoldirish",
+            "ru": "Оставить в исходной таблице пустые строки",
+            "en": "Leaving empty rows in the source table"
+          },
+          {
+            "uz": "Manba oʻzgarganda yigʻma jadvalni yangilamaslik (Refresh qilmaslik)",
+            "ru": "Не обновить сводную таблицу (не нажать Refresh) после изменения источника",
+            "en": "Not refreshing the pivot table (not pressing Refresh) after the source changes"
+          },
+          {
+            "uz": "Ustunlarda bitta turdagi maʼlumot saqlash",
+            "ru": "Хранить в столбцах данные одного типа",
+            "en": "Storing one data type per column"
+          },
+          {
+            "uz": "Birlashtirilgan kataklar bilan jadval formatlash",
+            "ru": "Форматирование таблицы с объединёнными ячейками",
+            "en": "Formatting a table with merged cells"
+          }
+        ],
+        "correct": [
+          0,
+          1,
+          3
+        ],
+        "explanation": {
+          "uz": "Boʻsh satrlar, birlashtirilgan kataklar va yangilamaslik — barchasida yigʻma jadval notoʻgʻri ishlaydi yoki eskirgan maʼlumot koʻrsatadi. Ustunlarda bitta turdagi maʼlumot saqlash esa toʻgʻri amaliyot — bu xato emas.",
+          "ru": "Пустые строки, объединённые ячейки и отсутствие обновления — во всех этих случаях сводная таблица работает неправильно или показывает устаревшие данные. Хранение одного типа данных в столбцах — это правильная практика, а не ошибка.",
+          "en": "Empty rows, merged cells and not refreshing — in all these cases the pivot table works incorrectly or shows stale data. Storing one data type per column is correct practice, not a mistake."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Goal Seek (Data → What-If Analysis) vositasi qanday vazifani bajaradi?",
+          "ru": "Какую задачу решает инструмент Goal Seek (Data → What-If Analysis)?",
+          "en": "What task does the Goal Seek tool (Data → What-If Analysis) solve?"
+        },
+        "options": [
+          {
+            "uz": "Bir nechta ssenariylarni saqlaydi va ularni jadvallarda solishtiradi",
+            "ru": "Сохраняет несколько сценариев и сравнивает их в таблицах",
+            "en": "Saves several scenarios and compares them in tables"
+          },
+          {
+            "uz": "Kerakli natijaga erishish uchun bitta kirish qiymatini topadi",
+            "ru": "Находит одно входное значение, необходимое для достижения нужного результата",
+            "en": "Finds one input value needed to reach a desired result"
+          },
+          {
+            "uz": "Ikki parametr oʻzgarganda barcha mumkin natijalar jadvalini yaratadi",
+            "ru": "Создаёт таблицу всех возможных результатов при изменении двух параметров",
+            "en": "Creates a table of all possible results when two parameters change"
+          },
+          {
+            "uz": "Yigʻma jadval yaratib, maʼlumotlarni guruhlaydi",
+            "ru": "Создаёт сводную таблицу, группируя данные",
+            "en": "Creates a pivot table by grouping data"
+          }
+        ],
+        "correct": [
+          1
+        ],
+        "explanation": {
+          "uz": "Goal Seek faqat bitta kirish qiymatini qidiradi — masalan, foyda 50 mln soʻm boʻlishi uchun qancha mahsulot sotish kerak. Ssenariylar menejerida bir nechta variant saqlanadi; Data Table ikki parametr uchun ishlatiladi; PivotTable esa guruhlab umumlashtiradi.",
+          "ru": "Goal Seek ищет только одно входное значение — например, сколько нужно продать, чтобы прибыль составила 50 млн сумов. В диспетчере сценариев хранится несколько вариантов; Data Table используется для двух параметров; PivotTable группирует и обобщает.",
+          "en": "Goal Seek looks for exactly one input value — for example, how many products must be sold for the profit to reach 50 million soums. Scenario Manager stores several variants; Data Table is used for two parameters; PivotTable groups and summarizes."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kengaytirilgan filtr (Advanced Filter) oddiy filtrdan farqli ravishda VA (AND) va YOKI (OR) shartlarini bitta alohida shartlar jadvalida birga ishlatishga imkon beradi.",
+          "ru": "Расширенный фильтр (Advanced Filter), в отличие от обычного, позволяет одновременно использовать условия И (AND) и ИЛИ (OR) в отдельной таблице критериев.",
+          "en": "The Advanced Filter, unlike the regular filter, allows AND and OR conditions to be used together in a separate criteria table."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Ha, kengaytirilgan filtr murakkab shartlarni (VA/YOKI) alohida shartlar jadvalida yozishga imkon beradi — bu oddiy avtofiltrdagi oddiy shartlardan ancha kuchli.",
+          "ru": "Да, расширенный фильтр позволяет записывать сложные условия (И/ИЛИ) в отдельной таблице критериев — это значительно мощнее простых условий обычного автофильтра.",
+          "en": "Yes, the Advanced Filter allows complex conditions (AND/OR) to be written in a separate criteria table — this is far more powerful than the simple conditions of the regular auto-filter."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Hudud boʻyicha savdo yigʻindisi",
+      "ru": "Сумма продаж по регионам",
+      "en": "Sales total by region"
+    },
+    "statement": {
+      "uz": "Dasturingiz savdo yozuvlarini oʻqisin. Har bir yozuv bir qatorda uchta qiymatdan iborat: hudud (boʻsh joy yoʻq), tovar (boʻsh joy yoʻq) va summa (musbat butun son). Kirish boʻsh qatorsiz tugaydi (EOF). Har bir hudud uchun yigʻindini hisoblang va natijani hudud nomini alifbo tartibida chiqaring: birinchi qatorda eng kichik hudud. Chiqish formati: «hudud: yigʻindi». Har bir hudud alohida qatorda. Masalan, «Buxoro choy 450000» va «Buxoro qahva 300000» kiritilsa, «Buxoro: 750000» chiqadi.",
+      "ru": "Ваша программа должна читать записи о продажах. Каждая запись — одна строка из трёх значений: регион (без пробелов), товар (без пробелов) и сумма (положительное целое число). Ввод завершается концом файла (EOF). Для каждого региона подсчитайте сумму и выведите результаты, отсортировав регионы в алфавитном порядке: первая строка — наименьший по алфавиту регион. Формат вывода: «регион: сумма». Каждый регион на отдельной строке. Например, при вводе «Buxoro choy 450000» и «Buxoro qahva 300000» выводится «Buxoro: 750000».",
+      "en": "Your program must read sales records. Each record is one line with three values: region (no spaces), product (no spaces) and amount (a positive integer). Input ends at EOF. For each region compute the total and print the results with regions in alphabetical order: first line is the alphabetically smallest region. Output format: «region: total». One region per line. For example, with input «Buxoro choy 450000» and «Buxoro qahva 300000» the output is «Buxoro: 750000»."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\njami = {}\nfor satr in sys.stdin.read().split(\"\\n\"):\n    if not satr.strip():\n        continue\n    hudud, tovar, summa = satr.split()\n    jami[hudud] = jami.get(hudud, 0) + int(summa)\nfor h in jami:\n    print(f\"{h}: {jami[h]}\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        while (in.hasNext()) {\n            String hudud = in.next();\n            String tovar = in.next();\n            long summa = in.nextLong();\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string hudud, tovar;\n    long long summa;\n    while (cin >> hudud >> tovar >> summa) {\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\njami = {}\nfor satr in sys.stdin.read().split(\"\\n\"):\n    if not satr.strip():\n        continue\n    hudud, tovar, summa = satr.split()\n    jami[hudud] = jami.get(hudud, 0) + int(summa)\nfor h in sorted(jami):\n    print(f\"{h}: {jami[h]}\")\n",
+        "java": "import java.util.Map;\nimport java.util.Scanner;\nimport java.util.TreeMap;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        Map<String, Long> jami = new TreeMap<>();\n        while (in.hasNext()) {\n            String hudud = in.next(), tovar = in.next();\n            long summa = in.nextLong();\n            jami.merge(hudud, summa, Long::sum);\n        }\n        for (String h : jami.keySet()) {\n            System.out.println(h + \": \" + jami.get(h));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\nusing namespace std;\n\nint main() {\n    map<string, long long> jami;\n    string hudud, tovar;\n    long long summa;\n    while (cin >> hudud >> tovar >> summa) {\n        jami[hudud] += summa;\n    }\n    for (auto& p : jami) {\n        cout << p.first << \": \" << p.second << \"\\n\";\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "Toshkent choy 1200000\nSamarqand choy 800000\nToshkent qahva 900000\nBuxoro shakar 450000\nSamarqand qahva 650000\nToshkent shakar 300000\nBuxoro choy 500000\n",
+          "expected": "Buxoro: 950000\nSamarqand: 1450000\nToshkent: 2400000",
+          "hidden": false
+        },
+        {
+          "input": "Andijon guruch 200000\nAndijon don 150000\n",
+          "expected": "Andijon: 350000",
+          "hidden": false
+        },
+        {
+          "input": "Namangan meva 300000\nFargʻona meva 400000\nNamangan don 100000\nFargʻona guruch 250000\nNamangan guruch 200000\n",
+          "expected": "Fargʻona: 650000\nNamangan: 600000",
+          "hidden": true
+        },
+        {
+          "input": "Xorazm paxta 1000000\nQashqadaryo gaz 2000000\nXorazm gaz 500000\nQashqadaryo paxta 1500000\nSurxondaryo oltin 3000000\n",
+          "expected": "Qashqadaryo: 3500000\nSurxondaryo: 3000000\nXorazm: 1500000",
+          "hidden": true
+        },
+        {
+          "input": "A mahsulot 100\nB mahsulot 200\nA boshqa 300\nC mahsulot 400\nB boshqa 100\n",
+          "expected": "A: 400\nB: 300\nC: 400",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

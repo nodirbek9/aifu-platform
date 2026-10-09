@@ -1,0 +1,212 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 10,
+        "prompt": {
+          "uz": "Windows ochiq kodli operatsion tizim hisoblanadi.",
+          "ru": "Windows является операционной системой с открытым исходным кодом.",
+          "en": "Windows is an open-source operating system."
+        },
+        "explanation": {
+          "uz": "Windows yopiq kodli (proprietar) operatsion tizimdir. Linux esa ochiq kodli.",
+          "ru": "Windows — это проприетарная операционная система с закрытым исходным кодом.",
+          "en": "Windows is a proprietary, closed-source operating system."
+        },
+        "options": [
+          { "uz": "Rost", "ru": "Истина", "en": "True" },
+          { "uz": "Yolgʻon", "ru": "Ложь", "en": "False" }
+        ],
+        "correct": [1]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 10,
+        "prompt": {
+          "uz": "Qaysi operatsion tizim Apple kompaniyasi tomonidan ishlab chiqilgan?",
+          "ru": "Какая операционная система разработана компанией Apple?",
+          "en": "Which operating system is developed by Apple?"
+        },
+        "explanation": {
+          "uz": "macOS Apple kompaniyasining kompyuterlari uchun moʻljallangan operatsion tizimdir.",
+          "ru": "macOS — это операционная система для компьютеров компании Apple.",
+          "en": "macOS is the operating system developed by Apple for their computers."
+        },
+        "options": [
+          { "uz": "Windows", "ru": "Windows", "en": "Windows" },
+          { "uz": "Linux", "ru": "Linux", "en": "Linux" },
+          { "uz": "macOS", "ru": "macOS", "en": "macOS" },
+          { "uz": "Android", "ru": "Android", "en": "Android" }
+        ],
+        "correct": [2]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 10,
+        "prompt": {
+          "uz": "Quyidagilardan qaysilari Linux distributivlari hisoblanadi?",
+          "ru": "Какие из следующих являются дистрибутивами Linux?",
+          "en": "Which of the following are Linux distributions?"
+        },
+        "explanation": {
+          "uz": "Ubuntu va Fedora mashhur Linux distributivlari hisoblanadi.",
+          "ru": "Ubuntu и Fedora — популярные дистрибутивы Linux.",
+          "en": "Ubuntu and Fedora are popular Linux distributions."
+        },
+        "options": [
+          { "uz": "Ubuntu", "ru": "Ubuntu", "en": "Ubuntu" },
+          { "uz": "Fedora", "ru": "Fedora", "en": "Fedora" },
+          { "uz": "Windows 11", "ru": "Windows 11", "en": "Windows 11" },
+          { "uz": "macOS", "ru": "macOS", "en": "macOS" }
+        ],
+        "correct": [0, 1]
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 10,
+        "prompt": {
+          "uz": "GUI qisqartmasi nimani anglatadi? (Ingliz tilida)",
+          "ru": "Что означает аббревиатура GUI? (На английском)",
+          "en": "What does the acronym GUI stand for?"
+        },
+        "explanation": {
+          "uz": "GUI - bu Graphical User Interface, yaʼni grafik foydalanuvchi interfeysi.",
+          "ru": "GUI расшифровывается как Graphical User Interface (графический интерфейс пользователя).",
+          "en": "GUI stands for Graphical User Interface."
+        },
+        "answers": [
+          "Graphical User Interface",
+          "graphical user interface"
+        ]
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 10,
+        "prompt": {
+          "uz": "Linux yadrosi Linus Torvalds tomonidan yaratilgan.",
+          "ru": "Ядро Linux было создано Линусом Торвальдсом.",
+          "en": "The Linux kernel was created by Linus Torvalds."
+        },
+        "explanation": {
+          "uz": "Linus Torvalds 1991-yilda Linux yadrosini yaratgan.",
+          "ru": "Линус Торвальдс создал ядро Linux в 1991 году.",
+          "en": "Linus Torvalds created the Linux kernel in 1991."
+        },
+        "options": [
+          { "uz": "Rost", "ru": "Истина", "en": "True" },
+          { "uz": "Yolgʻon", "ru": "Ложь", "en": "False" }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 10,
+        "prompt": {
+          "uz": "Qaysi operatsion tizim odatda NTFS fayl tizimidan foydalanadi?",
+          "ru": "Какая операционная система по умолчанию использует файловую систему NTFS?",
+          "en": "Which operating system uses the NTFS file system by default?"
+        },
+        "explanation": {
+          "uz": "NTFS Microsoft tomonidan yaratilgan va Windows tizimlarida ishlatiladi.",
+          "ru": "NTFS была создана Microsoft и используется в системах Windows.",
+          "en": "NTFS was created by Microsoft and is used in Windows systems."
+        },
+        "options": [
+          { "uz": "macOS", "ru": "macOS", "en": "macOS" },
+          { "uz": "Linux", "ru": "Linux", "en": "Linux" },
+          { "uz": "Windows", "ru": "Windows", "en": "Windows" },
+          { "uz": "MS-DOS", "ru": "MS-DOS", "en": "MS-DOS" }
+        ],
+        "correct": [2]
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 10,
+        "prompt": {
+          "uz": "Windows operatsion tizimining birinchi versiyasi (Windows 1.0) qaysi yilda chiqarilgan?",
+          "ru": "В каком году была выпущена первая версия операционной системы Windows (Windows 1.0)?",
+          "en": "In what year was the first version of Windows (Windows 1.0) released?"
+        },
+        "explanation": {
+          "uz": "Windows 1.0 1985-yilning noyabr oyida chiqarilgan.",
+          "ru": "Windows 1.0 была выпущена в ноябре 1985 года.",
+          "en": "Windows 1.0 was released in November 1985."
+        },
+        "answers": [1985],
+        "tolerance": 0
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 10,
+        "prompt": {
+          "uz": "Quyidagi fayl tizimlaridan qaysilari asosan macOSʼda qoʻllaniladi?",
+          "ru": "Какие из следующих файловых систем в основном используются в macOS?",
+          "en": "Which of the following file systems are primarily used in macOS?"
+        },
+        "explanation": {
+          "uz": "Apple File System (APFS) va HFS+ Apple operatsion tizimlarida qoʻllaniladi.",
+          "ru": "Apple File System (APFS) и HFS+ используются в операционных системах Apple.",
+          "en": "Apple File System (APFS) and HFS+ are used in Apple operating systems."
+        },
+        "options": [
+          { "uz": "APFS", "ru": "APFS", "en": "APFS" },
+          { "uz": "NTFS", "ru": "NTFS", "en": "NTFS" },
+          { "uz": "HFS+", "ru": "HFS+", "en": "HFS+" },
+          { "uz": "ext4", "ru": "ext4", "en": "ext4" }
+        ],
+        "correct": [0, 2]
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Operatsion tizim nomini chiqarish",
+      "ru": "Вывод названия операционной системы",
+      "en": "Print Operating System name"
+    },
+    "statement": {
+      "uz": "Operatsion tizim nomini kiritish sifatida qabul qilib, \"OS: [nomi]\" shaklida chiqaruvchi dastur yozing. Masalan, agar kiruvchi maʼlumot \"Windows\" boʻlsa, dastur \"OS: Windows\" deb chiqarishi kerak.",
+      "ru": "Напишите программу, которая принимает название ОС и выводит \"OS: [название]\". Например, если на входе \"Windows\", программа должна вывести \"OS: Windows\".",
+      "en": "Write a program that takes an OS name as input and prints \"OS: [name]\". For example, if the input is \"Windows\", it should output \"OS: Windows\"."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\ndef main():\n    pass\n\nif __name__ == '__main__':\n    main()\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n\nusing namespace std;\n\nint main() {\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\nname = sys.stdin.read().strip()\nprint(f\"OS: {name}\")\n",
+        "java": "import java.util.Scanner;\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        if (scanner.hasNext()) {\n            String name = scanner.next();\n            System.out.println(\"OS: \" + name);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\nint main() {\n    string name;\n    if (cin >> name) {\n        cout << \"OS: \" << name << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "Windows\n",
+          "expected": "OS: Windows\n",
+          "hidden": false
+        },
+        {
+          "input": "macOS\n",
+          "expected": "OS: macOS\n",
+          "hidden": true
+        },
+        {
+          "input": "Linux\n",
+          "expected": "OS: Linux\n",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

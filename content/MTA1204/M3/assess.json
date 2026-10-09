@@ -1,0 +1,318 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ikki xil kalit bitta savatga tushib qolsa, bu hodisa qanday ataladi?",
+          "ru": "Как называется ситуация, когда два разных ключа попадают в одну корзину?",
+          "en": "What is it called when two different keys land in the same bucket?"
+        },
+        "options": [
+          {
+            "uz": "Toʻqnashuv (kolliziya)",
+            "ru": "Коллизия",
+            "en": "A collision"
+          },
+          {
+            "uz": "Qayta xeshlash",
+            "ru": "Перехеширование",
+            "en": "Rehashing"
+          },
+          {
+            "uz": "Yuklanish koeffitsienti",
+            "ru": "Коэффициент загрузки",
+            "en": "The load factor"
+          },
+          {
+            "uz": "Zanjirlash",
+            "ru": "Метод цепочек",
+            "en": "Chaining"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Toʻqnashuv — ikki xil kalitning bitta indeksga tushishi. Zanjirlash esa buni hal qilish usullaridan biri: har bir savat roʻyxat boʻladi va toʻqnashgan kalitlar shu roʻyxatga qoʻshiladi.",
+          "ru": "Коллизия — это когда разные ключи дают один индекс. Цепочки — один из способов её разрешить: каждая корзина является списком, и коллидирующие ключи добавляются в него.",
+          "en": "A collision is two different keys giving the same index. Chaining is one way of resolving it: every bucket is a list and colliding keys are added to that list."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Fibonachchi izlash oraliqni xuddi binar izlashdek oʻrtadan boʻlib kamaytiradi.",
+          "ru": "Фибоначчи-поиск уменьшает область, деля её пополам, как бинарный поиск.",
+          "en": "Fibonacci search shrinks the range by halving it, just like binary search."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "U oraliqni ketma-ket Fibonachchi sonlari nisbatida (≈ 0,618) boʻladi va boʻlish amali umuman ishlatilmaydi — faqat qoʻshish va ayirish.",
+          "ru": "Он делит область в отношении последовательных чисел Фибоначчи (≈ 0,618) и вообще не использует деление — только сложение и вычитание.",
+          "en": "It splits the range in the ratio of consecutive Fibonacci numbers (≈ 0.618) and uses no division at all — only addition and subtraction."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda til kutubxonalaridagi tayyor xesh-jadvallardan bittasining nomini yozing (masalan, Python uchun).",
+          "ru": "Напишите название одной из готовых хеш-таблиц из библиотек языков, упомянутых в лекции (например, для Python).",
+          "en": "Write the name of one of the ready-made hash tables from the language libraries mentioned in the lesson (for example, for Python)."
+        },
+        "answers": ["dict", "set", "HashMap", "HashSet", "unordered_map", "unordered_set"],
+        "explanation": {
+          "uz": "Python dict va set, Java HashMap va HashSet, C++ unordered_map va unordered_set — hammasi xesh-jadvaldir.",
+          "ru": "Python dict и set, Java HashMap и HashSet, C++ unordered_map и unordered_set — всё это хеш-таблицы.",
+          "en": "Python's dict and set, Java's HashMap and HashSet, C++'s unordered_map and unordered_set are all hash tables."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Xesh-jadvalda 1000 ta kalit va 500 ta savat bor. Yuklanish koeffitsienti α nechaga teng?",
+          "ru": "В хеш-таблице 1000 ключей и 500 корзин. Чему равен коэффициент загрузки α?",
+          "en": "A hash table has 1000 keys and 500 buckets. What is the load factor α?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "α = n / M = 1000 / 500 = 2.",
+          "ru": "α = n / M = 1000 / 500 = 2.",
+          "en": "α = n / M = 1000 / 500 = 2."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi tasnif jadvaliga koʻra, qaysi saralash algoritmlari barqaror?",
+          "ru": "Какие из алгоритмов сортировки устойчивы согласно таблице классификации из лекции?",
+          "en": "According to the classification table in the lesson, which sorting algorithms are stable?"
+        },
+        "options": [
+          {
+            "uz": "Pufaksimon saralash",
+            "ru": "Сортировка пузырьком",
+            "en": "Bubble sort"
+          },
+          {
+            "uz": "Tanlab saralash",
+            "ru": "Сортировка выбором",
+            "en": "Selection sort"
+          },
+          {
+            "uz": "Qoʻyib saralash",
+            "ru": "Сортировка вставками",
+            "en": "Insertion sort"
+          },
+          {
+            "uz": "Tez saralash (Xoar)",
+            "ru": "Быстрая сортировка (Хоор)",
+            "en": "Quick sort (Hoare)"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Jadvalda barqaror deb pufaksimon, qoʻyib va birlashtirib saralash koʻrsatilgan; tanlab, piramidal, Shell va tez saralash barqaror emas.",
+          "ru": "В таблице устойчивыми названы пузырьковая, вставками и слиянием; выбором, пирамидальная, Shell и быстрая — неустойчивы.",
+          "en": "The table marks bubble, insertion and merge sort as stable; selection, heap, Shell and quick sort are not."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Taqqoslashga asoslangan har qanday saralash eng yomon holatda kamida Ω(n log n) taqqoslash talab qiladi.",
+          "ru": "Любая сортировка на сравнениях требует в худшем случае не менее Ω(n log n) сравнений.",
+          "en": "Any comparison-based sort needs at least Ω(n log n) comparisons in the worst case."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bu isbotlangan pastki chegara — shuning uchun birlashtirib va piramidal saralashning O(n log n) natijasi eng yaxshi mumkin boʻlgan natijadir.",
+          "ru": "Это доказанная нижняя граница, поэтому результат O(n log n) у сортировки слиянием и пирамидальной — лучший из возможных.",
+          "en": "This is a proven lower bound, which is why the O(n log n) of merge sort and heap sort is as good as it gets."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Fibonachchi izlashda har qadamda tekshiriladigan oʻrin qanday topiladi?",
+          "ru": "Как в фибоначчи-поиске находится позиция, проверяемая на каждом шаге?",
+          "en": "In Fibonacci search, how is the position checked at each step found?"
+        },
+        "options": [
+          {
+            "uz": "Oraliqning oʻrtasi",
+            "ru": "Середина области",
+            "en": "The middle of the range"
+          },
+          {
+            "uz": "siljish + F(k − 2)",
+            "ru": "смещение + F(k − 2)",
+            "en": "offset + F(k − 2)"
+          },
+          {
+            "uz": "F(k) − 1",
+            "ru": "F(k) − 1",
+            "en": "F(k) − 1"
+          },
+          {
+            "uz": "siljish + F(k − 1)",
+            "ru": "смещение + F(k − 1)",
+            "en": "offset + F(k − 1)"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Avval F(k) ≥ n boʻlgan eng kichik Fibonachchi soni olinadi, keyin har qadamda siljish + F(k − 2) tekshiriladi; javobga qarab oraliq F(k − 1) yoki F(k − 2) gacha qisqaradi.",
+          "ru": "Сначала берётся наименьшее F(k) ≥ n, затем на каждом шаге проверяется смещение + F(k − 2); в зависимости от ответа область сужается до F(k − 1) или F(k − 2).",
+          "en": "First the smallest F(k) ≥ n is found, then each step checks offset + F(k − 2); depending on the answer the range shrinks to F(k − 1) or F(k − 2)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tashqi saralashning ikkinchi bosqichida, k-yoʻlli birlashtirishda uyum (heap, ustuvor navbat) nimani bajaradi?",
+          "ru": "Что делает куча (приоритетная очередь) на втором шаге внешней сортировки — при к-путевом слиянии?",
+          "en": "What does the heap (priority queue) do in the second stage of external sorting, the k-way merge?"
+        },
+        "options": [
+          {
+            "uz": "Har bir qadamda barcha seriyalarning joriy elementlari ichidan eng kichigini O(log k) da topadi",
+            "ru": "На каждом шаге за O(log k) находит наименьший из текущих элементов всех серий",
+            "en": "At every step it finds the smallest of the runs' current elements in O(log k)"
+          },
+          {
+            "uz": "Saralangan seriyalarni xotiradan oʻchiradi va joyni boʻshatadi",
+            "ru": "Выгружает отсортированные серии из памяти, освобождая место",
+            "en": "Removes the sorted runs from memory and frees the space"
+          },
+          {
+            "uz": "Birlashtirilgan natijani qaytadan saralaydi",
+            "ru": "Заново сортирует результат слияния",
+            "en": "Sorts the merged result again"
+          },
+          {
+            "uz": "Taqqoslashlar sonini O(n log n) dan O(1) ga tushiradi",
+            "ru": "Сокращает число сравнений с O(n log n) до O(1)",
+            "en": "Cuts the number of comparisons from O(n log n) to O(1)"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Uyumda doim eng koʻpi bilan k ta element — har seriyadan bittasi — turadi, shuning uchun xotira O(k), N elementni birlashtirish esa O(N log k) vaqt oladi.",
+          "ru": "В кучи всегда не более k элементов — по одному из каждой серии, поэтому память O(k), а слияние N элементов занимает O(N log k).",
+          "en": "The heap always holds at most k elements, one from every run, so the memory is O(k) and merging N elements takes O(N log k)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Xesh-jadval va saralash boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о хеш-таблице и сортировке верны?",
+          "en": "Which statements about hash tables and sorting are correct?"
+        },
+        "options": [
+          {
+            "uz": "Yaxshi xesh-funksiya kalitlarni savatlar boʻylab tekis taqsimlaydi",
+            "ru": "Хорошая хеш-функция равномерно распределяет ключи по корзинам",
+            "en": "A good hash function spreads the keys evenly over the buckets"
+          },
+          {
+            "uz": "α juda oshib ketsa (masalan, 0,75 dan oshsa), jadval kattalashtiriladi va kalitlar qayta joylashtiriladi",
+            "ru": "Если α слишком растёт (например, выше 0,75), таблицу увеличивают и ключи размещают заново",
+            "en": "If α grows too large (say, above 0.75), the table is enlarged and the keys are placed again"
+          },
+          {
+            "uz": "Xesh-jadval kalitlarni tartibda saqlaydi, shuning uchun saralangan chiqish uchun qoʻshimcha saralash kerak emas",
+            "ru": "Хеш-таблица хранит ключи в порядке, поэтому для упорядоченного вывода сортировка не нужна",
+            "en": "A hash table keeps its keys in order, so no extra sort is needed for sorted output"
+          },
+          {
+            "uz": "Barcha kalitlar bitta savatga tushib qolsa, izlash O(n) ga aylanadi",
+            "ru": "Если все ключи попали в одну корзину, поиск превращается в O(n)",
+            "en": "If all keys land in one bucket, searching becomes O(n)"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Xesh-jadval hech qanday tartib bermaydi: saralangan chiqish kerak boʻlsa, saralash alohida bajariladi.",
+          "ru": "Хеш-таблица не даёт никакого порядка: если нужен упорядоченный вывод, сортировать приходится отдельно.",
+          "en": "A hash table gives no order at all: if sorted output is needed, sorting must be done separately."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Kalit uchun savat: polinomial xesh",
+      "ru": "Корзина для ключа: полиномиальное хеширование",
+      "en": "The bucket of a key: the polynomial hash"
+    },
+    "statement": {
+      "uz": "Darsdagi polinomial xesh (Horner sxemasi) boʻyicha kalit tushadigan savat indeksini hisoblang. Kirish: birinchi satrda M (2 ≤ M ≤ 1000) — savatlar soni, ikkinchi satrda faqat kichik lotin harflaridan iborat bitta soʻz (uzunligi 1 dan 30 gacha). h ni 0 dan boshlang va soʻzni chapdan oʻngga qarab oʻqing: har bir belgi uchun h ← (h · 31 + belgi kodi) mod M qilinadi, bu yerda belgi kodi — uning ASCII raqami (a = 97, b = 98, …, z = 122). Natijani bitta qatorda, faqat son koʻrinishida chiqaring; mod amali har bir qadamda bajarilishi kerak. Masalan, M = 7 va soʻz olma boʻlsa javob 4, soʻz a boʻlsa javob 6.",
+      "ru": "Вычислите номер корзины, в которую попадёт ключ по полиномиальному хешу (схема Горнера) из лекции. Вход: в первой строке M (2 ≤ M ≤ 1000) — число корзин, во второй строке одно слово только из строчных латинских букв (длина от 1 до 30). Начинайте с h = 0 и идите по слову слева направо: для каждого символа h ← (h · 31 + код символа) mod M, где код символа — его номер в ASCII (a = 97, b = 98, …, z = 122). Выведите результат в одной строке, только число; остаток от деления нужно брать на каждом шаге. Например, при M = 7 и слове olma ответ 4, при слове a ответ 6.",
+      "en": "Compute the bucket a key lands in with the polynomial hash (Horner's scheme) from the lesson. Input: on the first line M (2 ≤ M ≤ 1000), the number of buckets; on the second line one word made only of lowercase Latin letters (1 to 30 characters long). Start with h = 0 and read the word from left to right: for every character do h ← (h · 31 + code(c)) mod M, where code(c) is the ASCII number of the character (a = 97, b = 98, …, z = 122). Print the result on one line, only the number; take the remainder at every step. For example, with M = 7 and the word olma the answer is 4, and with the word a it is 6."
+    },
+    "code": {
+      "starter": {
+        "python": "M = int(input())\nsoz = input()\nh = 0\nfor c in soz:\n    h = h * 31 + ord(c)\nprint(h)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int M = in.nextInt();\n        String soz = in.next();\n        int h = 0;\n        for (char c : soz.toCharArray()) {\n            h = h * 31 + c;\n        }\n        System.out.println(h);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int M;\n    string soz;\n    cin >> M >> soz;\n    int h = 0;\n    for (unsigned char c : soz) {\n        h = h * 31 + c;\n    }\n    cout << h << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "M = int(input())\nsoz = input()\nh = 0\nfor c in soz:\n    h = (h * 31 + ord(c)) % M\nprint(h)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int M = in.nextInt();\n        String soz = in.next();\n        int h = 0;\n        for (char c : soz.toCharArray()) {\n            h = (h * 31 + c) % M;\n        }\n        System.out.println(h);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int M;\n    string soz;\n    cin >> M >> soz;\n    int h = 0;\n    for (unsigned char c : soz) {\n        h = (h * 31 + c) % M;\n    }\n    cout << h << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "7\nolma\n", "expected": "4", "hidden": false },
+        { "input": "7\na\n", "expected": "6", "hidden": false },
+        { "input": "7\nnok\n", "expected": "2", "hidden": false },
+        { "input": "7\nanor\n", "expected": "3", "hidden": true },
+        { "input": "13\nolma\n", "expected": "5", "hidden": true },
+        { "input": "1000\nuzum\n", "expected": "525", "hidden": true }
+      ]
+    }
+  }
+}

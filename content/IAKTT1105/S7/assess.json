@@ -1,0 +1,308 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Big Data konsepsiyasining asosiy xususiyatlarini tavsiflovchi \"3V\" qoidasiga nimalar kiradi?",
+          "ru": "Что входит в правило «3V», описывающее основные характеристики концепции Big Data?",
+          "en": "What is included in the \"3V\" rule that describes the main characteristics of the Big Data concept?"
+        },
+        "options": [
+          {
+            "uz": "Hajm, Tezlik, Xilma-xillik (Volume, Velocity, Variety)",
+            "ru": "Объем, Скорость, Разнообразие (Volume, Velocity, Variety)",
+            "en": "Volume, Velocity, Variety"
+          },
+          {
+            "uz": "Qiymat, Ishonchlilik, Koʻrgazmalilik",
+            "ru": "Ценность, Достоверность, Визуализация",
+            "en": "Value, Veracity, Visualization"
+          },
+          {
+            "uz": "Hajm, Qiymat, Oʻzgaruvchanlik",
+            "ru": "Объем, Ценность, Изменчивость",
+            "en": "Volume, Value, Variability"
+          },
+          {
+            "uz": "Tezlik, Ishonchlilik, Yaroqlilik",
+            "ru": "Скорость, Достоверность, Валидность",
+            "en": "Velocity, Veracity, Validity"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Big Data tushunchasi anʼanaviy ravishda 3V: Volume (Hajm), Velocity (Tezlik) va Variety (Xilma-xillik) bilan belgilanadi.",
+          "ru": "Понятие Big Data традиционно определяется через 3V: Volume (Объем), Velocity (Скорость) и Variety (Разнообразие).",
+          "en": "The concept of Big Data is traditionally defined by 3Vs: Volume, Velocity, and Variety."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Katta maʼlumotlar (Big Data) faqat raqamli va tuzilmali maʼlumotlardan iborat boʻladi.",
+          "ru": "Большие данные (Big Data) состоят только из числовых и структурированных данных.",
+          "en": "Big Data consists only of numerical and structured data."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Katta maʼlumotlar tuzilmali, yarim tuzilmali va tuzilmasiz maʼlumotlarni oʻz ichiga oladi.",
+          "ru": "Большие данные включают структурированные, полуструктурированные и неструктурированные данные.",
+          "en": "Big Data includes structured, semi-structured, and unstructured data."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Big Data texnologiyalarida maʼlumotlarni qayta ishlash uchun qaysi mashhur ochiq kodli platforma keng qoʻllaniladi?",
+          "ru": "Какая популярная платформа с открытым исходным кодом широко используется для обработки данных в технологиях Big Data?",
+          "en": "Which popular open-source platform is widely used for data processing in Big Data technologies?"
+        },
+        "options": [
+          {
+            "uz": "Apache Hadoop",
+            "ru": "Apache Hadoop",
+            "en": "Apache Hadoop"
+          },
+          {
+            "uz": "Microsoft Word",
+            "ru": "Microsoft Word",
+            "en": "Microsoft Word"
+          },
+          {
+            "uz": "Adobe Photoshop",
+            "ru": "Adobe Photoshop",
+            "en": "Adobe Photoshop"
+          },
+          {
+            "uz": "Mozilla Firefox",
+            "ru": "Mozilla Firefox",
+            "en": "Mozilla Firefox"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Apache Hadoop katta maʼlumotlarni qayta ishlash va saqlash uchun eng mashhur platformalardan biridir.",
+          "ru": "Apache Hadoop — одна из самых популярных платформ для обработки и хранения больших данных.",
+          "en": "Apache Hadoop is one of the most popular platforms for processing and storing big data."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Iqtisodiyotda Big Data tahlilidan qanday maqsadlarda foydalaniladi?",
+          "ru": "Для каких целей используется анализ Big Data в экономике?",
+          "en": "For what purposes is Big Data analysis used in the economy?"
+        },
+        "options": [
+          {
+            "uz": "Mijozlar xulq-atvorini prognoz qilish",
+            "ru": "Прогнозирование поведения клиентов",
+            "en": "Predicting customer behavior"
+          },
+          {
+            "uz": "Xatarlarni baholash va firibgarlikni aniqlash",
+            "ru": "Оценка рисков и выявление мошенничества",
+            "en": "Risk assessment and fraud detection"
+          },
+          {
+            "uz": "Kichik hajmdagi matnlarni formatlash",
+            "ru": "Форматирование небольших текстов",
+            "en": "Formatting small texts"
+          },
+          {
+            "uz": "Taʼminot zanjirini maqbullashtirish",
+            "ru": "Оптимизация цепочки поставок",
+            "en": "Optimizing the supply chain"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Big Data tahlili iqtisodiyotda prognozlash, xatarlarni boshqarish va taʼminot zanjirini maqbullashtirish uchun qoʻllaniladi.",
+          "ru": "Анализ Big Data в экономике применяется для прогнозирования, управления рисками и оптимизации цепочек поставок.",
+          "en": "Big Data analysis in the economy is used for forecasting, risk management, and supply chain optimization."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Katta maʼlumotlarni tavsiflovchi 3V qoidasiga koʻra, maʼlumotlarning kelib tushish tezligi ingliz tilida qanday ataladi? (Faqat bitta soʻz yozing)",
+          "ru": "Как на английском языке называется скорость поступления данных согласно правилу 3V для больших данных? (Напишите только одно слово)",
+          "en": "According to the 3V rule describing big data, what is the speed of data arrival called in English? (Write only one word)"
+        },
+        "answers": [
+          "Velocity",
+          "velocity",
+          "VELOCITY"
+        ],
+        "explanation": {
+          "uz": "3V qoidasida tezlik Velocity soʻzi bilan ifodalanadi.",
+          "ru": "В правиле 3V скорость обозначается словом Velocity.",
+          "en": "In the 3V rule, speed is represented by the word Velocity."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Agar korxona har kuni 500 Gigabayt maʼlumot yigʻsa, 4 kunda necha Gigabayt maʼlumot yigʻiladi? Raqam bilan yozing.",
+          "ru": "Если предприятие ежедневно собирает 500 Гигабайт данных, сколько Гигабайт будет собрано за 4 дня? Напишите число.",
+          "en": "If a company collects 500 Gigabytes of data every day, how many Gigabytes will be collected in 4 days? Write the number."
+        },
+        "answers": [
+          2000
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "500 * 4 = 2000 Gigabayt maʼlumot.",
+          "ru": "500 * 4 = 2000 Гигабайт данных.",
+          "en": "500 * 4 = 2000 Gigabytes of data."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Hadoop tizimining asosiy qismlaridan biri boʻlgan MapReduce dasturlash modeli katta maʼlumotlarni parallel ravishda hisoblash imkonini bermaydi.",
+          "ru": "Модель программирования MapReduce, являющаяся одной из основных частей системы Hadoop, не позволяет параллельно вычислять большие данные.",
+          "en": "The MapReduce programming model, which is one of the main parts of the Hadoop system, does not allow parallel computation of big data."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "MapReduce aynan katta hajmdagi maʼlumotlarni klasterlarda parallel qayta ishlash uchun moʻljallangan modeldir.",
+          "ru": "MapReduce — это модель, специально предназначенная для параллельной обработки больших объемов данных в кластерах.",
+          "en": "MapReduce is exactly the model designed for parallel processing of large volumes of data in clusters."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Katta maʼlumotlarni qayta ishlashda qaysi turdagi maʼlumotlar bazalari (NoSQL) koʻproq ishlatiladi?",
+          "ru": "Какие типы баз данных (NoSQL) чаще всего используются при обработке больших данных?",
+          "en": "What types of databases (NoSQL) are most commonly used when processing big data?"
+        },
+        "options": [
+          {
+            "uz": "Hujjatlarga yoʻnaltirilgan (Document-oriented)",
+            "ru": "Документо-ориентированные (Document-oriented)",
+            "en": "Document-oriented"
+          },
+          {
+            "uz": "Kalit-qiymat (Key-value)",
+            "ru": "Ключ-значение (Key-value)",
+            "en": "Key-value"
+          },
+          {
+            "uz": "Grafli (Graph)",
+            "ru": "Графовые (Graph)",
+            "en": "Graph"
+          },
+          {
+            "uz": "Faqat relyatsion (Only relational)",
+            "ru": "Только реляционные (Only relational)",
+            "en": "Only relational"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Big Data loyihalarida relyatsion boʻlmagan (NoSQL) bazalardan: hujjatli, kalit-qiymatli va grafli bazalar keng foydalaniladi.",
+          "ru": "В проектах Big Data широко используются нереляционные базы (NoSQL): документо-ориентированные, ключ-значение и графовые.",
+          "en": "Non-relational (NoSQL) databases like document, key-value, and graph are widely used in Big Data projects."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Katta maʼlumotlar (Big Data) amaliyoti",
+      "ru": "Практика по большим данным (Big Data)",
+      "en": "Big Data practice"
+    },
+    "statement": {
+      "uz": "Ushbu amaliyotda seminarda olingan Katta maʼlumotlar (Big Data) boʻyicha bilimlaringizni tekshiring.",
+      "ru": "В этой практике проверьте свои знания по Большим данным (Big Data), полученным на семинаре.",
+      "en": "In this practice, test your knowledge of Big Data obtained in the seminar."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "MULTI",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Big Data tahlilidan soʻng qanday iqtisodiy foydalar olinishi mumkin?",
+            "ru": "Какие экономические выгоды могут быть получены после анализа Big Data?",
+            "en": "What economic benefits can be obtained after Big Data analysis?"
+          },
+          "options": [
+            {
+              "uz": "Marketing xarajatlarini maqbullashtirish",
+              "ru": "Оптимизация маркетинговых затрат",
+              "en": "Optimization of marketing costs"
+            },
+            {
+              "uz": "Mijozlar ehtiyojini chuqurroq anglash",
+              "ru": "Более глубокое понимание потребностей клиентов",
+              "en": "Deeper understanding of customer needs"
+            },
+            {
+              "uz": "Ishlab chiqarish va xizmat koʻrsatish vaqtini qisqartirish",
+              "ru": "Сокращение времени производства и обслуживания",
+              "en": "Reducing production and service time"
+            },
+            {
+              "uz": "Qogʻoz hujjatlar aylanmasini toʻliq yoʻq qilish",
+              "ru": "Полное уничтожение бумажного документооборота",
+              "en": "Complete elimination of paper document flow"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Big Data tahlili marketing, mijozlar bilan ishlash va operatsion vaqtni qisqartirishga katta taʼsir qiladi, lekin qogʻozdan toʻliq voz kechish toʻgʻridan-toʻgʻri Big Data natijasi emas.",
+            "ru": "Анализ Big Data сильно влияет на маркетинг, работу с клиентами и сокращение операционного времени.",
+            "en": "Big Data analysis has a great impact on marketing, customer relations, and reducing operational time."
+          }
+        }
+      ]
+    }
+  }
+}

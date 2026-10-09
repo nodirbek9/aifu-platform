@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "TLS protokoli qaysi qatlam ustida ishlaydi?",
+          "ru": "Над каким уровнем работает протокол TLS?",
+          "en": "Above which layer does the TLS protocol work?"
+        },
+        "options": [
+          {
+            "uz": "Ilova qatlami ustida (HTTP ichida)",
+            "ru": "Над уровнем приложений (внутри HTTP)",
+            "en": "Above the application layer (inside HTTP)"
+          },
+          {
+            "uz": "Transport qatlami (TCP) ustida",
+            "ru": "Над транспортным уровнем (TCP)",
+            "en": "Above the transport layer (TCP)"
+          },
+          {
+            "uz": "Tarmoq qatlamida (IP darajasida)",
+            "ru": "На сетевом уровне (на уровне IP)",
+            "en": "At the network layer (at the IP level)"
+          },
+          {
+            "uz": "Fizik qatlamda (kabel ichida)",
+            "ru": "На физическом уровне (в кабеле)",
+            "en": "At the physical layer (in the cable)"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: TLS — HTTPS, xavfsiz pochta va koʻplab ilovalarning asosi, u transport qatlami (TCP) ustida ishlaydi; IP darajasida esa IPSec ishlaydi.",
+          "ru": "В уроке: TLS — основа HTTPS, защищённой почты и многих приложений, он работает поверх транспортного уровня (TCP); на уровне IP работает IPSec.",
+          "en": "In the lesson: TLS underlies HTTPS, secure mail and many applications and runs above the transport layer (TCP); IPSec works at the IP layer."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "SSL 2.0 va SSL 3.0 taqiqlangan, TLS 1.0 hamda TLS 1.1 esa 2021-yildan rasman eskirgan deb hisoblanadi (RFC 8996).",
+          "ru": "SSL 2.0 и SSL 3.0 запрещены, а TLS 1.0 и TLS 1.1 официально устарели с 2021 года (RFC 8996).",
+          "en": "SSL 2.0 and SSL 3.0 are prohibited, and TLS 1.0 and TLS 1.1 have been officially deprecated since 2021 (RFC 8996)."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Versiyalar jadvali shunday: SSL — taqiqlangan (DROWN, POODLE), TLS 1.0/1.1 — 2021-yildan eskirgan, TLS 1.2 ruxsat etilgan, TLS 1.3 tavsiya etiladi.",
+          "ru": "Таблица версий именно такая: SSL запрещены (DROWN, POODLE), TLS 1.0/1.1 устарели с 2021 года, TLS 1.2 допускается, TLS 1.3 рекомендуется.",
+          "en": "The version table says exactly this: SSL is prohibited (DROWN, POODLE), TLS 1.0/1.1 are deprecated since 2021, TLS 1.2 is allowed, TLS 1.3 is recommended."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blokcheyn haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о блокчейне верны?",
+          "en": "Which statements about blockchain are correct?"
+        },
+        "options": [
+          {
+            "uz": "Har bir blok oldingi blokning xeshini oʻz ichiga oladi",
+            "ru": "Каждый блок содержит хеш предыдущего блока",
+            "en": "Each block contains the hash of the previous block"
+          },
+          {
+            "uz": "Bitta blokdagi maʼlumot oʻzgarsa, keyingi barcha bloklardagi bogʻlanish buziladi",
+            "ru": "Если данные в одном блоке изменить, рвётся связь во всех последующих блоках",
+            "en": "Changing data in one block breaks the link in every following block"
+          },
+          {
+            "uz": "Eski blokni oʻzgartirish uchun faqat oʻsha blokning nonce qiymatini qayta topish yetarli",
+            "ru": "Для изменения старого блока достаточно заново найти nonce только этого блока",
+            "en": "Changing an old block only requires finding that block's nonce again"
+          },
+          {
+            "uz": "Tranzaksiyalar raqamli imzo bilan (ECDSA, Ed25519) imzolanadi",
+            "ru": "Транзакции подписываются цифровой подписью (ECDSA, Ed25519)",
+            "en": "Transactions are signed with digital signatures (ECDSA, Ed25519)"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Blok oʻzgarsa, uning xeshi oʻzgaradi — keyingi barcha bloklarning xeshlari va nonce qiymatlari qayta hisoblanishi kerak, qolgan tugunlar esa eski zanjirni saqlab, qalbakini rad etadi.",
+          "ru": "При изменении блока меняется его хеш — пришлось бы пересчитать хеши и nonce всех последующих блоков, а остальные узлы хранят старую цепочку и отвергают подделку.",
+          "en": "If a block changes, its hash changes — one would have to recompute the hashes and nonces of all following blocks, while the other nodes keep the old chain and reject the forgery."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "IPSec ning qaysi komponenti shifrlashni taʼminlaydi?",
+          "ru": "Какой компонент IPSec обеспечивает шифрование?",
+          "en": "Which IPSec component provides encryption?"
+        },
+        "options": [
+          {
+            "uz": "AH (Authentication Header)",
+            "ru": "AH (Authentication Header)",
+            "en": "AH (Authentication Header)"
+          },
+          {
+            "uz": "ESP (Encapsulating Security Payload)",
+            "ru": "ESP (Encapsulating Security Payload)",
+            "en": "ESP (Encapsulating Security Payload)"
+          },
+          {
+            "uz": "IKE (Internet Key Exchange)",
+            "ru": "IKE (Internet Key Exchange)",
+            "en": "IKE (Internet Key Exchange)"
+          },
+          {
+            "uz": "SA (Security Association)",
+            "ru": "SA (Security Association)",
+            "en": "SA (Security Association)"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Jadvalga koʻra: AH — yaxlitlik va manba autentifikatsiyasi, shifrlashsiz; ESP — shifrlash + yaxlitlik (amalda deyarli doim ESP); IKE — tomonlarni autentifikatsiya qilib kalit kelishadi; SA — kelishilgan algoritm va kalitlar toʻplami.",
+          "ru": "По таблице: AH — целостность и аутентификация источника без шифрования; ESP — шифрование + целостность (на практике почти всегда ESP); IKE — аутентификация сторон и согласование ключей; SA — согласованный набор алгоритмов и ключей.",
+          "en": "Per the table: AH gives integrity and source authentication with no encryption; ESP gives encryption plus integrity (in practice almost always ESP); IKE authenticates the parties and agrees on keys; SA is the agreed set of algorithms and keys."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "SSH protokoli standart ravishda qaysi portdan ishlaydi?",
+          "ru": "На каком порту по стандарту работает протокол SSH?",
+          "en": "Which port does the SSH protocol use by default?"
+        },
+        "answers": [22],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "SSH (Secure Shell) — 22-port; u shifrlanmagan Telnet va FTP oʻrnini egallagan.",
+          "ru": "SSH (Secure Shell) — порт 22; он заменил незашищённые Telnet и FTP.",
+          "en": "SSH (Secure Shell) uses port 22; it replaced the unencrypted Telnet and FTP."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "IPSec ning tunnel rejimi faqat paketning maʼlumot qismini (payload) himoyalaydi.",
+          "ru": "Туннельный режим IPSec защищает только полезную нагрузку пакета.",
+          "en": "IPSec tunnel mode protects only the payload of the packet."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bu — transport rejimining tavsifi. Tunnel rejimi esa butun paketni shifrlab, yangi IP sarlavhaga oʻraydi (ikki shlyuz oʻrtasida — klassik VPN).",
+          "ru": "Это описание транспортного режима. Туннельный режим шифрует весь пакет и упаковывает его в новый IP-заголовок (между двумя шлюзами — классический VPN).",
+          "en": "That describes transport mode. Tunnel mode encrypts the whole packet and wraps it in a new IP header (between two gateways — the classic VPN)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Oldinga maxfiylik (Perfect Forward Secrecy, PFS) nimani kafolatlaydi?",
+          "ru": "Что гарантирует прямая секретность (Perfect Forward Secrecy, PFS)?",
+          "en": "What does Perfect Forward Secrecy (PFS) guarantee?"
+        },
+        "options": [
+          {
+            "uz": "Server yopiq kaliti keyinroq oʻgʻrilansa ham, oldin yozib olingan trafikni deshifrlab boʻlmasligini",
+            "ru": "Что даже если закрытый ключ сервера украдут позже, ранее записанный трафик нельзя расшифровать",
+            "en": "That even if the server's private key is stolen later, previously recorded traffic cannot be decrypted"
+          },
+          {
+            "uz": "Sertifikat muddati hech qachon tugamasligini",
+            "ru": "Что срок действия сертификата никогда не истечёт",
+            "en": "That a certificate never expires"
+          },
+          {
+            "uz": "Parolni tanlash hujumlari umudan imkonsiz boʻlishini",
+            "ru": "Что атаки подбора пароля становятся совершенно невозможными",
+            "en": "That password-guessing attacks become completely impossible"
+          },
+          {
+            "uz": "Sessiya kalitlari serverda saqlanib, istalgan vaqtda qayta ishlatilishi mumkinligini",
+            "ru": "Что сеансовые ключи сохраняются на сервере и их можно в любой момент использовать снова",
+            "en": "That session keys are kept on the server and can be reused at any time"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Seans kaliti vaqtinchalik DH kalitlaridan olinadi va ular oʻchiriladi; RSA bilan kalit uzatilganda (TLS_RSA_WITH_...) PFS yoʻq — shuning uchun TLS 1.3 bu usulni butunlay olib tashlagan.",
+          "ru": "Сеансовый ключ получается из эфемерных ключей DH, которые затем удаляются; при передаче ключа с RSA (TLS_RSA_WITH_...) прямой секретности нет — поэтому TLS 1.3 полностью убрал этот способ.",
+          "en": "Session keys are derived from ephemeral DH keys that are then deleted; when the key is transported with RSA (TLS_RSA_WITH_...) there is no PFS — which is why TLS 1.3 removed that method entirely."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "SSH uchun darsdagi yaxshi amaliyotlar qaysilari?",
+          "ru": "Какие из перечисленного — хорошие практики для SSH из урока?",
+          "en": "Which of these are good SSH practices from the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Parol bilan kirishni oʻchirish",
+            "ru": "Отключить вход по паролю",
+            "en": "Disable password login"
+          },
+          {
+            "uz": "root bilan toʻgʻridan-toʻgʻri kirishni oʻchirish",
+            "ru": "Отключить прямой вход под root",
+            "en": "Disable direct root login"
+          },
+          {
+            "uz": "Kirish urinishlarini cheklash",
+            "ru": "Ограничить число попыток входа",
+            "en": "Limit login attempts"
+          },
+          {
+            "uz": "Yopiq kalitni serverdagi authorized_keys fayliga saqlash",
+            "ru": "Хранить закрытый ключ в файле authorized_keys на сервере",
+            "en": "Store the private key in authorized_keys on the server"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "authorized_keys ga ochiq kalit qoʻyiladi; yopiq kalit mijozda qoladi va parol iborasi bilan himoyalanadi.",
+          "ru": "В authorized_keys кладут открытый ключ; закрытый ключ остаётся на стороне клиента и защищается парольной фразой.",
+          "en": "The public key goes into authorized_keys; the private key stays on the client and is protected with a passphrase."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Mobil toʻlovlarda haqiqiy karta raqami oʻrniga qurilmaga xos token ishlatiladigan usul qanday ataladi?",
+          "ru": "Как называется приём в мобильных платежах, когда вместо настоящего номера карты используется токен, привязанный к устройству?",
+          "en": "What is the technique in mobile payments called, where a device-specific token is used instead of the real card number?"
+        },
+        "answers": ["tokenizatsiya", "tokenization", "токенизация", "Tokenization"],
+        "explanation": {
+          "uz": "Apple Pay va Google Pay da tokenizatsiya ishlatiladi: oʻgʻirlangan token boshqa joyda foydasiz.",
+          "ru": "В Apple Pay и Google Pay применяется токенизация: украденный токен бесполезен в другом месте.",
+          "en": "Apple Pay and Google Pay use tokenization: a stolen token is useless elsewhere."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "SSH host kaliti oʻzgarmaganmi?",
+      "ru": "Не изменился ли ключ хоста SSH?",
+      "en": "Has the SSH host key changed?"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda mijoz birinchi ulanishda known_hosts fayliga yozib olgan host kalitining barmoq izi beriladi. Keyingi har bir qatorda — navbatdagi ulanishda server koʻrsatgan barmoq izi. Har bir keyingi qator uchun, agar barmoq izi birinchi qatordagi bilan bir xil boʻlsa, alohida qatorda OK; farq qilsa, WARNING chiqaring (darsda kalitning oʻzgarishi «oʻrtadagi odam» hujumi belgisi deb ogohlantiriladi). Barmoq izlari — boʻshliqsiz soʻzlar, ularni oʻzgartirmasdan solishtiring.",
+      "ru": "В первой строке задан отпечаток ключа хоста, записанный в файл known_hosts при первом подключении. В каждой следующей строке — отпечаток, который сервер предъявил при очередном подключении. Для каждой такой строки выводите OK, если отпечаток совпадает с первым, и WARNING, если отличается (в уроке смена ключа — признак атаки «человек посередине»). Каждый ответ — на отдельной строке. Отпечатки — слова без пробелов, сравнивайте их без изменений.",
+      "en": "The first line holds the host key fingerprint recorded in known_hosts at the first connection. Each following line holds the fingerprint the server presented at a later connection. For each such line print OK on its own line if the fingerprint matches the first one, and WARNING if it differs (the lesson warns that a changed key may be a sign of a man-in-the-middle attack). Fingerprints are words without spaces — compare them unchanged."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nsatrlar = [s for s in sys.stdin.read().split(\"\\n\") if s]\noldingi = satrlar[0]\nfor satr in satrlar[1:]:\n    print(\"OK\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String old = in.nextLine();\n        while (in.hasNextLine()) {\n            String s = in.nextLine();\n            if (s.isEmpty()) continue;\n            System.out.println(\"OK\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string old, s;\n    getline(cin, old);\n    while (getline(cin, s)) {\n        if (s.empty()) continue;\n        cout << \"OK\" << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nsatrlar = [s for s in sys.stdin.read().split(\"\\n\") if s]\noldingi = satrlar[0]\nfor satr in satrlar[1:]:\n    if satr == oldingi:\n        print(\"OK\")\n    else:\n        print(\"WARNING\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String old = in.nextLine();\n        while (in.hasNextLine()) {\n            String s = in.nextLine();\n            if (s.isEmpty()) continue;\n            if (s.equals(old)) {\n                System.out.println(\"OK\");\n            } else {\n                System.out.println(\"WARNING\");\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string old, s;\n    getline(cin, old);\n    while (getline(cin, s)) {\n        if (s.empty()) continue;\n        if (s == old) {\n            cout << \"OK\" << endl;\n        } else {\n            cout << \"WARNING\" << endl;\n        }\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "aB3x\naB3x\naB3x\n", "expected": "OK\nOK", "hidden": false },
+        { "input": "k1:9f\nk1:9f\nz2:7c\n", "expected": "OK\nWARNING", "hidden": false },
+        { "input": "zz9\nq77\n", "expected": "WARNING", "hidden": true },
+        { "input": "ed25519fp\ned25519fp\ned25519fp\ned25519fp\nrsa4096fp\n", "expected": "OK\nOK\nOK\nWARNING", "hidden": true },
+        { "input": "aa\naa\nbb\nbb\naa\n", "expected": "OK\nWARNING\nWARNING\nOK", "hidden": true }
+      ]
+    }
+  }
+}

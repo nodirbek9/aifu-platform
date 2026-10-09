@@ -101,6 +101,8 @@ export function validateQuestion(question, at, problems, { requireLesson = false
     }
     if (typeof question.tolerance !== 'number' || !Number.isFinite(question.tolerance) || question.tolerance < 0) {
       problems.push(`${at}.tolerance: NUM needs a numeric tolerance >= 0`)
+    } else if (question.tolerance >= 1_000_000) {
+      problems.push(`${at}.tolerance: must be below 1000000 (the platform stores it as numeric(12,6))`)
     }
   }
 }

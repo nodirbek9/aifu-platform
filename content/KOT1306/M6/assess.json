@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Token Ring tarmogʻining fizik topologiyasi qanday — kompyuterlar MAU ga qanday ulanadi?",
+          "ru": "Какова физическая топология сети Token Ring — как компьютеры подключены к MAU?",
+          "en": "What is the physical topology of a Token Ring network — how do computers connect to the MAU?"
+        },
+        "options": [
+          {
+            "uz": "Halqa",
+            "ru": "Кольцо",
+            "en": "A ring"
+          },
+          {
+            "uz": "Yulduz",
+            "ru": "Звезда",
+            "en": "A star"
+          },
+          {
+            "uz": "Toʻr",
+            "ru": "Сетка",
+            "en": "A mesh"
+          },
+          {
+            "uz": "Shina",
+            "ru": "Шина",
+            "en": "A bus"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Mantiqiy topologiya — halqa, fizik — yulduz: hamma MAU ga ulangan, halqa MAU ichida shakllanadi. Oʻchirilgan kompyuter portini MAU chetlab oʻtadi, halqa uzilmaydi.",
+          "ru": "Логическая топология — кольцо, физическая — звезда: всё подключено к MAU, кольцо формируется внутри него. Выключенный компьютер MAU обходит, кольцо не рвётся.",
+          "en": "The logical topology is a ring, the physical one a star: everything connects to the MAU, which forms the ring inside itself. The MAU bypasses a switched-off computer, so the ring is not broken."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Wi-Fi kolliziyalarni yuborish paytida aniqlash uchun CSMA/CD usulidan foydalanadi.",
+          "ru": "Wi-Fi использует CSMA/CD, чтобы обнаруживать коллизии во время передачи.",
+          "en": "Wi-Fi uses CSMA/CD to detect collisions while transmitting."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Radio stansiya oʻz signali bilan «qichqirib» turganda boshqalarni eshita olmaydi — aniqlash imkonsiz. Shuning uchun CSMA/CA (oldini olish) va ACK tasdiqlash ishlatiladi.",
+          "ru": "Радиостанция, «кричащая» своим сигналом, не слышит других — обнаружение невозможно. Поэтому применяют CSMA/CA (предотвращение) и подтверждения ACK.",
+          "en": "A radio station cannot hear others while shouting with its own signal — detection is impossible. So Wi-Fi uses CSMA/CA (avoidance) and ACK confirmations."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Wi-Fi standartlari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о стандартах Wi-Fi верны?",
+          "en": "Which statements about Wi-Fi standards are correct?"
+        },
+        "options": [
+          {
+            "uz": "802.11b — 2.4 GHz da ishlaydi va maksimal 11 Mbit/s beradi",
+            "ru": "802.11b работает на 2,4 ГГц и даёт максимум 11 Мбит/с",
+            "en": "802.11b works on 2.4 GHz and gives a maximum of 11 Mbit/s"
+          },
+          {
+            "uz": "802.11a — 5 GHz da maksimal 54 Mbit/s",
+            "ru": "802.11a — максимум 54 Мбит/с на 5 ГГц",
+            "en": "802.11a gives a maximum of 54 Mbit/s on 5 GHz"
+          },
+          {
+            "uz": "802.11ax — Wi-Fi 7 deb ataladi",
+            "ru": "802.11ax называется Wi-Fi 7",
+            "en": "802.11ax is called Wi-Fi 7"
+          },
+          {
+            "uz": "802.11ac faqat 2.4 GHz da ishlaydi",
+            "ru": "802.11ac работает только на 2,4 ГГц",
+            "en": "802.11ac works only on 2.4 GHz"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "802.11ax — Wi-Fi 6/6E, Wi-Fi 7 esa 802.11be. 802.11ac — 5 GHz li Wi-Fi 5.",
+          "ru": "802.11ax — это Wi-Fi 6/6E, а Wi-Fi 7 — 802.11be. 802.11ac — это Wi-Fi 5 на 5 ГГц.",
+          "en": "802.11ax is Wi-Fi 6/6E; Wi-Fi 7 is 802.11be. 802.11ac is Wi-Fi 5 on 5 GHz."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "FDDI tarmogʻida kabel uzilsa yoki stansiya ishdan chiqsa, nima boʻladi?",
+          "ru": "Что происходит в сети FDDI при обрыве кабеля или отказе станции?",
+          "en": "In an FDDI network, what happens when a cable breaks or a station fails?"
+        },
+        "options": [
+          {
+            "uz": "Uzilish yonidagi stansiyalar asosiy halqani zaxira halqaga ulaydi (wrap) va tarmoq ishlashda davom etadi",
+            "ru": "Соседние с обрывом станции соединяют рабочее кольцо с резервным (wrap), и сеть продолжает работать",
+            "en": "The stations next to the break join the primary ring to the secondary (wrap) and the network keeps working"
+          },
+          {
+            "uz": "Butun tarmoq toʻxtaydi, operator kabelni tuzatguncha uzatish boʻlmaydi",
+            "ru": "Вся сеть останавливается до починки кабеля оператором",
+            "en": "The whole network stops until the operator repairs the cable"
+          },
+          {
+            "uz": "Zaxira halqa ham shu joydan uziladi",
+            "ru": "Резервное кольцо тоже рвётся в том же месте",
+            "en": "The backup ring breaks at the same place too"
+          },
+          {
+            "uz": "Marker yoʻqoladi va stansiyalar navbatsiz uzata boshlaydi",
+            "ru": "Маркер теряется, и станции начинают передавать без очереди",
+            "en": "The token is lost and stations start transmitting at random"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "FDDI da ikki halqa qarama-qarshi yoʻnalishda aylanadi; zaxira halqa odatda boʻsh yuradi va faqat uzilishda ishga qoʻshilib, ikki halqa bitta uzun halqaga aylanadi.",
+          "ru": "В FDDI два кольца идут в противоположных направлениях; резервное обычно свободно и включается только при отказе — два кольца становятся одним длинным.",
+          "en": "FDDI has two rings running in opposite directions; the backup is normally idle and joins only on a failure, the two rings becoming one long ring."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Halqada 10 ta stansiya, marker har aylanishda bir stansiyaga koʻpi bilan 5 kadr uzatishga ruxsat beradi. Eng yomon holatda, marker 1-stansiyaga qaytib kelguncha qolgan stansiyalar jami nechta kadr uzatadi?",
+          "ru": "В кольце 10 станций, за один обход маркер разрешает станции передать не более 5 кадров. В худшем случае сколько всего кадров передадут остальные станции, пока маркер вернётся к станции 1?",
+          "en": "A ring has 10 stations and the token lets each station send at most 5 frames per round. In the worst case, how many frames do the other stations send before the token comes back to station 1?"
+        },
+        "answers": [45],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "(10 − 1) × 5 = 45 kadr. Token Ring da kutishning aniq chegarasi bor — Ethernet bunday kafolatni bermaydi.",
+          "ru": "(10 − 1) × 5 = 45 кадров. У Token Ring есть точная верхняя граница ожидания — Ethernet такой гарантии не даёт.",
+          "en": "(10 − 1) × 5 = 45 frames. Token Ring has an exact worst-case wait — Ethernet gives no such guarantee."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Stansiyaning markerni ushlab turish vaqti chegarasi darsda qaysi qisqartma bilan berilgan?",
+          "ru": "Какой аббревиатурой обозначено в занятии ограничение времени удержания маркера станцией?",
+          "en": "Which abbreviation in the lesson marks the limit on how long a station may hold the token?"
+        },
+        "answers": ["THT"],
+        "explanation": {
+          "uz": "THT — token holding time, odatda 10 ms: stansiya markeri shu vaqt ichida ushlab, keyin keyingisiga uzatadi.",
+          "ru": "THT — token holding time, обычно 10 мс: станция держит маркер это время, затем передаёт дальше.",
+          "en": "THT — token holding time, usually 10 ms: the station holds the token for that long, then passes it on."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Yashirin stansiya muammosi nima va u qanday yechiladi?",
+          "ru": "В чём проблема скрытой станции и как она решается?",
+          "en": "What is the hidden station problem and how is it solved?"
+        },
+        "options": [
+          {
+            "uz": "Ikki stansiya bir-birini eshitmaydi, lekin umumiy nuqtani eshitadi va bir vaqtda uzatib toʻqnashadi — RTS/CTS almashinuvi bilan yechiladi",
+            "ru": "Две станции не слышат друг друга, но слышат общую точку и передают одновременно — решается обменом RTS/CTS",
+            "en": "Two stations cannot hear each other but hear a common access point and collide there — solved with an RTS/CTS exchange"
+          },
+          {
+            "uz": "Stansiyalar quvvatini oshirib, barcha toʻsiqlarni yengish orqali yechiladi",
+            "ru": "Решается увеличением мощности станций, чтобы «пробить» все препятствия",
+            "en": "Solved by raising station power so that every obstacle is overcome"
+          },
+          {
+            "uz": "Kolliziyani aniqlay olmagani uchun CSMA/CD yoqiladi",
+            "ru": "Включают CSMA/CD, чтобы всё-таки определять коллизию",
+            "en": "CSMA/CD is switched on to detect the collision after all"
+          },
+          {
+            "uz": "Kadr oʻlchamini kichraytirish orqali yechiladi",
+            "ru": "Решается уменьшением размера кадра",
+            "en": "Solved by making frames smaller"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "RTS/CTS da A «uzatmoqchiman» deydi, B hammaga eshitadigan «yoʻl boʻsh, uzat, A» (CTS) javobini beradi; C koʻrsatilgan vaqt davomida jim turadi.",
+          "ru": "При RTS/CTS станция A говорит «хочу передавать», B отвечает слышимым всем «путь свободен, передавай, A» (CTS); C молчит указанное время.",
+          "en": "With RTS/CTS, A says “I want to transmit”, B replies with a CTS everyone hears — “go ahead, A” — and C stays silent for the stated time."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Token Ring da 16 Mbit/s tezlikda kadrning qaytib kelishini kutmasdan, erta marker uzatish (early token release) qoʻllanadi.",
+          "ru": "В Token Ring на скорости 16 Мбит/с применяется ранняя передача маркера без ожидания возврата кадра.",
+          "en": "At 16 Mbit/s Token Ring uses early token release, without waiting for the frame to return."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda erta marker uzatish 16 Mbit/s uchun tilga olingan qoʻshimcha mexanizmlar qatorida; unga yana active monitor va 8 darajali ustuvorliklar qoʻshiladi.",
+          "ru": "Ранняя передача маркера при 16 Мбит/с названа среди дополнительных механизмов — вместе с активным монитором и восемью уровнями приоритета маркера.",
+          "en": "Early token release at 16 Mbit/s is listed among the extra mechanisms, with the active monitor and the token's eight priority levels."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Marker usuli va boshqa LAN texnologiyalari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о маркерном доступе и других LAN-технологиях верны?",
+          "en": "Which statements about token access and other LAN technologies are correct?"
+        },
+        "options": [
+          {
+            "uz": "Token Ring da stansiya faqat marker oʻziga kelgandagina uzatadi",
+            "ru": "В Token Ring станция передаёт, только когда маркер дошёл до неё",
+            "en": "In Token Ring a station transmits only when the token reaches it"
+          },
+          {
+            "uz": "FDDI da ikkala halqa ham doimo maʼlumot tashiydi",
+            "ru": "В FDDI оба кольца постоянно переносят данные",
+            "en": "In FDDI both rings always carry data"
+          },
+          {
+            "uz": "100VG-AnyLAN da demand priority usuli tufayli kolliziyalar boʻlmaydi",
+            "ru": "В 100VG-AnyLAN метод demand priority исключает коллизии",
+            "en": "100VG-AnyLAN's demand priority method means there are no collisions"
+          },
+          {
+            "uz": "Token Ring kolliziyalar sonini oshirib, Ethernet ni ortda qoldirdi",
+            "ru": "Token Ring обогнал Ethernet, увеличив число коллизий",
+            "en": "Token Ring beat Ethernet by increasing the number of collisions"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Zaxira halqa odatda boʻsh yuradi — u faqat uzilishda ishlatiladi. Marker usulida stansiya faqat marker kelganda uzatadi, shuning uchun kolliziya boʻlmaydi.",
+          "ru": "Резервное кольцо обычно свободно — оно включается только при отказе. При маркерном доступе станция передаёт только с маркером, поэтому коллизий нет.",
+          "en": "The backup ring normally runs idle and joins only on a failure. With token access a station transmits only when the token reaches it, so there are no collisions."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Marker halqasi: nechta aylanish kerak?",
+      "ru": "Токен-кольцо: сколько оборотов нужно?",
+      "en": "Token ring: how many rounds?"
+    },
+    "statement": {
+      "uz": "Token Ring da marker halqa boʻylab aylanadi va har bir aylanishda har bir stansiya koʻpi bilan h ta kadr uzata oladi (THT cheklovi). Birinchi satrda n va h (1 ≤ n ≤ 20, 1 ≤ h ≤ 10), ikkinchi satrda n ta butun son — stansiyalar navbatidagi kutayotgan kadrlar soni (har biri 0 dan 100 gacha) berilgan. Barcha kadrlar uzatilishi uchun marker halqani nechta toʻliq aylanib chiqishini hisoblang va bitta butun sonni chiqaring — hech qanday qoʻshimcha soʻz yozmang. Masalan, 4 2 va navbat 3 0 5 1 boʻlsa, javob 3.",
+      "ru": "В Token Ring маркер обходит кольцо, и за один обход каждая станция может передать не более h кадров (ограничение THT). В первой строке заданы n и h (1 ≤ n ≤ 20, 1 ≤ h ≤ 10), во второй — n целых чисел, очереди кадров станций (каждое от 0 до 100). Посчитайте, сколько полных оборотов кольца понадобится, чтобы все кадры были переданы, и выведите одно целое число — без каких-либо слов. Например, 4 2 и очереди 3 0 5 1 дают ответ 3.",
+      "en": "In Token Ring the token circulates around the ring, and in each round a station may send at most h frames (the THT limit). The first line gives n and h (1 ≤ n ≤ 20, 1 ≤ h ≤ 10), the second line gives n integers — the waiting frames of each station (each from 0 to 100). Work out how many full rounds of the token are needed until every frame has been sent and print a single integer — no words. For example, 4 2 with the queues 3 0 5 1 gives 3."
+    },
+    "code": {
+      "starter": {
+        "python": "n, h = map(int, input().split())\nnavbat = list(map(int, input().split()))\nprint(max(navbat) // h)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int h = in.nextInt();\n        int maxQueue = 0;\n        for (int i = 0; i < n; i++) {\n            int q = in.nextInt();\n            if (q > maxQueue) maxQueue = q;\n        }\n        System.out.println(maxQueue / h);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, h;\n    cin >> n >> h;\n    int maxQueue = 0;\n    for (int i = 0; i < n; i++) {\n        int q;\n        cin >> q;\n        if (q > maxQueue) maxQueue = q;\n    }\n    cout << maxQueue / h << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n, h = map(int, input().split())\nnavbat = list(map(int, input().split()))\nprint((max(navbat) + h - 1) // h)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int h = in.nextInt();\n        int maxQueue = 0;\n        for (int i = 0; i < n; i++) {\n            int q = in.nextInt();\n            if (q > maxQueue) maxQueue = q;\n        }\n        System.out.println((maxQueue + h - 1) / h);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, h;\n    cin >> n >> h;\n    int maxQueue = 0;\n    for (int i = 0; i < n; i++) {\n        int q;\n        cin >> q;\n        if (q > maxQueue) maxQueue = q;\n    }\n    cout << (maxQueue + h - 1) / h << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4 2\n3 0 5 1\n", "expected": "3", "hidden": false },
+        { "input": "3 5\n0 0 0\n", "expected": "0", "hidden": false },
+        { "input": "2 1\n2 2\n", "expected": "2", "hidden": true },
+        { "input": "5 3\n1 2 4 8 9\n", "expected": "3", "hidden": true },
+        { "input": "1 4\n7\n", "expected": "2", "hidden": true }
+      ]
+    }
+  }
+}

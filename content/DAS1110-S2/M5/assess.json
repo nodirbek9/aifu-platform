@@ -1,0 +1,285 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Shablonlar (generiklar) qanday muammoni hal qiladi?",
+          "ru": "Какую проблему решают шаблоны (дженерики)?",
+          "en": "What problem do templates (generics) solve?"
+        },
+        "options": [
+          {
+            "uz": "Bir xil algoritmni har bir tur uchun alohida nusxalash: nusxalardan birida tuzatilgan xato qolganlarida qoladi",
+            "ru": "Копирование одного и того же алгоритма под каждый тип: ошибка, исправленная в одной копии, остаётся в других",
+            "en": "Copying the same algorithm for every type: a bug fixed in one copy stays in the others"
+          },
+          {
+            "uz": "Dastur kodini faylda saqlash joyini kamaytirish",
+            "ru": "Сокращение места, которое код программы занимает в файле",
+            "en": "Reducing the space the program's code takes in a file"
+          },
+          {
+            "uz": "Oʻzgaruvchilarga tezroq qiymat berish",
+            "ru": "Более быстрое присваивание значений переменным",
+            "en": "Assigning values to variables faster"
+          },
+          {
+            "uz": "Bajarilish vaqtidagi xatolarni umuman yoʻq qilish",
+            "ru": "Полное устранение ошибок времени выполнения",
+            "en": "Eliminating run-time errors altogether"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shablon algoritmni tur parametri bilan bir marta yozish imkonini beradi: `T` oʻrniga `int`, `double`, String qoʻyiladi.",
+          "ru": "Шаблон позволяет записать алгоритм один раз с параметром типа: вместо `T` подставляют `int`, `double`, `String`.",
+          "en": "A template lets the algorithm be written once with a type parameter: `T` is replaced by `int`, `double` or `String`."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "C++ʼda shablon funksiyasining toʻliq kodini `.cpp` faylda qoldirib, uni boshqa fayldan bemalol chaqirish mumkin.",
+          "ru": "В C++ полный код шаблонной функции можно оставить в .cpp-файле и спокойно вызывать из другого файла.",
+          "en": "In C++ the full code of a template function may stay in a .cpp file and be called freely from another file."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Shablonning toʻliq kodi sarlavha faylida (`.h`) turishi kerak: kompilyator uni har bir tur uchun koʻrishi lozim. Aks holda „undefined reference“ xatosi chiqadi.",
+          "ru": "Полный код шаблона должен находиться в заголовочном файле (.h): компилятор должен видеть его для каждого типа. Иначе возникает ошибка undefined reference.",
+          "en": "The template's full code must sit in a header file (.h): the compiler has to see it for every type. Otherwise an \"undefined reference\" error appears."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi `engKatta` shablonida `T` oʻrniga qanday turlar qoʻyilishi mumkinligi aytilgan?",
+          "ru": "Какие типы, по занятию, можно подставить вместо T в шаблоне engKatta?",
+          "en": "According to the lesson, which types can replace `T` in the `engKatta` template?"
+        },
+        "options": [
+          { "uz": "`int`", "ru": "`int`", "en": "`int`" },
+          { "uz": "`double`", "ru": "`double`", "en": "`double`" },
+          { "uz": "String", "ru": "`String`", "en": "`String`" },
+          { "uz": "Faqat butun sonli turlar", "ru": "Только целочисленные типы", "en": "Only integer types" }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda `T` oʻrniga `int` ham, `double` ham, String ham qoʻyilishi mumkin deyiladi.",
+          "ru": "В занятии сказано, что вместо T подходит и int, и double, и String.",
+          "en": "The lesson names `int`, `double` and `String` as possible values of `T`."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Javaʼda nega `Stek<int>` yozib boʻlmaydi?",
+          "ru": "Почему в Java нельзя написать Stek<int>?",
+          "en": "Why can't you write `Stek<int>` in Java?"
+        },
+        "options": [
+          {
+            "uz": "Tur parametri faqat obyekt turi boʻla oladi; `int` oʻrniga `Integer` yoziladi, oʻtish avtomatik (autoboxing)",
+            "ru": "Параметр типа может быть только объектным типом; вместо int пишут Integer, переход выполняется автоматически (autoboxing)",
+            "en": "A type parameter can only be an object type; `Integer` is used instead of `int`, and the conversion is automatic (autoboxing)"
+          },
+          {
+            "uz": "Javaʼda umuman shablonlar yoʻq",
+            "ru": "В Java вообще нет шаблонов",
+            "en": "Java has no templates at all"
+          },
+          {
+            "uz": "`int` juda sekin ishlaydi",
+            "ru": "`int` работает слишком медленно",
+            "en": "`int` is too slow"
+          },
+          {
+            "uz": "`Stek` faqat String bilan ishlaydi",
+            "ru": "`Stek` работает только со `String`",
+            "en": "`Stek` only works with `String`"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Java generiklarida tur parametri obyekt turi boʻlishi shart: `Stek<Integer>` toʻgʻri, `Stek<int>` — kompilyatsiya xatosi.",
+          "ru": "В дженериках Java параметр типа — только объектный тип: Stek<Integer> верно, а Stek<int> — ошибка компиляции.",
+          "en": "Java generics take only object types as parameters: `Stek<Integer>` is right, `Stek<int>` is a compile error."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Javaʼda tur parametrini cheklash uchun qaysi soʻz ishlatiladi (`T ____ Comparable<T>` boʻshligʻiga)?",
+          "ru": "Какое слово в Java ограничивает параметр типа (в T ____ Comparable<T>)?",
+          "en": "Which Java keyword puts a bound on a type parameter (completes `T ____ Comparable<T>`)?"
+        },
+        "answers": ["extends"],
+        "explanation": {
+          "uz": "`<T extends Comparable<T>>` — „`T` oʻzaro solishtiriladigan tur boʻlishi shart“, shundan keyin compareTo chaqiriladi.",
+          "ru": "`<T extends Comparable<T>>` означает, что T должен быть взаимно сравниваемым типом, после чего можно вызывать compareTo.",
+          "en": "`<T extends Comparable<T>>` means `T` must be a mutually comparable type, after which `compareTo` can be called."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Pythonʼdagi tur izohlari (`TypeVar`) dastur qanday ishlashini oʻzgartiradi.",
+          "ru": "Аннотации типов в Python (TypeVar) меняют то, как работает программа.",
+          "en": "Python type hints (`TypeVar`) change how the program runs."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Izohlar faqat kod oʻquvchisi va tekshiruv vositalari uchun; dastur dinamik tipli boʻlgani uchun istalgan mos tur bilan ishlaydi (oʻrdak tiplash).",
+          "ru": "Аннотации нужны только читателю кода и проверочным инструментам; программа из-за динамической типизации работает с любым подходящим типом (duck typing).",
+          "en": "Hints are only for readers of the code and checking tools; because the language is dynamically typed, the program works with any suitable type (duck typing)."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "C++ dasturida `engKatta` uch marta chaqirildi: `vector<int>` bilan ikki marta va `vector<string>` bilan bir marta. Kompilyator necha xil funksiya nusxasini yaratadi?",
+          "ru": "В программе на C++ функция engKatta вызвана трижды: два раза с vector<int> и один раз с vector<string>. Сколько разных копий функции создаст компилятор?",
+          "en": "A C++ program calls `engKatta` three times: twice with `vector<int>` and once with `vector<string>`. How many different copies of the function does the compiler create?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Instansiyalash har bir tur uchun bitta nusxa yaratadi: takroriy chaqiruv yangi nusxa bermaydi. Jami: `int` uchun bitta, string uchun bitta.",
+          "ru": "Инстанцирование создаёт по одной копии на каждый тип, повторный вызов новой копии не даёт: одна для int и одна для string.",
+          "en": "Instantiation creates one copy per type; a repeated call adds none. So: one copy for `int`, one for `string`."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "C++ shabloni `T` ustida `<` ishlatadi, chaqirilganda esa `<` aniqlanmagan tur uzatilgan. Xato qayerda koʻrinadi?",
+          "ru": "Шаблон на C++ использует < для T, но переданный тип < не определяет. Где проявится ошибка?",
+          "en": "A C++ template applies `<` to `T`, but the type passed in does not define `<`. Where does the error appear?"
+        },
+        "options": [
+          {
+            "uz": "Shablonning ichida, `<` ishlatilgan qatorda",
+            "ru": "Внутри шаблона, на строке, где используется <",
+            "en": "Inside the template, on the line that uses `<`"
+          },
+          {
+            "uz": "Umuman xato chiqmaydi, dastur notoʻgʻri ishlaydi",
+            "ru": "Ошибки не будет вовсе, программа просто заработает неправильно",
+            "en": "No error at all; the program just misbehaves"
+          },
+          {
+            "uz": "Bogʻlash (linking) paytida: „undefined reference“",
+            "ru": "На этапе компановки: undefined reference",
+            "en": "At link time: \"undefined reference\""
+          },
+          {
+            "uz": "Bajarilish vaqtida, istisno (exception) koʻtariladi",
+            "ru": "Во время выполнения будет выброшено исключение",
+            "en": "At run time, as a thrown exception"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi ogohlantirish: xato shablon ichida koʻrinadi, lekin sabab koʻpincha chaqiruvdagi turdadir — unda kerakli amal (`<`, `==`, `<<`) yoʻq.",
+          "ru": "Как предупреждает занятие: ошибка видна внутри шаблона, но причина обычно в типе в месте вызова — у него нет нужной операции (<, ==, <<).",
+          "en": "The lesson warns: the error shows inside the template, but the cause is usually the type at the call — it lacks the needed operation (`<`, `==`, `<<`)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Java generiklari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о дженериках Java верны?",
+          "en": "Which statements about Java generics are correct?"
+        },
+        "options": [
+          {
+            "uz": "`Stek<String>` ichiga son qoʻyishga urinish kompilyatsiya xatosi beradi",
+            "ru": "Попытка положить число в Stek<String> приводит к ошибке компиляции",
+            "en": "Trying to put a number into a `Stek<String>` is a compile error"
+          },
+          {
+            "uz": "Cheklovsiz `T` uchun faqat `Object` metodlari mavjud",
+            "ru": "Для T без ограничения доступны только методы Object",
+            "en": "For an unbounded `T` only the methods of `Object` are available"
+          },
+          {
+            "uz": "Ish vaqtida tur parametri oʻchiriladi (type erasure), shuning uchun `new T[n]` yozib boʻlmaydi",
+            "ru": "Во время выполнения параметр типа стирается (type erasure), поэтому new T[n] написать нельзя",
+            "en": "At run time the type parameter is erased (type erasure), so `new T[n]` cannot be written"
+          },
+          {
+            "uz": "`T` oʻrniga primitiv tur ham qoʻyish mumkin",
+            "ru": "Вместо T можно поставить и примитивный тип",
+            "en": "A primitive type can also be used for `T`"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Primitiv tur qoʻyib boʻlmaydi: `List<int>` xato, `List<Integer>` toʻgʻri (autoboxing). Qolgan uchta ifoda darsda aytilgan.",
+          "ru": "Примитив подставить нельзя: List<int> — ошибка, List<Integer> — верно (autoboxing). Остальные три утверждения взяты из занятия.",
+          "en": "A primitive cannot be a type argument: `List<int>` is an error, `List<Integer>` is right (autoboxing). The other three statements are from the lesson."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Takrorlangan qiymatlarni oʻchirish",
+      "ru": "Удаление повторяющихся значений",
+      "en": "Removing repeated values"
+    },
+    "statement": {
+      "uz": "Birinchi satrda butun sonlar, ikkinchi satrda kichik lotin harfli soʻzlar berilgan (har bir satrda kamida bitta element, orasi boʻsh joy). Bitta umumiy funksiya yozing (C++ʼda shablon, Javaʼda generik metod) va uni ham sonlar roʻyxati, ham soʻzlar roʻyxati uchun chaqiring: funksiya takrorlangan qiymatlarni oʻchirib, har bir qiymatning faqat birinchi uchragan oʻrnini saqlaydi, qolgan tartib oʻzgarmaydi. Birinchi qatorda sonlar, ikkinchi qatorda soʻzlar — har bir qator boʻsh joy bilan ajratilgan elementlardan iborat. Masalan, `7 3 7 3 9` va `olma nok olma anor nok` kirilsa, dastur `7 3 9` va `olma nok anor` chiqaradi. Sonlar 0 dan 10^9 gacha, yetakchi nollarsiz yoziladi.",
+      "ru": "В первой строке заданы целые числа, во второй — слова из строчных латинских букв (в каждой строке хотя бы один элемент, разделены пробелами). Напишите одну общую функцию (шаблон в C++, дженерик-метод в Java) и вызовите её и для списка чисел, и для списка слов: функция удаляет повторяющиеся значения, оставляя каждое значение только на месте первого появления, порядок не меняется. В первой строке выведите числа, во второй — слова, разделив элементы одним пробелом. Например, для `7 3 7 3 9` и `olma nok olma anor nok` программа выводит `7 3 9` и `olma nok anor`. Числа от 0 до 10^9, без ведущих нулей.",
+      "en": "The first line holds integers, the second line lowercase Latin words (at least one element per line, separated by spaces). Write one common function (a template in C++, a generic method in Java) and call it for both the list of numbers and the list of words: the function removes repeated values, keeping each value only at its first occurrence, without changing the order. Print the numbers on the first line and the words on the second, each line its elements separated by single spaces. For example, `7 3 7 3 9` and `olma nok olma anor nok` make the program print `7 3 9` and `olma nok anor`. The integers are between 0 and 10^9 and have no leading zeros."
+    },
+    "code": {
+      "starter": {
+        "python": "def takrorlar(a):\n    natija = []\n    for x in a:\n        if not natija or natija[-1] != x:\n            natija.append(x)\n    return natija\n\n\nsonlar = list(map(int, input().split()))\nsozlar = input().split()\n\nprint(*takrorlar(sonlar))\nprint(*takrorlar(sozlar))\n",
+        "java": "import java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    static <T> List<T> takrorlar(List<T> a) {\n        List<T> natija = new ArrayList<>();\n        for (T x : a) {\n            if (natija.isEmpty() || !natija.get(natija.size() - 1).equals(x)) natija.add(x);\n        }\n        return natija;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        List<Integer> sonlar = new ArrayList<>();\n        for (String s : in.nextLine().trim().split(\"\\\\s+\")) sonlar.add(Integer.parseInt(s));\n        List<String> sozlar = Arrays.asList(in.nextLine().trim().split(\"\\\\s+\"));\n\n        StringBuilder sb = new StringBuilder();\n        for (int x : takrorlar(sonlar)) {\n            if (sb.length() > 0) sb.append(' ');\n            sb.append(x);\n        }\n        System.out.println(sb);\n\n        StringBuilder sb2 = new StringBuilder();\n        for (String s : takrorlar(sozlar)) {\n            if (sb2.length() > 0) sb2.append(' ');\n            sb2.append(s);\n        }\n        System.out.println(sb2);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\ntemplate <typename T>\nvector<T> takrorlar(const vector<T>& a) {\n    vector<T> natija;\n    for (const T& x : a) {\n        if (natija.empty() || !(natija.back() == x)) natija.push_back(x);\n    }\n    return natija;\n}\n\ntemplate <typename T>\nvoid chiqar(const vector<T>& a) {\n    for (size_t i = 0; i < a.size(); i++) {\n        if (i > 0) cout << ' ';\n        cout << a[i];\n    }\n    cout << endl;\n}\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    istringstream oqim1(satr);\n    vector<int> sonlar;\n    int x;\n    while (oqim1 >> x) sonlar.push_back(x);\n\n    getline(cin, satr);\n    istringstream oqim2(satr);\n    vector<string> sozlar;\n    string s;\n    while (oqim2 >> s) sozlar.push_back(s);\n\n    chiqar(takrorlar(sonlar));\n    chiqar(takrorlar(sozlar));\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "def takrorlar(a):\n    natija = []\n    for x in a:\n        if x not in natija:\n            natija.append(x)\n    return natija\n\n\nsonlar = list(map(int, input().split()))\nsozlar = input().split()\n\nprint(*takrorlar(sonlar))\nprint(*takrorlar(sozlar))\n",
+        "java": "import java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    static <T> List<T> takrorlar(List<T> a) {\n        List<T> natija = new ArrayList<>();\n        for (T x : a) {\n            if (!natija.contains(x)) natija.add(x);\n        }\n        return natija;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        List<Integer> sonlar = new ArrayList<>();\n        for (String s : in.nextLine().trim().split(\"\\\\s+\")) sonlar.add(Integer.parseInt(s));\n        List<String> sozlar = Arrays.asList(in.nextLine().trim().split(\"\\\\s+\"));\n\n        StringBuilder sb = new StringBuilder();\n        for (int x : takrorlar(sonlar)) {\n            if (sb.length() > 0) sb.append(' ');\n            sb.append(x);\n        }\n        System.out.println(sb);\n\n        StringBuilder sb2 = new StringBuilder();\n        for (String s : takrorlar(sozlar)) {\n            if (sb2.length() > 0) sb2.append(' ');\n            sb2.append(s);\n        }\n        System.out.println(sb2);\n    }\n}\n",
+        "cpp": "#include <bits/stdc++.h>\n#include <iostream>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\ntemplate <typename T>\nvector<T> takrorlar(const vector<T>& a) {\n    vector<T> natija;\n    for (const T& x : a) {\n        if (find(natija.begin(), natija.end(), x) == natija.end()) natija.push_back(x);\n    }\n    return natija;\n}\n\ntemplate <typename T>\nvoid chiqar(const vector<T>& a) {\n    for (size_t i = 0; i < a.size(); i++) {\n        if (i > 0) cout << ' ';\n        cout << a[i];\n    }\n    cout << endl;\n}\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    istringstream oqim1(satr);\n    vector<int> sonlar;\n    int x;\n    while (oqim1 >> x) sonlar.push_back(x);\n\n    getline(cin, satr);\n    istringstream oqim2(satr);\n    vector<string> sozlar;\n    string s;\n    while (oqim2 >> s) sozlar.push_back(s);\n\n    chiqar(takrorlar(sonlar));\n    chiqar(takrorlar(sozlar));\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "7 3 7 3 9\nolma nok olma anor nok\n", "expected": "7 3 9\nolma nok anor", "hidden": false },
+        { "input": "5 5 5\na b a b a\n", "expected": "5\na b", "hidden": false },
+        { "input": "1 2 3 4 5\nz\n", "expected": "1 2 3 4 5\nz", "hidden": true },
+        { "input": "10 20 10 30 20 40\nkitob qalam kitob daftar qalam\n", "expected": "10 20 30 40\nkitob qalam daftar", "hidden": true },
+        { "input": "0 0 7\nx x x x\n", "expected": "0 7\nx", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "ARP protokoli nimani hal qiladi?",
+          "ru": "Какую задачу решает протокол ARP?",
+          "en": "What problem does the ARP protocol solve?"
+        },
+        "options": [
+          {
+            "uz": "IP manzil boʻyicha MAC manzilni topish",
+            "ru": "Поиск MAC-адреса по IP-адресу",
+            "en": "Finding the MAC address for an IP address"
+          },
+          {
+            "uz": "Domenni IP manzilga aylantirish",
+            "ru": "Преобразование доменного имени в IP-адрес",
+            "en": "Turning a domain name into an IP address"
+          },
+          {
+            "uz": "Mijozga manzilni avtomatik berish",
+            "ru": "Автоматическая выдача адреса клиенту",
+            "en": "Assigning an address to a client automatically"
+          },
+          {
+            "uz": "Paket yetib kelmasligi haqida xabar berish",
+            "ru": "Сообщение о недоставленном пакете",
+            "en": "Reporting that a packet did not arrive"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ethernet kadriga MAC manzil kerak — ARP uni IP boʻyicha topadi. Domeni DNS aylantiradi, manzilni DHCP beradi, nosozlik haqida esa ICMP xabar qiladi.",
+          "ru": "Ethernet-кадру нужен MAC-адрес — ARP находит его по IP. Домен преобразует DNS, адрес выдаёт DHCP, а о проблемах сообщает ICMP.",
+          "en": "An Ethernet frame needs a MAC address, and ARP finds it from the IP address. DNS resolves domains, DHCP assigns addresses, ICMP reports faults."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "ARP soʻrovi broadkast koʻrinishda yuboriladi, javob esa soʻrovchini oʻziga (unicast) qaytariladi.",
+          "ru": "ARP-запрос отправляется широковещательно, а ответ — единолично (unicast) на адресанта.",
+          "en": "An ARP request is sent as a broadcast, while the reply goes unicast back to the requester."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Soʻrov «Kimda 192.168.1.1 bor?» deb hammaga yuboriladi, manzil egasi esa javobni faqat soʻrovchiga unicast qilib qaytaradi. Javob keshga yoziladi va bir necha daqiqa saqlanadi.",
+          "ru": "Запрос идёт всем — «кто такой 192.168.1.1?», а владелец адреса отвечает unicast только тому, кто спросил. Ответ записывается в кэш и хранится несколько минут.",
+          "en": "The request goes to everyone — «who has 192.168.1.1?» — and the owner replies unicast only to the requester. The reply is stored in the cache and kept for a few minutes."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysilari ICMP xabarlari?",
+          "ru": "Какие из перечисленного — сообщения ICMP?",
+          "en": "Which of these are ICMP messages?"
+        },
+        "options": [
+          {
+            "uz": "Echo Request / Echo Reply",
+            "ru": "Echo Request / Echo Reply",
+            "en": "Echo Request / Echo Reply"
+          },
+          {
+            "uz": "Destination Unreachable",
+            "ru": "Destination Unreachable",
+            "en": "Destination Unreachable"
+          },
+          {
+            "uz": "Time Exceeded",
+            "ru": "Time Exceeded",
+            "en": "Time Exceeded"
+          },
+          {
+            "uz": "Offer",
+            "ru": "Offer",
+            "en": "Offer"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi ICMP xabarlari: Echo (type 0/8, ping), Destination Unreachable (3), Redirect (5), Time Exceeded (11). Offer esa DHCP ning DORA bosqichi.",
+          "ru": "Сообщения ICMP из занятия: Echo (тип 0/8, ping), Destination Unreachable (3), Redirect (5), Time Exceeded (11). Offer — это шаг DORA протокола DHCP.",
+          "en": "The lesson lists Echo (type 0/8, ping), Destination Unreachable (3), Redirect (5) and Time Exceeded (11) as ICMP messages. Offer is a step of DHCP's DORA process."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`tracert` buyrugʻi yoʻldagi routerlarni aniqlashda qaysi ICMP xabaridan foydalanadi?",
+          "ru": "Какое ICMP-сообщение использует команда `tracert`, чтобы определить маршрутизаторы на пути?",
+          "en": "Which ICMP message does `tracert` use to discover the routers on the path?"
+        },
+        "options": [
+          {
+            "uz": "Echo Reply (type 0)",
+            "ru": "Echo Reply (тип 0)",
+            "en": "Echo Reply (type 0)"
+          },
+          {
+            "uz": "Redirect (type 5)",
+            "ru": "Redirect (тип 5)",
+            "en": "Redirect (type 5)"
+          },
+          {
+            "uz": "Time Exceeded (type 11)",
+            "ru": "Time Exceeded (тип 11)",
+            "en": "Time Exceeded (type 11)"
+          },
+          {
+            "uz": "Destination Unreachable (type 3)",
+            "ru": "Destination Unreachable (тип 3)",
+            "en": "Destination Unreachable (type 3)"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "`tracert` TTL = 1, 2, 3, … bilan paket yuboradi; TTL 0 ga tushgan har bir router «Time Exceeded» (type 11) xabarini qaytaradi va shu orqali yoʻl ochiladi.",
+          "ru": "`tracert` посылает пакеты с TTL = 1, 2, 3, …; каждый маршрутизатор, у которого TTL упал до 0, возвращает «Time Exceeded» (тип 11) — так и открывается путь.",
+          "en": "`tracert` sends packets with TTL = 1, 2, 3, …; every router whose TTL drops to 0 returns «Time Exceeded» (type 11), which reveals the path."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "DHCP server qaysi UDP portda soʻrovlarni qabul qiladi?",
+          "ru": "На каком UDP-порту сервер DHCP принимает запросы?",
+          "en": "On which UDP port does the DHCP server receive requests?"
+        },
+        "answers": [67],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "DHCP da server 67-portda, mijoz 68-portda ishlaydi.",
+          "ru": "У DHCP сервер работает на порту 67, клиент — на порту 68.",
+          "en": "In DHCP the server uses port 67 and the client port 68."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "OSPF protokoli eng qisqa yoʻllarni qaysi algoritmi yordamida hisoblaydi? Bitta soʻz bilan yozing.",
+          "ru": "Какой алгоритм использует OSPF для расчёта кратчайших путей? Ответьте одним словом.",
+          "en": "Which algorithm does OSPF use to compute the shortest paths? Answer in one word."
+        },
+        "answers": [
+          "Deykstra",
+          "Dijkstra",
+          "deykstra",
+          "dijkstra"
+        ],
+        "explanation": {
+          "uz": "Kanal holati protokollarida har bir router butun tarmoq xaritasini oladi va eng qisqa yoʻllarni Deykstra algoritmi bilan oʻzi hisoblaydi. Metrikasi — kanal narxi, sakrashlar soni emas.",
+          "ru": "В протоколах состояния каналов каждый маршрутизатор получает карту всей сети и сам считает кратчайшие пути алгоритмом Дейкстры; его метрика — стоимость канала, а не число переходов.",
+          "en": "In link-state protocols every router gets the map of the whole network and computes the shortest paths itself with Dijkstra's algorithm; its metric is the link cost, not the hop count."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nima uchun OSPF RIP ga qaragananda tezroq yaqinlashadi (jadvallar barqarorlashadi)?",
+          "ru": "Почему OSPF сходится быстрее, чем RIP?",
+          "en": "Why does OSPF converge faster than RIP?"
+        },
+        "options": [
+          {
+            "uz": "Har bir router butun tarmoq xaritasini oladi va eng qisqa yoʻllarni oʻzi hisoblaydi",
+            "ru": "Каждый маршрутизатор получает карту всей сети и сам считает кратчайшие пути",
+            "en": "Every router gets the map of the whole network and computes the shortest paths itself"
+          },
+          {
+            "uz": "OSPF marshrutni qoʻshnisining jadvalidan koʻchirib oladi",
+            "ru": "OSPF переносит маршрут из таблицы соседа",
+            "en": "OSPF copies a route from its neighbour's table"
+          },
+          {
+            "uz": "OSPF metrikasi sakrashlar soni boʻlgani uchun",
+            "ru": "Потому что метрика OSPF — число переходов",
+            "en": "Because the OSPF metric is the hop count"
+          },
+          {
+            "uz": "OSPF — yoʻl-vektor protokoli, maʼlumot bir raundda tarqaladi",
+            "ru": "OSPF — протокол вектора пути, данные распространяются за один раунд",
+            "en": "OSPF is a path-vector protocol, so the information spreads in one round"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Masofa-vektor protokollarida (RIP) maʼlumot bir raundda faqat bir qadam olgona yuradi, shuning uchun uzoq yoʻllar sekin ochiladi. OSPF esa xarita boʻyicha hisoblaydi; kanal narxi — uning metrikasi, yoʻl-vektor esa BGP ga xos.",
+          "ru": "В дистанционно-векторных протоколах (RIP) за один раунд информация проходит лишь один переход, поэтому дальние пути открываются медленно. OSPF же считает по карте; стоимость канала — его метрика, а вектор пути свойственен BGP.",
+          "en": "In distance-vector protocols (RIP) information advances only one hop per round, so distant paths appear slowly. OSPF computes from the map; the link cost is its metric, and path-vector belongs to BGP."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Marshrutlash va yordamchi protokollar haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о маршрутизации и вспомогательных протоколах верны?",
+          "en": "Which statements about routing and the helper protocols are correct?"
+        },
+        "options": [
+          {
+            "uz": "Bir tarmoqqa turli manbalardan marshrut boʻlsa, tanlov administrativ masofa boʻyicha qilinadi",
+            "ru": "Если к одной сети есть маршруты из разных источников, выбор идёт по административному расстоянию",
+            "en": "If one network has routes from different sources, the choice is made by administrative distance"
+          },
+          {
+            "uz": "BGP — tashqi protokol, u avtonom tizimlar orasida ishlaydi",
+            "ru": "BGP — внешний протокол, он работает между автономными системами",
+            "en": "BGP is an exterior protocol and runs between autonomous systems"
+          },
+          {
+            "uz": "Qabul qiluvchi boshqa tarmoqda boʻlsa, ARP soʻrovi uning oʻz MAC manzilini soʻraydi",
+            "ru": "Если получатель в другой сети, ARP запрашивает его собственный MAC-адрес",
+            "en": "If the receiver is on another network, ARP asks for its own MAC address"
+          },
+          {
+            "uz": "RIP da metrika 16 «yetib boʻlmaydi» degani",
+            "ru": "Метрика 16 в RIP означает «недостижимо»",
+            "en": "A RIP metric of 16 means unreachable"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Uchinchi ifoda xato: qabul qiluvchi boshqa tarmoqda boʻlsa, kompyuter standart shlyuz (router) MAC manzilini soʻraydi. Administrativ masofa turli manbalarni solishtiradi (bevosita 0, statik 1, OSPF 110, RIP 120), metrika esa bitta protokol ichidagi yoʻllarni.",
+          "ru": "Третье утверждение неверно: если получатель в другой сети, ARP запрашивает MAC-адрес стандартного шлюза (маршрутизатора). Административное расстояние сравнивает разные источники (подключённые 0, статические 1, OSPF 110, RIP 120), метрика — пути внутри одного протокола.",
+          "en": "The third statement is wrong: when the receiver is on another network, ARP asks for the default gateway's MAC address. Administrative distance compares different sources (connected 0, static 1, OSPF 110, RIP 120), the metric compares paths inside one protocol."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "DORA jarayonida mijoz yuboragan Request xabari unicast koʻrinishda bir serverga boradi.",
+          "ru": "В процессе DORA сообщение Request от клиента отправляется одним сообщением (unicast) конкретному серверу.",
+          "en": "In the DORA process the client's Request goes unicast to a single server."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Mijoz Request ni ham broadkast qilib yuboradi — shunda boshqa serverlar ham tanlanganini bilib, oʻz takliflarini qaytaradi. Ulanishning birinchi adimi Discover ham broadkast (manba 0.0.0.0).",
+          "ru": "Клиент тоже отправляет Request широко — так остальные серверы узнают о выборе и снимают свои предложения. Первый шаг, Discover, тоже широковещательный (источник 0.0.0.0).",
+          "en": "The client broadcasts the Request too, so the other servers learn of the choice and withdraw their offers. The first step, Discover, is broadcast as well (source 0.0.0.0)."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Qaysi marshrut jadvalga tushadi?",
+      "ru": "Какой маршрут попадёт в таблицу?",
+      "en": "Which route goes into the table?"
+    },
+    "statement": {
+      "uz": "Bir xil tarmoqqa turli manbalardan marshrutlar kelishi mumkin. Router tanlovda avval administrativ masofaga qaraydi (Cisco: connected 0, static 1, ospf 110, rip 120 — masofa kichik boʻlsa, manba ishonchliroq), soʻngra prefiks uzunligiga. Birinchi satrda yozuvlar soni n (1 ≤ n ≤ 20); keyingi n satrning har birida manba nomi (connected, static, ospf yoki rip — kichik harflar bilan) va prefiks uzunligi (0 dan 32 gacha) boʻshliq bilan ajratib yozilgan. Qoida: administrativ masofasi eng kichik yozuv tanlanadi; masofa teng boʻlsa — prefiksi uzunroq yozuv; hammasi teng boʻlsa — oldinroq kelgan yozuv. Tanlangan yozuvning tartib raqamini bitta son qilib chiqaring (birinchi satr — 1). Boshqa hech narsa yozmang. Masalan: 3 satr rip 24, ospf 32, static 0 boʻlsa, javob 3.",
+      "ru": "К одной сети могут приходить маршруты из разных источников. Выбирая, маршрутизатор сначала смотрит на административное расстояние (Cisco: connected 0, static 1, ospf 110, rip 120 — меньше значит надёжнее), затем на длину префикса. В первой строке дано число записей n (1 ≤ n ≤ 20); в следующих n строках стоят имя источника (connected, static, ospf или rip, строчными буквами) и длина префикса (от 0 до 32), разделённые пробелом. Правило: выигрывает запись с наименьшим административным расстоянием; при равенстве — более длинный префикс; если и это равно — та, что встречается раньше. Выведите только номер выбранной записи одним числом (первая строка — 1). Больше ничего печатать не нужно. Например, для строк rip 24, ospf 32, static 0 ответ: 3.",
+      "en": "Routes to the same network can arrive from different sources. The router compares entries first by administrative distance (Cisco: connected 0, static 1, ospf 110, rip 120 — smaller is more trusted) and, when that is equal, by prefix length. The first line holds the number of entries n (1 ≤ n ≤ 20); each of the next n lines holds a source name (connected, static, ospf or rip, in lower case) and a prefix length (0 to 32), separated by a space. The rule: the entry with the smallest administrative distance wins; on equal distance the longer prefix wins; if that is equal too, the earlier entry wins. Print only the position of the chosen entry as one number (the first line is 1). Print nothing else. For example, entries rip 24, ospf 32, static 0 give: 3."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nraqam = 1\neng_prefiks = -1\nfor i in range(1, n + 1):\n    manba, prefiks = input().split()\n    p = int(prefiks)\n    if p > eng_prefiks:\n        eng_prefiks = p\n        raqam = i\nprint(raqam)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int raqam = 1;\n        int engPrefiks = -1;\n        for (int i = 1; i <= n; i++) {\n            String manba = in.next();\n            int prefiks = in.nextInt();\n            if (prefiks > engPrefiks) {\n                engPrefiks = prefiks;\n                raqam = i;\n            }\n        }\n        System.out.println(raqam);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int raqam = 1;\n    int engPrefiks = -1;\n    for (int i = 1; i <= n; i++) {\n        string manba;\n        int prefiks;\n        cin >> manba >> prefiks;\n        if (prefiks > engPrefiks) {\n            engPrefiks = prefiks;\n            raqam = i;\n        }\n    }\n    cout << raqam << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nmasofa = {\"connected\": 0, \"static\": 1, \"ospf\": 110, \"rip\": 120}\nraqam = 1\nholat = None\nfor i in range(1, n + 1):\n    manba, prefiks = input().split()\n    p = int(prefiks)\n    keyin = (masofa[manba], -p, i)\n    if holat is None or keyin < holat:\n        holat = keyin\n        raqam = i\nprint(raqam)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static int masofa(String manba) {\n        if (manba.equals(\"connected\")) {\n            return 0;\n        }\n        if (manba.equals(\"static\")) {\n            return 1;\n        }\n        if (manba.equals(\"ospf\")) {\n            return 110;\n        }\n        return 120;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int raqam = 1;\n        int engMasofa = Integer.MAX_VALUE;\n        int engPrefiks = -1;\n        for (int i = 1; i <= n; i++) {\n            String manba = in.next();\n            int prefiks = in.nextInt();\n            int m = masofa(manba);\n            if (m < engMasofa || (m == engMasofa && prefiks > engPrefiks)) {\n                engMasofa = m;\n                engPrefiks = prefiks;\n                raqam = i;\n            }\n        }\n        System.out.println(raqam);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint masofa(const string& manba) {\n    if (manba == \"connected\") {\n        return 0;\n    }\n    if (manba == \"static\") {\n        return 1;\n    }\n    if (manba == \"ospf\") {\n        return 110;\n    }\n    return 120;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    int raqam = 1;\n    int engMasofa = 1000000000;\n    int engPrefiks = -1;\n    for (int i = 1; i <= n; i++) {\n        string manba;\n        int prefiks;\n        cin >> manba >> prefiks;\n        int m = masofa(manba);\n        if (m < engMasofa || (m == engMasofa && prefiks > engPrefiks)) {\n            engMasofa = m;\n            engPrefiks = prefiks;\n            raqam = i;\n        }\n    }\n    cout << raqam << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\nrip 24\nospf 32\nstatic 0\n", "expected": "3", "hidden": false },
+        { "input": "2\nospf 24\nospf 26\n", "expected": "2", "hidden": false },
+        { "input": "4\nospf 24\nospf 26\nrip 8\nstatic 24\n", "expected": "4", "hidden": true },
+        { "input": "2\nrip 24\nrip 24\n", "expected": "1", "hidden": true },
+        { "input": "3\nstatic 24\nstatic 20\nconnected 16\n", "expected": "3", "hidden": true }
+      ]
+    }
+  }
+}

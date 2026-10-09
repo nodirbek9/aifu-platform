@@ -1,0 +1,301 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Java tilida `Talaba[] t = new Talaba[5];` deb yozilsa, massivda nima turadi?",
+          "ru": "Что находится в массиве после записи в Java `Talaba[] t = new Talaba[5];`?",
+          "en": "In Java, what does the array hold after you write `Talaba[] t = new Talaba[5];`?"
+        },
+        "options": [
+          {
+            "uz": "Beshta tayyor obyekt, ularning maydonlari 0 ga teng",
+            "ru": "Пять готовых объектов, поля каждого равны 0",
+            "en": "Five ready objects whose fields are all 0"
+          },
+          {
+            "uz": "Beshta boʻsh (null) havola; obyektlarning har biri `new` bilan alohida yaratiladi",
+            "ru": "Пять пустых ссылок (null); каждый объект создаётся отдельно через `new`",
+            "en": "Five empty (null) references; each object has to be created separately with `new`"
+          },
+          {
+            "uz": "Bitta obyekt, u besh marta nusxalanadi",
+            "ru": "Один объект, который пять раз копируется",
+            "en": "One object that gets copied five times"
+          },
+          {
+            "uz": "Massiv boʻsh, Java birinchi murojaatda obyektni oʻzi yaratadi",
+            "ru": "Массив пуст, Java создаст объект сама при первом обращении",
+            "en": "The array is empty and Java creates the object by itself on first access"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi tuzoq: `new Talaba[n]` *n* ta obyekt yaratmaydi, *n* ta boʻsh havola yaratadi; `t[i] = new Talaba(...)` boʻlmasa, `NullPointerException` chiqadi.",
+          "ru": "Ловушка из занятия: `new Talaba[n]` создаёт не *n* объектов, а *n* пустых ссылок; без `t[i] = new Talaba(...)` будет `NullPointerException`.",
+          "en": "The lesson's trap: `new Talaba[n]` creates not *n* objects but *n* null references; without `t[i] = new Talaba(...)` you get a `NullPointerException`."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python tilida `for t in talabalar: t.ball += 1` sikli roʻyxatdagi obyektlarning oʻzini oʻzgartiradi.",
+          "ru": "В Python цикл `for t in talabalar: t.ball += 1` меняет сами объекты в списке.",
+          "en": "In Python, the loop `for t in talabalar: t.ball += 1` changes the objects in the list themselves."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "`t` — roʻyxatdagi obyektga havola, shuning uchun oʻzgarish massivda koʻrinadi. C++ tilida esa `for (auto t : v)` sikli nusxa ustida ishlaydi, oʻzgartirish uchun `auto&` kerak.",
+          "ru": "`t` — ссылка на объект в списке, поэтому изменение видно в массиве. В C++ же `auto` берёт копию, для изменения нужно `auto&`.",
+          "en": "`t` is a reference to the object in the list, so the change stays in the array. In C++ `auto` takes a copy, so changing needs `auto&`."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Java tilida ikki satrni qiymati boʻyicha solishtirish uchun `==` oʻrniga qaysi metod ishlatiladi?",
+          "ru": "Какой метод в Java используют вместо `==`, чтобы сравнить две строки по значению?",
+          "en": "In Java, which method do you use instead of `==` to compare two strings by value?"
+        },
+        "answers": ["equals", "equals()"],
+        "explanation": {
+          "uz": "Dars ogohlantirishi: Java tilida `==` havolani solishtiradi, nom boʻyicha qidirishda `equals` ishlatiladi.",
+          "ru": "Предупреждение из занятия: в Java `==` сравнивает ссылки, при поиске по имени нужно `equals`.",
+          "en": "The lesson warns: in Java `==` compares references, so searching by name uses `equals`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Obyektlarni roʻyxatga qoʻshish boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о добавлении объектов в список верны?",
+          "en": "Which statements about adding objects to a collection are correct?"
+        },
+        "options": [
+          {
+            "uz": "Python tilida `talabalar.append(Talaba(...))` ishlatiladi",
+            "ru": "В Python используется `talabalar.append(Talaba(...))`",
+            "en": "In Python you use `talabalar.append(Talaba(...))`"
+          },
+          {
+            "uz": "Java tilida `List<Talaba>` uchun `t.add(new Talaba(...))` ishlatiladi",
+            "ru": "В Java для `List<Talaba>` используется `t.add(new Talaba(...))`",
+            "en": "In Java a `List<Talaba>` grows with `t.add(new Talaba(...))`"
+          },
+          {
+            "uz": "C++ tilida `vector` ga `push_back` yoki `emplace_back` bilan qoʻshiladi",
+            "ru": "В C++ в `vector` добавляют через `push_back` или `emplace_back`",
+            "en": "In C++ objects go into a `vector` through `push_back` or `emplace_back`"
+          },
+          {
+            "uz": "Python tilida roʻyxatga nechta obyekt sigʻishini oldindan eʼlon qilish shart",
+            "ru": "В Python заранее нужно объявить, сколько объектов поместится в списке",
+            "en": "In Python you must declare in advance how many objects the list will hold"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Python roʻyxati (`list`) oʻsuvchi, oʻlcham oldindan eʼlon qilinmaydi. Oʻzgarmas oʻlchamli massiv Java tilida `new Talaba[n]`, C++ tilida `vector<Talaba> t(n)` bilan olinadi.",
+          "ru": "Список Python (`list`) растёт, размер заранее не объявляют. Массив фиксированного размера берут в Java как `new Talaba[n]`, а в C++ как `vector<Talaba> t(n)`.",
+          "en": "A Python `list` grows and needs no declared size. A fixed-size array comes from `new Talaba[n]` in Java and `vector<Talaba> t(n)` in C++."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi misol: 4 talaba va `k = 15` — Aziz 52, Malika 91, Bekzod 40, Dilnoza 95. Bali 60 dan kam har bir talabaga *k* ball qoʻshilgach (100 dan oshirilmay), nechta talaba oʻtgan hisoblanadi (ball >= 60)?",
+          "ru": "Пример из занятия: 4 студента и `k = 15` — Aziz 52, Malika 91, Bekzod 40, Dilnoza 95. После того как каждому с баллом ниже 60 добавили *k* баллов (не выше 100), сколько студентов считаются прошедшими (ball >= 60)?",
+          "en": "In the lesson's example there are 4 students and `k = 15` — Aziz 52, Malika 91, Bekzod 40, Dilnoza 95. After every student below 60 gets *k* more points (never above 100), how many students have passed (ball >= 60)?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "52 + 15 = 67 oʻtdi, 91 oʻzgarmadi, 40 + 15 = 55 baribir 60 dan past, 95 oʻzgarmadi: jami 3 ta.",
+          "ru": "52 + 15 = 67 — прошёл, 91 без изменений, 40 + 15 = 55 — всё равно ниже 60, 91 и 95 без изменений: всего 3.",
+          "en": "52 + 15 = 67 passes, 91 stays, 40 + 15 = 55 is still below 60, 95 stays: 3 in total."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ikkita obyektning qiymati teng boʻlsa, maximumni qatʼiy `>` sharti bilan izlashda qaysi biri tanlanadi?",
+          "ru": "Если у двух объектов значения равны, какой из них выберет поиск максимума со строгим условием `>`?",
+          "en": "When two objects have equal values, which one does a maximum search with the strict condition `>` keep?"
+        },
+        "options": [
+          {
+            "uz": "Oxirgi uchragani",
+            "ru": "Последний встреченный",
+            "en": "The one met last"
+          },
+          {
+            "uz": "Birinchi uchragani; `>=` shartida esa oxirisida turadi",
+            "ru": "Первый встреченный; при условии `>=` останется последний",
+            "en": "The one met first; with `>=` the last one stays"
+          },
+          {
+            "uz": "Ikkalasi ham birga saqlanadi",
+            "ru": "Оба сохраняются вместе",
+            "en": "Both of them are kept together"
+          },
+          {
+            "uz": "Hech biri tanlanmaydi, dastur toʻxtaydi",
+            "ru": "Не выбирается ни один, программа останавливается",
+            "en": "Neither is chosen and the program stops"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi izoh: teng qiymatlarda qaysi obyekt tanlanishini shartning oʻzi belgilaydi — `>` bilan birinchisi, `>=` bilan oxirisida qoladi. Shuning uchun `>` va `>=` oʻrtasida tanlov aniq qilinishi kerak.",
+          "ru": "Пояснение из занятия: при равных значениях выбор определяет само условие — с `>` остаётся первый, с `>=` последний. Поэтому между `>` и `>=` нужно выбрать сознательно.",
+          "en": "The lesson notes that with equal values the condition itself decides: `>` keeps the first, `>=` the last, so the choice between them must be deliberate."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "C++ tilida `vector<Talaba> t(n);` *n* ta obyektni darhol yaratishi uchun sinfda parametrsiz (standart) konstruktor boʻlishi kerak.",
+          "ru": "Чтобы `vector<Talaba> t(n);` в C++ сразу создал *n* объектов, в классе должен быть конструктор без параметров.",
+          "en": "For `vector<Talaba> t(n);` in C++ to create *n* objects at once, the class must have a constructor with no parameters."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra: agar faqat parametrli konstruktor boʻlsa, boʻsh `vector` yaratib, `push_back` yoki `emplace_back` bilan qoʻshish kerak.",
+          "ru": "По занятию: если есть только конструктор с параметрами, создают пустой `vector` и добавляют через `push_back` или `emplace_back`.",
+          "en": "The lesson says that with only a parameterised constructor you create an empty `vector` and add with `push_back` or `emplace_back`."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Obyekt sinfiga tabiiy tartib berishda Java tilida nima yoziladi?",
+          "ru": "Что пишут в Java, чтобы объект-классу задать естественный порядок?",
+          "en": "In Java, what do you write to give a class its natural order?"
+        },
+        "options": [
+          {
+            "uz": "Sinf `Comparable<...>` ni amalga oshiradi va `compareTo(...)` metodini yozadi",
+            "ru": "Класс реализует `Comparable<...>` и пишет метод `compareTo`",
+            "en": "The class implements `Comparable<...>` and defines `compareTo`"
+          },
+          {
+            "uz": "Sinfda `__lt__` metodi yoziladi",
+            "ru": "В классе пишут метод `__lt__`",
+            "en": "The class defines `__lt__`"
+          },
+          {
+            "uz": "Sinfda `operator<` yoziladi",
+            "ru": "В классе пишут `operator<`",
+            "en": "The class defines `operator<`"
+          },
+          {
+            "uz": "Sinfda `equals` metodi yoziladi",
+            "ru": "В классе пишут метод `equals`",
+            "en": "The class defines `equals`"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "`__lt__` — Python, `operator<` — C++ usuli. Java tilida `compareTo(...)` manfiy son („men oldinroqman“), nol („tengmiz“) yoki musbat son qaytaradi, shundan keyin `Collections.sort` kalit berilmadan ishlaydi.",
+          "ru": "`__lt__` — способ Python, `operator<` — способ C++. В Java `compareTo` возвращает отрицательное число («я раньше»), ноль («мы равны») или положительное; после этого `Collections.sort` работает без ключа.",
+          "en": "`__lt__` is the Python way, `operator<` the C++ way. In Java `compareTo` returns a negative number (this object comes first), zero (they are equal) or a positive number, after which `Collections.sort` needs no key."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Obyektlar massivi bilan ishlashda qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о работе с массивом объектов верны?",
+          "en": "Which statements about working with an array of objects are correct?"
+        },
+        "options": [
+          {
+            "uz": "Java tilida `new Talaba[n]` dan keyin obyektlarni yaratmasa, `t[0].ism` ga murojaat `NullPointerException` beradi",
+            "ru": "Если в Java после `new Talaba[n]` объекты не созданы, обращение к `t[0].ism` даёт `NullPointerException`",
+            "en": "In Java, if the objects are not created after `new Talaba[n]`, reaching `t[0].ism` throws `NullPointerException`"
+          },
+          {
+            "uz": "C++ tilida `for (auto t : v) t.ball = 0;` dan keyin `v` dagi ballar oʻzgarmaydi",
+            "ru": "После `for (auto t : v) t.ball = 0;` в C++ баллы в `v` не меняются",
+            "en": "In C++, after `for (auto t : v) t.ball = 0;` the scores in `v` stay unchanged"
+          },
+          {
+            "uz": "Java tilida `==` ikki satrning qiymatini solishtiradi",
+            "ru": "В Java `==` сравнивает значения двух строк",
+            "en": "In Java `==` compares the values of two strings"
+          },
+          {
+            "uz": "Python tilida `(yil, nom)` korteji solishtirilganda avval ikkinchi element tekshiriladi",
+            "ru": "В Python при сравнении кортежа `(yil, nom)` сначала проверяется второй элемент",
+            "en": "In Python, comparing the tuple `(yil, nom)` checks the second element first"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Java tilida `==` havolani solishtiradi, qiymat uchun `equals` kerak. Python korteji esa avval birinchi elementni, teng boʻlsa ikkinchisini solishtiradi.",
+          "ru": "В Java `==` сравнивает ссылки, для значений нужен `equals`. Кортеж Python сначала сравнивает первый элемент, а при равенстве — второй.",
+          "en": "In Java `==` compares references, so values need `equals`. A Python tuple compares the first element first and only then the second."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Ombor boʻyicha qidirish",
+      "ru": "Поиск по складу",
+      "en": "Searching the warehouse"
+    },
+    "statement": {
+      "uz": "Mahsulotlar `Mahsulot` sinfida saqlanadi: maydonlari `nom` va `narx`. Dasturingiz obyektlarni oʻqib, ularni massivda (roʻyxatda) saqlasin va har bir soʻrov uchun narxni **maydon boʻyicha qidirib** topsin. Kirish: birinchi qatorda `n`, soʻng `n` ta qatorda mahsulot nomi (bitta soʻz, boʻsh joy emas) va uning narxi; keyingi qatorda `q`, soʻng `q` ta qatorda bittadan nom. Chiqish: har bir soʻrov uchun alohida qatorda shu nomli mahsulotning narxi, agar bunday mahsulot topilmasa `-1`. Ombordagi nomlar takrorlanmaydi. Masalan: `3`, `daftar 5000`, `ruchka 2000`, `kitob 45000`, `2`, `ruchka`, `kitob` kirilsa, dastur `2000` va `45000` chiqaradi. `n` va `q` 1 dan 1000 gacha, narx 1 dan 1000000 gacha.",
+      "ru": "Товары хранятся в классе `Mahsulot` с полями `nom` и `narx`. Ваша программа должна прочитать объекты, сохранить их в массиве (списке) и для каждого запроса **найти цену по полю**. Ввод: первая строка — `n`, далее в n строках название товара (одно слово, без пробелов) и его цена; следующая строка — `q`, затем в q строках по одному названию. Вывод: для каждого запроса отдельная строка — цена товара с таким именем или `-1`, если товара нет. Названия не повторяются. Например, при вводе `3`, `daftar 5000`, `ruchka 2000`, `kitob 45000`, `2`, `ruchka`, `kitob` программа выведет `2000` и `45000`. `n` и `q` от 1 до 1000, цена от 1 до 1000000.",
+      "en": "Products live in a class `Mahsulot` with the fields `nom` and `narx`. Your program must read the objects, keep them in an array (a list) and, for every query, **search by field** to find the price. Input: the first line is `n`, then n lines each hold a product name (one word, no spaces) and its price; the next line is `q`, then q lines each hold one name. Output: for every query a separate line with the price of that product, or `-1` when the warehouse has no such product. Names never repeat. For example, the input `3`, `daftar 5000`, `ruchka 2000`, `kitob 45000`, `2`, `ruchka`, `kitob` makes the program print `2000` and `45000`. `n` and `q` range from 1 to 1000, a price from 1 to 1000000."
+    },
+    "code": {
+      "starter": {
+        "python": "class Mahsulot:\n    def __init__(self, nom, narx):\n        self.nom = nom\n        self.narx = narx\n\n\nn = int(input())\nombor = []\nfor _ in range(n):\n    nom, narx = input().split()\n    ombor.append(Mahsulot(nom, int(narx)))\n\nq = int(input())\nfor _ in range(q):\n    x = input()\n    javob = -1\n    for m in ombor[:-1]:\n        if m.nom == x:\n            javob = m.narx\n    print(javob)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static class Mahsulot {\n        String nom;\n        long narx;\n\n        Mahsulot(String nom, long narx) {\n            this.nom = nom;\n            this.narx = narx;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        Mahsulot[] ombor = new Mahsulot[n];\n        for (int i = 0; i < n; i++) {\n            ombor[i] = new Mahsulot(in.next(), in.nextLong());\n        }\n\n        int q = in.nextInt();\n        for (int j = 0; j < q; j++) {\n            String x = in.next();\n            long javob = -1;\n            for (int i = 0; i < n - 1; i++) {\n                if (ombor[i].nom.equals(x)) javob = ombor[i].narx;\n            }\n            System.out.println(javob);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Mahsulot {\npublic:\n    string nom;\n    long long narx;\n\n    Mahsulot(string nom, long long narx) : nom(nom), narx(narx) {}\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<Mahsulot> ombor;\n    for (int i = 0; i < n; i++) {\n        string nom;\n        long long narx;\n        cin >> nom >> narx;\n        ombor.emplace_back(nom, narx);\n    }\n\n    int q;\n    cin >> q;\n    for (int j = 0; j < q; j++) {\n        string x;\n        cin >> x;\n        long long javob = -1;\n        for (int i = 0; i < n - 1; i++) {\n            if (ombor[i].nom == x) javob = ombor[i].narx;\n        }\n        cout << javob << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "class Mahsulot:\n    def __init__(self, nom, narx):\n        self.nom = nom\n        self.narx = narx\n\n\nn = int(input())\nombor = []\nfor _ in range(n):\n    nom, narx = input().split()\n    ombor.append(Mahsulot(nom, int(narx)))\n\nq = int(input())\nfor _ in range(q):\n    x = input()\n    javob = -1\n    for m in ombor:\n        if m.nom == x:\n            javob = m.narx\n    print(javob)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static class Mahsulot {\n        String nom;\n        long narx;\n\n        Mahsulot(String nom, long narx) {\n            this.nom = nom;\n            this.narx = narx;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        Mahsulot[] ombor = new Mahsulot[n];\n        for (int i = 0; i < n; i++) {\n            ombor[i] = new Mahsulot(in.next(), in.nextLong());\n        }\n\n        int q = in.nextInt();\n        for (int j = 0; j < q; j++) {\n            String x = in.next();\n            long javob = -1;\n            for (Mahsulot m : ombor) {\n                if (m.nom.equals(x)) javob = m.narx;\n            }\n            System.out.println(javob);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Mahsulot {\npublic:\n    string nom;\n    long long narx;\n\n    Mahsulot(string nom, long long narx) : nom(nom), narx(narx) {}\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<Mahsulot> ombor;\n    for (int i = 0; i < n; i++) {\n        string nom;\n        long long narx;\n        cin >> nom >> narx;\n        ombor.emplace_back(nom, narx);\n    }\n\n    int q;\n    cin >> q;\n    for (int j = 0; j < q; j++) {\n        string x;\n        cin >> x;\n        long long javob = -1;\n        for (const auto& m : ombor) {\n            if (m.nom == x) javob = m.narx;\n        }\n        cout << javob << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\ndaftar 5000\nruchka 2000\nkitob 45000\n2\nruchka\nkitob\n", "expected": "2000\n45000", "hidden": false },
+        { "input": "1\nolma 120\n1\nolma\n", "expected": "120", "hidden": false },
+        { "input": "4\nanor 400\nguja 300\nnok 200\nolma 100\n2\nolma\nbanan\n", "expected": "100\n-1", "hidden": true },
+        { "input": "2\nnon 800\nchoy 1500\n1\nnon\n", "expected": "800", "hidden": true },
+        { "input": "3\nnon 100\nchoy 200\nshakar 300\n3\nshakar\nchoy\nnon\n", "expected": "300\n200\n100", "hidden": true }
+      ]
+    }
+  }
+}

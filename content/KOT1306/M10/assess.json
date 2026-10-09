@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Transport pogʻonasi kelgan maʼlumot qaysi dasturga tegishli ekanligini nima orqali aniqlaydi?",
+          "ru": "С помощью чего транспортный уровень определяет, какой программе принадлежат приходящие данные?",
+          "en": "By what means does the transport layer tell which program the incoming data belongs to?"
+        },
+        "options": [
+          {
+            "uz": "Port raqami orqali",
+            "ru": "По номеру порта",
+            "en": "By the port number"
+          },
+          {
+            "uz": "Kompyuterning IP manzili orqali",
+            "ru": "По IP-адресу компьютера",
+            "en": "By the computer's IP address"
+          },
+          {
+            "uz": "Maʼlumotlar hajmi orqali",
+            "ru": "По объёму данных",
+            "en": "By the amount of data"
+          },
+          {
+            "uz": "Domen nomi orqali",
+            "ru": "По доменному имени",
+            "en": "By the domain name"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "IP paketni kompyuterga yetkazadi; port esa kompyuterda bir vaqtda ishlaydigan dasturlarni bir-biridan ajratadi.",
+          "ru": "IP доставляет пакет до компьютера, а порт отличает друг от друга программы, работающие на этом компьютере одновременно.",
+          "en": "IP delivers the packet to the computer; the port tells apart the programs running on that computer at the same time."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "UDP paketlarning tartibini kafolatlaydi va yoʻqolgan paketlarni qayta yuboradi.",
+          "ru": "UDP гарантирует порядок пакетов и повторно передаёт потерянные.",
+          "en": "UDP guarantees packet order and retransmits lost packets."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "UDP da ulanish oʻrnatilmaydi, tasdiq, qayta yuborish va tartib kafolati yoʻq; uning afzalligi — tezlik va kam kechikish.",
+          "ru": "UDP не устанавливает соединение, в нём нет подтверждений, повторной передачи и гарантий порядка; его преимущество — скорость и малая задержка.",
+          "en": "UDP sets up no connection and has no acknowledgements, retransmission or order guarantees; its advantage is speed and low delay."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Transport pogʻonasi qaysi vazifalarni bajaradi?",
+          "ru": "Какие задачи выполняет транспортный уровень?",
+          "en": "Which functions does the transport layer perform?"
+        },
+        "options": [
+          {
+            "uz": "Dasturdan dasturga yetkazish",
+            "ru": "Доставка от программы к программе",
+            "en": "Process-to-process delivery"
+          },
+          {
+            "uz": "Multiplekslash: koʻp dasturlarni bitta IP manzil boʻyicha port yordamida ajratish",
+            "ru": "Многократное использование: различение многих программ на одном IP-адресе по портам",
+            "en": "Multiplexing: telling many programs on one IP address apart by their ports"
+          },
+          {
+            "uz": "Katta maʼlumot oqimini segmentlarga boʻlish va qayta yigʻish",
+            "ru": "Разбиение большого потока данных на сегменты и сборка обратно",
+            "en": "Splitting a large data stream into segments and reassembling it"
+          },
+          {
+            "uz": "Paket uchun eng yaxshi marshrutni tanlash",
+            "ru": "Выбор лучшего маршрута для пакета",
+            "en": "Choosing the best route for a packet"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Dars jadvalida jarayonlar orasida yetkazish, multiplekslash, segmentlash, ishonchlilik, oqim va tirbandlikni boshqarish bor. Marshrutni tanlash — tarmoq pogʻonasining ishi.",
+          "ru": "В таблице занятия: доставка между процессами, многократное использование, сегментация, надёжность, управление потоком и перегрузкой. Выбор маршрута — работа сетевого уровня.",
+          "en": "The lesson's table lists process-to-process delivery, multiplexing, segmentation, reliability, flow and congestion control. Choosing a route belongs to the network layer."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "TCP sarlavhasidagi tasdiq (acknowledgement) raqami nimani bildiradi?",
+          "ru": "Что означает номер подтверждения (acknowledgement) в заголовке TCP?",
+          "en": "What does the acknowledgement number in a TCP header mean?"
+        },
+        "options": [
+          {
+            "uz": "Qabul qiluvchi kutayotgan keyingi baytning raqami",
+            "ru": "Номер следующего байта, который ожидает получатель",
+            "en": "The number of the next byte the receiver expects"
+          },
+          {
+            "uz": "Qabul qilingan oxirgi baytning raqami",
+            "ru": "Номер последнего принятого байта",
+            "en": "The number of the last byte received"
+          },
+          {
+            "uz": "Yuboruvchining oynasi hajmi",
+            "ru": "Размер окна отправителя",
+            "en": "The size of the sender's window"
+          },
+          {
+            "uz": "Segmentdagi maʼlumot uzunligi",
+            "ru": "Длина данных в сегменте",
+            "en": "The length of the data in the segment"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Tasdiq raqami — oxirgi qabul qilingan bayt emas, kutayotgan keyingi bayt. Aynan shu darsdagi eng keng tarqalgan xatodir.",
+          "ru": "Подтверждение — не номер последнего принятого байта, а номер следующего ожидаемого. Именно это в занятии названо типичной ошибкой.",
+          "en": "The acknowledgement is not the last byte received but the next one expected — the lesson lists exactly this as a common mistake."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qabul qiluvchi seq = 2000 boʻlgan va 500 bayt maʼlumot olib kelgan segment oldi. Javob ACK da tasdiq raqami nechaga teng boʻladi?",
+          "ru": "Получатель принял сегмент с seq = 2000 и 500 байтами данных. Чему равен номер подтверждения в ответном ACK?",
+          "en": "A receiver got a segment with seq = 2000 carrying 500 bytes of data. What is the acknowledgement number in the reply ACK?"
+        },
+        "answers": [2500],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "*L* baytli segment seq = *s* bilan kelsa, javob ack = *s* + *L*: 2000 + 500 = 2500.",
+          "ru": "Если сегмент с *L* байтами пришёл с seq = *s*, ответный ack = *s* + *L*: 2000 + 500 = 2500.",
+          "en": "If an *L*-byte segment arrives with seq = *s*, the reply is ack = *s* + *L*: 2000 + 500 = 2500."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "TCP serverda kutish roʻyxatidagi ulanishni qabul qilib, oʻsha mijoz bilan ish uchun yangi soket qaytaradigan API chaqiruvining nomini yozing.",
+          "ru": "Напишите имя вызова API в TCP-сервере, который принимает соединение из очереди ожидания и возвращает новый сокет для работы с этим клиентом.",
+          "en": "Write the name of the server-side API call that accepts a waiting connection and returns a new socket for working with that client."
+        },
+        "answers": ["accept", "accept()"],
+        "explanation": {
+          "uz": "accept() har bir mijoz uchun yangi soket qaytaradi, tinglayotgan soket esa keyingi ulanishlarni kutishda davom etadi.",
+          "ru": "accept() возвращает новый сокет для каждого клиента, а слушающий сокет продолжает ждать следующие соединения.",
+          "en": "accept() returns a new socket for each client, while the listening socket keeps waiting for the next connections."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bitta TCP ulanishining maksimal tezligi nimaga bogʻliq va nimaga chegaralanadi?",
+          "ru": "От чего зависит и чем ограничена максимальная скорость одного TCP-соединения?",
+          "en": "What does one TCP connection's maximum speed depend on, and what limits it?"
+        },
+        "options": [
+          {
+            "uz": "Oyna va RTT ga: tezlik ≤ oyna / RTT",
+            "ru": "От окна и RTT: скорость ≤ окно / RTT",
+            "en": "On the window and the RTT: speed ≤ window / RTT"
+          },
+          {
+            "uz": "Faqat kanal kengligiga: u qanchalik katta boʻlsa, tezlik shunchalik yuqori",
+            "ru": "Только от ширины канала: чем она больше, тем выше скорость",
+            "en": "Only on the link width: the wider it is, the faster the connection"
+          },
+          {
+            "uz": "Portlar soniga: bir kompyuterdagi boʻsh portlar soni tezlikni belgilaydi",
+            "ru": "От числа портов: количество свободных портов задаёт скорость",
+            "en": "On the number of ports: the free ports set the speed"
+          },
+          {
+            "uz": "Sarlavha uzunligiga: 20 baytlik sarlavha tezlikni kamaytiradi va boshqa omil yoʻq",
+            "ru": "От длины заголовка: 20-байтный заголовок снижает скорость, других факторов нет",
+            "en": "On the header length: the 20-byte header slows it down, with no other factor"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Yuboruvchi tasdiq kutmasdan oyna hajmicha bayt yuboradi, shuning uchun tezlik ≤ oyna / RTT. Kanal tezligi ikkinchi chegara: haqiqiy tezlik — shu ikkisining kichigi.",
+          "ru": "Отправитель может послать столько байт, сколько позволяет окно, не дожидаясь подтверждений, поэтому скорость ≤ окно / RTT. Скорость канала — вторая граница: фактически работает меньшая из двух.",
+          "en": "A sender may send a window's worth of bytes without waiting, so speed ≤ window / RTT; the link rate is the second bound, and the smaller of the two applies."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "TCP ulanishi va ishonchlilik haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о соединении TCP и его надёжности верны?",
+          "en": "Which statements about TCP connections and their reliability are correct?"
+        },
+        "options": [
+          {
+            "uz": "SYN va FIN bayroqlarining har biri bittadan tartib raqamini egallaydi, shuning uchun SYN+ACK da ack = x + 1 boʻladi",
+            "ru": "Флаги SYN и FIN занимают по одному номеру последовательности, поэтому в SYN+ACK стоит ack = x + 1",
+            "en": "The SYN and FIN flags each take one sequence number, which is why the SYN+ACK carries ack = x + 1"
+          },
+          {
+            "uz": "Uchta takroriy ACK kelsa, segment RTO taymer tugashini kutmasdan darhol qayta yuboriladi",
+            "ru": "При трёх повторных подтверждениях сегмент передаётся заново сразу, не дожидаясь истечения таймера RTO",
+            "en": "After three duplicate acknowledgements the segment is resent at once, without waiting for the RTO timer"
+          },
+          {
+            "uz": "Haqiqiy oyna = min(cwnd, qabul qiluvchining oynasi)",
+            "ru": "Фактическое окно = min(cwnd, окно получателя)",
+            "en": "The effective window = min(cwnd, the receiver's window)"
+          },
+          {
+            "uz": "Ulanishni faol yopgan tomon TIME_WAIT holatida hech qanday kutishsiz darhol yopiladi",
+            "ru": "Сторона, активно закрывающая соединение, переходит в CLOSED сразу, без ожидания в TIME_WAIT",
+            "en": "The side that closes actively goes to CLOSED at once, with no TIME_WAIT wait"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Faol yopgan tomon TIME_WAIT da 2×MSL kutadi — kechikkan segmentlar yangi ulanishga aralashmasligi uchun.",
+          "ru": "Активно закрывающая сторона ждёт в TIME_WAIT 2×MSL, чтобы запоздавшие сегменты не попали в новое соединение.",
+          "en": "The actively closing side waits 2×MSL in TIME_WAIT so that late segments cannot slip into a new connection."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Port va soket — bir xil tushuncha: ulardan har biri shunchaki ulanishning raqami.",
+          "ru": "Порт и сокет — одно и то же: оба являются просто номером соединения.",
+          "en": "A port and a socket are the same thing: both are just a number of a connection."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Port — shunchaki raqam; soket esa IP manzil, port va protokol bilan aniqlanadigan, dasturning transport pogʻonasiga chiqish nuqtasi (API).",
+          "ru": "Порт — только число; сокет же определяется IP-адресом, портом и протоколом и является точкой выхода программы к транспортному уровню (API).",
+          "en": "A port is only a number; a socket is identified by an IP address, a port and a protocol, and is the program's entry point to the transport layer."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Port raqami boʻyicha port turini aniqlash",
+      "ru": "Определение типа порта по его номеру",
+      "en": "Finding a port's range from its number"
+    },
+    "statement": {
+      "uz": "Port raqamlari uch guruhga boʻlinadi: 0–1023 — taniqli (well-known), 1024–49151 — roʻyxatdan oʻtgan (registered), 49152–65535 — vaqtinchalik (ephemeral). Dasturingiz birinchi qatorda n sonni, keyingi n qatorda bittadan port raqamini oʻqisin. Har bir port uchun bitta qatorda uning guruhining nomini chiqaring: well-known, registered yoki ephemeral — qoʻshimcha hech narsa yozmang. Diqqat: chegaradagi raqamlarni ham toʻgʻri sinfga qoʻying.",
+      "ru": "Номера портов делятся на три группы: 0–1023 — well-known, 1024–49151 — registered, 49152–65535 — ephemeral. Прочитайте в первой строке число n, а в следующих n строках — по одному номеру порта. Для каждого порта выведите одной строкой название его группы: well-known, registered или ephemeral — без каких-либо пояснений. Будьте внимательны к числам на границах диапазонов.",
+      "en": "Port numbers fall into three groups: 0–1023 well-known, 1024–49151 registered, 49152–65535 ephemeral. Your program must read n on the first line and then n port numbers, one per line. For each port print its group name on one line — well-known, registered or ephemeral — with nothing else. Watch out for the numbers on the boundaries."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nfor _ in range(n):\n    p = int(input())\n    if p < 1024:\n        print(\"well-known\")\n    elif p < 49151:\n        print(\"registered\")\n    else:\n        print(\"ephemeral\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            int p = in.nextInt();\n            if (p < 1024) {\n                System.out.println(\"well-known\");\n            } else if (p < 49151) {\n                System.out.println(\"registered\");\n            } else {\n                System.out.println(\"ephemeral\");\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        int p;\n        cin >> p;\n        if (p < 1024) {\n            cout << \"well-known\" << endl;\n        } else if (p < 49151) {\n            cout << \"registered\" << endl;\n        } else {\n            cout << \"ephemeral\" << endl;\n        }\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nfor _ in range(n):\n    p = int(input())\n    if p <= 1023:\n        print(\"well-known\")\n    elif p <= 49151:\n        print(\"registered\")\n    else:\n        print(\"ephemeral\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            int p = in.nextInt();\n            if (p <= 1023) {\n                System.out.println(\"well-known\");\n            } else if (p <= 49151) {\n                System.out.println(\"registered\");\n            } else {\n                System.out.println(\"ephemeral\");\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        int p;\n        cin >> p;\n        if (p <= 1023) {\n            cout << \"well-known\" << endl;\n        } else if (p <= 49151) {\n            cout << \"registered\" << endl;\n        } else {\n            cout << \"ephemeral\" << endl;\n        }\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\n80\n49151\n443\n", "expected": "well-known\nregistered\nwell-known", "hidden": false },
+        { "input": "5\n21\n22\n53\n110\n3389\n", "expected": "well-known\nwell-known\nwell-known\nwell-known\nregistered", "hidden": false },
+        { "input": "4\n0\n1023\n1024\n1025\n", "expected": "well-known\nwell-known\nregistered\nregistered", "hidden": true },
+        { "input": "3\n49150\n49151\n49152\n", "expected": "registered\nregistered\nephemeral", "hidden": true },
+        { "input": "2\n50000\n65535\n", "expected": "ephemeral\nephemeral", "hidden": true }
+      ]
+    }
+  }
+}

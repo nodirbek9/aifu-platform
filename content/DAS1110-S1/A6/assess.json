@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Takrorlar soni sikl boshlanishidan oldin maʼlum boʻlsa (masalan, 1 dan 100 gacha), qaysi sikl odatda qulayroq tanlanadi?",
+          "ru": "Если число повторений известно до начала цикла (например, от 1 до 100), какой цикл обычно удобнее выбрать?",
+          "en": "When the number of repetitions is known before the loop starts (for example, 1 to 100), which loop is usually the handier choice?"
+        },
+        "options": [
+          {
+            "uz": "`for`, chunki takrorlar soni oldindan maʼlum",
+            "ru": "`for`, так как число повторений известно заранее",
+            "en": "`for`, because the number of repetitions is known in advance"
+          },
+          {
+            "uz": "`while`, chunki u har doim qisqaroq",
+            "ru": "`while`, потому что он всегда короче",
+            "en": "`while`, because it is always shorter"
+          },
+          {
+            "uz": "Hech qaysi — ikkalasi ham bir xil yomon",
+            "ru": "Ни один — оба одинаково плохи",
+            "en": "Neither — both are equally bad"
+          },
+          {
+            "uz": "Shartli oʻtish operatori",
+            "ru": "Оператор условного перехода",
+            "en": "The conditional statement"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvaliga koʻra: takrorlar soni oldindan maʼlum boʻlsa `for`, sikl biror hodisa roʻy berguncha davom etsa `while` tanlanadi.",
+          "ru": "По таблице занятия: если число повторений заранее известно — `for`, если цикл идёт до какого-то события — `while`.",
+          "en": "Per the lesson's table: a known number of repetitions means `for`; a loop that runs until something happens means `while`."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "`while` siklida hisoblagichni oshirishni unutish cheksiz siklga olib keladi.",
+          "ru": "Если в цикле `while` забыть увеличить счётчик, получится бесконечный цикл.",
+          "en": "Forgetting to increase the counter in a `while` loop gives an infinite loop."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda bu koʻp uchraydigan xato: hisoblagich oshirilmasa, toʻxtash sharti hech qachon yolgʻon boʻlmaydi.",
+          "ru": "В занятии это названо типичной ошибкой: без роста счётчика условие остановки никогда не станет ложным.",
+          "en": "The lesson lists this as a common mistake: without increasing the counter the stop condition never becomes false."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ketma-ketlikning oxirini bildiruvchi qiymat (masalan, 0) uchun darsda qaysi atama ishlatiladi?",
+          "ru": "Каким термином в занятии обозначают значение, которое знаменует конец последовательности (например, 0)?",
+          "en": "What term does the lesson use for a value that marks the end of a sequence (for example, 0)?"
+        },
+        "answers": ["sentinel", "toʻxtatuvchi qiymat", "toʻxtatuvchi", "sentinel value"],
+        "explanation": {
+          "uz": "Darsda bu — toʻxtatuvchi (sentinel) qiymat: u oʻzi hisobga kirmaydi, faqat ketma-ketlik oxirini bildiradi.",
+          "ru": "В занятии это sentinel (то есть стоп-сигнал, «сигнальное» значение): само оно не считается, а лишь обозначает конец.",
+          "en": "The lesson calls it a sentinel value: the value itself is not counted, it only marks the end of the sequence."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Evklid algoritmi bilan EKUB(84, 36) nechaga teng?",
+          "ru": "Чему равен НОД(84, 36), вычисленный алгоритмом Евклида?",
+          "en": "What is GCD(84, 36) computed with Euclid's algorithm?"
+        },
+        "answers": [12],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "(84, 36) → (36, 12) → (12, 0), demak EKUB = 12. Bu darsning tekshiruv savolidagi hisob.",
+          "ru": "(84, 36) → (36, 12) → (12, 0), значит НОД = 12. Это вычисление из самопроверки занятия.",
+          "en": "(84, 36) → (36, 12) → (12, 0), so the GCD is 12. This is the calculation in the lesson's self-check."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`for (int i = 10; i > 0; i -= 3)` sikli nechta iteratsiya bajaradi?",
+          "ru": "Сколько итераций выполнит цикл `for (int i = 10; i > 0; i -= 3)`?",
+          "en": "How many iterations does the loop `for (int i = 10; i > 0; i -= 3)` run?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "*i* qiymatlari 10, 7, 4, 1 — toʻrt marta; keyin *i* = -2 boʻlib shart buziladi, demak 4 iteratsiya.",
+          "ru": "Значения *i*: 10, 7, 4, 1 — четыре раза; затем *i* = -2 и условие нарушается, значит 4 итерации.",
+          "en": "The values of *i* are 10, 7, 4, 1 — four times; then *i* = -2 breaks the condition, so 4 iterations."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Toʻxtatuvchi qiymat bilan oʻqiydigan dasturda birinchi son nima uchun sikldan oldin oʻqiladi?",
+          "ru": "Почему в программе чтения до стоп-значения первое число считывается до начала цикла?",
+          "en": "In the read-until-sentinel program, why is the first number read before the loop?"
+        },
+        "options": [
+          {
+            "uz": "shart (`x != 0`) birinchi tekshirilganda *x* allaqachon qiymatga ega boʻlishi uchun",
+            "ru": "чтобы при первой проверке условия (`x != 0`) переменная *x* уже имела значение",
+            "en": "so that when the condition (`x != 0`) is first checked, *x* already has a value"
+          },
+          {
+            "uz": "sikl tanasini qisqartirish uchun",
+            "ru": "чтобы сократить тело цикла",
+            "en": "to shorten the loop body"
+          },
+          {
+            "uz": "0 ni yigʻindiga qoʻshib qoʻymaslik uchun",
+            "ru": "чтобы не прибавить 0 к сумме",
+            "en": "so that 0 is not added to the sum"
+          },
+          {
+            "uz": "dastur tezroq ishlashi uchun",
+            "ru": "чтобы программа работала быстрее",
+            "en": "so the program runs faster"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bu «oldindan oʻqish» andozasi: birinchi qiymat sikldan oldin, keyingilari tana oxirida oʻqiladi; 0 hisobga kirmasligi aynan tana oxiridagi oʻqish taʼminlaydi.",
+          "ru": "Это шаблон «предварительного чтения»: первое значение до цикла, остальные в конце тела; то, что 0 не считается, обеспечивает именно чтение в конце тела.",
+          "en": "This is the \"read ahead\" pattern: the first value before the loop, the rest at the end of the body; it is the read at the end of the body that keeps 0 out of the count."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Evklid algoritmi haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об алгоритме Евклида верны?",
+          "en": "Which statements about Euclid's algorithm are correct?"
+        },
+        "options": [
+          {
+            "uz": "EKUB(a, 0) = a",
+            "ru": "НОД(a, 0) = a",
+            "en": "GCD(a, 0) = a"
+          },
+          {
+            "uz": "har qadamda *b* qatʼiy kamayadi (qoldiq boʻluvchidan kichik), shuning uchun sikl toʻxtaydi",
+            "ru": "на каждом шаге *b* строго уменьшается (остаток меньше делителя), поэтому цикл завершается",
+            "en": "*b* strictly decreases at every step (a remainder is smaller than the divisor), so the loop stops"
+          },
+          {
+            "uz": "qoldiqni vaqtinchalik oʻzgaruvchiga saqlamasa (`a = b; b = a % b;`), *a* allaqachon oʻzgargan boʻladi va natija notoʻgʻri chiqadi",
+            "ru": "если не сохранить остаток во временную переменную (`a = b; b = a % b;`), *a* уже изменится и результат будет неверным",
+            "en": "if the remainder is not saved in a temporary variable (`a = b; b = a % b;`), *a* has already changed and the result is wrong"
+          },
+          {
+            "uz": "bu algoritmning sikli hech qachon toʻxtamasligi mumkin",
+            "ru": "цикл этого алгоритма может никогда не завершиться",
+            "en": "the loop of this algorithm might never stop"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda *b* har qadamda qatʼiy kamayadi va manfiy boʻlmaydi, demak 0 ga yetadi va sikl toʻxtaydi; tartib xatosi esa alohida ogohlantirilgan.",
+          "ru": "В занятии *b* строго убывает на каждом шаге и не становится отрицательным, значит дойдёт до 0 и цикл остановится; ошибка порядка отдельно выделена как предупреждение.",
+          "en": "The lesson notes *b* strictly decreases and never goes negative, so it reaches 0 and the loop stops; the wrong order is called out separately as a warning."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Toʻxtatuvchi qiymat dasturiga birinchi kiritilgan son 0 boʻlsa, u `Sonlar kiritilmadi` deb chiqaradi.",
+          "ru": "Если первое введённое число в программе со стоп-значением равно 0, она выведет «Sonlar kiritilmadi» («числа не введены»).",
+          "en": "If the first number entered in the sentinel program is 0, it prints \"No numbers entered\"."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Sikl bir marta ham ishlamaydi va `soni` = 0 boʻladi, shuning uchun `else` tarmogʻi ishlaydi.",
+          "ru": "Цикл не выполняется ни разу, `soni` остаётся 0, поэтому срабатывает ветка `else`.",
+          "en": "The loop never runs and `soni` stays 0, so the `else` branch fires."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Toʻxtatuvchi qiymat dasturida `soni > 0` tekshiruvi nimadan himoya qiladi?",
+          "ru": "От чего защищает проверка `soni > 0` в программе со стоп-значением?",
+          "en": "What does the `soni > 0` check protect against in the sentinel program?"
+        },
+        "options": [
+          {
+            "uz": "boʻsh ketma-ketlikda oʻrtachani hisoblashda nolga boʻlishdan",
+            "ru": "от деления на ноль при вычислении среднего для пустой последовательности",
+            "en": "division by zero when computing the average of an empty sequence"
+          },
+          {
+            "uz": "cheksiz siklga tushib qolishdan",
+            "ru": "от попадания в бесконечный цикл",
+            "en": "getting stuck in an infinite loop"
+          },
+          {
+            "uz": "toʻxtatuvchi qiymatning yigʻindiga qoʻshilib qolishidan",
+            "ru": "от прибавления стоп-значения к сумме",
+            "en": "the sentinel value being added to the sum"
+          },
+          {
+            "uz": "kiritilgan manfiy sonlardan",
+            "ru": "от введённых отрицательных чисел",
+            "en": "negative numbers being entered"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Birinchi son 0 boʻlsa `soni` = 0 va oʻrtacha hisoblab boʻlmaydi; `soni > 0` tekshiruvi nolga boʻlishning oldini oladi.",
+          "ru": "Если первое число 0, то `soni` = 0 и среднее вычислить нельзя; проверка `soni > 0` предотвращает деление на ноль.",
+          "en": "If the first number is 0 then `soni` = 0 and the average cannot be computed; the `soni > 0` check prevents a division by zero."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Raqamlar yigʻindisi",
+      "ru": "Сумма цифр",
+      "en": "Sum of digits"
+    },
+    "statement": {
+      "uz": "Dasturingiz bitta manfiy boʻlmagan butun sonni oʻqisin va uning oʻnlik yozuvidagi raqamlar yigʻindisini bitta qatorga chiqaring (masalan, 1234 uchun 1 + 2 + 3 + 4 = 10). Son 0 boʻlsa, javob 0. Hisoblashda `while` siklidan foydalaning: oxirgi raqamni qoldiqdan oling (`% 10`), soʻng sonni butun boʻlinish bilan qisqartiring.",
+      "ru": "Программа читает одно неотрицательное целое число и выводит сумму его десятичных цифр одной строкой (например, для 1234 это 1 + 2 + 3 + 4 = 10). Если число равно 0, ответ 0. Для вычисления используйте цикл `while`: последнюю цифру берите от остатка (`% 10`), затем уменьшайте число целочисленным делением.",
+      "en": "Your program reads one non-negative integer and prints the sum of its decimal digits on a single line (for example, 1234 gives 1 + 2 + 3 + 4 = 10). If the number is 0, the answer is 0. Use a `while` loop: take the last digit from the remainder (`% 10`), then shrink the number with integer division."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nyigindi = n % 10\nprint(yigindi)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int sum = n % 10;\n        System.out.println(sum);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int sum = n % 10;\n    cout << sum << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nyigindi = 0\nwhile n > 0:\n    yigindi += n % 10\n    n //= 10\nprint(yigindi)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int sum = 0;\n        while (n > 0) {\n            sum += n % 10;\n            n /= 10;\n        }\n        System.out.println(sum);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int sum = 0;\n    while (n > 0) {\n        sum += n % 10;\n        n /= 10;\n    }\n    cout << sum << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "1234\n", "expected": "10", "hidden": false },
+        { "input": "0\n", "expected": "0", "hidden": false },
+        { "input": "9\n", "expected": "9", "hidden": true },
+        { "input": "98765\n", "expected": "35", "hidden": true },
+        { "input": "1000\n", "expected": "1", "hidden": true }
+      ]
+    }
+  }
+}

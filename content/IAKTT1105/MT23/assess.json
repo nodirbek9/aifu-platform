@@ -1,0 +1,337 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blokcheynda tranzaksiyani yaratgan shaxs uni oʻzining ochiq kaliti bilan imzolaydi.",
+          "ru": "В блокчейне человек, создающий транзакцию, подписывает её своим открытым ключом.",
+          "en": "In a blockchain, the person creating a transaction signs it with their public key."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Tranzaksiya yopiq (maxfiy) kalit bilan imzolanadi. Ochiq kalit esa faqat imzoni tekshirish uchun ishlatiladi.",
+          "ru": "Транзакция подписывается закрытым ключом. Открытый ключ используется только для проверки подписи.",
+          "en": "A transaction is signed with a private key. The public key is only used to verify the signature."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blok sarlavhasida barcha tranzaksiyalarning \"barmoq izi\" qanday nomlanadi?",
+          "ru": "Как называется единый «отпечаток» всех транзакций в заголовке блока?",
+          "en": "What is the single \"fingerprint\" of all transactions in a block header called?"
+        },
+        "options": [
+          {
+            "uz": "Merkle ildizi",
+            "ru": "Корень Меркла",
+            "en": "Merkle root"
+          },
+          {
+            "uz": "Oldingi blok xeshi",
+            "ru": "Хеш предыдущего блока",
+            "en": "Previous block hash"
+          },
+          {
+            "uz": "Vaqt belgisi",
+            "ru": "Метка времени",
+            "en": "Timestamp"
+          },
+          {
+            "uz": "Maxfiy kalit",
+            "ru": "Закрытый ключ",
+            "en": "Private key"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Blokdagi barcha tranzaksiyalar Merkle daraxti orqali yagona Merkle ildiziga birlashtiriladi.",
+          "ru": "Все транзакции блока объединяются в единый корень Меркла с помощью дерева Меркла.",
+          "en": "All transactions in a block are combined into a single Merkle root using a Merkle tree."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blok sarlavhasiga qaysi elementlar kiradi?",
+          "ru": "Какие элементы входят в заголовок блока?",
+          "en": "Which elements are included in a block header?"
+        },
+        "options": [
+          {
+            "uz": "Oldingi blok xeshi va Merkle ildizi",
+            "ru": "Хеш предыдущего блока и корень Меркла",
+            "en": "Previous block hash and Merkle root"
+          },
+          {
+            "uz": "Vaqt belgisi va qiyinlik darajasi",
+            "ru": "Метка времени и сложность",
+            "en": "Timestamp and difficulty"
+          },
+          {
+            "uz": "Tranzaksiyalarning toʻliq matni",
+            "ru": "Полный текст транзакций",
+            "en": "Full text of transactions"
+          },
+          {
+            "uz": "Nonce (tasodifiy son)",
+            "ru": "Nonce (случайное число)",
+            "en": "Nonce"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Tranzaksiyalar roʻyxati blokning tanasida joylashadi, sarlavhasida emas.",
+          "ru": "Список транзакций находится в теле блока, а не в заголовке.",
+          "en": "The list of transactions is located in the body of the block, not the header."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ish isboti (Proof of Work) mexanizmida tizim xavfsizligi nima asosida taʼminlanadi?",
+          "ru": "На чём основана безопасность системы в механизме Proof of Work?",
+          "en": "What is the security of the system based on in the Proof of Work mechanism?"
+        },
+        "options": [
+          {
+            "uz": "Hisoblash quvvatining koʻp qismi halol ishtirokchilarda boʻlishiga",
+            "ru": "На том, что большая часть вычислительной мощности принадлежит честным участникам",
+            "en": "On the fact that most of the computing power belongs to honest participants"
+          },
+          {
+            "uz": "Validatorlarning oʻz garov mablagʻlarini yoʻqotishdan qoʻrqishiga",
+            "ru": "На страхе валидаторов потерять свой залог",
+            "en": "On validators fearing the loss of their stake"
+          },
+          {
+            "uz": "Faqat ruxsat etilgan, tasdiqlangan foydalanuvchilargina ishtirok etishiga",
+            "ru": "На том, что участвуют только одобренные пользователи с разрешениями",
+            "en": "On the fact that only approved, permissioned users participate"
+          },
+          {
+            "uz": "Markaziy bank yoki hukumatning rasmiy kafolatiga",
+            "ru": "На официальной гарантии центрального банка или правительства",
+            "en": "On the official guarantee of a central bank or government"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Proof of Work xavfsizligi hisoblash quvvatining kamida yarmidan koʻpi halol tugunlar nazoratida boʻlishiga tayanadi.",
+          "ru": "Безопасность Proof of Work опирается на то, что более половины вычислительной мощности контролируется честными узлами.",
+          "en": "Proof of Work security relies on more than half of the computing power being controlled by honest nodes."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ruxsatli tarmoqlardagi kelishuvda (BFT), Proof of Work kabi zanjirning ayrilishi tez-tez uchrab turadi va tasdiqlangan bloklar bekor qilinishi mumkin.",
+          "ru": "В согласии в сетях с разрешениями (BFT), как и в Proof of Work, часто встречается разветвление цепочки, и подтверждённые блоки могут быть отменены.",
+          "en": "In permissioned network agreement (BFT), just like in Proof of Work, chain forks frequently occur and confirmed blocks can be reversed."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Ruxsatli (BFT) tarmoqlarda yakuniylik darhol sodir boʻladi: qabul qilingan blok bekor qilinmaydi va zanjir ayrilmaydi.",
+          "ru": "В сетях BFT окончательность немедленная: принятый блок не отменяется и цепочка не разветвляется.",
+          "en": "In BFT networks, finality is immediate: an accepted block is not reversed and the chain does not fork."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Agar tarmoqda ish isboti uchun talab qilinadigan nollar soni bittaga oshsa, xeshni topish uchun oʻrtacha urinishlar soni necha barobarga oshadi?",
+          "ru": "Если требуемое число нулей для доказательства работы увеличивается на один, во сколько раз возрастает среднее число попыток?",
+          "en": "If the required number of zeros for proof of work increases by one, by what factor does the average number of attempts increase?"
+        },
+        "answers": [16],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Xesh oʻn oltilik sanoq sistemasida ifodalanganligi sababli, har bir qoʻshimcha nol urinishlar sonini oʻrtacha 16 barobarga oshiradi.",
+          "ru": "Поскольку хеш представлен в шестнадцатеричной системе, каждый дополнительный нуль увеличивает среднее число попыток в 16 раз.",
+          "en": "Because the hash is represented in hexadecimal, each additional zero increases the average number of attempts by a factor of 16."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Proof of Stake (PoS) konsensus mexanizmining asosiy xususiyatlarini belgilang.",
+          "ru": "Отметьте основные особенности механизма консенсуса Proof of Stake (PoS).",
+          "en": "Select the main features of the Proof of Stake (PoS) consensus mechanism."
+        },
+        "options": [
+          {
+            "uz": "Validatorlar garovga qoʻygan mablagʻiga mutanosib ravishda tasodifan tanlanadi",
+            "ru": "Валидаторы выбираются случайно, пропорционально внесённому ими залогу",
+            "en": "Validators are chosen randomly, in proportion to the funds they have staked"
+          },
+          {
+            "uz": "Qoidalarni buzgan validatorlarning garov mablagʻlari kesiladi",
+            "ru": "При нарушении правил залог валидаторов урезается",
+            "en": "The stakes of validators who break the rules are cut"
+          },
+          {
+            "uz": "Tizimda yirik mablagʻ egalarining taʼsiri kuchliroq boʻladi",
+            "ru": "В системе сильнее влияние владельцев крупных средств",
+            "en": "Large fund holders have more influence in the system"
+          },
+          {
+            "uz": "Blok yaratuvchi juda koʻp elektr energiyasi sarflab, matematik masalani yechishi shart",
+            "ru": "Создатель блока должен решить математическую задачу, потратив много электроэнергии",
+            "en": "The block creator must solve a mathematical puzzle, expending a lot of electricity"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Toʻrtinchi variant Proof of Work mexanizmiga tegishli. PoS energiyani tejaydi, chunki murakkab hisob-kitoblar talab qilinmaydi.",
+          "ru": "Четвертый вариант относится к Proof of Work. PoS экономит энергию, так как сложные вычисления не требуются.",
+          "en": "The fourth option refers to Proof of Work. PoS saves energy because complex calculations are not required."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tekshiruvdan oʻtgan tranzaksiyalar blokka kiritilishini kutadigan navbat (hovuz) nima deb ataladi?",
+          "ru": "Как называется очередь ожидания (пул), где транзакции ждут включения в блок после проверки?",
+          "en": "What is the waiting pool called where transactions wait to be included in a block after verification?"
+        },
+        "answers": ["mempool", "Mempool", "mempul", "Мемпул", "мемпул"],
+        "explanation": {
+          "uz": "Bu kutish navbati mempool (memory pool) deb ataladi va undan maynerlar blokka kiritish uchun tranzaksiyalarni tanlab oladi.",
+          "ru": "Эта очередь называется mempool (пул памяти), из которого майнеры выбирают транзакции для включения в блок.",
+          "en": "This waiting queue is called a mempool, from which miners select transactions to include in a block."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nima uchun Proof of Work tizimida tranzaksiyani yakuniy (oʻzgarmas) deb hisoblash ehtimoliy tabiatga ega?",
+          "ru": "Почему в системе Proof of Work признание транзакции окончательной (неизменной) носит вероятностный характер?",
+          "en": "Why is finality (immutability) of a transaction probabilistic in a Proof of Work system?"
+        },
+        "options": [
+          {
+            "uz": "Chunki ikki mayner bir vaqtda blok topsa zanjir ayriladi, va keyinchalik qisqaroq zanjir bekor qilinib, tranzaksiyalar navbatga qaytishi mumkin.",
+            "ru": "Потому что при одновременном нахождении блока двумя майнерами цепочка разветвляется, и позже более короткая ветвь отбрасывается, возвращая транзакции в очередь.",
+            "en": "Because if two miners find a block simultaneously the chain forks, and later the shorter branch is discarded, returning transactions to the pool."
+          },
+          {
+            "uz": "Chunki tizim ishtirokchilari ovoz berish orqali istalgan tasdiqlangan blokni doimiy ravishda oʻchirib yuborish huquqiga ega.",
+            "ru": "Потому что участники системы имеют право путём голосования навсегда удалить любой подтверждённый блок.",
+            "en": "Because system participants have the right to permanently delete any confirmed block by voting."
+          },
+          {
+            "uz": "Chunki tranzaksiyani yuboruvchi shaxs oʻzining yopiq kaliti yordamida har doim mablagʻni qaytarib olishi kafolatlangan.",
+            "ru": "Потому что отправитель транзакции гарантированно может в любой момент вернуть средства с помощью своего закрытого ключа.",
+            "en": "Because the transaction sender is guaranteed to always be able to take the funds back using their private key."
+          },
+          {
+            "uz": "Chunki Merkle daraxti faqat maʼlum vaqt davomida tranzaksiyalarni himoya qiladi va keyin oʻz-oʻzidan yangilanadi.",
+            "ru": "Потому что дерево Меркла защищает транзакции только определённое время, а затем само обновляется.",
+            "en": "Because the Merkle tree only protects transactions for a certain time and then updates itself."
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "PoW zanjirning ayrilishi va eng koʻp ish sarflangan zanjirni tanlash qoidasi sababli ehtimoliy yakuniylikka ega. Tasdiqlar koʻpayganda bekor boʻlish ehtimoli nolga yaqinlashadi.",
+          "ru": "PoW имеет вероятностную окончательность из-за ветвления и правила выбора цепочки с наибольшей работой. С ростом подтверждений вероятность отмены стремится к нулю.",
+          "en": "PoW has probabilistic finality due to forks and the rule of choosing the chain with the most work. With more confirmations, the reversal probability approaches zero."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Oʻrtacha urinishlar soni",
+      "ru": "Среднее число попыток",
+      "en": "Average number of attempts"
+    },
+    "statement": {
+      "uz": "Ish isboti (Proof of Work) mexanizmida xesh boshida q ta nol boʻlishi talab qilinsa, oʻrtacha urinishlar soni 16^q ga teng boʻladi. Dastur bitta butun sonni — q (talab qilingan nollar soni) ni oʻqisin va q ta nol uchun kutiladigan oʻrtacha urinishlar sonini hisoblab chiqarsin. Faqat sonni chiqaring. Masalan, 2 kiritilsa, dastur 256 chiqarishi kerak.",
+      "ru": "В механизме доказательства работы (Proof of Work), если требуется q нулей в начале хеша, среднее число попыток составляет 16 в степени q. Программа должна прочитать одно целое число q (требуемое количество нулей) и вывести ожидаемое среднее число попыток. Выводите только число. Например, если введено 2, программа должна вывести 256.",
+      "en": "In the Proof of Work mechanism, if a hash is required to start with q zeros, the average number of attempts is 16 to the power of q. Your program must read one integer q (the required number of zeros) and print the expected average number of attempts. Print only the number. For example, if 2 is entered, the program must output 256."
+    },
+    "code": {
+      "starter": {
+        "python": "q = int(input())\n\nprint(q)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int q = in.nextInt();\n        \n        System.out.println(q);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int q;\n    cin >> q;\n    \n    cout << q << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "q = int(input())\nprint(16 ** q)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int q = in.nextInt();\n        long ans = 1;\n        for (int i = 0; i < q; i++) ans *= 16;\n        System.out.println(ans);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int q;\n    cin >> q;\n    long long ans = 1;\n    for (int i = 0; i < q; i++) ans *= 16;\n    cout << ans << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "1\n",
+          "expected": "16",
+          "hidden": false
+        },
+        {
+          "input": "2\n",
+          "expected": "256",
+          "hidden": false
+        },
+        {
+          "input": "3\n",
+          "expected": "4096",
+          "hidden": true
+        },
+        {
+          "input": "4\n",
+          "expected": "65536",
+          "hidden": true
+        },
+        {
+          "input": "5\n",
+          "expected": "1048576",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

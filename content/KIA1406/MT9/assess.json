@@ -1,0 +1,488 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Imzo asosidagi aniqlashning asosiy kamchiligi nimada?",
+          "ru": "В чём главный недостаток сигнатурного обнаружения?",
+          "en": "What is the main drawback of signature-based detection?"
+        },
+        "options": [
+          {
+            "uz": "U faqat maʼlum namunalarni topadi, yangi yoki oʻzgartirilgan namunalarni koʻrmaydi",
+            "ru": "Оно находит только известные образцы, новые или изменённые не видит",
+            "en": "It finds only known samples and does not see new or modified ones"
+          },
+          {
+            "uz": "U juda koʻp soxta signal beradi",
+            "ru": "Оно даёт слишком много ложных тревог",
+            "en": "It produces too many false alerts"
+          },
+          {
+            "uz": "U ishlash uchun Internet aloqasini talab qiladi",
+            "ru": "Для работы оно требует подключения к интернету",
+            "en": "It needs an internet connection to work"
+          },
+          {
+            "uz": "U zarar boshlangandan keyingina ishga tushadi",
+            "ru": "Оно срабатывает только после начала ущерба",
+            "en": "It triggers only after the damage has started"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvali: imzolar — maʼlum namunalarning xeshlari va baytlar ketma-ketligi; kuchli tomoni aniq, kam soxta signal; zaif tomoni — yangi yoki oʻzgartirilgan namunalarni koʻrmaydi. Koʻp soxta signal — evristikaning, Internet aloqasi — bulut reputatsiyasining, zarardan keyin ishga tushish — xatti-harakat tahlilining zaif tomoni.",
+          "ru": "Таблица занятия: сигнатуры — хеши и последовательности байтов известных образцов; сильная сторона — точность и мало ложных тревог; слабая — не видит новые или изменённые образцы. Много ложных тревог — у эвристики, нужен интернет — у облачной репутации, срабатывание после ущерба — у поведенческого анализа.",
+          "en": "The lesson table: signatures are hashes and byte sequences of known samples; their strength is precision with few false alerts, their weakness is not seeing new or modified samples. Many false alerts belongs to heuristics, the internet requirement to cloud reputation, triggering after the damage to behaviour analysis."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsga koʻra, bir kompyuterga ikkita real vaqt antivirusini birga oʻrnatish tavsiya etiladi.",
+          "ru": "По занятию на один компьютер рекомендуется устанавливать два антивируса реального времени одновременно.",
+          "en": "According to the lesson, installing two real-time antivirus programs on one computer is recommended."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi muhim tamoyil: bitta kompyuterda faqat bitta real vaqt antivirusi — ikkitasi bir-biriga xalaqit beradi. «Ikki antivirusni birga oʻrnatish» koʻp uchraydigan xatolar roʻyxatida ham keltirilgan.",
+          "ru": "Важный принцип из занятия: на одном компьютере только один антивирус реального времени — два мешают друг другу. «Устанавливать два антивируса одновременно» стоит и в списке частых ошибок.",
+          "en": "The lesson's important principle: only one real-time antivirus on a computer, since two interfere with each other. «Installing two antivirus programs together» is also on the list of common mistakes."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "EDR klassik antivirusdan nimasi bilan farq qiladi?",
+          "ru": "Чем EDR отличается от классического антивируса?",
+          "en": "How does EDR differ from a classic antivirus?"
+        },
+        "options": [
+          {
+            "uz": "Jarayonlar, tarmoq ulanishlari va fayl amallarini doimiy yozib boradi, shubhali zanjirlarni aniqlaydi va javob choralarini beradi",
+            "ru": "Постоянно записывает процессы, сетевые соединения и файловые операции, обнаруживает подозрительные цепочки и даёт средства реагирования",
+            "en": "It continuously records processes, network connections and file operations, detects suspicious chains and provides response actions"
+          },
+          {
+            "uz": "Faqat maʼlum zararli fayllar imzolari bazasi asosida faylni ochishda skanerlaydi",
+            "ru": "Сканирует файл при открытии только по базе сигнатур известных вредоносных файлов",
+            "en": "It scans a file on open using only a database of signatures of known malicious files"
+          },
+          {
+            "uz": "Faqat bulutdagi fayl yoki sayt reputatsiyasiga tayanadi",
+            "ru": "Опирается только на облачную репутацию файла или сайта",
+            "en": "It relies only on the cloud reputation of a file or site"
+          },
+          {
+            "uz": "Shubhali faylni izolyatsiyalangan muhitda ishga tushirib kuzatadi",
+            "ru": "Запускает подозрительный файл в изолированной среде и наблюдает за ним",
+            "en": "It runs a suspicious file in an isolated environment and observes it"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars avlodlar jadvalida EDR (Endpoint Detection and Response) doimiy yozib borish, shubhali zanjirlarni aniqlash va javob choralarini — qurilmani tarmoqdan ajratish, jarayonni toʻxtatish, tergov uchun maʼlumot — berishi bilan farqlanadi. Faylni ochishda imzo boʻyicha skanerlash — klassik antivirus, qum qutisi esa alohida usul.",
+          "ru": "В таблице поколений занятия EDR (Endpoint Detection and Response) отличается постоянной записью, обнаружением подозрительных цепочек и средствами реагирования — изоляция устройства от сети, остановка процесса, данные для расследования. Сканирование при открытии по сигнатуре — это классический антивирус, а «песочница» — отдельный метод.",
+          "en": "In the lesson's generation table EDR (Endpoint Detection and Response) differs by continuous recording, detection of suspicious chains and response actions — isolating the device from the network, stopping a process, data for investigation. Scanning on open by signature is the classic antivirus, and a sandbox is a separate method."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda EPP (Endpoint Protection Platform) tarkibiga qaysi choralar kiritilgan?",
+          "ru": "Какие меры занятие включает в состав EPP (Endpoint Protection Platform)?",
+          "en": "Which measures does the lesson include in an EPP (Endpoint Protection Platform)?"
+        },
+        "options": [
+          {
+            "uz": "Antivirus va xost devori",
+            "ru": "Антивирус и хостовый межсетевой экран",
+            "en": "Antivirus and a host firewall"
+          },
+          {
+            "uz": "Veb-filtr va qurilma (USB) nazorati",
+            "ru": "Веб-фильтр и контроль устройств (USB)",
+            "en": "A web filter and device (USB) control"
+          },
+          {
+            "uz": "Ilovalar nazorati va markaziy boshqaruv",
+            "ru": "Контроль приложений и централизованное управление",
+            "en": "Application control and central management"
+          },
+          {
+            "uz": "Jarayonlar va ulanishlarni doimiy yozib borish va tergov uchun maʼlumot toʻplash",
+            "ru": "Постоянная запись процессов и соединений и сбор данных для расследования",
+            "en": "Continuously recording processes and connections and collecting data for investigation"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Dars jadvali EPP ni antivirus + xost devori, veb-filtr, qurilma (USB) nazorati, ilovalar nazorati va markaziy boshqaruv deb beradi. Doimiy yozib borish va tergov uchun maʼlumot — EDR ning imkoniyati, u jadvalda alohida qatorda.",
+          "ru": "Таблица занятия даёт EPP как антивирус плюс хостовый межсетевой экран, веб-фильтр, контроль устройств (USB), контроль приложений и централизованное управление. Постоянная запись и данные для расследования — возможность EDR, в таблице это отдельная строка.",
+          "en": "The lesson's table gives EPP as antivirus plus host firewall, web filter, device (USB) control, application control and central management. Continuous recording and data for investigation are an EDR capability, on a separate row of the table."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oʻzbekistonda «Kiberxavfsizlik toʻgʻrisida»gi Qonun qabul qilingan yilni raqamda yozing.",
+          "ru": "Запишите числом год принятия Закона Узбекистана «О кибербезопасности».",
+          "en": "Write as a number the year the Law «On Cybersecurity» of Uzbekistan was adopted."
+        },
+        "answers": [2022],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsdagi hujjatlar jadvali: «Kiberxavfsizlik toʻgʻrisida»gi Qonun — 2022-yil; «Shaxsga doir maʼlumotlar toʻgʻrisida»gi Qonun — 2019-yil; ikkalasining toʻliq matni lex.uz da.",
+          "ru": "Таблица документов из занятия: Закон «О кибербезопасности» — 2022 год; Закон «О персональных данных» — 2019 год; полные тексты — на lex.uz.",
+          "en": "The lesson's document table: the Law «On Cybersecurity» — 2022; the Law «On Personal Data» — 2019; full texts on lex.uz."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsga koʻra, antivirus mahsulotini qanday xolis baholash mumkin?",
+          "ru": "Как, по занятию, можно объективно оценить антивирусный продукт?",
+          "en": "According to the lesson, how can an antivirus product be evaluated objectively?"
+        },
+        "options": [
+          {
+            "uz": "AV-TEST va AV-Comparatives kabi mustaqil laboratoriyalarning sinov natijalari boʻyicha",
+            "ru": "По результатам испытаний независимых лабораторий, таких как AV-TEST и AV-Comparatives",
+            "en": "By the test results of independent laboratories such as AV-TEST and AV-Comparatives"
+          },
+          {
+            "uz": "Ishlab chiqaruvchining reklamasidagi aniqlash foizi boʻyicha",
+            "ru": "По проценту обнаружения в рекламе производителя",
+            "en": "By the detection percentage in the vendor's advertising"
+          },
+          {
+            "uz": "Dastur oʻrnatilgan kompyuterlar soni boʻyicha",
+            "ru": "По числу компьютеров, на которых установлена программа",
+            "en": "By the number of computers the program is installed on"
+          },
+          {
+            "uz": "Antivirus bazasidagi imzolar soni boʻyicha",
+            "ru": "По числу сигнатур в базе антивируса",
+            "en": "By the number of signatures in the antivirus database"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda reklama emas, mustaqil laboratoriyalar natijalariga tayanish aytilgan. Taqqoslash mezonlari: aniqlash darajasi, soxta signallar soni, tizimni sekinlashtirishi, boshqaruv qulayligi, narx, qoʻllab-quvvatlash va ishlab chiqaruvchining maʼlumotlar bilan ishlash siyosati.",
+          "ru": "В занятии сказано опираться не на рекламу, а на результаты независимых лабораторий. Критерии сравнения: уровень обнаружения, число ложных тревог, замедление системы, удобство управления, цена, поддержка и политика производителя в отношении данных.",
+          "en": "The lesson says to rely not on advertising but on the results of independent laboratories. The comparison criteria: detection rate, number of false alerts, system slowdown, ease of management, price, support and the vendor's data-handling policy."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsda qaysi aniqlash usulining zaif tomoni «zarar boshlangandan keyin ishga tushishi mumkin» deb koʻrsatilgan?",
+          "ru": "О каком методе обнаружения в занятии сказано, что его слабая сторона — «может сработать после начала ущерба»?",
+          "en": "For which detection method does the lesson give «may trigger after the damage has started» as the weakness?"
+        },
+        "options": [
+          {
+            "uz": "Xatti-harakat tahlili",
+            "ru": "Поведенческий анализ",
+            "en": "Behaviour analysis"
+          },
+          {
+            "uz": "Imzolar",
+            "ru": "Сигнатуры",
+            "en": "Signatures"
+          },
+          {
+            "uz": "Bulut reputatsiyasi",
+            "ru": "Облачная репутация",
+            "en": "Cloud reputation"
+          },
+          {
+            "uz": "Qum qutisi (sandbox)",
+            "ru": "«Песочница» (sandbox)",
+            "en": "Sandbox"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvalida xatti-harakat tahlili dastur nima qilayotganini — koʻp fayllarni shifrlash, tizim sozlamalarini oʻzgartirish — kuzatadi; u yangi tahdidlarga qarshi samarali, ammo zarar boshlangandan keyin ishga tushishi mumkin. Imzolarning zaif tomoni — yangi namunalarni koʻrmsizligi, bulut reputatsiyasiki — Internet aloqasi va maxfiylik, qum qutisiki — sekinlik.",
+          "ru": "В таблице занятия поведенческий анализ следит за тем, что делает программа — шифрует много файлов, меняет системные настройки; он эффективен против новых угроз, но может сработать после начала ущерба. Слабость сигнатур — слепота к новым образцам, облачной репутации — нужен интернет и вопрос конфиденциальности, «песочницы» — медленность.",
+          "en": "In the lesson's table behaviour analysis watches what the program does — encrypting many files, changing system settings; it is effective against new threats but may trigger after the damage has started. Signatures are blind to new samples, cloud reputation needs a connection and raises privacy, a sandbox is slow."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dars kiberjinoyatning asosiy turlari qatoriga qaysilarni kiritadi?",
+          "ru": "Что занятие относит к основным видам киберпреступлений?",
+          "en": "Which of these does the lesson list among the main types of cybercrime?"
+        },
+        "options": [
+          {
+            "uz": "Kompyuter tizimiga ruxsatsiz kirish va axborotni ruxsatsiz oʻzgartirish yoki yoʻq qilish",
+            "ru": "Несанкционированный доступ к компьютерной системе и несанкционированное изменение или уничтожение информации",
+            "en": "Unauthorized access to a computer system and unauthorized modification or destruction of information"
+          },
+          {
+            "uz": "Zararli dasturlarni yaratish va tarqatish",
+            "ru": "Создание и распространение вредоносных программ",
+            "en": "Creating and spreading malware"
+          },
+          {
+            "uz": "Shaxsiy maʼlumotlarni noqonuniy yigʻish va tarqatish, tovlamachilik",
+            "ru": "Незаконный сбор и распространение персональных данных, вымогательство",
+            "en": "Illegal collection and disclosure of personal data, extortion"
+          },
+          {
+            "uz": "Tizimni tezlashtirish uchun antivirusni oʻchirib qoʻyish",
+            "ru": "Отключение антивируса «ради скорости» системы",
+            "en": "Turning off the antivirus «for speed»"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Dars kiberjinoyat turlari qatorida ruxsatsiz kirish va axborotni oʻzgartirish-yoʻq qilish, zararli dasturlarni yaratish va tarqatish, kompyuter yordamidagi firibgarlik va oʻgʻirlik, shaxsiy maʼlumotlarni noqonuniy yigʻish va tarqatish, tovlamachilik, mualliflik huquqini buzishni keltiradi. Antivirusni oʻchirib qoʻyish — xavfsizlik xatosi, dars uni koʻp uchraydigan xatolar roʻyxatiga qoʻygan.",
+          "ru": "Среди видов киберпреступлений занятие называет несанкционированный доступ и изменение-уничтожение информации, создание и распространение вредоносных программ, мошенничество и кражу с помощью компьютера, незаконный сбор и распространение персональных данных, вымогательство, нарушение авторских прав. Отключение антивируса — ошибка безопасности, в занятии оно в списке частых ошибок.",
+          "en": "Among the types of cybercrime the lesson lists unauthorized access and modification or destruction of information, creating and spreading malware, computer-assisted fraud and theft, illegal collection and disclosure of personal data, extortion and copyright infringement. Turning off the antivirus is a security mistake, placed by the lesson in the list of common mistakes."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, antivirusning borligi yangilanishlar, zaxira nusxa va eng kam imtiyoz tamoyillari oʻrnini bosadi.",
+          "ru": "По занятию наличие антивируса заменяет обновления, резервные копии и принцип минимальных привилегий.",
+          "en": "According to the lesson, having an antivirus replaces updates, backups and the least-privilege principle."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda «antivirus bor — xavfsizman» koʻp uchraydigan xato deb atalgan: u fishing, zaif parollar va yangilanmagan dasturlardan toʻliq himoya qilmaydi; muhim tamoyillarda antivirus yangilanishlar, zaxira nusxa, eng kam imtiyoz va xabardorlik oʻrnini bosmaydi deyilgan.",
+          "ru": "В занятии «есть антивирус — я в безопасности» названо частой ошибкой: он не защищает полностью от фишинга, слабых паролей и необновлённых программ; среди важных принципов сказано, что антивирус не заменяет обновлений, резервных копий, минимальных привилегий и осведомлённости.",
+          "en": "The lesson calls «I have an antivirus, so I am safe» a common mistake: it does not fully protect against phishing, weak passwords and unpatched software, and among the important principles it states that an antivirus does not replace updates, backups, least privilege and awareness."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Antivirus mahsulotlarini solishtirish va jabrlanganingizdagi harakatlar — nazorat savollari",
+      "ru": "Сравнение антивирусных продуктов и действия пострадавшего — проверочные вопросы",
+      "en": "Comparing antivirus products and the victim's actions — check questions"
+    },
+    "statement": {
+      "uz": "Darsning amaliy ishi — referatda antivirus mahsulotlarini AV-TEST va AV-Comparatives saytlaridagi oxirgi sinov natijalari jadvali bilan solishtirish va qonun matnlarini faqat lex.uz dagi amaldagi tahrirdan olish — dan oldin besh savolga javob bering. Savollar aniqlash usullari, mahsulotlarni baholash, Oʻzbekiston qonunchiligi va jabrlanganda harakatlar boʻlimlariga asoslangan. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Перед практической работой занятия — сравнить антивирусные продукты в реферате по таблице последних испытаний с сайтов AV-TEST и AV-Comparatives, взяв тексты законов только в действующей редакции на lex.uz, — ответьте на пять вопросов. Они опираются на методы обнаружения, оценку продуктов, законодательство Узбекистана и действия пострадавшего. Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before the lesson's practical work — comparing antivirus products in an essay with a table of the latest test results from the AV-TEST and AV-Comparatives sites, taking the texts of laws only from the current version on lex.uz — answer five questions. They rest on detection methods, evaluating products, the law of Uzbekistan and the actions of a victim. The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Darsning maslahatida referatda antiviruslarni solishtirish uchun oxirgi sinov natijalarini qaysi ikki saytdan olish aytilgan?",
+            "ru": "С каких двух сайтов, по совету занятия, брать последние результаты испытаний для сравнения антивирусов в реферате?",
+            "en": "From which two sites does the lesson's tip say to take the latest test results when comparing antivirus products in an essay?"
+          },
+          "options": [
+            {
+              "uz": "AV-TEST va AV-Comparatives",
+              "ru": "AV-TEST и AV-Comparatives",
+              "en": "AV-TEST and AV-Comparatives"
+            },
+            {
+              "uz": "Windows Update va lex.uz",
+              "ru": "Windows Update и lex.uz",
+              "en": "Windows Update and lex.uz"
+            },
+            {
+              "uz": "VirusTotal va brauzerning sozlamalari sahifasi",
+              "ru": "VirusTotal и страница настроек браузера",
+              "en": "VirusTotal and the browser's settings page"
+            },
+            {
+              "uz": "Ishlab chiqaruvchilarning rasmiy reklama sahifalari",
+              "ru": "Официальные рекламные страницы производителей",
+              "en": "The vendors' official advertising pages"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsning maslahati: referatda solishtirish uchun AV-TEST va AV-Comparatives saytlaridagi oxirgi sinov natijalarini jadval qilib keltirish; qonunlar matnini esa faqat lex.uz dagi amaldagi tahrirdan olish va moddalarni aniq koʻrsatish.",
+            "ru": "Совет занятия: для сравнения в реферате привести таблицей последние результаты испытаний с сайтов AV-TEST и AV-Comparatives; тексты законов брать только в действующей редакции на lex.uz и точно указывать статьи.",
+            "en": "The lesson's tip: for an essay comparison, tabulate the latest test results from the AV-TEST and AV-Comparatives sites; take the texts of laws only from the current version on lex.uz and cite the articles precisely."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsga koʻra, qum qutisi usuli sekin ishlaydi va baʼzi namunalar sinov muhitini aniqlab qoʻyadi.",
+            "ru": "По занятию метод «песочницы» работает медленно, а некоторые образцы распознают тестовую среду.",
+            "en": "According to the lesson, the sandbox method is slow and some samples detect the test environment."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Dars jadvalida qum qutisining kuchli tomoni — xatti-harakatni xavfsiz koʻrish, zaif tomoni — sekinligi va baʼzi namunalar sinov muhitini aniqlashi. Shu sababli zamonaviy mahsulotlar usullarni birlashtiradi: birortasi yolgʻiz yetarli emas.",
+            "ru": "В таблице занятия сильная сторона «песочницы» — безопасный просмотр поведения, слабая — медленность и то, что некоторые образцы распознают тестовую среду. Поэтому современные продукты сочетают методы: ни одного по отдельности недостаточно.",
+            "en": "In the lesson's table the sandbox's strength is seeing behaviour safely, its weakness is slowness and that some samples detect the test environment. That is why modern products combine methods — none of them is enough on its own."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Dars kiberjinoyatdan jabrlanganda qaysi harakatlarni koʻrsatadi?",
+            "ru": "Какие действия занятие указывает, если вы стали жертвой киберпреступления?",
+            "en": "Which actions does the lesson tell you to take if you become a victim of cybercrime?"
+          },
+          "options": [
+            {
+              "uz": "Darhol bankka murojaat qilib, kartani bloklash va tranzaksiyani bahslash",
+              "ru": "Немедленно обратиться в банк, заблокировать карту и оспорить транзакцию",
+              "en": "Contact the bank immediately to block the card and dispute the transaction"
+            },
+            {
+              "uz": "Parollarni almashtirish, MFA ni yoqish, hisoblarni boshqa qurilmadan tekshirish",
+              "ru": "Сменить пароли, включить MFA, проверить учётные записи с другого устройства",
+              "en": "Change passwords, enable MFA, check the accounts from another device"
+            },
+            {
+              "uz": "Dalillarni saqlab qolish va huquqni muhofaza qilish organlariga ariza berish",
+              "ru": "Сохранить доказательства и подать заявление в правоохранительные органы",
+              "en": "Keep the evidence and file a report with law enforcement"
+            },
+            {
+              "uz": "Xabarlarni va skrinshotlarni oʻchirib, hisobni yopib qoʻyish",
+              "ru": "Удалить сообщения и скриншоты и закрыть учётную запись",
+              "en": "Delete the messages and screenshots and close the account"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Darsda besh qadam berilgan: bank, parollar va MFA, dalillarni saqlash (xabarlar, skrinshotlar, sanalar, raqamlar, havolalar — oʻchirmang), huquqni muhofaza qilish organlariga ariza hamda tashkilotlarda xavfsizlik xizmati va vakolatli organga xabar, va tanishlarni ogohlantirish. Dalillarni oʻchirish bu roʻyxatga zid.",
+            "ru": "В занятии пять шагов: банк; пароли и MFA; сохранение доказательств (сообщения, скриншоты, даты, номера, ссылки — не удаляйте); заявление в правоохранительные органы, а в организациях — сообщение службе безопасности и уполномоченному органу; предупреждение знакомых. Удаление доказательств противоречит этому списку.",
+            "en": "The lesson gives five steps: the bank; passwords and MFA; keeping the evidence (messages, screenshots, dates, numbers, links — do not delete them); a report to law enforcement and, in organizations, telling the security service and the authorized body; and warning your contacts. Deleting the evidence contradicts this list."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Darsdagi hujjatlar jadvali boʻyicha, «Shaxsga doir maʼlumotlar toʻgʻrisida»gi Qonun (2019) qanday talabni qoʻyadi?",
+            "ru": "Какое требование, согласно таблице документов занятия, выдвигает Закон «О персональных данных» (2019)?",
+            "en": "Per the lesson's table of documents, what requirement does the Law «On Personal Data» (2019) set?"
+          },
+          "options": [
+            {
+              "uz": "Oʻzbekiston fuqarolarining maʼlumotlarini mamlakat hududida saqlash",
+              "ru": "Хранить данные граждан Узбекистана на территории страны",
+              "en": "Store the data of citizens of Uzbekistan within the country"
+            },
+            {
+              "uz": "Barcha veb-saytlarni har kuni zaxiralash",
+              "ru": "Ежедневно создавать резервные копии всех веб-сайтов",
+              "en": "Back up every website daily"
+            },
+            {
+              "uz": "Har bir foydalanuvchiga elektron raqamli imzo olishni majburiy qilish",
+              "ru": "Обязать каждого пользователя получить электронную цифровую подпись",
+              "en": "Require every user to obtain an electronic digital signature"
+            },
+            {
+              "uz": "Antivirus bazasini haftada bir marta yangilash",
+              "ru": "Обновлять базы антивируса раз в неделю",
+              "en": "Update antivirus databases once a week"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Dars jadvalida «Shaxsga doir maʼlumotlar toʻgʻrisida»gi Qonun (2019) shaxsiy maʼlumotlarni yigʻish, saqlash va himoya qilish hamda Oʻzbekiston fuqarolari maʼlumotlarini mamlakat hududida saqlash talabi bilan keltirilgan. ERI ning huquqiy maqomi — alohida qonunda (M8), bazalarning yangilanishi esa tamoyillarda avtomatik deb aytilgan.",
+            "ru": "В таблице занятия Закон «О персональных данных» (2019) дан как сбор, хранение и защита персональных данных и требование хранить данные граждан Узбекистана на территории страны. Правовой статус ЭЦП — в отдельном законе (M8), а обновление баз в принципах названо автоматическим.",
+            "en": "The lesson's table gives the Law «On Personal Data» (2019) as collection, storage and protection of personal data plus the requirement to store the data of citizens of Uzbekistan within the country. The legal status of digital signatures is in a separate law (M8), and updating databases is called automatic among the principles."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Oʻzbekistonda kiberxavfsizlik hodisasi haqida xabar beriladigan vakolatli tashkilotning nomini yozing.",
+            "ru": "Запишите название уполномоченной организации в Узбекистане, которой сообщают об инциденте кибербезопасности.",
+            "en": "Write the name of the authorized body in Uzbekistan to which a cybersecurity incident is reported."
+          },
+          "answers": [
+            "Kiberxavfsizlik markazi",
+            "kiberxavfsizlik markazi",
+            "Kiberxavfsizlik Markazi",
+            "Cybersecurity Center",
+            "cybersecurity center"
+          ],
+          "explanation": {
+            "uz": "Darsda: tashkilotlarda hodisa haqida xavfsizlik xizmati va vakolatli organga xabar beriladi, Oʻzbekistonda bu — Kiberxavfsizlik markazi. «Kiberxavfsizlik toʻgʻrisida»gi Qonun (2022) ham vakolatli organni va hodisalar haqida xabar berishni belgilaydi.",
+            "ru": "В занятии: в организациях об инциденте сообщают службе безопасности и уполномоченному органу, в Узбекистане это — Центр кибербезопасности. Закон «О кибербезопасности» (2022) тоже определяет уполномоченный орган и сообщение об инцидентах.",
+            "en": "The lesson: in organizations an incident is reported to the security service and the authorized body, which in Uzbekistan is the Cybersecurity Center. The Law «On Cybersecurity» (2022) also defines the authorized body and incident reporting."
+          }
+        }
+      ]
+    }
+  }
+}

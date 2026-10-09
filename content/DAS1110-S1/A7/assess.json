@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python tilida range(20, 0, -5) qanday qiymatlarni beradi?",
+          "ru": "Какие значения даёт range(20, 0, -5) в Python?",
+          "en": "What values does range(20, 0, -5) give in Python?"
+        },
+        "options": [
+          {
+            "uz": "20, 15, 10, 5",
+            "ru": "20, 15, 10, 5",
+            "en": "20, 15, 10, 5"
+          },
+          {
+            "uz": "20, 15, 10, 5, 0",
+            "ru": "20, 15, 10, 5, 0",
+            "en": "20, 15, 10, 5, 0"
+          },
+          {
+            "uz": "0, 5, 10, 15, 20",
+            "ru": "0, 5, 10, 15, 20",
+            "en": "0, 5, 10, 15, 20"
+          },
+          {
+            "uz": "19, 14, 9, 4",
+            "ru": "19, 14, 9, 4",
+            "en": "19, 14, 9, 4"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda koʻrsatilganidek, teskari tartibli qadam -5 bilan 20, 15, 10, 5 olinadi.",
+          "ru": "Как показано на занятии, при обратном порядке с шагом -5 получаются 20, 15, 10, 5.",
+          "en": "As shown in the lesson, a reverse order with step -5 gives 20, 15, 10, 5."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tub son 1 dan katta boʻlishi shart.",
+          "ru": "Простое число должно быть больше 1.",
+          "en": "A prime number must be greater than 1."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Tub son — faqat 1 ga va oʻziga boʻlinadigan, 1 dan katta son. Shuning uchun bayroq ham n >= 2 bilan boshlanadi va 1 uchun javob tub emas boʻladi.",
+          "ru": "Простое число — это число больше 1, которое делится только на 1 и на себя. Поэтому флаг начинается с n >= 2, и для 1 ответ будет «не простое».",
+          "en": "A prime is a number greater than 1 that divides only by 1 and itself. That is why the flag starts with n >= 2, and the answer for 1 is not prime."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi yozuvlar for siklida qadamni yoki teskari tartibni ifodalaydi?",
+          "ru": "Какие записи задают шаг или обратный порядок цикла for?",
+          "en": "Which of these express a step or a reverse order in a for loop?"
+        },
+        "options": [
+          {
+            "uz": "Python: range(0, 21, 2)",
+            "ru": "Python: range(0, 21, 2)",
+            "en": "Python: range(0, 21, 2)"
+          },
+          {
+            "uz": "Python: range(10, 0, -1)",
+            "ru": "Python: range(10, 0, -1)",
+            "en": "Python: range(10, 0, -1)"
+          },
+          {
+            "uz": "Java: for (int i = 10; i >= 1; i--)",
+            "ru": "Java: for (int i = 10; i >= 1; i--)",
+            "en": "Java: for (int i = 10; i >= 1; i--)"
+          },
+          {
+            "uz": "Python: print(x, end=\" \")",
+            "ru": "Python: print(x, end=\" \")",
+            "en": "Python: print(x, end=\" \")"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Uchala yozuv ham qadam yoki teskari tartib beradi. print(x, end=\" \") esa natijani bir qatorda chiqarish vositasi, sikl qadami emas.",
+          "ru": "Все три записи задают шаг или обратный порядок. print(x, end=\" \") — это способ выводить значения в одной строке, а не шаг цикла.",
+          "en": "The first three give a step or a reverse order. print(x, end=\" \") is how values are printed on one line, not a loop step."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Fibonachchi ketma-ketligida ikkala qiymatni bir vaqtda toʻgʻi yangilaydigan qator qaysi?",
+          "ru": "Какая строка правильно обновляет оба значения одновременно в последовательности Фибоначчи?",
+          "en": "Which line updates both values at once correctly in the Fibonacci sequence?"
+        },
+        "options": [
+          {
+            "uz": "Python: a, b = b, a + b",
+            "ru": "Python: a, b = b, a + b",
+            "en": "Python: a, b = b, a + b"
+          },
+          {
+            "uz": "Python: a = b; b = a + b",
+            "ru": "Python: a = b; b = a + b",
+            "en": "Python: a = b; b = a + b"
+          },
+          {
+            "uz": "Java: a = a + b; b = a;",
+            "ru": "Java: a = a + b; b = a;",
+            "en": "Java: a = a + b; b = a;"
+          },
+          {
+            "uz": "C++: b = a + b; a = b;",
+            "ru": "C++: b = a + b; a = b;",
+            "en": "C++: b = a + b; a = b;"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Python da a, b = b, a + b ikkala qiymatni bir vaqtda yangilaydi. a = b; b = a + b tartibida esa a allaqachon oʻzgargan boʻladi va ketma-ketlik buziladi; shuning uchun Java va C++ da vaqtinchalik keyingi oʻzgaruvchisi kerak.",
+          "ru": "В Python a, b = b, a + b обновляет оба значения одновременно. При порядке a = b; b = a + b значение a уже изменилось, и последовательность ломается; поэтому в Java и C++ нужна временная переменная keyingi.",
+          "en": "In Python a, b = b, a + b updates both values at once. With a = b; b = a + b the value a has already changed and the sequence breaks, which is why Java and C++ need the temporary variable keyingi."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Java tilida k = 2 boʻlganda 1 / (k * k) ifodaning qiymati nechaga teng?",
+          "ru": "Чему равно выражение 1 / (k * k) в Java при k = 2?",
+          "en": "In Java, what is the value of 1 / (k * k) when k = 2?"
+        },
+        "answers": [0],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Ikkala operand ham butun son, butun boʻlish esa kasr qismini tashlab yuboradi: natija 0. Shuning uchun darsda 1.0 / yozish tavsiya etiladi.",
+          "ru": "Оба операнда — целые числа, а целочисленное деление отбрасывает дробную часть: результат 0. Поэтому на занятии советуют писать 1.0 /.",
+          "en": "Both operands are integers and integer division drops the fraction: the result is 0. That is why the lesson says to write 1.0 /."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Siklni kerakli joyda erta toʻxtatuvchi soʻz kalitni yozing.",
+          "ru": "Напишите ключевое слово, которое останавливает цикл досрочно.",
+          "en": "Write the keyword that stops a loop early."
+        },
+        "answers": ["break"],
+        "explanation": {
+          "uz": "Bayroq andozasida element topilganda bayroq True qoʻyilib, break bilan sikl toʻxtatiladi: qolgan elementlarni tekshirishga hojat yoʻq.",
+          "ru": "В шаблоне с флагом при находке флаг становится True, а цикл останавливается через break: остальные элементы проверять не нужно.",
+          "en": "In the flag pattern the item found sets the flag to True and break stops the loop: the rest does not need checking."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nima uchun tub sonlikni faqat √n gacha tekshirish yetarli?",
+          "ru": "Почему для проверки на простоту достаточно проверить делители до √n?",
+          "en": "Why is it enough to test primality only up to √n?"
+        },
+        "options": [
+          {
+            "uz": "Agar n = a · b va a ≤ b boʻlsa, u holda a ≤ √n, yaʼni boʻluvchi boʻlsa, ulardan biri albatta √n dan oshmaydi",
+            "ru": "Если n = a · b и a ≤ b, то a ≤ √n, то есть при наличии делителя один из них гарантированно не больше √n",
+            "en": "If n = a · b and a ≤ b, then a ≤ √n, so whenever a divisor exists one of them is certainly no greater than √n"
+          },
+          {
+            "uz": "Chunki √n har doim tub son",
+            "ru": "Потому что √n всегда является простым числом",
+            "en": "Because √n is always a prime number"
+          },
+          {
+            "uz": "Chunki katta boʻluvchi √n dan kichik boʻladi",
+            "ru": "Потому что больший делитель меньше √n",
+            "en": "Because the larger divisor is smaller than √n"
+          },
+          {
+            "uz": "Chunki n har doim 1 dan katta",
+            "ru": "Потому что n всегда больше 1",
+            "en": "Because n is always greater than 1"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi asos: n = a · b va a ≤ b boʻlsa, a · a ≤ n, demak a ≤ √n. Bu tekshiruv katta farq beradi: n ≈ 10⁹ da n gacha sikl milliard qadam, √n gacha esa taxminan 31 600 qadam.",
+          "ru": "Основание из занятия: если n = a · b и a ≤ b, то a · a ≤ n, значит a ≤ √n. Это даёт огромную разницу: при n ≈ 10⁹ цикл до n — миллиард шагов, до √n — около 31 600.",
+          "en": "The lesson's argument: if n = a · b and a ≤ b, then a · a ≤ n, so a ≤ √n. It makes a huge difference: for n ≈ 10⁹ a loop to n is a billion steps, to √n about 31 600."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qaysi yozuvlar darsdagi koʻp uchraydigan xatolar roʻyxatiga kiradi?",
+          "ru": "Какие из перечисленного входят в список частых ошибок с занятия?",
+          "en": "Which of these are in the lesson's list of common mistakes?"
+        },
+        "options": [
+          {
+            "uz": "1 ni tub son deb hisoblash",
+            "ru": "Считать 1 простым числом",
+            "en": "Treating 1 as a prime number"
+          },
+          {
+            "uz": "Bayroqni sikl ichida else: tub = True bilan qayta oʻrnatish",
+            "ru": "Сбрасывать флаг внутри цикла через else: tub = True",
+            "en": "Resetting the flag inside the loop with else: tub = True"
+          },
+          {
+            "uz": "Qatorda butun boʻlish: 1 / (k * k) yozish",
+            "ru": "Целочисленное деление в ряде: писать 1 / (k * k)",
+            "en": "Integer division in the series: writing 1 / (k * k)"
+          },
+          {
+            "uz": "Boʻluvchilarni √n gacha tekshirish",
+            "ru": "Проверять делители только до √n",
+            "en": "Testing divisors only up to √n"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "√n gacha tekshirish — xato emas, aksincha, tavsiya etiladigan usul. Qolgan uchtasi roʻyxatda: 1 tub emas, else: tub = True oldingi topilmani oʻchiradi, 1 / (k * k) esa Java va C++ da 0 beradi.",
+          "ru": "Проверка до √n — не ошибка, а наоборот, рекомендуемый приём. Остальные три в списке: 1 не простое, else: tub = True стирает уже найденное, а 1 / (k * k) в Java и C++ даёт 0.",
+          "en": "Testing up to √n is not a mistake but the recommended method. The other three are on the list: 1 is not prime, else: tub = True erases what was already found, and 1 / (k * k) gives 0 in Java and C++."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Fibonachchi sonlarini chiqarish uchun butun ketma-ketlikni saqlab borish kerak.",
+          "ru": "Для вывода чисел Фибоначчи нужно сохранять всю последовательность.",
+          "en": "To print Fibonacci numbers you have to keep the whole sequence."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Butun ketma-ketlikni saqlash shart emas: faqat oxirgi ikki had a va b yetarli. Ketma-ketlik tez oʻsadi: 93-had hatto long turiga ham sigʻmaydi.",
+          "ru": "Хранить всю последовательность не нужно: достаточно двух последних членов a и b. Растёт она быстро: 93-й член не помещается даже в long.",
+          "en": "The whole sequence need not be stored: the last two terms a and b are enough. It grows fast: the 93rd term does not fit even in a long."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "n sonining barcha boʻluvchilari",
+      "ru": "Все делители числа n",
+      "en": "All divisors of n"
+    },
+    "statement": {
+      "uz": "Masalada n sonining tub yoki tub emasligi emas, barcha boʻluvchilari soʻraladi. Dastur bitta butun sonni oʻqiydi: n (1 ≤ n ≤ 10000). n ning barcha musbat boʻluvchilarini 1 dan n gacha oʻsish tartibida bitta qatorda chiqaring, qoʻshni sonlarni bittadan probel bilan ajratib, oxirida ortiqcha probel qoʻymang. Masalan, 12 kirilsa dastur 1 2 3 4 6 12 chiqaradi, 7 kirilsa 1 7, 1 kirilsa 1. Har bir d uchun n ning d ga boʻlinishini qoldiq amali bilan tekshiring va d ni for sikli bilan 1 dan n gacha oling.",
+      "ru": "В задаче нужно не определить простоту числа, а выписать все его делители. Программа читает одно целое число n (1 ≤ n ≤ 10000). Выведите все натуральные делители n от 1 до n в порядке возрастания в одной строке, разделяя их одним пробелом и не ставя лишний пробел в конце. Например, для 12 программа выведет 1 2 3 4 6 12, для 7 — 1 7, для 1 — 1. Для каждого d проверяйте делимость n через операцию остатка, а d переберите циклом for от 1 до n.",
+      "en": "This task asks for all divisors of a number, not for whether it is prime. Your program reads one integer n (1 ≤ n ≤ 10000). Print every positive divisor of n from 1 up to n in increasing order on a single line, separating neighbours with one space and leaving no extra space at the end. For example, 12 makes the program print 1 2 3 4 6 12, 7 prints 1 7, and 1 prints 1. For each d test divisibility with the remainder operation, running d from 1 to n with a for loop."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\n\nfor d in range(2, n):\n    if n % d == 0:\n        print(d)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n\n        for (int d = 2; d < n; d++) {\n            if (n % d == 0) {\n                System.out.println(d);\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n\n    for (int d = 2; d < n; d++) {\n        if (n % d == 0) {\n            cout << d << endl;\n        }\n    }\n\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\n\nchiziq = \"\"\nfor d in range(1, n + 1):\n    if n % d == 0:\n        chiziq = chiziq + \" \" + str(d)\n\nprint(chiziq.strip())\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n\n        StringBuilder chiziq = new StringBuilder();\n        for (int d = 1; d <= n; d++) {\n            if (n % d == 0) {\n                chiziq.append(\" \").append(d);\n            }\n        }\n\n        System.out.println(chiziq.toString().trim());\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n\n    bool birinchi = true;\n    for (int d = 1; d <= n; d++) {\n        if (n % d == 0) {\n            if (!birinchi) {\n                cout << \" \";\n            }\n            cout << d;\n            birinchi = false;\n        }\n    }\n    cout << endl;\n\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "12\n", "expected": "1 2 3 4 6 12", "hidden": false },
+        { "input": "7\n", "expected": "1 7", "hidden": false },
+        { "input": "1\n", "expected": "1", "hidden": true },
+        { "input": "28\n", "expected": "1 2 4 7 14 28", "hidden": true },
+        { "input": "36\n", "expected": "1 2 3 4 6 9 12 18 36", "hidden": true }
+      ]
+    }
+  }
+}

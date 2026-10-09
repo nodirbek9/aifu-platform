@@ -1,0 +1,327 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Bit qoʻshish (bit stuffing) qoidasiga koʻra, yuboruvchi qachon bitta 0 qoʻshadi?",
+          "ru": "Согласно правилу вставки бита (bit stuffing), когда отправитель добавляет один 0?",
+          "en": "According to the bit stuffing rule, when does the sender insert one 0?"
+        },
+        "options": [
+          {
+            "uz": "Ketma-ket beshta 1 kelganda",
+            "ru": "После пяти подряд идущих единиц",
+            "en": "After five consecutive 1s"
+          },
+          {
+            "uz": "Ketma-ket uchta 0 kelganda",
+            "ru": "После трёх подряд идущих нулей",
+            "en": "After three consecutive 0s"
+          },
+          {
+            "uz": "Har sakkizinchi bitdan keyin",
+            "ru": "После каждого восьмого бита",
+            "en": "After every eighth bit"
+          },
+          {
+            "uz": "Faqat kadr boshida, bayroqdan oldin",
+            "ru": "Только в начале кадра, перед флагом",
+            "en": "Only at the start of the frame, before the flag"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra: yuboruvchi ketma-ket beshta 1 dan keyin doim bitta 0 qoʻshadi, qabul qiluvchi esa beshta 1 dan keyin kelgan 0 ni olib tashlaydi.",
+          "ru": "По занятию: отправитель всегда вставляет один 0 после пяти подряд идущих единиц, а приёмник убирает 0, стоящий после пяти единиц.",
+          "en": "In the lesson the sender always inserts one 0 after five consecutive 1s, and the receiver removes the 0 that follows five 1s."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Manchester kodida har bir bitning oʻrtasida oʻtish boʻlgani uchun sinxronizatsiya ideal hisoblanadi.",
+          "ru": "В коде Manchester переход есть в середине каждого бита, поэтому синхронизация считается идеальной.",
+          "en": "In Manchester code there is a transition in the middle of every bit, which makes synchronisation ideal."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: Manchester kodida har bir bitda oʻtish bor — sinxronizatsiya ideal, DC balans ham bor. Narxi — signal chastotasi NRZ ga qaraganda ikki baravar yuqori.",
+          "ru": "По таблице занятия: у Manchester переход в каждом бите — синхронизация идеальна, есть и DC-баланс. Цена — удвоенная по сравнению с NRZ частота сигнала.",
+          "en": "The lesson's table: Manchester has a transition in every bit, so synchronisation is ideal and it is DC balanced. The price is a signal rate twice that of NRZ."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Yaxshi chiziqli kodga qoʻyiladigan talablar qaysilar?",
+          "ru": "Какие требования предъявляются к хорошему линейному коду?",
+          "en": "Which requirements are stated for a good line code?"
+        },
+        "options": [
+          {
+            "uz": "Signalda yetarlicha oʻtish boʻlishi, yaʼni oʻz-oʻzini sinxronlash",
+            "ru": "Достаточное число переходов в сигнале, то есть самостоятельная синхронизация",
+            "en": "Enough transitions in the signal, that is, self-clocking"
+          },
+          {
+            "uz": "Doimiy tashkil etuvchining boʻlmasligi (DC balans)",
+            "ru": "Отсутствие постоянной составляющей (DC-баланс)",
+            "en": "No DC component (DC balance)"
+          },
+          {
+            "uz": "Tor spektr — sekundiga signal oʻzgarishlari kam boʻlishi",
+            "ru": "Узкий спектр — малое число изменений сигнала в секунду",
+            "en": "Narrow spectrum — few signal changes per second"
+          },
+          {
+            "uz": "Maʼlumotni begonalardan shifrlab berishi",
+            "ru": "Шифрование данных от посторонних",
+            "en": "Encrypting the data against outsiders"
+          },
+          {
+            "uz": "Uzun bir xil bitlar ketma-ketligini koʻpaytirishi",
+            "ru": "Увеличение числа длинных одинаковых последовательностей битов",
+            "en": "Producing more long runs of identical bits"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Talablar beshta: oʻz-oʻzini sinxronlash, doimiy tashkil etuvchining yoʻqligi, tor spektr, xatoni aniqlash, kodlovchi va dekodlovchining soddaligi. Shifrlash kod talabi emas.",
+          "ru": "Требований пять: самостоятельная синхронизация, отсутствие постоянной составляющей, узкий спектр, обнаружение ошибок, простота и дешевизна кодировщика и декодировщика. Шифрование в список не входит.",
+          "en": "The lesson lists five: self-clocking, no DC component, narrow spectrum, error detection, and simplicity of the encoder and decoder. Secrecy is not one of them."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "NRZI kodida bit qanday ifodalanadi?",
+          "ru": "Как представляется бит в коде NRZI?",
+          "en": "How does NRZI represent a bit?"
+        },
+        "options": [
+          {
+            "uz": "Sath oʻzgarsa 1, oʻzgarib tursa 0",
+            "ru": "1 — это смена уровня, 0 — его сохранение",
+            "en": "A change of level is 1, staying at the same level is 0"
+          },
+          {
+            "uz": "Yuqori sath 1, past sath 0",
+            "ru": "Высокий уровень — 1, низкий уровень — 0",
+            "en": "A high level is 1, a low level is 0"
+          },
+          {
+            "uz": "Har bir bitning oʻrtasida majburiy oʻtish boʻladi",
+            "ru": "В середине каждого бита обязателен переход",
+            "en": "Every bit must have a transition in its middle"
+          },
+          {
+            "uz": "0 nol sathda, 1 esa navbat bilan + va − sathlarda",
+            "ru": "0 — нулевой уровень, 1 — попеременно плюс и минус",
+            "en": "0 is the zero level, 1 alternates between + and −"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "NRZI da maʼlumot sathning oʻzgarishida yotadi: oʻtish bor — 1, yoʻq — 0. Ikkinchi variant NRZ-L, uchinchi Manchester, toʻrtinchi AMI qoidasi.",
+          "ru": "В NRZI данные заключены в смене уровня: переход — 1, его отсутствие — 0. Второй вариант — правило NRZ-L, третий — Manchester, четвёртый — AMI.",
+          "en": "In NRZI the data is the change of level: a transition is 1, none is 0. The second option is the NRZ-L rule, the third Manchester, the fourth AMI."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "4B/5B bilan 100 Mbit/s maʼlumotni uzatish uchun liniya chastotasi qancha Mbod boʻlishi kerak?",
+          "ru": "Какая частота линии (в бод) нужна для передачи 100 Мбит/с данных с кодированием 4B/5B?",
+          "en": "What line rate in Mbaud does sending 100 Mbit/s of data with 4B/5B need?"
+        },
+        "answers": [125],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Har 4 bit 5 bitli kod soʻziga almashtiriladi, yaʼni 25% ortiqcha bitlar: 100 · 1,25 = 125 Mbod.",
+          "ru": "Каждые 4 бита заменяются 5-битным словом, то есть 25% лишних битов: 100 · 1,25 = 125 бод.",
+          "en": "Every 4 bits become a 5-bit word, so there are 25% extra bits: 100 · 1.25 = 125 Mbaud."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "HDLC va PPP da kadr boshi va oxiri qaysi bitlar ketma-ketligi — bayroq — bilan belgilanadi? Javobni 8 ta bit koʻrinishida yozing.",
+          "ru": "Какой последовательностью битов — флагом — в HDLC и PPP обозначаются начало и конец кадра? Запишите ответ в виде 8 бит.",
+          "en": "Which sequence of bits — the flag — marks the start and end of a frame in HDLC and PPP? Write the answer as 8 bits."
+        },
+        "answers": ["01111110"],
+        "explanation": {
+          "uz": "Bayroq — `01111110`. Maʼlumot ichida ketma-ket oltita 1 uchramasligi uchun bit qoʻshish qoʻllanadi, aks holda qabul qiluvchi maʼlumotni kadr chegarasi deb oʻylaydi.",
+          "ru": "Флаг — `01111110`. Чтобы шесть единиц подряд не встречались в данных, применяется вставка бита: иначе приёмник принял бы их за границу кадра.",
+          "en": "The flag is `01111110`. Bit stuffing keeps six 1s from appearing inside the data, or the receiver would take them for a frame boundary."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi jadvalga koʻra, 100BASE-TX da qaysi chiziqli kod ishlatiladi?",
+          "ru": "Согласно таблице занятия, какой линейный код используется в 100BASE-TX?",
+          "en": "According to the lesson's table, which line code does 100BASE-TX use?"
+        },
+        "options": [
+          {
+            "uz": "NRZ-L",
+            "ru": "NRZ-L",
+            "en": "NRZ-L"
+          },
+          {
+            "uz": "Manchester",
+            "ru": "Manchester",
+            "en": "Manchester"
+          },
+          {
+            "uz": "MLT-3",
+            "ru": "MLT-3",
+            "en": "MLT-3"
+          },
+          {
+            "uz": "AMI",
+            "ru": "AMI",
+            "en": "AMI"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "100BASE-TX — MLT-3, mantiqiy kodlash 4B/5B bilan birga. NRZ-L RS-232 va ichki shinalarda, Manchester 10BASE-T da, AMI T1/E1 liniyalarida ishlatiladi.",
+          "ru": "В 100BASE-TX применяется MLT-3 вместе с блочным кодированием 4B/5B. NRZ-L — в RS-232 и внутренних шинах, Manchester — в 10BASE-T, AMI — на линиях T1/E1.",
+          "en": "100BASE-TX uses MLT-3 together with the 4B/5B block code. NRZ-L is in RS-232 and internal buses, Manchester in 10BASE-T, AMI on T1/E1 lines."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "4B/5B mantiqiy kodlash haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о блочном кодировании 4B/5B верны?",
+          "en": "Which statements about 4B/5B block coding are correct?"
+        },
+        "options": [
+          {
+            "uz": "Har 4 bit 5 bitli kod soʻzi bilan almashtiriladi",
+            "ru": "Каждые 4 бита заменяются 5-битным кодовым словом",
+            "en": "Every 4 bits are replaced by a 5-bit code word"
+          },
+          {
+            "uz": "Kodlangan oqimda uchtadan ortiq ketma-ket nol uchramaydi",
+            "ru": "В закодированном потоке не встречается более трёх нулей подряд",
+            "en": "The coded stream has no more than three zeros in a row"
+          },
+          {
+            "uz": "Qoʻshimcha bitlar hisobiga 25% ortiqcha hajm ketadi",
+            "ru": "Из-за лишних битов объём возрастает на 25%",
+            "en": "The extra bits cost 25% more bandwidth"
+          },
+          {
+            "uz": "32 ta 5 bitli kombinatsiyaning barchasi maʼlumot uchun ishlatiladi",
+            "ru": "Все 32 комбинации по 5 бит идут для данных",
+            "en": "All 32 five-bit combinations are used for data"
+          },
+          {
+            "uz": "Uning maqsadi — maʼlumotni maxfiy qilish",
+            "ru": "Его цель — сделать данные секретными",
+            "en": "Its aim is to keep the data secret"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Kod soʻzlari shunday tanlangan: 16 tasi maʼlumotga, qolganlarining bir qismi boshqaruv belgilari (`11111` — IDLE), qolgani taqiqlangan. Maqsad — sinxronizatsiya, maxfiylik emas; bu ochiq jadval boʻyicha almashtirish, shifrlash emas.",
+          "ru": "Слова подобраны так: 16 идут для данных, часть остальных — управляющие символы (`11111` — IDLE), прочее запрещено. Цель — синхронизация, а не секретность: это замена по открытой таблице, а не шифрование.",
+          "en": "The words are chosen so that 16 carry data, some of the rest are control symbols (`11111` — IDLE) and the remainder are forbidden. The aim is synchronisation, not secrecy: it is a substitution by a public table, not encryption."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "NRZI kodida uzun 1 lar ketma-ketligi sinxronizatsiyaning yoʻqolishiga olib keladi.",
+          "ru": "Длинная последовательность единиц в коде NRZI приводит к потере синхронизации.",
+          "en": "A long run of 1s in NRZI causes a loss of synchronisation."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "NRZI da 1 sathni almashtiradi, shuning uchun uzun 1 lar bilan muammo yoʻq; sinxronizatsiya uzun 0 larda yoʻqoladi. Aynan shu sababli USB va 100BASE-FX da NRZI 4B/5B bilan birga ishlatiladi.",
+          "ru": "В NRZI единица меняет уровень, поэтому длинная цепочка единиц не проблема; синхронизация теряется на длинных нулях. Именно поэтому в USB и 100BASE-FX NRZI применяется вместе с 4B/5B.",
+          "en": "In NRZI a 1 flips the level, so long runs of 1s are no problem; synchronisation is lost in long runs of 0s. That is why USB and 100BASE-FX pair NRZI with 4B/5B."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Qabul qiluvchi: bit qoʻshishni bekor qilish",
+      "ru": "Приёмник: отмена вставки бита",
+      "en": "The receiver: undoing bit stuffing"
+    },
+    "statement": {
+      "uz": "Darsda yuboruvchi ketma-ket beshta 1 dan keyin bitta 0 qoʻshishi, qabul qiluvchi esa beshta 1 dan keyin kelgan 0 ni tashlab yuborishi aytiladi. Qabul qiluvchining dasturini yozing. Kirishda bitta qatorda qabul qilingan bitlar ketma-ketligi beriladi. Saqlab qolingan qismda ketma-ket beshta 1 dan keyin uchraydigan 0 tashlab yuboriladi; qolgan barcha bitlar oʻz ornida qoladi. Chiqishda bitta qatorga ikki qiymatni yozing: tiklangan bitlar ketma-ketligi, boʻshliq va tashlab yuborilgan nollar soni — masalan `01111110 1`. Boshqa soʻz, belgi yoki izoh yozmang.",
+      "ru": "В занятии сказано, что отправитель вставляет один 0 после пяти подряд идущих единиц, а приёмник убирает 0, стоящий после пяти единиц. Напишите программу приёмника. Вход — одна строка с принятой последовательностью битов. Отбрасывается тот 0, который идёт сразу после пяти единиц в уже сохранённой части потока; все остальные биты остаются. Выведите одной строкой два значения: восстановленную последовательность битов, пробел и количество отброшенных нулей — например `01111110 1`. Никаких других слов или знаков не выводите.",
+      "en": "The lesson says the sender inserts one 0 after five consecutive 1s and the receiver drops the 0 that follows five 1s. Write the receiver's program. The input is one line holding the received sequence of bits. The 0 that comes right after five 1s in the part already kept is dropped; every other bit stays. Print on one line two values: the recovered sequence of bits, a space, and the number of dropped zeros — for example `01111110 1`. Print nothing else."
+    },
+    "code": {
+      "starter": {
+        "python": "satr = input().strip()\nnatija = []\nbirlar = 0\nolindi = 0\nfor b in satr:\n    if b == \"1\":\n        natija.append(b)\n        birlar += 1\n    elif birlar == 5:\n        olindi += 1\n    else:\n        natija.append(b)\n        birlar = 0\nprint(\"\".join(natija), olindi)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        String satr = new Scanner(System.in).nextLine().trim();\n        StringBuilder natija = new StringBuilder();\n        int birlar = 0;\n        int olindi = 0;\n        for (int i = 0; i < satr.length(); i++) {\n            char b = satr.charAt(i);\n            if (b == '1') {\n                natija.append(b);\n                birlar++;\n            } else if (birlar == 5) {\n                olindi++;\n            } else {\n                natija.append(b);\n                birlar = 0;\n            }\n        }\n        System.out.println(natija + \" \" + olindi);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string satr;\n    cin >> satr;\n    string natija;\n    int birlar = 0;\n    int olindi = 0;\n    for (char b : satr) {\n        if (b == '1') {\n            natija += b;\n            birlar++;\n        } else if (birlar == 5) {\n            olindi++;\n        } else {\n            natija += b;\n            birlar = 0;\n        }\n    }\n    cout << natija << \" \" << olindi << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "satr = input().strip()\nnatija = []\nbirlar = 0\nolindi = 0\nfor b in satr:\n    if b == \"1\":\n        natija.append(b)\n        birlar += 1\n    elif birlar == 5:\n        birlar = 0\n        olindi += 1\n    else:\n        natija.append(b)\n        birlar = 0\nprint(\"\".join(natija), olindi)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        String satr = new Scanner(System.in).nextLine().trim();\n        StringBuilder natija = new StringBuilder();\n        int birlar = 0;\n        int olindi = 0;\n        for (int i = 0; i < satr.length(); i++) {\n            char b = satr.charAt(i);\n            if (b == '1') {\n                natija.append(b);\n                birlar++;\n            } else if (birlar == 5) {\n                birlar = 0;\n                olindi++;\n            } else {\n                natija.append(b);\n                birlar = 0;\n            }\n        }\n        System.out.println(natija + \" \" + olindi);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string satr;\n    cin >> satr;\n    string natija;\n    int birlar = 0;\n    int olindi = 0;\n    for (char b : satr) {\n        if (b == '1') {\n            natija += b;\n            birlar++;\n        } else if (birlar == 5) {\n            birlar = 0;\n            olindi++;\n        } else {\n            natija += b;\n            birlar = 0;\n        }\n    }\n    cout << natija << \" \" << olindi << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "011111010\n", "expected": "01111110 1", "hidden": false },
+        { "input": "0101\n", "expected": "0101 0", "hidden": false },
+        { "input": "111110111110\n", "expected": "1111111111 2", "hidden": true },
+        { "input": "01111100\n", "expected": "0111110 1", "hidden": true },
+        { "input": "1111111111\n", "expected": "1111111111 0", "hidden": true }
+      ]
+    }
+  }
+}

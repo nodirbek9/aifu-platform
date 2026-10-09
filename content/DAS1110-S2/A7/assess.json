@@ -1,0 +1,236 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Satr funksiyalari jadvaliga koʻra, C++ʼda satr uzunligini qaysi funksiya bilan olamiz?",
+          "ru": "Согласно таблице строковых функций, какой функцией в C++ получают длину строки?",
+          "en": "According to the string-function table, which function gives the length of a string in C++?"
+        },
+        "options": [
+          { "uz": "`s.size()`", "ru": "`s.size()`", "en": "`s.size()`" },
+          { "uz": "`s.length()`", "ru": "`s.length()`", "en": "`s.length()`" },
+          { "uz": "`len(s)`", "ru": "`len(s)`", "en": "`len(s)`" },
+          { "uz": "`s.count()`", "ru": "`s.count()`", "en": "`s.count()`" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Jadvalda uzunlik: Pythonʼda `len(s)`, Javaʼda `s.length()`, C++ʼda `s.size()`.",
+          "ru": "В таблице длина: `len(s)` в Python, `s.length()` в Java, `s.size()` в C++.",
+          "en": "In the table the length is `len(s)` in Python, `s.length()` in Java, `s.size()` in C++."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "`aaabcc` satri RLE usulida siqilsa, `a3b1c2` natija chiqadi.",
+          "ru": "Если сжать строку `aaabcc` методом RLE, получится `a3b1c2`.",
+          "en": "Compressing the string `aaabcc` with RLE gives `a3b1c2`."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ketma-ket bir xil harflar guruhi „harf + soni“ bilan almashtiriladi: aaa → a3, b → b1, cc → c2.",
+          "ru": "Каждая группа одинаковых подряд идущих букв заменяется парой «буква + количество»: aaa → a3, b → b1, cc → c2.",
+          "en": "Each run of identical letters is replaced by «letter + count»: aaa → a3, b → b1, cc → c2."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Elektron pochtani tekshirish misolida satrning qaysi funksiyalaridan foydalanilgan?",
+          "ru": "Какие функции строки использовались в примере проверки электронной почты?",
+          "en": "Which string functions were used in the e-mail validation example?"
+        },
+        "options": [
+          { "uz": "`strip`", "ru": "`strip`", "en": "`strip`" },
+          { "uz": "`lower`", "ru": "`lower`", "en": "`lower`" },
+          { "uz": "`split`", "ru": "`split`", "en": "`split`" },
+          { "uz": "`size`", "ru": "`size`", "en": "`size`" }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda sanalganlar: `strip`, `lower`, `count`, `split`, `startswith`. `size` — uzunlik funksiyasi, bu misolda ishlatilmagan.",
+          "ru": "В занятии перечислены: `strip`, `lower`, `count`, `split`, `startswith`. `size` — функция длины, в этом примере она не использовалась.",
+          "en": "The lesson lists `strip`, `lower`, `count`, `split`, `startswith`. `size` is the length function and was not used there."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "C++ʼda `string(\"dasturlash\").substr(3, 4)` ifodasi nimani qaytaradi?",
+          "ru": "Что вернёт выражение `string(\"dasturlash\").substr(3, 4)` на C++?",
+          "en": "What does `string(\"dasturlash\").substr(3, 4)` return in C++?"
+        },
+        "options": [
+          { "uz": "`turl`", "ru": "`turl`", "en": "`turl`" },
+          { "uz": "`turla`", "ru": "`turla`", "en": "`turla`" },
+          { "uz": "`lash`", "ru": "`lash`", "en": "`lash`" },
+          { "uz": "`dast`", "ru": "`dast`", "en": "`dast`" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "C++ʼda `substr` ning ikkinchi argumenti — uzunlik: 3-indeksdan boshlab 4 ta belgi olindi.",
+          "ru": "Второй аргумент `substr` в C++ — длина: взяли 4 символа, начиная с индекса 3.",
+          "en": "The second argument of `substr` in C++ is a length: four characters starting at index 3."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Pythonʼda qism satr topilmasa, `find` -1 qaytaradi, `index` esa xato beradi.",
+          "ru": "Если подстрока в Python не найдена, `find` возвращает -1, а `index` выдаёт ошибку.",
+          "en": "In Python, when a substring is not found, `find` returns -1 while `index` raises an error."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bu haqda „koʻp uchraydigan xatolar“ boʻlimi ogohlantiradi: `find` natijasini notoʻgʻri tekshirmang.",
+          "ru": "Об этом предупреждает раздел «частые ошибки»: не проверяйте результат `find` неправильно.",
+          "en": "The common-mistakes section warns about this: do not check the result of `find` wrongly."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Javaʼda sikl ichida satrni samarali yigʻish uchun qaysi obyekt ishlatiladi? Nomini yozing.",
+          "ru": "Какой объект в Java используют для эффективного построения строки в цикле? Напишите его имя.",
+          "en": "Which Java object is used to build a string efficiently inside a loop? Write its name."
+        },
+        "answers": ["StringBuilder", "stringbuilder"],
+        "explanation": {
+          "uz": "Javaʼda satr oʻzgarmas; `StringBuilder` qismlarni ustiga qoʻshadi, oxirida `toString()` chaqiriladi.",
+          "ru": "Строка в Java неизменяема; `StringBuilder` дописывает части, а в конце вызывают `toString()`.",
+          "en": "Java strings are immutable; `StringBuilder` appends the parts and `toString()` is called at the end."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Misol qoidalariga koʻra (aynan bitta `@`, login boʻsh emas, domen nuqta bilan boshlanmaydi va unda kamida bitta nuqta bor), qaysi manzil toʻgʻri?",
+          "ru": "По правилам примера (ровно один `@`, непустой логин, домен не начинается с точки и содержит хотя бы одну точку) какой адрес верен?",
+          "en": "By the example's rules (exactly one `@`, a non-empty login, a domain not starting with a dot and containing at least one dot), which address is valid?"
+        },
+        "options": [
+          { "uz": "Aziz.Karimov@AIFU.uz", "ru": "Aziz.Karimov@AIFU.uz", "en": "Aziz.Karimov@AIFU.uz" },
+          { "uz": "malika@@mail.uz", "ru": "malika@@mail.uz", "en": "malika@@mail.uz" },
+          { "uz": "@aifu.uz", "ru": "@aifu.uz", "en": "@aifu.uz" },
+          { "uz": "bekzod@localhost", "ru": "bekzod@localhost", "en": "bekzod@localhost" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Birinchi manzil barcha shartlarga javob beradi; ikkinchisida ikkita `@`, uchinchisida login boʻsh, toʻrtinchisida domenda nuqta yoʻq.",
+          "ru": "Первый адрес подходит: во втором два `@`, в третьем пустой логин, в четвёртом в домене нет точки.",
+          "en": "The first address passes all checks: the second has two `@`, the third has an empty login, the fourth domain has no dot."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`aaabccddddddddddddx` satrida harflar guruhlanadi: 3 ta a, 1 ta b, 2 ta c, 12 ta d va 1 ta x. Bu satrni RLE bilan siqsak, nechta belgi chiqadi?",
+          "ru": "В строке `aaabccddddddddddddx` группы букв такие: 3 a, 1 b, 2 c, 12 d и 1 x. Сколько символов получится, если сжать эту строку методом RLE?",
+          "en": "The string `aaabccddddddddddddx` has runs of 3 a, 1 b, 2 c, 12 d and 1 x. How many characters does its RLE compression have?"
+        },
+        "answers": [11],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Siqilgan koʻrinish — `a3b1c2d12x1`: 2+2+2+3+2 = 11 belgi (d guruhi uchun raqam ikki xonali).",
+          "ru": "Сжатый вид — `a3b1c2d12x1`: 2+2+2+3+2 = 11 символов (число группы d занимает два знака).",
+          "en": "The compressed form is `a3b1c2d12x1`: 2+2+2+3+2 = 11 characters (the count of the d-run takes two digits)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Satrni sikl ichida yigʻish haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о построении строки в цикле верны?",
+          "en": "Which statements about building a string inside a loop are correct?"
+        },
+        "options": [
+          {
+            "uz": "Java va Pythonʼda `s = s + c` har safar yangi satr yaratadi, shuning uchun sikl *O*(*n*²) vaqt oladi",
+            "ru": "В Java и Python `s = s + c` каждый раз создаёт новую строку, поэтому цикл занимает *O*(*n*²) времени",
+            "en": "In Java and Python `s = s + c` creates a new string each time, so the loop takes *O*(*n*²) time"
+          },
+          {
+            "uz": "Pythonʼda qismlarni roʻyxatga `append` qilib, oxirida `\"\".join(qismlar)` chaqirish — toʻgʻri usul",
+            "ru": "Правильный способ в Python — добавлять части в список через `append` и в конце вызвать `\"\".join(части)`",
+            "en": "The right way in Python is to `append` the parts to a list and call `\"\".join(parts)` at the end"
+          },
+          {
+            "uz": "C++ʼda satr obyekti oʻzgarmas, shuning uchun `s += c` ham sekin ishlaydi",
+            "ru": "В C++ `string` неизменяема, поэтому `s += c` тоже работает медленно",
+            "en": "In C++ `string` is immutable, so `s += c` is slow as well"
+          },
+          {
+            "uz": "Javaʼda `StringBuilder` bilan ishlash tugagach `toString()` chaqiriladi",
+            "ru": "В Java после работы со `StringBuilder` вызывают `toString()`",
+            "en": "In Java, once the `StringBuilder` work is done, `toString()` is called"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "C++ʼda satr obyekti oʻzgaruvchan: `s += c` oʻrtacha *O*(1), shuning uchun u tilda qoʻshish muammo emas.",
+          "ru": "В C++ `string` изменяема: `s += c` в среднем *O*(1), поэтому добавление там не проблема.",
+          "en": "In C++ `string` is mutable: `s += c` is *O*(1) on average, so appending there is not a problem."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Soʻzlarni teskari tartibda",
+      "ru": "Слова в обратном порядке",
+      "en": "Words in reverse order"
+    },
+    "statement": {
+      "uz": "Bitta satr matn kiritiladi (lotin harflari va boʻsh joylar, kamida bitta soʻz; satrning boshida va oxirida boʻsh joylar boʻlishi mumkin). Birinchi qatorga soʻzlar sonini, ikkinchi qatorga esa shu soʻzlarni teskari tartibda, oralarida bittadan boʻsh joy bilan chiqaring. Masalan, `Dasturlash har kuni mashq talab qiladi` kiritilsa, dastur `6` va `qiladi talab mashq kuni har Dasturlash` chiqaradi.",
+      "ru": "Вводиться одна строка текста (латинские буквы и пробелы, хотя бы одно слово; в начале и в конце возможны пробелы). В первой строке выведите количество слов, во второй — те же слова в обратном порядке, через один пробел. Например, для `Dasturlash har kuni mashq talab qiladi` программа выводит `6` и `qiladi talab mashq kuni har Dasturlash`.",
+      "en": "The input is one line of text (Latin letters and spaces, at least one word; there may be spaces at the start and at the end). On the first line print the number of words, on the second line the same words in reverse order, separated by single spaces. For example, `Dasturlash har kuni mashq talab qiladi` makes the program print `6` and then `qiladi talab mashq kuni har Dasturlash`."
+    },
+    "code": {
+      "starter": {
+        "python": "sozlar = input().split()\nprint(len(sozlar))\nprint(\" \".join(sozlar))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] sozlar = in.nextLine().trim().split(\"\\\\s+\");\n        System.out.println(sozlar.length);\n        StringBuilder natija = new StringBuilder();\n        for (int i = 0; i < sozlar.length; i++) {\n            if (i > 0) natija.append(' ');\n            natija.append(sozlar[i]);\n        }\n        System.out.println(natija);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    istringstream oqim(satr);\n    vector<string> sozlar;\n    string soz;\n    while (oqim >> soz) sozlar.push_back(soz);\n    cout << sozlar.size() << endl;\n    string natija;\n    for (size_t i = 0; i < sozlar.size(); i++) {\n        if (!natija.empty()) natija += ' ';\n        natija += sozlar[i];\n    }\n    cout << natija << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "sozlar = input().split()\nprint(len(sozlar))\nprint(\" \".join(reversed(sozlar)))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] sozlar = in.nextLine().trim().split(\"\\\\s+\");\n        System.out.println(sozlar.length);\n        StringBuilder natija = new StringBuilder();\n        for (int i = sozlar.length - 1; i >= 0; i--) {\n            if (natija.length() > 0) natija.append(' ');\n            natija.append(sozlar[i]);\n        }\n        System.out.println(natija);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    istringstream oqim(satr);\n    vector<string> sozlar;\n    string soz;\n    while (oqim >> soz) sozlar.push_back(soz);\n    cout << sozlar.size() << endl;\n    string natija;\n    for (int i = (int) sozlar.size() - 1; i >= 0; i--) {\n        if (!natija.empty()) natija += ' ';\n        natija += sozlar[i];\n    }\n    cout << natija << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "Dasturlash har kuni mashq talab qiladi\n", "expected": "6\nqiladi talab mashq kuni har Dasturlash", "hidden": false },
+        { "input": "salom\n", "expected": "1\nsalom", "hidden": false },
+        { "input": "bir  ikki   uch\n", "expected": "3\nuch ikki bir", "hidden": true },
+        { "input": "  olma nok  olcha \n", "expected": "3\nolcha nok olma", "hidden": true }
+      ]
+    }
+  }
+}

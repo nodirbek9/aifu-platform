@@ -1,0 +1,220 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "DoS hujumi CIA uchligining qaysi xususiyatiga qarshi qaratilgan?",
+          "ru": "Против какого свойства триады CIA направлена DoS-атака?",
+          "en": "Which property of the CIA triad does a DoS attack target?"
+        },
+        "options": [
+          { "uz": "Maxfiylik", "ru": "Конфиденциальность", "en": "Confidentiality" },
+          { "uz": "Yaxlitlik", "ru": "Целостность", "en": "Integrity" },
+          { "uz": "Mavjudlik", "ru": "Доступность", "en": "Availability" },
+          { "uz": "Hisobdorlik", "ru": "Подотчётность", "en": "Accountability" }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "DoS — tizim yoki xizmatni qonuniy foydalanuvchilar uchun mavjud boʻlmaydigan holatga keltirishga qaratilgan harakat, yaʼni u mavjudlikka qarshi qaratilgan.",
+          "ru": "DoS — действие, направленное на то, чтобы сделать систему недоступной для законных пользователей, то есть против свойства доступности.",
+          "en": "A DoS aims to make a system unavailable to legitimate users, so it targets availability."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "TCP/IP modeli 7 qatlamdan, OSI modeli esa 4 qatlamdan iborat.",
+          "ru": "Модель TCP/IP состоит из 7 уровней, а модель OSI — из 4.",
+          "en": "The TCP/IP model has 7 layers and the OSI model has 4."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda teskarisi aytilgan: OSI — 7 qatlam, TCP/IP — 4 qatlam.",
+          "ru": "В занятии наоборот: OSI — 7 уровней, TCP/IP — 4.",
+          "en": "The lesson states the opposite: OSI has 7 layers, TCP/IP has 4."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda keltirilgan tarmoq xavfsizligi tamoyillari qaysilar?",
+          "ru": "Какие из перечисленного — принципы сетевой безопасности из занятия?",
+          "en": "Which of these are the network security principles given in the lesson?"
+        },
+        "options": [
+          { "uz": "Segmentlash — tarmoqni zonalarga boʻlish", "ru": "Сегментация — деление сети на зоны", "en": "Segmentation — dividing the network into zones" },
+          { "uz": "Minimal ochiqlik — faqat kerakli portlar ochiq", "ru": "Минимальная открытость — только нужные порты открыты", "en": "Minimal exposure — only needed ports are open" },
+          { "uz": "Monitoring — trafik va jurnallarni kuzatish", "ru": "Мониторинг — наблюдение за трафиком и журналами", "en": "Monitoring — watching traffic and logs" },
+          { "uz": "Qulaylik uchun standart parollarni saqlab qolish", "ru": "Оставлять пароли по умолчанию ради удобства", "en": "Keeping default passwords for convenience" }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Tamoyillar: segmentlash, minimal ochiqlik, shifrlash, autentifikatsiya, monitoring, yangilanishlar va sozlamalar (standart parollar almashtirilgan boʻlishi kerak).",
+          "ru": "Принципы: сегментация, минимальная открытость, шифрование, аутентификация, мониторинг, обновления и настройки (пароли по умолчанию должны быть сменены).",
+          "en": "The principles are segmentation, minimal exposure, encryption, authentication, monitoring, and updates and configuration (default passwords must be changed)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yangilanmagan router dasturi — bu tushunchalardan qaysi biri?",
+          "ru": "Необновлённое ПО маршрутизатора — это какой из терминов?",
+          "en": "Unpatched router software is which of these terms?"
+        },
+        "options": [
+          { "uz": "Tahdid", "ru": "Угроза", "en": "Threat" },
+          { "uz": "Zaiflik", "ru": "Уязвимость", "en": "Vulnerability" },
+          { "uz": "Xavf", "ru": "Риск", "en": "Risk" },
+          { "uz": "Nazorat chorasi", "ru": "Мера контроля", "en": "Control measure" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Zaiflik — tizimdagi kamchilik; tahdid — undan foydalanishi mumkin boʻlgan hodisa yoki manba; xavf esa ehtimollik × zarar.",
+          "ru": "Уязвимость — недостаток в системе; угроза — событие или источник, способные её использовать; риск — вероятность × ущерб.",
+          "en": "A vulnerability is a weakness in the system; a threat is an event or source that could exploit it; risk is likelihood times damage."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kommutatorlarda port xavfsizligi, 802.1X autentifikatsiyasi va ARP tekshiruvi OSI modelining qaysi qatlamiga tegishli himoya choralari?",
+          "ru": "Защита портов на коммутаторах, аутентификация 802.1X и проверка ARP — меры защиты на каком уровне OSI?",
+          "en": "Port security on switches, 802.1X authentication and ARP inspection are protective measures at which OSI layer?"
+        },
+        "options": [
+          { "uz": "1. Fizik", "ru": "1. Физический", "en": "1. Physical" },
+          { "uz": "2. Kanal", "ru": "2. Канальный", "en": "2. Data link" },
+          { "uz": "3. Tarmoq", "ru": "3. Сетевой", "en": "3. Network" },
+          { "uz": "4. Transport", "ru": "4. Транспортный", "en": "4. Transport" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi jadvalga koʻra: 2-kanal qatlamida manzillarni soxtalashtirish va ruxsatsiz qurilma ulash tahdidi bor; himoya — port xavfsizligi, 802.1X, ARP tekshiruvi, VLAN.",
+          "ru": "По таблице из занятия: на 2-м канальном уровне — подмена адресов и подключение неразрешённого устройства; защита — порты коммутаторов, 802.1X, проверка ARP, VLAN.",
+          "en": "Per the lesson table: the second, data-link layer faces forged addresses and unauthorized devices; the protection is port security, 802.1X, ARP inspection and VLANs."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsning rate limiting misolida (birinchi satr `5 10`) 10.0.0.5 manzili uchun limit birinchi marta t=6 da oshdi. Oʻsha paytda sirpanuvchi 10 soniyalik oynada bu manzilning nechta soʻrovi boʻlgan?",
+          "ru": "В примере rate limiting из занятия (первая строка `5 10`) для адреса 10.0.0.5 лимит впервые превышен при t=6. Сколько запросов этого адреса было в скользящем 10-секундном окне в этот момент?",
+          "en": "In the lesson's rate-limiting example (first line `5 10`) the limit for 10.0.0.5 was first exceeded at t=6. How many requests from that address were inside the sliding 10-second window at that moment?"
+        },
+        "answers": [6],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Oyna (t − 10, t] = (−4, 6] — t = 1, 2, 3, 4, 5, 6 dagi oltita soʻrov tushadi; aynan oltinchi soʻrov 5 limitini buzdi.",
+          "ru": "Окно (t − 10, t] = (−4, 6] включает шесть запросов при t = 1, 2, 3, 4, 5, 6; именно шестой запрос превысил лимит 5.",
+          "en": "The window (t − 10, t] = (−4, 6] holds the six requests at t = 1, 2, 3, 4, 5, 6; it is the sixth request that exceeded the limit of 5."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Zaifliklar roʻyxatga olinadigan ochiq bazaning qisqartma nomini yozing.",
+          "ru": "Запишите аббревиатуру открытой базы, в которой регистрируются уязвимости.",
+          "en": "Write the abbreviation of the public database in which vulnerabilities are registered."
+        },
+        "answers": ["CVE"],
+        "explanation": {
+          "uz": "Zaifliklar ochiq CVE bazasida roʻyxatga olinadi va jiddiyligi CVSS boʻyicha baholanadi.",
+          "ru": "Уязвимости регистрируются в открытой базе CVE и оцениваются по серьёзности через CVSS.",
+          "en": "Vulnerabilities are registered in the public CVE database and rated for severity by CVSS."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "DoS va DDoS haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о DoS и DDoS верны?",
+          "en": "Which statements about DoS and DDoS are correct?"
+        },
+        "options": [
+          { "uz": "DDoS bir vaqtda koʻplab manbalardan, koʻpincha botnet orqali bajariladi, shuning uchun bitta manzilni bloklash yetarli emas", "ru": "DDoS проводится одновременно из множества источников, часто через ботнет, поэтому блокировки одного адреса недостаточно", "en": "A DDoS runs from many sources at once, often through a botnet, so blocking a single address is not enough" },
+          { "uz": "Hajmga asoslangan hujum tarmoq kanalining oʻtkazish qobiliyatini toʻldirishga qaratilgan", "ru": "Атака по объёму нацелена на заполнение пропускной способности канала", "en": "A volume-based attack aims to fill the bandwidth of the network link" },
+          { "uz": "Ilova darajasidagi hujum qimmat amallarni (qidiruv, kirish sahifasi) koʻp chaqirib ilovani band qiladi", "ru": "Атака прикладного уровня занимает приложение, многократно вызывая дорогие операции (поиск, страница входа)", "en": "An application-level attack keeps the application busy by calling expensive operations (search, the sign-in page) many times" },
+          { "uz": "Bitta qatlamdagi himoya — masalan, faqat xavfsizlik devori — DoS dan toʻliq himoya qiladi", "ru": "Защита на одном уровне — например, только межсетевой экран — полностью защищает от DoS", "en": "Protection at a single layer — for example, only a firewall — fully protects against DoS" }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Himoya bir nechta qatlamda boʻlishi kerak: darsda taʼkidlanganidek, devorning oʻzi ilova darajasidagi tahdidlarni toʻxtatmaydi.",
+          "ru": "Защита нужна на нескольких уровнях: как отмечено в занятии, одного экрана недостаточно против угроз прикладного уровня.",
+          "en": "Protection must span several layers: as the lesson notes, a firewall alone does not stop application-level threats."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Baʼzan DoS boshqa harakatdan eʼtiborni chalgʻitish uchun ishlatiladi, shuning uchun hodisa paytida boshqa jurnallar ham kuzatiladi.",
+          "ru": "Иногда DoS используют, чтобы отвлечь внимание от другого действия, поэтому во время инцидента следят и за другими журналами.",
+          "en": "DoS is sometimes used to distract attention from another action, so during an incident other logs are watched too."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsning oqibatlar boʻlimida aynan shunday aytilgan: chalgʻitish ehtimoli uchun hodisa paytida boshqa jurnallar ham kuzatiladi.",
+          "ru": "В разделе последствий занятия сказано именно это: из-за возможности отвлечения внимания во время инцидента следят и за другими журналами.",
+          "en": "The consequences section of the lesson says exactly this: because of the distraction possibility, other logs are watched during an incident too."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Eng faol manzilni topish",
+      "ru": "Поиск самого активного адреса",
+      "en": "Finding the busiest address"
+    },
+    "statement": {
+      "uz": "Monitoring tizimi tashkilot saytiga tushgan soʻrovlar oqimini qayd etdi. Xavfsizlik mutaxassisi eng koʻp soʻrov yuborgan IP manzilni — katta ehtimol bilan DoS manbai — aniqlamoqchi. Kirish: birinchi satrda soʻrovlar soni n; keyingi n satrning har birida bitta IP manzil (har qanday tartibda kelishi mumkin). Eng koʻp soʻrov yuborgan manzilni va uning sonini bitta satrda `manzil: son` koʻrinishida chiqaring. Agar bir nechta manzilning soni teng va eng katta boʻlsa, kirishda birinchi boʻlib uchragan manzilni chiqaring. 1 ≤ n ≤ 1000.",
+      "ru": "Система мониторинга записала поток запросов к сайту организации. Специалист по безопасности хочет определить IP-адрес, пославший больше всего запросов, — вероятный источник DoS. Вход: в первой строке задано число запросов n, далее n строк, каждая — один IP-адрес (в любом порядке). Выведите адрес с наибольшим числом запросов и это число в одну строку в формате `адрес: число`. Если наибольшее число одинаково у нескольких адресов, выведите тот, который встретился раньше. 1 ≤ n ≤ 1000.",
+      "en": "The monitoring system recorded a stream of requests to the organization's site. The security specialist wants to find the IP address that sent the most requests — a likely DoS source. Input: the first line holds the number of requests n; each of the following n lines holds one IP address (in any order). Print the address with the most requests and that count on one line as `address: count`. If several addresses tie for the highest count, print the one that appears first in the input. 1 ≤ n ≤ 1000."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nqatorlar = [s.strip() for s in sys.stdin.read().split(\"\\n\") if s.strip()]\nn = int(qatorlar[0])\nsoni = {}\nfor ip in qatorlar[1:1 + n]:\n    soni[ip] = soni.get(ip, 0) + 1\n\neng = max(soni)\nprint(f\"{eng}: {soni[eng]}\")\n",
+        "java": "import java.util.LinkedHashMap;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        Map<String, Integer> soni = new LinkedHashMap<>();\n        for (int i = 0; i < n; i++) {\n            String ip = in.next();\n            soni.merge(ip, 1, Integer::sum);\n        }\n        String eng = \"\";\n        int max = -1;\n        for (Map.Entry<String, Integer> e : soni.entrySet()) {\n            if (e.getValue() >= max) {\n                max = e.getValue();\n                eng = e.getKey();\n            }\n        }\n        System.out.println(eng + \": \" + max);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    map<string, int> soni;\n    for (int i = 0; i < n; i++) {\n        string ip;\n        cin >> ip;\n        soni[ip]++;\n    }\n    string eng = soni.begin()->first;\n    for (const auto& x : soni) {\n        if (x.second >= soni[eng]) eng = x.first;\n    }\n    cout << eng << \": \" << soni[eng] << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nqatorlar = [s.strip() for s in sys.stdin.read().split(\"\\n\") if s.strip()]\nn = int(qatorlar[0])\nsoni = {}\nfor ip in qatorlar[1:1 + n]:\n    soni[ip] = soni.get(ip, 0) + 1\n\neng = max(soni, key=soni.get)\nprint(f\"{eng}: {soni[eng]}\")\n",
+        "java": "import java.util.LinkedHashMap;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        Map<String, Integer> soni = new LinkedHashMap<>();\n        for (int i = 0; i < n; i++) {\n            String ip = in.next();\n            soni.merge(ip, 1, Integer::sum);\n        }\n        String eng = \"\";\n        int max = -1;\n        for (Map.Entry<String, Integer> e : soni.entrySet()) {\n            if (e.getValue() > max) {\n                max = e.getValue();\n                eng = e.getKey();\n            }\n        }\n        System.out.println(eng + \": \" + max);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<string> tartib;\n    map<string, int> soni;\n    for (int i = 0; i < n; i++) {\n        string ip;\n        cin >> ip;\n        if (!soni.count(ip)) tartib.push_back(ip);\n        soni[ip]++;\n    }\n    string eng = tartib[0];\n    for (const string& ip : tartib) {\n        if (soni[ip] > soni[eng]) eng = ip;\n    }\n    cout << eng << \": \" << soni[eng] << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5\n10.0.0.5\n10.0.0.7\n10.0.0.5\n10.0.0.5\n10.0.0.9\n", "expected": "10.0.0.5: 3", "hidden": false },
+        { "input": "1\n192.168.1.10\n", "expected": "192.168.1.10: 1", "hidden": false },
+        { "input": "6\n1.1.1.1\n2.2.2.2\n2.2.2.2\n1.1.1.1\n3.3.3.3\n3.3.3.3\n", "expected": "1.1.1.1: 2", "hidden": true },
+        { "input": "4\n8.8.8.8\n9.9.9.9\n9.9.9.9\n9.9.9.9\n", "expected": "9.9.9.9: 3", "hidden": true }
+      ]
+    }
+  }
+}

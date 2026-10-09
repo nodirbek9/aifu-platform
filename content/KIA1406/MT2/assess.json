@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Mustaqil ish turlari jadvalida referatning hajmi qancha deb belgilangan?",
+          "ru": "Какой объём для реферата указан в таблице видов самостоятельной работы?",
+          "en": "In the table of types of independent work, what size is set for an essay?"
+        },
+        "options": [
+          { "uz": "3–5 bet", "ru": "3–5 страниц", "en": "3–5 pages" },
+          { "uz": "6–10 bet", "ru": "6–10 страниц", "en": "6–10 pages" },
+          { "uz": "3–6 bet", "ru": "3–6 страниц", "en": "3–6 pages" },
+          { "uz": "10–15 slayd", "ru": "10–15 слайдов", "en": "10–15 slides" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Jadvalda: referat 6–10 bet (kamida 5 manba va xulosa), keys tahlili 3–5 bet, laboratoriya hisoboti 3–6 bet, taqdimot 10–15 slayd.",
+          "ru": "В таблице: реферат — 6–10 страниц (не менее 5 источников и выводы), анализ кейса — 3–5, отчёт о лабораторной — 3–6, презентация — 10–15 слайдов.",
+          "en": "The table gives the essay as 6–10 pages with at least 5 sources and a conclusion, a case analysis as 3–5 pages, a lab report as 3–6 pages and a presentation as 10–15 slides."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ijtimoiy tarmoq postlari va anonim forumlar asosiy manba boʻla olmaydi.",
+          "ru": "Посты в соцсетях и анонимные форумы не могут быть основным источником.",
+          "en": "Social media posts and anonymous forums cannot be a main source."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda ishonchli manba sifatida NIST, CISA, OWASP, ENISA, lex.uz, ishlab chiqaruvchi hujjatlari va ilmiy maqolalar sanalgan; ijtimoiy tarmoq postlari va anonim forumlar esa asosiy manba boʻla olmasligi aytilgan.",
+          "ru": "Надёжными источниками названы NIST, CISA, OWASP, ENISA, lex.uz, документация производителей и научные статьи; о постах в соцсетях и анонимных форумах сказано, что основным источником они быть не могут.",
+          "en": "The lesson names NIST, CISA, OWASP, ENISA, lex.uz, vendor documentation and research papers as reliable sources, and says social media posts and anonymous forums cannot be a main source."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Hisobot tuzilishi boʻlimida qaysi qismlar sanalgan?",
+          "ru": "Какие части перечислены в разделе о структуре отчёта?",
+          "en": "Which parts are listed in the section on report structure?"
+        },
+        "options": [
+          { "uz": "Titul varagʻi", "ru": "Титульный лист", "en": "Title page" },
+          { "uz": "Kirish", "ru": "Введение", "en": "Introduction" },
+          { "uz": "Asosiy qism", "ru": "Основная часть", "en": "Main part" },
+          { "uz": "Xulosa", "ru": "Заключение", "en": "Conclusion" },
+          { "uz": "Ish beruvchining tavsiyanomasi", "ru": "Рекомендация работодателя", "en": "A recommendation from the employer" }
+        ],
+        "correct": [0, 1, 2, 3],
+        "explanation": {
+          "uz": "Tuzilishda yana amaliy qism (agar boʻlsa) va foydalanilgan manbalar roʻyxati bor; tavsiyanoma sanalmagan.",
+          "ru": "В структуру входят также практическая часть (если есть) и список источников; рекомендации работодателя там нет.",
+          "en": "The structure also has a practical part, if there is one, and a list of references; an employer's recommendation is not part of it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Baholash mezonlari jadvalida eng katta ulush qaysi mezonga berilgan?",
+          "ru": "Какой критерий получает наибольшую долю в таблице критериев оценивания?",
+          "en": "Which criterion carries the largest weight in the assessment criteria table?"
+        },
+        "options": [
+          { "uz": "Tahlil va xulosalar", "ru": "Анализ и выводы", "en": "Analysis and conclusions" },
+          { "uz": "Mazmun va toʻgʻrilik", "ru": "Содержание и правильность", "en": "Content and correctness" },
+          { "uz": "Manbalar", "ru": "Источники", "en": "Sources" },
+          { "uz": "Himoya", "ru": "Защита", "en": "Defense" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Ulushlar: mazmun va toʻgʻrilik 40%, tahlil va xulosalar 25%, manbalar 15%, tuzilma va rasmiylashtirish 10%, himoya 10%.",
+          "ru": "Доли: содержание и правильность 40%, анализ и выводы 25%, источники 15%, структура и оформление 10%, защита 10%.",
+          "en": "The weights are content and correctness 40%, analysis and conclusions 25%, sources 15%, structure and formatting 10% and defense 10%."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yuqori ball uchun ishingizda kamida nechta ishonchli, dolzarb manba boʻlishi kerak?",
+          "ru": "Сколько надёжных актуальных источников нужно в работе для высокой оценки?",
+          "en": "How many reliable, current sources does a work need for a high mark?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Manbalar mezoni boʻyicha yuqori ball uchun kamida 5 ta ishonchli, dolzarb manba talab qilinadi; ish jadvalining 1-haftasida ham 5–7 ta manba topish aytilgan.",
+          "ru": "Для высокой оценки по критерию «Источники» нужно не менее 5 надёжных актуальных источников; на 1-й неделе графика тоже предлагается найти 5–7 источников.",
+          "en": "The sources criterion asks for at least 5 reliable, current sources for a high mark, and week 1 of the schedule says to find 5–7 sources."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oʻzbekiston qonunlari va meʼyoriy hujjatlari joylashgan ishonchli manba saytining nomini yozing.",
+          "ru": "Напишите название надёжного источника, где размещены законы и нормативные акты Узбекистана.",
+          "en": "Write the name of the reliable source that holds the laws and regulations of Uzbekistan."
+        },
+        "answers": ["lex.uz", "Lex.uz", "LEX.UZ", "https://lex.uz"],
+        "explanation": {
+          "uz": "Ishonchli manbalar jadvalida lex.uz — Oʻzbekiston qonunlari va meʼyoriy hujjatlari manbaasi.",
+          "ru": "В таблице надёжных источников lex.uz — законы и нормативные акты Узбекистана.",
+          "en": "The reliable sources table lists lex.uz as the source of the laws and regulations of Uzbekistan."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi havola berish qoidasiga koʻra, manbaga matnda qanday ishora qilinadi?",
+          "ru": "Как, по правилу цитирования из занятия, в тексте обозначается ссылка на источник?",
+          "en": "By the lesson's citing rule, how is a source marked in the text?"
+        },
+        "options": [
+          {
+            "uz": "Faqat sahifa pastida izoh (dipnot) koʻrinishida",
+            "ru": "Только сноской внизу страницы",
+            "en": "Only as a footnote at the bottom of the page"
+          },
+          {
+            "uz": "Matnda havola berilmaydi, roʻyxat shunchaki oxirga qoʻyiladi",
+            "ru": "В тексте ссылки не ставятся, список просто прикладывается в конце",
+            "en": "No mark in the text; the list is simply placed at the end"
+          },
+          {
+            "uz": "Kvadrat qavsdagi raqam bilan, masalan [1], roʻyxat esa oxirida beriladi",
+            "ru": "Номером в квадратных скобках, например [1], а список — в конце",
+            "en": "A number in square brackets, for example [1], with the list at the end"
+          },
+          {
+            "uz": "Havola oʻrniga rasmlar raqamlanadi",
+            "ru": "Вместо ссылок нумеруются рисунки",
+            "en": "The figures are numbered instead of the sources"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Qoida: matnda kvadrat qavsda raqam, oxirida roʻyxat — muallif yoki tashkilot, nom, nashr yili, URL va murojaat sanasi.",
+          "ru": "Правило: в тексте номер в квадратных скобках, в конце список — автор или организация, название, год, URL и дата обращения.",
+          "en": "The rule is a number in square brackets in the text and a list at the end: author or organization, title, year, URL and access date."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Sunʼiy intellekt vositalaridan foydalanish boʻyicha darsda qaysi qoidalar aytilgan?",
+          "ru": "Какие правила об использовании инструментов искусственного интеллекта даны в занятии?",
+          "en": "Which rules about using artificial intelligence tools does the lesson give?"
+        },
+        "options": [
+          {
+            "uz": "Parollar, shaxsiy maʼlumotlar va ish hujjatlari onlayn vositalarga kiritiladi",
+            "ru": "Пароли, персональные данные и рабочие документы можно вводить в онлайн-инструменты",
+            "en": "Passwords, personal data and work documents may be entered into online tools"
+          },
+          {
+            "uz": "Gʻoya topish, mavzuni tushuntirish va matnni tahrirlash uchun foydalanish mumkin",
+            "ru": "Их можно использовать для поиска идей, объяснений и редактирования текста",
+            "en": "They may be used to find ideas, explain a topic and edit the text"
+          },
+          {
+            "uz": "Natija manbalar bilan tekshiriladi, chunki AI mavjud boʻlmagan havolalarni toʻqib chiqarishi mumkin",
+            "ru": "Результат проверяется по источникам, поскольку ИИ может выдумывать несуществующие ссылки",
+            "en": "The result is checked against sources, because AI can invent references that do not exist"
+          },
+          {
+            "uz": "Ishda qaysi vosita va nima uchun ishlatilgani koʻrsatiladi",
+            "ru": "В работе указывается, какой инструмент и для чего был применён",
+            "en": "The work states which tool was used and for what"
+          }
+        ],
+        "correct": [1, 2, 3],
+        "explanation": {
+          "uz": "Dars yana teskarisini talab qiladi: maxfiy maʼlumotlarni onlayn vositalarga kiritmang. Yakuniy matn va xulosalar ham muallifning oʻziniki boʻlishi kerak.",
+          "ru": "Занятие требует и обратного: конфиденциальные данные в онлайн-инструменты вводить нельзя. Итоговый текст и выводы тоже должны принадлежать автору.",
+          "en": "The lesson also requires the opposite: do not enter confidential data into online tools. The final text and the conclusions must be the author's own as well."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dasturiy topshiriqda toʻliq generatsiya qilingan kodni tushuntira olmasangiz, topshiriq bajarilgan hisoblanmaydi.",
+          "ru": "Если вы не можете объяснить полностью сгенерированный код, программное задание не засчитывается.",
+          "en": "If you cannot explain fully generated code, the programming task is not considered done."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda shunday aytilgan: koʻchirilgan yoki toʻliq generatsiya qilingan kodni tushuntira olmasangiz, topshiriq bajarilgan hisoblanmaydi.",
+          "ru": "В занятии сказано именно так: не можете объяснить скопированный или полностью сгенерированный код — задание не засчитывается.",
+          "en": "That is the lesson's rule: code you copied or generated in full must be explainable, or the task does not count."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Oʻz ishingizni mezonlar boʻyicha tekshirish",
+      "ru": "Проверьте свою работу по критериям",
+      "en": "Check your own work against the criteria"
+    },
+    "statement": {
+      "uz": "Javoblar faqat darsdagi jadvallar va qoidalardan olinadi: yozish qoidalari, ishonchli manbalar, baholash mezonlari va MT3–MT17 mavzulari boʻyicha yoʻriqnoma. Variantni tanlang, sonni yoki qisqartmani kiriting.",
+      "ru": "Ответы берутся только из таблиц и правил занятия: правила оформления, надёжные источники, критерии оценивания и указания по темам MT3–MT17. Выберите вариант или введите число либо сокращение.",
+      "en": "Every answer comes only from the lesson's tables and rules: the writing rules, the reliable sources, the assessment criteria and the guidance on the MT3–MT17 topics. Choose an option or enter a number or an abbreviation."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "MULTI",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Yozish qoidalari va koʻp uchraydigan xatolar boʻlimida skrinshotlarda nimani yashirish talab qilinadi?",
+            "ru": "Что, по правилам оформления и частым ошибкам, нужно скрыть на скриншотах?",
+            "en": "By the writing rules and the common mistakes, what must be hidden in screenshots?"
+          },
+          "options": [
+            { "uz": "Parollar", "ru": "Пароли", "en": "Passwords" },
+            { "uz": "Ishlatilgan vositaning nomi", "ru": "Название использованного инструмента", "en": "The name of the tool used" },
+            { "uz": "Tokenlar", "ru": "Токены", "en": "Tokens" },
+            { "uz": "Shaxsiy maʼlumotlar", "ru": "Персональные данные", "en": "Personal data" },
+            { "uz": "IP manzillar", "ru": "IP-адреса", "en": "IP addresses" }
+          ],
+          "correct": [0, 2, 3, 4],
+          "explanation": {
+            "uz": "Darsda skrinshotlarda parollar, tokenlar, shaxsiy maʼlumotlar va IP manzillar yashirilishi aytilgan; vosita nomi va versiyasi esa amaliy qismda koʻrsatiladi.",
+            "ru": "В занятии сказано скрывать на скриншотах пароли, токены, персональные данные и IP-адреса; название и версию инструмента, наоборот, указывают в практической части.",
+            "en": "The lesson says to hide passwords, tokens, personal data and IP addresses in screenshots; the tool's name and version, by contrast, belong in the practical part."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "MT3 mavzusi boʻyicha qanday ish turi tavsiya qilingan?",
+            "ru": "Какой вид работы рекомендован для темы MT3?",
+            "en": "Which type of work is suggested for topic MT3?"
+          },
+          "options": [
+            { "uz": "Faqat taqdimot", "ru": "Только презентация", "en": "A presentation only" },
+            { "uz": "Referat va kichik dastur", "ru": "Реферат и небольшая программа", "en": "An essay and a small program" },
+            { "uz": "Laboratoriya hisoboti", "ru": "Отчёт о лабораторной работе", "en": "A lab report" },
+            { "uz": "Keys tahlili", "ru": "Анализ кейса", "en": "A case analysis" }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Yoʻriqnoma jadvalida MT3 (Enigma va kriptografik usullar) uchun referat + kichik dastur berilgan, bogʻliq darslar — M5 va A5.",
+            "ru": "В таблице указаний для MT3 (Энигма и криптографические методы) стоит реферат + небольшая программа, связанные уроки — M5 и A5.",
+            "en": "The guidance table gives essay plus a small program for MT3, the Enigma and cryptographic methods topic, with M5 and A5 as the related lessons."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Manbani baholashda kiberxavfsizlik boʻyicha necha yildan eski maʼlumot koʻpincha eskirgan hisoblanadi?",
+            "ru": "Сколько лет — порог, после которого сведения по кибербезопасности при оценке источника часто считаются устаревшими?",
+            "en": "How old must cybersecurity information be for the source check to consider it often outdated?"
+          },
+          "answers": [5],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Darsda sana mezoni shunday: kiberxavfsizlikda 5 yildan eski maʼlumot koʻpincha eskirgan.",
+            "ru": "Критерий даты сформулирован так: в кибербезопасности сведения старше 5 лет часто устарели.",
+            "en": "The lesson's date criterion: in cybersecurity, information older than 5 years is often outdated."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 1,
+          "prompt": {
+            "uz": "Yevropa tahdidlar landshafti hisobotlarini chop etadigan tashkilot qisqartmasini yozing.",
+            "ru": "Напишите сокращение организации, публикующей европейские отчёты о ландшафте угроз.",
+            "en": "Write the abbreviation of the organization that publishes the European threat landscape reports."
+          },
+          "answers": ["ENISA", "enisa"],
+          "explanation": {
+            "uz": "Ishonchli manbalar jadvalida ENISA (enisa.europa.eu) Yevropa tahdidlar landshafti hisobotlari sifatida berilgan.",
+            "ru": "В таблице источников ENISA (enisa.europa.eu) указана как европейские отчёты о ландшафте угроз.",
+            "en": "The reliable sources table lists ENISA (enisa.europa.eu) as the European threat landscape reports."
+          }
+        }
+      ]
+    }
+  }
+}

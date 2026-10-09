@@ -1,0 +1,316 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kiberjinoyat deganda nima tushuniladi?",
+          "ru": "Что понимается под киберпреступлением?",
+          "en": "What is meant by cybercrime?"
+        },
+        "options": [
+          {
+            "uz": "Kompyuter, tarmoq yoki raqamli qurilma yordamida yoki ularga qarshi sodir etilgan jinoyat",
+            "ru": "Преступление, совершённое с помощью компьютера, сети или цифрового устройства либо против них",
+            "en": "A crime committed using, or against, a computer, a network or a digital device"
+          },
+          {
+            "uz": "Faqat bank kartalaridan pul oʻgʻirlashga qaratilgan jinoyatlar",
+            "ru": "Только преступления, направленные на кражу денег с банковских карт",
+            "en": "Only crimes aimed at stealing money from bank cards"
+          },
+          {
+            "uz": "Kompyuter texnikasini fizik oʻgʻrilash",
+            "ru": "Физическая кража компьютерной техники",
+            "en": "The physical theft of computer equipment"
+          },
+          {
+            "uz": "Internetga ulangan har qanday qonunbuzarlik",
+            "ru": "Любое правонарушение, если оно совершено с доступом в Интернет",
+            "en": "Any offence at all committed by a person who has Internet access"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi taʼrif: kiberjinoyat — kompyuter, tarmoq yoki raqamli qurilma yordamida yoki ularga qarshi sodir etilgan jinoyat.",
+          "ru": "Определение из занятия: киберпреступление — преступление с помощью компьютера, сети или цифрового устройства либо против них.",
+          "en": "The lesson's definition: cybercrime is crime committed using, or against, a computer, a network or a digital device."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "“Skript-kiddi”lar tashqi buzgʻunchilar roʻyxatiga kiradi.",
+          "ru": "«Скрипт-кидди» входят в перечень внешних нарушителей.",
+          "en": "“Script kiddies” are listed among the outside attackers."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda tashqi buzgʻunchilardan: kiberjinoyatchi guruhlar, xaktivistlar, davlat tomonidan qoʻllab-quvvatlanadigan guruhlar va “skript-kiddi”lar keltirilgan.",
+          "ru": "Среди внешних нарушителей в занятии перечислены киберпреступные группы, хактивисты, спонсируемые государством группы и «скрипт-кидди».",
+          "en": "The lesson lists among outsiders: cybercriminal groups, hacktivists, state-backed groups and “script kiddies”."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Raqamli kriminalistikaning bosqichlari qaysilar?",
+          "ru": "Какие из перечисленного — этапы цифровой криминалистики?",
+          "en": "Which of these are stages of digital forensics?"
+        },
+        "options": [
+          {
+            "uz": "Aniqlash",
+            "ru": "Выявление",
+            "en": "Identification"
+          },
+          {
+            "uz": "Saqlash va toʻplash",
+            "ru": "Сохранение и сбор",
+            "en": "Preservation and collection"
+          },
+          {
+            "uz": "Hujjatlashtirish",
+            "ru": "Оформление документации",
+            "en": "Paperwork"
+          },
+          {
+            "uz": "Tahlil",
+            "ru": "Анализ",
+            "en": "Analysis"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Bosqichlar: aniqlash → saqlash va toʻplash → xesh bilan yaxlitlikni tasdiqlash → tahlil → hisobot; “hujjatlashtirish” alohida bosqich emas.",
+          "ru": "Этапы: выявление → сохранение и сбор → подтверждение целостности хешем → анализ → отчёт; «оформление документации» отдельным этапом не является.",
+          "en": "The stages are identification → preservation and collection → integrity by hash → analysis → report; “paperwork” is not one of them."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yevropa Ittifoqining GDPR nizomiga koʻra, maʼlumotlar sizib chiqqani haqida nechcha soat ichida xabar berilishi kerak?",
+          "ru": "Согласно регламенту ЕС GDPR, в течение скольких часов нужно сообщить об утечке данных?",
+          "en": "Under the EU's GDPR, within how many hours must a data breach be reported?"
+        },
+        "answers": [72],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda GDPR talabi sifatida buzilish haqida 72 soat ichida xabar berish va yirik jarimalar koʻrsatilgan.",
+          "ru": "В занятии среди требований GDPR названы уведомление об утечке в течение 72 часов и крупные штрафы.",
+          "en": "The lesson names among GDPR's rules notifying a breach within 72 hours and large fines."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Budapesht konvensiyasi nimasi bilan muhim?",
+          "ru": "Чем важна Будапештская конвенция?",
+          "en": "Why is the Budapest Convention important?"
+        },
+        "options": [
+          {
+            "uz": "Kiberjinoyatlar boʻyicha birinchi xalqaro shartnoma (Yevropa Kengashi, 2001)",
+            "ru": "Это первый международный договор о киберпреступности (Совет Европы, 2001)",
+            "en": "It is the first international treaty on cybercrime (Council of Europe, 2001)"
+          },
+          {
+            "uz": "Oʻzbekistondagi shaxsiy maʼlumotlar toʻgʻrisidagi qonun (2019)",
+            "ru": "Это закон Узбекистана о персональных данных (2019)",
+            "en": "It is Uzbekistan's personal data law (2019)"
+          },
+          {
+            "uz": "Yevropa Ittifoqining maʼlumotlarni himoyalash nizomi (2018)",
+            "ru": "Это регламент Европейского союза о защите данных (2018)",
+            "en": "It is the European Union's data protection regulation (2018)"
+          },
+          {
+            "uz": "Kiberxavfsizlikni boshqarish boʻyicha xalqaro standart",
+            "ru": "Это международный стандарт управления кибербезопасностью",
+            "en": "It is an international standard for managing cybersecurity"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Konvensiya jinoyatlar tasnifi, tergov vakolatlari va xalqaro hamkorlikni belgilaydi; 2018-yilgi nizom — GDPR, 2019-yilgi qonun esa Oʻzbekistonniki.",
+          "ru": "Конвенция задаёт классификацию преступлений, следственные полномочия и международное сотрудничество; регламент 2018 года — это GDPR, закон 2019 года — узбекистанский.",
+          "en": "The convention sets a classification of offences, investigative powers and international cooperation; the 2018 regulation is GDPR and the 2019 law is Uzbekistan's."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Dalilni kim, qachon, qayerda va qanday maqsadda olgani, saqlangani va uzatilgani yozib boriladigan hujjat qanday ataladi?",
+          "ru": "Как называется документ, фиксирующий, кто, когда, где и с какой целью получал, хранил и передавал доказательство?",
+          "en": "What is the record called that documents who took, kept and handed over an evidence, when, where and for what purpose?"
+        },
+        "answers": ["dalillar zanjiri", "chain of custody"],
+        "explanation": {
+          "uz": "Darsda bu dalillar zanjiri (chain of custody) deb ataladi; zanjir uzilsa, sud dalilni qabul qilmasligi mumkin.",
+          "ru": "В занятии это цепочка хранения доказательств (chain of custody); при её разрыве суд может не принять доказательство.",
+          "en": "The lesson calls it the chain of custody; if the chain is broken, the court may not accept the evidence."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qaysi hujjatlar Oʻzbekiston Respublikasining huquqiy asoslari roʻyxatida keltirilgan?",
+          "ru": "Какие документы приведены в занятии как правовые основы Республики Узбекистан?",
+          "en": "Which instruments does the lesson list under the legal framework of Uzbekistan?"
+        },
+        "options": [
+          {
+            "uz": "“Kiberxavfsizlik toʻgʻrisida”gi Qonun (2022)",
+            "ru": "Закон «О кибербезопасности» (2022)",
+            "en": "The Law “On Cybersecurity” (2022)"
+          },
+          {
+            "uz": "“Shaxsga doir maʼlumotlar toʻgʻrisida”gi Qonun (2019)",
+            "ru": "Закон «О персональных данных» (2019)",
+            "en": "The Law “On Personal Data” (2019)"
+          },
+          {
+            "uz": "GDPR (2018)",
+            "ru": "GDPR (2018)",
+            "en": "GDPR (2018)"
+          },
+          {
+            "uz": "Jinoyat kodeksining XX¹ bobi — axborot texnologiyalari sohasidagi jinoyatlar",
+            "ru": "Глава XX¹ Уголовного кодекса — преступления в сфере информационных технологий",
+            "en": "Chapter XX¹ of the Criminal Code — crimes in the field of information technology"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "GDPR — Yevropa Ittifoqi hujjati, Oʻzbekiston roʻyxatiga kirmaydi; unda Jinoyat kodeksining XX¹ bobi va uchta qonun keltirilgan.",
+          "ru": "GDPR — документ Европейского союза, в узбекистанский перечень он не входит; там указаны глава XX¹ УК и законы.",
+          "en": "GDPR is a European Union instrument, not in Uzbekistan's list, which holds chapter XX¹ of the Criminal Code and the laws."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dalil topilgan kompyuterdan ishlaganda uni avval darhol oʻchirib qoʻyish toʻgʻri usul.",
+          "ru": "При работе с компьютером, где найдено доказательство, его следует сразу же выключить.",
+          "en": "When working with a computer where evidence was found, it should be switched off at once."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi xatolar roʻyxatiga koʻra darhol oʻchirish operativ xotiradagi dalillarni — jarayonlar, tarmoq ulanishlari, shifrlash kalitlarini — yoʻq qiladi.",
+          "ru": "Согласно списку частых ошибок, немедленное выключение теряет доказательства в оперативной памяти — процессы, соединения, ключи шифрования.",
+          "en": "The lesson's list of mistakes warns that switching off at once loses the volatile evidence in RAM — processes, connections, encryption keys."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kiberetikada “masʼuliyatli xabar berish” (responsible disclosure) nimani anglatadi?",
+          "ru": "Что в киберэтике означает «ответственное раскрытие» (responsible disclosure)?",
+          "en": "In cyberethics, what does responsible disclosure mean?"
+        },
+        "options": [
+          {
+            "uz": "Topilgan zaiflik haqida darhol uning egasiga xabar berish, ochiq eʼlon qilmaslik yoki sotmaslik",
+            "ru": "Немедленно сообщить о найденной уязвимости её владельцу, а не публиковать и не продавать её",
+            "en": "Reporting a found vulnerability to its owner at once, rather than publishing or selling it"
+          },
+          {
+            "uz": "Zaiflikni topilishi bilan blogda ochiq eʼlon qilish",
+            "ru": "Опубликовать уязвимость в блоге сразу после находки",
+            "en": "Publishing the vulnerability in a blog as soon as it is found"
+          },
+          {
+            "uz": "Zaiflikni eng yuqori narxni taklif qilganga sotish",
+            "ru": "Продать уязвимость тому, кто предложит наибольшую цену",
+            "en": "Selling the vulnerability to the highest bidder"
+          },
+          {
+            "uz": "Zaiflik haqida hech kimga aytmaslik",
+            "ru": "Никому не сообщать об уязвимости",
+            "en": "Telling nobody about the vulnerability"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi kiberetika qoidasi: topilgan zaiflik haqida egasiga masʼuliyatli xabar beriladi, ochiq eʼlon qilmaydi va sotilmaydi.",
+          "ru": "Правило киберэтики из занятия: о найденной уязвимости ответственно сообщают владельцу, не публикуя и не продавая.",
+          "en": "The lesson's rule of cyberethics: report a found vulnerability responsibly to its owner, do not publish or sell it."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Dalillarni yigʻishda uchuvchanlik tartibi",
+      "ru": "Порядок изменчивости при сборе доказательств",
+      "en": "Order of volatility when collecting evidence"
+    },
+    "statement": {
+      "uz": "Tergovchi raqamli dalillarni darsdagi uchuvchanlik tartibida yigʻadi: avval tez yoʻqoladiganlar — operativ xotira (ram), keyin tarmoq ulanishlari (net), soʻng disklar (disk) va oxirida arxivlar (archive). Birinchi satrda yozuvlar soni n (1 ≤ n ≤ 100). Keyingi n satrning har birida boʻshliq bilan ajratilgan dalil nomi (boʻshliqsiz) va uning turi beriladi: ram, net, disk yoki archive. Dalillarni yigʻish tartibida chiqaring: har bir nomni alohida satrga; bir xil turdagi dalillar kiritilgan tartibida qolsin. Masalan: 4 → backups archive, sessions ram, connections net, images disk chiqarsa, javob: sessions, connections, images, backups.",
+      "ru": "Следователь собирает цифровые доказательства в порядке изменчивости из занятия: сначала быстро исчезающее — оперативная память (ram), затем сетевые соединения (net), потом диски (disk) и наконец архивы (archive). В первой строке — число записей n (1 ≤ n ≤ 100). Каждая из следующих n строк содержит имя доказательства (без пробелов) и его тип — ram, net, disk или archive, разделённые пробелом. Выведите имена в порядке сбора, каждое на отдельной строке; доказательства одного типа сохраняют порядок ввода. Например: 4 → backups archive, sessions ram, connections net, images disk — ответ: sessions, connections, images, backups.",
+      "en": "An investigator collects digital evidence in the lesson's order of volatility: first what disappears fastest — RAM (ram), then network connections (net), then disks (disk) and finally archives (archive). The first line holds the number of items n (1 ≤ n ≤ 100). Each of the next n lines holds an evidence name (no spaces) and its type — ram, net, disk or archive — separated by a space. Print the names in the collection order, one per line; items of the same type keep their input order. For example, with 4 items: backups archive, sessions ram, connections net, images disk — the output is sessions, connections, images, backups."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nyozuvlar = []\nfor i in range(n):\n    nom, turi = input().split()\n    yozuvlar.append((turi, i, nom))\nyozuvlar.sort()\nfor _, _, nom in yozuvlar:\n    print(nom)\n",
+        "java": "import java.util.ArrayList;\nimport java.util.Comparator;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        List<String[]> dalillar = new ArrayList<>();\n        for (int i = 0; i < n; i++) {\n            dalillar.add(new String[]{in.next(), in.next()});\n        }\n        dalillar.sort(Comparator.comparing(d -> d[1]));\n        for (String[] d : dalillar) {\n            System.out.println(d[0]);\n        }\n    }\n}\n",
+        "cpp": "#include <algorithm>\n#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nstruct Dalil {\n    string nom;\n    string turi;\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<Dalil> dalillar(n);\n    for (int i = 0; i < n; i++) {\n        cin >> dalillar[i].nom >> dalillar[i].turi;\n    }\n    stable_sort(dalillar.begin(), dalillar.end(), [](const Dalil& x, const Dalil& y) {\n        return x.turi < y.turi;\n    });\n    for (int i = 0; i < n; i++) {\n        cout << dalillar[i].nom << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\ndaraja = {\"ram\": 0, \"net\": 1, \"disk\": 2, \"archive\": 3}\nyozuvlar = []\nfor i in range(n):\n    nom, turi = input().split()\n    yozuvlar.append((daraja[turi], i, nom))\nyozuvlar.sort()\nfor _, _, nom in yozuvlar:\n    print(nom)\n",
+        "java": "import java.util.ArrayList;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    static int daraja(String turi) {\n        if (turi.equals(\"ram\")) return 0;\n        if (turi.equals(\"net\")) return 1;\n        if (turi.equals(\"disk\")) return 2;\n        return 3;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        List<String> nomlar = new ArrayList<>();\n        List<Integer> tartib = new ArrayList<>();\n        for (int i = 0; i < n; i++) {\n            nomlar.add(in.next());\n            tartib.add(daraja(in.next()));\n        }\n        for (int d = 0; d < 4; d++) {\n            for (int i = 0; i < n; i++) {\n                if (tartib.get(i) == d) {\n                    System.out.println(nomlar.get(i));\n                }\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint daraja(const string& turi) {\n    if (turi == \"ram\") return 0;\n    if (turi == \"net\") return 1;\n    if (turi == \"disk\") return 2;\n    return 3;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    vector<string> nomlar(n);\n    vector<int> tartib(n);\n    for (int i = 0; i < n; i++) {\n        string turi;\n        cin >> nomlar[i] >> turi;\n        tartib[i] = daraja(turi);\n    }\n    for (int d = 0; d < 4; d++) {\n        for (int i = 0; i < n; i++) {\n            if (tartib[i] == d) {\n                cout << nomlar[i] << endl;\n            }\n        }\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4\nbackups archive\nsessions ram\nconnections net\nimages disk\n", "expected": "sessions\nconnections\nimages\nbackups", "hidden": false },
+        { "input": "2\nlogs disk\ncache ram\n", "expected": "cache\nlogs", "hidden": false },
+        { "input": "3\nw1 net\nw2 net\nold archive\n", "expected": "w1\nw2\nold", "hidden": true },
+        { "input": "6\nusb archive\nproc ram\nlink net\ndata disk\nkeys ram\nvlan net\n", "expected": "proc\nkeys\nlink\nvlan\ndata\nusb", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "«Aniq ruxsat berilmagan hamma narsa taqiqlangan» degan tamoyil qanday ataladi?",
+          "ru": "Как называется принцип «всё, что явно не разрешено, запрещено»?",
+          "en": "Which principle says that everything not explicitly allowed is forbidden?"
+        },
+        "options": [
+          {
+            "uz": "Eng kam imtiyoz",
+            "ru": "Минимальные привилегии",
+            "en": "Least privilege"
+          },
+          {
+            "uz": "Bilish zarurati",
+            "ru": "Необходимость знать",
+            "en": "Need to know"
+          },
+          {
+            "uz": "Standart rad etish",
+            "ru": "Запрет по умолчанию",
+            "en": "Default deny"
+          },
+          {
+            "uz": "Toʻliq vositachilik",
+            "ru": "Полное посредничество",
+            "en": "Complete mediation"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Bu — standart rad etish (default deny). Eng kam imtiyoz — huquqlar faqat vazifa uchun zarur miqdorda, bilish zarurati — faqat ishga tegishli maʼlumot, toʻliq vositachilik — har bir murojaat tekshiriladi.",
+          "ru": "Это запрет по умолчанию (default deny). Минимальные привилегии — права только нужные для задачи, необходимость знать — только относящаяся к работе информация, полное посредничество — проверка каждого обращения.",
+          "en": "This is default deny. Least privilege means only the rights the task needs, need to know means only work-related information, complete mediation means every access is checked."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "ACL obyektning oʻziga biriktiriladi, imkoniyatlar roʻyxati esa subyektga.",
+          "ru": "ACL прикрепляется к объекту, а список возможностей — к субъекту.",
+          "en": "An ACL is attached to the object, while a capability list is attached to the subject."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "ACL — matritsaning ustuni (bu faylga kimlar kira oladi), imkoniyatlar roʻyxati — satri (bu subyektga qaysi obyekt boʻyicha qanday huquq berilgan).",
+          "ru": "ACL — это столбец матрицы (кто имеет доступ к этому файлу), список возможностей — строка (какое право на какой объект у субъекта).",
+          "en": "An ACL is a column of the matrix (who can access this file), a capability list is a row (which right on which object the subject holds)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysilar foydalanishni boshqarishning tamoyillari?",
+          "ru": "Что из перечисленного — принципы управления доступом?",
+          "en": "Which of these are principles of access control?"
+        },
+        "options": [
+          {
+            "uz": "Eng kam imtiyoz",
+            "ru": "Минимальные привилегии",
+            "en": "Least privilege"
+          },
+          {
+            "uz": "Vazifalarni ajratish",
+            "ru": "Разделение обязанностей",
+            "en": "Separation of duties"
+          },
+          {
+            "uz": "Bilish zarurati",
+            "ru": "Необходимость знать",
+            "en": "Need to know"
+          },
+          {
+            "uz": "Parolni davriy almashtirish",
+            "ru": "Периодическая смена пароля",
+            "en": "Periodic password change"
+          },
+          {
+            "uz": "Rollar portlashi",
+            "ru": "Взрыв ролей",
+            "en": "Role explosion"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi tamoyillar: eng kam imtiyoz, bilish zarurati, vazifalarni ajratish, standart rad etish, toʻliq vositachilik. Rollar portlashi — RBAC modelining kamchiligi, parolni davriy almashtirish esa M10 dagi parol siyosati masalasi.",
+          "ru": "Принципы из занятия: минимальные привилегии, необходимость знать, разделение обязанностей, запрет по умолчанию, полное посредничество. Взрыв ролей — недостаток RBAC, а периодическая смена пароля — тема парольной политики из M10.",
+          "en": "The lesson's principles are least privilege, need to know, separation of duties, default deny and complete mediation. Role explosion is a weakness of RBAC, and periodic password change belongs to the password policy of M10."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "MAC modelida kimga qanday huquq berishni kim hal qiladi?",
+          "ru": "В модели MAC кто решает, кому какие права выдать?",
+          "en": "In the MAC model, who decides which rights a person gets?"
+        },
+        "options": [
+          {
+            "uz": "Obyektning egasi",
+            "ru": "Владелец объекта",
+            "en": "The owner of the object"
+          },
+          {
+            "uz": "Tizim siyosati: subyekt darajasi va obyekt belgisi",
+            "ru": "Политика системы: уровень допуска субъекта и гриф объекта",
+            "en": "The system policy: the subject's clearance and the object's label"
+          },
+          {
+            "uz": "Foydalanuvchining oʻzi, kerak boʻlsa huquqni soʻrab",
+            "ru": "Сам пользователь, запросив при необходимости право",
+            "en": "The user themselves, by asking for the right"
+          },
+          {
+            "uz": "Har bir fayldagi izohlar (kommentariylar)",
+            "ru": "Комментарии, оставленные в каждом файле",
+            "en": "The comments stored inside each file"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "MAC da qarorni egasi emas, tizim siyosati qabul qiladi: subyektlarga ruxsatnoma darajasi (clearance), obyektlarga maxfiylik belgisi beriladi va foydalanuvchi oʻz hujjatining belgisini ham oʻzgartira olmaydi. Egasi hal qiladigan model — DAC.",
+          "ru": "В MAC решает не владелец, а политика системы: субъектам дают уровень допуска, объектам — гриф, и пользователь не может изменить метку даже своего документа. Модель, где решает владелец, — это DAC.",
+          "en": "In MAC the decision comes from system policy, not the owner: subjects get a clearance and objects a label, and a user cannot change the label even of their own document. The model where the owner decides is DAC."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Bell–LaPadula modelida «Oʻta maxfiy» darajadagi foydalanuvchi «Ochiq» hujjatga yozmoqchi. Qaysi qoida buni taqiqlaydi?",
+          "ru": "В модели Белла–Лападулы пользователь уровня «Совершенно секретно» хочет записать в документ «Открыто». Какое правило это запрещает?",
+          "en": "In the Bell–LaPadula model a Top Secret user wants to write to an Unclassified document. Which rule forbids it?"
+        },
+        "options": [
+          {
+            "uz": "*-xossa: pastga yozish yoʻq (no write down)",
+            "ru": "*-свойство: нет записи вниз (no write down)",
+            "en": "The *-property: no write down"
+          },
+          {
+            "uz": "Simple security property: yuqoriga oʻqish yoʻq (no read up)",
+            "ru": "Simple security property: нет чтения вверх (no read up)",
+            "en": "The simple security property: no read up"
+          },
+          {
+            "uz": "Standart rad etish tamoyili",
+            "ru": "Принцип запрета по умолчанию",
+            "en": "The default deny principle"
+          },
+          {
+            "uz": "Rollar ierarxiyasi cheklovi",
+            "ru": "Ограничение иерархии ролей",
+            "en": "A role hierarchy constraint"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "BLP maxfiylikni himoyalaydi: subyekt faqat oʻz darajasidagi yoki yuqoriroq obyektga yozadi — aks holda maxfiy maʼlumot past darajaga oqib tushardi (troyan orqali ham). Ishlangan misolda ali (S) hujjatni oʻqiydi, lekin unga yoza olmaydi.",
+          "ru": "BLP защищает конфиденциальность: субъект пишет только в объекты своего уровня или выше — иначе секретная информация стекала бы на низкий уровень (в том числе через трояна). В разобранном примере ali (S) читает отчёт, но не может писать в него.",
+          "en": "BLP protects confidentiality: a subject writes only to objects at its own level or higher, otherwise secret information would leak down (even through a Trojan). In the worked example ali (S) may read the report but may not write to it."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi RBAC boʻyicha ishlangan misolda oltita soʻrov tekshiriladi. Ulardan nechtasi rad etish bilan yakunlanadi?",
+          "ru": "В разобранном примере по RBAC проверяется шесть запросов. Сколько из них заканчиваются отказом?",
+          "en": "In the lesson's worked RBAC example six requests are checked. How many of them end in a denial?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Rad etilganlari: ali baho.qoyish (talabada bu huquq yoʻq), olim baho.korish (admin baholarni koʻrmaydi) va kamol baho.korish (foydalanuvchi topilmadi). Qolgan uchta soʻrovga ruxsat berilgan.",
+          "ru": "Отклонены: ali baho.qoyish (у студента такого права нет), olim baho.korish (администратор не видит оценки) и kamol baho.korish (пользователь не найден). Остальные три запроса разрешены.",
+          "en": "Denied: ali baho.qoyish (the student role lacks it), olim baho.korish (the administrator does not see grades) and kamol baho.korish (user not found). The other three requests are allowed."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Yaxlitlikni himoyalash uchun BLP ga teskari qoidalarni («pastga oʻqish yoʻq» va «yuqoriga yozish yoʻq») taklif qilgan modelning nomini yozing.",
+          "ru": "Напишите имя модели, которая защищает целостность обратными правилами («нет чтения вниз» и «нет записи вверх»).",
+          "en": "Write the name of the model that protects integrity with the reversed rules (no read down, no write up)."
+        },
+        "answers": ["Biba", "biba", "Biba modeli", "model Biba"],
+        "explanation": {
+          "uz": "Biba (1977) — yaxlitlik modeli: past darajadagi maʼlumotni oʻqib ifloslanmaydi va past darajadagi jarayon yuqori darajadagi muhim maʼlumotni buzmaydi. Windows dagi Mandatory Integrity Control shu gʻoyaga asoslangan.",
+          "ru": "Биба (1977) — модель целостности: не читать вниз, чтобы не загрязняться, и не писать вверх, чтобы низкоуровневый процесс не испортил важные данные. Mandatory Integrity Control в Windows построен на идее Бибы.",
+          "en": "Biba (1977) is the integrity model: no read down to avoid contamination and no write up so a low-level process cannot corrupt important data. Windows Mandatory Integrity Control follows the Biba idea."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "RBAC va ABAC boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о RBAC и ABAC верны?",
+          "en": "Which statements about RBAC and ABAC are correct?"
+        },
+        "options": [
+          {
+            "uz": "RBAC da ruxsatlar foydalanuvchilarga emas, rollarga beriladi",
+            "ru": "В RBAC разрешения выдаются ролям, а не пользователям",
+            "en": "In RBAC permissions are granted to roles, not to users"
+          },
+          {
+            "uz": "ABAC qarorida muhit atributlari (vaqt, joylashuv, qurilma) ham qatnashadi",
+            "ru": "В решении ABAC участвуют и атрибуты среды (время, место, устройство)",
+            "en": "An ABAC decision also uses environment attributes (time, location, device)"
+          },
+          {
+            "uz": "Rollar ierarxiyasida «katta oʻqituvchi» roli «oʻqituvchi» ning barcha ruxsatlarini meros oladi",
+            "ru": "В иерархии ролей «старший преподаватель» наследует все разрешения роли «преподаватель»",
+            "en": "In a role hierarchy the senior-teacher role inherits every permission of the teacher role"
+          },
+          {
+            "uz": "Rollar portlashi DAC modelining kamchiligi",
+            "ru": "Взрыв ролей — недостаток модели DAC",
+            "en": "Role explosion is a weakness of the DAC model"
+          },
+          {
+            "uz": "ABAC da qaror obyekt egasining ixtiyoriga qoldiriladi",
+            "ru": "В ABAC решение оставляют на усмотрение владельца объекта",
+            "en": "In ABAC the decision is left to the discretion of the object's owner"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Rollar portlashi — RBAC ning kamchiligi, obyekt egasi hal qiladigan model esa DAC. ABAC da qaror atributlar boʻyicha yozilgan siyosat bilan qabul qilinadi.",
+          "ru": "Взрыв ролей — недостаток RBAC, а модель, где решает владелец объекта, — это DAC. В ABAC решение принимается политикой по атрибутам.",
+          "en": "Role explosion is a weakness of RBAC, and the model where the object's owner decides is DAC. In ABAC the decision comes from a policy written over attributes."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Veb-ilovada taqiqlangan tugmani yashirish — yetarli himoya.",
+          "ru": "Скрыть запрещённую кнопку в веб-приложении — достаточная защита.",
+          "en": "Hiding a forbidden button in a web application is sufficient protection."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Tugma yashirilgan boʻlsa ham soʻrovni toʻgʻridan-toʻgʻri yuborish mumkin; tekshiruv har bir API soʻrovida serverda bajarilishi kerak (toʻliq vositachilik va standart rad etish).",
+          "ru": "Даже если кнопка скрыта, запрос можно отправить напрямую; проверка обязана выполняться на сервере при каждом API-запросе (полное посредничество и запрет по умолчанию).",
+          "en": "Even with the button hidden, the request can be sent directly; the check has to run on the server for every API request (complete mediation and default deny)."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Obyekt boʻyicha ACL: kimlar kira oladi",
+      "ru": "ACL по объекту: кто имеет доступ",
+      "en": "The ACL of an object: who can access it"
+    },
+    "statement": {
+      "uz": "Foydalanish matritsasining ustuni — bu obyektning ACL roʻyxati: «bu obyektga kim nima qila oladi». Dasturingiz matritsadagi ruxsatlar roʻyxatini oʻqib, har bir obyekt uchun ACLni tiklaydi. Kirish: birinchi satrda n (1 ≤ n ≤ 20) — ruxsatlar soni; keyingi n satrda uchta soʻz: subyekt, obyekt, amal (barcha nomlar boʻshliqsiz, lotin harflarida). Soʻng bir satrda q (1 ≤ q ≤ 5) — soʻrovlar soni, keyingi q satrda esa obyekt nomi beriladi. Har bir soʻrov uchun bitta qator chiqaring: shu obyektga kamida bitta huquqi berilgan subyektlarni ular kirishda ilk marta koʻringan tartibda, har biri bir marta, bitta boʻshliq bilan ajratib chiqaring. Agar obyektga hech kimning huquqi boʻlmasa, faqat - belgisini chiqaring. Masalan, kirish 3 / ali baza.db read / vali baza.db write / ali printer print / 1 / baza.db boʻlsa, chiqish ali vali boʻladi.",
+      "ru": "Столбец матрицы доступа — это ACL объекта: «кто и что может с этим объектом». Ваша программа читает назначения прав матрицы и восстанавливает ACL. Ввод: в первой строке n (1 ≤ n ≤ 20) — число назначений; далее n строк по три слова: субъект объект операция (все имена без пробелов, латиницей). Затем в одной строке задано q (1 ≤ q ≤ 5) — число запросов, и следующие q строк содержат имя объекта. На каждый запрос выведите одну строку: субъекты, у которых на этом объекте есть хотя бы одно право, в порядке их первой встречи во входе, по одному разу, разделённые одним пробелом. Если у объекта прав ни у кого нет, выведите только знак -. Пример: ввод 3 / ali baza.db read / vali baza.db write / ali printer print / 1 / baza.db даёт вывод ali vali.",
+      "en": "A column of the access matrix is the object's ACL: who may do what with it. Your program reads the grants of the matrix and rebuilds the ACL. Input: the first line holds n (1 ≤ n ≤ 20), the number of grants; the next n lines hold three words each — subject object operation (all names without spaces, in Latin letters). Then one line holds q (1 ≤ q ≤ 5), the number of queries, and the following q lines each hold an object name. For every query print one line: the subjects that hold at least one right on that object, in the order they first appear in the input, each only once, separated by a single space. If nobody has a right on that object, print only a single - sign. For example, the input 3 / ali baza.db read / vali baza.db write / ali printer print / 1 / baza.db makes the output ali vali."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nt = sys.stdin.read().split()\ni = 0\nn = int(t[i])\ni += 1\nacl = {}\nfor _ in range(n):\n    sub, obj = t[i], t[i + 1]\n    i += 3\n    acl.setdefault(obj, []).append(sub)\nq = int(t[i])\ni += 1\nfor _ in range(q):\n    obj = t[i]\n    i += 1\n    print(\" \".join(acl.get(obj, [])) or \"-\")\n",
+        "java": "import java.util.ArrayList;\nimport java.util.LinkedHashMap;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        Map<String, List<String>> acl = new LinkedHashMap<>();\n        int n = in.nextInt();\n        for (int j = 0; j < n; j++) {\n            String sub = in.next();\n            String obj = in.next();\n            in.next();\n            acl.computeIfAbsent(obj, k -> new ArrayList<>()).add(sub);\n        }\n        int q = in.nextInt();\n        for (int j = 0; j < q; j++) {\n            String obj = in.next();\n            String javob = String.join(\" \", acl.getOrDefault(obj, List.of()));\n            System.out.println(javob.isEmpty() ? \"-\" : javob);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    map<string, vector<string>> acl;\n    int n;\n    cin >> n;\n    for (int j = 0; j < n; j++) {\n        string sub, obj, amal;\n        cin >> sub >> obj >> amal;\n        acl[obj].push_back(sub);\n    }\n    int q;\n    cin >> q;\n    for (int j = 0; j < q; j++) {\n        string obj;\n        cin >> obj;\n        vector<string> royxat = acl[obj];\n        if (royxat.empty()) {\n            cout << \"-\" << endl;\n            continue;\n        }\n        for (size_t k = 0; k < royxat.size(); k++) cout << (k ? \" \" : \"\") << royxat[k];\n        cout << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nt = sys.stdin.read().split()\ni = 0\nn = int(t[i])\ni += 1\nacl = {}\nfor _ in range(n):\n    sub, obj = t[i], t[i + 1]\n    i += 3\n    royxat = acl.setdefault(obj, [])\n    if sub not in royxat:\n        royxat.append(sub)\nq = int(t[i])\ni += 1\nfor _ in range(q):\n    obj = t[i]\n    i += 1\n    print(\" \".join(acl.get(obj, [])) or \"-\")\n",
+        "java": "import java.util.ArrayList;\nimport java.util.LinkedHashMap;\nimport java.util.List;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        Map<String, List<String>> acl = new LinkedHashMap<>();\n        int n = in.nextInt();\n        for (int j = 0; j < n; j++) {\n            String sub = in.next();\n            String obj = in.next();\n            in.next();\n            List<String> royxat = acl.computeIfAbsent(obj, k -> new ArrayList<>());\n            if (!royxat.contains(sub)) royxat.add(sub);\n        }\n        int q = in.nextInt();\n        for (int j = 0; j < q; j++) {\n            String obj = in.next();\n            String javob = String.join(\" \", acl.getOrDefault(obj, List.of()));\n            System.out.println(javob.isEmpty() ? \"-\" : javob);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    map<string, vector<string>> acl;\n    int n;\n    cin >> n;\n    for (int j = 0; j < n; j++) {\n        string sub, obj, amal;\n        cin >> sub >> obj >> amal;\n        vector<string> royxat = acl[obj];\n        bool bormi = false;\n        for (size_t k = 0; k < royxat.size(); k++) {\n            if (royxat[k] == sub) bormi = true;\n        }\n        if (!bormi) acl[obj].push_back(sub);\n    }\n    int q;\n    cin >> q;\n    for (int j = 0; j < q; j++) {\n        string obj;\n        cin >> obj;\n        vector<string> royxat = acl[obj];\n        if (royxat.empty()) {\n            cout << \"-\" << endl;\n            continue;\n        }\n        for (size_t k = 0; k < royxat.size(); k++) cout << (k ? \" \" : \"\") << royxat[k];\n        cout << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4\nali hisobot.docx read\nvali hisobot.docx read\nali baza.db write\nzaxira baza.db read\n2\nhisobot.docx\nprinter\n", "expected": "ali vali\n-", "hidden": false },
+        { "input": "1\nolim printer print\n1\nprinter\n", "expected": "olim", "hidden": false },
+        { "input": "3\nali kod read\nali kod write\nvali kod read\n1\nkod\n", "expected": "ali vali", "hidden": true },
+        { "input": "5\na x read\nb y read\nc x write\nd z read\ne x read\n3\nx\ny\nq\n", "expected": "a c e\nb\n-", "hidden": true },
+        { "input": "2\ns1 o1 read\ns2 o1 read\n2\no1\no1\n", "expected": "s1 s2\ns1 s2", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,395 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tashkilotdagi biznes-jarayonlarni, ishtirokchilarni va hujjatlarni tasvirlash uchun qaysi vosita ishlatiladi?",
+          "ru": "Какой инструмент используется для описания бизнес-процесса в организации, участников и документов?",
+          "en": "Which tool is used to describe a business process in an organization, its participants and documents?"
+        },
+        "options": [
+          {
+            "uz": "BPMN",
+            "ru": "BPMN",
+            "en": "BPMN"
+          },
+          {
+            "uz": "DFD",
+            "ru": "DFD",
+            "en": "DFD"
+          },
+          {
+            "uz": "Kuzatuv jadvali",
+            "ru": "Таблица трассировки",
+            "en": "Trace table"
+          },
+          {
+            "uz": "Blok-sxema",
+            "ru": "Блок-схема",
+            "en": "Flowchart"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "BPMN biznes-jarayonlarni, ularda qatnashuvchi rollarni va hujjatlarni tasvirlash uchun qoʻllanadi.",
+          "ru": "BPMN применяется для описания бизнес-процессов, участвующих в них ролей и документов.",
+          "en": "BPMN is used to describe business processes, the roles participating in them, and documents."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "DFD (maʼlumotlar oqimi diagrammasi) harakatlar ketma-ketligini emas, balki maʼlumotlarning harakatini koʻrsatadi.",
+          "ru": "DFD (диаграмма потоков данных) показывает не последовательность действий, а движение данных.",
+          "en": "A DFD (data flow diagram) shows the movement of data, not the sequence of actions."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "DFD maʼlumot qayerdan kelib, qayerda saqlanib, qayerga ketishini tasvirlaydi.",
+          "ru": "DFD описывает, откуда данные приходят, где хранятся и куда уходят.",
+          "en": "A DFD describes where data comes from, where it is stored and where it goes."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "BPMN dagi qaysi shlyuzlar darsda keltirilgan?",
+          "ru": "Какие шлюзы в BPMN приведены в занятии?",
+          "en": "Which BPMN gateways are mentioned in the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Eksklyuziv shlyuz (×)",
+            "ru": "Исключающий шлюз (×)",
+            "en": "Exclusive gateway (×)"
+          },
+          {
+            "uz": "Parallel shlyuz (+)",
+            "ru": "Параллельный шлюз (+)",
+            "en": "Parallel gateway (+)"
+          },
+          {
+            "uz": "Mantiqiy shlyuz",
+            "ru": "Логический шлюз",
+            "en": "Logical gateway"
+          },
+          {
+            "uz": "Matematik shlyuz",
+            "ru": "Математический шлюз",
+            "en": "Mathematical gateway"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Darsda faqat eksklyuziv (faqat bitta yoʻl) va parallel (bir nechta yoʻl bir vaqtda) shlyuzlar tushuntirilgan.",
+          "ru": "В занятии объяснены только исключающий (только один путь) и параллельный (несколько путей одновременно) шлюзы.",
+          "en": "The lesson explains only exclusive (only one path) and parallel (several paths at the same time) gateways."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "4 ta ha/yoʻq (mantiqiy) shartga ega qaror jadvalida nechta qoida (ustun) boʻlishi kerak?",
+          "ru": "Сколько правил (столбцов) должно быть в таблице решений с 4 условиями «да/нет»?",
+          "en": "How many rules (columns) should a decision table with 4 yes/no conditions have?"
+        },
+        "answers": [16],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Agar n ta ha/yoʻq shart boʻlsa, 2 ning n-darajasi (2^n) ta ustun boʻlishi kerak. 2 ning 4-darajasi 16 ga teng.",
+          "ru": "При n условиях «да/нет» должно быть 2 в степени n (2^n) столбцов. 2 в 4-й степени равно 16.",
+          "en": "With n yes/no conditions there should be 2 to the power of n (2^n) columns. 2 to the 4th power is 16."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "DFD da \"Mijoz\" yoki \"Soliq qoʻmitasi\" kabi elementlar qaysi tushunchaga misol boʻladi?",
+          "ru": "Примером какого понятия в DFD являются такие элементы, как «Клиент» или «Налоговый комитет»?",
+          "en": "In a DFD, elements like \"Customer\" or \"Tax Committee\" are examples of which concept?"
+        },
+        "options": [
+          {
+            "uz": "Tashqi obyekt",
+            "ru": "Внешняя сущность",
+            "en": "External entity"
+          },
+          {
+            "uz": "Jarayon",
+            "ru": "Процесс",
+            "en": "Process"
+          },
+          {
+            "uz": "Maʼlumot ombori",
+            "ru": "Хранилище данных",
+            "en": "Data store"
+          },
+          {
+            "uz": "Maʼlumot oqimi",
+            "ru": "Поток данных",
+            "en": "Data flow"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda \"Mijoz\" yoki \"Soliq qoʻmitasi\" tashqi obyektlar (external entity) ekanligi taʼkidlangan.",
+          "ru": "В занятии указано, что «Клиент» или «Налоговый комитет» — это внешние сущности (external entity).",
+          "en": "The lesson states that \"Customer\" or \"Tax Committee\" are external entities."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Dasturiy tizimlarni modellashtirish tilining inglizcha qisqartmasi (3 ta harf) nima?",
+          "ru": "Какова английская аббревиатура языка моделирования программных систем (3 буквы)?",
+          "en": "What is the English abbreviation for the Unified Modeling Language (3 letters)?"
+        },
+        "answers": ["UML"],
+        "explanation": {
+          "uz": "UML (Unified Modeling Language) — dasturiy tizimlarni modellashtirish tili.",
+          "ru": "UML (Unified Modeling Language) — язык моделирования программных систем.",
+          "en": "UML (Unified Modeling Language) is a language for modelling software systems."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kuzatuv jadvalidan (trace table) foydalanishning asosiy maqsadi nima?",
+          "ru": "Какова основная цель использования таблицы трассировки (trace table)?",
+          "en": "What is the main purpose of using a trace table?"
+        },
+        "options": [
+          {
+            "uz": "Algoritmni kompyutersiz qoʻlda tekshirish va xatolarni topish",
+            "ru": "Проверить алгоритм вручную без компьютера и найти ошибки",
+            "en": "To check an algorithm by hand without a computer and find errors"
+          },
+          {
+            "uz": "Biznes-jarayonlarni avtomatlashtirish",
+            "ru": "Автоматизировать бизнес-процессы",
+            "en": "To automate business processes"
+          },
+          {
+            "uz": "Maʼlumotlar omborini yaratish",
+            "ru": "Создать хранилище данных",
+            "en": "To create a data store"
+          },
+          {
+            "uz": "Dasturni boshqa tilga tarjima qilish",
+            "ru": "Перевести программу на другой язык",
+            "en": "To translate the program to another language"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Kuzatuv jadvali algoritmni yoki blok-sxemani kompyutersiz bosqichma-bosqich tekshirish uchun ishlatiladi.",
+          "ru": "Таблица трассировки используется для пошаговой проверки алгоритма или блок-схемы без компьютера.",
+          "en": "A trace table is used to check an algorithm or a flowchart step by step without a computer."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "UML faoliyat diagrammasida parallel harakatlarni tasvirlab boʻlmaydi.",
+          "ru": "На диаграмме деятельности UML невозможно изобразить параллельные действия.",
+          "en": "It is impossible to depict parallel actions in a UML activity diagram."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Notoʻgʻri. UML faoliyat diagrammasi blok-sxemaga oʻxshaydi, lekin aynan parallel harakatlarni (ayrilish va qoʻshilish orqali) tasvirlash imkoniga ega.",
+          "ru": "Неверно. Диаграмма деятельности UML похожа на блок-схему, но как раз позволяет изображать параллельные действия (через разветвление и слияние).",
+          "en": "False. A UML activity diagram resembles a flowchart but specifically allows depicting parallel actions (via fork and join)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "DFD diagrammasining asosiy elementlarini belgilang.",
+          "ru": "Отметьте основные элементы диаграммы DFD.",
+          "en": "Select the main elements of a DFD diagram."
+        },
+        "options": [
+          {
+            "uz": "Tashqi obyekt",
+            "ru": "Внешняя сущность",
+            "en": "External entity"
+          },
+          {
+            "uz": "Jarayon",
+            "ru": "Процесс",
+            "en": "Process"
+          },
+          {
+            "uz": "Maʼlumot ombori",
+            "ru": "Хранилище данных",
+            "en": "Data store"
+          },
+          {
+            "uz": "Eksklyuziv shlyuz",
+            "ru": "Исключающий шлюз",
+            "en": "Exclusive gateway"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "DFD ning toʻrtta asosiy elementi: tashqi obyekt, jarayon, maʼlumot ombori va maʼlumot oqimi. Shlyuzlar BPMN ga tegishli.",
+          "ru": "Четыре основных элемента DFD: внешняя сущность, процесс, хранилище данных и поток данных. Шлюзы относятся к BPMN.",
+          "en": "The four main elements of a DFD are: external entity, process, data store and data flow. Gateways belong to BPMN."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Grafik tasvirlash vositalari",
+      "ru": "Графические средства представления",
+      "en": "Graphical representation tools"
+    },
+    "statement": {
+      "uz": "Mavzu davomida oʻrganilgan BPMN, UML, DFD hamda qaror va kuzatuv jadvallari boʻyicha amaliy savollarga javob bering.",
+      "ru": "Ответьте на практические вопросы по изученным в теме BPMN, UML, DFD, а также таблицам решений и трассировки.",
+      "en": "Answer practical questions on BPMN, UML, DFD, as well as decision and trace tables studied in the topic."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "\"Ish haqiga mukofot\" qoidasi uchun 3 ta mustaqil shart mavjud boʻlgan qaror jadvalida barcha mumkin boʻlgan kombinatsiyalar (ustunlar) soni nechta boʻladi?",
+            "ru": "Сколько всего возможных комбинаций (столбцов) будет в таблице решений для правила «премия к зарплате», если имеется 3 независимых условия «да/нет»?",
+            "en": "How many possible combinations (columns) in total will there be in a decision table for a \"salary bonus\" rule if there are 3 independent yes/no conditions?"
+          },
+          "options": [
+            {
+              "uz": "3",
+              "ru": "3",
+              "en": "3"
+            },
+            {
+              "uz": "6",
+              "ru": "6",
+              "en": "6"
+            },
+            {
+              "uz": "8",
+              "ru": "8",
+              "en": "8"
+            },
+            {
+              "uz": "9",
+              "ru": "9",
+              "en": "9"
+            }
+          ],
+          "correct": [2],
+          "explanation": {
+            "uz": "n ta ha/yoʻq shartda 2 ning n-darajasi ustun boʻladi. 2 ning 3-darajasi 8 ga teng.",
+            "ru": "При n условиях «да/нет» получается 2 в степени n столбцов. 2 в степени 3 равно 8.",
+            "en": "With n yes/no conditions there are 2 to the power of n columns. 2 to the power of 3 is 8."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Darsdagi kuzatuv jadvali misolida tushumlar ketma-ketligi -10, -5, -20 boʻlganda va eng_katta oʻzgaruvchisining boshlangʻich qiymati 0 boʻlsa, algoritm yakunida eng_katta oʻzgaruvchisining qiymati qanday boʻladi?",
+            "ru": "В примере с таблицей трассировки из занятия, если последовательность выручки равна -10, -5, -20, а начальное значение макс равно 0, каким будет значение переменной макс в конце алгоритма?",
+            "en": "In the trace table example from the lesson, if the sequence of revenues is -10, -5, -20 and the initial value of largest is 0, what will be the value of the largest variable at the end of the algorithm?"
+          },
+          "answers": [0],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Hech bir manfiy qiymat 0 dan katta boʻlmagani uchun, shart (tushum > eng_katta) hech qachon bajarilmaydi va qiymat oʻzgarmay qoladi.",
+            "ru": "Так как ни одно отрицательное значение не больше 0, условие (выручка > макс) ни разу не выполнится, и значение останется неизменным.",
+            "en": "Since no negative value is greater than 0, the condition (revenue > largest) will never be met, and the value will remain unchanged."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Darsdagi kuzatuv jadvali misolida barcha tushumlar manfiy boʻlganda xato chiqmasligi uchun eng_katta oʻzgaruvchisiga boshlangʻich qiymat sifatida nimani berish eng toʻgʻri boʻladi?",
+            "ru": "Что правильнее всего задать в качестве начального значения переменной макс в примере с таблицей трассировки, чтобы избежать ошибки при всех отрицательных выручках?",
+            "en": "What is the most correct initial value to give to the largest variable in the trace table example to avoid an error when all revenues are negative?"
+          },
+          "options": [
+            {
+              "uz": "Birinchi tushum qiymati",
+              "ru": "Значение первой выручки",
+              "en": "The value of the first revenue"
+            },
+            {
+              "uz": "0",
+              "ru": "0",
+              "en": "0"
+            },
+            {
+              "uz": "100",
+              "ru": "100",
+              "en": "100"
+            },
+            {
+              "uz": "Tushumlar oʻrtachasi",
+              "ru": "Среднее значение выручек",
+              "en": "The average of the revenues"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Eng toʻgʻri yechim — birinchi elementni eng katta deb qabul qilish va keyingilarini u bilan solishtirishdir. 0 boʻlsa, barcha manfiy tushumlardan katta boʻlib qoladi.",
+            "ru": "Самое правильное решение — принять первый элемент за максимальный и сравнивать остальные с ним. Если поставить 0, он окажется больше всех отрицательных выручек.",
+            "en": "The most correct solution is to take the first element as the largest and compare the rest with it. If 0 is set, it will be greater than all negative revenues."
+          }
+        }
+      ]
+    }
+  }
+}

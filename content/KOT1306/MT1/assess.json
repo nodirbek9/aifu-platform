@@ -1,0 +1,461 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Uyda amaliyot uchun vositalar jadvalida Wireshark nima uchun koʻrsatilgan?",
+          "ru": "Для чего в таблице средств для домашней практики указан Wireshark?",
+          "en": "In the table of tools for practice at home, what is Wireshark listed for?"
+        },
+        "options": [
+          {
+            "uz": "Paketlarni tahlil qilish uchun",
+            "ru": "Для анализа пакетов",
+            "en": "For analysing packets"
+          },
+          {
+            "uz": "Topologiyalar va marshrutlashni loyihalash uchun",
+            "ru": "Для проектирования топологий и маршрутизации",
+            "en": "For designing topologies and routing"
+          },
+          {
+            "uz": "Virtual mashinalar yaratish uchun",
+            "ru": "Для создания виртуальных машин",
+            "en": "For creating virtual machines"
+          },
+          {
+            "uz": "Server operatsion tizimini oʻrnatish uchun",
+            "ru": "Для установки серверной операционной системы",
+            "en": "For installing a server operating system"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Jadvalda Wireshark — paketlarni tahlil qilish, bepul. Topologiyalar va marshrutlash — Packet Tracer, virtual mashinalar — VirtualBox yoki Hyper-V.",
+          "ru": "В таблице Wireshark — анализ пакетов, бесплатно. Топологии и маршрутизация — это Packet Tracer, виртуальные машины — VirtualBox или Hyper-V.",
+          "en": "The table has Wireshark for packet analysis, free. Topologies and routing are Packet Tracer, virtual machines are VirtualBox or Hyper-V."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Mavzular bir-biriga tayanadi, shuning uchun oʻtkazib yuborilgan mavzuni keyinga qoldirish mumkin.",
+          "ru": "Темы опираются друг на друга, поэтому пропущенную тему можно спокойно отложить на потом.",
+          "en": "The topics build on each other, so a missed topic can safely be put off for later."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Koʻp uchraydigan xatolar roʻyxatida aynan shu alohida aytilgan: IP manzillashsiz keyingi 8 ta mavzu tushunarsiz boʻlib qoladi.",
+          "ru": "Именно это названо среди частых ошибок: без IP-адресации следующие 8 тем становятся непонятными.",
+          "en": "This is named among the common mistakes: without IP addressing the next 8 topics become incomprehensible."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Windows Server Evaluation versiyasi nechta kungacha bepul ishlaydi?",
+          "ru": "Сколько дней бесплатно работает версия Windows Server Evaluation?",
+          "en": "For how many days is the Windows Server Evaluation version free?"
+        },
+        "answers": [180],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Vositalar jadvali: Windows Server Evaluation — 180 kun bepul, u A10–A14 mashgʻulotlari uchun olingan.",
+          "ru": "В таблице средств: Windows Server Evaluation — 180 дней бесплатно, для занятий A10–A14.",
+          "en": "The tools table: Windows Server Evaluation is free for 180 days, for sessions A10–A14."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tayanch tushunchalar lugʻatiga koʻra port nima?",
+          "ru": "Что такое порт по словарю ключевых понятий?",
+          "en": "According to the glossary of key terms, what is a port?"
+        },
+        "options": [
+          {
+            "uz": "Manzilning tarmoq va xost qismini ajratuvchi yozuv",
+            "ru": "Запись, разделяющая сетевую часть адреса и часть узла",
+            "en": "The notation separating the network part of an address from the host part"
+          },
+          {
+            "uz": "Dasturni aniqlovchi 16 bitli raqam, 4-pogʻona",
+            "ru": "16-битный номер, определяющий программу, уровень 4",
+            "en": "A 16-bit number identifying a program, layer 4"
+          },
+          {
+            "uz": "48 bitli fizik manzil, 2-pogʻona",
+            "ru": "48-битный физический адрес, уровень 2",
+            "en": "A 48-bit physical address, layer 2"
+          },
+          {
+            "uz": "Boshqa tarmoqqa chiqish uchun router manzili",
+            "ru": "Адрес маршрутизатора для выхода в другие сети",
+            "en": "The router address used for reaching other networks"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Lugʻatda: port — dasturni aniqlovchi 16 bitli raqam va 4-pogʻona. Tarmoq va xost qismini ajratgani — maska yoki prefiks, 48 bitli fizik manzil — MAC, router manzili esa — shlyuz.",
+          "ru": "В словаре: порт — 16-битный номер, определяющий программу, уровень 4. Сетевую часть и часть узла разделяет маска или префикс, 48-битный физический адрес — MAC, адрес маршрутизатора — шлюз.",
+          "en": "In the glossary a port is the 16-bit number identifying a program, layer 4. The mask or prefix separates the network and host parts, the 48-bit physical address is the MAC, and a router address is the gateway."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Maʼruzani faol oʻqishning bosqichlariga qaysilari kiradi?",
+          "ru": "Что входит в шаги активного чтения лекции?",
+          "en": "Which of these belong to the steps of reading a lecture actively?"
+        },
+        "options": [
+          {
+            "uz": "Sarlavhalar, jadvallar va oʻquv natijalari bilan 5 daqiqalik koʻzdan kechirish",
+            "ru": "Пятиминутный просмотр заголовков, таблиц и учебных результатов",
+            "en": "A five-minute survey of the headings, tables and learning outcomes"
+          },
+          {
+            "uz": "Har bir boʻlim sarlavhasini savolga aylantirish",
+            "ru": "Превратить заголовок каждого раздела в вопрос",
+            "en": "Turning each section heading into a question"
+          },
+          {
+            "uz": "Javobni oʻz soʻzi bilan qisqa yozish va jadvallarni qayta chizish",
+            "ru": "Кратко записать ответ своими словами и перерисовать таблицы",
+            "en": "Writing the answer briefly in your own words and redrawing the tables"
+          },
+          {
+            "uz": "Maʼruzani faqat imtihon oldidan bir kechada oʻqish",
+            "ru": "Читать лекцию только одной ночью перед экзаменом",
+            "en": "Reading the lecture only in the night before the exam"
+          },
+          {
+            "uz": "Takrorlashni butun semestr oxirida qilish",
+            "ru": "Повторять материал только в самом конце семестра",
+            "en": "Doing the reviewing only at the very end of the semester"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Toʻrtinchi qadam — misol kodini ishga tushirib, kirishni oʻzgartirish; beshinchi — takrorlash 1 kun, 1 hafta va 1 oydan soʻng, kitob yopiq holda. Bir kechada oʻqish esa xatolar roʻyxatida.",
+          "ru": "Четвёртый шаг — запустить код примера и менять ввод; пятый — повторение через 1 день, 1 неделю и 1 месяц с закрытой книгой. Учение в одну ночь стоит в списке ошибок.",
+          "en": "The fourth step is running the example code and changing the input, the fifth is reviewing after 1 day, 1 week and 1 month with the book closed. Cramming the night before is on the mistake list."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Xususiy manzillarni ommaviy manzilga almashtiruvchi mexanizm qisqartma bilan yozing.",
+          "ru": "Запишите аббревиатурой механизм, заменяющий частные адреса публичным.",
+          "en": "Write, as an abbreviation, the mechanism that replaces private addresses with a public one."
+        },
+        "answers": [
+          "NAT",
+          "nat"
+        ],
+        "explanation": {
+          "uz": "Lugʻatga koʻra NAT xususiy manzillarni ommaviy manzilga almashtiradi; DHCP manzilni avtomatik beradi, DNS nomni manzilga oʻgiradi.",
+          "ru": "По словарю NAT заменяет частные адреса публичным; DHCP автоматически выдаёт адрес, DNS преобразует имена в адреса.",
+          "en": "In the glossary NAT replaces private addresses with a public one; DHCP assigns addresses automatically and DNS turns names into addresses."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Maʼruzani faol oʻqishning birinchi qadami boʻlgan koʻzdan kechirish nech daqiqa davom etadi?",
+          "ru": "Сколько минут занимает первый шаг активного чтения лекции — просмотр?",
+          "en": "How many minutes does the first step of active reading, the survey, take?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Birinchi qadam — koʻzdan kechirish, 5 daqiqa: sarlavhalar, jadvallar va oʻquv natijalari roʻyxati bilan tanishish.",
+          "ru": "Первый шаг — просмотр, 5 минут: знакомство с заголовками, таблицами и списком учебных результатов.",
+          "en": "The first step is the survey, 5 minutes: looking over the headings, the tables and the list of learning outcomes."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Lugʻatga koʻra MAC manzil — 3-pogʻonadagi mantiqiy manzil, IP manzil esa 2-pogʻonadagi 48 bitli fizik manzil.",
+          "ru": "По словарю MAC-адрес — логический адрес 3-го уровня, а IP-адрес — 48-битный физический адрес 2-го уровня.",
+          "en": "According to the glossary a MAC address is the layer-3 logical address and an IP address is the 48-bit layer-2 physical one."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Teskari: MAC — 48 bitli fizik manzil, 2-pogʻona; IP — 32 (IPv4) yoki 128 (IPv6) bitli mantiqiy manzil, 3-pogʻona.",
+          "ru": "Наоборот: MAC — 48-битный физический адрес, уровень 2; IP — 32-битный (IPv4) или 128-битный (IPv6) логический адрес, уровень 3.",
+          "en": "It is the other way round: the MAC is the 48-bit physical address of layer 2, the IP the 32-bit (IPv4) or 128-bit (IPv6) logical address of layer 3."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Haftalik jadval boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения по недельному графику верны?",
+          "en": "Which statements about the weekly schedule are correct?"
+        },
+        "options": [
+          {
+            "uz": "5–6-haftalarda Ethernet kadri Wireshark da maydonlarga ajratiladi",
+            "ru": "На неделях 5–6 кадр Ethernet разбирается на поля в Wireshark",
+            "en": "In weeks 5–6 an Ethernet frame is split into fields in Wireshark"
+          },
+          {
+            "uz": "7–8-haftalarda 20 ta quyi tarmoq masalasi qoʻlda yechiladi",
+            "ru": "На неделях 7–8 вручную решаются 20 задач на подсети",
+            "en": "In weeks 7–8 twenty subnetting problems are solved by hand"
+          },
+          {
+            "uz": "15-hafta — M15 nosozliklarni bartaraf qilish va A15 utilitalar, natijasi — hisobot",
+            "ru": "Неделя 15 — M15 устранение неисправностей и A15 утилиты, результат — отчёт",
+            "en": "Week 15 is M15 troubleshooting and A15 utilities, with a report as the outcome"
+          },
+          {
+            "uz": "3–4-haftalarda IP manzillash va VLSM oʻrganiladi",
+            "ru": "На неделях 3–4 изучаются IP-адресация и VLSM",
+            "en": "In weeks 3–4 IP addressing and VLSM are studied"
+          },
+          {
+            "uz": "11–12-haftalarda Windows Server oʻrnatiladi va marshrutizatorlar sozlanadi",
+            "ru": "На неделях 11–12 устанавливают Windows Server и настраивают маршрутизаторы",
+            "en": "In weeks 11–12 one installs Windows Server and configures routers"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "3–4-haftalarda — OSI modeli, uzatish usullari va kodlash; marshrutizatorlar 9–10-haftada (A8) sozlanadi, 11–12-haftalarda esa Windows Server hamda DHCP va DNS (A10, A11) bilan ishlanadi.",
+          "ru": "На неделях 3–4 — модель OSI, способы передачи и кодирование; маршрутизаторы настраиваются на неделях 9–10 (A8), а на 11–12 идут Windows Server и DHCP с DNS (A10, A11).",
+          "en": "Weeks 3–4 are the OSI model, transmission methods and encoding; routers are configured in weeks 9–10 (A8), while weeks 11–12 cover Windows Server and DHCP with DNS (A10, A11)."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Haftalik rejangiz va oʻz tarmogʻingiz",
+      "ru": "Ваш недельный план и ваша сеть",
+      "en": "Your weekly plan and your own network"
+    },
+    "statement": {
+      "uz": "Rejalashtirish va tekshiruv boʻyicha kichik mashq: javoblar faqat darsdagi haftalik jadval, vositalar roʻyxati va maslahatlardan olinadi. Oʻzingizning hafta rejangiz va uy tarmogʻingiz uchun toʻgʻri variantni tanlang yoki sonni kiriting.",
+      "ru": "Небольшое упражнение по планированию и проверке: ответы берутся только из недельного графика, списка средств и советов из занятия. Выберите верный вариант или введите число — для своего недельного плана и домашней сети.",
+      "en": "A small exercise on planning and checking: every answer comes only from the lesson's weekly table, its tool list and its advice. Choose the right option or enter the number, for your own week and home network."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Har haftaga rejalashtirilgan 2–3 soat ichida maʼruzani qayta oʻqish va amaliyotni takrorlashga jami nechta soat ajratiladi?",
+            "ru": "Сколько часов из запланированных 2–3 часов в неделю уходит вместе на перечитывание лекции и повторение практики?",
+            "en": "Out of the 2–3 hours planned for a week, how many hours together go to rereading the lecture and repeating the practical work?"
+          },
+          "options": [
+            {
+              "uz": "1 soat",
+              "ru": "1 час",
+              "en": "1 hour"
+            },
+            {
+              "uz": "2 soat",
+              "ru": "2 часа",
+              "en": "2 hours"
+            },
+            {
+              "uz": "0,5 soat",
+              "ru": "0,5 часа",
+              "en": "0.5 hour"
+            },
+            {
+              "uz": "3 soat",
+              "ru": "3 часа",
+              "en": "3 hours"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Jadval boʻyicha: 1 soat — maʼruzani qayta oʻqish va konspekt, 1 soat — amaliyotni takrorlash, qolgan 0,5 soat — oʻz-oʻzini tekshirish savollari va testlar.",
+            "ru": "По графику: 1 час — перечитать лекцию и сделать конспект, 1 час — повторить практику, оставшиеся 0,5 часа — вопросы самопроверки и тесты.",
+            "en": "The plan gives 1 hour to reread the lecture and make notes and 1 hour to repeat the practical work, with 0.5 hour left for the self-check questions and tests."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Buyruqlar satri qatorida qaysi buyruqlar sanab oʻtilgan?",
+            "ru": "Какие команды перечислены в строке «Командная строка»?",
+            "en": "Which commands does the row for the command line list?"
+          },
+          "options": [
+            {
+              "uz": "ipconfig",
+              "ru": "ipconfig",
+              "en": "ipconfig"
+            },
+            {
+              "uz": "ping",
+              "ru": "ping",
+              "en": "ping"
+            },
+            {
+              "uz": "nslookup",
+              "ru": "nslookup",
+              "en": "nslookup"
+            },
+            {
+              "uz": "netstat",
+              "ru": "netstat",
+              "en": "netstat"
+            },
+            {
+              "uz": "chmod",
+              "ru": "chmod",
+              "en": "chmod"
+            }
+          ],
+          "correct": [0, 1, 2, 3],
+          "explanation": {
+            "uz": "Qatorda ipconfig, ping, tracert, nslookup va netstat berilgan — bular OT ichida; chmod roʻyxatda yoʻq.",
+            "ru": "В строке указаны ipconfig, ping, tracert, nslookup и netstat — они встроены в ОС; chmod там отсутствует.",
+            "en": "The row gives ipconfig, ping, tracert, nslookup and netstat — built into the OS; chmod is not among them."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Brauzerda sahifa ochilguncha protokollar qaysi tartibda ishlaydi?",
+            "ru": "В каком порядке работают протоколы до открытия страницы в браузере?",
+            "en": "In what order do the protocols work before a page opens in the browser?"
+          },
+          "options": [
+            {
+              "uz": "DNS → TCP → TLS → HTTP",
+              "ru": "DNS → TCP → TLS → HTTP",
+              "en": "DNS → TCP → TLS → HTTP"
+            },
+            {
+              "uz": "TCP → DNS → HTTP → TLS",
+              "ru": "TCP → DNS → HTTP → TLS",
+              "en": "TCP → DNS → HTTP → TLS"
+            },
+            {
+              "uz": "HTTP → DNS → TCP → TLS",
+              "ru": "HTTP → DNS → TCP → TLS",
+              "en": "HTTP → DNS → TCP → TLS"
+            },
+            {
+              "uz": "TLS → HTTP → DNS → TCP",
+              "ru": "TLS → HTTP → DNS → TCP",
+              "en": "TLS → HTTP → DNS → TCP"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsdagi tartib: DNS nomni manzilga oʻgiradi, TCP ulanadi, TLS shifrlaydi, HTTP soʻrov va javobni olib keladi.",
+            "ru": "Порядок из занятия: DNS превращает имя в адрес, TCP соединяет, TLS шифрует, HTTP приносит запрос и ответ.",
+            "en": "The lesson's order: DNS turns the name into an address, TCP connects, TLS encrypts, HTTP carries the request and the response."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "VirtualBox yoki Hyper-V dagi virtual mashinaga oʻrnatib, uyda bepul sinab koʻriladigan server tizimini yozing.",
+            "ru": "Напишите серверную систему, которую можно бесплатно попробовать дома, установив на виртуальную машину в VirtualBox или Hyper-V.",
+            "en": "Write the server system you can try at home for free by installing it on a virtual machine in VirtualBox or Hyper-V."
+          },
+          "answers": [
+            "Windows Server",
+            "windows server",
+            "Windows Server Evaluation"
+          ],
+          "explanation": {
+            "uz": "Vositalar jadvali va oʻzingizni tekshiring savolida: Windows Server Evaluation versiyasi (180 kun bepul) virtual mashinaga oʻrnatiladi.",
+            "ru": "Таблица средств и вопрос самопроверки: версию Windows Server Evaluation (180 дней бесплатно) ставят на виртуальную машину.",
+            "en": "The tools table and the self-check question name Windows Server Evaluation (free for 180 days), installed on a virtual machine."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 1,
+          "prompt": {
+            "uz": "Har modul oxirida tuzilgan bir sahifalik shpargalkalar semestr oxirida 15 sahifa boʻlib, imtihonga tayyorgarlik materialiga aylanadi.",
+            "ru": "Одностраничные «шпаргалки» в конце каждого модуля к концу семестра дают 15 страниц и становятся материалом подготовки к экзамену.",
+            "en": "The one-page cheat sheets made at the end of each module add up to 15 pages by the end of the semester and become exam preparation material."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsdagi maslahat shunday: modul oxirida bitta sahifalik shpargalka — asosiy jadval, formulalar va buyruqlar; ularning soni 15 ta mavzu boʻyicha 15 ga yetadi.",
+            "ru": "Совет из занятия именно таков: в конце модуля одна страница — главная таблица, формулы и команды; по 15 модулям их получается 15.",
+            "en": "That is the lesson's tip: at the end of each module one page with the key table, formulas and commands, which comes to 15 pages for the 15 topics."
+          }
+        }
+      ]
+    }
+  }
+}

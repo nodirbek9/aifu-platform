@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Java tilida `static void f(int[] a)` funksiyasi ichida massivning uzunligini qanday oladi?",
+          "ru": "Как функция `static void f(int[] a)` на Java получает длину массива внутри себя?",
+          "en": "In Java, how does `static void f(int[] a)` get the length of the array inside the function?"
+        },
+        "options": [
+          {
+            "uz": "`len(a)`",
+            "ru": "`len(a)`",
+            "en": "`len(a)`"
+          },
+          {
+            "uz": "`a.length`",
+            "ru": "`a.length`",
+            "en": "`a.length`"
+          },
+          {
+            "uz": "`a.size()`",
+            "ru": "`a.size()`",
+            "en": "`a.size()`"
+          },
+          {
+            "uz": "`sizeOf(a)`",
+            "ru": "`sizeOf(a)`",
+            "en": "`sizeOf(a)`"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi jadvalga koʻra: Pythonʼda `len(a)`, Javaʼda `a.length`, C++ tilida `vector` uchun `a.size()`, oddiy C++ massivi uchun esa alohida parametr `n`.",
+          "ru": "По таблице из занятия: в Python `len(a)`, в Java `a.length`, в C++ для `vector` — `a.size()`, для обычного массива — отдельный параметр `n`.",
+          "en": "Per the lesson's table: `len(a)` in Python, `a.length` in Java, `a.size()` for a C++ `vector`, and a separate parameter `n` for a plain C++ array."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python tilida funksiya ichida `a.append(5)` qilsa, tashqaridagi roʻyxat ham oʻzgaradi.",
+          "ru": "Если внутри функции на Python выполнить `a.append(5)`, внешний список тоже изменится.",
+          "en": "If a Python function calls `a.append(5)`, the list outside the function changes too."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi qoida: `a.append(...)` va `a[i] = ...` tashqaridagi roʻyxatga taʼsir qiladi; `a = [...]` esa funksiya ichida yangi roʻyxat yaratadi.",
+          "ru": "Правило из занятия: `a.append(...)` и `a[i] = ...` влияют на внешний список; `a = [...]` создаёт внутри функции новый список.",
+          "en": "The lesson's rule: `a.append(...)` and `a[i] = ...` affect the outer list, while `a = [...]` creates a new list inside the function."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Massivni funksiyaga uzatish haqida darsda qaysi ifodalar toʻgʻri deyilgan?",
+          "ru": "Какие утверждения о передаче массива в функцию верно изложены в занятии?",
+          "en": "Which statements about passing an array to a function does the lesson state as correct?"
+        },
+        "options": [
+          {
+            "uz": "Python roʻyxati funksiyaga havola sifatida uzatiladi",
+            "ru": "Список Python передаётся в функцию по ссылке",
+            "en": "A Python list is passed to a function as a reference"
+          },
+          {
+            "uz": "Java massivi funksiyaga havola sifatida uzatiladi",
+            "ru": "Массив Java передаётся в функцию по ссылке",
+            "en": "A Java array is passed to a function as a reference"
+          },
+          {
+            "uz": "C++ tilida `vector<int>` `&` siz uzatilsa ham funksiya ichidagi oʻzgarish tashqarida koʻrinadi",
+            "ru": "В C++ изменение внутри функции видно снаружи и когда `vector<int>` передан без `&`",
+            "en": "In C++ a change inside the function is visible outside even when `vector<int>` is passed without `&`"
+          },
+          {
+            "uz": "Oddiy C++ massivi funksiyaga koʻrsatkich boʻlib tushadi",
+            "ru": "Обычный массив C++ попадает в функцию как указатель",
+            "en": "A plain C++ array arrives in the function as a pointer"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "`&` siz uzatilganda nusxa uzatiladi va funksiya ichidagi oʻzgarish tashqarida koʻrinmaydi — darsda aynan shu ajratib koʻrsatilgan.",
+          "ru": "При передаче без `&` создаётся копия, и изменение внутри функции снаружи не видно — занятие подчёркивает именно это.",
+          "en": "Passed without `&` it is a copy, so a change inside the function is not visible outside — the lesson spells this out."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oddiy C++ massivi uchun uzunlik nima uchun alohida parametr boʻlib uzatiladi?",
+          "ru": "Почему для обычного массива C++ длина передаётся отдельным параметром?",
+          "en": "Why is the length passed as a separate parameter for a plain C++ array?"
+        },
+        "options": [
+          {
+            "uz": "Massiv funksiyaga koʻrsatkich boʻlib tushadi va oʻz uzunligi haqidagi maʼlumotni yoʻqotadi",
+            "ru": "Массив попадает в функцию как указатель и теряет информацию о своей длине",
+            "en": "The array arrives as a pointer and loses the information about its length"
+          },
+          {
+            "uz": "C++ tilida massivning oʻlchamini aniqlash funksiyasi yoʻq",
+            "ru": "В языке C++ вообще нет способа определить размер массива",
+            "en": "C++ has no way at all to determine the size of an array"
+          },
+          {
+            "uz": "Uzunlik parametrini yozmasa kompilyator xato beradi",
+            "ru": "Если не написать параметр длины, компилятор выдаст ошибку",
+            "en": "The compiler reports an error if the length parameter is missing"
+          },
+          {
+            "uz": "Uzunlik har doim 100 ga teng",
+            "ru": "Длина всегда равна 100",
+            "en": "The length is always 100"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi izoh: oddiy massiv funksiyaga koʻrsatkich sifatida tushadi va uzunligini „unutadi“, shuning uchun uni alohida uzatishadi.",
+          "ru": "Пояснение из занятия: обычный массив попадает в функцию как указатель и «забывает» свою длину, поэтому её передают отдельно.",
+          "en": "The lesson's note: a plain array reaches the function as a pointer and \"forgets\" its length, so the length is passed separately."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi namunaviy masalada protsedura har bir elementdan massivning eng kichik elementini ayiradi va massivning oʻzini oʻzgartiradi. `7 3 9 3` massivi uchun birinchi element nechchi boʻladi?",
+          "ru": "В образце из занятия процедура вычитает наименьший элемент массива из каждого элемента, меняя сам массив. Чему станет равен первый элемент для массива `7 3 9 3`?",
+          "en": "In the lesson's sample problem a procedure subtracts the smallest element of the array from every element, changing the array itself. What does the first element become for the array `7 3 9 3`?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Eng kichik element 3; 7 - 3 = 4. Darsdagi testlar jadvali ham shu javobni beradi: `4 0 6 0`.",
+          "ru": "Наименьший элемент — 3; 7 - 3 = 4. Таблица тестов из занятия даёт тот же ответ: `4 0 6 0`.",
+          "en": "The smallest element is 3, and 7 - 3 = 4. The lesson's table of tests gives the same answer: `4 0 6 0`."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda aytilishicha, funksiya massivni oʻzgartirsa, buni uning nomi aytib turishi kerak; shunga ikki misol nomi berilgan: `saralab_qoy` va yana biri. Oʻsha ikkinchi nomni yozing.",
+          "ru": "По занятию имя функции, меняющей массив, должно об этом говорить; приведены два примера таких имён: `saralab_qoy` и ещё одно. Напишите это второе имя.",
+          "en": "The lesson says a function that changes an array should say so in its name, and gives two example names: `saralab_qoy` and one more. Write that second name."
+        },
+        "answers": ["siljit", "Siljit", "siljit()"],
+        "explanation": {
+          "uz": "Darsdagi ikki protsedura: `siljit` — siljitish, `saralab_qoy` — joyida saralash; ikkalasi ham qiymat qaytarmaydi.",
+          "ru": "Две процедуры из занятия: `siljit` — сдвинуть, `saralab_qoy` — отсортировать на месте; обе не возвращают значение.",
+          "en": "The lesson's two procedures: `siljit` — shift, `saralab_qoy` — sort in place; neither returns a value."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Eng katta elementning birinchi oʻrnini topish uchun solishtirish shartini `>` oʻrniga `>=` qilib yozish toʻgʻri boʻladi.",
+          "ru": "Чтобы найти первую позицию наибольшего элемента, условие сравнения правильно записать как `>=` вместо `>`.",
+          "en": "To find the first position of the largest element, the comparison should be written as `>=` instead of `>`."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda `>` va `>=` farqiga eʼtibor berish aytilgan: `>=` boʻlsa, maksimum takrorlanganda uning oxirgi oʻrni saqlanib qoladi.",
+          "ru": "Занятие предупреждает о разнице `>` и `>=`: при `>=` при повторе максимума сохраняется его последняя позиция.",
+          "en": "The lesson warns about the difference between `>` and `>=`: with `>=` a repeated maximum ends up keeping its last position."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Topshiriq va baholash mezonlari boʻyicha darsda qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о задании самостоятельной работы и критериях оценки верны по занятию?",
+          "en": "Which statements about the independent-work assignment and the grading criteria are correct according to the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Maksimum va uning oʻrni funksiya orqali topilishi shart; hammasi `main` ichida yozilgan dastur toʻliq baho olmaydi",
+            "ru": "Максимум и его позицию обязана находить функция; программа, написанная целиком внутри `main`, не получит полный балл",
+            "en": "A function must find the maximum and its position; a program written entirely inside `main` does not get full marks"
+          },
+          {
+            "uz": "Boshlangʻich qiymat sifatida 0 emas, massivning birinchi elementini olish kerak",
+            "ru": "В качестве начального значения надо брать первый элемент массива, а не 0",
+            "en": "The starting value must be the first element of the array, not 0"
+          },
+          {
+            "uz": "Oʻrin 0 dan sanaladi, shuning uchun `+ 1` yozishning hojati yoʻq",
+            "ru": "Позиция считается от 0, поэтому писать `+ 1` не нужно",
+            "en": "Positions count from 0, so writing `+ 1` is not needed"
+          },
+          {
+            "uz": "Topshiriladigan ish kamida 5 ta testdan iborat jadvalni ham oʻz ichiga oladi",
+            "ru": "В сдаваемую работу входит и таблица как минимум из 5 тестов",
+            "en": "The work to hand in also includes a table of at least 5 tests"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Darsda ogohlantirilgan: oʻrin 1 dan, indeks esa 0 dan sanaladi — shuning uchun `+ 1` kerak; boshlangʻich qiymat birinchi element boʻladi, chunki sonlarning hammasi manfiy boʻlishi mumkin.",
+          "ru": "Занятие предупреждает: позиции считаются от 1, индексы — от 0, поэтому нужно `+ 1`; начальное значение — первый элемент, так как все числа могут быть отрицательными.",
+          "en": "The lesson warns: positions count from 1 while indices count from 0, so `+ 1` is needed; the starting value is the first element, because all numbers may be negative."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Massivning eng katta elementini va uning birinchi oʻrnini funksiyadan qaytarish uchun darsda qanday usullar sanab oʻtilgan?",
+          "ru": "Какие способы вернуть из функции наибольший элемент массива и его первую позицию перечислены в занятии?",
+          "en": "Which ways of returning the largest element and its first position from a function does the lesson list?"
+        },
+        "options": [
+          {
+            "uz": "tuple",
+            "ru": "кортеж",
+            "en": "a tuple"
+          },
+          {
+            "uz": "record",
+            "ru": "record",
+            "en": "a record"
+          },
+          {
+            "uz": "havola parametrlar orqali",
+            "ru": "через параметры-ссылки",
+            "en": "through reference parameters"
+          },
+          {
+            "uz": "bir xil nomli ikki funksiya yozib",
+            "ru": "написав две функции с одним именем",
+            "en": "by writing two functions with the same name"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda ikki natijani qaytarish usullari sanalgan: tuple, record, havola parametrlar yoki massiv. Tanlangan usul topshiriq tavsifida asoslanishi kerak.",
+          "ru": "В занятии указано, как вернуть два результата: кортеж, record, параметры-ссылки или массив. Выбор способа должен быть обоснован в описании задания.",
+          "en": "The lesson says how to return the two results: a tuple, a record, reference parameters or an array, and the choice must be explained in the description."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Massivni joyida teskarisiga aylantirish",
+      "ru": "Разворот массива на месте",
+      "en": "Reversing an array in place"
+    },
+    "statement": {
+      "uz": "Bir guruh talabaning ballarini teskarisiga chiqarib bermoqchi: buning uchun massivni oʻzgartiruvchi protsedura kerak, yangi massiv emas. Dasturingiz birinchi satrdan *n* ni, ikkinchi satrdan *n* ta butun sonni oʻqisin. `teskari(a)` protsedurasi massivning **oʻzini** chetdan markazga qarab juftliklarni almashtirib teskarisiga aylantirsin va qiymat qaytarmasin. Soʻng oʻzgargan massivni bitta qatorda, boʻsh joy bilan ajratib chiqaring. Masalan, 5 va `1 2 3 4 5` kirsa, dastur `5 4 3 2 1` chiqaradi; bitta elementli massiv oʻzgarmagan holda chiqadi. 1 ≤ n ≤ 100, har bir son -1000 dan 1000 gacha.",
+      "ru": "Группа хочет вывести баллы студентов в обратном порядке: для этого нужна процедура, меняющая сам массив, а не новая копия. Ваша программа читает из первой строки *n*, из второй — *n* целых чисел. Процедура `teskari(a)` должна перевернуть **сам массив**, меняя парами от краёв к середине, и ничего не возвращать. После этого выведите изменённый массив одной строкой через пробел. Например, при 5 и `1 2 3 4 5` программа выведет `5 4 3 2 1`; массив из одного элемента выводится без изменений. 1 ≤ n ≤ 100, каждое число от -1000 до 1000.",
+      "en": "A group wants to print the students' points in reverse order, which needs a procedure that changes the array itself rather than building a new one. Your program reads *n* from the first line and then *n* integers from the second line. The procedure `teskari(a)` must reverse **the array itself** by swapping pairs from the ends toward the middle, and return nothing. Then print the changed array on one line, separated by spaces. For example, 5 and `1 2 3 4 5` make the program print `5 4 3 2 1`; an array of one element is printed unchanged. 1 ≤ n ≤ 100, each number between -1000 and 1000."
+    },
+    "code": {
+      "starter": {
+        "python": "def teskari(a):\n    pass\n\n\nn = int(input())\na = list(map(int, input().split()))\nteskari(a)\nprint(*a)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static void teskari(int[] a) {\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n        teskari(a);\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(a[i]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvoid teskari(vector<int>& a) {\n}\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) cin >> a[i];\n    teskari(a);\n    for (int i = 0; i < n; i++) {\n        if (i > 0) cout << ' ';\n        cout << a[i];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "def teskari(a):\n    i = 0\n    j = len(a) - 1\n    while i < j:\n        a[i], a[j] = a[j], a[i]\n        i += 1\n        j -= 1\n\n\nn = int(input())\na = list(map(int, input().split()))\nteskari(a)\nprint(*a)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static void teskari(int[] a) {\n        int i = 0;\n        int j = a.length - 1;\n        while (i < j) {\n            int t = a[i];\n            a[i] = a[j];\n            a[j] = t;\n            i++;\n            j--;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n        teskari(a);\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(a[i]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nvoid teskari(vector<int>& a) {\n    int i = 0;\n    int j = int(a.size()) - 1;\n    while (i < j) {\n        int t = a[i];\n        a[i] = a[j];\n        a[j] = t;\n        i++;\n        j--;\n    }\n}\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) cin >> a[i];\n    teskari(a);\n    for (int i = 0; i < n; i++) {\n        if (i > 0) cout << ' ';\n        cout << a[i];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5\n1 2 3 4 5\n", "expected": "5 4 3 2 1", "hidden": false },
+        { "input": "4\n7 3 9 3\n", "expected": "3 9 3 7", "hidden": false },
+        { "input": "1\n42\n", "expected": "42", "hidden": true },
+        { "input": "6\n-2 -5 0 3 -1 8\n", "expected": "8 -1 3 0 -5 -2", "hidden": true },
+        { "input": "3\n5 5 5\n", "expected": "5 5 5", "hidden": true }
+      ]
+    }
+  }
+}

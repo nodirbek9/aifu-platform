@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Katalog uchun `x` huquqi nimani anglatadi?",
+          "ru": "Что означает право `x` для каталога?",
+          "en": "What does the `x` permission mean for a directory?"
+        },
+        "options": [
+          {
+            "uz": "Ichiga kirish (`cd`) va undagi fayllarga murojaat qilish",
+            "ru": "Войти в него (`cd`) и обращаться к файлам внутри",
+            "en": "Entering it (`cd`) and reaching the files inside"
+          },
+          {
+            "uz": "Mazmunini oʻqish",
+            "ru": "Читать содержимое",
+            "en": "Reading the contents"
+          },
+          {
+            "uz": "Ichida fayl yaratish va oʻchirish",
+            "ru": "Создавать и удалять внутри файлы",
+            "en": "Creating and deleting files inside"
+          },
+          {
+            "uz": "Dastur sifatida bajarish",
+            "ru": "Выполнение как программы",
+            "en": "Running it as a program"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Jadvalda katalog uchun: `r` — nomlar roʻyxatini koʻrish, `w` — fayl yaratish va oʻchirish, `x` — ichiga kirish va fayllarga murojaat. Fayl uchun esa `x` bajarish degani.",
+          "ru": "По таблице для каталога: `r` — список имён, `w` — создавать и удалять файлы, `x` — войти и обращаться к файлам. Для файла `x` означает выполнение.",
+          "en": "In the table, for a directory `r` is listing the names, `w` is creating and deleting files, `x` is entering it and reaching its files. For a file, `x` means running it."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Faylni oʻchirish uchun oʻsha faylning oʻzidagi `w` huquqi yetarli.",
+          "ru": "Для удаления файла достаточно права `w` самого этого файла.",
+          "en": "The `w` permission on the file itself is enough to delete it."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: faylni oʻchirish uchun katalogning `w` (va `x`) huquqi kerak, faylning oʻz huquqlari ahamiyatsiz — sticky bit qoʻyilmagan boʻlsa.",
+          "ru": "В занятии: нужно `w` (и `x`) каталога, права самого файла не важны — если только не стоит sticky bit.",
+          "en": "The lesson: you need the directory's `w` (and `x`); the file's own permissions do not matter, unless the sticky bit is set."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi jadvalda setuid bitining son qiymati qanday berilgan (sakkizlik yozuvda)?",
+          "ru": "Какое числовое значение setuid-бита приведено в таблице занятия (в восьмеричной записи)?",
+          "en": "Which numeric value for the setuid bit does the lesson's table give (in octal writing)?"
+        },
+        "answers": [4000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Jadval: setuid 4000, setgid 2000, sticky 1000. Setuid dastur egasining huquqlari bilan ishlaydi.",
+          "ru": "В таблице: setuid 4000, setgid 2000, sticky 1000. Setuid-программа работает с правами владельца.",
+          "en": "The table: setuid 4000, setgid 2000, sticky 1000. A setuid program runs with its owner's rights."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yangi fayl va katalog huquqlari hamda umask haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны о правах новых файлов и каталогов и о umask?",
+          "en": "Which statements about the permissions of new files, new directories and umask are correct?"
+        },
+        "options": [
+          {
+            "uz": "Yangi fayl 666 huquq bilan soʻraladi",
+            "ru": "Новый файл «запрашивает» права 666",
+            "en": "A new file asks for permission 666"
+          },
+          {
+            "uz": "Yangi katalog 777 huquq bilan soʻraladi",
+            "ru": "Новый каталог запрашивает права 777",
+            "en": "A new directory asks for permission 777"
+          },
+          {
+            "uz": "umask yangi fayllarga `x` huquqini ham qoʻshadi",
+            "ru": "umask также добавляет новым файлам `x`",
+            "en": "umask also adds `x` to new files"
+          },
+          {
+            "uz": "Huquq = soʻralgan AND (NOT umask)",
+            "ru": "Права = запрошенное И (NOT umask)",
+            "en": "Permissions = requested AND (NOT umask)"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Darsda: umask fayllarga `x` qoʻshmaydi, bajariladigan fayl uchun `chmod +x` aniq bajariladi. `022` niqobida fayl 644, katalog 755 boʻladi.",
+          "ru": "В занятии: umask не добавляет файлам `x` — для исполняемого файла нужен явный `chmod +x`. С маской `022` получаются файл 644 и каталог 755.",
+          "en": "The lesson: umask never adds `x` to files, so an executable needs an explicit `chmod +x`. With mask `022` you get file 644 and directory 755."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yadro kirish huquqini qanday tartibda tekshiradi?",
+          "ru": "В каком порядке ядро проверяет право доступа?",
+          "en": "In which order does the kernel check the access right?"
+        },
+        "options": [
+          {
+            "uz": "Egasi → guruh → boshqalar, faqat bitta uchlik qoʻllanadi",
+            "ru": "владелец → группа → остальные, применяется только одна тройка",
+            "en": "owner → group → others, and only one triple is applied"
+          },
+          {
+            "uz": "Boshqalar → guruh → egasi",
+            "ru": "остальные → группа → владелец",
+            "en": "others → group → owner"
+          },
+          {
+            "uz": "Uchala uchlik tekshiriladi va eng keng ruxsat tanlanadi",
+            "ru": "проверяются все три тройки и берётся самое широкое разрешение",
+            "en": "all three triples are checked and the widest grant wins"
+          },
+          {
+            "uz": "Faqat ACL tekshiriladi",
+            "ru": "проверяется только ACL",
+            "en": "only the ACL is checked"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "2-misolda `g.txt` (074) faylining egasi ali uni oʻqiy olmaydi: guruh va boshqalar uchliklari egaga hech qachon qaralmaydi.",
+          "ru": "В примере 2 владелец файла `g.txt` (074) ali не может его читать: тройки группы и остальных для владельца не рассматриваются.",
+          "en": "In example 2 ali, the owner of `g.txt` (074), cannot read it: the group and others triples are never considered for an owner."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yoʻldagi har bir katalogning huquqlarini koʻrsatuvchi buyruqni yozing — `Permission denied` sababini topish uchun.",
+          "ru": "Напишите команду, показывающую права каждого каталога на пути — чтобы найти причину `Permission denied`.",
+          "en": "Write the command that shows the permissions of every directory along a path, used to find the cause of `Permission denied`."
+        },
+        "answers": ["namei", "namei -l"],
+        "explanation": {
+          "uz": "Darsdagi maslahat: `namei -l /var/www/html/index.html`. `stat -c` buyrugʻi esa huquqlarni sakkizlik va belgili koʻrinishda birga chiqaradi.",
+          "ru": "Совет из занятия: `namei -l /var/www/html/index.html`. Команда `stat -c` выводит права сразу в восьмеричной и символьной форме.",
+          "en": "The lesson's tip is `namei -l /var/www/html/index.html`. The `stat -c` command prints permissions in octal and symbolic form together."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Hech qanday `x` biti boʻlmagan faylni root ham bajara olmaydi.",
+          "ru": "Файл без единого бита `x` не сможет выполнить даже root.",
+          "en": "A file with no `x` bit at all cannot be executed even by root."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: root `r` va `w` ni doim oladi, `x` ni esa kamida bitta `x` biti boʻlgandagina oladi — bu maʼlumot faylini tasodifan ishga tushirishning oldini oladi.",
+          "ru": "В занятии: root всегда получает `r` и `w`, а `x` — только если задан хотя бы один бит `x`; это защищает от случайного запуска файла с данными.",
+          "en": "The lesson: root always gets `r` and `w`, but `x` only when at least one `x` bit is set — which stops a data file from being run by accident."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`find / -perm -4000 -type f 2>/dev/null` buyrugʻi nimani topadi va bu nega muhim?",
+          "ru": "Что находит команда `find / -perm -4000 -type f 2>/dev/null` и почему это важно?",
+          "en": "What does `find / -perm -4000 -type f 2>/dev/null` list, and why does it matter?"
+        },
+        "options": [
+          {
+            "uz": "Tizimdagi barcha setuid dasturlarni — notanish setuid-root dastur jiddiy xavf",
+            "ru": "все setuid-программы системы — незнакомая setuid-root программа это серьёзный риск",
+            "en": "Every setuid program on the system — an unfamiliar setuid-root one is a serious risk"
+          },
+          {
+            "uz": "Faqat kataloglarni, huquqlarini tekshirish uchun",
+            "ru": "только каталоги, для проверки их прав",
+            "en": "Only directories, to check their permissions"
+          },
+          {
+            "uz": "Sticky bit qoʻyilgan fayllarni",
+            "ru": "файлы со sticky-битом",
+            "en": "The files carrying the sticky bit"
+          },
+          {
+            "uz": "ACL berilgan fayllarni",
+            "ru": "файлы с ACL",
+            "en": "The files that have an ACL"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Setuid dastur egasining huquqlari bilan ishlaydi, shuning uchun undagi zaiflik oddiy foydalanuvchiga root boʻlish imkonini beradi.",
+          "ru": "Setuid-программа работает с правами владельца, поэтому её уязвимость даёт обычному пользователю шанс стать root.",
+          "en": "A setuid program runs with its owner's rights, so a weakness in it lets an ordinary user become root."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi ogohlantirishlarga koʻra, qaysi amallar xavfli?",
+          "ru": "Какие действия, согласно предупреждениям занятия, опасны?",
+          "en": "According to the lesson's warnings, which practices are dangerous?"
+        },
+        "options": [
+          {
+            "uz": "Huquq yetishmasa, hammasiga `chmod 777` berish",
+            "ru": "давать всем `chmod 777`, если права не подходят",
+            "en": "Answering a permission problem with `chmod 777` on everything"
+          },
+          {
+            "uz": "`~/.ssh` katalogini 700, yopiq kalitni 600 qilish",
+            "ru": "установить 700 на `~/.ssh` и 600 на закрытый ключ",
+            "en": "Keeping `~/.ssh` at 700 and the private key at 600"
+          },
+          {
+            "uz": "Tizim kataloglarida `chmod -R` va `chown -R` ni sinab koʻrish",
+            "ru": "пробовать `chmod -R` и `chown -R` в системных каталогах",
+            "en": "Trying `chmod -R` and `chown -R` inside system directories"
+          },
+          {
+            "uz": "Root sifatida doimiy ishlash",
+            "ru": "постоянно работать под root",
+            "en": "Working as root all the time"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "Keng huquq muammoni yashiradi, `chmod -R` esa tizimni ishlamaydigan qilishi mumkin. `~/.ssh` uchun 700 va yopiq kalit uchun 600 — aksincha, toʻgʻri qiymat: SSH boshqa holda kalitni ishlatishdan bosh tortadi.",
+          "ru": "Широкие права прячут проблему, а `chmod -R` может сделать систему нерабочей. 700 для `~/.ssh` и 600 для ключа — наоборот, правильные значения: иначе SSH отказывается использовать ключ.",
+          "en": "Wide permissions hide the problem and `chmod -R` can leave the system unusable. 700 for `~/.ssh` and 600 for the key are, on the contrary, the right values: otherwise SSH refuses to use the key."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Rejim sonidagi maxsus bitlar",
+      "ru": "Специальные биты в числе режима",
+      "en": "The special bits inside a mode"
+    },
+    "statement": {
+      "uz": "Dars jadvalida maxsus bitlar sonlari sakkizlik yozuvda berilgan: setuid 4000, setgid 2000, sticky 1000. Huquqlar ham shu yozuvda yoziladi: masalan 4755, 1777, 640. Birinchi satrda bitta butun son `n` — fayllar soni; keyingi `n` satrning har birida boʻshliq bilan ajratilgan fayl nomi (boʻshliqsiz) va uning sakkizlik rejimi (1 dan 4 gacha raqamli son) keladi. Har bir fayl uchun qaysi belgilar qoʻyilganini chiqaring: `setuid`, `setgid`, `sticky` va `world-writable` (boshqalar uchligida `w` huquqi boʻlsa). Belgilarni aynan shu tartibda, vergul va boʻshliq bilan ajratib yozing; hech biri boʻlmasa `none` deb chiqaring. Har bir fayl uchun bitta qator: `nom: belgilar`. Masalan, `passwd 4755` uchun `passwd: setuid`, `tmp 1777` uchun `tmp: sticky, world-writable`, `app.conf 640` uchun `app.conf: none`.",
+      "ru": "В таблице занятия специальные биты заданы в восьмеричной записи: setuid 4000, setgid 2000, sticky 1000. Права записываются так же: например 4755, 1777, 640. В первой строке одно целое число `n` — количество файлов; в следующих `n` строках идут разделённые пробелом имя файла (без пробелов) и его восьмеричный режим (от 1 до 4 цифр). Для каждого файла выведите, какие флаги у него стоят: `setuid`, `setgid`, `sticky` и `world-writable` (если в тройке остальных есть право `w`). Флаги пишите именно в этом порядке, разделяя их запятой с пробелом; если нет ни одного — выведите `none`. По одной строке на файл: `имя: флаги`. Например, `passwd 4755` даёт `passwd: setuid`, `tmp 1777` даёт `tmp: sticky, world-writable`, `app.conf 640` даёт `app.conf: none`.",
+      "en": "The lesson's table gives the special bits in octal: setuid 4000, setgid 2000, sticky 1000. Permissions are written the same way: 4755, 1777, 640, for instance. The first line holds one integer `n`, the number of files; each of the next `n` lines holds a file name (no spaces) and its octal mode (one to four digits), separated by a space. For every file print which flags are set: `setuid`, `setgid`, `sticky` and `world-writable` (the others triple carries `w`). Write the flags exactly in that order, separated by a comma and a space, or `none` if no flag applies. One line per file: `name: flags`. For example `passwd 4755` gives `passwd: setuid`, `tmp 1777` gives `tmp: sticky, world-writable`, and `app.conf 640` gives `app.conf: none`."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nt = sys.stdin.read().split()\nn = int(t[0])\nnatija = []\nfor j in range(n):\n    nom = t[1 + 2 * j]\n    rejim = int(t[2 + 2 * j], 8)\n    belgilar = []\n    if rejim & 2:\n        belgilar.append(\"world-writable\")\n    natija.append(nom + \": \" + (\", \".join(belgilar) if belgilar else \"none\"))\nprint(\"\\n\".join(natija))\n",
+        "java": "import java.util.ArrayList;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int j = 0; j < n; j++) {\n            String nom = in.next();\n            int rejim = Integer.parseInt(in.next(), 8);\n            List<String> belgilar = new ArrayList<>();\n            if ((rejim & 2) != 0) {\n                belgilar.add(\"world-writable\");\n            }\n            System.out.println(nom + \": \" + (belgilar.isEmpty() ? \"none\" : String.join(\", \", belgilar)));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int j = 0; j < n; j++) {\n        string nom, t;\n        cin >> nom >> t;\n        int rejim = stoi(t, nullptr, 8);\n        vector<string> belgilar;\n        if ((rejim & 2) != 0) {\n            belgilar.push_back(\"world-writable\");\n        }\n        string natija;\n        for (size_t i = 0; i < belgilar.size(); i++) {\n            if (i > 0) {\n                natija += \", \";\n            }\n            natija += belgilar[i];\n        }\n        cout << nom << \": \" << (natija.empty() ? \"none\" : natija) << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nt = sys.stdin.read().split()\nn = int(t[0])\nnatija = []\nfor j in range(n):\n    nom = t[1 + 2 * j]\n    rejim = int(t[2 + 2 * j], 8)\n    belgilar = []\n    if (rejim >> 9) & 4:\n        belgilar.append(\"setuid\")\n    if (rejim >> 9) & 2:\n        belgilar.append(\"setgid\")\n    if (rejim >> 9) & 1:\n        belgilar.append(\"sticky\")\n    if rejim & 2:\n        belgilar.append(\"world-writable\")\n    natija.append(nom + \": \" + (\", \".join(belgilar) if belgilar else \"none\"))\nprint(\"\\n\".join(natija))\n",
+        "java": "import java.util.ArrayList;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int j = 0; j < n; j++) {\n            String nom = in.next();\n            int rejim = Integer.parseInt(in.next(), 8);\n            List<String> belgilar = new ArrayList<>();\n            if (((rejim >> 9) & 4) != 0) {\n                belgilar.add(\"setuid\");\n            }\n            if (((rejim >> 9) & 2) != 0) {\n                belgilar.add(\"setgid\");\n            }\n            if (((rejim >> 9) & 1) != 0) {\n                belgilar.add(\"sticky\");\n            }\n            if ((rejim & 2) != 0) {\n                belgilar.add(\"world-writable\");\n            }\n            System.out.println(nom + \": \" + (belgilar.isEmpty() ? \"none\" : String.join(\", \", belgilar)));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int j = 0; j < n; j++) {\n        string nom, t;\n        cin >> nom >> t;\n        int rejim = stoi(t, nullptr, 8);\n        vector<string> belgilar;\n        if (((rejim >> 9) & 4) != 0) {\n            belgilar.push_back(\"setuid\");\n        }\n        if (((rejim >> 9) & 2) != 0) {\n            belgilar.push_back(\"setgid\");\n        }\n        if (((rejim >> 9) & 1) != 0) {\n            belgilar.push_back(\"sticky\");\n        }\n        if ((rejim & 2) != 0) {\n            belgilar.push_back(\"world-writable\");\n        }\n        string natija;\n        for (size_t i = 0; i < belgilar.size(); i++) {\n            if (i > 0) {\n                natija += \", \";\n            }\n            natija += belgilar[i];\n        }\n        cout << nom << \": \" << (natija.empty() ? \"none\" : natija) << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\npasswd 4755\nskript 755\napp.conf 640\n", "expected": "passwd: setuid\nskript: none\napp.conf: none", "hidden": false },
+        { "input": "2\ntmp 1777\nwww 777\n", "expected": "tmp: sticky, world-writable\nwww: world-writable", "hidden": false },
+        { "input": "2\njob 2775\nshare 2777\n", "expected": "job: setgid\nshare: setgid, world-writable", "hidden": true },
+        { "input": "1\nodd 5777\n", "expected": "odd: setuid, sticky, world-writable", "hidden": true },
+        { "input": "3\na 700\nb 2644\nc 4755\n", "expected": "a: none\nb: setgid\nc: setuid", "hidden": true }
+      ]
+    }
+  }
+}

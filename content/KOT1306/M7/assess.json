@@ -1,0 +1,302 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "TCP/IP stekida IP (IPv4) protokoli qaysi pogʻonaga kiradi?",
+          "ru": "К какому уровню стека TCP/IP относится протокол IP (IPv4)?",
+          "en": "In the TCP/IP stack, which layer does the IP (IPv4) protocol belong to?"
+        },
+        "options": [
+          {
+            "uz": "Amaliy pogʻona",
+            "ru": "Прикладной уровень",
+            "en": "The application layer"
+          },
+          {
+            "uz": "Transport pogʻona",
+            "ru": "Транспортный уровень",
+            "en": "The transport layer"
+          },
+          {
+            "uz": "Internet (tarmoqlararo) pogʻona",
+            "ru": "Межсетевой уровень (Internet)",
+            "en": "The internet (inter-network) layer"
+          },
+          {
+            "uz": "Tarmoq kirishi pogʻonasi",
+            "ru": "Уровень сетевого доступа",
+            "en": "The network access layer"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Darsdagi stek: amaliy — HTTP, DNS, SMTP; transport — TCP, UDP; internet — IP, ICMP, IGMP; tarmoq kirishi — Ethernet, Wi-Fi, ARP.",
+          "ru": "Стек из занятия: прикладной — HTTP, DNS, SMTP; транспортный — TCP, UDP; межсетевой — IP, ICMP, IGMP; сетевого доступа — Ethernet, Wi-Fi, ARP.",
+          "en": "The lesson stack: application — HTTP, DNS, SMTP; transport — TCP, UDP; internet — IP, ICMP, IGMP; network access — Ethernet, Wi-Fi, ARP."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "IP protokoli paketning yetkazilishini, kelish tartibini va takrorlanmasligini kafolatlaydi.",
+          "ru": "Протокол IP гарантирует доставку пакета, порядок его прихода и отсутствие дублей.",
+          "en": "The IP protocol guarantees delivery, ordering and the absence of duplicates."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "IP — «eng yaxshi urinish» protokoli: u yetkazishga harakat qiladi, xolos. Ishonchlilik, tartib va qayta yuborish — oxirgi tizimlar (TCP) vazifasi.",
+          "ru": "IP работает «по возможности»: он только старается доставить пакет. Надёжность, порядок и повторная передача — задача конечных систем (TCP).",
+          "en": "IP is best effort: it only tries to deliver. Reliability, ordering and retransmission are the job of the end systems (TCP)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Transport pogʻonasiga qaysi protokollar tegishli?",
+          "ru": "Какие из перечисленных протоколов относятся к транспортному уровню?",
+          "en": "Which of these protocols belong to the transport layer?"
+        },
+        "options": [
+          {
+            "uz": "TCP",
+            "ru": "TCP",
+            "en": "TCP"
+          },
+          {
+            "uz": "UDP",
+            "ru": "UDP",
+            "en": "UDP"
+          },
+          {
+            "uz": "HTTP",
+            "ru": "HTTP",
+            "en": "HTTP"
+          },
+          {
+            "uz": "ICMP",
+            "ru": "ICMP",
+            "en": "ICMP"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Transport pogʻonasi — TCP va UDP, maʼlumot birligi segment / datagramma, manzil — port. HTTP amaliy, ICMP esa internet pogʻonasida.",
+          "ru": "Транспортный уровень — TCP и UDP; единица данных — сегмент/датаграмма, адрес — порт. HTTP относится к прикладному, а ICMP — к межсетевому уровню.",
+          "en": "The transport layer is TCP and UDP; its unit is the segment/datagram and its address is the port. HTTP is application layer, ICMP is internet layer."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "IPv4 sarlavhasidagi TTL maydoni nima uchun kerak?",
+          "ru": "Зачем нужно поле TTL в заголовке IPv4?",
+          "en": "What is the TTL field of the IPv4 header for?"
+        },
+        "options": [
+          {
+            "uz": "Paketning umumiy uzunligini belgilash uchun",
+            "ru": "Оно задаёт общую длину пакета",
+            "en": "It sets the total length of the packet"
+          },
+          {
+            "uz": "Paket marshrutlash halqasida abadiy aylanmasligi uchun",
+            "ru": "Чтобы пакет не циркулировал вечно в петле маршрутизации",
+            "en": "So that a packet does not circulate forever in a routing loop"
+          },
+          {
+            "uz": "Kanalning MTU qiymatini koʻrsatish uchun",
+            "ru": "Оно показывает MTU канала",
+            "en": "It reports the MTU of the link"
+          },
+          {
+            "uz": "Paket ichida TCP mi yoki UDP mi kelganini yozish uchun",
+            "ru": "В нём пишут, TCP это внутри или UDP",
+            "en": "It records whether TCP or UDP is inside the packet"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Har bir marshrutizator TTL ni 1 ga kamaytiradi, 0 boʻlsa paket tashlanadi. Protokol maydoni esa boshqa maydon: 1 — ICMP, 6 — TCP, 17 — UDP.",
+          "ru": "Каждый маршрутизатор уменьшает TTL на 1, а при 0 пакет отбрасывается. Какой протокол внутри — это другое поле: 1 — ICMP, 6 — TCP, 17 — UDP.",
+          "en": "Every router decreases TTL by 1 and drops the packet at 0. Which protocol is inside is a different field: 1 — ICMP, 6 — TCP, 17 — UDP."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "IPv4 sarlavhasining birinchi bayti oʻn oltilik koʻrinishda 46 boʻlsa, sarlavha nechta baytdan iborat?",
+          "ru": "Если первый байт заголовка IPv4 равен 46 (в шестнадцатеричной записи), сколько байт занимает заголовок?",
+          "en": "If the first byte of an IPv4 header is 46 in hexadecimal, how many bytes long is the header?"
+        },
+        "answers": [24],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Birinchi baytning pastki yarmi — IHL, yaʼni sarlavha uzunligi 4 baytli soʻzlarda. IHL = 6 → 6 × 4 = 24 bayt (4 bayt qoʻshimcha maydonlar bilan).",
+          "ru": "Младшая половина первого байта — IHL, длина заголовка в 4-байтных словах. IHL = 6 → 6 × 4 = 24 байта (с 4 байтами опций).",
+          "en": "The low half of the first byte is IHL, the header length in 4-byte words. IHL = 6 → 6 × 4 = 24 bytes (with 4 bytes of options)."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "IP paketining fragmentlari qayerda birlashtiriladi? Bir soʻz bilan yozing.",
+          "ru": "Где собираются фрагменты IP-пакета? Ответьте одним словом.",
+          "en": "Where are the fragments of an IP packet reassembled? Answer in one word."
+        },
+        "answers": [
+          "qabul qiluvchida",
+          "qabul qiluvchi",
+          "oluvchida",
+          "oluvchi",
+          "receiver"
+        ],
+        "explanation": {
+          "uz": "Fragmentlar faqat oxirgi qabul qiluvchida yigʻiladi — marshrutizatorlar buni qilmaydi. Yigʻishda MF bayrogʻi va 8 baytli birliklardagi siljish ishlatiladi.",
+          "ru": "Фрагменты собираются только у конечного получателя — маршрутизаторы этого не делают. При сборке используются флаг MF и смещение в 8-байтных единицах.",
+          "en": "Fragments are joined only at the final receiver — routers do not reassemble. Reassembly uses the MF flag and the offset in 8-byte units."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Marshrutizator paketning TTL maydonini 1 ga kamaytirdi. IP sarlavhasining nazorat yigʻindisi nechaga oshadi?",
+          "ru": "Маршрутизатор уменьшил TTL пакета на 1. На какое число при этом увеличится контрольная сумма заголовка IP?",
+          "en": "A router decreased the TTL of a packet by 1. By how much does the IP header checksum increase?"
+        },
+        "answers": [256],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "TTL 16 bitli soʻzning yuqori baytida turadi, shuning uchun TTL 1 ga kamayganda nazorat yigʻindisi 0x0100 = 256 ga oshadi. Marshrutizatorlar shu xossa tufayli uni butunlay qayta hisoblamaydi.",
+          "ru": "TTL стоит в старшем байте 16-битного слова, поэтому при уменьшении TTL на 1 контрольная сумма растёт на 0x0100 = 256. Благодаря этому свойству маршрутизаторы не пересчитывают её целиком.",
+          "en": "TTL sits in the high byte of a 16-bit word, so dropping it by 1 raises the checksum by 0x0100 = 256. Routers use this property to avoid recomputing it from scratch."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Fragmentatsiya haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о фрагментации верны?",
+          "en": "Which statements about fragmentation are correct?"
+        },
+        "options": [
+          {
+            "uz": "Har bir fragment oʻz IP sarlavhasiga ega, identifikatori esa bir xil boʻladi",
+            "ru": "Каждый фрагмент имеет свой заголовок IP, а идентификатор у них одинаковый",
+            "en": "Every fragment carries its own IP header, and the identification value is the same"
+          },
+          {
+            "uz": "Oxirgisidan tashqari, har bir fragmentdagi maʼlumot qismi 8 ga karrali boʻladi",
+            "ru": "Часть данных каждого фрагмента, кроме последнего, кратна 8",
+            "en": "The data part of every fragment except the last is a multiple of 8"
+          },
+          {
+            "uz": "Fragmentlarni yoʻldagi oxirgi marshrutizator yigʻadi",
+            "ru": "Фрагменты собирает последний маршрутизатор на пути",
+            "en": "The last router on the path reassembles the fragments"
+          },
+          {
+            "uz": "DF qoʻyilgan va MTU dan katta paket tashlanadi, yuboruvchiga esa ICMP «Fragmentation needed» xabari qaytadi",
+            "ru": "Пакет с DF больше MTU отбрасывается, а отправителю возвращается ICMP-сообщение «Fragmentation needed»",
+            "en": "A packet with DF set that is larger than the MTU is dropped, and the sender gets an ICMP «Fragmentation needed» message"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Uchinchi ifoda xato: fragmentlar marshrutizatorda emas, faqat oxirgi qabul qiluvchida yigʻiladi. Qolgan uch ifoda — 1, 2 va 4-variantlar — darsdagi fragmentatsiya qoidalariga mos keladi.",
+          "ru": "Третье утверждение неверно: фрагменты собирает не маршрутизатор, а только конечный получатель. Остальные три — первый, второй и четвёртый варианты — соответствуют правилам фрагментации из занятия.",
+          "en": "The third statement is wrong: fragments are reassembled only at the final receiver, never by a router. The other three — options one, two and four — match the lesson rules of fragmentation."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "IPv6 da marshrutizatorlar ham xuddi IPv4 dagidek, MTU dan katta paketni oʻzi fragmentlarga boʻladi.",
+          "ru": "В IPv6 маршрутизаторы, как и в IPv4, сами фрагментируют пакет, если он больше MTU.",
+          "en": "In IPv6, routers fragment a packet that is larger than the MTU, just as in IPv4."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "IPv6 da marshrutizatorlar umuman fragmentatsiya qilmaydi — u faqat yuboruvchida bajariladi. IPv6 sarlavhasi qatʼiy 40 bayt va unda nazorat yigʻindisi ham yoʻq.",
+          "ru": "В IPv6 маршрутизаторы не фрагментируют вовсе — это делает только отправитель. Заголовок IPv6 строго 40 байт, и контрольной суммы в нём нет.",
+          "en": "In IPv6 routers never fragment — only the sender does. The IPv6 header is a fixed 40 bytes and has no checksum."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Eng tor kanal va fragmentlar soni",
+      "ru": "Самый узкий канал и число фрагментов",
+      "en": "The narrowest link and the number of fragments"
+    },
+    "statement": {
+      "uz": "Paket marshrut boʻylab ketma-ket bir nechta kanal orqali boradi, va hajmni eng tor kanalga qarab tanlash kerak. Birinchi satrda IP paketining maʼlumot qismi uzunligi L (bayt) va kanallar soni n; ikkinchi satrda n ta kanal MTU si (bayt, boʻshliq bilan ajratilgan) beriladi; 1 ≤ n ≤ 20 va har bir MTU 576 dan 9000 gacha. IP sarlavhasi — 20 bayt. Fragmentdagi maʼlumot hajmi — eng kichik MTU dan 20 ni ayirib, 8 ga karrali qilib tushirilgan son (siljish 8 baytli birliklarda yoziladi). Shu hajm bilan L bayt maʼlumot nechta fragmentga boʻlinadi? Bitta satrda ikkita son chiqaring: avval fragmentdagi maʼlumot hajmi, soʻng fragmentlar soni — oralarida bitta boʻshliq. Boshqa hech narsa yozmang. Masalan, L = 4000 va kanallar 1500 1500 1500 boʻlsa, chiqish: 1480 3.",
+      "ru": "Пакет идёт последовательно через несколько каналов, и объём надо выбирать по самому узкому. В первой строке даны длина части данных IP-пакета L (байт) и число каналов n; во второй строке — MTU этих каналов (байт, через пробел), причём 1 ≤ n ≤ 20 и каждый MTU от 576 до 9000. Заголовок IP — 20 байт. Объём данных во фрагменте — это наименьший MTU минус 20, округлённый вниз до кратности 8 (смещение записывается в 8-байтных единицах). На сколько фрагментов разобься L байт данных при таком объёме? Выведите в одной строке два числа: сначала объём данных во фрагменте, затем число фрагментов, через один пробел. Больше ничего писать не нужно. Например, при L = 4000 и каналах 1500 1500 1500 вывод: 1480 3.",
+      "en": "A packet travels through several links in a row, so the size must be chosen by the narrowest one. The first line gives the length L of the IP packet data part (bytes) and the number of links n; the second line gives the MTU of those links (bytes, space separated), with 1 ≤ n ≤ 20 and every MTU between 576 and 9000. The IP header is 20 bytes. The data carried by a fragment is the smallest MTU minus 20, rounded down to a multiple of 8 (the offset is written in 8-byte units). Into how many fragments will L bytes of data be split at that size? Print two numbers on one line: first the data size of a fragment, then the number of fragments, separated by a single space. Print nothing else. For example, L = 4000 with links 1500 1500 1500 gives: 1480 3."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nl, n = map(int, input().split())\nmtular = [int(t) for t in sys.stdin.read().split()[:n]]\nqism = min(mtular) - 20\nsoni = (l + qism - 1) // qism\nprint(qism, soni)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int l = in.nextInt();\n        int n = in.nextInt();\n        int engKichik = Integer.MAX_VALUE;\n        for (int i = 0; i < n; i++) {\n            int mtu = in.nextInt();\n            if (mtu < engKichik) {\n                engKichik = mtu;\n            }\n        }\n        int qism = engKichik - 20;\n        int soni = (l + qism - 1) / qism;\n        System.out.println(qism + \" \" + soni);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int l, n;\n    cin >> l >> n;\n    int engKichik = 1000000;\n    for (int i = 0; i < n; i++) {\n        int mtu;\n        cin >> mtu;\n        if (mtu < engKichik) {\n            engKichik = mtu;\n        }\n    }\n    int qism = engKichik - 20;\n    int soni = (l + qism - 1) / qism;\n    cout << qism << \" \" << soni << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nl, n = map(int, input().split())\nmtular = [int(t) for t in sys.stdin.read().split()[:n]]\nqism = (min(mtular) - 20) // 8 * 8\nsoni = (l + qism - 1) // qism\nprint(qism, soni)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int l = in.nextInt();\n        int n = in.nextInt();\n        int engKichik = Integer.MAX_VALUE;\n        for (int i = 0; i < n; i++) {\n            int mtu = in.nextInt();\n            if (mtu < engKichik) {\n                engKichik = mtu;\n            }\n        }\n        int qism = (engKichik - 20) / 8 * 8;\n        int soni = (l + qism - 1) / qism;\n        System.out.println(qism + \" \" + soni);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int l, n;\n    cin >> l >> n;\n    int engKichik = 1000000;\n    for (int i = 0; i < n; i++) {\n        int mtu;\n        cin >> mtu;\n        if (mtu < engKichik) {\n            engKichik = mtu;\n        }\n    }\n    int qism = (engKichik - 20) / 8 * 8;\n    int soni = (l + qism - 1) / qism;\n    cout << qism << \" \" << soni << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4000 3\n1500 1500 1500\n", "expected": "1480 3", "hidden": false },
+        { "input": "1000 2\n1500 576\n", "expected": "552 2", "hidden": false },
+        { "input": "3000 2\n1500 1500\n", "expected": "1480 3", "hidden": true },
+        { "input": "100 1\n1500\n", "expected": "1480 1", "hidden": true },
+        { "input": "5000 3\n9000 1500 1400\n", "expected": "1376 4", "hidden": true }
+      ]
+    }
+  }
+}

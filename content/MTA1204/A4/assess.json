@@ -1,0 +1,280 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Birlashtirib saralashning (merge sort) ish vaqti qanday?",
+          "ru": "Каково время работы сортировки слиянием (merge sort)?",
+          "en": "What is the running time of merge sort?"
+        },
+        "options": [
+          {
+            "uz": "Faqat eng yomon holatda O(n²), yaxshi holatda O(n)",
+            "ru": "O(n²) только в худшем случае, O(n) в лучшем",
+            "en": "O(n²) only in the worst case, O(n) in the best"
+          },
+          {
+            "uz": "Har qanday holatda O(n log n)",
+            "ru": "O(n log n) при любом входе",
+            "en": "O(n log n) in every case"
+          },
+          {
+            "uz": "Taqqoslashsiz boʻlgani uchun O(n + k)",
+            "ru": "O(n + k), так как без сравнений",
+            "en": "O(n + k), because it needs no comparisons"
+          },
+          {
+            "uz": "Massiv allaqachon saralangan boʻlsa O(1)",
+            "ru": "O(1), если массив уже отсортирован",
+            "en": "O(1) if the array is already sorted"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dars jadvalida: birlashtirib saralash har qanday holatda O(n log n) vaqt va O(n) qoʻshimcha xotira oladi. Taqqoslashsiz O(n + k) esa sanab saralashga xos.",
+          "ru": "В таблице из занятия: сортировка слиянием при любом входе занимает O(n log n) времени и требует O(n) дополнительной памяти. O(n + k) без сравнений — это сортировка подсчётом.",
+          "en": "The lesson's table: merge sort takes O(n log n) time and O(n) extra memory in every case. The comparison-free O(n + k) belongs to counting sort."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Sanab saralash elementlarni oʻzaro taqqoslamagani uchun Ω(n log n) chegarasidan tez ishlay oladi.",
+          "ru": "Сортировка подсчётом может работать быстрее границы Ω(n log n), потому что не сравнивает элементы между собой.",
+          "en": "Counting sort can beat the Ω(n log n) bound because it does not compare elements with one another."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ω(n log n) chegarasi faqat taqqoslashga asoslangan saralashlarga tegishli; sanab saralash har bir qiymatning uchrashini sanab O(n + k) da ishlaydi.",
+          "ru": "Граница Ω(n log n) относится только к сортировкам на сравнениях; сортировка подсчётом считает, сколько раз встретилось каждое значение, и работает за O(n + k).",
+          "en": "The Ω(n log n) bound applies only to comparison-based sorts; counting sort counts how often each value occurs and runs in O(n + k)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Sanab saralash qaysi holatlarda qoʻllanadi?",
+          "ru": "В каких случаях применяется сортировка подсчётом?",
+          "en": "In which cases is counting sort applicable?"
+        },
+        "options": [
+          {
+            "uz": "Qiymatlar kichik oraliqda boʻlganda, masalan yosh: 0 dan 120 gacha",
+            "ru": "Когда значения лежат в маленьком диапазоне, например возраст: от 0 до 120",
+            "en": "When the values lie in a small range, say age: 0 to 120"
+          },
+          {
+            "uz": "Qiymatlar oraligʻi 10⁹ gacha boʻlganda",
+            "ru": "Когда диапазон значений доходит до 10⁹",
+            "en": "When the range of values goes up to 10⁹"
+          },
+          {
+            "uz": "Haqiqiy sonlar va satrlar saralanganda",
+            "ru": "При сортировке вещественных чисел и строк",
+            "en": "When sorting real numbers and strings"
+          },
+          {
+            "uz": "ASCII belgilari saralanganda",
+            "ru": "При сортировке символов ASCII",
+            "en": "When sorting ASCII characters"
+          }
+        ],
+        "correct": [0, 3],
+        "explanation": {
+          "uz": "Dars: kichik oraliq (0 … k) — yosh, baho, oy raqami, ASCII belgi — sanab saralashga mos. Katta oraliqda sanoq massivi xotiraga sigʻmaydi; haqiqiy sonlar va satrlar esa umuman yaramaydi.",
+          "ru": "По занятию: маленький диапазон (0 … k) — возраст, оценка, номер месяца, символ ASCII — подходит для подсчёта. При огромном диапазоне массив счётчиков не помещается в память, а вещественные числа и строки вовсе не годятся.",
+          "en": "The lesson: a small range (0 … k) — age, grade, month number, an ASCII character — suits counting sort. With a huge range the count array does not fit in memory, and real numbers and strings do not fit at all."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Talabalarni avval bal, keyin guruh boʻyicha barqaror saralashdi. Yakuniy tartibda qaysi kalit asosiy?",
+          "ru": "Студентов устойчиво отсортировали сначала по баллу, затем по группе. Какой ключ становится основным в итоговом порядке?",
+          "en": "The students were stably sorted first by score, then by group. Which key is primary in the final order?"
+        },
+        "options": [
+          {
+            "uz": "Bali — u birinchi saralangan",
+            "ru": "Балл — он сортировался первым",
+            "en": "The score — it was sorted first"
+          },
+          {
+            "uz": "Guruhi — u oxirgi saralangan",
+            "ru": "Группа — она сортировалась последней",
+            "en": "The group — it was sorted last"
+          },
+          {
+            "uz": "Ikkala kalit ham teng asosiy",
+            "ru": "Оба ключа равноценно основные",
+            "en": "Both keys are equally primary"
+          },
+          {
+            "uz": "Asosiy kalit yoʻq: guruhlar ichida tartib buziladi",
+            "ru": "Основного ключа нет: порядок внутри групп нарушается",
+            "en": "There is no primary key: the order inside groups is broken"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Oxirgi barqaror saralash asosiy kalitni belgilaydi: guruhlar tartiblanadi va teng guruhlar ichida birinchi saralashning bal tartibi saqlanadi. Jadvallarda ham oxirgi bosilgan ustun asosiy kalit boʻladi.",
+          "ru": "Последняя устойчивая сортировка задаёт основной ключ: группы упорядочиваются, а внутри равных групп сохраняется порядок по баллу из первой сортировки. В таблицах основной ключ — тоже последний нажатый столбец.",
+          "en": "The last stable sort defines the primary key: groups become ordered, and inside equal groups the score order from the first sort is kept. In tables the last column clicked is likewise the primary key."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi birlashtirib saralash dasturi teskari tartibdagi 8 7 6 5 4 3 2 1 massivini saralaganda nechta taqqoslash chiqaradi?",
+          "ru": "Сколько сравнений выведет программа сортировки слиянием из занятия, сортируя массив в обратном порядке 8 7 6 5 4 3 2 1?",
+          "en": "How many comparisons does the lesson's merge-sort program print when it sorts the reversed array 8 7 6 5 4 3 2 1?"
+        },
+        "answers": [12],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Saralangan va teskari tartibdagi 8 elementli massivlar uchun ham taqqoslashlar soni 12 — birlashtirib saralash kirish tartibiga deyarli befarq.",
+          "ru": "И для отсортированного, и для обратного порядка из 8 элементов число сравнений тоже 12: сортировка слиянием почти безразлична к порядку входа.",
+          "en": "For both a sorted and a reversed 8-element array the number of comparisons is 12 too — merge sort is almost indifferent to the input order."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Birlashtirishda barqarorlik saqlanishi uchun ikkala yarimning joriy elementlari qaysi taqqoslash amali bilan solishtiriladi? Amal belgisini yozing.",
+          "ru": "С помощью какого оператора сравниваются текущие элементы двух половин при слиянии, чтобы сохранить устойчивость? Напишите символ оператора.",
+          "en": "Which comparison operator is used on the current elements of the two halves when merging, so that stability is kept? Write the operator symbol."
+        },
+        "answers": ["<=", "≤"],
+        "explanation": {
+          "uz": "Teng elementlarda chapdagisi oldin olinadi — shuning uchun <= yoziladi; < boʻlsa barqarorlik buziladi.",
+          "ru": "При равных элементах первым берётся левый — поэтому пишут <=; оператор < нарушил бы устойчивость.",
+          "en": "With equal elements the left one is taken first, so the code uses <=; using < would break stability."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Birlashtirib saralash haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о сортировке слиянием верны?",
+          "en": "Which statements about merge sort are correct?"
+        },
+        "options": [
+          {
+            "uz": "Qoʻshimcha xotira O(n) talab qiladi",
+            "ru": "Она требует O(n) дополнительной памяти",
+            "en": "It needs O(n) extra memory"
+          },
+          {
+            "uz": "Teng elementlarda chapdagisi oldin olinsa, saralash barqaror boʻladi",
+            "ru": "Если при равных элементах первым брать левый, сортировка устойчива",
+            "en": "Taking the left element first when values are equal makes the sort stable"
+          },
+          {
+            "uz": "Maʼlumotni ketma-ket oʻqiydi — shuning uchun tashqi saralashga qulay",
+            "ru": "Она читает данные последовательно — поэтому удобна для внешней сортировки",
+            "en": "It reads data sequentially, which suits external sorting"
+          },
+          {
+            "uz": "Eng yaxshi holatda O(n) da ishlaydi",
+            "ru": "В лучшем случае она работает за O(n)",
+            "en": "In the best case it runs in O(n)"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Vaqt har qanday holatda O(n log n) — eng yaxshi holatda chiziqli emas. Qolgan uch ifoda dars jadvalida keltirilgan.",
+          "ru": "Время — O(n log n) при любом входе, в лучшем случае не линейное. Три других утверждения стоят в таблице занятия.",
+          "en": "The time is O(n log n) in every case, not linear even in the best case. The other three statements come from the lesson's table."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Koʻp kalitli tartiblashda avval asosiy, keyin ikkinchi darajali kalit boʻyicha barqaror saralash kerak.",
+          "ru": "При упорядочении по нескольким ключам нужно сначала устойчиво отсортировать по основному ключу, а затем по второстепенному.",
+          "en": "For a multi-key order you should first apply a stable sort by the primary key, then by the secondary key."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Teskari: avval ikkinchi darajali, keyin asosiy kalit. Avval asosiy kalit boʻyicha saralansa, ikkinchi saralash birinchi tartibni buzadi — bu darsdagi koʻp uchraydigan xato.",
+          "ru": "Наоборот: сначала второстепенный ключ, затем основной. Если первым сортировать по основному ключу, вторая сортировка уничтожит первый порядок — это типичная ошибка из занятия.",
+          "en": "The other way round: secondary key first, then primary. If the primary key is sorted first, the second sort destroys that order — one of the common mistakes in the lesson."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "5 · 10⁶ ta bahoni (0 dan 100 gacha) sanab saralash bilan saralashda elementlar nechta marta oʻzaro taqqoslanadi?",
+          "ru": "Сколько раз будут сравнены между собой элементы при сортировке 5 · 10⁶ оценок (от 0 до 100) сортировкой подсчётом?",
+          "en": "How many comparisons between elements are made when 5 · 10⁶ grades (0 to 100) are sorted with counting sort?"
+        },
+        "answers": [0],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Hech qancha — 0. Sanab saralash elementlarni oʻzaro taqqoslamaydi: har bir qiymat toʻgʻridan-toʻgʻri sanoq massivining indeksi boʻladi. Shuning uchun u taqqoslashli chegaradan tez ishlaydi.",
+          "ru": "Ни одного — 0. Сортировка подсчётом не сравнивает элементы: каждое значение напрямую служит индексом массива счётчиков. Именно поэтому она работает быстрее границы сравнительных сортировок.",
+          "en": "None — 0. Counting sort never compares elements with one another: each value is directly an index of the count array, which is why it beats the comparison bound."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Baholarni sanab chiqish",
+      "ru": "Подсчёт оценок",
+      "en": "Counting the grades"
+    },
+    "statement": {
+      "uz": "Darsdagi sanab saralash gʻoyasi bilan ishlang. Birinchi satrda n, ikkinchisida n ta baho (butun sonlar, 0 dan 100 gacha, boʻsh joy bilan ajratilgan). Har bir turli bahoni va uning nechta marta uchraganini chiqaring: baholar oʻsish tartibida, har biri alohida satrda, „baho son“ koʻrinishida. Elementlarni oʻzaro taqqoslamang va tayyor saralash funksiyasidan foydalanmang — sanoq massividan foydalaning. Masalan, 6 va 10 20 10 20 10 20 kirilsa, chiqish ikki satrdan iborat: 10 3 va 20 3. 1 ≤ n ≤ 10⁵.",
+      "ru": "Действуйте по идее сортировки подсчётом из занятия. В первой строке n, во второй — n оценок (целые числа от 0 до 100, разделённые пробелом). Выведите каждую различную оценку и число её встреч: оценки в порядке возрастания, по одной на строке, в виде «оценка количество». Не сравнивайте элементы между собой и не используйте готовую сортировку — применяйте массив счётчиков. Например, на ввод 6 и 10 20 10 20 10 20 программа выводит две строки: 10 3 и 20 3. 1 ≤ n ≤ 10⁵.",
+      "en": "Work with the counting-sort idea from the lesson. The first line holds n, the second n grades (integers from 0 to 100, space separated). Print every distinct grade and how many times it occurs: grades in ascending order, one per line, as \"grade count\". Do not compare elements with one another and do not use a built-in sort — use a count array. For example, the input 6 and 10 20 10 20 10 20 gives two lines: 10 3 and 20 3. 1 ≤ n ≤ 10⁵."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nsanoq = [0] * 101\nfor x in map(int, input().split()):\n    sanoq[x] += 1\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] sanoq = new int[101];\n        for (int i = 0; i < n; i++) {\n            sanoq[in.nextInt()]++;\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> sanoq(101, 0);\n    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        sanoq[x]++;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nsanoq = [0] * 101\nfor x in map(int, input().split()):\n    sanoq[x] += 1\nfor x in range(101):\n    if sanoq[x] > 0:\n        print(x, sanoq[x])\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] sanoq = new int[101];\n        for (int i = 0; i < n; i++) {\n            sanoq[in.nextInt()]++;\n        }\n        for (int x = 0; x <= 100; x++) {\n            if (sanoq[x] > 0) {\n                System.out.println(x + \" \" + sanoq[x]);\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> sanoq(101, 0);\n    for (int i = 0; i < n; i++) {\n        int x;\n        cin >> x;\n        sanoq[x]++;\n    }\n    for (int x = 0; x <= 100; x++) {\n        if (sanoq[x] > 0) {\n            cout << x << \" \" << sanoq[x] << endl;\n        }\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "8\n65 72 65 80 72 65 90 55\n", "expected": "55 1\n65 3\n72 2\n80 1\n90 1", "hidden": false },
+        { "input": "3\n100 0 100\n", "expected": "0 1\n100 2", "hidden": false },
+        { "input": "5\n42 42 42 42 42\n", "expected": "42 5", "hidden": true },
+        { "input": "1\n7\n", "expected": "7 1", "hidden": true },
+        { "input": "6\n10 20 10 20 10 20\n", "expected": "10 3\n20 3", "hidden": true }
+      ]
+    }
+  }
+}

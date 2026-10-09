@@ -1,0 +1,306 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "DHCP doirasida istisno qilingan manzil bilan hovuzdagi oddiy manzilning farqi nimada?",
+          "ru": "Чем исключённый адрес в области DHCP отличается от обычного адреса пула?",
+          "en": "What distinguishes an excluded address in a DHCP scope from an ordinary address of the pool?"
+        },
+        "options": [
+          {
+            "uz": "Istisno qilingan manzilni DHCP umuman bermaydi",
+            "ru": "Исключённый адрес DHCP не выдаёт вообще",
+            "en": "DHCP never hands out an excluded address"
+          },
+          {
+            "uz": "Istisno qilingan manzil faqat printerga beriladi",
+            "ru": "Исключённый адрес выдаётся только принтеру",
+            "en": "An excluded address is given only to the printer"
+          },
+          {
+            "uz": "Istisno qilingan manzil har safar birinchi mijozga toʻgʻri keladi",
+            "ru": "Исключённый адрес каждый раз получает первый клиент",
+            "en": "An excluded address always goes to the first client"
+          },
+          {
+            "uz": "Istisno qilingan manzil DNS da A yozuvi boʻlib turadi",
+            "ru": "Исключённый адрес является записью A в DNS",
+            "en": "An excluded address is an A record in DNS"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Istisno — DHCPning umuman bermaydigan manzili; rezervatsiya esa faqat koʻrsatilgan MAC li qurilmaga beriladi.",
+          "ru": "Исключение — адрес, запрещённый для выдачи; резервирование же выдаётся только устройству с указанным MAC.",
+          "en": "An exclusion is an address never handed out; a reservation is given only to the device with the stated MAC."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Domen tarmogʻida avtorizatsiya qilinmagan DHCP server mijozlarga manzil bermaydi.",
+          "ru": "В доменной сети неавторизованный DHCP-сервер не выдаёт адреса клиентам.",
+          "en": "On a domain network an unauthorised DHCP server does not give addresses to clients."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: domen — serverni AD da avtorizatsiya qilish shart, aks holda u ishlamaydi.",
+          "ru": "По занятию: в домене сервер нужно авторизовать в AD, иначе он не работает.",
+          "en": "The lesson states that in a domain the server must be authorised in AD, otherwise it does not work."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda kompyuter sinfi (laboratoriya) doirasi uchun ijara muddati necha soat deb tavsiya qilingan?",
+          "ru": "Сколько часов составляет рекомендованный в занятии срок аренды для области компьютерного класса?",
+          "en": "How many hours is the lease duration recommended in the lesson for a computer-lab scope?"
+        },
+        "answers": [8],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda: 8 soat — kompyuter sinfi uchun qisqa muddat, ofis uchun 8 kun.",
+          "ru": "В занятии: 8 часов — короткий срок для компьютерного класса, для офиса — 8 дней.",
+          "en": "The lesson uses 8 hours, short for a computer lab, and 8 days for an office."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Mijoz 169.254.x.x manzilni oldi. Darsga koʻra, qaysi xizmat topilmagan?",
+          "ru": "Клиент получил адрес 169.254.x.x. Согласно занятию, какая служба не найдена?",
+          "en": "The client got a 169.254.x.x address. According to the lesson, which service was not found?"
+        },
+        "answers": ["DHCP", "DHCP server", "DHCP-server", "dhcp"],
+        "explanation": {
+          "uz": "Bunday manzil DHCP server topilmaganini bildiradi: doira faol emas, avtorizatsiya yoʻq yoki VM lar turli tarmoqda.",
+          "ru": "Такой адрес означает, что DHCP-сервер не найден: область не активна, нет авторизации или ВМ в разных сетях.",
+          "en": "It means no DHCP server was found: the scope is inactive, the server is not authorised, or the VMs sit on different networks."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Doira opsiyalaridan 006 nimani beradi?",
+          "ru": "Что даёт параметр области 006?",
+          "en": "What does scope option 006 provide?"
+        },
+        "options": [
+          {
+            "uz": "DNS server manzili",
+            "ru": "Адрес DNS-сервера",
+            "en": "The DNS server address"
+          },
+          {
+            "uz": "Standart shlyuz (router) manzili",
+            "ru": "Адрес основного шлюза (маршрутизатора)",
+            "en": "The default gateway (router) address"
+          },
+          {
+            "uz": "Ijara muddati",
+            "ru": "Срок аренды",
+            "en": "The lease duration"
+          },
+          {
+            "uz": "Domen nomi",
+            "ru": "Имя домена",
+            "en": "The domain name"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi opsiyalar: 003 — shlyuz, 006 — DNS serverlari, 015 — domen nomi; Wiresharkda ularni Offer xabarida solishtirish aytiladi.",
+          "ru": "Параметры из занятия: 003 — шлюз, 006 — DNS-серверы, 015 — имя домена; в Wireshark их сравнивают в сообщении Offer.",
+          "en": "The lesson options are 003 gateway, 006 DNS servers and 015 domain name; in Wireshark they are compared in the Offer message."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "DHCP doirasini sozlash uchun darsda qaysi PowerShell buyruqlari keltirilgan?",
+          "ru": "Какие команды PowerShell из занятия служат для настройки области DHCP?",
+          "en": "Which PowerShell commands from the lesson configure the DHCP scope?"
+        },
+        "options": [
+          {
+            "uz": "Add-DhcpServerv4Scope",
+            "ru": "Add-DhcpServerv4Scope",
+            "en": "Add-DhcpServerv4Scope"
+          },
+          {
+            "uz": "Add-DhcpServerv4ExclusionRange",
+            "ru": "Add-DhcpServerv4ExclusionRange",
+            "en": "Add-DhcpServerv4ExclusionRange"
+          },
+          {
+            "uz": "Add-DhcpServerv4Reservation",
+            "ru": "Add-DhcpServerv4Reservation",
+            "en": "Add-DhcpServerv4Reservation"
+          },
+          {
+            "uz": "Set-DnsServerForwarder",
+            "ru": "Set-DnsServerForwarder",
+            "en": "Set-DnsServerForwarder"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Set-DnsServerForwarder DNS ga tegishli: u ichki zonada boʻlmagan nomlar uchun tashqi DNS ni koʻrsatadi.",
+          "ru": "Set-DnsServerForwarder относится к DNS: он указывает внешний DNS для имён, которых нет во внутренней зоне.",
+          "en": "Set-DnsServerForwarder belongs to DNS: it sets the external DNS for names missing from the internal zone."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi misolda hovuz .100–.104, ijara 60 soniya, .101 istisno, .104 printer uchun rezervlangan. 66-soniyada BB:05 mijozisi oladigan manzilning oxirgi oktetini raqam koʻrinishida yozing.",
+          "ru": "В примере из занятия пул .100–.104, аренда 60 секунд, .101 исключён, .104 зарезервирован для принтера. Какой последний октет адреса получит клиент BB:05 на 66-й секунде?",
+          "en": "In the lesson example the pool is .100–.104, the lease 60 seconds, .101 is excluded and .104 reserved for the printer. Which last octet does client BB:05 receive at second 66?"
+        },
+        "answers": [102],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "BB:02 ning ijarasi 65-soniyada tugadi va u yangilanmadi, shuning uchun 66-soniyada eng kichik boʻsh manzil .102 BB:05 ga berildi.",
+          "ru": "Аренда BB:02 истекла на 65-й секунде и не была продлена, поэтому на 66-й секунде наименьший свободный адрес .102 получил BB:05.",
+          "en": "BB:02's lease expired at second 65 and was not renewed, so at second 66 the smallest free address .102 went to BB:05."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "192.168.50.0/24 tarmogʻi uchun darsda teskari qidiruv zonasi qanday nomlangan?",
+          "ru": "Как в занятии названа зона обратного просмотра для сети 192.168.50.0/24?",
+          "en": "What name does the lesson give to the reverse lookup zone for the network 192.168.50.0/24?"
+        },
+        "options": [
+          {
+            "uz": "50.168.192.in-addr.arpa",
+            "ru": "50.168.192.in-addr.arpa",
+            "en": "50.168.192.in-addr.arpa"
+          },
+          {
+            "uz": "192.168.50.in-addr.arpa",
+            "ru": "192.168.50.in-addr.arpa",
+            "en": "192.168.50.in-addr.arpa"
+          },
+          {
+            "uz": "aifu.local",
+            "ru": "aifu.local",
+            "en": "aifu.local"
+          },
+          {
+            "uz": "reverse.aifu.local",
+            "ru": "reverse.aifu.local",
+            "en": "reverse.aifu.local"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Teskari zonada oktetlar teskari tartibda yoziladi; u PTR yozuvlari orqali IP boʻyicha nomni topishga xizmat qiladi.",
+          "ru": "В обратной зоне октеты записываются в обратном порядке; она служит для поиска имени по IP через записи PTR.",
+          "en": "A reverse zone writes the octets in reverse order and serves finding a name by IP through PTR records."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "DHCP va DNS birgalikda ishlashi boʻyicha darsdagi qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о совместной работе DHCP и DNS верны по занятию?",
+          "en": "Which statements about DHCP and DNS working together are correct according to the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Ichki zonada boʻlmagan nomlar uchun serverda forwarder sozlanadi",
+            "ru": "Для имён вне внутренней зоны на сервере настраивается пересылка (forwarder)",
+            "en": "A forwarder is configured on the server for names outside the internal zone"
+          },
+          {
+            "uz": "DHCP mijozga manzil berganda uning nomini DNS ga avtomatik yozishi mumkin",
+            "ru": "Выдавая адрес клиенту, DHCP может автоматически записать его имя в DNS",
+            "en": "When giving a client an address, DHCP can write its name into DNS automatically"
+          },
+          {
+            "uz": "Zaxira uchun ikki DHCP serverni bir xil hovuz bilan oddiy holda ishga tushirish tavsiya etiladi",
+            "ru": "Для резервирования рекомендуется просто запускать два DHCP-сервера с одинаковым пулом",
+            "en": "For redundancy it is recommended to simply run two DHCP servers with the same pool"
+          },
+          {
+            "uz": "006 opsiyada tashqi DNS koʻrsatilsa, ichki nomlar ham baribir hal qilinadi",
+            "ru": "Если в параметре 006 указать внешний DNS, внутренние имена всё равно будут разрешаться",
+            "en": "If option 006 gives an external DNS, internal names still resolve as well"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Ikki server bir xil hovuz bilan bir manzilni ikki mijozga berishi mumkin — buning uchun DHCP Failover ishlatiladi; tashqi DNS berilsa, ichki nomlar hal qilinmaydi.",
+          "ru": "Два сервера с одним пулом могут выдать один адрес двум клиентам — для этого нужен DHCP Failover; при внешнем DNS внутренние имена не разрешатся.",
+          "en": "Two servers with one pool may give one address to two clients, so DHCP Failover is used; with an external DNS the internal names do not resolve."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Hovuzdagi birinchi manzillar",
+      "ru": "Первые адреса из пула",
+      "en": "The first addresses from the pool"
+    },
+    "statement": {
+      "uz": "DHCP server doira faollashgach, mijozlarga istisno va rezervatsiya qilinmagan eng kichik manzilni beradi. Dasturingiz shu tartibni hisoblab chiqsin. Kirish: birinchi satrda hovuz boshi va hovuz oxiri (bitta /24 ichida, boʻshliq bilan); ikkinchi satrda istisnolar soni, keyingi satrlarda ularning manzillari; uchinchida rezervatsiyalar soni va ularning manzillari; toʻrtinchi satrda q — ketma-ket ulanadigan mijozlar soni. Har bir mijoz oldingisidan keyin keladi va unga hali hech qanday manzil berilmagan. Chiqish: q ta satr — har bir mijoz oladigan toʻliq manzil (birinchi mijoz eng kichik boʻsh manzilni oladi); boʻsh manzil boʻlmasa, `NONE` yozing. Qoʻshimcha matn yozmang. Masalan, hovuz 192.168.50.100–192.168.50.105, istisnolar .101 va .102, rezerv .105, q = 4 boʻlsa, chiqish: 192.168.50.100, 192.168.50.103, 192.168.50.104, NONE.",
+      "ru": "После активации области DHCP-сервер выдаёт клиентам наименьший адрес, не исключённый и не зарезервированный. Ваша программа должна просчитать этот порядок. Ввод: в первой строке — начало и конец пула (в пределах одной /24, через пробел); во второй — число исключений и следующими строками их адреса; в следующей — число резервирований и их адреса; затем q — число клиентов, которые подключаются один за другим. Каждый клиент приходит после предыдущего, и адрес ему выдаётся впервые. Вывод: q строк — полный адрес, который получит клиент с номером i, а если свободных адресов нет — `NONE`. Ничего лишнего не печатайте. Например, пул 192.168.50.100–192.168.50.105, исключения .101 и .102, резерв .105, q = 4 даст: 192.168.50.100, 192.168.50.103, 192.168.50.104, NONE.",
+      "en": "Once a scope is active, a DHCP server hands clients the smallest address that is neither excluded nor reserved. Your program must work that order out. Input: the first line holds the pool start and the pool end (within one /24, separated by a space); the next line gives the number of exclusions, followed by their addresses on separate lines; then the number of reservations and their addresses; then q — the number of clients that connect one after another. Each client arrives after the previous one and has never been given an address. Output: q lines, each the full address the i-th client receives, or `NONE` when no free address is left. Print nothing else. For example, the pool 192.168.50.100–192.168.50.105 with exclusions .101 and .102, a reservation on .105 and q = 4 gives 192.168.50.100, 192.168.50.103, 192.168.50.104, NONE."
+    },
+    "code": {
+      "starter": {
+        "python": "boshi, oxiri = input().split()\nn = int(input())\nfor _ in range(n):\n    input()\nn = int(input())\nfor _ in range(n):\n    input()\nq = int(input())\nbosh = int(boshi.split(\".\")[3])\noxir = int(oxiri.split(\".\")[3])\ntarmoq = boshi.rsplit(\".\", 1)[0] + \".\"\nfor i in range(q):\n    oktet = bosh + i\n    if oktet > oxir:\n        print(\"NONE\")\n    else:\n        print(tarmoq + str(oktet))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static int oxirgi(String ip) {\n        return Integer.parseInt(ip.substring(ip.lastIndexOf('.') + 1));\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String boshi = in.next();\n        String oxiri = in.next();\n        String tarmoq = boshi.substring(0, boshi.lastIndexOf('.') + 1);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) in.next();\n        n = in.nextInt();\n        for (int i = 0; i < n; i++) in.next();\n        int q = in.nextInt();\n        for (int i = 0; i < q; i++) {\n            int oktet = oxirgi(boshi) + i;\n            if (oktet > oxirgi(oxiri)) System.out.println(\"NONE\");\n            else System.out.println(tarmoq + oktet);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint oxirgi(const string& ip) {\n    return stoi(ip.substr(ip.rfind('.') + 1));\n}\n\nint main() {\n    string boshi, oxiri, ip;\n    int n, q;\n    cin >> boshi >> oxiri;\n    string tarmoq = boshi.substr(0, boshi.rfind('.') + 1);\n    cin >> n;\n    for (int i = 0; i < n; i++) cin >> ip;\n    cin >> n;\n    for (int i = 0; i < n; i++) cin >> ip;\n    cin >> q;\n    for (int i = 0; i < q; i++) {\n        int oktet = oxirgi(boshi) + i;\n        if (oktet > oxirgi(oxiri)) cout << \"NONE\" << endl;\n        else cout << tarmoq << oktet << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "def oxirgi(ip):\n    return int(ip.split(\".\")[3])\n\n\nboshi, oxiri = input().split()\ntarmoq = boshi.rsplit(\".\", 1)[0] + \".\"\nband = set()\nfor _ in range(int(input())):\n    band.add(oxirgi(input()))\nfor _ in range(int(input())):\n    band.add(oxirgi(input()))\nq = int(input())\nkeyin = [o for o in range(oxirgi(boshi), oxirgi(oxiri) + 1) if o not in band]\nfor i in range(q):\n    if i < len(keyin):\n        print(tarmoq + str(keyin[i]))\n    else:\n        print(\"NONE\")\n",
+        "java": "import java.util.ArrayList;\nimport java.util.HashSet;\nimport java.util.List;\nimport java.util.Scanner;\nimport java.util.Set;\n\npublic class Main {\n    static int oxirgi(String ip) {\n        return Integer.parseInt(ip.substring(ip.lastIndexOf('.') + 1));\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String boshi = in.next();\n        String oxiri = in.next();\n        String tarmoq = boshi.substring(0, boshi.lastIndexOf('.') + 1);\n        Set<Integer> band = new HashSet<>();\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) band.add(oxirgi(in.next()));\n        n = in.nextInt();\n        for (int i = 0; i < n; i++) band.add(oxirgi(in.next()));\n        List<Integer> keyin = new ArrayList<>();\n        for (int o = oxirgi(boshi); o <= oxirgi(oxiri); o++) {\n            if (!band.contains(o)) keyin.add(o);\n        }\n        int q = in.nextInt();\n        for (int i = 0; i < q; i++) {\n            if (i < keyin.size()) System.out.println(tarmoq + keyin.get(i));\n            else System.out.println(\"NONE\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <set>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint oxirgi(const string& ip) {\n    return stoi(ip.substr(ip.rfind('.') + 1));\n}\n\nint main() {\n    string boshi, oxiri;\n    int n, q;\n    cin >> boshi >> oxiri;\n    string tarmoq = boshi.substr(0, boshi.rfind('.') + 1);\n    set<int> band;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string ip;\n        cin >> ip;\n        band.insert(oxirgi(ip));\n    }\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string ip;\n        cin >> ip;\n        band.insert(oxirgi(ip));\n    }\n    vector<int> keyin;\n    for (int o = oxirgi(boshi); o <= oxirgi(oxiri); o++) {\n        if (!band.count(o)) keyin.push_back(o);\n    }\n    cin >> q;\n    for (int i = 0; i < q; i++) {\n        if (i < (int)keyin.size()) cout << tarmoq << keyin[i] << endl;\n        else cout << \"NONE\" << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "192.168.50.100 192.168.50.105\n2\n192.168.50.101\n192.168.50.102\n1\n192.168.50.105\n4\n", "expected": "192.168.50.100\n192.168.50.103\n192.168.50.104\nNONE", "hidden": false },
+        { "input": "10.0.0.10 10.0.0.12\n0\n0\n5\n", "expected": "10.0.0.10\n10.0.0.11\n10.0.0.12\nNONE\nNONE", "hidden": false },
+        { "input": "192.168.50.100 192.168.50.103\n2\n192.168.50.100\n192.168.50.101\n0\n3\n", "expected": "192.168.50.102\n192.168.50.103\nNONE", "hidden": true },
+        { "input": "192.168.1.1 192.168.1.6\n1\n192.168.1.2\n2\n192.168.1.6\n192.168.1.3\n3\n", "expected": "192.168.1.1\n192.168.1.4\n192.168.1.5", "hidden": true },
+        { "input": "172.16.0.50 172.16.0.50\n0\n1\n172.16.0.50\n2\n", "expected": "NONE\nNONE", "hidden": true }
+      ]
+    }
+  }
+}

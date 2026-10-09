@@ -1,0 +1,460 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda kiberxavfsizlik kasbi haqida qanday fikr aytilgan?",
+          "ru": "Что о профессии в кибербезопасности сказано в занятии?",
+          "en": "What does the lesson say about a career in cybersecurity?"
+        },
+        "options": [
+          {
+            "uz": "Bu bitta kasb emas, oʻnlab turli yoʻnalish: biri jurnallarni tahlil qiladi, biri kod tekshiradi, biri siyosat va auditlar bilan ishlaydi",
+            "ru": "Это не одна профессия, а десятки направлений: один анализирует журналы, другой проверяет код, третий работает с политиками и аудитами",
+            "en": "It is not a single profession but dozens of directions: one analyzes logs, another reviews code, another works with policies and audits"
+          },
+          {
+            "uz": "Bu faqat tarmoq administratorlari uchun kasb",
+            "ru": "Это профессия только для сетевых администраторов",
+            "en": "It is a profession only for network administrators"
+          },
+          {
+            "uz": "Bu kasb faqat ruxsatsiz tizimlarga kirishdan iborat",
+            "ru": "Этому ремеслу учатся только входом в несанкционированные системы",
+            "en": "One learns this trade only by breaking into unauthorized systems"
+          },
+          {
+            "uz": "Bu kasb dasturlash bilimini umuman talab qilmaydi",
+            "ru": "Эта профессия вообще не требует знания программирования",
+            "en": "This profession requires no programming knowledge at all"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars yoʻnalishlar roʻyxatini shu fikrdan boshlaydi: erta tanlangan yoʻnalish oʻqishni maqsadli qiladi.",
+          "ru": "Список направлений в занятии начинается с этой мысли: рано выбранный путь делает учёбу целенаправленной.",
+          "en": "The lesson's list of directions starts from this idea: choosing a path early makes your studies purposeful."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsga koʻra, barcha mutaxassislar sohaga faqat kiberxavfsizlik boʻyicha birinchi ish joyidan kiradi.",
+          "ru": "Согласно занятию, все специалисты приходят в отрасль сразу с первого места работы по кибербезопасности.",
+          "en": "According to the lesson, every specialist enters the field directly from a first job in cybersecurity."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda koʻpchilik sohaga IT ning boshqa tarmogʻi orqali kirishini aytilgan: tizim administratori, tarmoq muhandisi, dasturchi yoki texnik yordam xodimi sifatida.",
+          "ru": "В занятии сказано, что большинство приходит через другую ветвь ИТ: системными администраторами, сетевыми инженерами, разработчиками или специалистами поддержки.",
+          "en": "The lesson says most people enter through another branch of IT: as system administrators, network engineers, developers or support technicians."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsning asosiy yoʻnalishlar jadvaliga qaysilari kiritilgan?",
+          "ru": "Что из перечисленного входит в таблицу основных направлений занятия?",
+          "en": "Which of these are in the lesson's table of main directions?"
+        },
+        "options": [
+          {
+            "uz": "Monitoring va himoya (Blue team, SOC)",
+            "ru": "Мониторинг и защита (Blue team, SOC)",
+            "en": "Monitoring and defense (Blue team, SOC)"
+          },
+          {
+            "uz": "Hodisalarga javob va kriminalistika",
+            "ru": "Реагирование на инциденты и криминалистика",
+            "en": "Incident response and forensics"
+          },
+          {
+            "uz": "Boshqaruv, risk va muvofiqlik (GRC)",
+            "ru": "Управление, риски и соответствие (GRC)",
+            "en": "Governance, risk and compliance (GRC)"
+          },
+          {
+            "uz": "Grafik dizayn va reklama",
+            "ru": "Графический дизайн и реклама",
+            "en": "Graphic design and advertising"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalda shuningdek xavfsizlik muhandisligi va arxitekturasi, ilovalar xavfsizligi, ruxsat etilgan sinov, kriptografiya va tadqiqot, taʼlim va xabardorlik yoʻnalishlari bor; grafik dizayn yoʻq.",
+          "ru": "В таблице есть также инженерия и архитектура безопасности, безопасность приложений, санкционированное тестирование, криптография и исследования, обучение и осведомлённость; графического дизайна нет.",
+          "en": "The table also lists security engineering and architecture, application security, authorized testing, cryptography and research, and education and awareness; not graphic design."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Xodimlarni oʻqitish va xavfsizlik boʻyicha treninglar oʻtkazish qaysi yoʻnalishga tegishli?",
+          "ru": "К какому направлению относятся обучение сотрудников и тренинги по безопасности?",
+          "en": "Training staff and running security workshops belong to which direction?"
+        },
+        "options": [
+          {
+            "uz": "Taʼlim va xabardorlik",
+            "ru": "Обучение и осведомлённость",
+            "en": "Education and awareness"
+          },
+          {
+            "uz": "Ruxsat etilgan sinov (pentest, Red team)",
+            "ru": "Санкционированное тестирование (пентест, Red team)",
+            "en": "Authorized testing (penetration testing, Red team)"
+          },
+          {
+            "uz": "Kriptografiya va tadqiqot",
+            "ru": "Криптография и исследования",
+            "en": "Cryptography and research"
+          },
+          {
+            "uz": "Ilovalar xavfsizligi (AppSec, DevSecOps)",
+            "ru": "Безопасность приложений (AppSec, DevSecOps)",
+            "en": "Application security (AppSec, DevSecOps)"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Jadvalda bu yoʻnalishning tipik lavozimi sifatida xavfsizlik boʻyicha trener koʻrsatilgan.",
+          "ru": "В таблице типичной должностью этого направления назван тренер по безопасности.",
+          "en": "The table names a security trainer as the typical position of this direction."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi yoʻl xaritasi jadvalida nechta bosqich keltirilgan?",
+          "ru": "Сколько этапов приведено в таблице дорожной карты занятия?",
+          "en": "How many stages does the lesson's roadmap table list?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Besh bosqich: IT asoslari, xavfsizlik asoslari, yoʻnalish tanlash, amaliyot, birinchi ish.",
+          "ru": "Пять этапов: основы ИТ, основы безопасности, выбор направления, практика, первая работа.",
+          "en": "Five stages: IT basics, security basics, choosing a direction, practice and the first job."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "NIST ning kiberxavfsizlik kadrlarini vazifa, bilim va koʻnikmalar boʻyicha tavsiflovchi ramkasining qisqartmasini yozing.",
+          "ru": "Запишите аббревиатуру рамки NIST, описывающей кадры кибербезопасности через задачи, знания и навыки.",
+          "en": "Write the abbreviation of the NIST framework that describes cybersecurity workforce in terms of tasks, knowledge and skills."
+        },
+        "answers": ["NICE", "NICE Framework", "nice", "NICE ramkasi"],
+        "explanation": {
+          "uz": "Darsda bu NICE ramkasi (Workforce Framework for Cybersecurity) deb berilgan; undan mos lavozim va kerakli bilimlarni topishda foydalanish mumkin.",
+          "ru": "В занятии это рамка NICE (Workforce Framework for Cybersecurity); её можно использовать, чтобы найти подходящие должности и нужные знания.",
+          "en": "The lesson calls it the NICE framework (Workforce Framework for Cybersecurity), useful for finding suitable positions and the knowledge they require."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dars nima uchun IT tajribasidan keyin sohaga kirishni yaxshi yoʻl deb hisoblaydi?",
+          "ru": "Почему занятие считает путь в отрасль после ИТ-опыта хорошим?",
+          "en": "Why does the lesson treat entering the field after IT experience as a good path?"
+        },
+        "options": [
+          {
+            "uz": "Himoya qilish uchun avval tizim qanday ishlashini bilish kerak",
+            "ru": "Чтобы защищать систему, сначала нужно знать, как она работает",
+            "en": "To protect a system you first need to know how it works"
+          },
+          {
+            "uz": "Chunki IT da maosh har doim yuqoriroq",
+            "ru": "Потому что в ИТ оплата всегда выше",
+            "en": "Because pay in IT is always higher"
+          },
+          {
+            "uz": "Chunki kiberxavfsizlikda texnik koʻnikmalar kerak emas",
+            "ru": "Потому что в кибербезопасности технические навыки не нужны",
+            "en": "Because cybersecurity needs no technical skills"
+          },
+          {
+            "uz": "Chunki sertifikatlar IT tajribasini almashtiradi",
+            "ru": "Потому что сертификаты заменяют ИТ-опыт",
+            "en": "Because certificates replace IT experience"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aynan shu sabab aytilgan, shuning uchun birinchi bosqich — operatsion tizimlar, tarmoqlar va dasturlash.",
+          "ru": "Именно эта причина названа в занятии, поэтому первый этап — операционные системы, сети и программирование.",
+          "en": "This is exactly the reason the lesson gives, which is why the first stage is operating systems, networks and programming."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi koʻp uchraydigan xatolar roʻyxatiga qaysi harakatlar kiritilgan?",
+          "ru": "Что из перечисленного входит в список частых ошибок занятия?",
+          "en": "Which of these are in the lesson's list of common mistakes?"
+        },
+        "options": [
+          {
+            "uz": "IT asoslarini oʻtkazib yuborish",
+            "ru": "Пропускать основы ИТ",
+            "en": "Skipping the IT basics"
+          },
+          {
+            "uz": "Faqat sertifikatlarga tayanish: amaliy tajribasiz sertifikat suhbatda tezda koʻrinib qoladi",
+            "ru": "Опираться только на сертификаты: сертификат без практического опыта быстро виден на собеседовании",
+            "en": "Relying only on certifications: a certificate without practical experience shows quickly in an interview"
+          },
+          {
+            "uz": "Ruxsatsiz mashq: jinoiy javobgarlik va soha uchun obroʻni yoʻqotish",
+            "ru": "Несанкционированная «практика»: уголовная ответственность и потеря репутации в отрасли",
+            "en": "Unauthorized \"practice\": criminal liability and loss of reputation in the field"
+          },
+          {
+            "uz": "Yoʻnalishni erta tanlash",
+            "ru": "Ранний выбор направления",
+            "en": "Choosing a direction early"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Yoʻnalishni erta tanlash aksincha foydali deb koʻrsatilgan: u oʻqishni maqsadli qiladi.",
+          "ru": "Ранний выбор направления, наоборот, назван полезным: он делает учёбу целенаправленной.",
+          "en": "Choosing a direction early is called useful instead: it makes your studies purposeful."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, ish beruvchi uchun nimani bilaman degan daʼvo nimani qildim degan tajribadan muhimroq.",
+          "ru": "Согласно занятию, для работодателя важнее «что я знаю», чем «что я сделал».",
+          "en": "According to the lesson, for an employer \"what I know\" matters more than \"what I did\"."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda aksincha yozilgan: ish beruvchi uchun nimani qildim muhimroq, shuning uchun uy laboratoriyasi, taʼlim platformalari, CTF va ochiq loyihalar tavsiya qilinadi.",
+          "ru": "В занятии написано обратное: для работодателя важнее «что я сделал», поэтому советует домашнюю лабораторию, учебные платформы, CTF и открытые проекты.",
+          "en": "The lesson says the opposite: what you did matters more, which is why it recommends a home lab, learning platforms, CTFs and open projects."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Karyera yoʻnalishini tanlash boʻyicha nazorat savollari",
+      "ru": "Проверочные вопросы о выборе карьерного направления",
+      "en": "Check questions on choosing a career direction"
+    },
+    "statement": {
+      "uz": "Shaxsiy rivojlanish rejasini tuzishdan oldin darsning «Asosiy yoʻnalishlar», «Portfolio va qonuniy amaliyot» va «Shaxsiy rivojlanish rejasi» boʻlimlariga asoslangan besh savolga javob bering. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Прежде чем составлять личный план развития, ответьте на пять вопросов по разделам «Основные направления», «Портфолио и законная практика» и «Личный план развития». Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before drawing up your personal development plan, answer five questions based on the lesson's sections \"Main directions\", \"Portfolio and legal practice\" and \"Personal development plan\". The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Ruxsat etilgan sinov (pentest, Red team) yoʻnalishi darsda qanday tavsiflanadi?",
+            "ru": "Как направление санкционированного тестирования (пентест, Red team) описано в занятии?",
+            "en": "How does the lesson describe the authorized testing (penetration testing, Red team) direction?"
+          },
+          "options": [
+            {
+              "uz": "Shartnoma va ruxsat asosida himoyani sinash va hisobot berish",
+              "ru": "Проверка защиты по договору и с разрешения, отчёт",
+              "en": "Testing defenses under a contract and with permission, and reporting"
+            },
+            {
+              "uz": "Jurnallar va ogohlantirishlarni kuzatish",
+              "ru": "Отслеживание журналов и оповещений",
+              "en": "Watching logs and alerts"
+            },
+            {
+              "uz": "Siyosatlar va auditlar bilan ishlash",
+              "ru": "Работа с политиками и аудитами",
+              "en": "Working with policies and audits"
+            },
+            {
+              "uz": "Xodimlarni oʻqitish va treninglar oʻtkazish",
+              "ru": "Обучение сотрудников и тренинги",
+              "en": "Training staff and running workshops"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Tipik lavozimlari — pentester va xavfsizlik auditori; ish oʻrinlarining katta qismi esa himoya, muhandislik va GRC da.",
+            "ru": "Типичные должности — пентестер и аудитор безопасности; при этом большинство рабочих мест — в защите, инженерии и GRC.",
+            "en": "Its typical positions are penetration tester and security auditor, while most jobs are in defense, engineering and GRC."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Portfolio toʻplash uchun darsda qaysi manbalar taklif qilingan?",
+            "ru": "Какие источники занятие предлагает для сбора портфолио?",
+            "en": "Which sources does the lesson suggest for building a portfolio?"
+          },
+          "options": [
+            {
+              "uz": "Virtual mashinalarda uy laboratoriyasi: kichik tarmoq, domen va jurnallarni markazlashgan yigʻish",
+              "ru": "Домашняя лаборатория в виртуальных машинах: небольшая сеть, домен и централизованный сбор журналов",
+              "en": "A home lab in virtual machines: a small network, a domain and centralized log collection"
+            },
+            {
+              "uz": "Ruxsat etilgan taʼlim platformalari: TryHackMe, Hack The Box Academy, Cisco Networking Academy, Microsoft Learn",
+              "ru": "Разрешённые учебные платформы: TryHackMe, Hack The Box Academy, Cisco Networking Academy, Microsoft Learn",
+              "en": "Authorized learning platforms: TryHackMe, Hack The Box Academy, Cisco Networking Academy, Microsoft Learn"
+            },
+            {
+              "uz": "CTF musobaqalari va ochiq kodli loyihalar",
+              "ru": "Соревнования CTF и проекты с открытым кодом",
+              "en": "CTF competitions and open source projects"
+            },
+            {
+              "uz": "Begona tizimda ruxsatsiz mashq qilish",
+              "ru": "Практика на чужой системе без разрешения",
+              "en": "Practising on someone else's system without permission"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Toʻrtinchisi darsda jinoyat deb koʻrsatilgan; amaliyot faqat ataylab yaratilgan, ruxsat etilgan maydonchalarda.",
+            "ru": "Четвёртое в занятии названо преступлением; практика допускается только на специально созданных разрешённых площадках.",
+            "en": "The lesson calls the fourth a crime; practice is allowed only on platforms built on purpose for it."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Xavfsizlik muhandisligi va arxitekturasi yoʻnalishi tipik lavozimlari qatorsiga bulut xavfsizligi muhandisi ham kiradi.",
+            "ru": "В число типичных должностей направления инженерии и архитектуры безопасности входит инженер по облачной безопасности.",
+            "en": "A cloud security engineer is among the typical positions of the security engineering and architecture direction."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Jadvalda bu yoʻnalish uchun security engineer, cloud security engineer va arxitektor koʻrsatilgan; vazifasi — devorlar, IAM va bulutni loyihalash hamda sozlash.",
+            "ru": "В таблице для этого направления указаны security engineer, инженер по облачной безопасности и архитектор; задача — проектировать и настраивать экраны, IAM и облако.",
+            "en": "The table lists a security engineer, a cloud security engineer and an architect for it; the work is designing and configuring firewalls, IAM and cloud."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Shaxsiy rivojlanish rejasida natijani qanday oʻlchash taklif qilinadi?",
+            "ru": "Как предлагается измерять результат в личном плане развития?",
+            "en": "How does the personal development plan suggest measuring the result?"
+          },
+          "options": [
+            {
+              "uz": "Tugallangan laboratoriyalar soni va yozilgan hisobotlar kabi aniq koʻrsatkichlar bilan",
+              "ru": "По конкретным показателям: числу выполненных лабораторных и написанных отчётов",
+              "en": "By concrete indicators, such as the number of completed labs and written reports"
+            },
+            {
+              "uz": "Rezyumedagi sertifikatlar soni bilan",
+              "ru": "По числу сертификатов в резюме",
+              "en": "By the number of certificates in the résumé"
+            },
+            {
+              "uz": "Ijtimoiy tarmoqdagi doʻstlar soni bilan",
+              "ru": "По числу друзей в социальной сети",
+              "en": "By the number of friends in a social network"
+            },
+            {
+              "uz": "Oʻqishga ketgan vaqt soatlari bilan",
+              "ru": "По числу часов, потраченных на учёбу",
+              "en": "By the hours spent studying"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Rejaning beshinchi bandi shu: natijani qanday oʻlchash; toʻrtinchi bandi esa keyingi 6 oy uchun kurslar, laboratoriyalar va bitta portfolio loyihasini nazarda tutadi.",
+            "ru": "Пятый пункт плана — как измерить результат; четвёртый предполагает курсы, лабораторные и один проект для портфолио на ближайшие 6 месяцев.",
+            "en": "Item five of the plan is how you measure the result; item four means courses, labs and one portfolio project for the next 6 months."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Kriptografiya, kriminalistika va tarmoq tahlili boʻyicha jamoaviy masalalar beriladigan musobaqa turining qisqartmasini yozing.",
+            "ru": "Запишите аббревиатуру вида соревнований, где дают командные задачи по криптографии, криминалистике и анализу сети.",
+            "en": "Write the abbreviation of the competition that gives team challenges in cryptography, forensics and network analysis."
+          },
+          "answers": ["CTF", "ctf", "CTF musobaqasi", "Capture The Flag", "capture the flag"],
+          "explanation": {
+            "uz": "Darsda bu CTF musobaqalari (Capture The Flag) deb berilgan va ular Oʻzbekistonda tajriba toʻplash yoʻllari qatorida ham tilga olingan.",
+            "ru": "В занятии это соревнования CTF (Capture The Flag); они упомянуты и как способ набраться опыта в Узбекистане.",
+            "en": "The lesson names these CTF competitions (Capture The Flag) and also lists them as a way to gain experience in Uzbekistan."
+          }
+        }
+      ]
+    }
+  }
+}

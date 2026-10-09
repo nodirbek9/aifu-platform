@@ -1,0 +1,499 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi juftlik Oʻzbekistonning ichki toʻlov tizimlari?",
+          "ru": "Какая пара — внутренние платёжные системы Узбекистана?",
+          "en": "Which pair are Uzbekistan’s domestic payment systems?"
+        },
+        "options": [
+          {
+            "uz": "Uzcard va Humo",
+            "ru": "Uzcard и Humo",
+            "en": "Uzcard and Humo"
+          },
+          {
+            "uz": "SWIFT va SCADA",
+            "ru": "SWIFT и SCADA",
+            "en": "SWIFT and SCADA"
+          },
+          {
+            "uz": "LoRaWAN va ERP",
+            "ru": "LoRaWAN и ERP",
+            "en": "LoRaWAN and ERP"
+          },
+          {
+            "uz": "Visa va GPS",
+            "ru": "Visa и GPS",
+            "en": "Visa and GPS"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Uzcard va Humo — ichki bank kartalari tarmoqlari.",
+          "ru": "Uzcard и Humo — внутренние сети банковских карт.",
+          "en": "Uzcard and Humo are the domestic bank card networks."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Onlayn kassalar soliq nazoratini real vaqtga yaqinlashtiradi.",
+          "ru": "Онлайн-кассы приближают налоговый контроль к реальному времени.",
+          "en": "Online cash registers bring tax control close to real time."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Onlayn kassalar va fiskal modullar real vaqtda nazoratni taʼminlaydi.",
+          "ru": "Онлайн-кассы и фискальные модули обеспечивают контроль в реальном времени.",
+          "en": "Online cash registers and fiscal modules provide real-time control."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Xalqaro bank oʻtkazmalari qaysi tizim orqali amalga oshiriladi? (qisqartma)",
+          "ru": "Через какую систему проводятся международные банковские переводы? (аббревиатура)",
+          "en": "Which system carries international bank transfers? (abbreviation)"
+        },
+        "answers": [
+          "SWIFT"
+        ],
+        "explanation": {
+          "uz": "Xalqaro oʻtkazmalar SWIFT orqali bajariladi.",
+          "ru": "Международные переводы выполняются через SWIFT.",
+          "en": "International transfers are made through SWIFT."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "Qishloq xoʻjaligida datchiklar va aqlli sugʻorishning asosiy samarasi nima?",
+          "ru": "Каков главный эффект датчиков и умного полива в сельском хозяйстве?",
+          "en": "What is the main effect of sensors and smart irrigation in agriculture?"
+        },
+        "options": [
+          {
+            "uz": "Suv va oʻgʻitni tejash, hosildorlikni oshirish",
+            "ru": "Экономия воды и удобрений, рост урожайности",
+            "en": "Saving water and fertilizer, higher yield"
+          },
+          {
+            "uz": "Naqd pul aylanishini koʻpaytirish",
+            "ru": "Рост оборота наличных",
+            "en": "More cash circulation"
+          },
+          {
+            "uz": "Soliq hisobotini bekor qilish",
+            "ru": "Отмена налоговой отчётности",
+            "en": "Abolishing tax reporting"
+          },
+          {
+            "uz": "Elektron kutubxonani kengaytirish",
+            "ru": "Расширение электронной библиотеки",
+            "en": "Expanding the e-library"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Tuproq namligi datchiklari suv va oʻgʻitni tejaydi, hosildorlikni oshiradi.",
+          "ru": "Датчики влажности почвы экономят воду и удобрения и повышают урожайность.",
+          "en": "Soil moisture sensors save water and fertilizer and raise yield."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysilar tarmoq texnologiyalarining iqtisodiyot tarmoqlaridagi qoʻllanishiga misol?",
+          "ru": "Что является примером применения сетевых технологий в отраслях экономики?",
+          "en": "Which are examples of network technologies used in economic sectors?"
+        },
+        "options": [
+          {
+            "uz": "Tuproq namligi datchiklari",
+            "ru": "Датчики влажности почвы",
+            "en": "Soil moisture sensors"
+          },
+          {
+            "uz": "Aqlli elektr hisoblagichlar",
+            "ru": "Умные электросчётчики",
+            "en": "Smart electricity meters"
+          },
+          {
+            "uz": "Yuklarni GPS orqali kuzatish",
+            "ru": "Отслеживание грузов по GPS",
+            "en": "GPS tracking of cargo"
+          },
+          {
+            "uz": "Qogʻozga qoʻlda yozilgan daftar",
+            "ru": "Рукописная бумажная тетрадь",
+            "en": "A handwritten paper notebook"
+          }
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explanation": {
+          "uz": "Datchiklar, aqlli hisoblagichlar va GPS kuzatuv — tarmoq yechimlari; qoʻlda daftar emas.",
+          "ru": "Датчики, умные счётчики и GPS-слежение — сетевые решения; бумажная тетрадь — нет.",
+          "en": "Sensors, smart meters and GPS tracking are network solutions; a paper notebook is not."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "SCADA — jarayonni masofadan boshqarish va nazorat qilish tizimi.",
+          "ru": "SCADA — система удалённого управления и контроля процессов.",
+          "en": "SCADA is a system for remote control and monitoring of processes."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "SCADA sanoatda jarayonni masofadan boshqarish uchun ishlatiladi.",
+          "ru": "SCADA применяется в промышленности для удалённого управления процессами.",
+          "en": "SCADA is used in industry to control processes remotely."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "Telemeditsina bemor uchun qanday qulaylik beradi?",
+          "ru": "Какое удобство телемедицина даёт пациенту?",
+          "en": "What convenience does telemedicine give a patient?"
+        },
+        "options": [
+          {
+            "uz": "Shifokorga masofadan murojaat qilish va vaqtni tejash",
+            "ru": "Обращение к врачу удалённо и экономия времени",
+            "en": "Consulting a doctor remotely and saving time"
+          },
+          {
+            "uz": "Dorilarni bepul olish",
+            "ru": "Бесплатное получение лекарств",
+            "en": "Getting medicines for free"
+          },
+          {
+            "uz": "Kasalxonani yopish",
+            "ru": "Закрытие больницы",
+            "en": "Closing the hospital"
+          },
+          {
+            "uz": "Soliq imtiyozi",
+            "ru": "Налоговая льгота",
+            "en": "A tax benefit"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Telemeditsina shifokorga masofadan murojaat qilish imkonini beradi.",
+          "ru": "Телемедицина позволяет обратиться к врачу удалённо.",
+          "en": "Telemedicine lets people consult a doctor remotely."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 1,
+        "prompt": {
+          "uz": "Kooperativ dalasida mobil Internet yoʻq. Yechimni loyihalashda nima hisobga olinishi kerak?",
+          "ru": "В поле кооператива нет мобильного интернета. Что учесть при проектировании решения?",
+          "en": "The cooperative’s field has no mobile Internet. What must the design take into account?"
+        },
+        "options": [
+          {
+            "uz": "Muqobil aloqa kanali: LoRaWAN kabi kam quvvatli tarmoq yoki sunʼiy yoʻldosh",
+            "ru": "Альтернативный канал связи: маломощная сеть вроде LoRaWAN или спутник",
+            "en": "An alternative channel: a low-power network such as LoRaWAN, or satellite"
+          },
+          {
+            "uz": "Aloqa qamrovini eʼtiborsiz qoldirish",
+            "ru": "Не учитывать зону покрытия",
+            "en": "Ignoring coverage"
+          },
+          {
+            "uz": "Datchiklarni faqat idoraga oʻrnatish",
+            "ru": "Установить датчики только в офисе",
+            "en": "Installing sensors only in the office"
+          },
+          {
+            "uz": "Loyihadan voz kechish",
+            "ru": "Отказаться от проекта",
+            "en": "Dropping the project"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Dala sharoitida mobil Internet boʻlmasligi mumkin — muqobil kanal kerak.",
+          "ru": "В полевых условиях мобильного интернета может не быть — нужен альтернативный канал.",
+          "en": "In the field mobile Internet may be missing, so an alternative channel is needed."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 1,
+        "prompt": {
+          "uz": "Kooperativ suv sarfini 20% kamaytirdi. Avval sarf 5000 m³ edi. Hozir necha m³?",
+          "ru": "Кооператив снизил расход воды на 20%. Раньше было 5000 м³. Сколько м³ сейчас?",
+          "en": "The cooperative cut water use by 20%. It used to be 5000 m³. How many m³ now?"
+        },
+        "answers": [
+          4000
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "5000 · (1 − 0,2) = 4000 m³.",
+          "ru": "5000 · (1 − 0,2) = 4000 м³.",
+          "en": "5000 · (1 − 0.2) = 4000 m³."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 1,
+        "prompt": {
+          "uz": "Nega \"IoT joriy etamiz\" deb yozish yomon formulirovka, \"suv sarfini 20% kamaytiramiz\" esa yaxshi?",
+          "ru": "Почему «внедрим IoT» — плохая формулировка, а «снизим расход воды на 20%» — хорошая?",
+          "en": "Why is \"we will deploy IoT\" a poor goal while \"we will cut water use by 20%\" is a good one?"
+        },
+        "options": [
+          {
+            "uz": "Ikkinchisi texnologiyani soha muammosi va oʻlchanadigan natijaga bogʻlaydi",
+            "ru": "Вторая связывает технологию с проблемой отрасли и измеримым результатом",
+            "en": "The second ties the technology to a sector problem and a measurable result"
+          },
+          {
+            "uz": "Birinchisi qimmatroq",
+            "ru": "Первая дороже",
+            "en": "The first is more expensive"
+          },
+          {
+            "uz": "Ikkinchisi texnologiyasiz amalga oshadi",
+            "ru": "Вторая достигается без технологий",
+            "en": "The second needs no technology"
+          },
+          {
+            "uz": "Farqi yoʻq",
+            "ru": "Разницы нет",
+            "en": "There is no difference"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Texnologiyani soha muammosiga va oʻlchanadigan natijaga bogʻlash kerak.",
+          "ru": "Технологию нужно связывать с проблемой отрасли и измеримым результатом.",
+          "en": "Technology must be tied to a sector problem and a measurable result."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Tarmoq texnologiyalari iqtisodiyot tarmoqlarida",
+      "ru": "Сетевые технологии в отраслях экономики",
+      "en": "Network technologies in economic sectors"
+    },
+    "statement": {
+      "uz": "Seminar mazmuni boʻyicha toʻrt savol. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "ru": "Четыре вопроса по содержанию семинара. В вопросах с несколькими ответами отметьте все верные варианты.",
+      "en": "Four questions on the seminar. In questions with several answers, mark every correct option."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "\"Raqamli tafovut\" nimani bildiradi?",
+            "ru": "Что означает «цифровое неравенство»?",
+            "en": "What does the \"digital divide\" mean?"
+          },
+          "options": [
+            {
+              "uz": "Hududlar oʻrtasida Internet sifati va mavjudligidagi farq",
+              "ru": "Разницу в качестве и доступности интернета между регионами",
+              "en": "The gap in Internet quality and availability between regions"
+            },
+            {
+              "uz": "Datchiklarning narxi",
+              "ru": "Цену датчиков",
+              "en": "The price of sensors"
+            },
+            {
+              "uz": "Kassa apparati turi",
+              "ru": "Тип кассового аппарата",
+              "en": "The type of cash register"
+            },
+            {
+              "uz": "Bank foiz stavkasi",
+              "ru": "Процентную ставку банка",
+              "en": "A bank interest rate"
+            }
+          ],
+          "correct": [
+            0
+          ],
+          "explanation": {
+            "uz": "Raqamli tafovut — hududlar orasidagi Internet imkoniyatlaridagi farq.",
+            "ru": "Цифровое неравенство — разница в возможностях интернета между регионами.",
+            "en": "The digital divide is the gap in Internet access between regions."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Kooperativ yechimining qaysi xavflarini baholash kerak?",
+            "ru": "Какие риски решения для кооператива нужно оценить?",
+            "en": "Which risks of the cooperative’s solution must be assessed?"
+          },
+          "options": [
+            {
+              "uz": "Aloqa uzilishi",
+              "ru": "Обрыв связи",
+              "en": "Loss of connectivity"
+            },
+            {
+              "uz": "Datchiklarning buzilishi",
+              "ru": "Поломка датчиков",
+              "en": "Sensor failure"
+            },
+            {
+              "uz": "Xodimlar malakasi",
+              "ru": "Квалификация сотрудников",
+              "en": "Staff skills"
+            },
+            {
+              "uz": "Maʼlumotlar xavfsizligi",
+              "ru": "Безопасность данных",
+              "en": "Data security"
+            },
+            {
+              "uz": "Kitob muqovasining rangi",
+              "ru": "Цвет обложки книги",
+              "en": "The colour of a book cover"
+            }
+          ],
+          "correct": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": {
+            "uz": "Aloqa, datchiklar, malaka va xavfsizlik — hammasi xavf omillari.",
+            "ru": "Связь, датчики, квалификация и безопасность — всё это факторы риска.",
+            "en": "Connectivity, sensors, skills and security are all risk factors."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Yechimni baholashda ROI va qoplanish muddati hisoblanadi.",
+            "ru": "При оценке решения рассчитываются ROI и срок окупаемости.",
+            "en": "ROI and payback period are calculated when assessing a solution."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [
+            0
+          ],
+          "explanation": {
+            "uz": "Xarajat va kutilayotgan tejam asosida ROI va qoplanish muddati baholanadi.",
+            "ru": "ROI и срок окупаемости оцениваются по затратам и ожидаемой экономии.",
+            "en": "ROI and payback are estimated from costs and expected savings."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Dalada ishlaydigan kam quvvatli simsiz tarmoqqa misol keltiring (qisqartma).",
+            "ru": "Приведите пример маломощной беспроводной сети для поля (аббревиатура).",
+            "en": "Give an example of a low-power wireless network for the field (abbreviation)."
+          },
+          "answers": [
+            "LoRaWAN",
+            "LoRa"
+          ],
+          "explanation": {
+            "uz": "Misol: LoRaWAN.",
+            "ru": "Пример: LoRaWAN.",
+            "en": "Example: LoRaWAN."
+          }
+        }
+      ]
+    }
+  }
+}

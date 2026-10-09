@@ -1,0 +1,264 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Pufaksimon saralashda „toshbaqa“ deganda nima tushuniladi?",
+          "ru": "Что называется «черепахой» в пузырьковой сортировке?",
+          "en": "What is a turtle in bubble sort?"
+        },
+        "options": [
+          {
+            "uz": "Massiv oxiriga yaqin kichik element: har oʻtishda chapga faqat bitta oʻringa suriladi",
+            "ru": "Маленький элемент ближе к концу массива: за каждый проход он сдвигается влево всего на одну позицию",
+            "en": "A small element near the end of the array: it moves only one place left per pass"
+          },
+          {
+            "uz": "Bitta oʻtishda oxirigacha „uchib“ ketadigan katta element",
+            "ru": "Крупный элемент, который «улетает» в конец за один проход",
+            "en": "A large element that flies to the end in one pass"
+          },
+          {
+            "uz": "Saralashni erta toʻxtatuvchi belgi",
+            "ru": "Признак, который рано останавливает сортировку",
+            "en": "The flag that stops the sort early"
+          },
+          {
+            "uz": "Massivning oʻrtasidagi eng kichik element",
+            "ru": "Самый маленький элемент в середине массива",
+            "en": "The smallest element in the middle of the array"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Katta element — quyon: u bitta oʻtishda oxirigacha boradi. Kichik element esa har oʻtishda faqat bitta oʻringa chapga suriladi — shuning uchun toshbaqa.",
+          "ru": "Крупный элемент — «заяц»: он доходит до конца за один проход. Маленький элемент за каждый проход смещается влево лишь на одну позицию — потому его и называют черепахой.",
+          "en": "A large element is a rabbit: it reaches the end in one pass. A small element moves only one place left per pass — that is why it is called a turtle."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kokteyl (shaker) saralash oʻtishlarni navbatma-navbat chapdan oʻngga va oʻngdan chapga bajaradi.",
+          "ru": "Шейкерная (коктейльная) сортировка выполняет проходы попеременно слева направо и справа налево.",
+          "en": "Cocktail (shaker) sort runs its passes alternately from left to right and from right to left."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shu sababli teskari oʻtishda toshbaqalar ham bir oʻtishda boshiga yetadi. Eng yomon holatda esa murakkablik baribir O(n²).",
+          "ru": "Поэтому на обратном проходе черепахи тоже сразу попадают в начало. Но в худшем случае сложность всё равно O(n²).",
+          "en": "That is why on the backward pass turtles reach the front at once. In the worst case the complexity is still O(n²)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Quickselect haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о quickselect верны?",
+          "en": "Which statements about quickselect are correct?"
+        },
+        "options": [
+          {
+            "uz": "Ajratishdan keyin faqat k oʻrini tushgan qismga davom etadi",
+            "ru": "После разделения он продолжает только в ту часть, где находится позиция k",
+            "en": "After partitioning it continues only into the part holding position k"
+          },
+          {
+            "uz": "Oʻrtacha vaqti O(n): n + n/2 + n/4 + … ≈ 2n",
+            "ru": "Среднее время — O(n): n + n/2 + n/4 + … ≈ 2n",
+            "en": "Its average time is O(n): n + n/2 + n/4 + … ≈ 2n"
+          },
+          {
+            "uz": "Ikkala qismga ham davom etsa, tez saralashga aylanadi",
+            "ru": "Если продолжать в обе части, он превращается в быструю сортировку",
+            "en": "If it continues into both parts, it turns into quicksort"
+          },
+          {
+            "uz": "Eng yomon holatda ham O(n log n) da ishlaydi",
+            "ru": "Даже в худшем случае он работает за O(n log n)",
+            "en": "Even in the worst case it runs in O(n log n)"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Eng yomon holatda quickselect O(n²) — jadvalda ham shunday. Chiziqli oʻrtacha vaqt faqat bitta qismga davom etganda olinadi; ikkala qismga kirish uni tez saralashga aylantiradi.",
+          "ru": "В худшем случае quickselect — O(n²), так и в таблице занятия. Линейное среднее время получается только при продолжении в одну часть; вход в обе части превращает его в быструю сортировку.",
+          "en": "In the worst case quickselect is O(n²), as the lesson's table says. The linear average time comes only from continuing into one part; going into both turns it into quicksort."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi yaxshilangan pufaksimon saralash 2 3 4 5 6 7 1 massiviga nechta oʻtish bajaradi?",
+          "ru": "Сколько проходов выполнит улучшенная пузырьковая сортировка из занятия на массиве 2 3 4 5 6 7 1?",
+          "en": "How many passes does the lesson's improved bubble sort make on the array 2 3 4 5 6 7 1?"
+        },
+        "answers": [7],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Oxiridagi 1 — toshbaqa: u har oʻtishda faqat bitta chapga suriladi, shuning uchun 7 oʻtish kerak. Kokteyl saralash esa buni 3 oʻtishda bitiradi.",
+          "ru": "Единица в конце — черепаха: за каждый проход она сдвигается влево лишь на одну позицию, поэтому нужно 7 проходов. Коктейльная сортировка справляется за 3 прохода.",
+          "en": "The trailing 1 is a turtle: it moves one place left per pass, so 7 passes are needed. Cocktail sort finishes in 3 passes."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda qaysi C++ funksiyasi quickselect gʻoyasiga asoslangan deb aytiladi? Funksiya nomini yozing.",
+          "ru": "Какую функцию стандартной библиотеки C++ занятие называет построенной на идее quickselect? Напишите её имя.",
+          "en": "Which C++ standard library function does the lesson say rests on the quickselect idea? Write its name."
+        },
+        "answers": ["nth_element", "nth_element()"],
+        "explanation": {
+          "uz": "Dars: C++ʼda nth_element, Pythonʼda heapq.nsmallest va statistikada medianani tez hisoblash shu gʻoyaga asoslangan.",
+          "ru": "По занятию: C++ nth_element, Python heapq.nsmallest и быстрый подсчёт медианы в статистике опираются на эту идею.",
+          "en": "The lesson names C++ nth_element, Python heapq.nsmallest and fast median computation as based on this idea."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "(0,1), (2,3), (0,2), (1,3) kompatorlaridan iborat tarmoq (n = 4) 0101 kirishni saralay olmaydi. Qaysi kompator yetishmaydi?",
+          "ru": "Сеть из компараторов (0,1), (2,3), (0,2), (1,3) при n = 4 не сортирует вход 0101. Какого компаратора не хватает?",
+          "en": "The network with comparators (0,1), (2,3), (0,2), (1,3) for n = 4 fails to sort the input 0101. Which comparator is missing?"
+        },
+        "options": [
+          { "uz": "(0, 3)", "ru": "(0, 3)", "en": "(0, 3)" },
+          { "uz": "(1, 2)", "ru": "(1, 2)", "en": "(1, 2)" },
+          { "uz": "(0, 1)", "ru": "(0, 1)", "en": "(0, 1)" },
+          { "uz": "(2, 3)", "ru": "(2, 3)", "en": "(2, 3)" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "0101 kirishda oʻrtadagi ikki element hech qachon taqqoslanmagan. (1,2) kompator qoʻshilsa, tarmoq yana toʻgʻri ishlaydi — darsda u 4 element uchun optimal tarmoq deb aytilgan.",
+          "ru": "На входе 0101 два средних элемента ни разу не сравниваются. С добавленным (1,2) сеть становится оптимальной сетью из 5 компараторов для 4 элементов.",
+          "en": "On the input 0101 the two middle elements are never compared. Adding (1,2) makes the network the optimal 5-comparator network for 4 elements."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "8 kirishli saralash tarmogʻi 0-1 prinsipi bilan tekshiriladi. Nechta 0-1 kirish sinovdan oʻtkaziladi?",
+          "ru": "Сеть сортировки с 8 входами проверяют по принципу 0-1. Сколько 0-1 входов будет проверено?",
+          "en": "An 8-input sorting network is checked with the 0-1 principle. How many 0-1 inputs are tested?"
+        },
+        "answers": [256],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "0-1 prinsipiga koʻra barcha 2ⁿ ta 0 va 1 dan iborat kirishni sinash kifoya: 2⁸ = 256. Darsda n = 16 uchun 65 536 ta tekshiruv keltirilgan.",
+          "ru": "По принципу 0-1 достаточно проверить все 2ⁿ входов из 0 и 1: 2⁸ = 256. В занятии для n = 16 приведено число проверок 65 536.",
+          "en": "The 0-1 principle says it is enough to try all 2ⁿ inputs made of 0s and 1s: 2⁸ = 256. The lesson gives 65 536 checks for n = 16."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Saralash tarmogʻini bir nechta tasodifiy kirishda sinab koʻrish uning toʻgʻriligini tekshirishga yetarli.",
+          "ru": "Проверки сети сортировки на нескольких случайных входах достаточно, чтобы убедиться в её правильности.",
+          "en": "Testing a sorting network on a few random inputs is enough to verify that it is correct."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi koʻp uchraydigan xato: xato kam uchraydigan kirishda namoyon boʻlishi mumkin. Toʻliq tekshiruvni faqat 0-1 prinsipi beradi.",
+          "ru": "Типичная ошибка из занятия: ошибка может проявиться на редких входах. Полную проверку даёт только принцип 0-1.",
+          "en": "One of the lesson's common mistakes: an error may show up only on rare inputs. Only the 0-1 principle gives a complete check."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi qaysi ifodalar toʻgʻri?",
+          "ru": "Какие из приведённых утверждений соответствуют занятию?",
+          "en": "Which of these statements match the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Pufaksimon saralashda k-uchinchi oʻtishdan keyin oxirgi k element oʻz oʻrnida boʻladi",
+            "ru": "В пузырьковой сортировке после k-го прохода последние k элементов стоят на своих местах",
+            "en": "In bubble sort, after pass k the last k elements are in place"
+          },
+          {
+            "uz": "Teskari tartibdagi massivda kokteyl saralash pufaksimondan sezilarli tezroq ishlaydi",
+            "ru": "На массиве в обратном порядке шейкерная сортировка заметно быстрее пузырьковой",
+            "en": "On a reversed array cocktail sort is noticeably faster than bubble sort"
+          },
+          {
+            "uz": "Quickselectda 1 dan sanalgan k darhol k − 1 ga aylantiriladi",
+            "ru": "В quickselect задаваемое с единицы k сразу превращают в k − 1",
+            "en": "In quickselect the 1-based k is turned into k − 1 at once"
+          },
+          {
+            "uz": "Tez saralash ajratishdan keyin ikkala qismga rekursiv kiradi va oʻrtacha O(n log n) ishlaydi",
+            "ru": "Быстрая сортировка после разделения рекурсивно входит в обе части и в среднем работает за O(n log n)",
+            "en": "Quicksort recurses into both parts after partitioning and takes O(n log n) on average"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "Teskari tartibdagi massivda ikkalasi ham O(n²): kokteyl „deyarli saralangan“ massivlarda yutadi, toshbaqalar koʻp boʻlganda. Qolgan uch ifoda darsda bor.",
+          "ru": "На обратном порядке обе сортировки — O(n²): коктейльная выигрывает на „почти отсортированных“ массивах, где много черепах. Три других утверждения есть в занятии.",
+          "en": "On a reversed array both sorts are O(n²): cocktail sort wins on nearly sorted arrays, where there are many turtles. The other three statements are in the lesson."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Pufaksimon saralash: k oʻtishdan keyingi holat",
+      "ru": "Пузырёк: состояние массива после k проходов",
+      "en": "Bubble sort: the array after k passes"
+    },
+    "statement": {
+      "uz": "Massivga pufaksimon saralashning aynan k ta chapdan oʻngga oʻtishi qoʻllanadi. Bir oʻtish: qoʻshni elementlarni boshidan oxiriga qadar bir marta koʻrib chiqish va notoʻgʻri tartibdagi juftliklarni almashtirish. Massiv oldinroq saralansa ham erta toʻxtatish yoʻq — aynan k ta oʻtish bajariladi. Birinchi satrda n, ikkinchisida n ta butun son (boʻsh joy bilan ajratilgan), uchinchi satrda k. k oʻtishdan keyingi massivni bitta satrda, boʻsh joy bilan ajratib chiqaring. Masalan, 4; 4 3 2 1; 2 kirilsa, chiqish: 2 1 3 4. 1 ≤ n ≤ 1000, 0 ≤ k ≤ n.",
+      "ru": "К массиву применяют ровно k проходов пузырьковой сортировки слева направо. Один проход: один раз просмотреть соседние пары от начала до конца и переставить стоящие неверно. Ранней остановки нет: выполняются все k проходов, даже если массив уже отсортирован. Первая строка — n, вторая — n целых чисел через пробел, третья — k. Выведите массив после k проходов одной строкой через пробел. Например, на ввод 4; 4 3 2 1; 2 вывод: 2 1 3 4. 1 ≤ n ≤ 1000, 0 ≤ k ≤ n.",
+      "en": "Apply exactly k left-to-right passes of bubble sort to the array. One pass scans the neighbouring pairs once from start to end and swaps those in the wrong order. There is no early stop: all k passes run even if the array is already sorted. The first line holds n, the second n integers separated by spaces, the third k. Print the array after k passes on one line, space separated. For example, the input 4; 4 3 2 1; 2 gives 2 1 3 4. 1 ≤ n ≤ 1000, 0 ≤ k ≤ n."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\nk = int(input())\n\nprint(*a)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n        int k = in.nextInt();\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(a[i]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int& v : a) cin >> v;\n    int k;\n    cin >> k;\n    for (int i = 0; i < n; i++) cout << (i ? \" \" : \"\") << a[i];\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\nk = int(input())\nfor o in range(k):\n    for i in range(n - 1):\n        if a[i] > a[i + 1]:\n            a[i], a[i + 1] = a[i + 1], a[i]\nprint(*a)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n        int k = in.nextInt();\n        for (int o = 0; o < k; o++) {\n            for (int i = 0; i < n - 1; i++) {\n                if (a[i] > a[i + 1]) {\n                    int t = a[i];\n                    a[i] = a[i + 1];\n                    a[i + 1] = t;\n                }\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(a[i]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int& v : a) cin >> v;\n    int k;\n    cin >> k;\n    for (int o = 0; o < k; o++) {\n        for (int i = 0; i < n - 1; i++) {\n            if (a[i] > a[i + 1]) {\n                int t = a[i];\n                a[i] = a[i + 1];\n                a[i + 1] = t;\n            }\n        }\n    }\n    for (int i = 0; i < n; i++) cout << (i ? \" \" : \"\") << a[i];\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4\n4 3 2 1\n2\n", "expected": "2 1 3 4", "hidden": false },
+        { "input": "7\n2 3 4 5 6 7 1\n1\n", "expected": "2 3 4 5 6 1 7", "hidden": false },
+        { "input": "5\n5 1 4 2 3\n0\n", "expected": "5 1 4 2 3", "hidden": true },
+        { "input": "7\n2 3 4 5 6 7 1\n3\n", "expected": "2 3 4 1 5 6 7", "hidden": true },
+        { "input": "6\n6 5 4 3 2 1\n3\n", "expected": "3 2 1 4 5 6", "hidden": true }
+      ]
+    }
+  }
+}

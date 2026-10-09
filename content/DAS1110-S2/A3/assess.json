@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Funksiya tavsifiga (imzosiga) nimalar kiradi?",
+          "ru": "Что входит в описание (подпись) функции?",
+          "en": "What does a function's description (its signature) include?"
+        },
+        "options": [
+          {
+            "uz": "Funksiya tanasi: u ichida qanday amallar bajarilishi",
+            "ru": "Тело функции: какие действия в нём выполняются",
+            "en": "The function's body: which actions it performs inside"
+          },
+          {
+            "uz": "Faqat nomi va parametrlar soni",
+            "ru": "Только имя и количество параметров",
+            "en": "Only the name and the number of parameters"
+          },
+          {
+            "uz": "Funksiya qaysi faylda joylashgani va nechta qator edi",
+            "ru": "В каком файле функция находится и сколько строк занимает",
+            "en": "Which file the function lives in and how many lines it takes"
+          },
+          {
+            "uz": "Nomi, parametrlari va ularning turlari hamda qaytaradigan qiymat turi",
+            "ru": "Имя, параметры и их типы, а также тип возвращаемого значения",
+            "en": "Its name, its parameters and their types, and the type of value it returns"
+          }
+        ],
+        "correct": [3],
+        "explanation": {
+          "uz": "Darsda: tavsif — undan foydalanish uchun bilish kerak boʻlgan hamma narsa; tana esa „qanday ishlashi“ chaqiruvchi uchun ahamiyatsiz.",
+          "ru": "В занятии: описание — это всё, что нужно знать, чтобы функцией воспользоваться; тело, то есть «как оно работает», вызывающему не важно.",
+          "en": "The lesson says the description is everything you need to know in order to use the function; the body — how it works — does not matter to the caller."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi qoidaga koʻra: hisoblovchi funksiya chiqarmasin, chiqaruvchi protsedura hisoblamasin.",
+          "ru": "По правилу из занятия: вычисляющая функция ничего не печатает, а печатающая процедура ничего не вычисляет.",
+          "en": "By the lesson's rule: a computing function does not print, and a printing procedure does not compute."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shunda hisoblovchi funksiyani boshqa joyda ham ishlatish va testlash mumkin.",
+          "ru": "Именно тогда вычисляющую функцию можно использовать в другом месте и протестировать.",
+          "en": "Only then can a computing function be reused elsewhere and tested."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Protsedura haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о процедуре верны?",
+          "en": "Which statements about a procedure are correct?"
+        },
+        "options": [
+          {
+            "uz": "Ifoda ichida ishlatiladi: `y = chiqar(a) + 1`",
+            "ru": "Используется внутри выражения: `y = chiqar(a) + 1`",
+            "en": "It is used inside an expression: `y = chiqar(a) + 1`"
+          },
+          {
+            "uz": "Java va C++ʼda qaytaradigan turi `void`, Pythonʼda `None`",
+            "ru": "В Java и C++ её тип возврата `void`, в Python — `None`",
+            "en": "In Java and C++ its return type is `void`, in Python `None`"
+          },
+          {
+            "uz": "Hisoblangan natijani chaqiruvchiga qaytaradi",
+            "ru": "Возвращает вызывающему вычисленный результат",
+            "en": "It returns the computed result to the caller"
+          },
+          {
+            "uz": "Alohida buyruq sifatida chaqiriladi",
+            "ru": "Вызывается как отдельный оператор",
+            "en": "It is called as a separate statement"
+          }
+        ],
+        "correct": [1, 3],
+        "explanation": {
+          "uz": "Protsedura amal bajaradi (chiqaradi, massivni oʻzgartiradi) va natija qaytarmaydi; ifoda ichida qiymat qaytaruvchi funksiya ishlatiladi.",
+          "ru": "Процедура выполняет действие (печатает, меняет массив) и не возвращает результат; внутри выражения используется функция, возвращающая значение.",
+          "en": "A procedure performs an action (prints, changes an array) and returns no result; inside an expression you use a value-returning function."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Pythonʼda bir xil nomli ikkinchi `def` yozilsa nima boʻladi?",
+          "ru": "Что произойдёт, если в Python написать второй `def` с тем же именем?",
+          "en": "In Python, what happens if you write a second `def` with the same name?"
+        },
+        "options": [
+          {
+            "uz": "Dastur sintaksis xatosi bilan toʻxtaydi",
+            "ru": "Программа останавливается с синтаксической ошибкой",
+            "en": "The program stops with a syntax error"
+          },
+          {
+            "uz": "Ikkala funksiya ham ishlaydi va ular argumentlar soniga qarab tanlanadi",
+            "ru": "Обе функции работают, и они выбираются по количеству аргументов",
+            "en": "Both functions work and they are chosen by the number of arguments"
+          },
+          {
+            "uz": "Ikkinchisi birinchisini oʻchiradi, shuning uchun qayta yuklashning oʻrniga standart parametrlar ishlatiladi",
+            "ru": "Второй заменяет первый, поэтому вместо перегрузки используют параметры по умолчанию",
+            "en": "The second one replaces the first, so default parameters are used instead of overloading"
+          },
+          {
+            "uz": "Funksiya avtomatik ravishda ikkiga boʻlinadi",
+            "ru": "Функция автоматически разделяется на две",
+            "en": "The function is automatically split into two"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Python qayta yuklashni qoʻllamaydi: `def f(a, b=None)` kabi standart parametrlar yoki `*args` ishlatiladi.",
+          "ru": "Python не поддерживает перегрузку: используют параметры по умолчанию, например `def f(a, b=None)`, или `*args`.",
+          "en": "Python does not support overloading: use default parameters such as `def f(a, b=None)`, or `*args`."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Javaʼda funksiyadan bir nechta natijani qaytarish uchun darsda keltirilgan maxsus yozuv turining nomini yozing.",
+          "ru": "Напишите имя специального вида записи, который занятие приводит в Java для возврата нескольких результатов из функции.",
+          "en": "Write the name of the special kind of declaration the lesson uses in Java to return several results from a function."
+        },
+        "answers": ["record"],
+        "explanation": {
+          "uz": "Darsda: Java — kichik sinf yoki `record`, masalan `record Natija(int kichik, int katta)`.",
+          "ru": "В занятии: Java — маленький класс или `record`, например `record Natija(int kichik, int katta)`.",
+          "en": "The lesson gives Java — a small class or a `record`, for example `record Natija(int kichik, int katta)`."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi uch xil `yuza` funksiyasidan `yuza(3, 4, 5)` chaqirilganda qanday butun son chiqadi (uchburchak tomonlari 3, 4, 5)?",
+          "ru": "Какое целое число получится, если из трёх функций `yuza` занятия вызвать `yuza(3, 4, 5)` — для треугольника со сторонами 3, 4, 5?",
+          "en": "Of the three `yuza` functions in the lesson, what whole number does the call `yuza(3, 4, 5)` give — for a triangle with sides 3, 4, 5?"
+        },
+        "answers": [6],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Uchburchak Geron formulasi bilan hisoblanadi: p = (3 + 4 + 5) / 2 = 6, yuza = √(6 · 3 · 2 · 1) = 6; darsda chiqish 6.00.",
+          "ru": "Для треугольника работает формула Герона: p = (3 + 4 + 5) / 2 = 6, площадь = √(6 · 3 · 2 · 1) = 6; в занятии вывод 6.00.",
+          "en": "The triangle uses Heron's formula: p = (3 + 4 + 5) / 2 = 6, and the area is √(6 · 3 · 2 · 1) = 6; the lesson prints 6.00."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "C++ tilida `void f(int& x) { x = 5; }` funksiyasi `y` oʻzgaruvchisi bilan chaqirilsa, chaqiruvdan keyin `y` nimaga teng boʻladi?",
+          "ru": "В C++ функция `void f(int& x) { x = 5; }` вызвана с переменной `y`. Чему равен `y` после вызова?",
+          "en": "In C++, the function `void f(int& x) { x = 5; }` is called with the variable `y`. What is `y` after the call?"
+        },
+        "options": [
+          {
+            "uz": "Oʻzgarmaydi, chunki funksiya `void`",
+            "ru": "Не меняется, потому что функция `void`",
+            "en": "It does not change, because the function is `void`"
+          },
+          {
+            "uz": "5 — `x` havola, yaʼni chaqiruvchining oʻzgaruvchisining oʻzi",
+            "ru": "5 — `x` это ссылка, то есть сама переменная вызывающего",
+            "en": "5 — `x` is a reference, that is, the caller's own variable"
+          },
+          {
+            "uz": "0 — funksiya tashqariga qiymat chiqarmaydi",
+            "ru": "0 — функция не выводит значение наружу",
+            "en": "0 — the function returns no value outward"
+          },
+          {
+            "uz": "5, lekin faqat `x` `const` bilan uzatilgan boʻlsa",
+            "ru": "5, но только если `x` передан как `const`",
+            "en": "5, but only if `x` is passed as `const`"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: `int&` — havola parametr, funksiya chaqiruvchining oʻzgaruvchisini toʻgʻridan-toʻgʻri oʻzgartiradi. `&` boʻlmasa, funksiya nusxani oʻzgartirardi.",
+          "ru": "По занятию `int&` — параметр-ссылка: функция меняет переменную вызывающего напрямую. Без `&` функция меняла бы копию.",
+          "en": "The lesson says `int&` is a reference parameter: the function changes the caller's variable directly. Without `&` it would change only a copy."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qayta yuklash va parametr uzatish haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о перегрузке и передаче параметров верны?",
+          "en": "Which statements about overloading and passing parameters are correct?"
+        },
+        "options": [
+          {
+            "uz": "Parametrlari bir xil, faqat qaytaradigan turi bilan farq qiluvchi funksiyalar qayta yuklanmaydi",
+            "ru": "Функции с одинаковыми параметрами, различающиеся лишь типом возврата, перегрузить нельзя",
+            "en": "Functions with the same parameters that differ only in return type cannot be overloaded"
+          },
+          {
+            "uz": "Pythonʼda ham funksiyalarni qayta yuklash toʻgʻridan-toʻgʻri qoʻllanadi",
+            "ru": "В Python перегрузка функций тоже поддерживается напрямую",
+            "en": "Python also supports function overloading directly"
+          },
+          {
+            "uz": "`const vector<int>&` bilan uzatilganda vektor nusxalanmaydi va funksiya uni oʻzgartira olmaydi",
+            "ru": "Передача `const vector<int>&` не копирует вектор, и функция не может его изменить",
+            "en": "Passing `const vector<int>&` copies nothing, and the function cannot change the vector"
+          },
+          {
+            "uz": "Java va C++ funksiyalarni parametrlarining soni va turi boʻyicha qayta yuklaydi",
+            "ru": "Java и C++ перегружают функции по количеству и типам параметров",
+            "en": "Java and C++ overload functions by the number and the types of the parameters"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "Python qayta yuklashni qoʻllamaydi: bir xil nomli ikkinchi `def` birinchisini oʻchiradi, shuning uchun standart parametrlar ishlatiladi.",
+          "ru": "Python перегрузку не поддерживает: второй `def` с тем же именем стирает первый, поэтому берут параметры по умолчанию.",
+          "en": "Python has no overloading: a second `def` with the same name erases the first, so default parameters are used instead."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Pythonda `def f(a, royxat=[])` deb yozilsa, har bir chaqiruv uchun yangi boʻsh roʻyxat yaratiladi.",
+          "ru": "Если в Python написать `def f(a, royxat=[])`, то для каждого вызова создаётся новый пустой список.",
+          "en": "In Python, writing `def f(a, royxat=[])` creates a new empty list for every call."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi xolatlardan biri: `royxat=[]` bilan roʻyxat barcha chaqiruvlar uchun bitta boʻlib qoladi; `None` ishlatib, ichida yangi roʻyxat yaratish kerak.",
+          "ru": "Одна из ошибок в занятии: при `royxat=[]` список остаётся общим для всех вызовов; надо брать `None` и создавать новый список внутри.",
+          "en": "One of the lesson's mistakes: with `royxat=[]` the list is shared by all calls; use `None` and create a new list inside."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Tub sonlarni sanash",
+      "ru": "Подсчёт простых чисел",
+      "en": "Counting the prime numbers"
+    },
+    "statement": {
+      "uz": "Birinchisida n; ikkinchisida n ta butun son berilgan. Tub son — 1 dan katta va faqat oʻziga hamda 1 ga boʻlinadigan son. Dasturingiz ikkita funksiyadan tuzilsin: biri bitta son tubmi yoki yoʻqmi degan savolga javob qaytarsin, ikkinchisi massivdagi tub sonlarning sonini va ularning yigʻindisini qaytarsin; sonni oʻqish va natijani chiqarish asosiy dasturda qolsin. Chiqishda bitta satrda avval tub sonlarning soni, keyin ularning yigʻindisi, bitta boʻsh joy bilan chiqadi; tub son boʻlmasa `0 0` chiqadi. Masalan, 6 va 2 3 4 9 11 15 kiritilsa, chiqish: 3 16. 1 ≤ n ≤ 100, sonlar 1 dan 10⁶ gacha.",
+      "ru": "В первой строке дано n, во второй — n целых чисел. Простое число — число больше 1, которое делится только на себя и на 1. Ваша программа должна состоять из двух функций: одна отвечает на вопрос, простое ли число, вторая возвращает количество простых чисел в массиве и их сумму; чтение и печать остаются в основной программе. Выведите одной строкой сначала количество простых чисел, затем их сумму — через один пробел; если простых чисел нет, выведите `0 0`. Например, для 6 и 2 3 4 9 11 15 вывод: 3 16. 1 ≤ n ≤ 100, числа от 1 до 10⁶.",
+      "en": "The first line holds n, the second n integers. A prime number is a number greater than 1 that divides only by itself and by 1. Your program should be built from two functions: one answers whether a single number is prime, the other returns how many primes the array holds and their sum; reading and printing stay in the main program. Print on one line first the count of prime numbers, then their sum, separated by a single space; if there are none, print `0 0`. For example, n = 6 with 2 3 4 9 11 15 gives 3 16. 1 ≤ n ≤ 100, values from 1 to 10⁶."
+    },
+    "code": {
+      "starter": {
+        "python": "def tubmi(n):\n    return n > 1\n\n\ndef natija(a):\n    son = 0\n    yigindi = 0\n    for x in a:\n        if tubmi(x):\n            son += 1\n            yigindi += x\n    return son, yigindi\n\n\nn = int(input())\na = list(map(int, input().split()))\nson, yigindi = natija(a)\nprint(son, yigindi)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static boolean tubmi(long n) {\n        return n > 1;\n    }\n\n    static long[] natija(long[] a) {\n        long son = 0;\n        long yigindi = 0;\n        for (long x : a) {\n            if (tubmi(x)) {\n                son++;\n                yigindi += x;\n            }\n        }\n        return new long[]{son, yigindi};\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        long[] s = natija(a);\n        System.out.println(s[0] + \" \" + s[1]);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <utility>\n#include <vector>\nusing namespace std;\n\nbool tubmi(long long n) {\n    return n > 1;\n}\n\npair<long long, long long> natija(const vector<long long>& a) {\n    long long son = 0;\n    long long yigindi = 0;\n    for (long long x : a) {\n        if (tubmi(x)) {\n            son++;\n            yigindi += x;\n        }\n    }\n    return {son, yigindi};\n}\n\nint main() {\n    int n;\n    cin >> n;\n    vector<long long> a(n);\n    for (int i = 0; i < n; i++) cin >> a[i];\n    pair<long long, long long> s = natija(a);\n    cout << s.first << \" \" << s.second << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "def tubmi(n):\n    if n < 2:\n        return False\n    d = 2\n    while d * d <= n:\n        if n % d == 0:\n            return False\n        d += 1\n    return True\n\n\ndef natija(a):\n    son = 0\n    yigindi = 0\n    for x in a:\n        if tubmi(x):\n            son += 1\n            yigindi += x\n    return son, yigindi\n\n\nn = int(input())\na = list(map(int, input().split()))\nson, yigindi = natija(a)\nprint(son, yigindi)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static boolean tubmi(long n) {\n        if (n < 2) return false;\n        for (long d = 2; d * d <= n; d++) {\n            if (n % d == 0) return false;\n        }\n        return true;\n    }\n\n    static long[] natija(long[] a) {\n        long son = 0;\n        long yigindi = 0;\n        for (long x : a) {\n            if (tubmi(x)) {\n                son++;\n                yigindi += x;\n            }\n        }\n        return new long[]{son, yigindi};\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long[] a = new long[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextLong();\n        long[] s = natija(a);\n        System.out.println(s[0] + \" \" + s[1]);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <utility>\n#include <vector>\nusing namespace std;\n\nbool tubmi(long long n) {\n    if (n < 2) return false;\n    for (long long d = 2; d * d <= n; d++) {\n        if (n % d == 0) return false;\n    }\n    return true;\n}\n\npair<long long, long long> natija(const vector<long long>& a) {\n    long long son = 0;\n    long long yigindi = 0;\n    for (long long x : a) {\n        if (tubmi(x)) {\n            son++;\n            yigindi += x;\n        }\n    }\n    return {son, yigindi};\n}\n\nint main() {\n    int n;\n    cin >> n;\n    vector<long long> a(n);\n    for (int i = 0; i < n; i++) cin >> a[i];\n    pair<long long, long long> s = natija(a);\n    cout << s.first << \" \" << s.second << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "6\n2 3 4 9 11 15\n", "expected": "3 16", "hidden": false },
+        { "input": "4\n1 4 6 8\n", "expected": "0 0", "hidden": false },
+        { "input": "5\n1 2 3 4 5\n", "expected": "3 10", "hidden": true },
+        { "input": "4\n101 91 78 2\n", "expected": "2 103", "hidden": true },
+        { "input": "1\n1\n", "expected": "0 0", "hidden": true }
+      ]
+    }
+  }
+}

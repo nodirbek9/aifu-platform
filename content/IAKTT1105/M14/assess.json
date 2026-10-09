@@ -1,0 +1,316 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Axborot xavfsizligining uch asosiy xususiyati — CIA uchligi — qaysilar?",
+          "ru": "Какие три основных свойства лежат в основе триады CIA в информационной безопасности?",
+          "en": "What are the three core properties of the CIA triad of information security?"
+        },
+        "options": [
+          {
+            "uz": "Maxfiylik, yaxlitlik va mavjudlik",
+            "ru": "Конфиденциальность, целостность и доступность",
+            "en": "Confidentiality, integrity and availability"
+          },
+          {
+            "uz": "Tezlik, arzonlik va qulaylik",
+            "ru": "Скорость, дешевизна и удобство",
+            "en": "Speed, low cost and convenience"
+          },
+          {
+            "uz": "Shifrlash, antivirus va tarmoq ekrani",
+            "ru": "Шифрование, антивирус и межсетевой экран",
+            "en": "Encryption, antivirus and a firewall"
+          },
+          {
+            "uz": "Huquqiy, tashkiliy va jismoniy choralar",
+            "ru": "Юридические, организационные и физические меры",
+            "en": "Legal, organizational and physical measures"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "CIA uchligi — maxfiylik, yaxlitlik va mavjudlik; shifrlash va antivirus — bu xususiyatlarni taʼminlovchi vositalar, huquqiy, tashkiliy va jismoniy choralar esa himoya usullarining guruhlari.",
+          "ru": "Триада CIA — это конфиденциальность, целостность и доступность; шифрование и антивирус — средства их обеспечения, а юридические, организационные и физические меры — группы методов защиты.",
+          "en": "The CIA triad is confidentiality, integrity and availability; encryption and antivirus are means of ensuring them, while legal, organizational and physical measures are groups of protection methods."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysilari darsdagi axborot tahdidlari manbalariga kiradi?",
+          "ru": "Что из перечисленного относится к источникам угроз информации из урока?",
+          "en": "Which of these are sources of information threats from the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Inson xatosi: notoʻgʻri faylni oʻchirish, parolni stikerda qoldirish",
+            "ru": "Ошибка человека: удалить не тот файл, оставить пароль на стикере",
+            "en": "Human error: deleting the wrong file, leaving a password on a sticky note"
+          },
+          {
+            "uz": "Firibgarlik va ijtimoiy muhandislik: fishing",
+            "ru": "Мошенничество и социальная инженерия: фишинг",
+            "en": "Fraud and social engineering: phishing"
+          },
+          {
+            "uz": "Zararli dasturlar: viruslar va ransomware",
+            "ru": "Вредоносные программы: вирусы и ransomware",
+            "en": "Malware: viruses and ransomware"
+          },
+          {
+            "uz": "Maʼlumotlar bazasini normalizatsiyalash",
+            "ru": "Нормализация базы данных",
+            "en": "Normalizing a database"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Normalizatsiya — maʼlumotlar bazasini loyihalash usuli, tahdid emas; darsda bundan tashqari ichki tahdid, texnik nosozliklar va tabiiy hodisalar ham sanab oʻtilgan.",
+          "ru": "Нормализация — способ проектирования базы данных, а не угроза; в уроке названы также внутренние угрозы, технические сбои и природные события.",
+          "en": "Normalization is a database design technique, not a threat; the lesson also lists insider threats, technical failures and natural events."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Koʻp xodisa murakkab texnik hujumdan emas, oddiy inson xatosi yoki firibgarlikdan boshlanadi.",
+          "ru": "Многие инциденты начинаются не со сложной технической атаки, а с простой ошибки человека или мошенничества.",
+          "en": "Many incidents start not with a sophisticated technical attack but with simple human error or fraud."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bu darsning asosiy xulosasi: shuning uchun xodimlarni oʻqitish — eng arzon va samarali choralaridan biri.",
+          "ru": "Это главный вывод урока: поэтому обучение сотрудников — одна из самых дешевых и эффективных мер.",
+          "en": "This is the lesson's main point: that is why training staff is one of the cheapest and most effective measures."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Zaxira nusxaning 3-2-1 qoidasi nimani anglatadi?",
+          "ru": "Что означает правило резервных копий 3-2-1?",
+          "en": "What does the 3-2-1 backup rule mean?"
+        },
+        "options": [
+          {
+            "uz": "Maʼlumotning 3 nusxasi, 2 xil tashuvchida, 1 tasi boshqa joyda saqlanadi",
+            "ru": "3 копии данных на 2 разных носителях, одна из них — в другом месте",
+            "en": "3 copies of the data on 2 different media, 1 of them in another location"
+          },
+          {
+            "uz": "Zaxira har 3 kunda 2 soat davomida olinadi va 1 oy saqlanadi",
+            "ru": "Копия делается каждые 3 дня по 2 часа и хранится 1 месяц",
+            "en": "A copy is made every 3 days for 2 hours and kept for 1 month"
+          },
+          {
+            "uz": "Serverda 3 disk, 2 tasi SSD va 1 tasi zaxira boʻladi",
+            "ru": "На сервере 3 диска, из них 2 SSD и 1 резервный",
+            "en": "The server has 3 disks, 2 of them SSDs and 1 spare"
+          },
+          {
+            "uz": "Faqat 3 ta muhim fayl 2 nusxada 1 kompyuterda saqlanadi",
+            "ru": "Хранятся только 3 важных файла в 2 копиях на 1 компьютере",
+            "en": "Only 3 important files are kept in 2 copies on 1 computer"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "3 nusxa, 2 xil tashuvchi, 1 tasi boshqa joyda (masalan, bulutda yoki oflayn); zaxiradan tiklashni muntazam sinab koʻrish kerak.",
+          "ru": "3 копии, 2 разных носителя, 1 из них в другом месте (например, в облаке или офлайн); восстановление из копии нужно регулярно проверять.",
+          "en": "3 copies, on 2 different media, 1 of them in another location (for example, in the cloud or offline); restoring from a backup must be tested regularly."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "«Minimal imtiyoz» tamoyili nimani talab qiladi?",
+          "ru": "Что требует принцип минимальных привилегий?",
+          "en": "What does the least privilege principle require?"
+        },
+        "options": [
+          {
+            "uz": "Har bir xodim faqat ishi uchun zarur boʻlgan maʼlumot va funksiyalarga kira oladi",
+            "ru": "Каждый сотрудник имеет доступ только к данным и функциям, нужным для его работы",
+            "en": "Each employee can access only the data and functions needed for their work"
+          },
+          {
+            "uz": "Barcha xodimlarga administrator huquqi beriladi",
+            "ru": "Всем сотрудникам выдаются права администратора",
+            "en": "All employees are given administrator rights"
+          },
+          {
+            "uz": "Har bir foydalanuvchiga alohida kompyuter beriladi",
+            "ru": "Каждому пользователю выделяется отдельный компьютер",
+            "en": "Each user gets a separate computer"
+          },
+          {
+            "uz": "Maʼlumotlar faqat bulutta saqlanadi",
+            "ru": "Данные хранятся только в облаке",
+            "en": "Data is stored only in the cloud"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Masalan, kassir buxgalteriya hisobotlarini koʻrmaydi; hammaga administrator huquqi berish — darsda tilga olingan keng tarqalgan xato.",
+          "ru": "Например, кассир не видит бухгалтерских отчетов; выдавать всем права администратора — частая ошибка, отмеченная в уроке.",
+          "en": "For example, a cashier does not see accounting reports; giving everyone admin rights is a common mistake the lesson warns about."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "SLE 40 000 000 soʻm va ARO 0,5 boʻlsa, ALE yiliga necha soʻmga teng?",
+          "ru": "Чему равен ALE в сумах в год, если SLE = 40 000 000 сумов, а ARO = 0,5?",
+          "en": "What is the ALE in soums per year if the SLE is 40,000,000 soums and the ARO is 0.5?"
+        },
+        "answers": [20000000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "ALE = SLE × ARO = 40 000 000 × 0,5 = 20 000 000 soʻm — darsning «oʻzingizni tekshiring» boʻlimidagi javob.",
+          "ru": "ALE = SLE × ARO = 40 000 000 × 0,5 = 20 000 000 сумов — ответ из раздела урока «проверь себя».",
+          "en": "ALE = SLE × ARO = 40,000,000 × 0.5 = 20,000,000 soums — the answer from the lesson's check-yourself section."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Axborot xavfsizligini boshqarish tizimining xalqaro standarti qanday ataladi? Nomini raqami bilan yozing.",
+          "ru": "Как называется международный стандарт системы менеджмента информационной безопасности? Укажите название с номером.",
+          "en": "What is the international standard for information security management systems called? Give its name with the number."
+        },
+        "answers": ["ISO/IEC 27001", "ISO 27001", "iso/iec 27001", "iso 27001"],
+        "explanation": {
+          "uz": "ISO/IEC 27001 — axborot xavfsizligini boshqarish tizimi standarti; Oʻzbekistonda qoʻshimcha ravishda «Axborotlashtirish toʻgʻrisida», «Shaxsga doir maʼlumotlar toʻgʻrisida» va «Kiberxavfsizlik toʻgʻrisida» qonunlari amal qiladi.",
+          "ru": "ISO/IEC 27001 — стандарт систем менеджмента информационной безопасности; в Узбекистане дополнительно действуют законы «Об информатизации», «О персональных данных» и «О кибербезопасности».",
+          "en": "ISO/IEC 27001 is the standard for information security management systems; in Uzbekistan the laws On Informatization, On Personal Data and On Cybersecurity also apply."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qaysilari texnik va dasturiy himoya choralariga kiradi?",
+          "ru": "Что из перечисленного относится к техническим и программным мерам защиты?",
+          "en": "Which of these are technical and software protection measures?"
+        },
+        "options": [
+          {
+            "uz": "Koʻp faktorli autentifikatsiya (MFA)",
+            "ru": "Многофакторная аутентификация (MFA)",
+            "en": "Multi-factor authentication (MFA)"
+          },
+          {
+            "uz": "Zaxira nusxa va yangilanishlar",
+            "ru": "Резервные копии и обновления",
+            "en": "Backups and updates"
+          },
+          {
+            "uz": "Antivirus va tarmoq ekrani (firewall)",
+            "ru": "Антивирус и межсетевой экран (файрвол)",
+            "en": "Antivirus and a firewall"
+          },
+          {
+            "uz": "Ishdan ketgan xodim hisobini darhol yopish",
+            "ru": "Немедленное закрытие учётной записи уволенного сотрудника",
+            "en": "Closing a departing employee's account immediately"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Hisobni yopish — tashkiliy chora; server xonasiga kirishni cheklash, kuzatuv kameralari va UPS esa jismoniy choralardir.",
+          "ru": "Закрытие учётной записи — организационная мера; ограничение доступа в серверную, камеры наблюдения и ИБП — физические меры.",
+          "en": "Closing an account is an organizational measure; restricting access to the server room, CCTV cameras and a UPS are physical measures."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Agar choraning yillik narxi ALE kamayishidan katta boʻlsa, ROSI musbat boʻladi va chora oʻzini oqlaydi.",
+          "ru": "Если годовая стоимость меры превышает сокращение ALE, ROSI положителен и мера себя оправдывает.",
+          "en": "If a measure's annual cost is larger than the reduction in ALE, the ROSI is positive and the measure pays off."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "ROSI = (ALE kamayishi − narx) / narx × 100%: kamayish 30 mln, narx 40 mln boʻlgan dars misolida ROSI −25% — chora qayta koʻrib chiqiladi.",
+          "ru": "ROSI = (сокращение ALE − стоимость) / стоимость × 100%: в примере урока при сокращении 30 млн и цене 40 млн ROSI = −25% — меру нужно пересмотреть.",
+          "en": "ROSI = (reduction in ALE − cost) / cost × 100%: in the lesson's example a reduction of 30 million against a cost of 40 million gives ROSI −25% — the measure is reconsidered."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Himoya choralarini tanlash: ALE, ROSI va eng yaxshi chora",
+      "ru": "Выбор мер защиты: ALE, ROSI и лучшая мера",
+      "en": "Choosing protective measures: ALE, ROSI and the best measure"
+    },
+    "statement": {
+      "uz": "Darsdagi dastur kabi kiritishning har bir qatorida shu tartibda: tahdid nomi (bitta soʻz), bitta hodisa zarari SLE (soʻmda), choragacha boʻlgan chastota (10 yilda necha marta), choradan keyingi chastota va choraning yillik narxi (soʻmda). Boʻsh qatorlar uchraydi va ular oʻtkazib yuboriladi. Har bir chora uchun bitta qator chiqaring: «nom: ALE X -> Y, benefit B, ROSI R%, decision» — bunda X = SLE ni choragacha chastotaga koʻpaytirib 10 ga boʻlishning butun qismi (pastga yaxlitlanadi), Y = SLE ni choradan keyingi chastotaga koʻpaytirib 10 ga boʻlishning butun qismi, B = X − Y, R = (B − narx) × 100 ni narxga boʻlishning butun qismi. Agar R > 0 boʻlsa decision = implement, aks holda reconsider. Barcha chora qatorlaridan keyin yana ikkita qator chiqaring: «total benefit: T» — barcha B larning yigʻindisi, va «best: NOM» — eng yuqori ROSI ga ega choraning nomi; ROSI lar teng boʻlsa, kiritishda birinchi kelgan chora tanlanadi. Masalan, «outage 50000000 10 4 12000000» qatoriga «outage: ALE 50000000 -> 20000000, benefit 30000000, ROSI 150%, implement» toʻgʻri keladi.",
+      "ru": "Как в программе урока, каждая строка входа содержит: название угрозы (одно слово), ущерб от одного инцидента SLE (в сумах), частоту до меры (раз в 10 лет), частоту после меры и годовую стоимость меры (в сумах). Пустые строки встречаются и пропускаются. Для каждой меры выведите одну строку в формате: «nom: ALE X -> Y, benefit B, ROSI R%, decision» — X = целая часть от деления SLE × частота до на 10 (округление вниз), Y = целая часть от деления SLE × частота после на 10, B = X − Y, R = целая часть от деления (B − стоимость) × 100 на стоимость. Если R > 0, то decision = implement, иначе reconsider. После всех строк меры выведите ещё две строки: «total benefit: T» — сумма всех B, и «best: NOM» — название меры с наибольшим ROSI; при равном ROSI выбирается та, что встретилась во входе раньше. Например, строка «outage 50000000 10 4 12000000» даёт «outage: ALE 50000000 -> 20000000, benefit 30000000, ROSI 150%, implement».",
+      "en": "As in the lesson's program, each input line holds: the threat name (one word), the loss from one incident SLE (soums), the frequency before the measure (times per 10 years), the frequency after the measure and the annual cost of the measure (soums). Blank lines occur and are skipped. For each measure print one line in the format «nom: ALE X -> Y, benefit B, ROSI R%, decision» — X = SLE multiplied by the frequency-before divided by 10 rounded down to an integer, Y = SLE multiplied by the frequency-after divided by 10 rounded down, B = X − Y, R = (B − cost) × 100 divided by cost rounded down to an integer. If R > 0 the decision is implement, otherwise reconsider. After all the measure lines print two more lines: «total benefit: T» — the sum of all the B values, and «best: NOM» — the name of the measure with the highest ROSI; if several measures have equal ROSI, the one that appears first in the input wins. For example, the line «outage 50000000 10 4 12000000» gives «outage: ALE 50000000 -> 20000000, benefit 30000000, ROSI 150%, implement»."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nfor satr in sys.stdin.read().split(\"\\n\"):\n    if not satr.strip():\n        continue\n    nom, sle, oldin, keyin, narx = satr.split()\n    sle, oldin, keyin, narx = int(sle), int(oldin), int(keyin), int(narx)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        while (in.hasNext()) {\n            String nom = in.next();\n            long sle = in.nextLong(), oldin = in.nextLong(), keyin = in.nextLong(), narx = in.nextLong();\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string nom;\n    long long sle, oldin, keyin, narx;\n    while (cin >> nom >> sle >> oldin >> keyin >> narx) {\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\ntotal = 0\nbest_nom = \"\"\nbest_rosi = None\n\nfor satr in sys.stdin.read().split(\"\\n\"):\n    if not satr.strip():\n        continue\n    nom, sle, oldin, keyin, narx = satr.split()\n    sle, oldin, keyin, narx = int(sle), int(oldin), int(keyin), int(narx)\n    ale_oldin = sle * oldin // 10\n    ale_keyin = sle * keyin // 10\n    foyda = ale_oldin - ale_keyin\n    rosi = (foyda - narx) * 100 // narx\n    qaror = \"implement\" if rosi > 0 else \"reconsider\"\n    total += foyda\n    if best_rosi is None or rosi > best_rosi:\n        best_rosi = rosi\n        best_nom = nom\n    print(f\"{nom}: ALE {ale_oldin} -> {ale_keyin}, benefit {foyda}, ROSI {rosi}%, {qaror}\")\n\nprint(f\"total benefit: {total}\")\nprint(f\"best: {best_nom}\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long total = 0;\n        String bestNom = \"\";\n        long bestRosi = Long.MIN_VALUE;\n        while (in.hasNext()) {\n            String nom = in.next();\n            long sle = in.nextLong(), oldin = in.nextLong(), keyin = in.nextLong(), narx = in.nextLong();\n            long aleOldin = sle * oldin / 10;\n            long aleKeyin = sle * keyin / 10;\n            long foyda = aleOldin - aleKeyin;\n            long rosi = (foyda - narx) * 100 / narx;\n            String qaror = rosi > 0 ? \"implement\" : \"reconsider\";\n            total += foyda;\n            if (rosi > bestRosi) {\n                bestRosi = rosi;\n                bestNom = nom;\n            }\n            System.out.println(nom + \": ALE \" + aleOldin + \" -> \" + aleKeyin + \", benefit \" + foyda + \", ROSI \" + rosi + \"%, \" + qaror);\n        }\n        System.out.println(\"total benefit: \" + total);\n        System.out.println(\"best: \" + bestNom);\n    }\n}\n",
+        "cpp": "#include <climits>\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string nom;\n    long long sle, oldin, keyin, narx;\n    long long total = 0;\n    string bestNom = \"\";\n    long long bestRosi = LLONG_MIN;\n    while (cin >> nom >> sle >> oldin >> keyin >> narx) {\n        long long aleOldin = sle * oldin / 10;\n        long long aleKeyin = sle * keyin / 10;\n        long long foyda = aleOldin - aleKeyin;\n        long long rosi = (foyda - narx) * 100 / narx;\n        string qaror = rosi > 0 ? \"implement\" : \"reconsider\";\n        total += foyda;\n        if (rosi > bestRosi) {\n            bestRosi = rosi;\n            bestNom = nom;\n        }\n        cout << nom << \": ALE \" << aleOldin << \" -> \" << aleKeyin << \", benefit \" << foyda << \", ROSI \" << rosi << \"%, \" << qaror << \"\\n\";\n    }\n    cout << \"total benefit: \" << total << \"\\n\";\n    cout << \"best: \" << bestNom << \"\\n\";\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "phishing 20000000 30 6 30000000\noutage 50000000 10 4 12000000\nusb 4000000 25 20 1000000\n",
+          "expected": "phishing: ALE 60000000 -> 12000000, benefit 48000000, ROSI 60%, implement\noutage: ALE 50000000 -> 20000000, benefit 30000000, ROSI 150%, implement\nusb: ALE 10000000 -> 8000000, benefit 2000000, ROSI 100%, implement\ntotal benefit: 80000000\nbest: outage",
+          "hidden": false
+        },
+        {
+          "input": "ransomware 300000000 2 1 40000000\n",
+          "expected": "ransomware: ALE 60000000 -> 30000000, benefit 30000000, ROSI -25%, reconsider\ntotal benefit: 30000000\nbest: ransomware",
+          "hidden": false
+        },
+        {
+          "input": "laptop 15000000 8 2 10000000\n\nerror 5000000 40 10 2000000\n",
+          "expected": "laptop: ALE 12000000 -> 3000000, benefit 9000000, ROSI -10%, reconsider\nerror: ALE 20000000 -> 5000000, benefit 15000000, ROSI 650%, implement\ntotal benefit: 24000000\nbest: error",
+          "hidden": true
+        },
+        {
+          "input": "A 10000000 10 5 2500000\nB 20000000 5 2 3000000\n",
+          "expected": "A: ALE 10000000 -> 5000000, benefit 5000000, ROSI 100%, implement\nB: ALE 10000000 -> 4000000, benefit 6000000, ROSI 100%, implement\ntotal benefit: 11000000\nbest: A",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

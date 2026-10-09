@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kenglik boʻyicha qidiruv (BFS) grafni aylanishda qaysi tuzilmadan foydalanadi?",
+          "ru": "Какая структура данных используется при поиске в ширину (BFS)?",
+          "en": "Which data structure does breadth-first search (BFS) use?"
+        },
+        "options": [
+          {
+            "uz": "Navbat (queue)",
+            "ru": "Очередь (queue)",
+            "en": "A queue"
+          },
+          {
+            "uz": "Stek (stack)",
+            "ru": "Стек (stack)",
+            "en": "A stack"
+          },
+          {
+            "uz": "Uyum (heap)",
+            "ru": "Куча (heap)",
+            "en": "A heap"
+          },
+          {
+            "uz": "Binar qidiruv daraxti",
+            "ru": "Двоичное дерево поиска",
+            "en": "A binary search tree"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "BFS sathma-sath yuradi: yangi uch navbatning oxiriga qoʻyiladi, navbat boshidan olinadi.",
+          "ru": "BFS идёт слой за слоем: новая вершина попадает в конец очереди, а берётся из её начала.",
+          "en": "BFS moves level by level: a new vertex goes to the end of the queue and is taken from its front."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Vaznsiz grafda BFS bitta uchdan qolgan uchlarga eng qisqa yoʻlni topadi.",
+          "ru": "В невзвешенном графе BFS находит кратчайший путь от одной вершины до остальных.",
+          "en": "In an unweighted graph BFS finds the shortest path from one vertex to the others."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Uchlar boshlangʻich uchdan uzoqlashish tartibida koʻriladi, shuning uchun uchga birinchi marta yetish — eng kam qadam bilan yetish degani.",
+          "ru": "Вершины просматриваются в порядке удаления от начальной, поэтому первое достижение вершины означает достижение за минимальное число шагов.",
+          "en": "Vertices are visited in the order of their distance from the start, so reaching a vertex for the first time means reaching it in the fewest steps."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Labirint masalasida `#` belgisi nimani bildiradi? Bir soʻz bilan yozing.",
+          "ru": "Что обозначает символ `#` в задаче про лабиринт? Ответьте одним словом.",
+          "en": "What does the character `#` stand for in the maze problem? Answer in one word."
+        },
+        "answers": ["devor", "Devor", "стена", "wall"],
+        "explanation": {
+          "uz": "Darsda: `.` — yoʻlak, `#` — devor, `S` — boshlanish, `E` — chiqish; devor katakka kirib boʻlmaydi.",
+          "ru": "В занятии: `.` — проход, `#` — стена, `S` — старт, `E` — выход; в клетку со стеной войти нельзя.",
+          "en": "In the lesson: `.` is a passage, `#` a wall, `S` the start and `E` the exit; a wall cell cannot be entered."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Deykstra va BFS haqida qaysi ifoda toʻgʻri?",
+          "ru": "Какое утверждение о Дейкстре и BFS верно?",
+          "en": "Which statement about Dijkstra and BFS is correct?"
+        },
+        "options": [
+          {
+            "uz": "Vaznsiz grafda Deykstra ham ishlaydi, lekin BFS soddaroq va tezroq",
+            "ru": "В невзвешенном графе Дейкстра тоже работает, но BFS проще и быстрее",
+            "en": "In an unweighted graph Dijkstra works too, but BFS is simpler and faster"
+          },
+          {
+            "uz": "Vaznsiz grafda Deykstra notoʻgʻri natija beradi",
+            "ru": "В невзвешенном графе Дейкстра даёт неверный результат",
+            "en": "In an unweighted graph Dijkstra gives a wrong result"
+          },
+          {
+            "uz": "BFS vaznli grafda ham eng qisqa yoʻlni topadi",
+            "ru": "BFS находит кратчайший путь и во взвешенном графе",
+            "en": "BFS also finds the shortest path in a weighted graph"
+          },
+          {
+            "uz": "BFS faqat daraxtga ishlatilishi mumkin",
+            "ru": "BFS применим только к дереву",
+            "en": "BFS can only be used on a tree"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Deykstra notoʻgʻri natija bermaydi — u shunchaki ortiqcha ishlaydi; BFS esa vaznlarni hisobga olmaydi, shuning uchun u faqat vaznsiz grafda toʻgʻri.",
+          "ru": "Дейкстра не ошибается — он просто делает лишнюю работу; BFS же не учитывает веса и поэтому верен только для невзвешенного графа.",
+          "en": "Dijkstra is not wrong there — it just does extra work; BFS ignores weights, so it is correct only for an unweighted graph."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi algoritmni tanlash jadvaliga koʻra, qaysi ifodalar toʻgʻri?",
+          "ru": "Согласно таблице выбора алгоритма из занятия, какие утверждения верны?",
+          "en": "According to the algorithm-choice table in the lesson, which statements are correct?"
+        },
+        "options": [
+          {
+            "uz": "Vaznsiz graf va bitta manba uchun BFS O(V + E) da ishlaydi",
+            "ru": "Для невзвешенного графа и одного источника BFS работает за O(V + E)",
+            "en": "For an unweighted graph and one source BFS works in O(V + E)"
+          },
+          {
+            "uz": "Manfiy vaznlar bilan bitta manba uchun Bellman–Ford O(V · E) oʻrinli",
+            "ru": "При отрицательных весах для одного источника применим Беллман–Форд за O(V · E)",
+            "en": "With negative weights, Bellman–Ford in O(V · E) applies for one source"
+          },
+          {
+            "uz": "Barcha juftliklar uchun Floyd–Uorshell O(V³) da masofalarni beradi",
+            "ru": "Для всех пар расстояния даёт Флойд–Уоршелл за O(V³)",
+            "en": "For all pairs, Floyd–Warshall gives the distances in O(V³)"
+          },
+          {
+            "uz": "Deykstra manfiy vaznli grafda ham ishlaydi",
+            "ru": "Дейкстра работает и в графе с отрицательными весами",
+            "en": "Dijkstra also works on a graph with negative weights"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalda Deykstra „manfiy boʻlmagan vaznlar, bitta manba“ uchun berilgan: manfiy vaznlarda u ishlamaydi.",
+          "ru": "В таблице Дейкстра указан для «неотрицательных весов, один источник»: при отрицательных весах он не работает.",
+          "en": "The table lists Dijkstra for non-negative weights with one source: it does not work with negative weights."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "„Shifoxona joylashuvi“ misolidagi 5 tuman va 6 yoʻl uchun 1-tumandan 5-tumangacha boʻlgan eng qisqa vaqt necha daqiqa? (yoʻllarning vaqti: 1–2 — 4, 2–3 — 3, 3–4 — 2, 4–5 — 6, 1–5 — 10, 2–4 — 7 daqiqa)",
+          "ru": "Сколько минут занимает кратчайший путь от 1-го района до 5-го в примере про больницу? (дороги: 1-2 — 4, 2-3 — 3, 3-4 — 2, 4-5 — 6, 1-5 — 10, 2-4 — 7 минут)",
+          "en": "How many minutes is the shortest trip from district 1 to district 5 in the hospital example? (roads: 1-2 — 4, 2-3 — 3, 3-4 — 2, 4-5 — 6, 1-5 — 10, 2-4 — 7 minutes)"
+        },
+        "answers": [10],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Toʻgʻridan-toʻgʻri 1 → 5 yoʻli 10 daqiqa; 1 → 2 → 3 → 4 → 5 esa 4 + 3 + 2 + 6 = 15, 1 → 2 → 4 → 5 esa 4 + 7 + 6 = 17 daqiqa — eng qisqasi 10.",
+          "ru": "Прямая дорога 1 → 5 занимает 10 минут; 1 → 2 → 3 → 4 → 5 — 4 + 3 + 2 + 6 = 15, а 1 → 2 → 4 → 5 — 4 + 7 + 6 = 17 минут, значит кратчайший ответ 10.",
+          "en": "The direct road 1 → 5 takes 10 minutes; 1 → 2 → 3 → 4 → 5 takes 4 + 3 + 2 + 6 = 15 and 1 → 2 → 4 → 5 takes 4 + 7 + 6 = 17, so the shortest is 10."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Manfiy vaznli grafda Floyd–Uorshell dasturida `d[i][k] + d[k][j]` ni hisoblashdan oldin ikkala qiymat chekli ekanini nega tekshirish kerak?",
+          "ru": "Почему в программе Флойда–Уоршелла для графа с отрицательными весами перед вычислением `d[i][k] + d[k][j]` нужно проверять, что оба значения конечны?",
+          "en": "In a Floyd–Warshall program for a graph with negative weights, why must both values be checked as finite before computing `d[i][k] + d[k][j]`?"
+        },
+        "options": [
+          {
+            "uz": "Chunki ∞ ga manfiy son qoʻshilsa natija ∞ dan kichik boʻlib, mavjud boʻlmagan yoʻl paydo boʻladi",
+            "ru": "Иначе ∞ плюс отрицательное число становится меньше ∞ и появляется несуществующий путь",
+            "en": "Because ∞ plus a negative number becomes smaller than ∞ and a path that does not exist appears"
+          },
+          {
+            "uz": "Chunki manfiy vaznlar hisoblashni sekinlatadi",
+            "ru": "Иначе отрицательные веса замедляют вычисления",
+            "en": "Because negative weights slow the computation down"
+          },
+          {
+            "uz": "Chunki Floyd manfiy vaznlarni umuman oʻqiy olmaydi",
+            "ru": "Иначе Флойд вообще не читает отрицательные веса",
+            "en": "Because Floyd–Warshall cannot read negative weights at all"
+          },
+          {
+            "uz": "Chunki d[i][i] har doim 0 boʻlishi shart",
+            "ru": "Иначе d[i][i] обязан всегда быть равен нулю",
+            "en": "Because otherwise d[i][i] must always be zero"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Python ∞ bilan ishlaydi, ammo Java va C++ da ∞ oʻrniga katta son qoʻyiladi: `INF + (−3)` „∞ dan kichik“ boʻlib qoladi va mavjud boʻlmagan yoʻl paydo boʻladi.",
+          "ru": "В Python работает с ∞, но в Java и C++ вместо ∞ стоит большое число: `INF + (−3)` оказывается «меньше ∞», и появляется несуществующий путь.",
+          "en": "Python works with ∞, but Java and C++ put a large number in its place: INF plus (−3) becomes smaller than ∞, and a path that is not a path shows up."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Eksentrisitet va graf markazi haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об эксцентриситете и центре графа верны?",
+          "en": "Which statements about eccentricity and the centre of a graph are correct?"
+        },
+        "options": [
+          {
+            "uz": "Uchning eksentrisiteti — undan eng uzoq uchgacha boʻlgan masofa",
+            "ru": "Эксцентриситет вершины — расстояние до самой дальней от неё вершины",
+            "en": "A vertex's eccentricity is its distance to the farthest vertex"
+          },
+          {
+            "uz": "Graf markazi — eksentrisiteti eng kichik uch",
+            "ru": "Центр графа — вершина с минимальным эксцентриситетом",
+            "en": "The centre of a graph is the vertex with the smallest eccentricity"
+          },
+          {
+            "uz": "Markazni topish uchun barcha juftliklar masofasi kerak, shuning uchun Floyd qulay",
+            "ru": "Для поиска центра нужны расстояния между всеми парами, поэтому удобен Флойд",
+            "en": "Finding the centre needs the distances of all pairs, which is why Floyd is convenient"
+          },
+          {
+            "uz": "Graf markazi — eksentrisiteti eng katta uch",
+            "ru": "Центр графа — вершина с максимальным эксцентриситетом",
+            "en": "The centre of a graph is the vertex with the largest eccentricity"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Markaz — eng kichik eksentrisitetli uch: shifoxona, oʻt oʻchirish deposi yoki ombor eng uzoq manzilgacha borish vaqtini qisqartiradi.",
+          "ru": "Центр — вершина с наименьшим эксцентриситетом: для больницы, пожарного депо или склада важно сократить время до самого дальнего адреса.",
+          "en": "The centre is the vertex with the smallest eccentricity: a hospital, a fire station or a warehouse is placed to shorten the trip to the farthest address."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Manfiy sikl bor grafda ham eng qisqa yoʻl mavjud — u shunchaki uzunroq boʻladi.",
+          "ru": "В графе с отрицательным циклом кратчайший путь тоже существует — он просто длиннее.",
+          "en": "Even in a graph with a negative cycle a shortest path exists — it is only longer."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Manfiy siklni qayta-qayta aylanib yoʻlni cheksiz qisqartirsa boʻladi, shuning uchun bunday grafda „eng qisqa yoʻl“ mavjud emas. Floyd tugagach biror `d[i][i] < 0` boʻlsa, avval shuni tekshirish kerak.",
+          "ru": "Обходя отрицательный цикл снова и снова, путь можно бесконечно укорачивать, поэтому кратчайшего пути в таком графе нет. Если после Флойда какой-то `d[i][i] < 0`, сначала нужно проверить именно это.",
+          "en": "Going round a negative cycle again and again shortens a path endlessly, so such a graph has no shortest path. If some `d[i][i] < 0` after Floyd, that is what must be checked first."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "BFS: bitta uchdan barcha uchlargacha qadamlar",
+      "ru": "BFS: число шагов от одной вершины до всех",
+      "en": "BFS: steps from one vertex to every vertex"
+    },
+    "statement": {
+      "uz": "Vaznsiz, yoʻnaltirilmagan graf berilgan: *n* ta uch 1 dan *n* gacha raqamlangan va *m* ta qirra. *s* uchdan boshlab kenglik boʻyicha qidiruv yuritib, har bir uchga eng kam qadamlar sonini chiqaring. Chiqish — bitta satr: 1..*n* uchlari uchun masofalar, boʻshliq bilan ajratib; *s* dan yetib boʻlmagan uchning masofasi `-1`. Kirish: birinchi satrda *n* va *m*; keyingi *m* satrda `u v` — qirra; oxirgi satrda *s*. Masalan, *n* = 4, qirralar `1 2`, `2 3`, `3 4` va *s* = 1 boʻlsa, chiqish `0 1 2 3`; agar grafga `4 5` qirrasi bilan ajratilgan boʻlak ham kirsa, u boʻlakdagi uchlar uchun `-1` chiqadi. Bu graf labirint emas: katak panjarasi yoʻq, faqat roʻyxatdagi qirralar bor.",
+      "ru": "Дан невзвешенный неориентированный граф: *n* вершин пронумерованы от 1 до *n*, есть *m* рёбер. Начав поиск в ширину из вершины *s*, выведите минимальное число шагов до каждой вершины. Вывод — одна строка: расстояния для вершин 1..*n* через пробел; для недостижимой из *s* вершины выведите `-1`. Ввод: первая строка — *n* и *m*; в следующих *m* строках — `u v`, ребро; последняя строка — *s*. Например, при *n* = 4, рёбрах `1 2`, `2 3`, `3 4` и *s* = 1 вывод будет `0 1 2 3`; если в графе есть отдельный кусок, соединённый ребром `4 5`, его вершины дадут `-1`. Это не лабиринт: сетки клеток нет, есть только перечислённые рёбра.",
+      "en": "An unweighted, undirected graph is given: *n* vertices numbered from 1 to *n* and *m* edges. Start a breadth-first search from vertex *s* and print the fewest steps to every vertex. Output — one line: the distances for vertices 1..*n* separated by a space; for a vertex that cannot be reached from *s* print `-1`. Input: the first line holds *n* and *m*; the next *m* lines hold `u v`, an edge; the last line holds *s*. For example, *n* = 4 with the edges `1 2`, `2 3`, `3 4` and *s* = 1 gives `0 1 2 3`; if the graph also has a separate piece joined by the edge `4 5`, those vertices print `-1`. This is not a maze: there is no grid of cells, only the listed edges."
+    },
+    "code": {
+      "starter": {
+        "python": "from collections import deque\n\nn, m = map(int, input().split())\nqirralar = [[] for _ in range(n)]\nfor _ in range(m):\n    u, v = map(int, input().split())\n    qirralar[u - 1].append(v - 1)\n    qirralar[v - 1].append(u - 1)\ns = int(input()) - 1\n\nmasofa = [-1] * n\nmasofa[s] = 0\nnavbat = deque([s])\nwhile navbat:\n    v = navbat.popleft()\n    for u in qirralar[v]:\n        if masofa[u] == -1:\n            masofa[u] = masofa[v]\n            navbat.append(u)\nprint(*masofa)\n",
+        "java": "import java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.LinkedList;\nimport java.util.Queue;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt();\n        ArrayList<ArrayList<Integer>> qirralar = new ArrayList<>();\n        for (int i = 0; i < n; i++) qirralar.add(new ArrayList<>());\n        for (int k = 0; k < m; k++) {\n            int u = in.nextInt() - 1, v = in.nextInt() - 1;\n            qirralar.get(u).add(v);\n            qirralar.get(v).add(u);\n        }\n        int s = in.nextInt() - 1;\n\n        int[] masofa = new int[n];\n        Arrays.fill(masofa, -1);\n        masofa[s] = 0;\n        Queue<Integer> navbat = new LinkedList<>();\n        navbat.add(s);\n        while (!navbat.isEmpty()) {\n            int v = navbat.poll();\n            for (int u : qirralar.get(v)) {\n                if (masofa[u] == -1) {\n                    masofa[u] = masofa[v];\n                    navbat.add(u);\n                }\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(masofa[i]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <queue>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> qirralar(n);\n    for (int k = 0; k < m; k++) {\n        int u, v;\n        cin >> u >> v;\n        u--;\n        v--;\n        qirralar[u].push_back(v);\n        qirralar[v].push_back(u);\n    }\n    int s;\n    cin >> s;\n    s--;\n\n    vector<int> masofa(n, -1);\n    masofa[s] = 0;\n    queue<int> navbat;\n    navbat.push(s);\n    while (!navbat.empty()) {\n        int v = navbat.front();\n        navbat.pop();\n        for (int u : qirralar[v]) {\n            if (masofa[u] == -1) {\n                masofa[u] = masofa[v];\n                navbat.push(u);\n            }\n        }\n    }\n    for (int i = 0; i < n; i++) {\n        if (i) cout << \" \";\n        cout << masofa[i];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "from collections import deque\n\nn, m = map(int, input().split())\nqirralar = [[] for _ in range(n)]\nfor _ in range(m):\n    u, v = map(int, input().split())\n    qirralar[u - 1].append(v - 1)\n    qirralar[v - 1].append(u - 1)\ns = int(input()) - 1\n\nmasofa = [-1] * n\nmasofa[s] = 0\nnavbat = deque([s])\nwhile navbat:\n    v = navbat.popleft()\n    for u in qirralar[v]:\n        if masofa[u] == -1:\n            masofa[u] = masofa[v] + 1\n            navbat.append(u)\nprint(*masofa)\n",
+        "java": "import java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.LinkedList;\nimport java.util.Queue;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt();\n        ArrayList<ArrayList<Integer>> qirralar = new ArrayList<>();\n        for (int i = 0; i < n; i++) qirralar.add(new ArrayList<>());\n        for (int k = 0; k < m; k++) {\n            int u = in.nextInt() - 1, v = in.nextInt() - 1;\n            qirralar.get(u).add(v);\n            qirralar.get(v).add(u);\n        }\n        int s = in.nextInt() - 1;\n\n        int[] masofa = new int[n];\n        Arrays.fill(masofa, -1);\n        masofa[s] = 0;\n        Queue<Integer> navbat = new LinkedList<>();\n        navbat.add(s);\n        while (!navbat.isEmpty()) {\n            int v = navbat.poll();\n            for (int u : qirralar.get(v)) {\n                if (masofa[u] == -1) {\n                    masofa[u] = masofa[v] + 1;\n                    navbat.add(u);\n                }\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(masofa[i]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <queue>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> qirralar(n);\n    for (int k = 0; k < m; k++) {\n        int u, v;\n        cin >> u >> v;\n        u--;\n        v--;\n        qirralar[u].push_back(v);\n        qirralar[v].push_back(u);\n    }\n    int s;\n    cin >> s;\n    s--;\n\n    vector<int> masofa(n, -1);\n    masofa[s] = 0;\n    queue<int> navbat;\n    navbat.push(s);\n    while (!navbat.empty()) {\n        int v = navbat.front();\n        navbat.pop();\n        for (int u : qirralar[v]) {\n            if (masofa[u] == -1) {\n                masofa[u] = masofa[v] + 1;\n                navbat.push(u);\n            }\n        }\n    }\n    for (int i = 0; i < n; i++) {\n        if (i) cout << \" \";\n        cout << masofa[i];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4 3\n1 2\n2 3\n3 4\n1\n", "expected": "0 1 2 3", "hidden": false },
+        { "input": "5 3\n1 2\n2 3\n4 5\n1\n", "expected": "0 1 2 -1 -1", "hidden": false },
+        { "input": "4 4\n1 2\n1 3\n2 4\n3 4\n1\n", "expected": "0 1 1 2", "hidden": true },
+        { "input": "1 0\n1\n", "expected": "0", "hidden": true },
+        { "input": "6 5\n1 2\n2 3\n3 1\n4 5\n5 6\n4\n", "expected": "-1 -1 -1 0 1 2", "hidden": true }
+      ]
+    }
+  }
+}

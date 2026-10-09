@@ -1,0 +1,321 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Memoizatsiya deganda nima tushuniladi?",
+          "ru": "Что понимается под мемоизацией?",
+          "en": "What is memoization?"
+        },
+        "options": [
+          {
+            "uz": "Har bir hisoblangan natijani jadvalga yozib qoʻyish va keyingi safar qayta hisoblamasdan jadvaldan olish",
+            "ru": "Записывать каждый вычисленный результат в таблицу и при следующем обращении брать её из таблицы, не вычисляя заново",
+            "en": "Store every computed result in a table and take it from the table next time instead of recomputing"
+          },
+          {
+            "uz": "Rekursiyani oddiy sikl bilan almashtirish",
+            "ru": "Заменить рекурсию обычным циклом",
+            "en": "Replace the recursion with a plain loop"
+          },
+          {
+            "uz": "Massivni kichikroq boʻlaklarga boʻlib ishlash",
+            "ru": "Обрабатывать массив, разбивая его на более мелкие части",
+            "en": "Process an array by splitting it into smaller pieces"
+          },
+          {
+            "uz": "Funksiyalarni alohida faylga yigʻib, ularni import qilish",
+            "ru": "Собрать функции в отдельный файл и импортировать их",
+            "en": "Gather functions into a separate file and import them"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Memoizatsiyada har bir F(k) faqat bir marta hisoblanadi: natija jadvalda saqlanadi va keyingi safar jadvaldan olinadi.",
+          "ru": "При мемоизации каждое F(k) вычисляется только один раз: результат хранится в таблице и следующий раз берётся из неё.",
+          "en": "With memoization each F(k) is computed only once: the result is kept in a table and taken from it next time."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaytish usulida (backtracking) rekursiv chaqiruvdan soʻng qilingan tanlovni bekor qilish shart.",
+          "ru": "В методе возврата после рекурсивного вызова сделанный выбор нужно обязательно отменить.",
+          "en": "In backtracking, the choice made before the recursive call must be undone afterwards."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Usulning mazmuni shunda: tanlov → rekursiya → tanlovni bekor qilish. Bekor qilinmasa, umumiy holat keyingi tarmoqqa „ifloslangan“ holda oʻtadi.",
+          "ru": "Суть метода: выбор → рекурсия → отмена выбора. Без отмены общее состояние переходит в следующую ветвь «грязным».",
+          "en": "The method is: choose → recurse → undo the choice. Without undoing, the shared state passes into the next branch \"dirty\"."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi memoizatsiyali Fibonachchi dasturiga 10 kiritilsa, qanday son chiqadi?",
+          "ru": "Какое число выведет программа из занятия, вычисляющая Фибоначчи с мемоизацией, если ввести 10?",
+          "en": "What number does the lesson's memoized Fibonacci program print for the input 10?"
+        },
+        "answers": [55],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda koʻrsatilgan: 10 kiritilsa, chiqish 55; memoizatsiyada chaqiruvlar soni 19 ta.",
+          "ru": "В занятии указано: при вводе 10 ответ 55; с мемоизацией это всего 19 вызовов.",
+          "en": "The lesson states that the input 10 gives 55, with only 19 calls under memoization."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Massiv ustidagi rekursiv funksiya nima uchun massivning oʻzini va chegaralarini oladi, massivni nusxalab yangisini yaratmaydi?",
+          "ru": "Почему рекурсивная функция над массивом принимает сам массив и границы, а не создаёт его копию?",
+          "en": "Why does a recursive function over an array receive the array itself and the bounds instead of a copy?"
+        },
+        "options": [
+          {
+            "uz": "Bazaviy holatni unutmaslik uchun",
+            "ru": "Чтобы не забыть базовый случай",
+            "en": "So that the base case is not forgotten"
+          },
+          {
+            "uz": "Chaqiruvlar stekidagi joyni koʻpaytirish uchun",
+            "ru": "Чтобы занять больше места в стеке вызовов",
+            "en": "So that the call stack occupies more memory"
+          },
+          {
+            "uz": "Massivni har chaqiruvda qayta nusxalamaslik uchun",
+            "ru": "Чтобы не копировать массив при каждом вызове",
+            "en": "So that the array is not copied on every call"
+          },
+          {
+            "uz": "Masalani kichikroq masalaga keltirib boʻlmasligi uchun",
+            "ru": "Потому что задачу нельзя свести к более мелкой",
+            "en": "Because the problem cannot be reduced to a smaller one"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Darsga koʻra, massivni har safar nusxalamaslik uchun funksiyaga massivning oʻzi va chegaralar uzatiladi; masala esa xuddi shunday kichikroq masalaga keltiriladi.",
+          "ru": "По занятию, чтобы не копировать массив каждый раз, функции передают сам массив и границы; задача сводится к такой же, но более мелкой.",
+          "en": "In the lesson, the array itself and the bounds are passed so the array is never copied; the problem is reduced to the same, smaller one."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Memoizatsiyali Fibonachchi boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о Фибоначчи с мемоизацией верны?",
+          "en": "Which statements about the memoized Fibonacci are correct?"
+        },
+        "options": [
+          {
+            "uz": "C++ versiyasida „hisoblanmagan“ belgisi sifatida -1 olingan",
+            "ru": "В версии на C++ признаком «не вычислено» служит -1",
+            "en": "In the C++ version -1 serves as the \"not computed\" mark"
+          },
+          {
+            "uz": "Java versiyasida memo[n] != 0 sharti ishlaydi, chunki n >= 2 da F(n) hech qachon 0 emas",
+            "ru": "Условие memo[n] != 0 в Java работает потому, что при n >= 2 значение F(n) никогда не равно нулю",
+            "en": "The Java condition memo[n] != 0 works because F(n) is never 0 for n >= 2"
+          },
+          {
+            "uz": "F(93) long turiga sigʻadi",
+            "ru": "F(93) помещается в тип long",
+            "en": "F(93) fits into the long type"
+          },
+          {
+            "uz": "Memoizatsiya bilan n = 50 da chaqiruvlar soni 59 taga tushadi",
+            "ru": "С мемоизацией при n = 50 число вызовов падает до 59",
+            "en": "With memoization the number of calls for n = 50 drops to 59"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Darsda aytilishicha, F(93) long turiga sigʻmaydi. Jadvalda esa n = 50 uchun 99 chaqiruv berilgan; 59 bu n = 30 uchun.",
+          "ru": "В занятии сказано, что F(93) в long не помещается, а для n = 50 в таблице 99 вызовов; 59 — это для n = 30.",
+          "en": "The lesson says F(93) does not fit in a long, and the table gives 99 calls for n = 50; 59 belongs to n = 30."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Python modulidagi sinov kodi modul ulanganda (import) bajarilmasligi uchun uni qaysi shart bloki ichiga yozish kerak?",
+          "ru": "В какой блок условия нужно поместить тестовый код Python-модуля, чтобы он не выполнялся при импорте?",
+          "en": "Inside which condition block must a Python module's test code sit so that it does not run on import?"
+        },
+        "answers": [
+          "if __name__ == \"__main__\":",
+          "if __name__ == '__main__':",
+          "__main__"
+        ],
+        "explanation": {
+          "uz": "Modul ulanganda fayldagi kod ham bajariladi; sinov kodi faqat fayl oʻzi ishga tushganda ishlaydi, agar u if __name__ == \"__main__\": bloki ichida boʻlsa.",
+          "ru": "При импорте код файла выполняется тоже; тестовый код сработает лишь тогда, когда файл запущен сам, если он помещён в блок if __name__ == \"__main__\".",
+          "en": "Importing a module runs its code; test code runs only when the file itself is started, so it sits inside the if __name__ == \"__main__\" block."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kutubxonalar haqida qaysi ifoda toʻgʻri?",
+          "ru": "Какое утверждение о библиотеках верно?",
+          "en": "Which statement about libraries is correct?"
+        },
+        "options": [
+          {
+            "uz": "Java kutubxonasi metodlari faqat maxsus obyekt yaratib chaqiriladi",
+            "ru": "Методы Java-библиотеки вызываются только через специально созданный объект",
+            "en": "Methods of a Java library can only be called through a specially created object"
+          },
+          {
+            "uz": "Kutubxona funksiyasi kiritiladigan maʼlumotni oʻzi oʻqib, natijani oʻzi chiqarishi kerak",
+            "ru": "Функция библиотеки должна сама читать ввод и сама печатать результат",
+            "en": "A library function should read the input and print the result itself"
+          },
+          {
+            "uz": "Python modulini faqat from ... import koʻrinishidagi import orqaligina ulash mumkin",
+            "ru": "Python-модуль можно подключить только импортом вида from ... import",
+            "en": "A Python module can only be plugged in through a from ... import statement"
+          },
+          {
+            "uz": "C++ʼda funksiyalar nomlar fazosiga olinadi — turli kutubxonalardagi bir xil nomli funksiyalar toʻqnashmasligi uchun",
+            "ru": "В C++ функции помещают в пространство имён, чтобы одноимённые функции разных библиотек не конфликтовали",
+            "en": "In C++ functions live in a namespace so that same-named functions from different libraries do not clash"
+          }
+        ],
+        "correct": [3],
+        "explanation": {
+          "uz": "Javaʼda metodlar static boʻlib, xuddi Math.max kabi sinf nomi orqali chaqiriladi; kutubxona funksiyalari hech narsa oʻqimaydi va chiqarmaydi; Pythonʼda import massivlar ham, from massivlar import yigindi ham ishlaydi.",
+          "ru": "В Java методы статические и вызываются через имя класса, как Math.max; функции библиотеки ничего не читают и не печатают; в Python работают и import модуля, и from ... import.",
+          "en": "In Java the methods are static and are called through the class name like Math.max; library functions neither read nor print; Python accepts both a plain import and from ... import."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsda „koʻp uchraydigan xatolar“ roʻyxatiga kiritilgan amallar qaysilar?",
+          "ru": "Какие действия входят в приведённый в занятии список «частых ошибок»?",
+          "en": "Which practices are in the lesson's list of common mistakes?"
+        },
+        "options": [
+          {
+            "uz": "Memo jadvalini funksiya ichida yaratish",
+            "ru": "Создавать таблицу мемоизации внутри функции",
+            "en": "Creating the memo table inside the function"
+          },
+          {
+            "uz": "Qaytish usulida tanlovni bekor qilmaslik",
+            "ru": "Не отменять выбор в методе возврата",
+            "en": "Not undoing the choice in backtracking"
+          },
+          {
+            "uz": "Rekursiv funksiyani tekshirishni n = 0, 1, 2 kabi eng kichik holatlardan boshlash",
+            "ru": "Начинать проверку рекурсивной функции с наименьших случаев n = 0, 1, 2",
+            "en": "Starting the test of a recursive function from the smallest cases n = 0, 1, 2"
+          },
+          {
+            "uz": "Import qilinadigan Python fayliga sinov kodi yozish",
+            "ru": "Писать тестовый код в файле Python, который импортируют",
+            "en": "Putting test code into a Python file meant for import"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Uchinchisi xato emas: dars tekshirishni eng kichik holatlardan boshlashni maslahat beradi. Qolganlari — xatolar roʻyxatidan: jadval funksiya tashqarisida boʻlishi kerak, tanlov bekor qilinadi, sinov kodi esa alohida faylga.",
+          "ru": "Третий пункт — не ошибка: занятие как раз советует начинать проверку с n = 0, 1, 2. Остальные три взяты из списка ошибок: таблица должна жить вне функции, выбор нужно отменять, а тестовый код — не в импортируемом файле.",
+          "en": "The third is not a mistake: the lesson advises starting tests from n = 0, 1, 2. The others are from the mistake list: the table lives outside the function, the choice must be undone, and test code does not belong in an imported file."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ikkita 1 yonma-yon kelmaydigan satrlar dasturida satrlar leksikografik tartibda chiqishi uchun oxirida ularni maxsus saralash kerak.",
+          "ru": "Чтобы строки без соседних единиц выводились в лексикографическом порядке, их нужно в конце специально отсортировать.",
+          "en": "For the strings without adjacent ones to come out in lexicographic order they must be specially sorted at the end."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Saralash shart emas: avval 0, keyin 1 sinab koʻrilgani uchun satrlar oʻz-oʻzidan leksikografik tartibda chiqadi.",
+          "ru": "Сортировка не нужна: поскольку сначала пробуют 0, а затем 1, строки выходят в лексикографическом порядке сами.",
+          "en": "No sorting is needed: because 0 is tried before 1, the strings come out in lexicographic order by themselves."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Raqamlar yigʻindisi — rekursiyada",
+      "ru": "Сумма цифр — рекурсией",
+      "en": "The sum of digits — by recursion"
+    },
+    "statement": {
+      "uz": "Dastur bitta nomanfiy butun sonni oʻqiydi (0 dan 2 000 000 000 gacha). Sonning raqamlari yigʻindisini rekursiv funksiya bilan hisoblang: bir raqamli son — bazaviy holat, uning oʻzi qaytadi; aks holda qolgan qismning yigʻindisiga oxirgi raqamni qoʻshing. Natijani bitta qatorda, faqat son koʻrinishida chiqaring — hech qanday qoʻshimcha soʻz yozmang. Masalan, 98765 kiritilsa, dastur 35 chiqaradi; 0 kiritilsa, 0 chiqadi.",
+      "ru": "Программа читает одно неотрицательное целое число (от 0 до 2 000 000 000). Вычислите сумму его цифр рекурсивной функцией: базовый случай — сама цифра, иначе сумма остатка плюс последняя цифра. Выведите результат одной строкой — только число, без слов и пояснений. Например, при вводе 98765 программа выводит 35, при вводе 0 — 0.",
+      "en": "Your program reads a single non-negative integer (from 0 to 2 000 000 000). Compute the sum of its digits with a recursive function: the base case is the digit itself, otherwise add the last digit to the sum of the rest. Print the result on one line — only the number, with no words or label. For example, the input 98765 makes the program print 35; the input 0 prints 0."
+    },
+    "code": {
+      "starter": {
+        "python": "def yigindi(k):\n    if k < 10:\n        return k\n    return yigindi(k // 10)\n\n\nn = int(input())\nprint(yigindi(n))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static int yigindi(int k) {\n        if (k < 10) return k;\n        return yigindi(k / 10);\n    }\n\n    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        System.out.println(yigindi(n));\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nlong long yigindi(long long k) {\n    if (k < 10) return k;\n    return yigindi(k / 10);\n}\n\nint main() {\n    long long n;\n    cin >> n;\n    cout << yigindi(n) << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "def yigindi(k):\n    if k < 10:\n        return k\n    return yigindi(k // 10) + k % 10\n\n\nn = int(input())\nprint(yigindi(n))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static int yigindi(int k) {\n        if (k < 10) return k;\n        return yigindi(k / 10) + k % 10;\n    }\n\n    public static void main(String[] args) {\n        int n = new Scanner(System.in).nextInt();\n        System.out.println(yigindi(n));\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nlong long yigindi(long long k) {\n    if (k < 10) return k;\n    return yigindi(k / 10) + k % 10;\n}\n\nint main() {\n    long long n;\n    cin >> n;\n    cout << yigindi(n) << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "98765\n", "expected": "35", "hidden": false },
+        { "input": "0\n", "expected": "0", "hidden": false },
+        { "input": "2000000000\n", "expected": "2", "hidden": true },
+        { "input": "1000000009\n", "expected": "10", "hidden": true },
+        { "input": "123456789\n", "expected": "45", "hidden": true }
+      ]
+    }
+  }
+}

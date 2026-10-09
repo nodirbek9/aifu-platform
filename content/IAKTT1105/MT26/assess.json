@@ -1,0 +1,340 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Biznes modeli kanvasida jami 9 ta blok mavjud.",
+          "ru": "В канве бизнес-модели всего 9 блоков.",
+          "en": "There are a total of 9 blocks in the business model canvas."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Aleksandr Ostervalderning biznes modeli kanvasi biznesni toʻqqiz blokda bir varaqda tasvirlaydi.",
+          "ru": "Канва бизнес-модели Александра Остервальдера описывает бизнес на одном листе в девяти блоках.",
+          "en": "Alexander Osterwalder's business model canvas describes a business on one sheet in nine blocks."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi daromad modelida xaridor maʼlum muddat uchun muntazam toʻlov qilib boradi?",
+          "ru": "В какой модели дохода покупатель регулярно платит за определённый период?",
+          "en": "In which revenue model does the customer make regular payments for a certain period?"
+        },
+        "options": [
+          {
+            "uz": "Obuna",
+            "ru": "Подписка",
+            "en": "Subscription"
+          },
+          {
+            "uz": "Reklama",
+            "ru": "Реклама",
+            "en": "Advertising"
+          },
+          {
+            "uz": "Komissiya",
+            "ru": "Комиссия",
+            "en": "Commission"
+          },
+          {
+            "uz": "Litsenziya",
+            "ru": "Лицензия",
+            "en": "Licensing"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Obuna modelida xaridor muntazam (masalan, har oy) toʻlov qiladi.",
+          "ru": "В модели подписки покупатель делает регулярные (например, ежемесячные) платежи.",
+          "en": "In a subscription model, the buyer makes regular (e.g., monthly) payments."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ishlab chiqaruvchi vositachilarsiz, toʻgʻridan-toʻgʻri oʻz sayti orqali sotadigan model qanday ataladi?",
+          "ru": "Как называется модель, в которой производитель продаёт напрямую потребителю через свой сайт без посредников?",
+          "en": "What is the model called where a manufacturer sells directly to the consumer through its own website without intermediaries?"
+        },
+        "options": [
+          {
+            "uz": "D2C",
+            "ru": "D2C",
+            "en": "D2C"
+          },
+          {
+            "uz": "Dropshipping",
+            "ru": "Дропшиппинг",
+            "en": "Dropshipping"
+          },
+          {
+            "uz": "Freemium",
+            "ru": "Freemium",
+            "en": "Freemium"
+          },
+          {
+            "uz": "B2G",
+            "ru": "B2G",
+            "en": "B2G"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "D2C (direct to consumer) — toʻgʻridan-toʻgʻri isteʼmolchiga sotish modeli.",
+          "ru": "D2C (direct to consumer) — модель продаж напрямую потребителю.",
+          "en": "D2C (direct to consumer) is the model of selling directly to the consumer."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Zamonaviy elektron tijorat shakllariga qaysilar kiradi?",
+          "ru": "Какие из перечисленных относятся к современным формам электронной коммерции?",
+          "en": "Which of the following belong to modern forms of e-commerce?"
+        },
+        "options": [
+          {
+            "uz": "D2C",
+            "ru": "D2C",
+            "en": "D2C"
+          },
+          {
+            "uz": "Dropshipping",
+            "ru": "Дропшиппинг",
+            "en": "Dropshipping"
+          },
+          {
+            "uz": "Omnikanal",
+            "ru": "Омниканальность",
+            "en": "Omnichannel"
+          },
+          {
+            "uz": "Birlik iqtisodiyoti",
+            "ru": "Юнит-экономика",
+            "en": "Unit economics"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "D2C, dropshipping va omnikanal elektron tijorat shakllari, birlik iqtisodiyoti esa tahlil usuli.",
+          "ru": "D2C, дропшиппинг и омниканальность — это формы электронной коммерции, а юнит-экономика — метод анализа.",
+          "en": "D2C, dropshipping, and omnichannel are forms of e-commerce, while unit economics is a method of analysis."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Agar oylik churn (mijozni yoʻqotish darajasi) 10% boʻlsa, mijoz oʻrtacha necha oy qoladi?",
+          "ru": "Если ежемесячный отток (churn) составляет 10%, сколько месяцев в среднем остаётся клиент?",
+          "en": "If the monthly churn is 10%, how many months does a customer stay on average?"
+        },
+        "answers": [10],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Mijoz umri 1 / churn formulasi bilan hisoblanadi, yaʼni 100 / 10 = 10 oy.",
+          "ru": "Срок жизни клиента рассчитывается по формуле 1 / churn, то есть 100 / 10 = 10 месяцев.",
+          "en": "Customer lifetime is calculated using the formula 1 / churn, which is 100 / 10 = 10 months."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Bitta mijozni jalb qilish narxi qanday qisqartma bilan belgilanadi? (Lotin harflarida)",
+          "ru": "Какой аббревиатурой обозначается стоимость привлечения одного клиента? (латинскими буквами)",
+          "en": "What is the abbreviation for the cost of acquiring one customer? (in Latin letters)"
+        },
+        "answers": [
+          "CAC",
+          "cac"
+        ],
+        "explanation": {
+          "uz": "CAC — mijozni jalb qilish narxi (Customer Acquisition Cost).",
+          "ru": "CAC — стоимость привлечения одного клиента (Customer Acquisition Cost).",
+          "en": "CAC is the Customer Acquisition Cost."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Agar LTV/CAC koʻrsatkichi 1 dan kichik boʻlsa, biznesning tezroq oʻsishi foydani oshiradi.",
+          "ru": "Если показатель LTV/CAC меньше 1, более быстрый рост бизнеса увеличит прибыль.",
+          "en": "If the LTV/CAC ratio is less than 1, faster growth of the business will increase profit."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Agar LTV/CAC < 1 boʻlsa, har bir yangi mijoz zarar keltiradi va oʻsish faqat zararni koʻpaytiradi.",
+          "ru": "Если LTV/CAC < 1, каждый новый клиент приносит убыток, и рост лишь умножает убытки.",
+          "en": "If LTV/CAC < 1, every new customer brings a loss, and growth only multiplies the losses."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Birlik iqtisodiyotini hisoblashda qaysi koʻrsatkichlar qatnashadi?",
+          "ru": "Какие из следующих показателей участвуют в расчёте юнит-экономики?",
+          "en": "Which of the following metrics are involved in calculating unit economics?"
+        },
+        "options": [
+          {
+            "uz": "ARPU",
+            "ru": "ARPU",
+            "en": "ARPU"
+          },
+          {
+            "uz": "LTV",
+            "ru": "LTV",
+            "en": "LTV"
+          },
+          {
+            "uz": "CAC",
+            "ru": "CAC",
+            "en": "CAC"
+          },
+          {
+            "uz": "SaaS",
+            "ru": "SaaS",
+            "en": "SaaS"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "ARPU, LTV va CAC birlik iqtisodiyoti koʻrsatkichlaridir. SaaS esa daromad modeli yoki xizmat turi hisoblanadi.",
+          "ru": "ARPU, LTV и CAC — это показатели юнит-экономики. SaaS — это модель дохода или вид услуги.",
+          "en": "ARPU, LTV, and CAC are unit economics metrics. SaaS is a revenue model or type of service."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Birlik iqtisodiyotiga koʻra, qaysi holda model sogʻlom hisoblanadi?",
+          "ru": "Согласно юнит-экономике, в каком случае модель считается здоровой?",
+          "en": "According to unit economics, in which case is the model considered healthy?"
+        },
+        "options": [
+          {
+            "uz": "LTV/CAC qiymati 3 ga teng yoki undan katta boʻlganda",
+            "ru": "Когда значение LTV/CAC равно или больше 3",
+            "en": "When the LTV/CAC value is equal to or greater than 3"
+          },
+          {
+            "uz": "LTV/CAC qiymati 1 dan kichik boʻlganda",
+            "ru": "Когда значение LTV/CAC меньше 1",
+            "en": "When the LTV/CAC value is less than 1"
+          },
+          {
+            "uz": "ARPU koʻrsatkichi LTV dan katta boʻlganda",
+            "ru": "Когда показатель ARPU больше LTV",
+            "en": "When the ARPU metric is greater than LTV"
+          },
+          {
+            "uz": "CAC koʻrsatkichi LTV dan katta boʻlganda",
+            "ru": "Когда показатель CAC больше LTV",
+            "en": "When the CAC metric is greater than LTV"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "LTV/CAC kamida 3 boʻlsa, model sogʻlom hisoblanadi, aks holda ehtiyot boʻlish kerak yoki zarar keltiradi.",
+          "ru": "Если LTV/CAC минимум 3, модель считается здоровой, иначе нужна осторожность или она приносит убыток.",
+          "en": "If LTV/CAC is at least 3, the model is considered healthy, otherwise caution is needed or it brings a loss."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Qoplash muddatini hisoblash",
+      "ru": "Расчёт срока окупаемости",
+      "en": "Calculating the payback period"
+    },
+    "statement": {
+      "uz": "Mijozni jalb qilish narxi (CAC) va bir mijozdan olinadigan oylik foyda berilgan. CAC ni qoplash uchun necha oy kerakligini (qoplash muddati) hisoblang. Natija yuqoriga yaxlitlangan butun son boʻlishi kerak. Dastur bir qatorda ikkita butun sonni qabul qiladi: CAC va oylik foyda. Natijani (necha oy) bitta butun son koʻrinishida chiqaring. Masalan, 25000 va 3000 kiritilsa, dastur 9 chiqaradi.",
+      "ru": "Даны стоимость привлечения клиента (CAC) и ежемесячная прибыль с одного клиента. Рассчитайте срок окупаемости в месяцах. Результат должен быть целым числом, округлённым вверх. Программа получает два целых числа в одной строке: CAC и ежемесячная прибыль. Выведите результат (количество месяцев) в виде одного целого числа. Например, при вводе 25000 и 3000 программа выведет 9.",
+      "en": "You are given the Customer Acquisition Cost (CAC) and the monthly profit per customer. Calculate the payback period in months. The result must be an integer rounded up. The program reads two integers on a single line: the CAC and the monthly profit. Print the result (the number of months) as a single integer. For example, if the input is 25000 and 3000, the program prints 9."
+    },
+    "code": {
+      "starter": {
+        "python": "cac, foyda = map(int, input().split())\n\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        if (in.hasNextLong()) {\n            long cac = in.nextLong();\n            long foyda = in.nextLong();\n            \n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long cac, foyda;\n    if (cin >> cac >> foyda) {\n        \n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "cac, foyda = map(int, input().split())\nprint((cac + foyda - 1) // foyda)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        if (in.hasNextLong()) {\n            long cac = in.nextLong();\n            long foyda = in.nextLong();\n            System.out.println((cac + foyda - 1) / foyda);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long cac, foyda;\n    if (cin >> cac >> foyda) {\n        cout << (cac + foyda - 1) / foyda << \"\\n\";\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "25000 3000\n",
+          "expected": "9\n",
+          "hidden": false
+        },
+        {
+          "input": "140000 35000\n",
+          "expected": "4\n",
+          "hidden": false
+        },
+        {
+          "input": "150000 24000\n",
+          "expected": "7\n",
+          "hidden": true
+        },
+        {
+          "input": "20000 4000\n",
+          "expected": "5\n",
+          "hidden": true
+        },
+        {
+          "input": "1000 1000\n",
+          "expected": "1\n",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

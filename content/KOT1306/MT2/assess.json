@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Packet Tracer loyihasi boʻyicha natija sifatida nima topshiriladi?",
+          "ru": "Что сдаётся как результат проекта в Packet Tracer?",
+          "en": "What is handed in as the result of the Packet Tracer project?"
+        },
+        "options": [
+          {
+            "uz": "8–12 betlik tahliliy matn va kamida 5 manba",
+            "ru": "Аналитический текст на 8–12 страниц и не менее 5 источников",
+            "en": "An analytical text of 8–12 pages and at least 5 sources"
+          },
+          {
+            "uz": "1 ta .pkt fayl va 3–5 betlik hisobot",
+            "ru": "Один файл .pkt и отчёт на 3–5 страниц",
+            "en": "One .pkt file and a 3–5 page report"
+          },
+          {
+            "uz": "2–4 bet: amaliy mashgʻulot qadamlari, skrinshotlar va xulosa",
+            "ru": "2–4 страницы: шаги практического занятия, скриншоты и вывод",
+            "en": "2–4 pages: the steps of a practical session, screenshots and a conclusion"
+          },
+          {
+            "uz": "Platformaning avtomatik testlaridan oʻtgan dastur",
+            "ru": "Программа, прошедшая автоматические тесты платформы",
+            "en": "A program that passes the platform's automatic tests"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Mustaqil ish turlari jadvali: Packet Tracer loyihasi — 1 ta .pkt fayl + 3–5 bet hisobot. Birinchi variant — referat, uchinchi — laboratoriya hisoboti, toʻrtinchi — dasturiy vazifa.",
+          "ru": "Таблица видов самостоятельной работы: проект в Packet Tracer — один файл .pkt плюс отчёт на 3–5 страниц. Первый вариант — реферат, третий — лабораторный отчёт, четвёртый — программное задание.",
+          "en": "The table of independent work: a Packet Tracer project is one .pkt file plus a 3–5 page report. The first option is the essay, the third the lab report, the fourth the programming task."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Belgilangan muddatdan kech topshirilgan mustaqil ish qabul qilinmaydi.",
+          "ru": "Самостоятельная работа, сданная позже срока, не принимается.",
+          "en": "Independent work handed in after the deadline is not accepted."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: muddatdan kech topshirilgan ish qabul qilinadi, lekin „kechikkan“ deb belgilanadi.",
+          "ru": "В занятии: работа, сданная после срока, принимается, но помечается «с опозданием».",
+          "en": "The lesson says work handed in after the deadline is accepted, but marked \"late\"."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Referatda kamida nechta manba boʻlishi shart?",
+          "ru": "Сколько источников как минимум должно быть в реферате?",
+          "en": "At least how many sources must an essay have?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Turlar jadvalida referat: 8–12 bet, kamida 5 manba va xulosa; xatolar roʻyxatida ham bitta manbadan koʻchirish alohida tilga olingan.",
+          "ru": "В таблице видов: реферат 8–12 страниц, не менее 5 источников и вывод; списывание из одного источника отдельно названо среди ошибок.",
+          "en": "The kinds table gives an essay of 8–12 pages with at least 5 sources and a conclusion, and copying from one source is named among the mistakes."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Manzil rejasi tuzilgandan keyin loyihaning qaysi bosqichi keladi?",
+          "ru": "Какой этап проекта идёт после адресного плана?",
+          "en": "Which project stage comes after the address plan?"
+        },
+        "options": [
+          {
+            "uz": "Talablarni tahlil qilish",
+            "ru": "Анализ требований",
+            "en": "Analysing the requirements"
+          },
+          {
+            "uz": "Sozlash",
+            "ru": "Настройка",
+            "en": "Configuration"
+          },
+          {
+            "uz": "Sinov",
+            "ru": "Проверка",
+            "en": "Testing"
+          },
+          {
+            "uz": "Hujjatlashtirish",
+            "ru": "Документирование",
+            "en": "Documentation"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bosqichlar tartibi: talablar → mantiqiy sxema → manzil rejasi → sozlash → sinov → hujjatlashtirish.",
+          "ru": "Порядок этапов: требования → логическая схема → адресный план → настройка → проверка → документирование.",
+          "en": "The stages run: requirements → logical diagram → address plan → configuration → testing → documentation."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Hisobot shabloniga qaysi boʻlimlar kiritilgan?",
+          "ru": "Какие разделы входят в шаблон отчёта?",
+          "en": "Which sections does the report template include?"
+        },
+        "options": [
+          {
+            "uz": "Tarmoq sxemasi (rasm)",
+            "ru": "Схема сети (рисунок)",
+            "en": "The network diagram (picture)"
+          },
+          {
+            "uz": "Manzil rejasi: quyi tarmoq, prefiks, shlyuz, DHCP diapazoni, vazifasi",
+            "ru": "Адресный план: подсеть, префикс, шлюз, диапазон DHCP, назначение",
+            "en": "The address plan: subnet, prefix, gateway, DHCP range, purpose"
+          },
+          {
+            "uz": "Qurilmalar roʻyxati: nomi, modeli, interfeyslari va manzillari",
+            "ru": "Перечень устройств: имя, модель, интерфейсы и адреса",
+            "en": "The device list: name, model, interfaces and addresses"
+          },
+          {
+            "uz": "Sinov natijalari: tekshiruv, kutilgan va haqiqiy natija",
+            "ru": "Результаты проверок: проверка, ожидаемый и фактический результат",
+            "en": "The test results: check, expected result and actual result"
+          },
+          {
+            "uz": "Xizmat koʻrsatish shartnomasi va narxlar",
+            "ru": "Договор на обслуживание и цены",
+            "en": "A service contract and prices"
+          },
+          {
+            "uz": "Qurilmalarning bozordagi narxi",
+            "ru": "Рыночная стоимость устройств",
+            "en": "The market price of the devices"
+          }
+        ],
+        "correct": [0, 1, 2, 3],
+        "explanation": {
+          "uz": "Shablonning yetti bandi: vazifa va talablar, sxema, manzil rejasi, qurilmalar roʻyxati, asosiy sozlamalar, sinov natijalari, xulosa va takliflar — narxlar haqida band yoʻq.",
+          "ru": "Семь пунктов шаблона: задание и требования, схема, адресный план, перечень устройств, основные настройки, результаты проверок, вывод и предложения — пункта о деньгах нет.",
+          "en": "The template's seven items: task and requirements, diagram, address plan, device list, key configuration, test results, conclusion and suggestions — there is no item about money."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Bitta virtual mashinadan nusxalangan ikki qurilmada qaysi manzil qayta yaratilmagani uchun kommutator jadvali chalkashadi? Qisqa javob bering.",
+          "ru": "Какой адрес не пересоздаётся у двух машин, склонированных с одной виртуальной машины, из-за чего запутывается таблица коммутатора? Краткий ответ.",
+          "en": "Which address, not regenerated on two machines cloned from one virtual machine, confuses the switch's table? Short answer."
+        },
+        "answers": [
+          "MAC",
+          "mac",
+          "MAC manzil",
+          "mac manzil"
+        ],
+        "explanation": {
+          "uz": "Darsda: VM-A va VM-B bitta virtual mashinadan nusxalangan, MAC qayta yaratilmagan — bir segmentda boʻlsa, kommutatorning MAC jadvali chalkashadi.",
+          "ru": "В занятии: VM-A и VM-B склонированы с одной виртуальной машины без пересоздания MAC; в одном сегменте таблица MAC коммутатора запутается.",
+          "en": "The lesson says VM-A and VM-B were cloned from one virtual machine without regenerating the MAC; in one segment the switch's MAC table gets confused."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Baholash mezonlari jadvalida sinovlar va hujjatlashtirish sifati mezonlarining umumiy ulushi necha foiz?",
+          "ru": "Какая суммарная доля в процентах у критериев «проверки и их результаты» и «качество документации»?",
+          "en": "What is the combined share, in percent, of the criteria \"tests and their results\" and \"quality of documentation\"?"
+        },
+        "answers": [30],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Jadval: sinovlar 15% va hujjatlar sifati 15% — jami 30%. Qolganlari: talablar bajarilishi 40%, manzil rejasi 20%, himoya 10%.",
+          "ru": "В таблице: проверки — 15% и качество документации — 15%, всего 30%. Остальное: требования — 40%, адресный план — 20%, защита — 10%.",
+          "en": "The table gives tests 15% and documentation quality 15%, together 30%; the rest is requirements 40%, address plan 20% and defence 10%."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "MAC — oʻn oltilik son, `aa` va `AA` bir xil qiymat; shuning uchun takrorlangan MAC faqat hujjatdagi yozuv xatosi boʻlishi mumkin.",
+          "ru": "MAC — шестнадцатеричное число, `aa` и `AA` — одно значение; поэтому повторяющийся MAC может быть только ошибкой записи в документах.",
+          "en": "A MAC is a hexadecimal number and `aa` and `AA` are the same value, so a repeated MAC can only be a writing error in the documents."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Harflar kattaligi haqiqatan ham hisobga olinmaydi, lekin bir xil MACning ikki sababi bor: nusxalangan virtual mashina yoki hujjatdagi xato.",
+          "ru": "Регистр букв действительно не важен, но у одинакового MAC две причины: клонированная виртуальная машина или ошибка в документах.",
+          "en": "Letter case really is ignored, but an identical MAC has two causes: a cloned virtual machine or an error in the documents."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Koʻp uchraydigan xatolar va akademik halollik boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о частых ошибках и академической честности верны?",
+          "en": "Which statements about the common mistakes and academic honesty are correct?"
+        },
+        "options": [
+          {
+            "uz": "Sxemasiz va manzil rejasisiz sozlashni boshlash keyin hammani qayta qilishga majbur qiladi",
+            "ru": "Начать настройку без схемы и адресного плана — потом придётся всё переделывать",
+            "en": "Starting the configuration without a diagram and an address plan forces redoing everything"
+          },
+          {
+            "uz": "Hisobotda „ishlaydi“ degan gap isbot emas — ping va tracert natijalari kerak",
+            "ru": "Фраза «работает» в отчёте — не доказательство: нужны результаты ping и tracert",
+            "en": "In the report \"it works\" is not proof — the ping and tracert results are needed"
+          },
+          {
+            "uz": "Referat uchun kamida 5 manba, iqtiboslar va oʻz xulosasi shart",
+            "ru": "Для реферата обязательны не менее 5 источников, цитаты и собственный вывод",
+            "en": "An essay requires at least 5 sources, citations and your own conclusion"
+          },
+          {
+            "uz": "Sunʼiy intellekt yozgan matnni oʻzgartirmasdan topshirish mumkin",
+            "ru": "Текст, написанный искусственным интеллектом, можно сдать без изменений",
+            "en": "Text written by an artificial intelligence may be handed in unchanged"
+          },
+          {
+            "uz": "Packet Tracer faylini oxirgi kunga qoldirish eng xavfsiz yoʻl",
+            "ru": "Откладывать файл Packet Tracer на последний день — самый надёжный путь",
+            "en": "Leaving the Packet Tracer file to the last day is the safest course"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Oʻzgartirmasdan topshirilgan sunʼiy intellekt matni akademik halollik qoidasini buzadi; oxirgi kun esa xavfli: faylning versiyasi mos kelmasligi yoki saqlanmay qolishi mumkin.",
+          "ru": "Сданный без изменений текст искусственного интеллекта нарушает правила академической честности; последний день опасен: версия файла может не совпасть или файл не сохранится.",
+          "en": "Handing in AI-written text unchanged breaks academic honesty, and the last day is risky: the file's version may not match or it may fail to save."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Loyihaga kerakli kommutatorlar soni",
+      "ru": "Число коммутаторов для проекта",
+      "en": "The number of switches a project needs"
+    },
+    "statement": {
+      "uz": "Loyihaning qurilmalar roʻyxati tayyor boʻlgach, nechta kommutator kerakligini hisoblang. Kirish: birinchi satrda kommutatorga ulanishi kerak boʻlgan qurilmalar soni d (1 ≤ d ≤ 1000), ikkinchi satrda bitta kommutatorning portlari soni p (2 ≤ p ≤ 48). Bir portga faqat bitta qurilma ulanadi. Barcha qurilmalar joylashishi uchun kerak boʻlgan eng kichik kommutatorlar sonini bitta satrda, faqat son koʻrinishida chiqaring — hech qanday qoʻshimcha soʻz yozmang. Masalan, darsdagi namunaviy binoda 3 qavat va har qavatda 24 + 8 = 32 qurilma, jami 96 ta: 96 va 24 kirsa, dastur 4 chiqaradi; 24 va 24 kirsa 1; 1 va 8 kirsa ham 1 chiqadi.",
+      "ru": "Когда перечень устройств проекта готов, посчитайте, сколько нужно коммутаторов. Ввод: в первой строке число подключаемых устройств d (1 ≤ d ≤ 1000), во второй — число портов одного коммутатора p (2 ≤ p ≤ 48). К одному порту подключается только одно устройство. Выведите минимальное число коммутаторов, в которые поместятся все устройства, одной строкой — только число, без лишних слов. Например, в здании из занятия 3 этажа и на каждом 24 + 8 = 32 устройства, всего 96: при вводе 96 и 24 программа выводит 4; при 24 и 24 — 1; при 1 и 8 тоже 1.",
+      "en": "Once the project's device list is ready, work out how many switches are needed. Input: the number of devices to connect, d (1 ≤ d ≤ 1000), on the first line and the number of ports on one switch, p (2 ≤ p ≤ 48), on the second. A port carries only one device. Print the smallest number of switches that holds all the devices on one line — only the number, with no extra words. For example, the lesson's building has 3 floors with 24 + 8 = 32 devices on each, 96 in all: the input 96 and 24 makes the program print 4; 24 and 24 gives 1; and 1 and 8 also gives 1."
+    },
+    "code": {
+      "starter": {
+        "python": "d = int(input())\np = int(input())\n\nprint(d // p)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int d = in.nextInt();\n        int p = in.nextInt();\n        System.out.println(d / p);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int d, p;\n    cin >> d >> p;\n    cout << d / p << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "d = int(input())\np = int(input())\n\nprint((d + p - 1) // p)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int d = in.nextInt();\n        int p = in.nextInt();\n        System.out.println((d + p - 1) / p);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int d, p;\n    cin >> d >> p;\n    cout << (d + p - 1) / p << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "96\n24\n", "expected": "4", "hidden": false },
+        { "input": "24\n24\n", "expected": "1", "hidden": false },
+        { "input": "1\n8\n", "expected": "1", "hidden": false },
+        { "input": "49\n24\n", "expected": "3", "hidden": true },
+        { "input": "72\n48\n", "expected": "2", "hidden": true },
+        { "input": "1000\n48\n", "expected": "21", "hidden": true }
+      ]
+    }
+  }
+}

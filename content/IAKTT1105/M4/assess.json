@@ -1,0 +1,432 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Elektron jadval varagida ustun va satrning kesishmasi qanday ataladi?",
+          "ru": "Как называется на листе электронной таблицы пересечение столбца и строки?",
+          "en": "What is the intersection of a column and a row on a spreadsheet sheet called?"
+        },
+        "options": [
+          {
+            "uz": "Katak",
+            "ru": "Ячейка",
+            "en": "A cell"
+          },
+          {
+            "uz": "Diapazon",
+            "ru": "Диапазон",
+            "en": "A range"
+          },
+          {
+            "uz": "Varaq",
+            "ru": "Лист",
+            "en": "A sheet"
+          },
+          {
+            "uz": "Ishchi kitob",
+            "ru": "Рабочая книга",
+            "en": "A workbook"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: varaq ustunlar (A, B, C, …) va satrlardan (1, 2, 3, …) tashkil topgan; ularning kesishmasi — katak, manzili masalan B3.",
+          "ru": "По занятию: лист состоит из столбцов (A, B, C, …) и строк (1, 2, 3, …); их пересечение — ячейка с адресом, например B3.",
+          "en": "The lesson: a sheet is made of columns (A, B, C, …) and rows (1, 2, 3, …); their intersection is a cell, with an address such as B3."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Elektron jadvalda formula = belgisi bilan boshlanadi.",
+          "ru": "Формула в электронной таблице начинается со знака =.",
+          "en": "A formula in a spreadsheet starts with the = sign."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda formulalar = bilan boshlanadi deb aytilgan: masalan =B2*C2, =SUM(D2:D10).",
+          "ru": "В занятии сказано, что формулы начинаются с =: например =B2*C2, =SUM(D2:D10).",
+          "en": "The lesson states that formulas start with =: for example =B2*C2, =SUM(D2:D10)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "A1:A10 diapazonidagi sonlar yigʻindisini qaysi funksiya hisoblaydi?",
+          "ru": "Какая функция вычисляет сумму чисел в диапазоне A1:A10?",
+          "en": "Which function calculates the sum of the numbers in the range A1:A10?"
+        },
+        "options": [
+          {
+            "uz": "SUM",
+            "ru": "SUM",
+            "en": "SUM"
+          },
+          {
+            "uz": "AVERAGE",
+            "ru": "AVERAGE",
+            "en": "AVERAGE"
+          },
+          {
+            "uz": "COUNT",
+            "ru": "COUNT",
+            "en": "COUNT"
+          },
+          {
+            "uz": "MAX",
+            "ru": "MAX",
+            "en": "MAX"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsning Oʻzingizni tekshiring boʻlimida: A1:A10 kataklaridagi sonlar yigʻindisini =SUM(A1:A10) hisoblaydi. AVERAGE — oʻrtacha, COUNT — soni, MAX — eng katta qiymat.",
+          "ru": "В разделе «Проверьте себя»: сумму ячеек A1:A10 вычисляет =SUM(A1:A10). AVERAGE — среднее, COUNT — количество, MAX — наибольшее значение.",
+          "en": "The Check yourself section: the sum of cells A1:A10 is =SUM(A1:A10). AVERAGE is the mean, COUNT the number of values, MAX the largest value."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "QQS stavkasi kabi bitta umumiy qiymatga formulani nusxalaganda oʻzgarmaydigan murojaat kerak. U qanday yoziladi?",
+          "ru": "Для одного общего значения, например ставки НДС, нужна ссылка, которая не меняется при копировании формулы. Как она записывается?",
+          "en": "For one common value, such as the VAT rate, you need a reference that does not change when the formula is copied. How is it written?"
+        },
+        "options": [
+          {
+            "uz": "$B$2",
+            "ru": "$B$2",
+            "en": "$B$2"
+          },
+          {
+            "uz": "B2",
+            "ru": "B2",
+            "en": "B2"
+          },
+          {
+            "uz": "B2$ yoki $B2",
+            "ru": "B2$ или $B2",
+            "en": "B2$ or $B2"
+          },
+          {
+            "uz": "B:2",
+            "ru": "B:2",
+            "en": "B:2"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadvalda: absolyut murojaat $B$2 nusxalanganda oʻzgarmaydi va bitta umumiy qiymat uchun ishlatiladi — QQS stavkasi, valyuta kursi. B2 — nisbiy, $B2 yoki B$2 — aralash.",
+          "ru": "В таблице из занятия: абсолютная ссылка $B$2 при копировании не меняется и служит для одного общего значения — ставка НДС, курс валюты. B2 — относительная, $B2 или B$2 — смешанная.",
+          "en": "In the lesson's table: the absolute reference $B$2 does not change when copied and is used for one common value — the VAT rate, an exchange rate. B2 is relative, $B2 or B$2 mixed."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Agar A1 = 12, A2 = 8, A3 = 10 boʻlsa, =AVERAGE(A1:A3) formulasaning natijasi qancha?",
+          "ru": "Если A1 = 12, A2 = 8, A3 = 10, каков результат формулы =AVERAGE(A1:A3)?",
+          "en": "If A1 = 12, A2 = 8 and A3 = 10, what is the result of the formula =AVERAGE(A1:A3)?"
+        },
+        "answers": [10],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsning Oʻzingizni tekshiring boʻlimida: AVERAGE oʻrtacha qiymatni hisoblaydi: (12 + 8 + 10) / 3 = 10.",
+          "ru": "Из раздела «Проверьте себя»: AVERAGE вычисляет среднее значение: (12 + 8 + 10) / 3 = 10.",
+          "en": "From the Check yourself section: AVERAGE is the mean: (12 + 8 + 10) / 3 = 10."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Murojaat turini almashtiruvchi klavişa nomini yozing (masalan, F1).",
+          "ru": "Напишите название клавиши, переключающей тип ссылки (например, F1).",
+          "en": "Write the name of the key that switches the reference type (e.g. F1)."
+        },
+        "answers": ["F4", "f4"],
+        "explanation": {
+          "uz": "Darsda aytilganidek, F4 tugmasi murojaat turini almashtiradi.",
+          "ru": "Как сказано в занятии, клавиша F4 переключает тип ссылки.",
+          "en": "As the lesson states, the F4 key switches the reference type."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Murojaat turlari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о типах ссылок верны?",
+          "en": "Which statements about reference types are correct?"
+        },
+        "options": [
+          {
+            "uz": "Nisbiy murojaat (B2) nusxalanganda satr va ustun siljiydi",
+            "ru": "Относительная ссылка (B2) при копировании сдвигает и строку, и столбец",
+            "en": "A relative reference (B2) shifts both the row and the column when copied"
+          },
+          {
+            "uz": "Absolyut murojaat ($B$2) nusxalanganda oʻzgarmaydi",
+            "ru": "Абсолютная ссылка ($B$2) при копировании не меняется",
+            "en": "An absolute reference ($B$2) does not change when copied"
+          },
+          {
+            "uz": "Aralash murojaat ($B2 yoki B$2) nusxalanganda faqat bittasi siljiydi",
+            "ru": "Смешанная ссылка ($B2 или B$2) при копировании сдвигается только в одной части",
+            "en": "A mixed reference ($B2 or B$2) shifts only one part when copied"
+          },
+          {
+            "uz": "Nisbiy murojaat ham formulani nusxalaganda hech qachon oʻzgarmaydi",
+            "ru": "Относительная ссылка тоже никогда не меняется при копировании формулы",
+            "en": "A relative reference also never changes when the formula is copied"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi jadval: nisbiy — satr va ustun siljiydi, absolyut — oʻzgarmaydi, aralash — faqat bittasi siljiydi. Toʻrtinchi ifoda shu jadvalga zid.",
+          "ru": "Таблица из занятия: относительная — сдвигаются строка и столбец, абсолютная — не меняется, смешанная — сдвигается только одна часть. Четвёртое утверждение противоречит этой таблице.",
+          "en": "The lesson's table: relative — the row and column shift, absolute — does not change, mixed — only one part shifts. The fourth statement contradicts that table."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ishlangan misolda kredit summasi PMT funksiyasiga manfiy beriladi: =PMT(24%/12; 12; -10000000). Nima uchun?",
+          "ru": "В разобранном примере сумма кредита передана в PMT отрицательной: =PMT(24%/12; 12; -10000000). Почему?",
+          "en": "In the worked example the loan amount is passed to PMT as a negative: =PMT(24%/12; 12; -10000000). Why?"
+        },
+        "options": [
+          {
+            "uz": "Bankdan olingan pul — kirim, toʻlovlar — chiqim: pul oqimi yoʻnalishi shunday belgilanadi",
+            "ru": "Деньги, полученные от банка, — приток, а платежи — отток: так обозначается направление денежного потока",
+            "en": "Money received from the bank is an inflow and the payments are outflows: this marks the direction of the cash flow"
+          },
+          {
+            "uz": "Kredit foizi har doim manfiy son boʻladi",
+            "ru": "Проценты по кредиту всегда отрицательное число",
+            "en": "Loan interest is always a negative number"
+          },
+          {
+            "uz": "PMT funksiyasi faqat manfiy sonlar bilan ishlaydi",
+            "ru": "Функция PMT работает только с отрицательными числами",
+            "en": "The PMT function only works with negative numbers"
+          },
+          {
+            "uz": "Kredit summasi juda katta boʻlgani uchun",
+            "ru": "Потому что сумма кредита слишком большая",
+            "en": "Because the loan amount is very large"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: bankdan olingan pul — sizga kirim, toʻlovlar — chiqim, shuning uchun kredit summasi manfiy olinadi.",
+          "ru": "По занятию: деньги от банка — приток для вас, платежи — отток, поэтому сумма кредита берётся отрицательной.",
+          "en": "The lesson: money from the bank is an inflow for you and payments are outflows, so the loan amount is taken as negative."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsda stavkani formulaga son boʻlib yozib qoʻyish (masalan =B2*1.12) toʻgʻri amaliyot deb tavsiya etiladi.",
+          "ru": "В занятии вписывание ставки прямо в формулу (например =B2*1.12) рекомендуется как правильная практика.",
+          "en": "The lesson recommends typing a rate directly into the formula (e.g. =B2*1.12) as good practice."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bu darsdagi koʻp uchraydigan xatolar roʻyxatida: formulaga son yozib qoʻyish. Stavkani alohida katakka ($H$1) qoʻyish kerak — oʻzgartirish oson boʻladi.",
+          "ru": "Это ошибка из списка частых ошибок в занятии: вписывать число в формулу. Ставку нужно вынести в отдельную ячейку ($H$1) — её легко изменить.",
+          "en": "This is in the lesson's list of common mistakes: typing a number into a formula. The rate belongs in a separate cell ($H$1), where it is easy to change."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Savdo hisoboti va kredit toʻlovi: elektron jadvalda hisoblash",
+      "ru": "Отчёт о продажах и платёж по кредиту: расчёт в электронной таблице",
+      "en": "Sales report and loan payment: calculating in a spreadsheet"
+    },
+    "statement": {
+      "uz": "Darsning ishlangan misollari boʻyicha toʻrt savol. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "ru": "Четыре вопроса по разобранным примерам занятия. В вопросах с несколькими ответами отметьте все верные варианты.",
+      "en": "Four questions on the worked examples of the lesson. In questions with several answers, mark every correct option."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Savdo hisoboti jadvalida har bir tovar ulushi (masalan 38,5%) kabi, 5–6 tadan oshmagan qismlar ulushini koʻrsatish uchun qaysi diagramma mos?",
+            "ru": "Какая диаграмма подходит для долей, не более 5–6 частей, например доли каждого товара (38,5%) в отчёте о продажах?",
+            "en": "Which chart suits shares made of no more than 5–6 parts, such as each product's share (38.5%) in the sales report?"
+          },
+          "options": [
+            {
+              "uz": "Ustunli diagramma",
+              "ru": "Столбчатая диаграмма",
+              "en": "A column chart"
+            },
+            {
+              "uz": "Chiziqli diagramma",
+              "ru": "Линейная диаграмма",
+              "en": "A line chart"
+            },
+            {
+              "uz": "Doiraviy diagramma",
+              "ru": "Круговая диаграмма",
+              "en": "A pie chart"
+            },
+            {
+              "uz": "Nuqtali diagramma",
+              "ru": "Точечная диаграмма",
+              "en": "A scatter chart"
+            }
+          ],
+          "correct": [2],
+          "explanation": {
+            "uz": "Darsda: doiraviy diagramma — ulushlar, 5–6 dan ortiq boʻlmagan qism; ustunli — taqqoslash, chiziqli — vaqt boʻyicha dinamika, nuqtali — ikki koʻrsatkich bogʻliqligi.",
+            "ru": "По занятию: круговая диаграмма — доли, не более 5–6 частей; столбчатая — сравнение, линейная — динамика во времени, точечная — связь двух показателей.",
+            "en": "The lesson: pie chart — shares, no more than 5–6 parts; column — comparison, line — dynamics over time, scatter — the relationship of two indicators."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Savdo hisoboti jadvalida QQS stavkasi (12%) qaysi katakda saqlanadi? Manzilini yozing.",
+            "ru": "В какой ячейке таблицы отчёта о продажах хранится ставка НДС (12%)? Напишите её адрес.",
+            "en": "In which cell of the sales report table is the VAT rate (12%) stored? Write its address."
+          },
+          "answers": ["H1", "h1", "$H$1"],
+          "explanation": {
+            "uz": "Darsda: H1 katagida QQS stavkasi 12% joylashgan; E2 formulasi unga $H$1 orqali murojaat qiladi.",
+            "ru": "В занятии: в ячейке H1 находится ставка НДС 12%; формула E2 ссылается на неё как $H$1.",
+            "en": "The lesson: cell H1 holds the VAT rate of 12%; the formula in E2 refers to it as $H$1."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Savdo hisobotida E2 katagidagi =D2*(1+$H$1) formulasini E3 va E4 kataklariga nusxaladik. Nima oʻzgaradi?",
+            "ru": "Формулу из ячейки E2 отчёта =D2*(1+$H$1) копируем вниз, в E3 и E4. Что изменится?",
+            "en": "We copy the formula from cell E2 of the report, =D2*(1+$H$1), down to E3 and E4. What changes?"
+          },
+          "options": [
+            {
+              "uz": "D2 keyin D3 va D4 ga aylanadi, $H$1 oʻzgarmaydi",
+              "ru": "D2 станет D3 и D4, а $H$1 не изменится",
+              "en": "D2 becomes D3 and D4, while $H$1 stays unchanged"
+            },
+            {
+              "uz": "$H$1 keyin H2 va H3 ga siljiydi, D2 oʻzgarmaydi",
+              "ru": "$H$1 сдвинется в H2 и H3, а D2 не изменится",
+              "en": "$H$1 shifts to H2 and H3, while D2 stays unchanged"
+            },
+            {
+              "uz": "Ikkalasi ham oʻzgarmaydi",
+              "ru": "Не изменится ни то, ни другое",
+              "en": "Neither of them changes"
+            },
+            {
+              "uz": "Nusxa boʻsh katakka murojaat qilib, xato beradi",
+              "ru": "Копия обратится к пустой ячейке и выдаст ошибку",
+              "en": "The copy refers to an empty cell and gives an error"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda: E2 formulasida $H$1 absolyut — formulani pastga nusxalaganda stavka katagi oʻzgarmaydi, D2 esa D3, D4 ga oʻzgaradi.",
+            "ru": "По занятию: в формуле E2 ссылка $H$1 абсолютная — при копировании вниз ячейка ставки не меняется, а D2 становится D3, D4.",
+            "en": "The lesson: in the formula of E2, $H$1 is absolute — when the formula is copied down, the rate cell does not change, while D2 becomes D3, D4."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Darsdagi funksiyalar jadvalida moliyaviy funksiyalar qatoriga qaysilari kiritilgan?",
+            "ru": "Какие функции отнесены в таблице занятия к финансовым?",
+            "en": "Which functions does the lesson's table list under financial functions?"
+          },
+          "options": [
+            {
+              "uz": "PMT",
+              "ru": "PMT",
+              "en": "PMT"
+            },
+            {
+              "uz": "FV",
+              "ru": "FV",
+              "en": "FV"
+            },
+            {
+              "uz": "NPV",
+              "ru": "NPV",
+              "en": "NPV"
+            },
+            {
+              "uz": "MEDIAN",
+              "ru": "MEDIAN",
+              "en": "MEDIAN"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Dars jadvalida moliyaviy funksiyalar: PMT, FV, PV, NPV, IRR — kredit toʻlovi, kelajakdagi qiymat, investitsiya samaradorligi. MEDIAN — statistik guruhga kiradi.",
+            "ru": "В таблице занятия финансовые функции: PMT, FV, PV, NPV, IRR — платёж по кредиту, будущая стоимость, эффективность инвестиций. MEDIAN относится к статистическим.",
+            "en": "The lesson's table lists PMT, FV, PV, NPV, IRR as financial: loan payment, future value, investment effectiveness. MEDIAN belongs to the statistical group."
+          }
+        }
+      ]
+    }
+  }
+}

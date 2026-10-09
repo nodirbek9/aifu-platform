@@ -1,0 +1,322 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "startup-config routerning NVRAM xotirasida saqlanadi.",
+          "ru": "startup-config хранится в памяти NVRAM маршрутизатора.",
+          "en": "The startup-config is stored in the router's NVRAM."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: NVRAM — startup-config (yoqilganda yuklanadi), RAM — running-config va jadvallar, Flash — IOS obrazi, ROM — bootstrap.",
+          "ru": "По таблице из занятия: NVRAM — startup-config (загружается при включении), RAM — running-config и таблицы, Flash — образ IOS, ROM — bootstrap.",
+          "en": "In the lesson's table: NVRAM holds the startup-config (loaded at power-on), RAM the running-config and the tables, Flash the IOS image, ROM the bootstrap."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Router ni birinchi marta sozlashda yoki tarmoq ishlamayotganda qaysi ulanish usuli ishlatiladi?",
+          "ru": "Какой способ подключения используют при первой настройке маршрутизатора или когда сеть не работает?",
+          "en": "Which way of connecting is used for the first setup of a router, or when the network does not work?"
+        },
+        "options": [
+          {
+            "uz": "Konsol kabeli va terminal dasturi (PuTTY, 9600 bod)",
+            "ru": "Консольный кабель и терминальная программа (PuTTY, 9600 бод)",
+            "en": "A console cable and a terminal program (PuTTY, 9600 baud)"
+          },
+          {
+            "uz": "SSH orqali",
+            "ru": "Через SSH",
+            "en": "Over SSH"
+          },
+          {
+            "uz": "Telnet orqali",
+            "ru": "Через Telnet",
+            "en": "Over Telnet"
+          },
+          {
+            "uz": "AUX port va modem orqali",
+            "ru": "Через порт AUX и модем",
+            "en": "Through the AUX port and a modem"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "SSH va Telnet tarmoq orqali ishlaydi: tarmoq sozlanmaguncha ulanib boʻlmaydi. Konsol — birinchi sozlash va nosozlik holati uchun; SSH — keyingi kundalik masofaviy boshqaruv.",
+          "ru": "SSH и Telnet работают по сети: пока сеть не настроена, подключиться нельзя. Консоль — для первой настройки и при неисправности; SSH — для повседневного удалённого управления.",
+          "en": "SSH and Telnet work over the network, which is not configured yet. The console is for the first setup and for faults; SSH is for everyday remote management."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "`show ip interface brief` da interfeys `administratively down` koʻrsatilgan. Nima qilish kerak?",
+          "ru": "В выводе `show ip interface brief` интерфейс показан как `administratively down`. Что нужно сделать?",
+          "en": "`show ip interface brief` shows an interface as `administratively down`. What must be done?"
+        },
+        "options": [
+          {
+            "uz": "Interfeys sozlash rejimida `no shutdown` buyrugʻini berish",
+            "ru": "В режиме настройки интерфейса дать команду `no shutdown`",
+            "en": "Give the `no shutdown` command in interface configuration mode"
+          },
+          {
+            "uz": "Kabelni almashtirish",
+            "ru": "Заменить кабель",
+            "en": "Replace the cable"
+          },
+          {
+            "uz": "Router ni qayta yuklash (reload)",
+            "ru": "Перезагрузить маршрутизатор (reload)",
+            "en": "Reload the router"
+          },
+          {
+            "uz": "Interfeysga boshqa IP manzil berish",
+            "ru": "Выдать интерфейсу другой IP-адрес",
+            "en": "Give the interface another IP address"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Cisco router interfeyslari sukut boʻyicha oʻchiq: `administratively down` degani — `no shutdown` berilmagan, kabel bilan muammo yoʻq.",
+          "ru": "Интерфейсы Cisco по умолчанию выключены: `administratively down` означает, что `no shutdown` не была дана, а с кабелем проблем нет.",
+          "en": "Cisco interfaces are off by default: `administratively down` means `no shutdown` was never given; the cable is not the problem."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Buyruq va vazifasi qaysilari toʻgʻri berilgan?",
+          "ru": "Какие пары «команда — её назначение» указаны верно?",
+          "en": "Which command-and-purpose pairs are correct?"
+        },
+        "options": [
+          {
+            "uz": "`show ip interface brief` — interfeyslar, IP manzillar va ularning holati",
+            "ru": "`show ip interface brief` — интерфейсы, IP-адреса и их состояние",
+            "en": "`show ip interface brief` — the interfaces, their IP addresses and their state"
+          },
+          {
+            "uz": "`show ip route` — marshrutlash jadvali",
+            "ru": "`show ip route` — таблица маршрутизации",
+            "en": "`show ip route` — the routing table"
+          },
+          {
+            "uz": "`show version` — IOS versiyasi, ish vaqti va xotira",
+            "ru": "`show version` — версия IOS, время работы и память",
+            "en": "`show version` — the IOS version, uptime and memory"
+          },
+          {
+            "uz": "`show cdp neighbors` — joriy sozlamalar",
+            "ru": "`show cdp neighbors` — текущие настройки",
+            "en": "`show cdp neighbors` — the current configuration"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "`show cdp neighbors` qoʻshni Cisco qurilmalarni koʻrsatadi, joriy sozlamalar esa show running-config buyrugʻida; interfeys statistikasi va xatolari — `show interfaces g0/0` da.",
+          "ru": "`show cdp neighbors` показывает соседние устройства Cisco, а текущие настройки — это show running-config; статистика и ошибки интерфейса — в `show interfaces g0/0`.",
+          "en": "`show cdp neighbors` lists the neighbouring Cisco devices; the current configuration comes from `show running-config`, interface statistics and errors from `show interfaces g0/0`."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "R2 ning standart marshruti R3 ga, R3 niki R2 ga qaraydi. Mavjud boʻlmagan LAN-C ga TTL = 6 bilan yuborilgan paket nechta uzatishdan soʻng tashlab yuboriladi?",
+          "ru": "Стандартный маршрут R2 указывает на R3, а маршрут R3 — на R2. Сколько пересылок выполнится, прежде чем пакет с TTL = 6 для несуществующей сети LAN-C будет выброшен?",
+          "en": "R2's default route points at R3 and R3's points back at R2. After how many forwardings is a packet with TTL = 6 for the missing network LAN-C dropped?"
+        },
+        "answers": [6],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Har bir uzatishda TTL 1 ga kamayadi, nolga yetganda paket tashlanadi: 6 ta uzatish. Misoldagi yoʻl shuning uchun 7 ta router nomidan iborat (boshlangʻich R2 + 6 uzatish).",
+          "ru": "При каждой пересылке TTL уменьшается на 1, а при нуле пакет выбрасывается: 6 пересылок. Поэтому путь в примере состоит из 7 имён маршрутизаторов (начальный R2 + 6 пересылок).",
+          "en": "Each forwarding lowers the TTL by 1 and at zero the packet is dropped: 6 forwardings. That is why the path in the example has seven router names (the starting R2 plus six forwardings)."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Joriy sozlamalarni (RAM dagi running-config ni) NVRAM ga nusxalash buyrugʻini toʻliq yozing.",
+          "ru": "Полностью запишите команду копирования текущей конфигурации (running-config из RAM) в NVRAM.",
+          "en": "Write in full the command that copies the running configuration (running-config in RAM) into NVRAM."
+        },
+        "answers": ["copy running-config startup-config", "write memory"],
+        "explanation": {
+          "uz": "Buyruqlar darhol running-config ga (RAM ga) yoziladi; copy running-config startup-config (yoki write memory) qilinmasa, qayta yuklanishda hammasi yoʻqoladi.",
+          "ru": "Команды сразу попадают в running-config; без `copy running-config startup-config` (или `write memory`) при перезагрузке всё теряется.",
+          "en": "Commands go straight into the running-config; without `copy running-config startup-config` (or `write memory`) everything is lost on reload."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`show ip route` chiqishidagi `S` kodli va `*` belgilangan qatordagi `[1/0]` qiymati nimani anglatadi?",
+          "ru": "Что означает значение `[1/0]` в строке с кодом `S` и знаком `*` в выводе `show ip route`?",
+          "en": "What does the `[1/0]` value in a `show ip route` line marked `S` and `*` mean?"
+        },
+        "options": [
+          {
+            "uz": "Administrativ masofa va metrika",
+            "ru": "Административное расстояние и метрика",
+            "en": "Administrative distance and metric"
+          },
+          {
+            "uz": "Statik marshrutlar va bevosita ulangan tarmoqlar soni",
+            "ru": "Число статических маршрутов и число напрямую подключённых сетей",
+            "en": "The number of static routes and of directly connected networks"
+          },
+          {
+            "uz": "Paketning TTL qiymati va qolgan qadamlar soni",
+            "ru": "Значение TTL пакета и число оставшихся прыжков",
+            "en": "The packet's TTL value and the number of hops left"
+          },
+          {
+            "uz": "Interfeysning tezligi va uzatish vaqti",
+            "ru": "Скорость интерфейса и время передачи",
+            "en": "The interface speed and the transmission delay"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra: S — statik marshrut, `*` — standart marshrut nomzodi, `[1/0]` esa [administrativ masofa/metrika].",
+          "ru": "По занятию: S — статический маршрут, `*` — кандидат по умолчанию, а `[1/0]` — это [административное расстояние/метрика].",
+          "en": "In the lesson: S is a static route, `*` marks the candidate default route, and `[1/0]` is [administrative distance/metric]."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Router ni himoyalash haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о защите маршрутизатора верны?",
+          "en": "Which statements about protecting a router are correct?"
+        },
+        "options": [
+          {
+            "uz": "`enable secret` parolni xeshlab saqlaydi, `enable password` esa ochiq matn",
+            "ru": "`enable secret` хранит пароль в виде хеша, а `enable password` — открытым текстом",
+            "en": "`enable secret` stores the password hashed, `enable password` in plain text"
+          },
+          {
+            "uz": "`transport input ssh` VTY da faqat SSH ni qoldiradi, Telnet yopiladi",
+            "ru": "`transport input ssh` оставляет на VTY только SSH, Telnet закрывается",
+            "en": "`transport input ssh` leaves only SSH on the VTY lines and closes Telnet"
+          },
+          {
+            "uz": "`service password-encryption` sozlamadagi boshqa parollarni yashiradi",
+            "ru": "`service password-encryption` скрывает остальные пароли в конфигурации",
+            "en": "`service password-encryption` hides the other passwords in the configuration"
+          },
+          {
+            "uz": "SSH kalitlari `crypto key generate rsa modulus 2048` buyrugʻi bilan yaratiladi",
+            "ru": "Ключи SSH создаются командой `crypto key generate rsa modulus 2048`",
+            "en": "The SSH keys are created with `crypto key generate rsa modulus 2048`"
+          },
+          {
+            "uz": "Telnet parolni shifrlab yuboradi, shuning uchun u konsol oʻrniga ishlatiladi",
+            "ru": "Telnet передаёт пароль в зашифрованном виде и потому заменяет консоль",
+            "en": "Telnet sends the password encrypted, so it replaces the console"
+          }
+        ],
+        "correct": [0, 1, 2, 3],
+        "explanation": {
+          "uz": "Telnet shifrlanmagan: parol ochiq koʻrinadi, shuning uchun uni ishlatmaslik kerak. Masofaviy boshqarish uchun — SSH.",
+          "ru": "Telnet не шифрует: пароль виден открыто, поэтому его использовать нельзя. Для удалённого управления служит SSH.",
+          "en": "Telnet is unencrypted — the password is visible in the clear, so it must not be used. Remote management goes over SSH."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Statik marshrutda keyingi qadam sifatida bevosita ulanmagan, tarmoqning uzoqidagi router manzilini koʻrsatish mumkin.",
+          "ru": "В статическом маршруте в качестве следующего адреса можно указать адрес маршрутизатора, который не подключён напрямую и находится далеко в сети.",
+          "en": "A static route may name as its next hop a router that is not directly connected and sits far away in the network."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Keyingi qadam — doim bevosita ulangan qoʻshni interfeys manzili. Aks holda router paketga yoʻnalish topa olmaydi.",
+          "ru": "Следующий адрес — всегда адрес интерфейса напрямую подключённого соседа, иначе маршрутизатор не сможет отправить пакет дальше.",
+          "en": "The next hop is always the interface address of a directly connected neighbour; otherwise the router cannot forward the packet."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Interfeys holati boʻyicha tashxis",
+      "ru": "Диагноз по состоянию интерфейса",
+      "en": "Diagnosing an interface from its state"
+    },
+    "statement": {
+      "uz": "Yordam xizmati `show ip interface brief` chiqishini oʻqib, har bir interfeys uchun nimani tekshirish kerakligini aytib beruvchi dastur yozadi. Birinchi satrda interfeyslar soni *n* (1 ≤ *n* ≤ 20). Keyingi *n* satrning har birida: interfeys nomi, birinchi holat (`up`, `down` yoki `admin`) va ikkinchi holat (`up` yoki `down`). Har bir interfeys uchun bitta soʻzni chiqaring: `up` va `up` boʻlsa — `WORKS` (interfeys ishlayapti); `admin` va `down` boʻlsa — `NO_SHUTDOWN` (`no shutdown` berilmagan); `up` va `down` boʻlsa — `LAYER2` (kabel bor, lekin 2-pogʻonada muammo); `down` va `down` boʻlsa — `CABLE` (kabel yoki qarama-qarshi qurilma yoʻq). `admin` soʻzi faqat birinchi holatda uchraydi. Interfeys nomida boʻshliq yoʻq.",
+      "ru": "Служба поддержки пишет программу, которая читает вывод `show ip interface brief` и для каждого интерфейса говорит, что проверять. В первой строке — число интерфейсов *n* (1 ≤ *n* ≤ 20). В каждой из следующих *n* строк: имя интерфейса, первое состояние (`up`, `down` или `admin`) и второе состояние (`up` или `down`). Для каждого интерфейса выведите одно слово: `up` и `up` — `WORKS` (интерфейс работает); `admin` и `down` — `NO_SHUTDOWN` (не была дана команда `no shutdown`); `up` и `down` — `LAYER2` (кабель есть, но проблема на втором уровне); `down` и `down` — `CABLE` (нет кабеля или устройства на другом конце). Слово `admin` встречается только в первом состоянии. В имени интерфейса пробелов нет.",
+      "en": "The help desk writes a program that reads the output of `show ip interface brief` and says, for each interface, what to check. The first line holds the number of interfaces *n* (1 ≤ *n* ≤ 20). Each of the next *n* lines holds an interface name, the first state (`up`, `down` or `admin`) and the second state (`up` or `down`). For every interface print one word: `up` and `up` — `WORKS` (the interface is working); `admin` and `down` — `NO_SHUTDOWN` (`no shutdown` was not given); `up` and `down` — `LAYER2` (there is a cable but a layer 2 problem); `down` and `down` — `CABLE` (no cable or no device at the other end). The word `admin` appears only as the first state. An interface name has no spaces."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nfor _ in range(n):\n    interfeys, birinchi, ikkinchi = input().split()\n    if birinchi == \"up\" and ikkinchi == \"up\":\n        print(\"WORKS\")\n    elif birinchi == \"up\":\n        print(\"LAYER2\")\n    else:\n        print(\"CABLE\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            in.next();\n            String a = in.next();\n            String b = in.next();\n            if (a.equals(\"up\") && b.equals(\"up\")) {\n                System.out.println(\"WORKS\");\n            } else if (a.equals(\"up\")) {\n                System.out.println(\"LAYER2\");\n            } else {\n                System.out.println(\"CABLE\");\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string interfeys, a, b;\n        cin >> interfeys >> a >> b;\n        if (a == \"up\" && b == \"up\") {\n            cout << \"WORKS\" << endl;\n        } else if (a == \"up\") {\n            cout << \"LAYER2\" << endl;\n        } else {\n            cout << \"CABLE\" << endl;\n        }\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nfor _ in range(n):\n    interfeys, birinchi, ikkinchi = input().split()\n    if birinchi == \"admin\":\n        print(\"NO_SHUTDOWN\")\n    elif birinchi == \"up\" and ikkinchi == \"up\":\n        print(\"WORKS\")\n    elif birinchi == \"up\":\n        print(\"LAYER2\")\n    else:\n        print(\"CABLE\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            in.next();\n            String a = in.next();\n            String b = in.next();\n            if (a.equals(\"admin\")) {\n                System.out.println(\"NO_SHUTDOWN\");\n            } else if (a.equals(\"up\") && b.equals(\"up\")) {\n                System.out.println(\"WORKS\");\n            } else if (a.equals(\"up\")) {\n                System.out.println(\"LAYER2\");\n            } else {\n                System.out.println(\"CABLE\");\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string interfeys, a, b;\n        cin >> interfeys >> a >> b;\n        if (a == \"admin\") {\n            cout << \"NO_SHUTDOWN\" << endl;\n        } else if (a == \"up\" && b == \"up\") {\n            cout << \"WORKS\" << endl;\n        } else if (a == \"up\") {\n            cout << \"LAYER2\" << endl;\n        } else {\n            cout << \"CABLE\" << endl;\n        }\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4\ng0/0 up up\ng0/1 admin down\ng0/2 up down\ng0/3 down down\n", "expected": "WORKS\nNO_SHUTDOWN\nLAYER2\nCABLE", "hidden": false },
+        { "input": "1\nS0/0/0 admin down\n", "expected": "NO_SHUTDOWN", "hidden": false },
+        { "input": "3\nGi0/0 down down\nGi0/1 up up\nGi0/2 up down\n", "expected": "CABLE\nWORKS\nLAYER2", "hidden": true },
+        { "input": "2\nFa0/1 up down\nFa0/2 admin down\n", "expected": "LAYER2\nNO_SHUTDOWN", "hidden": true },
+        { "input": "4\na admin down\nb up down\nc down down\nd up up\n", "expected": "NO_SHUTDOWN\nLAYER2\nCABLE\nWORKS", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,283 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "IDEʼning qaysi qismi „qaysi fayllar dasturga kirishi va dastur qanday yigʻilishi“ni saqlaydi?",
+          "ru": "Какая часть IDE хранит информацию о том, какие файлы входят в программу и как она собирается?",
+          "en": "Which part of an IDE keeps track of which files make up the program and how it is built?"
+        },
+        "options": [
+          {
+            "uz": "Loyiha tizimi (Visual Studioʼda Solution Explorer)",
+            "ru": "Система проектов (в Visual Studio — Solution Explorer)",
+            "en": "The project system (Solution Explorer in Visual Studio)"
+          },
+          {
+            "uz": "Muharrir (IntelliSense)",
+            "ru": "Редактор (IntelliSense)",
+            "en": "The editor (IntelliSense)"
+          },
+          {
+            "uz": "Xatolar roʻyxati (Error List)",
+            "ru": "Список ошибок (Error List)",
+            "en": "The error list (Error List)"
+          },
+          {
+            "uz": "Tuzatuvchi (debugger)",
+            "ru": "Отладчик (debugger)",
+            "en": "The debugger"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: loyiha tizimi fayllar va qurish tartibini saqlaydi; muharrir — kod yozish, xatolar roʻyxati — kompilyator xato va ogohlantirishlari, tuzatuvchi — toʻxtatish va qadamlash.",
+          "ru": "По таблице из занятия: система проектов хранит файлы и способ сборки; редактор — для кода, список ошибок — для ошибок и предупреждений компилятора, отладчик — для остановки и шагов.",
+          "en": "Per the lesson's table: the project system stores the files and how the program is built; the editor is for writing code, the error list for compiler errors and warnings, the debugger for stopping and stepping."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Visual Studioʼda Ctrl+F5 dasturni tuzatuvchi bilan ishga tushiradi, F5 esa tuzatuvchisiz ishga tushiradi.",
+          "ru": "В Visual Studio Ctrl+F5 запускает программу с отладчиком, а F5 — без отладчика.",
+          "en": "In Visual Studio Ctrl+F5 starts the program with the debugger, and F5 starts it without the debugger."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Aksincha: Ctrl+F5 — tuzatuvchisiz (oyna dastur tugagach yopilmaydi), F5 — tuzatuvchi bilan.",
+          "ru": "Наоборот: Ctrl+F5 — без отладчика (окно не закрывается после завершения), F5 — с отладчиком.",
+          "en": "It is the other way round: Ctrl+F5 runs without the debugger (the window stays open after the program ends), F5 runs with it."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Dars IDE tarkibiga nimalarni kiritadi?",
+          "ru": "Что занятие включает в состав IDE?",
+          "en": "Which parts does the lesson count as parts of an IDE?"
+        },
+        "options": [
+          {
+            "uz": "Muharrir — kod yozish, rang bilan ajratish, avtomatik toʻldirish",
+            "ru": "Редактор — написание кода, подсветка, автодополнение",
+            "en": "The editor — writing code, colour highlighting, auto-completion"
+          },
+          {
+            "uz": "Xatolar roʻyxati — kompilyator xato va ogohlantirishlari",
+            "ru": "Список ошибок — ошибки и предупреждения компилятора",
+            "en": "The error list — compiler errors and warnings"
+          },
+          {
+            "uz": "Tuzatuvchi — dasturni toʻxtatish, qadamlash, qiymatlarni koʻrish",
+            "ru": "Отладчик — остановка программы, шаги, просмотр значений",
+            "en": "The debugger — stopping the program, stepping, viewing values"
+          },
+          {
+            "uz": "Alohida xatolar bazasi (bug tracker) serveri",
+            "ru": "Отдельный сервер базы дефектов (bug tracker)",
+            "en": "A separate bug-tracker server"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalda besh qism: muharrir, loyiha tizimi, yigʻuvchi, xatolar roʻyxati, tuzatuvchi. Bug tracker ular orasida yoʻq.",
+          "ru": "В таблице пять частей: редактор, система проектов, сборщик, список ошибок, отладчик. Bug-трекера среди них нет.",
+          "en": "The table lists five parts: editor, project system, builder, error list, debugger — no bug tracker."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Step Over (F10) va Step Into (F11) nimasi bilan farq qiladi?",
+          "ru": "Чем Step Over (F10) отличается от Step Into (F11)?",
+          "en": "How do Step Over (F10) and Step Into (F11) differ?"
+        },
+        "options": [
+          {
+            "uz": "Step Over joriy qatorni toʻliq bajarib keyingi qatorga oʻtadi; Step Into shu qatorda chaqirilgan funksiyaga kiradi",
+            "ru": "Step Over выполняет текущую строку целиком и переходит к следующей; Step Into заходит в функцию, вызываемую на этой строке",
+            "en": "Step Over runs the current line completely and moves to the next; Step Into enters the function called on that line"
+          },
+          {
+            "uz": "Ikkalasi bir xil ishlaydi, faqat tugmalar xilma-xil",
+            "ru": "Они работают одинаково, различаются только клавиши",
+            "en": "They do the same thing, only the keys differ"
+          },
+          {
+            "uz": "Step Into dasturni toʻxtatadi, Step Over esa qayta ishga tushiradi",
+            "ru": "Step Into останавливает программу, а Step Over перезапускает её",
+            "en": "Step Into stops the program, Step Over restarts it"
+          },
+          {
+            "uz": "Step Over faqat rekursiyada ishlaydi",
+            "ru": "Step Over работает только в рекурсии",
+            "en": "Step Over works only in recursion"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval shunday: F10 — funksiyaga kirmasdan keyingi qatorga, F11 — funksiya ichiga. Funksiyadan chiqish — Step Out (Shift+F11).",
+          "ru": "По таблице занятия: F10 — к следующей строке без входа в функцию, F11 — внутрь функции. Выход из функции — Step Out (Shift+F11).",
+          "en": "The lesson's table: F10 goes to the next line without entering functions, F11 enters the function. Step Out (Shift+F11) leaves it."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "„Qaysi funksiya qaysisini chaqirgani“ zanjirini koʻrsatuvchi oynaning nomini yozing.",
+          "ru": "Напишите имя окна, которое показывает цепочку «какая функция какую вызвала».",
+          "en": "Write the name of the window that shows which function called which."
+        },
+        "answers": ["Call Stack", "call stack", "CallStack", "callstack"],
+        "explanation": {
+          "uz": "Call Stack oynasi chaqiruvlar zanjirini koʻrsatadi; darsda rekursiyada chaqirilgan funksiyalarni koʻrish uchun juda foydali deyiladi.",
+          "ru": "Окно Call Stack показывает цепочку вызовов и особенно полезно при рекурсии.",
+          "en": "The Call Stack window shows the chain of calls; the lesson highlights it for recursion."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kompilyator ogohlantirishlariga eʼtibor berish shart emas: ular hech qachon haqiqiy xatoning belgisi boʻlmaydi.",
+          "ru": "На предупреждения компилятора можно не обращать внимания: они никогда не бывают признаком настоящей ошибки.",
+          "en": "Compiler warnings can be ignored: they are never a sign of a real bug."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi ogohlantirish: „used without being initialized“ kabi ogohlantirish koʻpincha haqiqiy xato; oʻquv dasturlari uchun `/W4` darajasida yigʻish va ularıni tuzatish tavsiya etiladi.",
+          "ru": "Как предупреждает занятие: предупреждение вроде «used without being initialized» часто и есть настоящая ошибка; рекомендуется собирать с /W4 и исправлять их.",
+          "en": "The lesson warns that a warning such as \"used without being initialized\" is often a real bug; build with /W4 and fix warnings."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`int yigindi = 5, n = 2;` va `double x = yigindi / n;` dan keyin `x` ning qiymati nechaga teng?",
+          "ru": "Чему равно значение x после `int yigindi = 5, n = 2; double x = yigindi / n;`?",
+          "en": "After `int yigindi = 5, n = 2;` and `double x = yigindi / n;`, what is the value of `x`?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Ikkala amal ham `int`, shuning uchun oldin butun boʻlish bajariladi (5 / 2 = 2), natija keyin `double` ga aylanadi: 2.0. Pythonda `/` doim haqiqiy boʻlish, lekin Java va C++ʼda bu eng koʻp uchraydigan xatolardan biri.",
+          "ru": "Оба операнда — int, поэтому сначала выполняется целочисленное деление (5 / 2 = 2), а потом результат приводится к double: 2.0. В Python / всегда вещественное деление, но в Java и C++ это одна из самых частых ошибок.",
+          "en": "Both operands are ints, so integer division runs first (5 / 2 = 2) and only then the result becomes double: 2.0. In Python `/` is always true division, but in Java and C++ this is one of the most common bugs."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "assert Release konfiguratsiyada NDEBUG tufayli oʻchiriladi, shuning uchun unga dasturga taʼsir qiluvchi muhim amalni kiritish xavfli.",
+          "ru": "В конфигурации Release assert отключается из-за NDEBUG, поэтому включать в него важное для программы действие опасно.",
+          "en": "In the Release configuration `assert` is switched off because of `NDEBUG`, so putting an action the program depends on inside it is dangerous."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi misol: `assert(++k < n)` Releaseʼda umuman bajarilmaydi va dastur xatti-harakati oʻzgaradi; Javaʼda esa `assert` ni `java -ea` bilan yoqish kerak.",
+          "ru": "Пример из занятия: assert(++k < n) в Release не выполняется вовсе, и поведение программы меняется; в Java assert нужно включать через java -ea.",
+          "en": "The lesson's example: `assert(++k < n)` never runs in Release and the program's behaviour changes; in Java you must enable assert with `java -ea`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Xatoni tizimli izlash boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о систематическом поиске ошибки верны?",
+          "en": "Which statements about hunting a bug systematically are correct?"
+        },
+        "options": [
+          {
+            "uz": "Avval xatoni har safar chiqaradigan eng kichik kirishni topib, uni takrorlang",
+            "ru": "Сначала найдите минимальный вход, который каждый раз вызывает ошибку, и воспроизведите её",
+            "en": "First find the smallest input that triggers the bug every time and reproduce it"
+          },
+          {
+            "uz": "Dastur nima chiqarishi kerakligini qoʻlda hisoblab chiqing",
+            "ru": "Вычислите вручную, что программа должна была вывести",
+            "en": "Compute by hand what the program should print"
+          },
+          {
+            "uz": "Tuzatuv kodiga aralashmasin deb, tuzatuv xabarlarini asosiy chiqish oqimiga yozib, tekshiruv tizimiga yuborish mumkin",
+            "ru": "Отладочные сообщения можно писать в основной поток вывода и отправлять системе проверки",
+            "en": "Debug messages may go to the main output stream and be sent to the automatic checker"
+          },
+          {
+            "uz": "Xato topilib tuzatilgach, saqlab qoʻyilgan barcha testlarni qayta ishga tushiring",
+            "ru": "После исправления запускайте все сохранённые тесты заново",
+            "en": "After the fix, run all the saved tests again"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Uchinchi ifoda xato: asosiy chiqishdagi tuzatuv `print`lari avtomatik tekshiruvda notoʻgʻri javob hisoblanadi; ular xatolar oqimiga — `cerr`, `System.err`, `sys.stderr` — yoziladi.",
+          "ru": "Третье неверно: отладочные print в основном выводе автоматическая проверка сочтёт неправильным ответом; их пишут в поток ошибок — cerr, System.err, sys.stderr.",
+          "en": "The third is wrong: debug prints in the main output make an automatic checker judge the answer wrong; they belong in the error stream — `cerr`, `System.err`, `sys.stderr`."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Bitta xatoni toping va tuzating",
+      "ru": "Найдите и исправьте одну ошибку",
+      "en": "Find and fix the single bug"
+    },
+    "statement": {
+      "uz": "Birinchi satrda *n* (1 ≤ *n* ≤ 100), ikkinchi satrda boʻsh joy bilan ajratilgan *n* ta butun son (moduli 10^6 dan oshmaydi) berilgan. Toʻgʻri dastur birinchi qatorda barcha *n* sonning yigʻindisini, ikkinchi qatorda esa ulardan juftlar sonini chiqaradi (0 juft son). Berilgan dasturda xuddi darsdagidek BITTA xato bor: u sonlardan birini qatordan chiqarib yuboradi. Xatoni tizimli izlang — takrorlang, kutilgan natijani qoʻlda hisoblang, taxmin qiling, tekshiring — va tuzating. Masalan, `4` va `2 4 6 8` kirilsa, toʻgʻri javob `20` va `4`. Chiqish formatini oʻzgartirmang.",
+      "ru": "В первой строке задано *n* (1 ≤ *n* ≤ 100), во второй — *n* целых чисел через пробел (по модулю не больше 10^6). Правильная программа выводит на первой строке сумму всех *n* чисел, на второй — количество чётких среди них (0 считается чётным). В данной программе, как в занятии, ровно ОДНА ошибка: она пропускает одно из чисел. Ищите ошибку систематически: воспроизведите, вычислите ожидаемый результат вручную, выдвиньте гипотезу, проверьте — и исправьте. Например, для `4` и `2 4 6 8` правильный ответ — `20` и `4`. Формат вывода не меняйте.",
+      "en": "The first line holds *n* (1 ≤ *n* ≤ 100), the second line *n* integers separated by spaces (absolute value at most 10^6). The correct program prints on the first line the sum of all *n* numbers and on the second line how many of them are even (0 counts as even). The program you are given has exactly one bug, like in the lesson: it skips one of the numbers. Hunt the bug systematically — reproduce, compute the expected result by hand, form a hypothesis, check — and fix it. For example, `4` and `2 4 6 8` must print `20` and `4`. Do not change the output format."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\n\nyigindi = 0\njuftlar = 0\nfor i in range(n - 1):\n    yigindi += a[i]\n    if a[i] % 2 == 0:\n        juftlar += 1\n\nprint(yigindi)\nprint(juftlar)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n\n        int yigindi = 0;\n        int juftlar = 0;\n        for (int i = 0; i < n - 1; i++) {\n            yigindi += a[i];\n            if (a[i] % 2 == 0) juftlar++;\n        }\n\n        System.out.println(yigindi);\n        System.out.println(juftlar);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) cin >> a[i];\n\n    int yigindi = 0;\n    int juftlar = 0;\n    for (int i = 0; i < n - 1; i++) {\n        yigindi += a[i];\n        if (a[i] % 2 == 0) juftlar++;\n    }\n\n    cout << yigindi << endl;\n    cout << juftlar << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\n\nyigindi = 0\njuftlar = 0\nfor i in range(n):\n    yigindi += a[i]\n    if a[i] % 2 == 0:\n        juftlar += 1\n\nprint(yigindi)\nprint(juftlar)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n\n        int yigindi = 0;\n        int juftlar = 0;\n        for (int i = 0; i < n; i++) {\n            yigindi += a[i];\n            if (a[i] % 2 == 0) juftlar++;\n        }\n\n        System.out.println(yigindi);\n        System.out.println(juftlar);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) cin >> a[i];\n\n    int yigindi = 0;\n    int juftlar = 0;\n    for (int i = 0; i < n; i++) {\n        yigindi += a[i];\n        if (a[i] % 2 == 0) juftlar++;\n    }\n\n    cout << yigindi << endl;\n    cout << juftlar << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4\n2 4 6 8\n", "expected": "20\n4", "hidden": false },
+        { "input": "3\n1 2 2\n", "expected": "5\n2", "hidden": false },
+        { "input": "1\n7\n", "expected": "7\n0", "hidden": true },
+        { "input": "5\n-3 -4 -5 -6 -7\n", "expected": "-25\n2", "hidden": true },
+        { "input": "6\n0 1 0 1 0 1\n", "expected": "3\n3", "hidden": true }
+      ]
+    }
+  }
+}

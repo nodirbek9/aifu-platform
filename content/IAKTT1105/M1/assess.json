@@ -1,0 +1,444 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda maʼlumot (data) deganda nima tushuniladi?",
+          "ru": "Что в занятии понимается под данными (data)?",
+          "en": "In the lesson, what are data?"
+        },
+        "options": [
+          {
+            "uz": "Qayta ishlanmagan faktlar, sonlar, belgilar",
+            "ru": "Необработанные факты, числа, символы",
+            "en": "Unprocessed facts, numbers, symbols"
+          },
+          {
+            "uz": "Maʼlum maqsadda tartiblangan, maʼno berilgan maʼlumot",
+            "ru": "Данные, упорядоченные для конкретной цели и получившие смысл",
+            "en": "Data organized and given meaning for a purpose"
+          },
+          {
+            "uz": "Axborotni tahlil qilish va tajriba asosida olingan xulosalar",
+            "ru": "Выводы, полученные из анализа информации и опыта",
+            "en": "Conclusions drawn from analyzing information and from experience"
+          },
+          {
+            "uz": "Kassa apparatida saqlanadigan tayyor hisobot",
+            "ru": "Готовый отчёт, хранимый в кассовом аппарате",
+            "en": "A finished report stored in a cash register"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda maʼlumot — qayta ishlanmagan faktlar; ular maʼlum maqsadda tartiblanganida axborotga aylanadi.",
+          "ru": "В занятии данные — необработанные факты; упорядоченные для цели, они становятся информацией.",
+          "en": "In the lesson data are unprocessed facts; organized for a purpose, they become information."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Axborot moddiy resurslardan farq qiladi: u ishlatilganda kamaymaydi.",
+          "ru": "Информация отличается от материальных ресурсов: при использовании она не убывает.",
+          "en": "Information differs from material resources: using it does not diminish it."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra, axborot iqtisodiy resurs sifatida ishlatilganda kamaymaydi, nusxa koʻchirish deyarli bepul.",
+          "ru": "По занятию, информация как экономический ресурс не убывает при использовании, а копирование почти бесплатно.",
+          "en": "According to the lesson, information as an economic resource does not diminish when used, and copying is almost free."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Axborotning sifat xossalari qaysilari?",
+          "ru": "Какие из перечисленного — свойства качества информации?",
+          "en": "Which of these are quality properties of information?"
+        },
+        "options": [
+          {
+            "uz": "Ishonchlilik",
+            "ru": "Достоверность",
+            "en": "Reliability"
+          },
+          {
+            "uz": "Dolzarblik",
+            "ru": "Актуальность",
+            "en": "Timeliness"
+          },
+          {
+            "uz": "Tushunarlilik",
+            "ru": "Понятность",
+            "en": "Clarity"
+          },
+          {
+            "uz": "Ishlab chiqarish tezligi",
+            "ru": "Скорость производства",
+            "en": "Production speed"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi roʻyxat: ishonchlilik, dolzarblik, toʻliqlik, aniqlik, tushunarlilik, foydalanish mumkinligi. Ishlab chiqarish tezligi unda yoʻq.",
+          "ru": "Список из занятия: достоверность, актуальность, полнота, точность, понятность, доступность. Скорость производства там отсутствует.",
+          "en": "The lesson lists reliability, timeliness, completeness, accuracy, clarity and accessibility. Production speed is not among them."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda axborot tizimi deb nimaga aytiladi?",
+          "ru": "Что в занятии называется информационной системой?",
+          "en": "What does the lesson call an information system?"
+        },
+        "options": [
+          {
+            "uz": "Apparatni viruslardan himoya qiluvchi dastur",
+            "ru": "Программа, защищающая оборудование от вирусов",
+            "en": "A program that protects the hardware from viruses"
+          },
+          {
+            "uz": "AKT, maʼlumotlar, odamlar va jarayonlarni birlashtirib, tashkilot maqsadlariga xizmat qiluvchi tizim",
+            "ru": "Система, объединяющая ИКТ, данные, людей и процессы для служения целям организации",
+            "en": "A system combining ICT, data, people and processes to serve an organization's goals"
+          },
+          {
+            "uz": "Fayllar uzoq saqlanadigan doimiy xotira",
+            "ru": "Постоянная память, где файлы хранятся долго",
+            "en": "Storage where files are kept long term"
+          },
+          {
+            "uz": "Internetga ulanish kanali",
+            "ru": "Канал подключения к Интернету",
+            "en": "The link connecting to the Internet"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Axborot tizimi — AKT, maʼlumotlar, odamlar va jarayonlarni birlashtirgan tizim; darsda AKT ni faqat kompyuter deb tushunish koʻp uchraydigan xato sifatida tilga olingan.",
+          "ru": "Информационная система объединяет ИКТ, данные, людей и процессы; считать ИКТ только компьютерами — типичная ошибка, отмеченная в занятии.",
+          "en": "An information system combines ICT, data, people and processes; treating ICT as only computers is a common mistake the lesson warns about."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "\"Raqamli Oʻzbekiston — 2030\" strategiyasi qaysi yilda qabul qilingan?",
+          "ru": "В каком году была принята стратегия «Цифровой Узбекистан — 2030»?",
+          "en": "In which year was the \"Digital Uzbekistan — 2030\" strategy adopted?"
+        },
+        "answers": [2020],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda strategiya 2020-yilga tegishli deb aytiladi; nomdagi 2030 — maqsad yili.",
+          "ru": "В занятии стратегия отнесена к 2020 году; 2030 в названии — целевой год.",
+          "en": "The lesson dates the strategy to 2020; the 2030 in its name is the target year."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Axborotni yigʻish, saqlash, qayta ishlash, uzatish va taqdim etish uchun ishlatiladigan usullar, apparat va dasturiy vositalar majmuining qisqartirilgan nomini yozing.",
+          "ru": "Напишите сокращённое название совокупности методов, аппаратных и программных средств для сбора, хранения, обработки, передачи и представления информации.",
+          "en": "Write the short name of the set of methods, hardware and software used to collect, store, process, transmit and present information."
+        },
+        "answers": ["AKT", "akt", "ICT", "ict", "IKT", "ИКТ"],
+        "explanation": {
+          "uz": "Bu — axborot-kommunikatsiya texnologiyalari (AKT, inglizcha ICT).",
+          "ru": "Это информационно-коммуникационные технологии (ИКТ, по-английски ICT).",
+          "en": "This is information and communication technologies (ICT)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "BMT ning Elektron hukumat rivojlanish indeksi (EGDI) nimani baholaydi?",
+          "ru": "Что оценивает Индекс развития электронного правительства ООН (EGDI)?",
+          "en": "What does the UN E-Government Development Index (EGDI) assess?"
+        },
+        "options": [
+          {
+            "uz": "Davlatlarning elektron hukumat sohasidagi rivojlanish darajasini",
+            "ru": "Уровень развития электронного правительства в странах",
+            "en": "The level of e-government development across countries"
+          },
+          {
+            "uz": "Tarmoq tezligining oʻrtacha qiymatini",
+            "ru": "Среднюю скорость интернет-соединения",
+            "en": "The average internet connection speed"
+          },
+          {
+            "uz": "IT Parkdagi rezidentlar sonini",
+            "ru": "Число резидентов IT Park",
+            "en": "The number of IT Park residents"
+          },
+          {
+            "uz": "Naqd pul muomalasi hajmini",
+            "ru": "Объём наличного денежного обращения",
+            "en": "The volume of cash in circulation"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda raqamli iqtisodiyotning xalqaro reytinglari qatorida BMT ning elektron hukumat rivojlanish indeksi (EGDI) va ITU ning AKT rivojlanish koʻrsatkichlari tilga olingan.",
+          "ru": "В занятии среди международных рейтингов цифровой экономики названы Индекс развития электронного правительства ООН (EGDI) и показатели развития ИКТ МСЭ.",
+          "en": "The lesson names it among the international rankings of the digital economy, together with the ITU ICT development indicators."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsda Oʻzbekistondagi raqamli transformatsiyaning amaliy natijalari qatorida qaysilari qayd etilgan?",
+          "ru": "Что из перечисленного названо в занятии практическими результатами цифровой трансформации в Узбекистане?",
+          "en": "Which of these does the lesson list as practical results of digital transformation in Uzbekistan?"
+        },
+        "options": [
+          {
+            "uz": "Yagona interaktiv davlat xizmatlari portali (my.gov.uz)",
+            "ru": "Единый портал интерактивных государственных услуг (my.gov.uz)",
+            "en": "The Single Portal of Interactive Public Services (my.gov.uz)"
+          },
+          {
+            "uz": "Soliq xizmatining elektron kabineti",
+            "ru": "Электронный кабинет налоговой службы",
+            "en": "The electronic account of the tax service"
+          },
+          {
+            "uz": "Onlayn kassalar va elektron hisob-fakturalar",
+            "ru": "Онлайн-кассы и электронные счета-фактуры",
+            "en": "Online cash registers and electronic invoices"
+          },
+          {
+            "uz": "Naqd toʻlovlarning majburiy kuchaytirilishi",
+            "ru": "Обязательное расширение наличных расчётов",
+            "en": "A mandatory shift back to cash payments"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda naqd pulsiz toʻlovlar hajmi raqamli iqtisodiyotning koʻrsatkichi deb aytilgan; naqd toʻlovlarni kuchaytirish haqida gap yoʻq.",
+          "ru": "В занятии объём безналичных платежей назван показателем цифровой экономики; о возвращении к наличным расчётам речи нет.",
+          "en": "The lesson names the volume of cashless payments as an indicator of the digital economy; there is no talk of pushing cash payments."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Axborotning qiymati vaqt va kontekstdan qatʼi nazar oʻzgarmaydi.",
+          "ru": "Ценность информации не зависит от времени и контекста.",
+          "en": "The value of information does not depend on time and context."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsga koʻra axborot qiymati vaqt va kontekstga bogʻliq; eskirgan axborot asosidagi qaror zarar keltiradi.",
+          "ru": "По занятию ценность информации зависит от времени и контекста; решение на устаревшей информации приносит убыток.",
+          "en": "The lesson says the value of information depends on time and context; deciding on outdated information causes losses."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Maʼlumot, axborot va AKT tarkibi",
+      "ru": "Данные, информация и состав ИКТ",
+      "en": "Data, information and the components of ICT"
+    },
+    "statement": {
+      "uz": "Dars mazmuni boʻyicha toʻrt savol. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "ru": "Четыре вопроса по содержанию занятия. В вопросах с несколькими ответами отметьте все верные варианты.",
+      "en": "Four questions on the content of the lesson. In questions with several answers, mark every correct option."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Oylik sotuv hisoboti — qaysi tushunchaga misol?",
+            "ru": "Ежемесячный отчёт о продажах — пример какого понятия?",
+            "en": "A monthly sales report is an example of which concept?"
+          },
+          "options": [
+            {
+              "uz": "Maʼlumot (data)",
+              "ru": "Данные (data)",
+              "en": "Data"
+            },
+            {
+              "uz": "Axborot (information)",
+              "ru": "Информация (information)",
+              "en": "Information"
+            },
+            {
+              "uz": "Bilim (knowledge)",
+              "ru": "Знание (knowledge)",
+              "en": "Knowledge"
+            },
+            {
+              "uz": "Apparat taʼminoti",
+              "ru": "Аппаратное обеспечение",
+              "en": "Hardware"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Hisobot — maʼlum maqsadda tartiblangan, maʼno berilgan maʼlumot, yaʼni axborot.",
+            "ru": "Отчёт — это данные, упорядоченные для цели и получившие смысл, то есть информация.",
+            "en": "A report is data organized for a purpose and given meaning, that is, information."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "\"Dam olish kunlari ichimliklar sotuvi 30% oshadi — zaxirani koʻpaytirish kerak\" degan xulosaga kelish nima namunasidir?",
+            "ru": "Вывод «в выходные продажи напитков растут на 30% — нужно увеличить запас» — это пример чего?",
+            "en": "The conclusion \"drinks sales rise by 30% at weekends — stock must be increased\" is an example of what?"
+          },
+          "options": [
+            {
+              "uz": "Maʼlumot (data)",
+              "ru": "Данные (data)",
+              "en": "Data"
+            },
+            {
+              "uz": "Axborot (information)",
+              "ru": "Информация (information)",
+              "en": "Information"
+            },
+            {
+              "uz": "Bilim (knowledge)",
+              "ru": "Знание (knowledge)",
+              "en": "Knowledge"
+            },
+            {
+              "uz": "Jarayon (process)",
+              "ru": "Процесс (process)",
+              "en": "A process"
+            }
+          ],
+          "correct": [2],
+          "explanation": {
+            "uz": "Darsda bilim — axborotni tahlil qilish va tajriba asosida olingan xulosalar deb taʼriflangan.",
+            "ru": "В занятии знание определено как выводы, полученные из анализа информации и опыта.",
+            "en": "The lesson defines knowledge as conclusions drawn from analyzing information and from experience."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "AKT ning tarkibiy qismlari qaysilari?",
+            "ru": "Какие из перечисленного — компоненты ИКТ?",
+            "en": "Which of these are components of ICT?"
+          },
+          "options": [
+            {
+              "uz": "Apparat taʼminoti",
+              "ru": "Аппаратное обеспечение",
+              "en": "Hardware"
+            },
+            {
+              "uz": "Dasturiy taʼminot",
+              "ru": "Программное обеспечение",
+              "en": "Software"
+            },
+            {
+              "uz": "Tarmoqlar va aloqa",
+              "ru": "Сети и связь",
+              "en": "Networks and communication"
+            },
+            {
+              "uz": "Ishlab chiqarishning foydaliligi",
+              "ru": "Рентабельность производства",
+              "en": "Profitability of production"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Darsdagi tarkibiy qismlar: apparat, dasturiy taʼminot, tarmoqlar va aloqa, maʼlumotlar, odamlar, jarayonlar.",
+            "ru": "Компоненты из занятия: аппаратное и программное обеспечение, сети и связь, данные, люди, процессы.",
+            "en": "The lesson lists hardware, software, networks and communication, data, people and processes."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Raqamlashtirish — shunchaki dastur sotib olishdir.",
+            "ru": "Цифровизация — это просто покупка программного обеспечения.",
+            "en": "Digitalization is simply buying software."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Darsda bu koʻp uchraydigan xato deb aytilgan: jarayonlar va xodimlar malakasi ham oʻzgarishi kerak.",
+            "ru": "В занятии это названо типичной ошибкой: должны измениться и процессы, и квалификация сотрудников.",
+            "en": "The lesson calls this a common mistake: processes and staff skills must change too."
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kafe yoki aeroportdagi ommaviy Wi-Fi tarmogʻida Windows Defender Firewall qaysi profilni ishlatadi?",
+          "ru": "Какой профиль использует Windows Defender Firewall в общественной Wi-Fi сети кафе или аэропорта?",
+          "en": "Which profile does Windows Defender Firewall use on public café or airport Wi-Fi?"
+        },
+        "options": [
+          {
+            "uz": "Public",
+            "ru": "Public",
+            "en": "Public"
+          },
+          {
+            "uz": "Private",
+            "ru": "Private",
+            "en": "Private"
+          },
+          {
+            "uz": "Domain",
+            "ru": "Domain",
+            "en": "Domain"
+          },
+          {
+            "uz": "Server",
+            "ru": "Server",
+            "en": "Server"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: Public — kafe, aeroport, mehmonxona Wi-Fi uchun, eng qatʼiy profili; Private — uy yoki ishonchli tarmoq, Domain — domen topilganda.",
+          "ru": "Таблица из занятия: Public — Wi-Fi кафе, аэропорта, гостиницы, самый строгий профиль; Private — домашняя или доверенная сеть, Domain — когда найден контроллер домена.",
+          "en": "The lesson table: Public is for café, airport and hotel Wi-Fi and is the strictest profile; Private is a home or trusted network, Domain applies when a domain controller is found."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Windows Defender Firewall da sukut boʻyicha kiruvchi ulanishlarga ruxsat beriladi, chiquvchilari esa taqiqlanadi.",
+          "ru": "В Windows Defender Firewall по умолчанию входящим подключениям разрешено, а исходящие запрещены.",
+          "en": "In Windows Defender Firewall the defaults allow inbound connections and block outbound ones."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda sukut teskarisi: kiruvchi — ruxsat berilmagan hammasi taqiqlanadi, chiquvchi — taqiqlanmagan hammasi ruxsat etiladi.",
+          "ru": "В занятии наоборот: входящие запрещены, если не разрешены, а исходящие разрешены, если не запрещены.",
+          "en": "The lesson says the opposite: inbound is blocked unless allowed, outbound is allowed unless blocked."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi `RDP faqat laboratoriyadan` qoidasida RDP uchun qaysi lokal port koʻrsatilgan?",
+          "ru": "Какой локальный порт указан для RDP в правиле `RDP только из лаборатории` из занятия?",
+          "en": "Which local port does the lesson's `RDP only from the lab` rule give for RDP?"
+        },
+        "answers": [3389],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "PowerShell misolida `-LocalPort 3389` berilgan, yaʼni RDP porti 3389; u faqat `192.168.50.0/24` quyi tarmogʻidan ruxsat etilgan.",
+          "ru": "В примере PowerShell стоит `-LocalPort 3389`, то есть порт RDP — 3389, и он разрешён только для подсети `192.168.50.0/24`.",
+          "en": "The PowerShell example uses `-LocalPort 3389`, so RDP is on port 3389, allowed only for the `192.168.50.0/24` subnet."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qoidalar roʻyxatini faylga eksport qilib, zaxira nusxasini olish uchun darsda qaysi buyruq ishlatilgan?",
+          "ru": "Какой командой из занятия выгружают список правил в файл-резервную копию?",
+          "en": "Which lesson command exports the rule list into a backup file?"
+        },
+        "options": [
+          {
+            "uz": "`netsh advfirewall export C:\\fw-backup.wfw`",
+            "ru": "`netsh advfirewall export C:\\fw-backup.wfw`",
+            "en": "`netsh advfirewall export C:\\fw-backup.wfw`"
+          },
+          {
+            "uz": "`netsh advfirewall show allprofiles`",
+            "ru": "`netsh advfirewall show allprofiles`",
+            "en": "`netsh advfirewall show allprofiles`"
+          },
+          {
+            "uz": "`Get-NetFirewallProfile | Select-Object Name, Enabled`",
+            "ru": "`Get-NetFirewallProfile | Select-Object Name, Enabled`",
+            "en": "`Get-NetFirewallProfile | Select-Object Name, Enabled`"
+          },
+          {
+            "uz": "`netsh advfirewall firewall delete rule name=\"Web 80\"`",
+            "ru": "`netsh advfirewall firewall delete rule name=\"Web 80\"`",
+            "en": "`netsh advfirewall firewall delete rule name=\"Web 80\"`"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "`show allprofiles` profillar holatini koʻrsatadi, `delete rule` qoidani oʻchiradi; eksport esa `netsh advfirewall export` bilan qilinadi.",
+          "ru": "`show allprofiles` показывает состояние профилей, `delete rule` удаляет правило; экспорт делает `netsh advfirewall export`.",
+          "en": "`show allprofiles` reports the profile states and `delete rule` removes a rule; the export is done by `netsh advfirewall export`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda brandmauer qoidasida nimalar koʻrsatilishi aytilgan?",
+          "ru": "Что, по занятию, указывается в правиле брандмауэра?",
+          "en": "What does the lesson say a firewall rule contains?"
+        },
+        "options": [
+          {
+            "uz": "Yoʻnalish — kiruvchi yoki chiquvchi",
+            "ru": "Направление — входящее или исходящее",
+            "en": "The direction — inbound or outbound"
+          },
+          {
+            "uz": "Amal — Allow yoki Block",
+            "ru": "Действие — Allow или Block",
+            "en": "The action — Allow or Block"
+          },
+          {
+            "uz": "Protokol va port, manba va qabul qiluvchi manzillar",
+            "ru": "Протокол и порт, адреса источника и получателя",
+            "en": "Protocol and port, source and destination addresses"
+          },
+          {
+            "uz": "Foydalanuvchining paroli",
+            "ru": "Пароль пользователя",
+            "en": "The user's password"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda qoidada shuningdek profil (Domain, Private, Public) koʻrsatiladi va `Block` qoidasi `Allow` dan ustun deb aytiladi; parol esa qoidaning maydoni emas.",
+          "ru": "В занятии в правиле указан также профиль (Domain, Private, Public), а правило `Block` названо приоритетным над `Allow`; пароль полем правила не является.",
+          "en": "The lesson also names a profile (Domain, Private, Public) in a rule and says a `Block` rule beats an `Allow`; a password is not a field of a rule."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Boshqa kompyuterdan muayyan TCP porti ochiqligini sinish uchun darsda qaysi PowerShell buyrugʻi ishlatilgan?",
+          "ru": "Какой командой PowerShell в занятии проверяют открытость конкретного TCP-порта с другого компьютера?",
+          "en": "Which PowerShell command does the lesson use to test a specific TCP port from another computer?"
+        },
+        "answers": ["Test-NetConnection", "test-netconnection", "TEST-NETCONNECTION"],
+        "explanation": {
+          "uz": "Darsda: `Test-NetConnection 192.168.50.10 -Port 80` — natija `TcpTestSucceeded : True` yoki `False`; qoida natijasi shuningdek ping bilan va jurnal bilan tekshiriladi.",
+          "ru": "В занятии: `Test-NetConnection 192.168.50.10 -Port 80` даёт `TcpTestSucceeded : True` или `False`; результат проверяют также `ping`ом и журналом.",
+          "en": "The lesson runs `Test-NetConnection 192.168.50.10 -Port 80`, which gives `TcpTestSucceeded : True` or `False`; the result is also checked with `ping` and in the journal."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "NAT va PAT haqida darsga koʻra qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о NAT и PAT верны по занятию?",
+          "en": "Which statements about NAT and PAT are correct according to the lesson?"
+        },
+        "options": [
+          {
+            "uz": "PAT ichki manzil va portni routerning ommaviy manzili va porti bilan almashtiradi",
+            "ru": "PAT заменяет внутренний адрес и порт публичным адресом и портом роутера",
+            "en": "PAT replaces the internal address and port with the router's public address and port"
+          },
+          {
+            "uz": "NAT jadvalida yozuvi boʻlmagan tashqi paket tashlab yuboriladi",
+            "ru": "Внешний пакет без записи в таблице NAT отбрасывается",
+            "en": "An inbound packet with no entry in the NAT table is dropped"
+          },
+          {
+            "uz": "NAT brandmauerning oʻrnini toʻliq bosadi",
+            "ru": "NAT полностью заменяет брандмауэр",
+            "en": "NAT fully replaces a firewall"
+          },
+          {
+            "uz": "Port forwarding sozlanmasa, NAT ortidagi kompyuterga tashqaridan toʻgʻridan-toʻgʻri ulanib boʻlmaydi",
+            "ru": "Без настройки port forwarding к компьютеру за NAT нельзя подключиться извне напрямую",
+            "en": "Without port forwarding a computer behind NAT cannot be reached directly from outside"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Darsda bu — himoyaning yon taʼsiri, u brandmauerning oʻrnini bosmaydi deyiladi: ochiq portlar (port forwarding, UPnP) orqali hujum toʻgʻridan-toʻgʻri keladi.",
+          "ru": "В занятии это названо побочным эффектом защиты, а не заменой брандмауэра: через открытые порты (port forwarding, UPnP) атака приходит напрямую.",
+          "en": "The lesson calls this a side effect of protection, not a replacement for a firewall: an attack reaches the host directly through an opened port (port forwarding, UPnP)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Uydagi oʻqituvchi universitet tarmogʻiga shifrlangan tunnel orqali ulanmoqda. Qaysi VPN turi TCP 443-port orqali ishlaydi?",
+          "ru": "Домашний преподаватель подключается к сети университета по шифрованному туннелю. Какой тип VPN работает через TCP-порт 443?",
+          "en": "A teacher at home connects to the university network through an encrypted tunnel. Which VPN type works over TCP port 443?"
+        },
+        "options": [
+          {
+            "uz": "SSTP",
+            "ru": "SSTP",
+            "en": "SSTP"
+          },
+          {
+            "uz": "IKEv2",
+            "ru": "IKEv2",
+            "en": "IKEv2"
+          },
+          {
+            "uz": "WireGuard",
+            "ru": "WireGuard",
+            "en": "WireGuard"
+          },
+          {
+            "uz": "PPTP",
+            "ru": "PPTP",
+            "en": "PPTP"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda SSTP — 443-port orqali; IKEv2 — UDP 500 va 4500, WireGuard — UDP 51820, PPTP esa eskirgan va buzilgan protokol deb atalgan.",
+          "ru": "В занятии SSTP идёт через порт 443; IKEv2 — UDP 500 и 4500, WireGuard — UDP 51820, а PPTP назван устаревшим и взломанным протоколом.",
+          "en": "The lesson puts SSTP on port 443; IKEv2 uses UDP 500 and 4500, WireGuard UDP 51820, and PPTP is called obsolete and broken."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Split tunneling da ichki tarmoq trafigi ham, Internet trafigi ham VPN tunneli orqali yuboriladi.",
+          "ru": "При split tunneling весь трафик — и внутренней сети, и в Интернет — идёт через VPN-туннель.",
+          "en": "With split tunneling all traffic — both to the internal network and to the Internet — goes through the VPN tunnel."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Split tunneling da faqat ichki tarmoq trafigi tunnel orqali, qolgani toʻgʻridan-toʻgʻri Internetga ketadi; barcha trafikni tunnel orqali yuborish — full tunnel siyosati.",
+          "ru": "При split tunneling через туннель идёт только трафик внутренней сети, остальной — прямо в Интернет; весь трафик в туннеле — это политика full tunnel.",
+          "en": "Split tunneling sends only internal-network traffic through the tunnel and the rest straight to the Internet; putting all traffic in the tunnel is the full tunnel policy."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Qoidalar va sukut siyosati",
+      "ru": "Правила и политика по умолчанию",
+      "en": "Rules and the default policy"
+    },
+    "statement": {
+      "uz": "Windows Defender Firewall sukut boʻyicha kiruvchi harakatni taqiqlaydi, chiquvchiga ruxsat beradi va `Block` qoidasi `Allow` dan ustun. Shu uch qoidani yurituvchi dastur yozing. Kirish: birinchi satrda n — qoidalar soni (0 boʻlishi ham mumkin); keyingi n satrda bittadan qoida, toʻrt maydon boʻshliq bilan: yoʻnalish (`in` yoki `out`), protokol (`tcp`, `udp` yoki `any`), port (raqam yoki `*`) va amal (`allow` yoki `block`). Keyingi satrda q — paketlar soni; q satrda paket: yoʻnalish (`in` yoki `out`), protokol (`tcp` yoki `udp`) va port. Qoida paketga mos keladi, agar uch shart bajarilsa: yoʻnalishlar teng; protokol teng yoki qoidaning protokoli `any`; port teng yoki qoidaning porti `*`. Biror mos keluvchi `block` qoidasi boʻlsa — paketga `DENY`; `block` yoʻq-u, mos `allow` qoidasi bor boʻlsa — `ALLOW`; hech qanday mos qoida boʻlmasa — sukut siyosati: `in` uchun `DENY`, `out` uchun `ALLOW`. Qoidalar yozilgan tartib natijaga taʼsir qilmaydi. Har bir paketga bitta soʻz chiqaring, oxirgi satrga esa `DENY` berilgan paketlar sonini `BLOCKED k` koʻrinishida yozing. Masalan, `in any * block` va `in tcp 3389 allow` qoidalari boʻlsa, `in tcp 3389` paketi `DENY` boʻladi, `out tcp 3389` paketi esa `ALLOW`. Boshqa matn yozmang. 0 ≤ n ≤ 100, 1 ≤ q ≤ 100.",
+      "ru": "По умолчанию Windows Defender Firewall запрещает входящее, разрешает исходящее, а правило `Block` имеет приоритет над `Allow`. Напишите программу, применяющую эти три правила. Ввод: в первой строке n — число правил (может быть 0); в следующих n строках по одному правилу из четырёх полей через пробел: направление (`in` или `out`), протокол (`tcp`, `udp` или `any`), порт (число или `*`) и действие (`allow` или `block`). Затем строка с числом пакетов q; в следующих q строках пакет: направление (`in` или `out`), протокол (`tcp` или `udp`) и порт. Правило подходит пакету, если выполнены три условия: направления равны; протоколы равны либо в правиле `any`; порты равны либо в правиле `*`. Если найдено хоть одно подходящее правило `block` — пакету `DENY`; если `block` нет, но есть подходящее `allow` — `ALLOW`; если нет ни одного подходящего правила — политика по умолчанию: `DENY` для `in` и `ALLOW` для `out`. Порядок правил не важен. На каждый пакет выведите одно слово, а последней строкой `BLOCKED k` — число пакетов с `DENY`. Например, при правилах `in any * block` и `in tcp 3389 allow` пакет `in tcp 3389` даёт `DENY`, а пакет `out tcp 3389` — `ALLOW`. Другой текст не печатайте. 0 ≤ n ≤ 100, 1 ≤ q ≤ 100.",
+      "en": "By default Windows Defender Firewall blocks inbound traffic, allows outbound traffic, and a `Block` rule beats an `Allow` rule. Write a program that applies these three rules. Input: the first line holds n — the number of rules (it may be 0); the next n lines hold one rule each, four space-separated fields: direction (`in` or `out`), protocol (`tcp`, `udp` or `any`), port (a number or `*`) and action (`allow` or `block`). The next line holds q — the number of packets; the next q lines hold a packet: direction (`in` or `out`), protocol (`tcp` or `udp`) and port. A rule matches a packet when all three hold: the directions are equal; the protocols are equal or the rule says `any`; the ports are equal or the rule says `*`. If any matching `block` rule exists, the packet gets `DENY`; with no `block` but a matching `allow` rule — `ALLOW`; with no matching rule at all the default policy applies: `DENY` for `in`, `ALLOW` for `out`. The order of the rules does not matter. Print one word per packet, then a last line `BLOCKED k` — the number of packets that got `DENY`. For example, with the rules `in any * block` and `in tcp 3389 allow` the packet `in tcp 3389` gives `DENY` while `out tcp 3389` gives `ALLOW`. Print no other text. 0 ≤ n ≤ 100, 1 ≤ q ≤ 100."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nqoidalar = [input().split() for _ in range(n)]\nq = int(input())\ntaqiqlar = 0\nfor _ in range(q):\n    yo, pr, po = input().split()\n    javob = \"ALLOW\"\n    for r in qoidalar:\n        if r[0] == yo and (r[1] == pr or r[1] == \"any\") and (r[2] == po or r[2] == \"*\"):\n            javob = \"DENY\" if r[3] == \"block\" else \"ALLOW\"\n    if javob == \"DENY\":\n        taqiqlar += 1\n    print(javob)\nprint(\"BLOCKED \" + str(taqiqlar))\n",
+        "java": "import java.util.ArrayList;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    static boolean mos(String[] r, String yo, String pr, String po) {\n        return r[0].equals(yo) && (r[1].equals(pr) || r[1].equals(\"any\")) && (r[2].equals(po) || r[2].equals(\"*\"));\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        List<String[]> qoidalar = new ArrayList<>();\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            qoidalar.add(new String[] {in.next(), in.next(), in.next(), in.next()});\n        }\n        int q = in.nextInt();\n        int taqiqlar = 0;\n        for (int i = 0; i < q; i++) {\n            String yo = in.next();\n            String pr = in.next();\n            String po = in.next();\n            String javob = \"ALLOW\";\n            for (String[] r : qoidalar) {\n                if (mos(r, yo, pr, po)) {\n                    javob = r[3].equals(\"block\") ? \"DENY\" : \"ALLOW\";\n                }\n            }\n            if (javob.equals(\"DENY\")) {\n                taqiqlar++;\n            }\n            System.out.println(javob);\n        }\n        System.out.println(\"BLOCKED \" + taqiqlar);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nbool mos(const vector<string>& r, const string& yo, const string& pr, const string& po) {\n    return r[0] == yo && (r[1] == pr || r[1] == \"any\") && (r[2] == po || r[2] == \"*\");\n}\n\nint main() {\n    int n;\n    cin >> n;\n    vector<vector<string>> qoidalar;\n    for (int i = 0; i < n; i++) {\n        vector<string> r(4);\n        cin >> r[0] >> r[1] >> r[2] >> r[3];\n        qoidalar.push_back(r);\n    }\n    int q;\n    cin >> q;\n    int taqiqlar = 0;\n    for (int i = 0; i < q; i++) {\n        string yo, pr, po;\n        cin >> yo >> pr >> po;\n        string javob = \"ALLOW\";\n        for (auto& r : qoidalar) {\n            if (mos(r, yo, pr, po)) javob = (r[3] == \"block\") ? \"DENY\" : \"ALLOW\";\n        }\n        if (javob == \"DENY\") taqiqlar++;\n        cout << javob << endl;\n    }\n    cout << \"BLOCKED \" << taqiqlar << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nqoidalar = [input().split() for _ in range(n)]\nq = int(input())\ntaqiqlar = 0\nfor _ in range(q):\n    yo, pr, po = input().split()\n    javob = \"\"\n    for r in qoidalar:\n        if r[3] == \"block\" and r[0] == yo and (r[1] == pr or r[1] == \"any\") and (r[2] == po or r[2] == \"*\"):\n            javob = \"DENY\"\n    if javob == \"\":\n        for r in qoidalar:\n            if r[3] == \"allow\" and r[0] == yo and (r[1] == pr or r[1] == \"any\") and (r[2] == po or r[2] == \"*\"):\n                javob = \"ALLOW\"\n    if javob == \"\":\n        javob = \"DENY\" if yo == \"in\" else \"ALLOW\"\n    if javob == \"DENY\":\n        taqiqlar += 1\n    print(javob)\nprint(\"BLOCKED \" + str(taqiqlar))\n",
+        "java": "import java.util.ArrayList;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    static boolean mos(String[] r, String yo, String pr, String po) {\n        return r[0].equals(yo) && (r[1].equals(pr) || r[1].equals(\"any\")) && (r[2].equals(po) || r[2].equals(\"*\"));\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        List<String[]> qoidalar = new ArrayList<>();\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            qoidalar.add(new String[] {in.next(), in.next(), in.next(), in.next()});\n        }\n        int q = in.nextInt();\n        int taqiqlar = 0;\n        for (int i = 0; i < q; i++) {\n            String yo = in.next();\n            String pr = in.next();\n            String po = in.next();\n            String javob = \"\";\n            for (String[] r : qoidalar) {\n                if (r[3].equals(\"block\") && mos(r, yo, pr, po)) {\n                    javob = \"DENY\";\n                }\n            }\n            if (javob.isEmpty()) {\n                for (String[] r : qoidalar) {\n                    if (r[3].equals(\"allow\") && mos(r, yo, pr, po)) {\n                        javob = \"ALLOW\";\n                    }\n                }\n            }\n            if (javob.isEmpty()) {\n                javob = yo.equals(\"in\") ? \"DENY\" : \"ALLOW\";\n            }\n            if (javob.equals(\"DENY\")) {\n                taqiqlar++;\n            }\n            System.out.println(javob);\n        }\n        System.out.println(\"BLOCKED \" + taqiqlar);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nbool mos(const vector<string>& r, const string& yo, const string& pr, const string& po) {\n    return r[0] == yo && (r[1] == pr || r[1] == \"any\") && (r[2] == po || r[2] == \"*\");\n}\n\nint main() {\n    int n;\n    cin >> n;\n    vector<vector<string>> qoidalar;\n    for (int i = 0; i < n; i++) {\n        vector<string> r(4);\n        cin >> r[0] >> r[1] >> r[2] >> r[3];\n        qoidalar.push_back(r);\n    }\n    int q;\n    cin >> q;\n    int taqiqlar = 0;\n    for (int i = 0; i < q; i++) {\n        string yo, pr, po;\n        cin >> yo >> pr >> po;\n        string javob;\n        for (auto& r : qoidalar) {\n            if (r[3] == \"block\" && mos(r, yo, pr, po)) javob = \"DENY\";\n        }\n        if (javob.empty()) {\n            for (auto& r : qoidalar) {\n                if (r[3] == \"allow\" && mos(r, yo, pr, po)) javob = \"ALLOW\";\n            }\n        }\n        if (javob.empty()) javob = (yo == \"in\") ? \"DENY\" : \"ALLOW\";\n        if (javob == \"DENY\") taqiqlar++;\n        cout << javob << endl;\n    }\n    cout << \"BLOCKED \" << taqiqlar << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4\nin any * block\nin tcp 3389 allow\nout tcp 80 block\nin tcp 23 block\n5\nin tcp 3389\nin tcp 21\nout tcp 80\nout tcp 443\nin udp 53\n", "expected": "DENY\nDENY\nDENY\nALLOW\nDENY\nBLOCKED 4", "hidden": false },
+        { "input": "0\n2\nin tcp 445\nout tcp 445\n", "expected": "DENY\nALLOW\nBLOCKED 1", "hidden": false },
+        { "input": "2\nout any 51820 allow\nout udp 51820 block\n3\nout udp 51820\nout tcp 51820\nin udp 51820\n", "expected": "DENY\nALLOW\nDENY\nBLOCKED 2", "hidden": true },
+        { "input": "3\nin tcp 80 allow\nin udp 80 block\nout tcp * allow\n4\nin tcp 80\nin udp 80\nin udp 21\nout tcp 21\n", "expected": "ALLOW\nDENY\nDENY\nALLOW\nBLOCKED 2", "hidden": true },
+        { "input": "2\nout tcp 443 allow\nin any * block\n4\nin tcp 80\nin udp 53\nout tcp 443\nout udp 123\n", "expected": "DENY\nDENY\nALLOW\nALLOW\nBLOCKED 2", "hidden": true }
+      ]
+    }
+  }
+}

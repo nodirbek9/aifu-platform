@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Boshiga ega boʻlgan bir bogʻlamli roʻyxatning boshiga yangi tugun qoʻshish qancha vaqt oladi?",
+          "ru": "Сколько времени занимает добавление нового узла в начало односвязного списка с головой?",
+          "en": "How long does it take to add a new node at the front of a singly linked list with a head?"
+        },
+        "options": [
+          {
+            "uz": "O(1)",
+            "ru": "O(1)",
+            "en": "O(1)"
+          },
+          {
+            "uz": "O(log n)",
+            "ru": "O(log n)",
+            "en": "O(log n)"
+          },
+          {
+            "uz": "O(n)",
+            "ru": "O(n)",
+            "en": "O(n)"
+          },
+          {
+            "uz": "O(n²)",
+            "ru": "O(n²)",
+            "en": "O(n²)"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Yangi tugunning keyingi koʻrsatkichi eski boshga ulanadi va bosh yangilanadi — elementlarni surish shart emas. Massivda esa boshiga qoʻshish O(n). Lekin roʻyxatda i-elementga murojaat O(n): boshidan yurish kerak.",
+          "ru": "Ссылка нового узла ставится на старую голову, и обновляется голова — сдвигать элементы не нужно. В массиве вставка в начало стоит O(n). Правда, доступ к i-му элементу списка тоже O(n): нужно идти от головы.",
+          "en": "The new node's next pointer links to the old head and the head is updated — nothing needs shifting. In an array inserting at the front costs O(n). Access to element i of a list is O(n) too: you must walk from the head."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Javaʼdagi LinkedList va C++ dagi std::list — ikki bogʻlamli roʻyxatlardir.",
+          "ru": "LinkedList в Java и std::list в C++ — это двусвязные списки.",
+          "en": "Java's LinkedList and C++'s std::list are doubly linked lists."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ikkalasi ham har tugunda oldingi va keyingi koʻrsatkichni saqlaydi, bu ikki tomonga yurish va tugunni O(1) da oʻchirish imkonini beradi.",
+          "ru": "Оба хранят в каждом узле предыдущий и следующий указатели, что даёт движение в обе стороны и удаление узла за O(1).",
+          "en": "Both keep a previous and a next pointer in every node, which allows walking both ways and removing a node in O(1)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Grafda uchning darajasi deganda nima tushuniladi?",
+          "ru": "Что понимается под степенью вершины графа?",
+          "en": "What is the degree of a vertex in a graph?"
+        },
+        "options": [
+          {
+            "uz": "Unga tegishli qirralar soni",
+            "ru": "Число инцидентных ей рёбер",
+            "en": "The number of edges incident to it"
+          },
+          {
+            "uz": "Uchdan eng yaqin qoʻshinigacha boʻlgan masofa",
+            "ru": "Расстояние до ближайшего соседа",
+            "en": "The distance to its nearest neighbour"
+          },
+          {
+            "uz": "Uchdan chiqadigan eng qisqa yoʻllar soni",
+            "ru": "Число кратчайших путей, выходящих из вершины",
+            "en": "The number of shortest paths leaving the vertex"
+          },
+          {
+            "uz": "Grafdagi uchlarning umumiy soni",
+            "ru": "Общее число вершин в графе",
+            "en": "The total number of vertices in the graph"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Daraja — uchga tegishli qirralar soni. Qoʻshnilik roʻyxatida u va v qoʻshnimi degan savol O(daraja) da tekshiriladi.",
+          "ru": "Степень — число рёбер при вершине. В списках смежности вопрос «смежны ли u и v?» проверяется за O(степень).",
+          "en": "The degree is the number of edges at the vertex. With adjacency lists the question \"are u and v adjacent?\" is checked in O(degree)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "10⁶ uchli va 3·10⁶ qirrali yoʻllar tarmogʻi grafini kompyuterda qanday saqlash toʻgʻri?",
+          "ru": "Как правильно хранить в компьютере граф дорожной сети с 10⁶ вершин и 3·10⁶ рёбер?",
+          "en": "How should a road-network graph with 10⁶ vertices and 3·10⁶ edges be stored in a computer?"
+        },
+        "options": [
+          {
+            "uz": "Qoʻshnilik matritsasi bilan",
+            "ru": "Матрицей смежности",
+            "en": "As an adjacency matrix"
+          },
+          {
+            "uz": "Qoʻshnilik roʻyxatlari bilan",
+            "ru": "Списками смежности",
+            "en": "As adjacency lists"
+          },
+          {
+            "uz": "Ikkala usul ham bir xil yaramli",
+            "ru": "Оба способа одинаково пригодны",
+            "en": "Both ways serve equally well"
+          },
+          {
+            "uz": "Grafni umuman saqlab boʻlmaydi",
+            "ru": "Такой граф вообще невозможно хранить",
+            "en": "Such a graph cannot be stored at all"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bu siyrak, katta graf: qoʻshnilik roʻyxati O(V + E) xotira oladi, matritsa esa 10¹² katak talab qilardi. Matritsa zich, kichik graflar (V ≤ ~2000) uchun.",
+          "ru": "Это большой разреженный граф: списки смежности займут O(V + E) памяти, а матрица потребовала бы 10¹² ячеек. Матрица пригодна для плотных небольших графов (V ≤ ~2000).",
+          "en": "This is a large sparse graph: adjacency lists take O(V + E) memory, while a matrix would need 10¹² cells. A matrix suits dense, small graphs (V ≤ ~2000)."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Floyd–Uorshell algoritmi n = 400 uchun qariyb nechta amal bajaradi?",
+          "ru": "Сколько примерно операций выполняет алгоритм Флойда–Уоршелла при n = 400?",
+          "en": "Roughly how many operations does the Floyd–Warshall algorithm perform for n = 400?"
+        },
+        "answers": [64000000],
+        "tolerance": 500000,
+        "explanation": {
+          "uz": "Algoritm O(V³): 400³ = 6,4·10⁷ amal — bir секундdan kam. n = 10⁴ boʻlganda esa 10¹² amal chiqadi, unday graflar uchun har uchdan Deykstra yurgizgan maʼqul.",
+          "ru": "Алгоритм работает за O(V³): 400³ = 6,4·10⁷ операций — меньше секунды. При n = 10⁴ это было бы 10¹², и для таких графов лучше запускать Дейкстру из каждой вершины.",
+          "en": "The algorithm is O(V³): 400³ = 6.4·10⁷ operations — under a second. For n = 10⁴ it would be 10¹², so for such graphs running Dijkstra from every vertex is better."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Deykstra algoritmining har bir qadamida belgilanmagan uchlardan eng kichik masofani tanlashni tezlashtirish uchun qaysi dinamik tuzilma ishlatiladi?",
+          "ru": "Какая динамическая структура используется, чтобы ускорять выбор наименьшего расстояния среди непомеченных вершин в алгоритме Дейкстры?",
+          "en": "Which dynamic structure speeds up Dijkstra's choice of the smallest distance among unmarked vertices at every step?"
+        },
+        "answers": ["ustuvor navbat", "priority queue", "очередь с приоритетом", "uyum", "heap"],
+        "explanation": {
+          "uz": "Ustuvor navbat (uyum) bilan Deykstra O((V + E) log V) ishlaydi — katta siyrak graflar uchun; oddiy massiv bilan tanlash O(V²) beradi.",
+          "ru": "С приоритетной очередью (кучей) Дейкстра работает за O((V + E) log V) — для больших разреженных графов; с массивом выбор даёт O(V²).",
+          "en": "With a priority queue (a heap) Dijkstra runs in O((V + E) log V), which suits large sparse graphs; choosing with a plain array gives O(V²)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bir bogʻlamli roʻyxatda oraliqdagi tugunni oʻchirganda aslida nima sodir boʻladi?",
+          "ru": "Что фактически происходит при удалении промежуточного узла из односвязного списка?",
+          "en": "What actually happens when a middle node is removed from a singly linked list?"
+        },
+        "options": [
+          {
+            "uz": "Oldingi tugunning koʻrsatkichi oʻchirilayotgan tugunni aylanib oʻtib, keyingisiga ulanadi",
+            "ru": "Указатель предыдущего узла «обходит» удаляемый и связывается со следующим",
+            "en": "The previous node's pointer bypasses the removed node and links to the next one"
+          },
+          {
+            "uz": "Tugun oʻzidan keyingilari bilan qoʻshib, massivda kabi suriladi",
+            "ru": "Узел сдвигается вместе со всеми последующими, как в массиве",
+            "en": "The node shifts together with all the following ones, as in an array"
+          },
+          {
+            "uz": "Tugunning qiymati nolga tenglashtiriladi",
+            "ru": "Значение узла обнуляется",
+            "en": "The node's value is set to zero"
+          },
+          {
+            "uz": "Bosh koʻrsatkichi boʻsh qoldiriladi",
+            "ru": "Очищается указатель головы",
+            "en": "The head pointer is cleared"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Tugunning oʻzi joyidan qimirlamaydi. Ishlangan misolda uch holat ajratiladi: bosh oʻchirilganda bosh siljiydi, oxirgi tugun boʻlsa oxir yangilanadi, roʻyxat boʻshab qolishi ham mumkin; C++ da tugun delete bilan boʻshatiladi.",
+          "ru": "Сам узел с места не двигается. В разобранном примере выделяются три случая: при удалении головы сдвигается голова, при удалении последнего узла обновляется хвост, список может и опустеть; в C++ узел освобождается через delete.",
+          "en": "The node itself does not move. The worked example separates three cases: deleting the head shifts the head, deleting the last node updates the tail, and the list may become empty; in C++ the node is freed with delete."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Deykstra va Floyd–Uorshell haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о Дейкстре и Флойде–Уоршелле верны?",
+          "en": "Which statements about Dijkstra's and Floyd–Warshall's algorithms are correct?"
+        },
+        "options": [
+          {
+            "uz": "Deykstra algoritmi manfiy vaznli qirrali graflarda notoʻgʻri ishlaydi, unda Bellman–Ford kerak",
+            "ru": "Дейкстра неверно работает на графах с отрицательными весами — там нужен Беллман–Форд",
+            "en": "Dijkstra works incorrectly on graphs with negative weights, where Bellman–Ford is needed"
+          },
+          {
+            "uz": "Floyd–Uorshell uchta siklidan qaysi biri tashqi boʻlishi farq qilmaydi",
+            "ru": "В Флойде–Уоршелле неважно, какой из трёх циклов внешний",
+            "en": "In Floyd–Warshall it does not matter which of the three loops is outer"
+          },
+          {
+            "uz": "Floyd–Uorshell barcha juftliklar orasidagi masofani O(V³) vaqtda va O(V²) xotirada topadi",
+            "ru": "Флойд–Уоршелл находит все попарные расстояния за O(V³) времени и O(V²) памяти",
+            "en": "Floyd–Warshall finds all pairwise distances in O(V³) time and O(V²) memory"
+          },
+          {
+            "uz": "Manfiy siklli grafga Floyd–Uorshell qoʻllansa ham natija toʻgʻri boʻladi",
+            "ru": "Флойд–Уоршелл даёт верный результат и на графе с отрицательным циклом",
+            "en": "Floyd–Warshall still gives a correct result on a graph with a negative cycle"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Floyd–Uorshelda tashqi sikl albatta oraliq uch k boʻyicha yurishi kerak — aks holda algoritm notoʻgʻri ishlaydi. Manfiy vaznli qirralar bilan u ishlaydi, lekin manfiy sikl boʻlmasa.",
+          "ru": "В Флойде–Уоршелле внешний цикл обязан идти по промежуточной вершине k — иначе алгоритм работает неверно. С отрицательными весами он работает, но лишь при отсутствии отрицательного цикла.",
+          "en": "In Floyd–Warshall the outer loop must run over the intermediate vertex k — otherwise the algorithm is wrong. It copes with negative edge weights, but only when there is no negative cycle."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Yoʻnaltirilgan grafga Floyd–Uorshell qoʻllanganda masofalar matritsasi har doim simmetrik boʻladi.",
+          "ru": "При применении Флойда–Уоршелла к ориентированному графу матрица расстояний всегда симметрична.",
+          "en": "Applying Floyd–Warshall to a directed graph always yields a symmetric distance matrix."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Ishlangan misolda 1 dan 2 gacha masofa 3, 2 dan 1 gacha esa 9 (2 → 3 → 4 → 1) — graf yoʻnaltirilgan boʻlsa, matritsa simmetrik boʻlmaydi.",
+          "ru": "В разобранном примере расстояние 1 → 2 равно 3, а 2 → 1 равно 9 (2 → 3 → 4 → 1): на ориентированном графе матрица не симметрична.",
+          "en": "In the worked example the distance 1 → 2 is 3 while 2 → 1 is 9 (2 → 3 → 4 → 1): on a directed graph the matrix is not symmetric."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Uchning qoʻshnilari",
+      "ru": "Соседи вершины",
+      "en": "The neighbours of a vertex"
+    },
+    "statement": {
+      "uz": "Grafni qoʻshnilik roʻyxatlari bilan saqlashni mashq qiling. Birinchi satrda uchlar soni n (1 ≤ n ≤ 1000) va qirralar soni m (0 ≤ m ≤ n(n−1)/2), keyingi m satrning har birida bitta qirra u v koʻrinishida beriladi. Graf yoʻnaltirilmagan, qirralar takrorlanmaydi, hech bir uch oʻzi bilan oʻzi bogʻlanmagan; uchlar 1 dan n gacha raqamlangan. 1 dan n gacha har bir uch uchun alohida satrda avval uning qoʻshnilari sonini, soʻng qoʻshni raqamlarini oʻsish tartibida, bitta boʻsh joy bilan ajratib chiqaring. Qoʻshnisi boʻlmagan uch uchun faqat 0 yozilgan satr chiqarilsin. Masalan, n = 5 va qirralar 1–2, 1–3, 3–2, 2–4, 3–4, 4–5 boʻlsa, birinchi satr 2 2 3, oxirgi satr 1 4 boʻladi.",
+      "ru": "Потренируйтесь хранить граф списками смежности. В первой строке заданы число вершин n (1 ≤ n ≤ 1000) и число рёбер m (0 ≤ m ≤ n(n−1)/2), далее в m строках по одному ребру u v. Граф неориентированный, рёбра не повторяются, ни одна вершина не соединена с самой собой; вершины занумерованы от 1 до n. Для каждой вершины от 1 до n выведите отдельной строкой сначала число её соседей, затем номера соседей в порядке возрастания через один пробел. Для вершины без соседей выведите строку с одним нулём. Например, при n = 5 и рёбрах 1–2, 1–3, 3–2, 2–4, 3–4, 4–5 первая строка вывода — 2 2 3, последняя — 1 4.",
+      "en": "Practise storing a graph as adjacency lists. The first line holds the number of vertices n (1 ≤ n ≤ 1000) and the number of edges m (0 ≤ m ≤ n(n−1)/2); the next m lines each give one edge u v. The graph is undirected, no edge is repeated and no vertex joins itself; vertices are numbered from 1 to n. For every vertex from 1 to n print its own line: first the number of its neighbours, then the neighbour numbers in ascending order, separated by a single space. For a vertex without neighbours print a line with a single 0. For example, for n = 5 and the edges 1–2, 1–3, 3–2, 2–4, 3–4, 4–5 the first output line is 2 2 3 and the last is 1 4."
+    },
+    "code": {
+      "starter": {
+        "python": "n, m = map(int, input().split())\ndaraja = [0] * (n + 1)\nfor _ in range(m):\n    u, v = map(int, input().split())\n    daraja[u] += 1\n    daraja[v] += 1\nfor i in range(1, n + 1):\n    print(daraja[i])\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt();\n        int[] daraja = new int[n + 1];\n        for (int k = 0; k < m; k++) {\n            int u = in.nextInt(), v = in.nextInt();\n            daraja[u]++;\n            daraja[v]++;\n        }\n        for (int i = 1; i <= n; i++) {\n            System.out.println(daraja[i]);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    int daraja[1001] = {0};\n    for (int k = 0; k < m; k++) {\n        int u, v;\n        cin >> u >> v;\n        daraja[u]++;\n        daraja[v]++;\n    }\n    for (int i = 1; i <= n; i++) cout << daraja[i] << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n, m = map(int, input().split())\nqoshni = [[] for _ in range(n + 1)]\nfor _ in range(m):\n    u, v = map(int, input().split())\n    qoshni[u].append(v)\n    qoshni[v].append(u)\nfor i in range(1, n + 1):\n    qoshni[i].sort()\n    print(len(qoshni[i]), *qoshni[i])\n",
+        "java": "import java.util.ArrayList;\nimport java.util.Collections;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt(), m = in.nextInt();\n        ArrayList<ArrayList<Integer>> qoshni = new ArrayList<>();\n        for (int i = 0; i <= n; i++) qoshni.add(new ArrayList<>());\n        for (int k = 0; k < m; k++) {\n            int u = in.nextInt(), v = in.nextInt();\n            qoshni.get(u).add(v);\n            qoshni.get(v).add(u);\n        }\n        for (int i = 1; i <= n; i++) {\n            Collections.sort(qoshni.get(i));\n            StringBuilder sb = new StringBuilder();\n            sb.append(qoshni.get(i).size());\n            for (int x : qoshni.get(i)) sb.append(' ').append(x);\n            System.out.println(sb);\n        }\n    }\n}\n",
+        "cpp": "#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> qoshni(n + 1);\n    for (int k = 0; k < m; k++) {\n        int u, v;\n        cin >> u >> v;\n        qoshni[u].push_back(v);\n        qoshni[v].push_back(u);\n    }\n    for (int i = 1; i <= n; i++) {\n        sort(qoshni[i].begin(), qoshni[i].end());\n        cout << qoshni[i].size();\n        for (int x : qoshni[i]) cout << \" \" << x;\n        cout << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5 6\n1 2\n1 3\n3 2\n2 4\n3 4\n4 5\n", "expected": "2 2 3\n3 1 3 4\n3 1 2 4\n3 2 3 5\n1 4", "hidden": false },
+        { "input": "4 0\n", "expected": "0\n0\n0\n0", "hidden": false },
+        { "input": "3 2\n1 2\n2 3\n", "expected": "1 2\n2 1 3\n1 2", "hidden": true },
+        { "input": "4 3\n1 2\n1 3\n1 4\n", "expected": "3 2 3 4\n1 1\n1 1\n1 1", "hidden": true },
+        { "input": "2 1\n1 2\n", "expected": "1 2\n1 1", "hidden": true }
+      ]
+    }
+  }
+}

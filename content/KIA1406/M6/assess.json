@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Oqimli shifrda ochiq matn nima bilan bitma-bit XOR qilinadi?",
+          "ru": "С чем открытый текст побитово складывается по модулю 2 (XOR) в потоковом шифре?",
+          "en": "In a stream cipher, what is the plaintext XORed with, bit by bit?"
+        },
+        "options": [
+          {
+            "uz": "Kalit oqimi bilan",
+            "ru": "С потоком ключа",
+            "en": "The keystream"
+          },
+          {
+            "uz": "Boshlangʻich vektor bilan",
+            "ru": "С начальным вектором",
+            "en": "The initialisation vector"
+          },
+          {
+            "uz": "Toʻldirish baytlari bilan",
+            "ru": "С байтами дополнения",
+            "en": "The padding bytes"
+          },
+          {
+            "uz": "Raund kaliti bilan",
+            "ru": "С раундовым ключом",
+            "en": "The round key"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Oqimli shifr kalitdan uzun psevdotasodifiy kalit oqimi hosil qiladi: C = M ⊕ kalit oqimi.",
+          "ru": "Потоковый шифр создаёт длинный псевдослучайный поток ключа: C = M ⊕ поток ключа.",
+          "en": "A stream cipher produces a long pseudo-random keystream: C = M ⊕ keystream."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Oqimli shifrlashda deshifrlash shifrlashning oʻzi bilan bir xil amal orqali bajariladi.",
+          "ru": "При потоковом шифровании расшифрование выполняется той же операцией, что и шифрование.",
+          "en": "In stream encryption, decryption is carried out by the very same operation as encryption."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "C = M ⊕ Ks boʻlsa, M = C ⊕ Ks: XOR amali oʻzini oʻzi bekor qiladi.",
+          "ru": "Если C = M ⊕ Ks, то M = C ⊕ Ks: операция XOR отменяет сама себя.",
+          "en": "If C = M ⊕ Ks, then M = C ⊕ Ks: the XOR undoes itself."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda eskirgan va amalda buzilgan deb aytilgan shifrlar qaysilari?",
+          "ru": "Какие из перечисленных шифров в занятии названы устаревшими и фактически взломанными?",
+          "en": "Which of these ciphers does the lesson call obsolete and broken in practice?"
+        },
+        "options": [
+          {
+            "uz": "DES",
+            "ru": "DES",
+            "en": "DES"
+          },
+          {
+            "uz": "A5/1",
+            "ru": "A5/1",
+            "en": "A5/1"
+          },
+          {
+            "uz": "ChaCha20",
+            "ru": "ChaCha20",
+            "en": "ChaCha20"
+          },
+          {
+            "uz": "AES-GCM",
+            "ru": "AES-GCM",
+            "en": "AES-GCM"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "DES 1998-yilda 56 bitli kaliti uchun toʻliq tanlash bilan buzilgan, A5/1 esa 2000-yillarda jadvallar orqali sekundlarda ochilgan; dars AES-GCM yoki ChaCha20-Poly1305 tavsiya etadi.",
+          "ru": "DES пал в 1998 году полным перебором 56-битного ключа, A5/1 вскрывался за секунды по таблицам в 2000-х; занятие рекомендует AES-GCM или ChaCha20-Poly1305.",
+          "en": "DES fell to brute force of its 56-bit key in 1998, and A5/1 was opened in seconds from tables in the 2000s; the lesson recommends AES-GCM or ChaCha20-Poly1305."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "AES kalit uzunligi 256 bit boʻlganda nechta raund bajariladi?",
+          "ru": "Сколько раундов выполняет AES при длине ключа 256 бит?",
+          "en": "How many rounds does AES run when the key is 256 bits long?"
+        },
+        "options": [
+          {
+            "uz": "10",
+            "ru": "10",
+            "en": "10"
+          },
+          {
+            "uz": "12",
+            "ru": "12",
+            "en": "12"
+          },
+          {
+            "uz": "14",
+            "ru": "14",
+            "en": "14"
+          },
+          {
+            "uz": "16",
+            "ru": "16",
+            "en": "16"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Darsga koʻra: 128 bitga 10, 192 bitga 12, 256 bitga 14 raund; 16 raund — DES ning Feystel tarmogʻiga tegishli.",
+          "ru": "По занятию: 128 бит — 10 раундов, 192 — 12, 256 — 14; 16 раундов относится к сети Фейстеля в DES.",
+          "en": "In the lesson: 128 bits — 10 rounds, 192 — 12, 256 — 14; the 16 rounds belong to DES's Feistel network."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "AES da blok uzunligi nechta bit?",
+          "ru": "Какова длина блока в AES (в битах)?",
+          "en": "What is the block length of AES, in bits?"
+        },
+        "answers": [128],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "AES bloki 128 bit; kalit 128, 192 yoki 256 bit boʻladi. 64 bit — DES bloki.",
+          "ru": "Блок AES — 128 бит; ключ бывает 128, 192 или 256 бит. 64 бита — это блок DES.",
+          "en": "The AES block is 128 bits; the key is 128, 192 or 256 bits. 64 bits is the DES block."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oxirgi blok toʻliq boʻlmaganda, qancha k bayt yetishmasa qiymati k boʻlgan k bayt qoʻshiladigan toʻldirish usuli qanday ataladi?",
+          "ru": "Как называется метод дополнения, при котором, если не хватает k байт, дописываются k байт со значением k?",
+          "en": "What is the padding method called in which, if k bytes are missing, k bytes of value k are appended?"
+        },
+        "answers": ["pkcs#7", "pkcs7"],
+        "explanation": {
+          "uz": "Darsda bu — PKCS#7 usuli deb berilgan.",
+          "ru": "В занятии этот метод назван PKCS#7.",
+          "en": "The lesson names it the PKCS#7 method."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ishlangan misolda toʻrtta bir xil A bayti ECB rejimida toʻrtta bir xil e8 ga aylandi. Buning asosiy xavfi nimada?",
+          "ru": "В примере четыре одинаковых байта A в режиме ECB дали четыре одинаковых e8. В чём здесь главный риск?",
+          "en": "In the worked example four identical A bytes became four identical e8 bytes in ECB mode. What is the main danger in that?"
+        },
+        "options": [
+          {
+            "uz": "Xavf yoʻq: shifrmatn baribir oʻqib boʻlmaydi",
+            "ru": "Опасности нет: шифртекст всё равно нечитаем",
+            "en": "There is no danger: the ciphertext is unreadable anyway"
+          },
+          {
+            "uz": "Bir xil bloklar shifrmatnda ham bir xil koʻrinadi — maʼlumot tuzilmasi oshkor boʻladi",
+            "ru": "Одинаковые блоки остаются одинаковыми в шифртексте — раскрывается структура данных",
+            "en": "Identical blocks stay identical in the ciphertext — the structure of the data is revealed"
+          },
+          {
+            "uz": "Shifrmatn ochishda doim xato beradi",
+            "ru": "При расшифровании такой шифртекст всегда даёт ошибку",
+            "en": "Such a ciphertext always fails to decrypt"
+          },
+          {
+            "uz": "Har blok uchun yangi kalit kerak boʻladi",
+            "ru": "Для каждого блока приходится брать новый ключ",
+            "en": "Every block then needs a new key"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi misol: ECB bilan shifrlangan pingvin rasmining konturi koʻrinib turar edi; haqiqiy AES da xuddi shu hodisa 16 baytli bloklarda roʻy beradi.",
+          "ru": "Пример из занятия: у изображения пингвина, зашифрованного ECB, был виден контур; в настоящем AES то же происходит на 16-байтных блоках.",
+          "en": "The lesson's example: the outline of a penguin image encrypted with ECB stayed visible; in real AES the same happens on 16-byte blocks."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Blok shifrlarning ishlash rejimlari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о режимах работы блочных шифров верны?",
+          "en": "Which statements about the modes of block ciphers are correct?"
+        },
+        "options": [
+          {
+            "uz": "ECB da har bir blok oldingi shifrmatn bloki bilan XOR qilinib shifrlanadi",
+            "ru": "В ECB каждый блок перед шифрованием XORится с предыдущим блоком шифртекста",
+            "en": "In ECB each block is XORed with the previous ciphertext block before encryption"
+          },
+          {
+            "uz": "CTR hisoblagichni shifrlab kalit oqimi hosil qiladi va parallel bajarilishi mumkin",
+            "ru": "CTR шифрует счётчик, получая поток ключа, и может выполняться параллельно",
+            "en": "CTR encrypts a counter to obtain a keystream and can run in parallel"
+          },
+          {
+            "uz": "GCM maxfiylik bilan birga autentifikatsiya tegi orqali yaxlitlikni ham taʼminlaydi",
+            "ru": "GCM наряду с конфиденциальностью обеспечивает целостность через аутентификационный тег",
+            "en": "GCM provides integrity through an authentication tag as well as confidentiality"
+          },
+          {
+            "uz": "IV maxfiy hisoblanadi va uni bir necha xabar uchun bir xil olish mumkin",
+            "ru": "IV является секретным, и его можно брать один и тот же для нескольких сообщений",
+            "en": "The IV is secret and may be reused for several messages"
+          }
+        ],
+        "correct": [1, 2],
+        "explanation": {
+          "uz": "Oldingi shifrmatn bilan zanjir — CBC; IV maxfiy emas, lekin har bir xabar uchun yangi va oldindan aytib boʻlmaydigan boʻlishi shart. GCM — AEAD rejimi, TLS 1.3 da standart.",
+          "ru": "Цепочка с предыдущим блоком — это CBC; IV не секретный, но обязан быть новым и непредсказуемым для каждого сообщения. GCM — это AEAD-режим, стандарт в TLS 1.3.",
+          "en": "Chaining with the previous block is CBC; the IV is not secret but must be new and unpredictable for every message. GCM is the AEAD mode, the standard in TLS 1.3."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Koʻchki effektiga koʻra, ochiq matnda bitta bitning oʻzgarishi shifrmatnning deyarli butunlay oʻzgarishiga olib keladi.",
+          "ru": "Согласно лавинному эффекту, если в открытом тексте изменить один бит, шифртекст меняется практически целиком.",
+          "en": "By the avalanche effect, changing one bit of the plaintext changes practically the whole ciphertext."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda aniqlangan: bitta bit oʻzgarsa, shifrmatnning taxminan yarmi oʻzgaradi — bu tarqatish xossasining natijasi.",
+          "ru": "В занятии сказано: при изменении одного бита меняется примерно половина шифртекста — это следствие свойства распространения.",
+          "en": "The lesson defines it as about half of the ciphertext changing when one bit changes — the result of diffusion."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Takrorlangan kalit oqimi: ikki shifrmatnni solishtirish",
+      "ru": "Повторённый поток ключа: два шифртекста",
+      "en": "A reused keystream: two ciphertexts"
+    },
+    "statement": {
+      "uz": "Agar ikki xabar bir xil kalit oqimi bilan shifrlansa, C1 ⊕ C2 = M1 ⊕ M2 boʻladi — kalitni bilmasdan ham matnlar haqida maʼlumot olish mumkin. Dasturingiz ikkita satr oʻqisin: har bir satrda baytlar oʻn oltilik koʻrinishida, bitta boʻshliq bilan ajratilgan (masalan, d4 74 08). Ikkala satrda baytlar soni teng va 1 dan 1000 gacha. Chiqishda bitta satrda shu ikki yozuvning bayt-boʻyicha XORini xuddi shu koʻrinishda chiqaring: ikki xonali, kichik harfli oʻn oltilik baytlar, orasida bittadan boʻshliq. Masalan, d4 74 va 08 ad kirsa, dc d9 chiqadi.",
+      "ru": "Если два сообщения зашифрованы одним и тем же потоком ключа, то C1 ⊕ C2 = M1 ⊕ M2 — о текстах можно узнать многое даже без ключа. Программа читает две строки: в каждой байты записаны шестнадцатеричными числами через один пробел (например, d4 74 08). В обеих строках одинаковое число байтов, от 1 до 1000. Выведите одной строкой побайтовый XOR этих записей в том же формате: двузначные шестнадцатеричные байты строчными буквами, через один пробел. Например, d4 74 и 08 ad дают dc d9.",
+      "en": "If two messages are encrypted with the same keystream, then C1 ⊕ C2 = M1 ⊕ M2 — much can be learned about the texts even without the key. Your program reads two lines, each holding bytes written as hexadecimal numbers separated by single spaces (for example, d4 74 08). Both lines contain the same number of bytes, between 1 and 1000. Print the byte-wise XOR of the two lines on one line in the same format: two-digit lowercase hex bytes separated by a single space. For example, d4 74 and 08 ad give dc d9."
+    },
+    "code": {
+      "starter": {
+        "python": "a = input().split()\nb = input().split()\nout = []\nfor x, y in zip(a, b):\n    out.append(format(int(x, 16), \"02x\"))\nprint(\" \".join(out))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] a = in.nextLine().trim().split(\" \");\n        String[] b = in.nextLine().trim().split(\" \");\n        StringBuilder out = new StringBuilder();\n        for (int i = 0; i < a.length; i++) {\n            if (i > 0) {\n                out.append(\" \");\n            }\n            int x = Integer.parseInt(a[i], 16);\n            out.append(String.format(\"%02x\", x));\n        }\n        System.out.println(out);\n    }\n}\n",
+        "cpp": "#include <cstdio>\n#include <iostream>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nvector<int> read_bytes() {\n    string satr;\n    getline(cin, satr);\n    stringstream ss(satr);\n    vector<int> natija;\n    string h;\n    while (ss >> h) {\n        natija.push_back(stoi(h, nullptr, 16));\n    }\n    return natija;\n}\n\nint main() {\n    vector<int> a = read_bytes();\n    vector<int> b = read_bytes();\n    string out;\n    for (size_t i = 0; i < a.size(); i++) {\n        char buf[4];\n        snprintf(buf, sizeof buf, \"%02x\", a[i]);\n        if (i > 0) {\n            out += \" \";\n        }\n        out += buf;\n    }\n    cout << out << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "a = input().split()\nb = input().split()\nout = []\nfor x, y in zip(a, b):\n    out.append(format(int(x, 16) ^ int(y, 16), \"02x\"))\nprint(\" \".join(out))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] a = in.nextLine().trim().split(\" \");\n        String[] b = in.nextLine().trim().split(\" \");\n        StringBuilder out = new StringBuilder();\n        for (int i = 0; i < a.length; i++) {\n            if (i > 0) {\n                out.append(\" \");\n            }\n            int x = Integer.parseInt(a[i], 16) ^ Integer.parseInt(b[i], 16);\n            out.append(String.format(\"%02x\", x));\n        }\n        System.out.println(out);\n    }\n}\n",
+        "cpp": "#include <cstdio>\n#include <iostream>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nvector<int> read_bytes() {\n    string satr;\n    getline(cin, satr);\n    stringstream ss(satr);\n    vector<int> natija;\n    string h;\n    while (ss >> h) {\n        natija.push_back(stoi(h, nullptr, 16));\n    }\n    return natija;\n}\n\nint main() {\n    vector<int> a = read_bytes();\n    vector<int> b = read_bytes();\n    string out;\n    for (size_t i = 0; i < a.size(); i++) {\n        char buf[4];\n        snprintf(buf, sizeof buf, \"%02x\", a[i] ^ b[i]);\n        if (i > 0) {\n            out += \" \";\n        }\n        out += buf;\n    }\n    cout << out << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "d4 74\n08 ad\n", "expected": "dc d9", "hidden": false },
+        { "input": "1a 1a 1a\n1a 1a 1a\n", "expected": "00 00 00", "hidden": false },
+        { "input": "ff 00 f0\n0f f0 0f\n", "expected": "f0 f0 ff", "hidden": true },
+        { "input": "0a\n0a\n", "expected": "00", "hidden": true },
+        { "input": "12 34 56 78 9a bc de f0\nff ff ff ff ff ff ff ff\n", "expected": "ed cb a9 87 65 43 21 0f", "hidden": true }
+      ]
+    }
+  }
+}

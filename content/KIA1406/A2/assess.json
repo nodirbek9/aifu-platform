@@ -1,0 +1,337 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ehtimollik shkalasida 4 ball qanday daraja va mezon bilan berilgan?",
+          "ru": "Какой уровень и критерий у балла 4 в шкале вероятности?",
+          "en": "In the likelihood scale, which level and criterion go with score 4?"
+        },
+        "options": [
+          {
+            "uz": "Ehtimolli — yiliga bir necha marta",
+            "ru": "Вероятно — несколько раз в год",
+            "en": "Likely — several times a year"
+          },
+          {
+            "uz": "Mumkin — 1–3 yilda bir marta",
+            "ru": "Возможно — раз в 1–3 года",
+            "en": "Possible — once in 1–3 years"
+          },
+          {
+            "uz": "Deyarli muqarrar — oyiga bir marta va koʻproq",
+            "ru": "Почти неизбежно — раз в месяц и чаще",
+            "en": "Almost certain — once a month or more"
+          },
+          {
+            "uz": "Kam — 3–10 yilda bir marta",
+            "ru": "Маловероятно — раз в 3–10 лет",
+            "en": "Unlikely — once in 3–10 years"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shkala: 1 — juda kam, 2 — kam, 3 — mumkin, 4 — ehtimolli (yiliga bir necha marta), 5 — deyarli muqarrar.",
+          "ru": "Шкала: 1 — редко, 2 — маловероятно, 3 — возможно, 4 — вероятно (несколько раз в год), 5 — почти неизбежно.",
+          "en": "The scale: 1 rare, 2 unlikely, 3 possible, 4 likely (several times a year), 5 almost certain."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Taʼsir bir necha ustun boʻyicha baholansa, ularning eng yuqori balli olinadi.",
+          "ru": "Если последствия оценены по нескольким столбцам, берётся наибольший из баллов.",
+          "en": "If impact is rated in several columns, the highest of the scores is taken."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi qoida shunday: moliyaviy 2, obroʻ 4 boʻlsa, olinadigan ball — 4.",
+          "ru": "Правило из занятия: при финансовых 2 и репутационных 4 берётся балл 4.",
+          "en": "The lesson rule: a financial 2 and a reputational 4 give the score 4."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ikki baholash misolidagi kabi risk darajasi ehtimollik va taʼsirning koʻpaytmasi. Ehtimolligi 3, taʼsiri 4 boʻlgan riskning darajasi nechaga teng?",
+          "ru": "Как и в примере с двумя оценками, уровень риска — произведение вероятности и последствий. Чему равен уровень риска с вероятностью 3 и последствиями 4?",
+          "en": "As in the two-assessment example, a risk level is the product of likelihood and impact. What is the level of a risk with likelihood 3 and impact 4?"
+        },
+        "answers": [12],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "3 × 4 = 12. Darsdagi misolda ham Fishing riski 4 × 3 = 12 deb hisoblangan.",
+          "ru": "3 × 4 = 12. В примере из занятия риск Fishing тоже посчитан как 4 × 3 = 12.",
+          "en": "3 × 4 = 12. In the lesson example the Fishing risk is computed the same way: 4 × 3 = 12."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ehtimollik va taʼsir shkalalariga aniq, oʻlchanadigan mezonlar yozishning asosiy maqsadi nima?",
+          "ru": "Какова главная цель записывать точные, измеримые критерии для шкал вероятности и последствий?",
+          "en": "What is the main reason for writing precise, measurable criteria for the likelihood and impact scales?"
+        },
+        "options": [
+          {
+            "uz": "Turli mutaxassislar bir xil riskni turlicha baholamasligi uchun",
+            "ru": "Чтобы разные специалисты оценивали один и тот же риск одинаково",
+            "en": "So that different specialists rate the same risk the same way"
+          },
+          {
+            "uz": "Risklarni avtomatik ravishda kamaytirish uchun",
+            "ru": "Чтобы автоматически снижать риски",
+            "en": "So that risks are reduced automatically"
+          },
+          {
+            "uz": "Matritsa hajmini 5×5 dan kichraytirish uchun",
+            "ru": "Чтобы уменьшить размер матрицы меньше 5×5",
+            "en": "So that the matrix becomes smaller than 5×5"
+          },
+          {
+            "uz": "Risk egasini avtomatik tanlash uchun",
+            "ru": "Чтобы автоматически назначать владельца риска",
+            "en": "So that a risk owner is assigned automatically"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda «Menimcha, 4» degan baholash xato deb koʻrsatilgan: mezon boʻlmasa, har xil odam har xil natija beradi.",
+          "ru": "В занятии оценка «я думаю, 4» названа ошибкой: без критериев разные люди дают разные результаты.",
+          "en": "The lesson calls an assessment of the type I think it is a 4 a mistake: without criteria different people give different results."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "«Bilim» oʻquv markazi uchun tuzilgan tahdid–zaiflik juftliklaridan qaysilari roʻyxatda bor?",
+          "ru": "Какие пары угроза–уязвимость действительно есть в списке учебного центра «Bilim»?",
+          "en": "Which threat–vulnerability pairs really appear in the list for the Bilim training centre?"
+        },
+        "options": [
+          {
+            "uz": "Fishing — xodimlar oʻqitilmagan",
+            "ru": "Фишинг — сотрудники не обучены",
+            "en": "Phishing — staff not trained"
+          },
+          {
+            "uz": "Shifrlovchi virus — zaxira nusxa yoʻq",
+            "ru": "Шифровальщик — нет резервных копий",
+            "en": "Ransomware — no backups"
+          },
+          {
+            "uz": "Noutbuk oʻgʻirlanishi — disk shifrlanmagan",
+            "ru": "Кража ноутбука — диск не зашифрован",
+            "en": "Laptop theft — the disk is not encrypted"
+          },
+          {
+            "uz": "SQL-inyeksiya — zaxira nusxa ajratilmagan",
+            "ru": "SQL-инъекция — резервные копии не отделены",
+            "en": "SQL injection — backups not kept separately"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Roʻyxatda shuningdek DDoS (himoya yoʻq), ichki buzgʻunchi (huquqlar keng), yongʻin (oʻt oʻchirish tizimi yoʻq), oddiy parollar (siyosat yoʻq) va kamera nosozligi bor; SQL-inyeksiya esa bu roʻyxatda yoʻq.",
+          "ru": "В списке также DDoS (нет защиты), внутренний нарушитель (широкие права), пожар (нет пожаротушения), простые пароли (нет политики) и неисправность видеонаблюдения; SQL-инъекции в этом списке нет.",
+          "en": "The list also holds DDoS (no protection), an insider (broad rights), fire (no fire suppression), simple passwords (no policy) and a CCTV failure; SQL injection is not in it."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Chora koʻrilgandan keyin kutilgan ehtimollik va taʼsir asosida qayta baholangan risk qanday ataladi?",
+          "ru": "Как называется риск, переоценённый по ожидаемым вероятности и последствиям после принятия меры?",
+          "en": "What is the risk called that is reassessed by the expected likelihood and impact after a control?"
+        },
+        "answers": ["qoldiq risk", "Qoldiq risk", "остаточный риск", "residual risk"],
+        "explanation": {
+          "uz": "Darsdagi 6-qadam: qoldiq risk — chora koʻrilgandan keyingi kutilgan ehtimollik va taʼsir. Chora samarasi faqat uni oʻlchab bilinadi.",
+          "ru": "Шестой шаг из занятия: остаточный риск — это ожидаемые вероятность и последствия после меры; саму меру можно оценить только по нему.",
+          "en": "Step six of the lesson: the residual risk is the expected likelihood and impact after the control; the effect of a control is known only by measuring it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Issiqlik xaritasida eng xavfli risklar qayerda joylashadi?",
+          "ru": "Где на тепловой карте расположены самые опасные риски?",
+          "en": "Where on the heat map are the most dangerous risks?"
+        },
+        "options": [
+          {
+            "uz": "Yuqori oʻng burchakda — yuqori ehtimollik va yuqori taʼsir",
+            "ru": "В правом верхнем углу — высокая вероятность и высокие последствия",
+            "en": "In the top right corner — high likelihood and high impact"
+          },
+          {
+            "uz": "Pastki chap burchakda — past ehtimollik va past taʼsir",
+            "ru": "В левом нижнем углу — низкие вероятность и последствия",
+            "en": "In the bottom left corner — low likelihood and low impact"
+          },
+          {
+            "uz": "Xaritaning markazida — oʻrtacha qiymatlar atrofida",
+            "ru": "В центре карты — около средних значений",
+            "en": "In the middle of the map — around the average values"
+          },
+          {
+            "uz": "Birinchi qatorda — ehtimollik 5 boʻlgan joyda",
+            "ru": "В первой строке — там, где вероятность 5",
+            "en": "In the first row — where the likelihood is 5"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Qatorlar ehtimollik 5 dan 1 gacha, ustunlar taʼsir 1 dan 5 gacha, shuning uchun eng xavfli kataklar yuqori oʻng burchakka yaqin.",
+          "ru": "Строки — вероятность от 5 до 1, столбцы — последствия от 1 до 5, поэтому самые опасные ячейки близки к правому верхнему углу.",
+          "en": "Rows are likelihood from 5 down to 1 and columns are impact from 1 to 5, so the most dangerous cells are near the top right corner."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ikki baholash orasidagi dinamika boʻyicha qaysi xulosalar toʻgʻri?",
+          "ru": "Какие выводы по изменению между двумя оценками верны?",
+          "en": "Which conclusions about the change between the two assessments are correct?"
+        },
+        "options": [
+          {
+            "uz": "Xodimlarni oʻqitish fishing riskining ehtimolligini kamaytirdi",
+            "ru": "Обучение сотрудников снизило вероятность риска фишинга",
+            "en": "Staff training reduced the likelihood of the phishing risk"
+          },
+          {
+            "uz": "Zaxira nusxa shifrlovchi virus riskining taʼsirini kamaytirdi",
+            "ru": "Резервные копии снизили последствия риска шифровальщика",
+            "en": "Backups reduced the impact of the ransomware risk"
+          },
+          {
+            "uz": "Choralar matritsaning turli oʻqlariga taʼsir qiladi",
+            "ru": "Меры воздействуют на разные оси матрицы",
+            "en": "Controls act on different axes of the matrix"
+          },
+          {
+            "uz": "DDoS riski choraga qaramay kamaydi, chunki sayt yaxshilandi",
+            "ru": "Риск DDoS снизился, потому что была принята мера",
+            "en": "The DDoS risk fell despite the control because the site was improved"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda DDoS riski oshgani koʻrsatilgan (8 → 12): tashkilot onlayn toʻlovlarni kengaytirgani uchun sayt toʻxtashi koʻproq zarar keltiradi.",
+          "ru": "В занятии риск DDoS вырос (8 → 12): организация расширила онлайн-оплаты, и простой сайта приносит больший ущерб.",
+          "en": "The lesson shows the DDoS risk growing (8 → 12): the organisation expanded online payments, so a site outage now causes more harm."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, kam ehtimolli, lekin halokatli risklarni faqat daraja boʻyicha baholab, ularni alohida koʻrib chiqishning hojati yoʻq.",
+          "ru": "По занятию, редкие, но катастрофические риски достаточно оценить только по уровню, и отдельно их рассматривать не нужно.",
+          "en": "According to the lesson, unlikely but catastrophic risks are covered by their level alone and need no separate review."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Pastki oʻng burchakdagi yongʻin kam ehtimolli, lekin halokatli — bunday risklar taʼsir boʻyicha ham alohida koʻriladi; ularni eʼtiborsiz qoldirish koʻp uchraydigan xato.",
+          "ru": "Пожар в правом нижнем углу маловероятен, но катастрофичен — такие риски рассматривают отдельно и по последствиям; игнорировать их — частая ошибка.",
+          "en": "The fire in the bottom right corner is unlikely but catastrophic — such risks are reviewed separately by impact too, and ignoring them is a common mistake."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Reja tuziladigan risklar roʻyxati",
+      "ru": "Список рисков, для которых нужен план",
+      "en": "The list of risks that need a plan"
+    },
+    "statement": {
+      "uz": "«Bilim» oʻquv markazi kritik va yuqori risklar uchun muddat va masʼul bilan reja tuzadi. Shu sababli risk darajasi (ehtimollik × taʼsir) 12 dan kichik boʻlmagan yoki taʼsiri 5 ga teng boʻlgan har bir risk rejalashtiriladi: halokatli taʼsir kam ehtimollikda ham alohida koʻrib chiqiladi. Dasturingiz birinchi satrda risklar soni n ni, keyingi n ta satrda har bir risk uchun nomini (boʻshliqsiz bitta soʻz), ehtimollikni va taʼsirni (1–5) oʻqisin. Kiritilgan tartibda, har bir rejalashtiriladigan risk uchun alohida satrda nom va darajani bitta boʻshliq bilan chiqaring. Oxirgi satrga shunday risklarning sonini chiqaring — hech biri tanlanmasa, faqat 0. Boshqa hech qanday matn, sarlavha yoki izoh chiqarmang.",
+      "ru": "Учебный центр «Bilim» строит план со сроками и ответственным для критических и высоких рисков. Поэтому в план попадает каждый риск, у которого уровень (вероятность × последствия) не меньше 12 ИЛИ последствия равны 5: катастрофические последствия рассматриваются отдельно, даже если вероятность мала. Ваша программа читает в первой строке число рисков n, затем n строк: название риска (одно слово без пробелов), вероятность и последствия (1–5). В порядке ввода выведите для каждого запланированного риска отдельной строкой название и уровень через один пробел. Последней строкой выведите количество таких рисков — если таких нет, выведите только 0. Никакого другого текста, заголовков и пояснений выводить не нужно.",
+      "en": "The Bilim training centre writes a plan with deadlines and a responsible person for critical and high risks. A risk goes into the plan when its level (likelihood × impact) is at least 12 OR its impact equals 5: a catastrophic impact is reviewed separately even when the likelihood is small. Your program reads n, the number of risks, on the first line, then n lines, each holding a risk name (one word, no spaces), its likelihood and its impact (1–5). In the order they were given, print one line per planned risk: the name, a single space, the level. On the last line print how many such risks there are — if none, print only 0. Print no other text, heading or note."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nfor _ in range(n):\n    nom, e, t = input().split()\n    daraja = int(e) * int(t)\n    if daraja >= 12:\n        print(nom + \" \" + str(daraja))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            String nom = in.next();\n            int e = in.nextInt();\n            int t = in.nextInt();\n            int daraja = e * t;\n            if (daraja >= 12) System.out.println(nom + \" \" + daraja);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string nom;\n        int e, t;\n        cin >> nom >> e >> t;\n        int daraja = e * t;\n        if (daraja >= 12) cout << nom << \" \" << daraja << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nreja = []\nfor _ in range(n):\n    nom, e, t = input().split()\n    daraja = int(e) * int(t)\n    if daraja >= 12 or t == \"5\":\n        reja.append(nom + \" \" + str(daraja))\nfor qator in reja:\n    print(qator)\nprint(len(reja))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        String[] reja = new String[n];\n        int son = 0;\n        for (int i = 0; i < n; i++) {\n            String nom = in.next();\n            int e = in.nextInt();\n            int t = in.nextInt();\n            int daraja = e * t;\n            if (daraja >= 12 || t == 5) {\n                reja[son] = nom + \" \" + daraja;\n                son++;\n            }\n        }\n        for (int i = 0; i < son; i++) System.out.println(reja[i]);\n        System.out.println(son);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<string> reja;\n    for (int i = 0; i < n; i++) {\n        string nom;\n        int e, t;\n        cin >> nom >> e >> t;\n        int daraja = e * t;\n        if (daraja >= 12 || t == 5) reja.push_back(nom + \" \" + to_string(daraja));\n    }\n    for (size_t i = 0; i < reja.size(); i++) cout << reja[i] << endl;\n    cout << reja.size() << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "5\nFishing 4 3\nShifrlovchi 3 5\nNoutbuk 3 2\nDDoS 2 4\nYongin 1 5\n",
+          "expected": "Fishing 12\nShifrlovchi 15\nYongin 5\n3",
+          "hidden": false
+        },
+        {
+          "input": "3\nKamera 1 1\nParol 4 3\nInsayder 2 5\n",
+          "expected": "Parol 12\nInsayder 10\n2",
+          "hidden": false
+        },
+        {
+          "input": "2\nWiFi 2 3\nSite 3 3\n",
+          "expected": "0",
+          "hidden": true
+        },
+        {
+          "input": "4\nA 3 4\nB 4 2\nC 1 5\nD 5 2\n",
+          "expected": "A 12\nC 5\n2",
+          "hidden": true
+        },
+        {
+          "input": "3\nServer 5 5\nQidiruv 5 1\nTalaba 2 5\n",
+          "expected": "Server 25\nTalaba 10\n2",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

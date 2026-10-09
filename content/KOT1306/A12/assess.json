@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Lokal hisob qayerda saqlanadi?",
+          "ru": "Где хранится локальная учётная запись?",
+          "en": "Where is a local account stored?"
+        },
+        "options": [
+          {
+            "uz": "Kompyuterning SAM bazasida",
+            "ru": "В базе SAM компьютера",
+            "en": "In the computer's SAM database"
+          },
+          {
+            "uz": "Active Directory da",
+            "ru": "В Active Directory",
+            "en": "In Active Directory"
+          },
+          {
+            "uz": "Bulutda (Microsoft hisobida)",
+            "ru": "В облаке (учётная запись Microsoft)",
+            "en": "In the cloud (Microsoft account)"
+          },
+          {
+            "uz": "NTFS ruxsatlar roʻyxatida",
+            "ru": "В списке разрешений NTFS",
+            "en": "In the NTFS permission list"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: lokal — SAM bazasida (`PC07\\talaba`), domen — Active Directory da, Microsoft hisobi — bulutda.",
+          "ru": "Таблица из занятия: локальная — в базе SAM (`PC07\\talaba`), доменная — в Active Directory, учётная запись Microsoft — в облаке.",
+          "en": "The lesson table: local — in the SAM database (`PC07\\talaba`), domain — in Active Directory, Microsoft account — in the cloud."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Oʻrnatilgan Guest hisobi sukut boʻyicha oʻchirilgan holatda boʻladi va shunday qolishi kerak.",
+          "ru": "Встроенная учётная запись Guest по умолчанию отключена и такой должна оставаться.",
+          "en": "The built-in Guest account is disabled by default and should stay that way."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda Guest sukut boʻyicha oʻchirilgan deyiladi; Administrator uchun esa nomini oʻzgartirish yoki oʻchirib qoʻyish tavsiya etiladi.",
+          "ru": "В занятии сказано, что Guest отключён по умолчанию; для Administrator рекомендуется переименовать или отключить.",
+          "en": "The lesson says Guest is disabled by default; for Administrator it recommends renaming or disabling the account."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi tavsiya boʻyicha parolning minimal uzunligi necha belgi?",
+          "ru": "Сколько символов составляет минимальная длина пароля по рекомендации из занятия?",
+          "en": "What minimum password length does the lesson recommend in characters?"
+        },
+        "answers": [12],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "secpol.msc → Account Policies jadvali: minimal uzunlik 12 belgi, murakkablik talabi yoqilgan.",
+          "ru": "Таблица secpol.msc → Account Policies: минимальная длина 12 символов, требование сложности включено.",
+          "en": "The secpol.msc → Account Policies table: minimum length 12 characters, complexity requirement enabled."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "UAC (User Account Control) haqida darsda qaysi ifoda aytilgan?",
+          "ru": "Какое утверждение о UAC (User Account Control) приведено в занятии?",
+          "en": "Which statement about UAC (User Account Control) does the lesson give?"
+        },
+        "options": [
+          {
+            "uz": "Administrator ham sukut boʻyicha oddiy huquqlar bilan ishlaydi; tizim oʻzgarishi kerak boʻlganda tasdiqlash oynasi chiqadi",
+            "ru": "Даже администратор по умолчанию работает с обычными правами; при нужном изменении системы появляется окно подтверждения",
+            "en": "Even an administrator works with ordinary rights by default; a confirmation window appears when the system must change"
+          },
+          {
+            "uz": "Administrator har doim toʻliq huquq bilan ishlaydi va hech narsa soʻralmaydi",
+            "ru": "Администратор всегда работает с полными правами, и ничего не спрашивается",
+            "en": "An administrator always runs with full rights and nothing is asked"
+          },
+          {
+            "uz": "UAC faqat domenda ishlaydi",
+            "ru": "UAC работает только в домене",
+            "en": "UAC works only in a domain"
+          },
+          {
+            "uz": "UAC parol siyosatini oʻrniga qoʻyadi",
+            "ru": "UAC заменяет политику паролей",
+            "en": "UAC replaces the password policy"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda UAC aynan shunday izohlanadi: sukutda oddiy huquqlar, kerak boʻlganda tasdiqlash oynasi.",
+          "ru": "Именно так UAC объясняется в занятии: по умолчанию обычные права, при необходимости — окно подтверждения.",
+          "en": "That is how the lesson explains UAC: ordinary rights by default, a confirmation window when needed."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda oʻrnatilgan (built-in) guruhlar qatori qaysilari keltirilgan?",
+          "ru": "Что из перечисленного названо в занятии встроенной группой?",
+          "en": "Which of these does the lesson list as built-in groups?"
+        },
+        "options": [
+          {
+            "uz": "Administrators",
+            "ru": "Administrators",
+            "en": "Administrators"
+          },
+          {
+            "uz": "Remote Desktop Users",
+            "ru": "Remote Desktop Users",
+            "en": "Remote Desktop Users"
+          },
+          {
+            "uz": "Backup Operators",
+            "ru": "Backup Operators",
+            "en": "Backup Operators"
+          },
+          {
+            "uz": "Talabalar",
+            "ru": "Talabalar",
+            "en": "Talabalar"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Talabalar — laboratoriya yaratgan lokal guruh (`net localgroup Talabalar /add`); oʻrnatilganlar: Administrators, Users, Remote Desktop Users, Backup Operators, Guests.",
+          "ru": "Talabalar — локальная группа, созданная в лаборатории (`net localgroup Talabalar /add`); встроенные: Administrators, Users, Remote Desktop Users, Backup Operators, Guests.",
+          "en": "Talabalar is a local group created in the lab (`net localgroup Talabalar /add`); the built-in ones are Administrators, Users, Remote Desktop Users, Backup Operators and Guests."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`net user` buyrugʻida hisobni vaqtincha oʻchirish (bloklash) uchun qaysi kalit yoziladi?",
+          "ru": "Какой ключ пишется в команде `net user`, чтобы временно отключить учётную запись?",
+          "en": "Which switch of the `net user` command temporarily disables an account?"
+        },
+        "answers": ["/active:no", "active:no", "/ACTIVE:NO"],
+        "explanation": {
+          "uz": "Darsdagi buyruq: net user a.karimov /active:no — hisobni vaqtincha oʻchirish.",
+          "ru": "Команда из занятия: `net user a.karimov /active:no` — временное отключение учётной записи.",
+          "en": "The lesson command is `net user a.karimov /active:no` — disabling the account temporarily."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Domen uchun darsdagi AGDLP zanjirining toʻgʻri tartibi qaysi?",
+          "ru": "Каков верный порядок цепочки AGDLP для домена по занятию?",
+          "en": "What is the correct order of the AGDLP chain given in the lesson for a domain?"
+        },
+        "options": [
+          {
+            "uz": "Account → Global group → Domain Local group → Permission",
+            "ru": "Account → Global group → Domain Local group → Permission",
+            "en": "Account → Global group → Domain Local group → Permission"
+          },
+          {
+            "uz": "Permission → Global group → Account → Domain Local group",
+            "ru": "Permission → Global group → Account → Domain Local group",
+            "en": "Permission → Global group → Account → Domain Local group"
+          },
+          {
+            "uz": "Account → Permission → Domain Local group → Global group",
+            "ru": "Account → Permission → Domain Local group → Global group",
+            "en": "Account → Permission → Domain Local group → Global group"
+          },
+          {
+            "uz": "Domain Local group → Account → Permission → Global group",
+            "ru": "Domain Local group → Account → Permission → Global group",
+            "en": "Domain Local group → Account → Permission → Global group"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Huquqlar guruhlarga beriladi, foydalanuvchilar guruhlarga qoʻshiladi — shu tamoyil AGDLP deb ataladi.",
+          "ru": "Права назначаются группам, пользователи добавляются в группы — этот принцип и называется AGDLP.",
+          "en": "Rights go to groups and users are added to groups — that principle is called AGDLP."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "NTFS ruxsatlarining qoidalari boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о правилах разрешений NTFS верны?",
+          "en": "Which statements about the rules of NTFS permissions are correct?"
+        },
+        "options": [
+          {
+            "uz": "Foydalanuvchi va uning guruhlariga berilgan Allow lar yigʻiladi",
+            "ru": "Allow, выданные пользователю и его группам, суммируются",
+            "en": "The Allows given to the user and their groups add up"
+          },
+          {
+            "uz": "Biror guruhdagi Deny ni boshqa guruhdagi Allow bekor qila olmaydi",
+            "ru": "Deny из одной группы не может отменить Allow из другой",
+            "en": "A Deny in one group cannot be cancelled by an Allow in another"
+          },
+          {
+            "uz": "Obyektga hech qanday ruxsat berilmagan boʻlsa, foydalanuvchaga ruxsat bor hisoblanadi",
+            "ru": "Если объекту не выдано никакого разрешения, пользователь считается допущенным",
+            "en": "If nothing is granted to the object, the user is considered to have access"
+          },
+          {
+            "uz": "Papkadagi ruxsatlar ichidagi fayl va papkalarga meros orqali oʻtadi",
+            "ru": "Разрешения папки через наследование переходят на вложенные файлы и папки",
+            "en": "A folder's permissions pass to the files and folders inside it through inheritance"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Hech narsa berilmagan — bu yashirin rad, yaʼni ruxsat yoʻq. Merosni Advanced → Disable inheritance bilan uzish mumkin.",
+          "ru": "Если ничего не выдано — это неявный запрет, доступа нет. Наследование прерывают через Advanced → Disable inheritance.",
+          "en": "Nothing granted means an implicit deny, so there is no access. Inheritance can be broken in Advanced → Disable inheritance."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Xavfsizlik uchun Deny ruxsatini koʻproq ishlatish tavsiya etiladi.",
+          "ru": "В целях безопасности рекомендуется чаще использовать Deny.",
+          "en": "For security it is recommended to use Deny more often."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda Deny ni haddan tashqari koʻp ishlatish xato deyiladi: u har doim ustun boʻlgani uchun kutilmagan radlarga olib keladi; koʻpincha Allow bermaslik kifoya.",
+          "ru": "В занятии злоупотребление Deny названо ошибкой: он всегда имеет приоритет и ведёт к неожиданным запретам; обычно достаточно не выдавать Allow.",
+          "en": "The lesson lists overusing Deny as a mistake: it always wins and leads to unexpected denials; usually not granting an Allow is enough."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Hisobni bloklash siyosatini tekshirish",
+      "ru": "Проверка политики блокировки учётных записей",
+      "en": "Checking the account lockout policy"
+    },
+    "statement": {
+      "uz": "Siyosatga koʻra hisob ketma-ket k ta notoʻgʻri urinishdan soʻng bloklanadi va t daqiqa blokda turadi. Shu qoidani yurituvchi dastur yozing. Kirish: birinchi satrda k va t; ikkinchi satrda m — urinishlar soni; keyingi m satrda har bir urinish: vaqt (daqiqa, oʻsma tartibda), hisob nomi va natija (`OK` yoki `FAIL`). Chiqish: har bir urinishga bitta satr — urinish vaqti, hisob nomi va holat. Holat `OK` boʻlsa kirish muvaffaqiyatli; notoʻgʻri urinish hisobni bloklamagan boʻlsa `FAIL` yoziladi va keyin shu hisobning ketma-ket notoʻgʻri urinishlari soni (masalan `FAIL 2`); urinish bloklangan hisobga kelganda yoki notoʻgʻri urinish hisobni blokganda `LOCKED` chiqariladi. Boshqa matn yozmang. Qoidalar: muvaffaqiyatli kirish ketma-ket xatolar sonini 0 ga qaytaradi; blok boshlangan vaqtdan t daqiqa oʻtgach ochiladi, aynan shu vaqtda kelgan urinish ham blokdan tashqarida hisoblanadi; blok ochilgunicha boʻlgan urinishlar qabul qilinmaydi — ular xatolar sonini oʻzgartirmaydi va blokni uzaytirmaydi; ketma-ket xatolar soni k ga yetganida hisob bloklanadi va son 0 ga tushadi. Masalan, k = 3 va t = 10 boʻlsa, `9 ali FAIL` urinishi hisobni bloklaydi, 12-daqiqadagi `ali OK` urinishi `LOCKED` bilan yakunlanadi, 19-daqiqadagi esa `OK` bilan.",
+      "ru": "Согласно политике учётная запись блокируется после k неудачных попыток подряд и остаётся заблокированной t минут. Напишите программу, применяющую это правило. Ввод: в первой строке k и t; во второй строке m — число попыток; в следующих m строках каждая попытка: время (минуты, по возрастанию), имя учётной записи и результат (`OK` или `FAIL`). Вывод: на каждую попытку одна строка — время попытки, имя учётной записи и состояние. Состояние `OK` — вход успешный; если неудачная попытка не привела к блокировке, пишется `FAIL` и после него число подряд неудачных попыток этой записи (например `FAIL 2`); `LOCKED` выводится, когда попытка пришла к заблокированной учётной записи либо когда неудачная попытка её заблокировала. Другой текст не печатайте. Правила: успешный вход обнуляет счётчик подряд неудач; блокировка снимается через t минут после её начала, и попытка ровно в этот момент уже вне блокировки; попытки до снятия блокировки не принимаются — они не меняют счётчик и не продлевают блокировку; когда счётчик доходит до k, учётная запись блокируется, а счётчик обнуляется. Например, при k = 3 и t = 10 попытка `9 ali FAIL` блокирует запись, попытка `ali OK` на 12-й минуте даёт `LOCKED`, а на 19-й минуте — `OK`.",
+      "en": "According to the policy an account locks after k failed attempts in a row and stays locked for t minutes. Write a program that applies this rule. Input: the first line holds k and t; the second line m — the number of attempts; the next m lines hold each attempt: the time (minutes, non-decreasing), the account name and the result (`OK` or `FAIL`). Output: one line per attempt — the time of the attempt, the account name and the outcome. The outcome is `OK` when the logon succeeds; when a failed attempt does not lock the account, print `FAIL` followed by the number of failed attempts in a row for that account (for instance `FAIL 2`); print `LOCKED` when the attempt reaches a locked account or when the failed attempt is the one that locks it. Print no other text. Rules: a successful logon resets the row of failures to zero; a lock is released t minutes after it started, and an attempt exactly at that moment is already outside the lock; attempts before the release are not accepted — they neither change the counter nor extend the lock; when the counter reaches k the account locks and the counter goes back to zero. For example, with k = 3 and t = 10 the attempt `9 ali FAIL` locks the account, the `ali OK` attempt at minute 12 gives `LOCKED`, and at minute 19 it gives `OK`."
+    },
+    "code": {
+      "starter": {
+        "python": "k, t = map(int, input().split())\nxato = 0\nbloklangan = set()\nfor _ in range(int(input())):\n    vaqt, hisob, natija = input().split()\n    if hisob in bloklangan:\n        print(vaqt, hisob, \"LOCKED\")\n        continue\n    if natija == \"OK\":\n        print(vaqt, hisob, \"OK\")\n    else:\n        xato = xato + 1\n        if xato >= k:\n            bloklangan.add(hisob)\n            print(vaqt, hisob, \"LOCKED\")\n        else:\n            print(vaqt, hisob, \"FAIL\", xato)\n",
+        "java": "import java.util.HashSet;\nimport java.util.Scanner;\nimport java.util.Set;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int k = in.nextInt();\n        int t = in.nextInt();\n        Set<String> bloklangan = new HashSet<>();\n        int xato = 0;\n        int m = in.nextInt();\n        for (int i = 0; i < m; i++) {\n            int vaqt = in.nextInt();\n            String hisob = in.next();\n            String natija = in.next();\n            if (bloklangan.contains(hisob)) {\n                System.out.println(vaqt + \" \" + hisob + \" LOCKED\");\n                continue;\n            }\n            if (natija.equals(\"OK\")) {\n                System.out.println(vaqt + \" \" + hisob + \" OK\");\n            } else {\n                xato = xato + 1;\n                if (xato >= k) {\n                    bloklangan.add(hisob);\n                    System.out.println(vaqt + \" \" + hisob + \" LOCKED\");\n                } else {\n                    System.out.println(vaqt + \" \" + hisob + \" FAIL \" + xato);\n                }\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <set>\n#include <string>\nusing namespace std;\n\nint main() {\n    int k, t, m, xato = 0;\n    cin >> k >> t >> m;\n    set<string> bloklangan;\n    for (int i = 0; i < m; i++) {\n        int vaqt;\n        string hisob, natija;\n        cin >> vaqt >> hisob >> natija;\n        if (bloklangan.count(hisob)) {\n            cout << vaqt << \" \" << hisob << \" LOCKED\" << endl;\n            continue;\n        }\n        if (natija == \"OK\") {\n            cout << vaqt << \" \" << hisob << \" OK\" << endl;\n        } else {\n            xato = xato + 1;\n            if (xato >= k) {\n                bloklangan.insert(hisob);\n                cout << vaqt << \" \" << hisob << \" LOCKED\" << endl;\n            } else {\n                cout << vaqt << \" \" << hisob << \" FAIL \" << xato << endl;\n            }\n        }\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "k, t = map(int, input().split())\nblok = {}\nson = {}\nfor _ in range(int(input())):\n    vaqt, hisob, natija = input().split()\n    vaqt = int(vaqt)\n    if hisob in blok and vaqt < blok[hisob] + t:\n        print(vaqt, hisob, \"LOCKED\")\n        continue\n    if natija == \"OK\":\n        son[hisob] = 0\n        print(vaqt, hisob, \"OK\")\n    else:\n        son[hisob] = son.get(hisob, 0) + 1\n        if son[hisob] >= k:\n            blok[hisob] = vaqt\n            son[hisob] = 0\n            print(vaqt, hisob, \"LOCKED\")\n        else:\n            print(vaqt, hisob, \"FAIL\", son[hisob])\n",
+        "java": "import java.util.HashMap;\nimport java.util.Map;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int k = in.nextInt();\n        int t = in.nextInt();\n        Map<String, Integer> son = new HashMap<>();\n        Map<String, Integer> blok = new HashMap<>();\n        int m = in.nextInt();\n        for (int i = 0; i < m; i++) {\n            int vaqt = in.nextInt();\n            String hisob = in.next();\n            String natija = in.next();\n            Integer b = blok.get(hisob);\n            if (b != null && vaqt < b + t) {\n                System.out.println(vaqt + \" \" + hisob + \" LOCKED\");\n                continue;\n            }\n            if (natija.equals(\"OK\")) {\n                son.put(hisob, 0);\n                System.out.println(vaqt + \" \" + hisob + \" OK\");\n            } else {\n                int x = son.getOrDefault(hisob, 0) + 1;\n                son.put(hisob, x);\n                if (x >= k) {\n                    blok.put(hisob, vaqt);\n                    son.put(hisob, 0);\n                    System.out.println(vaqt + \" \" + hisob + \" LOCKED\");\n                } else {\n                    System.out.println(vaqt + \" \" + hisob + \" FAIL \" + x);\n                }\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <map>\n#include <string>\nusing namespace std;\n\nint main() {\n    int k, t, m;\n    cin >> k >> t >> m;\n    map<string, int> son;\n    map<string, int> blok;\n    for (int i = 0; i < m; i++) {\n        int vaqt;\n        string hisob, natija;\n        cin >> vaqt >> hisob >> natija;\n        if (blok.count(hisob) && vaqt < blok[hisob] + t) {\n            cout << vaqt << \" \" << hisob << \" LOCKED\" << endl;\n            continue;\n        }\n        if (natija == \"OK\") {\n            son[hisob] = 0;\n            cout << vaqt << \" \" << hisob << \" OK\" << endl;\n        } else {\n            son[hisob] = son[hisob] + 1;\n            if (son[hisob] >= k) {\n                blok[hisob] = vaqt;\n                son[hisob] = 0;\n                cout << vaqt << \" \" << hisob << \" LOCKED\" << endl;\n            } else {\n                cout << vaqt << \" \" << hisob << \" FAIL \" << son[hisob] << endl;\n            }\n        }\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3 10\n6\n0 ali FAIL\n5 ali FAIL\n9 ali FAIL\n12 ali OK\n19 ali OK\n20 vali FAIL\n", "expected": "0 ali FAIL 1\n5 ali FAIL 2\n9 ali LOCKED\n12 ali LOCKED\n19 ali OK\n20 vali FAIL 1", "hidden": false },
+        { "input": "2 5\n4\n0 x FAIL\n3 x OK\n4 x FAIL\n9 x FAIL\n", "expected": "0 x FAIL 1\n3 x OK\n4 x FAIL 1\n9 x LOCKED", "hidden": false },
+        { "input": "1 3\n5\n0 a OK\n0 b FAIL\n1 b OK\n3 b FAIL\n4 b OK\n", "expected": "0 a OK\n0 b LOCKED\n1 b LOCKED\n3 b LOCKED\n4 b LOCKED", "hidden": true },
+        { "input": "3 100\n7\n0 ali FAIL\n1 vali FAIL\n2 ali FAIL\n3 vali FAIL\n4 ali OK\n5 vali FAIL\n6 vali FAIL\n", "expected": "0 ali FAIL 1\n1 vali FAIL 1\n2 ali FAIL 2\n3 vali FAIL 2\n4 ali OK\n5 vali LOCKED\n6 vali LOCKED", "hidden": true },
+        { "input": "2 1\n4\n0 s FAIL\n0 s FAIL\n0 s OK\n1 s FAIL\n", "expected": "0 s FAIL 1\n0 s LOCKED\n0 s LOCKED\n1 s FAIL 1", "hidden": true }
+      ]
+    }
+  }
+}

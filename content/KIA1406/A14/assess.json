@@ -1,0 +1,307 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "WireGuardning mijoz tomonidagi sozlamasida qaysi qator \"qaysi manzillar tunnel orqali yuborilsin\" degan marshrutlash qoidasi vazifasini bajaradi?",
+          "ru": "Какая строка в конфигурации клиента WireGuard работает как правило маршрутизации «какие адреса отправлять через туннель»?",
+          "en": "Which line in a WireGuard client configuration acts as the routing rule \"which addresses go through the tunnel\"?"
+        },
+        "options": [
+          {
+            "uz": "AllowedIPs",
+            "ru": "AllowedIPs",
+            "en": "AllowedIPs"
+          },
+          {
+            "uz": "ListenPort",
+            "ru": "ListenPort",
+            "en": "ListenPort"
+          },
+          {
+            "uz": "PrivateKey",
+            "ru": "PrivateKey",
+            "en": "PrivateKey"
+          },
+          {
+            "uz": "PersistentKeepalive",
+            "ru": "PersistentKeepalive",
+            "en": "PersistentKeepalive"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: AllowedIPs mijoz tomonida marshrutlash qoidasi — qaysi manzillar tunnel orqali, qaysilari toʻgʻridan-toʻgʻri ketishini belgilaydi.",
+          "ru": "В занятии: AllowedIPs на стороне клиента — правило маршрутизации: какие адреса идут через туннель, а какие напрямую.",
+          "en": "The lesson: on the client side AllowedIPs is the routing rule deciding which addresses go through the tunnel and which go directly."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "WireGuardda kalitlar almashinuvida har bir tomon oʻz yopiq kalitini raqibga beradi.",
+          "ru": "При обмене ключами в WireGuard каждая сторона передаёт другой свой закрытый ключ.",
+          "en": "In the WireGuard key exchange each side gives its private key to the peer."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Har bir tomon yopiq kalitini oʻzida saqlaydi va hech kimga bermaydi; faqat ochiq kalitlar almashiladi. Koʻp uchraydigan xatolardan biri — yopiq kalitni raqibga yuborish yoki ochiq joyda saqlash.",
+          "ru": "Каждая сторона держит закрытый ключ у себя и никому не даёт; обмениваются только открытыми ключами. Одна из частых ошибок — отправить закрытый ключ другой стороне или хранить его в открытом месте.",
+          "en": "Each side keeps its private key to itself and gives it to no one; only public keys are exchanged. Sending the private key to the other side or storing it in the open is one of the common mistakes."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tunnel holatini — oxirgi kelishuv vaqti bilan yuborilgan va qabul qilingan baytlarni — koʻrsatuvchi buyruqni yozing.",
+          "ru": "Напишите команду, которая показывает состояние туннеля — время последнего рукопожатия и переданные/принятые байты.",
+          "en": "Write the command that shows the tunnel status — the latest handshake and the bytes sent and received."
+        },
+        "answers": ["wg show", "sudo wg show"],
+        "explanation": {
+          "uz": "Darsda: sudo wg-quick up wg0 bilan tunnel ishga tushadi, sudo wg show esa latest handshake va transferni koʻrsatadi; keyin ping 10.8.0.1 bilan tekshiriladi.",
+          "ru": "В занятии: tunnel поднимается командой sudo wg-quick up wg0, а sudo wg show показывает latest handshake и transfer; затем проверку ping 10.8.0.1.",
+          "en": "In the lesson the tunnel comes up with sudo wg-quick up wg0, and sudo wg show displays the latest handshake and the transfer; then a ping to 10.8.0.1 checks it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Uchta VPN protokolini solishtirishga koʻra, qaysi tasdiq toʻgʻri?",
+          "ru": "Согласно сравнению трёх VPN-протоколов, какое утверждение верно?",
+          "en": "According to the comparison of the three VPN protocols, which statement is correct?"
+        },
+        "options": [
+          {
+            "uz": "IPsec tarmoq qatlamida ishlaydi (OSI 3), koʻp operatsion tizim va qurilmalarda oʻrnatilgan va saytdan-saytga standarti",
+            "ru": "IPsec работает на сетевом уровне (OSI 3), встроен во многие ОС и устройства и является стандартом для site-to-site",
+            "en": "IPsec works at the network layer (OSI 3), is built into many operating systems and devices, and is the site-to-site standard"
+          },
+          {
+            "uz": "OpenVPN Linux yadrosiga kiritilgan, kod hajmi eng kichik protokol",
+            "ru": "OpenVPN встроен в ядро Linux и имеет самый маленький объём кода",
+            "en": "OpenVPN is part of the Linux kernel and has the smallest code base"
+          },
+          {
+            "uz": "WireGuard TLS asosida ishlaydi va TCP yoki UDP tanlash imkonini beradi",
+            "ru": "WireGuard работает на базе TLS и позволяет выбирать TCP или UDP",
+            "en": "WireGuard is based on TLS and lets you choose TCP or UDP"
+          },
+          {
+            "uz": "IPsec eng sekin va sozlashi eng murakkab boʻlmagan protokol",
+            "ru": "IPsec — самый медленный протокол, и настраивать его проще всего",
+            "en": "IPsec is the slowest protocol and the simplest to configure"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Jadvalga koʻra: Linux yadrosiga kiritilgan, kod hajmi kichik protokol — WireGuard; TLS asosida ishlaydigan va TCP yoki UDP tanlaydigan — OpenVPN. IPsec — tarmoq qatlamida, koʻp tizimlarda oʻrnatilgan, lekin sozlashi murakkab.",
+          "ru": "По таблице: маленький код в ядре Linux — WireGuard, на базе TLS с выбором TCP/UDP — OpenVPN. IPsec — сетевой уровень, встроен во многие системы, но сложен в настройке.",
+          "en": "Per the table: the small code base in the Linux kernel is WireGuard, the TLS-based one with a TCP/UDP choice is OpenVPN. IPsec works at the network layer, is built into many systems, but is complex to configure."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi laboratoriyada server tarmoq ekranida WireGuard uchun faqat qaysi UDP porti ochiladi?",
+          "ru": "Какой единственный UDP-порт для WireGuard открывают на межсетевом экране сервера в лаборатории из занятия?",
+          "en": "Which single UDP port for WireGuard does the lab open on the server firewall in the lesson?"
+        },
+        "answers": [51820],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Server sozlamasida ListenPort = 51820; tarmoq ekranida faqat shu 51820/UDP porti ochiladi — keraksiz portlarni ochish koʻp uchraydigan xato.",
+          "ru": "В конфигурации сервера ListenPort = 51820; на межсетевом экране открывается только 51820/UDP — открывать лишние порты занятие называет частой ошибкой.",
+          "en": "The server configuration has ListenPort = 51820; the firewall opens only that 51820/UDP port — opening unnecessary ports is listed as a common mistake."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tijorat VPN provayderini tanlashda darsda qaysi mezonlarga qarash tavsiya qilingan?",
+          "ru": "Какие критерии смотрят при выборе коммерческого VPN-провайдера согласно занятию?",
+          "en": "Which criteria does the lesson recommend checking when choosing a commercial VPN provider?"
+        },
+        "options": [
+          {
+            "uz": "Qanday maʼlumotlar saqlanishi (log siyosati) va buning mustaqil audit bilan tasdiqlanganligi",
+            "ru": "Политика логирования и подтверждён ли она независимым аудитом",
+            "en": "The logging policy and whether an independent audit confirmed it"
+          },
+          {
+            "uz": "Kompaniyaning yurisdiktsiyasi (qaysi davlat qonunlariga boʻysunishi)",
+            "ru": "Юрисдикция компании — каким государственным законам она подчиняется",
+            "en": "The company's jurisdiction — which country's laws it answers to"
+          },
+          {
+            "uz": "Qaysi protokollar va shifrlash ishlatilishi, kill switch va DNS sizishidan himoya borligi",
+            "ru": "Какие протоколы и шифрование используются, есть ли kill switch и защита от утечки DNS",
+            "en": "Which protocols and encryption are used, whether there is a kill switch and DNS leak protection"
+          },
+          {
+            "uz": "Provayderning reklamasidagi serverlari soni boʻyicha rankingi",
+            "ru": "Рейтинг провайдера по числу серверов в его рекламе",
+            "en": "The provider's advertised ranking by number of servers"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Dars provayder tanlashda log siyosati va audit, yurisdiktsiya, protokollar va shifrlash hamda kill switch / DNS himoyasini koʻrishni maslahat beradi; bepul VPNlar esa koʻpincha foydalanuvchi maʼlumotini sotib daromad qiladi.",
+          "ru": "Занятие советует смотреть политику логов и аудит, юрисдикцию, протоколы и шифрование, kill switch и защиту от утечки DNS; бесплатные VPN часто зарабатывают на продаже данных пользователей.",
+          "en": "The lesson says to look at the logging policy and audit, the jurisdiction, the protocols and encryption, and the kill switch and DNS leak protection; free VPNs often earn by selling user data."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "DNS sizishida trafik tunnel orqali ketsa ham, DNS soʻrovlari tunnel tashqarisida mahalliy provayderga chiqishi mumkin.",
+          "ru": "При утечке DNS, даже когда трафик идёт через туннель, DNS-запросы могут уходить мимо туннеля локальному провайдеру.",
+          "en": "In a DNS leak, even when traffic goes through the tunnel, DNS queries may leave outside it to the local provider."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aynan shunday: bunday holda provayder qaysi saytlarga kirganingizni koʻradi. Yechimi — mijoz sozlamasidagi DNS = qatori va toʻliq tunnelda DNSni tunnel ichida yurish.",
+          "ru": "Именно так в занятии: в таком случае провайдер видит, на какие сайты вы заходите. Решение — строка DNS = в конфигурации клиента и движение DNS внутри туннеля при полном туннеле.",
+          "en": "Exactly as the lesson says: the provider then sees which sites you visit. The fix is the DNS = line in the client configuration and, with a full tunnel, routing DNS inside the tunnel."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "\"Kill switch\" nima uchun kerak?",
+          "ru": "Зачем нужен «kill switch»?",
+          "en": "What is the \"kill switch\" for?"
+        },
+        "options": [
+          {
+            "uz": "VPN uzilganda, tunnel tiklangunicha, trafik shifrlanmagan holda chiqib ketmasligi uchun Internet aloqasini toʻsadi",
+            "ru": "Блокирует интернет-связь при падении VPN, чтобы трафик не пошёл незашифрованным, пока туннель не восстановлен",
+            "en": "It blocks the internet connection when the VPN drops, so traffic cannot leave unencrypted until the tunnel is restored"
+          },
+          {
+            "uz": "Tunnel uzilganda avtomatik ravishda boshqa provayderga qayta ulanadi",
+            "ru": "При обрыве туннеля автоматически переподключается к другому провайдеру",
+            "en": "It reconnects automatically to another provider when the tunnel drops"
+          },
+          {
+            "uz": "Tunnel orqali oʻtuvchi trafik tezligini oshiradi",
+            "ru": "Увеличивает скорость трафика, идущего через туннель",
+            "en": "It increases the speed of the traffic going through the tunnel"
+          },
+          {
+            "uz": "Qurilmadagi zararli dasturlarni avtomatik oʻchiradi",
+            "ru": "Автоматически удаляет вредоносные программы на устройстве",
+            "en": "It automatically removes malware from the device"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: kill switch — VPN uzilganda trafik avtomatik ravishda shifrlanmagan holda tashqariga chiqmasligi uchun Internetni tunnel tiklangunicha toʻsadi (muhofiza qoidasi yoki mijoz dasturining sozlamasi orqali).",
+          "ru": "В занятии: kill switch блокирует интернет до восстановления туннеля, чтобы при обрыве VPN трафик автоматически не ушёл незашифрованным — через правило файрвола или настройку клиента.",
+          "en": "The lesson: the kill switch blocks the internet until the tunnel is restored, so that a dropped VPN does not let traffic out unencrypted — through a firewall rule or a client setting."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tunnel ishlayotganda, tashqi interfeysni trafik tahlilchisi bilan kuzatsak, tunnel ichidagi HTTP soʻrovlarining ochiq matni koʻrinadi.",
+          "ru": "Если при работающем туннеле наблюдать внешний интерфейс анализатором трафика, открытый текст HTTP-запросов из туннеля будет виден.",
+          "en": "While the tunnel is up, watching the external interface with a traffic analyser shows the plain-text HTTP requests made inside the tunnel."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi tekshiruv: tashqi interfeysda tunnel ichidagi ping yoki HTTP soʻrov oʻrniga faqat 51820-portga UDP paketlari koʻrinadi, ularning mazmuni shifrlangan.",
+          "ru": "Проверка из занятия: на внешнем интерфейсе вместо ping или HTTP-запроса из туннеля видны только UDP-пакеты на порт 51820, их содержимое зашифровано.",
+          "en": "The lesson's check: on the external interface, instead of the ping or HTTP request from inside the tunnel, only UDP packets to port 51820 are visible, with encrypted content."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "DNS sizishini tekshirish",
+      "ru": "Проверка утечки DNS",
+      "en": "Checking for a DNS leak"
+    },
+    "statement": {
+      "uz": "Mijozning WireGuard sozlamasida DNS = qatorida tunnel ichidagi DNS-server manzili koʻrsatilgan. Kirishning birinchi qatorida shu sozlangan DNS-server manzili, keyingi qatorlarda (kirish oxirigacha) — soʻrovlarga javob bergan DNS-server manzillari keladi. Har bir javob bergan manzil uchun alohida qatorda ok (sozlangan manzil bilan bir xil) yoki leak (manzil farq qiladi — DNS sizishi) deb chiqaring. Masalan, kirish: 10.8.0.1, soʻng 10.8.0.1, 8.8.8.8, 10.8.0.1 boʻlsa, chiqish: ok, leak, ok (har biri alohida qatorda). Boʻsh qatorlarni eʼtiborga olmang.",
+      "ru": "В конфигурации клиента WireGuard строка DNS = указывает DNS-сервер туннеля. Первая строка входа — этот настроенный адрес DNS-сервера, далее (до конца ввода) — адреса DNS-серверов, которые ответили на запросы. Для каждого ответившего адреса выведите отдельной строкой ok (совпадает с настроенным) или leak (не совпадает — утечка DNS). Например, при вводе 10.8.0.1, затем 10.8.0.1, 8.8.8.8, 10.8.0.1 вывод: ok, leak, ok. Пустые строки пропускайте.",
+      "en": "In the WireGuard client configuration the DNS = line names the tunnel's DNS server. The first input line is that configured server address; the following lines, until the end of input, hold the addresses of the DNS servers that answered the queries. For each answering address print ok on its own line (it equals the configured address) or leak (it differs — a DNS leak). For example, the input 10.8.0.1, then 10.8.0.1, 8.8.8.8, 10.8.0.1 gives ok, leak, ok, one per line. Skip blank lines."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nlines = [s.strip() for s in sys.stdin.read().splitlines() if s.strip()]\ndns = lines[0]\nfor line in lines[1:]:\n    print(\"ok\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String dns = in.nextLine().trim();\n        while (in.hasNextLine()) {\n            String line = in.nextLine().trim();\n            if (line.isEmpty())\n                continue;\n            System.out.println(\"ok\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string dns, line;\n    getline(cin, dns);\n    while (getline(cin, line)) {\n        if (line.empty())\n            continue;\n        cout << \"ok\" << \"\\n\";\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nlines = [s.strip() for s in sys.stdin.read().splitlines() if s.strip()]\ndns = lines[0]\nfor line in lines[1:]:\n    print(\"ok\" if line == dns else \"leak\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String dns = in.nextLine().trim();\n        while (in.hasNextLine()) {\n            String line = in.nextLine().trim();\n            if (line.isEmpty())\n                continue;\n            System.out.println(line.equals(dns) ? \"ok\" : \"leak\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string dns, line;\n    getline(cin, dns);\n    while (getline(cin, line)) {\n        if (line.empty())\n            continue;\n        cout << (line == dns ? \"ok\" : \"leak\") << \"\\n\";\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "10.8.0.1\n10.8.0.1\n8.8.8.8\n10.8.0.1\n", "expected": "ok\nleak\nok", "hidden": false },
+        { "input": "8.8.8.8\n8.8.8.8\n", "expected": "ok", "hidden": false },
+        { "input": "10.8.0.1\n192.168.56.1\n8.8.4.4\n10.8.0.1\n", "expected": "leak\nleak\nok", "hidden": true },
+        { "input": "10.8.0.1\n10.8.0.2\n", "expected": "leak", "hidden": true },
+        { "input": "10.8.0.1\n10.8.0.1\n\n8.8.8.8\n", "expected": "ok\nleak", "hidden": true }
+      ]
+    }
+  }
+}

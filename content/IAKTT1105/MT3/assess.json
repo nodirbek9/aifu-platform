@@ -1,0 +1,499 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Taqdimotning asosiy maqsadi nima?",
+          "ru": "Какова главная цель презентации?",
+          "en": "What is the main goal of a presentation?"
+        },
+        "options": [
+          {
+            "uz": "Auditoriyaning qarori yoki harakati — masalan, kreditni tasdiqlash",
+            "ru": "Решение или действие аудитории — например, одобрение кредита",
+            "en": "The audience's decision or action — for example, approving the loan"
+          },
+          {
+            "uz": "Iloji boricha koʻproq slayd tayyorlash",
+            "ru": "Подготовить как можно больше слайдов",
+            "en": "Preparing as many slides as possible"
+          },
+          {
+            "uz": "Slaydlarda mavzu boʻyicha butun matnni yozib chiqish",
+            "ru": "Выписать на слайды весь текст по теме",
+            "en": "Writing the whole text of the topic onto the slides"
+          },
+          {
+            "uz": "Har bir slaydni yangi animatsiya bilan bezatish",
+            "ru": "Оформить каждый слайд новой анимацией",
+            "en": "Giving every slide a new animation"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: maqsad slaydlar emas, auditoriyaning qarori yoki harakati — investor pul beradi, rahbar loyihani tasdiqlaydi, komissiya diplomni qabul qiladi.",
+          "ru": "В занятии: цель — не слайды, а решение или действие аудитории: инвестор даёт деньги, руководитель утверждает проект, комиссия принимает диплом.",
+          "en": "The lesson says the goal is not the slides but the audience's decision or action: an investor gives money, a manager approves the project, a committee accepts the thesis."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Agar tinglovchi faqat bitta narsani eslab qolsa, bu taqdimotning asosiy xabari boʻlishi kerak.",
+          "ru": "Если слушатель запомнит только одно — это должно быть ключевое сообщение презентации.",
+          "en": "If the listener remembers only one thing, it should be the presentation's key message."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Asosiy xabar — taqdimotning bir jumlali mazmuni; taqdim etishda u birinchi 30 soniyada beriladi.",
+          "ru": "Ключевое сообщение — содержание презентации в одном предложении; при выступлении его дают в первые 30 секунд.",
+          "en": "The key message is the content of the presentation in one sentence; when delivering, it comes in the first 30 seconds."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Dizaynning toʻrt tamoyiliga qaysilari kiradi?",
+          "ru": "Что входит в четыре принципа дизайна?",
+          "en": "Which of these are among the four design principles?"
+        },
+        "options": [
+          {
+            "uz": "Kontrast",
+            "ru": "Контраст",
+            "en": "Contrast"
+          },
+          {
+            "uz": "Takrorlash",
+            "ru": "Повторение",
+            "en": "Repetition"
+          },
+          {
+            "uz": "Yaqinlik",
+            "ru": "Близость",
+            "en": "Proximity"
+          },
+          {
+            "uz": "Effektlar koʻpligi",
+            "ru": "Обилие эффектов",
+            "en": "A wealth of effects"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Toʻrtinchi tamoyil — tekislash: har bir element qandaydir chiziqqa tekislanadi, «taxminan» joylashtirish yoʻq; effektlar koʻpligi esa xatolar roʻyxatida.",
+          "ru": "Четвёртый принцип — выравнивание: каждый элемент выровнен по какой-то линии, никакого «примерно»; обилие эффектов же — в списке ошибок.",
+          "en": "The fourth principle is alignment: every element sits on some line, no «roughly» placement; a wealth of effects is in the list of mistakes."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Piramida tamoyili (Barbara Minto) boʻyicha fikr qanday tartibda aytiladi?",
+          "ru": "В каком порядке излагается мысль по принципу пирамиды (Барбара Минто)?",
+          "en": "In what order is the thought laid out by the pyramid principle (Barbara Minto)?"
+        },
+        "options": [
+          {
+            "uz": "Avval kirish va usul, xulosa esa eng oxirida",
+            "ru": "Сначала введение и метод, вывод — в самом конце",
+            "en": "Introduction and method first, the conclusion at the very end"
+          },
+          {
+            "uz": "Avval xulosa, keyin uni qoʻllab-quvvatlovchi 3–4 dalil, har bir dalil ostida — raqam va faktlar",
+            "ru": "Сначала вывод, затем 3–4 подтверждающих аргумента, под каждым — цифры и факты",
+            "en": "The conclusion first, then 3–4 supporting arguments, with figures and facts under each"
+          },
+          {
+            "uz": "Avval raqamlar va faktlar, xulosa ularning yigʻindisidan keyin",
+            "ru": "Сначала цифры и факты, вывод — после их обобщения",
+            "en": "Figures and facts first, the conclusion after summing them up"
+          },
+          {
+            "uz": "Dalillar tartibining ahamiyati yoʻq, muhimi — ularning soni",
+            "ru": "Порядок аргументов не важен, важно их количество",
+            "en": "The order of arguments does not matter, only their number"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bu akademik tartibning («kirish → usul → natijalar → xulosa») teskarisi: band rahbar birinchi daqiqadayoq asosiy fikrni oladi.",
+          "ru": "Это противоположность академическому порядку («введение → метод → результаты → вывод»): занятый руководитель получает главную мысль в первую же минуту.",
+          "en": "This is the reverse of the academic order («introduction → method → results → conclusion»): a busy manager gets the main idea in the very first minute."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "SCR tuzilmasida «Ertalab navbat 30 daqiqa, 20% xaridor ketib qoladi» ifodasi qaysi bosqichga toʻgʻri keladi?",
+          "ru": "Какому этапу структуры SCR соответствует фраза «Утром очередь 30 минут, 20% покупателей уходят»?",
+          "en": "Which stage of the SCR structure is the sentence «In the morning the queue is 30 minutes and 20% of buyers leave»?"
+        },
+        "options": [
+          {
+            "uz": "Vaziyat (Situation)",
+            "ru": "Ситуация (Situation)",
+            "en": "Situation"
+          },
+          {
+            "uz": "Muammo (Complication)",
+            "ru": "Осложнение (Complication)",
+            "en": "Complication"
+          },
+          {
+            "uz": "Yechim (Resolution)",
+            "ru": "Решение (Resolution)",
+            "en": "Resolution"
+          },
+          {
+            "uz": "Asosiy xabar (key message)",
+            "ru": "Ключевое сообщение (key message)",
+            "en": "The key message"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Vaziyat — auditoriya rozi boʻladigan fakt («novvoyxona kuniga 2 000 non sotadi»), muammo — oʻzgarish yoki xavf, yechim — taklif va natija («ikkinchi pech — +40% quvvat»).",
+          "ru": "Ситуация — факт, с которым аудитория согласна («пекарня продаёт 2 000 буханок в день»), осложнение — изменение или риск, решение — предложение и результат («вторая печь — +40% мощности»).",
+          "en": "The situation is a fact the audience agrees with («the bakery sells 2,000 loaves a day»), the complication is a change or a risk, the resolution is the proposal and its result («a second oven — +40% capacity»)."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda slayd matni uchun tavsiya etilgan eng kichik shrift oʻlchami nechta pt?",
+          "ru": "Сколько pt составляет минимальный размер шрифта для текста слайда по занятию?",
+          "en": "What is the minimum font size, in points, that the lesson recommends for slide text?"
+        },
+        "answers": [24],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Sarlavha 32 pt va undan katta; shrift — bitta yoki ikkita oila.",
+          "ru": "Заголовки — 32 pt и больше; шрифт — одно-два семейства.",
+          "en": "Titles are 32 pt or larger; the font is one or two families."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Boshlangʻich qiymatdan yakuniy qiymatgacha boʻlgan oʻzgarish tarkibini koʻrsatish uchun qaysi diagramma tanlanadi?",
+          "ru": "Какая диаграмма выбирается, чтобы показать состав изменения от начального значения к итоговому?",
+          "en": "Which chart is chosen to show the composition of a change from a starting to a final value?"
+        },
+        "options": [
+          {
+            "uz": "Chiziqli diagramma",
+            "ru": "Линейная диаграмма",
+            "en": "A line chart"
+          },
+          {
+            "uz": "Doiraviy diagramma",
+            "ru": "Круговая диаграмма",
+            "en": "A pie chart"
+          },
+          {
+            "uz": "Sharshara (waterfall) diagramma",
+            "ru": "Каскадная диаграмма (waterfall)",
+            "en": "A waterfall chart"
+          },
+          {
+            "uz": "Nuqtali diagramma",
+            "ru": "Точечная диаграмма",
+            "en": "A scatter chart"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Chiziqli — vaqt boʻyicha oʻzgarish, doiraviy — faqat 2–4 qismli butun, nuqtali — ikki koʻrsatkich bogʻliqligi uchun.",
+          "ru": "Линейная — изменение во времени, круговая — только для целого из 2–4 частей, точечная — связь двух показателей.",
+          "en": "A line chart is for change over time, a pie chart only for a whole of 2–4 parts, a scatter chart for the relationship of two indicators."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Maqsadga qarab diagramma tanlash boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о выборе диаграммы по цели верны?",
+          "en": "Which statements about choosing a chart by purpose are correct?"
+        },
+        "options": [
+          {
+            "uz": "Vaqt boʻyicha oʻzgarishni koʻrsatish uchun chiziqli diagramma",
+            "ru": "Для изменения во времени — линейная диаграмма",
+            "en": "A line chart shows change over time"
+          },
+          {
+            "uz": "Uzun nomli kategoriyalarni solishtirish uchun gorizontal chiziqli diagramma",
+            "ru": "Для сравнения категорий с длинными названиями — горизонтальная линейчатая",
+            "en": "A horizontal bar chart compares categories with long names"
+          },
+          {
+            "uz": "Butunning 6 ta qismini koʻrsatish uchun doiraviy diagramma",
+            "ru": "Для целого из 6 частей — круговая диаграмма",
+            "en": "A pie chart shows a whole made of 6 parts"
+          },
+          {
+            "uz": "Bitta muhim raqam uchun diagramma emas — katta raqam va izoh",
+            "ru": "Для одной важной цифры — не диаграмма, а крупное число и подпись",
+            "en": "For one important figure, not a chart but a large number and a caption"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Doiraviy diagramma faqat 2–4 qism uchun; qismlar koʻp boʻlsa, butunning ulushlari 100% ustunli diagramma bilan koʻrsatiladi.",
+          "ru": "Круговая диаграмма — только для 2–4 частей; если частей больше, доли целого показывают нормированной столбчатой (100%) диаграммой.",
+          "en": "A pie chart is for 2–4 parts only; with more parts the shares of the whole go into a 100% stacked column chart."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ustunli diagrammaning oʻqi noldan boshlanmasa, kichik farq ulkan koʻrinadi va auditoriya chalgʻiydi.",
+          "ru": "Если ось столбчатой диаграммы начинается не с нуля, малая разница выглядит огромной и вводит аудиторию в заблуждение.",
+          "en": "If a column chart's axis does not start at zero, a small difference looks huge and misleads the audience."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bu — darsdagi «koʻp uchraydigan xatolar» roʻyxatidagi toʻrt xatodan biri; qolganlari: hamma narsani slaydga yozish, asosiy xabarsiz taqdimot va effektlar koʻpligi.",
+          "ru": "Это одна из четырёх ошибок в блоке «частые ошибки»; остальные: писать на слайде всё, презентация без ключевого сообщения и обилие эффектов.",
+          "en": "This is one of the four mistakes in the «common mistakes» block; the others are writing everything on the slide, a presentation without a key message, and too many effects."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Taqdimotni tamoyillar boʻyicha baholash",
+      "ru": "Оценка презентации по принципам",
+      "en": "Assessing a presentation against the principles"
+    },
+    "statement": {
+      "uz": "Bu amaliyotda javoblar faqat MT3 dars matnidagi tamoyillardan olinadi: taqdimot — muloqot vositasi, asosiy xabar va piramida tamoyili, SCR hikoyasi, «tasdiq + dalil» slaydlari, toʻrt dizayn tamoyili, kognitiv yuk, rang va shrift, diagramma tanlash, taqdim etish va topshiriq. Har bir savolga javob bering yoki toʻgʻri variantni belgilang.",
+      "ru": "В этом упражнении ответы берутся только из принципов текста MT3: презентация как средство коммуникации, ключевое сообщение и принцип пирамиды, история SCR, слайды «утверждение + доказательство», четыре принципа дизайна, когнитивная нагрузка, цвет и шрифт, выбор диаграммы, выступление и задание. Отвечайте на каждый вопрос или отмечайте верный вариант.",
+      "en": "In this exercise every answer comes only from the principles in the MT3 text: the presentation as a communication tool, the key message and the pyramid principle, the SCR story, «assertion + evidence» slides, the four design principles, cognitive load, colour and fonts, choosing a chart, delivery and the assignment. Answer each question or select the right option."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Bank krediti uchun biznes-reja taqdimoti ustida ish birinchi boʻlib qaysi savoldan boshlanadi?",
+            "ru": "С какого вопроса начинается работа над презентацией бизнес-плана для банковского кредита?",
+            "en": "Which question does the work on a business-plan presentation for a bank loan start with?"
+          },
+          "options": [
+            {
+              "uz": "Kim tinglaydi — auditoriya kim va u nimaga eʼtibor beradi?",
+              "ru": "Кто слушает — кто аудитория и на что она обращает внимание?",
+              "en": "Who is listening — who is the audience and what does it pay attention to?"
+            },
+            {
+              "uz": "Necha slayd va qanday shablon kerak?",
+              "ru": "Сколько нужно слайдов и какой шаблон?",
+              "en": "How many slides are needed and which template?"
+            },
+            {
+              "uz": "Qaysi shrift va rang tanlanadi?",
+              "ru": "Какие шрифт и цвет выбрать?",
+              "en": "Which font and colour to choose?"
+            },
+            {
+              "uz": "Qanday diagramma va effektlar qoʻyiladi?",
+              "ru": "Какие диаграммы и эффекты поставить?",
+              "en": "Which charts and effects to put in?"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Ish dasturni ochishdan emas, uchta savoldan boshlanadi: kim tinglaydi, ular nima bilishi kerak, taqdimotdan keyin nima qilishlari kerak.",
+            "ru": "Работа начинается не с открытия программы, а с трёх вопросов: кто слушает, что им нужно знать, что они должны сделать после презентации.",
+            "en": "The work starts not by opening the program but with three questions: who is listening, what they need to know, and what they should do after the presentation."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Slayd — hujjat, shuning uchun batafsil maʼlumot toʻgʻridan-toʻgʻri slaydga yoziladi.",
+            "ru": "Слайд — это документ, поэтому подробности пишут прямо на слайде.",
+            "en": "A slide is a document, so the details are written on the slide itself."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Darsda slayd — hujjat emas deyiladi: batafsil maʼlumot tarqatma materialga, slaydda esa kalit soʻzlar va tasvir qoladi.",
+            "ru": "В занятии сказано, что слайд — не документ: подробности уходят в раздаточный материал, на слайде остаются ключевые слова и изображение.",
+            "en": "The lesson says a slide is not a document: detailed information goes into a handout, while the slide keeps key words and an image."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "«Tasdiq + dalil» uslubidagi sarlavhalarni belgilang.",
+            "ru": "Отметьте заголовки в стиле «утверждение + доказательство».",
+            "en": "Select the titles in the «assertion + evidence» style."
+          },
+          "options": [
+            {
+              "uz": "Sotuv 2 yilda 2 barobar oʻsdi, lekin quvvat chegarasiga yetdi",
+              "ru": "Продажи за 2 года выросли вдвое, но упёрлись в предел мощности",
+              "en": "Sales doubled in 2 years but have reached the capacity limit"
+            },
+            {
+              "uz": "Xarajatlar",
+              "ru": "Затраты",
+              "en": "Costs"
+            },
+            {
+              "uz": "Ikkinchi pech 18 oyda oʻzini qoplaydi",
+              "ru": "Вторая печь окупится за 18 месяцев",
+              "en": "A second oven pays back in 18 months"
+            },
+            {
+              "uz": "Asosiy xavflar sugʻurta va garov bilan qoplangan",
+              "ru": "Основные риски покрыты страховкой и залогом",
+              "en": "The main risks are covered by insurance and collateral"
+            }
+          ],
+          "correct": [0, 2, 3],
+          "explanation": {
+            "uz": "«Xarajatlar» — atama, tasdiq emas; kuchli sarlavha toʻliq fikr bildiruvchi jumladir, slayd tanasi esa uni isbotlovchi dalil — diagramma, rasm yoki jadval.",
+            "ru": "«Затраты» — это термин, а не утверждение; сильный заголовок — полное утверждение, а тело слайда — доказательство: диаграмма, изображение или таблица.",
+            "en": "«Costs» is a term, not an assertion; a strong title is a full assertion sentence and the slide body is the evidence proving it — a chart, a picture or a table."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Murakkab sxemani bir slaydda butunlay koʻrsatish oʻrniga uni bosqichma-bosqich ochib borish qaysi qoidaga asoslanadi?",
+            "ru": "Опора на какое правило: раскрыывать сложную схему поэтапно вместо показа целиком на одном слайде?",
+            "en": "Which rule is behind revealing a complex diagram step by step instead of showing it whole on one slide?"
+          },
+          "options": [
+            {
+              "uz": "Boʻlib berish (segment)",
+              "ru": "Деление на части (segment)",
+              "en": "Segmentation"
+            },
+            {
+              "uz": "Signal berish — strelka, rang yoki kattalashtirish",
+              "ru": "Подача сигнала — стрелка, цвет или увеличение",
+              "en": "Signalling — an arrow, colour or zoom"
+            },
+            {
+              "uz": "Tekislash — toʻr va yoʻriqnomalar",
+              "ru": "Выравнивание — сетка и направляющие",
+              "en": "Alignment — grids and guides"
+            },
+            {
+              "uz": "Takrorlash — slayd ustasi",
+              "ru": "Повторение — образец слайдов",
+              "en": "Repetition — the slide master"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Mayer qoidalari toʻrttasi: ortiqchasini olib tashlash, matnni oʻqib bermaslik, signal berish, boʻlib berish — hammasi kognitiv yukni kamaytiradi.",
+            "ru": "Правила Майера: убрать лишнее, не читать текст вслух, подавать сигналы, делить на части — все они снижают когнитивную нагрузку.",
+            "en": "Mayer's rules: remove the extras, do not read the text aloud, signal, segment — all of them lower the cognitive load."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Slaydlarning faqat sarlavhalarini ketma-ket oʻqiganingizda nima chiqsa — tuzilma yaxshi deyiladi?",
+            "ru": "Что должно получиться, если читать подряд только заголовки слайдов, чтобы структура считалась хорошей?",
+            "en": "What should you get when reading only the slide titles in sequence for the structure to be good?"
+          },
+          "answers": ["mantiqiy hikoya", "hikoya", "логичная история", "история", "logical story", "story"],
+          "explanation": {
+            "uz": "Har bir slayd hikoyaning bitta qadami boʻlishi kerak: vaziyat → muammo → yechim ketma-ketligi sarlavhalardayoq koʻrinadi.",
+            "ru": "Каждый слайд — один шаг истории: последовательность «ситуация → осложнение → решение» видна уже в заголовках.",
+            "en": "Each slide should be one step of the story: the sequence situation → complication → resolution shows already in the titles."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "10 daqiqalik taqdimot uchun darsda tavsiya etilgan slaydlar sonining oʻrtacha qiymati nechta?",
+            "ru": "Сколько в среднем слайдов рекомендует занятие для 10-минутной презентации?",
+            "en": "What is the average number of slides the lesson recommends for a 10-minute presentation?"
+          },
+          "answers": [7],
+          "tolerance": 1,
+          "explanation": {
+            "uz": "Bir slaydga oʻrtacha 1–2 daqiqa, yaʼni 10 daqiqaga 6–8 slayd; mashq kamida ikki marta, ovoz chiqarib va vaqtni oʻlchab.",
+            "ru": "В среднем 1–2 минуты на слайд, то есть 6–8 слайдов на 10 минут; репетиция не меньше двух раз вслух с замером времени.",
+            "en": "On average 1–2 minutes per slide, so 6–8 slides for 10 minutes; rehearse at least twice aloud, timing yourself."
+          }
+        }
+      ]
+    }
+  }
+}

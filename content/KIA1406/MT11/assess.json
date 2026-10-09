@@ -1,0 +1,460 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Jinoyat uchburchagining qaysi tomoni darsda kamaytirish qiyin deb koʻrsatilgan?",
+          "ru": "Какая сторона треугольника преступления названа в занятии трудной для уменьшения?",
+          "en": "Which side of the crime triangle does the lesson call hard to reduce?"
+        },
+        "options": [
+          {
+            "uz": "Motiv",
+            "ru": "Мотив",
+            "en": "Motive"
+          },
+          {
+            "uz": "Imkoniyat",
+            "ru": "Возможность",
+            "en": "Opportunity"
+          },
+          {
+            "uz": "Oqlash",
+            "ru": "Оправдание",
+            "en": "Rationalization"
+          },
+          {
+            "uz": "Jabrlanuvchini aniqlash",
+            "ru": "Установление потерпевшего",
+            "en": "Identifying the victim"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra motivni kamaytirish qiyin, imkoniyat (texnik himoya, MFA, yangilanishlar, toʻlovlarni tasdiqlash) va oqlashni (xabardorlik, qonun va jazoning muqarrarligi) kamaytirish mumkin.",
+          "ru": "По занятию мотив уменьшить трудно, а возможность (техническая защита, MFA, обновления, подтверждение платежей) и оправдание (осведомлённость, неотвратимость наказания) — можно.",
+          "en": "The lesson says motive is hard to reduce, but opportunity (technical protection, MFA, updates, payment confirmation) and rationalization (awareness, the certainty of law and punishment) can be reduced."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kiberjinoyatchilik tarqalishining sabablari qatoriga darsda qaysilari keltirilgan?",
+          "ru": "Что из перечислено в занятии как причина распространения киберпреступности?",
+          "en": "Which of these does the lesson list as reasons for the spread of cybercrime?"
+        },
+        "options": [
+          {
+            "uz": "Past xarajat va yuqori daromad",
+            "ru": "Низкая стоимость и высокая прибыль",
+            "en": "Low cost and high profit"
+          },
+          {
+            "uz": "Anonimlik va masofa: jinoyatchi boshqa davlatda, hisoblari soxta",
+            "ru": "Анонимность и расстояние: преступник может быть в другой стране, аккаунты поддельные",
+            "en": "Anonymity and distance: the criminal may be in another country with fake accounts"
+          },
+          {
+            "uz": "«Xizmat sifatida jinoyat» bozori",
+            "ru": "Рынок «преступность как услуга»",
+            "en": "The \"crime as a service\" market"
+          },
+          {
+            "uz": "Hujum uchun qimmat maxsus uskunalar kerak boʻlishi",
+            "ru": "Необходимость дорогого специального оборудования для атаки",
+            "en": "The need for expensive special equipment for an attack"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda aksincha yozilgan: hujum uchun qimmat uskunalar kerak emas — aynan shu past xarajat sabab boʻlib, katta daromad keltiradi.",
+          "ru": "В занятии сказано обратное: дорогое оборудование для атаки не нужно — именно низкая стоимость и даёт большую прибыль.",
+          "en": "The lesson says the opposite: an attack needs no expensive equipment — it is exactly the low cost that brings a large profit."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Telefon qulfini yuz bilan ochishda foydalanuvchi bu usulni oʻzi tanlaydi va yuz shabloni qurilmada saqlanadi.",
+          "ru": "При разблокировке телефона лицом пользователь сам выбирает этот способ, и шаблон лица хранится на устройстве.",
+          "en": "When a phone is unlocked with the face, the user chooses this method and the face template stays on the device."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda telefonni ochish va jamoat joylarida roziliksiz ommaviy kuzatuv butunlay boshqa masalalar deb koʻrsatilgan.",
+          "ru": "В занятии разблокировка телефона и массовое наблюдение в общественных местах без согласия названы совершенно разными вопросами.",
+          "en": "The lesson treats unlocking a phone and mass surveillance in public places without consent as completely different matters."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yuz tanish tizimida «embedding» deganda nima tushuniladi?",
+          "ru": "Что в системе распознавания лиц понимается под embedding?",
+          "en": "In a face recognition system, what is an embedding?"
+        },
+        "options": [
+          {
+            "uz": "Chuqur neyron tarmoq yuz tasviridan hosil qilgan sonli vektor",
+            "ru": "Числовой вектор, который глубокая нейронная сеть получает из изображения лица",
+            "en": "A numeric vector that a deep neural network produces from a face image"
+          },
+          {
+            "uz": "Yuzni koʻz va burun nuqtalari boʻyicha standart holatga keltirish",
+            "ru": "Приведение лица к стандартному положению по точкам глаз и носа",
+            "en": "Bringing the face into a standard position using the eye and nose points"
+          },
+          {
+            "uz": "Tirik ekanini aniqlash uchun yuzga tushiriladigan yorugʻlik patterni",
+            "ru": "Световой рисунок, проецируемый на лицо для проверки живости",
+            "en": "A light pattern projected onto the face for liveness detection"
+          },
+          {
+            "uz": "Saqlangan rasmning siqilgan nusxasi",
+            "ru": "Сжатая копия сохранённого изображения",
+            "en": "A compressed copy of the stored image"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Belgilarni ajratish bosqichida neyron tarmoq yuzni sonli vektorga aylantiradi; solishtirish shu vektorlar orasidagi masofa yoki oʻxshashlik bilan bajariladi.",
+          "ru": "На этапе извлечения признаков нейросеть превращает лицо в числовой вектор; сравнение идёт по расстоянию или сходству между такими векторами.",
+          "en": "In the feature-extraction step a neural network turns the face into a numeric vector; comparison uses the distance or similarity between such vectors."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda embedding masalan 128 dan 512 gacha sondan iborat deb berilgan. Ushbu oralikning eng katta va eng kichik qiymatlari farqi nechaga teng?",
+          "ru": "В занятии embedding приведён как вектор от 128 до 512 чисел. Какова разность наибольшего и наименьшего значений этого интервала?",
+          "en": "The lesson gives an embedding as 128 to 512 numbers. What is the difference between the largest and the smallest value of that range?"
+        },
+        "answers": [384],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "512 − 128 = 384; darsda vektor uzunligi shu oralikda berilgan.",
+          "ru": "512 − 128 = 384; длина вектора в занятии задана в этом интервале.",
+          "en": "512 − 128 = 384; the lesson gives the vector length within that range."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yuz oldidan rasm, video yoki niqob tutib qoʻyish hujumini aniqlaydigan tekshiruvning inglizcha atamasini yoki qisqartmasini yozing.",
+          "ru": "Запишите английское название или аббревиатуру проверки, которая выявляет атаку с фото, видео или маской перед лицом.",
+          "en": "Write the English name or abbreviation of the check that detects a photo, video or mask held in front of the face."
+        },
+        "answers": ["liveness", "liveness detection", "PAD", "presentation attack detection"],
+        "explanation": {
+          "uz": "Darsda bu tirik ekanini aniqlash (liveness, PAD) deb berilgan: passiv yoki faol usullar.",
+          "ru": "В занятии это названо определением живости (liveness, PAD): пассивными или активными методами.",
+          "en": "The lesson names this liveness detection (PAD), by passive or active methods."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Foydalanuvchidan koʻzini qisish yoki boshini burish soʻraladigan tirik ekanini aniqlash usuli qaysi turkumga kiradi?",
+          "ru": "К какому типу относится метод определения живости, когда у пользователя просят моргнуть или повернуть голову?",
+          "en": "Which kind of liveness detection is the method that asks the user to blink or turn the head?"
+        },
+        "options": [
+          {
+            "uz": "Faol",
+            "ru": "Активный",
+            "en": "Active"
+          },
+          {
+            "uz": "Passiv",
+            "ru": "Пассивный",
+            "en": "Passive"
+          },
+          {
+            "uz": "Strukturali yorugʻlik",
+            "ru": "Структурированный свет",
+            "en": "Structured light"
+          },
+          {
+            "uz": "Infraqizil tasvir",
+            "ru": "Инфракрасное изображение",
+            "en": "Infrared image"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda faol usulga koʻzni qisish va boshni burish, passiv usulga esa tekstura, aks va chuqurlik tahlili kiritilgan.",
+          "ru": "В занятии к активным методам отнесены моргание и поворот головы, к пассивным — анализ текстуры, отражений и глубины.",
+          "en": "The lesson puts blinking and turning the head under active methods, and texture, reflection and depth analysis under passive ones."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Yuz tanishning maxfiylik, adolatlilik va huquqiy masalalari boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о вопросах приватности, справедливости и законности распознавания лиц верны?",
+          "en": "Which statements about the privacy, fairness and legal issues of face recognition are correct?"
+        },
+        "options": [
+          {
+            "uz": "Yuz shablonlari — biometrik shaxsiy maʼlumot: huquqiy asos, himoya va saqlash muddati talab qilinadi",
+            "ru": "Шаблоны лиц — биометрические персональные данные: требуют правового основания, защиты и срока хранения",
+            "en": "Face templates are biometric personal data: a legal basis, protection and a retention period are required"
+          },
+          {
+            "uz": "Yevropa Ittifoqida GDPR va AI Act jamoat joylarida real vaqtli identifikatsiyani qatʼiy cheklaydi",
+            "ru": "В Европейском союзе GDPR и AI Act строго ограничивают идентификацию в реальном времени в общественных местах",
+            "en": "In the European Union the GDPR and the AI Act strictly limit real-time identification in public spaces"
+          },
+          {
+            "uz": "Tizim turli yosh, jins va teri rangidagi odamlarda bir xil aniqlikda ishlashi sinab koʻrilishi kerak",
+            "ru": "Нужно проверить, что система работает с одинаковой точностью для людей разного возраста, пола и цвета кожи",
+            "en": "It must be tested that the system works with the same accuracy for people of different ages, genders and skin tones"
+          },
+          {
+            "uz": "Avtomatik moslik yuz berganda, hibsga olish qarorini faqat shunga asoslash yetarli",
+            "ru": "При автоматическом совпадении решение об аресте может основываться только на нём",
+            "en": "With an automatic match, a decision to arrest may rest on that match alone"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda inson nazorati talab qilingan: muhim qarorlar faqat avtomatik moslikka asoslanmasligi kerak, chunki har qanday biometrik tizimda xato ehtimoli bor.",
+          "ru": "В занятии требуется человеческий контроль: важные решения не должны основываться только на автоматическом совпадении, поскольку в любой биометрической системе есть вероятность ошибки.",
+          "en": "The lesson requires human oversight: important decisions must not rest on an automatic match alone, since every biometric system has a probability of error."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, kiberjinoyatchilikning keng tarqalishi faqat texnik muammo — sababi zaif himoya va yangilanmagan tizimlardir.",
+          "ru": "Согласно занятию, широкое распространение киберпреступности — только техническая проблема, причина которой слабая защита и необновлённые системы.",
+          "en": "According to the lesson, the spread of cybercrime is only a technical problem, caused by weak protection and unpatched systems."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bu darsdagi koʻp uchraydigan xato: sabablar iqtisodiy (past xarajat, yuqori daromad), ijtimoiy (inson omili, xabardorlik) va huquqiy (transchegaraviy tergov, ekstraditsiya qiyinligi) ham.",
+          "ru": "Это частая ошибка из занятия: причины также экономические (низкая стоимость, высокая прибыль), социальные (человеческий фактор, осведомлённость) и правовые (сложность трансграничного расследования, экстрадиции).",
+          "en": "This is a common mistake in the lesson: the causes are also economic (low cost, high profit), social (the human factor, awareness) and legal (the difficulty of cross-border investigation and extradition)."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Kiberjinoyatga chidamlilik boʻyicha nazorat savollari",
+      "ru": "Проверочные вопросы об устойчивости к киберпреступности",
+      "en": "Check questions on resilience against cybercrime"
+    },
+    "statement": {
+      "uz": "Mustaqil ish uchun referat yozishdan oldin darsning «Oldini olish yondashuvlari», «Yuz orqali autentifikatsiya» va «Maxfiylik, adolatlilik va qonun» boʻlimlariga asoslangan besh savolga javob bering. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Прежде чем писать реферат по самостоятельной работе, ответьте на пять вопросов по разделам «Подходы к предупреждению», «Аутентификация по лицу» и «Приватность, справедливость и закон». Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before writing the essay for the independent assignment, answer five questions based on the lesson's sections \"Prevention approaches\", \"Face authentication\" and \"Privacy, fairness and law\". The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Tashkilot jinoyat uchburchagidagi imkoniyatni kamaytirish uchun darsda qaysi choralarni taklif qiladi?",
+            "ru": "Какие меры предлагает занятие для уменьшения возможности в треугольнике преступления?",
+            "en": "Which measures does the lesson propose for reducing opportunity in the crime triangle?"
+          },
+          "options": [
+            {
+              "uz": "Texnik himoya, MFA, yangilanishlar va toʻlovlarni tasdiqlash",
+              "ru": "Техническая защита, MFA, обновления и подтверждение платежей",
+              "en": "Technical protection, MFA, updates and payment confirmation"
+            },
+            {
+              "uz": "Ish haqini oshirish va kasbga yoʻnaltirish",
+              "ru": "Повышение зарплаты и профориентация",
+              "en": "Raising wages and career guidance"
+            },
+            {
+              "uz": "Jazoning muqarrarligi haqida eʼlon qilish",
+              "ru": "Объявление о неотвратимости наказания",
+              "en": "Announcing the certainty of punishment"
+            },
+            {
+              "uz": "Jinoyatchilarni ekstraditsiya qilish shartnomalari",
+              "ru": "Договоры об экстрадиции преступников",
+              "en": "Treaties on the extradition of criminals"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Imkoniyat — bu texnik va tashkiliy himoya; jazoning muqarrarligi va xabardorlik oqlashga, ekstraditsiya esa tergov qiyinliklariga tegishli.",
+            "ru": "Возможность — это техническая и организационная защита; неотвратимость наказания и осведомлённость относятся к оправданию, а экстрадиция — к трудностям расследования.",
+            "en": "Opportunity is technical and organizational protection; the certainty of punishment and awareness belong to rationalization, extradition to the investigative difficulties."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Kiberjinoyatchilik tarqalishining sabablari boʻyicha qaysi ifodalar darsga mos keladi?",
+            "ru": "Какие утверждения о причинах распространения киберпреступности соответствуют занятию?",
+            "en": "Which statements about the reasons for the spread of cybercrime match the lesson?"
+          },
+          "options": [
+            {
+              "uz": "Inson omili: xabardorlik yetishmasligi, ishonuvchanlik va shoshilish ijtimoiy muhandislikka imkon beradi",
+              "ru": "Человеческий фактор: недостаточная осведомлённость, доверчивость и спешка работают на социальную инженерию",
+              "en": "The human factor: lack of awareness, trust and haste give social engineering a chance"
+            },
+            {
+              "uz": "Tez raqamlashuv: onlayn toʻlovlar, davlat xizmatlari va masofaviy ish ortidan himoya ulgurmaydi",
+              "ru": "Быстрая цифровизация: защита не успевает за онлайн-платежами, госуслугами и удалённой работой",
+              "en": "Rapid digitalization: protection does not keep up with online payments, public services and remote work"
+            },
+            {
+              "uz": "«Xizmat sifatida jinoyat» tufayli texnik bilimi past odamlar ham jinoyatga qoʻshila oladi",
+              "ru": "Из-за «преступности как услуги» в преступлениях могут участвовать и люди со слабой технической подготовкой",
+              "en": "Because of \"crime as a service\" people with little technical knowledge can join in too"
+            },
+            {
+              "uz": "Kiberjinoyatda qatnashish uchun oʻrta maxsus maʼlumot talab qilinadi",
+              "ru": "Для участия в киберпреступности требуется среднее специальное образование",
+              "en": "Taking part in cybercrime requires a specialized secondary education"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Toʻrtinchi ifoda darsda yoʻq: tayyor vositalar va infratuzilma sotilgani uchun texnik bilimi past odamlar ham qatnashadi.",
+            "ru": "Четвёртое утверждение в занятии отсутствует: готовые средства и инфраструктура продаются, поэтому участвуют и люди со слабой подготовкой.",
+            "en": "The lesson has no such statement: ready-made tools and infrastructure are sold, so people with little knowledge take part."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsga koʻra, jabrlanganda bank va huquqni muhofaza qilish organlariga tez murojaat qilish pulni qaytarish imkonini oshiradi.",
+            "ru": "Согласно занятию, быстрое обращение в банк и правоохранительные органы после жертвы повышает шанс вернуть деньги.",
+            "en": "According to the lesson, reporting quickly to the bank and law enforcement after being victimized increases the chance of getting the money back."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda jabrlanuvchilar koʻpincha murojaat qilmaydi va bu tergov qiyinliklari sababi; tez xabar berish pulni qaytarish va boshqalarni himoya qilish imkonini oshiradi.",
+            "ru": "В занятии отмечается, что жертвы часто не обращаются, и это причина трудностей расследования; быстрое сообщение повышает шанс вернуть деньги и защитить других.",
+            "en": "The lesson notes that victims often do not report, which is one investigative difficulty; prompt reporting raises the chance of recovering money and protecting others."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Bank hisobini onlayn ochish kabi masofaviy identifikatsiyada darsda nima talab qilinadi?",
+            "ru": "Что требует занятие при удалённой идентификации, например при онлайн-открытии банковского счёта?",
+            "en": "For remote identification, such as opening a bank account online, what does the lesson require?"
+          },
+          "options": [
+            {
+              "uz": "Sertifikatlangan tirik ekanini aniqlash (PAD)",
+              "ru": "Сертифицированное определение живости (PAD)",
+              "en": "Certified liveness detection (PAD)"
+            },
+            {
+              "uz": "Faqat oddiy 2D kamera bilan rasmni solishtirish",
+              "ru": "Только сравнение изображения обычной 2D-камерой",
+              "en": "Comparing the image with an ordinary 2D camera only"
+            },
+            {
+              "uz": "Parolni uzunroq va murakkabroq qilish",
+              "ru": "Сделать пароль длиннее и сложнее",
+              "en": "Making the password longer and more complex"
+            },
+            {
+              "uz": "SMS orqali bir martalik kod yuborish",
+              "ru": "Отправить одноразовый код по SMS",
+              "en": "Sending a one-time code by SMS"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda zamonaviy xavf deepfake videolar va maskalar; shuning uchun masofaviy identifikatsiyada sertifikatlangan PAD talab qilinadi.",
+            "ru": "Современная угроза из занятия — deepfake-видео и маски, поэтому при удалённой идентификации требуется сертифицированный PAD.",
+            "en": "The lesson's modern threat is deepfake videos and masks, so remote identification requires certified PAD."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Muhim qarorlar faqat avtomatik moslikka asoslanmasligi talabi darsda qanday atama bilan berilgan?",
+            "ru": "Каким термином в занятии обозначено требование, чтобы важные решения не основывались только на автоматическом совпадении?",
+            "en": "What term does the lesson use for the requirement that important decisions must not rest on an automatic match alone?"
+          },
+          "answers": ["inson nazorati", "human oversight", "человеческий контроль", "человеческий надзор"],
+          "explanation": {
+            "uz": "Darsda bu talab «Inson nazorati» boʻlimida berilgan: har qanday biometrik tizimda xato ehtimoli bor.",
+            "ru": "Это требование приведено в разделе «Человеческий контроль»: в любой биометрической системе есть вероятность ошибки.",
+            "en": "The lesson gives this requirement under \"Human oversight\": every biometric system has a probability of error."
+          }
+        }
+      ]
+    }
+  }
+}

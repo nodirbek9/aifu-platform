@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "HTTP da 404 holat kodi nimani bildiradi?",
+          "ru": "Что означает код состояния 404 в HTTP?",
+          "en": "In HTTP, what does status code 404 mean?"
+        },
+        "options": [
+          {
+            "uz": "Soʻrilgan manba (sahifa) topilmadi — bu mijoz xatosi",
+            "ru": "Запрошенный ресурс (страница) не найден — это ошибка клиента",
+            "en": "The requested resource (page) was not found — a client error"
+          },
+          {
+            "uz": "Server ichida xato yuz berdi",
+            "ru": "Внутри сервера произошла ошибка",
+            "en": "An error happened inside the server"
+          },
+          {
+            "uz": "Amal muvaffaqiyatli bajarildi",
+            "ru": "Действие выполнено успешно",
+            "en": "The action completed successfully"
+          },
+          {
+            "uz": "Server vaqtincha band, keyinroq qayta urinib koʻring",
+            "ru": "Сервер временно занят, попробуйте позже",
+            "en": "The server is temporarily busy, try again later"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "4xx — mijoz xatosi: 404 Not Found. Server ichidagi xato — 500, vaqtincha bandlik — 503, muvaffaqiyat — 2xx.",
+          "ru": "4xx — ошибка клиента: 404 Not Found. Ошибка внутри сервера — 500, временная занятость — 503, успех — 2xx.",
+          "en": "4xx is a client error: 404 Not Found. A server-side fault is 500, temporary unavailability 503, success 2xx."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Base64 kodlash matnni shifrlaydi: kodlangan qatorni faqat maxsus kalit yordamida orqaga aylantirish mumkin.",
+          "ru": "Кодирование Base64 шифрует текст: обратимо только со специальным ключом.",
+          "en": "Base64 encoding encrypts text: the coded string can be turned back only with a special key."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Base64 shifr emas: u ikkilamchi maʼlumotni matn koʻrinishiga aylantiradi va har kim darhol orqaga oʻgirishi mumkin. Shuning uchun HTTP Basic autentifikatsiya faqat HTTPS da ishlatiladi.",
+          "ru": "Base64 — не шифр: он превращает двоичные данные в текст, и обратно это может мгновенно сделать любой. Поэтому HTTP Basic применяют только поверх HTTPS.",
+          "en": "Base64 is not encryption: it turns binary data into text, and anyone can reverse it at once — which is why HTTP Basic authentication is used only over HTTPS."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi jadvalga koʻra, qaysilari HTTP metodi?",
+          "ru": "Какие из перечисленного, согласно таблице занятия, являются методами HTTP?",
+          "en": "According to the lesson's table, which of these are HTTP methods?"
+        },
+        "options": [
+          {
+            "uz": "GET",
+            "ru": "GET",
+            "en": "GET"
+          },
+          {
+            "uz": "POST",
+            "ru": "POST",
+            "en": "POST"
+          },
+          {
+            "uz": "PUT",
+            "ru": "PUT",
+            "en": "PUT"
+          },
+          {
+            "uz": "RETR",
+            "ru": "RETR",
+            "en": "RETR"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "HTTP metodlari: GET, POST, PUT, PATCH, DELETE, HEAD. RETR esa boshqaruv ulanishidagi FTP buyrugʻi.",
+          "ru": "Методы HTTP: GET, POST, PUT, PATCH, DELETE, HEAD. А RETR — команда FTP в управляющем соединении.",
+          "en": "The HTTP methods are GET, POST, PUT, PATCH, DELETE and HEAD; RETR is an FTP command on the control connection."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "FTPning passiv rejimida maʼlumot ulanishi qanday ochiladi?",
+          "ru": "Как в пассивном режиме FTP устанавливается соединение для данных?",
+          "en": "How is the data connection set up in FTP's passive mode?"
+        },
+        "options": [
+          {
+            "uz": "Server port ochadi, mijoz oʻsha portga ulanadi",
+            "ru": "Сервер открывает порт, и клиент подключается к нему",
+            "en": "The server opens a port and the client connects to it"
+          },
+          {
+            "uz": "Server 20-portdan mijozga ulanadi",
+            "ru": "Сервер сам подключается к клиенту с порта 20",
+            "en": "The server connects to the client from port 20"
+          },
+          {
+            "uz": "Maʼlumot boshqaruv ulanishining oʻzidayoq uzatiladi, alohida ulanish kerak emas",
+            "ru": "Данные идут по тому же управляющему соединению, отдельное не нужно",
+            "en": "The data travels over the control connection itself, with no separate one"
+          },
+          {
+            "uz": "Ulanishni DNS xizmati oʻrnatadi",
+            "ru": "Соединение устанавливает служба DNS",
+            "en": "The DNS service sets up the connection"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Faol rejimda server mijozga ulanadi va koʻpincha mijoz tarafdagi NAT va brandmauer bu uni toʻsadi; passiv rejimda tashabbus mijozda — hozirgi norma shu.",
+          "ru": "В активном режиме сервер подключается к клиенту, что часто блокируют его NAT и файрвол; в пассивном инициатор — клиент, и сегодня это норма.",
+          "en": "In active mode the server dials the client, which client-side NAT and firewalls often block; in passive mode the client starts the connection, the norm today."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "FTP fayl uzatishda nechta alohida TCP ulanish ishlatiladi?",
+          "ru": "Сколько отдельных TCP-соединений использует FTP при передаче файла?",
+          "en": "How many separate TCP connections does FTP use to transfer a file?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Ikkitasi: boshqaruv ulanishi (21-port, buyruqlar) va har bir fayl uchun alohida maʼlumot ulanishi.",
+          "ru": "Два: управляющее соединение (порт 21, команды) и отдельное соединение для данных каждого файла.",
+          "en": "Two: the control connection (port 21, commands) and a separate data connection for each file."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Bitta IP manzil va bitta serverda bir nechta sayt ishlaydi. Server mijoz qaysi saytni soʻrayotganini qaysi HTTP sarlavhasi (header) orqali bilib oladi? Sarlavha nomini yozing.",
+          "ru": "На одном IP-адресе и одном сервере работает несколько сайтов. По какому HTTP-заголовку сервер узнаёт, какой сайт запрашивает клиент? Напишите имя заголовка.",
+          "en": "Several sites run on one IP address and one server. Which HTTP header tells the server which site the client wants? Write the header's name."
+        },
+        "answers": ["Host", "host", "Host:"],
+        "explanation": {
+          "uz": "Virtual hostlar kerakli saytni Host sarlavhasidan aniqlaydi; shuning uchun HTTP/1.1 da bu sarlavha majburiy.",
+          "ru": "Виртуальные хосты определяют нужный сайт по заголовку Host, поэтому в HTTP/1.1 он обязателен.",
+          "en": "Virtual hosts find the wanted site from the Host header, which is why HTTP/1.1 made it mandatory."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "HTTP/2 ni HTTP/1.1 dan asosiy jihatdan nima farqlaydi?",
+          "ru": "Чем HTTP/2 принципиально отличается от HTTP/1.1?",
+          "en": "What mainly distinguishes HTTP/2 from HTTP/1.1?"
+        },
+        "options": [
+          {
+            "uz": "Bitta ulanish ustida parallel oqimlar (multiplexing), binar freymlar va sarlavhalarni siqish",
+            "ru": "Параллельные потоки поверх одного соединения, бинарные кадры и сжатие заголовков",
+            "en": "Parallel streams over a single connection, binary frames and header compression"
+          },
+          {
+            "uz": "Har bir soʻrov uchun yangi TCP ulanish ochiladi",
+            "ru": "Для каждого запроса открывается новое TCP-соединение",
+            "en": "A new TCP connection is opened for every request"
+          },
+          {
+            "uz": "Soʻrovlar TCP oʻrniga UDP orqali yuborila boshladi",
+            "ru": "Запросы стали отправлять по UDP вместо TCP",
+            "en": "Requests started going over UDP instead of TCP"
+          },
+          {
+            "uz": "Holat kodlari butunlay oʻzgartirildi va metodlar qisqartirildi",
+            "ru": "Коды состояния полностью заменили, а методы сократили",
+            "en": "The status codes were replaced entirely and the methods cut down"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Har bir soʻrovga yangi ulanish — HTTP/1.0 ning ishi; UDP esa HTTP/3 (QUIC) ga xos.",
+          "ru": "Новое соединение на каждый запрос — это HTTP/1.0, а UDP относится к HTTP/3 (QUIC).",
+          "en": "A new connection per request is HTTP/1.0; UDP belongs to HTTP/3 with QUIC."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Elektron pochta haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об электронной почте верны?",
+          "en": "Which statements about e-mail are correct?"
+        },
+        "options": [
+          {
+            "uz": "Xabar MUA dan SMTP orqali MTA ga, u yerda yana bir MTA ga oʻtadi va MDA uni qutiga joylaydi; qabul qiluvchi server DNS dagi MX yozuvi orqali topiladi",
+            "ru": "Письмо идёт от MUA через SMTP к MTA, затем к другому MTA, а MDA помещает его в ящик; сервер получателя находят по MX-записи в DNS",
+            "en": "A message travels from the MUA through SMTP to an MTA, then to another MTA, and the MDA places it in the mailbox; the receiving server is found from the MX record in DNS"
+          },
+          {
+            "uz": "POP3 xabarlarni odatda serverdan oʻchirib yuklab oladi, IMAP esa ularni serverda qoldiradi — papkalar va bir necha qurilma uchun qulay",
+            "ru": "POP3 обычно скачивает письма, удаляя их с сервера, а IMAP оставляет их на сервере — удобно для папок и нескольких устройств",
+            "en": "POP3 usually downloads messages deleting them from the server, while IMAP keeps them on the server — handy for folders and several devices"
+          },
+          {
+            "uz": "Rasm va fayllar MIME orqali qoʻshimcha qilinadi va 7 bitli matn tashishga moslash uchun Base64 bilan matnga aylantiriladi",
+            "ru": "Изображения и файлы добавляются через MIME и для совместимости с 7-битной передачей текста кодируются в Base64",
+            "en": "Pictures and files are attached with MIME and turned into text with Base64 to suit the original 7-bit text transport"
+          },
+          {
+            "uz": "SMTP javobining birinchi raqami 5 boʻlsa — bu vaqtinchalik xato: server birozdan soʻng oʻzi qayta urinadi",
+            "ru": "Если первая цифра ответа SMTP — 5, это временная ошибка: сервер сам повторит попытку позднее",
+            "en": "If the first digit of an SMTP reply is 5, it is a temporary error: the server retries on its own later"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "SMTP da 4 — vaqtinchalik xato, 5 — doimiy xato (masalan, 550 No such user).",
+          "ru": "В SMTP 4 — временная ошибка, 5 — постоянная (например, 550 No such user).",
+          "en": "In SMTP 4 means a temporary error and 5 a permanent one, as in 550 No such user."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "GET xavfsiz metod: u maʼlumotni oʻzgartirmaydi, shuning uchun uni istalgancha koʻp marta chaqirish mumkin.",
+          "ru": "GET — безопасный метод: он не меняет данные, поэтому его можно вызывать сколько угодно раз.",
+          "en": "GET is a safe method: it changes no data, so it may be called any number of times."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda GET xavfsiz va idempotent deb berilgan; maʼlumotni oʻzgartirish uchun POST, PUT, PATCH ishlatiladi, GET ni esa qidiruv robotlari va oldindan yuklash istalgancha chaqiradi.",
+          "ru": "В занятии GET назван безопасным и идемпотентным; изменения делают POST, PUT, PATCH, а поисковые роботы и предзагрузка могут вызывать GET неограниченно.",
+          "en": "The lesson marks GET safe and idempotent; changes belong to POST, PUT and PATCH, while robots and prefetching may call GET without limit."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "HTTP holat kodini sinfiga ajratish",
+      "ru": "Разбор кода состояния HTTP по классам",
+      "en": "Sorting HTTP status codes into classes"
+    },
+    "statement": {
+      "uz": "HTTP holat kodlari birinchi raqami boʻyicha beshta sinfga boʻlinadi: 1xx — informational, 2xx — success, 3xx — redirection, 4xx — client error, 5xx — server error. Dasturingiz birinchi qatorda n sonni, keyingi n qatorda bittadan holat kodini (100–599) oʻqisin. Har bir kod uchun bitta qatorda uning sinfining nomini chiqaring: informational, success, redirection, client error yoki server error — qoʻshimcha hech narsa yozmang.",
+      "ru": "Коды состояния HTTP делятся по первой цифре на пять классов: 1xx — informational, 2xx — success, 3xx — redirection, 4xx — client error, 5xx — server error. Прочитайте в первой строке число n, а в следующих n строках — по одному коду состояния (100–599). Для каждого кода выведите одной строкой название его класса: informational, success, redirection, client error или server error — без пояснений.",
+      "en": "HTTP status codes fall into five classes by their first digit: 1xx informational, 2xx success, 3xx redirection, 4xx client error, 5xx server error. Your program must read n on the first line and then n status codes (100–599), one per line. For each code print its class name on one line — informational, success, redirection, client error or server error — with nothing else."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nfor _ in range(n):\n    c = int(input())\n    if c < 200:\n        print(\"informational\")\n    elif c < 300:\n        print(\"success\")\n    elif c < 400:\n        print(\"redirection\")\n    else:\n        print(\"server error\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            int c = in.nextInt();\n            if (c < 200) {\n                System.out.println(\"informational\");\n            } else if (c < 300) {\n                System.out.println(\"success\");\n            } else if (c < 400) {\n                System.out.println(\"redirection\");\n            } else {\n                System.out.println(\"server error\");\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        int c;\n        cin >> c;\n        if (c < 200) {\n            cout << \"informational\" << endl;\n        } else if (c < 300) {\n            cout << \"success\" << endl;\n        } else if (c < 400) {\n            cout << \"redirection\" << endl;\n        } else {\n            cout << \"server error\" << endl;\n        }\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nfor _ in range(n):\n    c = int(input())\n    if c < 200:\n        print(\"informational\")\n    elif c < 300:\n        print(\"success\")\n    elif c < 400:\n        print(\"redirection\")\n    elif c < 500:\n        print(\"client error\")\n    else:\n        print(\"server error\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            int c = in.nextInt();\n            if (c < 200) {\n                System.out.println(\"informational\");\n            } else if (c < 300) {\n                System.out.println(\"success\");\n            } else if (c < 400) {\n                System.out.println(\"redirection\");\n            } else if (c < 500) {\n                System.out.println(\"client error\");\n            } else {\n                System.out.println(\"server error\");\n            }\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        int c;\n        cin >> c;\n        if (c < 200) {\n            cout << \"informational\" << endl;\n        } else if (c < 300) {\n            cout << \"success\" << endl;\n        } else if (c < 400) {\n            cout << \"redirection\" << endl;\n        } else if (c < 500) {\n            cout << \"client error\" << endl;\n        } else {\n            cout << \"server error\" << endl;\n        }\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "6\n200\n404\n301\n500\n101\n204\n", "expected": "success\nclient error\nredirection\nserver error\ninformational\nsuccess", "hidden": false },
+        { "input": "1\n302\n", "expected": "redirection", "hidden": false },
+        { "input": "4\n401\n403\n304\n502\n", "expected": "client error\nclient error\nredirection\nserver error", "hidden": true },
+        { "input": "3\n400\n503\n201\n", "expected": "client error\nserver error\nsuccess", "hidden": true },
+        { "input": "5\n201\n302\n403\n500\n101\n", "expected": "success\nredirection\nclient error\nserver error\ninformational", "hidden": true }
+      ]
+    }
+  }
+}

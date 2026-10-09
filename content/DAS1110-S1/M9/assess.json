@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Koʻrsatkich (pointer) nima?",
+          "ru": "Что такое указатель (pointer)?",
+          "en": "What is a pointer?"
+        },
+        "options": [
+          {
+            "uz": "Boshqa oʻzgaruvchining manzilini saqlaydigan oʻzgaruvchi",
+            "ru": "Переменная, которая хранит адрес другой переменной",
+            "en": "A variable that holds the address of another variable"
+          },
+          {
+            "uz": "Oʻzgaruvchining oʻzi saqlangan xotira boʻlagi",
+            "ru": "Участок памяти, где хранится сама переменная",
+            "en": "The block of memory where the variable itself is stored"
+          },
+          {
+            "uz": "Funksiyani chaqiruvchi maxsus belgi",
+            "ru": "Специальный символ, вызывающий функцию",
+            "en": "A special symbol that calls a function"
+          },
+          {
+            "uz": "Massivning oxirgi elementi",
+            "ru": "Последний элемент массива",
+            "en": "The last element of an array"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Xotiradagi har bir bayt oʻz manziliga ega; koʻrsatkich ana shu manzilni saqlaydi, masalan `int* p;`.",
+          "ru": "Каждый байт памяти имеет свой адрес; указатель хранит именно этот адрес, например `int* p;`.",
+          "en": "Every byte of memory has an address; a pointer holds that address, as in `int* p;`."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "`&` va `*` amallari bir-biriga teskari: `*(&x)` — bu x ning oʻzi.",
+          "ru": "Операции `&` и `*` обратны друг другу: `*(&x)` — это сам x.",
+          "en": "The `&` and `*` operators undo each other: `*(&x)` is x itself."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "`&x` — x ning manzili, `*p` esa oʻsha manzildagi qiymat, shuning uchun ular bir-birini bekor qiladi.",
+          "ru": "`&x` — адрес x, `*p` — значение по адресу в p, поэтому они отменяют друг друга.",
+          "en": "`&x` is the address of x and `*p` is the value at that address, so the two cancel out."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Stek (stack) xotira haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о памяти стека верны?",
+          "en": "Which statements about stack memory are correct?"
+        },
+        "options": [
+          {
+            "uz": "Stekda lokal oʻzgaruvchilar, parametrlar va chaqiruv freymlari saqlanadi",
+            "ru": "В стеке хранятся локальные переменные, параметры и фреймы вызовов",
+            "en": "The stack holds local variables, parameters and call frames"
+          },
+          {
+            "uz": "Stek xotira avtomatik boshqariladi: funksiya tugaganda boʻshaydi",
+            "ru": "Стек управляется автоматически: он освобождается, когда функция завершается",
+            "en": "Stack memory is managed automatically: it is freed when a function ends"
+          },
+          {
+            "uz": "Stek kichik (odatda 1–8 MB), lekin juda tez ishlaydi",
+            "ru": "Стек невелик (обычно 1–8 МБ), но работает очень быстро",
+            "en": "The stack is small (usually 1–8 MB) but very fast"
+          },
+          {
+            "uz": "Stekning oʻlchami dastur ishlayotganda maʼlum boʻladi",
+            "ru": "Размер стека становится известен во время работы программы",
+            "en": "The size of the stack becomes known while the program runs"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Stekning oʻlchami kompilyatsiyada maʼlum boʻladi; ishlayotganda maʼlum boʻladigan oʻlcham — uyum (heap) xotirasiga xos.",
+          "ru": "Размер стека известен на этапе компиляции; размер, который выясняется во время работы, относится к куче (heap).",
+          "en": "The stack's size is known at compile time; a size that is only known while the program runs belongs to the heap."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`int* a = new int[100];` bilan olingan xotira qanday boʻshatiladi?",
+          "ru": "Как освободить память, полученную через `int* a = new int[100];`?",
+          "en": "How is the memory taken by `int* a = new int[100];` freed?"
+        },
+        "options": [
+          {
+            "uz": "`delete[] a;`",
+            "ru": "`delete[] a;`",
+            "en": "`delete[] a;`"
+          },
+          {
+            "uz": "`delete a;`",
+            "ru": "`delete a;`",
+            "en": "`delete a;`"
+          },
+          {
+            "uz": "`a = nullptr;`",
+            "ru": "`a = nullptr;`",
+            "en": "`a = nullptr;`"
+          },
+          {
+            "uz": "Hech narsa qilinmaydi, axlat yigʻuvchi oʻzi boʻshatadi",
+            "ru": "Ничего делать не нужно, сборщик мусора освободит сам",
+            "en": "Nothing: the garbage collector frees it"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Qoida: har bir `new[]` ga bitta `delete[]`. `delete` ni unutish — darsda koʻrsatilgan xatolardan biri.",
+          "ru": "Правило: на каждый `new[]` один `delete[]`. Забыть `delete` — одна из ошибок из занятия.",
+          "en": "The rule: one `delete[]` for every `new[]`. Forgetting the delete is one of the mistakes listed in the lesson."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "C++ʼda har bir `new` ga bitta `delete`, har bir `new[]` ga bitta `delete[]` toʻgʻri kelishi kerak.",
+          "ru": "В C++ на каждый `new` должен приходиться один `delete`, а на каждый `new[]` — один `delete[]`.",
+          "en": "In C++ every `new` must be matched by one `delete`, and every `new[]` by one `delete[]`."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi qoida shunday; aks holda xotira sizib chiqadi yoki bir xotira ikki marta boʻshatiladi.",
+          "ru": "Так и сформулировано в занятии; иначе возникает утечка памяти или двойное освобождение.",
+          "en": "That is the lesson's rule; otherwise the memory leaks or is freed twice."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Hech narsani koʻrsatmaydigan koʻrsatkichning maxsus qiymati qanday soʻz bilan yoziladi?",
+          "ru": "Каким специальным словом записывается значение указателя, который ничего не указывает?",
+          "en": "What special word is the value of a pointer that points to nothing?"
+        },
+        "answers": ["nullptr"],
+        "explanation": {
+          "uz": "`nullptr` — hech narsani koʻrsatmaydigan koʻrsatkich; xotira boʻshatilgandan keyin koʻrsatkichga shu qiymatni berish tavsiya etiladi.",
+          "ru": "`nullptr` — указатель, который ничего не указывает; после освобождения памяти указателю советуют присваивать это значение.",
+          "en": "`nullptr` is a pointer that points to nothing; after freeing, the lesson advises setting the pointer to it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Javaʼda `int[] b = a;` bajarilgandan soʻng `b[0] = 1;` qilinsa, a[0] bilan nima boʻladi?",
+          "ru": "В Java после `int[] b = a;` выполнили `b[0] = 1;`. Что произойдёт с a[0]?",
+          "en": "In Java, after `int[] b = a;` the statement `b[0] = 1;` runs. What happens to a[0]?"
+        },
+        "options": [
+          {
+            "uz": "a[0] ham 1 boʻladi: `b = a` nusxa emas, ikkinchi havola",
+            "ru": "a[0] тоже станет 1: `b = a` — не копия, а вторая ссылка",
+            "en": "a[0] becomes 1 too: `b = a` is not a copy but a second reference"
+          },
+          {
+            "uz": "a[0] oʻzgarmaydi: b massivning mustaqil nusxasi",
+            "ru": "a[0] не изменится: b — независимая копия массива",
+            "en": "a[0] stays as it was: b is an independent copy of the array"
+          },
+          {
+            "uz": "Dastur `delete` yoʻqligi uchun qulaydi",
+            "ru": "Программа падает из-за отсутствия `delete`",
+            "en": "The program crashes because there is no `delete`"
+          },
+          {
+            "uz": "Javaʼda bir massivni ikkinchisiga tenglashtirib boʻlmaydi",
+            "ru": "В Java один массив нельзя присвоить другому",
+            "en": "In Java one array cannot be assigned to another"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda bu xato deb ogohlantiriladi: `b = a` — nusxa emas, shuning uchun `b[0] = 1` asl massivni ham oʻzgartiradi.",
+          "ru": "Занятие предупреждает об этом как об ошибке: `b = a` — не копия, поэтому `b[0] = 1` меняет и исходный массив.",
+          "en": "The lesson warns about exactly this: `b = a` is not a copy, so `b[0] = 1` changes the original array as well."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Java va Pythonʼdagi avtomatik xotira boshqaruvi haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об автоматическом управлении памятью в Java и Python верны?",
+          "en": "Which statements about automatic memory management in Java and Python are correct?"
+        },
+        "options": [
+          {
+            "uz": "Oʻzgaruvchilar obyektning oʻzini emas, obyektga havolani saqlaydi",
+            "ru": "Переменные хранят не сам объект, а ссылку на объект",
+            "en": "Variables hold a reference to the object, not the object itself"
+          },
+          {
+            "uz": "Obyektga birorta havola qolmasa, axlat yigʻuvchi uni avtomatik oʻchiradi",
+            "ru": "Если у объекта не осталось ссылок, сборщик мусора удаляет его автоматически",
+            "en": "When no reference to an object is left, the garbage collector deletes it automatically"
+          },
+          {
+            "uz": "Pythonʼda havolalar soni nolga tushganda obyekt oʻchiriladi",
+            "ru": "В Python объект удаляется, когда число ссылок на него падает до нуля",
+            "en": "In Python an object is deleted when its reference count drops to zero"
+          },
+          {
+            "uz": "Java va Pythonʼda dasturchi har bir obyektni `delete` bilan boʻshatishi kerak",
+            "ru": "В Java и Python программист должен освобождать каждый объект через `delete`",
+            "en": "In Java and Python the programmer must free every object with `delete`"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "`delete` — faqat C++ vositasi. Evaziga Java va Pythonʼda xotira qachon boʻshashi nomaʼlum va koʻrsatkich arifmetikasi yoʻq.",
+          "ru": "`delete` — инструмент только C++. Расплата в Java и Python: момент освобождения неизвестен, арифметики указателей нет.",
+          "en": "`delete` belongs to C++ only. The price in Java and Python is that you do not control when memory is freed, and there is no pointer arithmetic."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi oʻsuvchi massiv sigimi 2 dan boshlanadi va toʻlganda ikki baravar oʻsadi. 0 dan oldin 9 ta son kiritilsa, oxirgi sigim nechaga teng boʻladi?",
+          "ru": "В растущем массиве из занятия ёмкость начинается с 2 и удваивается при заполнении. Чему равна итоговая ёмкость, если до 0 введено 9 чисел?",
+          "en": "In the growing array from the lesson the capacity starts at 2 and doubles when full. What is the final capacity if 9 numbers are entered before the 0?"
+        },
+        "answers": [16],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "2 → 4 → 8 → 16: 9-son kirganda 8 joy band, shuning uchun massiv 16 ga kattalashadi.",
+          "ru": "2 → 4 → 8 → 16: когда приходит 9-е число, все 8 мест заняты, поэтому массив вырастает до 16.",
+          "en": "2 → 4 → 8 → 16: when the 9th number arrives all 8 places are taken, so the array grows to 16."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Qoʻshni juftlarni almashtirish",
+      "ru": "Поменять местами соседние пары",
+      "en": "Swap each pair of neighbours"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda n (1 ≤ n ≤ 100), ikkinchi qatorda boʻsh joy bilan ajratilgan n ta butun son kiritiladi. Dastur qoʻshni elementlarni juftlab almashtirsin: 1- va 2-element, 3- va 4-element va hokazo. n toq boʻlsa, oxirgi element oʻz oʻrnida qoladi. Natijani bitta qatorda chiqaring: elementlar orasida bittadan boʻsh joy boʻlsin. Masalan, 5 va 10 20 30 40 50 kiritsa, dastur 20 10 40 30 50 chiqaradi. Almashtirish asl massivning oʻzida bajarilishi kerak.",
+      "ru": "В первой строке задаётся n (1 ≤ n ≤ 100), во второй строке — n целых чисел через пробел. Программа должна поменять местами соседние элементы парами: 1-й со 2-м, 3-й с 4-м и так далее. Если n нечётное, последний элемент остаётся на своём месте. Результат выведите одной строкой: элементы через один пробел, без лишних символов. Например, при вводе 5 и 10 20 30 40 50 программа выводит 20 10 40 30 50. Менять нужно сам исходный массив.",
+      "en": "The first line holds n (1 ≤ n ≤ 100), the second line holds n integers separated by spaces. Your program must swap neighbouring elements in pairs: the 1st with the 2nd, the 3rd with the 4th, and so on. If n is odd, the last element stays where it is. Print the result on one line: elements separated by a single space, nothing extra. For the input 5 and 10 20 30 40 50 the program prints 20 10 40 30 50. The swap has to happen in the original array itself."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\n\ni = 1\nwhile i + 1 < n:\n    a[i], a[i + 1] = a[i + 1], a[i]\n    i += 2\n\nprint(*a)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n        for (int i = 1; i + 1 < n; i += 2) {\n            int t = a[i];\n            a[i] = a[i + 1];\n            a[i + 1] = t;\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(a[i]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int* a = new int[n];\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    for (int i = 1; i + 1 < n; i += 2) {\n        int t = a[i];\n        a[i] = a[i + 1];\n        a[i + 1] = t;\n    }\n    for (int i = 0; i < n; i++) {\n        if (i > 0) cout << ' ';\n        cout << a[i];\n    }\n    cout << endl;\n    delete[] a;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\n\ni = 0\nwhile i + 1 < n:\n    a[i], a[i + 1] = a[i + 1], a[i]\n    i += 2\n\nprint(*a)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n        for (int i = 0; i + 1 < n; i += 2) {\n            int t = a[i];\n            a[i] = a[i + 1];\n            a[i + 1] = t;\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            if (i > 0) sb.append(' ');\n            sb.append(a[i]);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int* a = new int[n];\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    for (int i = 0; i + 1 < n; i += 2) {\n        int t = a[i];\n        a[i] = a[i + 1];\n        a[i + 1] = t;\n    }\n    for (int i = 0; i < n; i++) {\n        if (i > 0) cout << ' ';\n        cout << a[i];\n    }\n    cout << endl;\n    delete[] a;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5\n10 20 30 40 50\n", "expected": "20 10 40 30 50", "hidden": false },
+        { "input": "1\n7\n", "expected": "7", "hidden": false },
+        { "input": "4\n3 1 4 1\n", "expected": "1 3 1 4", "hidden": true },
+        { "input": "6\n2 4 6 8 10 12\n", "expected": "4 2 8 6 12 10", "hidden": true },
+        { "input": "2\n-5 5\n", "expected": "5 -5", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,411 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Interaktiv xizmat nima?",
+          "ru": "Что такое интерактивная услуга?",
+          "en": "What is an interactive service?"
+        },
+        "options": [
+          {
+            "uz": "Foydalanuvchi va tashkilot oʻrtasida elektron kanal orqali ikki tomonlama oʻzaro taʼsir",
+            "ru": "Двустороннее взаимодействие пользователя и организации через электронный канал",
+            "en": "A two-way interaction between a user and an organization through an electronic channel"
+          },
+          {
+            "uz": "Faqat yangiliklar va maqolalardan iborat sayt",
+            "ru": "Сайт, состоящий только из новостей и статей",
+            "en": "A website consisting only of news and articles"
+          },
+          {
+            "uz": "Natijani olish uchun idoraga borishni talab qiladigan xizmat",
+            "ru": "Услуга, требующая посещения офиса для получения результата",
+            "en": "A service that requires visiting an office to get the result"
+          },
+          {
+            "uz": "Muloqot qilish uchun ijtimoiy tarmoq",
+            "ru": "Социальная сеть для общения",
+            "en": "A social network for communication"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Interaktiv xizmat foydalanuvchi va tashkilot oʻrtasida elektron kanal orqali ikki tomonlama oʻzaro taʼsir boʻlib, jarayonni onlayn yakunlash imkonini beradi.",
+          "ru": "Интерактивная услуга — это двустороннее взаимодействие через электронный канал, позволяющее получить услугу онлайн от начала до конца.",
+          "en": "An interactive service is a two-way interaction through an electronic channel that allows you to receive a service online from start to finish."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Interaktiv xizmatni boshidan oxirigacha onlayn olish mumkin.",
+          "ru": "Интерактивную услугу можно получить онлайн от начала до конца.",
+          "en": "An interactive service can be received online from start to finish."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Interaktiv xizmatning afzalligi shundaki, ariza berishdan tortib natijani olishgacha boʻlgan barcha qadamlar onlayn bajariladi.",
+          "ru": "Преимущество интерактивной услуги в том, что все этапы от заявления до результата происходят онлайн.",
+          "en": "The advantage of an interactive service is that all stages from applying to receiving the result take place online."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Davlat xizmatlarida foydalanuvchi kimligi qanday tasdiqlanishi mumkin?",
+          "ru": "Как может подтверждаться личность пользователя в госуслугах?",
+          "en": "How can the user's identity be confirmed in public services?"
+        },
+        "options": [
+          {
+            "uz": "OneID orqali",
+            "ru": "Через OneID",
+            "en": "Through OneID"
+          },
+          {
+            "uz": "ERI (elektron raqamli imzo) kaliti orqali",
+            "ru": "Через ключ ЭЦП (электронной цифровой подписи)",
+            "en": "Through a digital signature key"
+          },
+          {
+            "uz": "ID-karta orqali",
+            "ru": "Через ID-карту",
+            "en": "Through an ID card"
+          },
+          {
+            "uz": "Anonim taxallus bilan",
+            "ru": "С помощью анонимного псевдонима",
+            "en": "With an anonymous nickname"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Davlat xizmatlarida identifikatsiya qilish uchun OneID, ERI kaliti, ID-karta yoki SMS ishlatiladi.",
+          "ru": "Для идентификации в госуслугах используются OneID, ключ ЭЦП, ID-карта или SMS.",
+          "en": "Identity in public services is verified using OneID, a digital signature, an ID card, or SMS."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oʻzbekistonda interaktiv davlat xizmatlarining asosiy platformasi boʻlgan portalning manzilini yozing (faqat domenni yozing, masalan, misol.uz).",
+          "ru": "Напишите адрес портала, который является основной платформой интерактивных госуслуг в Узбекистане (только домен, например, misol.uz).",
+          "en": "Write the address of the portal that is the main platform for interactive public services in Uzbekistan (just the domain, e.g., misol.uz)."
+        },
+        "answers": [
+          "my.gov.uz",
+          "www.my.gov.uz"
+        ],
+        "explanation": {
+          "uz": "Yagona interaktiv davlat xizmatlari portali — my.gov.uz boʻlib, u orqali koʻplab xizmatlarni olish mumkin.",
+          "ru": "Единый портал интерактивных государственных услуг — my.gov.uz, через который предоставляется большинство услуг.",
+          "en": "The Single Portal of Interactive Public Services is my.gov.uz, through which many services are provided."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Agar oʻzini xodim deb tanishtirgan shaxs qoʻngʻiroq qilsa, unga SMS kod yoki karta CVV sini aytish xavfsiz hisoblanadi.",
+          "ru": "Если звонит человек, представившийся сотрудником, ему безопасно сообщить SMS-код или CVV карты.",
+          "en": "If a person introducing themselves as an employee calls, it is safe to tell them your SMS code or the card's CVV."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Firibgarlardan himoyalanish uchun SMS kod, ERI paroli va karta CVV sini hech kimga aytmaslik kerak.",
+          "ru": "Для защиты от мошенников никогда никому не сообщайте SMS-коды, пароли от ЭЦП или данные карт.",
+          "en": "To protect yourself from fraud, never share SMS codes, digital signature passwords, or card details with anyone."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Interaktiv xizmat sifatini baholash mezonlariga nimalar kiradi?",
+          "ru": "Что входит в критерии оценки качества интерактивной услуги?",
+          "en": "Which of the following are criteria for assessing the quality of an interactive service?"
+        },
+        "options": [
+          {
+            "uz": "Qulaylik",
+            "ru": "Удобство",
+            "en": "Convenience"
+          },
+          {
+            "uz": "Shaffoflik",
+            "ru": "Прозрачность",
+            "en": "Transparency"
+          },
+          {
+            "uz": "Tezlik",
+            "ru": "Скорость",
+            "en": "Speed"
+          },
+          {
+            "uz": "Monitor yorqinligi",
+            "ru": "Яркость монитора",
+            "en": "Monitor brightness"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Baholash mezonlariga qulaylik, tezlik, shaffoflik, ishonchlilik, yordam va xavfsizlik kiradi.",
+          "ru": "Критериями оценки являются удобство, скорость, прозрачность, надёжность, поддержка и безопасность.",
+          "en": "Evaluation criteria include convenience, speed, transparency, reliability, help, and security."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Elektron hujjatning (natijaning) haqiqiyligini qanday tekshirish mumkin?",
+          "ru": "Как можно проверить подлинность электронного документа (результата)?",
+          "en": "How can the authenticity of an electronic document (result) be verified?"
+        },
+        "options": [
+          {
+            "uz": "Hujjatdagi QR kod orqali rasmiy tizimda",
+            "ru": "По QR-коду на документе в официальной системе",
+            "en": "Through the QR code on the document in the official system"
+          },
+          {
+            "uz": "Hujjatni rangli qogʻozga chop etish orqali",
+            "ru": "Распечатав документ на цветной бумаге",
+            "en": "By printing the document on colored paper"
+          },
+          {
+            "uz": "Uni messenjer orqali doʻstga yuborib",
+            "ru": "Отправив его другу через мессенджер",
+            "en": "By sending it to a friend via a messenger"
+          },
+          {
+            "uz": "Hujjat matnini diqqat bilan oʻqib chiqib",
+            "ru": "Внимательно прочитав текст документа",
+            "en": "By reading the document text carefully"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Natija sifatida berilgan elektron hujjatlarning haqiqiyligi ulardagi QR kodni rasmiy tizimda skanerlash orqali tasdiqlanadi.",
+          "ru": "Подлинность электронных результатов подтверждается сканированием QR-кода на документе в официальной системе.",
+          "en": "The authenticity of an electronic result is confirmed by scanning its QR code in the official system."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Interaktiv xizmatlardan foydalanishda koʻp uchraydigan xatolar qaysilar?",
+          "ru": "Какие частые ошибки встречаются при использовании интерактивных услуг?",
+          "en": "What are common mistakes when using interactive services?"
+        },
+        "options": [
+          {
+            "uz": "Qidiruv natijasidagi birinchi havolaga uning domenini tekshirmasdan ishonish",
+            "ru": "Доверять первой ссылке в поиске, не проверяя её домен",
+            "en": "Trusting the first link in search results without checking its domain"
+          },
+          {
+            "uz": "Arizani maʼlumotlarni tekshirmasdan yuborish",
+            "ru": "Отправлять заявление без проверки данных",
+            "en": "Submitting the application without checking the data"
+          },
+          {
+            "uz": "Shaxsiy maʼlumotlarni messenjer orqali notanish yordamchiga yuborish",
+            "ru": "Отправлять персональные данные незнакомому помощнику в мессенджере",
+            "en": "Sending personal data to an unknown helper via a messenger"
+          },
+          {
+            "uz": "Toʻlov chekini ehtiyotkorlik bilan saqlash",
+            "ru": "Бережно сохранять квитанцию об оплате",
+            "en": "Keeping the payment receipt carefully"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Domenlarni tekshirmaslik, arizani xato bilan yuborish va maʼlumotlarni begonalarga berish koʻp uchraydigan xatolardir.",
+          "ru": "Отсутствие проверки домена, ошибки в заявлениях и передача данных посторонним — самые частые ошибки.",
+          "en": "Failing to check domains, submitting errors in applications, and sharing personal data with strangers are common mistakes."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi umumiy sxemaga koʻra, rasmiy manbani topishdan boshlab xizmat sifatini baholashgacha boʻlgan xizmat olish bosqichlari jami nechta?",
+          "ru": "Сколько этапов получения услуги перечислено в общей схеме в занятии, начиная от поиска официального источника и заканчивая оценкой?",
+          "en": "According to the general scheme in the lesson, how many stages of receiving a service are there, starting from finding the official source to rating the service?"
+        },
+        "answers": [
+          8
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Xizmat olish bosqichlari 8 ta: manba, identifikatsiya, tanlash, ariza, toʻlov, kuzatish, natija va baholash.",
+          "ru": "В схеме 8 этапов: источник, идентификация, выбор, заявление, оплата, отслеживание, результат и оценка.",
+          "en": "There are 8 stages: source, identification, choosing, application, payment, tracking, result, and rating."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Interaktiv xizmatlarni amalda farqlash",
+      "ru": "Практическое различие интерактивных услуг",
+      "en": "Distinguishing interactive services in practice"
+    },
+    "statement": {
+      "uz": "Quyidagi savollarga javob berib, xizmat turlarini va ularning sifat mezonlarini qanchalik toʻgʻri tushunganingizni tekshiring.",
+      "ru": "Ответьте на следующие вопросы, чтобы проверить, насколько правильно вы поняли виды услуг и критерии их качества.",
+      "en": "Answer the following questions to check how well you have understood the types of services and their quality criteria."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "MULTI",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Bank va toʻlov xizmatlari guruhiga qaysilar kiradi?",
+            "ru": "Какие услуги входят в группу банковских и платёжных?",
+            "en": "Which services belong to the group of banking and payment services?"
+          },
+          "options": [
+            {
+              "uz": "Mobil banking",
+              "ru": "Мобильный банкинг",
+              "en": "Mobile banking"
+            },
+            {
+              "uz": "Click",
+              "ru": "Click",
+              "en": "Click"
+            },
+            {
+              "uz": "Payme",
+              "ru": "Payme",
+              "en": "Payme"
+            },
+            {
+              "uz": "soliq.uz",
+              "ru": "soliq.uz",
+              "en": "soliq.uz"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Soliq xizmatlari alohida guruhga (soliq.uz) kiradi, qolganlari esa bank va toʻlov ilovalari hisoblanadi.",
+            "ru": "Soliq.uz относится к налоговым услугам, а остальные — к банковским и платёжным.",
+            "en": "Soliq.uz is a tax service, while the others are banking and payment applications."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "\"Shaffoflik\" mezoni interaktiv xizmatning qaysi jihatini baholaydi?",
+            "ru": "Какой аспект интерактивной услуги оценивает критерий «Прозрачность»?",
+            "en": "Which aspect of an interactive service does the \"Transparency\" criterion evaluate?"
+          },
+          "options": [
+            {
+              "uz": "Holatni kuzatish, muddatlar va narxning oldindan maʼlum boʻlishi",
+              "ru": "Отслеживание статуса, предварительное знание сроков и цены",
+              "en": "Status tracking, and deadlines and price being known in advance"
+            },
+            {
+              "uz": "Qadamlar soni va tushunarlilik",
+              "ru": "Число шагов и понятность",
+              "en": "The number of steps and clarity"
+            },
+            {
+              "uz": "Xatolar va uzilishlardan xoli boʻlish",
+              "ru": "Отсутствие ошибок и сбоев",
+              "en": "Freedom from errors and outages"
+            },
+            {
+              "uz": "Identifikatsiya va natijani tekshirish imkoniyati",
+              "ru": "Идентификация и возможность проверки результата",
+              "en": "Identification and the possibility of verifying the result"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Shaffoflik — foydalanuvchi qancha toʻlashi, qancha kutishi va arizasi qaysi bosqichda ekanini bilishi demakdir.",
+            "ru": "Прозрачность означает, что пользователь заранее знает стоимость, сроки и может отслеживать статус своей заявки.",
+            "en": "Transparency means the user knows in advance how much it costs, how long it takes, and can track the application status."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Xizmat talablari, muddati va narxini bilish uchun har doim shaxsiy maʼlumotlarni kiritish shart.",
+            "ru": "Чтобы узнать требования, срок и стоимость услуги, всегда обязательно вводить персональные данные.",
+            "en": "You always have to enter your personal data to find out the requirements, deadline and price of a service."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Koʻplab xizmatlarning talablari va narxlari haqidagi maʼlumotlar tizimga kirmasdan oldin ham ochiq koʻrsatiladi.",
+            "ru": "На страницах многих услуг требования, сроки и стоимость доступны для просмотра ещё до авторизации.",
+            "en": "Many services show their requirements, deadlines, and prices openly before you even log in."
+          }
+        }
+      ]
+    }
+  }
+}

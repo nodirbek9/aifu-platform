@@ -1,0 +1,468 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Bulutdagi hodisalarning eng koʻp uchraydigan sababi qaysi?",
+          "ru": "Что чаще всего приводит к инцидентам в облаке?",
+          "en": "What is the most common cause of cloud incidents?"
+        },
+        "options": [
+          {
+            "uz": "Mijozning notoʻgʻri sozlamalari",
+            "ru": "Неверные настройки клиента",
+            "en": "The customer’s misconfiguration"
+          },
+          {
+            "uz": "Provayder binosining yongʻini",
+            "ru": "Пожар в здании провайдера",
+            "en": "A fire in the provider’s building"
+          },
+          {
+            "uz": "Elektr toki yoʻqolishi",
+            "ru": "Отключение электричества",
+            "en": "A power cut"
+          },
+          {
+            "uz": "Kabel uzilishi",
+            "ru": "Обрыв кабеля",
+            "en": "A cable break"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Koʻp hodisa provayder emas, mijozning oʻz sozlamalari tufayli yuz beradi.",
+          "ru": "Большинство инцидентов происходит из-за собственных настроек клиента, а не взлома провайдера.",
+          "en": "Most incidents come from the customer’s own settings, not a provider breach."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Bulutga oʻtgach, provayder maʼlumotlar xavfsizligiga toʻliq javob beradi.",
+          "ru": "После перехода в облако провайдер полностью отвечает за безопасность данных.",
+          "en": "After moving to the cloud, the provider is fully responsible for data security."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [
+          1
+        ],
+        "explanation": {
+          "uz": "Maʼlumot, kirish huquqlari va sozlamalar har doim mijoz javobgarligida qoladi.",
+          "ru": "Данные, права доступа и настройки всегда остаются на стороне клиента.",
+          "en": "Data, access rights and settings always remain the customer’s responsibility."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Koʻp omilli autentifikatsiyaning qisqartmasi nima?",
+          "ru": "Как сокращённо называется многофакторная аутентификация?",
+          "en": "What is the abbreviation of multi-factor authentication?"
+        },
+        "answers": [
+          "MFA"
+        ],
+        "explanation": {
+          "uz": "Koʻp omilli autentifikatsiya — MFA.",
+          "ru": "Многофакторная аутентификация — MFA.",
+          "en": "Multi-factor authentication is MFA."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "SaaS modelida mijoz nima uchun javobgar boʻlib qoladi?",
+          "ru": "За что отвечает клиент даже в модели SaaS?",
+          "en": "What does the customer remain responsible for even in the SaaS model?"
+        },
+        "options": [
+          {
+            "uz": "Kirish huquqlari, maʼlumotlar va ularni ulashish sozlamalari",
+            "ru": "Права доступа, данные и настройки общего доступа",
+            "en": "Access rights, data and sharing settings"
+          },
+          {
+            "uz": "Fizik maʼlumotlar markazi",
+            "ru": "Физический центр обработки данных",
+            "en": "The physical data centre"
+          },
+          {
+            "uz": "Virtualizatsiya",
+            "ru": "Виртуализация",
+            "en": "Virtualization"
+          },
+          {
+            "uz": "Server uskunalari",
+            "ru": "Серверное оборудование",
+            "en": "Server hardware"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Har bir modelda maʼlumot, huquqlar va sozlamalar mijozda qoladi.",
+          "ru": "В каждой модели данные, права и настройки остаются у клиента.",
+          "en": "In every model data, rights and settings stay with the customer."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysilar bulutda kirishni boshqarishning toʻgʻri choralari?",
+          "ru": "Какие меры правильны для управления доступом в облаке?",
+          "en": "Which are correct access-management measures in the cloud?"
+        },
+        "options": [
+          {
+            "uz": "Administratorlar uchun MFA",
+            "ru": "MFA для администраторов",
+            "en": "MFA for administrators"
+          },
+          {
+            "uz": "Minimal huquqlar tamoyili (least privilege)",
+            "ru": "Принцип наименьших привилегий (least privilege)",
+            "en": "The principle of least privilege"
+          },
+          {
+            "uz": "Har bir xodim uchun shaxsiy hisob",
+            "ru": "Личная учётная запись каждого сотрудника",
+            "en": "A personal account for every employee"
+          },
+          {
+            "uz": "Hamma uchun umumiy \"admin\" hisobi",
+            "ru": "Одна общая учётная запись «admin» для всех",
+            "en": "One shared \"admin\" account for everyone"
+          }
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explanation": {
+          "uz": "MFA, minimal huquqlar va shaxsiy hisoblar toʻgʻri; umumiy admin hisobi xavfli.",
+          "ru": "MFA, наименьшие права и личные учётные записи верны; общая учётная запись admin опасна.",
+          "en": "MFA, least privilege and personal accounts are right; a shared admin account is dangerous."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "BYOK nimani anglatadi?",
+          "ru": "Что означает BYOK?",
+          "en": "What does BYOK mean?"
+        },
+        "options": [
+          {
+            "uz": "Mijoz shifrlash kalitini oʻzi yaratadi va boshqaradi",
+            "ru": "Клиент сам создаёт ключ шифрования и управляет им",
+            "en": "The customer creates and controls the encryption key itself"
+          },
+          {
+            "uz": "Provayder barcha kalitlarni ochiq saqlaydi",
+            "ru": "Провайдер хранит все ключи открыто",
+            "en": "The provider keeps all keys in the open"
+          },
+          {
+            "uz": "Zaxira nusxani bekor qilish",
+            "ru": "Отмена резервного копирования",
+            "en": "Cancelling backups"
+          },
+          {
+            "uz": "Bulutdan voz kechish",
+            "ru": "Отказ от облака",
+            "en": "Leaving the cloud"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "BYOK — \"oʻz kalitingizni olib keling\": kalitni mijoz nazorat qiladi.",
+          "ru": "BYOK — «принеси свой ключ»: ключом управляет клиент.",
+          "en": "BYOK — \"bring your own key\": the customer controls the key."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "3-2-1 qoidasida jami nechta nusxa saqlanadi?",
+          "ru": "Сколько всего копий хранится по правилу 3-2-1?",
+          "en": "How many copies in total are kept under the 3-2-1 rule?"
+        },
+        "answers": [
+          3
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "3-2-1: 3 nusxa, 2 xil muhit, 1 nusxa boshqa joyda.",
+          "ru": "3-2-1: 3 копии, 2 типа носителей, 1 копия в другом месте.",
+          "en": "3-2-1: 3 copies, 2 media types, 1 copy elsewhere."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 1,
+        "prompt": {
+          "uz": "RTO nimani bildiradi?",
+          "ru": "Что определяет RTO?",
+          "en": "What does RTO define?"
+        },
+        "options": [
+          {
+            "uz": "Xizmat qanchalik tez tiklanishi kerakligini",
+            "ru": "Как быстро должна быть восстановлена служба",
+            "en": "How quickly the service must be restored"
+          },
+          {
+            "uz": "Qancha maʼlumot yoʻqotish mumkinligini",
+            "ru": "Какая потеря данных допустима",
+            "en": "How much data loss is acceptable"
+          },
+          {
+            "uz": "Shifrlash algoritmini",
+            "ru": "Алгоритм шифрования",
+            "en": "The encryption algorithm"
+          },
+          {
+            "uz": "Provayder narxini",
+            "ru": "Цену провайдера",
+            "en": "The provider’s price"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "RTO — tiklash tezligi; RPO — maʼlumot yoʻqotishning ruxsat etilgan hajmi.",
+          "ru": "RTO — скорость восстановления; RPO — допустимая потеря данных.",
+          "en": "RTO is restoration speed; RPO is acceptable data loss."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 1,
+        "prompt": {
+          "uz": "Kompaniya zaxira nusxalarni faqat oʻsha bulut hisobida saqlaydi. Hisob buzilsa nima boʻladi va qanday chora kerak?",
+          "ru": "Компания хранит резервные копии только в той же облачной учётной записи. Что будет при её взломе и какая нужна мера?",
+          "en": "A company keeps backups only in the same cloud account. What happens if it is compromised and what is the fix?"
+        },
+        "options": [
+          {
+            "uz": "Zaxiralar ham yoʻqoladi; nusxani boshqa hisob, region yoki provayderda ham saqlash kerak",
+            "ru": "Копии тоже будут потеряны; нужна копия в другой учётной записи, регионе или у другого провайдера",
+            "en": "The backups are lost too; keep a copy in another account, region or provider"
+          },
+          {
+            "uz": "Hech narsa boʻlmaydi",
+            "ru": "Ничего не произойдёт",
+            "en": "Nothing happens"
+          },
+          {
+            "uz": "Zaxiralar avtomatik tiklanadi",
+            "ru": "Копии восстановятся автоматически",
+            "en": "The backups restore automatically"
+          },
+          {
+            "uz": "Zaxiralarni oʻchirib tashlash kerak",
+            "ru": "Копии нужно удалить",
+            "en": "The backups should be deleted"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Hisob buzilsa, shu hisobdagi zaxiralar ham yoʻqoladi — nusxa boshqa joyda boʻlishi shart.",
+          "ru": "При взломе учётной записи копии в ней тоже теряются — нужна копия в другом месте.",
+          "en": "If the account is compromised its backups are lost too, so a copy must be elsewhere."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Bulutda axborot xavfsizligi",
+      "ru": "Информационная безопасность в облаке",
+      "en": "Information security in the cloud"
+    },
+    "statement": {
+      "uz": "Mustaqil ish mazmuni boʻyicha toʻrt savol. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "ru": "Четыре вопроса по содержанию самостоятельной работы. В вопросах с несколькими ответами отметьте все верные варианты.",
+      "en": "Four questions on the independent study. In questions with several answers, mark every correct option."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Xodim ishdan ketganda uning bulutdagi hisobi bilan nima qilinadi?",
+            "ru": "Что делают с облачной учётной записью сотрудника при его увольнении?",
+            "en": "What is done with an employee’s cloud account when they leave?"
+          },
+          "options": [
+            {
+              "uz": "Darhol yopiladi",
+              "ru": "Немедленно закрывают",
+              "en": "It is closed immediately"
+            },
+            {
+              "uz": "Bir yil ochiq qoldiriladi",
+              "ru": "Оставляют открытой на год",
+              "en": "It is left open for a year"
+            },
+            {
+              "uz": "Boshqa xodimga parol bilan beriladi",
+              "ru": "Передают другому сотруднику вместе с паролем",
+              "en": "It is passed on with its password"
+            },
+            {
+              "uz": "Hech narsa qilinmaydi",
+              "ru": "Ничего не делают",
+              "en": "Nothing is done"
+            }
+          ],
+          "correct": [
+            0
+          ],
+          "explanation": {
+            "uz": "Hisoblarning hayot sikli: xodim ketishi bilan hisob darhol yopiladi.",
+            "ru": "Жизненный цикл учётных записей: при уходе сотрудника запись закрывается сразу.",
+            "en": "Account life cycle: when an employee leaves, the account is closed at once."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Provayderning sertifikati mijozning sozlamalar boʻyicha javobgarligini ham tasdiqlaydi.",
+            "ru": "Сертификат провайдера подтверждает и ответственность клиента за настройки.",
+            "en": "A provider’s certificate also confirms the customer’s own part, the settings."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [
+            1
+          ],
+          "explanation": {
+            "uz": "Sertifikat provayderning qismini tasdiqlaydi; mijoz oʻz qismini (huquqlar, sozlamalar) oʻzi taʼminlaydi.",
+            "ru": "Сертификат подтверждает часть провайдера; свою часть (права, настройки) клиент обеспечивает сам.",
+            "en": "A certificate confirms the provider’s part; the customer secures its own part (permissions, settings)."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Provayderni tanlash roʻyxatiga qaysilar kiradi?",
+            "ru": "Что входит в чек-лист выбора провайдера?",
+            "en": "What is on the provider-selection checklist?"
+          },
+          "options": [
+            {
+              "uz": "Maʼlumotlar qaysi mamlakatda saqlanishi",
+              "ru": "В какой стране хранятся данные",
+              "en": "In which country the data is stored"
+            },
+            {
+              "uz": "Sertifikatlar va mustaqil audit hisobotlari",
+              "ru": "Сертификаты и независимые аудиторские отчёты",
+              "en": "Certifications and independent audit reports"
+            },
+            {
+              "uz": "Chiqish strategiyasi (maʼlumotni qaytarib olish)",
+              "ru": "Стратегия выхода (возврат данных)",
+              "en": "The exit strategy (getting the data back)"
+            },
+            {
+              "uz": "SLA: ish vaqti va hodisa haqida xabar berish muddati",
+              "ru": "SLA: время работы и срок уведомления об инциденте",
+              "en": "The SLA: uptime and incident notification deadline"
+            },
+            {
+              "uz": "Provayder logotipining rangi",
+              "ru": "Цвет логотипа провайдера",
+              "en": "The colour of the provider’s logo"
+            }
+          ],
+          "correct": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "explanation": {
+            "uz": "Maʼlumot joyi, sertifikatlar, chiqish strategiyasi va SLA — roʻyxatning asosiy bandlari.",
+            "ru": "Место данных, сертификаты, стратегия выхода и SLA — основные пункты списка.",
+            "en": "Data location, certifications, exit strategy and SLA are the core items."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Kalitlarni yaratish, saqlash va almashtirish xizmatining qisqartmasi nima?",
+            "ru": "Как сокращённо называется служба создания, хранения и ротации ключей?",
+            "en": "What is the abbreviation of the service that creates, stores and rotates keys?"
+          },
+          "answers": [
+            "KMS"
+          ],
+          "explanation": {
+            "uz": "Kalitlarni boshqarish xizmati — KMS.",
+            "ru": "Служба управления ключами — KMS.",
+            "en": "The key management service is KMS."
+          }
+        }
+      ]
+    }
+  }
+}

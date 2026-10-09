@@ -1,0 +1,380 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kompyuter tarmogʻi deganda nima tushuniladi?",
+          "ru": "Что понимается под компьютерной сетью?",
+          "en": "What is a computer network?"
+        },
+        "options": [
+          {
+            "uz": "Aloqa kanallari orqali ulangan, maʼlumot almashadigan va resurslarni birgalikda ishlatadigan kompyuterlar va boshqa qurilmalar majmui",
+            "ru": "Совокупность компьютеров и других устройств, соединённых каналами связи для обмена данными и совместного использования ресурсов",
+            "en": "A set of computers and other devices joined by communication channels to exchange data and share resources"
+          },
+          {
+            "uz": "Bitta binoda joylashgan printerlar toplami",
+            "ru": "Совокупность принтеров, размещённых в одном здании",
+            "en": "A group of printers placed in one building"
+          },
+          {
+            "uz": "Maʼlumot saqlanadigan server diskining turi",
+            "ru": "Вид серверного диска для хранения данных",
+            "en": "A kind of server disk used for storing data"
+          },
+          {
+            "uz": "Internet orqali tarqatiladigan veb-sahifalar roʻyxati",
+            "ru": "Перечень веб-страниц, распространяемых через Интернет",
+            "en": "A list of web pages distributed over the Internet"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Taʼrifda uch belgi bor: qurilmalar majmui, maʼlumot almashish va resurslardan birgalikda foydalanish.",
+          "ru": "В определении три признака: совокупность устройств, обмен данными и совместное использование ресурсов.",
+          "en": "The definition has three marks: a set of devices, data exchange and shared use of resources."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Internet va World Wide Web — bitta va bir xil narsa.",
+          "ru": "Интернет и Всемирная паутина — это одно и то же.",
+          "en": "The Internet and the World Wide Web are the same thing."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Internet — tarmoqlar tarmogʻi, veb esa uning ustida ishlaydigan xizmatlardan biri; pochta va fayl almashish ham Internetdan foydalanadi.",
+          "ru": "Интернет — сеть сетей, а веб — лишь один из работающих поверх неё сервисов; почта и обмен файлами тоже используют Интернет.",
+          "en": "The Internet is a network of networks; the web is one service running over it — mail and file sharing use the Internet too."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Har qanday tarmoqning tarkibiy qismlari qaysilar?",
+          "ru": "Что входит в состав любой сети?",
+          "en": "Which are the components of every network?"
+        },
+        "options": [
+          {
+            "uz": "Tugunlar",
+            "ru": "Узлы",
+            "en": "Nodes"
+          },
+          {
+            "uz": "Aloqa kanallari",
+            "ru": "Каналы связи",
+            "en": "Communication channels"
+          },
+          {
+            "uz": "Protokollar",
+            "ru": "Протоколы",
+            "en": "Protocols"
+          },
+          {
+            "uz": "Bitta operatsion tizim",
+            "ru": "Единая операционная система",
+            "en": "One shared operating system"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsga koʻra uchta qism bor: tugunlar, aloqa kanallari va protokollar; operatsion tizim ular roʻyxatida yoʻq.",
+          "ru": "По занятию: узлы, каналы связи и протоколы; операционная система в этом списке не значится.",
+          "en": "The lesson lists three parts: nodes, communication channels and protocols; an operating system is not among them."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "1983-yil 1-yanvar sana tarmoq tarixida nima bilan muhim?",
+          "ru": "Чем важна дата 1 января 1983 года в истории сетей?",
+          "en": "Why is 1 January 1983 important in the history of networks?"
+        },
+        "options": [
+          {
+            "uz": "ARPANET TCP/IP protokollariga oʻtdi — bu Internetning tugʻilgan kuni hisoblanadi",
+            "ru": "ARPANET перешла на стек TCP/IP — это считается днём рождения Интернета",
+            "en": "ARPANET switched to TCP/IP — this is counted as the birthday of the Internet"
+          },
+          {
+            "uz": "Birinchi Ethernet kabi bino ichiga tortildi",
+            "ru": "Впервые кабель Ethernet протянули внутри здания",
+            "en": "The first Ethernet cable was laid inside a building"
+          },
+          {
+            "uz": "World Wide Web hammaga ochiq eʼlon qilindi",
+            "ru": "Всемирная паутина была объявлена общедоступной",
+            "en": "The World Wide Web was announced as open to everyone"
+          },
+          {
+            "uz": "Birinchi terminal katta EHM ga ulandi",
+            "ru": "К большой ЭВМ подключили первый терминал",
+            "en": "The first terminal was connected to a large mainframe"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "V. Serf va R. Kan taklif qilgan protokollar stekiga oʻtish 1983-yil 1-yanvarda boʻldi; Ethernet 1973-yilga, veb 1989–1991-yillarga tegishli.",
+          "ru": "Переход на стек, предложенный В. Серфом и Р. Каном, состоялся 1 января 1983 года; Ethernet относится к 1973 году, веб — к 1989–1991 годам.",
+          "en": "The switch to the stack proposed by Cerf and Kahn happened on 1 January 1983; Ethernet belongs to 1973 and the web to 1989–1991."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Birinchi paketli kommutatsiya tarmogʻi ARPANET da nechta universitet kompyuteri ulangan edi?",
+          "ru": "Сколько университетских компьютеров было объединено в первой сети с коммутацией пакетов ARPANET?",
+          "en": "How many university computers were joined in ARPANET, the first packet-switched network?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsdagi tarix jadvalida: 1969-yilda 4 ta universitet kompyuteri birinchi paketli kommutatsiya tarmogʻiga ulangan.",
+          "ru": "В исторической таблице занятия: в 1969 году 4 университетских компьютера объединили в первую сеть с коммутацией пакетов.",
+          "en": "The history table in the lesson: in 1969 four university computers were joined into the first packet-switched network."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tarmoqda maʼlumot almashish qoidalarini iflovchi atamani bitta soʻz bilan yozing.",
+          "ru": "Напишите одним словом, как называется совокупность правил обмена данными в сети.",
+          "en": "Write the single word for the rules of data exchange in a network."
+        },
+        "answers": ["protokol", "protokollar", "protocol", "протокол", "протоколы"],
+        "explanation": {
+          "uz": "Uchta tarkibiy qismdan biri — protokollar, yaʼni maʼlumot almashish qoidalari.",
+          "ru": "Один из трёх компонентов — протоколы, то есть правила обмена данными.",
+          "en": "One of the three components is protocols — the rules of data exchange."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tarmoqlarni tasniflash va boshqaruv usullari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о классификации сетей и способах управления верны?",
+          "en": "Which statements about classifying networks and about management methods are correct?"
+        },
+        "options": [
+          {
+            "uz": "PAN bir necha metrni qamraydi, masalan telefon va simsiz quloqchin",
+            "ru": "PAN охватывает несколько метров, например телефон и беспроводные наушники",
+            "en": "A PAN covers a few metres, for example a phone and wireless earbuds"
+          },
+          {
+            "uz": "Tarmoqning qaysi turga (PAN, LAN, MAN, WAN) tegishli boʻlishi qurilmalar soni bilan belgilanadi",
+            "ru": "К какому виду (PAN, LAN, MAN, WAN) относится сеть, определяется числом устройств",
+            "en": "Which class a network belongs to (PAN, LAN, MAN, WAN) is decided by the number of devices"
+          },
+          {
+            "uz": "Mijoz–server tarmogʻida server ishdan chiqsa, xizmat toʻxtaydi",
+            "ru": "В клиент–серверной сети при отказе сервера сервис останавливается",
+            "en": "In a client–server network the service stops when the server fails"
+          },
+          {
+            "uz": "Peer-to-peer tarmoqda xizmatlarni maxsus serverlar beradi",
+            "ru": "В одноранговой сети сервисы предоставляют выделенные серверы",
+            "en": "In a peer-to-peer network dedicated servers provide the services"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Tasnif hudud va boshqaruv bilan bogʻliq, qurilmalar soni bilan emas (kampus LAN minglab qurilmani qamraydi). Peer-to-peer da server yoʻq: har bir kompyuter ham mijoz, ham server.",
+          "ru": "Классификация связана с территорией и управлением, а не с числом устройств (сеть кампуса охватывает тысячи устройств). В одноранговой сети серверов нет: каждый компьютер и клиент, и сервер.",
+          "en": "The classification follows area and management, not the number of devices (a campus LAN covers thousands of devices). Peer-to-peer has no servers: every computer is both client and server."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "100 Mbit/s kanaldan hajmi 400 MB boʻlgan fayl taxminan necha sekundda uzatiladi? (1 bayt = 8 bit)",
+          "ru": "За сколько примерно секунд по каналу 100 Мбит/с передастся файл размером 400 МБ? (1 байт = 8 бит)",
+          "en": "Roughly how many seconds does a 400 MB file need to be transferred over a 100 Mbit/s channel? (1 byte = 8 bits)"
+        },
+        "answers": [32],
+        "tolerance": 0.5,
+        "explanation": {
+          "uz": "400 MB = 3200 Mbit; 3200 / 100 = 32 sekund. Darsdagi hisobga koʻra kanal soniyasiga 12,5 MB uzatadi: 400 / 12,5 = 32.",
+          "ru": "400 МБ = 3200 Мбит; 3200 / 100 = 32 секунды. По расчёту занятия канал даёт 12,5 МБ в секунду: 400 / 12,5 = 32.",
+          "en": "400 MB = 3200 Mbit; 3200 / 100 = 32 seconds. By the lesson the channel carries 12.5 MB per second: 400 / 12.5 = 32."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Oʻtkazuvchanlik qanchalik katta boʻlsa, kechikish shunchalik kichik boʻladi.",
+          "ru": "Чем больше пропускная способность, тем меньше задержка.",
+          "en": "The greater the bandwidth, the smaller the latency."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bu ikki xususiyat chalkashtirilmasligi kerak: keng kanal ham uzoq masofada, masalan sunʼiy yoʻldosh orqali katta kechikishga ega boʻladi.",
+          "ru": "Эти две характеристики нельзя путать: даже широкий канал на большом расстоянии, например через спутник, имеет большую задержку.",
+          "en": "The two must not be confused: even a wide channel over a long distance, say via satellite, can have a large latency."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Tarmoq turi va xarakteristikalari",
+      "ru": "Вид сети и её характеристики",
+      "en": "The kind of network and its characteristics"
+    },
+    "statement": {
+      "uz": "Atrofingizdagi tarmoqlarni darsdagi tasnif va xarakteristikalar boʻyicha baholang: har bir savolga javob dars matnidan olinadi.",
+      "ru": "Оцените сети вокруг вас по классификации и характеристикам из занятия: ответ на каждый вопрос берётся из текста.",
+      "en": "Look at the networks around you through the lesson's classification and characteristics: every answer comes from the lesson text."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Shahar provayderining optik halqasi qaysi tarmoq turiga kiradi?",
+            "ru": "К какому виду сетей относится оптическое кольцо городского провайдера?",
+            "en": "Which kind of network is a city provider's optical ring?"
+          },
+          "options": [
+            {
+              "uz": "PAN",
+              "ru": "PAN",
+              "en": "PAN"
+            },
+            {
+              "uz": "LAN",
+              "ru": "LAN",
+              "en": "LAN"
+            },
+            {
+              "uz": "MAN",
+              "ru": "MAN",
+              "en": "MAN"
+            },
+            {
+              "uz": "WAN",
+              "ru": "WAN",
+              "en": "WAN"
+            }
+          ],
+          "correct": [2],
+          "explanation": {
+            "uz": "Halqa shaharni qamraydi, hudud boʻyicha bu — MAN (Metropolitan Area Network).",
+            "ru": "Кольцо охватывает город, то есть по территории это MAN (Metropolitan Area Network).",
+            "en": "The ring covers a city, so by area it is a MAN — Metropolitan Area Network."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "50 Mbit/s kanal soniyasiga taxminan necha megabayt uzatadi?",
+            "ru": "Сколько примерно мегабайт в секунду передаёт канал 50 Мбит/с?",
+            "en": "Roughly how many megabytes per second does a 50 Mbit/s channel transfer?"
+          },
+          "answers": [6.25],
+          "tolerance": 0.1,
+          "explanation": {
+            "uz": "1 bayt = 8 bit, shuning uchun 50 / 8 = 6,25 MB.",
+            "ru": "1 байт = 8 бит, поэтому 50 / 8 = 6,25 МБ.",
+            "en": "1 byte = 8 bits, so 50 / 8 = 6.25 MB."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 1,
+          "prompt": {
+            "uz": "Ethernet — bitta bino ichidagi kompyuterlarni ulash uchun 1973-yilda ishlab chiqilgan texnologiya.",
+            "ru": "Ethernet — технология 1973 года для объединения компьютеров в пределах одного здания.",
+            "en": "Ethernet is a 1973 technology for joining the computers within one building."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsdagi bosqichlar jadvali: 1970-yillar, Ethernet (1973, Xerox) — bitta bino ichidagi kompyuterlarni ulash.",
+            "ru": "По таблице этапов из занятия: 1970-е, Ethernet (1973, Xerox) — объединение компьютеров в пределах здания.",
+            "en": "The lesson's stages table says: 1970s, Ethernet (1973, Xerox) — joining the computers of one building."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 2,
+          "prompt": {
+            "uz": "Vaqt birligida uzatiladigan maʼlumot hajmini iflovchi tarmoq xususiyatining nomini yozing.",
+            "ru": "Напишите название характеристики сети — объёма данных, передаваемых в единицу времени.",
+            "en": "Name the network characteristic that is the amount of data transferred per unit of time."
+          },
+          "answers": ["otkazuvchanlik", "oʻtkazuvchanlik", "oʻtkazuvchanlik qobiliyati", "bandwidth", "пропускная способность"],
+          "explanation": {
+            "uz": "Bu xususiyat oʻtkazuvchanlik qobiliyati (bandwidth) deb ataladi va bit/s da oʻlchanadi.",
+            "ru": "Эта характеристика — пропускная способность (bandwidth), измеряется в бит/с.",
+            "en": "This is bandwidth, measured in bit/s."
+          }
+        }
+      ]
+    }
+  }
+}

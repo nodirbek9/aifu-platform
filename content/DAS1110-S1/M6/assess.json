@@ -1,0 +1,318 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "n × m matritsada a[i][j] yozuvida birinchi indeks i nimani bildiradi?",
+          "ru": "Что обозначает первый индекс i в записи a[i][j] матрицы n × m?",
+          "en": "In a[i][j] of an n × m matrix, what does the first index i stand for?"
+        },
+        "options": [
+          {
+            "uz": "Satr",
+            "ru": "Строку",
+            "en": "The row"
+          },
+          {
+            "uz": "Ustun",
+            "ru": "Столбец",
+            "en": "The column"
+          },
+          {
+            "uz": "Elementning qiymati",
+            "ru": "Значение элемента",
+            "en": "The value of the element"
+          },
+          {
+            "uz": "Matritsaning oʻlchami",
+            "ru": "Размер матрицы",
+            "en": "The size of the matrix"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi kelishuv: birinchi indeks — satr, ikkinchisi — ustun. Bu jadvalni oʻqish tartibiga mos: avval qator, keyin undagi oʻrin.",
+          "ru": "Соглашение из занятия: первый индекс — строка, второй — столбец. Это соответствует порядку чтения таблицы: сначала ряд, потом место в нём.",
+          "en": "The lesson's convention: the first index is the row, the second the column. It follows the order of reading a table: first the line, then the place in it."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ikki oʻlchovli massiv — massivlar massivi: uning har bir elementi oʻzi bir massiv.",
+          "ru": "Двумерный массив — это массив массивов: каждый его элемент сам является массивом.",
+          "en": "A two-dimensional array is an array of arrays: each of its elements is itself an array."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Har bir element — bir satr. Shuning uchun satrlar soni len(a), ustunlar soni esa len(a[0]) bilan olinadi.",
+          "ru": "Каждый элемент — это строка. Поэтому число строк получают как len(a), а число столбцов — как len(a[0]).",
+          "en": "Each element is a row. That is why the number of rows is len(a) and the number of columns is len(a[0])."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "3 × 4 matritsada jami nechta element bor?",
+          "ru": "Сколько всего элементов в матрице 3 × 4?",
+          "en": "How many elements does a 3 × 4 matrix have in total?"
+        },
+        "answers": [12],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "3 satr va 4 ustun: 3 · 4 = 12 element. 4 × 5 matritsada esa 20 element bor, ularning indeksi a[3][4] bilan tugaydi.",
+          "ru": "3 строки и 4 столбца: 3 · 4 = 12 элементов. В матрице 4 × 5 их 20, и индексы кончаются на a[3][4].",
+          "en": "Three rows and four columns: 3 · 4 = 12 elements. A 4 × 5 matrix has 20 of them and its last index pair is a[3][4]."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Python tilida a = [[0] * m] * n yozuvi haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о записи в Python a = [[0] * m] * n верны?",
+          "en": "Which statements about the Python writing a = [[0] * m] * n are correct?"
+        },
+        "options": [
+          {
+            "uz": "n ta alohida satr emas, bitta satrga n ta havola yaratadi",
+            "ru": "Создаёт не n отдельных строк, а n ссылок на одну строку",
+            "en": "It creates not n separate rows but n references to one row"
+          },
+          {
+            "uz": "a[0][0] = 5 deb yozilsa, barcha satrlarning birinchi elementi 5 boʻladi",
+            "ru": "Если написать a[0][0] = 5, первый элемент станет 5 во всех строках",
+            "en": "Writing a[0][0] = 5 makes the first element 5 in every row"
+          },
+          {
+            "uz": "Toʻgʻri usul — har bir satrni alohida yaratish: [[0] * m for _ in range(n)]",
+            "ru": "Правильный способ — создавать каждую строку отдельно: [[0] * m for _ in range(n)]",
+            "en": "The right way is to create each row separately: [[0] * m for _ in range(n)]"
+          },
+          {
+            "uz": "Bu yozuv sintaksis xatosi beradi va dastur ishga tushmaydi",
+            "ru": "Эта запись даёт синтаксическую ошибку, и программа не запускается",
+            "en": "This writing gives a syntax error and the program does not start"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Yozuv sintaksis jihatdan toʻgʻri va hech qanday xato bermaydi — ayni shu xavfli: barcha satrlar bitta obyekt boʻlib qoladi, bitta elementni oʻzgartirish butun ustunni oʻzgartiradi.",
+          "ru": "Запись синтаксически верна и ошибки не выдаёт — в этом и опасность: все строки оказываются одним объектом, и изменение одного элемента меняет весь столбец.",
+          "en": "The writing is syntactically correct and raises no error — that is exactly the danger: all the rows turn out to be one object, so changing one element changes a whole column."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "5 × 5 matritsada a[1][3] qaysi diagonalda yotadi?",
+          "ru": "На какой диагонали в матрице 5 × 5 лежит элемент a[1][3]?",
+          "en": "On which diagonal of a 5 × 5 matrix does the element a[1][3] lie?"
+        },
+        "options": [
+          {
+            "uz": "Yordamchi diagonalda",
+            "ru": "На побочной диагонали",
+            "en": "On the secondary diagonal"
+          },
+          {
+            "uz": "Bosh diagonalda",
+            "ru": "На главной диагонали",
+            "en": "On the main diagonal"
+          },
+          {
+            "uz": "Matritsaning tashqarisida",
+            "ru": "Вне матрицы",
+            "en": "Outside the matrix"
+          },
+          {
+            "uz": "Diagonalga tegishli emas",
+            "ru": "Не принадлежит ни одной диагонали",
+            "en": "It belongs to neither diagonal"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bosh diagonalda i = j, yordamchi diagonalda i + j = n − 1. Bu yerda 1 + 3 = 4 = 5 − 1, shuning uchun element yordamchi diagonalda yotadi.",
+          "ru": "На главной i = j, на побочной i + j = n − 1. Здесь 1 + 3 = 4 = 5 − 1, значит элемент на побочной диагонали.",
+          "en": "The main diagonal has i = j, the secondary one i + j = n − 1. Here 1 + 3 = 4 = 5 − 1, so the element is on the secondary diagonal."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Transponirlangan matritsaning t[i][j] elementi asl matritsaning qaysi elementiga teng? a bilan, masalan a[0][0] koʻrinishida yozing.",
+          "ru": "Какому элементу исходной матрицы равен элемент t[i][j] транспонированной матрицы? Запишите через a, например a[0][0].",
+          "en": "Which element of the original matrix equals the element t[i][j] of the transposed one? Write it using a, for example a[0][0]."
+        },
+        "answers": ["a[j][i]", "a[j][i] = t[i][j]", "t[i][j] = a[j][i]"],
+        "explanation": {
+          "uz": "Transponirlash satrlarni ustunlarga aylantiradi: t[i][j] = a[j][i]. Matritsani chiqarishda alohida saqlash shart emas — indekslarni almashtirish kifoya.",
+          "ru": "Транспонирование превращает строки в столбцы: t[i][j] = a[j][i]. Отдельно хранить транспонированную матрицу не нужно — достаточно менять индексы при выводе.",
+          "en": "Transposition turns rows into columns: t[i][j] = a[j][i]. The transposed matrix need not be stored separately — swapping the indices while printing is enough."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kvadrat matritsaning yordamchi diagonal elementlari i-satrdagi uchun a[i][n - i] bilan olinadi.",
+          "ru": "Элементы побочной диагонали квадратной матрицы в i-й строке берутся как a[i][n - i].",
+          "en": "The elements of the secondary diagonal of a square matrix are taken in row i as a[i][n - i]."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Toʻgʻri yozuv — a[i][n - 1 - i]. a[i][n - i] boʻlsa, i = 0 da indeks n boʻlib, chegaradan chiqiladi.",
+          "ru": "Верная запись — a[i][n - 1 - i]. При a[i][n - i] на i = 0 индекс станет n, что означает выход за границы.",
+          "en": "The correct form is a[i][n - 1 - i]. With a[i][n - i] the index is n at i = 0, which goes out of bounds."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Matritsani joyida transponirlashda qaysi elementlar oʻzaro almashtiriladi?",
+          "ru": "Какие элементы взаимно обмениваются при транспонировании матрицы на месте?",
+          "en": "Which elements are swapped when a matrix is transposed in place?"
+        },
+        "options": [
+          {
+            "uz": "Faqat bosh diagonal ustidagi elementlar, yaʼni j > i boʻlganlar",
+            "ru": "Только элементы выше главной диагонали, то есть при j > i",
+            "en": "Only the elements above the main diagonal, that is those with j > i"
+          },
+          {
+            "uz": "Barcha n × n elementlar",
+            "ru": "Все n × n элементов",
+            "en": "All of the n × n elements"
+          },
+          {
+            "uz": "Faqat bosh diagonalning oʻzi",
+            "ru": "Только сама главная диагональ",
+            "en": "Only the main diagonal itself"
+          },
+          {
+            "uz": "Qoʻshni ustunlar",
+            "ru": "Соседние столбцы",
+            "en": "Neighbouring columns"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Hammasi almashtirilsa, matritsa ikki marta aylanib, avvalgi holiga qaytadi. Xuddi shu sabab bilan massivni teskari qilishda ham n/2 almashtirish bajariladi.",
+          "ru": "Если обменять все, матрица повернётся дважды и вернётся в исходное состояние. По той же причине при развороте массива выполняют n/2 обменов.",
+          "en": "Swapping all of them transposes the matrix twice and brings it back to where it started — the same reason reversing an array takes only n/2 swaps."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Matritsani aylanib chiqish haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об обходе матрицы верны?",
+          "en": "Which statements about traversing a matrix are correct?"
+        },
+        "options": [
+          {
+            "uz": "Satr yigʻindisida tashqi sikl satr boʻyicha, ustun yigʻindisida esa ustun boʻyicha yuradi",
+            "ru": "Для суммы строки внешний цикл идёт по строкам, для суммы столбца — по столбцам",
+            "en": "For a row sum the outer loop runs over rows, for a column sum over columns"
+          },
+          {
+            "uz": "Diagonal uchun ichma-ich sikl shart emas, bitta sikl yetarli",
+            "ru": "Для диагонали вложенный цикл не нужен, достаточно одного цикла",
+            "en": "A diagonal needs no nested loop, one loop is enough"
+          },
+          {
+            "uz": "Ustun boʻyicha yursada ham indekslar avval satr, keyin ustun tartibida yoziladi",
+            "ru": "Даже при обходе по столбцам индексы пишутся в порядке «строка, затем столбец»",
+            "en": "Even when going by columns the indices are written row first, then column"
+          },
+          {
+            "uz": "Har bir satr uchun yigʻuvchi tashqi sikldan tashqarida nolga tenglanadi",
+            "ru": "Накопитель для каждой строки обнуляется вне внешнего цикла",
+            "en": "The accumulator for each row is reset outside the outer loop"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Yigʻuvchi har bir satr uchun tashqi sikl ichida nolga tenglanadi, aks holda oldingi satrning yigʻindisi qoʻshilib ketadi. Diagonal uchun esa ichma-ich sikl bilan n² elementni tekshirish n marta sekinroq ishlaydi.",
+          "ru": "Накопитель обнуляется внутри внешнего цикла для каждой строки, иначе сумма предыдущей строки продолжит копиться. Проверять же n² элементов вложенным циклом ради диагонали — в n раз медленнее.",
+          "en": "The accumulator is reset inside the outer loop, for each row, or the previous row's sum keeps adding on. Checking all n² elements with a nested loop for a diagonal is n times slower."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Ustunlarning eng katta elementlari",
+      "ru": "Наибольшие элементы столбцов",
+      "en": "The largest elements of the columns"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda n va m sonlari (har biri 1 dan 100 gacha), keyingi n qatorda m tadan butun son (har biri -1000000 dan 1000000 gacha) beriladi — bu n satr va m ustundan iborat matritsa. Har bir ustunning eng katta elementini toping va ularni bitta qatorda, bitta boʻsh joy bilan ajratib chiqaring: avval birinchi ustun, keyin ikkinchi ustun va hokazo — hech qanday qoʻshimcha soʻz yozmang. Masalan, n = 2, m = 3 va birinchi satrida 7 2 9, ikkinchi satrida 4 8 1 boʻlsa, dastur 7 8 9 chiqaradi. Ustun yigʻindisini hisoblagandek bu yerda ham tashqi sikl ustunlar boʻyicha, ichki sikl satrlar boʻyicha yuradi, indekslar esa avval satr, keyin ustun tartibida qoladi.",
+      "ru": "В первой строке задаются n и m (каждое от 1 до 100), в следующих n строках — по m целых чисел (каждое от -1000000 до 1000000), то есть матрица из n строк и m столбцов. Для каждого столбца найдите его наибольший элемент и выведите эти числа одной строкой через один пробел: сначала для первого столбца, затем для второго и так далее — без каких-либо дополнительных слов. Например, при n = 2, m = 3 и строках 7 2 9 и 4 8 1 программа выводит 7 8 9. Как и при сумме столбцов, здесь внешний цикл идёт по столбцам, внутренний — по строкам, а индексы остаются в порядке «строка, затем столбец».",
+      "en": "The first line contains n and m (each from 1 to 100), and the next n lines contain m integers each (each from -1000000 to 1000000): a matrix of n rows and m columns. For every column find its largest element and print those numbers on one line separated by a single space — the first column first, then the second, and so on — with no extra words. For example, n = 2, m = 3 with the rows 7 2 9 and 4 8 1 makes the program print 7 8 9. As with a column sum, the outer loop runs over the columns and the inner one over the rows, while the indices stay row first, then column."
+    },
+    "code": {
+      "starter": {
+        "python": "n, m = map(int, input().split())\na = [list(map(int, input().split())) for _ in range(n)]\n\njavob = []\nfor i in range(n):\n    mx = a[i][0]\n    for j in range(1, m):\n        if a[i][j] > mx:\n            mx = a[i][j]\n    javob.append(mx)\nprint(*javob)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int m = in.nextInt();\n        int[][] a = new int[n][m];\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < m; j++) {\n                a[i][j] = in.nextInt();\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < n; i++) {\n            int mx = a[i][0];\n            for (int j = 1; j < m; j++) {\n                if (a[i][j] > mx) {\n                    mx = a[i][j];\n                }\n            }\n            if (i > 0) sb.append(' ');\n            sb.append(mx);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> a(n, vector<int>(m));\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < m; j++) {\n            cin >> a[i][j];\n        }\n    }\n    for (int i = 0; i < n; i++) {\n        int mx = a[i][0];\n        for (int j = 1; j < m; j++) {\n            if (a[i][j] > mx) {\n                mx = a[i][j];\n            }\n        }\n        if (i > 0) cout << ' ';\n        cout << mx;\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n, m = map(int, input().split())\na = [list(map(int, input().split())) for _ in range(n)]\n\njavob = []\nfor j in range(m):\n    mx = a[0][j]\n    for i in range(1, n):\n        if a[i][j] > mx:\n            mx = a[i][j]\n    javob.append(mx)\nprint(*javob)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int m = in.nextInt();\n        int[][] a = new int[n][m];\n        for (int i = 0; i < n; i++) {\n            for (int j = 0; j < m; j++) {\n                a[i][j] = in.nextInt();\n            }\n        }\n        StringBuilder sb = new StringBuilder();\n        for (int j = 0; j < m; j++) {\n            int mx = a[0][j];\n            for (int i = 1; i < n; i++) {\n                if (a[i][j] > mx) {\n                    mx = a[i][j];\n                }\n            }\n            if (j > 0) sb.append(' ');\n            sb.append(mx);\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    vector<vector<int>> a(n, vector<int>(m));\n    for (int i = 0; i < n; i++) {\n        for (int j = 0; j < m; j++) {\n            cin >> a[i][j];\n        }\n    }\n    for (int j = 0; j < m; j++) {\n        int mx = a[0][j];\n        for (int i = 1; i < n; i++) {\n            if (a[i][j] > mx) {\n                mx = a[i][j];\n            }\n        }\n        if (j > 0) cout << ' ';\n        cout << mx;\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "2 3\n7 2 9\n4 8 1\n", "expected": "7 8 9", "hidden": false },
+        { "input": "1 1\n5\n", "expected": "5", "hidden": false },
+        { "input": "3 2\n-1 -2\n-3 -4\n-5 -6\n", "expected": "-1 -2", "hidden": false },
+        { "input": "4 3\n1 2 3\n4 5 6\n7 8 9\n10 11 12\n", "expected": "10 11 12", "hidden": true },
+        { "input": "2 4\n0 -5 3 7\n-1 6 2 7\n", "expected": "0 6 3 7", "hidden": true },
+        { "input": "3 1\n4\n9\n2\n", "expected": "9", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,392 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi holda blokcheyn oʻrniga oddiy maʼlumotlar bazasi yetarli boʻladi?",
+          "ru": "В каком случае вместо блокчейна достаточно обычной базы данных?",
+          "en": "In which case is an ordinary database enough instead of blockchain?"
+        },
+        "options": [
+          {
+            "uz": "Maʼlumotni bitta tashkilot yuritsa va unga barcha tomonlar ishonsa",
+            "ru": "Когда данные ведёт одна организация и все стороны ей доверяют",
+            "en": "When one organization maintains the data and all parties trust it"
+          },
+          {
+            "uz": "Bir nechta mustaqil tomonlar bir-biriga ishonmaganda",
+            "ru": "Когда несколько независимых сторон не доверяют друг другу",
+            "en": "When several independent parties do not trust each other"
+          },
+          {
+            "uz": "Raqobatdosh korxonalar orasida oʻzgartirib boʻlmaydigan tarix kerak boʻlganda",
+            "ru": "Когда между конкурирующими компаниями нужна неизменяемая история",
+            "en": "When an unalterable history is needed between competing companies"
+          },
+          {
+            "uz": "Yangi kriptovalyuta chiqarish rejalashtirilganda",
+            "ru": "Когда планируется выпуск новой криптовалюты",
+            "en": "When planning to issue a new cryptocurrency"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Agar bitta tashkilot hamma narsani nazorat qilsa va unga hamma ishonsa, blokcheyn kerak emas. Blokcheyn — ishonch muammosi bor joyda foydali.",
+          "ru": "Если одна организация всё контролирует и ей все доверяют, блокчейн не нужен. Блокчейн полезен там, где есть проблема доверия.",
+          "en": "If one organization controls everything and everyone trusts it, blockchain is not needed. Blockchain is useful where there is a trust problem."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Blokcheyn tizimi unga kiritilgan maʼlumotlarning haqiqatda toʻgʻri ekanligini kafolatlaydi.",
+          "ru": "Система блокчейн гарантирует, что введённые в неё данные действительно верны.",
+          "en": "A blockchain system guarantees that the data entered into it is factually correct."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Blokcheyn kiritilgan maʼlumot toʻgʻriligini kafolatlamaydi (\"axlat kirsa, axlat chiqadi\"), faqat u keyin oʻzgartirilmaganini kafolatlaydi.",
+          "ru": "Блокчейн не гарантирует правильность введённых данных («мусор на входе — мусор на выходе»), только то, что их потом не изменили.",
+          "en": "Blockchain does not guarantee that the entered data is correct (\"garbage in, garbage out\"), only that it has not been altered afterwards."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Taʼminot zanjirida blokcheyn qoʻllashning qanday afzalliklari bor?",
+          "ru": "Каковы преимущества использования блокчейна в цепочках поставок?",
+          "en": "What are the benefits of using blockchain in supply chains?"
+        },
+        "options": [
+          {
+            "uz": "Tovarning kelib chiqishini tasdiqlash",
+            "ru": "Подтверждение происхождения товара",
+            "en": "Confirming the origin of a product"
+          },
+          {
+            "uz": "Soxtalikka qarshi kurash",
+            "ru": "Борьба с подделками",
+            "en": "Fighting counterfeits"
+          },
+          {
+            "uz": "Kiritilgan maʼlumotlarning avtomatik toʻgʻriligini taʼminlash",
+            "ru": "Автоматическое обеспечение правильности введённых данных",
+            "en": "Automatically ensuring the correctness of entered data"
+          },
+          {
+            "uz": "Taʼminot zanjirini barcha ishtirokchilardan butunlay yashirish",
+            "ru": "Полное сокрытие цепочки поставок от всех участников",
+            "en": "Completely hiding the supply chain from all participants"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Blokcheyn tovarning yoʻlini kuzatish, kelib chiqishini tasdiqlash va soxtalikka qarshi kurashda yordam beradi. U maʼlumot toʻgʻriligini tekshirmaydi.",
+          "ru": "Блокчейн помогает отслеживать путь товара, подтверждать происхождение и бороться с подделками. Он не проверяет верность самих данных.",
+          "en": "Blockchain helps track a product's path, confirm its origin and fight counterfeits. It does not verify the correctness of the data itself."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi fermer sugʻurtasi aqlli shartnomasi misolida mintaqada necha kun yomgʻir boʻlmasa, toʻlov amalga oshiriladi?",
+          "ru": "Сколько дней без дождя вызывают выплату в примере смарт-контракта страхования фермеров из занятия?",
+          "en": "In the farmer insurance smart contract example from the lesson, how many days without rain trigger the payout?"
+        },
+        "answers": [30],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Misolda \"agar mintaqada 30 kun yomgʻir boʻlmasa, sugʻurtalanganlarga toʻlov oʻtkazilsin\" deb koʻrsatilgan.",
+          "ru": "В примере указано: «если в регионе 30 дней нет дождя, выплатить застрахованным».",
+          "en": "The example states: \"if there is no rain in the region for 30 days, pay the insured\"."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Aqlli shartnomaga tashqi maʼlumotni (masalan, ob-havo) yetkazib beradigan ishonchli manba nima deb ataladi?",
+          "ru": "Как называется доверенный источник, передающий смарт-контракту внешние данные (например, погоду)?",
+          "en": "What is the trusted source that delivers external data (for example, weather) to a smart contract called?"
+        },
+        "answers": [
+          "orakul",
+          "оракул",
+          "oracle",
+          "Orakul",
+          "Оракул",
+          "Oracle"
+        ],
+        "explanation": {
+          "uz": "Aqlli shartnomalar ob-havo kabi tashqi maʼlumotlarni ishonchli manbadan, yaʼni orakuldan oladi.",
+          "ru": "Смарт-контракты получают внешние данные, такие как погода, из доверенного источника — оракула.",
+          "en": "Smart contracts get external data like weather from a trusted source, which is an oracle."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dars matniga koʻra \"tokenizatsiya\" nima?",
+          "ru": "Что такое «токенизация» согласно тексту занятия?",
+          "en": "What is \"tokenization\" according to the lesson text?"
+        },
+        "options": [
+          {
+            "uz": "Real aktivni blokcheynda raqamli ulushlarga (tokenlarga) boʻlish",
+            "ru": "Разделение реального актива на цифровые доли (токены) в блокчейне",
+            "en": "Dividing a real asset into digital shares (tokens) on a blockchain"
+          },
+          {
+            "uz": "Maʼlumotlarni ruxsatsiz foydalanuvchilardan yashirish uchun shifrlash",
+            "ru": "Шифрование данных для скрытия от несанкционированных пользователей",
+            "en": "Encrypting data to hide it from unauthorized users"
+          },
+          {
+            "uz": "Oddiy maʼlumotlar bazasini blokcheynga aylantirish jarayoni",
+            "ru": "Процесс превращения обычной базы данных в блокчейн",
+            "en": "The process of turning an ordinary database into a blockchain"
+          },
+          {
+            "uz": "Markaziy bank tomonidan raqamli valyuta chiqarish",
+            "ru": "Выпуск цифровой валюты центральным банком",
+            "en": "Issuing a digital currency by a central bank"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Tokenizatsiya — real aktivni (koʻchmas mulk, tovar) tokenlarga, yaʼni raqamli ulushlarga boʻlishdir.",
+          "ru": "Токенизация — разделение реального актива (недвижимость, товар) на токены, то есть цифровые доли.",
+          "en": "Tokenization means dividing a real asset (real estate, commodity) into tokens, which are digital shares."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Matnga koʻra ochiq blokcheynlarning qanday cheklovlari va xavflari bor?",
+          "ru": "Каковы ограничения и риски публичных блокчейнов согласно тексту?",
+          "en": "According to the text, what are the limitations and risks of public blockchains?"
+        },
+        "options": [
+          {
+            "uz": "Markazlashgan tizimlardan sekinroq ekanligi",
+            "ru": "Более низкая скорость по сравнению с централизованными системами",
+            "en": "Slower speed compared to centralized systems"
+          },
+          {
+            "uz": "Proof of Work konsensusida koʻp elektr energiyasi talab qilinishi",
+            "ru": "Высокое потребление электроэнергии при консенсусе Proof of Work",
+            "en": "High electricity requirement for Proof of Work consensus"
+          },
+          {
+            "uz": "Maʼlumotlarni oson oʻchirish imkoniyati tufayli yuqori maxfiylik",
+            "ru": "Высокая конфиденциальность благодаря возможности легко удалять данные",
+            "en": "High privacy due to the ability to easily delete data"
+          },
+          {
+            "uz": "Xato qilinganda tranzaksiyalarni bekor qilishning qulayligi",
+            "ru": "Удобство отмены транзакций при допущении ошибки",
+            "en": "Convenience of cancelling transactions if a mistake is made"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Blokcheyn sekinroq ishlaydi va koʻp energiya sarflaydi. Undagi yozuvlarni oʻchirib yoki xato qilinganda bekor qilib boʻlmaydi.",
+          "ru": "Блокчейн работает медленнее и потребляет много энергии. Записи в нём нельзя удалить или отменить при ошибке.",
+          "en": "Blockchain is slower and uses a lot of energy. Its records cannot be deleted or reversed if a mistake is made."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Shaxsiy maʼlumotlar hech qachon yoʻqolmasligi uchun ularni ochiq blokcheynga yozish tavsiya etiladi.",
+          "ru": "Персональные данные рекомендуется записывать в публичный блокчейн, чтобы они никогда не потерялись.",
+          "en": "It is recommended to write personal data to a public blockchain so that it is never lost."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Shaxsiy maʼlumotlarni blokcheynga yozmaslik kerak, chunki undagi yozuvni oʻchirib boʻlmaydi (\"unutilish huquqi\" buziladi).",
+          "ru": "Персональные данные не следует записывать в блокчейн, так как запись нельзя удалить (нарушается «право на забвение»).",
+          "en": "Personal data should not be written to a blockchain because a record there cannot be deleted (violating the \"right to be forgotten\")."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Matndagi tokenizatsiya misolida bitta bino kichik investorlarga sotish uchun nechta ulushga boʻlingan?",
+          "ru": "В примере токенизации из текста, на сколько долей было разделено одно здание для продажи мелким инвесторам?",
+          "en": "In the tokenization example in the text, one building is divided into how many shares to sell to small investors?"
+        },
+        "answers": [1000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Misolda \"bitta binoni 1 000 ta ulushga boʻlib, kichik investorlarga sotish\" keltirilgan.",
+          "ru": "В примере приведено «здание делят на 1 000 долей и продают мелким инвесторам».",
+          "en": "The example mentions \"splitting one building into 1,000 shares and selling them to small investors\"."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Blokcheyn tushunchalarini mustahkamlash",
+      "ru": "Закрепление понятий блокчейна",
+      "en": "Consolidating blockchain concepts"
+    },
+    "statement": {
+      "uz": "Ushbu mashq orqali blokcheyn texnologiyasi, aqlli shartnomalar va ishtirokchilar boʻyicha bilimlaringizni sinab koʻring.",
+      "ru": "С помощью этого упражнения проверьте свои знания о технологии блокчейн, смарт-контрактах и участниках.",
+      "en": "Through this exercise, test your knowledge of blockchain technology, smart contracts and participants."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Aqlli shartnoma (smart contract) nima?",
+            "ru": "Что такое смарт-контракт?",
+            "en": "What is a smart contract?"
+          },
+          "options": [
+            {
+              "uz": "Shartlar bajarilganda avtomatik ishga tushadigan blokcheyndagi dastur",
+              "ru": "Программа в блокчейне, которая автоматически срабатывает при выполнении условий",
+              "en": "A program on a blockchain that runs automatically when its conditions are met"
+            },
+            {
+              "uz": "Notarius tasdiqlagan va bazaga kiritilgan yuridik hujjat",
+              "ru": "Юридический документ, заверенный нотариусом и внесённый в базу",
+              "en": "A legal document signed by a notary and scanned into a database"
+            },
+            {
+              "uz": "Aqlli uy qurilmalari uchun toʻlov vositasi boʻlgan kriptovalyuta",
+              "ru": "Криптовалюта, используемая для оплаты устройств умного дома",
+              "en": "A cryptocurrency used to pay for smart home devices"
+            },
+            {
+              "uz": "Yagona ishonchli operator tomonidan boshqariladigan maʼlumotlar bazasi",
+              "ru": "База данных, управляемая единым доверенным оператором",
+              "en": "An ordinary database maintained by a single trusted operator"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Aqlli shartnoma — bu blokcheynda joylashgan dastur kodi boʻlib, kiritilgan shartlar yuzaga kelganda oʻz-oʻzidan bajariladi.",
+            "ru": "Смарт-контракт — это программный код в блокчейне, который выполняется сам по себе при наступлении заданных условий.",
+            "en": "A smart contract is program code on a blockchain that executes on its own when the specified conditions are met."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Paxta-toʻqimachilik klasteri keysida zanjir ishtirokchilari qatoriga kimlar kiradi?",
+            "ru": "В кейсе хлопково-текстильного кластера, кто входит в число участников цепочки?",
+            "en": "In the cotton-textile cluster case, who is included among the participants in the chain?"
+          },
+          "options": [
+            {
+              "uz": "Fermerlar",
+              "ru": "Фермеры",
+              "en": "Farmers"
+            },
+            {
+              "uz": "Laboratoriya",
+              "ru": "Лаборатория",
+              "en": "Laboratory"
+            },
+            {
+              "uz": "Bojxona",
+              "ru": "Таможня",
+              "en": "Customs"
+            },
+            {
+              "uz": "Markaziy bank",
+              "ru": "Центральный банк",
+              "en": "Central bank"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Keysda fermerlar, klaster, laboratoriya, bojxona, logistika kompaniyasi va xaridor tilga olingan. Markaziy bank bu zanjir ishtirokchisi emas.",
+            "ru": "В кейсе упомянуты фермеры, кластер, лаборатория, таможня, логистическая компания и покупатель. Центральный банк не является участником этой цепочки.",
+            "en": "The case mentions farmers, the cluster, a laboratory, customs, a logistics company and the buyer. A central bank is not a participant in this chain."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Oʻzbekistonda kripto-aktivlar aylanmasi butunlay tartibga solinmagan va litsenziyasiz platformalardan foydalanish qonuniydir.",
+            "ru": "В Узбекистане оборот крипто-активов совершенно не регулируется, и использование нелицензированных платформ законно.",
+            "en": "In Uzbekistan, the circulation of crypto-assets is completely unregulated and using unlicensed platforms is legal."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Oʻzbekistonda kripto-aktivlar qonun bilan tartibga solinadi; faqat litsenziyalangan kripto-birjalar va kriptodoʻkonlar orqali ishlash mumkin.",
+            "ru": "В Узбекистане крипто-активы регулируются законом; работать можно только через лицензированные криптобиржи и криптомагазины.",
+            "en": "In Uzbekistan crypto-assets are regulated by law; one can only operate through licensed crypto exchanges and crypto shops."
+          }
+        }
+      ]
+    }
+  }
+}

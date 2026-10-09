@@ -1,0 +1,408 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Internet-banking nima?",
+          "ru": "Что такое интернет-банкинг?",
+          "en": "What is internet banking?"
+        },
+        "options": [
+          {
+            "uz": "Bank xizmatlaridan sayt yoki ilova orqali masofadan foydalanish",
+            "ru": "Дистанционное использование банковских услуг через сайт или приложение",
+            "en": "Using bank services remotely through a website or an app"
+          },
+          {
+            "uz": "Bankning faqat korporativ mijozlarga xizmat koʻrsatishi",
+            "ru": "Обслуживание банком только корпоративных клиентов",
+            "en": "A bank serving only corporate clients"
+          },
+          {
+            "uz": "Bank filiallarining 24/7 rejimida ishlashi",
+            "ru": "Работа отделений банка в режиме 24/7",
+            "en": "Bank branches working 24/7"
+          },
+          {
+            "uz": "Qidiruv tizimlarida bank saytini yuqoriga chiqarish",
+            "ru": "Продвижение сайта банка в поисковых системах",
+            "en": "Raising a bank's website in search engines"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra, internet-banking — bu bank xizmatlaridan masofadan turib foydalanishdir.",
+          "ru": "Согласно занятию, интернет-банкинг — это дистанционное использование банковских услуг.",
+          "en": "According to the lesson, internet banking is the remote use of bank services."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Telematik sugʻurta nimani oʻlchaydi?",
+          "ru": "Что измеряет телематическое страхование?",
+          "en": "What does telematics insurance measure?"
+        },
+        "options": [
+          {
+            "uz": "Haydash uslubini",
+            "ru": "Стиль вождения",
+            "en": "Driving style"
+          },
+          {
+            "uz": "Saytga tashrif buyuruvchilar sonini",
+            "ru": "Количество посетителей сайта",
+            "en": "The number of website visitors"
+          },
+          {
+            "uz": "Qidiruv soʻrovlarini",
+            "ru": "Поисковые запросы",
+            "en": "Search queries"
+          },
+          {
+            "uz": "Xaridorning yoshini va joylashuvini",
+            "ru": "Возраст и местоположение покупателя",
+            "en": "The buyer's age and location"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilishicha, telematik sugʻurta haydash uslubini oʻlchaydi.",
+          "ru": "В занятии сказано, что телематическое страхование измеряет стиль вождения.",
+          "en": "The lesson states that telematics insurance measures driving style."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Bank xodimlari baʼzan hisob xavfsizligi uchun SMS kod yoki kartaning CVV kodini soʻrashi mumkin.",
+          "ru": "Сотрудники банка иногда могут запрашивать SMS-код или CVV-код карты для безопасности счёта.",
+          "en": "Bank employees may sometimes ask for an SMS code or a card's CVV code for account security."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bank xodimlari hech qachon SMS kodlarni yoki parollarni soʻramaydi. Bu firibgarlikdir.",
+          "ru": "Сотрудники банка никогда не спрашивают SMS-коды или пароли. Это мошенничество.",
+          "en": "Bank staff never ask for SMS codes or passwords. That is fraud."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda aytib oʻtilgan internet-marketing vositalari qaysilar?",
+          "ru": "Какие из перечисленных инструментов интернет-маркетинга упоминаются в занятии?",
+          "en": "Which of the following internet marketing tools are mentioned in the lesson?"
+        },
+        "options": [
+          {
+            "uz": "SEO",
+            "ru": "SEO",
+            "en": "SEO"
+          },
+          {
+            "uz": "SMM",
+            "ru": "SMM",
+            "en": "SMM"
+          },
+          {
+            "uz": "Kontekstli reklama",
+            "ru": "Контекстная реклама",
+            "en": "Contextual advertising"
+          },
+          {
+            "uz": "Ochiq banking",
+            "ru": "Открытый банкинг",
+            "en": "Open banking"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda SEO, kontekstli va targetli reklama, shuningdek SMM internet-marketing vositalari sifatida koʻrsatilgan.",
+          "ru": "В занятии SEO, контекстная реклама и SMM указаны как инструменты интернет-маркетинга.",
+          "en": "In the lesson, SEO, contextual ads, and SMM are listed as internet marketing tools."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Agar 2000 tashrifdan 60 ta xarid boʻlsa, konversiya necha foizni tashkil qiladi?",
+          "ru": "Если из 2000 визитов совершено 60 покупок, сколько процентов составляет конверсия?",
+          "en": "If there are 2000 visits and 60 purchases, what is the conversion rate in percent?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "60 / 2000 = 0.03, yaʼni 3%.",
+          "ru": "60 / 2000 = 0.03, то есть 3%.",
+          "en": "60 / 2000 = 0.03, which is 3%."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kontekstli va targetli reklamaning farqi nima?",
+          "ru": "В чём отличие контекстной рекламы от таргетированной?",
+          "en": "What is the difference between contextual and targeted advertising?"
+        },
+        "options": [
+          {
+            "uz": "Kontekstli reklama qidiruv soʻroviga mos keladi, targetli esa auditoriya xususiyatlariga koʻra tanlanadi",
+            "ru": "Контекстная реклама соответствует поисковому запросу, а таргетированная выбирается по характеристикам аудитории",
+            "en": "Contextual ads match a search query, while targeted ads are selected by audience characteristics"
+          },
+          {
+            "uz": "Kontekstli reklama faqat ijtimoiy tarmoqlarda, targetli esa faqat qidiruv tizimlarida ishlaydi",
+            "ru": "Контекстная реклама работает только в соцсетях, а таргетированная только в поисковиках",
+            "en": "Contextual ads work only on social networks, and targeted ads only in search engines"
+          },
+          {
+            "uz": "Kontekstli reklama qimmatroq, targetli reklama esa bepul",
+            "ru": "Контекстная реклама дороже, а таргетированная бесплатна",
+            "en": "Contextual advertising is more expensive, and targeted advertising is free"
+          },
+          {
+            "uz": "Ular oʻrtasida hech qanday farq yoʻq",
+            "ru": "Между ними нет разницы",
+            "en": "There is no difference between them"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Kontekstli reklama qidiruvdagi soʻzlarga asoslanadi, targetli reklama esa auditoriya parametrlariga (yosh, joylashuv) qarab koʻrsatiladi.",
+          "ru": "Контекстная реклама основана на словах в поиске, а таргетированная показывается по параметрам аудитории (возраст, место).",
+          "en": "Contextual ads are based on search words, while targeted ads are shown based on audience parameters (age, location)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Internet-bankingda \"Biznes uchun\" guruhiga qaysi xizmatlar kiradi?",
+          "ru": "Какие услуги входят в группу «Для бизнеса» в интернет-банкинге?",
+          "en": "Which services belong to the \"For business\" group in internet banking?"
+        },
+        "options": [
+          {
+            "uz": "Korporativ hisob",
+            "ru": "Корпоративный счёт",
+            "en": "A corporate account"
+          },
+          {
+            "uz": "Ish haqi loyihasi",
+            "ru": "Зарплатный проект",
+            "en": "Payroll projects"
+          },
+          {
+            "uz": "Toʻlov topshiriqnomalari",
+            "ru": "Платёжные поручения",
+            "en": "Payment orders"
+          },
+          {
+            "uz": "Kommunal toʻlovlar",
+            "ru": "Коммунальные платежи",
+            "en": "Utility payments"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Korporativ hisob, ish haqi loyihasi va toʻlov topshiriqnomalari biznes xizmatlaridir. Kommunal toʻlovlar esa umumiy toʻlovlardir.",
+          "ru": "Корпоративный счёт, зарплатный проект и платёжные поручения — это бизнес-услуги. Коммунальные платежи — это общие платежи.",
+          "en": "A corporate account, payroll projects, and payment orders are business services. Utility payments are general payments."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ochiq banking (Open Banking) ruxsat berilganda raqamli bank filiallari 24/7 ishlashini anglatadi.",
+          "ru": "Открытый банкинг (Open Banking) означает, что отделения цифрового банка работают 24/7.",
+          "en": "Open Banking means that a digital bank's branches work 24/7."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Ochiq banking bu bank maʼlumotlarini boshqa xizmatlarga API orqali uzatishdir, filiallar ishlashi emas.",
+          "ru": "Открытый банкинг — это передача данных банка другим сервисам через API, а не работа отделений.",
+          "en": "Open Banking is the transfer of bank data to other services through an API, not the operation of branches."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Saytni qidiruv tizimlarida yuqoriga chiqarish jarayoni qanday qisqartma bilan yoziladi?",
+          "ru": "Какой аббревиатурой обозначается продвижение сайта в результатах поисковых систем?",
+          "en": "What abbreviation is used for raising a website in search engine results?"
+        },
+        "answers": [
+          "SEO"
+        ],
+        "explanation": {
+          "uz": "Saytni qidiruv tizimlarida yuqoriga chiqarish jarayoni SEO (Search Engine Optimization) deb ataladi.",
+          "ru": "Процесс продвижения сайта в результатах поиска называется SEO.",
+          "en": "The process of raising a website in search results is called SEO."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Asosiy tushunchalar",
+      "ru": "Основные понятия",
+      "en": "Basic concepts"
+    },
+    "statement": {
+      "uz": "Seminardagi asosiy tushunchalarni yodga oling va quyidagi savollarga javob bering.",
+      "ru": "Вспомните основные понятия с семинара и ответьте на следующие вопросы.",
+      "en": "Recall the basic concepts from the seminar and answer the following questions."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Mijozning bankka bormasdan, pasport va yuz biometriyasi orqali shaxsini tasdiqlashi nima deb ataladi?",
+            "ru": "Как называется подтверждение личности клиента без визита в банк по паспортным данным и биометрии лица?",
+            "en": "What is the term for verifying a customer's identity without visiting the bank, through passport data and face biometrics?"
+          },
+          "options": [
+            {
+              "uz": "Masofaviy identifikatsiya",
+              "ru": "Удалённая идентификация",
+              "en": "Remote identification"
+            },
+            {
+              "uz": "Ochiq banking",
+              "ru": "Открытый банкинг",
+              "en": "Open banking"
+            },
+            {
+              "uz": "Omnikanal savdo",
+              "ru": "Омниканальная торговля",
+              "en": "Omnichannel trade"
+            },
+            {
+              "uz": "Telematik sugʻurta",
+              "ru": "Телематическое страхование",
+              "en": "Telematics insurance"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Masofaviy identifikatsiya mijozga bankka bormasdan shaxsini tasdiqlash imkonini beradi.",
+            "ru": "Удалённая идентификация позволяет клиенту подтвердить личность без визита в банк.",
+            "en": "Remote identification allows a customer to verify their identity without visiting the bank."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsga koʻra, sotuv varonkasidagi mijoz yoʻlining bosqichlari qaysilar?",
+            "ru": "Каковы этапы пути клиента в воронке продаж согласно занятию?",
+            "en": "What are the stages of the customer journey in the sales funnel according to the lesson?"
+          },
+          "options": [
+            {
+              "uz": "Koʻrdi",
+              "ru": "Увидел",
+              "en": "Saw"
+            },
+            {
+              "uz": "Savatga qoʻshdi",
+              "ru": "Добавил в корзину",
+              "en": "Added to basket"
+            },
+            {
+              "uz": "Xarid qildi",
+              "ru": "Купил",
+              "en": "Bought"
+            },
+            {
+              "uz": "Dasturni yozdi",
+              "ru": "Написал программу",
+              "en": "Wrote a program"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Sotuv varonkasi bosqichlariga koʻrdi, bosdi, savatga qoʻshdi, xarid qildi va qayta xarid qildi kiradi.",
+            "ru": "Этапы воронки продаж включают: увидел, кликнул, добавил в корзину, купил и купил повторно.",
+            "en": "The sales funnel stages include: saw, clicked, added to basket, bought, and bought again."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Elektron sugʻurta polisi qogʻoz polis bilan bir xil yuridik kuchga ega.",
+            "ru": "Электронный страховой полис равнозначен бумажному полису.",
+            "en": "An electronic insurance policy is equivalent to a paper one."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda aytilishicha, elektron polis qogʻoz polis bilan teng kuchga ega.",
+            "ru": "Как сказано в занятии, электронный полис равнозначен бумажному.",
+            "en": "As the lesson states, an electronic policy is equivalent to a paper one."
+          }
+        }
+      ]
+    }
+  }
+}

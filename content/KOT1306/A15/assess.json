@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Paket manzilga qaysi marshrutizatorlar orqali borishini koʻrsatuvchi Windows utilitasi qaysi?",
+          "ru": "Какая утилита Windows показывает, через какие маршрутизаторы идёт пакет к адресату?",
+          "en": "Which Windows utility shows the routers a packet passes on its way to the destination?"
+        },
+        "options": [
+          {
+            "uz": "`tracert`",
+            "ru": "`tracert`",
+            "en": "`tracert`"
+          },
+          {
+            "uz": "`getmac`",
+            "ru": "`getmac`",
+            "en": "`getmac`"
+          },
+          {
+            "uz": "`hostname`",
+            "ru": "`hostname`",
+            "en": "`hostname`"
+          },
+          {
+            "uz": "`route print`",
+            "ru": "`route print`",
+            "en": "`route print`"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: yoʻl — Windows da `tracert host`, Linux da `traceroute host`; `route print` esa marshrut jadvalini koʻrsatadi.",
+          "ru": "Таблица из занятия: путь — `tracert host` в Windows и `traceroute host` в Linux; `route print` показывает таблицу маршрутизации.",
+          "en": "The lesson table: the path is `tracert host` on Windows and `traceroute host` on Linux; `route print` shows the routing table."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Linux da manzil va sozlamalarni koʻrish uchun `ipconfig /all` ishlatiladi.",
+          "ru": "Для просмотра адреса и настроек в Linux используют `ipconfig /all`.",
+          "en": "On Linux the address and settings are viewed with `ipconfig /all`."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "`ipconfig /all` — Windows uchun; darsdagi jadvalda Linux ustunida `ip addr`, `ip route` va `resolvectl status` berilgan.",
+          "ru": "`ipconfig /all` — команда Windows; в столбце Linux таблицы занятия указаны `ip addr`, `ip route` и `resolvectl status`.",
+          "en": "`ipconfig /all` is a Windows command; the lesson table lists `ip addr`, `ip route` and `resolvectl status` for Linux."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi jadvalda Linux uchun `ping -c 10 host` keltirilgan: bu buyruq nechta bogʻlanish soʻrovi yuboradi?",
+          "ru": "В таблице занятия для Linux приведена команда `ping -c 10 host`: сколько запросов она отправляет?",
+          "en": "The lesson table shows `ping -c 10 host` for Linux: how many requests does it send?"
+        },
+        "answers": [10],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "`-c 10` — 10 ta soʻrov; Windows da shunga mos kalit `-n`, masalan `ping -n 10 host`.",
+          "ru": "`-c 10` означает 10 запросов; в Windows соответствующий ключ `-n`, например `ping -n 10 host`.",
+          "en": "`-c 10` means 10 requests; the matching Windows switch is `-n`, as in `ping -n 10 host`."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi stsenariylar jadvaliga koʻra, kompyuter 169.254.x.x manzil olgan boʻlsa, odatiy sabab nima?",
+          "ru": "Согласно таблице сценариев из занятия, какова обычная причина, если компьютер получил адрес 169.254.x.x?",
+          "en": "By the lesson's scenario table, what is the usual cause when a computer has the address 169.254.x.x?"
+        },
+        "options": [
+          {
+            "uz": "DHCP server ishlamaydi yoki unga yetib boʻlmaydi",
+            "ru": "DHCP-сервер не работает или до него не добраться",
+            "en": "The DHCP server is down or unreachable"
+          },
+          {
+            "uz": "DNS server manzili notoʻgʻri",
+            "ru": "Неверный адрес DNS-сервера",
+            "en": "The DNS server address is wrong"
+          },
+          {
+            "uz": "Ikki qurilmada bir xil statik IP",
+            "ru": "Два устройства имеют одинаковый статический IP",
+            "en": "Two devices share one static IP"
+          },
+          {
+            "uz": "Kabel uzilgan yoki port oʻchiq",
+            "ru": "Оборван кабель или порт отключён",
+            "en": "The cable is cut or the port is down"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Jadvalda bu belgiga tekshiruv `ipconfig /all` va `/renew`, sabab — DHCP server ishlamaydi yoki yetib boʻlmaydi deyilgan.",
+          "ru": "Для этого признака в таблице проверки `ipconfig /all` и `/renew`, причина — DHCP-сервер не работает или недосягаем.",
+          "en": "The table pairs this symptom with `ipconfig /all` and `/renew`, and names the DHCP server being down or unreachable."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Manzil va sozlamalarni toʻliq koʻrsatish uchun ipconfig buyrugʻiga qaysi kalit qoʻshiladi?",
+          "ru": "Какой ключ добавляют к `ipconfig`, чтобы увидеть адрес и настройки полностью?",
+          "en": "Which switch do you add to `ipconfig` to see the full address and settings?"
+        },
+        "answers": ["/all", "all", "/ALL"],
+        "explanation": {
+          "uz": "Darsdagi jadval: manzil va sozlamalar — `ipconfig /all`; bundan tashqari `/release` va `/renew` manzilni yangilaydi, `/flushdns` DNS keshini tozalaydi.",
+          "ru": "Таблица из занятия: адрес и настройки — `ipconfig /all`; кроме того, `/release` и `/renew` обновляют адрес, `/flushdns` очищает кеш DNS.",
+          "en": "The lesson table: address and settings — `ipconfig /all`; besides it, `/release` and `/renew` refresh the address and `/flushdns` clears the DNS cache."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ishlangan misol 2 da 5-qadam uchun `60 * 62` yozilgan. Dastur shu qadamning oʻrtacha RTT qiymatini nechcha ms deb chiqaradi?",
+          "ru": "В разобранном примере 2 для пятого шага записано `60 * 62`. Сколько миллисекунд составляет среднее RTT этого шага в выводе программы?",
+          "en": "In worked example 2 the fifth hop reads `60 * 62`. What average RTT in milliseconds does the program print for it?"
+        },
+        "answers": [61],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Oʻrtacha faqat javob kelgan vaqtlar boʻyicha hisoblanadi: (60 + 62) / 2 = 61, chiqishda `5 72.14.215.1: 61.0 ms`.",
+          "ru": "Среднее считается только по полученным ответам: (60 + 62) / 2 = 61, в выводе `5 72.14.215.1: 61.0 ms`.",
+          "en": "The average uses only the answers that arrived: (60 + 62) / 2 = 61, and the output reads `5 72.14.215.1: 61.0 ms`."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`tracert` da bitta oraliq qadamning uchala natijasi `*`, keyingi qadamlar esa javob beradi. Darsda bu haqda nima deyiladi?",
+          "ru": "На одном промежуточном шаге `tracert` все три результата — `*`, а следующие шаги отвечают. Что об этом сказано в занятии?",
+          "en": "On one intermediate `tracert` hop all three results are `*`, while the later hops answer. What does the lesson say?"
+        },
+        "options": [
+          {
+            "uz": "Oʻsha router ICMP ga javob bermaslikka sozlangan — yoʻl ishlayapti, bu nosozlik emas",
+            "ru": "Тот маршрутизатор настроен не отвечать на ICMP — путь работает, это не неисправность",
+            "en": "That router is configured not to answer ICMP — the path works, it is not a fault"
+          },
+          {
+            "uz": "Yoʻl uzilgan, keyingi qadamlar boshqa marshrutdan javob berayapti",
+            "ru": "Путь оборван, следующие шаги отвечают по другому маршруту",
+            "en": "The path is broken, the later hops answer along another route"
+          },
+          {
+            "uz": "Marshrutizatorni qayta yuklash kerak",
+            "ru": "Маршрутизатор нужно перезагрузить",
+            "en": "The router must be rebooted"
+          },
+          {
+            "uz": "DNS server ishlamayapti",
+            "ru": "DNS-сервер не работает",
+            "en": "The DNS server is down"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda `tracert` dagi `*` ni uzilish deb hisoblash koʻp uchraydigan xato deb berilgan: keyingi qadamlar javob bersa, yoʻl ishlayapti.",
+          "ru": "В занятии считать `*` в `tracert` обрывом названо типичной ошибкой: если следующие шаги отвечают, путь работает.",
+          "en": "The lesson lists taking a `*` in `tracert` for a break as a common mistake: when the next hops answer, the path works."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`netstat` chiqishidagi holatlar va ularning talqini boʻyicha qaysi juftliklar toʻgʻri?",
+          "ru": "Какие пары «состояние в выводе netstat — его толкование» верны?",
+          "en": "Which pairs of a `netstat` state and its reading are correct?"
+        },
+        "options": [
+          {
+            "uz": "LISTENING — ochiq xizmatlar (tinglanayotgan portlar)",
+            "ru": "`LISTENING` — открытые службы (прослушиваемые порты)",
+            "en": "`LISTENING` — open services (ports being listened on)"
+          },
+          {
+            "uz": "`ESTABLISHED` — faol ulanishlar",
+            "ru": "`ESTABLISHED` — активные соединения",
+            "en": "`ESTABLISHED` — active connections"
+          },
+          {
+            "uz": "`SYN_SENT` — ulanish soʻrovi yuborilgan, javob yoʻq",
+            "ru": "`SYN_SENT` — запрос на соединение отправлен, ответа нет",
+            "en": "`SYN_SENT` — a connection request was sent with no answer"
+          },
+          {
+            "uz": "`TIME_WAIT` — router ICMP ga javob bermayapti",
+            "ru": "`TIME_WAIT` — маршрутизатор не отвечает на ICMP",
+            "en": "`TIME_WAIT` — the router does not answer ICMP"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "`TIME_WAIT` — yopilgan ulanishlar; ICMP ga javob bermaslik `tracert` dagi `*` bilan bogʻliq holat.",
+          "ru": "`TIME_WAIT` — это закрытые соединения; отсутствие ответа на ICMP относится к `*` в `tracert`.",
+          "en": "`TIME_WAIT` means closed connections; not answering ICMP belongs to the `*` rows of `tracert`."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "netstat -ano da -o kaliti PID ni beradi, dastur nomlarini koʻrish uchun esa `-b` administrator huquqida kerak boʻladi.",
+          "ru": "Ключ `-o` в `netstat -ano` даёт PID, а имена программ через `-b` требуют прав администратора.",
+          "en": "The `-o` switch of `netstat -ano` gives the PID, while program names via `-b` need administrator rights."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda netstat -a ni -b bilan administrator huquqisiz ishga tushirish xato deb aytilgan: PID ni -o bilan olib, Task Manager da solishtirish tavsiya etiladi.",
+          "ru": "В занятии запуск `netstat -a` с `-b` без прав администратора назван ошибкой: PID получают через `-o` и сверяют в Task Manager.",
+          "en": "The lesson calls running `netstat -a` with `-b` without administrator rights a mistake: it recommends taking the PID with `-o` and checking it in Task Manager."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Ping kuzatuvi",
+      "ru": "Мониторинг ping",
+      "en": "A ping monitor"
+    },
+    "statement": {
+      "uz": "Administrator tarmoqdagi uchta qurilmaga muntazam ping yuboradi va javoblarni yozib boradi. Har bir qurilma boʻyicha yoʻqotishlar sonini hamda eng kichik va eng katta javob vaqtini hisoblovchi dastur yozing. Kirish: birinchi satrda n — qurilmalar soni; keyin har bir qurilma uchun uch qism: bitta satrda qurilma nomi (boʻshliqsiz), bitta satrda m — urinishlar soni, soʻng m satrda javoblar: javob kelgan boʻlsa `R <ms>` (vaqt — butun son, millisekundda), javob kelmasa `*`. Chiqish: har bir qurilma uchun bitta satr — nomi, yoʻqotishlar soni, eng kichik javob vaqti va eng katta javob vaqti; agar qurilmadan birorta javob kelmagan boʻlsa, ikki vaqt oʻrniga `- -` yoziladi. Oxirgi satrda eng kam yoʻqotishli qurilma nomi va uning yoʻqotishlar soni chiqariladi; tenglikda kirishda oldinroq kelgan qurilma oladi. Qurilmalar chiqishda kirishdagi tartibda beriladi. Boshqa matn yozmang. 1 ≤ n ≤ 50, 1 ≤ m ≤ 100. Masalan, `GW-LAB` uchun `R 2`, `R 3`, `*`, `R 4` javoblar kelsa, satr `GW-LAB 1 2 4` boʻladi.",
+      "ru": "Администратор регулярно отправляет `ping` трём устройствам сети и записывает ответы. Напишите программу, которая для каждого устройства считает число потерь, а также минимальное и максимальное время ответа. Ввод: в первой строке n — число устройств; далее для каждого устройства три части: строка с именем устройства (без пробелов), строка с числом попыток m и следующие m строк ответов: если ответ пришёл — `R <мс>` (время — целое число миллисекунд), если нет — `*`. Вывод: на каждое устройство одна строка — имя, число потерь, минимальное и максимальное время ответа; если ни одного ответа не пришло, вместо обоих времён пишется `- -`. Последней строкой выведите имя устройства с наименьшим числом потерь и это число; при равенстве выигрывает то, что во вводе встречается раньше. Устройства выводятся в порядке ввода. Другой текст не печатайте. 1 ≤ n ≤ 50, 1 ≤ m ≤ 100. Например, ответы `R 2`, `R 3`, `*`, `R 4` для `GW-LAB` дают строку `GW-LAB 1 2 4`.",
+      "en": "An administrator pings three network devices regularly and records the answers. Write a program that, for each device, counts the lost attempts and finds the smallest and the largest reply time. Input: the first line holds n — the number of devices; then for each device three parts: one line with the device name (no spaces), one line with the number of attempts m, and the next m lines with the answers — `R <ms>` when a reply came (the time is a whole number of milliseconds), `*` when none came. Output: one line per device — its name, the number of losses, the smallest reply time and the largest one; if the device never answered, print `- -` in place of the two times. The last line names the device with the fewest losses and that number; on a tie the device that comes first in the input wins. Devices appear in input order. Print no other text. 1 ≤ n ≤ 50, 1 ≤ m ≤ 100. For example, the answers `R 2`, `R 3`, `*`, `R 4` for `GW-LAB` give the line `GW-LAB 1 2 4`."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nfor _ in range(n):\n    host = input().strip()\n    m = int(input())\n    yoqotish = 0\n    minvaqt = 10 ** 9\n    maxvaqt = 0\n    for _ in range(m):\n        satr = input().strip()\n        if satr == \"*\":\n            yoqotish += 1\n        else:\n            vaqt = int(satr.split()[1])\n            minvaqt = min(minvaqt, vaqt)\n            maxvaqt = max(maxvaqt, vaqt)\n    print(host + \" \" + str(yoqotish) + \" \" + str(minvaqt) + \" \" + str(maxvaqt))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n        for (int i = 0; i < n; i++) {\n            String host = in.nextLine().trim();\n            int m = Integer.parseInt(in.nextLine().trim());\n            int yoqotish = 0;\n            int minvaqt = 1000000000;\n            int maxvaqt = 0;\n            for (int j = 0; j < m; j++) {\n                String satr = in.nextLine().trim();\n                if (satr.equals(\"*\")) {\n                    yoqotish++;\n                } else {\n                    int vaqt = Integer.parseInt(satr.split(\" +\")[1]);\n                    if (vaqt < minvaqt) minvaqt = vaqt;\n                    if (vaqt > maxvaqt) maxvaqt = vaqt;\n                }\n            }\n            System.out.println(host + \" \" + yoqotish + \" \" + minvaqt + \" \" + maxvaqt);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        string host;\n        int m;\n        cin >> host >> m;\n        int yoqotish = 0;\n        int minvaqt = 1000000000;\n        int maxvaqt = 0;\n        for (int j = 0; j < m; j++) {\n            string tur;\n            cin >> tur;\n            if (tur == \"*\") {\n                yoqotish++;\n            } else {\n                int vaqt;\n                cin >> vaqt;\n                if (vaqt < minvaqt) minvaqt = vaqt;\n                if (vaqt > maxvaqt) maxvaqt = vaqt;\n            }\n        }\n        cout << host << \" \" << yoqotish << \" \" << minvaqt << \" \" << maxvaqt << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nnatijalar = []\nfor _ in range(n):\n    host = input().strip()\n    m = int(input())\n    vaqtlar = []\n    yoqotish = 0\n    for _ in range(m):\n        satr = input().strip()\n        if satr == \"*\":\n            yoqotish += 1\n        else:\n            vaqtlar.append(int(satr.split()[1]))\n    if vaqtlar:\n        print(host + \" \" + str(yoqotish) + \" \" + str(min(vaqtlar)) + \" \" + str(max(vaqtlar)))\n    else:\n        print(host + \" \" + str(yoqotish) + \" - -\")\n    natijalar.append((host, yoqotish))\neng = natijalar[0]\nfor host, yoqotish in natijalar:\n    if yoqotish < eng[1]:\n        eng = (host, yoqotish)\nprint(eng[0] + \" \" + str(eng[1]))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n        String engHost = \"\";\n        int engYoq = 0;\n        for (int i = 0; i < n; i++) {\n            String host = in.nextLine().trim();\n            int m = Integer.parseInt(in.nextLine().trim());\n            int yoqotish = 0;\n            int minvaqt = 1000000000;\n            int maxvaqt = 0;\n            for (int j = 0; j < m; j++) {\n                String satr = in.nextLine().trim();\n                if (satr.equals(\"*\")) {\n                    yoqotish++;\n                } else {\n                    int vaqt = Integer.parseInt(satr.split(\" +\")[1]);\n                    if (vaqt < minvaqt) minvaqt = vaqt;\n                    if (vaqt > maxvaqt) maxvaqt = vaqt;\n                }\n            }\n            if (yoqotish == m) {\n                System.out.println(host + \" \" + yoqotish + \" - -\");\n            } else {\n                System.out.println(host + \" \" + yoqotish + \" \" + minvaqt + \" \" + maxvaqt);\n            }\n            if (i == 0 || yoqotish < engYoq) {\n                engHost = host;\n                engYoq = yoqotish;\n            }\n        }\n        System.out.println(engHost + \" \" + engYoq);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    string engHost;\n    int engYoq = 0;\n    for (int i = 0; i < n; i++) {\n        string host;\n        int m;\n        cin >> host >> m;\n        int yoqotish = 0;\n        int minvaqt = 1000000000;\n        int maxvaqt = 0;\n        for (int j = 0; j < m; j++) {\n            string tur;\n            cin >> tur;\n            if (tur == \"*\") {\n                yoqotish++;\n            } else {\n                int vaqt;\n                cin >> vaqt;\n                if (vaqt < minvaqt) minvaqt = vaqt;\n                if (vaqt > maxvaqt) maxvaqt = vaqt;\n            }\n        }\n        if (yoqotish == m) cout << host << \" \" << yoqotish << \" - -\" << endl;\n        else cout << host << \" \" << yoqotish << \" \" << minvaqt << \" \" << maxvaqt << endl;\n        if (i == 0 || yoqotish < engYoq) {\n            engHost = host;\n            engYoq = yoqotish;\n        }\n    }\n    cout << engHost << \" \" << engYoq << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\nGW-LAB\n4\nR 2\nR 3\n*\nR 4\nDNS-8888\n3\nR 120\nR 140\nR 118\nSRV-DC01\n2\n*\n*\n", "expected": "GW-LAB 1 2 4\nDNS-8888 0 118 140\nSRV-DC01 2 - -\nDNS-8888 0", "hidden": false },
+        { "input": "1\nGW\n3\nR 5\nR 5\nR 5\n", "expected": "GW 0 5 5\nGW 0", "hidden": false },
+        { "input": "2\nA\n2\n*\nR 30\nB\n2\nR 40\n*\n", "expected": "A 1 30 30\nB 1 40 40\nA 1", "hidden": true },
+        { "input": "3\nSRV-DC01\n4\nR 1\nR 7\nR 4\n*\nPC07\n1\n*\nPC08\n3\nR 200\nR 15\nR 90\n", "expected": "SRV-DC01 1 1 7\nPC07 1 - -\nPC08 0 15 200\nPC08 0", "hidden": true },
+        { "input": "2\nh1\n3\nR 8\nR 9\nR 10\nh2\n4\nR 3\n*\nR 3\n*\n", "expected": "h1 0 8 10\nh2 2 3 3\nh1 0", "hidden": true }
+      ]
+    }
+  }
+}

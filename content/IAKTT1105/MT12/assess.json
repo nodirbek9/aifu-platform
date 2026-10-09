@@ -1,0 +1,269 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "SQL qaysi dasturlash tillari avlodiga (GL) kiradi?",
+          "ru": "К какому поколению языков программирования (GL) относится SQL?",
+          "en": "Which generation of programming languages (GL) does SQL belong to?"
+        },
+        "options": [
+          { "uz": "1GL", "ru": "1GL", "en": "1GL" },
+          { "uz": "2GL", "ru": "2GL", "en": "2GL" },
+          { "uz": "3GL", "ru": "3GL", "en": "3GL" },
+          { "uz": "4GL", "ru": "4GL", "en": "4GL" }
+        ],
+        "correct": [3],
+        "explanation": {
+          "uz": "SQL natijani tasvirlaydigan («nima kerak», «qanday» emas) 4GL avlodiga kiradi.",
+          "ru": "SQL относится к 4GL, описывающему результат («что нужно», а не «как»).",
+          "en": "SQL belongs to 4GL, describing the result («what is needed», not «how»)."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python va R tillari odatda kompilyatsiya oʻrniga interpretatsiya qilinadi.",
+          "ru": "Языки Python и R обычно интерпретируются, а не компилируются.",
+          "en": "The Python and R languages are typically interpreted rather than compiled."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Python va R dasturlari qatorma-qator bajariladigan interpretatsiya qilinadigan tillar qatoriga kiradi.",
+          "ru": "Python и R относятся к интерпретируемым языкам, чьи программы выполняются построчно.",
+          "en": "Python and R belong to interpreted languages, whose programs are executed line by line."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsga koʻra, iqtisodchi uchun qaysi tillarni oʻrganish eng samarali yoʻl hisoblanadi?",
+          "ru": "Согласно уроку, изучение каких языков является наиболее эффективным путём для экономиста?",
+          "en": "According to the lesson, which languages form the most effective learning path for an economist?"
+        },
+        "options": [
+          { "uz": "SQL", "ru": "SQL", "en": "SQL" },
+          { "uz": "C++", "ru": "C++", "en": "C++" },
+          { "uz": "Python (yoki R)", "ru": "Python (или R)", "en": "Python (or R)" },
+          { "uz": "Assembler", "ru": "Ассемблер", "en": "Assembler" }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Iqtisodchi uchun samarali yoʻl: Excel → SQL → Python (yoki R) deb koʻrsatilgan.",
+          "ru": "Эффективный путь для экономиста указан как: Excel → SQL → Python (или R).",
+          "en": "The effective path for an economist is shown as: Excel → SQL → Python (or R)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Buxgalteriya va moliya dasturlarida nima uchun pulni double yoki float turida saqlash xavfli?",
+          "ru": "Почему в бухгалтерских и финансовых программах опасно хранить деньги в типе double или float?",
+          "en": "Why is it dangerous to store money in the double or float type in accounting and finance programs?"
+        },
+        "options": [
+          {
+            "uz": "Ular oʻnli kasrlarni ikkilik tizimida aniq saqlay olmaydi va kichik xatolar yigʻiladi",
+            "ru": "Они не могут точно хранить десятичные дроби в двоичной системе, и накапливаются мелкие ошибки",
+            "en": "They cannot store decimal fractions exactly in binary, and small errors accumulate"
+          },
+          {
+            "uz": "Ular faqat butun sonlarni saqlaydi va qoldiqlarni eʼtiborsiz qoldiradi",
+            "ru": "Они хранят только целые числа и игнорируют остатки",
+            "en": "They only store integers and ignore remainders"
+          },
+          {
+            "uz": "Ular dasturning ishlashini sekinlashtiradi va koʻp xotira talab qiladi",
+            "ru": "Они замедляют работу программы и требуют много памяти",
+            "en": "They slow down the program and require a lot of memory"
+          },
+          {
+            "uz": "Bu turlar faqat C++ tilida mavjud va boshqa tillarda ishlamaydi",
+            "ru": "Эти типы существуют только в C++ и не работают в других языках",
+            "en": "These types only exist in C++ and do not work in other languages"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "0,1 kabi oʻnli kasrlar ikkilikda cheksiz kasr boʻladi va taxminan saqlanadi, bu esa moliyaviy xatolarga olib keladi.",
+          "ru": "Десятичные дроби вроде 0,1 в двоичной системе становятся бесконечными и хранятся приближённо, что приводит к финансовым ошибкам.",
+          "en": "Decimal fractions like 0.1 become infinite fractions in binary and are stored approximately, leading to financial errors."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Dasturlash paradigmalariga berilgan toʻgʻri taʼriflarni tanlang.",
+          "ru": "Выберите верные определения парадигм программирования.",
+          "en": "Choose the correct definitions for programming paradigms."
+        },
+        "options": [
+          {
+            "uz": "Protsedurali: dastur - buyruqlar va funksiyalar ketma-ketligi",
+            "ru": "Процедурная: программа — последовательность команд и функций",
+            "en": "Procedural: a program is a sequence of commands and functions"
+          },
+          {
+            "uz": "Obyektga yoʻnaltirilgan: natija qanday hisoblanishini koʻrsatmaydi, nima kerakligini yozadi",
+            "ru": "Объектно-ориентированная: не показывает, как вычислять результат, а пишет, что нужно",
+            "en": "Object-oriented: does not show how to compute the result, but writes what is needed"
+          },
+          {
+            "uz": "Funksional: natija funksiyalar kompozitsiyasi, holat oʻzgarmaydi",
+            "ru": "Функциональная: результат — композиция функций, состояние не меняется",
+            "en": "Functional: the result is a composition of functions, state does not change"
+          },
+          {
+            "uz": "Deklarativ: maʼlumot va amallar obyektlarga birlashtiriladi",
+            "ru": "Декларативная: данные и операции объединяются в объекты",
+            "en": "Declarative: data and operations are combined into objects"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Protsedurali va funksional paradigmalar taʼrifi toʻgʻri berilgan. Obyektga yoʻnaltirilgan va deklarativ taʼriflari esa almashtirib yozilgan.",
+          "ru": "Определения процедурной и функциональной парадигм даны верно. Определения объектно-ориентированной и декларативной перепутаны местами.",
+          "en": "The definitions for procedural and functional paradigms are correct. The definitions for object-oriented and declarative are swapped."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "0,25 kabi sonlar kompyuter xotirasida (ikkilik tizimda) cheksiz kasrga aylanib, aniq saqlanmaydi.",
+          "ru": "Такие числа, как 0,25, в памяти компьютера (в двоичной системе) превращаются в бесконечную дробь и не хранятся точно.",
+          "en": "Numbers like 0.25 become infinite fractions in the computer's memory (in binary) and are not stored exactly."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "0,25 soni 1/4 ga teng boʻlgani uchun ikkilik tizimda aniq ifodalanadi va cheksiz kasrga aylanmaydi (0,1 dan farqli ravishda).",
+          "ru": "Число 0,25 равно 1/4, поэтому оно точно представляется в двоичной системе и не становится бесконечной дробью (в отличие от 0,1).",
+          "en": "The number 0.25 equals 1/4, so it is represented exactly in binary and does not become an infinite fraction (unlike 0.1)."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "0,25 soni ikkilik tizimda aniq ifodalanadi, chunki u oddiy kasr koʻrinishida 1/X ga teng. X ning qiymati nechaga teng?",
+          "ru": "Число 0,25 точно представляется в двоичной системе, так как оно равно обыкновенной дроби 1/X. Чему равно значение X?",
+          "en": "The number 0.25 is represented exactly in binary because it equals the simple fraction 1/X. What is the value of X?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "0,25 soni 1/4 ni bildiradi. Maxraj ikkining darajasi (4 = 2^2) boʻlgani uchun ikkilik tizimda aniq saqlanadi.",
+          "ru": "0,25 означает 1/4. Поскольку знаменатель является степенью двойки (4 = 2^2), число точно хранится в двоичной системе.",
+          "en": "0.25 represents 1/4. Because the denominator is a power of two (4 = 2^2), the number is stored exactly in binary."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "«Nima» kerakligini yozib, «qanday» bajarishni koʻrsatmaydigan paradigma (masalan, SQL tili) qanday nomlanadi?",
+          "ru": "Как называется парадигма (например, язык SQL), в которой пишется, «что» нужно, а не «как» это сделать?",
+          "en": "What is the paradigm called (e.g. the SQL language) that writes «what» is needed, not «how» to do it?"
+        },
+        "answers": ["deklarativ", "declarative", "декларативная", "deklarativ paradigma", "декларативная парадигма", "declarative paradigm"],
+        "explanation": {
+          "uz": "Bu deklarativ paradigma boʻlib, dasturchi natijani tasvirlaydi, uni qanday olishni esa tizim oʻzi hal qiladi.",
+          "ru": "Это декларативная парадигма, где программист описывает результат, а система сама решает, как его получить.",
+          "en": "This is the declarative paradigm, where the programmer describes the result and the system decides how to get it."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bayt-kod va JIT (Just-In-Time) yondashuvining asosiy afzalligi nima?",
+          "ru": "В чём основное преимущество подхода с использованием байт-кода и JIT (Just-In-Time)?",
+          "en": "What is the main advantage of the bytecode and JIT (Just-In-Time) approach?"
+        },
+        "options": [
+          {
+            "uz": "Dasturni faqat bitta platformada eng yuqori tezlikda ishlashini taʼminlaydi",
+            "ru": "Обеспечивает работу программы с максимальной скоростью только на одной платформе",
+            "en": "Ensures the program runs at maximum speed on only one platform"
+          },
+          {
+            "uz": "Kodni yozishni qisqartirib, vizual konstruktorlardan foydalanish imkonini beradi",
+            "ru": "Сокращает написание кода, позволяя использовать визуальные конструкторы",
+            "en": "Reduces code writing, allowing the use of visual builders"
+          },
+          {
+            "uz": "Platformadan mustaqillikni taʼminlaydi va bajarish vaqtida dasturni tezlashtiradi",
+            "ru": "Обеспечивает независимость от платформы и ускоряет программу во время выполнения",
+            "en": "Provides platform independence and speeds up the program at run time"
+          },
+          {
+            "uz": "Barcha mantiqiy xatolarni avtomatik tarzda topadi va tuzatadi",
+            "ru": "Автоматически находит и исправляет все логические ошибки",
+            "en": "Automatically finds and fixes all logical errors"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Bayt-kod turli xil operatsion tizimlarda ishlash imkonini beradi, JIT kompilyatori esa bajarish paytida kodni mashina kodiga oʻgirib, tezlikni oshiradi.",
+          "ru": "Байт-код позволяет работать на разных ОС, а JIT-компилятор ускоряет выполнение, переводя код в машинный прямо во время работы.",
+          "en": "Bytecode allows running on different OSs, and the JIT compiler speeds up execution by translating to machine code at run time."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Uchta mahsulotning narxi va oʻrtachasi",
+      "ru": "Цена и среднее трёх товаров",
+      "en": "Total and average of three products"
+    },
+    "statement": {
+      "uz": "Dastur uchta mahsulotning narxini alohida qatorlarda kiritishni soʻraydi (har biri butun son). Sizning dasturingiz ularning yigʻindisini va oʻrtacha qiymatini (butun son koʻrinishida, qoldiqsiz) alohida qatorlarda chiqarishi kerak. Masalan, 10, 20 va 30 kiritilganda, avval 60, keyingi qatorda 20 chiqariladi.",
+      "ru": "Программа запрашивает цены трёх товаров на отдельных строках (каждая — целое число). Ваша программа должна вывести их сумму и среднее значение (как целое число, без остатка) на отдельных строках. Например, при вводе 10, 20 и 30 сначала выводится 60, а на следующей строке 20.",
+      "en": "The program asks for the prices of three products on separate lines (each an integer). Your program must output their sum and their average (as an integer, without remainder) on separate lines. For example, given 10, 20 and 30, it prints 60 first, and 20 on the next line."
+    },
+    "code": {
+      "starter": {
+        "python": "a = int(input())\nb = int(input())\nc = int(input())\n\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int a = in.nextInt();\n        int b = in.nextInt();\n        int c = in.nextInt();\n        \n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b, c;\n    cin >> a >> b >> c;\n    \n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "a = int(input())\nb = int(input())\nc = int(input())\n\nprint(a + b + c)\nprint((a + b + c) // 3)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int a = in.nextInt();\n        int b = in.nextInt();\n        int c = in.nextInt();\n        System.out.println(a + b + c);\n        System.out.println((a + b + c) / 3);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b, c;\n    cin >> a >> b >> c;\n    cout << a + b + c << endl;\n    cout << (a + b + c) / 3 << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "10\n20\n30\n", "expected": "60\n20", "hidden": false },
+        { "input": "15\n25\n35\n", "expected": "75\n25", "hidden": false },
+        { "input": "100\n100\n100\n", "expected": "300\n100", "hidden": true },
+        { "input": "0\n0\n0\n", "expected": "0\n0", "hidden": true },
+        { "input": "1\n2\n3\n", "expected": "6\n2", "hidden": true }
+      ]
+    }
+  }
+}

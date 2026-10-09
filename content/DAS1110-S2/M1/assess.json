@@ -1,0 +1,285 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tanlab saralashda har bir qadamda nima qilinadi?",
+          "ru": "Что делается на каждом шаге сортировки выбором?",
+          "en": "What does each step of selection sort do?"
+        },
+        "options": [
+          {
+            "uz": "Saralanmagan qismdagi eng kichik element topilib, shu qismning boshiga qoʻyiladi",
+            "ru": "В несортированной части находится минимальный элемент и ставится в её начало",
+            "en": "The smallest element of the unsorted part is found and put at the start of that part"
+          },
+          {
+            "uz": "Yangi element chapdagi saralangan qismga oʻz joyiga suqib qoʻyiladi",
+            "ru": "Новый элемент вставляется на своё место в уже отсортированную левую часть",
+            "en": "A new element is inserted into its place in the sorted left part"
+          },
+          {
+            "uz": "Massiv ikkiga boʻlib, har bir qism alohida saralanadi",
+            "ru": "Массив делится пополам, и каждая часть сортируется отдельно",
+            "en": "The array is split in half and each half is sorted separately"
+          },
+          {
+            "uz": "Qoʻshni elementlarning oʻrni almashinadi",
+            "ru": "Меняются местами соседние элементы",
+            "en": "Neighbouring elements swap places"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Tanlab saralash: *i* … *n* − 1 oraligʻidan eng kichik indeks topiladi va u `a[i]` bilan almashtiriladi. Ikkinchi ifoda qoʻyib saralashga tegishli.",
+          "ru": "Сортировка выбором: ищется индекс минимума на *i* … *n* − 1, он меняется с `a[i]`. Второе утверждение — про сортировку вставками.",
+          "en": "Selection sort: find the index of the smallest element in the range *i* … *n* − 1 and swap it with `a[i]`. The second sentence describes insertion sort."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ikkilik qidiruv istalgan massivda, hatto saralanmaganida ham ishlaydi.",
+          "ru": "Двоичный поиск работает на любом массиве, даже на несортированном.",
+          "en": "Binary search works on any array, even an unsorted one."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: ikkilik qidiruv faqat saralangan maʼlumotda ishlaydi, shuning uchun saralash — kompyuterlar eng koʻp bajaradigan ishlardan biri.",
+          "ru": "В занятии: двоичный поиск работает только на отсортированных данных, поэтому сортировка — одна из самых частых задач компьютера.",
+          "en": "The lesson says binary search works only on sorted data, which is why sorting is one of the jobs computers do most often."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Murakkablik jadvaliga koʻra, qaysi algoritmlar *O*(*n*²) turadi?",
+          "ru": "Какие алгоритмы, согласно таблице сложности, относятся к *O*(*n*²)?",
+          "en": "According to the complexity table, which algorithms are *O*(*n*²)?"
+        },
+        "options": [
+          { "uz": "Pufakchali saralash", "ru": "Пузырьковая сортировка", "en": "Bubble sort" },
+          { "uz": "Tanlab saralash", "ru": "Сортировка выбором", "en": "Selection sort" },
+          { "uz": "Qoʻyib saralash", "ru": "Сортировка вставками", "en": "Insertion sort" },
+          { "uz": "Birlashtirib saralash", "ru": "Сортировка слиянием", "en": "Merge sort" }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalning *O*(*n*²) qatorida pufakchali, tanlab va qoʻyib saralash turadi; birlashtirib saralash — *O*(*n* log *n*).",
+          "ru": "В строке *O*(*n*²) таблицы — пузырьковая, выбором и вставками; сортировка слиянием — *O*(*n* log *n*).",
+          "en": "The *O*(*n*²) row of the table lists bubble, selection and insertion sort; merge sort is *O*(*n* log *n*)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qoʻyib saralash qachon taxminan *n* qadamda ishlaydi?",
+          "ru": "Когда сортировка вставками работает примерно за *n* шагов?",
+          "en": "When does insertion sort run in about *n* steps?"
+        },
+        "options": [
+          {
+            "uz": "Massiv deyarli saralangan boʻlsa",
+            "ru": "Когда массив почти отсортирован",
+            "en": "When the array is almost sorted"
+          },
+          {
+            "uz": "Massiv kamayish tartibida saralangan boʻlsa",
+            "ru": "Когда массив отсортирован по убыванию",
+            "en": "When the array is sorted in decreasing order"
+          },
+          {
+            "uz": "Elementlar soni 1000 dan oshsa",
+            "ru": "Когда количество элементов превышает 1000",
+            "en": "When there are more than 1000 elements"
+          },
+          {
+            "uz": "Massivda takrorlanuvchi sonlar koʻp boʻlsa",
+            "ru": "Когда в массиве много повторяющихся чисел",
+            "en": "When the array has many repeated numbers"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Deyarli saralangan massivda har bir element oʻz joyiga yaqin, siljitishlar kam; shu sababli standart saralash funksiyalari kichik boʻlaklarda aynan shu usuldan foydalanadi.",
+          "ru": "В почти отсортированном массиве каждый элемент близок к своему месту, перемещений мало; поэтому стандартные функции сортировки используют этот способ для маленьких кусков.",
+          "en": "In an almost-sorted array every element is close to its place, so there are few shifts; standard sort functions use this method for small pieces for exactly this reason."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi tanlab saralash dasturi elementni oʻzi bilan almashtirmaydi va qilgan almashtirishlari sonini chiqaradi. `3 1 2` massivini saralashda u nechta almashtirish chiqaradi?",
+          "ru": "Программа сортировки выбором из занятия не меняет элемент с самим собой и печатает число сделанных обменов. Сколько обменов она напечатает для массива `3 1 2`?",
+          "en": "The lesson's selection sort program never swaps an element with itself and prints the number of swaps it made. How many swaps will it print for the array `3 1 2`?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "1-qadam: eng kichigi 1, u 0-orindiqdagi 3 bilan almashtiriladi → `1 3 2`. 2-qadam: qolganlar eng kichigi 2, u 3 bilan almashtiriladi → `1 2 3`. Jami 2 ta.",
+          "ru": "Шаг 1: минимум 1 меняется с 3 на позиции 0 → `1 3 2`. Шаг 2: минимум оставшейся части 2 меняется с 3 → `1 2 3`. Итого 2 обмена.",
+          "en": "Step 1: the smallest, 1, swaps with the 3 at position 0 → `1 3 2`. Step 2: the smallest of the rest, 2, swaps with 3 → `1 2 3`. Two swaps in all."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Birlashtirib va tez saralash qaysi gʻoyaga asoslanadi? Gʻoyaning nomini yozing.",
+          "ru": "На какой идее основаны сортировка слиянием и быстрая сортировка? Напишите название идеи.",
+          "en": "Which idea do merge sort and quick sort rest on? Write the name of the idea."
+        },
+        "answers": ["boʻl va hukmronlik qil", "разделяй и властвуй", "divide and conquer"],
+        "explanation": {
+          "uz": "Darsda: ikkala usul ham „boʻl va hukmronlik qil“ gʻoyasiga asoslangan va rekursiv.",
+          "ru": "По занятию: оба метода основаны на идее «разделяй и властвуй» и рекурсивны.",
+          "en": "In the lesson both methods rest on divide and conquer and are recursive."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "C++ʼdagi `sort` barqaror (stable) saralash, `stable_sort` esa barqaror emas.",
+          "ru": "В C++ функция `sort` устойчива, а `stable_sort` — неустойчива.",
+          "en": "In C++, `sort` is a stable sort and `stable_sort` is not."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Jadvalda aksi: `sort` — barqaror emas, `stable_sort` — barqaror. Tartib muhim boʻlsa, `stable_sort` yoki toʻliq kalit ishlatiladi.",
+          "ru": "В таблице наоборот: `sort` не устойчива, `stable_sort` устойчива. Если порядок важен, берут `stable_sort` или полный ключ.",
+          "en": "The table says the opposite: `sort` is not stable, `stable_sort` is. When the order matters, use `stable_sort` or a full key."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Birlashtirib va tez saralashni solishtirganda qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о сравнении сортировки слиянием и быстрой сортировки верны?",
+          "en": "Which statements comparing merge sort and quick sort are correct?"
+        },
+        "options": [
+          {
+            "uz": "Birlashtirib saralash har doim *O*(*n* log *n*) ishlaydi",
+            "ru": "Сортировка слиянием всегда работает за *O*(*n* log *n*)",
+            "en": "Merge sort always runs in *O*(*n* log *n*)"
+          },
+          {
+            "uz": "Tez saralash oʻrtacha *O*(*n* log *n*), eng yomon holatda *O*(*n*²) ishlaydi",
+            "ru": "Быстрая сортировка в среднем работает за *O*(*n* log *n*), в худшем случае — за *O*(*n*²)",
+            "en": "Quick sort averages *O*(*n* log *n*) and is *O*(*n*²) in the worst case"
+          },
+          {
+            "uz": "Birlashtirib saralash *O*(*n*) qoʻshimcha xotira oladi, tez saralash — *O*(log *n*)",
+            "ru": "Сортировка слиянием требует *O*(*n*) дополнительной памяти, быстрая — *O*(log *n*)",
+            "en": "Merge sort needs *O*(*n*) extra memory, quick sort *O*(log *n*)"
+          },
+          {
+            "uz": "Tez saralash barqaror saralash hisoblanadi",
+            "ru": "Быстрая сортировка является устойчивой",
+            "en": "Quick sort is a stable sort"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalga koʻra tez saralash barqaror emas; unda tayanch elementtan kichiklar chapga, kattalar oʻngga ajratiladi.",
+          "ru": "По таблице быстрая сортировка не устойчива: относительно опорного элемента меньшие уходят влево, большие — вправо.",
+          "en": "Per the table quick sort is not stable; around the pivot, smaller elements go left and larger ones right."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Pythonʼda saralash haqida qaysi ifoda toʻgʻri?",
+          "ru": "Какое утверждение о сортировке в Python верно?",
+          "en": "Which statement about sorting in Python is correct?"
+        },
+        "options": [
+          {
+            "uz": "`a.sort()` roʻyxatni joyida saralaydi va `None` qaytaradi, `sorted(a)` esa yangi roʻyxat qaytaradi",
+            "ru": "`a.sort()` сортирует список на месте и возвращает `None`, а `sorted(a)` возвращает новый список",
+            "en": "`a.sort()` sorts the list in place and returns `None`, while `sorted(a)` returns a new list"
+          },
+          {
+            "uz": "`sorted(a)` roʻyxatni joyida saralaydi va `None` qaytaradi",
+            "ru": "`sorted(a)` сортирует список на месте и возвращает `None`",
+            "en": "`sorted(a)` sorts the list in place and returns `None`"
+          },
+          {
+            "uz": "`a.sort()` yangi saralangan roʻyxat qaytaradi",
+            "ru": "`a.sort()` возвращает новый отсортированный список",
+            "en": "`a.sort()` returns a new sorted list"
+          },
+          {
+            "uz": "Ikkalasi ham yangi roʻyxat qaytaradi, aslisi oʻzgarmaydi",
+            "ru": "Оба возвращают новый список, исходный не меняется",
+            "en": "Both return a new list and leave the original unchanged"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi xatolardan biri: `sorted(a)` natijasini saqlamaslik. `sort` esa joyida saralaydi va `None` qaytaradi.",
+          "ru": "Одна из ошибок из занятия: не сохранить результат `sorted(a)`. Метод `sort` работает на месте и возвращает `None`.",
+          "en": "One of the lesson's mistakes: not keeping the result of `sorted(a)`. The `sort` method sorts in place and returns `None`."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Saralangan massivning k-sonchi elementi",
+      "ru": "k-й элемент отсортированного массива",
+      "en": "The k-th element of the sorted array"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda `n`, ikkinchisida `n` ta butun son, uchinchisida `k` (1 ≤ k ≤ n) beriladi. Sonlarni oʻsish tartibida saralang va saralangan massivdagi `k`-sonchi sonni chiqaring (sonlar 1 dan boshlab raqamlanadi). Masalan, kirish: `5`, `29 10 14 37 13`, `3` — chiqish `14`. Cheklar: 1 ≤ n ≤ 100 000, har bir son -10^9 dan 10^9 gacha. Tayyor saralash funksiyasidan foydalaning: *O*(*n*²) saralash vaqt limitidan oshadi.",
+      "ru": "В первой строке задано `n`, во второй — `n` целых чисел, в третьей — `k` (1 ≤ k ≤ n). Отсортируйте числа по возрастанию и выведите `k`-е число отсортированного массива (нумерация с 1). Например, ввод `5`, `29 10 14 37 13`, `3` даёт вывод `14`. Ограничения: 1 ≤ n ≤ 100 000, каждое число от -10^9 до 10^9. Используйте готовую функцию сортировки: сортировка за *O*(*n*²) не уложится в ограничение по времени.",
+      "en": "The first line holds `n`, the second `n` integers, the third `k` (1 ≤ k ≤ n). Sort the numbers in increasing order and print the k-th number of the sorted array (counting from 1). For example, the input `5`, `29 10 14 37 13`, `3` prints `14`. Limits: 1 ≤ n ≤ 100 000, each number between -10^9 and 10^9. Use the ready sort function: an *O*(*n*²) sort exceeds the time limit."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\nk = int(input())\n\nprint(a[k - 1])\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n        int k = in.nextInt();\n\n        System.out.println(a[k - 1]);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) cin >> a[i];\n    int k;\n    cin >> k;\n\n    cout << a[k - 1] << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\nk = int(input())\n\na.sort()\nprint(a[k - 1])\n",
+        "java": "import java.util.Arrays;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) a[i] = in.nextInt();\n        int k = in.nextInt();\n\n        Arrays.sort(a);\n        System.out.println(a[k - 1]);\n    }\n}\n",
+        "cpp": "#include <algorithm>\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) cin >> a[i];\n    int k;\n    cin >> k;\n\n    sort(a.begin(), a.end());\n    cout << a[k - 1] << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5\n29 10 14 37 13\n3\n", "expected": "14", "hidden": false },
+        { "input": "1\n7\n1\n", "expected": "7", "hidden": false },
+        { "input": "4\n8 8 8 8\n3\n", "expected": "8", "hidden": true },
+        { "input": "6\n-5 0 -1 3 -1 2\n4\n", "expected": "0", "hidden": true },
+        { "input": "3\n1 2 3\n3\n", "expected": "3", "hidden": true }
+      ]
+    }
+  }
+}

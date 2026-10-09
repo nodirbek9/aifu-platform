@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Rekursiv funksiya qanday funksiya?",
+          "ru": "Какая функция называется рекурсивной?",
+          "en": "What is a recursive function?"
+        },
+        "options": [
+          {
+            "uz": "Oʻzini oʻzi chaqiradigan funksiya",
+            "ru": "Функция, которая вызывает саму себя",
+            "en": "A function that calls itself"
+          },
+          {
+            "uz": "Faqat bitta marta chaqiriladigan funksiya",
+            "ru": "Функция, которую вызывают только один раз",
+            "en": "A function that is called only once"
+          },
+          {
+            "uz": "Hech qanday qiymat qaytarmaydigan funksiya",
+            "ru": "Функция, которая не возвращает значений",
+            "en": "A function that returns no value"
+          },
+          {
+            "uz": "Boshqa funksiyani chaqiradigan funksiya",
+            "ru": "Функция, которая вызывает другую функцию",
+            "en": "A function that calls another function"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Rekursiya — masalani oʻzining kichikroq nusxasi orqali yechish: funksiya oʻzini chaqiradi.",
+          "ru": "Рекурсия — решение задачи через её уменьшенную копию: функция вызывает саму себя.",
+          "en": "Recursion solves a problem through a smaller copy of itself: the function calls itself."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Har qanday rekursiyani sikl bilan yozish mumkin.",
+          "ru": "Любую рекурсию можно записать циклом.",
+          "en": "Any recursion can be written as a loop."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: har qanday rekursiyani sikl bilan, aksincha ham mumkin; tanlov masalaga bogʻliq.",
+          "ru": "В занятии: любую рекурсию можно записать циклом и наоборот; выбор зависит от задачи.",
+          "en": "The lesson says any recursion can be written as a loop and the reverse; the choice depends on the problem."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Toʻgʻri rekursiv funksiyada albatta boʻlishi shart boʻlgan qismlarni tanlang.",
+          "ru": "Выберите части, которые обязательно должны быть в корректной рекурсивной функции.",
+          "en": "Select the parts that a correct recursive function must have."
+        },
+        "options": [
+          {
+            "uz": "Bazaviy holat — javob toʻgʻridan-toʻgʻri maʼlum boʻlgan eng oddiy holat, rekursiya shu yerda toʻxtaydi",
+            "ru": "Базовый случай — простейший случай, ответ известен напрямую, здесь рекурсия останавливается",
+            "en": "The base case — the simplest case whose answer is known directly, where recursion stops"
+          },
+          {
+            "uz": "Rekursiv qadam — masala oʻzining kichikroq nusxasiga keltiriladi",
+            "ru": "Рекурсивный шаг — задача сводится к её меньшей копии",
+            "en": "The recursive step — the problem is reduced to a smaller copy of itself"
+          },
+          {
+            "uz": "C++ prototipi",
+            "ru": "Прототип на C++",
+            "en": "A C++ prototype"
+          },
+          {
+            "uz": "Natijani yigʻuvchi global oʻzgaruvchi",
+            "ru": "Глобальная переменная для накопления результата",
+            "en": "A global variable to accumulate the result"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Ikki qism shart: bazaviy holat va rekursiv qadam. Natijani global oʻzgaruvchida yigʻish — darsdagi xato sifatida koʻrsatilgan.",
+          "ru": "Нужны две части: базовый случай и рекурсивный шаг. Накопление результата в глобальной переменной — ошибка из занятия.",
+          "en": "Two parts are required: the base case and the recursive step. Collecting the result in a global variable is listed as a mistake."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Chaqiruvlar steki (call stack) qanday ishlaydi?",
+          "ru": "Как работает стек вызовов?",
+          "en": "How does the call stack work?"
+        },
+        "options": [
+          {
+            "uz": "Oxirgi kelgan freym birinchi ketadi: funksiya tugaganda uning freymi stekdan olib tashlanadi",
+            "ru": "Последний вошедший фрейм выходит первым: по завершении функции её фрейм убирается из стека",
+            "en": "The last frame in is the first out: when a function ends its frame is removed from the stack"
+          },
+          {
+            "uz": "Birinchi kelgan freym birinchi ketadi",
+            "ru": "Первый вошедший фрейм выходит первым",
+            "en": "The first frame in is the first out"
+          },
+          {
+            "uz": "Funksiya tugagach, uning freymi stekda qoladi",
+            "ru": "После завершения функции её фрейм остаётся в стеке",
+            "en": "After a function ends its frame stays in the stack"
+          },
+          {
+            "uz": "Freymlar soni chaqiruvlar soniga bogʻliq emas",
+            "ru": "Число фреймов не зависит от числа вызовов",
+            "en": "The number of frames does not depend on the number of calls"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Stek — „oxirgi kelgan birinchi ketadi“ tuzilmasi: har bir chaqiruv freym qoʻshadi, funksiya tugaganda esa u stekdan chiqadi.",
+          "ru": "Стек — структура „последним пришёл, первым ушёл“; каждый вызов добавляет фрейм, завершение его возвращает.",
+          "en": "A stack is a last-in, first-out structure: every call adds a frame and every return removes it."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Xanoy minoralari masalasida disklar soni n boʻlsa, yurishlar soni 2ⁿ − 1 ga teng. 5 disk uchun nechta yurish kerak?",
+          "ru": "В задаче о ханойских башнях число ходов равно 2ⁿ − 1. Сколько ходов нужно для 5 дисков?",
+          "en": "In the Towers of Hanoi the number of moves is 2ⁿ − 1. How many moves does 5 discs need?"
+        },
+        "answers": [31],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "2⁵ − 1 = 32 − 1 = 31. Darsda 3 disk — 7 yurish, 10 disk — 1023 deb ham keltirilgan.",
+          "ru": "2⁵ − 1 = 32 − 1 = 31. В занятии приведено: 3 диска — 7 ходов, 10 дисков — 1023.",
+          "en": "2⁵ − 1 = 32 − 1 = 31. The lesson also gives 3 discs — 7 moves and 10 discs — 1023."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Bazaviy holati boʻlmagan yoki juda chuqur rekursiya stekning toʻlib ketishiga olib keladi.",
+          "ru": "Рекурсия без базового случая или слишком глубокая приводит к переполнению стека.",
+          "en": "Recursion with no base case, or too deep recursion, leads to a stack overflow."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Stek hajmi cheklangan: Pythonʼda RecursionError, Javaʼda StackOverflowError, C++ʼda dastur qulaydi.",
+          "ru": "Размер стека ограничен: в Python — RecursionError, в Java — StackOverflowError, в C++ — падение программы.",
+          "en": "The stack has a limited size: RecursionError in Python, StackOverflowError in Java, a crash in C++."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi `ikkilik(n)` funksiyasi 20 soni uchun qanday natija chiqaradi?",
+          "ru": "Что выведет функция `ikkilik(n)` из занятия для числа 20?",
+          "en": "What does the function `ikkilik(n)` from the lesson print for 20?"
+        },
+        "answers": ["10100"],
+        "explanation": {
+          "uz": "Chaqiruvdan keyingi amallar yuqoriga qaytishda bajariladi: 20 = 16 + 4, ikkilik koʻrinishi 10100.",
+          "ru": "Действия после вызова выполняются на обратном пути: 20 = 16 + 4, двоичная форма 10100.",
+          "en": "Actions after the call run on the way back: 20 = 16 + 4, its binary form is 10100."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Fibonachchi sonlarining toʻgʻridan-toʻgʻri rekursiyasi `fib(n) = fib(n-1) + fib(n-2)` haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о „прямой“ рекурсии чисел Фибоначчи `fib(n) = fib(n-1) + fib(n-2)` верны?",
+          "en": "Which statements about the plain recursion for Fibonacci numbers, `fib(n) = fib(n-1) + fib(n-2)`, are correct?"
+        },
+        "options": [
+          {
+            "uz": "Bir xil qiymatlar qayta-qayta hisoblanadi",
+            "ru": "Одни и те же значения вычисляются снова и снова",
+            "en": "The same values are computed again and again"
+          },
+          {
+            "uz": "Chaqiruvlar soni eksponensial oʻsadi",
+            "ru": "Число вызовов растёт экспоненциально",
+            "en": "The number of calls grows exponentially"
+          },
+          {
+            "uz": "n = 40 da ham juda tez ishlaydi",
+            "ru": "Она работает очень быстро даже при n = 40",
+            "en": "It stays very fast even at n = 40"
+          },
+          {
+            "uz": "A7 dagi sikl bilan yozilgan versiyasi bu hisobni bir zumda bajaradi",
+            "ru": "Версия с циклом из занятия A7 выполняет этот расчёт мгновенно",
+            "en": "The loop version from session A7 does the same computation instantly"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Darsda aynan shu ogohlantirish bor: n = 40 da hisoblash sezilarli sekinlashadi, chunki fib(n−3) ikkala tarmoqda qayta hisoblanadi.",
+          "ru": "Именно об этом предупреждает занятие: при n = 40 вычисления заметно замедляются, потому что fib(n−3) считается заново в обеих ветвях.",
+          "en": "This is exactly the lesson's warning: at n = 40 it becomes noticeably slow, because fib(n−3) is recomputed in both branches."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Rekursiv funksiya olgan natijani qanday berishi tavsiya etiladi?",
+          "ru": "Как рекурсивная функция должна отдавать полученный результат?",
+          "en": "How should a recursive function give the result it computed?"
+        },
+        "options": [
+          {
+            "uz": "`return` orqali chaqiruvchiga qaytarish kerak",
+            "ru": "Возвращать результат вызывающему коду через `return`",
+            "en": "Return it to the caller with `return`"
+          },
+          {
+            "uz": "Global oʻzgaruvchiga yigʻib borish kerak",
+            "ru": "Накапливать его в глобальной переменной",
+            "en": "Accumulate it in a global variable"
+          },
+          {
+            "uz": "Faqat `print` bilan chiqarib yuborish kerak",
+            "ru": "Только выводить его через `print`",
+            "en": "Just print it"
+          },
+          {
+            "uz": "Parametrni oʻzgartirib, chaqiruvchida uni oʻqish kerak",
+            "ru": "Изменять параметр и читать его в вызывающем коде",
+            "en": "Change the parameter and read it in the caller"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars xatolar roʻyxatida: natijani global oʻzgaruvchida yigʻish — rekursiv funksiya natijani `return` orqali berishi kerak.",
+          "ru": "В списке ошибок занятия: накопление в глобальной переменной — рекурсивная функция должна отдавать результат через `return`.",
+          "en": "The lesson's mistake list says: do not collect the result in a global variable — a recursive function should give it back through `return`."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Fibonachchi soni",
+      "ru": "Число Фибоначчи",
+      "en": "A Fibonacci number"
+    },
+    "statement": {
+      "uz": "Bitta butun son n (0 ≤ n ≤ 30) kiritiladi. Fibonachchi ketma-ketligining n-elementini chiqaring: F(0) = 0, F(1) = 1, F(n) = F(n−1) + F(n−2). Natijani bitta qatorda, faqat son koʻrinishida yozing — masalan, 10 uchun javob 55, 0 uchun javob 0. Hisoblashni rekursiv funksiya yoki sikl bilan bajarish — oʻzingiz tanlang: n 30 dan oshmaydi, ikkala usul ham yetarli tez ishlaydi.",
+      "ru": "Вводится одно целое число n (0 ≤ n ≤ 30). Выведите n-й элемент последовательности Фибоначчи: F(0) = 0, F(1) = 1, F(n) = F(n−1) + F(n−2). Результат — одна строка, только число, например для 10 это 55, для 0 — 0. Считать рекурсивной функцией или циклом — решать вам: n не больше 30, поэтому оба способа работают достаточно быстро.",
+      "en": "The input is one integer n (0 ≤ n ≤ 30). Print the n-th Fibonacci number: F(0) = 0, F(1) = 1, F(n) = F(n−1) + F(n−2). Print the result on one line — only the number, for example 55 for 10 and 0 for 0. Compute it with a recursive function or with a loop, your choice: n is at most 30, so both are fast enough."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = 0\nb = 1\ni = 0\nwhile i < n - 1:\n    a, b = b, a + b\n    i += 1\nprint(a)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long a = 0;\n        long b = 1;\n        for (int i = 0; i < n - 1; i++) {\n            long t = a + b;\n            a = b;\n            b = t;\n        }\n        System.out.println(a);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    long long a = 0;\n    long long b = 1;\n    for (int i = 0; i < n - 1; i++) {\n        long long t = a + b;\n        a = b;\n        b = t;\n    }\n    cout << a << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = 0\nb = 1\ni = 0\nwhile i < n:\n    a, b = b, a + b\n    i += 1\nprint(a)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        long a = 0;\n        long b = 1;\n        for (int i = 0; i < n; i++) {\n            long t = a + b;\n            a = b;\n            b = t;\n        }\n        System.out.println(a);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    long long a = 0;\n    long long b = 1;\n    for (int i = 0; i < n; i++) {\n        long long t = a + b;\n        a = b;\n        b = t;\n    }\n    cout << a << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "0\n", "expected": "0", "hidden": false },
+        { "input": "10\n", "expected": "55", "hidden": false },
+        { "input": "1\n", "expected": "1", "hidden": true },
+        { "input": "20\n", "expected": "6765", "hidden": true },
+        { "input": "30\n", "expected": "832040", "hidden": true }
+      ]
+    }
+  }
+}

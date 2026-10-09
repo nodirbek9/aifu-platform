@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Java tilida `int[][] m` matritsasining ustunlari sonini funksiya ichida qanday oladi?",
+          "ru": "Как функция на Java получает число столбцов матрицы `int[][] m`?",
+          "en": "In Java, how does a function get the number of columns of the matrix `int[][] m`?"
+        },
+        "options": [
+          {
+            "uz": "`m.length`",
+            "ru": "`m.length`",
+            "en": "`m.length`"
+          },
+          {
+            "uz": "`m[0].length`",
+            "ru": "`m[0].length`",
+            "en": "`m[0].length`"
+          },
+          {
+            "uz": "`len(m)`",
+            "ru": "`len(m)`",
+            "en": "`len(m)`"
+          },
+          {
+            "uz": "`m.size()`",
+            "ru": "`m.size()`",
+            "en": "`m.size()`"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi jadval: satrlar soni `m.length`, ustunlar soni `m[0].length` (matritsa boʻsh boʻlmaganda).",
+          "ru": "По таблице занятия: число строк — `m.length`, число столбцов — `m[0].length` (если матрица не пуста).",
+          "en": "Per the lesson's table: `m.length` rows and `m[0].length` columns, if the matrix is not empty."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Funksiya matritsani faqat oʻqisa, uni C++ tilida `const &` bilan uzatish tavsiya qilinadi — katta matritsaning nusxasi yaratilmaydi.",
+          "ru": "Если функция только читает матрицу, её рекомендуют передавать в C++ как `const &` — копия большой матрицы не создаётся.",
+          "en": "If a function only reads a matrix, the lesson recommends passing it in C++ as `const &` — no copy of the large matrix is made."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi ikkinchi eslatma shuni aytdi: faqat oʻqish uchun `const &` yoziladi, nusxa yaratilmaydi va tasodifan oʻzgartirib boʻlmaydi.",
+          "ru": "Второе замечание из занятия именно об этом: для чтения пишут `const &`, копия не создаётся и случайно изменить нельзя.",
+          "en": "The lesson's second note says exactly this: for reading one writes `const &`, no copy is made, and it cannot be changed by accident."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsda matritsalar bilan ishlovchi amallar sifatida qaysilari sanalgan?",
+          "ru": "Какие операции над матрицами перечислены в занятии?",
+          "en": "Which operations on matrices does the lesson list?"
+        },
+        "options": [
+          {
+            "uz": "Qoʻshish",
+            "ru": "Сложение",
+            "en": "Addition"
+          },
+          {
+            "uz": "Koʻpaytirish",
+            "ru": "Умножение",
+            "en": "Multiplication"
+          },
+          {
+            "uz": "Transponirlash",
+            "ru": "Транспонирование",
+            "en": "Transposition"
+          },
+          {
+            "uz": "Saralash",
+            "ru": "Сортировка",
+            "en": "Sorting"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Dars matritsa amallari deb qoʻshish, koʻpaytirish, transponirlash va burishni sanaydi; ularning har birini alohida funksiya qilsa, bir-biriga ulab boʻladi.",
+          "ru": "Занятие перечисляет операции: сложение, умножение, транспонирование и поворот; каждую можно писать отдельной функцией и соединять.",
+          "en": "The lesson names addition, multiplication, transposition and rotation; each can be a separate function and they can be chained."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`void f(int m[][])` eʼloni C++ tilida nima uchun kompilyatsiya boʻlmaydi?",
+          "ru": "Почему объявление `void f(int m[][])` не компилируется на C++?",
+          "en": "Why does the declaration `void f(int m[][])` not compile in C++?"
+        },
+        "options": [
+          {
+            "uz": "Ikkinchi oʻlcham yozilmagan: kompilyator `m[i][j]` manzilini hisoblashi uchun satr uzunligini bilishi kerak",
+            "ru": "Не указано второе измерение: компилятору нужна длина строки, чтобы вычислить адрес `m[i][j]`",
+            "en": "The second dimension is missing: the compiler needs the row length to compute the address of `m[i][j]`"
+          },
+          {
+            "uz": "Matritsani funksiyaga uzatish C++ tilida umuman mumkin emas",
+            "ru": "Передавать матрицу в функцию на C++ вообще невозможно",
+            "en": "Passing a matrix to a function is not possible in C++ at all"
+          },
+          {
+            "uz": "Funksiya qiymat qaytarmayapti",
+            "ru": "Функция ничего не возвращает",
+            "en": "The function returns no value"
+          },
+          {
+            "uz": "Parametr nomi `m` emas, boshqa boʻlishi kerak",
+            "ru": "Имя параметра должно быть не `m`, а другим",
+            "en": "The parameter must have a name other than `m`"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shu sababli darsda statik matritsa uchun `int m[][100]` koʻrinishi va qoʻshimcha `n, k` parametrlari koʻrsatilgan; `vector` esa qulayroq.",
+          "ru": "Поэтому в занятии для статической матрицы показаны `int m[][100]` и дополнительные параметры `n, k`; `vector` удобнее.",
+          "en": "That is why the lesson shows `int m[][100]` with extra parameters `n, k` for a static matrix; `vector` is more convenient."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi `iz(m)` funksiyasi bosh diagonali elementlari yigʻindisini topadi. `2 7 1`, `3 4 8`, `0 6 5` satrlaridan iborat matritsa uchun iz nechchi boʻladi?",
+          "ru": "Функция `iz(m)` из занятия находит сумму элементов главной диагонали. Чему равен след для матрицы со строками `2 7 1`, `3 4 8`, `0 6 5`?",
+          "en": "The lesson's function `iz(m)` finds the sum of the main diagonal's elements. What is the trace of the matrix with rows `2 7 1`, `3 4 8`, `0 6 5`?"
+        },
+        "answers": [11],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Bosh diagonali: `m[0][0] = 2`, `m[1][1] = 4`, `m[2][2] = 5`; yigʻindi 2 + 4 + 5 = 11.",
+          "ru": "Главная диагональ: `m[0][0] = 2`, `m[1][1] = 4`, `m[2][2] = 5`; сумма 2 + 4 + 5 = 11.",
+          "en": "The main diagonal is `m[0][0] = 2`, `m[1][1] = 4`, `m[2][2] = 5`; the sum is 2 + 4 + 5 = 11."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda C++ tilida uzun tip nomi uchun qisqa nom berilgan: `Matritsa`. Buning uchun ishlatiladigan kalit soʻzni yozing.",
+          "ru": "В занятии для долгого типа в C++ введено короткое имя `Matritsa`. Напишите ключевое слово, которым это сделано.",
+          "en": "In the lesson a long C++ type is given the short name `Matritsa`. Write the keyword used to do that."
+        },
+        "answers": ["using", "Using", "using Matritsa"],
+        "explanation": {
+          "uz": "Darsda `using Matritsa = vector<vector<int>>;` yozilgan: bu uzun tipga qisqa nom beradi va funksiya eʼlonlarini oʻqishni yengillashtiradi.",
+          "ru": "В занятии написано `using Matritsa = vector<vector<int>>;`: это даёт длинному типу короткое имя и облегчает чтение объявлений функций.",
+          "en": "The lesson writes `using Matritsa = vector<vector<int>>;`, giving the long type a short name and making the function declarations easier to read."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "C++ tilida funksiyadan matritsani `vector` koʻrinishida qaytarish qimmatga tushadi, chunki butun matritsaning nusxasi yaratiladi.",
+          "ru": "Возврат матрицы из функции в C++ как `vector` обходится дорого, потому что создаётся копия всей матрицы.",
+          "en": "Returning a matrix from a C++ function as a `vector` is expensive, because a copy of the whole matrix is made."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsning uchinchi eslatmasi: funksiyadan `vector` qaytarish tez — kompilyator nusxa olmasdan uni „koʻchiradi“ (move).",
+          "ru": "Третье замечание занятия: возврат `vector` из функции быстр — компилятор «перемещает» его, а не копирует.",
+          "en": "The lesson's third note: returning a `vector` from a function is fast — the compiler moves it instead of copying it."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "*A* (*n* × *m*) va *B* (*m* × *p*) matritsalarni koʻpaytirish boʻyicha darsda qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об умножении матриц *A* (*n* × *m*) и *B* (*m* × *p*) верны по занятию?",
+          "en": "Which statements about multiplying *A* (*n* × *m*) by *B* (*m* × *p*) does the lesson state correctly?"
+        },
+        "options": [
+          {
+            "uz": "Natija matritsa *n* × *p* oʻlchamli boʻladi",
+            "ru": "Результирующая матрица имеет размер *n* × *p*",
+            "en": "The result matrix has size *n* × *p*"
+          },
+          {
+            "uz": "*A* matritsaning ustunlari soni *B* matritsaning satrlari soniga teng boʻlishi kerak",
+            "ru": "Число столбцов *A* должно быть равно числу строк *B*",
+            "en": "The number of columns of *A* must equal the number of rows of *B*"
+          },
+          {
+            "uz": "Har bir `C[i][j]` hujayrasi uchun yigʻindi 0 dan boshlanadi",
+            "ru": "Сумма для каждой ячейки `C[i][j]` начинается с нуля",
+            "en": "The sum for each cell `C[i][j]` starts from zero"
+          },
+          {
+            "uz": "Koʻpaytirish `main` ichida yozilgan boʻlsa ham ish toʻliq baholanadi",
+            "ru": "Работа получит полный балл, даже если умножение написано внутри `main`",
+            "en": "The work still earns full marks if the multiplication sits inside `main`"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsning baholash mezonida aytilishiicha, koʻpaytirish — yangi matritsa qaytaruvchi alohida funksiya boʻlishi kerak; ichki sikl esa *m* gacha bajariladi.",
+          "ru": "В критериях занятия сказано, что умножение обязано быть отдельной функцией, возвращающей новую матрицу; внутренний цикл доходит до *m*.",
+          "en": "The lesson's grading criteria require the multiplication to be a separate function returning a new matrix; the inner loop runs up to *m*."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`simmetrikmi(m)` funksiyasida ichki sikl nega `j = i + 1` dan boshlanadi?",
+          "ru": "Почему во внутреннем цикле функции `simmetrikmi(m)` отсчёт начинается с `j = i + 1`?",
+          "en": "Why does the inner loop of `simmetrikmi(m)` start at `j = i + 1`?"
+        },
+        "options": [
+          {
+            "uz": "Diagonal element oʻzi bilan teng, har `(i, j)` va `(j, i)` juftligini bir marta tekshirish kifoya",
+            "ru": "Диагональный элемент равен самому себе, и каждую пару `(i, j)` — `(j, i)` достаточно проверить один раз",
+            "en": "A diagonal element equals itself, and checking each pair `(i, j)` — `(j, i)` once is enough"
+          },
+          {
+            "uz": "Ustunlarni tekshirishga hojat yoʻq",
+            "ru": "Столбцы проверять не нужно",
+            "en": "The columns do not need checking"
+          },
+          {
+            "uz": "Matritsa kvadrat boʻlmaganda dastur xato ishlamasligi uchun",
+            "ru": "Чтобы программа не ошиблась, если матрица не квадратная",
+            "en": "So that the program does not fail when the matrix is not square"
+          },
+          {
+            "uz": "Diagonaldan pastdagi elementlar matritsaga kirmaydi",
+            "ru": "Элементы под диагональю вообще не входят в матрицу",
+            "en": "The elements below the diagonal are not part of the matrix"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi izoh: `m[i][j] == m[j][i]` shartini tekshirishda faqat diagonaldan yuqoridagi qism yetarli — har juftlik bir marta koʻriladi.",
+          "ru": "Пояснение из занятия: для проверки `m[i][j] == m[j][i]` достаточно половины выше диагонали — каждая пара просматривается один раз.",
+          "en": "The lesson's note: checking `m[i][j] == m[j][i]` needs only the half above the diagonal, so every pair is looked at once."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Matritsani transponirlash funksiyasi",
+      "ru": "Функция транспонирования матрицы",
+      "en": "A transposition function"
+    },
+    "statement": {
+      "uz": "Grafik muharrir rasmni burish uchun matritsani transponirlaydi: funksiya matritsani qabul qilib, **yangi** matritsa qaytarishi kerak. Dasturingiz birinchi satrdan *n* va *m* sonlarni, soʻng *n* ta satrda *m* tadan butun sonni oʻqisin. `transponirla(a)` funksiyasi shunday matritsa qaytarsinki, uning *j*-satridagi elementlar *a* matritsaning *j*-ustunidan ketma-ket olinsin. Natijani *m* ta qatorda chiqaring: har qatorda *n* ta son, boʻsh joy bilan ajratilgan, qoʻshimcha soʻz yozmang. Masalan, `2 3` va `1 2 3` hamda `4 5 6` satrlari kirsa, dastur `1 4`, `2 5`, `3 6` chiqaradi. 1 ≤ n, m ≤ 50, har bir son -1000 dan 1000 gacha.",
+      "ru": "Графический редактор поворачивает изображение, транспонируя матрицу: функция должна принять матрицу и вернуть **новую**. Ваша программа читает из первой строки *n* и *m*, затем *n* строк по *m* целых чисел. Функция `transponirla(a)` должна вернуть такую матрицу, что её *j*-я строка состоит из элементов *j*-го столбца матрицы *a*. Выведите результат *m* строками: в каждой строке *n* чисел через пробел, без лишних слов. Например, для `2 3`, `1 2 3` и `4 5 6` программа выведет `1 4`, `2 5`, `3 6`. 1 ≤ n, m ≤ 50, каждое число от -1000 до 1000.",
+      "en": "A graphics editor rotates a picture by transposing its matrix: the function must take a matrix and return a **new** one. Your program reads *n* and *m* from the first line, then *n* lines of *m* integers each. The function `transponirla(a)` must return a matrix whose row *j* consists of the elements of column *j* of *a*. Print the result as *m* lines: each line holds *n* numbers separated by spaces, with no extra words. For example, `2 3` with the rows `1 2 3` and `4 5 6` makes the program print `1 4`, `2 5`, `3 6`. 1 ≤ n, m ≤ 50, each number between -1000 and 1000."
+    },
+    "code": {
+      "starter": {
+        "python": "def transponirla(m):\n    return [list(satr) for satr in m]\n\n\nn, p = map(int, input().split())\na = [list(map(int, input().split())) for _ in range(n)]\nfor satr in transponirla(a):\n    print(*satr)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static int[][] transponirla(int[][] a) {\n        int n = a.length;\n        int m = a[0].length;\n        int[][] natija = new int[n][m];\n        for (int i = 0; i < n; i++)\n            for (int j = 0; j < m; j++)\n                natija[i][j] = a[i][j];\n        return natija;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int m = in.nextInt();\n        int[][] a = new int[n][m];\n        for (int i = 0; i < n; i++)\n            for (int j = 0; j < m; j++)\n                a[i][j] = in.nextInt();\n        int[][] t = transponirla(a);\n        for (int[] satr : t) {\n            StringBuilder sb = new StringBuilder();\n            for (int j = 0; j < satr.length; j++) {\n                if (j > 0) sb.append(' ');\n                sb.append(satr[j]);\n            }\n            System.out.println(sb);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nusing Matritsa = vector<vector<int>>;\n\nMatritsa transponirla(const Matritsa& a) {\n    return a;\n}\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    Matritsa a(n, vector<int>(m));\n    for (auto& satr : a)\n        for (int& x : satr) cin >> x;\n    Matritsa t = transponirla(a);\n    for (const auto& satr : t) {\n        for (size_t j = 0; j < satr.size(); j++) {\n            if (j > 0) cout << ' ';\n            cout << satr[j];\n        }\n        cout << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "def oqi(n):\n    return [list(map(int, input().split())) for _ in range(n)]\n\n\ndef transponirla(m):\n    n = len(m)\n    p = len(m[0])\n    natija = [[0] * n for _ in range(p)]\n    for i in range(n):\n        for j in range(p):\n            natija[j][i] = m[i][j]\n    return natija\n\n\ndef chiqar(m):\n    for satr in m:\n        print(*satr)\n\n\nn, p = map(int, input().split())\nchiqar(transponirla(oqi(n)))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static int[][] oqi(Scanner in, int n, int m) {\n        int[][] a = new int[n][m];\n        for (int i = 0; i < n; i++)\n            for (int j = 0; j < m; j++)\n                a[i][j] = in.nextInt();\n        return a;\n    }\n\n    static int[][] transponirla(int[][] a) {\n        int n = a.length;\n        int m = a[0].length;\n        int[][] natija = new int[m][n];\n        for (int i = 0; i < n; i++)\n            for (int j = 0; j < m; j++)\n                natija[j][i] = a[i][j];\n        return natija;\n    }\n\n    static void chiqar(int[][] a) {\n        for (int[] satr : a) {\n            StringBuilder sb = new StringBuilder();\n            for (int j = 0; j < satr.length; j++) {\n                if (j > 0) sb.append(' ');\n                sb.append(satr[j]);\n            }\n            System.out.println(sb);\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int m = in.nextInt();\n        chiqar(transponirla(oqi(in, n, m)));\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nusing Matritsa = vector<vector<int>>;\n\nMatritsa oqi(int n, int m) {\n    Matritsa a(n, vector<int>(m));\n    for (auto& satr : a)\n        for (int& x : satr) cin >> x;\n    return a;\n}\n\nMatritsa transponirla(const Matritsa& a) {\n    size_t n = a.size();\n    size_t m = a[0].size();\n    Matritsa natija(m, vector<int>(n));\n    for (size_t i = 0; i < n; i++)\n        for (size_t j = 0; j < m; j++)\n            natija[j][i] = a[i][j];\n    return natija;\n}\n\nint main() {\n    int n, m;\n    cin >> n >> m;\n    Matritsa t = transponirla(oqi(n, m));\n    for (const auto& satr : t) {\n        for (size_t j = 0; j < satr.size(); j++) {\n            if (j > 0) cout << ' ';\n            cout << satr[j];\n        }\n        cout << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "2 3\n1 2 3\n4 5 6\n", "expected": "1 4\n2 5\n3 6", "hidden": false },
+        { "input": "1 1\n7\n", "expected": "7", "hidden": false },
+        { "input": "3 2\n-1 2\n0 5\n3 -4\n", "expected": "-1 0 3\n2 5 -4", "hidden": true },
+        { "input": "4 1\n5\n-2\n0\n8\n", "expected": "5 -2 0 8", "hidden": true },
+        { "input": "2 2\n1 2\n2 1\n", "expected": "1 2\n2 1", "hidden": true }
+      ]
+    }
+  }
+}

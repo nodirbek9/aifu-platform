@@ -1,0 +1,301 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "„Algoritm“ soʻzi kimning nomidan kelib chiqqan?",
+          "ru": "От чьего имени произошло слово «алгоритм»?",
+          "en": "Whose name does the word \"algorithm\" come from?"
+        },
+        "options": [
+          {
+            "uz": "Muhammad ibn Muso al-Xorazmiy nomining lotincha shakli — Algoritmi",
+            "ru": "От латинской формы имени Мухаммада ибн Мусы аль-Хорезми — Algoritmi",
+            "en": "The Latin form of the name of Muhammad ibn Musa al-Khwarizmi — Algoritmi"
+          },
+          {
+            "uz": "Alan Tyuring familiyasidan",
+            "ru": "От фамилии Алана Тьюринга",
+            "en": "From the surname of Alan Turing"
+          },
+          {
+            "uz": "Chyorch ismidan",
+            "ru": "От имени Чёрча",
+            "en": "From the name of Church"
+          },
+          {
+            "uz": "Markov familiyasidan",
+            "ru": "От фамилии Маркова",
+            "en": "From the surname of Markov"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "IX asrda yashagan al-Xorazmiyning hind raqamlari bilan hisoblash haqidagi asari arifmetika qoidalarini Yevropaga tarqatgan.",
+          "ru": "Труд жившего в IX веке аль-Хорезми о вычислениях индийскими цифрами распространил в Европе правила арифметики.",
+          "en": "The 9th-century work of al-Khwarizmi on calculating with Hindu numerals spread the rules of arithmetic through Europe."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tyuring mashinasining lentasi ikki tomonga ham cheksiz va har bir katakda alifbodan bitta belgi turadi.",
+          "ru": "Лента машины Тьюринга бесконечна в обе стороны, и в каждой клетке стоит один символ алфавита.",
+          "en": "The tape of a Turing machine is infinite in both directions and every cell holds one symbol of the alphabet."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Boʻsh katak `_` belgisi bilan ifodalanadi. Lekin bu haqiqiy qurilma emas — matematik model, cheksiz lenta esa faqat nazariy.",
+          "ru": "Пустая клетка обозначается символом `_`. Но это не реальное устройство, а математическая модель; бесконечная лента лишь теоретична.",
+          "en": "A blank cell is written as `_`. Yet this is not a real device but a mathematical model, and the infinite tape is only theoretical."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tyuring mashinasining kallak bir vaqtda nechta katakni koʻradi?",
+          "ru": "Сколько клеток видит головка машины Тьюринга одновременно?",
+          "en": "How many cells does the head of a Turing machine see at one time?"
+        },
+        "answers": [1],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Kallak bitta katakni koʻradi: belgini oʻqiydi, yangisini yozadi va bir katak chapga (L) yoki oʻngga (R) suriladi.",
+          "ru": "Головка видит одну клетку: читает символ, пишет новый и сдвигается на одну клетку влево (L) или вправо (R).",
+          "en": "The head sees one cell: it reads the symbol, writes a new one and moves one cell left (L) or right (R)."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda sanalgan algoritm xossalari qaysilar?",
+          "ru": "Какие из перечисленного — свойства алгоритма из занятия?",
+          "en": "Which of these are the properties of an algorithm listed in the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Diskretlik",
+            "ru": "Дискретность",
+            "en": "Discreteness"
+          },
+          {
+            "uz": "Aniqlik",
+            "ru": "Определённость",
+            "en": "Definiteness"
+          },
+          {
+            "uz": "Tezlik",
+            "ru": "Быстродействие",
+            "en": "Speed"
+          },
+          {
+            "uz": "Natijadorlik",
+            "ru": "Результативность",
+            "en": "Effectiveness"
+          },
+          {
+            "uz": "Cheklilik",
+            "ru": "Конечность",
+            "en": "Finiteness"
+          }
+        ],
+        "correct": [0, 1, 3, 4],
+        "explanation": {
+          "uz": "Beshinchi xossa — ommaviylik (bir turdagi masalalar sinfi uchun ishlashi). Tezlik esa algoritm xossasi emas.",
+          "ru": "Пятое свойство — массовость (работа для класса задач одного рода). Алгоритм не обязан быть быстрым: быстродействие в список свойств не входит.",
+          "en": "The fifth property is generality: working for a class of problems of one kind. Speed is not a property of an algorithm."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Algoritmni „boshqariluvchi obyektni boshlangʻich holatdan maqsadli holatga oʻtkazuvchi buyruqlar tizimi“ deb taʼriflaydigan yondashuv qaysi?",
+          "ru": "Какой подход определяет алгоритм как «систему команд, переводящую управляемый объект из начального состояния в целевое»?",
+          "en": "Which approach defines an algorithm as \"a system of commands that moves a controlled object from an initial state to a target state\"?"
+        },
+        "options": [
+          {
+            "uz": "Kibernetik taʼrif",
+            "ru": "Кибернетическое определение",
+            "en": "The cybernetic definition"
+          },
+          {
+            "uz": "Intuitiv taʼrif",
+            "ru": "Интуитивное определение",
+            "en": "The intuitive definition"
+          },
+          {
+            "uz": "Formal taʼrif",
+            "ru": "Формальное определение",
+            "en": "The formal definition"
+          },
+          {
+            "uz": "Chyorch–Tyuring tezis",
+            "ru": "Тезис Чёрча–Тьюринга",
+            "en": "The Church–Turing thesis"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Kibernetik taʼrifda bajaruvchi inson, avtomat yoki kompyuter boʻlishi mumkin — u boshqaruv tizimlari va avtomatikaga qulay. Formal taʼrif esa aniq matematik model doirasida yoziladi.",
+          "ru": "В кибернетическом определении исполнителем может быть человек, автомат или компьютер — оно удобно для систем управления и автоматизации. Формальное же определение пишется в рамках точной математической модели.",
+          "en": "In the cybernetic definition the executor may be a person, an automaton or a computer, which suits control systems and automation. The formal definition is written inside a precise mathematical model."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Algoritm oʻzini kichikroq kirish bilan chaqirsa, tuzilishi boʻyicha qanday algoritm boʻladi? Bir soʻz bilan yozing.",
+          "ru": "Как называется алгоритм по типу структуры, если он вызывает сам себя с меньшим входом? Ответьте одним словом.",
+          "en": "What kind of algorithm, by structure, calls itself with a smaller input? Answer in one word."
+        },
+        "answers": ["rekursiv", "Rekursiv", "recursive", "рекурсивный"],
+        "explanation": {
+          "uz": "Darsdagi toʻrt tur: chiziqli, tarmoqlanuvchi, takrorlanuvchi (siklik) va rekursiv. Rekursivga misol — faktorial va Xanoy minoralari.",
+          "ru": "Четыре вида из занятия: линейный, ветвящийся, повторяющийся (циклический) и рекурсивный. Пример рекурсивного — факториал и ханойская башня.",
+          "en": "The lesson lists four kinds: linear, branching, repetitive (cyclic) and recursive. The factorial and the Towers of Hanoi are recursive."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Istalgan dastur va kirish uchun „bu dastur toʻxtaydimi?“ degan savolga har doim toʻgʻri javob beruvchi algoritm mavjud.",
+          "ru": "Существует алгоритм, который для любой программы и входа всегда верно отвечает на вопрос «остановится ли эта программа?».",
+          "en": "There is an algorithm that always answers correctly, for any program and input, the question \"will this program stop?\""
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bu — toʻxtash muammosi: Tyuring (1936) bunday algoritm yoʻqligini koʻrsatdi. Demak, algoritm bilan umuman yechib boʻlmaydigan masalalar mavjud.",
+          "ru": "Это проблема остановки: Тьюринг (1936) показал, что такого алгоритма нет. Значит, существуют задачи, не разрешимые никаким алгоритмом.",
+          "en": "This is the halting problem: Turing (1936) showed that no such algorithm exists. So there are problems no algorithm can solve at all."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi ikkilik songa bir qoʻshuvchi Tyuring mashinasida kallak oxirgi raqamda turadi. `1111` kiritilsa, mashina toʻxtashgacha nechta qadam bajaradi?",
+          "ru": "В машине Тьюринга из занятия, прибавляющей единицу к двоичному числу, головка стоит на последней цифре. Сколько шагов она выполнит до остановки для `1111`?",
+          "en": "In the lesson's Turing machine that adds one to a binary number, the head stands on the last digit. How many steps does it take to halt for `1111`?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Toʻrt qadamda toʻrtta `1` ham `0` ga aylanadi (oʻtkazma davom etadi), beshinchi qadamda kallak lenta boshidan chiqib, boʻsh katakka `1` yozadi va toʻxtaydi: natija `10000`.",
+          "ru": "За четыре шага четыре `1` превращаются в `0` (перенос продолжается), на пятом шаге головка выходит за начало ленты, пишет `1` в пустую клетку и останавливается: результат `10000`.",
+          "en": "In four steps the four `1`s become `0`s (the carry continues); on the fifth step the head leaves the start of the tape, writes `1` into a blank cell and stops: the result is `10000`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Hisoblash modellari va Chyorch–Tyuring tezisi haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о моделях вычисления и тезисе Чёрча–Тьюринга верны?",
+          "en": "Which statements about models of computation and the Church–Turing thesis are correct?"
+        },
+        "options": [
+          {
+            "uz": "Chyorch–Tyuring tezisi isbotlanmagan, lekin hamma tomonidan qabul qilingan gipoteza",
+            "ru": "Тезис Чёрча–Тьюринга — недоказанная, но общепринятая гипотеза",
+            "en": "The Church–Turing thesis is an unproved but universally accepted hypothesis"
+          },
+          {
+            "uz": "Lambda-hisob Tyuring mashinasiga teng kuchli",
+            "ru": "Лямбда-исчисление эквивалентно по силе машине Тьюринга",
+            "en": "The lambda calculus is equivalent in power to a Turing machine"
+          },
+          {
+            "uz": "Tezisni isbolab boʻlmasligining sababi — „intuitiv algoritm“ tushunchasining aniq taʼriflanmaganligi",
+            "ru": "Тезис нельзя доказать, потому что понятие «интуитивный алгоритм» точно не определено",
+            "en": "The thesis cannot be proved because the notion of an \"intuitive algorithm\" is not precisely defined"
+          },
+          {
+            "uz": "Formal taʼrif uchun faqat Tyuring mashinasi modeli mavjud",
+            "ru": "Для формального определения существует единственная модель — машина Тьюринга",
+            "en": "The Turing machine is the only model available for a formal definition"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Formal taʼrif boshqa modellarda ham yoziladi — Markov normal algoritmi va rekursiv funksiyalar ham darsda sanalgan; hozirgacha taklif qilingan barcha modellar Tyuring mashinasiga teng kuchli.",
+          "ru": "Формальное определение записывается и в других моделях — в занятии названы также нормальный алгоритм Маркова и рекурсивные функции; все предложенные до сих пор модели эквивалентны машине Тьюринга.",
+          "en": "A formal definition is written in other models too — the lesson also names Markov's normal algorithm and recursive functions, and every model proposed so far proved equivalent to the Turing machine."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Kollats: eng uzoq zanjirni boshlovchi son",
+      "ru": "Коллац: число с самой длинной цепочкой",
+      "en": "Collatz: the starting value with the longest chain"
+    },
+    "statement": {
+      "uz": "Kollats qoidasi: son juft boʻlsa ikkiga boʻlinadi, toq boʻlsa 3 ga koʻpaytirilib 1 qoʻshiladi; jarayon 1 ga yetganda toʻxtaydi. *n* (1 ≤ *n* ≤ 1000) kiritiladi. 1, 2, … , *n* boshlangʻich sonlarining har biri uchun 1 gacha boʻlgan qadamlar sonini sanang va eng koʻp qadam talab qiluvchi boshlangʻich sonni (bir nechta boʻlsa raqami eng kichigini) hamda shu qadamlar sonini bitta satrda, boʻshliq bilan ajratib chiqaring. 1 ning oʻzida qadamlar soni 0. Masalan, *n* = 10 boʻlsa, eng uzun zanjir 9 dan boshlanadi — 19 qadam, shuning uchun chiqish `9 19`; *n* = 6 boʻlsa chiqish `6 8` (6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1). Bu — darsdagi Kollats gipotezasi eslatmasi: zanjira hech qachon toʻxtamasligi mumkinmi, buni hech kim kafolatlay olmaydi, lekin *n* ≤ 1000 oraligʻida barcha zanjirlar 1 ga tushadi.",
+      "ru": "Правило Коллаца: чётное число делится пополам, нечётное умножается на 3 и к нему прибавляется 1; процесс останавливается, когда достигнуто 1. Дано *n* (1 ≤ *n* ≤ 1000). Для каждого начального числа 1, 2, … , *n* посчитайте число шагов до 1 и выведите в одной строке через пробел то начальное число, которое требует больше всего шагов (при равенстве — наименьшее из них), и это число шагов. Для самого 1 число шагов равно 0. Например, при *n* = 10 дольше всех идёт 9 — 19 шагов, вывод `9 19`; при *n* = 6 вывод `6 8` (6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1). Напоминание о гипотезе Коллаца из занятия: гарантию остановки дать никто не может, но для *n* ≤ 1000 все цепочки доходят до 1.",
+      "en": "The Collatz rule: an even number is halved, an odd one is multiplied by 3 and 1 is added, and the process stops when it reaches 1. A value *n* (1 ≤ *n* ≤ 1000) is given. For every starting number 1, 2, … , *n* count the steps down to 1, then print on one line, separated by a space, the starting number that needs the most steps (if several tie, the smallest such number) and that number of steps. The number 1 itself needs 0 steps. For example, *n* = 10 makes 9 the longest chain with 19 steps, so the output is `9 19`; for *n* = 6 the output is `6 8` (6 → 3 → 10 → 5 → 16 → 8 → 4 → 2 → 1). Recall the Collatz conjecture from the lesson: nobody can guarantee the stop, yet for *n* ≤ 1000 every chain comes down to 1."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\neng_bosh = 1\neng_qadam = 0\nfor bosh in range(2, n):\n    x = bosh\n    qadam = 0\n    while x != 1:\n        if x % 2 == 0:\n            x //= 2\n        else:\n            x = 3 * x + 1\n        qadam += 1\n    if qadam > eng_qadam:\n        eng_qadam = qadam\n        eng_bosh = bosh\nprint(eng_bosh, eng_qadam)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int engBosh = 1;\n        long engQadam = 0;\n        for (int bosh = 2; bosh < n; bosh++) {\n            long x = bosh;\n            long qadam = 0;\n            while (x != 1) {\n                if (x % 2 == 0) x /= 2;\n                else x = 3 * x + 1;\n                qadam++;\n            }\n            if (qadam > engQadam) {\n                engQadam = qadam;\n                engBosh = bosh;\n            }\n        }\n        System.out.println(engBosh + \" \" + engQadam);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int engBosh = 1;\n    long long engQadam = 0;\n    for (int bosh = 2; bosh < n; bosh++) {\n        long long x = bosh;\n        long long qadam = 0;\n        while (x != 1) {\n            if (x % 2 == 0) x /= 2;\n            else x = 3 * x + 1;\n            qadam++;\n        }\n        if (qadam > engQadam) {\n            engQadam = qadam;\n            engBosh = bosh;\n        }\n    }\n    cout << engBosh << \" \" << engQadam << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\neng_bosh = 1\neng_qadam = 0\nfor bosh in range(2, n + 1):\n    x = bosh\n    qadam = 0\n    while x != 1:\n        if x % 2 == 0:\n            x //= 2\n        else:\n            x = 3 * x + 1\n        qadam += 1\n    if qadam > eng_qadam:\n        eng_qadam = qadam\n        eng_bosh = bosh\nprint(eng_bosh, eng_qadam)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int engBosh = 1;\n        long engQadam = 0;\n        for (int bosh = 2; bosh <= n; bosh++) {\n            long x = bosh;\n            long qadam = 0;\n            while (x != 1) {\n                if (x % 2 == 0) x /= 2;\n                else x = 3 * x + 1;\n                qadam++;\n            }\n            if (qadam > engQadam) {\n                engQadam = qadam;\n                engBosh = bosh;\n            }\n        }\n        System.out.println(engBosh + \" \" + engQadam);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int engBosh = 1;\n    long long engQadam = 0;\n    for (int bosh = 2; bosh <= n; bosh++) {\n        long long x = bosh;\n        long long qadam = 0;\n        while (x != 1) {\n            if (x % 2 == 0) x /= 2;\n            else x = 3 * x + 1;\n            qadam++;\n        }\n        if (qadam > engQadam) {\n            engQadam = qadam;\n            engBosh = bosh;\n        }\n    }\n    cout << engBosh << \" \" << engQadam << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "6\n", "expected": "6 8", "hidden": false },
+        { "input": "10\n", "expected": "9 19", "hidden": false },
+        { "input": "1\n", "expected": "1 0", "hidden": true },
+        { "input": "8\n", "expected": "7 16", "hidden": true },
+        { "input": "18\n", "expected": "18 20", "hidden": true }
+      ]
+    }
+  }
+}

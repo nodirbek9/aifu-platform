@@ -1,0 +1,301 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Inkapsulyatsiya deganda nima tushuniladi?",
+          "ru": "Что понимается под инкапсуляцией?",
+          "en": "What is encapsulation?"
+        },
+        "options": [
+          {
+            "uz": "Obyektning ichki maʼlumoti tashqaridan yashiriladi va unga faqat sinf metodlari orqali kirishga ruxsat beriladi",
+            "ru": "Внутренние данные объекта скрыты от внешнего кода, доступ к ним разрешён только через методы класса",
+            "en": "The object's internal data is hidden from the outside and may only be reached through the class's methods"
+          },
+          {
+            "uz": "Voris sinf otaning barcha maydon va metodlarini oladi",
+            "ru": "Наследник получает все поля и методы родителя",
+            "en": "A derived class takes over all fields and methods of its parent"
+          },
+          {
+            "uz": "Bir xil chaqiruv obyektning haqiqiy turiga qarab turlicha ishlaydi",
+            "ru": "Один и тот же вызов работает по-разному в зависимости от фактического типа объекта",
+            "en": "The same call behaves differently depending on the object's real type"
+          },
+          {
+            "uz": "Obyektlar bitta massivda yoki roʻyxatda saqlanadi",
+            "ru": "Объекты хранятся в одном массиве или списке",
+            "en": "Objects are kept in one array or list"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra inkapsulyatsiya obyektni notoʻgʻri holatdan saqlaydi: tekshiruvni metod bajaradi. Ikkinchi variyant — merosxoʻrlik, uchinchisi — polimorfizm.",
+          "ru": "По занятию инкапсуляция защищает объект от неверного состояния: проверку выполняет метод. Вариант 2 — наследование, вариант 3 — полиморфизм.",
+          "en": "In the lesson encapsulation protects an object from a wrong state: the check is done by a method. Option 2 is inheritance, option 3 is polymorphism."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python tilida `private` kalit soʻzi yoʻq: `self._ball` yozuvidagi bitta pastki chiziq — dasturchilar kelishuvi, til uni majburlamaydi.",
+          "ru": "В Python нет ключевого слова `private`: одна нижняя черта в `self._ball` — соглашение программистов, язык его не навязывает.",
+          "en": "Python has no `private` keyword: the single underscore in `self._ball` is an agreement between programmers, which the language does not enforce."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilishicha, Python tilida bu — kelishuv, Java va C++ tilida esa `private` kompilyator tomonidan himoya qilinadi.",
+          "ru": "В занятии сказано, что в Python это соглашение, а в Java и C++ поле `private` защищает компилятор.",
+          "en": "The lesson says this is only an agreement in Python, while in Java and C++ a `private` field is guarded by the compiler."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Voris sinf otaning konstruktori yoki metodini chaqirishda ishlatadigan kalit soʻzni yozing (Java va Python tilida bir xil).",
+          "ru": "Запишите ключевое слово, которым наследник вызывает конструктор или метод родителя (в Java и Python оно одинаковое).",
+          "en": "Write the keyword a derived class uses to call the parent's constructor or method (the same word in Java and Python)."
+        },
+        "answers": ["super", "super()"],
+        "explanation": {
+          "uz": "Dars jadvali: Python tilida `super().__init__(ism, maosh)` va `super().oylik()`, Java tilida `super(ism, maosh)` va `super.oylik()`. C++ tilida esa `Xodim(ism, maosh)` yoki `Xodim::oylik()` yoziladi.",
+          "ru": "Таблица из занятия: в Python `super().__init__(ism, maosh)` и `super().oylik()`, в Java `super(ism, maosh)` и `super.oylik()`. В C++ пишут `Xodim(ism, maosh)` или `Xodim::oylik()`.",
+          "en": "The lesson's table: `super().__init__(ism, maosh)` and `super().oylik()` in Python, `super(ism, maosh)` and `super.oylik()` in Java, while C++ writes `Xodim(ism, maosh)` or `Xodim::oylik()`."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Voris obyekt yaratilganda konstruktorlar qanday tartibda ishlaydi?",
+          "ru": "В каком порядке работают конструкторы при создании объекта-наследника?",
+          "en": "In what order do the constructors run when a derived object is created?"
+        },
+        "options": [
+          {
+            "uz": "Avval voris konstruktori, keyin otaniki",
+            "ru": "Сначала конструктор наследника, затем родителя",
+            "en": "First the derived constructor, then the parent's"
+          },
+          {
+            "uz": "Avval ota qismi, keyin voris qismi quriladi — ota konstruktori birinchi chaqiriladi",
+            "ru": "Сначала собирается часть родителя — первым вызывается его конструктор",
+            "en": "The parent part is built first, so the parent's constructor is called first"
+          },
+          {
+            "uz": "Faqat voris konstruktori ishlaydi, otaniki umuman chaqirilmaydi",
+            "ru": "Работает только конструктор наследника, конструктор родителя не вызывается вовсе",
+            "en": "Only the derived constructor runs; the parent's is never called"
+          },
+          {
+            "uz": "Ikkala konstruktor bir vaqtda ishlaydi",
+            "ru": "Оба конструктора работают одновременно",
+            "en": "Both constructors run at the same time"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: voris obyekt yaratilganda avval ota qismi, keyin voris qismi quriladi. Shuning uchun Java tilida `super(...)` birinchi qator boʻlishi shart.",
+          "ru": "В занятии: при создании объекта-наследника сначала собирается часть родителя, затем часть наследника. Поэтому в Java `super(...)` должно быть первой строкой.",
+          "en": "The lesson: when a derived object is created, the parent part is built first and only then the derived part, which is why `super(...)` must be the first statement in Java."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi `Harorat` sinfida setter `qiymat < -273` sharti bilan ishlaydi va rad etilgan qiymat obyektga kirmaydi. Ketma-ket 25 va -300 kirilsa, obyekt ichida saqlanadigan Selsiy qiymati nechaga teng boʻladi?",
+          "ru": "В классе `Harorat` из занятия setter работает с условием `qiymat < -273`, и отклонённое значение в объект не попадает. Если подряд ввести 25 и -300, чему равно значение по Цельсию, которое хранит объект?",
+          "en": "In the lesson's `Harorat` class the setter checks `qiymat < -273`, and a rejected value never enters the object. After entering 25 and then -300, what Celsius value does the object keep?"
+        },
+        "answers": [25],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "-300 absolyut noldan past, shuning uchun rad etiladi va obyekt oldingi qiymatini — 25 ni saqlab qoladi.",
+          "ru": "-300 ниже абсолютного нуля, поэтому отклоняется, и объект сохраняет прежнее значение — 25.",
+          "en": "-300 is below absolute zero, so it is rejected and the object keeps its previous value, 25."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kirish huquqlari (Java va C++ tili) haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о правах доступа (в Java и C++) верны?",
+          "en": "Which statements about access rights (in Java and C++) are correct?"
+        },
+        "options": [
+          {
+            "uz": "`private` maydonni faqat sinfning oʻzi koʻradi",
+            "ru": "Поле `private` видит только сам класс",
+            "en": "Only the class itself sees a `private` field"
+          },
+          {
+            "uz": "`protected` maydonni sinf va uning vorislari koʻradi",
+            "ru": "Поле `protected` видят класс и его наследники",
+            "en": "The class and its derived classes see a `protected` field"
+          },
+          {
+            "uz": "`public` maydonni hamma koʻradi",
+            "ru": "Поле `public` видят все",
+            "en": "Everyone sees a `public` field"
+          },
+          {
+            "uz": "`protected` maydonni tashqi kod ham bemalol oʻzgartiradi",
+            "ru": "Внешний код может свободно менять и поле `protected`",
+            "en": "Outside code may freely change a `protected` field as well"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Dars jadvaliga koʻra `protected` ni sinf va vorislari (Java tilida yana shu paketdagi sinflar) koʻradi; tashqi kod uchun ochiq boʻlgani — `public`.",
+          "ru": "По таблице из занятия `protected` видят класс и наследники (в Java — ещё классы того же пакета), а внешнему коду открыто только `public`.",
+          "en": "According to the lesson's table, `protected` is visible to the class and its derived classes (in Java also to the classes of the same package); only `public` is open to outside code."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "C++ tilida `Xodim x = menejer;` deb yozilsa, menejerning barcha qismlari yangi obyektga toʻliq oʻtadi.",
+          "ru": "При записи `Xodim x = menejer;` в C++ все части менеджера полностью переходят в новый объект.",
+          "en": "In C++, writing `Xodim x = menejer;` carries every part of the manager into the new object."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dars xatosi: bunday nusxalash mukofot qismini „kesib tashlaydi“ (slicing); polimorfizmda koʻrsatkich yoki havoladan foydalanish kerak.",
+          "ru": "Ошибка из занятия: такое копирование «срезает» часть с премией (slicing); при полиморфизме нужны указатель или ссылка.",
+          "en": "The lesson's mistake: such a copy cuts off the bonus part (slicing); polymorphism needs a pointer or a reference."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Abstrakt sinf haqida qaysi ifoda toʻgʻri?",
+          "ru": "Какое утверждение об абстрактном классе верно?",
+          "en": "Which statement about an abstract class is correct?"
+        },
+        "options": [
+          {
+            "uz": "Undan obyekt yaratib boʻlmaydi, har bir voris esa uning abstrakt metodlarini albatta aniqlashi kerak",
+            "ru": "Нельзя создать его объект, а каждый наследник обязан реализовать его абстрактные методы",
+            "en": "No object can be made from it, and every derived class must define its abstract methods"
+          },
+          {
+            "uz": "Undan obyekt yaratish mumkin, lekin faqat `new` orqali",
+            "ru": "Объект создать можно, но только через `new`",
+            "en": "An object can be made from it, but only through `new`"
+          },
+          {
+            "uz": "Uning barcha metodlari tanasi bilan beriladi",
+            "ru": "Все его методы даются с телом",
+            "en": "All of its methods come with a body"
+          },
+          {
+            "uz": "U faqat statik maydonlarni saqlay oladi",
+            "ru": "Он может хранить только статические поля",
+            "en": "It can hold only static fields"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: `Shakl` abstrakt boʻlgani uchun `Shakl()` (Python), `new Shakl()` (Java) va `Shakl s;` (C++) xato beradi; abstrakt metodlar tanasiz.",
+          "ru": "В занятии: так как `Shakl` абстрактный, `Shakl()` в Python, `new Shakl()` в Java и `Shakl s;` в C++ дают ошибку; абстрактные методы не имеют тела.",
+          "en": "In the lesson, because `Shakl` is abstract, `Shakl()` in Python, `new Shakl()` in Java and `Shakl s;` in C++ all fail; abstract methods have no body."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Polimorfizm va qayta aniqlash haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о полиморфизме и переопределении верны?",
+          "en": "Which statements about polymorphism and overriding are correct?"
+        },
+        "options": [
+          {
+            "uz": "C++ tilida metod ota sinfda `virtual` boʻlmasa, koʻrsatkich orqali chaqirilganda ota versiyasi ishlaydi",
+            "ru": "Если в C++ метод не объявлен `virtual` в родителе, вызов через указатель выполнит версию родителя",
+            "en": "In C++, if the method is not `virtual` in the parent, a call through a pointer runs the parent's version"
+          },
+          {
+            "uz": "Python va Java tillarida barcha metodlar sukut boʻyicha polimorf",
+            "ru": "В Python и Java все методы полиморфны по умолчанию",
+            "en": "In Python and Java all methods are polymorphic by default"
+          },
+          {
+            "uz": "Java tilida `@Override` izohi metod nomi notoʻgʻri yozilganda kompilyatorga ogohlantiradi",
+            "ru": "В Java аннотация `@Override` заставляет компилятор предупредить об ошибке в имени метода",
+            "en": "In Java the `@Override` annotation makes the compiler catch a wrong method name"
+          },
+          {
+            "uz": "Metodni qayta aniqlashda voris nomi va parametrlarini oʻzgartirishi shart",
+            "ru": "При переопределении наследник обязан изменить имя и параметры метода",
+            "en": "When overriding, the derived class must change the method's name and parameters"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Qayta aniqlashda nomi va parametrlari bir xil, mazmuni boshqa boʻladi — shu sababli toʻrtinchi variyant notoʻgʻri. C++ tilida `virtual` va koʻrsatkich yoki havola shart.",
+          "ru": "При переопределении имя и параметры остаются теми же, меняется только содержание — поэтому четвёртое утверждение неверно. В C++ обязательны `virtual` и указатель или ссылка.",
+          "en": "Overriding keeps the same name and parameters and changes only the content, so the fourth statement is wrong; in C++ `virtual` plus a pointer or reference are required."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Bino ijarasining oylik narxi",
+      "ru": "Месячная плата за аренду зданий",
+      "en": "The monthly rent of the buildings"
+    },
+    "statement": {
+      "uz": "Merosxoʻrlik va polimorfizmni mashq qiling: Bino — abstrakt sinf, unda `oylik()` abstrakt metodi bor. `Kvartira` vorisi `maydon` va `xona` maydonlarini saqlaydi va oylik narxni `maydon * 15000 + xona * 40000` deb hisoblaydi, `Ofis` vorisi esa `maydon * 25000` ni qaytaradi. Obyektlarni ota turidagi bitta roʻyxatda saqlang: hisoblash sikli faqat Bino sinfi haqida bilsin va turini `if` bilan tekshirmasin. Kirish: birinchi qatorda `n`, soʻng `n` ta qatorda obyekt turi va oʻlchamlari — `kvartira MAYDON XONA` yoki `ofis MAYDON`. Chiqish: har bir bino uchun alohida qatorda uning oylik ijara narxi, oxirgi qatorda esa barcha narxlarning yigʻindisi; har qatorda faqat son, qoʻshimcha soʻz yozmang. Masalan: `2`, `kvartira 60 2`, `ofis 100` kirilsa, dastur `980000`, `2500000`, `3480000` chiqaradi. `n` 1 dan 100 gacha, `MAYDON` 1 dan 500 gacha, `XONA` 0 dan 10 gacha.",
+      "ru": "Потренируйтесь с наследованием и полиморфизмом: `Bino` — абстрактный класс с абстрактным методом `oylik()`. Наследник `Kvartira` хранит поля `maydon` и `xona` и вычисляет плату как `maydon * 15000 + xona * 40000`, а наследник `Ofis` возвращает `maydon * 25000`. Храните объекты в одном списке типа родителя, чтобы цикл не проверял тип. Ввод: первая строка — `n`, далее n строк вида `kvartira MAYDON XONA` или `ofis MAYDON`. Вывод: для каждого здания отдельная строка с его месячной платой, последняя строка — сумма всех плат; только числа, без слов. Например, при вводе `2`, `kvartira 60 2`, `ofis 100` программа выведет `980000`, `2500000`, `3480000`. `n` от 1 до 100, `MAYDON` от 1 до 500, `XONA` от 0 до 10.",
+      "en": "Practise inheritance and polymorphism: `Bino` is an abstract class with the abstract method `oylik()`. The derived `Kvartira` keeps the fields `maydon` and `xona` and computes the rent as `maydon * 15000 + xona * 40000`, while the derived `Ofis` returns `maydon * 25000`. Keep the objects in one list of the parent type, so that the loop never tests the type. Input: the first line is `n`, then n lines of the form `kvartira MAYDON XONA` or `ofis MAYDON`. Output: one line per building with its monthly rent, and a last line with the sum of all rents — only numbers, no words. For example, the input `2`, `kvartira 60 2`, `ofis 100` makes the program print `980000`, `2500000`, `3480000`. `n` ranges from 1 to 100, `MAYDON` from 1 to 500, `XONA` from 0 to 10."
+    },
+    "code": {
+      "starter": {
+        "python": "from abc import ABC, abstractmethod\n\n\nclass Bino(ABC):\n    @abstractmethod\n    def oylik(self):\n        pass\n\n\nclass Kvartira(Bino):\n    def __init__(self, maydon, xona):\n        self.maydon = maydon\n        self.xona = xona\n\n    def oylik(self):\n        return self.maydon * 15000\n\n\nclass Ofis(Bino):\n    def __init__(self, maydon):\n        self.maydon = maydon\n\n    def oylik(self):\n        return self.maydon * 25000\n\n\nn = int(input())\nbinolar = []\nfor _ in range(n):\n    q = input().split()\n    if q[0] == \"kvartira\":\n        binolar.append(Kvartira(int(q[1]), int(q[2])))\n    else:\n        binolar.append(Ofis(int(q[1])))\n\njami = 0\nfor b in binolar:\n    print(b.oylik())\n    jami += b.oylik()\nprint(jami)\n",
+        "java": "import java.util.ArrayList;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    abstract static class Bino {\n        abstract long oylik();\n    }\n\n    static class Kvartira extends Bino {\n        long maydon, xona;\n\n        Kvartira(long maydon, long xona) {\n            this.maydon = maydon;\n            this.xona = xona;\n        }\n\n        @Override\n        long oylik() {\n            return maydon * 15000;\n        }\n    }\n\n    static class Ofis extends Bino {\n        long maydon;\n\n        Ofis(long maydon) {\n            this.maydon = maydon;\n        }\n\n        @Override\n        long oylik() {\n            return maydon * 25000;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        List<Bino> binolar = new ArrayList<>();\n        for (int i = 0; i < n; i++) {\n            String tur = in.next();\n            if (tur.equals(\"kvartira\")) binolar.add(new Kvartira(in.nextLong(), in.nextLong()));\n            else binolar.add(new Ofis(in.nextLong()));\n        }\n\n        long jami = 0;\n        for (Bino b : binolar) {\n            System.out.println(b.oylik());\n            jami += b.oylik();\n        }\n        System.out.println(jami);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <memory>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Bino {\npublic:\n    virtual ~Bino() = default;\n    virtual long long oylik() const = 0;\n};\n\nclass Kvartira : public Bino {\n    long long maydon, xona;\n\npublic:\n    Kvartira(long long maydon, long long xona) : maydon(maydon), xona(xona) {}\n\n    long long oylik() const override {\n        return maydon * 15000;\n    }\n};\n\nclass Ofis : public Bino {\n    long long maydon;\n\npublic:\n    Ofis(long long maydon) : maydon(maydon) {}\n\n    long long oylik() const override {\n        return maydon * 25000;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<unique_ptr<Bino>> binolar;\n    for (int i = 0; i < n; i++) {\n        string tur;\n        long long maydon, xona;\n        cin >> tur >> maydon;\n        if (tur == \"kvartira\") {\n            cin >> xona;\n            binolar.push_back(make_unique<Kvartira>(maydon, xona));\n        } else {\n            binolar.push_back(make_unique<Ofis>(maydon));\n        }\n    }\n\n    long long jami = 0;\n    for (const auto& b : binolar) {\n        cout << b->oylik() << endl;\n        jami += b->oylik();\n    }\n    cout << jami << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "from abc import ABC, abstractmethod\n\n\nclass Bino(ABC):\n    @abstractmethod\n    def oylik(self):\n        pass\n\n\nclass Kvartira(Bino):\n    def __init__(self, maydon, xona):\n        self.maydon = maydon\n        self.xona = xona\n\n    def oylik(self):\n        return self.maydon * 15000 + self.xona * 40000\n\n\nclass Ofis(Bino):\n    def __init__(self, maydon):\n        self.maydon = maydon\n\n    def oylik(self):\n        return self.maydon * 25000\n\n\nn = int(input())\nbinolar = []\nfor _ in range(n):\n    q = input().split()\n    if q[0] == \"kvartira\":\n        binolar.append(Kvartira(int(q[1]), int(q[2])))\n    else:\n        binolar.append(Ofis(int(q[1])))\n\njami = 0\nfor b in binolar:\n    print(b.oylik())\n    jami += b.oylik()\nprint(jami)\n",
+        "java": "import java.util.ArrayList;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    abstract static class Bino {\n        abstract long oylik();\n    }\n\n    static class Kvartira extends Bino {\n        long maydon, xona;\n\n        Kvartira(long maydon, long xona) {\n            this.maydon = maydon;\n            this.xona = xona;\n        }\n\n        @Override\n        long oylik() {\n            return maydon * 15000 + xona * 40000;\n        }\n    }\n\n    static class Ofis extends Bino {\n        long maydon;\n\n        Ofis(long maydon) {\n            this.maydon = maydon;\n        }\n\n        @Override\n        long oylik() {\n            return maydon * 25000;\n        }\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        List<Bino> binolar = new ArrayList<>();\n        for (int i = 0; i < n; i++) {\n            String tur = in.next();\n            if (tur.equals(\"kvartira\")) binolar.add(new Kvartira(in.nextLong(), in.nextLong()));\n            else binolar.add(new Ofis(in.nextLong()));\n        }\n\n        long jami = 0;\n        for (Bino b : binolar) {\n            System.out.println(b.oylik());\n            jami += b.oylik();\n        }\n        System.out.println(jami);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <memory>\n#include <string>\n#include <vector>\nusing namespace std;\n\nclass Bino {\npublic:\n    virtual ~Bino() = default;\n    virtual long long oylik() const = 0;\n};\n\nclass Kvartira : public Bino {\n    long long maydon, xona;\n\npublic:\n    Kvartira(long long maydon, long long xona) : maydon(maydon), xona(xona) {}\n\n    long long oylik() const override {\n        return maydon * 15000 + xona * 40000;\n    }\n};\n\nclass Ofis : public Bino {\n    long long maydon;\n\npublic:\n    Ofis(long long maydon) : maydon(maydon) {}\n\n    long long oylik() const override {\n        return maydon * 25000;\n    }\n};\n\nint main() {\n    int n;\n    cin >> n;\n    vector<unique_ptr<Bino>> binolar;\n    for (int i = 0; i < n; i++) {\n        string tur;\n        long long maydon, xona;\n        cin >> tur >> maydon;\n        if (tur == \"kvartira\") {\n            cin >> xona;\n            binolar.push_back(make_unique<Kvartira>(maydon, xona));\n        } else {\n            binolar.push_back(make_unique<Ofis>(maydon));\n        }\n    }\n\n    long long jami = 0;\n    for (const auto& b : binolar) {\n        cout << b->oylik() << endl;\n        jami += b->oylik();\n    }\n    cout << jami << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "2\nkvartira 60 2\nofis 100\n", "expected": "980000\n2500000\n3480000", "hidden": false },
+        { "input": "1\nofis 40\n", "expected": "1000000\n1000000", "hidden": false },
+        { "input": "1\nkvartira 75 3\n", "expected": "1245000\n1245000", "hidden": true },
+        { "input": "3\nkvartira 45 1\nkvartira 80 3\nofis 12\n", "expected": "715000\n1320000\n300000\n2335000", "hidden": true },
+        { "input": "4\nofis 50\nkvartira 100 4\nofis 20\nkvartira 30 1\n", "expected": "1250000\n1660000\n500000\n490000\n3900000", "hidden": true }
+      ]
+    }
+  }
+}

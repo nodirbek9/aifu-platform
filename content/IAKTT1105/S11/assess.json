@@ -1,0 +1,400 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Bulutga oʻtishning qaysi bosqichida pilot loyiha amalga oshiriladi va maʼlumotlar koʻchiriladi?",
+          "ru": "На каком этапе перехода в облако реализуется пилотный проект и переносятся данные?",
+          "en": "At which stage of moving to the cloud is a pilot project implemented and data migrated?"
+        },
+        "options": [
+          {
+            "uz": "Baholash",
+            "ru": "Оценка",
+            "en": "Assessment"
+          },
+          {
+            "uz": "Rejalashtirish",
+            "ru": "Планирование",
+            "en": "Planning"
+          },
+          {
+            "uz": "Koʻchirish",
+            "ru": "Миграция",
+            "en": "Migration"
+          },
+          {
+            "uz": "Optimallashtirish",
+            "ru": "Оптимизация",
+            "en": "Optimization"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Darsga koʻra, pilot loyiha va maʼlumotlarni koʻchirish aynan uchinchi, \"Koʻchirish\" bosqichida bajariladi.",
+          "ru": "По занятию, пилотный проект и перенос данных выполняются на третьем этапе — \"Миграция\".",
+          "en": "According to the lesson, a pilot project and data migration are carried out at the third stage, \"Migration\"."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Dars matniga koʻra, bulutga oʻtish jarayoni nechta asosiy bosqichni oʻz ichiga oladi?",
+          "ru": "Согласно тексту занятия, сколько основных этапов включает процесс перехода в облако?",
+          "en": "According to the lesson text, how many main stages does the process of moving to the cloud include?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Bosqichlar toʻrtta: baholash, rejalashtirish, koʻchirish va optimallashtirish.",
+          "ru": "Этапов четыре: оценка, планирование, миграция и оптимизация.",
+          "en": "There are four stages: assessment, planning, migration and optimization."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "\"Rehost\" strategiyasi ilovani bulut uchun qayta yozishni (masalan, mikroservislarga ajratishni) anglatadi.",
+          "ru": "Стратегия \"Rehost\" означает переписывание приложения под облако (например, на микросервисы).",
+          "en": "The \"Rehost\" strategy means rewriting an application for the cloud (for example, into microservices)."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Qayta yozish — bu \"Refactor\" strategiyasi. \"Rehost\" tizimni oʻzgarishsiz koʻchirishni bildiradi.",
+          "ru": "Переписывание — это стратегия \"Refactor\". \"Rehost\" означает перенос системы без изменений.",
+          "en": "Rewriting is the \"Refactor\" strategy. \"Rehost\" means moving the system unchanged."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Moliya va IT boʻlimlarining bulut xarajatlarini birgalikda boshqarish amaliyoti qanday ataladi?",
+          "ru": "Как называется практика совместного управления облачными затратами финансами и ИТ?",
+          "en": "What is the practice of finance and IT jointly managing cloud costs called?"
+        },
+        "answers": ["FinOps", "finops", "FINOPS"],
+        "explanation": {
+          "uz": "Darsda bu amaliyot FinOps deb ataladi.",
+          "ru": "В занятии эта практика называется FinOps.",
+          "en": "In the lesson this practice is called FinOps."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Umumiy javobgarlik modelida mijoz (foydalanuvchi) nimalar uchun javob beradi?",
+          "ru": "За что отвечает клиент (пользователь) в модели разделённой ответственности?",
+          "en": "What is the customer responsible for in the shared responsibility model?"
+        },
+        "options": [
+          {
+            "uz": "Kirish huquqlari",
+            "ru": "Права доступа",
+            "en": "Access rights"
+          },
+          {
+            "uz": "Jismoniy serverlarni taʼminlash",
+            "ru": "Обеспечение физическими серверами",
+            "en": "Providing physical servers"
+          },
+          {
+            "uz": "Maʼlumotlarni shifrlash",
+            "ru": "Шифрование данных",
+            "en": "Encryption of data"
+          },
+          {
+            "uz": "Zaxira nusxalarini yaratish",
+            "ru": "Создание резервных копий",
+            "en": "Creating backups"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "Mijoz kirish huquqlari, shifrlash, zaxira nusxa va sozlamalar uchun javob beradi. Jismoniy serverlar provayder javobgarligida.",
+          "ru": "Клиент отвечает за права доступа, шифрование, резервные копии и настройки. Физические серверы — ответственность провайдера.",
+          "en": "The customer is responsible for access rights, encryption, backups and settings. Physical servers are the provider's responsibility."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nima uchun bank va moliya tashkilotlari koʻpincha xususiy yoki gibrid bulutdan foydalanadilar?",
+          "ru": "Почему банки и финансовые организации часто используют частное или гибридное облако?",
+          "en": "Why do banking and financial organizations often use private or hybrid clouds?"
+        },
+        "options": [
+          {
+            "uz": "Ommaviy bulutdan koʻra ancha arzon boʻlgani uchun",
+            "ru": "Потому что это намного дешевле публичного облака",
+            "en": "Because it is much cheaper than a public cloud"
+          },
+          {
+            "uz": "Regulyator talablari va maxfiy maʼlumotlarni himoya qilish zarurati tufayli",
+            "ru": "Из-за требований регулятора и необходимости защиты конфиденциальных данных",
+            "en": "Because of regulators' requirements and the need to protect confidential data"
+          },
+          {
+            "uz": "Ommaviy bulutlarda masshtablash imkoniyati yoʻqligi uchun",
+            "ru": "Потому что в публичных облаках нет возможности масштабирования",
+            "en": "Because public clouds lack scaling capabilities"
+          },
+          {
+            "uz": "Ular doimo internetsiz ishlashlari kerakligi sababli",
+            "ru": "Потому что они должны всегда работать без интернета",
+            "en": "Because they must always work without the internet"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda yozilganidek, banklar regulyator talablari tufayli koʻpincha xususiy yoki gibrid bulutni tanlaydilar.",
+          "ru": "Как сказано в занятии, банки часто выбирают частное или гибридное облако из-за требований регулятора.",
+          "en": "As stated in the lesson, banks often choose a private or hybrid cloud because of regulators' requirements."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Shaxsiy maʼlumotlarni lokallashtirish talabini eʼtiborsiz qoldirish qonun buzilishiga va jarimalarga olib kelishi mumkin.",
+          "ru": "Игнорирование требования локализации персональных данных может привести к нарушению закона и штрафам.",
+          "en": "Ignoring the personal data localization requirement can lead to a breach of the law and fines."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Koʻp uchraydigan xatolarda taʼkidlanganidek, lokallashtirish talabiga rioya qilmaslik qonun buzilishiga sabab boʻladi.",
+          "ru": "Как подчёркнуто в частых ошибках, несоблюдение требования локализации приводит к нарушению закона.",
+          "en": "As highlighted in the common mistakes, failing to comply with the localization requirement causes a breach of the law."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Oʻz tizimini tayyor SaaS mahsulotiga (masalan, Microsoft 365) almashtirish qaysi koʻchirish strategiyasi hisoblanadi?",
+          "ru": "Какая стратегия миграции предполагает замену собственной системы на готовый SaaS-продукт (например, Microsoft 365)?",
+          "en": "Which migration strategy involves replacing your own system with a ready SaaS product (for example, Microsoft 365)?"
+        },
+        "answers": ["Repurchase", "repurchase", "REPURCHASE"],
+        "explanation": {
+          "uz": "Oʻz tizimidan voz kechib SaaS ishlatish \"Repurchase\" strategiyasi deyiladi.",
+          "ru": "Отказ от своей системы в пользу SaaS называется стратегией \"Repurchase\".",
+          "en": "Giving up your own system to use SaaS is called the \"Repurchase\" strategy."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bulutga oʻtishning birinchi — \"Baholash\" bosqichida qanday vazifalar bajariladi?",
+          "ru": "Какие задачи выполняются на первом этапе перехода в облако — \"Оценка\"?",
+          "en": "What tasks are performed at the first stage of moving to the cloud, \"Assessment\"?"
+        },
+        "options": [
+          {
+            "uz": "Tizimlar va maʼlumotlarning roʻyxatini tuzish",
+            "ru": "Составление перечня систем и данных",
+            "en": "Making an inventory of systems and data"
+          },
+          {
+            "uz": "Dasturni mikroservislarga ajratish",
+            "ru": "Разделение программы на микросервисы",
+            "en": "Dividing the program into microservices"
+          },
+          {
+            "uz": "TCO (egalik qilishning umumiy qiymati) hisobi",
+            "ru": "Расчёт TCO (совокупной стоимости владения)",
+            "en": "A TCO (total cost of ownership) calculation"
+          },
+          {
+            "uz": "Maʼlumotlarni bulutga koʻchirish",
+            "ru": "Перенос данных в облако",
+            "en": "Migrating data to the cloud"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Baholash bosqichida tizimlar roʻyxati, ularning muhimligi va TCO hisobi amalga oshiriladi. Koʻchirish esa uchinchi bosqichdir.",
+          "ru": "На этапе оценки составляется перечень систем, их важность и расчёт TCO. А перенос — это третий этап.",
+          "en": "The assessment stage involves an inventory of systems, their importance and a TCO calculation. Migration is the third stage."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Bulutga oʻtish strategiyalari va xatolari",
+      "ru": "Стратегии и ошибки перехода в облако",
+      "en": "Cloud migration strategies and mistakes"
+    },
+    "statement": {
+      "uz": "Ushbu mashqda bulutga oʻtish strategiyalari va unda yoʻl qoʻyiladigan umumiy xatolarga doir bilimlaringizni tekshirasiz.",
+      "ru": "В этом упражнении вы проверите свои знания о стратегиях перехода в облако и распространённых ошибках.",
+      "en": "In this exercise you will check your knowledge of cloud migration strategies and common mistakes."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "\"6R\" strategiyalaridan qaysi biri \"koʻtarib koʻchirish\" (lift and shift) deb ataladi va tizimni oʻzgarishsiz virtual serverga oʻtkazishni anglatadi?",
+            "ru": "Какая из стратегий \"6R\" называется \"поднять и перенести\" (lift and shift) и означает перенос системы без изменений на виртуальный сервер?",
+            "en": "Which of the \"6 Rs\" strategies is called \"lift and shift\" and means moving the system unchanged to a virtual server?"
+          },
+          "options": [
+            {
+              "uz": "Rehost",
+              "ru": "Rehost",
+              "en": "Rehost"
+            },
+            {
+              "uz": "Replatform",
+              "ru": "Replatform",
+              "en": "Replatform"
+            },
+            {
+              "uz": "Refactor",
+              "ru": "Refactor",
+              "en": "Refactor"
+            },
+            {
+              "uz": "Retire",
+              "ru": "Retire",
+              "en": "Retire"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Tizimni oʻzgarishsiz koʻchirish \"Rehost\" yoki \"koʻtarib koʻchirish\" deb ataladi.",
+            "ru": "Перенос системы без изменений называется \"Rehost\" или \"поднять и перенести\".",
+            "en": "Moving the system unchanged is called \"Rehost\" or \"lift and shift\"."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsda keltirilganidek, bulutga oʻtishda koʻp uchraydigan xatolarni belgilang.",
+            "ru": "Отметьте частые ошибки при переходе в облако, упомянутые в занятии.",
+            "en": "Mark the common mistakes when moving to the cloud mentioned in the lesson."
+          },
+          "options": [
+            {
+              "uz": "Hammasini birdaniga, pilot loyihasiz koʻchirish",
+              "ru": "Переносить всё сразу, без пилотного проекта",
+              "en": "Moving everything at once without a pilot project"
+            },
+            {
+              "uz": "Provayderni almashtirish uchun chiqish rejasini tuzish",
+              "ru": "Составление плана выхода для смены провайдера",
+              "en": "Drawing up an exit plan for changing the provider"
+            },
+            {
+              "uz": "Lokallashtirish talabini eʼtiborsiz qoldirish",
+              "ru": "Игнорирование требования локализации",
+              "en": "Ignoring the localization requirement"
+            },
+            {
+              "uz": "Eski tizimni oʻzgarishsiz koʻchirib, bulut afzalliklarini kutish",
+              "ru": "Перенос старой системы без изменений в ожидании выгод облака",
+              "en": "Moving an old system unchanged and expecting cloud benefits"
+            }
+          ],
+          "correct": [0, 2, 3],
+          "explanation": {
+            "uz": "Chiqish rejasini tuzish xato emas, balki toʻgʻri qadamdir. Qolgan uchta variant darsda xato sifatida koʻrsatilgan.",
+            "ru": "Составление плана выхода — правильный шаг, а не ошибка. Остальные три варианта указаны в занятии как ошибки.",
+            "en": "Drawing up an exit plan is a correct step, not a mistake. The other three options are listed as mistakes in the lesson."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Savdo sohasida (masalan, internet-doʻkonlarda) bulutli yechimlar mavsumiy choʻqqilarda (masalan, \"qora juma\") resurslarni tez oshirish imkonini beradi.",
+            "ru": "В сфере торговли (например, в интернет-магазинах) облачные решения позволяют быстро наращивать ресурсы в сезонные пики (например, в \"чёрную пятницу\").",
+            "en": "In the retail sector (for example, online shops), cloud solutions allow quickly adding resources at seasonal peaks (for example, \"Black Friday\")."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Savdo sohasida bulutning asosiy yutugʻi mavsumiy vaqtda yuklamaga moslashish va tez masshtablashdir.",
+            "ru": "В торговле главное преимущество облака — адаптация к нагрузке в сезон и быстрое масштабирование.",
+            "en": "In retail the main advantage of the cloud is adapting to seasonal loads and quick scaling."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Foydalanilmayotgan eski ilovalarni bulutga koʻchirmasdan, shunchaki oʻchirishni koʻzda tutadigan strategiya qanday ataladi?",
+            "ru": "Как называется стратегия, которая предполагает не переносить неиспользуемые старые приложения в облако, а просто отключить их?",
+            "en": "What is the strategy called that involves not moving unused old applications to the cloud, but simply switching them off?"
+          },
+          "answers": ["Retire", "retire", "RETIRE"],
+          "explanation": {
+            "uz": "Keraksiz va ishlatilmaydigan tizimlarni oʻchirish \"Retire\" strategiyasi hisoblanadi.",
+            "ru": "Отключение ненужных и неиспользуемых систем — это стратегия \"Retire\".",
+            "en": "Switching off unneeded and unused systems is the \"Retire\" strategy."
+          }
+        }
+      ]
+    }
+  }
+}

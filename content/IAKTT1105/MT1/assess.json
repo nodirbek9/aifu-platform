@@ -1,0 +1,440 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kurs tarkibida qanday miqdordagi mavzular bor?",
+          "ru": "Сколько и каких тем входит в курс?",
+          "en": "Which counts of topics make up the course?"
+        },
+        "options": [
+          {
+            "uz": "15 maʼruza, 15 seminar va 31 ta mustaqil ish mavzusi",
+            "ru": "15 лекций, 15 семинаров и 31 тема самостоятельной работы",
+            "en": "15 lectures, 15 seminars and 31 independent study topics"
+          },
+          {
+            "uz": "15 maʼruza, 31 seminar va 15 ta mustaqil ish mavzusi",
+            "ru": "15 лекций, 31 семинар и 15 тем самостоятельной работы",
+            "en": "15 lectures, 31 seminars and 15 independent study topics"
+          },
+          {
+            "uz": "31 ta maʼruza, 15 seminar va 15 ta mustaqil ish mavzusi",
+            "ru": "31 лекция, 15 семинаров и 15 тем самостоятельной работы",
+            "en": "31 lectures, 15 seminars and 15 independent study topics"
+          },
+          {
+            "uz": "15 maʼruza, 15 seminar va 15 ta mustaqil ish mavzusi",
+            "ru": "15 лекций, 15 семинаров и 15 тем самостоятельной работы",
+            "en": "15 lectures, 15 seminars and 15 independent study topics"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: kurs 15 ta maʼruza, 15 ta seminar va 31 ta mustaqil ish mavzusidan iborat, ular 6 boʻlimga birlashgan.",
+          "ru": "В занятии: курс состоит из 15 лекций, 15 семинаров и 31 темы самостоятельной работы, объединённых в 6 разделов.",
+          "en": "The lesson says the course has 15 lectures, 15 seminars and 31 independent study topics, grouped into 6 sections."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Faqat qayta-qayta oʻqish va rang bilan belgilash samarali oʻqish usuli hisoblanadi.",
+          "ru": "Только перечитывание и выделение цветом — эффективный способ учёбы.",
+          "en": "Only rereading and highlighting is an effective way of studying."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda bu usul tavsiya etilmaydi: u «bilaman» degan yolgʻon tuygʻu beradi, xotirani esa mustahkamlamaydi.",
+          "ru": "Занятие не рекомендует этот способ: он даёт ложное ощущение «я знаю» и не укрепляет память.",
+          "en": "The lesson does not recommend it: it gives a false feeling of «I know it» and does not strengthen memory."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Samarali oʻqish usullari jadvaliga qaysi usullar kiritilgan?",
+          "ru": "Какие методы входят в таблицу эффективных способов учёбы?",
+          "en": "Which methods are in the table of effective learning methods?"
+        },
+        "options": [
+          {
+            "uz": "Faol eslash",
+            "ru": "Активное вспоминание",
+            "en": "Active recall"
+          },
+          {
+            "uz": "Oraliq takrorlash",
+            "ru": "Интервальное повторение",
+            "en": "Spaced repetition"
+          },
+          {
+            "uz": "Oʻz soʻzi bilan tushuntirish",
+            "ru": "Объяснение своими словами",
+            "en": "Explaining in your own words"
+          },
+          {
+            "uz": "Hamma narsani sessiyadan oldin bir kechada oʻqish",
+            "ru": "Выучить всё за одну ночь перед сессией",
+            "en": "Cramming everything the night before the session"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Jadvalda yana misollarni oʻzi bajarish va bogʻlash bor; bir kechada oʻqish esa «koʻp uchraydigan xatolar» blokida.",
+          "ru": "В таблице ещё самостоятельное выполнение примеров и связывание; учёба за одну ночь — в блоке «частые ошибки».",
+          "en": "The table also lists doing the examples yourself and connecting; cramming overnight is in the «common mistakes» block."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda tavsiya etilgan haftalik yurish surʼati qanday?",
+          "ru": "Какой недельный темп работы рекомендует занятие?",
+          "en": "What weekly pace of work does the lesson recommend?"
+        },
+        "options": [
+          {
+            "uz": "Bitta maʼruza + bitta seminar + 2 ta mustaqil ish",
+            "ru": "Одна лекция + один семинар + 2 самостоятельные работы",
+            "en": "One lecture + one seminar + 2 independent study topics"
+          },
+          {
+            "uz": "Ikki maʼruza + ikki seminar + 4 ta mustaqil ish",
+            "ru": "Две лекции + два семинара + 4 самостоятельные работы",
+            "en": "Two lectures + two seminars + 4 independent study topics"
+          },
+          {
+            "uz": "Bitta maʼruza + 2 ta seminar + bitta mustaqil ish",
+            "ru": "Одна лекция + два семинара + 1 самостоятельная работа",
+            "en": "One lecture + two seminars + 1 independent study topic"
+          },
+          {
+            "uz": "Har kuni bittadan butun mavzu",
+            "ru": "Каждый день по одной полной теме",
+            "en": "One full topic every day"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Namuna rejad ham shu tartib: haftasiga bitta maʼruza, bitta seminar va 2 ta mustaqil ish; eng muhimi — muntazamlik.",
+          "ru": "В образце плана тот же порядок: в неделю одна лекция, один семинар и 2 самостоятельные работы; главное — регулярность.",
+          "en": "The sample plan follows the same order: a week gives one lecture, one seminar and 2 independent study topics; regularity matters most."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kurs xaritasiga koʻra, barcha mavzular nechta boʻlimga birlashgan?",
+          "ru": "На сколько разделов объединены все темы курса?",
+          "en": "How many sections does the course map group the topics into?"
+        },
+        "answers": [6],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Olti boʻlim: asoslar, vositalar, maʼlumotlar va tarmoqlar, tizimlar, yangi texnologiyalar, xavfsizlik va kasbiy tizimlar.",
+          "ru": "Шесть разделов: основы, инструменты, данные и сети, системы, новые технологии, безопасность и профессиональные системы.",
+          "en": "Six sections: foundations, tools, data and networks, systems, emerging technologies, security and professional systems."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Atama — uch tilda — qisqa taʼrif koʻrinishida yuritiladigan alohida lugʻat qanday ataladi?",
+          "ru": "Как называется отдельный словарь ведёмый по схеме «термин — на трёх языках — краткое определение»?",
+          "en": "What is the separate dictionary kept as «term — in three languages — short definition» called?"
+        },
+        "answers": ["glossariy", "глоссарий", "glossary"],
+        "explanation": {
+          "uz": "Dars har mavzu boʻyicha bir sahifalik konspekt va alohida glossariy yuritishni maslahat beradi.",
+          "ru": "Занятие советует вести по одной странице конспекта на тему и отдельный глоссарий.",
+          "en": "The lesson advises keeping one page of notes per topic plus a separate glossary."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "MT1 topshigʻiga koʻra, glossariyga M1 va M2 dan kamida nechta atama qoʻshish kerak?",
+          "ru": "Сколько не менее терминов из M1 и M2 нужно добавить в глоссарий по заданию MT1?",
+          "en": "At least how many terms from M1 and M2 must the MT1 assignment add to the glossary?"
+        },
+        "answers": [10],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "3-topshiriq: kamida 10 ta atama, uch tilda; 4-topshiriqda esa M1 faol eslash usuli bilan oʻrganiladi.",
+          "ru": "Задание 3: не менее 10 терминов на трёх языках; задание 4 — изучить M1 методом активного вспоминания.",
+          "en": "Task 3: at least 10 terms in three languages; task 4 studies M1 with the active recall method."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kurs xaritasidagi bogʻliqliklar roʻyxati boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны по списку связей на карте курса?",
+          "en": "Which statements are correct according to the dependencies of the course map?"
+        },
+        "options": [
+          {
+            "uz": "Tarmoqlar (M6) bulut (M11) va elektron hukumat (M10) mavzulariga asos boʻladi",
+            "ru": "Сети (M6) — основа для тем «облако» (M11) и «электронное правительство» (M10)",
+            "en": "Networks (M6) are the basis for the cloud (M11) and e-government (M10) topics"
+          },
+          {
+            "uz": "Maʼlumotlar bazalari (M7) axborot tizimlari (M9) va ERP (M15) uchun kerak",
+            "ru": "Базы данных (M7) нужны для тем «информационные системы» (M9) и ERP (M15)",
+            "en": "Databases (M7) are needed for information systems (M9) and ERP (M15)"
+          },
+          {
+            "uz": "Algoritmlar (M8, S8) dasturlash topshiriqlari uchun asos boʻladi",
+            "ru": "Алгоритмы (M8, S8) — основа для заданий по программированию",
+            "en": "Algorithms (M8, S8) are the basis for the programming tasks"
+          },
+          {
+            "uz": "Xesh va kriptografiya (M12, S14) Excel (M4) mavzusidan oldin oʻrganilishi shart",
+            "ru": "Хеш и криптографию (M12, S14) нужно изучить до темы Excel (M4)",
+            "en": "Hashing and cryptography (M12, S14) must be studied before the Excel (M4) topic"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda Excel (M4) statistik tahlil (MT2) va Big Data uchun asos deyilgan; xesh va kriptografiya esa blokcheyn, elektron raqamli imzo va soliq hisobotlariga (MT31) bogʻlanadi.",
+          "ru": "В занятии Excel (M4) — основа для статистического анализа (MT2) и Big Data; хеш и криптография связаны с блокчейном, ЭЦП и налоговой отчётностью (MT31).",
+          "en": "The lesson makes Excel (M4) the basis for statistical analysis (MT2) and Big Data; hashing and cryptography lead to blockchain, digital signatures and tax reports (MT31)."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Oʻzini baholashda 3 qoʻyilgan mavzuni oʻqituvchi bilan muhokama qilish yoki seminarda savol berish tavsiya etiladi.",
+          "ru": "Тему с оценкой 3 по самооценке рекомендуется обсудить с преподавателем или задать по ней вопрос на семинаре.",
+          "en": "A topic you self-rated 3 should be discussed with the teacher or asked about at the seminar."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "3 va undan past baholi mavzular muhokama qilinadi; 5 baho esa «boshqalarga tushuntira olaman» degani.",
+          "ru": "Темы с оценкой 3 и ниже обсуждают; оценка 5 означает «могу объяснить другим».",
+          "en": "Topics rated 3 or lower are discussed; a rating of 5 means «I can explain it to others»."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Kurs xaritasi va oʻqish rejasi boʻyicha mashq",
+      "ru": "Упражнение по карте курса и плану учёбы",
+      "en": "Exercise on the course map and the study plan"
+    },
+    "statement": {
+      "uz": "Bu amaliyotda javoblar faqat MT1 dars matnidan olinadi: kursning tuzilishi, tavsiya etilgan usullar, topshiriqlar va akademik halollik. Har bir savolga javob bering yoki toʻgʻri variantni belgilang.",
+      "ru": "В этом упражнении ответы берутся только из текста MT1: структура курса, рекомендуемые методы, задания и академическая честность. Отвечайте на каждый вопрос или отмечайте верный вариант.",
+      "en": "In this exercise every answer comes only from the MT1 text: the structure of the course, the recommended methods, the assignment and academic integrity. Answer each question or select the right option."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Faol eslash usulida darsni oʻqib boʻlgach nima qilinadi?",
+            "ru": "Что делают после прочтения урока при активном вспоминании?",
+            "en": "What do you do after reading the lesson in the active recall method?"
+          },
+          "options": [
+            {
+              "uz": "Darsni yopib, asosiy fikrlarni yozasiz",
+              "ru": "Закрывают урок и записывают главные мысли",
+              "en": "You close the lesson and write down the main ideas"
+            },
+            {
+              "uz": "Darsni bir necha marta qayta oʻqiysiz",
+              "ru": "Перечитывают урок несколько раз",
+              "en": "You reread the lesson several times"
+            },
+            {
+              "uz": "Sarlavhalarni rang bilan belgilaysiz",
+              "ru": "Выделяют заголовки цветом",
+              "en": "You highlight the headings with colour"
+            },
+            {
+              "uz": "Doʻstingizning konspektini koʻchirasiz",
+              "ru": "Переписывают конспект друга",
+              "en": "You copy a friend's notes"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Esashga urinish xotirani mustahkamlaydi; «Oʻzingizni tekshiring» savollariga ham javobni koʻrmasdan javob beriladi.",
+            "ru": "Попытка вспомнить укрепляет память; на вопросы «Проверьте себя» тоже отвечают, не глядя в ответы.",
+            "en": "Trying to remember strengthens memory; you also answer the «check yourself» questions without looking at the answers."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "MT1 topshigʻiga koʻra, kurs xaritasini qanday chizish mumkin?",
+            "ru": "Как, по заданию MT1, можно нарисовать карту курса?",
+            "en": "How may you draw the course map according to the MT1 assignment?"
+          },
+          "options": [
+            {
+              "uz": "Qogʻozda yoki elektron sxema koʻrinishida",
+              "ru": "На бумаге или в виде электронной схемы",
+              "en": "On paper or as an electronic diagram"
+            },
+            {
+              "uz": "Faqat Excel da diagramma qilib",
+              "ru": "Только диаграммой в Excel",
+              "en": "Only as a chart in Excel"
+            },
+            {
+              "uz": "Faqat ogʻzaki aytib berish koʻrinishida",
+              "ru": "Только устно",
+              "en": "Only by telling it verbally"
+            },
+            {
+              "uz": "Video rolik tayyorlab",
+              "ru": "Сняв видеоролик",
+              "en": "By making a video"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "2-topshiriqda xarita qogʻozda yoki elektron sxemada chiziladi: boʻlimlar va ular orasidagi bogʻliqliklar.",
+            "ru": "Задание 2: карту рисуют на бумаге или в электронной схеме — разделы и связи между ними.",
+            "en": "Task 2: draw the map on paper or as an electronic diagram — the sections and the links between them."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsda sunʼiy intellektdan butunlay foydalanish taqiqlangan.",
+            "ru": "Занятие полностью запрещает пользоваться искусственным интеллектом.",
+            "en": "The lesson forbids using artificial intelligence altogether."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Sunʼiy intellektdan tushuntirish soʻrash uchun foydalanish mumkin, yechimni esa oʻzingiz yozishingiz kerak.",
+            "ru": "Искусственным интеллектом можно просить объяснить, но решение нужно писать самому.",
+            "en": "You may use artificial intelligence to ask for an explanation, but the solution must be your own."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "«Koʻp uchraydigan xatolar» blokiga qaysilari kiritilgan?",
+            "ru": "Что входит в блок «частые ошибки»?",
+            "en": "Which items are in the «common mistakes» block?"
+          },
+          "options": [
+            {
+              "uz": "Hamma narsani sessiyadan oldingi haftaga qoldirish",
+              "ru": "Откладывать всё на неделю перед сессией",
+              "en": "Leaving everything to the week before the session"
+            },
+            {
+              "uz": "Kod misollarini oʻqib, lekin ishga tushirmaslik",
+              "ru": "Читать примеры кода, но не запускать их",
+              "en": "Reading code examples without running them"
+            },
+            {
+              "uz": "Glossariy tuzish va konspekt yuritish",
+              "ru": "Составлять глоссарий и вести конспект",
+              "en": "Keeping a glossary and notes"
+            },
+            {
+              "uz": "Tushunmagan joyini soʻramaslik",
+              "ru": "Не спрашивать о непонятном",
+              "en": "Not asking about what you did not understand"
+            }
+          ],
+          "correct": [0, 1, 3],
+          "explanation": {
+            "uz": "Glossariy va konspekt — aksincha, tavsiya etilgan usul; xatolar roʻyxatida seminar va mustaqil ishni tashlab ketish ham bor.",
+            "ru": "Глоссарий и конспект — наоборот, рекомендуемый способ; в списке ошибок также пропуск семинаров и самостоятельных работ.",
+            "en": "A glossary and notes are a recommended method instead; the mistakes also include skipping seminars and independent study."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Namuna rejaga koʻra, yakuniy nazorat va S15 dasturlash topshiriqi nechta haftada rejalashtirilgan?",
+            "ru": "На какой неделе по образцу плана запланированы итоговый контроль и задание по программированию S15?",
+            "en": "In the sample plan, on which week are the final assessment and the S15 programming task scheduled?"
+          },
+          "answers": [15],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "15-hafta: M15 maʼruzasi, S15 seminari, MT31, S15 dasturlash topshiriqi va yakuniy nazorat.",
+            "ru": "Неделя 15: лекция M15, семинар S15, MT31, задание по программированию S15 и итоговый контроль.",
+            "en": "Week 15: lecture M15, seminar S15, MT31, the S15 programming task and the final assessment."
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "C++ va Java tillarida int turi qiymat uchun qancha joy ajratadi?",
+          "ru": "Сколько места тип int выделяет под значение в C++ и Java?",
+          "en": "How much space does the type int set aside for a value in C++ and Java?"
+        },
+        "options": [
+          {
+            "uz": "4 bayt — chegarasi taxminan -2,1 mlrd dan 2,1 mlrgacha",
+            "ru": "4 байта — диапазон примерно от -2,1 млрд до 2,1 млрд",
+            "en": "4 bytes — a range of roughly -2.1 billion to 2.1 billion"
+          },
+          {
+            "uz": "8 bayt — chegarasi ±9,2 · 10^18",
+            "ru": "8 байт — диапазон ±9,2 · 10^18",
+            "en": "8 bytes — a range of ±9.2 · 10^18"
+          },
+          {
+            "uz": "2 bayt — har doim ikki bayt ajratiladi",
+            "ru": "2 байта — всегда выделяется два байта",
+            "en": "2 bytes — two bytes are always set aside"
+          },
+          {
+            "uz": "1 bayt — chegarasi 127 gacha",
+            "ru": "1 байт — диапазон до 127",
+            "en": "1 byte — a range up to 127"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: int — 4 bayt, -2^31 dan 2^31-1 gacha. 8 baytni long long va double oladi.",
+          "ru": "Таблица из занятия: int — 4 байта, от -2^31 до 2^31-1. По 8 байт занимают long long и double.",
+          "en": "The table in the lesson: int is 4 bytes, from -2^31 to 2^31-1. The 8-byte types are long long and double."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python tilida int turi 4 bayt joy oladi va 2 147 483 647 dan katta sonni saqlab boʻlmaydi.",
+          "ru": "В Python тип int занимает 4 байта, и число больше 2 147 483 647 сохранить нельзя.",
+          "en": "In Python the type int takes 4 bytes and a number bigger than 2 147 483 647 cannot be stored."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Pythonʼda int chegarasiz: son qanchalik katta boʻlsa, shuncha joy oladi. 4 baytlik chegarasi C++ va Javaʼning int turi uchun.",
+          "ru": "В Python int не ограничен: чем больше число, тем больше места оно занимает. Граница в 4 байта относится к int в C++ и Java.",
+          "en": "In Python int has no limit: the bigger the number, the more space it takes. The 4-byte limit belongs to int in C++ and Java."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Turlarning oʻlchami va chegarasi haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о размере и диапазоне типов верны?",
+          "en": "Which statements about the size and range of types are correct?"
+        },
+        "options": [
+          {
+            "uz": "double 8 bayt joy oladi va taxminan 15-16 ta aniq raqam saqlaydi",
+            "ru": "double занимает 8 байт и хранит примерно 15-16 точных цифр",
+            "en": "double takes 8 bytes and keeps about 15-16 exact digits"
+          },
+          {
+            "uz": "C++ʼda char 1 bayt, Javaʼda esa 2 bayt joy oladi",
+            "ru": "В C++ char занимает 1 байт, а в Java — 2 байта",
+            "en": "In C++ char takes 1 byte, in Java 2 bytes"
+          },
+          {
+            "uz": "bool odatda 1 bayt boʻlib, faqat true yoki false qiymatini oladi",
+            "ru": "bool обычно занимает 1 байт и принимает только true или false",
+            "en": "bool is usually 1 byte and holds only true or false"
+          },
+          {
+            "uz": "long long bilan int ikkalasi ham 4 bayt joy oladi",
+            "ru": "long long и int оба занимают 4 байта",
+            "en": "long long and int both take 4 bytes"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "long long / long — 8 bayt, chegarasi ±9,2 · 10^18; int esa 4 bayt, shuning uchun oxirgi ifoda notoʻgʻri.",
+          "ru": "long long / long — 8 байт с диапазоном ±9,2 · 10^18, а int — 4 байта, поэтому последнее утверждение неверно.",
+          "en": "long long / long is 8 bytes with a range of ±9.2 · 10^18, while int is 4 bytes, so the last statement is wrong."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Java dasturida int x = 2147483647 va x++; bajarilgandan soʻng x nimaga teng boʻladi?",
+          "ru": "Чему станет равен x в Java после int x = 2147483647 и x++;?",
+          "en": "In a Java program, after int x = 2147483647 and x++;, what does x become?"
+        },
+        "options": [
+          {
+            "uz": "-2147483648: int toʻlib ketadi va eng kichik qiymatga oʻtadi",
+            "ru": "-2147483648: int переполняется и переходит к наименьшему значению",
+            "en": "-2147483648: the int overflows and wraps to the smallest value"
+          },
+          {
+            "uz": "2147483648: son chegaradan chiqib, oʻsaveradi",
+            "ru": "2147483648: число выходит за границу и продолжает расти",
+            "en": "2147483648: the number passes the limit and keeps growing"
+          },
+          {
+            "uz": "0: chegaradan oʻtgach hisoblagich qaytadan boshlanadi",
+            "ru": "0: после выхода за границу счётчик начинается заново",
+            "en": "0: after passing the limit the counter starts again"
+          },
+          {
+            "uz": "Dastur xato berib toʻxtaydi",
+            "ru": "Программа выдаёт ошибку и останавливается",
+            "en": "The program reports an error and stops"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "C++ va Javaʼda toʻlib ketish hech qanday xatosiz sodir boʻladi. Katta sonlar uchun long (Java) yoki long long (C++) tanlanadi.",
+          "ru": "В C++ и Java переполнение происходит без всякой ошибки. Для больших чисел выбирают long (Java) или long long (C++).",
+          "en": "In C++ and Java overflow happens silently. For large numbers one chooses long (Java) or long long (C++)."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi soniyalarni SS:MM:ss koʻrinishiga oʻtkazuvchi dasturda n = 7384 kiritsa, daqiqa nechaga teng?",
+          "ru": "В программе из занятия, переводящей секунды в вид ЧЧ:ММ:сс, при вводе n = 7384 чему равна переменная daqiqa (минуты)?",
+          "en": "In the lesson program that turns seconds into HH:MM:ss, with the input n = 7384, what is the value of the minutes variable?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "7384 // 3600 = 2 soat, qoldiq 184 soniya; 184 // 60 = 3 daqiqa, soniya 4. Chiqish 02:03:04.",
+          "ru": "7384 // 3600 = 2 часа, остаток 184 секунды; 184 // 60 = 3 минуты, секунд 4. Вывод: 02:03:04.",
+          "en": "7384 // 3600 = 2 hours, the remainder is 184 seconds; 184 // 60 = 3 minutes and 4 seconds. The output is 02:03:04."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "C++ tilida setw va setprecision ni ishlatish uchun qaysi sarlavha fayl qoʻshiladi?",
+          "ru": "Какой заголовочный файл подключают в C++, чтобы использовать setw и setprecision?",
+          "en": "Which header is included in C++ in order to use setw and setprecision?"
+        },
+        "answers": ["iomanip", "#include <iomanip>"],
+        "explanation": {
+          "uz": "Formatlash manipulyatorlari iomanip faylida: darsda #include <iomanip> koʻrsatilgan.",
+          "ru": "Манипуляторы форматирования находятся в файле iomanip: в занятии указан #include <iomanip>.",
+          "en": "The formatting manipulators live in the file iomanip: the lesson shows #include <iomanip>."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "C++ʼda a = 7 va b = 2 boʻlsa, (double) (a / b) ifodasi nimaga teng?",
+          "ru": "Чему в C++ равно выражение (double) (a / b), если a = 7 и b = 2?",
+          "en": "In C++, with a = 7 and b = 2, what is the value of (double) (a / b)?"
+        },
+        "options": [
+          {
+            "uz": "3.0: avval butun boʻlish 3 ni beradi, keyin u double ga oʻtkaziladi",
+            "ru": "3.0: сначала целочисленное деление даёт 3, затем оно приводится к double",
+            "en": "3.0: integer division gives 3 first, and only then that is converted to double"
+          },
+          {
+            "uz": "3.5: boʻlish har doim haqiqiy son beradi",
+            "ru": "3.5: деление всегда даёт вещественное число",
+            "en": "3.5: division always gives a real number"
+          },
+          {
+            "uz": "4.0: natija yuqoriga yaxlitlanadi",
+            "ru": "4.0: результат округляется вверх",
+            "en": "4.0: the result is rounded up"
+          },
+          {
+            "uz": "Xato: double butun son bilan ishlatilmaydi",
+            "ru": "Ошибка: double нельзя применить к целому числу",
+            "en": "An error: double cannot be applied to an integer"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Oʻzgartirish boʻlishdan keyin bajarilganligi uchun kasr qism allaqachon yoʻqolgan. 3.5 olish uchun (double) a / b yoki a / 2.0 yoziladi.",
+          "ru": "Преобразование выполнено после деления, поэтому дробная часть уже потеряна. Чтобы получить 3.5, пишут (double) a / b или a / 2.0.",
+          "en": "The conversion happens after the division, so the fraction is already gone. For 3.5 one writes (double) a / b or a / 2.0."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Formatlangan chiqarish haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о форматированном выводе верны?",
+          "en": "Which statements about formatted output are correct?"
+        },
+        "options": [
+          {
+            "uz": "Pythonʼda f-string ichida .2f ikki kasr xona, 02d esa ikki xonali son va oldidagi nolni beradi",
+            "ru": "В Python внутри f-строки .2f даёт два знака после запятой, а 02d — двузначное число с ведущим нулём",
+            "en": "In Python, inside an f-string, .2f gives two decimal places and 02d a two-digit number with a leading zero"
+          },
+          {
+            "uz": "Javaʼda %02d va %.2f String.format ichida yoziladi",
+            "ru": "В Java %02d и %.2f записывают внутри String.format",
+            "en": "In Java %02d and %.2f are written inside String.format"
+          },
+          {
+            "uz": "C++ʼda setw faqat bitta keyingi qiymatga taʼsir qiladi, setfill esa keyingi barcha chiqarishlarga",
+            "ru": "В C++ setw влияет только на одно следующее значение, а setfill — на весь последующий вывод",
+            "en": "In C++ setw affects only the next value, while setfill affects all later output"
+          },
+          {
+            "uz": "C++ʼda setprecision uchun hech qanday sarlavha fayl kerak emas",
+            "ru": "В C++ для setprecision не нужен никакой заголовочный файл",
+            "en": "In C++ setprecision needs no header at all"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "setprecision va setw uchun #include <iomanip> kerak; setfill oʻzgarib qoladi, shuning uchun uni ham hisobga olish lozim.",
+          "ru": "Для setprecision и setw нужен #include <iomanip>; setfill остаётся действующим, и это тоже надо учитывать.",
+          "en": "setprecision and setw need #include <iomanip>; setfill stays in effect, which must be taken into account too."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Python tilida x ni birga oshirish uchun x++ yozish mumkin.",
+          "ru": "В Python для увеличения x на единицу можно записать x++.",
+          "en": "In Python you can write x++ to increase x by one."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Pythonʼda ++ va -- operatorlari yoʻq: x += 1 deb yoziladi. x++ faqat Java va C++ʼda bor.",
+          "ru": "В Python операторов ++ и -- нет: пишут x += 1. x++ есть только в Java и C++.",
+          "en": "Python has no ++ or --: one writes x += 1. The x++ form exists only in Java and C++."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Bosmaxonaga buyurtma: nechta sahifa bosiladi",
+      "ru": "Заказ в типографии: сколько страниц напечатать",
+      "en": "The print shop order: how many pages to print"
+    },
+    "statement": {
+      "uz": "Fakultet bosmaxonaga buyurtma beradi: n ta guruh, har guruhda s ta talaba, har talabaga esa t ta bosma sahifa. Birinchi qatorda uchta butun son probel bilan ajratilgan holda beriladi: n, s, t. Ikkita qatorda ikki natijani chiqaring: birinchi qatorda talabalar soni (n ning s ga koʻpaytmasi), ikkinchi qatorda esa jami sahifalar soni (shu natijaning t ga koʻpaytmasi). Har qatorda faqat son boʻlsin, hech qanday qoʻshimcha soʻz yozmang. Masalan, 2 30 100 kiritsa, dastur avval 60, soʻng 6000 chiqaradi. Chegaralar: 1 ≤ n ≤ 500, 1 ≤ s ≤ 100000, 1 ≤ t ≤ 100000. Ikkinchi natija int ga sigʻmasligi mumkin: C++ʼda long long, Javaʼda long ishlating, Pythonʼda int chegarasiz.",
+      "ru": "Факультет делает заказ в типографии: n групп, в каждой группе s студентов, каждому студенту t печатных страниц. В одной строке через пробел даются три целых числа: n, s, t. Выведите два результата на двух строках: на первой — число студентов (n умножить на s), на второй — общее число страниц (это произведение умножить на t). В каждой строке только число, без слов и пояснений. Например, ввод 2 30 100 даёт сначала 60, затем 6000. Границы: 1 ≤ n ≤ 500, 1 ≤ s ≤ 100000, 1 ≤ t ≤ 100000. Второй результат может не поместиться в int: используйте long long в C++ и long в Java, в Python int не ограничен.",
+      "en": "A faculty places an order at the print shop: n groups, s students in each group, t printed pages for every student. One line gives three integers separated by spaces: n, s, t. Print two results on two lines: the first line is the number of students (n times s), the second line is the total number of pages (that product times t). Each line holds only the number, with no words or label. For example, the input 2 30 100 makes the program print 60 and then 6000. Limits: 1 ≤ n ≤ 500, 1 ≤ s ≤ 100000, 1 ≤ t ≤ 100000. The second result may not fit in an int: use long long in C++ and long in Java, while Python's int has no limit."
+    },
+    "code": {
+      "starter": {
+        "python": "n, s, t = map(int, input().split())\n\nprint(n * s, n * s * t)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int s = in.nextInt();\n        int t = in.nextInt();\n        System.out.println(n * s + \" \" + n * s * t);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n, s, t;\n    cin >> n >> s >> t;\n    cout << n * s << \" \" << n * s * t << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n, s, t = map(int, input().split())\n\nprint(n * s)\nprint(n * s * t)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long n = in.nextLong();\n        long s = in.nextLong();\n        long t = in.nextLong();\n        System.out.println(n * s);\n        System.out.println(n * s * t);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long n, s, t;\n    cin >> n >> s >> t;\n    cout << n * s << endl;\n    cout << n * s * t << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "2 30 100\n", "expected": "60\n6000", "hidden": false },
+        { "input": "1 1 1\n", "expected": "1\n1", "hidden": false },
+        { "input": "500 100000 100000\n", "expected": "50000000\n5000000000000", "hidden": true },
+        { "input": "100 99999 87654\n", "expected": "9999900\n876531234600", "hidden": true },
+        { "input": "7 12345 6\n", "expected": "86415\n518490", "hidden": true }
+      ]
+    }
+  }
+}

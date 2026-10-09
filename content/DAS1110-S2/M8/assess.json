@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Komponentning interfeysi deganda nima tushuniladi?",
+          "ru": "Что понимается под интерфейсом компонента?",
+          "en": "What is a component's interface?"
+        },
+        "options": [
+          {
+            "uz": "Qanday metodlar borligi va ular nima qilishini belgilovchi shartnoma",
+            "ru": "Контракт о том, какие методы есть и что они делают",
+            "en": "A contract stating which methods exist and what they do"
+          },
+          {
+            "uz": "Komponentning ichki tuzilishi",
+            "ru": "Внутреннее устройство компонента",
+            "en": "The internal structure of the component"
+          },
+          {
+            "uz": "Komponent kodi saqlanadigan fayl",
+            "ru": "Файл, в котором хранится код компонента",
+            "en": "The file where the component's code is stored"
+          },
+          {
+            "uz": "Oynaga joylashtiriladigan tugma",
+            "ru": "Кнопка, размещённая на окне",
+            "en": "A button placed on a window"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Interfeys — shartnoma; komponentning ichki tuzilishi esa yashirin boʻladi, bu inkapsulyatsiya deyiladi.",
+          "ru": "Интерфейс — это контракт; внутреннее устройство компонента скрыто, это называется инкапсуляцией.",
+          "en": "The interface is the contract; the component's internals stay hidden, which is called encapsulation."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kompozitsiya — bu „is a“ munosabati: oynadagi tugma oynadan meros oladi.",
+          "ru": "Композиция — это отношение «является»: кнопка на окне наследуется от окна.",
+          "en": "Composition is the \"is a\" relation: a button on a window inherits from the window."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Kompozitsiya — „…da … bor“ munosabati: oynada tugma bor. Merosxoʻrlik „is a“ munosabati, darsda ular ajratib koʻrsatilgan.",
+          "ru": "Композиция — отношение «имеет»: в окне есть кнопка. Наследование — отношение «является»; занятие их разводит.",
+          "en": "Composition is the \"has a\" relation: a window has a button. Inheritance is the \"is a\" relation, and the lesson keeps them apart."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi jadvalga koʻra, tugmaning qaysi aʼzolari xususiyat (property) hisoblanadi?",
+          "ru": "Какие из перечисленных членов кнопки, по таблице занятия, являются свойствами?",
+          "en": "According to the lesson's table, which of these members of a button are properties?"
+        },
+        "options": [
+          {
+            "uz": "`Text = \"Saqlash\"`",
+            "ru": "`Text = \"Сохранить\"`",
+            "en": "`Text = \"Save\"`"
+          },
+          {
+            "uz": "`Click`",
+            "ru": "`Click`",
+            "en": "`Click`"
+          },
+          {
+            "uz": "`Width = 120`",
+            "ru": "`Width = 120`",
+            "en": "`Width = 120`"
+          },
+          {
+            "uz": "`Focus()`",
+            "ru": "`Focus()`",
+            "en": "`Focus()`"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Xususiyat — komponent holati: `Text`, `Enabled`, `Width`. `Click` — hodisa, `Focus()` esa komponentga buyruq, yaʼni metod.",
+          "ru": "Свойство — состояние компонента: `Text`, `Enabled`, `Width`. `Click` — событие, а `Focus()` — команда, то есть метод.",
+          "en": "A property is the component's state: `Text`, `Enabled`, `Width`. `Click` is an event, and `Focus()` is a command, i.e. a method."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`mainloop()` dasturda nima vazifani bajaradi?",
+          "ru": "Какую задачу в программе выполняет `mainloop()`?",
+          "en": "What job does `mainloop()` do in the program?"
+        },
+        "options": [
+          {
+            "uz": "Foydalanuvchi harakatlarini kutadi va har bir hodisa uchun tegishli javob beruvchi funksiyani chaqiradi",
+            "ru": "Ждёт действий пользователя и для каждого события вызывает соответствующий обработчик",
+            "en": "Waits for user actions and, for every event, calls the matching handler function"
+          },
+          {
+            "uz": "Kodni bajariladigan faylga aylantiradi",
+            "ru": "Превращает код в исполняемый файл",
+            "en": "Turns the code into an executable file"
+          },
+          {
+            "uz": "Komponentlarni oynaga birin-ketin joylashtiradi",
+            "ru": "Размещает компоненты на окне по одному",
+            "en": "Places the components on the window one by one"
+          },
+          {
+            "uz": "Interfeysni tekshirib, amalga oshiruvchi sinfni tanlaydi",
+            "ru": "Проверяет интерфейс и выбирает класс-реализацию",
+            "en": "Checks the interface and picks the implementing class"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "`mainloop()` — hodisalar sikli: dastur oʻzi buyruq bermaydi, balki hodisalarni kutadi; shu sxema boʻyicha barcha grafik kutubxonalar ishlaydi.",
+          "ru": "`mainloop()` — цикл событий: программа не командует сама, а ждёт событий; по такой схеме работают все графические библиотеки.",
+          "en": "`mainloop()` is the event loop: the program does not give orders itself but waits for events; every graphical library works on this scheme."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tkinter tugmasiga `command=saqlash()` deb yozilsa nima boʻladi?",
+          "ru": "Что произойдёт, если в Tkinter для кнопки написать `command=saqlash()`?",
+          "en": "What happens if a Tkinter button is written with `command=saqlash()`?"
+        },
+        "options": [
+          {
+            "uz": "Funksiya darhol chaqiriladi va uning natijasi (hech narsa) hodisaga ulangan boʻladi",
+            "ru": "Функция вызывается сразу, и к событию подключается её результат (ничто)",
+            "en": "The function is called at once and its result (nothing) is what gets attached to the event"
+          },
+          {
+            "uz": "Funksiya har bosilganda chaqiriladi",
+            "ru": "Функция вызывается при каждом нажатии",
+            "en": "The function is called on every click"
+          },
+          {
+            "uz": "Dastur sintaksis xatosi bilan toʻxtaydi",
+            "ru": "Программа останавливается с синтаксической ошибкой",
+            "en": "The program stops with a syntax error"
+          },
+          {
+            "uz": "Funksiya ikki marta chaqiriladi",
+            "ru": "Функция вызывается дважды",
+            "en": "The function is called twice"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi keng tarqalgan xato: toʻgʻri yozuv `command=saqlash` — unda funksiya hodisaga ulanadi, qavslar esa uni qoʻnganda darhol ishga tushiradi.",
+          "ru": "Типичная ошибка из занятия: правильно `command=saqlash` — так функция подключается к событию, а скобки запускают её сразу.",
+          "en": "A common mistake from the lesson: the right form is `command=saqlash`, which attaches the function; the brackets make it run at once."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi ikkinchi ishlangan misolda tugmaga uch tinglovchi ulangan: hisoblagich, jurnal va ogohlantirish; ogohlantirish `soni > 3` boʻlganda `Be careful!` chiqaradi. Darsdagi kirish maʼlumotida (6 hodisa: bos Aziz, bos Malika, holat, bos Aziz, bos Bekzod, holat) `Be careful!` yozuvi nechchi marta chiqadi?",
+          "ru": "Во втором разобранном примере к кнопке подключены три слушателя: счётчик, журнал и предупреждение; предупреждение печатает `Be careful!`, когда `soni > 3`. Сколько раз надпись `Be careful!` появится на вводе из занятия (6 событий: bos Aziz, bos Malika, holat, bos Aziz, bos Bekzod, holat)?",
+          "en": "In the lesson's second worked example the button has three listeners: a counter, a log and a warner; the warner prints `Be careful!` when `soni > 3`. How many times does `Be careful!` appear for the lesson's input (6 events: bos Aziz, bos Malika, holat, bos Aziz, bos Bekzod, holat)?"
+        },
+        "answers": [1],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Hisoblagich birinchi ulangan, shuning uchun toʻrtinchi bosilganda `soni` 4 ga yetadi va keyin ogohlantirish ishlaydi. Uchta hodisa (holat) hisobga kirmaydi, javob — bir marta.",
+          "ru": "Счётчик подключён первым, поэтому при четвёртом нажатии `soni` становится 4, и затем срабатывает предупреждение. События `holat` в счёт не входят, ответ — один раз.",
+          "en": "The counter is attached first, so on the fourth click `soni` reaches 4 and the warner then fires. The `holat` events are not clicks, so the answer is once."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Grafik ilovada hodisaga javob beruvchi funksiya ichida uzun hisoblash bajarilsa, butun oyna javob bermay qoladi.",
+          "ru": "Если внутри обработчика события выполнить долгое вычисление, всё окно перестанет отзываться.",
+          "en": "If a long computation runs inside an event handler, the whole window stops responding."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi xatolar roʻyxatiga koʻra: javob beruvchi funksiya ishlayotganida hodisalar sikli kutib turadi, shuning uchun oyna „qotib“ qoladi.",
+          "ru": "По списку ошибок из занятия: пока работает обработчик, цикл событий стоит, и окно «замерзает».",
+          "en": "According to the lesson's list of mistakes: while the handler runs, the event loop is stuck, so the window freezes."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Komponentli dizayn haqida darsda qaysi qoidalar aytilgan?",
+          "ru": "Какие правила компонентного дизайна названы в занятии?",
+          "en": "Which rules of component design does the lesson state?"
+        },
+        "options": [
+          {
+            "uz": "Komponent yaratiladigan joy va undan foydalaniladigan joy ajratilgan boʻladi",
+            "ru": "Место создания компонента и место его использования разделены",
+            "en": "Where the component is created and where it is used are kept apart"
+          },
+          {
+            "uz": "Interfeysga qarab yozilgan kod qaysi komponent ulanganini bilmaydi",
+            "ru": "Код, написанный в расчёте на интерфейс, не знает, какой компонент подключён",
+            "en": "Code written against the interface does not know which component is plugged in"
+          },
+          {
+            "uz": "Yangi chegirma turi qoʻshilganda hisoblovchi sikl ham qayta yoziladi",
+            "ru": "При добавлении нового вида скидки приходится переписывать и цикл вычисления",
+            "en": "Adding a new kind of discount also forces rewriting the computing loop"
+          },
+          {
+            "uz": "Boshqa komponentning ichki maydonlariga bevosita murojaat qilish uni almashtirishni imkonsiz qiladi",
+            "ru": "Прямое обращение к внутренним полям другого компонента делает его замену невозможной",
+            "en": "Reaching directly into another component's fields makes it impossible to replace it"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Darsda: yangi chegirma turi qoʻshilsa, faqat komponentni tanlovchi funksiyaga qator qoʻshiladi — hisoblovchi sikl oʻzgarmaydi.",
+          "ru": "В занятии: при новом виде скидки добавляется строка только в функцию выбора компонента — вычисляющий цикл не меняется.",
+          "en": "In the lesson a new discount adds a line only where the component is chosen; the computing loop does not change."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Uchinchi ishlangan misolda `Forma` ham boshqa komponentlar bilan bir xil interfeysga ega, shuning uchun uni yana bir formaning ichiga qoʻyish mumkin. Darsda bunday dizayn namunasi qanday atalgan (inglizcha nomini yozing)?",
+          "ru": "В третьем разобранном примере `Forma` сама является `Komponent`, поэтому её можно поместить внутрь другой формы. Как в занятии называется этот паттерн проектирования (напишите английское имя)?",
+          "en": "In the third worked example `Forma` is itself a `Komponent`, so a form can sit inside another form. What is this design pattern called in the lesson?"
+        },
+        "answers": ["Composite", "composite", "Composite pattern", "composite pattern", "Kompozit", "kompozit"],
+        "explanation": {
+          "uz": "Dars „Composite“ deb ataydi: forma ham komponent, shuning uchun u boshqa formaning tarkibiga kiradi.",
+          "ru": "В занятии это называется «Composite»: форма сама является компонентом и входит в состав другой формы.",
+          "en": "The lesson calls it \"Composite\": the form is itself a component, so it can be part of another form."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Yetkazib berish komponenti",
+      "ru": "Компонент доставки",
+      "en": "The delivery component"
+    },
+    "statement": {
+      "uz": "Doʻkondagi buyurtma narxini hisoblovchi kod faqat `Yetkazish` interfeysini bilishi kerak: qaysi komponent ulanishi bitta joyda hal qilinadi. Yetkazish turi birinchi satrda beriladi: `oddiy`, `tez` yoki `bepul`. Ikkinchi satrda *n*, uchinchisida *n* ta yuk ogʻirligi (butun sonlar, boʻsh joy bilan ajratilgan). Har bir ogʻirlik uchun yetkazish narxini alohida qatorda chiqaring: `oddiy` — 1000 + 50 · ogʻirlik, `tez` — 3000 + 120 · ogʻirlik, `bepul` — 0. Faqat son chiqaring, hech qanday qoʻshimcha soʻz yozmang. Masalan, `oddiy`, 3 va `1 2 10` kirsa, dastur 1050, 1100, 1500 chiqaradi. 1 ≤ n ≤ 100, 0 ≤ ogʻirlik ≤ 1000.",
+      "ru": "Код, считающий стоимость доставки заказа, должен знать только интерфейс `Yetkazish`: какой компонент подключён, решается в одном месте. В первой строке вид доставки: `oddiy`, `tez` или `bepul`. Во второй строке *n*, в третьей — *n* весов посылок (целые числа через пробел). Для каждого веса выведите стоимость доставки на отдельной строке: `oddiy` — 1000 + 50 · вес, `tez` — 3000 + 120 · вес, `bepul` — 0. Выводите только числа, без лишних слов. Например, при `oddiy`, 3 и `1 2 10` программа выведет 1050, 1100, 1500. 1 ≤ n ≤ 100, 0 ≤ вес ≤ 1000.",
+      "en": "The code that computes a delivery price must know only the `Yetkazish` interface; which component is plugged in is decided in one place. The first line holds the kind of delivery: `oddiy`, `tez` or `bepul`. The second line holds *n*, the third *n* parcel weights (integers separated by spaces). For every weight print its delivery price on its own line: `oddiy` — 1000 + 50 · weight, `tez` — 3000 + 120 · weight, `bepul` — 0. Print only numbers, with no extra words. For example, `oddiy`, 3 and `1 2 10` make the program print 1050, 1100, 1500. 1 ≤ n ≤ 100, 0 ≤ weight ≤ 1000."
+    },
+    "code": {
+      "starter": {
+        "python": "tur = input()\nn = int(input())\nfor ogirlik in map(int, input().split()):\n    print(1000 + 50 * ogirlik)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String tur = in.next();\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            System.out.println(1000 + 50 * in.nextLong());\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string tur;\n    cin >> tur;\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        long long ogirlik;\n        cin >> ogirlik;\n        cout << 1000 + 50 * ogirlik << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "from abc import ABC, abstractmethod\n\n\nclass Yetkazish(ABC):\n    @abstractmethod\n    def narx(self, ogirlik):\n        pass\n\n\nclass Oddiy(Yetkazish):\n    def narx(self, ogirlik):\n        return 1000 + 50 * ogirlik\n\n\nclass Tez(Yetkazish):\n    def narx(self, ogirlik):\n        return 3000 + 120 * ogirlik\n\n\nclass Bepul(Yetkazish):\n    def narx(self, ogirlik):\n        return 0\n\n\ndef yarat(tur):\n    if tur == \"tez\":\n        return Tez()\n    if tur == \"bepul\":\n        return Bepul()\n    return Oddiy()\n\n\nyetkazish = yarat(input())\nn = int(input())\nfor ogirlik in map(int, input().split()):\n    print(yetkazish.narx(ogirlik))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    interface Yetkazish {\n        long narx(long ogirlik);\n    }\n\n    static class Oddiy implements Yetkazish {\n        public long narx(long ogirlik) { return 1000 + 50 * ogirlik; }\n    }\n\n    static class Tez implements Yetkazish {\n        public long narx(long ogirlik) { return 3000 + 120 * ogirlik; }\n    }\n\n    static class Bepul implements Yetkazish {\n        public long narx(long ogirlik) { return 0; }\n    }\n\n    static Yetkazish yarat(String tur) {\n        if (tur.equals(\"tez\")) return new Tez();\n        if (tur.equals(\"bepul\")) return new Bepul();\n        return new Oddiy();\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        Yetkazish yetkazish = yarat(in.next());\n        int n = in.nextInt();\n        for (int i = 0; i < n; i++) {\n            System.out.println(yetkazish.narx(in.nextLong()));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <memory>\n#include <string>\nusing namespace std;\n\nclass Yetkazish {\npublic:\n    virtual ~Yetkazish() = default;\n    virtual long long narx(long long ogirlik) const = 0;\n};\n\nclass Oddiy : public Yetkazish {\npublic:\n    long long narx(long long ogirlik) const override { return 1000 + 50 * ogirlik; }\n};\n\nclass Tez : public Yetkazish {\npublic:\n    long long narx(long long ogirlik) const override { return 3000 + 120 * ogirlik; }\n};\n\nclass Bepul : public Yetkazish {\npublic:\n    long long narx(long long) const override { return 0; }\n};\n\nint main() {\n    string tur;\n    cin >> tur;\n    unique_ptr<Yetkazish> yetkazish;\n    if (tur == \"tez\")\n        yetkazish = make_unique<Tez>();\n    else if (tur == \"bepul\")\n        yetkazish = make_unique<Bepul>();\n    else\n        yetkazish = make_unique<Oddiy>();\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        long long ogirlik;\n        cin >> ogirlik;\n        cout << yetkazish->narx(ogirlik) << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "oddiy\n3\n1 2 10\n", "expected": "1050\n1100\n1500", "hidden": false },
+        { "input": "bepul\n2\n5 50\n", "expected": "0\n0", "hidden": false },
+        { "input": "tez\n3\n1 2 10\n", "expected": "3120\n3240\n4200", "hidden": true },
+        { "input": "oddiy\n1\n0\n", "expected": "1000", "hidden": true },
+        { "input": "tez\n1\n100\n", "expected": "15000", "hidden": true }
+      ]
+    }
+  }
+}

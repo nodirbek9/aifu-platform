@@ -1,0 +1,439 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Prezi taqdimot muharriri qaysi turkumga kiradi?",
+          "ru": "К какому виду относится редактор презентаций Prezi?",
+          "en": "Which type of presentation editor is Prezi?"
+        },
+        "options": [
+          {
+            "uz": "Ish stoli (desktop) muharrirlari",
+            "ru": "Настольные редакторы",
+            "en": "Desktop editors"
+          },
+          {
+            "uz": "Bulutli muharrirlar",
+            "ru": "Облачные редакторы",
+            "en": "Cloud editors"
+          },
+          {
+            "uz": "Chiziqsiz (zoom) muharrirlar",
+            "ru": "Нелинейные (zoom) редакторы",
+            "en": "Non-linear (zoom) editors"
+          },
+          {
+            "uz": "Kod asosidagi muharrirlar",
+            "ru": "Редакторы на основе кода",
+            "en": "Code-based editors"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Prezi — chiziqsiz turkum: bitta katta «kanvas» boʻylab harakat, slaydlar ketma-ketligi yoʻq.",
+          "ru": "Prezi — нелинейный вид: движение по одному большому «холсту», отсутствие последовательности слайдов.",
+          "en": "Prezi is the non-linear type: movement across one large «canvas» and no sequence of slides."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Bulutli muharrirga brauzerda ishlash, real vaqtda birgalikda tahrirlash va avtomatik saqlash xos.",
+          "ru": "Облачному редактору свойственны работа в браузере, совместное редактирование в реальном времени и автосохранение.",
+          "en": "A cloud editor is characterised by working in the browser, co-editing in real time and autosaving."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Toʻliq funksiyalar va oflayn ishlash — ish stoli muharrirlariga xos; bulutli muharrirlar esa brauzerda ishlaydi.",
+          "ru": "Полный набор функций и работа офлайн — признак настольных редакторов; облачные работают в браузере.",
+          "en": "Full functionality and offline work belong to desktop editors; cloud editors run in the browser."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kod asosidagi taqdimot muharrirlari qaysilari?",
+          "ru": "Какие из перечисленного — редакторы презентаций на основе кода?",
+          "en": "Which of these are code-based presentation editors?"
+        },
+        "options": [
+          {
+            "uz": "reveal.js",
+            "ru": "reveal.js",
+            "en": "reveal.js"
+          },
+          {
+            "uz": "Marp",
+            "ru": "Marp",
+            "en": "Marp"
+          },
+          {
+            "uz": "LaTeX Beamer",
+            "ru": "LaTeX Beamer",
+            "en": "LaTeX Beamer"
+          },
+          {
+            "uz": "Canva",
+            "ru": "Canva",
+            "en": "Canva"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Bu turkumda reveal.js, Marp va LaTeX Beamer berilgan; Canva esa dizayn platformalariga kiradi.",
+          "ru": "В эту группу входят reveal.js, Marp и LaTeX Beamer; Canva — дизайн-платформа.",
+          "en": "The lesson puts reveal.js, Marp and LaTeX Beamer in this type; Canva is a design platform."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Taqdimotni tarqatish uchun eng ishonchli format deb qaysi biri koʻrsatilgan va bu holatda nima yoʻqoladi?",
+          "ru": "Какой формат назван самым надёжным для распространения презентации и что при этом теряется?",
+          "en": "Which format is called the most reliable for distributing a presentation, and what is lost?"
+        },
+        "options": [
+          {
+            "uz": "PDF — animatsiyalar yoʻqoladi",
+            "ru": "PDF — теряются анимации",
+            "en": "PDF — the animations are lost"
+          },
+          {
+            "uz": "PPTX — shriftlar yoʻqoladi",
+            "ru": "PPTX — теряются шрифты",
+            "en": "PPTX — the fonts are lost"
+          },
+          {
+            "uz": "ODP — matn yoʻqoladi",
+            "ru": "ODP — теряется текст",
+            "en": "ODP — the text is lost"
+          },
+          {
+            "uz": "KEY — slaydlar soni kamayadi",
+            "ru": "KEY — уменьшается число слайдов",
+            "en": "KEY — slides are dropped"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "PDF hamma joyda bir xil koʻrinadi, lekin animatsiyalar saqlanmaydi; PPTX da esa boshqa dasturlarda shriftlar va animatsiyalar oʻzgarishi mumkin.",
+          "ru": "PDF везде выглядит одинаково, но анимации не сохраняются; у PPTX в других программах могут измениться шрифты и анимации.",
+          "en": "A PDF looks the same everywhere but keeps no animations; a PPTX may have its fonts and animations changed by other programs."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi vaznli baholash matritsasi boʻyicha LibreOffice Impressning yakuniy vaznli balli nechaga teng?",
+          "ru": "Чему равен итоговый взвешенный балл LibreOffice Impress во взвешенной матрице из занятия?",
+          "en": "In the lesson's weighted scoring matrix, what is the final weighted score of LibreOffice Impress?"
+        },
+        "answers": [3.25],
+        "tolerance": 0.01,
+        "explanation": {
+          "uz": "5·0,25 + 2·0,25 + 3·0,20 + 5·0,10 + 1·0,10 + 3·0,10 = 3,25: har bir mezon bali vazniga koʻpaytirilib, natijalar qoʻshiladi.",
+          "ru": "5·0,25 + 2·0,25 + 3·0,20 + 5·0,10 + 1·0,10 + 3·0,10 = 3,25: балл каждого критерия умножают на его вес и результаты складывают.",
+          "en": "5·0.25 + 2·0.25 + 3·0.20 + 5·0.10 + 1·0.10 + 3·0.10 = 3.25: each criterion's score is multiplied by its weight and the results are added."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "LibreOffice Impress formati boʻlgan ochiq standart uch harfli kengaytmani yozing.",
+          "ru": "Напишите три буквы — расширение открытого стандарта формата LibreOffice Impress.",
+          "en": "Write the three letters of the open-standard format of LibreOffice Impress."
+        },
+        "answers": ["ODP", "odp", ".ODP", ".odp"],
+        "explanation": {
+          "uz": "ODP — Impress formati va ochiq standart; PPTX — amaldagi standart, KEY esa boshqa platformaga PPTX yoki PDF qilib eksport qilinadi.",
+          "ru": "ODP — формат Impress и открытый стандарт; PPTX — фактический стандарт, а KEY для других платформ экспортируют в PPTX или PDF.",
+          "en": "ODP is the Impress format and an open standard; PPTX is the de facto standard, and KEY is exported to PPTX or PDF for other platforms."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Sunʼiy intellekt bilan yaratilgan taqdimotning darsda aytilgan xavflari qaysilar?",
+          "ru": "Какие из перечисленного — риски презентации, созданной искусственным интеллектом, о которых говорится в занятии?",
+          "en": "Which of these are the risks of an AI-created presentation named in the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Toʻqib chiqarilgan raqam va faktlar",
+            "ru": "Выдуманные цифры и факты",
+            "en": "Invented figures and facts"
+          },
+          {
+            "uz": "Eskrigan maʼlumotlar",
+            "ru": "Устаревшие данные",
+            "en": "Outdated information"
+          },
+          {
+            "uz": "Maxfiy maʼlumotni tashqi xizmatga yuklash",
+            "ru": "Загрузка конфиденциальных данных во внешний сервис",
+            "en": "Uploading confidential data to an external service"
+          },
+          {
+            "uz": "Sunʼiy intellekt slaydlarni umuma tuzolmaydi",
+            "ru": "Искусственный интеллект вовсе не составляет слайды",
+            "en": "Artificial intelligence cannot build slides at all"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda yana bir xil «andoza» koʻrinishi xavfi aytiladi; har bir raqamni manbadan tekshirish va javobgarlik sizda qoladi.",
+          "ru": "В занятии называется также одинаковый «шаблонный» вид; проверять каждую цифру по источнику и нести ответственность должен автор.",
+          "en": "The lesson also names the same «template» look; every figure must be checked against its source and the responsibility stays with you."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Keynote da saqlangan KEY faylni boshqa platformaga oʻtkazish darsda qanday aytilgan?",
+          "ru": "Как, по занятию, перенести файл KEY на другую платформу?",
+          "en": "How does the lesson move a KEY file onto another platform?"
+        },
+        "options": [
+          {
+            "uz": "PPTX yoki PDF qilib eksport qilish",
+            "ru": "Экспортировать в PPTX или PDF",
+            "en": "Export it as PPTX or PDF"
+          },
+          {
+            "uz": "Faqat KEY formatida yuborish",
+            "ru": "Отправлять только в формате KEY",
+            "en": "Send it only as KEY"
+          },
+          {
+            "uz": "Faqat ODP ga aylantirish",
+            "ru": "Перевести только в ODP",
+            "en": "Convert it only to ODP"
+          },
+          {
+            "uz": "Faqat chop etib tarqatish",
+            "ru": "Распространять только в печатном виде",
+            "en": "Distribute it only printed"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsga koʻra KEY boshqa platformaga PPTX yoki PDF qilib eksport qilinadi; tarqatish uchun eng ishonchli format — PDF.",
+          "ru": "По занятию KEY на других платформах открывают через экспорт в PPTX или PDF; самый надёжный формат для распространения — PDF.",
+          "en": "The lesson exports KEY to PPTX or PDF for other platforms, and PDF is the most reliable format for distribution."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Vaznli baholash matritsasida mezon vaznlari oʻzgartirilsa, yakuniy natija oʻzgarmaydi.",
+          "ru": "Если во взвешенной матрице изменить веса критериев, итоговый результат не изменится.",
+          "en": "If the weights of the criteria are changed, the final result of the weighted matrix stays the same."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Vaznlar oʻzgarsa, natija ham oʻzgaradi — shuning uchun vaznlarni rahbariyat bilan oldindan kelishib olish maslahat beriladi.",
+          "ru": "Изменение весов меняет и результат — поэтому веса согласуют с руководством заранее.",
+          "en": "Change the weights and the result changes too, which is why they are agreed with management in advance."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Ikki muharrirda taqdimot va vaznli tanlov",
+      "ru": "Презентация в двух редакторах и взвешенный выбор",
+      "en": "A presentation in two editors and a weighted choice"
+    },
+    "statement": {
+      "uz": "Bu amaliyot MT4 dagi topshiriq boʻyicha: bir mavzuda 5 slaydli taqdimotni ikki xil muharrirda tayyorlab, ularni solishtirasiz va tashkilot uchun vaznli baholash matritsasini tuzasiz. Javoblar faqat MT4 dars matnidan olinadi.",
+      "ru": "Это упражнение по заданию MT4: подготовьте презентацию из 5 слайдов в двух разных редакторах, сравните их и составьте взвешенную матрицу оценок для организации. Ответы берутся только из текста MT4.",
+      "en": "This exercise follows the MT4 assignment: prepare a 5-slide presentation in two different editors, compare them, and build a weighted scoring matrix for an organization. Every answer comes only from the MT4 text."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Topshiriq boʻyicha taqdimot nechta xil muharrirda tayyorlanadi?",
+            "ru": "В скольких разных редакторах по заданию нужно подготовить презентацию?",
+            "en": "How many different editors does the assignment ask you to prepare the presentation in?"
+          },
+          "options": [
+            {
+              "uz": "Ikkita: biri anʼanaviy muharrir, biri dizayn yoki sunʼiy intellekt platformasi",
+              "ru": "В двух: один традиционный редактор и одна дизайн- или ИИ-платформа",
+              "en": "Two: one traditional editor and one design or AI platform"
+            },
+            {
+              "uz": "Faqat bitta muharrirda",
+              "ru": "Только в одном редакторе",
+              "en": "In one editor only"
+            },
+            {
+              "uz": "Uchtada: har bir turdagi muharrirda",
+              "ru": "В трёх: по одному редактору каждого вида",
+              "en": "In three: one editor of each type"
+            },
+            {
+              "uz": "Barcha tanish muharrirlarda",
+              "ru": "Во всех знакомых редакторах",
+              "en": "In every editor you know"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Anʼanaviy tomonda PowerPoint, Google Slides yoki Impress; dizayn yoki sunʼiy intellekt tomonida Canva yoki Gamma olinadi.",
+            "ru": "Традиционная сторона — PowerPoint, Google Slides или Impress; дизайн- или ИИ-сторона — Canva yoki Gamma.",
+            "en": "The traditional side is PowerPoint, Google Slides or Impress; the design or AI side is Canva or Gamma."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Topshiriqda anʼanaviy muharrirlar deb qaysilari sanalgan?",
+            "ru": "Какие редакторы в задании названы традиционными?",
+            "en": "Which editors does the assignment call traditional?"
+          },
+          "options": [
+            {
+              "uz": "PowerPoint",
+              "ru": "PowerPoint",
+              "en": "PowerPoint"
+            },
+            {
+              "uz": "Google Slides",
+              "ru": "Google Slides",
+              "en": "Google Slides"
+            },
+            {
+              "uz": "LibreOffice Impress",
+              "ru": "LibreOffice Impress",
+              "en": "LibreOffice Impress"
+            },
+            {
+              "uz": "Gamma",
+              "ru": "Gamma",
+              "en": "Gamma"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Gamma dizayn yoki sunʼiy intellekt platformasi tomonida: PowerPoint, Google Slides, Impress — anʼanaviy, Canva yoki Gamma — ikkinchi guruh.",
+            "ru": "Gamma относится ко второй стороне — дизайн- или ИИ-платформе; PowerPoint, Google Slides, Impress — традиционные редакторы.",
+            "en": "Gamma belongs to the second side, the design or AI platform; PowerPoint, Google Slides and Impress are the traditional editors."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Vaznli baholash matritsasida kamida nechta muharrir qatnashishi kerak?",
+            "ru": "Сколько как минимум редакторов должно быть во взвешенной матрице оценок?",
+            "en": "What is the minimum number of editors the weighted scoring matrix must include?"
+          },
+          "answers": [4],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Topshiriqda kamida 4 muharrir va 5 mezon talab qilinadi, soʻng tavsiya beriladi.",
+            "ru": "В задании требуется не менее 4 редакторов и 5 критериев, затем даётся рекомендация.",
+            "en": "The assignment asks for at least 4 editors and 5 criteria, followed by a recommendation."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Matritsa tuzishda vaznlarni rahbariyat bilan oldindan kelishib olish tavsiya etiladi.",
+            "ru": "При составлении матрицы рекомендуется заранее согласовать веса с руководством.",
+            "en": "When building the matrix, agreeing on the weights with management in advance is recommended."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Vaznlar oʻzgarsa natija ham oʻzgaradi, shuning uchun ular oldindan kelishiladi; tanlashda «hamma ishlatadi» degan fikr emas, ehtiyoj va TCO asos boʻladi.",
+            "ru": "При изменении весов меняется и результат, поэтому их согласуют заранее; выбирать нужно не потому, что «все пользуются», а по потребностям и TCO.",
+            "en": "Changing the weights changes the result, so they are agreed in advance; the choice rests on the organization's needs and the TCO, not on «everyone uses it»."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Begona kompyuterda taqdimot qilishdan oldin fleshkaga zaxira sifatida qaysi formatda nusxa yozish maslahat beriladi?",
+            "ru": "В каком формате рекомендуется записать запасную копию на флешку перед выступлением на чужом компьютере?",
+            "en": "Which format should the backup copy on a USB stick be in before presenting on someone else's computer?"
+          },
+          "answers": ["PDF", "pdf", ".pdf", "PDF format"],
+          "explanation": {
+            "uz": "Maslahat: shriftlarni faylga joylang yoki standart shriftlardan foydalaning, videolarni faylga qoʻshing va zaxira PDF nusxani fleshkaga yozing.",
+            "ru": "Совет: внедрите шрифты в файл или возьмите стандартные, включите видео в файл и запишите на флешку запасную PDF-копию.",
+            "en": "The advice: embed the fonts or use standard ones, include videos in the file, and put a backup PDF copy on a USB stick."
+          }
+        }
+      ]
+    }
+  }
+}

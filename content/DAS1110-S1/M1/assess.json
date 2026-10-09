@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Algoritm deganda nima tushuniladi?",
+          "ru": "Что понимается под алгоритмом?",
+          "en": "What is an algorithm?"
+        },
+        "options": [
+          {
+            "uz": "Masalani yechish uchun aniq belgilangan tartibda bajariladigan chekli sonli qadamlar ketma-ketligi",
+            "ru": "Конечная последовательность шагов, выполняемых в строго определённом порядке для решения задачи",
+            "en": "A finite sequence of steps carried out in a strictly defined order to solve a problem"
+          },
+          {
+            "uz": "Dastur kodi saqlanadigan fayl",
+            "ru": "Файл, в котором хранится код программы",
+            "en": "A file that stores the code of a program"
+          },
+          {
+            "uz": "Kompyuterning maʼlumot saqlaydigan qurilmasi",
+            "ru": "Устройство компьютера для хранения данных",
+            "en": "A device of the computer that stores data"
+          },
+          {
+            "uz": "Dasturlash tilining bir turi",
+            "ru": "Один из языков программирования",
+            "en": "One kind of programming language"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Algoritm — qadamlar ketma-ketligi, u tilga bogʻliq emas; dastur esa shu algoritmning kompyuter tushunadigan tildagi yozuvi.",
+          "ru": "Алгоритм — это последовательность шагов, она не зависит от языка; программа — запись того же алгоритма на языке, понятном компьютеру.",
+          "en": "An algorithm is the sequence of steps and does not depend on a language; a program is that algorithm written in a language the computer understands."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Algoritm qaysi koʻrinishda yozilganiga qarab oʻzgaradi: soʻz bilan yozilgan algoritm Python kodi bilan bir xil boʻlmaydi.",
+          "ru": "Алгоритм меняется в зависимости от формы записи: записанный словами алгоритм не совпадает с тем же алгоритмом на Python.",
+          "en": "An algorithm changes with the form it is written in: one written in words is not the same as the same algorithm in Python code."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Algoritm qaysi tilda yozilishidan qatʼi nazar bir xil boʻladi: uni soʻz bilan, blok-sxemada, psevdokodda yoki dasturlash tilida ifodalash mumkin.",
+          "ru": "Алгоритм остаётся тем же, независимо от языка и формы: его можно выразить словами, блок-схемой, псевдокодом или кодом.",
+          "en": "An algorithm stays the same whatever language or form is used: words, a flowchart, pseudocode or a programming language."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Algoritmning xossalari qaysilar?",
+          "ru": "Какие из перечисленного — свойства алгоритма?",
+          "en": "Which of these are properties of an algorithm?"
+        },
+        "options": [
+          {
+            "uz": "Aniqlik",
+            "ru": "Определённость",
+            "en": "Definiteness"
+          },
+          {
+            "uz": "Tezlik",
+            "ru": "Скорость",
+            "en": "Speed"
+          },
+          {
+            "uz": "Ommaviylik",
+            "ru": "Массовость",
+            "en": "Generality"
+          },
+          {
+            "uz": "Natijaviylik",
+            "ru": "Результативность",
+            "en": "Effectiveness"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "Darsdagi xossalar: diskretlik, aniqlik, cheklilik, natijaviylik, ommaviylik. Tezlik — tillarni solishtirish jadvalidagi ustun, algoritm xossasi emas.",
+          "ru": "Свойства из занятия: дискретность, определённость, конечность, результативность, массовость. Скорость — столбец сравнения языков, а не свойство алгоритма.",
+          "en": "The lesson lists discreteness, definiteness, finiteness, effectiveness and generality. Speed is a row of the language comparison, not a property of an algorithm."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kompilyator va interpretator haqida qaysi ifoda toʻgʻri?",
+          "ru": "Какое утверждение о компиляторе и интерпретаторе верно?",
+          "en": "Which statement about a compiler and an interpreter is correct?"
+        },
+        "options": [
+          {
+            "uz": "Kompilyator butun dasturni oldindan, bir marta tarjima qilib, bajariladigan fayl hosil qiladi",
+            "ru": "Компилятор переводит всю программу заранее, один раз, и создаёт исполняемый файл",
+            "en": "A compiler translates the whole program in advance, once, and produces an executable file"
+          },
+          {
+            "uz": "Interpretator dasturni oldindan bajariladigan faylga aylantiradi",
+            "ru": "Интерпретатор заранее превращает программу в исполняемый файл",
+            "en": "An interpreter turns the program into an executable file in advance"
+          },
+          {
+            "uz": "Kompilyator xatoni faqat oʻsha qatorga navbat kelganda koʻrsatadi",
+            "ru": "Компилятор сообщает об ошибке только тогда, когда очередь доходит до этой строки",
+            "en": "A compiler reports an error only when its line's turn comes"
+          },
+          {
+            "uz": "Interpretator dasturni umuman tarjima qilmaydi",
+            "ru": "Интерпретатор вовсе не переводит программу",
+            "en": "An interpreter does not translate the program at all"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Kompilyator bir marta tarjima qiladi va fayl yaratadi; interpretator dasturni bajarish paytida qatorma-qator oʻqiydi, xato esa navbat kelganda chiqadi.",
+          "ru": "Компилятор переводит программу целиком и создаёт файл; интерпретатор читает её строка за строком во время работы, и ошибка появляется, когда до неё доходит очередь.",
+          "en": "A compiler translates the whole program and creates a file; an interpreter reads the program line by line while it runs, so an error appears only when its line comes."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi ikki sonni qoʻshish dasturida a = 12 va b = 30 boʻlsa, s oʻzgaruvchisiga qanday qiymat yoziladi?",
+          "ru": "В программе из занятия, складывающей два числа, если a = 12 и b = 30, какое значение записывается в переменную s?",
+          "en": "In the lesson program that adds two numbers, if a = 12 and b = 30, what value is written into the variable s?"
+        },
+        "answers": [42],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "s = a + b qadamida 12 + 30 hisoblanadi va natija s oʻzgaruvchisiga yoziladi: 42.",
+          "ru": "На шаге s = a + b вычисляется 12 + 30, и результат записывается в переменную s: 42.",
+          "en": "At the step s = a + b the sum 12 + 30 is computed and stored in the variable s: 42."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Python tilida kiritilgan matnni butun songa aylantiruvchi funksiyaning nomini yozing.",
+          "ru": "Напишите имя функции в Python, которая превращает введённый текст в целое число.",
+          "en": "Write the name of the Python function that turns the text you read into an integer."
+        },
+        "answers": ["int", "int()"],
+        "explanation": {
+          "uz": "input() matn qaytaradi, shuning uchun uni butun songa aylantirish uchun int() funksiyasi kerak.",
+          "ru": "input() возвращает строку, поэтому для превращения её в целое число нужна функция int().",
+          "en": "input() returns text, so the function int() is needed to turn it into an integer."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Blok-sxemada kiritish va chiqarish qaysi shakl bilan belgilanadi?",
+          "ru": "Какой фигурой на блок-схеме обозначаются ввод и вывод?",
+          "en": "On a flowchart, which shape marks input and output?"
+        },
+        "options": [
+          {
+            "uz": "Oval",
+            "ru": "Овал",
+            "en": "An oval"
+          },
+          {
+            "uz": "Toʻrtburchak",
+            "ru": "Прямоугольник",
+            "en": "A rectangle"
+          },
+          {
+            "uz": "Romb",
+            "ru": "Ромб",
+            "en": "A diamond"
+          },
+          {
+            "uz": "Parallelogramm",
+            "ru": "Параллелограмм",
+            "en": "A parallelogram"
+          }
+        ],
+        "correct": [3],
+        "explanation": {
+          "uz": "Darsga koʻra: oval — boshlanish va tugash, toʻrtburchak — amal, romb — shart, parallelogramm — kiritish va chiqarish.",
+          "ru": "По занятию: овал — начало и конец, прямоугольник — действие, ромб — условие, параллелограмм — ввод и вывод.",
+          "en": "In the lesson: an oval is start and end, a rectangle an action, a diamond a condition, a parallelogram input and output."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Uchta tilni solishtirish boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о сравнении трёх языков верны?",
+          "en": "Which statements about the three languages are correct?"
+        },
+        "options": [
+          {
+            "uz": "Java dasturi bayt-kod koʻrinishida Windowsʼda ham, Linuxʼda ham qayta kompilyatsiya qilinmasdan ishlaydi",
+            "ru": "Программа на Java в виде байт-кода работает и в Windows, и в Linux без повторной компиляции",
+            "en": "A Java program as bytecode runs on Windows and on Linux without being compiled again"
+          },
+          {
+            "uz": "Python dasturidagi xato faqat oʻsha qatorga navbat kelganda aniqlanadi",
+            "ru": "Ошибка в программе на Python выявляется только тогда, когда очередь доходит до этой строки",
+            "en": "An error in a Python program appears only when its line's turn comes"
+          },
+          {
+            "uz": "C++ dastuni ishga tushirilgunicha butunlay tarjima qilinadi",
+            "ru": "Программа на C++ переводится целиком до запуска",
+            "en": "A C++ program is translated completely before it is run"
+          },
+          {
+            "uz": "Interpretator dasturdan bajariladigan fayl yaratadi",
+            "ru": "Интерпретатор создаёт из программы исполняемый файл",
+            "en": "An interpreter creates an executable file from the program"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Interpretator bajariladigan fayl yaratmaydi: u dasturni bajarish paytida qatorma-qator oʻqiydi. Kompilyator esa tarjima paytidayoq xato haqida xabar beradi.",
+          "ru": "Интерпретатор не создаёт исполняемый файл: он читает программу строка за строкой во время выполнения. Компилятор же сообщает об ошибке ещё при переводе.",
+          "en": "An interpreter creates no executable file: it reads the program line by line while it runs. A compiler reports an error already during translation."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Mantiqiy (semantik) xatoda dastur umuman ishga tushmaydi.",
+          "ru": "При логической (семантической) ошибке программа вообще не запускается.",
+          "en": "With a logic (semantic) error the program does not start at all."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dasturni ishga tushirmaydigan narsa — sintaksis xatosi. Mantiqiy xatoda dastur ishlaydi, lekin notoʻgʻri natija beradi, shuning uchun uni topish qiyinroq.",
+          "ru": "Программу не запускает синтаксическая ошибка. При логической ошибке программа работает, но выдаёт неверный результат, поэтому найти её труднее.",
+          "en": "A syntax error is what stops the program from running. With a logic error the program runs but gives a wrong result, which makes it harder to find."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Uchta nazorat ballining yigʻindisi",
+      "ru": "Сумма трёх контрольных баллов",
+      "en": "The sum of three assessment points"
+    },
+    "statement": {
+      "uz": "Dekanat talabaning joriy, oraliq va yakuniy nazorat ballarini qoʻshib, umumiy ballni hisoblaydi. Dasturingiz uchta butun sonni oʻqisin: har biri alohida qatorda (joriy, oraliq, yakuniy ball). Uchala ballning yigʻindisini bitta qatorda, faqat son koʻrinishida chiqaring — hech qanday qoʻshimcha soʻz yozmang. Masalan, 32, 28 va 40 kiritsa, dastur 100 chiqaradi. Har bir ball 0 dan 100 gacha boʻladi.",
+      "ru": "Деканат складывает баллы текущего, промежуточного и итогового контроля студента. Ваша программа должна прочитать три целых числа, каждое на отдельной строке (текущий, промежуточный, итоговый балл), и вывести их сумму одной строкой — только число, без слов и пояснений. Например, при вводе 32, 28 и 40 программа выводит 100. Каждый балл от 0 до 100.",
+      "en": "The dean's office adds up a student's continuous, midterm and final points. Your program must read three integers, each on its own line (continuous, midterm, final), and print their sum on one line — only the number, with no words or label. For example, the input 32, 28 and 40 makes the program print 100. Each point value is between 0 and 100."
+    },
+    "code": {
+      "starter": {
+        "python": "a = int(input())\nb = int(input())\nc = int(input())\n\nprint(a + b)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int a = in.nextInt();\n        int b = in.nextInt();\n        int c = in.nextInt();\n        System.out.println(a + b);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b, c;\n    cin >> a >> b >> c;\n    cout << a + b << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "a = int(input())\nb = int(input())\nc = int(input())\n\nprint(a + b + c)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int a = in.nextInt();\n        int b = in.nextInt();\n        int c = in.nextInt();\n        System.out.println(a + b + c);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int a, b, c;\n    cin >> a >> b >> c;\n    cout << a + b + c << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "32\n28\n40\n", "expected": "100", "hidden": false },
+        { "input": "0\n0\n0\n", "expected": "0", "hidden": false },
+        { "input": "100\n100\n100\n", "expected": "300", "hidden": true },
+        { "input": "17\n25\n38\n", "expected": "80", "hidden": true },
+        { "input": "55\n0\n45\n", "expected": "100", "hidden": true }
+      ]
+    }
+  }
+}

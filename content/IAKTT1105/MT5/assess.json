@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kompyuter tarmoqlarida maʼlumot qanday uzatiladi?",
+          "ru": "Как в компьютерных сетях передаётся информация?",
+          "en": "How is data transferred in computer networks?"
+        },
+        "options": [
+          {
+            "uz": "Kichik paketlarga boʻlinib, har biri manzil bilan alohida yuboriladi va qabul qiluvchida qayta yigʻiladi",
+            "ru": "Делится на небольшие пакеты, каждый отправляется отдельно с адресом и собирается заново у получателя",
+            "en": "It is split into small packets, each sent separately with an address and reassembled at the recipient"
+          },
+          {
+            "uz": "Har bir aloqa uchun butun suhbat davomida alohida liniya ajratiladi",
+            "ru": "На всё время соединения выделяется отдельная линия",
+            "en": "A separate line is reserved for the whole connection"
+          },
+          {
+            "uz": "Fayl boʻlaklanmay, bir butun holatda yuboriladi",
+            "ru": "Файл отправляется целиком, без деления на части",
+            "en": "A file is sent whole, without being split"
+          },
+          {
+            "uz": "Maʼlumot faqat optik tola orqali uzatiladi",
+            "ru": "Данные передаются только по оптоволокну",
+            "en": "Data travels only over optical fibre"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Alohida liniya ajratish — telefon tarmogʻidagi kanal kommutatsiyasi; paketlar esa odatda 1 500 baytgacha boʻladi.",
+          "ru": "Выделение отдельной линии — это коммутация каналов в телефонной сети; пакеты обычно не превышают 1 500 байт.",
+          "en": "Reserving a separate line is circuit switching in the telephone network; packets are usually up to 1,500 bytes."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "TCP/IP — Internetda amalda ishlatiladigan 4 qatlamli model, OSI esa 7 qatlamli nazariy model.",
+          "ru": "TCP/IP — практически используемая в Интернете 4-уровневая модель, а OSI — теоретическая 7-уровневая модель.",
+          "en": "TCP/IP is the 4-layer model actually used on the Internet, while OSI is a 7-layer theoretical model."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Har bir qatlam faqat oʻz ishini qiladi va qoʻshni qatlamlar bilan «gaplashadi».",
+          "ru": "Каждый уровень делает только свою работу и «общается» с соседними уровнями.",
+          "en": "Each layer does only its own job and «talks» to the neighbouring layers."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Boshqaruv modeli boʻyicha tasnifga qaysilari kiradi?",
+          "ru": "Что из перечисленного относится к классификации по модели управления?",
+          "en": "Which of these belong to the classification by management model?"
+        },
+        "options": [
+          {
+            "uz": "Mijoz-server",
+            "ru": "Клиент-сервер",
+            "en": "Client-server"
+          },
+          {
+            "uz": "Peer-to-peer (teng huquqli tugunlar)",
+            "ru": "Одноранговая (peer-to-peer)",
+            "en": "Peer-to-peer (equal nodes)"
+          },
+          {
+            "uz": "Yulduz",
+            "ru": "Звезда",
+            "en": "Star"
+          },
+          {
+            "uz": "Halqa",
+            "ru": "Кольцо",
+            "en": "Ring"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Yulduz, shina, halqa va toʻr — topologiya belgisi; boshqaruv modelida mijoz-server va peer-to-peer turlari bor.",
+          "ru": "Звезда, шина, кольцо и ячеистая сеть — признак топологии; в модели управления есть клиент-сервер и одноранговая.",
+          "en": "Star, bus, ring and mesh are topologies; the management model has client-server and peer-to-peer."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qaysi qatlam manzillash va yoʻnaltirish uchun javob beradi?",
+          "ru": "Какой уровень отвечает за адресацию и маршрутизацию?",
+          "en": "Which layer is responsible for addressing and routing?"
+        },
+        "options": [
+          {
+            "uz": "Ilova qatlami",
+            "ru": "Прикладной уровень",
+            "en": "The application layer"
+          },
+          {
+            "uz": "Transport qatlami",
+            "ru": "Транспортный уровень",
+            "en": "The transport layer"
+          },
+          {
+            "uz": "Tarmoq (Internet) qatlami",
+            "ru": "Сетевой (межсетевой) уровень",
+            "en": "The network (Internet) layer"
+          },
+          {
+            "uz": "Kanal va fizik qatlam",
+            "ru": "Канальный и физический уровни",
+            "en": "The link and physical layers"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Tarmoq qatlami — IP va marshrutizator; transport ilovalar orasida yetkazishni, kanal va fizik esa qoʻshni qurilmalar orasidagi signalni taʼminlaydi.",
+          "ru": "Сетевой уровень — это IP и маршрутизатор; транспорт обеспечивает доставку между приложениями, канальный и физический — сигнал между соседними устройствами.",
+          "en": "The network layer is IP and the router; transport delivers between applications, link and physical carry the signal between neighbouring devices."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "100 Mbit/s kanal orqali 100 MB fayl nazariy jihatdan necha soniyada yuklanadi?",
+          "ru": "За сколько секунд теоретически загрузится файл 100 МБ через канал 100 Мбит/с?",
+          "en": "In theory, how many seconds does it take to download a 100 MB file over a 100 Mbit/s channel?"
+        },
+        "answers": [8],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "1 bayt = 8 bit, shuning uchun 100 × 8 / 100 = 8 soniya.",
+          "ru": "1 байт = 8 бит, поэтому 100 × 8 / 100 = 8 секунд.",
+          "en": "1 byte = 8 bits, so 100 × 8 / 100 = 8 seconds."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tarmoq kartasining zavod manzili qanday ataladi?",
+          "ru": "Как называется заводской адрес сетевой карты?",
+          "en": "What is the factory address of a network card called?"
+        },
+        "answers": ["MAC", "MAC manzil", "mac", "MAC-address"],
+        "explanation": {
+          "uz": "MAC manzil mahalliy tarmoqda ishlatiladi; IPv4 esa 32 bitlik manzil — 4 ta 0–255 son.",
+          "ru": "MAC-адрес используется в локальной сети; IPv4 — это 32-битный адрес, 4 числа от 0 до 255.",
+          "en": "A MAC address is used within the local network; IPv4 is a 32-bit address — four numbers from 0 to 255."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Uydagi oʻnlab qurilma bitta tashqi IP manzil orqali Internetga chiqishiga nima imkon beradi?",
+          "ru": "Что позволяет десяткам домашних устройств выходить в Интернет через один внешний IP-адрес?",
+          "en": "What lets dozens of home devices reach the Internet through one external IP address?"
+        },
+        "options": [
+          {
+            "uz": "NAT",
+            "ru": "NAT",
+            "en": "NAT"
+          },
+          {
+            "uz": "DHCP",
+            "ru": "DHCP",
+            "en": "DHCP"
+          },
+          {
+            "uz": "Port",
+            "ru": "Порт",
+            "en": "Port"
+          },
+          {
+            "uz": "IPv6",
+            "ru": "IPv6",
+            "en": "IPv6"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "DHCP qurilmaga IP manzil, shlyuz va DNS ni avtomatik beradi; port esa maʼlumot qaysi ilovaga tegishli ekanini bildiradi.",
+          "ru": "DHCP автоматически выдаёт устройству IP-адрес, шлюз и DNS; порт показывает, какому приложению на компьютере адресованы данные.",
+          "en": "DHCP hands out the IP address, gateway and DNS automatically; a port marks which application on the computer is meant."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Sifat koʻrsatkichlari va oʻlchov birliklari boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о показателях качества и единицах измерения верны?",
+          "en": "Which statements about quality indicators and units are correct?"
+        },
+        "options": [
+          {
+            "uz": "1 bayt = 8 bit",
+            "ru": "1 байт = 8 бит",
+            "en": "1 byte = 8 bits"
+          },
+          {
+            "uz": "100 Mbit/s ≈ 12,5 MB/s",
+            "ru": "100 Мбит/с ≈ 12,5 МБ/с",
+            "en": "100 Mbit/s ≈ 12.5 MB/s"
+          },
+          {
+            "uz": "Real tezlik odatda nazariy tezlikdan 10–30% past boʻladi",
+            "ru": "Реальная скорость обычно на 10–30% ниже теоретической",
+            "en": "The real speed is usually 10–30% below the theoretical one"
+          },
+          {
+            "uz": "Provayder vaʼda qilgan tezlik har doim kafolatlangan tezlikdir",
+            "ru": "Скорость, обещанная провайдером, всегда гарантирована",
+            "en": "The speed the provider promises is always a guaranteed speed"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Protokollar «yuki», Wi-Fi shovqini va server tezligi real tezlikni kamaytiradi; kafolat uchun shartnomadagi SLA ni tekshiring.",
+          "ru": "«Накладные расходы» протоколов, помехи Wi-Fi и скорость сервера снижают реальную скорость; для гарантии проверяйте SLA в договоре.",
+          "en": "Protocol overhead, Wi-Fi interference and server speed lower the real speed; check the SLA in the contract for a guarantee."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Video qoʻngʻiroq uchun eng muhim koʻrsatkich — oʻtkazish qobiliyati, kechikishning ahamiyati yoʻq.",
+          "ru": "Для видеозвонка самый важный показатель — пропускная способность, задержка не важна.",
+          "en": "For a video call the most important indicator is bandwidth; latency does not matter."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Video qoʻngʻiroqda kechikish va jitter muhim: 150 ms dan katta kechikish suhbatni qiyinlashtiradi. Katta fayllar uchun esa oʻtkazish qobiliyati kerak.",
+          "ru": "Для видеозвонка важны задержка и джиттер: задержка больше 150 мс затрудняет разговор. Для больших файлов нужна пропускная способность.",
+          "en": "A video call depends on latency and jitter: latency above 150 ms makes conversation difficult. Large files need bandwidth."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Xususiy yoki ommaviy manzil",
+      "ru": "Частный или публичный адрес",
+      "en": "Private or public address"
+    },
+    "statement": {
+      "uz": "IT boʻlimiga qoʻngʻiroq qilgan xodim oʻz manzili Internetdan koʻrinadimi yoki faqat ichki tarmoqdamimi — shu haqda aniq maʼlumot berishi kerak. Kiritish: har bir qatorda bitta IPv4 manzil, toʻrt son nuqta bilan ajratilgan (masalan, 192.168.1.100). Har bir qator uchun bitta qator chiqaring: manzil quyidagi xususiy oraliqlarning birortasiga tusa — private, aks holda public. Boshqa hech narsa yozmang. Xususiy oraliqlar: 10.x.x.x, 192.168.x.x va 172.16.x.x dan 172.31.x.x gacha (172.15 va 172.32 — ommaviy). Masalan, 192.168.1.100 uchun private, 8.8.8.8 uchun public chiqadi.",
+      "ru": "Сотрудник, звонящий в отдел ИТ, должен точно сказать, виден ли его адрес из Интернета или он только во внутренней сети. Вход: в каждой строке один IPv4-адрес в виде четырёх чисел через точку (например, 192.168.1.100). На каждую строку выведите одну строку: private, если адрес попадает в один из частных диапазонов, иначе public. Ничего другого не печатайте. Частные диапазоны: 10.x.x.x, 192.168.x.x и с 172.16.x.x по 172.31.x.x (172.15 и 172.32 — публичные). Например, 192.168.1.100 даёт private, а 8.8.8.8 — public.",
+      "en": "An employee calling the IT department must say precisely whether the address is visible from the Internet or lives only inside the local network. Input: each line holds one IPv4 address as four numbers separated by dots (for example, 192.168.1.100). For every line print one line: private if the address falls into one of the private ranges, public otherwise. Print nothing else. Private ranges: 10.x.x.x, 192.168.x.x and 172.16.x.x through 172.31.x.x (172.15 and 172.32 are public). For example, 192.168.1.100 gives private and 8.8.8.8 gives public."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nfor line in sys.stdin.read().split(\"\\n\"):\n    if not line.strip():\n        continue\n    qism = line.split(\".\")\n    a = int(qism[0])\n    b = int(qism[1])\n    if a == 10:\n        print(\"private\")\n    else:\n        print(\"public\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        while (in.hasNextLine()) {\n            String satr = in.nextLine().trim();\n            if (satr.isEmpty()) {\n                continue;\n            }\n            int o1 = satr.indexOf('.');\n            int o2 = satr.indexOf('.', o1 + 1);\n            int a = Integer.parseInt(satr.substring(0, o1));\n            int b = Integer.parseInt(satr.substring(o1 + 1, o2));\n            boolean xususiy = a == 10;\n            System.out.println(xususiy ? \"private\" : \"public\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string satr;\n    while (getline(cin, satr)) {\n        if (satr.empty()) {\n            continue;\n        }\n        size_t o1 = satr.find('.');\n        size_t o2 = satr.find('.', o1 + 1);\n        int a = stoi(satr.substr(0, o1));\n        int b = stoi(satr.substr(o1 + 1, o2 - o1 - 1));\n        bool xususiy = a == 10;\n        cout << (xususiy ? \"private\" : \"public\") << \"\\n\";\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nfor line in sys.stdin.read().split(\"\\n\"):\n    if not line.strip():\n        continue\n    qism = line.split(\".\")\n    a = int(qism[0])\n    b = int(qism[1])\n    if a == 10 or (a == 192 and b == 168) or (a == 172 and 16 <= b <= 31):\n        print(\"private\")\n    else:\n        print(\"public\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        while (in.hasNextLine()) {\n            String satr = in.nextLine().trim();\n            if (satr.isEmpty()) {\n                continue;\n            }\n            int o1 = satr.indexOf('.');\n            int o2 = satr.indexOf('.', o1 + 1);\n            int a = Integer.parseInt(satr.substring(0, o1));\n            int b = Integer.parseInt(satr.substring(o1 + 1, o2));\n            boolean xususiy = a == 10 || (a == 192 && b == 168) || (a == 172 && b >= 16 && b <= 31);\n            System.out.println(xususiy ? \"private\" : \"public\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string satr;\n    while (getline(cin, satr)) {\n        if (satr.empty()) {\n            continue;\n        }\n        size_t o1 = satr.find('.');\n        size_t o2 = satr.find('.', o1 + 1);\n        int a = stoi(satr.substr(0, o1));\n        int b = stoi(satr.substr(o1 + 1, o2 - o1 - 1));\n        bool xususiy = (a == 10) || (a == 192 && b == 168) || (a == 172 && b >= 16 && b <= 31);\n        cout << (xususiy ? \"private\" : \"public\") << \"\\n\";\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "192.168.1.100\n", "expected": "private", "hidden": false },
+        { "input": "8.8.8.8\n", "expected": "public", "hidden": false },
+        { "input": "10.20.30.40\n", "expected": "private", "hidden": true },
+        { "input": "172.16.5.5\n", "expected": "private", "hidden": true },
+        { "input": "172.15.0.1\n172.32.0.1\n213.230.96.15\n", "expected": "public\npublic\npublic", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Nima uchun 2,4 GHz da faqat 1, 6 va 11-kanallar tavsiya etiladi?",
+          "ru": "Почему в диапазоне 2,4 ГГц рекомендуют только каналы 1, 6 и 11?",
+          "en": "Why are only channels 1, 6 and 11 recommended at 2.4 GHz?"
+        },
+        "options": [
+          {
+            "uz": "Kanal markazlari 5 MHz oraliqda, kengligi esa 20 MHz — faqat shu uchlik bir-biri bilan kesishmaydi",
+            "ru": "Центры каналов стоят через 5 МГц при ширине 20 МГц — только эта тройка не перекрывается",
+            "en": "Channel centres are 5 MHz apart while a channel is 20 MHz wide — only this trio does not overlap"
+          },
+          {
+            "uz": "Ular eng yuqori tezlikni beradi",
+            "ru": "Они дают самую высокую скорость",
+            "en": "They give the highest speed"
+          },
+          {
+            "uz": "Faqat shu kanallarda shifrlash ishlaydi",
+            "ru": "Шифрование работает только на этих каналах",
+            "en": "Encryption works only on these channels"
+          },
+          {
+            "uz": "Ular devorlardan boshqa kanallarga qaraganda yaxshiroq oʻtadi",
+            "ru": "Они проходят сквозь стены лучше, чем другие каналы",
+            "en": "They pass through walls better than the other channels"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "2,4 GHz da kanal markazi = 2407 + 5·c MHz. Markazlari 20 MHz dan kam farq qiladigan, yaʼni raqami 4 dan kam farq qiladigan kanallar kesishadi va xalaqit beradi.",
+          "ru": "В 2,4 ГГц центр канала = 2407 + 5·c МГц. Каналы, центры которых различаются менее чем на 20 МГц, то есть чьи номера отличаются менее чем на 4, перекрываются и мешают друг другу.",
+          "en": "At 2.4 GHz a channel centre is 2407 + 5·c MHz. Channels whose centres differ by less than 20 MHz — by less than 4 in their numbers — overlap and interfere."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Wi-Fi signal kuchi qaysi birlikda oʻlchanadi?",
+          "ru": "В какой единице измеряется сила сигнала Wi-Fi?",
+          "en": "In which unit is Wi-Fi signal strength measured?"
+        },
+        "answers": ["dBm"],
+        "explanation": {
+          "uz": "dBm — 1 milliwattga nisbatan desibel: 0 dBm = 1 mW, 20 dBm = 100 mW. Qiymat manfiy va 0 ga qanchalik yaqin boʻlsa, signal shunchalik kuchli.",
+          "ru": "дБм — децибел относительно 1 милливатта: 0 дБм = 1 мВт, 20 дБм = 100 мВт. Значение отрицательное, и чем оно ближе к нулю, тем сильнее сигнал.",
+          "en": "dBm is decibels relative to one milliwatt: 0 dBm = 1 mW, 20 dBm = 100 mW. The value is negative, and the closer it is to 0, the stronger the signal."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "WEP — hozirgi kunda uy routeri uchun minimal xavfsizlik talabi.",
+          "ru": "WEP — сегодняшнее минимальное требование безопасности для домашнего роутера.",
+          "en": "WEP is today's minimum security requirement for a home router."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsdagi jadval: WEP (RC4, 1997) bir necha daqiqada buziladi va uni ishlatmang deyilgan. Minimal talab — WPA2 (AES-CCMP) kuchli parol bilan, eng yaxshi tanlov — WPA3.",
+          "ru": "По таблице занятия: WEP (RC4, 1997) взламывается за несколько минут, и сказано его не использовать. Минимальное требование — WPA2 (AES-CCMP) со стойким паролем, лучший выбор — WPA3.",
+          "en": "The lesson's table: WEP (RC4, 1997) is broken in minutes and must not be used. The minimum is WPA2 (AES-CCMP) with a strong password; the best choice is WPA3."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qabul qilingan signal −75 dBm boʻlsa, darsdagi jadval boʻyicha uning sifati qanday?",
+          "ru": "Если принятый сигнал равен −75 дБм, каково его качество по таблице занятия?",
+          "en": "If the received signal is −75 dBm, what is its quality in the lesson's table?"
+        },
+        "options": [
+          {
+            "uz": "Aʼlo",
+            "ru": "Отличное",
+            "en": "Excellent"
+          },
+          {
+            "uz": "Yaxshi (video qoʻngʻiroq, striming uchun yetarli)",
+            "ru": "Хорошее (видеозвонки, стриминг)",
+            "en": "Good (video calls, streaming)"
+          },
+          {
+            "uz": "Past (sahifalar ochiladi, lekin sekin)",
+            "ru": "Слабое (страницы открываются, но медленно)",
+            "en": "Weak (pages open, slowly)"
+          },
+          {
+            "uz": "Amalda ishlamaydi",
+            "ru": "Практически не работает",
+            "en": "Practically does not work"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Jadval: −50 dBm va undan yuqori — aʼlo, −67 … −50 — yaxshi, −80 … −67 — past, −80 dan past — amalda ishlamaydi. −75 dBm oʻsha \"past\" oraligʻiga tushadi.",
+          "ru": "Таблица: −50 дБм и выше — отлично, −67 … −50 — хорошо, −80 … −67 — слабо, ниже −80 — практически не работает. −75 дБм попадает в диапазон «слабо».",
+          "en": "The table: −50 dBm and above is excellent, −67 … −50 good, −80 … −67 weak, below −80 practically does not work. −75 dBm falls in the weak band."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "2,4 GHz da 6-kanalning markaziy chastotasi qancha MHz?",
+          "ru": "Сколько мегагерц составляет центральная частота канала 6 в диапазоне 2,4 ГГц?",
+          "en": "How many MHz is the centre frequency of channel 6 at 2.4 GHz?"
+        },
+        "answers": [2437],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsdagi formula boʻyicha: 2407 + 5·6 = 2437 MHz.",
+          "ru": "По формуле из занятия: 2407 + 5·6 = 2437 МГц.",
+          "en": "By the lesson's formula: 2407 + 5·6 = 2437 MHz."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Router xavfsizligi boʻyicha darsdagi qaysi qoidalar toʻgʻri?",
+          "ru": "Какие правила безопасности роутера из занятия верны?",
+          "en": "Which of the lesson's rules on router security are correct?"
+        },
+        "options": [
+          {
+            "uz": "WPS oʻchiriladi, chunki uning 8 raqamli PIN kodi tez buziladi",
+            "ru": "WPS отключают, потому что его 8-значный PIN быстро взламывается",
+            "en": "WPS is turned off because its 8-digit PIN is broken quickly"
+          },
+          {
+            "uz": "Administrator paroli almashtiriladi va dasturiy taʼminot yangilanib turadi",
+            "ru": "Меняют пароль администратора и обновляют прошивку",
+            "en": "The administrator password is changed and the firmware kept up to date"
+          },
+          {
+            "uz": "Mehmonlar uchun alohida mehmon tarmogʻi yaratiladi",
+            "ru": "Для гостей создают отдельную гостевую сеть",
+            "en": "A separate guest network is created for visitors"
+          },
+          {
+            "uz": "SSID ni yashirish — asosiy himoya chorasidir",
+            "ru": "Главная мера защиты — скрыть SSID",
+            "en": "Hiding the SSID is the main protection"
+          },
+          {
+            "uz": "Kuchli parol oʻrniga MAC filtrlash qoʻyish kifoya",
+            "ru": "Достаточно поставить MAC-фильтрацию вместо стойкого пароля",
+            "en": "MAC filtering is enough instead of a strong password"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda aytilishicha, SSID ni yashirish va MAC filtrlash haqiqiy himoya emas: sniffer bilan SSID ham, ruxsat etilgan MAC lar ham koʻrinadi. Haqiqiy himoya — WPA2/WPA3 va kuchli parol.",
+          "ru": "В занятии сказано: скрытие SSID и MAC-фильтрация не являются реальной защитой — со сниффером видны и SSID, и разрешённые MAC. Настоящая защита — WPA2/WPA3 и стойкий пароль.",
+          "en": "The lesson says hiding the SSID and MAC filtering are not real protection: with a sniffer both the SSID and the allowed MACs are visible. Real protection is WPA2/WPA3 with a strong password."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Chastota 2,4 GHz dan 5 GHz ga oshganda, ochiq fazodagi soʻnish taxminan qanchaga ortadi?",
+          "ru": "На сколько примерно децибел вырастает потеря в свободном пространстве при переходе с 2,4 ГГц на 5 ГГц?",
+          "en": "By roughly how much does free-space path loss grow when the frequency rises from 2.4 GHz to 5 GHz?"
+        },
+        "options": [
+          {
+            "uz": "3 dB",
+            "ru": "На 3 дБ",
+            "en": "By 3 dB"
+          },
+          {
+            "uz": "6 dB",
+            "ru": "На 6 дБ",
+            "en": "By 6 dB"
+          },
+          {
+            "uz": "6,5 dB",
+            "ru": "На 6,5 дБ",
+            "en": "By 6.5 dB"
+          },
+          {
+            "uz": "20 dB",
+            "ru": "На 20 дБ",
+            "en": "By 20 dB"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Darsda: masofa 2 marta oshsa 6 dB yoʻqotiladi, chastota 2,4 dan 5 GHz ga oshsa — taxminan 6,5 dB koʻproq. Devorlar qoʻshimcha 3–15 dB \"yeydi\".",
+          "ru": "В занятии: удвоение расстояния — 6 дБ потерь, переход с 2,4 ГГц на 5 ГГц — примерно на 6,5 дБ больше. Стены «съедают» ещё 3–15 дБ.",
+          "en": "The lesson: doubling the distance loses 6 dB, and moving from 2.4 to 5 GHz loses about 6.5 dB more. Walls take another 3–15 dB."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "dBm boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о дБм верны?",
+          "en": "Which statements about dBm are correct?"
+        },
+        "options": [
+          {
+            "uz": "−60 dBm signal −70 dBm dan 10 baravar kuchli",
+            "ru": "Сигнал −60 дБм в 10 раз сильнее, чем −70 дБм",
+            "en": "A −60 dBm signal is 10 times stronger than −70 dBm"
+          },
+          {
+            "uz": "3 dB farq — quvvatning 2 baravar oʻzgarishi",
+            "ru": "Разница в 3 дБ означает удвоение или уменьшение мощности вдвое",
+            "en": "A 3 dB difference means twice the power"
+          },
+          {
+            "uz": "Qiymat 0 ga qanchalik yaqin boʻlsa, signal shunchalik kuchli",
+            "ru": "Чем ближе значение к нулю, тем сильнее сигнал",
+            "en": "The closer the value is to 0, the stronger the signal"
+          },
+          {
+            "uz": "−80 dBm signal −50 dBm dan kuchli",
+            "ru": "Сигнал −80 дБм сильнее, чем −50 дБм",
+            "en": "−80 dBm is stronger than −50 dBm"
+          },
+          {
+            "uz": "0 dBm = 100 mW",
+            "ru": "0 дБм = 100 мВт",
+            "en": "0 dBm = 100 mW"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda 0 dBm = 1 mW, 20 dBm = 100 mW deyilgan — shuning uchun 0 dBm = 100 mW notoʻgʻri. dBm qiymatini oddiy son kabi solishtirish xato: −80 dBm −50 dBm dan ancha kuchsiz.",
+          "ru": "В занятии сказано 0 дБм = 1 мВт и 20 дБм = 100 мВт, поэтому «0 дБм = 100 мВт» неверно. Ошибочно сравнивать дБм как обычные числа: −80 дБм заметно слабее −50 дБм.",
+          "en": "The lesson gives 0 dBm = 1 mW and 20 dBm = 100 mW, so \"0 dBm = 100 mW\" is wrong. Comparing dBm like ordinary numbers is a mistake: −80 dBm is far weaker than −50 dBm."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "2,4 GHz da 40 MHz kanal kengligi tanlansa, u 13 kanaldan 9 tasini egallaydi va qoʻshnilar bilan doimiy toʻqnashuvga olib keladi.",
+          "ru": "Если в диапазоне 2,4 ГГц выбрать ширину канала 40 МГц, она займёт 9 из 13 каналов и приведёт к постоянным конфликтам с соседями.",
+          "en": "Choosing a 40 MHz channel width at 2.4 GHz occupies 9 of the 13 channels and leads to constant clashes with neighbours."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bu darsdagi \"koʻp uchraydigan xatolar\" roʻyxatidagi holat: 40 MHz ikki baravar tezlik bersa-da, 2,4 GHz da deyarli butun diapazonni egallaydi. Shuning uchun 2,4 GHz uchun 20 MHz, 5 GHz uchun 40 yoki 80 MHz tavsiya etiladi.",
+          "ru": "Это пункт из списка «частые ошибки» занятия: 40 МГц даёт удвоенную скорость, но в 2,4 ГГц занимает почти весь диапазон. Поэтому для 2,4 ГГц советуют 20 МГц, для 5 ГГц — 40 или 80 МГц.",
+          "en": "This is one of the lesson's common mistakes: 40 MHz is twice as fast but at 2.4 GHz it takes up almost the whole band. Hence 20 MHz for 2.4 GHz, and 40 or 80 MHz for 5 GHz."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Ikki kanal: markaziy chastota va kesishish",
+      "ru": "Два канала: центральная частота и пересечение",
+      "en": "Two channels: centre frequency and overlap"
+    },
+    "statement": {
+      "uz": "2,4 GHz da *c*-kanalning markazi 2407 + 5·*c* MHz ga teng, kanal kengligi esa 20 MHz; markazlari 20 MHz dan kam farq qiladigan kanallar kesishadi. Kirishda bitta qatorda ikkita butun son — 1 dan 13 gacha ikki kanal raqami beriladi. Dasturingiz bitta qatorga uch qiymatni yozsin: birinchi kanalning markaziy chastotasi (MHz), ikkinchi kanalning markaziy chastotasi va ular kesishishini — kesishsa \"yes\", kesishmasa \"no\". Kanal raqamlari farqi 4 dan kichik boʻlsa, ular kesishadi. Boshqa soʻz yozmang. Masalan, `1 6` kirsa, \"2412 2437 no\" chiqadi; `3 4` kirsa, \"2422 2427 yes\" chiqadi.",
+      "ru": "В диапазоне 2,4 ГГц центр канала *c* равен 2407 + 5·*c* МГц, ширина канала 20 МГц; каналы, чьи центры различаются менее чем на 20 МГц, перекрываются. Во входе одна строка с двумя целыми числами — номерами каналов от 1 до 13. Программа выводит одной строкой три значения: центральную частоту первого канала (МГц), центральную частоту второго канала и признак пересечения — `yes`, если каналы перекрываются, иначе `no`. Пересечение считается по правилу: если разница номеров каналов меньше 4, выводите `yes`. Других слов не выводите. Например, ввод `1 6` даёт `2412 2437 no`, а `3 4` даёт `2422 2427 yes`.",
+      "en": "At 2.4 GHz the centre of channel *c* is 2407 + 5·*c* MHz and a channel is 20 MHz wide; channels whose centres differ by less than 20 MHz overlap. The input is one line with two integers — two channel numbers from 1 to 13. Print on one line three values: the centre frequency of the first channel in MHz, the centre frequency of the second channel, and whether they overlap — `yes` when they do, `no` when they do not. The overlap follows the rule: when the channel numbers differ by less than 4, print `yes`. Print no other words. For example, `1 6` gives `2412 2437 no` and `3 4` gives `2422 2427 yes`."
+    },
+    "code": {
+      "starter": {
+        "python": "a, b = map(int, input().split())\nkesadi = \"yes\" if abs(a - b) <= 4 else \"no\"\nprint(2407 + 5 * a, 2407 + 5 * b, kesadi)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int a = in.nextInt();\n        int b = in.nextInt();\n        String kesadi = Math.abs(a - b) <= 4 ? \"yes\" : \"no\";\n        System.out.println((2407 + 5 * a) + \" \" + (2407 + 5 * b) + \" \" + kesadi);\n    }\n}\n",
+        "cpp": "#include <cstdlib>\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    string kesadi = abs(a - b) <= 4 ? \"yes\" : \"no\";\n    cout << 2407 + 5 * a << \" \" << 2407 + 5 * b << \" \" << kesadi << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "a, b = map(int, input().split())\nkesadi = \"yes\" if abs(a - b) < 4 else \"no\"\nprint(2407 + 5 * a, 2407 + 5 * b, kesadi)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int a = in.nextInt();\n        int b = in.nextInt();\n        String kesadi = Math.abs(a - b) < 4 ? \"yes\" : \"no\";\n        System.out.println((2407 + 5 * a) + \" \" + (2407 + 5 * b) + \" \" + kesadi);\n    }\n}\n",
+        "cpp": "#include <cstdlib>\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int a, b;\n    cin >> a >> b;\n    string kesadi = abs(a - b) < 4 ? \"yes\" : \"no\";\n    cout << 2407 + 5 * a << \" \" << 2407 + 5 * b << \" \" << kesadi << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "1 6\n", "expected": "2412 2437 no", "hidden": false },
+        { "input": "3 4\n", "expected": "2422 2427 yes", "hidden": false },
+        { "input": "1 5\n", "expected": "2412 2432 no", "hidden": false },
+        { "input": "1 4\n", "expected": "2412 2427 yes", "hidden": true },
+        { "input": "11 11\n", "expected": "2462 2462 yes", "hidden": true },
+        { "input": "6 11\n", "expected": "2437 2462 no", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Chiziqli qidiruv va ikkilik qidiruv uchun massivning saralangan boʻlishi talabi qanday?",
+          "ru": "Чем отличается требование отсортированности массива для линейного и двоичного поиска?",
+          "en": "How does the sorted-array requirement differ between linear search and binary search?"
+        },
+        "options": [
+          {
+            "uz": "Chiziqli qidiruvda saralangan boʻlishi shart emas, ikkilik qidiruvda esa shart",
+            "ru": "Линейному поиску сортировка не нужна, двоичному — обязательна",
+            "en": "Linear search does not need it sorted, binary search does"
+          },
+          {
+            "uz": "Ikkalasida ham saralangan boʻlishi shart",
+            "ru": "Оба требуют отсортированного массива",
+            "en": "Both require a sorted array"
+          },
+          {
+            "uz": "Ikkalasida ham saralangan boʻlishi shart emas",
+            "ru": "Ни одному не нужна сортировка",
+            "en": "Neither needs the array sorted"
+          },
+          {
+            "uz": "Chiziqli qidiruvda saralangan boʻlishi shart, ikkilik qidiruvda shart emas",
+            "ru": "Линейному нужна сортировка, двоичному — нет",
+            "en": "Linear search needs it sorted, binary search does not"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Chiziqli qidiruv elementlarni boshidan birma-bir tekshiradi, shuning uchun tartib muhim emas. Ikkilik qidiruv esa qidiruv oraligʻini har qadamda ikki baravar qisqartiradi va faqat saralangan massivda toʻgʻri ishlaydi.",
+          "ru": "Линейный поиск проверяет элементы один за другим с начала, поэтому порядок не важен. Двоичный поиск на каждом шаге уменьшает диапазон вдвое и корректно работает только с отсортированным массивом.",
+          "en": "Linear search checks the elements one by one from the start, so the order does not matter. Binary search halves the range at every step and is correct only on a sorted array."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Statik massivning oʻlchami dastur ishlab turganda ham oʻzgartirilishi mumkin.",
+          "ru": "Размер статического массива можно изменить во время работы программы.",
+          "en": "The size of a static array can be changed while the program runs."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Statik massivning oʻlchami kompilyatsiya paytida maʼlum boʻladi va dastur davomida oʻzgarmaydi. Shuning uchun n ≤ 1000 deyilsa, massiv eng katta holat uchun eʼlon qilinadi va faqat birinchi n ta element ishlatiladi.",
+          "ru": "Размер статического массива известен на этапе компиляции и не меняется при выполнении. Поэтому при n ≤ 1000 массив объявляют на максимальный случай и используют только первые n элементов.",
+          "en": "A static array's size is known at compile time and does not change while the program runs. So when n ≤ 1000 the array is declared for the largest case and only the first n elements are used."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "C++ tilida main funksiyasi ichida eʼlon qilingan int a[100]; massivining xossalari qaysilar?",
+          "ru": "Какие свойства верны для объявления int a[100]; внутри функции main на C++?",
+          "en": "Which properties hold for int a[100]; declared inside main in C++?"
+        },
+        "options": [
+          {
+            "uz": "Qiymatlari aniqlanmagan boʻladi, xotiradagi axlat qoladi",
+            "ru": "Значения не определены — в памяти остаётся мусор",
+            "en": "The values are undefined, garbage is left in memory"
+          },
+          {
+            "uz": "Oʻlchami oldindan belgilangan va 100 ta int uchun joy ajratiladi",
+            "ru": "Размер задан заранее, выделяется место под 100 значений int",
+            "en": "Its size is fixed in advance and room for 100 ints is reserved"
+          },
+          {
+            "uz": "Global eʼlon qilinganda u avtomatik ravishda nollar bilan toʻladi",
+            "ru": "Объявленный глобально, он автоматически заполняется нулями",
+            "en": "Declared globally it is filled with zeros automatically"
+          },
+          {
+            "uz": "Massiv oʻzi oʻz uzunligini biladi, shuning uchun n ni alohida saqlash shart emas",
+            "ru": "Массив сам знает свою длину, поэтому n отдельно хранить не нужно",
+            "en": "The array knows its own length, so n does not have to be kept separately"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Statik massivning uzunligini u bilmaydi: n ni alohida oʻzgaruvchida saqlash kerak. Main ichidagi massiv axlat bilan toʻlgan boʻladi, nol bilan toʻldirish uchun = {} yoziladi yoki massiv global eʼlon qilinadi.",
+          "ru": "Статический массив не знает своей длины: n нужно хранить в отдельной переменной. Массив внутри main заполнен мусором; чтобы получить нули, пишут = {} или объявляют массив глобально.",
+          "en": "A static array does not know its length: n has to be kept in a separate variable. An array inside main holds garbage; write = {} or declare it globally to get zeros."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "1 000 elementli saralangan massivda ikkilik qidiruv eng yomon holatda koʻpi bilan nechta qadam bajaradi?",
+          "ru": "Сколько шагов максимум делает двоичный поиск в отсортированном массиве из 1000 элементов?",
+          "en": "At most how many steps does binary search take on a sorted array of 1 000 elements?"
+        },
+        "answers": [10],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsdagi jadval: 1 000 element uchun chiziqli qidiruv 1 000, ikkilik qidiruv esa koʻpi bilan 10 qadamda ishlaydi.",
+          "ru": "По таблице с занятия: для 1 000 элементов линейный поиск — 1 000, двоичный — максимум 10 шагов.",
+          "en": "The lesson table says: for 1 000 elements linear search takes 1 000, binary search at most 10 steps."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Massiv 3 1 2 boʻlsa, pufakchali saralashning birinchi oʻtishidan keyin u qanday koʻrinish oladi?",
+          "ru": "Как выглядит массив 3 1 2 после первого прохода пузырьковой сортировки?",
+          "en": "What does the array 3 1 2 look like after the first pass of bubble sort?"
+        },
+        "options": [
+          {
+            "uz": "1 2 3",
+            "ru": "1 2 3",
+            "en": "1 2 3"
+          },
+          {
+            "uz": "1 3 2",
+            "ru": "1 3 2",
+            "en": "1 3 2"
+          },
+          {
+            "uz": "2 1 3",
+            "ru": "2 1 3",
+            "en": "2 1 3"
+          },
+          {
+            "uz": "3 1 2",
+            "ru": "3 1 2",
+            "en": "3 1 2"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Birinchi oʻtishda qoʻshni juftliklar solishtiriladi: 3 va 1 almashtiriladi, soʻng 3 va 2 almashtiriladi — 1 2 3.",
+          "ru": "За первый проход сравниваются соседние пары: 3 и 1 меняются местами, затем 3 и 2 — получается 1 2 3.",
+          "en": "In the first pass neighbouring pairs are compared: 3 swaps with 1, then 3 swaps with 2, giving 1 2 3."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "C++ tilida amalda massivni saralash uchun ishlatiladigan standart funksiyaning nomini yozing.",
+          "ru": "Напишите имя стандартной функции сортировки массива, которую используют на практике в C++.",
+          "en": "Write the name of the standard C++ function used for sorting an array in practice."
+        },
+        "answers": ["sort", "std::sort"],
+        "explanation": {
+          "uz": "Darsda amalda standart funksiyalar ishlatilishi aytilgan: Python da a.sort(), Java da Arrays.sort(a), C++ da sort(a, a + n) — ular taxminan n log n vaqtda ishlaydi.",
+          "ru": "На практике берут стандартные функции: в Python a.sort(), в Java Arrays.sort(a), в C++ sort(a, a + n) — они работают за ~n log n.",
+          "en": "In practice the standard functions are used: a.sort() in Python, Arrays.sort(a) in Java, sort(a, a + n) in C++ — they take about n log n time."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ikkilik qidiruv haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о двоичном поиске верны?",
+          "en": "Which statements about binary search are correct?"
+        },
+        "options": [
+          {
+            "uz": "Har qadamda qidiruv oraligʻi ikki baravar qisqaradi",
+            "ru": "На каждом шаге диапазон поиска уменьшается вдвое",
+            "en": "Each step halves the search range"
+          },
+          {
+            "uz": "Oraliq boʻsh qolganda, yaʼni chap > ong boʻlsa, qidiruv toʻxtaydi",
+            "ru": "Когда диапазон опустел, то есть chap > ong, поиск прекращается",
+            "en": "The search stops when the range is empty, that is when chap > ong"
+          },
+          {
+            "uz": "Element topilmasa, odatda -1 qaytariladi",
+            "ru": "Если элемент не найден, обычно возвращают -1",
+            "en": "If the element is not found, -1 is usually returned"
+          },
+          {
+            "uz": "Saralanmagan massivda ham toʻgʻri ishlaydi, faqat sekinroq",
+            "ru": "Он верно работает и в неотсортированном массиве, просто медленнее",
+            "en": "It works correctly on an unsorted array too, only slower"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Saralanmagan massivda ikkilik qidiruv notoʻgʻri natija beradi, xato xabari esa umuman chiqmaydi. Shuning uchun oldin massivni saralash kerak.",
+          "ru": "В неотсортированном массиве двоичный поиск даёт неверный результат, и сообщение об ошибке при этом не появляется. Поэтому массив сначала сортируют.",
+          "en": "On an unsorted array binary search gives a wrong result and no error message appears at all. That is why the array must be sorted first."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Pufakchali saralashda bir oʻtishda birorta ham almashtirish boʻlmasa, massiv saralangan va qolgan oʻtishlarni bajarishning hojati yoʻq.",
+          "ru": "Если в пузырьковой сортировке за проход не было ни одного обмена, массив отсортирован и оставшиеся проходы не нужны.",
+          "en": "In bubble sort, if a pass makes no swaps at all, the array is sorted and the remaining passes are not needed."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Almashtirish boʻlmasa, almashdi bayrogʻi yolgʻon qoladi va saralash erta toʻxtaydi. Allaqachon saralangan massiv shuning uchun bir oʻtishda tekshiriladi.",
+          "ru": "Если обменов не было, флаг almashdi остаётся ложным, и сортировка завершается досрочно. Уже отсортированный массив проверяется за один проход именно поэтому.",
+          "en": "With no swaps the almashdi flag stays false and the sort stops early. An already sorted array is checked in one pass for this very reason."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Pufakchali saralash eng yomon holatda taxminan n²/2 ta solishtirish bajaradi. n = 100 boʻlsa, bu taxminan nechta solishtirish?",
+          "ru": "Пузырьковая сортировка в худшем случае делает примерно n²/2 сравнений. Сколько это сравнений при n = 100?",
+          "en": "Bubble sort makes about n²/2 comparisons in the worst case. About how many comparisons is that when n = 100?"
+        },
+        "answers": [5000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "100 · 100 / 2 = 5000 solishtirish. Shu sababli amalda n log n vaqtda ishlaydigan standart funksiyalar ishlatiladi.",
+          "ru": "100 · 100 / 2 = 5000 сравнений. Поэтому на практике применяют стандартные функции, работающие за n log n.",
+          "en": "100 · 100 / 2 = 5000 comparisons. That is why in practice functions running in n log n time are used."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Massivdagi eng katta element va uning oʻrni",
+      "ru": "Максимальный элемент массива и его позиция",
+      "en": "The largest element of an array and its position"
+    },
+    "statement": {
+      "uz": "Darsdagi chiziqli qidiruv bitta qiymatni izladi, bu topshiriqda esa massivning eng katta elementini topasiz. Birinchi qatorda bitta butun son n (1 ≤ n ≤ 1000) kiritiladi, ikkinchi qatorda boʻsh joy bilan ajratilgan n ta butun son beriladi (har biri -10⁹ dan 10⁹ gacha). Ikki sonni bitta qatorda chiqaring: avval massivdagi eng katta qiymat, soʻng bittadan probel bilan uning oʻrni (1 dan boshlab sanaladi) chiqsin. Eng katta qiymat bir necha marta takrorlansa, birinchi marta uchragan oʻrni chiqarilsin. Masalan, 3 7 2 7 1 massivida dastur 7 2 chiqaradi, chunki 7 birinchi marta 2-orinda turibdi. Bitta elementli massivda oʻrin 1 boʻladi.",
+      "ru": "Линейный поиск с занятия искал одно значение, а здесь нужно найти максимальный элемент массива. В первой строке задаётся целое число n (1 ≤ n ≤ 1000), во второй строке — n целых чисел через пробел (каждое от -10⁹ до 10⁹). Выведите два числа в одной строке: сначала максимальное значение массива, затем через один пробел его позицию, начиная с 1. Если максимальное значение встречается несколько раз, выводится позиция, где оно появилось первым. Например, для массива 3 7 2 7 1 программа выведет 7 2, потому что 7 стоит на 2-й позиции. Для массива из одного элемента позиция равна 1.",
+      "en": "The lesson's linear search looked for one value; here you find the largest element of the array. The first line holds one integer n (1 ≤ n ≤ 1000), the second line holds n integers separated by spaces (each between -10⁹ and 10⁹). Print two numbers on one line: first the largest value in the array, then after a single space its position counted from 1. If the largest value appears several times, print the position where it appears first. For the array 3 7 2 7 1 the program prints 7 2, because 7 stands at position 2. For an array of one element the position is 1."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\n\neng = a[0]\norin = 1\nfor i in range(1, n):\n    if a[i] > eng:\n        eng = a[i]\n\nprint(eng, orin)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n\n        int eng = a[0];\n        int orin = 1;\n        for (int i = 1; i < n; i++) {\n            if (a[i] > eng) {\n                eng = a[i];\n            }\n        }\n\n        System.out.println(eng + \" \" + orin);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nconst int MAX = 1000;\nint a[MAX];\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n\n    int eng = a[0];\n    int orin = 1;\n    for (int i = 1; i < n; i++) {\n        if (a[i] > eng) {\n            eng = a[i];\n        }\n    }\n\n    cout << eng << \" \" << orin << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\n\neng = a[0]\norin = 1\nfor i in range(1, n):\n    if a[i] > eng:\n        eng = a[i]\n        orin = i + 1\n\nprint(eng, orin)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n\n        int eng = a[0];\n        int orin = 1;\n        for (int i = 1; i < n; i++) {\n            if (a[i] > eng) {\n                eng = a[i];\n                orin = i + 1;\n            }\n        }\n\n        System.out.println(eng + \" \" + orin);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nconst int MAX = 1000;\nint a[MAX];\n\nint main() {\n    int n;\n    cin >> n;\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n\n    int eng = a[0];\n    int orin = 1;\n    for (int i = 1; i < n; i++) {\n        if (a[i] > eng) {\n            eng = a[i];\n            orin = i + 1;\n        }\n    }\n\n    cout << eng << \" \" << orin << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5\n3 7 2 7 1\n", "expected": "7 2", "hidden": false },
+        { "input": "1\n42\n", "expected": "42 1", "hidden": false },
+        { "input": "6\n-5 -5 -8 0 -3 0\n", "expected": "0 4", "hidden": true },
+        { "input": "4\n1 2 3 4\n", "expected": "4 4", "hidden": true },
+        { "input": "3\n9 -9 0\n", "expected": "9 1", "hidden": true }
+      ]
+    }
+  }
+}

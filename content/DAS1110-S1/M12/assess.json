@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsga koʻra, fayl bilan ishlash qanday tartibda boʻladi?",
+          "ru": "В каком порядке, согласно занятию, работают с файлом?",
+          "en": "According to the lesson, in what order is a file worked with?"
+        },
+        "options": [
+          {
+            "uz": "Ochish (rejim bilan) → oʻqish yoki yozish → yopish",
+            "ru": "Открытие (с режимом) → чтение или запись → закрытие",
+            "en": "Open (with a mode) → read or write → close"
+          },
+          {
+            "uz": "Ochish → yopish → oʻqish",
+            "ru": "Открытие → закрытие → чтение",
+            "en": "Open → close → read"
+          },
+          {
+            "uz": "Oʻqish → ochish → yopish",
+            "ru": "Чтение → открытие → закрытие",
+            "en": "Read → open → close"
+          },
+          {
+            "uz": "Yopish → ochish → yozish",
+            "ru": "Закрытие → открытие → запись",
+            "en": "Close → open → write"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Uch bosqich: ochishda rejim tanlanadi, soʻng maʼlumot oʻqiladi yoki yoziladi, oxirida fayl yopiladi.",
+          "ru": "Три этапа: при открытии выбирается режим, затем данные читаются или записываются, в конце файл закрывается.",
+          "en": "Three stages: a mode is chosen when opening, data is then read or written, and the file is closed at the end."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": ".jpg fayli matnli faylga misol boʻladi.",
+          "ru": "Файл `.jpg` — пример текстового файла.",
+          "en": "A `.jpg` file is an example of a text file."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "jpg, mp3, exe va docx — ikkilik fayllar: ichida ixtiyoriy baytlar, ularni maxsus dastur ochadi. Matnli fayllarga misol: txt, csv, json, py, html.",
+          "ru": "`.jpg`, `.mp3`, `.exe`, `.docx` — двоичные файлы: внутри произвольные байты, их открывает специальная программа. Примеры текстовых — `.txt`, `.csv`, `.json`, `.py`, `.html`.",
+          "en": "`.jpg`, `.mp3`, `.exe`, `.docx` are binary files: arbitrary bytes inside, opened with a special program. Text files are `.txt`, `.csv`, `.json`, `.py`, `.html`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Pythonʼdagi fayl ochish rejimlari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о режимах открытия файла в Python верны?",
+          "en": "Which statements about Python's file opening modes are correct?"
+        },
+        "options": [
+          {
+            "uz": "`\"r\"` rejimida fayl mavjud boʻlishi shart",
+            "ru": "В режиме `\"r\"` файл обязан существовать",
+            "en": "In `\"r\"` mode the file must exist"
+          },
+          {
+            "uz": "`\"w\"` rejimida mavjud faylning ichi tozalanadi",
+            "ru": "В режиме `\"w\"` существующий файл очищается",
+            "en": "In `\"w\"` mode an existing file is emptied"
+          },
+          {
+            "uz": "`\"a\"` rejimida yozuv fayl oxiriga qoʻshiladi",
+            "ru": "В режиме `\"a\"` запись добавляется в конец файла",
+            "en": "In `\"a\"` mode writing goes to the end of the file"
+          },
+          {
+            "uz": "`\"w\"` rejimi mavjud faylning oxiriga qoʻshib boradi",
+            "ru": "Режим `\"w\"` дописывает в конец существующего файла",
+            "en": "`\"w\"` mode appends to the end of an existing file"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Mavjud faylga qoʻshish uchun `\"a\"` kerak: `\"w\"` faylni yaratadi, lekin mavjud boʻlsa darhol tozalab yuboradi.",
+          "ru": "Для дозаписи нужен `\"a\"`: `\"w\"` создаёт файл, но если он уже есть — сразу очищает его.",
+          "en": "To add to an existing file use `\"a\"`: `\"w\"` creates the file but empties it at once when it already exists."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Fayl nima uchun yopiladi?",
+          "ru": "Зачем файл закрывают?",
+          "en": "Why is a file closed?"
+        },
+        "options": [
+          {
+            "uz": "Yozilgan maʼlumot avval buferda turadi va yopishda diskka toʻliq yoziladi",
+            "ru": "Записанные данные лежат в буфере и только при закрытии полностью попадают на диск",
+            "en": "Written data sits in a buffer and reaches the disk in full only when the file is closed"
+          },
+          {
+            "uz": "Fayl nomini saqlash uchun",
+            "ru": "Чтобы сохранить имя файла",
+            "en": "To keep the name of the file"
+          },
+          {
+            "uz": "Faylning ichi oʻchib ketmasligi uchun",
+            "ru": "Чтобы содержимое файла не удалилось",
+            "en": "So that the content of the file is not deleted"
+          },
+          {
+            "uz": "Kodlash (encoding) tanlash uchun",
+            "ru": "Чтобы выбрать кодировку",
+            "en": "To choose the encoding"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Yopilmagan faylda oxirgi yozuvlar yoʻqolishi mumkin; bundan tashqari operatsion tizim bir vaqtda ochiq fayllar sonini cheklaydi.",
+          "ru": "В незакрытом файле последние записи могут потеряться; кроме того, операционная система ограничивает число одновременно открытых файлов.",
+          "en": "In a file left open the last writes can be lost; besides, the operating system limits how many files may be open at once."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Pythonʼda `open` da `encoding=` ga qanday qiymat berilsa, Windowsʼda oʻzbekcha harflar buzilmaydi? Qiymatni yozing.",
+          "ru": "Какое значение надо дать `encoding=` в Python, чтобы в Windows узбекские буквы не искажались? Напишите значение.",
+          "en": "What value should `encoding=` have in Python so that Uzbek letters are not mangled on Windows? Write the value."
+        },
+        "answers": ["utf-8", "UTF-8", "utf8", "\"utf-8\"", "'utf-8'"],
+        "explanation": {
+          "uz": "Darsdagi maslahat: `open(\"fayl.txt\", \"w\", encoding=\"utf-8\")`. Kodlashni koʻrsatmasa, Windowsʼda oʻzbekcha harflar buziladi.",
+          "ru": "Из занятия: `open(\"fayl.txt\", \"w\", encoding=\"utf-8\")`. Без указания кодировки в Windows узбекские буквы искажаются.",
+          "en": "From the lesson: `open(\"fayl.txt\", \"w\", encoding=\"utf-8\")`. Without the encoding, Uzbek letters get mangled on Windows."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "CSV misolidagi kirish: `4`, `Aziz,78`, `Dilnoza,92`, `Bekzod,45`, `Malika,56`. Dastur `ball >= 56` shartini tekshiradi va `Total: 3` chiqaradi. Shart `ball > 56` boʻlganda edi, `Total` nechaga teng boʻlar edi?",
+          "ru": "Ввод из примера с CSV: `4`, `Aziz,78`, `Dilnoza,92`, `Bekzod,45`, `Malika,56`. Программа проверяет условие `ball >= 56` и печатает `Total: 3`. Чему был бы равен `Total`, если бы условие было `ball > 56`?",
+          "en": "The input of the CSV example is `4`, `Aziz,78`, `Dilnoza,92`, `Bekzod,45`, `Malika,56`. The program checks `ball >= 56` and prints `Total: 3`. What would `Total` be if the condition were `ball > 56`?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "`> 56` boʻlganda Malika (56) chegara boʻlgani uchun qatordan tushib qoladi: Aziz va Dilnoza — 2 ta.",
+          "ru": "При `> 56` Малика (56) не проходит пограничное значение: остаются Aziz и Dilnoza — двое.",
+          "en": "With `> 56` Malika (56) falls out on the boundary: only Aziz and Dilnoza remain — 2."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Fayl xatolari va fayl yoʻli boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об ошибках файла и о пути к файлу верны?",
+          "en": "Which statements about file errors and the file path are correct?"
+        },
+        "options": [
+          {
+            "uz": "Fayl topilmasa, Python `FileNotFoundError` beradi, Javaʼda esa `FileNotFoundException` ni `try`/`catch` bilan ushlash shart",
+            "ru": "Если файл не найден, Python даёт `FileNotFoundError`, а в Java `FileNotFoundException` обязательно перехватывать через `try`/`catch`",
+            "en": "When the file is missing, Python gives `FileNotFoundError`, and Java requires catching `FileNotFoundException` with `try`/`catch`"
+          },
+          {
+            "uz": "C++ʼda fayl topilmasa istisno koʻtarilmaydi — `if (!f)` yoki `f.is_open()` bilan tekshiriladi",
+            "ru": "В C++ при отсутствии файла исключение не возникает — проверяют `if (!f)` или `f.is_open()`",
+            "en": "In C++ no exception is thrown for a missing file: it is checked with `if (!f)` or `f.is_open()`"
+          },
+          {
+            "uz": "`\"baholar.txt\"` — nisbiy yoʻl: fayl dastur ishga tushirilgan joriy papkada qidiriladi",
+            "ru": "`\"baholar.txt\"` — относительный путь: файл ищется в текущей папке, откуда запущена программа",
+            "en": "`\"baholar.txt\"` is a relative path: the file is looked for in the current folder the program was started from"
+          },
+          {
+            "uz": "Fayl topilmasa, C++ dasturi avtomatik toʻxtaydi va xato haqida xabar beradi",
+            "ru": "Если файл не найден, программа на C++ сама останавливается и сообщает об ошибке",
+            "en": "When the file is missing, a C++ program stops on its own and reports the error"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "C++ʼda `ifstream` jim qoladi: tekshirilmasa, oʻqish hech narsa bermaydi. Shuning uchun darsda `if (!f)` yoki `f.is_open()` tavsiya qilingan.",
+          "ru": "В C++ `ifstream` молчит: без проверки чтение ничего и не даст. Поэтому на занятии советуют `if (!f)` или `f.is_open()`.",
+          "en": "In C++ `ifstream` stays silent: without a check, reading simply gives nothing, which is why the lesson recommends `if (!f)` or `f.is_open()`."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Pythonʼda `with open(...) as f:` bloki ichida xato yuzaga kelsa, fayl yopilmay qoladi.",
+          "ru": "Если внутри блока `with open(...) as f:` в Python возникает ошибка, файл остаётся незакрытым.",
+          "en": "If an error happens inside Python's `with open(...) as f:` block, the file stays open."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "`with` faylni blokdan chiqqanda yopadi — xato boʻlsa ham. Javaʼda shu vazifani try-with-resources, C++ʼda obyektning oʻz blokidan chiqishi bajaradi.",
+          "ru": "`with` закрывает файл при выходе из блока — даже при ошибке. В Java ту же роль играет try-with-resources, в C++ — выход объекта из его блока.",
+          "en": "`with` closes the file on leaving the block, even after an error. In Java the same job is done by try-with-resources, in C++ by the object leaving its block."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Birinchi ishlangan misol `n` va `n` ta ballni `baholar.txt` ga yozadi, soʻng fayldan oʻqib, `Count: …, sum: …, average: …` chiqaradi. Kirish `3` va `10 20 30` boʻlganda, chiqarilgan oʻrtacha qiymat nechaga teng boʻladi?",
+          "ru": "Первый разобранный пример записывает `n` и `n` оценок в `baholar.txt`, затем читает файл и печатает `Count: …, sum: …, average: …`. Чему будет равно среднее значение при вводе `3` и `10 20 30`?",
+          "en": "The first worked example writes `n` and `n` marks into `baholar.txt`, then reads the file and prints `Count: …, sum: …, average: …`. What average does it print for the input `3` and `10 20 30`?"
+        },
+        "answers": [20],
+        "tolerance": 0.001,
+        "explanation": {
+          "uz": "Faylga har ball alohida qatorga yoziladi va qatorma-qator oʻqiladi: yigʻindi 60, soni 3, oʻrtacha 60 / 3 = 20 (dastur `average: 20.00` deb chiqaradi).",
+          "ru": "Каждая оценка пишется отдельной строкой и читается построчно: сумма 60, количество 3, среднее 60 / 3 = 20 (программа напечатает `average: 20.00`).",
+          "en": "Each mark is written on its own line and read back line by line: the sum is 60, the count 3, the average 60 / 3 = 20 (the program prints `average: 20.00`)."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Eng yuqori ballli talaba",
+      "ru": "Студент с наибольшим баллом",
+      "en": "The student with the highest score"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda `n` — talabalar soni. Keyingi `n` qatorning har biri CSV yozuvi: `ism,ball` (ismda probel va vergul yoʻq, `ball` — butun son). Eng katta ballni olgan talabaning ismini, keyingi qatorga esa oʻsha ballni chiqaring. Eng katta ball bir nechta talabada boʻlsa, jadvalda birinchi kelganining ismini yozing. Boshqa hech narsa chiqarmang. Masalan, `3`, `Aziz,78`, `Dilnoza,92`, `Bekzod,45` kirsa, chiqadi `Dilnoza` va `92`.",
+      "ru": "В первой строке `n` — число студентов. Каждая из следующих `n` строк — запись CSV: `ism,ball` (в имени нет пробелов и запятых, `ball` — целое число). Выведите имя студента с наибольшим баллом, а следующей строкой — сам балл. Если наибольший балл есть у нескольких студентов, выведите того, кто в таблице идёт раньше. Больше ничего не выводите. Например, на ввод `3`, `Aziz,78`, `Dilnoza,92`, `Bekzod,45` программа выводит `Dilnoza` и `92`.",
+      "en": "The first line has `n`, the number of students. Each of the next `n` lines is a CSV record: `ism,ball` (the name has no spaces or commas, `ball` is an integer). Print the name of the student with the highest score, and on the next line that score. If several students have the same highest score, print the one who comes earlier in the table. Print nothing else. For example, the input `3`, `Aziz,78`, `Dilnoza,92`, `Bekzod,45` makes the program print `Dilnoza` and `92`."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\n\neng_yuqori = \"\"\neng_katta = -1\nfor _ in range(n):\n    ism, ball = input().split(\",\")\n    ball = int(ball)\n    if ball >= eng_katta:\n        eng_katta = ball\n        eng_yuqori = ism\n\nprint(eng_yuqori)\nprint(eng_katta)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n\n        String engYuqori = \"\";\n        int engKatta = -1;\n        for (int i = 0; i < n; i++) {\n            String[] maydon = in.nextLine().trim().split(\",\");\n            int ball = Integer.parseInt(maydon[1]);\n            if (ball >= engKatta) {\n                engKatta = ball;\n                engYuqori = maydon[0];\n            }\n        }\n\n        System.out.println(engYuqori);\n        System.out.println(engKatta);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <sstream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    cin.ignore();\n\n    string engYuqori;\n    int engKatta = -1;\n    for (int i = 0; i < n; i++) {\n        string qator;\n        getline(cin, qator);\n        stringstream ss(qator);\n        string ism, ballMatn;\n        getline(ss, ism, ',');\n        getline(ss, ballMatn);\n        int ball = stoi(ballMatn);\n        if (ball >= engKatta) {\n            engKatta = ball;\n            engYuqori = ism;\n        }\n    }\n\n    cout << engYuqori << endl;\n    cout << engKatta << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\n\neng_yuqori = \"\"\neng_katta = -1\nfor _ in range(n):\n    ism, ball = input().split(\",\")\n    ball = int(ball)\n    if ball > eng_katta:\n        eng_katta = ball\n        eng_yuqori = ism\n\nprint(eng_yuqori)\nprint(eng_katta)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n\n        String engYuqori = \"\";\n        int engKatta = -1;\n        for (int i = 0; i < n; i++) {\n            String[] maydon = in.nextLine().trim().split(\",\");\n            int ball = Integer.parseInt(maydon[1]);\n            if (ball > engKatta) {\n                engKatta = ball;\n                engYuqori = maydon[0];\n            }\n        }\n\n        System.out.println(engYuqori);\n        System.out.println(engKatta);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <sstream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    cin.ignore();\n\n    string engYuqori;\n    int engKatta = -1;\n    for (int i = 0; i < n; i++) {\n        string qator;\n        getline(cin, qator);\n        stringstream ss(qator);\n        string ism, ballMatn;\n        getline(ss, ism, ',');\n        getline(ss, ballMatn);\n        int ball = stoi(ballMatn);\n        if (ball > engKatta) {\n            engKatta = ball;\n            engYuqori = ism;\n        }\n    }\n\n    cout << engYuqori << endl;\n    cout << engKatta << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3\nAziz,78\nDilnoza,92\nBekzod,45\n", "expected": "Dilnoza\n92", "hidden": false },
+        { "input": "1\nMalika,56\n", "expected": "Malika\n56", "hidden": false },
+        { "input": "3\nAziz,90\nBekzod,90\nMalika,85\n", "expected": "Aziz\n90", "hidden": true },
+        { "input": "4\nGulnoza,60\nOrif,59\nSitora,60\nDoniyor,58\n", "expected": "Gulnoza\n60", "hidden": true },
+        { "input": "2\nA,1\nB,100\n", "expected": "B\n100", "hidden": true }
+      ]
+    }
+  }
+}

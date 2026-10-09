@@ -1,0 +1,365 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Besh komponentli modelga qaysi komponentlar kiradi?",
+          "ru": "Какие компоненты входят в пятикомпонентную модель?",
+          "en": "Which components belong to the five-component model?"
+        },
+        "options": [
+          { "uz": "Apparat", "ru": "Аппаратное обеспечение", "en": "Hardware" },
+          { "uz": "Maʼlumotlar", "ru": "Данные", "en": "Data" },
+          { "uz": "Marketing", "ru": "Маркетинг", "en": "Marketing" },
+          { "uz": "Odamlar", "ru": "Люди", "en": "People" }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Besh komponent: apparat, dasturiy taʼminot, maʼlumotlar, tartib-qoidalar, odamlar. Marketing ularga kirmaydi.",
+          "ru": "Пять компонентов: аппаратное и программное обеспечение, данные, процедуры, люди. Маркетинг в их число не входит.",
+          "en": "The five: hardware, software, data, procedures, people. Marketing is not one of them."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Besh komponentli modelda ularni tarmoq bogʻlab turadi.",
+          "ru": "В пятикомпонентной модели их связывает сеть.",
+          "en": "In the five-component model the network connects the components."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars matni: besh komponentni tarmoq bogʻlab turadi; chapda apparat va dastur, oʻrtada maʼlumotlar, oʻngda tartib-qoidalar va odamlar.",
+          "ru": "Текст занятия: компоненты связывает сеть; слева аппаратное и программное обеспечение, в середине данные, справа процедуры и люди.",
+          "en": "The lesson: the network connects them; hardware and software on the left, data in the middle, procedures and people on the right."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Hisob ochish reglamenti va kunlik yopilish tartibi qaysi komponentga kiradi?",
+          "ru": "К какому компоненту относятся регламент открытия счёта и порядок закрытия дня?",
+          "en": "Which component covers the account opening regulation and the end-of-day closing procedure?"
+        },
+        "options": [
+          { "uz": "Apparat", "ru": "Аппаратное обеспечение", "en": "Hardware" },
+          { "uz": "Dasturiy taʼminot", "ru": "Программное обеспечение", "en": "Software" },
+          { "uz": "Tartib-qoidalar", "ru": "Процедуры", "en": "Procedures" },
+          { "uz": "Maʼlumotlar", "ru": "Данные", "en": "Data" }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Tizimdan qanday foydalanish yoʻriqnomalari — tartib-qoidalar komponenti.",
+          "ru": "Инструкции по использованию системы — это компонент «процедуры».",
+          "en": "Instructions on how to use the system are the procedures component."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Uch qatlamli arxitekturada soliqni hisoblash va kredit qarori qabul qilish qaysi qatlamning vazifasi?",
+          "ru": "На каком уровне трёхуровневой архитектуры работают расчёт налога и принятие решения по кредиту?",
+          "en": "On which tier of the three-tier architecture do tax calculation and the loan decision run?"
+        },
+        "options": [
+          { "uz": "Taqdimot", "ru": "Представление", "en": "Presentation" },
+          { "uz": "Biznes-mantiq", "ru": "Бизнес-логика", "en": "Business logic" },
+          { "uz": "Maʼlumotlar", "ru": "Данные", "en": "Data" },
+          { "uz": "Tarmoq", "ru": "Сеть", "en": "Network" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Qoidalar va hisob-kitoblar ilova serverida — biznes-mantiq qatlamida ishlaydi; taqdimot — interfeys, maʼlumotlar qatlami — saqlash va qidirish.",
+          "ru": "Правила и расчёты работают на сервере приложений — уровне бизнес-логики; представление — интерфейс, уровень данных — хранение и поиск.",
+          "en": "Rules and calculations work on the application server — the business logic tier; presentation is the interface, the data tier stores and retrieves."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Soliq toʻlovchining identifikatsiya raqami qanday qisqartma bilan belgilanadi?",
+          "ru": "Какой аббревиатурой обозначается идентификационный номер налогоплательщика?",
+          "en": "Which abbreviation stands for the taxpayer identification number?"
+        },
+        "answers": ["STIR", "INN"],
+        "explanation": {
+          "uz": "STIR — soliq toʻlovchining identifikatsiya raqami; bank, soliq va statistika tizimi korxonani bir xil STIR orqali taniydi.",
+          "ru": "ИНН (STIR) — идентификационный номер налогоплательщика; банковская, налоговая и статистическая системы узнают предприятие по одному ИНН.",
+          "en": "STIR (INN) is the taxpayer identification number; bank, tax and statistics systems recognise a company by the same number."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Integratsiya usullaridan qaysi biri almashinuvni real vaqtda va avtomatik qiladi, lekin ishlab chiqish talab etadi?",
+          "ru": "Какой способ интеграции даёт обмен в реальном времени и автоматически, но требует разработки?",
+          "en": "Which integration method exchanges data in real time and automatically, yet requires development?"
+        },
+        "options": [
+          { "uz": "Qoʻlda Excel orqali", "ru": "Вручную через Excel", "en": "Manually through Excel" },
+          { "uz": "API", "ru": "API", "en": "API" },
+          { "uz": "Fayl almashinuvi", "ru": "Файловый обмен", "en": "File exchange" },
+          { "uz": "Hech qaysi biri", "ru": "Ни один из них", "en": "None of them" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "API — real vaqtda, avtomatik, lekin ishlab chiqish talab qiladi; fayl almashinuvi belgilangan vaqtda boʻladi, qoʻlda usul esa sekin va xatoga moyil.",
+          "ru": "API — в реальном времени и автоматически, но требует разработки; файловый обмен идёт в установленное время, ручной способ медленный и с ошибками.",
+          "en": "API is real-time and automatic but requires development; file exchange runs at set times, and the manual way is slow and error-prone."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Onlayn kassa tizimida Internet uzilib qolsa yoki kassir chek bermasa, savdoni shaffof qilish maqsadi buziladi. Bu nimani namoyon etadi?",
+          "ru": "Если в системе онлайн-касс пропадает Интернет или кассир не выдаёт чек, цель — прозрачность торговли — нарушается. Что это показывает?",
+          "en": "If the Internet drops or the cashier issues no receipt, the online cash register system's goal of transparent trade is undermined. What does this show?"
+        },
+        "options": [
+          {
+            "uz": "«Eng zaif boʻgʻin» tamoyili: tizim samaradorligi eng zaif komponenti bilan belgilanadi",
+            "ru": "Принцип «слабого звена»: эффективность системы определяется её самым слабым компонентом",
+            "en": "The weakest link principle: a system works at the level of its weakest component"
+          },
+          {
+            "uz": "Tizimda faqat apparat qismining muhimligi",
+            "ru": "Что в системе важно только аппаратное обеспечение",
+            "en": "That only the hardware of the system matters"
+          },
+          {
+            "uz": "Klassifikatorsiz ham tizim toʻliq ishlashi mumkinligi",
+            "ru": "Что система может работать и без классификаторов",
+            "en": "That the system can work fully without classifiers"
+          },
+          {
+            "uz": "Fayl almashinuvi API dan ustunligi",
+            "ru": "Что файловый обмен лучше API",
+            "en": "That file exchange is better than an API"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bitta komponent ishlamasa, butun tizim maqsadi buziladi — bu «eng zaif boʻgʻin» tamoyili.",
+          "ru": "Если один компонент не работает, нарушается цель всей системы — это и есть принцип «слабого звена».",
+          "en": "When one component fails, the whole system's goal breaks — that is the weakest link principle."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, tizim joriy etilganda eng koʻp muammo apparat va dastur tomonida chiqadi.",
+          "ru": "По занятию, при внедрении системы больше всего проблем возникает на стороне аппаратуры и программ.",
+          "en": "According to the lesson, implementing a system causes most problems on the hardware and software side."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Eʼtibor odatda apparat va dasturga beriladi, lekin eng koʻp muammo tartib-qoidalar va odamlar tomonida: yoʻriqnoma yoʻq, xodimlar oʻqitilmagan.",
+          "ru": "Внимания обычно ждут аппаратура и программы, но больше всего проблем на стороне процедур и людей: нет инструкции, сотрудники не обучены.",
+          "en": "Attention usually goes to hardware and software, but most problems arise with procedures and people: no manual, staff untrained."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Klassifikatorlar haqida darsga koʻra qaysi fikrlar toʻgʻri?",
+          "ru": "Какие утверждения о классификаторах верны по занятию?",
+          "en": "Which statements about classifiers are correct according to the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Turli tizimlar korxonani bir xil STIR orqali taniydi",
+            "ru": "Разные системы узнают предприятие по одному ИНН",
+            "en": "Different systems recognise a company by the same taxpayer ID"
+          },
+          {
+            "uz": "Notoʻgʻri IKPU yoki STIR tufayli hisob-faktura rad etiladi",
+            "ru": "Из-за неверного ИКПУ или ИНН счёт-фактура отклоняется",
+            "en": "A wrong goods code or taxpayer ID makes the invoice rejected"
+          },
+          {
+            "uz": "Har kompaniya klassifikatorlarni oʻzi uchun alohida tuzadi",
+            "ru": "Каждая компания составляет классификаторы сама для себя",
+            "en": "Each company draws up its own classifiers for itself"
+          },
+          {
+            "uz": "Maʼlumotnoma maʼlumotlari tashqi standartlardan olinadi",
+            "ru": "Справочные данные берутся из внешних стандартов",
+            "en": "Reference data comes from external standards"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Klassifikatorlar — tashqi standartlar roʻyxati, ular tizimlarning bir-birini «tushunishi» uchun kerak; kompaniya ularni oʻzi qayta yozmaydi.",
+          "ru": "Классификаторы — перечни стандартных кодов из внешних стандартов, нужные, чтобы системы «понимали» друг друга; компания их не переписывает.",
+          "en": "Classifiers are lists of standard external codes that let systems understand each other; a company does not rewrite them."
+          }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Tizim komponentlari va maʼlumotlar turlari: amaliy savollar",
+      "ru": "Компоненты системы и виды данных: практические вопросы",
+      "en": "System components and data types: practice questions"
+    },
+    "statement": {
+      "uz": "Dars matniga asoslangan beshta savol: maʼlumotlar turlari, MDM, klassifikatorlar va keng tarqalgan xatolar. Bir nechta toʻgʻri javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "ru": "Пять вопросов по тексту занятия: виды данных, MDM, классификаторы и частые ошибки. В вопросах с несколькими ответами отметьте все верные варианты.",
+      "en": "Five questions from the lesson text: data types, MDM, classifiers and common mistakes. For multi-answer questions mark every correct option."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Mijozlar, mahsulotlar va xodimlar — biznesning kam oʻzgaradigan obyektlari — qaysi maʼlumotlar turiga kiradi?",
+            "ru": "К какому виду данных относятся клиенты, товары и сотрудники — редко меняющиеся объекты бизнеса?",
+            "en": "Which data type covers customers, products and employees — the business's rarely changing objects?"
+          },
+          "options": [
+            { "uz": "Tranzaksion maʼlumotlar", "ru": "Транзакционные данные", "en": "Transactional data" },
+            { "uz": "Asosiy maʼlumotlar", "ru": "Основные (мастер-) данные", "en": "Master data" },
+            { "uz": "Metamaʼlumotlar", "ru": "Метаданные", "en": "Metadata" },
+            { "uz": "Maʼlumotnoma maʼlumotlari", "ru": "Справочные данные", "en": "Reference data" }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Asosiy (master) maʼlumotlar — biznesning asosiy obyektlari; ular kam oʻzgaradi va koʻp tizimlarda ishlatiladi.",
+            "ru": "Основные (мастер-) данные — ключевые объекты бизнеса: меняются редко, используются во многих системах.",
+            "en": "Master data are the core business objects: they change rarely and are used in many systems."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Savdolar va toʻlovlar — tranzaksion maʼlumotlarga misol.",
+            "ru": "Продажи и платежи — пример транзакционных данных.",
+            "en": "Sales and payments are an example of transactional data."
+          },
+          "options": [
+            { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+            { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Tranzaksion maʼlumotlar — hodisalar va operatsiyalar: savdolar, toʻlovlar, kirim-chiqim; ular juda koʻp va doim oʻsadi.",
+            "ru": "Транзакционные данные — события и операции: продажи, платежи, приход и расход; их очень много, они постоянно растут.",
+            "en": "Transactional data are events and operations — sales, payments, receipts and issues; they are numerous and keep growing."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "MDM (asosiy maʼlumotlarni boshqarish) nimani yaratishdir?",
+            "ru": "Что создаёт MDM (управление основными данными)?",
+            "en": "What does MDM (master data management) create?"
+          },
+          "options": [
+            {
+              "uz": "Asosiy obyektlar uchun yagona «haqiqat manbai»",
+              "ru": "Единый «источник истины» для ключевых объектов",
+              "en": "A single source of truth for the core objects"
+            },
+            {
+              "uz": "Har boʻlim uchun alohida Excel fayllar",
+              "ru": "Отдельные Excel-файлы для каждого отдела",
+              "en": "Separate Excel files for each department"
+            },
+            {
+              "uz": "Yangi klassifikatorlar roʻyxati",
+              "ru": "Новый перечень классификаторов",
+              "en": "A new list of classifiers"
+            },
+            {
+              "uz": "Integratsiya shinasi (ESB)",
+              "ru": "Интеграционную шину (ESB)",
+              "en": "An integration bus (ESB)"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Bitta mijoz CRM, buxgalteriya va saytda turlicha yozilsa, hisobotlar ziddiyatli boʻladi — MDM yagona haqiqat manbaini yaratadi.",
+            "ru": "Если один клиент записан по-разному в CRM, бухгалтерии и сайте, отчёты противоречат друг другу — MDM создаёт единый источник истины.",
+            "en": "If one customer is recorded differently in CRM, accounting and the website, reports contradict each other — MDM builds a single source of truth."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Onlayn kassa tizimi misolida qaysi elementlar klassifikator (maʼlumotnoma) maʼlumotlariga kiradi?",
+            "ru": "Какие элементы в примере системы онлайн-касс относятся к справочным данным (классификаторам)?",
+            "en": "In the online cash register example, which elements are reference data (classifiers)?"
+          },
+          "options": [
+            { "uz": "IKPU kodlari", "ru": "Коды ИКПУ", "en": "Goods and service identification codes" },
+            { "uz": "STIR", "ru": "ИНН", "en": "The taxpayer identification number" },
+            { "uz": "Chek", "ru": "Чек", "en": "The receipt" },
+            { "uz": "Sotuvchi va tovarlar", "ru": "Продавец и товары", "en": "The seller and the goods" }
+          ],
+          "correct": [0, 1],
+          "explanation": {
+            "uz": "Dars jadvalida: IKPU kodlari va STIR — klassifikatorlar; chek — tranzaksion, sotuvchi va tovarlar — asosiy maʼlumotlar.",
+            "ru": "В таблице занятия: коды ИКПУ и ИНН — классификаторы; чек — транзакционные, продавец и товары — основные данные.",
+            "en": "In the lesson's table: IKPU codes and STIR are classifiers; the receipt is transactional, the seller and goods are master data."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Axborot tizimini faqat dastur deb bilish — darsda koʻrsatilgan keng tarqalgan xato.",
+            "ru": "Считать информационную систему просто программой — частая ошибка, указанная в занятии.",
+            "en": "Seeing an information system as just a program is a common mistake named in the lesson."
+          },
+          "options": [
+            { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+            { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Odamlar, tartib-qoidalar va maʼlumotlarsiz tizim ishlamaydi — shuning uchun bu xato roʻyxatda turadi.",
+            "ru": "Без людей, процедур и данных система не работает — поэтому ошибка стоит в перечне.",
+            "en": "Without people, procedures and data the system does not work — hence the item in the list."
+          }
+        }
+      ]
+    }
+  }
+}

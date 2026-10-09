@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Windows da fayl va printerlarni ulashish uchun ishlatiladigan protokol qaysi?",
+          "ru": "Какой протокол используется в Windows для совместного доступа к файлам и принтерам?",
+          "en": "Which protocol does Windows use for sharing files and printers?"
+        },
+        "options": [
+          {
+            "uz": "SMB (Server Message Block)",
+            "ru": "SMB (Server Message Block)",
+            "en": "SMB (Server Message Block)"
+          },
+          {
+            "uz": "SMTP",
+            "ru": "SMTP",
+            "en": "SMTP"
+          },
+          {
+            "uz": "SNMP",
+            "ru": "SNMP",
+            "en": "SNMP"
+          },
+          {
+            "uz": "FTP",
+            "ru": "FTP",
+            "en": "FTP"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda Windows ning fayl va printer ulashish protokoli SMB (Server Message Block) deb berilgan; NFS esa Linux lar orasida ishlatiladi.",
+          "ru": "В занятии протоколом обмена файлами и принтерами в Windows назван SMB (Server Message Block); NFS применяется между машинами на Linux.",
+          "en": "The lesson names SMB (Server Message Block) as the Windows protocol for sharing files and printers; NFS is used between Linux machines."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Nomi `$` bilan tugaydigan yashirin ulashish (`Arxiv$`) tarmoq roʻyxatida koʻrinmaydi, shuning uchun u umumiy papkani himoya qiladi.",
+          "ru": "Скрытая папка с именем, оканчивающимся на `$` (`Arxiv$`), не видна в сетевом списке, поэтому она защищена.",
+          "en": "A share whose name ends in `$` (`Arxiv$`) is not visible in the network list, so the folder is protected."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsga koʻra yashirin ulashish faqat roʻyxatda koʻrinmaydi: nomni bilgan har kim ulanadi — bu himoya emas, faqat qulaylik.",
+          "ru": "По занятию скрытая папка лишь отсутствует в списке: подключится всякий, кто знает имя, — это удобство, а не защита.",
+          "en": "In the lesson a hidden share is only absent from the list: anyone who knows the name connects — a convenience, not protection."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi yozuv umumiy resursga murojaat qiluvchi UNC yoʻliga misol boʻla oladi?",
+          "ru": "Какая запись является примером UNC-пути к общему ресурсу?",
+          "en": "Which entry is an example of a UNC path to a shared resource?"
+        },
+        "options": [
+          {
+            "uz": "`\\\\SRV-DC01\\Kurslar`",
+            "ru": "`\\\\SRV-DC01\\Kurslar`",
+            "en": "`\\\\SRV-DC01\\Kurslar`"
+          },
+          {
+            "uz": "`D:\\Kurslar\\Materiallar`",
+            "ru": "`D:\\Kurslar\\Materiallar`",
+            "en": "`D:\\Kurslar\\Materiallar`"
+          },
+          {
+            "uz": "`https://SRV-DC01/Kurslar`",
+            "ru": "`https://SRV-DC01/Kurslar`",
+            "en": "`https://SRV-DC01/Kurslar`"
+          },
+          {
+            "uz": "`192.168.50.10/24`",
+            "ru": "`192.168.50.10/24`",
+            "en": "`192.168.50.10/24`"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "UNC (Universal Naming Convention) yozuvi `\\\\server\\ulashish` koʻrinishida boʻladi; `D:` — mahalliy disk yoʻli, `192.168.50.10/24` — CIDR.",
+          "ru": "Запись UNC (Universal Naming Convention) выглядит как `\\\\server\\share`; `D:` — локальный путь на диске, `192.168.50.10/24` — CIDR.",
+          "en": "A UNC (Universal Naming Convention) path looks like `\\\\server\\share`; `D:` is a local disk path and `192.168.50.10/24` is CIDR."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Share va NTFS ruxsatlari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о разрешениях share и NTFS верны?",
+          "en": "Which statements about share and NTFS permissions are correct?"
+        },
+        "options": [
+          {
+            "uz": "Share ruxsatlari faqat tarmoq orqali murojaatda amal qiladi",
+            "ru": "Разрешения share действуют только при доступе по сети",
+            "en": "Share permissions apply only to access over the network"
+          },
+          {
+            "uz": "NTFS ruxsatlari ham tarmoq orqali, ham lokal murojaatda amal qiladi",
+            "ru": "Разрешения NTFS действуют и по сети, и локально",
+            "en": "NTFS permissions apply both over the network and locally"
+          },
+          {
+            "uz": "Share ruxsatlari har bir papka va faylga alohida, meros bilan beriladi",
+            "ru": "Разрешения share выдаются каждой папке и файлу отдельно, с наследованием",
+            "en": "Share permissions are set on every folder and file separately, with inheritance"
+          },
+          {
+            "uz": "Tarmoq orqali kirganda amaldagi huquq — share va NTFS ruxsatlarining eng keng qamrovli boʻlgani",
+            "ru": "При доступе по сети действует самое широкое из разрешений share и NTFS",
+            "en": "Over the network the broadest of the share and NTFS permissions applies"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Darsdagi jadval: share ruxsati butun ulashishga beriladi, NTFS esa har bir papka va faylga, meros bilan. Tarmoq orqali amaldagi huquq — ikkalasining eng cheklovchisi.",
+          "ru": "Таблица из занятия: share-разрешение даётся всему ресурсу, NTFS — каждой папке и файлу с наследованием. По сети действует самое ограничительное из двух.",
+          "en": "The lesson table: a share permission covers the whole share, NTFS covers every folder and file with inheritance. Over the network the more restrictive of the two applies."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "SMB protokoli qaysi TCP portdan foydalanadi?",
+          "ru": "На каком TCP порту работает протокол SMB?",
+          "en": "On which TCP port does the SMB protocol work?"
+        },
+        "answers": [445],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda SMB — TCP 445 deb berilgan; bu portni Internetga ochish xato, SMB faqat ichki tarmoq yoki VPN orqali ishlatiladi.",
+          "ru": "В занятии SMB указан на TCP 445; открывать этот порт наружу — ошибка, SMB работает только во внутренней сети или через VPN.",
+          "en": "The lesson puts SMB on TCP 445; opening that port to the Internet is a mistake — SMB is used only on the internal network or over a VPN."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tarmoq diskini (masalan, Z: ni) buyruqlar satri orqali ulash uchun qaysi buyruq ishlatiladi?",
+          "ru": "Какой командой строки подключают сетевой диск (например, Z:)?",
+          "en": "Which command-line command maps a network drive such as Z:?"
+        },
+        "answers": ["net use", "Net Use", "NET USE", "net use Z:"],
+        "explanation": {
+          "uz": "Darsdagi buyruq: `net use Z: \\\\SRV-DC01\\Kurslar` (doimiy ulashish uchun `/persistent:yes`); `net share` esa ulashishlarni yaratadi va roʻyxatini koʻrsatadi.",
+          "ru": "Команда из занятия: `net use Z: \\\\SRV-DC01\\Kurslar` (для постоянного подключения — `/persistent:yes`); `net share` создаёт папки и показывает их список.",
+          "en": "The lesson command is `net use Z: \\\\SRV-DC01\\Kurslar` (`/persistent:yes` to keep it); `net share` creates shares and lists them."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Amaldagi huquqni hisoblashdagi darajalar shkalasi va qoidalar boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о шкале уровней и правилах вычисления действующего права верны?",
+          "en": "Which statements about the scale of levels and the rules of the calculation are correct?"
+        },
+        "options": [
+          {
+            "uz": "Darajalar shkalasi: `None` < `Read` < `Change` < `Full`",
+            "ru": "Шкала уровней: `None` < `Read` < `Change` < `Full`",
+            "en": "The scale of levels is `None` < `Read` < `Change` < `Full`"
+          },
+          {
+            "uz": "NTFS dagi `Modify` darajasi shkaladagi `Change` ga mos keladi",
+            "ru": "Уровень NTFS `Modify` соответствует уровню `Change` в шкале",
+            "en": "The NTFS level `Modify` corresponds to `Change` on the scale"
+          },
+          {
+            "uz": "`Everyone` yozuvi faqat administratorlar guruhiga taalluqli",
+            "ru": "Запись `Everyone` относится только к группе администраторов",
+            "en": "The entry `Everyone` applies only to the administrators group"
+          },
+          {
+            "uz": "Lokal amaldagi huquq — share darajasi",
+            "ru": "Действующее право локально — это уровень share",
+            "en": "The effective right locally is the share level"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Hisoblashda `Everyone` har bir foydalanuvchiga taalluqli hisoblanadi; lokal holatda esa NTFS darajasi olinadi, share ruxsatlari lokal amal qilmaydi.",
+          "ru": "При расчёте `Everyone` относится к каждому пользователю; локально берётся уровень NTFS, так как share-разрешения локально не действуют.",
+          "en": "In the calculation `Everyone` applies to every user; locally the NTFS level is taken, because share permissions do not apply locally."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Foydalanuvchi serverning oʻzida (lokal) `D:\\Kurslar` papkasiga kirmoqda. Share ruxsati — `Everyone: Read`, NTFS da esa unga `Modify` berilgan. Lokal holatda u papkada nimani qila oladi?",
+          "ru": "Пользователь входит в папку `D:\\Kurslar` локально, на самом сервере. Разрешение share — `Everyone: Read`, а в NTFS ему выдан `Modify`. Что он сможет сделать локально?",
+          "en": "A user opens `D:\\Kurslar` locally, on the server itself. The share permission is `Everyone: Read`, while NTFS grants them `Modify`. What can they do locally?"
+        },
+        "options": [
+          {
+            "uz": "Oʻqiy va oʻzgartira oladi (`Modify`) — share ruxsati lokal amal qilmaydi",
+            "ru": "Читать и изменять (`Modify`) — share-разрешение локально не действует",
+            "en": "Read and change (`Modify`) — the share permission does not apply locally"
+          },
+          {
+            "uz": "Faqat oʻqiydi, chunki share ruxsati `Read` ga tenglangan",
+            "ru": "Только читать, потому что share-разрешение равно `Read`",
+            "en": "Only read, because the share permission equals `Read`"
+          },
+          {
+            "uz": "Hech narsa qila olmaydi: `Everyone` faqat `Read` olgan",
+            "ru": "Не сможет ничего: `Everyone` получил только `Read`",
+            "en": "Nothing at all: `Everyone` only got `Read`"
+          },
+          {
+            "uz": "Faqat yangi fayl yaratadi, lekin mavjud faylni oʻchira olmaydi",
+            "ru": "Сможет только создать новый файл, но не удалить существующий",
+            "en": "Can only create a new file, not delete an existing one"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Share ruxsatlari faqat tarmoq orqali murojaatda ishlaydi; lokal kirishda hisobga olinadigan yagona ruxsat — NTFS, yaʼni natija `Modify`.",
+          "ru": "Разрешения share работают только при сетевом доступе; при локальном входе учитывается лишь NTFS, то есть результат — `Modify`.",
+          "en": "Share permissions work only for network access; on a local sign-in only NTFS counts, so the result is `Modify`."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Zamonaviy tavsiyaga koʻra share ruxsati keng qoʻyiladi, haqiqiy cheklovlar esa NTFS da beriladi.",
+          "ru": "Современная рекомендация: разрешение share делают широким, а настоящие ограничения задают в NTFS.",
+          "en": "The modern advice is to keep the share permission broad and set the real restrictions in NTFS."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda shunday tavsiya qilinadi: masalan, share da `Authenticated Users: Change`, batafsil cheklovlar esa NTFS da — shunda ruxsatlar bir joyda boshqariladi.",
+          "ru": "Так и советуется в занятии: например, в share — `Authenticated Users: Change`, подробности — в NTFS, чтобы всё управлялось в одном месте.",
+          "en": "That is the lesson's advice: for example `Authenticated Users — Change` on the share, with the detail in NTFS, so permissions are managed in one place."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "UNC yoʻllarini tahlil qilish",
+      "ru": "Разбор UNC-путей",
+      "en": "Analysing UNC paths"
+    },
+    "statement": {
+      "uz": "Kafedra tarmoq disklari roʻyxatini tuzish uchun UNC yoʻllarini tekshiruvchi skript kerak. Dasturingiz yoʻlni server nomi, ulashish nomi va ulashishning turiga ajratsin. Kirish: birinchi satrda n — yoʻllar soni; keyingi n satrda bittadan yoʻl (`\\\\server\\ulashish\\ichki\\papka` koʻrinishida; server nomi host nomi yoki IP manzil boʻlishi mumkin). Har bir yoʻl uchun bitta satr chiqaring: server nomi, ulashish nomi, ulashishdan keyin qolgan komponentlar soni va ulashishning turi — `OPEN`, `HIDDEN` yoki `ADMIN`. Qoidalar: server nomi — birinchi, ulashish nomi — ikkinchi komponent; ulashishdan keyin komponent boʻlmasligi ham mumkin (son 0). Agar ulashish nomi aynan `C$`, `ADMIN$` yoki `IPC$` boʻlsa, turi `ADMIN`; boshqa nom `$` bilan tugasa — `HIDDEN`; `$` boʻlmasa — `OPEN`. Chiqariladigan ulashish nomidan `$` belgisi olib tashlanadi (`Arxiv$` → `Arxiv`, `C$` → `C`). Masalan, `\\\\SRV-DC01\\C$\\Windows` satriga `SRV-DC01 C 1 ADMIN` javob boʻladi. Boshqa matn yozmang. 1 ≤ n ≤ 100.",
+      "ru": "Для списка сетевых дисков кафедре нужен скрипт, разбирающий UNC-пути. Пусть программа разделит путь на имя сервера, имя папки и тип папки. Ввод: в первой строке n — число путей; в следующих n строках по одному пути в виде `\\\\server\\share\\вложенная\\папка` (имя сервера — имя хоста или IP-адрес). На каждый путь выведите одну строку: имя сервера, имя папки, число компонентов после папки и её тип — `OPEN`, `HIDDEN` или `ADMIN`. Правила: имя сервера — первый компонент, имя папки — второй; после папки компонентов может и не быть (тогда 0). Если папка называется ровно `C$`, `ADMIN$` или `IPC$` — тип `ADMIN`; если другое имя оканчивается на `$` — `HIDDEN`; без `$` — `OPEN`. При выводе из имени папки символ `$` убирается (`Arxiv$` → `Arxiv`, `C$` → `C`). Другой текст не печатайте. 1 ≤ n ≤ 100.",
+      "en": "The department needs a script that reads UNC paths and lists the network drives. Let your program split a path into the server name, the share name and the kind of share. Input: the first line holds n — the number of paths; the next n lines hold one path each in the form `\\\\server\\share\\inner\\folder` (the server is a host name or an IP address). For every path print one line: the server name, the share name, the number of components left after the share, and the kind of share — `OPEN`, `HIDDEN` or `ADMIN`. Rules: the server name is the first component and the share name the second; nothing may follow the share (then the count is 0). A share named exactly `C$`, `ADMIN$` or `IPC$` is `ADMIN`; any other name ending in `$` is `HIDDEN`; a name without `$` is `OPEN`. When you print the share name, drop its `$` (`Arxiv$` → `Arxiv`, `C$` → `C`). Print no other text. 1 ≤ n ≤ 100."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nfor _ in range(n):\n    qism = input().strip().replace(\"\\\\\", \" \").split()\n    print(qism[0] + \" \" + qism[1] + \" \" + str(len(qism) - 1) + \" OPEN\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n        for (int i = 0; i < n; i++) {\n            String[] qism = in.nextLine().replace('\\\\', ' ').trim().split(\" +\");\n            System.out.println(qism[0] + \" \" + qism[1] + \" \" + (qism.length - 1) + \" OPEN\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    int n = stoi(satr);\n    for (int i = 0; i < n; i++) {\n        getline(cin, satr);\n        for (char& c : satr) {\n            if (c == '\\\\') c = ' ';\n        }\n        istringstream ss(satr);\n        vector<string> qism;\n        string s;\n        while (ss >> s) qism.push_back(s);\n        cout << qism[0] << \" \" << qism[1] << \" \" << (int)(qism.size() - 1) << \" OPEN\" << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "ADMIN = [\"ADMIN$\", \"C$\", \"IPC$\"]\n\nn = int(input())\nfor _ in range(n):\n    qism = input().strip().replace(\"\\\\\", \" \").split()\n    share = qism[1]\n    nom = share[:-1] if share.endswith(\"$\") else share\n    if share in ADMIN:\n        tur = \"ADMIN\"\n    elif share.endswith(\"$\"):\n        tur = \"HIDDEN\"\n    else:\n        tur = \"OPEN\"\n    print(qism[0] + \" \" + nom + \" \" + str(len(qism) - 2) + \" \" + tur)\n",
+        "java": "import java.util.Arrays;\nimport java.util.List;\nimport java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        List<String> admin = Arrays.asList(\"ADMIN$\", \"C$\", \"IPC$\");\n        Scanner in = new Scanner(System.in);\n        int n = Integer.parseInt(in.nextLine().trim());\n        for (int i = 0; i < n; i++) {\n            String[] qism = in.nextLine().replace('\\\\', ' ').trim().split(\" +\");\n            String share = qism[1];\n            String nom = share.endsWith(\"$\") ? share.substring(0, share.length() - 1) : share;\n            String tur;\n            if (admin.contains(share)) {\n                tur = \"ADMIN\";\n            } else if (share.endsWith(\"$\")) {\n                tur = \"HIDDEN\";\n            } else {\n                tur = \"OPEN\";\n            }\n            System.out.println(qism[0] + \" \" + nom + \" \" + (qism.length - 2) + \" \" + tur);\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    string satr;\n    getline(cin, satr);\n    int n = stoi(satr);\n    for (int i = 0; i < n; i++) {\n        getline(cin, satr);\n        for (char& c : satr) {\n            if (c == '\\\\') c = ' ';\n        }\n        istringstream ss(satr);\n        vector<string> qism;\n        string s;\n        while (ss >> s) qism.push_back(s);\n        string share = qism[1];\n        string nom = share;\n        if (!nom.empty() && nom.back() == '$') nom.pop_back();\n        string tur = \"OPEN\";\n        if (share == \"ADMIN$\" || share == \"C$\" || share == \"IPC$\") tur = \"ADMIN\";\n        else if (!share.empty() && share.back() == '$') tur = \"HIDDEN\";\n        cout << qism[0] << \" \" << nom << \" \" << (int)(qism.size() - 2) << \" \" << tur << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "4\n\\\\SRV-DC01\\Kurslar\n\\\\192.168.50.10\\Kurslar\\KOT1306\\semestr1\n\\\\SRV-DC01\\Arxiv$\n\\\\SRV-DC01\\C$\\Windows\n", "expected": "SRV-DC01 Kurslar 0 OPEN\n192.168.50.10 Kurslar 2 OPEN\nSRV-DC01 Arxiv 0 HIDDEN\nSRV-DC01 C 1 ADMIN", "hidden": false },
+        { "input": "1\n\\\\192.168.50.10\\Kurslar\n", "expected": "192.168.50.10 Kurslar 0 OPEN", "hidden": false },
+        { "input": "3\n\\\\SRV-PC07\\C$\n\\\\SRV-DC01\\Materiallar\\2026\\semestr1\\dars10.docx\n\\\\SRV-DC01\\IPC$\n", "expected": "SRV-PC07 C 0 ADMIN\nSRV-DC01 Materiallar 3 OPEN\nSRV-DC01 IPC 0 ADMIN", "hidden": true },
+        { "input": "2\n\\\\FILE02\\Arxiv$\n\\\\FILE02\\Arxiv$\\2019\\hujjatlar\n", "expected": "FILE02 Arxiv 0 HIDDEN\nFILE02 Arxiv 2 HIDDEN", "hidden": true },
+        { "input": "3\n\\\\SRV-DC01\\ADMIN$\\Scripts\\logon.cmd\n\\\\SRV-FS01\\Dushanba$\n\\\\10.0.0.5\\Kurslar\\A13\n", "expected": "SRV-DC01 ADMIN 2 ADMIN\nSRV-FS01 Dushanba 0 HIDDEN\n10.0.0.5 Kurslar 1 OPEN", "hidden": true }
+      ]
+    }
+  }
+}

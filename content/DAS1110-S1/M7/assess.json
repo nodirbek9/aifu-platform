@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Funksiya deganda nima tushuniladi?",
+          "ru": "Что понимается под функцией?",
+          "en": "What is a function?"
+        },
+        "options": [
+          {
+            "uz": "Nomlangan, qayta ishlatiladigan kod boʻlagi: kirish maʼlumotlarini parametrlar orqali oladi, ish bajaradi va natijani qaytaradi",
+            "ru": "Именованный переиспользуемый кусок кода: принимает входные данные через параметры, выполняет работу и возвращает результат",
+            "en": "A named, reusable piece of code that takes input through parameters, does work and returns a result"
+          },
+          {
+            "uz": "Dasturda birinchi boʻlib bajariladigan qator",
+            "ru": "Строка, которая выполняется в программе первой",
+            "en": "The line that runs first in a program"
+          },
+          {
+            "uz": "Faqat butun sonlarni qaytaradigan blok-sxema shakli",
+            "ru": "Форма блок-схемы, возвращающая только целые числа",
+            "en": "A flowchart shape that returns only integers"
+          },
+          {
+            "uz": "Kodni faylga saqlashning bir usuli",
+            "ru": "Один из способов сохранить код в файл",
+            "en": "One way of saving code to a file"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: funksiya — nomlangan, qayta ishlatiladigan kod boʻlagi; u bir marta yoziladi va kerakli joyda nomi bilan chaqiriladi.",
+          "ru": "В занятии: функция — именованный переиспользуемый кусок кода; он пишется один раз и вызывается по имени там, где нужен.",
+          "en": "In the lesson: a function is a named, reusable piece of code, written once and called by name wherever it is needed."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "`kvadrat(5)` chaqiruvida 5 — argument, `def kvadrat(x)` yozuvidagi x esa parametr hisoblanadi.",
+          "ru": "В вызове `kvadrat(5)` число 5 — аргумент, а x в записи `def kvadrat(x)` — параметр.",
+          "en": "In the call `kvadrat(5)` the 5 is the argument, while the x in `def kvadrat(x)` is the parameter."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Parametr — funksiya eʼlonidagi nom, argument — chaqiruvda beriladigan aniq qiymat; ular tartib boʻyicha moslanadi.",
+          "ru": "Параметр — имя в объявлении функции, аргумент — конкретное значение в вызове; они сопоставляются по порядку.",
+          "en": "A parameter is the name in the declaration, an argument the concrete value in the call; they are matched by order."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Lokal va global oʻzgaruvchilar haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о локальных и глобальных переменных верны?",
+          "en": "Which statements about local and global variables are correct?"
+        },
+        "options": [
+          {
+            "uz": "Lokal oʻzgaruvchi funksiya ichida eʼlon qilinadi va funksiya tugaganda yoʻqoladi",
+            "ru": "Локальная переменная объявляется внутри функции и исчезает, когда функция завершается",
+            "en": "A local variable is declared inside a function and disappears when the function ends"
+          },
+          {
+            "uz": "Funksiyaning parametrlari ham lokal oʻzgaruvchi hisoblanadi",
+            "ru": "Параметры функции тоже являются локальными переменными",
+            "en": "A function's parameters are local variables too"
+          },
+          {
+            "uz": "Global oʻzgaruvchi barcha funksiyalardan tashqarida eʼlon qilinadi va hamma joyda koʻrinadi",
+            "ru": "Глобальная переменная объявляется вне всех функций и видна везде",
+            "en": "A global variable is declared outside all functions and is visible everywhere"
+          },
+          {
+            "uz": "Turli funksiyalardagi bir xil nomli lokal oʻzgaruvchilar — bitta va oʻsha oʻzgaruvchi",
+            "ru": "Локальные переменные с одинаковым именем в разных функциях — одна и та же переменная",
+            "en": "Local variables with the same name in different functions are the same variable"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Turli funksiyalardagi bir xil nomli lokal oʻzgaruvchilar — turli oʻzgaruvchilar; global oʻzgaruvchilardan qochish tavsiya etiladi.",
+          "ru": "Одноимённые локальные переменные в разных функциях — разные переменные; от глобальных советуют избегать.",
+          "en": "Same-named local variables in different functions are different variables; global variables should be avoided."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "`return` va `void` haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о `return` и `void` верны?",
+          "en": "Which statements about `return` and `void` are correct?"
+        },
+        "options": [
+          {
+            "uz": "`return` natijani qaytaradi va funksiyani darhol tugatadi: keyingi qatorlar bajarilmaydi",
+            "ru": "`return` возвращает результат и немедленно завершает функцию: последующие строки не выполняются",
+            "en": "`return` gives back the result and ends the function immediately: later lines are not executed"
+          },
+          {
+            "uz": "Qiymat qaytarmaydigan funksiya Java va C++ʼda `void` tur bilan eʼlon qilinadi",
+            "ru": "Функция, не возвращающая значение, в Java и C++ объявляется с типом `void`",
+            "en": "A function that returns no value is declared with `void` in Java and C++"
+          },
+          {
+            "uz": "Pythonʼda `return` siz funksiya aslida `None` qaytaradi",
+            "ru": "В Python функция без `return` на самом деле возвращает `None`",
+            "en": "In Python a function without `return` actually returns `None`"
+          },
+          {
+            "uz": "`void` funksiya ham kerak boʻlsa son qiymat qaytara oladi",
+            "ru": "`void`-функция тоже может вернуть числовое значение, если нужно",
+            "en": "A `void` function can also return a number if needed"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "`void` — qaytariladigan qiymat yoʻqligining belgisi: bunday funksiya qiymat qaytarmaydi, u faqat amal bajaradi.",
+          "ru": "`void` и означает отсутствие возвращаемого типа: такая функция не возвращает значение, она только выполняет действие.",
+          "en": "`void` is exactly the absence of a return type: such a function returns no value, it only performs an action."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi `ekub(a, b)` funksiyasi Evklid algoritmini rekursiya emas, sikl bilan hisoblaydi. U 100 va 75 uchun qanday qiymat qaytaradi?",
+          "ru": "Функция `ekub(a, b)` из занятия считает НОД циклом (алгоритм Евклида). Какое значение она вернёт для 100 и 75?",
+          "en": "The function `ekub(a, b)` in the lesson computes the GCD with a loop (Euclid's algorithm). What value does it return for 100 and 75?"
+        },
+        "answers": [25],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "100 = 75 · 1 + 25, soʻng 75 = 25 · 3 + 0; qoldiq 0 boʻlganda sikl tugaydi va a = 25 qaytariladi.",
+          "ru": "100 = 75 · 1 + 25, затем 75 = 25 · 3 + 0; при нулевом остатке цикл заканчивается и возвращается a = 25.",
+          "en": "100 = 75 · 1 + 25, then 75 = 25 · 3 + 0; when the remainder is 0 the loop ends and a = 25 is returned."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "C++ʼda funksiyani `main` dan keyin yozib, `main` dan oldin uning faqat sarlavhasini nuqtali vergul bilan qoldirish yozuvi qanday ataladi?",
+          "ru": "Как называется запись, когда в C++ перед `main` оставляют только заголовок функции с точкой с запятой, а тело пишут позже?",
+          "en": "In C++, what is it called when only the function header, followed by a semicolon, is written before `main` and the body comes later?"
+        },
+        "answers": ["prototip", "prototype"],
+        "explanation": {
+          "uz": "Bu — prototip; kompilyator faylni yuqoridan pastga oʻqigani uchun funksiya chaqiruvdan oldin eʼlon qilinishi kerak.",
+          "ru": "Это прототип: компилятор читает файл сверху вниз, поэтому функция должна быть объявлена до вызова.",
+          "en": "It is the prototype: the compiler reads the file top to bottom, so the function must be declared before it is called."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "`void tozala(vector<int> a) { a[0] = 0; }` chaqiruvidan keyin asl vektorning birinchi elementi oʻzgarishi uchun funksiya qanday yozilishi kerak?",
+          "ru": "Как нужно написать функцию, чтобы после вызова `void tozala(vector<int> a) { a[0] = 0; }` первый элемент исходного вектора действительно изменился?",
+          "en": "How must the function be written so that after a call to `void tozala(vector<int> a) { a[0] = 0; }` the first element of the original vector really changes?"
+        },
+        "options": [
+          {
+            "uz": "`void tozala(vector<int>& a)`",
+            "ru": "`void tozala(vector<int>& a)`",
+            "en": "`void tozala(vector<int>& a)`"
+          },
+          {
+            "uz": "`void tozala(vector<int> a)`",
+            "ru": "`void tozala(vector<int> a)`",
+            "en": "`void tozala(vector<int> a)`"
+          },
+          {
+            "uz": "`int tozala(vector<int> a)`",
+            "ru": "`int tozala(vector<int> a)`",
+            "en": "`int tozala(vector<int> a)`"
+          },
+          {
+            "uz": "`void tozala(vector a)`",
+            "ru": "`void tozala(vector a)`",
+            "en": "`void tozala(vector a)`"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "C++ʼda `vector<int> a` butun vektorni nusxalaydi; `&` havola boʻyicha uzatish — parametr argumentning oʻzi bilan bitta boʻladi.",
+          "ru": "В C++ `vector<int> a` копирует весь вектор; `&` означает передачу по ссылке — параметр становится той же переменной, что и аргумент.",
+          "en": "In C++ `vector<int> a` copies the whole vector; `&` means pass by reference — the parameter becomes the very same variable as the argument."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qiymat boʻyicha uzatish va massivlar haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о передаче по значению и о массивах верны?",
+          "en": "Which statements about pass by value and about arrays are correct?"
+        },
+        "options": [
+          {
+            "uz": "Oddiy turlar (son, mantiqiy qiymat) funksiyaga qiymat boʻyicha uzatiladi: parametr argumentning nusxasini oladi",
+            "ru": "Простые типы (число, логическое значение) передаются по значению: параметр получает копию аргумента",
+            "en": "Simple types (numbers, booleans) are passed by value: the parameter receives a copy of the argument"
+          },
+          {
+            "uz": "Funksiya ichida sonli parametrni oʻzgartirish chaqiruvchidagi oʻzgaruvchiga taʼsir qilmaydi",
+            "ru": "Изменение числового параметра внутри функции не влияет на переменную вызывающего кода",
+            "en": "Changing a numeric parameter inside the function does not affect the caller's variable"
+          },
+          {
+            "uz": "Pythonʼda roʻyxat funksiyaga uzatilganda uni ichida oʻzgartirsak, asl roʻyxat oʻzgarmaydi",
+            "ru": "Если в Python изменить переданный в функцию список, исходный список не изменится",
+            "en": "In Python, changing a list inside the function leaves the original list unchanged"
+          },
+          {
+            "uz": "Javaʼda massivga havola uzatiladi, shuning uchun funksiya elementni oʻzgartirsa asl massiv oʻzgaradi",
+            "ru": "В Java передаётся ссылка на массив, поэтому изменение элемента в функции меняет исходный массив",
+            "en": "In Java a reference to the array is passed, so changing an element in the function changes the original array"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Python va Javaʼda massiv/roʻyxat havola orqali uzatiladi — funksiya ichida qilingan oʻzgartirish asl tuzilmaga tegadi; nusxa faqat C++ʼdagi `vector<int> a` da.",
+          "ru": "В Python и Java передаётся ссылка на список/массив — изменения внутри затрагивают исходную структуру; копия только у C++ `vector<int> a`.",
+          "en": "Python and Java pass a reference to the list or array, so changes inside reach the original; only C++ `vector<int> a` copies."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Python va Javaʼda ham funksiya chaqirilishidan oldin uning prototipi yozilishi shart.",
+          "ru": "В Python и Java тоже обязательно писать прототип функции перед её вызовом.",
+          "en": "In Python and Java too, a prototype must be written before a function is called."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Prototip kerak emas: Python funksiyani chaqiruv paytida qidiradi, Java butun klassni oldindan koʻradi. Bu faqat C++ muammosi.",
+          "ru": "Не нужен: Python находит функцию в момент вызова, Java видит весь класс заранее. Это проблема только C++.",
+          "en": "No: Python looks the function up at the moment of the call and Java sees the whole class in advance. This is a C++ issue only."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Sonning boʻluvchilari soni",
+      "ru": "Число делителей числа",
+      "en": "The number of divisors"
+    },
+    "statement": {
+      "uz": "Bitta butun son n (1 ≤ n ≤ 10000) kiritiladi. n ning nechta musbat boʻluvchisi borligini toping va natijani bitta qatorda, faqat son koʻrinishida chiqaring — hech qanday qoʻshimcha soʻz yozmang. Masalan, 12 uchun javob 6, chunki boʻluvchilar: 1, 2, 3, 4, 6, 12. Hisoblashni alohida funksiya ichida bajaring: funksiya parametr sifatida n ni olsin va natijani `return` bilan qaytarsin.",
+      "ru": "Вводится одно целое число n (1 ≤ n ≤ 10000). Найдите, сколько у числа n положительных делителей, и выведите результат одной строкой — только число, без слов и пояснений. Например, для 12 ответ 6, потому что делители: 1, 2, 3, 4, 6, 12. Расчёт выполните в отдельной функции: функция получает n как параметр и возвращает результат через `return`.",
+      "en": "The input is one integer n (1 ≤ n ≤ 10000). Find how many positive divisors n has and print the result on one line — only the number, with no words or label. For 12 the answer is 6, because the divisors are 1, 2, 3, 4, 6, 12. Do the counting inside a separate function: the function takes n as a parameter and gives the result back with `return`."
+    },
+    "code": {
+      "starter": {
+        "python": "def boluvchilar_soni(n):\n    soni = 0\n    for i in range(1, n):\n        if n % i == 0:\n            soni += 1\n    return soni\n\n\nn = int(input())\nprint(boluvchilar_soni(n))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static int boluvchilarSoni(int n) {\n        int soni = 0;\n        for (int i = 1; i < n; i++) {\n            if (n % i == 0) {\n                soni++;\n            }\n        }\n        return soni;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        System.out.println(boluvchilarSoni(n));\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint boluvchilarSoni(int n) {\n    int soni = 0;\n    for (int i = 1; i < n; i++) {\n        if (n % i == 0) {\n            soni++;\n        }\n    }\n    return soni;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    cout << boluvchilarSoni(n) << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "def boluvchilar_soni(n):\n    soni = 0\n    for i in range(1, n + 1):\n        if n % i == 0:\n            soni += 1\n    return soni\n\n\nn = int(input())\nprint(boluvchilar_soni(n))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static int boluvchilarSoni(int n) {\n        int soni = 0;\n        for (int i = 1; i <= n; i++) {\n            if (n % i == 0) {\n                soni++;\n            }\n        }\n        return soni;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        System.out.println(boluvchilarSoni(n));\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint boluvchilarSoni(int n) {\n    int soni = 0;\n    for (int i = 1; i <= n; i++) {\n        if (n % i == 0) {\n            soni++;\n        }\n    }\n    return soni;\n}\n\nint main() {\n    int n;\n    cin >> n;\n    cout << boluvchilarSoni(n) << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "6\n", "expected": "4", "hidden": false },
+        { "input": "1\n", "expected": "1", "hidden": false },
+        { "input": "12\n", "expected": "6", "hidden": true },
+        { "input": "7\n", "expected": "2", "hidden": true },
+        { "input": "100\n", "expected": "9", "hidden": true }
+      ]
+    }
+  }
+}

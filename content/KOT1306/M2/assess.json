@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Fizik topologiya nima?",
+          "ru": "Что такое физическая топология?",
+          "en": "What is a physical topology?"
+        },
+        "options": [
+          {
+            "uz": "Kabellar va qurilmalar haqiqatda qanday ulangan",
+            "ru": "Как кабели и устройства соединены на самом деле",
+            "en": "How the cables and devices are actually connected"
+          },
+          {
+            "uz": "Signal va maʼlumotning tarmoq ichida qanday yoʻl harakatlanishi",
+            "ru": "По какому пути внутри сети движется сигнал и данные",
+            "en": "The path along which the signal and data travel inside the network"
+          },
+          {
+            "uz": "Tarmoqning vaqt birligida uzatadigan maʼlumot hajmi",
+            "ru": "Объём данных, который сеть передаёт за единицу времени",
+            "en": "The amount of data the network transfers per unit of time"
+          },
+          {
+            "uz": "Tarmoqdagi tugunlar soni",
+            "ru": "Число узлов в сети",
+            "en": "The number of nodes in the network"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Fizik topologiya — kabellar va qurilmalar haqiqatda qanday ulangani; signal qanday yoʻl bilan harakatlanadi — bu mantiqiy topologiya.",
+          "ru": "Физическая топология — реальное соединение кабелей и устройств; путь сигнала — это логическая топология.",
+          "en": "A physical topology is how cables and devices really connect; the path the signal takes is the logical topology."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Konsentratorli tarmoq fizik jihatdan yulduz, mantiqiy jihatdan shina boʻladi.",
+          "ru": "Сеть на концентраторе физически является звездой, а логически — шиной.",
+          "en": "A hub-based network is a star physically and a bus logically."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Konsentrator signalni barcha portlarga tarqatadi, shuning uchun fizik yulduz mantiqan shina boʻlib ishlaydi.",
+          "ru": "Концентратор рассылает сигнал на все порты, поэтому физическая звезда работает как логическая шина.",
+          "en": "A hub repeats the signal to every port, so the physical star works as a logical bus."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tarmoq qurishning asosiy tamoyillari qaysilar?",
+          "ru": "Какие из перечисленного — основные принципы построения сети?",
+          "en": "Which of these are the basic principles of building a network?"
+        },
+        "options": [
+          {
+            "uz": "Standartlashtirish",
+            "ru": "Стандартизация",
+            "en": "Standardisation"
+          },
+          {
+            "uz": "Pogʻonalilik (modullilik)",
+            "ru": "Иерархичность (модульность)",
+            "en": "Layering (modularity)"
+          },
+          {
+            "uz": "Ortiqchalik (redundancy)",
+            "ru": "Избыточность (резервирование)",
+            "en": "Redundancy"
+          },
+          {
+            "uz": "Bitta ishlab chiqaruvchining qurilmalaridan foydalanish",
+            "ru": "Использование устройств только одного производителя",
+            "en": "Using devices of a single manufacturer only"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi tamoyillar: standartlashtirish, pogʻonalilik, ortiqchalik, masshtablanuvchanlik, ierarxiya. Aksincha, standartlar turli ishlab chiqaruvchilarga birga ishlash imkonini beradi.",
+          "ru": "Принципы из занятия: стандартизация, иерархичность, избыточность, масштабируемость, уровни ядро–распределение–доступ. Напротив, стандарты нужны именно чтобы устройства разных производителей работали вместе.",
+          "en": "The lesson's principles are standardisation, layering, redundancy, scalability and hierarchy. Standards do the opposite: they let devices of different makers work together."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "10 ta tugunli toʻliq bogʻlangan (full mesh) tarmoqda nechta aloqa liniyasi kerak?",
+          "ru": "Сколько линий связи нужно для полностью связанной сети из 10 узлов?",
+          "en": "How many links does a full mesh of 10 nodes need?"
+        },
+        "answers": [45],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Toʻliq bogʻlangan topologiyada liniyalar soni n(n - 1)/2: 10 · 9 / 2 = 45.",
+          "ru": "В полностью связанной топологии число линий n(n - 1)/2: 10 · 9 / 2 = 45.",
+          "en": "A full mesh needs n(n - 1)/2 links: 10 · 9 / 2 = 45."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Turli IP tarmoqlarni bogʻlab, IP manzil boʻyicha eng yaxshi yoʻlni tanuvchi qurilma qaysi?",
+          "ru": "Какое устройство соединяет разные IP-сети и выбирает лучший путь по IP-адресу?",
+          "en": "Which device joins different IP networks and picks the best path by IP address?"
+        },
+        "options": [
+          {
+            "uz": "Marshrutizator",
+            "ru": "Маршрутизатор",
+            "en": "A router"
+          },
+          {
+            "uz": "Kommutator",
+            "ru": "Коммутатор",
+            "en": "A switch"
+          },
+          {
+            "uz": "Konsentrator",
+            "ru": "Концентратор",
+            "en": "A hub"
+          },
+          {
+            "uz": "Takrorlagich",
+            "ru": "Повторитель",
+            "en": "A repeater"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Marshrutizator 3-pogʻonada ishlaydi va turli tarmoqlarni bogʻlaydi; bitta LAN ichida qurilmalarni ulash — kommutator vazifasi.",
+          "ru": "Маршрутизатор работает на 3-м уровне и соединяет разные сети; соединять устройства внутри одной LAN — задача коммутатора.",
+          "en": "A router works at layer 3 and joins different networks; attaching devices inside one LAN is a switch's job."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kommutator kadrni qaysi manzil boʻyicha faqat kerakli portga yuboradi? Manzil turining nomini qisqartma bilan yozing.",
+          "ru": "По какому адресу коммутатор отправляет кадр только на нужный порт? Напишите название адреса сокращённо.",
+          "en": "By which kind of address does a switch send a frame only to the needed port? Write the short form."
+        },
+        "answers": ["MAC", "mac", "MAC manzil", "MAC-адрес", "мак"],
+        "explanation": {
+          "uz": "Kommutator oʻzining MAC jadvali yordamida kadrni qabul qiluvchining MAC manzili joylashgan portga yuboradi.",
+          "ru": "Коммутатор по своей MAC-таблице отправляет кадр на порт, где находится MAC-адрес получателя.",
+          "en": "Using its MAC table, a switch sends the frame to the port where the receiver's MAC address sits."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Topologiyalar haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о топологиях верны?",
+          "en": "Which statements about topologies are correct?"
+        },
+        "options": [
+          {
+            "uz": "Yulduz topologiyasida bitta kabel uzilishi faqat bitta tugunga taʼsir qiladi",
+            "ru": "В топологии «звезда» обрыв одного кабеля влияет только на один узел",
+            "en": "In a star, one broken cable affects only one node"
+          },
+          {
+            "uz": "Daraxt topologiyasida yuqori sathdagi qurilma buzilsa, butun shox uziladi",
+            "ru": "В дереве при отказе устройства верхнего уровня отсекается вся ветвь",
+            "en": "In a tree, if an upper-level device fails, the whole branch is cut off"
+          },
+          {
+            "uz": "Shina topologiyasi arzon, lekin liniya uzilsa butun tarmoq ishlamay qoladi",
+            "ru": "Шина дешёва, но при обрыве линии перестает работать вся сеть",
+            "en": "A bus is cheap, but if the line breaks the whole network stops"
+          },
+          {
+            "uz": "Toʻliq bogʻlangan topologiyada tugunlar soni oshganda liniyalar soni chiziqli oʻsadi",
+            "ru": "В полностью связанной топологии число линий растёт линейно с числом узлов",
+            "en": "In a full mesh the number of links grows linearly with the number of nodes"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Toʻliq bogʻlanganda liniyalar soni n(n - 1)/2 — kvadratik oʻsadi, shuning uchun u juda qimmat va faqat muhim tugunlar orasida ishlatiladi.",
+          "ru": "В полной связке число линий равно n(n - 1)/2 — оно растёт квадратично, поэтому такая сеть очень дорогая и применяется лишь между важными узлами.",
+          "en": "A full mesh has n(n - 1)/2 links — a quadratic growth — which is why it is very costly and used only between key nodes."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Konsentrator — koʻp portli koʻprik, u kadrni faqat kerakli portga yuboradi.",
+          "ru": "Концентратор — это многопортовый мост, он отправляет кадр только на нужный порт.",
+          "en": "A hub is a multi-port bridge that sends a frame only to the needed port."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Konsentrator — 1-pogʻonadagi koʻp portli takrorlagich: kadrni barcha portlarga yuboradi. Kadrni faqat kerakli portga yuboruvchi qurilma — kommutator (koʻp portli koʻprik, 2-pogʻona).",
+          "ru": "Концентратор — это многопортовый повторитель 1-го уровня: он рассылает кадр на все порты. Кадры только на нужный порт отправляет коммутатор (многопортовый мост, 2-й уровень).",
+          "en": "A hub is a multi-port repeater at layer 1: it floods the frame to every port. Only a switch — a multi-port bridge at layer 2 — sends a frame to the needed port."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "300 ta kompyuterli toʻliq bogʻlangan tarmoqda nechta aloqa liniyasi kerak?",
+          "ru": "Сколько линий связи потребуется для полностью связанной сети из 300 компьютеров?",
+          "en": "How many links are needed for a full mesh of 300 computers?"
+        },
+        "answers": [44850],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "n(n - 1)/2 formulasi bilan: 300 · 299 / 2 = 44850. Shuning uchun toʻliq bogʻlangan topologiya faqat bir necha muhim tugun orasida ishlatiladi.",
+          "ru": "По формуле n(n - 1)/2: 300 · 299 / 2 = 44850. Поэтому полная связка применяется лишь между несколькими важными узлами.",
+          "en": "By the formula n(n - 1)/2: 300 · 299 / 2 = 44850. That is why a full mesh is used only among a few key nodes."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Qavatlar uchun kommutator va kabellar soni",
+      "ru": "Коммутаторы и кабели по этажам",
+      "en": "Switches and cables for the floors"
+    },
+    "statement": {
+      "uz": "Universitet binosida har bir qavatning kompyuterlari yulduz sxemasi bilan oʻzining kirish kommutatoriga, ular esa markaziy kommutatorga ulanadi (daraxt). Har bir kirish kommutatorida p ta port bor, ulardan bittasi yuqori sathga ulanish uchun ajratiladi, shuning uchun bitta kommutator eng koʻpi bilan p-1 ta kompyuterga xizmat qiladi. Bir qavatda c ta kompyuter boʻlsa, u qavatga ceil(c / (p-1)) ta kommutator kerak (boʻsh qavatga — 0 ta, natija yuqoriga yaxlitlanadi). Kirish: birinchi satrda p va k (qavatlar soni), keyingi k satrda har bir qavatdagi kompyuterlar soni c. Chiqish: ikkita qator — birinchida jami kommutatorlar soni, ikkinchida jami kabellar soni (har bir kompyuterdan bitta kabel, har bir kommutatordan markazga yana bitta kabel). Masalan, p = 5, k = 2 va qavatlarda 8 va 4 kompyuter boʻlsa: kommutatorlar 2 + 1 = 3, kabellar 12 + 3 = 15. Chegaralar: 3 ≤ p ≤ 25, 1 ≤ k ≤ 100, 0 ≤ c ≤ 500.",
+      "ru": "В здании университета компьютеры каждого этажа звездой подключены к своему коммутатору доступа, а те — к центральному коммутатору (дерево). У коммутатора доступа p портов, один из них занят под восходящий канал, поэтому он обслуживает не более p-1 компьютера. Если на этаже c компьютеров, этажу нужно ceil(c / (p-1)) коммутаторов (пустому этажу — 0, деление округляется вверх). Ввод: в первой строке p и k (число этажей), далее в k строках — число компьютеров c на каждом этаже. Вывод: две строки — сначала общее число коммутаторов, затем общее число кабелей (по кабелю на каждый компьютер и по одному кабелю от каждого коммутатора к центральному). Пример: p = 5, k = 2, на этажах 8 и 4 компьютера: коммутаторов 2 + 1 = 3, кабелей 12 + 3 = 15. Ограничения: 3 ≤ p ≤ 25, 1 ≤ k ≤ 100, 0 ≤ c ≤ 500.",
+      "en": "In a university building every floor's computers connect in a star to their own access switch, and those switches connect to a central switch (a tree). An access switch has p ports, one of them reserved for the uplink, so it serves at most p-1 computers. A floor with c computers needs ceil(c / (p-1)) switches (an empty floor needs 0; round the division up). Input: the first line holds p and k (the number of floors), then k lines hold the number of computers c on each floor. Output: two lines — first the total number of switches, then the total number of cables (one cable per computer plus one uplink cable per switch). Example: p = 5, k = 2, floors with 8 and 4 computers: 2 + 1 = 3 switches and 12 + 3 = 15 cables. Limits: 3 ≤ p ≤ 25, 1 ≤ k ≤ 100, 0 ≤ c ≤ 500."
+    },
+    "code": {
+      "starter": {
+        "python": "birinchi = input().split()\nport = int(birinchi[0]) - 1\nqavatlar = int(birinchi[1])\nkommutatorlar = 0\nkompyuterlar = 0\nfor _ in range(qavatlar):\n    c = int(input())\n    kompyuterlar += c\n    kommutatorlar += c // port\nprint(kommutatorlar)\nprint(kompyuterlar + kommutatorlar)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int port = in.nextInt() - 1;\n        int qavatlar = in.nextInt();\n        int kommutatorlar = 0;\n        int kompyuterlar = 0;\n        for (int i = 0; i < qavatlar; i++) {\n            int c = in.nextInt();\n            kompyuterlar += c;\n            kommutatorlar += c / port;\n        }\n        System.out.println(kommutatorlar);\n        System.out.println(kompyuterlar + kommutatorlar);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int port, qavatlar;\n    cin >> port >> qavatlar;\n    port = port - 1;\n    int kommutatorlar = 0;\n    int kompyuterlar = 0;\n    for (int i = 0; i < qavatlar; i++) {\n        int c;\n        cin >> c;\n        kompyuterlar += c;\n        kommutatorlar += c / port;\n    }\n    cout << kommutatorlar << endl;\n    cout << kompyuterlar + kommutatorlar << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "birinchi = input().split()\nport = int(birinchi[0]) - 1\nqavatlar = int(birinchi[1])\nkommutatorlar = 0\nkompyuterlar = 0\nfor _ in range(qavatlar):\n    c = int(input())\n    kompyuterlar += c\n    kommutatorlar += (c + port - 1) // port\nprint(kommutatorlar)\nprint(kompyuterlar + kommutatorlar)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int port = in.nextInt() - 1;\n        int qavatlar = in.nextInt();\n        int kommutatorlar = 0;\n        int kompyuterlar = 0;\n        for (int i = 0; i < qavatlar; i++) {\n            int c = in.nextInt();\n            kompyuterlar += c;\n            kommutatorlar += (c + port - 1) / port;\n        }\n        System.out.println(kommutatorlar);\n        System.out.println(kompyuterlar + kommutatorlar);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int port, qavatlar;\n    cin >> port >> qavatlar;\n    port = port - 1;\n    int kommutatorlar = 0;\n    int kompyuterlar = 0;\n    for (int i = 0; i < qavatlar; i++) {\n        int c;\n        cin >> c;\n        kompyuterlar += c;\n        kommutatorlar += (c + port - 1) / port;\n    }\n    cout << kommutatorlar << endl;\n    cout << kompyuterlar + kommutatorlar << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5 2\n8\n4\n", "expected": "3\n15", "hidden": false },
+        { "input": "24 3\n20\n20\n20\n", "expected": "3\n63", "hidden": false },
+        { "input": "8 1\n0\n", "expected": "0\n0", "hidden": true },
+        { "input": "6 2\n25\n26\n", "expected": "11\n62", "hidden": true },
+        { "input": "3 4\n1\n2\n3\n100\n", "expected": "54\n160", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,342 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Raqamli tovarning qoʻshimcha (chekli) nusxasini yaratish xarajati nolga yaqin.",
+          "ru": "Предельные издержки на создание дополнительной копии цифрового товара близки к нулю.",
+          "en": "The marginal cost of creating an additional copy of a digital good is near zero."
+        },
+        "explanation": {
+          "uz": "Birinchi nusxani yaratish qimmat boʻlishi mumkin, lekin keyingi nusxalarni koʻpaytirish va tarqatish deyarli bepul.",
+          "ru": "Создание первой копии может быть дорогим, но копирование и распространение последующих почти бесплатно.",
+          "en": "The first copy may be expensive to create, but copying and distributing subsequent ones is almost free."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Asosiy funksiyalari bepul, kengaytirilgan imkoniyatlari esa pullik boʻlgan narxlash strategiyasi qanday ataladi?",
+          "ru": "Как называется стратегия ценообразования, при которой базовые функции бесплатны, а расширенные — платны?",
+          "en": "What is the pricing strategy where basic features are free, and extended features are paid?"
+        },
+        "explanation": {
+          "uz": "Bu Freemium strategiyasi boʻlib, foydalanuvchilarni jalb qilish uchun asosiy qism bepul beriladi.",
+          "ru": "Это стратегия Freemium, базовая часть предоставляется бесплатно для привлечения пользователей.",
+          "en": "This is the Freemium strategy, where the basic part is free to attract users."
+        },
+        "options": [
+          {
+            "uz": "Freemium",
+            "ru": "Freemium",
+            "en": "Freemium"
+          },
+          {
+            "uz": "Versiyalash",
+            "ru": "Версионирование",
+            "en": "Versioning"
+          },
+          {
+            "uz": "Obuna",
+            "ru": "Подписка",
+            "en": "Subscription"
+          },
+          {
+            "uz": "Dinamik narx",
+            "ru": "Динамическая цена",
+            "en": "Dynamic pricing"
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Teskari auksion nima?",
+          "ru": "Что такое обратный аукцион?",
+          "en": "What is a reverse auction?"
+        },
+        "explanation": {
+          "uz": "Teskari auksionda sotuvchilar xaridor (masalan, davlat buyurtmachisi) uchun narxni pasaytirib raqobatlashadi.",
+          "ru": "В обратном аукционе продавцы конкурируют, снижая цену для покупателя (например, госзаказчика).",
+          "en": "In a reverse auction, sellers compete by lowering the price for a buyer (e.g., a government customer)."
+        },
+        "options": [
+          {
+            "uz": "Sotuvchilar xaridor uchun narxni pasaytirib raqobatlashadigan savdo.",
+            "ru": "Торги, где продавцы снижают цену для покупателя.",
+            "en": "A sale where sellers compete by lowering the price for a buyer."
+          },
+          {
+            "uz": "Xaridorlar narxni oshirib boradigan savdo.",
+            "ru": "Торги, где покупатели повышают цену.",
+            "en": "A sale where buyers bid the price up."
+          },
+          {
+            "uz": "Sotuvchi qatʼiy narx oʻrnatadigan doʻkon.",
+            "ru": "Магазин, где продавец устанавливает фиксированную цену.",
+            "en": "A shop where the seller sets a fixed price."
+          },
+          {
+            "uz": "Tomonlar oʻzaro kelishadigan eʼlonlar taxtasi.",
+            "ru": "Доска объявлений, где стороны договариваются.",
+            "en": "A classifieds platform where parties agree with each other."
+          }
+        ],
+        "correct": [0]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Raqamli tovarlarning asosiy iqtisodiy xususiyatlarini belgilang.",
+          "ru": "Отметьте основные экономические свойства цифровых товаров.",
+          "en": "Mark the main economic properties of digital goods."
+        },
+        "explanation": {
+          "uz": "Raqamli tovarlar raqobatsiz, ularning chekli xarajati nolga yaqin va sifatini faqat foydalanib koʻrib bilish mumkin (tajriba tovari).",
+          "ru": "Цифровые товары неконкурентны, имеют почти нулевые предельные издержки, и их качество можно узнать только после использования (товар опыта).",
+          "en": "Digital goods are non-rival, have near-zero marginal cost, and their quality can only be known after use (experience good)."
+        },
+        "options": [
+          {
+            "uz": "Nolga yaqin chekli xarajat",
+            "ru": "Почти нулевые предельные издержки",
+            "en": "Near-zero marginal cost"
+          },
+          {
+            "uz": "Raqobatsizlik",
+            "ru": "Неконкурентность",
+            "en": "Non-rivalry"
+          },
+          {
+            "uz": "Tajriba tovari",
+            "ru": "Товар опыта",
+            "en": "Experience good"
+          },
+          {
+            "uz": "Yuqori chekli xarajat",
+            "ru": "Высокие предельные издержки",
+            "en": "High marginal cost"
+          },
+          {
+            "uz": "Jismoniy eskirish",
+            "ru": "Физический износ",
+            "en": "Physical wear and tear"
+          }
+        ],
+        "correct": [0, 1, 2]
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ikki tomonlama platformalar qanday xususiyatlarga ega?",
+          "ru": "Какими характеристиками обладают двусторонние платформы?",
+          "en": "What are the characteristics of two-sided platforms?"
+        },
+        "explanation": {
+          "uz": "Ikki tomonlama bozorlar sotuvchi va xaridorni bogʻlaydi, tarmoq effektiga ega va koʻpincha bir tomonni subsidiyalaydi.",
+          "ru": "Двусторонние рынки связывают продавцов и покупателей, обладают сетевым эффектом и часто субсидируют одну сторону.",
+          "en": "Two-sided markets connect buyers and sellers, have network effects, and often subsidize one side."
+        },
+        "options": [
+          {
+            "uz": "Ikki guruhni (masalan, sotuvchi va xaridor) bogʻlaydi",
+            "ru": "Связывают две группы (например, продавцов и покупателей)",
+            "en": "Connect two groups (e.g., sellers and buyers)"
+          },
+          {
+            "uz": "Oʻzaro tarmoq effektiga ega",
+            "ru": "Обладают перекрестным сетевым эффектом",
+            "en": "Have cross-side network effects"
+          },
+          {
+            "uz": "Koʻpincha bir tomonni subsidiyalaydi",
+            "ru": "Часто субсидируют одну сторону",
+            "en": "Often subsidize one side"
+          },
+          {
+            "uz": "Faqat bitta turdagi foydalanuvchilarga xizmat qiladi",
+            "ru": "Обслуживают только один тип пользователей",
+            "en": "Serve only one type of users"
+          }
+        ],
+        "correct": [0, 1, 2]
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 1,
+        "prompt": {
+          "uz": "Toʻplam (bundling) strategiyasi xaridorlar tovarlarni bir xil tartibda qadrlaganda eng yuqori foyda keltiradi.",
+          "ru": "Стратегия набора (бандлинга) приносит наибольшую выгоду, когда покупатели ценят товары в одинаковом порядке.",
+          "en": "The bundling strategy is most profitable when buyers value the goods in the same order."
+        },
+        "explanation": {
+          "uz": "Notoʻgʻri. Toʻplam xaridorlar tovarlarni turlicha (qarama-qarshi) qadrlaganda eng foydali boʻladi.",
+          "ru": "Неверно. Набор наиболее выгоден, когда покупатели ценят товары по-разному (противоположно).",
+          "en": "False. Bundling pays most when buyers value the goods differently (in opposite ways)."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1]
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 2,
+        "prompt": {
+          "uz": "Raqamli tovarlarni noqonuniy nusxalash va tarqatishni texnik jihatdan cheklovchi tizim qanday qisqartma bilan ataladi? (Inglizcha 3 harfli qisqartmani kiriting)",
+          "ru": "Как называется аббревиатура системы, которая технически ограничивает незаконное копирование и распространение цифровых товаров? (Введите 3 буквы на английском)",
+          "en": "What is the 3-letter acronym for the system that technically restricts illegal copying and distribution of digital goods?"
+        },
+        "explanation": {
+          "uz": "DRM (Digital Rights Management) - raqamli huquqlarni boshqarish tizimi.",
+          "ru": "DRM (Digital Rights Management) — управление цифровыми правами.",
+          "en": "DRM stands for Digital Rights Management."
+        },
+        "answers": [
+          "DRM",
+          "drm"
+        ]
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 2,
+        "prompt": {
+          "uz": "Xaridorlarning bitta raqamli dasturni qadrlashi mos ravishda 10, 20 va 30 ming soʻmga teng. Sotuvchi tushumni maksimal qilish uchun qanday narx (ming soʻmda) belgilashi kerak?",
+          "ru": "Оценки покупателей одной цифровой программы составляют 10, 20 и 30 тысяч сумов соответственно. Какую цену (в тысячах сумов) должен установить продавец для максимизации выручки?",
+          "en": "Buyers' valuations for a single digital program are 10, 20, and 30 thousand soums, respectively. What price (in thousands of soums) should the seller set to maximize revenue?"
+        },
+        "explanation": {
+          "uz": "10 narxda 3 kishi oladi (tushum 30). 20 narxda 2 kishi oladi (tushum 40). 30 narxda 1 kishi oladi (tushum 30). Maksimal tushum 40, buning uchun narx 20 boʻlishi kerak.",
+          "ru": "При цене 10 купят 3 человека (выручка 30). При цене 20 купят 2 человека (выручка 40). При цене 30 купит 1 человек (выручка 30). Максимальная выручка 40 достигается при цене 20.",
+          "en": "At price 10, 3 people buy (revenue 30). At price 20, 2 people buy (revenue 40). At price 30, 1 person buys (revenue 30). The maximum revenue is 40 at a price of 20."
+        },
+        "answers": [
+          20
+        ],
+        "tolerance": 0
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 2,
+        "prompt": {
+          "uz": "Nima uchun elektron platformalar koʻpincha \"qulflanish\" (lock-in) effektidan foydalanadi?",
+          "ru": "Почему электронные платформы часто используют эффект привязки (lock-in)?",
+          "en": "Why do electronic platforms often use the lock-in effect?"
+        },
+        "explanation": {
+          "uz": "Qulflanish effekti mijozlarning boshqa xizmatga oʻtish xarajatlarini oshiradi, bu esa ularning sodiqligini taʼminlaydi va raqobatni kamaytiradi.",
+          "ru": "Эффект привязки увеличивает затраты клиентов на переход к другому сервису, что обеспечивает их лояльность и снижает конкуренцию.",
+          "en": "The lock-in effect increases the cost for customers to switch to another service, which ensures their loyalty and reduces competition."
+        },
+        "options": [
+          {
+            "uz": "Boshqa tovarga oʻtish xarajatini oshirib, mijozlar sodiqligini taʼminlash uchun",
+            "ru": "Чтобы увеличить затраты на переход и обеспечить лояльность клиентов",
+            "en": "To increase switching costs and ensure customer loyalty"
+          },
+          {
+            "uz": "Tovar sifatini yaxshilash uchun",
+            "ru": "Чтобы улучшить качество товара",
+            "en": "To improve the quality of the good"
+          },
+          {
+            "uz": "Chekli xarajatlarni kamaytirish uchun",
+            "ru": "Чтобы снизить предельные издержки",
+            "en": "To reduce marginal costs"
+          },
+          {
+            "uz": "Serverlar ishlash tezligini oshirish uchun",
+            "ru": "Чтобы повысить скорость работы серверов",
+            "en": "To increase the speed of servers"
+          }
+        ],
+        "correct": [0]
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Optimal narxni topish",
+      "ru": "Поиск оптимальной цены",
+      "en": "Finding the optimal price"
+    },
+    "statement": {
+      "uz": "Raqamli tovar sotmoqdasiz. N ta potensial xaridorning bu tovarni qanday qadrlashi (maksimal toʻlashga tayyor boʻlgan summasi) maʼlum. Tushumni maksimal qiladigan narxni va shu narxdagi umumiy tushumni aniqlovchi dastur tuzing. Agar bir xil maksimal tushum beruvchi bir nechta narx boʻlsa, xaridorlar sonini koʻpaytirish (tarmoq effekti) uchun ulardan eng kichigini tanlang.\n\n**Kirish:** Birinchi qatorda N (xaridorlar soni). Ikkinchi qatorda xaridorlarning qadrlashlari (N ta butun son, boʻsh joy bilan ajratilgan).\n\n**Chiqish:** Ikkita butun son — eng yaxshi narx va olinadigan maksimal tushum (boʻsh joy bilan ajratilgan).",
+      "ru": "Вы продаете один цифровой товар. Известны оценки N потенциальных покупателей (максимальная сумма, которую они готовы заплатить). Напишите программу, которая найдет цену, максимизирующую выручку, и саму максимальную выручку. Если есть несколько цен с одинаковой максимальной выручкой, выберите наименьшую из них, чтобы увеличить число пользователей (сетевой эффект).\n\n**Ввод:** В первой строке N (число покупателей). Во второй строке оценки покупателей (N целых чисел, через пробел).\n\n**Вывод:** Два целых числа — лучшая цена и максимальная выручка (через пробел).",
+      "en": "You are selling a single digital product. You know the valuations of N potential buyers (the maximum amount they are willing to pay). Write a program to find the price that maximizes revenue, and the maximum revenue itself. If there are multiple prices yielding the same maximum revenue, choose the lowest one to increase the number of users (network effect).\n\n**Input:** The first line contains N (the number of buyers). The second line contains the buyers' valuations (N integers, separated by spaces).\n\n**Output:** Two integers — the optimal price and the maximum revenue (separated by a space)."
+    },
+    "code": {
+      "starter": {
+        "python": "def main():\n    pass\n\nif __name__ == '__main__':\n    main()\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        \n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\n\nusing namespace std;\n\nint main() {\n    \n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\ndef main():\n    input_data = sys.stdin.read().split()\n    if not input_data:\n        return\n    n = int(input_data[0])\n    valuations = [int(x) for x in input_data[1:]]\n    \n    unique_vals = sorted(list(set(valuations)))\n    best_price = 0\n    max_rev = 0\n    \n    for p in unique_vals:\n        buyers = sum(1 for v in valuations if v >= p)\n        rev = p * buyers\n        if rev > max_rev:\n            max_rev = rev\n            best_price = p\n        elif rev == max_rev and best_price == 0:\n            best_price = p\n            \n    print(f\"{best_price} {max_rev}\")\n\nif __name__ == '__main__':\n    main()\n",
+        "java": "import java.util.Scanner;\nimport java.util.Arrays;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner scanner = new Scanner(System.in);\n        if (!scanner.hasNextInt()) return;\n        int n = scanner.nextInt();\n        int[] vals = new int[n];\n        for (int i = 0; i < n; i++) {\n            vals[i] = scanner.nextInt();\n        }\n        \n        Arrays.sort(vals);\n        long bestPrice = 0;\n        long maxRev = -1;\n        \n        for (int i = 0; i < n; i++) {\n            if (i > 0 && vals[i] == vals[i-1]) continue;\n            long p = vals[i];\n            long buyers = n - i;\n            long rev = p * buyers;\n            \n            if (rev > maxRev) {\n                maxRev = rev;\n                bestPrice = p;\n            }\n        }\n        \n        System.out.println(bestPrice + \" \" + maxRev);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\n#include <algorithm>\n\nusing namespace std;\n\nint main() {\n    int n;\n    if (!(cin >> n)) return 0;\n    vector<long long> vals(n);\n    for (int i = 0; i < n; i++) {\n        cin >> vals[i];\n    }\n    \n    sort(vals.begin(), vals.end());\n    long long best_price = 0;\n    long long max_rev = -1;\n    \n    for (int i = 0; i < n; i++) {\n        if (i > 0 && vals[i] == vals[i-1]) continue;\n        long long p = vals[i];\n        long long buyers = n - i;\n        long long rev = p * buyers;\n        \n        if (rev > max_rev) {\n            max_rev = rev;\n            best_price = p;\n        }\n    }\n    \n    cout << best_price << \" \" << max_rev << \"\\n\";\n    return 0;\n}\n"
+      },
+      "tests": [
+        {
+          "input": "4\n10 20 30 40\n",
+          "expected": "20 60\n",
+          "hidden": false
+        },
+        {
+          "input": "5\n15 15 15 15 15\n",
+          "expected": "15 75\n",
+          "hidden": false
+        },
+        {
+          "input": "3\n50 100 200\n",
+          "expected": "100 200\n",
+          "hidden": true
+        },
+        {
+          "input": "6\n10 15 20 20 20 50\n",
+          "expected": "20 80\n",
+          "hidden": true
+        }
+      ]
+    }
+  }
+}

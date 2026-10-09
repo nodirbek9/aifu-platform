@@ -1,0 +1,428 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Stuxnet zararli dasturi havodan jismonan ajratilgan tarmoqqa qanday yetib borgan?",
+          "ru": "Как вредоносная программа Stuxnet попала в физически изолированную сеть?",
+          "en": "How did the Stuxnet malware reach a physically isolated network?"
+        },
+        "options": [
+          {
+            "uz": "USB fleshkalar orqali",
+            "ru": "Через USB-флешки",
+            "en": "Through USB flash drives"
+          },
+          {
+            "uz": "Internet orqali toʻgʻridan-toʻgʻri",
+            "ru": "Напрямую через интернет",
+            "en": "Directly over the Internet"
+          },
+          {
+            "uz": "Elektr taʼminoti tarmogʻi orqali",
+            "ru": "Через сеть электропитания",
+            "en": "Through the power supply network"
+          },
+          {
+            "uz": "Operatorlarning elektron xatlari orqali",
+            "ru": "Через электронные письма операторов",
+            "en": "Through the operators' emails"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Zararli dastur USB fleshkalar orqali tarqalgan va Siemens kontrollerlariga oʻzgartirilgan buyruqlar yuborib, operatorlarga normal koʻrsatkichlarni koʻrsatgan.",
+          "ru": "Вредонос распространялся через USB-флешки, посылал контроллерам Siemens изменённые команды и показывал операторам нормальные значения.",
+          "en": "It spread via USB flash drives, sent the Siemens controllers modified commands and showed the operators normal readings."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Havo boʻshligʻi (air gap) — mutlaq himoya: ajratilgan tarmoqqa hech qanday zararli dastur yetib bora olmaydi.",
+          "ru": "Воздушный зазор (air gap) — абсолютная защита: в изолированную сеть не может попасть ни одна вредоносная программа.",
+          "en": "An air gap is absolute protection: no malware can reach an isolated network."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Stuxnet keysida havo boʻshligʻiga qaramay zararli dastur olinadigan tashuvchi orqali kirib bordi — saboq: olinadigan tashuvchilarni boshqarish kerak.",
+          "ru": "В кейсе Stuxnet вредонос всё равно попал внутрь через съёмный носитель: вывод — съёмные носители нужно контролировать.",
+          "en": "In the Stuxnet case the malware still got in on a removable medium, so removable media must be managed."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "3-2-1 qoidasiga koʻra zaxira nusxa nechta xil tashuvchida saqlanadi?",
+          "ru": "Сколько разных носителей, по правилу 3-2-1, должно хранить резервные копии?",
+          "en": "Per the 3-2-1 rule, on how many different kinds of media are the backups kept?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Qoida: 3 nusxa, 2 xil tashuvchi, 1 tasi boshqa joyda — boshqa shahar yoki hududda.",
+          "ru": "Правило: 3 копии, 2 разных носителя, 1 из них в другом месте — в другом городе или регионе.",
+          "en": "The rule: 3 copies, 2 kinds of media, 1 of them in another place — another city or region."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Veteranlar ishlari departamenti keysida qanday arzon chora maʼlumot sizishini deyarli yoʻqqa chiqarardi?",
+          "ru": "Какая дешёвая мера в кейсе Министерства по делам ветеранов почти исключила бы утечку данных?",
+          "en": "Which cheap measure in the Veterans Affairs case would have almost eliminated the data breach?"
+        },
+        "options": [
+          {
+            "uz": "Barcha noutbuk va disklarda toʻliq disk shifrlash",
+            "ru": "Полное шифрование диска на всех ноутбуках и дисках",
+            "en": "Full-disk encryption on every laptop and drive"
+          },
+          {
+            "uz": "USB portlarni bloklash",
+            "ru": "Блокировка USB-портов",
+            "en": "Blocking the USB ports"
+          },
+          {
+            "uz": "Zaxira nusxani boshqa hududda saqlash",
+            "ru": "Хранение резервной копии в другом регионе",
+            "en": "Keeping the backup in another region"
+          },
+          {
+            "uz": "NIST 800-88 boʻyicha tozalash",
+            "ru": "Очистка носителей по NIST 800-88",
+            "en": "Sanitising media per NIST 800-88"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: shifrlangan qurilma oʻgʻirlansa — bu faqat qurilma narxi, maʼlumot sizishi emas. Holatda esa maʼlumot shifrlanmagan edi.",
+          "ru": "В занятии: если украден зашифрованный носитель — это только стоимость устройства, а не утечка. В этом же кейсе данные хранились без шифрования.",
+          "en": "The lesson: a stolen encrypted device costs only the hardware, not a data breach. Here the data was stored unencrypted."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Tahlil modelidagi nazorat vazifalari qaysilari?",
+          "ru": "Какие функции контроля входят в модель анализа?",
+          "en": "Which control functions belong to the analysis model?"
+        },
+        "options": [
+          {
+            "uz": "Toʻsiq",
+            "ru": "Сдерживание",
+            "en": "Deter"
+          },
+          {
+            "uz": "Toʻxtatish",
+            "ru": "Задержка",
+            "en": "Delay"
+          },
+          {
+            "uz": "Hisobdorlik",
+            "ru": "Подотчётность",
+            "en": "Accountability"
+          },
+          {
+            "uz": "Aniqlash",
+            "ru": "Обнаружение",
+            "en": "Detect"
+          },
+          {
+            "uz": "Javob",
+            "ru": "Реагирование",
+            "en": "Respond"
+          }
+        ],
+        "correct": [0, 1, 3, 4],
+        "explanation": {
+          "uz": "Modeldagi toʻrt vazifa: toʻsiq, toʻxtatish, aniqlash, javob. Hisobdorlik — axborot xavfsizligi xossasi, bu jadvalda yoʻq.",
+          "ru": "Четыре функции из модели: сдерживание, задержка, обнаружение, реагирование. Подотчётность — свойство информационной безопасности, в этой таблице его нет.",
+          "en": "The model has four functions: deter, delay, detect, respond. Accountability is an information-security property and is not in this table."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Axborot tashuvchilarini yoʻq qilish boʻyicha darsda aytilgan standart nomini raqami bilan yozing.",
+          "ru": "Напишите название стандарта уничтожения носителей информации, названного в занятии, с номером.",
+          "en": "Write the name of the media-destruction standard given in the lesson, with its number."
+        },
+        "answers": ["NIST SP 800-88", "NIST 800-88", "800-88"],
+        "explanation": {
+          "uz": "Standart boʻyicha uch daraja bor: Clear, Purge va Destroy. Fayllarni oʻchirish yoki diskni tez formatlash yetarli emas.",
+          "ru": "По стандарту есть три уровня: Clear, Purge и Destroy. Удаление файлов и быстрое форматирование недостаточны.",
+          "en": "The standard gives three levels: Clear, Purge and Destroy. Deleting files or a quick format is not enough."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Ayova sudi binosidagi pentestda eshik ochildi, ammo aniqlash va javob ishlamadi.",
+          "ru": "При пентесте в здании суда Айовой дверь открыли, но обнаружение и реагирование не сработали.",
+          "en": "In the Iowa courthouse pentest the door was opened, but detection and response did not work."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Signalizatsiya ishga tushdi va politsiya tez yetib keldi — yaʼni aniqlash va javob ishladi; himoya chuqurligi aynan shunday ishlashi kerak.",
+          "ru": "Сигнализация сработала, полиция приехала быстро — значит, обнаружение и реагирование сработали; так и должна работать эшелонированная защита.",
+          "en": "The alarm went off and the police arrived quickly, so detection and response did work — that is how layered protection should behave."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Fizik pentestga kim va qanday ruxsat bera oladi?",
+          "ru": "Кто и как может разрешить физический пентест?",
+          "en": "Who may authorise a physical pentest, and how?"
+        },
+        "options": [
+          {
+            "uz": "Mulk egasi, yozma ravishda",
+            "ru": "Собственник здания — письменно",
+            "en": "The owner of the property, in writing"
+          },
+          {
+            "uz": "Pentesterning oʻzi, shartnoma boʻlsa yetarli",
+            "ru": "Сам пентестер, если у него есть договор",
+            "en": "The pentester alone, if a contract exists"
+          },
+          {
+            "uz": "Xavfsizlik xizmati rahbari, ogʻzaki kelishuv bilan",
+            "ru": "Руководитель службы безопасности — устно",
+            "en": "The head of security, by a verbal agreement"
+          },
+          {
+            "uz": "Politsiyaga shartnomani koʻrsatish yetarli",
+            "ru": "Достаточно показать договор полиции",
+            "en": "Showing the contract to the police is enough"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Keysda pentesterlar politsiyaga shartnomani koʻrsatgan holda hibsga olindi: bino egasi — okrug maʼmuriyati — rozilik bermagan edi. Ruxsat hujjatlari pentester yonida boʻlishi va mulk egasi imzolagan boʻlishi kerak.",
+          "ru": "В кейсе пентестеры показали полиции договор, но были задержаны: согласие не дал собственник здания — администрация округа. Документы о разрешении должны быть у пентестера и подписаны владельцем собственности.",
+          "en": "In the case the pentesters showed the police their contract and were still arrested: the building's owner, the county administration, had not agreed. The permission documents must be on the pentester and signed by the property owner."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Umumiy xulosalar jadvali boʻyicha qaysi juftliklar toʻgʻri?",
+          "ru": "Какие пары верны по таблице общих выводов?",
+          "en": "Which pairings are correct in the summary table of findings?"
+        },
+        "options": [
+          {
+            "uz": "Zaxira nusxa asl tizim bilan birga yoʻqoldi — OVHcloud",
+            "ru": "Резервная копия погибла вместе с исходной системой — OVHcloud",
+            "en": "The backup was lost together with the original system — OVHcloud"
+          },
+          {
+            "uz": "Olinadigan tashuvchi himoyani chetlab oʻtdi — Stuxnet",
+            "ru": "Съёмный носитель обошёл защиту — Stuxnet",
+            "en": "A removable medium bypassed the protection — Stuxnet"
+          },
+          {
+            "uz": "Eshik ochildi va hech qanday qatlam ishlamadi — Ayova sudi",
+            "ru": "Дверь открыли, и ни один слой не сработал — суд Айовой",
+            "en": "The door was opened and no layer worked — the Iowa courthouse"
+          },
+          {
+            "uz": "Qurilma oʻgʻirlandi, lekin maʼlumot shifrlangan edi — Veteranlar departamenti",
+            "ru": "Устройство украли, но данные были зашифрованы — Министерство по делам ветеранов",
+            "en": "The device was stolen, but the data was encrypted — Veterans Affairs"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Ayova keyisida aniqlash va javob ishlagan; Veteranlar keyisida esa maʼlumot shifrlanmagan holda oʻgʻirlangan.",
+          "ru": "В кейсе Айовой обнаружение и реагирование сработали, а данные ветеранов были похищены незашифрованными.",
+          "en": "In the Iowa case detection and response worked, and the Veterans data was stolen unencrypted."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Oʻquv binosining fizik auditi",
+      "ru": "Физический аудит учебного здания",
+      "en": "A physical audit of the teaching building"
+    },
+    "statement": {
+      "uz": "Siz universitetning kompyuter xonasi joylashgan qavatida fizik audit oʻtkazdingiz. Koʻrganlaringiz: server shkafi qulflanmagan va ochiq qolgani seziladi; yongʻin datchiklari bor, oʻt oʻchirgichlar muddati oʻtmagan; eski disklar hech qanday dalolatnoma olmasdan sotuvchiga berib yuborilgan; tunda kirish nazorati ishlamaydi, xodimlar fleshkalarni kompyuterga ulaydi. Darsdagi tahlil modeli va beshta keys asosida quyidagi savollarga javob bering — faqat shu mashgʻulotda aytilgan faktlar soʻraladi, hisobotda aniq odamlar va parollar boʻlmasligi kerak.",
+      "ru": "Вы провели физический аудит этажа университета, где находится компьютерный класс. Вы видели: шкаф с серверами не заперт и заметно, что его оставляют открытым; датчики дыма есть, огнетушители с действующим сроком; старые диски отдали продавцу без всякого акта уничтожения; ночью контроль входа не работает, а сотрудники подключают найденные флешки к компьютерам. Ответьте на вопросы по модели анализа и пяти кейсам занятия — спрашивается только то, что говорилось на этом занятии; в отчёте не должно быть конкретных людей и паролей.",
+      "en": "You carried out a physical audit of the university floor that holds the computer room. What you saw: the server cabinet is unlocked and clearly left open; smoke detectors exist and the extinguishers are in date; old disks were handed to a reseller without any certificate of destruction; at night access control does not work and staff plug found flash drives into computers. Answer the questions below from the analysis model and the five cases of the lesson — only what this lesson states is asked, and the report must not name people or passwords."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Tunda kirish nazorati ishlamasligi tahlil modelidagi qaysi vazifaning buzilishi?",
+            "ru": "Нарушением какой функции модели анализа является неработающий ночной контроль входа?",
+            "en": "The access control not working at night breaks which function of the analysis model?"
+          },
+          "options": [
+            {
+              "uz": "Toʻsiq",
+              "ru": "Сдерживание",
+              "en": "Deter"
+            },
+            {
+              "uz": "Aniqlash",
+              "ru": "Обнаружение",
+              "en": "Detect"
+            },
+            {
+              "uz": "Javob",
+              "ru": "Реагирование",
+              "en": "Respond"
+            },
+            {
+              "uz": "Qayta tiklash",
+              "ru": "Восстановление",
+              "en": "Recover"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Kirish nazorati (qoʻriqchi, turniket, karta) kirishni toʻsadi — bu toʻsiq vazifasi. Darsning audit roʻyxatidagi birinchi band shu: kirish nazorati bormi.",
+            "ru": "Контроль входа (охрана, турникет, карта) именно преграждает путь — это функция сдерживания; первый пункт списка аудита в занятии спрашивает, есть ли он.",
+            "en": "Access control (a guard, a turnstile, a card) keeps people out, which is the deter function; the first item of the lesson's audit list asks whether it exists."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Topilgan fleshkani tekshirish uchun xodim uni oʻz kompyuteriga ulashi mumkin.",
+            "ru": "Сотрудник может подключить найденную флешку к своему компьютеру, чтобы её проверить.",
+            "en": "A member of staff may plug a found flash drive into their own computer to inspect it."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Darsdagi xatolar roʻyxatida: topilgan fleshkani ulash mumkin emas, uni IT yoki xavfsizlik xizmatiga topshirish kerak. Stuxnet ham olinadigan tashuvchi orqali kirib borgan edi.",
+            "ru": "В списке ошибок занятия: найденную флешку подключать нельзя — её передают в IT или службу безопасности. Stuxnet тоже проник через съёмный носитель.",
+            "en": "The lesson's list of mistakes says a found flash drive must not be plugged in but handed to IT or the security service; Stuxnet also arrived on a removable medium."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "3-2-1 qoidasiga koʻra muhim maʼlumotning nechta nusxasi boʻlishi kerak?",
+            "ru": "Сколько копий важных данных, по правилу 3-2-1, должно быть?",
+            "en": "How many copies of important data does the 3-2-1 rule call for?"
+          },
+          "answers": [3],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "3 nusxa, 2 xil tashuvchi, 1 tasi boshqa joyda. OVHcloud yongʻinida kampus ichidagi yoki umuman boʻlmagan nusxalar bilan birga maʼlumot ham yoʻqoldi.",
+            "ru": "3 копии, 2 разных носителя, 1 в другом месте. При пожаре OVHcloud погибли данные вместе с копиями, хранившимися на той же площадке или отсутствовавшими.",
+            "en": "3 copies, 2 kinds of media, 1 elsewhere. In the OVHcloud fire the data was lost together with backups kept on the same campus or missing entirely."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Eski disklarni sotishga topshirishdan oldin darsda qanday choralar aytilgan?",
+            "ru": "Какие меры названы в занятии перед передачей старых дисков на продажу?",
+            "en": "Which measures does the lesson require before old disks are handed over for resale?"
+          },
+          "options": [
+            {
+              "uz": "NIST SP 800-88 boʻyicha Clear, Purge yoki Destroy",
+              "ru": "Очистка Clear, Purge или Destroy по NIST SP 800-88",
+              "en": "Clear, Purge or Destroy according to NIST SP 800-88"
+            },
+            {
+              "uz": "Yoʻq qilish dalolatnomasini olish",
+              "ru": "Получить акт уничтожения",
+              "en": "Obtaining a certificate of destruction"
+            },
+            {
+              "uz": "Fayllarni oʻchirib, diskni tez formatlash",
+              "ru": "Удалить файлы и отформатировать диск быстро",
+              "en": "Deleting the files and giving the disk a quick format"
+            },
+            {
+              "uz": "Utilizatsiya pudratchisidan sertifikat talab qilish",
+              "ru": "Требовать сертификат у подрядчика по утилизации",
+              "en": "Requiring a certificate from the disposal contractor"
+            }
+          ],
+          "correct": [0, 1, 3],
+          "explanation": {
+            "uz": "Ikkinchi qoʻl disklar keyisida aynan oʻchirilgan va tez formatlangan disklarning sezilarli qismida maʼlumot tiklangan edi. Boshidanoq shifrlash ham yordam beradi — kriptografik tozalash bir zumda boʻladi.",
+            "ru": "В кейсе с подержанными дисками на заметной части удалённых и быстро отформатированных дисков данные восстанавливались. Помогает и шифрование с самого начала: тогда криптографическое стирание мгновенно.",
+            "en": "In the second-hand drives case a significant share of deleted, quick-formatted disks still yielded data. Encrypting from the start helps too, because a cryptographic erase is instant."
+          }
+        }
+      ]
+    }
+  }
+}

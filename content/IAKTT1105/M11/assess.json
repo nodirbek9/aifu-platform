@@ -1,0 +1,380 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Bulutli hisoblash deganda nima tushuniladi?",
+          "ru": "Что понимается под облачными вычислениями?",
+          "en": "What is cloud computing?"
+        },
+        "options": [
+          {
+            "uz": "Hisoblash resurslaridan (serverlar, xotira, dasturlar) tarmoq orqali talab boʻyicha, tez va oson foydalanish modeli",
+            "ru": "Модель доступа по требованию к вычислительным ресурсам (серверы, хранилище, программы) через сеть",
+            "en": "A model of on-demand access over a network to computing resources (servers, storage, programs)"
+          },
+          {
+            "uz": "Korporativ tarmoqning yangi simli protokollari toʻplami",
+            "ru": "Набор новых проводных протоколов для корпоративной сети",
+            "en": "A set of new wired protocols for a corporate network"
+          },
+          {
+            "uz": "Bitta kuchli serverni butun tashkilotga birga berish",
+            "ru": "Выдача одного мощного сервера всей организации",
+            "en": "Handing one powerful server to a whole organisation"
+          },
+          {
+            "uz": "Brauzerda sahifalarni tezroq ochadigan dastur",
+            "ru": "Программа, ускоряющая открытие страниц в браузере",
+            "en": "A program that opens browser pages faster"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bulut korxonaga oʻz serverlarini sotib olmasdan, kerak paytda resurs olish va faqat ishlatilgani uchun toʻlash imkonini beradi.",
+          "ru": "Облако позволяет компании получать ресурсы, когда нужно, и платить только за использованное, не покупая свои серверы.",
+          "en": "The cloud lets a company get resources when needed and pay only for what it uses, without buying its own servers."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "NIST boʻyicha bulutli hisoblashning asosiy xususiyatlariga qaysilari kiradi?",
+          "ru": "Что из перечисленного входит в основные характеристики облачных вычислений по NIST?",
+          "en": "Which of these are essential characteristics of cloud computing according to NIST?"
+        },
+        "options": [
+          {
+            "uz": "Talab boʻyicha oʻz-oʻziga xizmat koʻrsatish",
+            "ru": "Самообслуживание по требованию",
+            "en": "On-demand self-service"
+          },
+          { "uz": "Tez moslashuvchanlik", "ru": "Быстрая упругость", "en": "Rapid elasticity" },
+          { "uz": "Oʻlchanadigan xizmat", "ru": "Измеряемое обслуживание", "en": "Measured service" },
+          {
+            "uz": "Faqat bitta maʼlum qurilmadan kirish",
+            "ru": "Доступ только с одного заданного устройства",
+            "en": "Access from one fixed device only"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Besh xususiyat: oʻz-oʻziga xizmat, keng tarmoq kirishi (istalgan qurilmadan), resurslar puli, tez moslashuvchanlik, oʻlchanadigan xizmat.",
+          "ru": "Пять характеристик: самообслуживание, широкий сетевой доступ (с любого устройства), пул ресурсов, упругость, измеряемость.",
+          "en": "There are five: self-service, broad network access (any device), resource pooling, rapid elasticity, measured service."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "SaaS modelida mijoz xizmat koʻrsatilayotgan serverdagi operatsion tizimni oʻzi boshqaradi.",
+          "ru": "В модели SaaS клиент сам управляет операционной системой на сервере провайдера.",
+          "en": "In the SaaS model the customer manages the operating system on the provider's server."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "SaaS da provayder tayyor dasturni brauzer yoki ilova orqali beradi, mijoz esa faqat maʼlumot va sozlamalarni boshqaradi; operatsion tizim mijozning masʼuliyati faqat IaaS da.",
+          "ru": "В SaaS провайдер даёт готовую программу через браузер или приложение, клиент управляет только данными и настройками; ОС — зона клиента лишь в IaaS.",
+          "en": "In SaaS the provider supplies a ready program through a browser or app and the customer manages only data and settings; the OS is the customer's job only in IaaS."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "«Pitsa xizmat sifatida» oʻxshatishida tayyor xamir va pechni ijaraga olish qaysi modelga toʻgʻri keladi?",
+          "ru": "Какой модели в аналогии «пицца как услуга» соответствует аренда готового теста и печи?",
+          "en": "In the \"pizza as a service\" analogy, which model is renting ready dough and an oven?"
+        },
+        "options": [
+          { "uz": "IaaS", "ru": "IaaS", "en": "IaaS" },
+          { "uz": "PaaS", "ru": "PaaS", "en": "PaaS" },
+          { "uz": "SaaS", "ru": "SaaS", "en": "SaaS" },
+          { "uz": "FaaS", "ru": "FaaS", "en": "FaaS" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Oʻzingiz pishirib yoysangiz — oʻz serveri, xamir va pech ijarasi — IaaS, buyurtma qilib uyda yeysiz — PaaS, restoranda yeysiz — SaaS.",
+          "ru": "Испечь самому — свой сервер, аренда теста и печи — IaaS, заказать и есть дома — PaaS, есть в ресторане — SaaS.",
+          "en": "Baking it yourself is your own server, renting dough and oven is IaaS, ordering delivery and eating at home is PaaS, eating at a restaurant is SaaS."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Provayderga bogʻliqlik (vendor lock-in) xavfi nimani anglatadi?",
+          "ru": "Что означает риск зависимости от поставщика (vendor lock-in)?",
+          "en": "What does the provider dependence risk (vendor lock-in) mean?"
+        },
+        "options": [
+          {
+            "uz": "Boshqa provayderga koʻchish qiyin va qimmat",
+            "ru": "Переход к другому поставщику сложен и дорог",
+            "en": "Moving to another provider is hard and expensive"
+          },
+          {
+            "uz": "Serverlar juda tez isib ketadi",
+            "ru": "Серверы слишком быстро перегреваются",
+            "en": "Servers overheat too quickly"
+          },
+          {
+            "uz": "Internet narxi har oy koʻtariladi",
+            "ru": "Цена интернета растёт каждый месяц",
+            "en": "The price of the Internet rises every month"
+          },
+          {
+            "uz": "Provayder maʼlumotlar markazini yopib qoʻyadi",
+            "ru": "Поставщик внезапно закрывает центр обработки данных",
+            "en": "The provider suddenly closes its data centre"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Shu sababli dars chiqish strategiyasini oldindan oʻylashni maslahat beradi: maʼlumotlarni qanday va qancha turib boshqa joyga koʻchirish mumkinligini bilib qoʻying.",
+          "ru": "Поэтому урок советует заранее продумать стратегию выхода: знать, как и какой ценой данные можно перенести в другое место.",
+          "en": "That is why the lesson advises planning an exit strategy in advance: knowing how, and at what cost, data can be moved elsewhere."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "NIST boʻyicha bulutli hisoblashning nechta asosiy xususiyati bor?",
+          "ru": "Сколько основных характеристик облачных вычислений выделяет NIST?",
+          "en": "How many essential characteristics of cloud computing does NIST list?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Beshta: talab boʻyicha oʻz-oʻziga xizmat, keng tarmoq kirishi, resurslar puli, tez moslashuvchanlik, oʻlchanadigan xizmat.",
+          "ru": "Пять: самообслуживание по требованию, широкий сетевой доступ, пул ресурсов, быстрая упругость, измерямое обслуживание.",
+          "en": "Five: on-demand self-service, broad network access, resource pooling, rapid elasticity, measured service."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kod faqat hodisa (voqea) kelganda ishga tushadigan xizmat modelining qisqartmasini yozing.",
+          "ru": "Напишите сокращение сервисной модели, в которой код запускается только при наступлении события.",
+          "en": "Write the abbreviation of the service model in which code runs only when an event arrives."
+        },
+        "answers": ["FaaS", "faas"],
+        "explanation": {
+          "uz": "FaaS (funksiya) — provayder kodni hodisa kelganda ishga tushiradi; mijoz kod funksiyalarini boshqaradi. Misol: AWS Lambda.",
+          "ru": "FaaS (функции): провайдер запускает код при событии, клиент управляет функциями кода. Пример — AWS Lambda.",
+          "en": "FaaS (functions): the provider runs the code when an event arrives and the customer manages the code functions. Example: AWS Lambda."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Umumiy javobgarlik modeli boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о модели разделённой ответственности верны?",
+          "en": "Which statements about the shared responsibility model are correct?"
+        },
+        "options": [
+          {
+            "uz": "Infrastruktani (binolar, apparat, tarmoq, virtualizatsiya) provayder himoya qiladi",
+            "ru": "Инфраструктуру (здания, оборудование, сеть, виртуализацию) защищает провайдер",
+            "en": "The provider protects the infrastructure (buildings, hardware, network, virtualization)"
+          },
+          {
+            "uz": "Mijoz oʻz maʼlumotlari, foydalanuvchilar va kirish huquqlari hamda sozlamalari uchun javob beradi",
+            "ru": "Клиент отвечает за свои данные, пользователей и права доступа, а также за настройки",
+            "en": "The customer is responsible for its own data, users and access rights, and settings"
+          },
+          {
+            "uz": "Koʻp maʼlumot sizishlari provayder emas, mijozning notoʻgʻri sozlamasi tufayli sodir boʻladi",
+            "ru": "Большинство утечек происходит не из-за провайдера, а из-за неверных настроек клиента",
+            "en": "Many data leaks happen because of a customer's misconfiguration, not the provider"
+          },
+          {
+            "uz": "SaaS modelida mijozning javobgarlik ulushi eng katta",
+            "ru": "В модели SaaS доля ответственности клиента наибольшая",
+            "en": "In SaaS the customer's share of responsibility is the largest"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Aksincha: SaaS da mijozning ulushi eng kichik, IaaS da eng katta.",
+          "ru": "Наоборот: в SaaS доля клиента наименьшая, в IaaS — наибольшая.",
+          "en": "The opposite: in SaaS the customer's share is the smallest, in IaaS the largest."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "«Shaxsga doir maʼlumotlar toʻgʻrisida»gi Qonunga koʻra, Oʻzbekiston fuqarolarining shaxsiy maʼlumotlarini mamlakat hududidagi serverlardan tashqarida saqlash ham mumkin.",
+          "ru": "Согласно закону «О персональных данных», персональные данные граждан Узбекистана можно хранить на серверах за пределами страны.",
+          "en": "Under the Law \"On Personal Data\", personal data of citizens of Uzbekistan may also be stored on servers outside the country."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Qonun shaxsiy maʼlumotlar mamlakat hududidagi serverlarda saqlanishini talab qiladi — bu bulut provayderini tanlashga taʼsir qiladi.",
+          "ru": "Закон требует хранить персональные данные на серверах внутри страны — это влияет на выбор провайдера.",
+          "en": "The law requires personal data to be stored on servers within the country — this affects the choice of provider."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Bulutni tanlash: modellar, iqtisodiyot va javobgarlik",
+      "ru": "Выбор облака: модели, экономика и ответственность",
+      "en": "Choosing a cloud: models, economics and responsibility"
+    },
+    "statement": {
+      "uz": "Darsdagi joylashtirish modellari, iqtisodiy afzalliklar va umumiy javobgarlik boʻyicha quyidagi savollarga javob bering.",
+      "ru": "Ответьте на вопросы о моделях развёртывания, экономических преимуществах и разделённой ответственности из урока.",
+      "en": "Answer the questions below on the deployment models, economic advantages and shared responsibility from the lesson."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Bank yoki davlat organi maxfiy maʼlumotlar uchun qaysi joylashtirish modelini tanlaydi?",
+            "ru": "Какой модель развёртывания выберет банк или госорган для конфиденциальных данных?",
+            "en": "Which deployment model would a bank or a government body choose for confidential data?"
+          },
+          "options": [
+            { "uz": "Ommaviy bulut", "ru": "Публичное облако", "en": "Public cloud" },
+            { "uz": "Xususiy bulut", "ru": "Частное облако", "en": "Private cloud" },
+            { "uz": "Jamoaviy bulut", "ru": "Облако сообщества", "en": "Community cloud" },
+            { "uz": "Bitta provayderga bogʻlanib qolish", "ru": "Привязка к одному поставщику", "en": "Lock-in to a single provider" }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Xususiy bulut faqat bitta tashkilot uchun ajratiladi — oʻzida yoki provayderda; ommaviy bulut esa startap va kichik biznes uchun.",
+            "ru": "Частное облако выделяется только одной организации — у неё самой или у провайдера; публичное — для стартапов и малого бизнеса.",
+            "en": "A private cloud is dedicated to one organisation — on its premises or at a provider; a public cloud is for start-ups and small businesses."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Gibrid bulutda yuklama choʻqqisini ommaviy bulut qismi qabul qiladi.",
+            "ru": "В гибридном облаке пиковую нагрузку принимает на себя публичная часть.",
+            "en": "In a hybrid cloud the public part absorbs the peak load."
+          },
+          "options": [
+            { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+            { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsdagi taqsimot: maxfiy maʼlumot — xususiy qismda, yuklama choʻqqisi — ommaviy qismda.",
+            "ru": "Распределение из урока: конфиденциальные данные — в частной части, пик нагрузки — в публичной.",
+            "en": "The lesson's split: confidential data in the private part, peak load in the public part."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Bulutning iqtisodiy afzalligi boʻyicha CAPEX → OPEX nimani anglatadi?",
+            "ru": "Что означает CAPEX → OPEX как экономическое преимущество облака?",
+            "en": "What does CAPEX → OPEX mean as an economic advantage of the cloud?"
+          },
+          "options": [
+            {
+              "uz": "Katta boshlangʻich sarmoya oʻrniga oylik toʻlov",
+              "ru": "Ежемесячная плата вместо крупных стартовых инвестиций",
+              "en": "A monthly fee instead of a large initial investment"
+            },
+            {
+              "uz": "Apparatni sotib olib, keyin uni amortizatsiyalash",
+              "ru": "Купить оборудование и затем амортизировать его",
+              "en": "Buying hardware and then depreciating it"
+            },
+            {
+              "uz": "Barcha xarajatlarni butunlay provayderga yuklash",
+              "ru": "Полностью переложить все расходы на провайдера",
+              "en": "Shifting all costs entirely to the provider"
+            },
+            {
+              "uz": "Har yili apparatni majburiy almashtirish",
+              "ru": "Обязательная ежегодная замена оборудования",
+              "en": "Mandatory yearly hardware replacement"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Bulutda server sotib olinmaydi: oylik toʻlov va foydalanganingizcha toʻlov; lekin doimiy katta yuklamada oʻz serveri uzoq muddatda arzonroq boʻlishi mumkin.",
+            "ru": "В облаке сервер не покупают: ежемесячная плата и оплата по мере использования; но при постоянной высокой нагрузке свой сервер в долгую может быть дешевле.",
+            "en": "In the cloud you do not buy a server: a monthly fee and pay as you go; but with a constant heavy load your own server may be cheaper in the long run."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Bulutda sodir boʻladigan koʻplab maʼlumot sizishlari nimadan boshlanadi?",
+            "ru": "Из-за чего происходит большинство утечек данных в облаке?",
+            "en": "What causes many cloud data leaks?"
+          },
+          "options": [
+            {
+              "uz": "Mijozning notoʻgʻri sozlamasi, masalan hammaga ochiq qoldirilgan saqlash joyi",
+              "ru": "Неверные настройки клиента, например хранилище, оставленное открытым для всех",
+              "en": "A customer's misconfiguration, for example storage left open to everyone"
+            },
+            {
+              "uz": "Provayder binosidagi oʻt ochilishidan",
+              "ru": "Пожар в здании провайдера",
+              "en": "A fire in the provider's building"
+            },
+            {
+              "uz": "Internet kanalining vaqtinchalik sekinligidan",
+              "ru": "Временное замедление интернет-канала",
+              "en": "A temporary slowdown of the Internet channel"
+            },
+            {
+              "uz": "Virtualizatsiya platformasining aniqlanmagan xatosidan",
+              "ru": "Необнаруженная ошибка платформы виртуализации",
+              "en": "An undetected bug in the virtualization platform"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Shuning uchun «bulutda — demak xavfsiz va zaxiralangan» degan fikr ham xato: maʼlumotlar va kirish huquqlari uchun mijoz javobgar.",
+            "ru": "Поэтому мнение «в облаке — значит безопасно и с резервной копией» тоже ошибочно: за данные и права доступа отвечает клиент.",
+            "en": "That is why \"it's in the cloud, so it's secure and backed up\" is wrong too: the customer is responsible for data and access rights."
+          }
+        }
+      ]
+    }
+  }
+}

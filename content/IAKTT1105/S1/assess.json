@@ -1,0 +1,444 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi raqamli yetuklik darajasida korxonada hujjatlar va hisob asosan qogʻozda yoki alohida fayllarda yuritilib, Internetdan juda kam foydalaniladi?",
+          "ru": "На каком уровне цифровой зрелости учёт ведётся в основном на бумаге или в разрозненных файлах, а интернет используется мало?",
+          "en": "At which level of digital maturity are records kept mostly on paper or in separate files, with little use of the Internet?"
+        },
+        "options": [
+          {
+            "uz": "Boshlangʻich",
+            "ru": "Начальный",
+            "en": "Initial"
+          },
+          {
+            "uz": "Asosiy",
+            "ru": "Базовый",
+            "en": "Basic"
+          },
+          {
+            "uz": "Integratsiyalashgan",
+            "ru": "Интегрированный",
+            "en": "Integrated"
+          },
+          {
+            "uz": "Raqamli kanallar",
+            "ru": "Цифровые каналы",
+            "en": "Digital channels"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Boshlangʻich darajada AKT vositalari deyarli qoʻllanilmaydi va hisob-kitoblar asosan anʼanaviy usulda bajariladi.",
+          "ru": "На начальном уровне средства ИКТ почти не применяются, и учёт ведётся традиционным способом.",
+          "en": "At the initial level, ICT tools are hardly used and records are kept in a traditional way."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Korxonani raqamlashtirishda eng birinchi qadam — bu eng soʻnggi texnologiyani sotib olishdir, biznes muammosini aniqlash esa muhim emas.",
+          "ru": "Первый шаг в цифровизации предприятия — это покупка новейшей технологии, а определение бизнес-проблемы не важно.",
+          "en": "The first step in digitalizing a company is buying the latest technology, and identifying the business problem is not important."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda ogohlantirilganidek, texnologiyani maqsad deb bilish eng koʻp uchraydigan xatodir. Avval biznes muammosi aniqlanadi, soʻng uni hal qiluvchi vosita tanlanadi.",
+          "ru": "Как предупреждает занятие, считать технологию целью — частая ошибка. Сначала определяется бизнес-проблема, затем выбирается решающее её средство.",
+          "en": "As the lesson warns, treating technology as the goal is a common mistake. The business problem must be identified first, and then the tool to solve it is chosen."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kichik biznes subyektlarining raqamlashtirish jarayoniga qanday omillar toʻsiq boʻlishi mumkin?",
+          "ru": "Какие факторы могут быть барьерами для цифровизации малого бизнеса?",
+          "en": "What factors can be barriers to digitalization for a small business?"
+        },
+        "options": [
+          {
+            "uz": "Moliya yetishmovchiligi",
+            "ru": "Нехватка финансов",
+            "en": "Lack of finance"
+          },
+          {
+            "uz": "Bilim va malakaning kamligi",
+            "ru": "Недостаток знаний и навыков",
+            "en": "Lack of knowledge and skills"
+          },
+          {
+            "uz": "Infratuzilmaning yoʻqligi",
+            "ru": "Отсутствие инфраструктуры",
+            "en": "Lack of infrastructure"
+          },
+          {
+            "uz": "Zaxiralarning avtomatik nazorati",
+            "ru": "Автоматический контроль запасов",
+            "en": "Automatic inventory control"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda kichik biznes uchun raqamlashtirishga moliya, bilim va infratuzilma kabi toʻsiqlar mavjudligi qayd etilgan.",
+          "ru": "В занятии отмечается, что для малого бизнеса существуют такие барьеры цифровизации, как финансы, знания и инфраструктура.",
+          "en": "The lesson notes that a small business faces barriers to digitalization such as finance, knowledge and infrastructure."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Sarmoyadan olinadigan foyda koeffitsiyenti (inglizcha \"Return on Investment\") qanday qisqartma bilan belgilanadi? Faqat 3 ta harf bilan yozing.",
+          "ru": "Какой аббревиатурой (3 буквы) обозначается коэффициент доходности инвестиций (Return on Investment)?",
+          "en": "Which three-letter abbreviation stands for the profitability ratio of an investment (Return on Investment)?"
+        },
+        "answers": ["ROI", "roi", "Roi"],
+        "explanation": {
+          "uz": "Loyihadan olinadigan foydani uning xarajatiga nisbati orqali hisoblanadigan koʻrsatkich ROI deb ataladi.",
+          "ru": "Показатель, рассчитываемый как отношение выгоды от проекта к его затратам, называется ROI.",
+          "en": "The indicator calculated as the ratio of project benefit to project cost is called ROI."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Korxona yangi dasturiy taʼminot joriy etish uchun 40 mln soʻm xarajat qildi. Yil oxirida dastur tufayli tejalgan mablagʻ va qoʻshimcha daromad jami 50 mln soʻmni tashkil etdi. Ushbu loyihaning ROI koʻrsatkichini (foizda) hisoblang. Faqat son kiriting.",
+          "ru": "Предприятие потратило 40 млн сумов на внедрение новой программы. К концу года сэкономленные средства и дополнительный доход составили 50 млн сумов. Рассчитайте показатель ROI (в процентах) для этого проекта. Введите только число.",
+          "en": "A company spent 40 million soums on implementing a new software program. At the end of the year, the savings and extra revenue generated by the program totalled 50 million soums. Calculate the ROI (in percent) for this project. Enter only the number."
+        },
+        "answers": [25],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "ROI = (50 - 40) / 40 * 100 = 10 / 40 * 100 = 25.",
+          "ru": "ROI = (50 - 40) / 40 * 100 = 10 / 40 * 100 = 25.",
+          "en": "ROI = (50 - 40) / 40 * 100 = 10 / 40 * 100 = 25."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "\"Integratsiyalashgan\" raqamli yetuklik darajasida korxonaning biznes modeli toʻliq raqamli platformaga asoslangan boʻladi va maʼlumotlar tahlili keng koʻlamda qoʻllaniladi.",
+          "ru": "На «интегрированном» уровне цифровой зрелости бизнес-модель предприятия полностью основана на цифровой платформе, и широко применяется анализ данных.",
+          "en": "At the \"integrated\" level of digital maturity, the business model of the company is completely based on a digital platform, and data analysis is widely used."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bu taʼrif \"Raqamli model\" (5-daraja) ga tegishli. \"Integratsiyalashgan\" (3-daraja) darajada faqat buxgalteriya, ombor va savdo bitta tizimda ishlaydi.",
+          "ru": "Это описание относится к «Цифровой модели» (5 уровень). На «интегрированном» уровне (3 уровень) только бухгалтерия, склад и продажи работают в одной системе.",
+          "en": "This description belongs to the \"Digital model\" (level 5). At the \"integrated\" level (level 3), only accounting, inventory and sales work in one system."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "AKT ga sarmoyaning qoplanishini (ROI) haqiqiy sharoitda hisoblashda dastlabki xariddan tashqari yana nimalar hisobga olinishi kerak?",
+          "ru": "Что, помимо первоначальной покупки, должно учитываться при расчёте окупаемости инвестиций в ИКТ (ROI) в реальных условиях?",
+          "en": "What else besides the initial purchase should be taken into account when calculating the return on ICT investment (ROI) in real conditions?"
+        },
+        "options": [
+          {
+            "uz": "Xodimlarni oʻqitish xarajatlari",
+            "ru": "Затраты на обучение персонала",
+            "en": "Staff training costs"
+          },
+          {
+            "uz": "Bir necha yillik foyda va xarajatlar",
+            "ru": "Выгоды и затраты за несколько лет",
+            "en": "Benefits and costs over several years"
+          },
+          {
+            "uz": "Loyiha bilan bogʻliq risklar",
+            "ru": "Риски, связанные с проектом",
+            "en": "Risks associated with the project"
+          },
+          {
+            "uz": "Dasturchilarning yashash joyi",
+            "ru": "Место жительства программистов",
+            "en": "The residence of the programmers"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsda aytib oʻtilganidek, haqiqiy hisobda bir necha yillik foyda, xodimlarni oʻqitish xarajatlari va risklar ham hisobga olinadi.",
+          "ru": "Как сказано в занятии, в реальном расчёте учитываются выгоды за несколько лет, затраты на обучение персонала и риски.",
+          "en": "As stated in the lesson, a real calculation also considers several years of benefit, staff training costs and risks."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga muvofiq, korxonada raqamlashtirishni joriy etish rejasining toʻgʻri ketma-ketligi qaysi qatorda toʻgʻri koʻrsatilgan?",
+          "ru": "Согласно занятию, в какой строке правильно указана последовательность плана внедрения цифровизации на предприятии?",
+          "en": "According to the lesson, which line correctly shows the sequence of a digitalization implementation plan in a company?"
+        },
+        "options": [
+          {
+            "uz": "Muammo → vosita → xarajat va foyda → bosqichli joriy etish → oʻqitish → xavflar",
+            "ru": "Проблема → средство → затраты и выгода → поэтапное внедрение → обучение → риски",
+            "en": "Problem → tool → cost and benefit → step-by-step implementation → training → risks"
+          },
+          {
+            "uz": "Vosita → muammo → oʻqitish → xavflar → bosqichli joriy etish → xarajat va foyda",
+            "ru": "Средство → проблема → обучение → риски → поэтапное внедрение → затраты и выгода",
+            "en": "Tool → problem → training → risks → step-by-step implementation → cost and benefit"
+          },
+          {
+            "uz": "Oʻqitish → xavflar → vosita → muammo → bosqichli joriy etish → xarajat va foyda",
+            "ru": "Обучение → риски → средство → проблема → поэтапное внедрение → затраты и выгода",
+            "en": "Training → risks → tool → problem → step-by-step implementation → cost and benefit"
+          },
+          {
+            "uz": "Xarajat va foyda → muammo → oʻqitish → xavflar → vosita → bosqichli joriy etish",
+            "ru": "Затраты и выгода → проблема → обучение → риски → средство → поэтапное внедрение",
+            "en": "Cost and benefit → problem → training → risks → tool → step-by-step implementation"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Reja har doim biznes muammosini aniqlashdan boshlanadi, soʻng vosita tanlanadi, iqtisodiy asoslanadi, bosqichma-bosqich joriy etiladi, xodimlar oʻqitiladi va xavflar boshqariladi.",
+          "ru": "План всегда начинается с определения проблемы, затем выбирается средство, обосновывается экономически, внедряется поэтапно, сотрудники обучаются и управляются риски.",
+          "en": "A plan always starts with identifying the business problem, then the tool is chosen, economically justified, implemented step-by-step, staff are trained and risks are managed."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "AKT ni ishlab chiqarish sohasida qoʻllashning iqtisodiy natijalari nimalardan iborat?",
+          "ru": "В чём заключаются экономические результаты применения ИКТ в производстве?",
+          "en": "What are the economic results of using ICT in manufacturing?"
+        },
+        "options": [
+          {
+            "uz": "Tannarxning pasayishi",
+            "ru": "Снижение себестоимости",
+            "en": "Lower production cost"
+          },
+          {
+            "uz": "Sifat nazoratining yaxshilanishi",
+            "ru": "Контроль качества",
+            "en": "Quality control"
+          },
+          {
+            "uz": "Suvni tejash va hosildorlikning oshishi",
+            "ru": "Экономия воды и рост урожайности",
+            "en": "Water savings and higher yields"
+          },
+          {
+            "uz": "Filiallarsiz xizmat koʻrsatish",
+            "ru": "Обслуживание без отделений",
+            "en": "Service without branches"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Ishlab chiqarishda avtomatlashtirilgan liniyalar va ERP orqali tannarx pasayadi va sifat nazorati oʻrnatiladi. Suvni tejash qishloq xoʻjaligiga, filiallarsiz xizmat esa bank sohasiga tegishli.",
+          "ru": "В производстве благодаря автоматизированным линиям и ERP снижается себестоимость и устанавливается контроль качества. Экономия воды относится к сельскому хозяйству, а обслуживание без отделений — к банкам.",
+          "en": "In manufacturing, automated lines and ERP lower production costs and provide quality control. Water saving belongs to agriculture, and service without branches to banking."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "AKT va biznes tahlili amaliyoti",
+      "ru": "Практика по ИКТ и бизнес-анализу",
+      "en": "ICT and business analysis practice"
+    },
+    "statement": {
+      "uz": "Ushbu amaliyotda seminarda keltirilgan iqtisodiy vaziyatlar va keyslar boʻyicha olingan bilimlaringizni tekshiring.",
+      "ru": "В этой практике проверьте свои знания по экономическим ситуациям и кейсам, представленным на семинаре.",
+      "en": "In this practice, test your knowledge of the economic situations and cases presented in the seminar."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Qishloq xoʻjaligida sunʼiy yoʻldosh va dron maʼlumotlari hamda aqlli sugʻorish tizimlari qanday iqtisodiy foyda keltiradi?",
+            "ru": "Какую экономическую выгоду приносят данные спутников и дронов, а также системы умного полива в сельском хозяйстве?",
+            "en": "What economic benefit do satellite and drone data, as well as smart irrigation systems, bring in agriculture?"
+          },
+          "options": [
+            {
+              "uz": "Hosildorlik oshishi va suvni tejash",
+              "ru": "Рост урожайности и экономия воды",
+              "en": "Higher yields and water savings"
+            },
+            {
+              "uz": "Yoqilgʻini tejash va marshrutni optimallashtirish",
+              "ru": "Экономия топлива и оптимизация маршрутов",
+              "en": "Fuel and time savings"
+            },
+            {
+              "uz": "Korrupsiya xavfining kamayishi",
+              "ru": "Снижение коррупционных рисков",
+              "en": "Lower corruption risk"
+            },
+            {
+              "uz": "Onlayn kassalar orqali tez xizmat",
+              "ru": "Быстрое обслуживание через онлайн-кассы",
+              "en": "Fast service through online cash registers"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Qishloq xoʻjaligida AKT vositalari orqali suv tejaladi va hosildorlik oshadi.",
+            "ru": "С помощью средств ИКТ в сельском хозяйстве экономится вода и повышается урожайность.",
+            "en": "Through ICT tools in agriculture, water is saved and yields are increased."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "\"Bahor\" doʻkoni misolida qayd etilgan biznes muammolarni belgilang.",
+            "ru": "Отметьте бизнес-проблемы, упомянутые на примере магазина «Bahor».",
+            "en": "Mark the business problems mentioned in the example of the \"Bahor\" shop."
+          },
+          "options": [
+            {
+              "uz": "Xarajatlar koʻpayayotgani",
+              "ru": "Затраты растут",
+              "en": "Costs are rising"
+            },
+            {
+              "uz": "Ayrim tovarlar tez-tez tugab qolayotgani",
+              "ru": "Некоторые товары часто заканчиваются",
+              "en": "Some products often run out"
+            },
+            {
+              "uz": "Savdo faqat onlayn amalga oshirilayotgani",
+              "ru": "Продажи ведутся только онлайн",
+              "en": "Sales are only online"
+            },
+            {
+              "uz": "Toʻlovlar umuman qabul qilinmayotgani",
+              "ru": "Платежи вообще не принимаются",
+              "en": "Payments are not accepted at all"
+            }
+          ],
+          "correct": [0, 1],
+          "explanation": {
+            "uz": "\"Bahor\" doʻkoni egasi xarajatlar koʻpayayotgani va tovarlar zaxirasi boshqaruvi yoʻqligi sababli ayrim tovarlar tugab qolayotganidan shikoyat qilgan.",
+            "ru": "Владелец магазина «Bahor» жалуется, что затраты растут, а некоторые товары часто заканчиваются из-за отсутствия управления запасами.",
+            "en": "The owner of the \"Bahor\" shop complains that costs are rising and some products often run out due to a lack of inventory management."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Agar biror axborot tizimi bir korxonada juda yaxshi foyda keltirgan boʻlsa, demak u har qanday boshqa korxonada ham xuddi shunday yuqori samaradorlik koʻrsatadi.",
+            "ru": "Если какая-то информационная система принесла хорошую прибыль в одном предприятии, значит, она покажет такую же высокую эффективность и в любом другом предприятии.",
+            "en": "If an information system has brought good profit in one company, it means it will show the same high effectiveness in any other company."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Har bir korxonaning muammolari, xodimlari va sharoitlari turlicha boʻlgani uchun, bir xil dastur bir korxonada samarali, boshqasida esa foydasiz boʻlishi mumkin.",
+            "ru": "Поскольку проблемы, сотрудники и условия каждого предприятия различаются, одна и та же программа может быть эффективной в одной компании и бесполезной в другой.",
+            "en": "Because the problems, staff and conditions of each company vary, the same program can be effective in one company and useless in another."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsdagi misolga muvofiq, \"Bahor\" doʻkonining hozirgi raqamli yetuklik darajasi qanday?",
+            "ru": "Согласно примеру из занятия, каков текущий уровень цифровой зрелости магазина «Bahor»?",
+            "en": "According to the example in the lesson, what is the current digital maturity level of the \"Bahor\" shop?"
+          },
+          "options": [
+            {
+              "uz": "1. Boshlangʻich",
+              "ru": "1. Начальный",
+              "en": "1. Initial"
+            },
+            {
+              "uz": "2. Asosiy",
+              "ru": "2. Базовый",
+              "en": "2. Basic"
+            },
+            {
+              "uz": "3. Integratsiyalashgan",
+              "ru": "3. Интегрированный",
+              "en": "3. Integrated"
+            },
+            {
+              "uz": "5. Raqamli model",
+              "ru": "5. Цифровая модель",
+              "en": "5. Digital model"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Doʻkonda savdo kassa daftariga yozilmoqda, tovar qoldigʻi qoʻlda sanalmoqda. Bu xususiyatlar \"Boshlangʻich\" darajaga toʻgʻri keladi.",
+            "ru": "В магазине продажи записываются в тетрадь, остатки считаются вручную. Эти характеристики соответствуют «Начальному» уровню.",
+            "en": "In the shop, sales are written in a book, and stock is counted by hand. These features correspond to the \"Initial\" level."
+          }
+        }
+      ]
+    }
+  }
+}

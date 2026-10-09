@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Windows da parol siyosati parametrlarini grafik oynada sozlash uchun qaysi vosita ochiladi?",
+          "ru": "Какое средство открывает параметры политики паролей Windows в графическом окне?",
+          "en": "Which tool opens the Windows password policy settings in a window?"
+        },
+        "options": [
+          {
+            "uz": "secpol.msc",
+            "ru": "secpol.msc",
+            "en": "secpol.msc"
+          },
+          {
+            "uz": "eventvwr.msc",
+            "ru": "eventvwr.msc",
+            "en": "eventvwr.msc"
+          },
+          {
+            "uz": "gpresult /r",
+            "ru": "gpresult /r",
+            "en": "gpresult /r"
+          },
+          {
+            "uz": "net user",
+            "ru": "net user",
+            "en": "net user"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: secpol.msc → Account Policies → Password Policy. Windows Home nashrida bu oyna yoʻq, unda `net accounts` buyrugʻidan foydalaniladi.",
+          "ru": "В занятии: secpol.msc → Account Policies → Password Policy. В выпуске Windows Home этого окна нет, там используют команду `net accounts`.",
+          "en": "The lesson: secpol.msc → Account Policies → Password Policy. This window is missing in Windows Home, where the `net accounts` command is used."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Parolni tiklanadigan koʻrinishda saqlash (reversible encryption) parametrini yoqish tavsiya etiladi.",
+          "ru": "Параметр хранения паролей в обратимом виде (reversible encryption) рекомендуется включить.",
+          "en": "Storing passwords using reversible encryption is recommended to be turned on."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Jadvalda bu parametr oʻchirilgan deb berilgan: yoqilgan holda parol amalda ochiq saqlanadi.",
+          "ru": "В таблице он отключён: при включении пароль фактически хранится в открытом виде.",
+          "en": "The table lists it as disabled: if it is on, the password is effectively stored in clear text."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi tavsiyaga koʻra (CIS / Microsoft asosiy chizigʻi) Enforce password history parametri nechaga qoʻyiladi?",
+          "ru": "Чему равен параметр Enforce password history по рекомендации из занятия (CIS / базовая линия Microsoft)?",
+          "en": "Per the lesson's recommendation (CIS / Microsoft baseline), what value is Enforce password history set to?"
+        },
+        "answers": [24],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Bu parametr oxirgi 24 parolni qayta ishlatishni taqiqlaydi; minimal uzunlik — 14 belgi, minimal muddat — 1 kun.",
+          "ru": "Он запрещает повторять последние 24 пароля; минимальная длина — 14 символов, минимальный возраст — 1 день.",
+          "en": "It forbids reusing the last 24 passwords; the minimum length is 14 characters and the minimum age one day."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Minimum password age parametri nega 0 dan katta qoʻyiladi?",
+          "ru": "Почему параметр Minimum password age ставят больше нуля?",
+          "en": "Why is Minimum password age set to more than zero?"
+        },
+        "options": [
+          {
+            "uz": "Foydalanuvchi parolni ketma-ket koʻp marta almashtirib, tarixni aylanib oʻtib, eski paroliga qaytamasligi uchun",
+            "ru": "Чтобы пользователь не менял пароль много раз подряд, не обходил историю и не возвращался к старому",
+            "en": "So that a user cannot change the password many times in a row, cycle through the history and get the old one back"
+          },
+          {
+            "uz": "Parol uzunligi kamida 14 belgiligini tekshirish uchun",
+            "ru": "Чтобы проверять, что длина пароля не меньше 14 символов",
+            "en": "To check that the password is at least 14 characters long"
+          },
+          {
+            "uz": "Bloklash hisoblagichini nolga tushirish uchun",
+            "ru": "Чтобы сбрасывать счётчик блокировки в ноль",
+            "en": "To reset the lockout counter to zero"
+          },
+          {
+            "uz": "Parolni TPM da saqlash uchun",
+            "ru": "Чтобы хранить пароль в TPM",
+            "en": "To keep the password in the TPM"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi misol: minimal muddat 0 boʻlsa, foydalanuvchi parolni bir daqiqada 24 marta almashtirib, eski sevimli paroliga qaytishi mumkin.",
+          "ru": "Пример из занятия: при нулевом минимальном возрасте пользователь может за минуту сменить пароль 24 раза и вернуться к старому.",
+          "en": "The lesson's example: with a minimum age of 0 a user can change the password 24 times in a minute and return to the old favourite."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Account Lockout Policy ga qaysi parametrlar kiradi?",
+          "ru": "Какие параметры входят в Account Lockout Policy?",
+          "en": "Which settings belong to the Account Lockout Policy?"
+        },
+        "options": [
+          {
+            "uz": "Account lockout threshold",
+            "ru": "Account lockout threshold",
+            "en": "Account lockout threshold"
+          },
+          {
+            "uz": "Account lockout duration",
+            "ru": "Account lockout duration",
+            "en": "Account lockout duration"
+          },
+          {
+            "uz": "Minimum password length",
+            "ru": "Minimum password length",
+            "en": "Minimum password length"
+          },
+          {
+            "uz": "Reset account lockout counter after",
+            "ru": "Reset account lockout counter after",
+            "en": "Reset account lockout counter after"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Bloklash siyosatida uch parametr bor: chegara, davomiylik va hisoblagichni tiklash. Minimal uzunlik esa parol siyosati parametri.",
+          "ru": "У политики блокировки три параметра: порог, длительность и сброс счётчика. Минимальная длина — параметр политики паролей.",
+          "en": "The lockout policy has three settings: threshold, duration and counter reset. The minimum length is a password-policy setting."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Parol va bloklash siyosatining joriy qiymatlarini buyruq satrida chiqaruvchi buyruqni yozing.",
+          "ru": "Напишите команду, которая выводит в командной строке текущие значения политики паролей и блокировки.",
+          "en": "Write the command that prints the current password and lockout policy values at the command line."
+        },
+        "answers": ["net accounts"],
+        "explanation": {
+          "uz": "`net accounts` minimal uzunlik, muddatlar, tarix va bloklash qiymatlarini chiqaradi; `net user talaba1` hisobning parolni qachon almashtirgani va qachon eskirishini koʻrsatadi.",
+          "ru": "`net accounts` выдаёт минимальную длину, сроки, историю и значения блокировки; `net user talaba1` показывает, когда учётная запись меняла пароль и когда устареет.",
+          "en": "`net accounts` prints the minimum length, the ages, the history and the lockout values; `net user talaba1` shows when the account last changed its password and when it expires."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Hisob bloklangan paytda tizim kiritilgan parolni tekshirmaydi — shuning uchun toʻgʻri parol ham rad etiladi.",
+          "ru": "Пока учётная запись заблокирована, система не проверяет введённый пароль — поэтому верный пароль тоже отклоняется.",
+          "en": "While an account is locked the system does not check the password at all, so even a correct password is refused."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "1-misolda 09:10 dagi toʻgʻri parol ham qabul qilinmadi: aks holda hujumchi bloklangan hisobda ham tanlashni davom ettirardi.",
+          "ru": "В примере 1 верный пароль в 09:10 тоже не принят: иначе злоумышленник продолжал бы перебор и на заблокированной записи.",
+          "en": "In example 1 the correct password at 09:10 was refused too: otherwise an attacker could keep guessing on the locked account."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "1-misolda bloklash chegarasi 3, kuzatish oynasi 15 daqiqa, bloklash davomiyligi 15 daqiqa. ali 09:00, 09:02 va 09:05 da xato urinish qildi. Bloklash soat 09 ning nechinchi daqiqasida tugaydi?",
+          "ru": "В примере 1 порог блокировки 3, окно наблюдения 15 минут, длительность блокировки 15 минут. ali сделал ошибочные попытки в 09:00, 09:02 и 09:05. На какой минуте часа 09 закончится блокировка?",
+          "en": "In example 1 the threshold is 3, the window is 15 minutes and the lockout lasts 15 minutes. ali failed at 09:00, 09:02 and 09:05. On which minute of hour 09 does the lockout end?"
+        },
+        "answers": [20],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Uchinchi xatodan keyin bloklash 09:05 + 15 = 09:20 da tugaydi, shuning uchun 09:10 dagi urinish ham rad etilgan.",
+          "ru": "После третьей ошибки блокировка заканчивается в 09:05 + 15 = 09:20, поэтому и попытка в 09:10 отклонена.",
+          "en": "After the third failure the lockout ends at 09:05 + 15 = 09:20, which is why the 09:10 attempt was denied as well."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "2-misol (parol tarixi) va darsdagi ogohlantirishlar boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения верны по примеру 2 (история паролей) и предупреждениям занятия?",
+          "en": "Which statements are correct about example 2 (password history) and the warnings of the lesson?"
+        },
+        "options": [
+          {
+            "uz": "vali ham `Qwerty!1` ni tanladi, lekin uning xeshi boshqa — foydalanuvchi nomi tuz vazifasini bajardi",
+            "ru": "вали тоже выбрал `Qwerty!1`, но его хеш другой: имя пользователя сработало как соль",
+            "en": "vali also chose `Qwerty!1`, yet its hash differs: the user name acted as the salt"
+          },
+          {
+            "uz": "Tizim parollarning oʻzini, hech qanday oʻzgartirishsiz saqlaydi",
+            "ru": "Система хранит сами пароли, без каких-либо изменений",
+            "en": "The system stores the passwords themselves, unchanged"
+          },
+          {
+            "uz": "Tarix hajmi 3 boʻlsa, uch marta almashtirgandan keyin eski parol yana qabul qilinadi",
+            "ru": "При размере истории 3 старый пароль снова принимается после трёх замен",
+            "en": "With a history size of 3 an old password is accepted again after three changes"
+          },
+          {
+            "uz": "Bloklash chegarasini 1 ga qoʻyish xizmatdan voz kechish xavfini tugʻdiradi",
+            "ru": "Порог блокировки, равный 1, создаёт риск отказа в обслуживании",
+            "en": "A lockout threshold of 1 creates a denial-of-service risk"
+          }
+        ],
+        "correct": [0, 2, 3],
+        "explanation": {
+          "uz": "Tizim parolning oʻzini emas, xeshini saqlaydi — shuning uchun ikkinchi ifoda notoʻgʻri. Juda past chegara bilan hujumchi xodimlarni ataylab bloklaydi.",
+          "ru": "Система хранит не пароль, а его хеш, поэтому второе утверждение неверно. При очень низком пороге злоумышленник может специально блокировать сотрудников.",
+          "en": "The system stores the hash, not the password, so the second statement is wrong. With a very low threshold an attacker can lock staff out on purpose."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Parolni siyosat boʻyicha tekshirish",
+      "ru": "Проверка пароля по политике",
+      "en": "Checking a password against the policy"
+    },
+    "statement": {
+      "uz": "Siz tashkilot parolini siyosatga qarab tekshiruvchi dastur yozasiz. Birinchi satrda ikkita butun son beriladi: minimal uzunlik va minimal belgi guruhi soni. Keyingi satrlarda bir boʻshliq bilan ajratilgan foydalanuvchi nomi va parol (boʻshliqsiz, ASCII) keladi. Parol uchta shart bajarilganda qabul qilinadi: uzunligi minimal uzunlikdan kichik emas; quyidagi toʻrt guruhning kamida minimal soni parolda uchraydi — kichik harf, katta harf, raqam, harf va raqam boʻlmagan belgi; parol foydalanuvchi nomini oʻz ichiga olmaydi (katta-kichik harf farqi bilan). Har bir juftlik uchun bitta qator chiqaring: `user: ACCEPT` yoki `user: REJECT`, boshqa hech narsa yozmang. Masalan, `8 3` va `ali Ali2025#` kirsa — `ali: ACCEPT`; `8 3` va `ali ali2025#` kirsa — `ali: REJECT`, chunki parol foydalanuvchi nomini oʻz ichiga oladi.",
+      "ru": "Вы пишете программу, которая проверяет пароль пользователя по политике. В первой строке два целых числа: минимальная длина и минимальное число групп символов. В последующих строках идут имя пользователя и пароль (без пробелов, ASCII), разделённые одним пробелом. Пароль принимается, если выполнены три условия: его длина не меньше минимальной; в нём встречается не меньше указанного числа из четырёх групп символов — строчные буквы, прописные буквы, цифры, символы не буквы и не цифры; пароль не содержит имя пользователя (с учётом регистра). На каждую пару выведите одну строку: `user: ACCEPT` или `user: REJECT`, ничего больше не печатайте. Например, `8 3` и `ali Ali2025#` дают `ali: ACCEPT`; `8 3` и `ali ali2025#` дают `ali: REJECT`, потому что пароль содержит имя пользователя.",
+      "en": "You write a program that checks a user's password against the policy. The first line holds two integers: the minimum length and the minimum number of character groups. The following lines hold a user name and a password (no spaces, ASCII) separated by one space. A password is accepted when all three conditions hold: its length is not below the minimum; at least the given number of these four groups appear in it — lower-case letters, upper-case letters, digits, characters that are neither letters nor digits; the password does not contain the user name (case-sensitive). For each pair print one line, `user: ACCEPT` or `user: REJECT`, and print nothing else. For example, `8 3` with `ali Ali2025#` gives `ali: ACCEPT`; `8 3` with `ali ali2025#` gives `ali: REJECT`, because the password contains the user name."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\nt = sys.stdin.read().split()\nmin_len = int(t[0])\nmin_types = int(t[1])\nnatija = []\ni = 2\nwhile i + 1 < len(t):\n    user = t[i]\n    pwd = t[i + 1]\n    i += 2\n    ok = len(pwd) >= min_len\n    natija.append(user + \": \" + (\"ACCEPT\" if ok else \"REJECT\"))\nprint(\"\\n\".join(natija))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int minLen = in.nextInt();\n        int minTypes = in.nextInt();\n        while (in.hasNext()) {\n            String user = in.next();\n            String pwd = in.next();\n            boolean ok = pwd.length() >= minLen;\n            System.out.println(user + \": \" + (ok ? \"ACCEPT\" : \"REJECT\"));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int minLen, minTypes;\n    cin >> minLen >> minTypes;\n    string user, pwd;\n    while (cin >> user >> pwd) {\n        bool ok = (int) pwd.size() >= minLen;\n        cout << user << \": \" << (ok ? \"ACCEPT\" : \"REJECT\") << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\nt = sys.stdin.read().split()\nmin_len = int(t[0])\nmin_types = int(t[1])\nnatija = []\ni = 2\nwhile i + 1 < len(t):\n    user = t[i]\n    pwd = t[i + 1]\n    i += 2\n    sinflar = 0\n    if any(c.islower() for c in pwd):\n        sinflar += 1\n    if any(c.isupper() for c in pwd):\n        sinflar += 1\n    if any(c.isdigit() for c in pwd):\n        sinflar += 1\n    if any(not c.isalnum() for c in pwd):\n        sinflar += 1\n    ok = len(pwd) >= min_len and sinflar >= min_types and user not in pwd\n    natija.append(user + \": \" + (\"ACCEPT\" if ok else \"REJECT\"))\nprint(\"\\n\".join(natija))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int minLen = in.nextInt();\n        int minTypes = in.nextInt();\n        while (in.hasNext()) {\n            String user = in.next();\n            String pwd = in.next();\n            int lower = 0;\n            int upper = 0;\n            int digit = 0;\n            int other = 0;\n            for (int i = 0; i < pwd.length(); i++) {\n                char c = pwd.charAt(i);\n                if (c >= 'a' && c <= 'z') {\n                    lower = 1;\n                } else if (c >= 'A' && c <= 'Z') {\n                    upper = 1;\n                } else if (c >= '0' && c <= '9') {\n                    digit = 1;\n                } else {\n                    other = 1;\n                }\n            }\n            int classes = lower + upper + digit + other;\n            boolean ok = pwd.length() >= minLen && classes >= minTypes && !pwd.contains(user);\n            System.out.println(user + \": \" + (ok ? \"ACCEPT\" : \"REJECT\"));\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int minLen, minTypes;\n    cin >> minLen >> minTypes;\n    string user, pwd;\n    while (cin >> user >> pwd) {\n        int lower = 0;\n        int upper = 0;\n        int digit = 0;\n        int other = 0;\n        for (char c : pwd) {\n            if (c >= 'a' && c <= 'z') {\n                lower = 1;\n            } else if (c >= 'A' && c <= 'Z') {\n                upper = 1;\n            } else if (c >= '0' && c <= '9') {\n                digit = 1;\n            } else {\n                other = 1;\n            }\n        }\n        int classes = lower + upper + digit + other;\n        bool ok = (int) pwd.size() >= minLen && classes >= minTypes && pwd.find(user) == string::npos;\n        cout << user << \": \" << (ok ? \"ACCEPT\" : \"REJECT\") << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "8 3\nali Ali2025#\n", "expected": "ali: ACCEPT", "hidden": false },
+        { "input": "8 3\nali ali2025#\n", "expected": "ali: REJECT", "hidden": false },
+        { "input": "8 3\nali Ali2025#\nvali vali\n", "expected": "ali: ACCEPT\nvali: REJECT", "hidden": true },
+        { "input": "12 4\nmalika Malika2025!!\n", "expected": "malika: ACCEPT", "hidden": true },
+        { "input": "6 4\nozod abcdef\nbotir Bot1r#\n", "expected": "ozod: REJECT\nbotir: ACCEPT", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,322 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Vijiner jadvalida (tabula recta) satr va ustun nimani bildiradi?",
+          "ru": "Что обозначают строка и столбец в таблице Виженера (tabula recta)?",
+          "en": "In the Vigenère table (tabula recta), what do the row and the column stand for?"
+        },
+        "options": [
+          {
+            "uz": "Satr — kalit harfi, ustun — ochiq matn harfi",
+            "ru": "Строка — буква ключа, столбец — буква открытого текста",
+            "en": "The row is the key letter, the column the plaintext letter"
+          },
+          {
+            "uz": "Satr — ochiq matn harfi, ustun — shifrmatn harfi",
+            "ru": "Строка — буква открытого текста, столбец — буква шифртекста",
+            "en": "The row is the plaintext letter, the column the ciphertext letter"
+          },
+          {
+            "uz": "Satr — siljish soni, ustun — kalit uzunligi",
+            "ru": "Строка — величина сдвига, столбец — длина ключа",
+            "en": "The row is the size of the shift, the column the key length"
+          },
+          {
+            "uz": "Satr — harf chastotasi, ustun — harflar soni",
+            "ru": "Строка — частота буквы, столбец — число букв",
+            "en": "The row is a letter frequency, the column a letter count"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Qoʻlda ishlashda satr — kalit harfi, ustun — ochiq matn harfi, kesishmada esa shifrmatn harfi olinadi.",
+          "ru": "При работе вручную строка — буква ключа, столбец — буква открытого текста, на пересечении — буква шифртекста.",
+          "en": "For work by hand the row is the key letter, the column the plaintext letter, and the intersection gives the ciphertext letter."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Atbash shifrida kalit mavjud emas.",
+          "ru": "У шифра Атбаш ключа нет.",
+          "en": "The Atbash cipher has no key."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Jadvalda Atbash uchun «kalit yoʻq» deb berilgan: C = 25 − P (A↔Z, B↔Y), shuning uchun algoritm maʼlum boʻlsa shifr darhol ochiladi.",
+          "ru": "В таблице для Атбаша указано «ключа нет»: C = 25 − P (A↔Z, B↔Y), поэтому при известном алгоритме шифр раскрывается сразу.",
+          "en": "The table lists no key for Atbash: C = 25 − P (A↔Z, B↔Y), so once the algorithm is known the cipher opens immediately."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi jadvalga koʻra, Sezar shifriga qarshi qaysi usullar samarali?",
+          "ru": "Какие методы, согласно таблице из занятия, действенны против шифра Цезаря?",
+          "en": "According to the table in the lesson, which methods work against the Caesar cipher?"
+        },
+        "options": [
+          {
+            "uz": "Toʻliq tanlash",
+            "ru": "Полный перебор",
+            "en": "Exhaustive search"
+          },
+          {
+            "uz": "Chastotali tahlil",
+            "ru": "Частотный анализ",
+            "en": "Frequency analysis"
+          },
+          {
+            "uz": "Kasiski usuli",
+            "ru": "Метод Казиски",
+            "en": "The Kasiski method"
+          },
+          {
+            "uz": "Matnni ustunlarga ajratib moslik indeksini hisoblash",
+            "ru": "Разбиение на столбцы и подсчёт индекса совпадений",
+            "en": "Splitting into columns and computing the index of coincidence"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Sezarda 25 ta kalit va harflar taqsimoti faqat suriladi. Kasiski usuli ham, moslik indeksi ham kaliti takrorlanadigan Vijiner shifriga qaratilgan.",
+          "ru": "У Цезаря 25 ключей, а распределение букв лишь сдвигается. Метод Казиски и индекс совпадений направлены против Виженера с повторяющимся ключом.",
+          "en": "Caesar has 25 keys and the letter distribution is only shifted. Both Kasiski and the index of coincidence aim at the Vigenère cipher, whose key repeats."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda harflar A = 0, B = 1, …, Z = 25 deb raqamlangan va Atbash shifrida B ↔ Y. Y harfining raqami nechaga teng?",
+          "ru": "В занятии буквы пронумерованы A = 0, B = 1, …, Z = 25, и в шифре Атбаш B ↔ Y. Чему равен номер буквы Y?",
+          "en": "The lesson numbers letters A = 0, B = 1, …, Z = 25, and in Atbash B ↔ Y. What number does the letter Y have?"
+        },
+        "answers": [24],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Atbashda C = 25 − P: P = 1 (B) boʻlganda C = 24 chiqadi, demak Y harfi 24 raqamida turadi (Z = 25).",
+          "ru": "В Атбаше C = 25 − P: при P = 1 (B) выходит 24, значит буква Y стоит под номером 24 (Z = 25).",
+          "en": "Atbash is C = 25 − P: with P = 1 (B) the result is 24, so Y sits at number 24 (Z = 25)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda HUJUM soʻzi Sezar shifri bilan, k = 3 boʻlganda qanday yoziladi?",
+          "ru": "Как в занятии шифром Цезаря при k = 3 записано слово HUJUM?",
+          "en": "In the lesson, how is the word HUJUM written with Caesar when k = 3?"
+        },
+        "options": [
+          {
+            "uz": "KXMXP",
+            "ru": "KXMXP",
+            "en": "KXMXP"
+          },
+          {
+            "uz": "MXKXP",
+            "ru": "MXKXP",
+            "en": "MXKXP"
+          },
+          {
+            "uz": "HUJUM",
+            "ru": "HUJUM",
+            "en": "HUJUM"
+          },
+          {
+            "uz": "KXWXP",
+            "ru": "KXWXP",
+            "en": "KXWXP"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "H+3 = K, U+3 = X, J+3 = M, U+3 = X, M+3 = P → KXMXP.",
+          "ru": "H+3 = K, U+3 = X, J+3 = M, U+3 = X, M+3 = P → KXMXP.",
+          "en": "H+3 = K, U+3 = X, J+3 = M, U+3 = X, M+3 = P → KXMXP."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi SALOM → CEJYQ misolida L(11)+Y(24) yigʻindisi mod 26 da nechaga teng? Faqat sonni yozing.",
+          "ru": "Чему в примере SALOM → CEJYQ из занятия равно L(11)+Y(24) по модулю 26? Напишите только число.",
+          "en": "In the lesson example SALOM → CEJYQ, what is L(11)+Y(24) mod 26? Write the number only."
+        },
+        "answers": ["9", "09"],
+        "explanation": {
+          "uz": "11 + 24 = 35, 35 mod 26 = 9 — shu sababli uchinchi harf J (A = 0, …, J = 9) boʻladi.",
+          "ru": "11 + 24 = 35, 35 mod 26 = 9 — поэтому третья буква J (A = 0, …, J = 9).",
+          "en": "11 + 24 = 35, and 35 mod 26 = 9, which is why the third letter is J (A = 0, …, J = 9)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nima uchun oddiy almashtirish shifrida kalit fazosi 26! ga yaqin boʻlsa ham u chastotali tahlil bilan ochiladi?",
+          "ru": "Почему шифр простой замены раскрывается частотным анализом, хотя его пространство ключей близко к 26!?",
+          "en": "Why does the simple substitution cipher fall to frequency analysis although its key space is close to 26!?"
+        },
+        "options": [
+          {
+            "uz": "Har bir harf doim bitta va oʻsha harfga almashadi, shuning uchun til chastotalari shifrmatnda saqlanadi",
+            "ru": "Каждая буква всегда заменяется одной и той же буквой, поэтому частоты языка сохраняются в шифртексте",
+            "en": "Every letter is always replaced by the same letter, so the language frequencies survive in the ciphertext"
+          },
+          {
+            "uz": "Kalit fazosi juda katta boʻlgani uchun uni umuman tekshirib boʻlmaydi",
+            "ru": "Пространство ключей слишком велико, чтобы его когда-либо проверить",
+            "en": "The key space is far too large to ever be searched"
+          },
+          {
+            "uz": "Shifrmatnda harflar butunlay tasodifiy taqsimlanadi",
+            "ru": "В шифртексте буквы распределены совершенно случайно",
+            "en": "In the ciphertext the letters are distributed entirely at random"
+          },
+          {
+            "uz": "Siljish har bir harfda kalit uzunligiga qarab oʻzgarib turadi",
+            "ru": "Сдвиг на каждой букве меняется в зависимости от длины ключа",
+            "en": "The shift at each letter changes with the key length"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsning xulosasi: kalit fazosi katta boʻlsa ham til statistikasi shifrmatnda saqlansa, shifr baribir buziladi.",
+          "ru": "Вывод занятия: даже при большом пространстве ключей шифр ломается, если статистика языка остаётся в шифртексте.",
+          "en": "The lesson's conclusion: even with a large key space, a cipher breaks when the language statistics survive in the ciphertext."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Moslik indeksi (IC) haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об индексе совпадений (IC) верны?",
+          "en": "Which statements about the index of coincidence (IC) are correct?"
+        },
+        "options": [
+          {
+            "uz": "IC = Σ nᵢ(nᵢ − 1) / (N(N − 1))",
+            "ru": "IC = Σ nᵢ(nᵢ − 1) / (N(N − 1))",
+            "en": "IC = Σ nᵢ(nᵢ − 1) / (N(N − 1))"
+          },
+          {
+            "uz": "Tabiiy matnda IC ≈ 0,07, tasodifiy harflarda ≈ 0,038",
+            "ru": "В естественном тексте IC ≈ 0,07, в случайных буквах ≈ 0,038",
+            "en": "IC is about 0.07 in natural text and about 0.038 in random letters"
+          },
+          {
+            "uz": "Kalit uzunligi toʻgʻri boʻlsa, ustunlarning oʻrtacha IC si keskin oshadi",
+            "ru": "При верной длине ключа средний IC столбцов резко растёт",
+            "en": "At the right key length the average column IC rises sharply"
+          },
+          {
+            "uz": "IC har qanday shifrmatnda har doim 1 ga teng",
+            "ru": "IC в любом шифртексте всегда равен 1",
+            "en": "IC in any ciphertext is always equal to 1"
+          },
+          {
+            "uz": "m ning karralilari ham yuqori IC beradi, shuning uchun eng kichik «baland» qiymat tanlanadi",
+            "ru": "Кратные m тоже дают высокий IC, поэтому выбирают наименьшее «высокое» значение",
+            "en": "Multiples of m also give a high IC, so the smallest high value is chosen"
+          }
+        ],
+        "correct": [0, 1, 2, 4],
+        "explanation": {
+          "uz": "IC — tasodifan tanlangan ikki harfning bir xil boʻlish ehtimoli: u 1 ga teng emas, kalit uzunligi topilganda esa tabiiy til qiymatiga (≈ 0,07) koʻtariladi.",
+          "ru": "IC — вероятность того, что две случайно взятые буквы совпадут: он не равен 1, а при найденной длине ключа поднимается до значения естественного языка (≈ 0,07).",
+          "en": "IC is the probability that two randomly chosen letters are the same: it is not 1, and it climbs to the natural-language value (about 0.07) once the key length is right."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Java va C++ da (−3) % 26 = 23, Python da esa −3.",
+          "ru": "В Java и C++ (−3) % 26 = 23, а в Python −3.",
+          "en": "In Java and C++ (−3) % 26 = 23, while in Python it is −3."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda aksincha aytilgan: Python da (−3) % 26 = 23, Java va C++ da −3; shuning uchun deshifrlashda (x % 26 + 26) % 26 ishlatiladi.",
+          "ru": "В занятии сказано обратное: в Python (−3) % 26 = 23, в Java и C++ −3; поэтому при расшифровании берут (x % 26 + 26) % 26.",
+          "en": "The lesson says the opposite: Python gives 23, Java and C++ give −3, so decryption uses (x % 26 + 26) % 26."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Affin shifri dasturi",
+      "ru": "Программа аффинного шифра",
+      "en": "The affine cipher program"
+    },
+    "statement": {
+      "uz": "Darsdagi nazariya jadvaliga koʻra affin shifrida C = (a·P + b) mod 26, bu yerda P — harfning alifbodagi raqami (A = 0, B = 1, …, Z = 25) va EKUB(a, 26) = 1. Dasturingiz birinchi satrdan ikkita butun son a va b ni (bitta boʻshliq bilan ajratilgan, 1 ≤ a ≤ 25, 0 ≤ b ≤ 25), ikkinchi satrdan bitta matn qatorini oʻqisin. Faqat lotin harflarini shifrlang: katta harf oʻrniga katta, kichik harf oʻrniga kichik harf chiqsin; boʻshliq, tinish belgilari va raqamlar oʻzgarmasin. Natijani bitta qatorda, hech qanday qoʻshimcha soʻz yozmasdan chiqaring. Masalan, a = 3, b = 5 boʻlsa ABC → FIL.",
+      "ru": "Согласно таблице из занятия, в аффинном шифре C = (a·P + b) mod 26, где P — номер буквы в алфавите (A = 0, B = 1, …, Z = 25) и НОД(a, 26) = 1. Программа читает из первой строки два целых числа a и b (через один пробел, 1 ≤ a ≤ 25, 0 ≤ b ≤ 25), из второй строки — одну строку текста. Шифруйте только латинские буквы: заглавная остаётся заглавной, строчная — строчной; пробелы, знаки препинания и цифры не меняются. Результат выведите одной строкой, без каких-либо лишних слов. Например, при a = 3, b = 5: ABC → FIL.",
+      "en": "According to the theory table of the lesson the affine cipher is C = (a·P + b) mod 26, where P is the letter's number in the alphabet (A = 0, B = 1, …, Z = 25) and gcd(a, 26) = 1. Your program reads two integers a and b from the first line (separated by one space, 1 ≤ a ≤ 25, 0 ≤ b ≤ 25) and one line of text from the second line. Encrypt only Latin letters: an uppercase letter stays uppercase, a lowercase one stays lowercase; spaces, punctuation and digits do not change. Print the result on one line, with no extra words. For example, with a = 3 and b = 5: ABC → FIL."
+    },
+    "code": {
+      "starter": {
+        "python": "qator = input().split()\na = int(qator[0])\nb = int(qator[1])\nmatn = input()\nnatija = []\nfor ch in matn:\n    if \"a\" <= ch <= \"z\":\n        natija.append(chr((a * (ord(ch) - 97) + b) % 26 + 97))\n    else:\n        natija.append(ch)\nprint(\"\".join(natija))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] qator = in.nextLine().split(\" \");\n        int a = Integer.parseInt(qator[0]);\n        int b = Integer.parseInt(qator[1]);\n        String matn = in.nextLine();\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < matn.length(); i++) {\n            char ch = matn.charAt(i);\n            if (ch >= 'a' && ch <= 'z') {\n                sb.append((char) ('a' + (a * (ch - 'a') + b) % 26));\n            } else {\n                sb.append(ch);\n            }\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <cstdio>\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int a, b;\n    string matn;\n    cin >> a >> b;\n    cin.ignore();\n    getline(cin, matn);\n    string natija = \"\";\n    for (char ch : matn) {\n        if (ch >= 'a' && ch <= 'z') {\n            natija += char('a' + (a * (ch - 'a') + b) % 26);\n        } else {\n            natija += ch;\n        }\n    }\n    printf(\"%s\\n\", natija.c_str());\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "qator = input().split()\na = int(qator[0])\nb = int(qator[1])\nmatn = input()\nnatija = []\nfor ch in matn:\n    if \"a\" <= ch <= \"z\":\n        natija.append(chr((a * (ord(ch) - 97) + b) % 26 + 97))\n    elif \"A\" <= ch <= \"Z\":\n        natija.append(chr((a * (ord(ch) - 65) + b) % 26 + 65))\n    else:\n        natija.append(ch)\nprint(\"\".join(natija))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] qator = in.nextLine().split(\" \");\n        int a = Integer.parseInt(qator[0]);\n        int b = Integer.parseInt(qator[1]);\n        String matn = in.nextLine();\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < matn.length(); i++) {\n            char ch = matn.charAt(i);\n            if (ch >= 'a' && ch <= 'z') {\n                sb.append((char) ('a' + (a * (ch - 'a') + b) % 26));\n            } else if (ch >= 'A' && ch <= 'Z') {\n                sb.append((char) ('A' + (a * (ch - 'A') + b) % 26));\n            } else {\n                sb.append(ch);\n            }\n        }\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <cstdio>\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    int a, b;\n    string matn;\n    cin >> a >> b;\n    cin.ignore();\n    getline(cin, matn);\n    string natija = \"\";\n    for (char ch : matn) {\n        if (ch >= 'a' && ch <= 'z') {\n            natija += char('a' + (a * (ch - 'a') + b) % 26);\n        } else if (ch >= 'A' && ch <= 'Z') {\n            natija += char('A' + (a * (ch - 'A') + b) % 26);\n        } else {\n            natija += ch;\n        }\n    }\n    printf(\"%s\\n\", natija.c_str());\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3 5\nABC\n", "expected": "FIL", "hidden": false },
+        { "input": "5 8\nHello, World!\n", "expected": "Rclla, Oaplx!", "hidden": false },
+        { "input": "1 13\nUzbekistan\n", "expected": "Hmorxvfgna", "hidden": true },
+        { "input": "7 3\nzz ZZ 9!\n", "expected": "ww WW 9!", "hidden": true },
+        { "input": "25 25\nABCabc\n", "expected": "ZYXzyx", "hidden": true }
+      ]
+    }
+  }
+}

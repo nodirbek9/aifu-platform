@@ -1,0 +1,412 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kriptografiyaning qaysi vazifasi xabarni begona shaxslar oʻqiy olmasligini taʼminlaydi?",
+          "ru": "Какая задача криптографии гарантирует, что посторонние не смогут прочитать сообщение?",
+          "en": "Which task of cryptography ensures that outsiders cannot read the message?"
+        },
+        "options": [
+          {
+            "uz": "Maxfiylik",
+            "ru": "Конфиденциальность",
+            "en": "Confidentiality"
+          },
+          {
+            "uz": "Yaxlitlik",
+            "ru": "Целостность",
+            "en": "Integrity"
+          },
+          {
+            "uz": "Autentifikatsiya",
+            "ru": "Аутентификация",
+            "en": "Authentication"
+          },
+          {
+            "uz": "Rad etib boʻlmaslik",
+            "ru": "Неотказуемость",
+            "en": "Non-repudiation"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Maxfiylik vazifasi shifrlash vositasi orqali amalga oshirilib, xabarni faqat ruxsat etilganlar oʻqiy olishini taʼminlaydi.",
+          "ru": "Задача конфиденциальности решается с помощью шифрования и гарантирует, что сообщение смогут прочитать только авторизованные лица.",
+          "en": "The confidentiality task is achieved through encryption, ensuring that only authorized persons can read the message."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Simmetrik shifrlashda maʼlumotni shifrlash va ochish uchun turli xil kalitlardan foydalaniladi.",
+          "ru": "В симметричном шифровании для шифрования и расшифрования информации используются разные ключи.",
+          "en": "In symmetric encryption, different keys are used for encrypting and decrypting information."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Simmetrik shifrlashda ikkala amal uchun ham bitta umumiy kalit ishlatiladi.",
+          "ru": "В симметричном шифровании для обоих действий используется один и тот же общий ключ.",
+          "en": "In symmetric encryption, a single common key is used for both operations."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Matnda simmetrik shifrlash uchun qaysi zamonaviy standart algoritm nomi keltirilgan? (Qisqartmani yozing)",
+          "ru": "Какой современный стандартный алгоритм для симметричного шифрования упомянут в тексте? (Напишите аббревиатуру)",
+          "en": "Which modern standard algorithm for symmetric encryption is mentioned in the text? (Write the abbreviation)"
+        },
+        "answers": [
+          "AES",
+          "aes"
+        ],
+        "explanation": {
+          "uz": "Zamonaviy simmetrik shifrlash standarti AES (Advanced Encryption Standard) hisoblanadi.",
+          "ru": "Современным стандартом симметричного шифрования является AES (Advanced Encryption Standard).",
+          "en": "The modern standard for symmetric encryption is AES (Advanced Encryption Standard)."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Berilgan kichik RSA misolida p = 5 va q = 11 boʻlsa, hisoblangan n ning qiymati nechaga teng?",
+          "ru": "В приведенном небольшом примере RSA, если p = 5 и q = 11, чему равно вычисленное значение n?",
+          "en": "In the small RSA example given, if p = 5 and q = 11, what is the calculated value of n?"
+        },
+        "answers": [
+          55
+        ],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "RSA algoritmida n modul ikkita tub sonning koʻpaytmasiga teng: n = 5 × 11 = 55.",
+          "ru": "В алгоритме RSA модуль n равен произведению двух простых чисел: n = 5 × 11 = 55.",
+          "en": "In the RSA algorithm, the modulus n equals the product of two prime numbers: n = 5 × 11 = 55."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Xesh-funksiyaning xususiyatlari nimalardan iborat?",
+          "ru": "Каковы свойства хеш-функции?",
+          "en": "What are the properties of a hash function?"
+        },
+        "options": [
+          {
+            "uz": "Istalgan uzunlikdagi maʼlumotdan qatʼiy uzunlikdagi natija hosil qiladi",
+            "ru": "Из данных любой длины получает результат фиксированной длины",
+            "en": "Produces a fixed-length result from data of any length"
+          },
+          {
+            "uz": "Kirishdagi bitta belgi oʻzgarsa ham xesh butunlay oʻzgaradi",
+            "ru": "При изменении одного символа входа хеш меняется полностью",
+            "en": "If one character of the input changes, the hash changes completely"
+          },
+          {
+            "uz": "Bir xil kirish maʼlumotidan doimo bir xil xesh hosil boʻladi",
+            "ru": "Одинаковые входные данные всегда дают одинаковый хеш",
+            "en": "The same input data always produces the same hash"
+          },
+          {
+            "uz": "Xesh qiymati orqali asl maʼlumotni osongina tiklab olish mumkin",
+            "ru": "По значению хеша можно легко восстановить исходные данные",
+            "en": "The original data can be easily recovered from the hash value"
+          }
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explanation": {
+          "uz": "Xesh-funksiya bir tomonlama ishlaydi, yaʼni xesh orqali asl maʼlumotni qayta tiklab boʻlmaydi.",
+          "ru": "Хеш-функция работает в одну сторону, то есть исходные данные восстановить по хешу невозможно.",
+          "en": "A hash function works one-way, meaning the original data cannot be recovered from the hash."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Simmetrik shifrlashning eng asosiy muammosi nima?",
+          "ru": "В чем заключается самая главная проблема симметричного шифрования?",
+          "en": "What is the main problem of symmetric encryption?"
+        },
+        "options": [
+          {
+            "uz": "Joʻnatuvchi va qabul qiluvchi oʻrtasida kalitni xavfsiz kelishib olish",
+            "ru": "Безопасный обмен ключом между отправителем и получателем",
+            "en": "Exchanging the key securely between the sender and the recipient"
+          },
+          {
+            "uz": "Shifrlash algoritmiga hamma kirish imkoniga ega boʻlishi",
+            "ru": "Доступность алгоритма шифрования для всех",
+            "en": "The encryption algorithm being accessible to everyone"
+          },
+          {
+            "uz": "Asimmetrik shifrlashga nisbatan juda sekin ishlashi",
+            "ru": "Очень медленная работа по сравнению с асимметричным шифрованием",
+            "en": "Working very slowly compared to asymmetric encryption"
+          },
+          {
+            "uz": "Katta hajmdagi maʼlumotlarni shifrlash imkonining yoʻqligi",
+            "ru": "Невозможность шифрования больших объемов данных",
+            "en": "The inability to encrypt large volumes of data"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Simmetrik shifrlash juda tez ishlaydi, ammo umumiy kalitni xavfsiz almashish ochiq kanal orqali qiyin muammo hisoblanadi.",
+          "ru": "Симметричное шифрование работает очень быстро, но безопасно обменяться общим ключом по открытому каналу — сложная проблема.",
+          "en": "Symmetric encryption is very fast, but exchanging the shared key securely over an open channel is a difficult problem."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "HTTPS kabi amaliyotda keng qoʻllaniladigan gibrid sxema qanday ishlaydi?",
+          "ru": "Как работает гибридная схема, широко применяемая на практике, например в HTTPS?",
+          "en": "How does a hybrid scheme widely used in practice, like HTTPS, work?"
+        },
+        "options": [
+          {
+            "uz": "Asimmetrik kriptografiya faqat simmetrik kalitni xavfsiz almashish uchun ishlatiladi, maʼlumot esa shu simmetrik kalit yordamida shifrlanadi",
+            "ru": "Асимметричная криптография используется только для безопасного обмена симметричным ключом, а данные шифруются этим симметричным ключом",
+            "en": "Asymmetric cryptography is used only to securely exchange a symmetric key, and the data is encrypted with that symmetric key"
+          },
+          {
+            "uz": "Asimmetrik shifrlash toʻgʻridan-toʻgʻri barcha maʼlumotlarni shifrlash va himoyalash uchun xizmat qiladi",
+            "ru": "Асимметричное шифрование служит непосредственно для шифрования и защиты всех данных",
+            "en": "Asymmetric encryption serves directly to encrypt and protect all data"
+          },
+          {
+            "uz": "Simmetrik shifrlash ochiq kalitni yuborish uchun ishlatiladi, asimmetrik shifrlash esa maʼlumotni shifrlaydi",
+            "ru": "Симметричное шифрование используется для передачи открытого ключа, а асимметричное шифрует данные",
+            "en": "Symmetric encryption is used to send the public key, and asymmetric encryption encrypts the data"
+          },
+          {
+            "uz": "Maʼlumot shifrlanmaydi, faqatgina xesh-funksiya yordamida xavfsiz kanal orqali uzatiladi",
+            "ru": "Данные не шифруются, а передаются по защищенному каналу только с помощью хеш-функции",
+            "en": "Data is not encrypted, but is transmitted over a secure channel using only a hash function"
+          }
+        ],
+        "correct": [
+          0
+        ],
+        "explanation": {
+          "uz": "Asimmetrik shifrlash sekin boʻlganligi sababli, u tezkor AES simmetrik kalitini almashish vazifasini bajaradi.",
+          "ru": "Поскольку асимметричное шифрование работает медленно, оно выполняет задачу обмена быстрым симметричным ключом AES.",
+          "en": "Because asymmetric encryption is slow, it performs the task of exchanging the fast AES symmetric key."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kerkgoffs tamoyiliga koʻra, tizimning xavfsizligi shifrlash algoritmiga hech kimning aqli yetmasligini sir saqlashga tayanadi.",
+          "ru": "Согласно принципу Керкгоффса, безопасность системы держится на том, что алгоритм шифрования должен храниться в строгом секрете от всех.",
+          "en": "According to Kerckhoffs's principle, the security of the system relies on keeping the encryption algorithm itself a strict secret from everyone."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [
+          1
+        ],
+        "explanation": {
+          "uz": "Ushbu tamoyil algoritm ochiq boʻlishi mumkinligini va xavfsizlik faqat kalitning sir saqlanishiga bogʻliqligini bildiradi.",
+          "ru": "Этот принцип гласит, что алгоритм может быть открытым, а безопасность зависит только от сохранения в тайне ключа.",
+          "en": "This principle states that the algorithm can be public, and security depends solely on keeping the key a secret."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Elektron raqamli imzo (ERI) qanday ishlash jarayonini oʻz ichiga oladi?",
+          "ru": "Какой процесс включает в себя работа электронной цифровой подписи (ЭЦП)?",
+          "en": "What process does the operation of an electronic digital signature (EDS) include?"
+        },
+        "options": [
+          {
+            "uz": "Joʻnatuvchi hujjat xeshini hisoblab, uni oʻzining yopiq kaliti bilan imzolaydi",
+            "ru": "Отправитель вычисляет хеш документа и подписывает его своим закрытым ключом",
+            "en": "The sender calculates the hash of the document and signs it with their private key"
+          },
+          {
+            "uz": "Qabul qiluvchi imzoni joʻnatuvchining ochiq kaliti yordamida tekshiradi",
+            "ru": "Получатель проверяет подпись с помощью открытого ключа отправителя",
+            "en": "The recipient verifies the signature using the sender's public key"
+          },
+          {
+            "uz": "Sertifikat ochiq kalitning haqiqatan ham shu shaxsga tegishli ekanini tasdiqlaydi",
+            "ru": "Сертификат подтверждает, что открытый ключ действительно принадлежит этому лицу",
+            "en": "The certificate confirms that the public key really belongs to this person"
+          },
+          {
+            "uz": "Joʻnatuvchi har qanday hujjatni qabul qiluvchining yopiq kaliti bilan shifrlashi shart",
+            "ru": "Отправитель обязан шифровать любой документ закрытым ключом получателя",
+            "en": "The sender must encrypt any document with the recipient's private key"
+          }
+        ],
+        "correct": [
+          0,
+          1,
+          2
+        ],
+        "explanation": {
+          "uz": "ERI hujjatning xeshini yopiq kalit bilan imzolash, ochiq kalit bilan tekshirish va ochiq kalit ishonchliligini sertifikat orqali tasdiqlashdan iborat.",
+          "ru": "ЭЦП состоит из подписания хеша закрытым ключом, его проверки открытым ключом и подтверждения надежности открытого ключа сертификатом.",
+          "en": "EDS consists of signing the hash with a private key, verifying it with a public key, and confirming the public key's reliability via a certificate."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Amaliyot: Kriptografiya asoslari",
+      "ru": "Практика: Основы криптографии",
+      "en": "Practice: Fundamentals of Cryptography"
+    },
+    "statement": {
+      "uz": "Kriptografiyaning asosiy tushunchalarini yana bir bor takrorlab, bilimlaringizni amaliy mustahkamlang.",
+      "ru": "Еще раз повторите основные понятия криптографии и закрепите свои знания на практике.",
+      "en": "Review the basic concepts of cryptography once again and reinforce your knowledge in practice."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "TF",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Sezar shifri kabi klassik shifrlar zamonaviy bank va davlat tizimlarini himoya qilish talablariga toʻliq javob beradi.",
+            "ru": "Классические шифры, такие как шифр Цезаря, полностью отвечают современным требованиям защиты банковских и государственных систем.",
+            "en": "Classical ciphers like the Caesar cipher fully meet modern requirements for protecting banking and state systems."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [
+            1
+          ],
+          "explanation": {
+            "uz": "Klassik shifrlar zaif boʻlib, ulardagi kalitlar soni kamligi sababli soniyalar ichida buzib kirish mumkin.",
+            "ru": "Классические шифры уязвимы, из-за небольшого количества ключей их можно взломать за секунды.",
+            "en": "Classical ciphers are weak; because of the small number of keys, they can be cracked in seconds."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Iqtisodiyotda elektron raqamli imzo (ERI) asosan qanday maqsadlarda ishlatilishi mumkin?",
+            "ru": "Для каких целей в экономике в основном может использоваться электронная цифровая подпись (ЭЦП)?",
+            "en": "For what purposes can an electronic digital signature (EDS) be mainly used in the economy?"
+          },
+          "options": [
+            {
+              "uz": "Elektron hisob-fakturalarni (ESF) imzolash",
+              "ru": "Подписание электронных счетов-фактур (ЭСФ)",
+              "en": "Signing electronic invoices (ESF)"
+            },
+            {
+              "uz": "Davlat xizmatlari arizalarini (my.gov.uz) tasdiqlash",
+              "ru": "Подтверждение заявлений на госуслуги (my.gov.uz)",
+              "en": "Confirming applications for public services (my.gov.uz)"
+            },
+            {
+              "uz": "Soliq hisobotlarini joʻnatish",
+              "ru": "Отправка налоговой отчетности",
+              "en": "Sending tax reports"
+            },
+            {
+              "uz": "Internet tezligini avtomatik oshirish",
+              "ru": "Автоматическое увеличение скорости интернета",
+              "en": "Automatically increasing internet speed"
+            }
+          ],
+          "correct": [
+            0,
+            1,
+            2
+          ],
+          "explanation": {
+            "uz": "ERI hujjatlar va hisobotlarni tasdiqlash uchun xizmat qiladi, lekin internet tezligiga aloqasi yoʻq.",
+            "ru": "ЭЦП служит для подтверждения документов и отчетов, но не имеет отношения к скорости интернета.",
+            "en": "EDS serves to confirm documents and reports, but has nothing to do with internet speed."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Matnda keltirilgan misolga koʻra, lotin alifbosiga asoslangan Sezar shifrida jami nechta mumkin boʻlgan kalit mavjud?",
+            "ru": "Согласно примеру из текста, сколько всего возможных ключей существует в шифре Цезаря, основанном на латинском алфавите?",
+            "en": "According to the example given in the text, how many possible keys in total exist in the Caesar cipher based on the Latin alphabet?"
+          },
+          "answers": [
+            25
+          ],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Lotin alifbosi harflari siljish qadami chegaralanganligi sababli faqat 25 ta mumkin boʻlgan kalitga ega.",
+            "ru": "Поскольку шаг сдвига букв латинского алфавита ограничен, существует всего 25 возможных ключей.",
+            "en": "Because the shift step of Latin alphabet letters is limited, there are only 25 possible keys."
+          }
+        }
+      ]
+    }
+  }
+}

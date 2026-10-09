@@ -1,0 +1,406 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Barcha slaydlarda logotip va shriftlarni bir joyda sozlash uchun qaysi vosita ishlatiladi?",
+          "ru": "Какой инструмент используется для настройки логотипа и шрифтов на всех слайдах в одном месте?",
+          "en": "Which tool is used to set the logo and fonts in one place for all slides?"
+        },
+        "options": [
+          {
+            "uz": "Namuna slayd (Slide Master)",
+            "ru": "Образец слайдов (Slide Master)",
+            "en": "Slide Master"
+          },
+          {
+            "uz": "Slaydlarni tartiblash (Slide Sorter)",
+            "ru": "Сортировщик слайдов (Slide Sorter)",
+            "en": "Slide Sorter"
+          },
+          {
+            "uz": "Oʻtishlar (Transitions)",
+            "ru": "Переходы (Transitions)",
+            "en": "Transitions"
+          },
+          {
+            "uz": "Animatsiyalar paneli",
+            "ru": "Панель анимации",
+            "en": "Animation pane"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Namuna slayd (Slide Master) orqali logotip, shrift va ranglarni bir marta sozlash butun taqdimot uchun izchil dizayn yaratadi.",
+          "ru": "Настройка логотипа, шрифтов и цветов в образце слайдов (Slide Master) один раз создаёт единый дизайн для всей презентации.",
+          "en": "Setting the logo, font, and colours once in the Slide Master creates a consistent design for the entire presentation."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Excel maʼlumotlari asosida qurilgan diagrammani PowerPoint dasturiga oddiy rasm sifatida qoʻyish tavsiya etiladi.",
+          "ru": "Рекомендуется вставлять диаграмму на основе данных Excel в PowerPoint как обычную картинку.",
+          "en": "It is recommended to insert a chart based on Excel data into PowerPoint as an ordinary picture."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Diagrammani Paste Special orqali bogʻlangan holda qoʻyish kerak, shunda Excel maʼlumotlari oʻzgarganda u avtomatik yangilanadi.",
+          "ru": "Диаграмму следует вставлять со связью через Paste Special, чтобы при изменении данных Excel она обновлялась автоматически.",
+          "en": "The chart should be inserted as linked via Paste Special, so that it updates automatically when the Excel data changes."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Taqdimotni tarqatish va arxivlash uchun qaysi formatga eksport qilish eng qulay hisoblanadi?",
+          "ru": "В каком формате удобнее всего экспортировать презентацию для распространения и архива?",
+          "en": "Which format is the most convenient for exporting a presentation for distribution and archiving?"
+        },
+        "options": [
+          {
+            "uz": "PDF",
+            "ru": "PDF",
+            "en": "PDF"
+          },
+          {
+            "uz": "Word hujjati",
+            "ru": "Документ Word",
+            "en": "Word document"
+          },
+          {
+            "uz": "Excel jadvali",
+            "ru": "Таблица Excel",
+            "en": "Excel spreadsheet"
+          },
+          {
+            "uz": "Faqat matn (TXT)",
+            "ru": "Только текст (TXT)",
+            "en": "Text only (TXT)"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "PDF formati qurilmalarda bir xil koʻrinishni taʼminlaydi va tarqatma materiallar uchun juda mos keladi.",
+          "ru": "Формат PDF обеспечивает одинаковое отображение на устройствах и отлично подходит для раздаточного материала.",
+          "en": "The PDF format ensures a consistent look across devices and is very suitable for handouts."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Maʼlumotlarni namoyish etishda diagrammalarni qanday tanlash toʻgʻri boʻladi?",
+          "ru": "Как правильно выбирать диаграммы для представления данных?",
+          "en": "How to correctly choose charts for presenting data?"
+        },
+        "options": [
+          {
+            "uz": "Vaqt boʻyicha dinamika uchun chiziqli diagramma",
+            "ru": "Для динамики во времени — линейная диаграмма",
+            "en": "A line chart for dynamics over time"
+          },
+          {
+            "uz": "Tovarlar ulushi uchun doiraviy diagramma",
+            "ru": "Для долей товаров — круговая диаграмма",
+            "en": "A pie chart for product shares"
+          },
+          {
+            "uz": "Hududlar boʻyicha taqqoslash uchun matnli roʻyxat",
+            "ru": "Для сравнения по регионам — текстовый список",
+            "en": "A text list for comparison by region"
+          },
+          {
+            "uz": "Jarayonlarni koʻrsatish uchun jadval",
+            "ru": "Для показа процессов — таблица",
+            "en": "A table for showing processes"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Dinamika uchun chiziqli, ulushlar uchun doiraviy yoki ustunli diagramma mos keladi. Hududlar uchun ham diagramma (ustunli), jarayonlar uchun SmartArt tavsiya etiladi.",
+          "ru": "Для динамики подходит линейная, для долей — круговая или столбчатая диаграмма. Для регионов также рекомендуется диаграмма (столбчатая), для процессов — SmartArt.",
+          "en": "A line chart suits dynamics, and a pie or column chart suits shares. A chart (column) is also recommended for regions, and SmartArt for processes."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Seminardagi topshiriq shartiga koʻra, taqdimot namoyishi (chiqish) uchun necha daqiqa vaqt belgilangan?",
+          "ru": "Согласно условию задания на семинаре, сколько минут отведено на выступление (показ презентации)?",
+          "en": "According to the seminar task requirements, how many minutes are allocated for the delivery (presentation)?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Topshiriq talablarida taqdimot vaqti 5 daqiqa deb koʻrsatilgan va uni mashq qilish muhimligi uqtirilgan.",
+          "ru": "В требованиях задания указано время выступления — 5 минут, и подчёркнута важность его репетиции.",
+          "en": "The task requirements state that the presentation time is 5 minutes, and the importance of rehearsing it is emphasised."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Matn va roʻyxatlarda har bir slayd sarlavhasi toʻliq jumla shaklida boʻlishi kerak.",
+          "ru": "В текстах и списках заголовок каждого слайда должен быть полным предложением.",
+          "en": "In text and lists, each slide title should be a full sentence."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Topshiriq talablarida har bir slayd sarlavhasi toʻliq jumla boʻlishi soʻralgan, bu tushunishni osonlashtiradi.",
+          "ru": "В требованиях задания сказано, что заголовок каждого слайда — полное предложение, это облегчает понимание.",
+          "en": "The task requirements state that each slide title should be a full sentence, which makes it easier to understand."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Koʻrish imkoniyati cheklangan foydalanuvchilar va ekran oʻquvchi dasturlar uchun rasmlarga qoʻshiladigan maxsus matn inglizcha qanday ataladi? (Ikki soʻz bilan yozing)",
+          "ru": "Как по-английски называется специальный текст, добавляемый к изображениям для пользователей с нарушениями зрения и программ экранного доступа? (Напишите два слова)",
+          "en": "What is the special text added to images for users with visual impairments and screen readers called in English? (Write two words)"
+        },
+        "answers": ["Alt Text", "alt text", "Alt text"],
+        "explanation": {
+          "uz": "Maxsus imkoniyatlarni tekshirishda (Check Accessibility) rasmlarga muqobil matn (Alt Text) qoʻshilishi talab etiladi.",
+          "ru": "При проверке специальных возможностей (Check Accessibility) требуется добавление замещающего текста (Alt Text) к изображениям.",
+          "en": "Checking accessibility requires adding alternative text (Alt Text) to images."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Seminar taqdimotini baholash mezonlariga qaysi bandlar kiradi?",
+          "ru": "Какие пункты входят в критерии оценивания презентации на семинаре?",
+          "en": "Which items are included in the assessment criteria for the seminar presentation?"
+        },
+        "options": [
+          {
+            "uz": "Tuzilma va mantiq",
+            "ru": "Структура и логика",
+            "en": "Structure and logic"
+          },
+          {
+            "uz": "Dizayn izchilligi",
+            "ru": "Единство дизайна",
+            "en": "Design consistency"
+          },
+          {
+            "uz": "Slaydlar va animatsiyalar soni",
+            "ru": "Количество слайдов и анимаций",
+            "en": "Number of slides and animations"
+          },
+          {
+            "uz": "Maʼlumotlarning toʻgʻriligi va manbalar",
+            "ru": "Правильность данных и источники",
+            "en": "Correctness of data and sources"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Baholash mezonlariga tuzilma va mantiq, maʼlumotlar toʻgʻriligi, diagrammalar sifati, dizayn izchilligi va namoyish sifati kiradi. Slayd yoki animatsiyalar soni toʻgʻridan-toʻgʻri baholanmaydi.",
+          "ru": "В критерии оценивания входят структура и логика, правильность данных, качество диаграмм, единство дизайна и качество выступления. Количество слайдов или анимаций напрямую не оценивается.",
+          "en": "Assessment criteria include structure and logic, data correctness, chart quality, design consistency, and delivery quality. The number of slides or animations is not assessed directly."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Taqdimotda mantiqiy tuzilma qanday ketma-ketlikda boʻlishi tavsiya qilinadi?",
+          "ru": "В какой последовательности рекомендуется строить логическую структуру презентации?",
+          "en": "In what sequence is it recommended to build the logical structure of a presentation?"
+        },
+        "options": [
+          {
+            "uz": "Muammo → dalil → taklif",
+            "ru": "Проблема → доказательства → предложение",
+            "en": "Problem → evidence → proposal"
+          },
+          {
+            "uz": "Taklif → muammo → dalil",
+            "ru": "Предложение → проблема → доказательства",
+            "en": "Proposal → problem → evidence"
+          },
+          {
+            "uz": "Dalil → taklif → muammo",
+            "ru": "Доказательства → предложение → проблема",
+            "en": "Evidence → proposal → problem"
+          },
+          {
+            "uz": "Muammo → taklif",
+            "ru": "Проблема → предложение",
+            "en": "Problem → proposal"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Yaxshi tuzilma va mantiq avval muammoni, keyin uning dalillarini (raqamlar, sabablar) va oxirida aniq chora-tadbirlarni (takliflarni) koʻrsatishni talab etadi.",
+          "ru": "Хорошая структура и логика требуют показать сначала проблему, затем её доказательства (цифры, причины) и в конце — конкретные меры (предложения).",
+          "en": "A good structure and logic require showing the problem first, then its evidence (numbers, causes), and finally concrete measures (proposals)."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Taqdimot yaratish koʻnikmalari",
+      "ru": "Навыки создания презентаций",
+      "en": "Presentation creation skills"
+    },
+    "statement": {
+      "uz": "Taqdimot muharriridan toʻgʻri foydalanish boʻyicha quyidagi savollarga javob bering.",
+      "ru": "Ответьте на следующие вопросы по правильному использованию редактора презентаций.",
+      "en": "Answer the following questions about the correct use of a presentation editor."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Taqdimot uchun qanday mavzu va ranglar tanlash tavsiya etiladi?",
+            "ru": "Какую тему и цвета рекомендуется выбрать для презентации?",
+            "en": "What kind of theme and colours are recommended to choose for a presentation?"
+          },
+          "options": [
+            {
+              "uz": "2–3 rangli sodda mavzu",
+              "ru": "Простая тема в 2–3 цвета",
+              "en": "A simple theme with 2–3 colours"
+            },
+            {
+              "uz": "Kamida 10 xil rang",
+              "ru": "Не менее 10 разных цветов",
+              "en": "At least 10 different colours"
+            },
+            {
+              "uz": "Har bir slayd uchun turli fonlar",
+              "ru": "Разные фоны для каждого слайда",
+              "en": "Different backgrounds for each slide"
+            },
+            {
+              "uz": "Faqat qora va oq ranglar",
+              "ru": "Только чёрный и белый цвета",
+              "en": "Only black and white colours"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Haddan tashqari koʻp ranglar eʼtiborni chalgʻitadi, shu sababli 2–3 rangli sodda mavzu ishlatish maʼqul.",
+            "ru": "Слишком много цветов отвлекают внимание, поэтому желательно использовать простую тему из 2–3 цветов.",
+            "en": "Too many colours distract attention, so it is preferable to use a simple theme with 2–3 colours."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Katta va murakkab taqdimotlarni boshqarish hamda tartibga solish uchun PowerPoint dasturida qaysi vositalardan foydalanish mumkin?",
+            "ru": "Какие инструменты в PowerPoint можно использовать для управления и упорядочивания больших и сложных презентаций?",
+            "en": "Which tools in PowerPoint can be used to manage and organise large and complex presentations?"
+          },
+          "options": [
+            {
+              "uz": "Slaydlarni tartiblash (Slide Sorter)",
+              "ru": "Сортировщик слайдов (Slide Sorter)",
+              "en": "Slide Sorter"
+            },
+            {
+              "uz": "Boʻlimlar qoʻshish (Add Section)",
+              "ru": "Добавление разделов (Add Section)",
+              "en": "Add Section"
+            },
+            {
+              "uz": "Rasm formatini oʻzgartirish",
+              "ru": "Изменение формата рисунка",
+              "en": "Changing picture format"
+            },
+            {
+              "uz": "Matnni tekshirish",
+              "ru": "Проверка текста",
+              "en": "Checking text"
+            }
+          ],
+          "correct": [0, 1],
+          "explanation": {
+            "uz": "Slide Sorter slaydlar ketma-ketligini osongina oʻzgartirishga, Add Section esa ularni mantiqiy boʻlimlarga ajratishga yordam beradi.",
+            "ru": "Slide Sorter помогает легко менять порядок слайдов, а Add Section — делить их на логические разделы.",
+            "en": "Slide Sorter helps to easily change the slide order, and Add Section helps to divide them into logical sections."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Taqdimot namoyishi vaqtida slayddagi barcha matnlarni toʻliq oʻqib berish kerak.",
+            "ru": "Во время показа презентации нужно полностью зачитывать весь текст со слайда.",
+            "en": "During the presentation delivery, you should read all the text on the slide out loud."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Koʻp uchraydigan xatolardan biri bu matnni oʻqib berishdir. Eslatmalardan foydalanish va tinglovchilarga qarash muhim.",
+            "ru": "Зачитывание текста — частая ошибка. Важно использовать заметки докладчика и смотреть на слушателей.",
+            "en": "Reading text aloud is a common mistake. It is important to use speaker notes and look at the audience."
+          }
+        }
+      ]
+    }
+  }
+}

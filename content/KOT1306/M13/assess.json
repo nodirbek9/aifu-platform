@@ -1,0 +1,451 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Server operatsion tizimining ish stansiyasi operatsion tizimidan asosiy farqi nimada?",
+          "ru": "В чём основное отличие серверной операционной системы от ОС рабочей станции?",
+          "en": "What is the main difference between a server operating system and a workstation operating system?"
+        },
+        "options": [
+          {
+            "uz": "Koʻp mijozga uzluksiz xizmat koʻrsatishga moʻljallangan",
+            "ru": "Рассчитана на непрерывное обслуживание многих клиентов",
+            "en": "It is designed to serve many clients without interruption"
+          },
+          {
+            "uz": "Unda grafik interfeys hech qachon boʻlmaydi",
+            "ru": "В нём вообще никогда не бывает графического интерфейса",
+            "en": "It never has a graphical interface at all"
+          },
+          {
+            "uz": "Faqat bitta protsessor bilan ishlaydi",
+            "ru": "Работает только с одним процессором",
+            "en": "It works with only one processor"
+          },
+          {
+            "uz": "Dasturlarni oʻrnatishni talab qilmaydi",
+            "ru": "Не требует установки программ",
+            "en": "It needs no software to be installed"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi jadval: server OT vazifasi — koʻp mijozga xizmat koʻrsatish. Grafik interfeys ixtiyoriy (Desktop Experience yoki Server Core), serverlar esa koʻp protsessorli uskunada ishlaydi.",
+          "ru": "По таблице из занятия: задача серверной ОС — обслуживание многих клиентов. Графический интерфейс необязателен (Desktop Experience или Server Core), а серверы работают на многопроцессорном оборудовании.",
+          "en": "The lesson table: a server OS exists to serve many clients. The GUI is optional (Desktop Experience or Server Core), and servers run on multi-processor hardware."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Server Core oʻrnatish turi grafik interfeys bilan keladi.",
+          "ru": "Вариант установки Server Core поставляется с графическим интерфейсом.",
+          "en": "The Server Core installation type comes with a graphical interface."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Server Core — grafiksiz, faqat buyruqlar satri: kam resurs, kamroq yangilanish va kichik hujum yuzasi. Grafik versiya — Desktop Experience.",
+          "ru": "Server Core — без графики, только командная строка: меньше ресурсов, меньше обновлений и меньше поверхность атаки. Графический вариант — Desktop Experience.",
+          "en": "Server Core has no GUI — command line only: fewer resources, fewer updates, a smaller attack surface. The graphical variant is Desktop Experience."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi server rollari roʻyxatiga qaysilari kiritilgan?",
+          "ru": "Что из перечисленного входит в список ролей сервера из занятия?",
+          "en": "Which of these are in the lesson's list of server roles?"
+        },
+        "options": [
+          {
+            "uz": "Katalog xizmati (foydalanuvchilar va kompyuterlar bazasi)",
+            "ru": "Служба каталогов (база пользователей и компьютеров)",
+            "en": "Directory service (database of users and computers)"
+          },
+          {
+            "uz": "DNS — nomlarni hal qilish",
+            "ru": "DNS — разрешение имён",
+            "en": "DNS — name resolution"
+          },
+          {
+            "uz": "Virtualizatsiya (virtual mashinalar)",
+            "ru": "Виртуализация (виртуальные машины)",
+            "en": "Virtualisation (virtual machines)"
+          },
+          {
+            "uz": "Uzluksiz quvvat manbai (UPS) xizmati",
+            "ru": "Служба источника бесперебойного питания (ИБП)",
+            "en": "Uninterruptible power supply (UPS) service"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Rollar: katalog xizmati, DHCP, DNS, fayl va chop etish, veb, virtualizatsiya, masofaviy kirish. UPS — darsdagi rollar roʻyxatida yoʻq.",
+          "ru": "Роли: служба каталогов, DHCP, DNS, файлы и печать, веб, виртуализация, удалённый доступ. ИБП в списке ролей нет.",
+          "en": "The roles are directory service, DHCP, DNS, file and print, web, virtualisation, remote access. A UPS is not in the lesson's list."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ishchi guruh (workgroup) modelida foydalanuvchi hisoblari qayerda saqlanadi?",
+          "ru": "Где хранятся учётные записи пользователей в модели рабочей группы?",
+          "en": "Where are user accounts stored in a workgroup model?"
+        },
+        "options": [
+          {
+            "uz": "Har bir kompyuterning oʻzida (lokal hisoblar)",
+            "ru": "На каждом компьютере отдельно (локальные учётные записи)",
+            "en": "Separately on each computer (local accounts)"
+          },
+          {
+            "uz": "Domen kontroleridagi markaziy bazada",
+            "ru": "В центральной базе на контроллере домена",
+            "en": "In a central database on a domain controller"
+          },
+          {
+            "uz": "Fayl serveridagi umumiy papkada",
+            "ru": "В общей папке на файловом сервере",
+            "en": "In a shared folder on a file server"
+          },
+          {
+            "uz": "Kommutatorning MAC jadvalida",
+            "ru": "В таблице MAC-адресов коммутатора",
+            "en": "In the switch's MAC table"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ishchi guruh — teng huquqli model: markaziy baza yoʻq, har bir kompyuter oʻz hisoblarini oʻzi saqlaydi. Markaziy baza — domenning xossasi.",
+          "ru": "Рабочая группа — одноранговая модель: центральной базы нет, каждый компьютер хранит свои учётные записи сам. Центральная база — признак домена.",
+          "en": "A workgroup is peer-to-peer: there is no central database, each computer keeps its own accounts. A central database belongs to a domain."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi universitet misolida domen GPO siyosati parolda kamida nechta belgini talab qiladi?",
+          "ru": "В примере университетской сети из занятия политика GPO домена требует от пароля минимум сколько символов?",
+          "en": "In the university example of the lesson, how many characters at least does the domain GPO password policy require?"
+        },
+        "answers": [10],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsdagi parol siyosati: kamida 10 belgi, 90 kunda almashtirish.",
+          "ru": "Политика из занятия: не менее 10 символов, смена каждые 90 дней.",
+          "en": "The lesson's policy: at least 10 characters, changed every 90 days."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Domen ichida obyektlarni tartiblash, ularga siyosat bogʻlash va boshqaruv huquqini topshirish uchun ishlatiladigan «papka»ga oʻxshash konteynerning qisqartma nomi?",
+          "ru": "Сокращённое имя подобного «папке» контейнера внутри домена, к которому привязывают политики и делегируют права?",
+          "en": "What is the short name of the folder-like container inside a domain that holds objects, links policies and delegates rights?"
+        },
+        "answers": ["OU", "ou", "Organizational Unit", "organizational unit"],
+        "explanation": {
+          "uz": "OU (Organizational Unit) — domen ichidagi konteyner: masalan, Talabalar, Oʻqituvchilar, Kompyuter sinflari.",
+          "ru": "OU (Organizational Unit) — контейнер внутри домена: например, Студенты, Преподаватели, Компьютерные классы.",
+          "en": "An OU (Organizational Unit) is a container inside a domain: Students, Teachers, Computer labs."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Domen kompyuterlari nega tashqi DNS (masalan, 8.8.8.8) emas, ichki DNS serverdan foydalanishi kerak?",
+          "ru": "Почему компьютеры домена должны использовать внутренний DNS-сервер, а не внешний (например, 8.8.8.8)?",
+          "en": "Why must domain computers use the internal DNS server rather than an external one (e.g. 8.8.8.8)?"
+        },
+        "options": [
+          {
+            "uz": "Domen kontrolleri DNS dagi SRV yozuvlari orqali topiladi; tashqi DNS da bunday yozuvlar yoʻq",
+            "ru": "Контроллер домена находится по SRV-записям в DNS; во внешнем DNS таких записей нет",
+            "en": "The domain controller is found through SRV records in DNS; an external DNS has no such records"
+          },
+          {
+            "uz": "Tashqi DNS parollarni shifrlab yuboradi",
+            "ru": "Внешний DNS отправляет пароли в незашифрованном виде",
+            "en": "An external DNS sends passwords in clear text"
+          },
+          {
+            "uz": "Ichki DNS har doim tezroq javob beradi",
+            "ru": "Внутренний DNS всегда отвечает быстрее",
+            "en": "The internal DNS always answers faster"
+          },
+          {
+            "uz": "Active Directory tashqi Internet aloqasini umuman taqiqlaydi",
+            "ru": "Active Directory вообще запрещает внешний доступ в Интернет",
+            "en": "Active Directory forbids all external Internet access"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "AD DNS ga kuchli bogʻliq: mijozlar domen kontrolerini SRV yozuvlari orqali topadi. Mijozga tashqi DNS berilsa, kompyuter DC ni topa olmaydi — bu darsdagi koʻp uchraydigan xato.",
+          "ru": "AD сильно зависит от DNS: клиенты находят DC по SRV-записям. Если клиенту указать внешний DNS, компьютер не найдёт контроллер домена — это частая ошибка из занятия.",
+          "en": "AD depends heavily on DNS: clients locate the DC through SRV records. Give a client an external DNS and it cannot find the DC — one of the lesson's common mistakes."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Active Directory haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об Active Directory верны?",
+          "en": "Which statements about Active Directory are correct?"
+        },
+        "options": [
+          {
+            "uz": "Bir nechta domen kontrolleri oʻzaro replikatsiya qiladi: bittasi ishdan chiqsa, boshqasi ishlaydi",
+            "ru": "Несколько контроллеров домена реплицируются: если один откажет, работает другой",
+            "en": "Several domain controllers replicate with each other: if one fails, another keeps working"
+          },
+          {
+            "uz": "Foydalanuvchilarni autentifikatsiya protokoli — Kerberos (chiptalar bilan)",
+            "ru": "Протокол аутентификации пользователей — Kerberos (по билетам)",
+            "en": "The user authentication protocol is Kerberos (ticket-based)"
+          },
+          {
+            "uz": "Katalogga murojaat protokoli — LDAP, 389-port",
+            "ru": "Протокол доступа к каталогу — LDAP, порт 389",
+            "en": "The directory access protocol is LDAP, port 389"
+          },
+          {
+            "uz": "Huquqlar har bir foydalanuvchiga alohida berilishi kerak",
+            "ru": "Права нужно выдавать каждому пользователю отдельно",
+            "en": "Rights should be granted to each user separately"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi koʻp uchraydigan xatolardan biri — huquqni har foydalanuvchiga alohida berish: huquqlar guruhlarga beriladi, foydalanuvchilar guruhlarga qoʻshiladi.",
+          "ru": "Одна из частых ошибок по занятию — выдавать права каждому пользователю: права назначают группам, а пользователей добавляют в группы.",
+          "en": "One of the lesson's common mistakes is granting rights user by user: rights go to groups, and users are added to groups."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bitta jismoniy serverda bir nechta server rolini (masalan, DHCP va DNS) birga ishga tushirib boʻlmaydi.",
+          "ru": "На одном физическом сервере нельзя запустить несколько серверных ролей (например, DHCP и DNS) вместе.",
+          "en": "One physical server cannot run several server roles (e.g. DHCP and DNS) together."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Mumkin: bitta jismoniy serverda koʻp rolni ishga tushirish mumkin. Lekin yaxshi amaliyot — har bir muhim rolni alohida (koʻpincha virtual) serverda saqlash.",
+          "ru": "Можно: много ролей запускается на одном физическом сервере. Но хорошая практика — держать каждую важную роль на отдельном (часто виртуальном) сервере.",
+          "en": "It is possible: many roles can run on one physical server. But good practice keeps each important role on its own (often virtual) server."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Server OT, ishchi guruh va domen: oʻzingizni tekshiring",
+      "ru": "Серверные ОС, рабочая группа и домен: проверьте себя",
+      "en": "Server OSes, workgroup and domain: check yourself"
+    },
+    "statement": {
+      "uz": "Amaliyot: quyidagi savollar faqat shu dars matniga asoslangan. Bir nechta javobli savollarda barcha toʻgʻri variantlarni belgilang.",
+      "ru": "Практикум: вопросы ниже опираются только на текст этого занятия. В вопросах с несколькими ответами отметьте все верные варианты.",
+      "en": "Practice: the questions below rely only on this lesson's text. In multi-answer questions mark every correct option."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "TF",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Ishchi guruh tarmogʻi uchun alohida server shart emas.",
+            "ru": "Для сети рабочей группы отдельный сервер не обязателен.",
+            "en": "A workgroup network does not require a dedicated server."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsdagi jadval: ishchi guruhda server shart emas, domenda esa kamida bitta domen kontrolleri kerak (yaxshisi ikkita).",
+            "ru": "Таблица из занятия: в рабочей группе сервер не нужен, в домене нужен минимум один контроллер домена (лучше два).",
+            "en": "The lesson table: a workgroup needs no server; a domain needs at least one domain controller (two is better)."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Kompyuter domenga qoʻshilgandan soʻng talaba tizimga qanday kiradi?",
+            "ru": "Как студент входит в систему после ввода компьютера в домен?",
+            "en": "After a computer joins the domain, how does a student log in?"
+          },
+          "options": [
+            {
+              "uz": "Domendagi istalgan kompyuterga bitta login va paroli bilan",
+              "ru": "На любой компьютер домена — со своим одним логином и паролем",
+              "en": "To any computer in the domain with their one login and password"
+            },
+            {
+              "uz": "Faqat uning hisobi ochilgan bitta kompyuterga",
+              "ru": "Только на тот один компьютер, где заведена его учётная запись",
+              "en": "Only to the one computer where its account was created"
+            },
+            {
+              "uz": "Har kompyuterda alohida hisob ochib",
+              "ru": "Заводя отдельную учётную запись на каждом компьютере",
+              "en": "By creating a separate account on each computer"
+            },
+            {
+              "uz": "Faqat Server Core orqali",
+              "ru": "Только через Server Core",
+              "en": "Only through Server Core"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Domenning mohiyati: hisoblar markaziy bazada, shuning uchun `AIFU\\talaba01` bilan domendagi istalgan kompyuterga kirish mumkin.",
+            "ru": "Суть домена: учётные записи в центральной базе, поэтому под `AIFU\\talaba01` можно войти на любой компьютер домена.",
+            "en": "The point of a domain: accounts live in the central database, so `AIFU\\talaba01` works on any domain computer."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "OU (Organizational Unit) va guruhning farqi nimada?",
+            "ru": "Чем OU (организационное подразделение) отличается от группы?",
+            "en": "What is the difference between an OU and a group?"
+          },
+          "options": [
+            {
+              "uz": "OU — obyektlarni tartiblash va siyosat bogʻlash konteyneri; guruh — huquq berish uchun foydalanuvchilar toʻplami",
+              "ru": "OU — контейнер для упорядочивания объектов и привязки политик; группа — набор пользователей для назначения прав",
+              "en": "An OU is a container for organising objects and applying policies; a group is a set of users for granting rights"
+            },
+            {
+              "uz": "OU va guruh — bir xil tushuncha",
+              "ru": "OU и группа — одно и то же",
+              "en": "An OU and a group are the same thing"
+            },
+            {
+              "uz": "OU huquq beradi, guruh siyosat bogʻlaydi",
+              "ru": "OU назначает права, а группа привязывает политики",
+              "en": "An OU grants rights, a group links policies"
+            },
+            {
+              "uz": "Guruhda faqat kompyuterlar saqlanadi",
+              "ru": "Группа содержит только компьютеры",
+              "en": "A group contains only computers"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsdagi «Oʻzingizni tekshiring» savoliga koʻra: OU — konteyner va siyosat uchun, guruh — huquqlar uchun.",
+            "ru": "Согласно вопросу «Проверьте себя»: OU — для контейнера и политик, группа — для прав.",
+            "en": "Per the lesson's self-check: an OU is for organising and policy, a group is for rights."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Active Directory katalogiga LDAP orqali murojaat qaysi port boʻyicha ishlaydi?",
+            "ru": "На каком порту работает обращение к каталогу Active Directory по LDAP?",
+            "en": "On which port does LDAP access to the Active Directory catalog work?"
+          },
+          "answers": [389],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Darsda: katalogga murojaat — LDAP, 389-port.",
+            "ru": "В занятии: доступ к каталогу — LDAP, порт 389.",
+            "en": "The lesson: directory access is LDAP, port 389."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Yagona domen kontrolleri ishdan chiqsa, foydalanuvchilar tarmoqdagi boshqa server orqali tizimga kira oladilar.",
+            "ru": "Если единственный контроллер домена выйдет из строя, пользователи смогут войти через другой сервер сети.",
+            "en": "If the single domain controller fails, users can still log in through another server of the network."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Domen autentifikatsiyasi faqat domen kontrolerida. U yagona boʻlib, ishdan chiqsa, hech kim kira olmaydi — shuning uchun kamida ikkita DC tavsiya etiladi.",
+            "ru": "Аутентификация домена живёт только на контроллере домена. Если он один и отказал — войти не сможет никто, поэтому рекомендуют минимум два DC.",
+            "en": "Domain authentication lives only on domain controllers. With one DC down, nobody can log in — hence the recommendation of at least two."
+          }
+        }
+      ]
+    }
+  }
+}

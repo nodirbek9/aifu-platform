@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Javob boʻyicha binar izlash ishlashi uchun shart qanday boʻlishi kerak?",
+          "ru": "Каким должно быть условие, чтобы работал двоичный поиск по ответу?",
+          "en": "What must the condition be like for binary search on the answer to work?"
+        },
+        "options": [
+          {
+            "uz": "Monoton: biror chegaragacha rost, undan keyin yolgʻon (yoki aksincha)",
+            "ru": "Монотонным: истинным до некоторой границы и ложным после неё (или наоборот)",
+            "en": "Monotone: true up to some bound and false after it (or the other way round)"
+          },
+          {
+            "uz": "Har qanday x da yolgʻon boʻlishi",
+            "ru": "Ложным при любом x",
+            "en": "False for every x"
+          },
+          {
+            "uz": "Faqat saralangan massiv ustida ishlashi",
+            "ru": "Оно обязано идти по отсортированному массиву",
+            "en": "It must work over a sorted array"
+          },
+          {
+            "uz": "Ikki uchida ishorasi turli boʻlishi",
+            "ru": "На концах отрезка иметь разные знаки",
+            "en": "It must have different signs at the two ends"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: savol „P(x) shart bajariladigan eng katta x qaysi?“ boʻlsa va P monoton boʻlsa, javob oraliqni ikkiga boʻlib topiladi; turli ishora esa bisektsiyaga kerak.",
+          "ru": "В занятии: если вопрос — «какое наибольшее x удовлетворяет P(x)?» и P монотонно, ответ ищут делением диапазона пополам; разные знаки нужны для бисекции.",
+          "en": "The session: if the question is \"what is the largest x with P(x)?\" and P is monotone, the answer comes from halving the range; different signs belong to bisection."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Dars jadvalida tekis taqsimlangan saralangan maʼlumot uchun interpolyatsion izlash tavsiya etiladi.",
+          "ru": "В таблице занятия для отсортированных равномерно распределённых данных рекомендован интерполяционный поиск.",
+          "en": "The lesson's table recommends interpolation search for sorted, uniformly distributed data."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Jadval shuni deydi; kalit boʻyicha juda koʻp izlash va tartib kerak boʻlmasa, xesh-jadval tanlanadi.",
+          "ru": "Таблица говорит именно это; при очень многих поисках по ключу без требования порядка выбирают хеш-таблицу.",
+          "en": "That is what the table says; for very many searches by key with no need for order, a hash table is chosen."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "0 dan 10⁹ gacha boʻlgan javoblar oraligʻida binar izlash taxminan nechta qadam talab qiladi?",
+          "ru": "Сколько примерно шагов требует двоичный поиск на диапазоне ответов от 0 до 10⁹?",
+          "en": "Approximately how many steps does binary search take over a range of answers from 0 to 10⁹?"
+        },
+        "answers": [30],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Dars: 2³⁰ ≈ 10⁹, shuning uchun taxminan 30 qadam yetadi (0 dan 2·10⁹ gacha boʻlsa ~31).",
+          "ru": "В занятии: 2³⁰ ≈ 10⁹, поэтому хватает примерно 30 шагов (для 0..2·10⁹ — около 31).",
+          "en": "The session: 2³⁰ ≈ 10⁹, so about 30 steps are enough (for 0..2·10⁹ — about 31)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Javob boʻyicha binar izlashda orta = (chap + ong + 1) / 2 ifodasidagi + 1 nimani oldini oladi?",
+          "ru": "От чего защищает + 1 в выражении orta = (chap + ong + 1) / 2 при поиске по ответу?",
+          "en": "What does the + 1 in orta = (chap + ong + 1) / 2 prevent in binary search on the answer?"
+        },
+        "options": [
+          {
+            "uz": "chap = orta qadami oraliqni qisqartirmay, cheksiz siklga tushishining",
+            "ru": "Бесконечного цикла, когда шаг chap = orta не сокращает диапазон",
+            "en": "An endless loop, when the step chap = orta stops shrinking the range"
+          },
+          {
+            "uz": "Javobning pastga yaxlitlanishining",
+            "ru": "Округления ответа вниз",
+            "en": "The answer being rounded down"
+          },
+          {
+            "uz": "ong = orta − 1 qadamidagi xatoning",
+            "ru": "Ошибки в шаге ong = orta − 1",
+            "en": "A mistake in the step ong = orta − 1"
+          },
+          {
+            "uz": "Qadamlar sonining ortib ketishining",
+            "ru": "Роста числа шагов сверх меры",
+            "en": "The number of steps growing too large"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: + 1 muhim — usiz chap = orta qadami oraliqni qisqartirmay, cheksiz siklga olib kelishi mumkin.",
+          "ru": "В занятии: + 1 важен — без него шаг chap = orta может не сокращать диапазон и привести к бесконечному циклу.",
+          "en": "The session: the + 1 matters — without it the step chap = orta may not shrink the range and lead to an endless loop."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda aytilishicha, 10⁵ elementda ichma-ich sikl 5·10⁹ juftlikni tekshiradi. Xesh-toʻplam bilan juftlik izlashda jami nechta amal bajariladi?",
+          "ru": "По занятию вложенный цикл на 10⁵ элементах проверил бы 5·10⁹ пар. Сколько всего операций даёт поиск пары с хеш-множеством?",
+          "en": "The session says a nested loop on 10⁵ elements checks 5·10⁹ pairs. How many operations does searching the pair with a hash set take in total?"
+        },
+        "answers": [100000],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Har bir element bir marta koʻriladi va xesh-toʻplamga bitta murojaat qilinadi: 10⁵ ta amal, yaʼni O(n).",
+          "ru": "Каждый элемент просматривается один раз с одним обращением к хеш-множеству: 10⁵ операций, то есть O(n).",
+          "en": "Every element is looked at once with one access to the hash set: 10⁵ operations, that is O(n)."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Yigʻindisi t ga teng juftlik boʻlmasa, darsdagi dastur nima chiqaradi?",
+          "ru": "Что печатает программа из занятия, если пары с суммой t нет?",
+          "en": "What does the lesson's program print when there is no pair with sum t?"
+        },
+        "answers": ["-"],
+        "explanation": {
+          "uz": "Dastur `-` belgisini chiqaradi: masalan, 3 10 va 1 2 3 kiritsa — `-`.",
+          "ru": "Программа печатает символ `-`: например, на вводе 3 10 и 1 2 3 вывод — `-`.",
+          "en": "The program prints the symbol `-`: for example, the input 3 10 and 1 2 3 gives `-`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Qaysi ifodalar dars matniga mos keladi?",
+          "ru": "Какие утверждения соответствуют тексту занятия?",
+          "en": "Which statements match the text of the session?"
+        },
+        "options": [
+          {
+            "uz": "double 2⁵³ dan katta butun sonlarni aniq saqlamaydi",
+            "ru": "double не хранит точно целые числа больше 2⁵³",
+            "en": "A double does not hold integers above 2⁵³ exactly"
+          },
+          {
+            "uz": "Butun kvadrat ildizda orta · orta ≤ 4·10¹⁸ boʻladi va long (long long) ga sigʻadi",
+            "ru": "В целом квадратном корне orta · orta ≤ 4·10¹⁸ и помещается в long (long long)",
+            "en": "In the integer square root, orta · orta ≤ 4·10¹⁸ and fits in a long (long long)"
+          },
+          {
+            "uz": "Bisektsiyada har bir qadam xatolikni ikki baravar kamaytiradi",
+            "ru": "Каждый шаг бисекции уменьшает погрешность вдвое",
+            "en": "Every bisection step halves the error"
+          },
+          {
+            "uz": "Javob boʻyicha binar izlash faqat saralangan massivda ishlaydi",
+            "ru": "Двоичный поиск по ответу работает только в отсортированном массиве",
+            "en": "Binary search on the answer works only in a sorted array"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsning asosiy gʻoyasi: binar izlash saralangan massivda emas, monoton shart boʻlgan istalgan oraliqda ishlaydi. Yuqori chegarani 2·10⁹ dan katta olsangiz, koʻpaytma toʻlib ketishi mumkin.",
+          "ru": "Главная идея занятия: двоичный поиск работает не только в отсортированном массиве, а на любом диапазоне с монотонным условием. Если взять верхнюю границу больше 2·10⁹, произведение может переполниться.",
+          "en": "The session's main idea: binary search works not only in a sorted array but on any range with a monotone condition. Taking an upper bound above 2·10⁹ may overflow the product."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bisektsiyani „ong − chap juda kichik boʻlguncha“ sharti bilan toʻxtatish ishonchli, chunki double aniqligi buning uchun yetarli.",
+          "ru": "Надёжно останавливать бисекцию условием «ong − chap стало очень малым», потому что точности double для этого достаточно.",
+          "en": "It is reliable to stop bisection once \"ong − chap has become very small\", because a double's precision is enough for that."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda: double aniqligi chegaralangan, shart yaxlitlash tufayli hech qachon bajarilmasligi mumkin — shuning uchun qadamlar soni oldindan belgilanadi (100 qadam).",
+          "ru": "В занятии: точность double ограничена, и из-за округления такое условие может никогда не выполниться — поэтому число шагов задают заранее (100 шагов).",
+          "en": "The session: a double's precision is limited, so rounding may make that condition never come true — hence the number of steps is fixed in advance (100 steps)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Xesh-toʻplamda element avval tekshiriladi va keyin qoʻshiladi. Nega?",
+          "ru": "В хеш-множестве элемент сначала проверяют и лишь потом добавляют. Почему?",
+          "en": "In the hash set an element is checked first and added afterwards. Why?"
+        },
+        "options": [
+          {
+            "uz": "t = 2x boʻlganda element oʻzi bilan juftlanib qolmasligi uchun",
+            "ru": "Чтобы при t = 2x элемент не спарился с самим собой",
+            "en": "So that when t = 2x the element is not paired with itself"
+          },
+          {
+            "uz": "Xesh-toʻplam tezroq ishlashi uchun",
+            "ru": "Чтобы хеш-множество работало быстрее",
+            "en": "So that the hash set runs faster"
+          },
+          {
+            "uz": "Elementlarning dastlabki tartibi saqlanishi uchun",
+            "ru": "Чтобы сохранился исходный порядок элементов",
+            "en": "So that the original order of elements is kept"
+          },
+          {
+            "uz": "Javobdagi oʻrinlar kamayish tartibida chiqishi uchun",
+            "ru": "Чтобы позиции в ответе шли в порядке убывания",
+            "en": "So that the positions in the answer come out in decreasing order"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi misol: 2 8 va 4 4 kiritsa javob 1 2 — ikki teng, lekin turli element; teng elementlar holati shu tartibda toʻgʻri yechiladi.",
+          "ru": "Пример из занятия: на вводе 2 8 и 4 4 ответ — 1 2, то есть два равных, но разных элемента; случай равных элементов решается именно такой очерёдностью.",
+          "en": "The lesson's example: the input 2 8 and 4 4 gives 1 2 — two equal but different elements; the case of equal elements is handled exactly by this order."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Butun kub ildiz",
+      "ru": "Целый кубический корень",
+      "en": "The integer cube root"
+    },
+    "statement": {
+      "uz": "Darsdagi „javob boʻyicha binar izlash“ usulini bu gal kub ildizga qoʻllaymiz. Dasturingiz bitta butun son n ni oʻqisin (0 ≤ n ≤ 10^18) va x³ ≤ n shartini qanoatlantiruvchi eng katta butun x ni chiqarsin — bitta qatorda, faqat son, qoʻshimcha soʻz yozmang. Haqiqiy sonli ildiz funksiyasidan (sqrt, cbrt, pow) foydalanmang: darsda aytilishicha, katta n da u yaxlitlash xatosi beradi. Javob 0 dan 10^6 gacha boʻladi, chunki (10^6)³ = 10^18. Masalan, 10 uchun chiqish 2 (2³ = 8 ≤ 10 < 27 = 3³), 64 uchun 4 boʻladi.",
+      "ru": "Применим метод «двоичного поиска по ответу» из занятия к кубическому корню. Ваша программа читает одно целое число n (0 ≤ n ≤ 10^18) и выводит наибольшее целое x, удовлетворяющее условию x³ ≤ n — одной строкой, только число, без дополнительных слов. Не используйте вещественные функции корня (sqrt, cbrt, pow): как сказано в занятии, при больших n они дают ошибку округления. Ответ лежит от 0 до 10^6, поскольку (10^6)³ = 10^18. Например, для 10 вывод 2 (2³ = 8 ≤ 10 < 27 = 3³), для 64 — 4.",
+      "en": "Apply the session's binary-search-on-the-answer method to the cube root. Your program reads one integer n (0 ≤ n ≤ 10^18) and prints the largest integer x satisfying x³ ≤ n — on one line, only the number, with no extra words. Do not use real-number root functions (sqrt, cbrt, pow): as the session says, with large n they give rounding errors. The answer lies between 0 and 10^6, since (10^6)³ = 10^18. For example, 10 gives 2 (2³ = 8 ≤ 10 < 27 = 3³), and 64 gives 4."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nchap, ong = 0, 10**6\nwhile chap < ong:\n    orta = (chap + ong + 1) // 2\n    if orta * orta * orta < n:\n        chap = orta\n    else:\n        ong = orta - 1\nprint(chap)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long n = in.nextLong();\n        long chap = 0, ong = 1000000;\n        while (chap < ong) {\n            long orta = (chap + ong + 1) / 2;\n            if (orta * orta * orta < n) chap = orta;\n            else ong = orta - 1;\n        }\n        System.out.println(chap);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long n;\n    cin >> n;\n    long long chap = 0, ong = 1000000;\n    while (chap < ong) {\n        long long orta = (chap + ong + 1) / 2;\n        if (orta * orta * orta < n) chap = orta;\n        else ong = orta - 1;\n    }\n    cout << chap << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nchap, ong = 0, 10**6\nwhile chap < ong:\n    orta = (chap + ong + 1) // 2\n    if orta * orta * orta <= n:\n        chap = orta\n    else:\n        ong = orta - 1\nprint(chap)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        long n = in.nextLong();\n        long chap = 0, ong = 1000000;\n        while (chap < ong) {\n            long orta = (chap + ong + 1) / 2;\n            if (orta * orta * orta <= n) chap = orta;\n            else ong = orta - 1;\n        }\n        System.out.println(chap);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    long long n;\n    cin >> n;\n    long long chap = 0, ong = 1000000;\n    while (chap < ong) {\n        long long orta = (chap + ong + 1) / 2;\n        if (orta * orta * orta <= n) chap = orta;\n        else ong = orta - 1;\n    }\n    cout << chap << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "10\n", "expected": "2", "hidden": false },
+        { "input": "64\n", "expected": "4", "hidden": false },
+        { "input": "0\n", "expected": "0", "hidden": true },
+        { "input": "999999999\n", "expected": "999", "hidden": true },
+        { "input": "1000000000000000000\n", "expected": "1000000", "hidden": true }
+      ]
+    }
+  }
+}

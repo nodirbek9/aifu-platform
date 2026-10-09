@@ -1,0 +1,460 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Tarmoqda uzatilayotgan trafik mazmunini hech kim tinglay olmasligi kriptografiyaning qaysi xossasi bilan taʼminlanadi?",
+          "ru": "Какое свойство криптографии обеспечивает то, что содержание сетевого трафика нельзя подслушать?",
+          "en": "Which property of cryptography makes the content of network traffic impossible to eavesdrop on?"
+        },
+        "options": [
+          {
+            "uz": "Konfidensiallik — simmetrik shifrlash (AES, ChaCha20)",
+            "ru": "Конфиденциальность — симметричное шифрование (AES, ChaCha20)",
+            "en": "Confidentiality — symmetric encryption (AES, ChaCha20)"
+          },
+          {
+            "uz": "Yaxlitlik — MAC yoki AEAD (AES-GCM)",
+            "ru": "Целостность — MAC или AEAD (AES-GCM)",
+            "en": "Integrity — MAC or AEAD (AES-GCM)"
+          },
+          {
+            "uz": "Autentiklik — sertifikatlar va elektron raqamli imzo",
+            "ru": "Аутентичность — сертификаты и электронная цифровая подпись",
+            "en": "Authenticity — certificates and digital signatures"
+          },
+          {
+            "uz": "Oldinga maxfiylik — vaqtinchalik DH kalitlari",
+            "ru": "Прямая секретность — временные ключи DH",
+            "en": "Forward secrecy — ephemeral DH keys"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvaliga koʻra konfidensiallik simmetrik shifrlash bilan taʼminlanadi va trafik mazmunini tinglab boʻlmaydi.",
+          "ru": "По таблице занятия конфиденциальность обеспечивается симметричным шифрованием, и содержание трафика нельзя подслушать.",
+          "en": "In the lesson's table confidentiality is provided by symmetric encryption, so the traffic content cannot be eavesdropped."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qatlamlar boʻyicha himoya protokollari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о протоколах защиты по уровням верны?",
+          "en": "Which statements about the protection protocols by layer are correct?"
+        },
+        "options": [
+          {
+            "uz": "TLS veb, pochta va API ulanishlarini himoya qiladi",
+            "ru": "TLS защищает веб-, почтовые и API-соединения",
+            "en": "TLS protects web, mail and API connections"
+          },
+          {
+            "uz": "SSH serverga masofaviy kirish va fayl uzatish uchun ishlatiladi",
+            "ru": "SSH используется для удалённого доступа к серверу и передачи файлов",
+            "en": "SSH is used for remote server access and file transfer"
+          },
+          {
+            "uz": "DNSSEC soʻrovlar maxfiyligini taʼminlaydi",
+            "ru": "DNSSEC обеспечивает конфиденциальность запросов",
+            "en": "DNSSEC provides the privacy of queries"
+          },
+          {
+            "uz": "WPA3 qurilma va kirish nuqtasi oraligʻidagi simsiz kanalni himoya qiladi",
+            "ru": "WPA3 защищает беспроводной канал между устройством и точкой доступа",
+            "en": "WPA3 protects the wireless link between the device and the access point"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Darsda DNSSEC javobning haqiqiyligini, soʻrov maxfiyligini esa DoH / DoT taʼminlashi koʻrsatilgan.",
+          "ru": "В занятии DNSSEC обеспечивает подлинность ответов, а приватность запросов дают DoH / DoT.",
+          "en": "The lesson gives DNSSEC for the authenticity of answers; the privacy of queries comes from DoH / DoT."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Malwarebytes ning bepul versiyasi real vaqt himoyasini ham beradi.",
+          "ru": "Бесплатная версия Malwarebytes также даёт защиту в реальном времени.",
+          "en": "The free version of Malwarebytes also provides real-time protection."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsga koʻra bepul versiya talab boʻyicha skanerlash va tozalash uchun, real vaqt himoyasi esa pullik versiyaga qoʻshilgan.",
+          "ru": "По занятию бесплатная версия предназначена для сканирования и очистки по требованию, а защита в реальном времени добавлена в платной.",
+          "en": "In the lesson the free version is for on-demand scanning and cleaning; real-time protection is added in the paid version."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Uchdan-uchga shifrlash (Signal protokoli) oddiy TLS dan nimasi bilan farq qiladi?",
+          "ru": "Чем сквозное шифрование (протокол Signal) отличается от обычного TLS?",
+          "en": "How does end-to-end encryption (the Signal protocol) differ from ordinary TLS?"
+        },
+        "options": [
+          {
+            "uz": "Xabar faqat yuboruvchi va qabul qiluvchi qurilmalarida ochiladi — xizmat serveri ham uni oʻqiy olmaydi",
+            "ru": "Сообщение расшифровывается только на устройстве отправителя и получателя — даже сервер сервиса не может его прочитать",
+            "en": "The message is opened only on the sender's and the recipient's device — even the service's server cannot read it"
+          },
+          {
+            "uz": "TLS ga qaraganda uzunroq va murakkabroq parol talab qiladi",
+            "ru": "Требует более длинного и сложного пароля, чем TLS",
+            "en": "It requires a longer and more complex password than TLS"
+          },
+          {
+            "uz": "Tarmoq provayderi xabarni shifrlashdan oldin oʻqib oladi",
+            "ru": "Провайдер сети читает сообщение до шифрования",
+            "en": "The network provider reads the message before it is encrypted"
+          },
+          {
+            "uz": "Server xabarni deshifrlaydi, lekin faqat xavfsiz kanal ichida",
+            "ru": "Сервер расшифровывает сообщение, но только внутри защищённого канала",
+            "en": "The server decrypts the message, but only inside the secure channel"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "TLS kanalni himoya qiladi, uchdan-uchga shifrlashda esa xabar serverda ham ochilmaydi.",
+          "ru": "TLS защищает канал, а при сквозном шифровании сообщение не открывается даже на сервере.",
+          "en": "TLS protects the channel; with end-to-end encryption the message is not opened even on the server."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Dars jadvalida tarmoqda kriptografiya taʼminlaydigan nechta xossa keltirilgan?",
+          "ru": "Сколько свойств, которые криптография обеспечивает в сети, приведено в таблице занятия?",
+          "en": "How many properties that cryptography provides on a network are listed in the lesson's table?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Toʻrt xossa: konfidensiallik, yaxlitlik, autentiklik va oldinga maxfiylik.",
+          "ru": "Четыре свойства: конфиденциальность, целостность, аутентичность и прямая секретность.",
+          "en": "Four: confidentiality, integrity, authenticity and forward secrecy."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kim, kim bilan, qachon va qancha hajmda aloqa qilgani — koʻpincha shifrlanmaydigan shu maʼlumot turi qanday ataladi?",
+          "ru": "Как называется вид данных о том, кто, с кем, когда и в каком объёме общался, который часто не шифруется?",
+          "en": "What is the kind of data — who spoke with whom, when and how much — that is often not encrypted?"
+        },
+        "answers": ["metamaʼlumot", "metamaʼlumotlar", "metadata", "метаинформация", "метаданные"],
+        "explanation": {
+          "uz": "Dars kriptografiya chegaralarini sanab, metamaʼlumotlar koʻpincha shifrlanmaydi deydi.",
+          "ru": "Перечисляя пределы криптографии, занятие указывает, что метаданные часто не шифруются.",
+          "en": "Listing the limits of cryptography, the lesson says metadata is often not encrypted."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Sertifikat ogohlantirishini eʼtiborsiz qoldirish shifrlashning qaysi qismini bekor qiladi?",
+          "ru": "Какую часть шифрования отменяет игнорирование предупреждения о сертификате?",
+          "en": "Which part of the encryption does ignoring a certificate warning cancel?"
+        },
+        "options": [
+          {
+            "uz": "Autentiklik",
+            "ru": "Аутентичность",
+            "en": "Authenticity"
+          },
+          {
+            "uz": "Konfidensiallik",
+            "ru": "Конфиденциальность",
+            "en": "Confidentiality"
+          },
+          {
+            "uz": "Yaxlitlik",
+            "ru": "Целостность",
+            "en": "Integrity"
+          },
+          {
+            "uz": "Oldinga maxfiylik",
+            "ru": "Прямая секретность",
+            "en": "Forward secrecy"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda bu koʻp uchraydigan xato sifatida yozilgan: sertifikat ogohlantirishini eʼtiborsiz qoldirish shifrlashning autentiklik qismini bekor qiladi.",
+          "ru": "В занятии это названо частой ошибкой: игнорирование предупреждения о сертификате отменяет аутентичность шифрования.",
+          "en": "The lesson lists this as a common mistake: ignoring the certificate warning cancels the authenticity part of the encryption."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kriptografiyaning chegaralari boʻyicha darsda qaysi ifodalar keltirilgan?",
+          "ru": "Какие утверждения о пределах криптографии приведены в занятии?",
+          "en": "Which statements about the limits of cryptography does the lesson give?"
+        },
+        "options": [
+          {
+            "uz": "Metamaʼlumotlar — kim, kim bilan, qachon — koʻpincha shifrlanmaydi",
+            "ru": "Метаданные — кто, с кем, когда — часто не шифруются",
+            "en": "Metadata — who, with whom, when — is often not encrypted"
+          },
+          {
+            "uz": "Oxirgi nuqtada maʼlumot ochiq holda boʻladi va zararli dastur uni shifrlashdan oldin yoki keyin oʻqiydi",
+            "ru": "На конечном устройстве данные открыты, и вредоносная программа читает их до шифрования или после расшифрования",
+            "en": "On the endpoint the data is in the clear, and malware reads it before encryption or after decryption"
+          },
+          {
+            "uz": "Notoʻgʻri foydalanish: eskirgan protokollar va eʼtiborsiz qoldirilgan sertifikat ogohlantirishlari",
+            "ru": "Неверное использование: устаревшие протоколы и проигнорированные предупреждения о сертификате",
+            "en": "Misuse: outdated protocols and ignored certificate warnings"
+          },
+          {
+            "uz": "Kriptografiya yetarlicha kuchli boʻlsa, u qurilmadagi zararli dasturdan ham himoya qiladi",
+            "ru": "Если криптография достаточно сильна, она защищает и от вредоносных программ на устройстве",
+            "en": "If the cryptography is strong enough, it also protects against malware on the device"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Toʻrtinchi ifoda darsdagi «HTTPS bor — demak hammasi xavfsiz» xatosiga toʻgʻri keladi: kriptografiya kanalni himoyalaydi, qurilmadagi zararli dastur va fishingdan emas.",
+          "ru": "Четвёртое утверждение повторяет ошибку занятия «есть HTTPS — значит всё безопасно»: криптография защищает канал, а не от вредоносной программы на устройстве и не от фишинга.",
+          "en": "The fourth statement repeats the lesson's mistake \"there is HTTPS, so everything is safe\": cryptography protects the channel, not the device against malware or phishing."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Zararlangan kompyuterni tozalashda dars birinchi qadam sifatida muhim hisoblar parollarini almashtirishni koʻrsatadi.",
+          "ru": "При очистке заражённого компьютера первым шагом занятие называет смену паролей важных аккаунтов.",
+          "en": "When cleaning an infected computer the lesson names changing the passwords of important accounts as the first step."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Birinchi qadam — qurilmani tarmoqdan uzish; parollar esa ikkinchi qadamda, boshqa toza qurilmadan almashtiriladi.",
+          "ru": "Первый шаг — отключить устройство от сети; пароли меняются вторым шагом, с другого чистого устройства.",
+          "en": "The first step is disconnecting the device from the network; passwords come second and are changed from another, clean device."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Zararlangan kompyuterni tozalash boʻyicha nazorat savollari",
+      "ru": "Проверочные вопросы об очистке заражённого компьютера",
+      "en": "Check questions on cleaning an infected computer"
+    },
+    "statement": {
+      "uz": "Mustaqil ish boʻyicha hisobot yozishdan oldin darsning «Amaliy ish», «Zararlangan kompyuterni tozalash tartibi» va «Koʻp uchraydigan xatolar» boʻlimlariga asoslangan besh savolga javob bering. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Прежде чем писать отчёт по самостоятельной работе, ответьте на пять вопросов по разделам «Практическая работа», «Порядок очистки заражённого компьютера» и «Частые ошибки». Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before writing the report for the independent assignment, answer five questions based on the lesson's sections \"Practical work\", \"The procedure for cleaning an infected computer\" and \"Common mistakes\". The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Darsda Malwarebytes ni qayerdan yuklab olish koʻrsatilgan?",
+            "ru": "Откуда занятие советует скачивать Malwarebytes?",
+            "en": "Where does the lesson say to download Malwarebytes from?"
+          },
+          "options": [
+            {
+              "uz": "Faqat rasmiy saytdan, oʻrnatuvchining raqamli imzosini tekshirib",
+              "ru": "Только с официального сайта, проверив цифровую подпись установщика",
+              "en": "Only from the official website, checking the installer's digital signature"
+            },
+            {
+              "uz": "Ishonchli forumdagi muqoba havoladan",
+              "ru": "С зеркальной ссылки с надёжного форума",
+              "en": "From a mirror link on a trusted forum"
+            },
+            {
+              "uz": "Qidiruv tizimidagi birinchi reklama havolasidan",
+              "ru": "С первой рекламной ссылки в поисковике",
+              "en": "From the first advertised link in a search engine"
+            },
+            {
+              "uz": "Boshqa kompyuterdan nusxa koʻchirib",
+              "ru": "Скопировав с другого компьютера",
+              "en": "By copying it from another computer"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Amaliy ishning birinchi qadami: dasturni faqat rasmiy saytdan yuklab olish va oʻrnatuvchining raqamli imzosini tekshirish.",
+            "ru": "Первый шаг практической работы: скачивать программу только с официального сайта и проверять цифровую подпись установщика.",
+            "en": "The first step of the practical work: download the program only from the official website and check the installer's digital signature."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsda Windows Defender bilan birga Malwarebytes ham ishlatish umuman tavsiya etilmaydi.",
+            "ru": "Занятие вовсе не рекомендует использовать Malwarebytes вместе с Windows Defender.",
+            "en": "The lesson does not recommend using Malwarebytes together with Windows Defender at all."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Darsda uni Defender bilan birga «ikkinchi fikr» skaneri sifatida ishlatish mumkin deyilgan; taqiqlangan narsa — ikki real vaqt himoyasini bir vaqtda yoqish.",
+            "ru": "В занятии его можно использовать вместе с Defender как сканер «второго мнения»; под запретом лишь одновременное включение двух защит реального времени.",
+            "en": "The lesson allows using it with Defender as a second-opinion scanner; what is forbidden is enabling two real-time protections at once."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Amaliy ish hisobotida qaysi maʼlumotlar yozilishi kerak?",
+            "ru":"Какие данные нужно записать в отчёт о практической работе?",
+            "en": "What must the practical-work report contain?"
+          },
+          "options": [
+            {
+              "uz": "Skanerlash vaqti",
+              "ru": "Время сканирования",
+              "en": "The scan time"
+            },
+            {
+              "uz": "Tekshirilgan obyektlar soni",
+              "ru": "Число проверенных объектов",
+              "en": "The number of objects checked"
+            },
+            {
+              "uz": "Topilgan obyektlar va ularga nisbatan qabul qilingan qaror",
+              "ru": "Найденные объекты и принятое по ним решение",
+              "en": "The detections and the decision taken on them"
+            },
+            {
+              "uz": "Parollar roʻyxati va ularning almashtirilgan qiymatlari",
+              "ru": "Список паролей и их новые значения",
+              "en": "The list of passwords and their new values"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Hisobot talablarida skanerlash vaqti, tekshirilgan obyektlar soni, topilganlar va ularga nisbatan qaror koʻrsatilgan; parollarni hisobotga yozish ularni ochish boʻlardi.",
+            "ru": "В требованиях к отчёту указаны время сканирования, число проверенных объектов, находки и решения по ним; вписывать пароли в отчёт означало бы их раскрыть.",
+            "en": "The report must give the scan time, the number of objects checked, the detections and the decisions on them; writing passwords into a report would disclose them."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Chuqur zararlanish, rootkit yoki shifrlovchi aniqlanganda darsda qaysi chora ishonchliroq deb koʻrsatilgan?",
+            "ru": "Какая мера названа в занятии более надёжной при глубоком поражении, рутките или шифровальщике?",
+            "en": "Which measure does the lesson call more reliable with a deep infection, a rootkit or ransomware?"
+          },
+          "options": [
+            {
+              "uz": "Operatsion tizimni toʻliq qayta oʻrnatish va toza zaxira nusxadan tiklash",
+              "ru": "Полная переустановка операционной системы и восстановление из чистой резервной копии",
+              "en": "Reinstalling the operating system completely and restoring from a clean backup"
+            },
+            {
+              "uz": "Faqat bitta tez skanerlashni takrorlab, ishlashni davom ettirish",
+              "ru": "Повторить только быстрое сканирование и продолжить работу",
+              "en": "Repeating a single quick scan and continuing to work"
+            },
+            {
+              "uz": "Zararli dasturni qoʻlda oʻchirib, tizimni qayta ishga tushirish",
+              "ru": "Удалить вредоносную программу вручную и перезагрузить систему",
+              "en": "Deleting the malware by hand and rebooting the system"
+            },
+            {
+              "uz": "Antivirus bazasini yangilab, skanerlashni haftaga qoldirish",
+              "ru": "Обновить базу антивируса и отложить сканирование на неделю",
+              "en": "Updating the antivirus database and postponing the scan for a week"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Tozalash tartibining beshinchi qadamida bu hol uchun operatsion tizimni qayta oʻrnatish va toza nusxadan tiklash ishonchliroq deyilgan (MT17).",
+            "ru": "В пятом шаге порядка очистки сказано, что в таком случае надёжнее переустановить ОС и восстановиться из чистой копии (MT17).",
+            "en": "Step five of the cleaning procedure says that in this case reinstalling the OS and restoring from a clean copy is more reliable (MT17)."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Barcha antiviruslar zararli deb taniydigan, lekin hech qanday zarar keltirmaydigan standart sinov qatorining nomini yozing.",
+            "ru": "Запишите имя стандартной тестовой строки, которую все антивирусы распознают как вредоносную, но которая не причиняет никакого вреда.",
+            "en": "Write the name of the standard test string that every antivirus recognizes as malicious but which does no harm."
+          },
+          "answers": ["EICAR", "eicar", "EICAR test fayli", "EICAR test file"],
+          "explanation": {
+            "uz": "Darsda xavfsiz sinov uchun EICAR test fayli tavsiya qilingan; haqiqiy zararli namunalarni yuklab olmang deyilgan.",
+            "ru": "Для безопасной проверки в занятии рекомендован тест-файл EICAR; скачивать настоящие образцы вредоносного ПО запрещено.",
+            "en": "The lesson recommends the EICAR test file for safe testing and says never to download real malware samples."
+          }
+        }
+      ]
+    }
+  }
+}

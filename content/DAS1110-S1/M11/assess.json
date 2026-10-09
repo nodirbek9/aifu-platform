@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "`s = \"Dasturlash\"` boʻlsa, C++ʼda `s.substr(3, 4)` nimani qaytaradi?",
+          "ru": "Что вернёт `s.substr(3, 4)` в C++, если `s = \"Dasturlash\"`?",
+          "en": "With `s = \"Dasturlash\"`, what does `s.substr(3, 4)` return in C++?"
+        },
+        "options": [
+          {
+            "uz": "`turl`",
+            "ru": "`turl`",
+            "en": "`turl`"
+          },
+          {
+            "uz": "`turla`",
+            "ru": "`turla`",
+            "en": "`turla`"
+          },
+          {
+            "uz": "`Dast`",
+            "ru": "`Dast`",
+            "en": "`Dast`"
+          },
+          {
+            "uz": "`url`",
+            "ru": "`url`",
+            "en": "`url`"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "C++ʼda `substr` ning ikkinchi argumenti — uzunlik: 3-indeksdan boshlab 4 ta belgi. Python va Javaʼda esa oxirgi indeks olinadi (`s[3:7]`, `s.substring(3, 7)`).",
+          "ru": "В C++ второй аргумент `substr` — это длина: 4 символа, начиная с индекса 3. В Python и Java берут конец-индекс (`s[3:7]`, `s.substring(3, 7)`).",
+          "en": "In C++ the second argument of `substr` is a length: 4 characters starting at index 3. Python and Java take an end index instead (`s[3:7]`, `s.substring(3, 7)`)."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Javaʼda ikki satrning mazmunini solishtirish uchun `==` yetarli.",
+          "ru": "В Java для сравнения содержимого двух строк достаточно `==`.",
+          "en": "In Java, `==` is enough to compare the content of two strings."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Javaʼda `==` havolalarni solishtiradi: ikki xil obyektdagi bir xil matn uchun u yolgʻon boʻlishi mumkin. Mazmun uchun `s.equals(t)` ishlatiladi.",
+          "ru": "В Java `==` сравнивает ссылки: для одинакового текста в двух разных объектах она может дать ложь. Для содержимого служит `s.equals(t)`.",
+          "en": "In Java `==` compares references, so the same text in two different objects can be false. Content is compared with `s.equals(t)`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Satrlarning oʻzgarmasligi haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о неизменяемости строк верны?",
+          "en": "Which statements about immutable strings are correct?"
+        },
+        "options": [
+          {
+            "uz": "`s.upper()` asl satrni oʻzgartirmaydi, yangi satr qaytaradi",
+            "ru": "`s.upper()` не меняет исходную строку, а возвращает новую",
+            "en": "`s.upper()` leaves the original string unchanged and returns a new one"
+          },
+          {
+            "uz": "C++ʼda string oʻzgaruvchan: `s[0] = 'X'` mumkin",
+            "ru": "`string` в C++ изменяем: `s[0] = 'X'` допустимо",
+            "en": "C++ `string` is mutable: `s[0] = 'X'` is allowed"
+          },
+          {
+            "uz": "Pythonʼda `s[0] = 'X'` xato beradi",
+            "ru": "В Python `s[0] = 'X'` вызывает ошибку",
+            "en": "In Python `s[0] = 'X'` raises an error"
+          },
+          {
+            "uz": "Javaʼda siklda `s = s + x` katta matnda ham tez ishlaydi",
+            "ru": "В Java `s = s + x` в цикле быстро работает и на большом тексте",
+            "en": "In Java `s = s + x` in a loop is fast even on a large text"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Java va Pythonʼda satr oʻzgarmas, shuning uchun har bir `+` yangi satr yaratadi va eskisini toʻliq nusxalaydi. C++ʼda string oʻzgaruvchan: `s += x` tez.",
+          "ru": "В Java и Python строка неизменяема, поэтому каждое `+` создаёт новую строку и полностью копирует старую. В C++ `string` изменяем: `s += x` работает быстро.",
+          "en": "Strings are immutable in Java and Python, so every `+` builds a new string and copies the old one in full. In C++ `string` is mutable: `s += x` is fast."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Javaʼda katta matn siklda `s = s + x` bilan yigʻilganda nima uchun sekin ishlaydi?",
+          "ru": "Почему в Java сборка большого текста через `s = s + x` в цикле работает медленно?",
+          "en": "Why is building a large text in Java with `s = s + x` in a loop slow?"
+        },
+        "options": [
+          {
+            "uz": "Har bir `+` yangi satr yaratadi va eski satrni toʻliq nusxalaydi",
+            "ru": "Каждый `+` создаёт новую строку и полностью копирует старую",
+            "en": "Every `+` creates a new string and copies the old one in full"
+          },
+          {
+            "uz": "`+` operatori Javaʼda sekin ishlaydigan funksiya",
+            "ru": "`+` в Java — это просто медленно работающая функция",
+            "en": "The `+` operator in Java is just a slow function"
+          },
+          {
+            "uz": "Har qadorda xotira majburiy tozalanadi",
+            "ru": "На каждом шаге память обязательно очищается",
+            "en": "Memory is always cleared at every step"
+          },
+          {
+            "uz": "`s` ni har safar qayta eʼlon qilish kerak boʻladi",
+            "ru": "Переменную `s` каждый раз нужно объявлять заново",
+            "en": "The variable `s` has to be declared again every time"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "n marta birlashtirish ~n² ish talab qiladi, chunki satr oʻzgarmas. `StringBuilder` esa bitta oʻzgaruvchan bufer bilan ishlaydi.",
+          "ru": "n соединений требуют ~n² работы, потому что строка неизменяема. `StringBuilder` работает с одним изменяемым буфером.",
+          "en": "n joins need about n² work because the string is immutable. `StringBuilder` works with one mutable buffer instead."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Javaʼda `\"aab\".indexOf(\"a\", 1)` qanday son qaytaradi?",
+          "ru": "Какое число вернёт в Java `\"aab\".indexOf(\"a\", 1)`?",
+          "en": "What number does `\"aab\".indexOf(\"a\", 1)` return in Java?"
+        },
+        "answers": [1],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Ikkinchi argument — qidiruv boshlanadigan indeks: 1-indeksdagi belgi `a`, shuning uchun javob 1. Darsda shu usul `indexOf(eski, i + eski.length())` bilan almashtirishdan keyin qidirishda ishlatilgan.",
+          "ru": "Второй аргумент — индекс, с которого начинается поиск: символ по индексу 1 — это `a`, поэтому ответ 1. В занятии так искали после вхождения: `indexOf(eski, i + eski.length())`.",
+          "en": "The second argument is the index where the search starts: the character at index 1 is `a`, so the answer is 1. The lesson used this form to continue searching after an occurrence: `indexOf(eski, i + eski.length())`."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Javaʼda ikki satrning mazmunini katta-kichik harfga qaramasdan solishtiruvchi metodning nomini yozing.",
+          "ru": "Напишите имя метода в Java, который сравнивает содержимое двух строк без учёта регистра.",
+          "en": "Write the name of the Java method that compares the content of two strings ignoring case."
+        },
+        "answers": ["equalsIgnoreCase", "equalsIgnoreCase()", "s.equalsIgnoreCase(t)", "equalsignorecase", "EqualsIgnoreCase"],
+        "explanation": {
+          "uz": "Mazmun uchun `equals`, registni hisobga olmasdan `equalsIgnoreCase` ishlatiladi.",
+          "ru": "Для содержимого — `equals`, а без учёта регистра — `equalsIgnoreCase`.",
+          "en": "For content use `equals`; ignoring case, `equalsIgnoreCase`."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Satr amallaridan foydalanish boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о работе с методами строк верны?",
+          "en": "Which statements about using string operations are correct?"
+        },
+        "options": [
+          {
+            "uz": "C++ʼda `find` topilmasa uning natijasi `string::npos` ga teng",
+            "ru": "Если `find` в C++ ничего не нашёл, результат равен `string::npos`",
+            "en": "When `find` in C++ finds nothing, its result equals `string::npos`"
+          },
+          {
+            "uz": "Pythonʼda `s[::-1]` satrni teskari aylantiradi",
+            "ru": "В Python `s[::-1]` разворачивает строку",
+            "en": "In Python `s[::-1]` reverses a string"
+          },
+          {
+            "uz": "Pythonʼda `s.upper()` natijasini alohida saqlash shart emas",
+            "ru": "Результат `s.upper()` в Python можно не сохранять",
+            "en": "The result of `s.upper()` in Python does not have to be saved"
+          },
+          {
+            "uz": "Boʻsh satrda `w[0]` ga murojaat xatosiz ishlaydi",
+            "ru": "Обращение к `w[0]` в пустой строке проходит без ошибки",
+            "en": "Referring to `w[0]` of an empty string works without an error"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "`upper()` yangi satr qaytaradi, shuning uchun `s = s.upper()` deb saqlash kerak. Boʻsh satrning 0-belgisi yoʻq: oldin uzunlikni tekshiring. C++ʼda `find` natijasi bilan solishtirish uchun −1 emas, `string::npos` olinadi.",
+          "ru": "`upper()` возвращает новую строку, поэтому её надо сохранить: `s = s.upper()`. У пустой строки нет символа 0: сначала проверяйте длину. В C++ результат `find` сравнивают не с −1, а с `string::npos`.",
+          "en": "`upper()` returns a new string, so it must be saved as `s = s.upper()`. An empty string has no character 0: check the length first. In C++ the result of `find` is compared with `string::npos`, not with −1."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Pythonʼda `s = \"salom\"; s.upper(); print(s)` `SALOM` chiqaradi.",
+          "ru": "В Python `s = \"salom\"; s.upper(); print(s)` напечатает `SALOM`.",
+          "en": "In Python, `s = \"salom\"; s.upper(); print(s)` prints `SALOM`."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Satr oʻzgarmas: `upper()` yangi satr qaytardi, lekin u saqlanmadi — `print(s)` satrning oʻzini, `salom` ni chiqaradi.",
+          "ru": "Строка неизменяема: `upper()` вернула новую строку, но её не сохранили — `print(s)` выведет `salom`.",
+          "en": "The string is immutable: `upper()` returned a new string but it was not saved, so `print(s)` outputs `salom`."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Palindromni tekshiruvchi ishlangan misolda `A man, a plan, a canal: Panama` qatoridan faqat harflar olinib, kichik harfga oʻtkazildi. Hosil boʻlgan satrda nechta belgi bor?",
+          "ru": "В разобранном примере с палиндромом из строки `A man, a plan, a canal: Panama` взяли только буквы и перешли в нижний регистр. Сколько символов в получившейся строке?",
+          "en": "In the lesson's palindrome example, the line `A man, a plan, a canal: Panama` was reduced to letters only and lowercased. How many characters does the resulting string have?"
+        },
+        "answers": [21],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Harflar `amanaplanacanalpanama` boʻladi — 21 belgi, va u oʻz teskarisiga teng, shuning uchun javob `yes`.",
+          "ru": "Получается `amanaplanacanalpanama` — 21 символ, и она равна своему перевёрнутому варианту, поэтому ответ `yes`.",
+          "en": "The letters give `amanaplanacanalpanama` — 21 characters, equal to its own reverse, which is why the answer is `yes`."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Soʻzlarni teskari tartibda chiqarish",
+      "ru": "Вывести слова в обратном порядке",
+      "en": "Print the words in reverse order"
+    },
+    "statement": {
+      "uz": "Bitta qator kiritiladi: soʻzlar bitta yoki bir nechta probel bilan ajratilgan, qatorda kamida bitta soʻz bor. Soʻzlarni teskari tartibda chiqaring, oralarida bittadan probel qoldiring. Masalan, `bir  ikki   uch` kirsa, dastur `uch ikki bir` chiqaradi. Boshqa belgi, yozuv yoki izoh chiqarmang.",
+      "ru": "Вводится одна строка: слова разделены одним или несколькими пробелами, в строке есть хотя бы одно слово. Выведите слова в обратном порядке, оставив между ними по одному пробелу. Например, на ввод `bir  ikki   uch` программа выводит `uch ikki bir`. Никаких других символов, надписей или пояснений не выводите.",
+      "en": "The input is one line: the words are separated by one or more spaces, and the line has at least one word. Print the words in reverse order with exactly one space between them. For example, the input `bir  ikki   uch` makes the program print `uch ikki bir`. Do not print any other characters, labels or notes."
+    },
+    "code": {
+      "starter": {
+        "python": "sozlar = input().split()\n\nteskari = []\nfor w in sozlar:\n    teskari.append(w)\n\nprint(\" \".join(teskari))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] sozlar = in.nextLine().trim().split(\"\\\\s+\");\n\n        StringBuilder sb = new StringBuilder();\n        for (int i = 0; i < sozlar.length; i++) {\n            if (sb.length() > 0) sb.append(' ');\n            sb.append(sozlar[i]);\n        }\n\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    string qator;\n    getline(cin, qator);\n\n    vector<string> sozlar;\n    istringstream ss(qator);\n    string w;\n    while (ss >> w) {\n        sozlar.push_back(w);\n    }\n\n    for (size_t i = 0; i < sozlar.size(); i++) {\n        if (i > 0) cout << ' ';\n        cout << sozlar[i];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "sozlar = input().split()\n\nteskari = []\nfor i in range(len(sozlar) - 1, -1, -1):\n    teskari.append(sozlar[i])\n\nprint(\" \".join(teskari))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        String[] sozlar = in.nextLine().trim().split(\"\\\\s+\");\n\n        StringBuilder sb = new StringBuilder();\n        for (int i = sozlar.length - 1; i >= 0; i--) {\n            if (sb.length() > 0) sb.append(' ');\n            sb.append(sozlar[i]);\n        }\n\n        System.out.println(sb);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <sstream>\n#include <string>\n#include <vector>\nusing namespace std;\n\nint main() {\n    string qator;\n    getline(cin, qator);\n\n    vector<string> sozlar;\n    istringstream ss(qator);\n    string w;\n    while (ss >> w) {\n        sozlar.push_back(w);\n    }\n\n    for (size_t i = 0; i < sozlar.size(); i++) {\n        if (i > 0) cout << ' ';\n        cout << sozlar[sozlar.size() - 1 - i];\n    }\n    cout << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "  bir  ikki   uch\n", "expected": "uch ikki bir", "hidden": false },
+        { "input": "salom dunyo\n", "expected": "dunyo salom", "hidden": false },
+        { "input": "AIFU platform 2026 dasturlash\n", "expected": "dasturlash 2026 platform AIFU", "hidden": true },
+        { "input": "a\n", "expected": "a", "hidden": true },
+        { "input": "  keyin  oldin \n", "expected": "oldin keyin", "hidden": true }
+      ]
+    }
+  }
+}

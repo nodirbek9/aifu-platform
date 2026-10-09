@@ -1,0 +1,428 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Nima uchun laboratoriya ishlarida Windows Server real kompyuterga emas, virtual mashinaga oʻrnatiladi?",
+          "ru": "Почему в лабораторных работах Windows Server устанавливается не на реальный компьютер, а на виртуальную машину?",
+          "en": "Why is Windows Server installed on a virtual machine rather than on a real computer in the lab?"
+        },
+        "options": [
+          {
+            "uz": "Real kompyuterga xavf yoʻq va holat snapshot qilinib, xatodan keyin unga qaytish mumkin",
+            "ru": "Реальному компьютеру ничего не угрожает, а состояние можно снять снимком и вернуться после ошибки",
+            "en": "The real computer is not at risk, and the state can be saved as a snapshot to go back after a mistake"
+          },
+          {
+            "uz": "Virtual mashina haqiqiy kompyuterdan tezroq ishlaydi",
+            "ru": "Виртуальная машина работает быстрее реального компьютера",
+            "en": "A virtual machine runs faster than a real computer"
+          },
+          {
+            "uz": "Virtual mashinaga oʻrnatishda ISO obrazi kerak emas",
+            "ru": "Для установки на виртуальную машину не нужен образ ISO",
+            "en": "Installing on a virtual machine needs no ISO image"
+          },
+          {
+            "uz": "Virtual mashinada Administrator paroli soʻralmaydi",
+            "ru": "На виртуальной машине не запрашивается пароль Administrator",
+            "en": "A virtual machine does not ask for an Administrator password"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda ikki sabab aytilgan: real kompyuterga xavf yoʻq va snapshot orqali xatodan qaytish mumkin.",
+          "ru": "В занятии названы две причины: нет риска для реального компьютера и возможность вернуться через снимок.",
+          "en": "The lesson gives two reasons: no risk to the real computer and a way back through a snapshot."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Sinov DHCP serverini universitet tarmogʻiga Bridge rejimida ulash toʻgʻri.",
+          "ru": "Тестовый DHCP-сервер правильно подключать к сети университета в режиме моста (Bridge).",
+          "en": "It is right to connect a test DHCP server to the university network in Bridge mode."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bridge rejimida begona DHCP butun tarmoqqa notoʻgʻri manzil tarqatadi; laboratoriya ichki yoki Host-only tarmoq kerak.",
+          "ru": "В режиме моста чужой DHCP раздаёт сетевым компьютерам неверные адреса; в лаборатории нужна внутренняя сеть или Host-only.",
+          "en": "In Bridge mode a stray DHCP hands wrong addresses to the whole network; the lab needs an internal or Host-only network."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsdagi jadval boʻyicha Windows Server 2022 uchun minimal disk talabi necha GB?",
+          "ru": "Сколько ГБ составляет минимальное требование к диску для Windows Server 2022 по таблице из занятия?",
+          "en": "According to the table in the lesson, what is the minimum disk requirement for Windows Server 2022 in GB?"
+        },
+        "answers": [32],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Minimal talab: protsessor 1,4 GHz 64 bit, disk 32 GB; laboratoriya uchun tavsiya 60 GB.",
+          "ru": "Минимум: процессор 1,4 ГГц 64 бит, диск 32 ГБ; для лаборатории рекомендуется 60 ГБ.",
+          "en": "The minimum is a 1.4 GHz 64-bit processor and a 32 GB disk; 60 GB is recommended for the lab."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oʻrnatish obrazi (ISO) rasman qayerdan olinadi?",
+          "ru": "Откуда официально берётся образ установки (ISO)?",
+          "en": "From where is the installation image (ISO) officially obtained?"
+        },
+        "answers": ["Microsoft Evaluation Center", "Evaluation Center"],
+        "explanation": {
+          "uz": "Darsda: Microsoft Evaluation Center dan 180 kunlik sinov versiyasi olinadi.",
+          "ru": "В занятии: 180-дневная пробная версия из Microsoft Evaluation Center.",
+          "en": "The lesson says: the 180-day evaluation version from the Microsoft Evaluation Center."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oʻrnatish paytida qaysi tur tanlanadi?",
+          "ru": "Какой тип выбирается во время установки?",
+          "en": "Which installation type is chosen during the install?"
+        },
+        "options": [
+          {
+            "uz": "Custom: Install Windows only",
+            "ru": "Custom: Install Windows only",
+            "en": "Custom: Install Windows only"
+          },
+          {
+            "uz": "Upgrade",
+            "ru": "Upgrade (обновление)",
+            "en": "Upgrade"
+          },
+          {
+            "uz": "Repair",
+            "ru": "Repair (восстановление)",
+            "en": "Repair"
+          },
+          {
+            "uz": "Tur tanlanmaydi, tizim oʻzi Server Core ni oladi",
+            "ru": "Тип не выбирается, система сама берёт Server Core",
+            "en": "No type is chosen; the system takes Server Core itself"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bosqichlar: litsenziya shartlarini qabul qilish, soʻng Custom: Install Windows only; diskda boʻsh joy tanlanadi.",
+          "ru": "Шаги: принять лицензию, затем Custom: Install Windows only; на диске выбирается незанятое место.",
+          "en": "The steps are: accept the licence, then Custom: Install Windows only; on the disk the unallocated space is chosen."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Birinchi kirishdan soʻng Server Manager → Local Server da sozlanadigan bandlar qaysilar?",
+          "ru": "Какие пункты настраиваются в Server Manager → Local Server после первого входа?",
+          "en": "Which items are configured in Server Manager → Local Server after the first logon?"
+        },
+        "options": [
+          {
+            "uz": "Kompyuter nomi",
+            "ru": "Имя компьютера",
+            "en": "Computer name"
+          },
+          {
+            "uz": "Statik IP manzil va DNS",
+            "ru": "Статический IP-адрес и DNS",
+            "en": "Static IP address and DNS"
+          },
+          {
+            "uz": "Vaqt mintaqasi",
+            "ru": "Часовой пояс",
+            "en": "Time zone"
+          },
+          {
+            "uz": "Umumiy papka ochish",
+            "ru": "Создание общей папки",
+            "en": "Creating a shared folder"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Local Server da nom, IP va DNS, vaqt mintaqasi, yangilanishlar, masofaviy boshqaruv sozlanadi; umumiy papka — A13 mavzusi.",
+          "ru": "В Local Server настраивают имя, IP и DNS, часовой пояс, обновления и удалённое управление; общая папка — тема A13.",
+          "en": "Local Server holds the name, IP and DNS, time zone, updates and remote management; a shared folder belongs to A13."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Administrator uchun murakkab parolda kamida necha belgi boʻlishi kerak?",
+          "ru": "Сколько знаков как минимум должно быть в сложном пароле Administrator?",
+          "en": "What is the minimum number of characters in the complex Administrator password?"
+        },
+        "answers": [8],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda: katta va kichik harf, raqam, belgi va kamida 8 belgi.",
+          "ru": "В занятии: заглавные и строчные буквы, цифры, символы и не менее 8 знаков.",
+          "en": "The lesson says: upper and lower case letters, digits, symbols and at least 8 characters."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tarmoq adapteriga DNS server manzilini PowerShell orqali berish buyruqi qaysi?",
+          "ru": "Какая команда PowerShell задаёт адрес DNS-сервера для сетевого адаптера?",
+          "en": "Which PowerShell command sets the DNS server address on the network adapter?"
+        },
+        "options": [
+          {
+            "uz": "Set-DnsClientServerAddress",
+            "ru": "Set-DnsClientServerAddress",
+            "en": "Set-DnsClientServerAddress"
+          },
+          {
+            "uz": "Set-DnsServerForwarder",
+            "ru": "Set-DnsServerForwarder",
+            "en": "Set-DnsServerForwarder"
+          },
+          {
+            "uz": "Get-NetAdapter",
+            "ru": "Get-NetAdapter",
+            "en": "Get-NetAdapter"
+          },
+          {
+            "uz": "Set-TimeZone",
+            "ru": "Set-TimeZone",
+            "en": "Set-TimeZone"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Manzil New-NetIPAddress bilan, DNS esa Set-DnsClientServerAddress bilan beriladi; Get-NetAdapter faqat adapterlarni koʻrsatadi.",
+          "ru": "Адрес задаётся New-NetIPAddress, а DNS — Set-DnsClientServerAddress; Get-NetAdapter лишь показывает адаптеры.",
+          "en": "The address comes from New-NetIPAddress and the DNS from Set-DnsClientServerAddress; Get-NetAdapter only lists adapters."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi tavsiyalar va ogohlantirishlar boʻyicha qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения соответствуют рекомендациям и предупреждениям из занятия?",
+          "en": "Which statements match the advice and warnings of the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Nom rollar oʻrnatilgandan keyin almashtirilsa muammo boʻladi, shuning uchun u birinchi beriladi",
+            "ru": "Если менять имя после установки ролей, возникнет проблема, поэтому имя задают первым",
+            "en": "Renaming after roles are installed causes trouble, so the name is set first"
+          },
+          {
+            "uz": "Baʼzi rollar oʻrnatilgach sariq bayroqcha bilan qoʻshimcha sozlashni talab qiladi",
+            "ru": "Некоторые роли после установки требуют дальнейшей настройки, показывая жёлтый флажок",
+            "en": "Some roles need further configuration after installation and show a yellow flag"
+          },
+          {
+            "uz": "Katta oʻzgarishdan oldin snapshot olish shart emas",
+            "ru": "Перед крупным изменением снимок делать не обязательно",
+            "en": "A snapshot before a big change is not necessary"
+          },
+          {
+            "uz": "Serverga DHCP orqali olingan manzil qoldirilsa ham boʻladi",
+            "ru": "Серверу можно оставить адрес, полученный от DHCP",
+            "en": "The server may keep an address obtained from DHCP"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Snapshot olmagan oʻzgarishdan qaytib boʻlmaydi, server manzili esa doim statik: mijozlar uni doimiy manzil boʻyicha topadi.",
+          "ru": "После изменения без снимка вернуться нельзя, а адрес сервера всегда статический: клиенты ищут его по постоянному адресу.",
+          "en": "A change without a snapshot cannot be undone, and a server's address is always static: clients find it by a permanent address."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Serverni laboratoriyada tayyorlashni tekshirish",
+      "ru": "Проверка подготовки сервера в лаборатории",
+      "en": "Checking how the server is prepared in the lab"
+    },
+    "statement": {
+      "uz": "Siz `SRV-DC01` serverini virtual mashinaga oʻrnatib, boshlangʻich sozlashni yakunladingiz va ikkinchi VM — Windows mijozini xuddi shu ichki tarmoqqa uldingiz. Dars matniga asoslanib, quyidagi savollarga javob bering; savollarda faqat shu mashgʻulotda aytilgan faktlar soʻraladi.",
+      "ru": "Вы установили сервер `SRV-DC01` на виртуальную машину, завершили начальную настройку и подключили ко второй ВМ — клиент Windows — к той же внутренней сети. Опираясь на текст занятия, ответьте на вопросы ниже; спрашивается только то, что говорилось на этом занятии.",
+      "en": "You installed the `SRV-DC01` server on a virtual machine, finished the initial configuration and connected a second VM, a Windows client, to the same internal network. Answer the questions below using the lesson text; only facts stated in this session are asked."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Mijoz VM dan serverga ping qildi, javob kelmadi. Darsda koʻrsatilgan eng ehtimoliy sabab qaysi?",
+            "ru": "Клиентская ВМ выполнила ping сервера, ответа нет. Какая причина названа в занятии как наиболее вероятная?",
+            "en": "The client VM pinged the server and got no reply. Which cause does the lesson give as the most likely?"
+          },
+          "options": [
+            {
+              "uz": "Windows brandmaueri ICMP ni yopib qoʻygan",
+              "ru": "Брандмауэр Windows закрыл ICMP",
+              "en": "Windows Firewall is blocking ICMP"
+            },
+            {
+              "uz": "Serverda brauzer oʻrnatilmagan",
+              "ru": "На сервере не установлен браузер",
+              "en": "The server has no browser installed"
+            },
+            {
+              "uz": "Administrator paroli murakkab emas",
+              "ru": "Пароль Administrator не сложный",
+              "en": "The Administrator password is not complex"
+            },
+            {
+              "uz": "Disk talabi 32 GB ga yetmaydi",
+              "ru": "Диск не достигает требования 32 ГБ",
+              "en": "The disk is below the 32 GB requirement"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda javob boʻlmasa, sabab koʻpincha brandmauerning ICMP ni yopgani aytiladi va `Get-NetFirewallRule -DisplayName \"*Echo*\"` bilan tekshirish tavsiya qilinadi.",
+            "ru": "В занятии сказано: если ответа нет, обычно ICMP закрыт брандмауэром, и это проверяют командой `Get-NetFirewallRule -DisplayName \"*Echo*\"`.",
+            "en": "The lesson says a missing reply is usually ICMP blocked by Windows Firewall, checked with `Get-NetFirewallRule -DisplayName \"*Echo*\"`."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Katta oʻzgarish qilishdan oldin VM holatini snapshot sifatida saqlash tavsiya etiladi.",
+            "ru": "Перед крупным изменением рекомендуется сохранить состояние ВМ снимком.",
+            "en": "Saving the VM state as a snapshot before a big change is recommended."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Snapshot boʻlmasa, xatodan keyin qaytish imkoni qolmaydi; kontrol roʻyxatida holatni saqlash bandi bor.",
+            "ru": "Без снимка после ошибки пути назад не остаётся; в контрольном списке есть пункт о сохранении состояния.",
+            "en": "Without a snapshot there is no way back after a mistake; the checklist includes saving the state."
+          }
+        },
+        {
+          "type": "NUM",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Server Core da sconfig menyusi orqali tarmoqni sozlash uchun qaysi raqam tanlanadi?",
+            "ru": "Какой пункт меню `sconfig` в Server Core выбирается для настройки сети?",
+            "en": "In Server Core, which number of the `sconfig` menu is used to configure the network?"
+          },
+          "answers": [8],
+          "tolerance": 0,
+          "explanation": {
+            "uz": "Darsda: 2 — nom, 8 — tarmoq, 6 — yangilanishlar, 7 — Remote Desktop.",
+            "ru": "В занятии: 2 — имя, 8 — сеть, 6 — обновления, 7 — Remote Desktop.",
+            "en": "The lesson gives: 2 — name, 8 — network, 6 — updates, 7 — Remote Desktop."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Remote Desktop haqida darsda qanday tavsiya berilgan?",
+            "ru": "Какая рекомендация по Remote Desktop дана в занятии?",
+            "en": "What does the lesson advise about Remote Desktop?"
+          },
+          "options": [
+            {
+              "uz": "Kerak boʻlsa yoqiladi va faqat administratorlar uchun",
+              "ru": "Включать при необходимости, и только для администраторов",
+              "en": "Enable it if needed, and only for administrators"
+            },
+            {
+              "uz": "Barcha foydalanuvchilar uchun yoqiladi",
+              "ru": "Включать для всех пользователей",
+              "en": "Enable it for every user"
+            },
+            {
+              "uz": "Hech qachon yoqilmaydi",
+              "ru": "Никогда не включать",
+              "en": "Never enable it"
+            },
+            {
+              "uz": "Faqat Desktop Experience da emas, Server Core da mavjud",
+              "ru": "Есть только в Server Core, а не в Desktop Experience",
+              "en": "It exists only in Server Core, not in Desktop Experience"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Boshlangʻich sozlash jadvalida: Remote Desktop kerak boʻlsa yoqiladi, faqat administratorlar uchun — masofaviy boshqaruv uchun.",
+            "ru": "В таблице начальной настройки: Remote Desktop включают при необходимости, только для администраторов — для удалённого управления.",
+            "en": "The initial-configuration table says: enable Remote Desktop if needed, for administrators only, for remote management."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Serverga oʻrnatilgan rollarni PowerShell da koʻrish uchun cmdlet nomini yozing.",
+            "ru": "Напишите имя cmdlet в PowerShell для просмотра установленных на сервере ролей.",
+            "en": "Write the name of the PowerShell cmdlet that lists the roles installed on the server."
+          },
+          "answers": ["Get-WindowsFeature", "get-windowsfeature", "Get-WindowsFeature | Where-Object Installed"],
+          "explanation": {
+            "uz": "Darsdagi buyruq: `Get-WindowsFeature | Where-Object Installed`; rolni qoʻshish esa `Install-WindowsFeature` bilan.",
+            "ru": "Команда из занятия: `Get-WindowsFeature | Where-Object Installed`; роль добавляется `Install-WindowsFeature`.",
+            "en": "The lesson command is `Get-WindowsFeature | Where-Object Installed`; a role is added with `Install-WindowsFeature`."
+          }
+        }
+      ]
+    }
+  }
+}

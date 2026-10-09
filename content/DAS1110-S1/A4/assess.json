@@ -1,0 +1,297 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Uch sonning eng kattasini topishda nega `if-elif` zanjiri emas, alohida `if` operatorlari ishlatiladi?",
+          "ru": "Почему для поиска наибольшего из трёх чисел используется не цепочка `if-elif`, а отдельные операторы `if`?",
+          "en": "Why are separate `if` statements used to find the largest of three numbers, not an `if-elif` chain?"
+        },
+        "options": [
+          {
+            "uz": "Zanjirda birinchi rost shartdan soʻng qolgan shartlar tekshirilmaydi, ammo har bir sonni `mx` bilan solishtirish kerak",
+            "ru": "В цепочке после первого истинного условия остальные не проверяются, а каждое число нужно сравнить с `mx`",
+            "en": "In a chain the rest are not checked after the first true condition, but every number must be compared with `mx`"
+          },
+          {
+            "uz": "`elif` sekinroq ishlaydi",
+            "ru": "`elif` работает медленнее",
+            "en": "`elif` runs more slowly"
+          },
+          {
+            "uz": "Alohida `if` operatorlari kamroq xotira band qiladi",
+            "ru": "Отдельные `if` занимают меньше памяти",
+            "en": "Separate `if` statements use less memory"
+          },
+          {
+            "uz": "Zanjir manfiy sonlarda umuman ishlamaydi",
+            "ru": "Цепочка вообще не работает с отрицательными числами",
+            "en": "A chain does not work at all with negative numbers"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda aytilganidek, zanjir birinchi rost shartda toʻxtaydi; eng kattasini topishda esa har bir sonni `hozirgacha eng katta` qiymati bilan qayta solishtirish shart.",
+          "ru": "Как сказано в занятии: цепочка останавливается на первом истинном условии, а для поиска наибольшего каждое число нужно заново сравнивать с «наибольшим пока».",
+          "en": "As the lesson says, a chain stops at the first true condition; to find the largest, every number must again be compared with the \"largest so far\" value."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Java va C++ tilida shart bloki faqat bitta qatordan iborat boʻlsa ham `{ }` qavslaridan foydalanish kerak.",
+          "ru": "В Java и C++ фигурные скобки `{ }` нужно ставить, даже если блок условия состоит из одной строки.",
+          "en": "In Java and C++ you should use `{ }` braces even when the condition's block is a single line."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Ikkinchi qoida: Java va C++ʼda hatto blokda bitta qator boʻlsa ham har doim `{ }` qoʻying.",
+          "ru": "Правило второе: в Java и C++ всегда ставьте `{ }`, даже если в блоке одна строка.",
+          "en": "Rule two: in Java and C++ always use `{ }`, even when the block has one line."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Python tilida bir nechta qiymatning eng kattasini qaytaruvchi standart funksiyaning nomini yozing.",
+          "ru": "Напишите имя стандартной функции Python, возвращающей наибольший из нескольких значений.",
+          "en": "Write the name of the standard Python function that returns the largest of several values."
+        },
+        "answers": ["max", "max()"],
+        "explanation": {
+          "uz": "Pythonʼda `max(a, b, c)`, Javaʼda `Math.max(a, b)`, C++ʼda `max({a, b, c})` eng kattasini qaytaradi.",
+          "ru": "В Python это `max(a, b, c)`, в Java — `Math.max(a, b)`, в C++ — `max({a, b, c})`.",
+          "en": "In Python it is `max(a, b, c)`, in Java `Math.max(a, b)`, in C++ `max({a, b, c})`."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Nuqtaning choragini aniqlaydigan dasturga `5 -1` kiritilsa, qaysi chorak raqami chiqadi?",
+          "ru": "Какую цифру четверти выведет программа определения четверти точки, если на вход подать `5 -1`?",
+          "en": "If the quadrant program is given `5 -1`, which quadrant number does it print?"
+        },
+        "answers": [4],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "*x* musbat, *y* manfiy — toʻrtinchi chorak; darsda ham `5 -1` → `4` deb koʻrsatilgan.",
+          "ru": "*x* положителен, *y* отрицателен — четвёртая четверть; в занятии тоже `5 -1` → `4`.",
+          "en": "*x* is positive and *y* negative — the fourth quadrant; the lesson shows `5 -1` → `4`."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Uchburchak turini aniqlaydigan dasturda `teng yonli` sharti `teng tomonli` shartidan oldin tursa, `5 5 5` uchun nima chiqadi?",
+          "ru": "Что выведет программа определения типа треугольника для `5 5 5`, если условие «равнобедренный» стоит раньше условия «равносторонний»?",
+          "en": "In the triangle-type program, if the \"isosceles\" condition comes before \"equilateral\", what does it print for `5 5 5`?"
+        },
+        "options": [
+          {
+            "uz": "teng tomonli",
+            "ru": "равносторонний",
+            "en": "equilateral"
+          },
+          {
+            "uz": "teng yonli",
+            "ru": "равнобедренный",
+            "en": "isosceles"
+          },
+          {
+            "uz": "turli tomonli",
+            "ru": "разносторонний",
+            "en": "scalene"
+          },
+          {
+            "uz": "mavjud emas",
+            "ru": "не существует",
+            "en": "does not exist"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "`a == b` rost, shuning uchun zanjir `teng yonli`da toʻxtaydi — dars aytganidek, xususiy holat umumiy holatdan oldin turishi kerak.",
+          "ru": "`a == b` истинно, поэтому цепочка остановится на «равнобедренный» — как говорит занятие, частный случай должен стоять раньше общего.",
+          "en": "`a == b` is true, so the chain stops at \"isosceles\" — as the lesson says, the special case must come before the general one."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Uchburchak masalasi va tekshiruv tartibi haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о задаче про треугольник и о порядке проверки верны?",
+          "en": "Which statements about the triangle problem and the order of checks are correct?"
+        },
+        "options": [
+          {
+            "uz": "`1 2 3` kiritilsa `mavjud emas` chiqadi, chunki 1 + 2 = 3 va shart qatʼiy emas (`<=`)",
+            "ru": "При вводе `1 2 3` выдастся «не существует», так как 1 + 2 = 3 и неравенство не строгое (`<=`)",
+            "en": "The input `1 2 3` prints \"does not exist\", because 1 + 2 = 3 and the inequality is not strict (`<=`)"
+          },
+          {
+            "uz": "Maʼlumotni tekshirish asosiy hisobdan keyin bajariladi",
+            "ru": "Проверка данных выполняется после основного вычисления",
+            "en": "The data is validated after the main computation"
+          },
+          {
+            "uz": "`5 5 5` uchun `teng tomonli` chiqishi uchun bu shart `teng yonli` shartidan oldin turishi kerak",
+            "ru": "Чтобы для `5 5 5` вывелось «равносторонний», это условие должно стоять раньше «равнобедренный»",
+            "en": "For `5 5 5` to print \"equilateral\", that condition must come before \"isosceles\""
+          },
+          {
+            "uz": "Mavjud boʻlmagan uchburchakning ham turini aniqlash mumkin",
+            "ru": "Можно определить тип и несуществующего треугольника",
+            "en": "The type of a triangle that does not exist can also be determined"
+          }
+        ],
+        "correct": [0, 2],
+        "explanation": {
+          "uz": "Darsda: avval tekshiruv, keyin hisob; mavjud boʻlmagan uchburchakning turini aniqlashning maʼnosi yoʻq.",
+          "ru": "В занятии: сначала проверка, потом вычисление; определять тип несуществующего треугольника нет смысла.",
+          "en": "The lesson says: first the check, then the computation; there is no point finding the type of a triangle that does not exist."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nuqtaning choragi masalasi uchun toʻrtta test (har chorakka bittadan) yetarli.",
+          "ru": "Для задачи о четверти точки достаточно четырёх тестов — по одному на каждую четверть.",
+          "en": "Four tests — one per quadrant — are enough for the quadrant problem."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Toʻrt chorak va oʻqda yotgan nuqta — beshta tarmoq, demak kamida beshta test kerak.",
+          "ru": "Четыре четверти плюс точка на оси — это пять ветвей, значит нужно минимум пять тестов.",
+          "en": "Four quadrants plus a point on an axis make five branches, so at least five tests are needed."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Uch sonning eng kichigini topish uchun `mx` andozasida nimani oʻzgartirish kerak?",
+          "ru": "Что нужно изменить в образце с `mx`, чтобы находить наименьшее из трёх чисел?",
+          "en": "What do you change in the `mx` pattern to find the smallest of three numbers?"
+        },
+        "options": [
+          {
+            "uz": "Solishtirish belgisini `>` dan `<` ga oʻzgartirish (va oʻzgaruvchini `mn` deb atash maqul)",
+            "ru": "Заменить знак сравнения `>` на `<` (и лучше назвать переменную `mn`)",
+            "en": "Change the comparison `>` to `<` (and it is better to name the variable `mn`)"
+          },
+          {
+            "uz": "`if` operatorlarini `elif` zanjiriga aylantirish",
+            "ru": "Преобразовать `if` в цепочку `elif`",
+            "en": "Turn the `if` statements into an `elif` chain"
+          },
+          {
+            "uz": "Oxirgi `if` operatorini butunlay oʻchirib tashlash",
+            "ru": "Полностью удалить последний `if`",
+            "en": "Delete the last `if` entirely"
+          },
+          {
+            "uz": "Hech narsa oʻzgartirish shart emas — dastur avtomatik eng kichigini topadi",
+            "ru": "Ничего менять не нужно — программа сама найдёт наименьшее",
+            "en": "Nothing needs changing — the program finds the smallest automatically"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsning tekshiruv savolida: `>` belgisi `<` ga almashtiriladi, oʻzgaruvchini esa `mn` deb atash maqul.",
+          "ru": "В вопросе для самопроверки занятия: знак `>` меняется на `<`, а переменную лучше назвать `mn`.",
+          "en": "The lesson's self-check says: replace `>` with `<`, and it is better to call the variable `mn`."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nuqtaning choragini aniqlaydigan dasturda nechta tarmoq bor, yaʼni kamida nechta test yozish kerak?",
+          "ru": "Сколько ветвей в программе определения четверти точки, то есть минимум сколько тестов нужно написать?",
+          "en": "How many branches does the quadrant program have, that is, what is the minimum number of tests to write?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Toʻrt chorak va oʻqda yotgan holat — jami beshta tarmoq; dars har bir tarmoq uchun kamida bitta test deydi.",
+          "ru": "Четыре четверти плюс случай на оси — всего пять ветвей; в занятии сказано: на каждую ветвь минимум один тест.",
+          "en": "Four quadrants plus the on-an-axis case make five branches; the lesson says every branch needs at least one test."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Savat summasi boʻyicha yetkazib berish",
+      "ru": "Доставка по сумме корзины",
+      "en": "Delivery by basket amount"
+    },
+    "statement": {
+      "uz": "Internet-doʻkon qoidasi: savatga summasi 300 000 soʻmdan oshsa yetkazib berish bepul boʻladi, 1 000 000 soʻmdan oshsa esa bepul yetkazib berish bilan birga qoʻshimcha chegirma beriladi. Dasturingiz bitta butun son — savatga summasini (soʻmda) oʻqisin. Summa 1000000 dan qatʼiy katta boʻlsa `free discount` deb; aks holda 300000 dan qatʼiy katta boʻlsa `free` deb; boshqa hollarda `paid` deb bitta qatorga chiqaring. Hech qanday qoʻshimcha matn yozmang. Eʼtibor bering: kattaroq chegirma sharti birinchi tekshirilishi kerak, aks holda u hech qachon bajarilmaydi.",
+      "ru": "Правило интернет-магазина: при сумме корзины больше 300 000 сум доставка бесплатная, а при сумме больше 1 000 000 сум к бесплатной доставке добавляется ещё и скидка. Ваша программа читает одно целое число — сумму корзины (в сумах). Если сумма строго больше 1000000, выведите `free discount`; иначе если строго больше 300000, выведите `free`; во всех остальных случаях выведите `paid` — одной строкой, без какого-либо дополнительного текста. Обратите внимание: условие большей скидки должно проверяться первым, иначе оно никогда не сработает.",
+      "en": "The online shop's rule: a basket over 300 000 sum gets free delivery, and a basket over 1 000 000 sum gets, on top of free delivery, an extra discount. Your program reads one integer — the basket amount in sum. If it is strictly greater than 1000000, print `free discount`; otherwise if it is strictly greater than 300000, print `free`; in every other case print `paid` — on a single line, with no extra text. Note: the larger-discount condition must be checked first, otherwise it never runs."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\nif n > 300000:\n    print(\"free\")\nelse:\n    print(\"paid\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        if (n > 300000) {\n            System.out.println(\"free\");\n        } else {\n            System.out.println(\"paid\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    if (n > 300000) {\n        cout << \"free\" << endl;\n    } else {\n        cout << \"paid\" << endl;\n    }\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\nif n > 1000000:\n    print(\"free discount\")\nelif n > 300000:\n    print(\"free\")\nelse:\n    print(\"paid\")\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        if (n > 1000000) {\n            System.out.println(\"free discount\");\n        } else if (n > 300000) {\n            System.out.println(\"free\");\n        } else {\n            System.out.println(\"paid\");\n        }\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    if (n > 1000000) {\n        cout << \"free discount\" << endl;\n    } else if (n > 300000) {\n        cout << \"free\" << endl;\n    } else {\n        cout << \"paid\" << endl;\n    }\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "1500000\n", "expected": "free discount", "hidden": false },
+        { "input": "500000\n", "expected": "free", "hidden": false },
+        { "input": "0\n", "expected": "paid", "hidden": false },
+        { "input": "300000\n", "expected": "paid", "hidden": true },
+        { "input": "1000000\n", "expected": "free", "hidden": true },
+        { "input": "1000001\n", "expected": "free discount", "hidden": true }
+      ]
+    }
+  }
+}

@@ -1,0 +1,352 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Elektron hukumat deganda nima tushuniladi?",
+          "ru": "Что понимается под электронным правительством?",
+          "en": "What is e-government?"
+        },
+        "options": [
+          {
+            "uz": "Davlat organlarining fuqarolar, biznes va boshqa idoralar bilan axborot-kommunikatsiya texnologiyalari orqali oʻzaro taʼsiri",
+            "ru": "Взаимодействие государственных органов с гражданами, бизнесом и другими ведомствами с помощью ИКТ",
+            "en": "The interaction of government bodies with citizens, businesses and other agencies through ICT"
+          },
+          {
+            "uz": "Davlat xizmatchilari oʻzaro xat yozishadigan ichki elektron pochta tizimi",
+            "ru": "Внутренняя электронная почта, через которую переписываются госслужащие",
+            "en": "An internal email system through which civil servants write to each other"
+          },
+          {
+            "uz": "Faqat davlat organlari saytlarida axborot joylashtirilishi",
+            "ru": "Размещение информации только на сайтах государственных органов",
+            "en": "Publishing information only on government agency websites"
+          },
+          {
+            "uz": "Fuqarolarning shaxsiy maʼlumotlarini yigʻib sotadigan tizim",
+            "ru": "Система сбора и продажи персональных данных граждан",
+            "en": "A system that collects and sells citizens' personal data"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Taʼrifga koʻra maqsad — xizmatlarni tez, qulay va shaffof koʻrsatish, xarajatlarni kamaytirish, korrupsiya xavfini pasaytirish.",
+          "ru": "По определению цель — быстро, удобно и прозрачно оказывать услуги, сокращать затраты и снижать коррупционные риски.",
+          "en": "The definition's goal: fast, convenient and transparent services, lower costs and reduced corruption risk."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "G2C modeli davlat va biznes oʻrtasidagi oʻzaro taʼsirni bildiradi.",
+          "ru": "Модель G2C обозначает взаимодействие государства и бизнеса.",
+          "en": "The G2C model denotes interaction between the government and business."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "G2C — davlat va fuqarolar oʻrtasida: maʼlumotnomalar, arizalar, toʻlovlar, navbatga yozilish. Biznes bilan oʻzaro taʼsir — G2B modeli.",
+          "ru": "G2C — это государство и граждане: справки, заявления, платежи, запись на приём. Взаимодействие с бизнесом — модель G2B.",
+          "en": "G2C is government and citizens: certificates, applications, payments, appointments. Interaction with business is G2B."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Elektron hukumat rivojlanishining bosqichlariga qaysilari kiradi?",
+          "ru": "Что из перечисленного входит в этапы развития электронного правительства?",
+          "en": "Which of these are stages of e-government development?"
+        },
+        "options": [
+          { "uz": "Axborot berish", "ru": "Информирование", "en": "Information" },
+          { "uz": "Interaktivlik", "ru": "Взаимодействие", "en": "Interaction" },
+          { "uz": "Tranzaksiya", "ru": "Транзакция", "en": "Transaction" },
+          { "uz": "Virtualizatsiya", "ru": "Виртуализация", "en": "Virtualization" }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi toʻrt bosqich: axborot berish → interaktivlik → tranzaksiya → transformatsiya. Virtualizatsiya ular orasida yoʻq.",
+          "ru": "Четыре этапа из урока: информирование → взаимодействие → транзакция → трансформация. Виртуализации среди них нет.",
+          "en": "The lesson's four stages: information → interaction → transaction → transformation. Virtualization is not among them."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "«Bir marta» tamoyili nimani anglatadi?",
+          "ru": "Что означает принцип «однократности»?",
+          "en": "What does the \"once-only\" principle mean?"
+        },
+        "options": [
+          {
+            "uz": "Fuqaro yoki tadbirkor maʼlumotni davlatga faqat bir marta taqdim etadi, boshqa idoralar uni tizim orqali oladi",
+            "ru": "Гражданин или предприниматель подаёт данные государству один раз, а другие ведомства получают их через систему",
+            "en": "A citizen or entrepreneur submits data to the state once, and other agencies obtain it through the system"
+          },
+          {
+            "uz": "Har bir murojaat uchun fuqaro hujjatlarni qaytadan yigʻadi",
+            "ru": "При каждом обращении гражданин собирает документы заново",
+            "en": "For every request the citizen collects the documents again"
+          },
+          {
+            "uz": "Har bir davlat xizmati fuqaroga faqat bir marta koʻrsatiladi",
+            "ru": "Каждая госуслуга оказывается гражданину только один раз",
+            "en": "Each public service is provided to a citizen only once"
+          },
+          {
+            "uz": "Maʼlumotlar faqat bitta idorada saqlanadi va boshqa idoralarga berilmaydi",
+            "ru": "Данные хранятся только в одном ведомстве и не выдаются другим",
+            "en": "Data is stored in one agency only and not shared with others"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bu transformatsiya bosqichi: idoralar bir-biri bilan bogʻlangan, fuqaro maʼlumotni qayta-qayta taqdim etmaydi; proaktiv xizmatlar ham shundan (bola tugʻilganda nafaqa avtomatik).",
+          "ru": "Это этап трансформации: ведомства связаны, гражданин не подаёт данные снова; отсюда же проактивные услуги (пособие при рождении ребёнка назначается автоматически).",
+          "en": "This is the transformation stage: agencies are connected and the citizen does not resubmit data; proactive services come from here too (a benefit is granted automatically when a child is born)."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "BMTning Elektron hukumat rivojlanish indeksi (EGDI) qancha yilda bir marta eʼlon qilinadi?",
+          "ru": "Раз в сколько лет публикуется Индекс развития электронного правительства ООН (EGDI)?",
+          "en": "How often (in years) is the UN E-Government Development Index (EGDI) published?"
+        },
+        "answers": [2],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsga koʻra EGDI har ikki yilda eʼlon qilinadi va mamlakatlarni onlayn xizmatlar, telekommunikatsiya infratuzilmasi hamda inson kapitali boʻyicha baholaydi.",
+          "ru": "По уроку EGDI публикуется раз в два года и оценивает страны по онлайн-услугам, телекоммуникационной инфраструктуре и человеческому капиталу.",
+          "en": "In the lesson EGDI is published every two years and rates countries on online services, telecommunications infrastructure and human capital."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Oʻzbekistonda yuzlab davlat xizmatini onlayn koʻrsatadigan Yagona interaktiv davlat xizmatlari portalining manzilini yozing.",
+          "ru": "Напишите адрес Единого портала интерактивных государственных услуг Узбекистана, где онлайн оказываются сотни госуслуг.",
+          "en": "Write the address of Uzbekistan's Single Portal of Interactive Public Services, which provides hundreds of services online."
+        },
+        "answers": ["my.gov.uz", "www.my.gov.uz", "MY.GOV.UZ"],
+        "explanation": {
+          "uz": "my.gov.uz — yagona portal. data.gov.uz esa ochiq maʼlumotlar portali, ularni aralashtirmang.",
+          "ru": "my.gov.uz — единый портал. data.gov.uz — это портал открытых данных, не путайте их.",
+          "en": "my.gov.uz is the single portal; data.gov.uz is the open data portal — do not confuse them."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nima uchun elektron hukumatni faqat veb-saytlar toʻplami deb qarash xato?",
+          "ru": "Почему ошибочно считать электронное правительство просто набором веб-сайтов?",
+          "en": "Why is it wrong to see e-government as just a collection of websites?"
+        },
+        "options": [
+          {
+            "uz": "Asosiy qiymat — idoralar orasidagi integratsiya va jarayonlarning qayta qurilishi",
+            "ru": "Главная ценность — интеграция между ведомствами и перестройка процессов",
+            "en": "The main value is integration between agencies and redesigned processes"
+          },
+          {
+            "uz": "Chunki davlat saytlari Internet boʻlmaganida umuman ishlamaydi",
+            "ru": "Потому что госсайты вообще не работают без интернета",
+            "en": "Because government sites do not work at all without the Internet"
+          },
+          {
+            "uz": "Chunki davlat organlari oʻz saytlarini yuritmaydi",
+            "ru": "Потому что госорганы не ведут собственных сайтов",
+            "en": "Because government agencies do not run their own sites"
+          },
+          {
+            "uz": "Chunki davlat sayti faqat xorij tillarida boʻlishi shart",
+            "ru": "Потому что госсайт обязан быть только на иностранных языках",
+            "en": "Because a government site must be only in foreign languages"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi koʻp uchraydigan xatolar roʻyxati: elektron hukumat — bu birinchidan integratsiya va qayta qurilgan jarayonlar, sayt esa faqat kirish nuqtasi.",
+          "ru": "Список типичных ошибок из урока: электронное правительство — это прежде всего интеграция и перестроенные процессы, а сайт лишь точка входа.",
+          "en": "The lesson's list of common mistakes: e-government is first of all integration and redesigned processes; a website is only an entry point."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Elektron hukumatning xavf va muammolariga qaysilari kiradi?",
+          "ru": "Что из перечисленного относится к рискам и проблемам электронного правительства?",
+          "en": "Which of these are risks and problems of e-government?"
+        },
+        "options": [
+          {
+            "uz": "Raqamli tafovut — Internet yoki koʻnikmasi yoʻq aholi",
+            "ru": "Цифровой разрыв — люди без интернета или навыков",
+            "en": "The digital divide — people without the Internet or skills"
+          },
+          {
+            "uz": "Kiberxavfsizlik va shaxsiy maʼlumotlarning sizishi",
+            "ru": "Кибербезопасность и утечки персональных данных",
+            "en": "Cybersecurity and personal data leaks"
+          },
+          { "uz": "Tizim uzilishlari", "ru": "Сбои в работе систем", "en": "System outages" },
+          {
+            "uz": "Biznes muhitining yaxshilanishi",
+            "ru": "Улучшение делового климата",
+            "en": "A better business environment"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Biznes muhitining yaxshilanishi — foydalar roʻyxatidagi ustun, xavf emas. Xavflar: raqamli tafovut, sizishlar, uzilishlar, tizimlarning mos kelmasligi, murakkab interfeys.",
+          "ru": "Улучшение делового климата — столбец выгод, а не рисков. Риски: цифровой разрыв, утечки, сбои, несовместимость систем, сложный интерфейс.",
+          "en": "A better business environment is a column of benefits, not risks. The risks: the digital divide, leaks, outages, incompatible systems, a complicated interface."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "ERI qonunan qoʻl imzosiga teng boʻlgani uchun oʻz ERI kaliti va parolini ishonchli hamkasbiga berish mumkin.",
+          "ru": "Поскольку ЭЦП юридически равна рукописной подписи, свой ключ ЭЦП и пароль можно передать надёжному коллеге.",
+          "en": "Because a digital signature equals a handwritten one by law, you may hand your signature key and password to a trusted colleague."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dars bu aynan koʻp uchraydigan xato deb ogohlantiradi: ERI kaliti va parolni boshqalarga bermang — ERI imzosi qoʻl imzosi kuchi bilan sizning imzoyingiz.",
+          "ru": "Урок предупреждает об этом как о типичной ошибке: ключ ЭЦП и пароль никому не передают — подпись ЭЦП действует с силой вашей личной подписи.",
+          "en": "The lesson warns about exactly this common mistake: never give your signature key and password to others — a digital signature carries the force of your own signature."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Elektron davlat xizmatlari: modellar va tizimlar",
+      "ru": "Электронные госуслуги: модели и системы",
+      "en": "Electronic public services: models and systems"
+    },
+    "statement": {
+      "uz": "Darsda oʻrganilgan modellar, bosqichlar va Oʻzbekistonning elektron tizimlari boʻyicha quyidagi savollarga javob bering.",
+      "ru": "Ответьте на вопросы о моделях, этапах и электронных системах Узбекистана, разобранных на уроке.",
+      "en": "Answer the questions below on the models, stages and electronic systems of Uzbekistan covered in the lesson."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Korxonani roʻyxatdan oʻtkazish va soliq hisobotini topshirish qaysi oʻzaro taʼsir modeliga tegishli?",
+            "ru": "К какой модели взаимодействия относятся регистрация предприятия и подача налогового отчёта?",
+            "en": "Which interaction model covers registering a company and submitting a tax report?"
+          },
+          "options": [
+            { "uz": "G2C (davlat — fuqaro)", "ru": "G2C (государство — гражданин)", "en": "G2C (government — citizen)" },
+            { "uz": "G2B (davlat — biznes)", "ru": "G2B (государство — бизнес)", "en": "G2B (government — business)" },
+            { "uz": "G2G (davlat — davlat)", "ru": "G2G (государство — государство)", "en": "G2G (government — government)" },
+            { "uz": "G2E (davlat — xodim)", "ru": "G2E (государство — служащий)", "en": "G2E (government — employee)" }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "G2B modeli tadbirkorlar bilan: roʻyxatdan oʻtkazish, soliq hisobotlari, litsenziyalar, davlat xaridlari.",
+            "ru": "Модель G2B — работа с предпринимателями: регистрация, отчётность, лицензии, госзакупки.",
+            "en": "The G2B model serves entrepreneurs: registration, tax reports, licences, public procurement."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Ochiq maʼlumotlar — davlat statistikasi va maʼlumotlarini mashinada oʻqiladigan formatda eʼlon qilish.",
+            "ru": "Открытые данные — это публикация госстатистики и данных в машиночитаемом формате.",
+            "en": "Open data means publishing government statistics and data in machine-readable formats."
+          },
+          "options": [
+            { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+            { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsdagi taʼrif shunday; Oʻzbekistonda bu — data.gov.uz portali.",
+            "ru": "Так определено в уроке; в Узбекистане за это отвечает портал data.gov.uz.",
+            "en": "That is the lesson's definition; in Uzbekistan this is the data.gov.uz portal."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Soliq hisobotlari, toʻlovlar va soliq qarzini tekshirish uchun qaysi tizim xizmat qiladi?",
+            "ru": "Какая система служит для налоговых отчётов, платежей и проверки налоговой задолженности?",
+            "en": "Which system is used for tax reports, payments and checking tax debt?"
+          },
+          "options": [
+            { "uz": "my.gov.uz", "ru": "my.gov.uz", "en": "my.gov.uz" },
+            { "uz": "soliq.uz — soliq xizmatining elektron kabineti", "ru": "soliq.uz — электронный кабинет налоговой службы", "en": "soliq.uz — the tax service's electronic account" },
+            { "uz": "data.gov.uz", "ru": "data.gov.uz", "en": "data.gov.uz" },
+            { "uz": "Davlat xaridlari portali", "ru": "Портал госзакупок", "en": "The public procurement portal" }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Elektron hisob-fakturalar korxonalar orasida almashiladi, davlat xaridlari portali — tender va auksionlar uchun.",
+            "ru": "Электронные счета-фактуры обмениваются между компаниями, а портал госзакупок — для тендеров и аукционов.",
+            "en": "Electronic invoices are exchanged between companies, and the procurement portal is for tenders and auctions."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Xizmatni toʻliq onlayn olish va toʻlash (ERI bilan) rivojlanishning qaysi bosqichiga toʻgʻri keladi?",
+            "ru": "На каком этапе развития услугу можно полностью получить и оплатить онлайн (с ЭЦП)?",
+            "en": "At which development stage is a service fully received and paid for online (with a digital signature)?"
+          },
+          "options": [
+            { "uz": "Axborot berish", "ru": "Информирование", "en": "Information" },
+            { "uz": "Interaktivlik", "ru": "Взаимодействие", "en": "Interaction" },
+            { "uz": "Tranzaksiya", "ru": "Транзакция", "en": "Transaction" },
+            { "uz": "Transformatsiya", "ru": "Трансформация", "en": "Transformation" }
+          ],
+          "correct": [2],
+          "explanation": {
+            "uz": "Interaktivlikda faqat ariza shakli yuklab olinadi va murojaat yuboriladi; toʻlov bilan birga toʻliq onlayn xizmat — tranzaksiya bosqichi.",
+            "ru": "На этапе взаимодействия форму только скачивают и подают обращение; полноценная онлайн-услуга с оплатой — это транзакция.",
+            "en": "At the interaction stage a form is only downloaded and a request sent; a fully online service with payment is the transaction stage."
+          }
+        }
+      ]
+    }
+  }
+}

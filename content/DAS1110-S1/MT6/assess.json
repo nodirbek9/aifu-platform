@@ -1,0 +1,248 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "n elementli massivda i < j shartni qanoatlantiruvchi (i, j) juftliklari soni qaysi formula bilan hisoblanadi?",
+          "ru": "По какой формуле считается число пар (i, j) с условием i < j в массиве из n элементов?",
+          "en": "Which formula counts the pairs (i, j) with i < j in an array of n elements?"
+        },
+        "options": [
+          { "uz": "n(n - 1) / 2", "ru": "n(n - 1) / 2", "en": "n(n - 1) / 2" },
+          { "uz": "n²", "ru": "n²", "en": "n²" },
+          { "uz": "n(n + 1) / 2", "ru": "n(n + 1) / 2", "en": "n(n + 1) / 2" },
+          { "uz": "2n", "ru": "2n", "en": "2n" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvali: faqat i < j boʻyicha yurilganda juftliklar soni n(n - 1)/2; n² esa „hamma bilan hamma“ usulida.",
+          "ru": "Таблица занятия: при обходе только i < j пар получается n(n - 1)/2; n² — это способ «все со всеми».",
+          "en": "The lesson table: walking only i < j gives n(n - 1)/2 pairs; n² belongs to the everyone-with-everyone way."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Faqat i < j sharti bilan koʻrib chiqilganda har bir juftlik aynan bir marta uchraydi.",
+          "ru": "При обходе только с условием i < j каждая пара встречается ровно один раз.",
+          "en": "When walking only the pairs with i < j, every pair appears exactly once."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: ikkinchi usulda har bir juftlik aynan bir marta uchraydi, (i, i) va takrorlanishlar kirmaydi.",
+          "ru": "В занятии: вторым способом каждая пара встречается ровно один раз, (i, i) и повторы не попадают.",
+          "en": "The lesson: the second way visits every pair exactly once, with no (i, i) and no repeats."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Barcha juftliklarni takrorlanmasdan koʻrib chiqish uchun ichki sikl j = ____ dan boshlanadi (tashqi hisoblagich — i).",
+          "ru": "Чтобы обойти все пары без повторов, внутренний цикл начинается с j = ____ (внешний счётчик — i).",
+          "en": "To walk all pairs without repeats, the inner loop starts at j = ____ (the outer counter is i)."
+        },
+        "answers": ["i+1", "i + 1"],
+        "explanation": {
+          "uz": "Ichki sikl i + 1 dan boshlanadi — chegara tashqi hisoblagichga bogʻliq, shuning uchun (i, i) va tesari juftlik kirmaydi.",
+          "ru": "Внутренний цикл стартует с i + 1 — граница зависит от внешнего счётчика, поэтому (i, i) и обратная пара не попадают.",
+          "en": "The inner loop starts at i + 1 — its bound depends on the outer counter, so (i, i) and the reversed pair are excluded."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "8 jamoali turnirda har bir jamoa har bir raqib bilan bir marta oʻynaydi. Nechta oʻyin boʻladi?",
+          "ru": "В турнире из 8 команд каждая играет с каждой по одному разу. Сколько будет игр?",
+          "en": "In a tournament of 8 teams, every team plays every other team once. How many games are there?"
+        },
+        "answers": [28],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Bu — barcha juftliklar soni: 8 · 7 / 2 = 28 (darsning „oʻzingizni tekshiring“ savoli).",
+          "ru": "Это число всех пар: 8 · 7 / 2 = 28 (вопрос «проверь себя» из занятия).",
+          "en": "This is the number of all pairs: 8 · 7 / 2 = 28 (the lesson's check-yourself question)."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Inversiyalar soni masalasida ichki sikl j = i dan boshlansa, natija oʻzgarmaydi.",
+          "ru": "В задаче о числе инверсий результат не изменится, если внутренний цикл начинать с j = i.",
+          "en": "In the inversion-count problem the result does not change if the inner loop starts at j = i."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "a[i] > a[i] hech qachon true emas, shuning uchun natija oʻzgarmaydi — faqat boshiga n ta behuda tekshiruv qoʻshiladi. Lekin yigʻindi masalasida (i, i) notoʻgʻri javob berishi mumkin.",
+          "ru": "a[i] > a[i] никогда не верно, поэтому результат тот же — просто добавляются n лишних проверок. Но в задаче о сумме пар (i, i) может дать неверный ответ.",
+          "en": "a[i] > a[i] is never true, so the result stays the same — only n useless checks are added. In the pair-sum problem, though, (i, i) could give a wrong result."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Teskari tartiblangan (kamayuvchi) massivda inversiyalar soni qanchaga teng?",
+          "ru": "Сколько инверсий в упорядоченной по убыванию последовательности?",
+          "en": "How many inversions does a sequence sorted in descending order have?"
+        },
+        "options": [
+          { "uz": "0", "ru": "0", "en": "0" },
+          { "uz": "n", "ru": "n", "en": "n" },
+          { "uz": "n(n - 1) / 2 — barcha juftliklar", "ru": "n(n - 1) / 2 — все пары", "en": "n(n - 1) / 2 — every pair" },
+          { "uz": "n²", "ru": "n²", "en": "n²" }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Dars: saralangan massivda 0, kamayuvchi massivda esa har bir juftlik inversiya — n(n - 1)/2. Masalan, 4 3 2 1 da 6.",
+          "ru": "В занятии: в возрастании — 0, в убывании каждая пара является инверсией — n(n - 1)/2. Например, в 4 3 2 1 это 6.",
+          "en": "The lesson: 0 in a sorted array, in a descending one every pair is an inversion — n(n - 1)/2. For 4 3 2 1 that is 6."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "n = 10 boʻlganda, i < j boʻyicha barcha juftliklarni koʻrib chiqishda ichki sikl tanasi necha marta bajariladi?",
+          "ru": "Сколько раз выполнится тело внутреннего цикла при переборе всех пар i < j, если n = 10?",
+          "en": "For n = 10, how many times does the inner body run when walking all pairs with i < j?"
+        },
+        "answers": [45],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsdagi baholash: n(n - 1)/2, yaʼni n = 10 da 45 marta.",
+          "ru": "Оценка из занятия: n(n - 1)/2, то есть при n = 10 это 45 раз.",
+          "en": "The lesson's estimate: n(n - 1)/2, which is 45 for n = 10."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Juftliklarni sanash haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения о подсчёте пар верны?",
+          "en": "Which statements about counting pairs are correct?"
+        },
+        "options": [
+          {
+            "uz": "Ichki sikl j = 0 dan boshlansa, har bir juftlik ikki marta sanaladi va (i, i) ham qoʻshiladi",
+            "ru": "Если внутренний цикл начинается с j = 0, каждая пара считается дважды и (i, i) тоже попадает",
+            "en": "If the inner loop starts at j = 0, every pair is counted twice and (i, i) is included too"
+          },
+          {
+            "uz": "Bir xil qiymatli, lekin turli pozitsiyadagi elementlar (masalan, 3 va 3) alohida juftlik hosil qiladi",
+            "ru": "Элементы с одинаковым значением, но на разных позициях (например, 3 и 3) образуют отдельную пару",
+            "en": "Elements with the same value in different positions (for example 3 and 3) form a separate pair"
+          },
+          {
+            "uz": "n katta boʻlsa juftliklar soni int doirasidan chiqishi mumkin — soni long bilan hisoblanadi",
+            "ru": "При большом n число пар может выйти за пределы int — счётчик берут типа long",
+            "en": "For large n the number of pairs can exceed an int — the counter is kept in a long"
+          },
+          {
+            "uz": "Ichma-ich sikllar turli nomli hisoblagichlar ishlatmasa ham toʻgʻri ishlaydi",
+            "ru": "Вложенные циклы работают верно, даже если использовать одно имя счётчика для обоих циклов",
+            "en": "Nested loops work fine even when both loops use the same counter name"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Dars ogohlantirishi: tashqi va ichki sikllar har xil nomli hisoblagichlardan (i, j) foydalanishi kerak.",
+          "ru": "Предупреждение из занятия: внешний и внутренний циклы должны использовать счётчики с разными именами (i, j).",
+          "en": "The lesson warns: the inner and outer loops must use counters with different names (i, j)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Nima uchun dars katta n da barcha juftliklarni ichma-ich sikl bilan koʻrib chiqishni tavsiya qilmaydi?",
+          "ru": "Почему в занятии не советуют перебирать все пары вложенным циклом при большом n?",
+          "en": "Why does the lesson advise against walking all pairs with a nested loop for large n?"
+        },
+        "options": [
+          {
+            "uz": "n = 100 000 da juftliklar soni ~5 milliardga yetadi — sikl sekin ishlaydi, tezroq algoritm kerak",
+            "ru": "При n = 100 000 пар будет около 5 миллиардов — цикл работает медленно, нужен более быстрый алгоритм",
+            "en": "For n = 100 000 there are about 5 billion pairs — the loop runs slowly and a faster algorithm is needed"
+          },
+          {
+            "uz": "Ichma-ich sikl katta n da umuman ishlamaydi",
+            "ru": "При большом n вложенный цикл вообще не работает",
+            "en": "A nested loop does not work at all for large n"
+          },
+          {
+            "uz": "Juftliklar soni long doirasiga ham sigʻmaydi",
+            "ru": "Число пар не помещается даже в long",
+            "en": "The number of pairs does not fit even in a long"
+          },
+          {
+            "uz": "Bunday sikl faqat saralangan massivda toʻgʻri ishlaydi",
+            "ru": "Такой цикл корректен только на отсортированном массиве",
+            "en": "Such a loop is correct only on a sorted array"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars baholashi: n(n - 1)/2 tez oʻsadi — 10 da 45, 1000 da ~500 ming, 100 000 da ~5 milliard; keyingi semestrlarda saralash va xesh-jadvallar bilan tezroq yechimlar boʻladi.",
+          "ru": "Оценка из занятия: n(n - 1)/2 растёт быстро — 45 при n = 10, ~500 тысяч при n = 1000, ~5 миллиардов при n = 100 000; дальше — сортировка и хеш-таблицы.",
+          "en": "The lesson's estimate: n(n - 1)/2 grows fast — 45 at n = 10, ~500 thousand at n = 1000, ~5 billion at n = 100 000; sorting and hash tables come later."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Teng qiymatli juftliklar",
+      "ru": "Пары равных элементов",
+      "en": "Pairs of equal elements"
+    },
+    "statement": {
+      "uz": "Birinchi qatorda n, ikkinchi qatorda n ta butun son — massiv berilgan. Dasturingiz i < j va a[i] = a[j] boʻlgan juftliklar sonini chiqaring. Masalan, 5 va 1 5 3 3 2 kirilsa, 1 chiqadi: mos yagona juftlik — ikkita 3. Faqat son chiqaring. 1 ≤ n ≤ 1000, qiymatlar −10^6 dan 10^6 gacha.",
+      "ru": "В первой строке дано n, во второй — n целых чисел: массив. Программа должна вывести число пар с i < j и a[i] = a[j]. Например, при вводе 5 и 1 5 3 3 2 выводится 1: единственная подходящая пара — две тройки. Выведите только число. 1 ≤ n ≤ 1000, значения от −10^6 до 10^6.",
+      "en": "The first line holds n, the second line n integers: the array. Your program must print the number of pairs with i < j and a[i] = a[j]. For example, the input 5 and 1 5 3 3 2 gives 1: the only matching pair is the two 3s. Print only the number. 1 ≤ n ≤ 1000, values from −10^6 to 10^6."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\n\nsoni = 0\nfor i in range(n):\n    for j in range(i, n):\n        if a[i] == a[j]:\n            soni += 1\n\nprint(soni)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n\n        long soni = 0;\n        for (int i = 0; i < n; i++) {\n            for (int j = i; j < n; j++) {\n                if (a[i] == a[j]) {\n                    soni++;\n                }\n            }\n        }\n\n        System.out.println(soni);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n\n    long long soni = 0;\n    for (int i = 0; i < n; i++) {\n        for (int j = i; j < n; j++) {\n            if (a[i] == a[j]) {\n                soni++;\n            }\n        }\n    }\n\n    cout << soni << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\na = list(map(int, input().split()))\n\nsoni = 0\nfor i in range(n):\n    for j in range(i + 1, n):\n        if a[i] == a[j]:\n            soni += 1\n\nprint(soni)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int[] a = new int[n];\n        for (int i = 0; i < n; i++) {\n            a[i] = in.nextInt();\n        }\n\n        long soni = 0;\n        for (int i = 0; i < n; i++) {\n            for (int j = i + 1; j < n; j++) {\n                if (a[i] == a[j]) {\n                    soni++;\n                }\n            }\n        }\n\n        System.out.println(soni);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n\n    long long soni = 0;\n    for (int i = 0; i < n; i++) {\n        for (int j = i + 1; j < n; j++) {\n            if (a[i] == a[j]) {\n                soni++;\n            }\n        }\n    }\n\n    cout << soni << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "5\n1 5 3 3 2\n", "expected": "1", "hidden": false },
+        { "input": "1\n7\n", "expected": "0", "hidden": false },
+        { "input": "4\n2 2 2 2\n", "expected": "6", "hidden": true },
+        { "input": "3\n1 2 3\n", "expected": "0", "hidden": true },
+        { "input": "6\n1 1 2 2 2 3\n", "expected": "4", "hidden": true }
+      ]
+    }
+  }
+}

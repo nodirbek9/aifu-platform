@@ -1,0 +1,482 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsga koʻra, ijtimoiy muhandislik nima?",
+          "ru": "Что такое социальная инженерия по занятию?",
+          "en": "According to the lesson, what is social engineering?"
+        },
+        "options": [
+          {
+            "uz": "Odamni aldab, u oʻz xohishi bilan maxfiy maʼlumot berishi yoki xavfsizlikni buzuvchi harakat qilishiga undash",
+            "ru": "Обман человека, чтобы он добровольно выдал конфиденциальную информацию или совершил действие, нарушающее безопасность",
+            "en": "Tricking a person into voluntarily giving away confidential information or taking an action that breaks security"
+          },
+          {
+            "uz": "Zararli dasturni avtomatik aniqlash usuli",
+            "ru": "Метод автоматического обнаружения вредоносных программ",
+            "en": "A method for automatically detecting malware"
+          },
+          {
+            "uz": "Parolni saqlashda ishlatiladigan shifrlash algoritmi",
+            "ru": "Алгоритм шифрования, применяемый при хранении пароля",
+            "en": "An encryption algorithm used when storing a password"
+          },
+          {
+            "uz": "Tarmoq trafigini toʻsuvchi xavfsizlik devori",
+            "ru": "Межсетевой экран, блокирующий сетевой трафик",
+            "en": "A firewall that blocks network traffic"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi taʼrif: ijtimoiy muhandislik — odamni aldab, u oʻz xohishi bilan maxfiy maʼlumot berishi yoki xavfsizlikni buzuvchi harakat qilishiga undash.",
+          "ru": "Определение из занятия: социальная инженерия — обман человека с целью добиться, чтобы он добровольно выдал конфиденциальную информацию или совершил действие, нарушающее безопасность.",
+          "en": "The lesson's definition: social engineering is tricking a person into voluntarily giving away confidential information or taking an action that breaks security."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Darsga koʻra, ijtimoiy muhandislik texnik zaiflikdan foydalanadi.",
+          "ru": "По занятию социальная инженерия использует техническую уязвимость.",
+          "en": "According to the lesson, social engineering exploits a technical weakness."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsda ochiq aytilgan: u texnik zaiflikdan emas, inson psixologiyasidan foydalanadi. Shu sababli himoya qanchalik kuchli boʻlmasin, hujumchilar odamlarga murojaat qiladi.",
+          "ru": "В занятии сказано прямо: она использует не техническую уязвимость, а психологию человека. Поэтому, какой бы сильной ни была защита, злоумышленники обращаются к людям.",
+          "en": "The lesson states it plainly: it exploits not a technical weakness but human psychology. That is why, however strong the protection is, attackers turn to people."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Dars jadvalida telefon orqali aldash qaysi atama bilan berilgan?",
+          "ru": "Каким термином в таблице занятия обозначен обман по телефону?",
+          "en": "Which term in the lesson's table names deception by phone?"
+        },
+        "options": [
+          {
+            "uz": "Vishing",
+            "ru": "Вишинг",
+            "en": "Vishing"
+          },
+          {
+            "uz": "Smishing",
+            "ru": "Смишинг",
+            "en": "Smishing"
+          },
+          {
+            "uz": "Oʻlja (baiting)",
+            "ru": "Приманка (baiting)",
+            "en": "Baiting"
+          },
+          {
+            "uz": "Ommaviy fishing",
+            "ru": "Массовый фишинг",
+            "en": "Mass phishing"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Jadval: vishing — telefon orqali aldash (soʻnggi yillarda ovozni soxtalashtirish bilan); smishing — SMS va messenjer xabarlari orqali; oʻlja — qiziqarli fleshka yoki «bepul» yuklab olish.",
+          "ru": "Таблица: вишинг — обман по телефону (в последние годы с подделкой голоса); смишинг — через SMS и сообщения в мессенджерах; приманка — интересная флешка или «бесплатная» загрузка.",
+          "en": "The table: vishing — deception by phone (in recent years with voice cloning); smishing — via SMS and messenger messages; baiting — an interesting flash drive or a «free» download."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsda ijtimoiy muhandislik hujum turlari qatoriga qaysilari kiritilgan?",
+          "ru": "Что из перечисленного отнесено в занятии к видам атак социальной инженерии?",
+          "en": "Which of these does the lesson list among the types of social engineering attacks?"
+        },
+        "options": [
+          {
+            "uz": "Nishonli fishing (spear phishing)",
+            "ru": "Целевой фишинг (spear phishing)",
+            "en": "Spear phishing"
+          },
+          {
+            "uz": "Biznes pochtasini buzish (BEC)",
+            "ru": "Компрометация деловой почты (BEC)",
+            "en": "Business email compromise (BEC)"
+          },
+          {
+            "uz": "Deepfake",
+            "ru": "Дипфейк",
+            "en": "Deepfake"
+          },
+          {
+            "uz": "Maʼlumotlar bazasiga buyruq kiritish (SQL injection)",
+            "ru": "Внедрение SQL-кода в базу данных",
+            "en": "SQL injection into a database"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Darsdagi roʻyxat: fishing, nishonli fishing, vishing, smishing, bahona (pretexting), oʻlja, biznes pochtasini buzish (BEC), deepfake. SQL injection texnik hujum boʻlib, bu roʻyxatda yoʻq.",
+          "ru": "Список из занятия: фишинг, целевой фишинг, вишинг, смишинг, претекстинг, приманка, компрометация деловой почты (BEC), дипфейк. Внедрение SQL-кода — техническая атака, в этом списке её нет.",
+          "en": "The lesson's list: phishing, spear phishing, vishing, smishing, pretexting, baiting, business email compromise (BEC), deepfake. SQL injection is a technical attack and is not on this list."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "«Hisobingiz 1 soatda bloklanadi» degan xaborda Chaldini qaysi taʼsir tamoyili ishlatiladi?",
+          "ru": "Какой принцип влияния Чалдини используется в сообщении «ваш счёт будет заблокирован через 1 час»?",
+          "en": "Which of Cialdini's influence principles is used in the message «your account will be blocked in 1 hour»?"
+        },
+        "options": [
+          {
+            "uz": "Shoshilinchlik (urgency / scarcity)",
+            "ru": "Срочность / дефицит",
+            "en": "Urgency / scarcity"
+          },
+          {
+            "uz": "Oʻzaro yordam (reciprocity)",
+            "ru": "Взаимность",
+            "en": "Reciprocity"
+          },
+          {
+            "uz": "Yoqtirish",
+            "ru": "Симпатия",
+            "en": "Liking"
+          },
+          {
+            "uz": "Majburiyat va izchillik",
+            "ru": "Обязательство и последовательность",
+            "en": "Commitment and consistency"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvalida «hisobingiz 1 soatda bloklanadi», «bugun toʻlanmasa jarima» shoshilinchlik / tanqislik tamoyiliga kiritilgan. «Oʻzingizni tekshiring» boʻlimida aytilganidek, vaqt bosimi qurbonni oʻylash va tekshirish imkoniyatidan mahrum qiladi.",
+          "ru": "В таблице занятия «ваш счёт будет заблокирован через 1 час», «штраф, если не оплатить сегодня» отнесены к срочности / дефициту. Как сказано в разделе «Проверьте себя», давление времени лишает жертву возможности подумать и проверить.",
+          "en": "The lesson's table places «your account will be blocked in 1 hour» and «a fine if not paid today» under urgency / scarcity. As the check-yourself section says, time pressure deprives the victim of the chance to think and verify."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Dars jadvalida ruxsatsiz foydalanishdan himoyaning nechta qatlami keltirilgan?",
+          "ru": "Сколько уровней защиты от несанкционированного использования приведено в таблице занятия?",
+          "en": "How many layers of protection against unauthorized use does the lesson's table list?"
+        },
+        "answers": [7],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Yetti qatlam: identifikatsiya va autentifikatsiya; foydalanishni boshqarish; maʼlumotni himoyalash; tarmoq; fizik; kuzatuv va javob; odamlar va jarayonlar.",
+          "ru": "Семь уровней: идентификация и аутентификация; управление доступом; защита данных; сеть; физический; мониторинг и реагирование; люди и процессы.",
+          "en": "Seven layers: identification and authentication; access control; data protection; network; physical; monitoring and response; people and processes."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Arup (2024) keysidagi zararni darsda qaysi chora toʻxtatishi mumkin edi deyilgan?",
+          "ru": "Какая мера, по занятию, могла бы остановить ущерб в кейсе Arup (2024)?",
+          "en": "Which measure does the lesson say could have stopped the damage in the Arup case (2024)?"
+        },
+        "options": [
+          {
+            "uz": "Katta yoki gʻayrioddiy toʻlovni boshqa, oldindan maʼlum kanal orqali tasdiqlash va ikki kishilik imzo",
+            "ru": "Подтверждение крупного или необычного платежа по другому, заранее известному каналу и подпись двух лиц",
+            "en": "Confirming a large or unusual payment through a different, previously known channel, with two-person signing"
+          },
+          {
+            "uz": "Videokonferensiya yozuvini arxivda saqlash",
+            "ru": "Хранение записи видеоконференции в архиве",
+            "en": "Keeping the video conference recording in an archive"
+          },
+          {
+            "uz": "Toʻlovni kechqurun, ish paytdan tashqarida amalga oshirish",
+            "ru": "Выполнение платежа вечером, вне рабочего времени",
+            "en": "Making the payment in the evening, outside working hours"
+          },
+          {
+            "uz": "Xodimning brauzerida kengaytuvma (plug-in) oʻrnatish",
+            "ru": "Установка расширения в браузере сотрудника",
+            "en": "Installing a browser extension for the employee"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars tahlilida zaiflik — katta toʻlovlarni mustaqil kanal orqali tasdiqlash tartibi yoʻqligi; choralar — oldindan maʼlum kanal orqali tasdiqlash, ikki kishilik imzo, «maxfiy va shoshilinch toʻlov» — avtomatik shubha belgisi.",
+          "ru": "В анализе занятия слабость — отсутствие процедуры подтверждения крупных платежей по независимому каналу; меры — подтверждение по заранее известному каналу, подпись двух лиц, «секретный и срочный платёж» — автоматический тревожный признак.",
+          "en": "The lesson's analysis names the weakness as the lack of a procedure for confirming large payments through an independent channel; the measures are confirmation via a previously known channel, two-person signing, and a «secret and urgent payment» as an automatic red flag."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "MGM Resorts (2023) hodisasida darsda asosiy zaiflik deb nima koʻrsatilgan?",
+          "ru": "Что названо главной слабостью в инциденте MGM Resorts (2023) в занятии?",
+          "en": "What does the lesson name as the main weakness in the MGM Resorts incident (2023)?"
+        },
+        "options": [
+          {
+            "uz": "Yordam xizmatida shaxsni ishonchli tekshirish tartibining yoʻqligi",
+            "ru": "Отсутствие надёжной процедуры проверки личности в службе поддержки",
+            "en": "No reliable identity verification procedure at the help desk"
+          },
+          {
+            "uz": "Serverlarda zaxira nusxalarning (backup) yoʻqligi",
+            "ru": "Отсутствие резервных копий на серверах",
+            "en": "The absence of server backups"
+          },
+          {
+            "uz": "Xodimlarning parollari juda qisqa boʻlgani",
+            "ru": "Слишком короткие пароли сотрудников",
+            "en": "The employees' passwords were too short"
+          },
+          {
+            "uz": "Tarmoq kabellarining shikastlangani",
+            "ru": "Повреждение сетевых кабелей",
+            "en": "Damaged network cables"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsda: hujumchilar ochiq tarmoqlardan xodim haqida maʼlumot topib, IT yordam xizmatiga uning nomidan qoʻngʻiroq qilgan va hisobni tiklashga erishgan; zaiflik — yordam xizmatida ishonchli tekshiruv tartibining yoʻqligi. Choralar — qayta qoʻngʻiroq rasmiy raqamga, rahbar tasdigʻi, shaxsan kelish va imtiyozli hisoblar uchun alohida tartib.",
+          "ru": "В занятии: злоумышленники нашли сведения о сотруднике в открытых сетях, позвонили в ИТ-поддержку от его имени и добились сброса учётной записи; слабость — отсутствие в службе поддержки процедуры надёжной проверки. Меры — обратный звонок на официальный номер, подтверждение руководителя, личная явка и отдельная процедура для привилегированных учётных записей.",
+          "en": "The lesson: the attackers found information about an employee on social networks, called the IT help desk in the employee's name and got the account reset; the weakness was the lack of a reliable verification procedure at the help desk. The measures are calling back on the official number, a manager's approval, appearing in person, and a separate procedure for privileged accounts."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra, shubhali soʻrovni tekshirish uchun xatdagi yoki SMSdagi telefon raqamiga qayta qoʻngʻiroq qilish yetarli.",
+          "ru": "По занятию для проверки подозрительного запроса достаточно перезвонить по номеру из письма или SMS.",
+          "en": "According to the lesson, it is enough to call back the phone number in the email or SMS to check a suspicious request."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Darsning koʻp uchraydigan xatolar roʻyxatida bu alohida belgilangan: tekshirish faqat oldindan maʼlum, rasmiy raqam yoki kanal orqali. Videoqoʻngʻiroq ham mutlaq dalil emas, chunki deepfake ovoz va tasvirni soxtalashtira oladi.",
+          "ru": "В списке частых ошибок занятия это отмечено отдельно: проверять только по заранее известному официальному номеру или каналу. Видеозвонок тоже не абсолютное доказательство, так как дипфейк может подделать голос и изображение.",
+          "en": "The lesson's list of common mistakes flags this separately: check only via a previously known, official number or channel. A video call is not absolute proof either, because a deepfake can fake voice and image."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "ANSWER",
+    "title": {
+      "uz": "Shubhali soʻrovni tanish boʻyicha nazorat savollari",
+      "ru": "Проверочные вопросы по распознаванию подозрительного запроса",
+      "en": "Check questions on recognising a suspicious request"
+    },
+    "statement": {
+      "uz": "Darsning «toʻxta — tekshir — xabar ber» qoidasini oʻz ish odatiga kiritishdan oldin besh savolga javob bering. Savollar ijtimoiy muhandislik hujum turlarini tanishga, Chaldini tamoyillarini qoʻllashga, real hodisalarning saboqlariga va tashkiliy himoya choralariga asoslangan. Javoblar darhol tekshiriladi, urinishlar soni cheklanmagan.",
+      "ru": "Прежде чем встроить правило занятия «остановись — проверь — сообщи» в свою рабочую привычку, ответьте на пять вопросов. Они опираются на распознавание видов атак социальной инженерии, применение принципов Чалдини, уроки реальных инцидентов и организационные меры защиты. Ответы проверяются сразу, число попыток не ограничено.",
+      "en": "Before you turn the lesson's rule «stop — verify — report» into your own working habit, answer five questions. They rest on recognizing the types of social engineering attacks, applying Cialdini's principles, the lessons of the real incidents and the organizational protective measures. The answers are checked at once and attempts are not limited."
+    },
+    "answer": {
+      "questions": [
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Xodimga «IT boʻlimi» vakili deb tanishib, telefon orqali qoʻngʻiroq qilishdi va parolini tiklash uchun kodni aytishni soʻrashdi. Bu qaysi hujum turi?",
+            "ru": "Сотруднику позвонили по телефону, представившись представителем «ИТ-отдела», и попросили назвать код для сброса пароля. Что это за вид атаки?",
+            "en": "An employee received a phone call from someone introducing themselves as a representative of the «IT department», who asked for the code to reset the password. Which attack type is this?"
+          },
+          "options": [
+            {
+              "uz": "Vishing (telefon orqali aldash)",
+              "ru": "Вишинг (обман по телефону)",
+              "en": "Vishing (deception by phone)"
+            },
+            {
+              "uz": "Smishing (SMS orqali)",
+              "ru": "Смишинг (через SMS)",
+              "en": "Smishing (via SMS)"
+            },
+            {
+              "uz": "Oʻlja (baiting)",
+              "ru": "Приманка (baiting)",
+              "en": "Baiting"
+            },
+            {
+              "uz": "Ommaviy fishing xati",
+              "ru": "Массовое фишинговое письмо",
+              "en": "A mass phishing email"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Dars jadvalida vishing — telefon orqali aldash; Twitter (2020) va MGM (2023) keyslari aynan shu usulga asoslangan. Kanal — qoʻngʻiroq, demak, javob vishing.",
+            "ru": "В таблице занятия вишинг — обман по телефону; кейсы Twitter (2020) и MGM (2023) построены именно на этом приёме. Канал — звонок, значит ответ — вишинг.",
+            "en": "The lesson's table defines vishing as deception by phone; the Twitter (2020) and MGM (2023) cases rest on exactly this technique. The channel is a call, so the answer is vishing."
+          }
+        },
+        {
+          "type": "SINGLE",
+          "difficulty": "EASY",
+          "points": 1,
+          "prompt": {
+            "uz": "Kirishda xodimlarning stoliga «Sovgʻa: ushbu fleshkani kompyuteringizga ulang» deb yozilgan fleshka qoʻyilgan. Bu qaysi tur?",
+            "ru": "На столы сотрудников у входа положили флешку с надписью «Подарок: вставьте эту флешку в свой компьютер». Что это за вид?",
+            "en": "A flash drive labelled «Gift: plug this drive into your computer» is left on the desks at the entrance. Which type is this?"
+          },
+          "options": [
+            {
+              "uz": "Oʻlja (baiting)",
+              "ru": "Приманка (baiting)",
+              "en": "Baiting"
+            },
+            {
+              "uz": "Bahona (pretexting)",
+              "ru": "Претекстинг (выдуманная ситуация)",
+              "en": "Pretexting (an invented situation)"
+            },
+            {
+              "uz": "Deepfake",
+              "ru": "Дипфейк",
+              "en": "Deepfake"
+            },
+            {
+              "uz": "Biznes pochtasini buzish (BEC)",
+              "ru": "Компрометация деловой почты (BEC)",
+              "en": "Business email compromise (BEC)"
+            }
+          ],
+          "correct": [0],
+          "explanation": {
+            "uz": "Darsda oʻlja (baiting) — qiziqarli fleshka yoki «bepul» yuklab olish orqali aldash (A12 bilan bogʻlangan). Bu yerda qiziqish va sovgʻa ishlatilgan.",
+            "ru": "В занятии приманка (baiting) — обман через интересную флешку или «бесплатную» загрузку (связано с A12). Здесь использованы интерес и подарок.",
+            "en": "The lesson defines baiting as deception through an interesting flash drive or a «free» download (linked to A12). Here curiosity and a gift are used."
+          }
+        },
+        {
+          "type": "MULTI",
+          "difficulty": "MEDIUM",
+          "points": 2,
+          "prompt": {
+            "uz": "Darsning «toʻxta — tekshir — xabar ber» qoidasiga qaysi harakatlar mos keladi?",
+            "ru": "Какие действия соответствуют правилу занятия «остановись — проверь — сообщи»?",
+            "en": "Which actions match the lesson's rule «stop — verify — report»?"
+          },
+          "options": [
+            {
+              "uz": "Shoshilinch va gʻayrioddiy soʻrov kelganda harakatni toʻxtatish",
+              "ru": "Остановить действие, получив срочную и необычную просьбу",
+              "en": "Stopping the action when an urgent and unusual request arrives"
+            },
+            {
+              "uz": "Soʻrovni mustaqil, oldindan maʼlum kanal orqali tekshirish",
+              "ru": "Проверить просьбу по независимому, заранее известному каналу",
+              "en": "Checking the request through an independent, previously known channel"
+            },
+            {
+              "uz": "Shubhali boʻlsa, xavfsizlik xizmatiga xabar berish",
+              "ru": "Сообщить в службу безопасности, если просьба подозрительна",
+              "en": "Reporting to the security service if the request is suspicious"
+            },
+            {
+              "uz": "Xatdagi raqamga qayta qoʻngʻiroq qilib, soʻrovchi oʻzidan tasdiq olish",
+              "ru": "Перезвонить по номеру из письма и получить подтверждение у самого просителя",
+              "en": "Calling back the number in the email and taking confirmation from the requester"
+            }
+          ],
+          "correct": [0, 1, 2],
+          "explanation": {
+            "uz": "Darsning maslahatida uch qadam aytilgan: harakatni toʻxtatish, soʻrovni mustaqil kanal orqali tekshirish, shubhali boʻlsa xavfsizlik xizmatiga xabar berish. Toʻrtinchi variant esa koʻp uchraydigan xatolar roʻyxatida: «Xatdagi raqamga qayta qoʻngʻiroq qilib tekshirish» — tekshirish faqat oldindan maʼlum rasmiy kanal orqali.",
+            "ru": "В совете занятия названы три шага: остановите действие, проверьте просьбу по независимому каналу, при подозрении сообщите в службу безопасности. Четвёртый вариант — из списка частых ошибок: «проверять, перезвонив по номеру из письма»; проверять нужно только по заранее известному официальному каналу.",
+            "en": "The lesson's tip gives three steps: stop the action, check the request through an independent channel, and report to the security service if it is suspicious. The fourth option is from the list of common mistakes, «checking by calling back the number in the email» — verification runs only through a previously known official channel."
+          }
+        },
+        {
+          "type": "TF",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Darsga koʻra, ijtimoiy muhandislikka uchragan xodimni jazolash hodisalarni tezroq aniqlashga yordam beradi.",
+            "ru": "По занятию наказание сотрудника, попавшего под влияние социальной инженерии, помогает быстрее обнаруживать инциденты.",
+            "en": "According to the lesson, punishing an employee who fell for social engineering helps incidents be detected sooner."
+          },
+          "options": [
+            {
+              "uz": "Toʻgʻri",
+              "ru": "Верно",
+              "en": "True"
+            },
+            {
+              "uz": "Notoʻgʻri",
+              "ru": "Неверно",
+              "en": "False"
+            }
+          ],
+          "correct": [1],
+          "explanation": {
+            "uz": "Darsda aksi aytilgan: xato qilgan xodimni jazolash emas, tez xabar bergani uchun minnatdorchilik kerak; jazolash keyingi hodisalarni yashirishga va ularning kech aniqlanishiga olib keladi.",
+            "ru": "В занятии сказано обратное: ошибившегося сотрудника не надо наказывать, его нужно поблагодарить за быстрое сообщение; наказание приводит к сокрытию будущих инцидентов и их позднему обнаружению.",
+            "en": "The lesson says the opposite: an employee who made a mistake should not be punished but thanked for reporting quickly; punishment leads to future incidents being hidden and detected late."
+          }
+        },
+        {
+          "type": "SHORT",
+          "difficulty": "HARD",
+          "points": 3,
+          "prompt": {
+            "uz": "Rahbar yoki yetkazib beruvchi nomidan toʻlov rekvizitlarini almashtirishga qaratilgan hujumning darsdagi inglizcha qisqartmasini yozing.",
+            "ru": "Запишите английскую аббревиатуру атаки из занятия, направленной на смену платёжных реквизитов от имени руководителя или поставщика.",
+            "en": "Write the English abbreviation from the lesson for the attack aimed at changing payment details in the name of a manager or supplier."
+          },
+          "answers": ["BEC", "bec", "B.E.C.", "Business Email Compromise", "business email compromise", "BEC (Business Email Compromise)"],
+          "explanation": {
+            "uz": "Dars jadvali: biznes pochtasini buzish (BEC) — rahbar yoki yetkazib beruvchi nomidan toʻlov rekvizitlarini almashtirish; Arup keysida u deepfake bilan birga ishlatilgan.",
+            "ru": "Таблица занятия: компрометация деловой почты (BEC) — смена платёжных реквизитов от имени руководителя или поставщика; в кейсе Arup она применена вместе с дипфейком.",
+            "en": "The lesson's table: business email compromise (BEC) is changing payment details in the name of a manager or supplier; in the Arup case it was used together with a deepfake."
+          }
+        }
+      ]
+    }
+  }
+}

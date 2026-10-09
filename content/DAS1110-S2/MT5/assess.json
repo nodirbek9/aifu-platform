@@ -1,0 +1,264 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ichma-ich rekursiya oddiy (chiziqli) rekursiyadan nimasi bilan farq qiladi?",
+          "ru": "Чем вложенная рекурсия отличается от обычной (линейной)?",
+          "en": "How does nested recursion differ from ordinary (linear) recursion?"
+        },
+        "options": [
+          {
+            "uz": "Argumentning oʻzi ham shu funksiyaning chaqiruvi boʻladi: masalan, M(M(n + 11))",
+            "ru": "Сам аргумент является вызовом этой же функции, например M(M(n + 11))",
+            "en": "The argument itself is a call of the same function, for instance M(M(n + 11))"
+          },
+          {
+            "uz": "Unda bazaviy holat boʻlmaydi",
+            "ru": "В ней нет базового случая",
+            "en": "It has no base case"
+          },
+          {
+            "uz": "Argument har qadamda albatta kamayadi",
+            "ru": "Аргумент обязательно уменьшается на каждом шаге",
+            "en": "The argument always decreases at every step"
+          },
+          {
+            "uz": "Unda rekursiya oʻrniga sikl ishlatiladi",
+            "ru": "Вместо рекурсии в ней используется цикл",
+            "en": "It uses a loop instead of recursion"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars jadvoli: chiziqli — bitta chaqiruv, ichma-ich — chaqiruv natijasi yana argument. Argument esa har doim ham kamaymaydi: n + 11 kattaroq!",
+          "ru": "Таблица занятия: линейная — один вызов, вложенная — результат вызова снова аргумент. Причём аргумент не всегда уменьшается: n + 11 больше!",
+          "en": "The lesson's table: linear is one call, nested is a call's result used again as argument — and the argument does not always decrease: n + 11 is larger!"
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Ichma-ich chaqiruv ichkaridan tashqariga hisoblanadi: avval ichki M(n + 11) toʻliq hisoblanadi, uning natijasi tashqi M ga argument boʻladi.",
+          "ru": "Вложенный вызов вычисляется изнутри наружу: сначала полностью вычисляется внутренний M(n + 11), и его результат становится аргументом внешнего M.",
+          "en": "A nested call is evaluated from the inside out: first the inner M(n + 11) is computed completely, and its result becomes the argument of the outer M."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Dars aynan shunday deydi; M(M(110)) da birinchi boʻlib ichki M(110) bajariladi.",
+          "ru": "Занятие говорит именно это; в M(M(110)) первым выполняется внутренний M(110).",
+          "en": "The lesson says exactly this; in M(M(110)) the inner M(110) runs first."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Chaqiruvlar sonini sanash uchun hisoblagich darsda qanday eʼlon qilingan — qaysilari toʻgʻri?",
+          "ru": "Как занятие предписывает объявлять счётчик вызовов — что из перечисленного верно?",
+          "en": "How does the lesson declare the call counter — which of these are right?"
+        },
+        "options": [
+          {
+            "uz": "Pythonʼda: `global soni`",
+            "ru": "В Python: global soni",
+            "en": "In Python: global soni"
+          },
+          {
+            "uz": "Javaʼda: `static long soni`",
+            "ru": "В Java: static long soni",
+            "en": "In Java: static long soni"
+          },
+          {
+            "uz": "C++ʼda: global oʻzgaruvchi",
+            "ru": "В C++: глобальная переменная",
+            "en": "In C++: a global variable"
+          },
+          {
+            "uz": "Funksiya ichida: oddiy lokal oʻzgaruvchi",
+            "ru": "Внутри функции: обычная локальная переменная",
+            "en": "Inside the function: an ordinary local variable"
+          }
+        ],
+        "correct": [0, 1, 2],
+        "explanation": {
+          "uz": "Funksiya ichidagi oʻzgaruvchi har chaqiruvda qaytadan yaratiladi; umumiy son faqat tashqi (global yoki statik) oʻzgaruvchida yigʻiladi.",
+          "ru": "Переменная внутри функции создаётся заново при каждом вызове; общая сумма накапливается только во внешней (глобальной или статической) переменной.",
+          "en": "A variable inside the function is created anew on every call; a total accumulates only in an outer (global or static) variable."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "M(150) nimaga teng?",
+          "ru": "Чему равно M(150)?",
+          "en": "What is M(150)?"
+        },
+        "options": [
+          { "uz": "140", "ru": "140", "en": "140" },
+          { "uz": "91", "ru": "91", "en": "91" },
+          { "uz": "150", "ru": "150", "en": "150" },
+          { "uz": "160", "ru": "160", "en": "160" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "150 > 100, shuning uchun M(n) = n − 10 = 140 va funksiya atigi bir marta chaqiriladi (dars testlar jadvali).",
+          "ru": "150 > 100, поэтому M(n) = n − 10 = 140, и функция вызывается ровно один раз (таблица тестов занятия).",
+          "en": "150 > 100, so M(n) = n − 10 = 140, with a single call (the lesson's test table)."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Pythonʼda rekursiya chuqurligi chegarasini oshirish uchun qaysi funksiya chaqiriladi?",
+          "ru": "Какая функция в Python повышает предел глубины рекурсии?",
+          "en": "Which Python function raises the recursion depth limit?"
+        },
+        "answers": ["sys.setrecursionlimit", "setrecursionlimit"],
+        "explanation": {
+          "uz": "Namunaviy dastur `sys.setrecursionlimit(10000)` ni chaqiradi: n = 0 da rekursiya 100 dan ortiq qavat chuqurlashadi.",
+          "ru": "Программа-образец вызывает sys.setrecursionlimit(10000): при n = 0 рекурсия уходит глубже ста уровней.",
+          "en": "The sample calls sys.setrecursionlimit(10000): for n = 0 the recursion goes more than 100 levels deep."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Darsdagi qonuniyatga koʻra A(1, n) = n + 2 boʻlsa, A(1, 5) nechaga teng?",
+          "ru": "По закономерности из занятия A(1, n) = n + 2. Чему равно A(1, 5)?",
+          "en": "The lesson's pattern says A(1, n) = n + 2. What is A(1, 5)?"
+        },
+        "answers": [7],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "5 + 2 = 7. Bunday formulalar dastur natijasini tekshirishga yordam beradi.",
+          "ru": "5 + 2 = 7. Такие формулы помогают проверить результат программы.",
+          "en": "5 + 2 = 7. Formulas like this help check the program's result."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "M(99) hisoblanishida funksiya jami necha marta chaqiriladi?",
+          "ru": "Сколько раз всего вызывается функция при вычислении M(99)?",
+          "en": "How many calls in total does computing M(99) make?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsdagi kuzatish jadvali: M(99) → M(110) → M(100) → M(111) → M(101) — besh chaqiruv, natija 91.",
+          "ru": "Таблица отслеживания из занятия: M(99) → M(110) → M(100) → M(111) → M(101) — пять вызовов, результат 91.",
+          "en": "The lesson's tracing table: M(99) → M(110) → M(100) → M(111) → M(101) — five calls, the result is 91."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Akkerman funksiyasi uchta holatni aynan shu tartibda tekshirishi kerak: avval m = 0, keyin n = 0.",
+          "ru": "Функция Аккермана должна проверять три случая именно в этом порядке: сначала m = 0, затем n = 0.",
+          "en": "The Ackermann function must check the three cases in exactly this order: first m = 0, then n = 0."
+        },
+        "options": [
+          { "uz": "Toʻgʻri", "ru": "Верно", "en": "True" },
+          { "uz": "Notoʻgʻri", "ru": "Неверно", "en": "False" }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Bu baholash mezonida yozilgan: taʼrifdagi uchta holat aynan shu tartibda tekshiriladi.",
+          "ru": "Это записано в критериях оценивания: три случая из определения проверяются именно в таком порядке.",
+          "en": "The grading criteria say so: the three cases of the definition are checked in exactly this order."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsga koʻra qaysi gaplar toʻgʻri?",
+          "ru": "Какие утверждения верны согласно занятию?",
+          "en": "Which statements are correct according to the lesson?"
+        },
+        "options": [
+          {
+            "uz": "Daraxtsimon rekursiyada chaqiruvlar mustaqil va natijalari qoʻshiladi; ichma-ichda bitta chaqiruvning natijasi boshqa chaqiruvning argumenti boʻladi",
+            "ru": "В древовидной рекурсии вызовы независимы, а их результаты складываются; во вложенной результат одного вызова становится аргументом другого",
+            "en": "In tree-like recursion the calls are independent and their results are added; in nested recursion one call's result is another call's argument"
+          },
+          {
+            "uz": "101 dan kichik har qanday n uchun M(n) = 91",
+            "ru": "Для любого n меньше 101 результат M(n) равен 91",
+            "en": "For any n below 101 the result of M(n) is 91"
+          },
+          {
+            "uz": "Ichma-ich rekursiyada argument har qadamda kamayib boradi",
+            "ru": "Во вложенной рекурсии аргумент уменьшается на каждом шаге",
+            "en": "In nested recursion the argument decreases at every step"
+          },
+          {
+            "uz": "Chaqiruvlar soni funksiya ichidagi lokal oʻzgaruvchida yigʻiladi",
+            "ru": "Число вызовов накапливается в локальной переменной внутри функции",
+            "en": "The call count accumulates in a local variable inside the function"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Ichma-ich rekursiyada argument har doim ham kamaymaydi (n + 11 kattaroq), shuning uchun toʻxtashini isbotlash qiyin; hisoblagich esa funksiya tashqarisida eʼlon qilinadi.",
+          "ru": "Во вложенной рекурсии аргумент не всегда уменьшается (n + 11 больше), поэтому доказательство остановки сложнее; счётчик объявляют вне функции.",
+          "en": "In nested recursion the argument does not always decrease (n + 11 is larger), which makes termination harder to prove; the counter is declared outside the function."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Akkerman funksiyasi va chaqiruvlar soni",
+      "ru": "Функция Аккермана и число вызовов",
+      "en": "The Ackermann function and its call count"
+    },
+    "statement": {
+      "uz": "Bitta satrda m va n kiritiladi (0 ≤ m ≤ 3, 0 ≤ n ≤ 5). Akkerman funksiyasining taʼrifini rekursiv dasturlang: A(0, n) = n + 1; A(m, 0) = A(m − 1, 1); A(m, n) = A(m − 1, A(m, n − 1)). Holatlarni taʼrifdagi tartibda tekshiring: avval m = 0, keyin n = 0. Birinchi satrda A(m, n) ni, ikkinchi satrda funksiyaning jami chaqirilgan sonini chiqaring — birinchi chaqiruv ham sanaladi. Hisoblagich funksiyadan tashqarida eʼlon qilinsin. Masalan, 1 2 kirilsa, dastur 4 va keyin 6 chiqaradi. Pythonʼda sys.setrecursionlimit ni oshiring.",
+      "ru": "В одной строке даются m и n (0 ≤ m ≤ 3, 0 ≤ n ≤ 5). Реализуйте рекурсивно определение функции Аккермана: A(0, n) = n + 1; A(m, 0) = A(m − 1, 1); A(m, n) = A(m − 1, A(m, n − 1)). Проверяйте случаи в порядке определения: сначала m = 0, затем n = 0. В первой строке выведите A(m, n), во второй — общее число вызовов функции, включая первый. Счётчик объявите вне функции. Например, на ввод 1 2 программа выводит 4 и затем 6. В Python повысьте sys.setrecursionlimit.",
+      "en": "One line holds m and n (0 ≤ m ≤ 3, 0 ≤ n ≤ 5). Implement the definition of the Ackermann function recursively: A(0, n) = n + 1; A(m, 0) = A(m − 1, 1); A(m, n) = A(m − 1, A(m, n − 1)). Check the cases in the order of the definition: first m = 0, then n = 0. Print A(m, n) on the first line and the total number of calls of the function on the second line, counting the first call too. Declare the counter outside the function. For example, the input 1 2 makes the program print 4 and then 6. In Python raise sys.setrecursionlimit."
+    },
+    "code": {
+      "starter": {
+        "python": "import sys\n\n\nsys.setrecursionlimit(10000)\n\n\ndef a(m, n):\n    if m == 0:\n        return n + 1\n    if n == 0:\n        return a(m - 1, 1)\n    return a(m - 1, a(m, n - 1))\n\n\nm, n = map(int, input().split())\nprint(a(m, n))\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static int a(int m, int n) {\n        if (m == 0) return n + 1;\n        if (n == 0) return a(m - 1, 1);\n        return a(m - 1, a(m, n - 1));\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int m = in.nextInt();\n        int n = in.nextInt();\n        System.out.println(a(m, n));\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint a(int m, int n) {\n    if (m == 0) return n + 1;\n    if (n == 0) return a(m - 1, 1);\n    return a(m - 1, a(m, n - 1));\n}\n\nint main() {\n    int m, n;\n    cin >> m >> n;\n    cout << a(m, n) << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "import sys\n\n\nsys.setrecursionlimit(10000)\nsoni = 0\n\n\ndef a(m, n):\n    global soni\n    soni += 1\n    if m == 0:\n        return n + 1\n    if n == 0:\n        return a(m - 1, 1)\n    return a(m - 1, a(m, n - 1))\n\n\nm, n = map(int, input().split())\nnatija = a(m, n)\nprint(natija)\nprint(soni)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    static long soni = 0;\n\n    static int a(int m, int n) {\n        soni++;\n        if (m == 0) return n + 1;\n        if (n == 0) return a(m - 1, 1);\n        return a(m - 1, a(m, n - 1));\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int m = in.nextInt();\n        int n = in.nextInt();\n        int natija = a(m, n);\n        System.out.println(natija);\n        System.out.println(soni);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nlong long soni = 0;\n\nint a(int m, int n) {\n    soni++;\n    if (m == 0) return n + 1;\n    if (n == 0) return a(m - 1, 1);\n    return a(m - 1, a(m, n - 1));\n}\n\nint main() {\n    int m, n;\n    cin >> m >> n;\n    int natija = a(m, n);\n    cout << natija << endl;\n    cout << soni << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "1 2\n", "expected": "4\n6", "hidden": false },
+        { "input": "0 5\n", "expected": "6\n1", "hidden": false },
+        { "input": "1 0\n", "expected": "2\n2", "hidden": true },
+        { "input": "2 1\n", "expected": "5\n14", "hidden": true },
+        { "input": "2 2\n", "expected": "7\n27", "hidden": true }
+      ]
+    }
+  }
+}

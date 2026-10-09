@@ -1,0 +1,296 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Identifikator nima?",
+          "ru": "Что такое идентификатор?",
+          "en": "What is an identifier?"
+        },
+        "options": [
+          {
+            "uz": "Oʻzgaruvchi, funksiya yoki klass kabi dastur elementining nomi",
+            "ru": "Имя элемента программы: переменной, функции, класса",
+            "en": "The name of a program element: a variable, a function, a class"
+          },
+          {
+            "uz": "Tilning alifbosidagi harf",
+            "ru": "Буква алфавита языка",
+            "en": "A letter of the alphabet of the language"
+          },
+          {
+            "uz": "Dastur matnida toʻgʻridan-toʻgʻri yozilgan qiymat",
+            "ru": "Значение, записанное прямо в тексте программы",
+            "en": "A value written directly in the program text"
+          },
+          {
+            "uz": "Kompyuter eʼtibor bermaydigan izoh",
+            "ru": "Комментарий, который компьютер не учитывает",
+            "en": "A comment the computer ignores"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Identifikator — dastur elementining nomi. Uni dasturchi oʻzi tanlaydi, lekin til qoidasiga rioya qilishi shart.",
+          "ru": "Идентификатор — имя элемента программы. Программист выбирает его сам, но обязан соблюдать правила языка.",
+          "en": "An identifier is the name of a program element. The programmer chooses it, but must follow the rules of the language."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Identifikator raqam bilan boshlanishi mumkin.",
+          "ru": "Идентификатор может начинаться с цифры.",
+          "en": "An identifier may start with a digit."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Identifikator raqam bilan boshlanmaydi: 2son notoʻgʻri, son2 toʻgʻri. Raqam faqat nomning ichida yoki oxirida kelishi mumkin.",
+          "ru": "Идентификатор не начинается с цифры: 2son неправильно, son2 правильно. Цифры могут стоять внутри имени или в конце.",
+          "en": "An identifier does not start with a digit: 2son is invalid, son2 is valid. Digits may come inside the name or at its end."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Qaysi nomlar toʻgʻri identifikator boʻladi?",
+          "ru": "Какие из имён являются правильными идентификаторами?",
+          "en": "Which of these names are valid identifiers?"
+        },
+        "options": [
+          {
+            "uz": "talaba_soni",
+            "ru": "talaba_soni",
+            "en": "talaba_soni"
+          },
+          {
+            "uz": "jami2026",
+            "ru": "jami2026",
+            "en": "jami2026"
+          },
+          {
+            "uz": "2-guruh",
+            "ru": "2-guruh",
+            "en": "2-guruh"
+          },
+          {
+            "uz": "for",
+            "ru": "for",
+            "en": "for"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "talaba_soni va jami2026 qoidalarga mos. 2-guruh raqam bilan boshlanadi va minus belgisi bor, for esa kalit soʻz — nom boʻlolmaydi.",
+          "ru": "talaba_soni и jami2026 соответствуют правилам. 2-guruh начинается с цифры и содержит минус, а for — ключевое слово, именем оно быть не может.",
+          "en": "talaba_soni and jami2026 follow the rules. 2-guruh starts with a digit and contains a minus, and for is a keyword, so it cannot be a name."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Qaysi til dinamik turlashgan hisoblanadi?",
+          "ru": "Какой язык считается языком с динамической типизацией?",
+          "en": "Which language is dynamically typed?"
+        },
+        "options": [
+          {
+            "uz": "Python",
+            "ru": "Python",
+            "en": "Python"
+          },
+          {
+            "uz": "Java",
+            "ru": "Java",
+            "en": "Java"
+          },
+          {
+            "uz": "C++",
+            "ru": "C++",
+            "en": "C++"
+          },
+          {
+            "uz": "Java va C++ʼning ikkalasi ham",
+            "ru": "Java и C++ оба",
+            "en": "Both Java and C++"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Pythonʼda tur qiymatdan aniqlanadi: yosh = 19. Java va C++ statik turlashgan — tur eʼlon qilishda yoziladi va keyin oʻzgarmaydi.",
+          "ru": "В Python тип определяется по значению: yosh = 19. Java и C++ типизированы статически — тип пишется при объявлении и не меняется.",
+          "en": "In Python the type follows from the value: yosh = 19. Java and C++ are statically typed — the type is written at declaration and does not change."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Java va C++ʼda a = 7 va b = 2 boʻlgan butun sonlar uchun a / b boʻlishi nechaga teng?",
+          "ru": "Чему равно a / b в Java и C++, если a = 7 и b = 2 — оба целые числа?",
+          "en": "In Java and C++, what is a / b when a = 7 and b = 2 are both integers?"
+        },
+        "answers": [3],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Ikkala son ham butun boʻlgani uchun boʻlish butun qismini qaytaradi: 3. Kasr kerak boʻlsa, sonlardan biri haqiqiy boʻlishi kerak, masalan 7.0 / 2.",
+          "ru": "Так как оба числа целые, деление возвращает целую часть: 3. Если нужна дробь, одно из чисел должно быть вещественным, например 7.0 / 2.",
+          "en": "Because both numbers are integers, the division returns the whole part: 3. If you need a fraction, one of the numbers must be floating-point, for example 7.0 / 2."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Ifoda qiymatga ega boʻladi, operator esa bajariladigan buyruqdir.",
+          "ru": "Выражение имеет значение, а оператор — это выполняемая команда.",
+          "en": "An expression has a value, while a statement is a command that is executed."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "Darsdagi taʼrifga koʻra: ifoda — qiymatga ega birikma, masalan 2 + 3; operator — bajariladigan buyruq: taʼminlash, chiqarish, shart, takrorlash.",
+          "ru": "По определению из занятия: выражение — конструкция со значением, например 2 + 3; оператор — выполняемая команда: присваивание, вывод, условие, цикл.",
+          "en": "As the lesson defines it: an expression is a construct with a value, such as 2 + 3; a statement is a command that is executed: assignment, output, a condition, a loop."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Python tilida bir qatorli izoh qaysi belgi bilan boshlanadi? Oʻsha belgini yozing.",
+          "ru": "Какой символ начинает однострочный комментарий в Python? Напишите этот символ.",
+          "en": "Which character starts a one-line comment in Python? Write that character."
+        },
+        "answers": ["#"],
+        "explanation": {
+          "uz": "Pythonʼda izoh # belgisi bilan boshlanadi; Java va C++ʼda bir qatorli izoh // bilan yoziladi.",
+          "ru": "В Python комментарий начинается с #; в Java и C++ однострочный комментарий пишется через //.",
+          "en": "In Python a comment starts with #; in Java and C++ a one-line comment uses //."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Python tilida 17 // 5 + 17 % 5 ifodasi nechaga teng?",
+          "ru": "Чему в Python равно выражение 17 // 5 + 17 % 5?",
+          "en": "In Python, what is the value of 17 // 5 + 17 % 5?"
+        },
+        "answers": [5],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "17 // 5 = 3 (butun boʻlinma), 17 % 5 = 2 (qoldiq), jami 3 + 2 = 5.",
+          "ru": "17 // 5 = 3 (целая часть от деления), 17 % 5 = 2 (остаток), всего 3 + 2 = 5.",
+          "en": "17 // 5 = 3 (the whole quotient), 17 % 5 = 2 (the remainder), altogether 3 + 2 = 5."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Darsdagi doira yuzini hisoblovchi dasturga 5 kirilsa, uchala tilning dasturi ham nima chiqaradi?",
+          "ru": "Если в программу из занятия, вычисляющую площадь круга, ввести 5, что выведут все три программы?",
+          "en": "If you give the input 5 to the lesson program that computes the area of a circle, what do all three programs print?"
+        },
+        "options": [
+          {
+            "uz": "78.54",
+            "ru": "78.54",
+            "en": "78.54"
+          },
+          {
+            "uz": "78.53",
+            "ru": "78.53",
+            "en": "78.53"
+          },
+          {
+            "uz": "785.4",
+            "ru": "785.4",
+            "en": "785.4"
+          },
+          {
+            "uz": "79",
+            "ru": "79",
+            "en": "79"
+          }
+        ],
+        "correct": [0],
+        "explanation": {
+          "uz": "3.14159 * 25 = 78.53975, natija ikki kasr xonagacha yaxlitlanadi: 78.54.",
+          "ru": "3.14159 * 25 = 78.53975, результат округляется до двух знаков после запятой: 78.54.",
+          "en": "3.14159 * 25 = 78.53975, and the result is rounded to two decimal places: 78.54."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Sekundlarni soat, minut va sekundga ajratish",
+      "ru": "Разделить секунды на часы, минуты и секунды",
+      "en": "Split seconds into hours, minutes and seconds"
+    },
+    "statement": {
+      "uz": "Dastur bitta butun sonni oʻqiydi: sekundlarda oʻlchangan umumiy vaqt. Uni soat, minut va qolgan sekundlarga ajratib, uchta qatorda chiqaring — birinchi qatorda soatlar soni, ikkinchisida minutlar, uchinchisida sekundlar, har birida faqat son. 1 soat = 3600 sekund, 1 minut = 60 sekund. Butun qismni olish uchun butun boʻlish, qolgan qismni olish uchun qoldiq amalidan foydalaning. Masalan, 7540 kirilsa, dastur 2, soʻng 5, soʻng 40 chiqaradi (uch qator). Kiriladigan son 0 dan 86400 gacha.",
+      "ru": "Программа читает одно целое число — общее время в секундах. Разделите его на часы, минуты и оставшиеся секунды и выведите в трёх строках: в первой — число часов, во второй — минуты, в третьей — секунды, каждая строка содержит только число. 1 час = 3600 секунд, 1 минута = 60 секунд. Для целой части используйте целочисленное деление, для остатка — операцию остатка. Например, при вводе 7540 программа выведет 2, затем 5, затем 40 (три строки). Входное число от 0 до 86400.",
+      "en": "Your program reads one integer: a total time measured in seconds. Split it into hours, minutes and the remaining seconds and print three lines: the number of hours first, then the minutes, then the seconds, each line holding only a number. One hour = 3600 seconds, one minute = 60 seconds. Use integer division for the whole part and the remainder operation for what is left. For example, the input 7540 makes the program print 2, then 5, then 40 (three lines). The input number is between 0 and 86400."
+    },
+    "code": {
+      "starter": {
+        "python": "n = int(input())\n\nh = n // 3600\nm = 0\ns = 0\n\nprint(h)\nprint(m)\nprint(s)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int h = n / 3600;\n        int m = 0;\n        int s = 0;\n        System.out.println(h);\n        System.out.println(m);\n        System.out.println(s);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int h = n / 3600;\n    int m = 0;\n    int s = 0;\n    cout << h << endl;\n    cout << m << endl;\n    cout << s << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "n = int(input())\n\nh = n // 3600\nm = (n % 3600) // 60\ns = n % 60\n\nprint(h)\nprint(m)\nprint(s)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in);\n        int n = in.nextInt();\n        int h = n / 3600;\n        int m = (n % 3600) / 60;\n        int s = n % 60;\n        System.out.println(h);\n        System.out.println(m);\n        System.out.println(s);\n    }\n}\n",
+        "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int h = n / 3600;\n    int m = (n % 3600) / 60;\n    int s = n % 60;\n    cout << h << endl;\n    cout << m << endl;\n    cout << s << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "3600\n", "expected": "1\n0\n0", "hidden": false },
+        { "input": "7540\n", "expected": "2\n5\n40", "hidden": false },
+        { "input": "0\n", "expected": "0\n0\n0", "hidden": true },
+        { "input": "45295\n", "expected": "12\n34\n55", "hidden": true },
+        { "input": "86399\n", "expected": "23\n59\n59", "hidden": true }
+      ]
+    }
+  }
+}

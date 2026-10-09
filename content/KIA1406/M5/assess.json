@@ -1,0 +1,317 @@
+{
+  "test": {
+    "questions": [
+      {
+        "type": "SINGLE",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Kalitni bilmasdan shifrni ochish usullarini oʻrganuvchi yoʻnalish qaysi?",
+          "ru": "Как называется направление, изучающее способы вскрытия шифра без знания ключа?",
+          "en": "Which field studies methods of breaking a cipher without knowing the key?"
+        },
+        "options": [
+          {
+            "uz": "Kriptografiya",
+            "ru": "Криптография",
+            "en": "Cryptography"
+          },
+          {
+            "uz": "Kriptologiya",
+            "ru": "Криптология",
+            "en": "Cryptology"
+          },
+          {
+            "uz": "Kriptoanaliz",
+            "ru": "Криптоанализ",
+            "en": "Cryptanalysis"
+          },
+          {
+            "uz": "Kriptotizim",
+            "ru": "Криптосистема",
+            "en": "Cryptosystem"
+          }
+        ],
+        "correct": [2],
+        "explanation": {
+          "uz": "Dars taʼrifiga koʻra: kriptoanaliz — kalitni bilmasdan shifrni ochish usullari; kriptografiya himoya usullarini yaratadi, kriptologiya esa butun fan (kriptografiya + kriptoanaliz).",
+          "ru": "По определению из занятия: криптоанализ — способы вскрытия шифра без ключа; криптография создаёт методы защиты, а криптология — вся наука целиком.",
+          "en": "In the lesson: cryptanalysis breaks ciphers without the key; cryptography creates the protection methods, cryptology is the whole science."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Base64 kodlash ham shifrlashning bir turi hisoblanadi, chunki unda ham maxfiy kalit ishtirok etadi.",
+          "ru": "Кодирование Base64 — тоже вид шифрования, потому что и здесь участвует секретный ключ.",
+          "en": "Base64 encoding is also a kind of encryption because a secret key is involved here too."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Kodlash kalitsiz bajariladi va uni hamma ochadi; shifrlash esa kalit bilan ishlaydi. Darsda bu chalkashtirish koʻp uchraydigan xato deb aytilgan.",
+          "ru": "Кодирование выполняется без ключа и доступно всем; шифрование работает с ключом. Занятие называет это смешение частой ошибкой.",
+          "en": "Encoding uses no key and anyone can undo it; encryption works with a key. The lesson lists this confusion as a common mistake."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "EASY",
+        "points": 1,
+        "prompt": {
+          "uz": "Dars jadvaliga koʻra, qaysilari almashtirish (substitution) turidagi shifrlar?",
+          "ru": "Какие из перечисленных шифров, согласно таблице занятия, относятся к подстановке?",
+          "en": "According to the lesson's table, which of these ciphers are substitution ciphers?"
+        },
+        "options": [
+          {
+            "uz": "Sezar shifri",
+            "ru": "Шифр Цезаря",
+            "en": "The Caesar cipher"
+          },
+          {
+            "uz": "Atbash shifri",
+            "ru": "Шифр Атбаш",
+            "en": "The Atbash cipher"
+          },
+          {
+            "uz": "Skital",
+            "ru": "Сцитала",
+            "en": "The scytale"
+          },
+          {
+            "uz": "Vijiner shifri",
+            "ru": "Шифр Виженера",
+            "en": "The Vigenère cipher"
+          }
+        ],
+        "correct": [0, 1, 3],
+        "explanation": {
+          "uz": "Skital — oʻrin almashtirish shifri: belgilar oʻzgarmaydi, faqat tartibi oʻzgaradi. Qolganlari almashtirishga kiradi (Vijiner — koʻp alifboli almashtirish).",
+          "ru": "Сцитала — транспозиция: символы не меняются, меняется только их порядок. Остальные относятся к подстановке (Виженер — полиалфавитная подстановка).",
+          "en": "The scytale is a transposition: symbols stay the same and only their order changes. The others are substitutions (Vigenère is polyalphabetic substitution)."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Kerkxofs prinsipiga koʻra, tizimning xavfsizligi nimaga bogʻliq boʻlishi kerak?",
+          "ru": "Согласно принципу Керкхоффса, от чего должна зависеть безопасность системы?",
+          "en": "According to Kerckhoffs's principle, what should the security of a system depend on?"
+        },
+        "options": [
+          {
+            "uz": "Algoritmning maxfiyligiga",
+            "ru": "На секретности алгоритма",
+            "en": "On the secrecy of the algorithm"
+          },
+          {
+            "uz": "Faqat kalitning maxfiyligiga",
+            "ru": "Только на секретности ключа",
+            "en": "On the secrecy of the key only"
+          },
+          {
+            "uz": "Algoritm va kalitning birga maxfiyligiga",
+            "ru": "На секретности и алгоритма, и ключа одновременно",
+            "en": "On the secrecy of both the algorithm and the key"
+          },
+          {
+            "uz": "Dastur kodining yopiq tarqatilishiga",
+            "ru": "На закрытом распространении кода программы",
+            "en": "On distributing the program code in closed form"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Kerkxofs (1883): dushman algoritmni bilsa ham, kalitsiz shifrni ocha olmasligi lozim — shuning uchun AES, RSA kabi zamonaviy algoritmlar ochiq eʼlon qilingan.",
+          "ru": "Керкхоффс (1883): даже зная алгоритм, противник не должен суметь вскрыть шифр без ключа — поэтому современные алгоритмы вроде AES и RSA публикуются открыто.",
+          "en": "Kerckhoffs (1883): even knowing the algorithm, the enemy must not break the cipher without the key — which is why modern algorithms like AES and RSA are published openly."
+        }
+      },
+      {
+        "type": "NUM",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Lotin alifbosida Sezar shifriga nechta foydali kalit toʻgʻri keladi?",
+          "ru": "Сколько полезных ключей у шифра Цезаря в латинском алфавите?",
+          "en": "How many useful keys does the Caesar cipher have in the Latin alphabet?"
+        },
+        "answers": [25],
+        "tolerance": 0,
+        "explanation": {
+          "uz": "Darsda Sezar zaifligi «atigi 25 ta kalit» deb berilgan: 0 va 26 siljishda matn oʻzgarmaydi.",
+          "ru": "В занятии слабость Цезаря описана словами «всего 25 ключей»: при сдвиге 0 и 26 текст не меняется.",
+          "en": "The lesson lists the Caesar's weakness as “only 25 keys”: shifts of 0 and 26 leave the text unchanged."
+        }
+      },
+      {
+        "type": "SHORT",
+        "difficulty": "MEDIUM",
+        "points": 2,
+        "prompt": {
+          "uz": "Asimmetrik usul bilan simmetrik kalit kelishiladigan, maʼlumot esa simmetrik shifrlanadigan tizim qanday ataladi?",
+          "ru": "Как называется система, в которой асимметричным способом согласуется симметричный ключ, а данные шифруются симметричным шифром?",
+          "en": "What is the system called in which an asymmetric method agrees a symmetric key while the data itself is encrypted symmetrically?"
+        },
+        "answers": ["gibrid", "hybrid", "гибрид", "гибридная"],
+        "explanation": {
+          "uz": "Darsda: amalda ikkala tizim birga ishlatiladi — gibrid tizim; TLS aynan shunday ishlaydi.",
+          "ru": "По занятию: на практике оба типа используют вместе — это гибридная система; именно так работает TLS.",
+          "en": "The lesson: in practice the two are combined — a hybrid system; this is how TLS works."
+        }
+      },
+      {
+        "type": "SINGLE",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Bitta alifboli almashtirish shifrida kalitlar soni 26! ≈ 4·10²⁶ boʻlsa-yu, u nega bir necha daqiqada buziladi?",
+          "ru": "Почему шифр простой замены вскрывается за считанные минуты, хотя ключей у него 26! ≈ 4·10²⁶?",
+          "en": "Why is a monoalphabetic substitution cipher broken in minutes although it has 26! ≈ 4·10²⁶ keys?"
+        },
+        "options": [
+          {
+            "uz": "Kalit fazosi aslida juda kichik boʻlgani uchun",
+            "ru": "Потому что ключевое пространство на самом деле мало",
+            "en": "Because its key space is actually small"
+          },
+          {
+            "uz": "Chastota tahlili harf chastotalari shifrmatnda saqlanib qolishiga asoslangani uchun",
+            "ru": "Потому что частотный анализ опирается на сохранение частот букв в шифртексте",
+            "en": "Because frequency analysis relies on letter frequencies surviving into the ciphertext"
+          },
+          {
+            "uz": "Shifr faqat raqamlar bilan ishlagani uchun",
+            "ru": "Потому что шифр работает только с цифрами",
+            "en": "Because the cipher works only with digits"
+          },
+          {
+            "uz": "Atbash kabi kalitsiz ishlagani uchun",
+            "ru": "Потому что он работает без ключа, как Атбаш",
+            "en": "Because it works without a key, like Atbash"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Dars xulosasi: kalit fazosining kattaligi yetarli emas — shifr statistikani ham yashirishi kerak.",
+          "ru": "Вывод занятия: большого ключевого пространства недостаточно — шифр должен также скрывать статистику.",
+          "en": "The lesson's conclusion: a large key space is not enough — the cipher must also hide the statistics."
+        }
+      },
+      {
+        "type": "MULTI",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Tarixiy shifrlar va hujum modellari haqida qaysi ifodalar toʻgʻri?",
+          "ru": "Какие утверждения об исторических шифрах и моделях атак верны?",
+          "en": "Which statements about historical ciphers and attack models are correct?"
+        },
+        "options": [
+          {
+            "uz": "Skital — oʻrin almashtirish shifri, kaliti esa tayoqchaning diametri",
+            "ru": "Сцитала — шифр перестановки, а её ключ — диаметр палки",
+            "en": "The scytale is a transposition cipher and its key is the rod's diameter"
+          },
+          {
+            "uz": "Enigma rotorlari har bosishda aylanardi, uni Polsha va Britaniya kriptoanalitiklari (Rejewski, Turing) buzdi",
+            "ru": "Роторы «Энигмы» поворачивались при каждом нажатии; её взломали польские и британские криптоаналитики (Режевский, Тьюринг)",
+            "en": "Enigma's rotors turned with every key press; Polish and British cryptanalysts (Rejewski, Turing) broke it"
+          },
+          {
+            "uz": "Tanlangan ochiq matn modelida hujumchi istalgan shifrmatnni ochtira oladi",
+            "ru": "В модели выбранного открытого текста атакующий может расшифровать любой шифртекст",
+            "en": "In the chosen-plaintext model the attacker can have any ciphertext decrypted"
+          },
+          {
+            "uz": "Atbash shifrida kalit soni Sezar shifridan koʻp",
+            "ru": "У шифра Атбаш ключей больше, чем у шифра Цезаря",
+            "en": "The Atbash cipher has more keys than the Caesar cipher"
+          }
+        ],
+        "correct": [0, 1],
+        "explanation": {
+          "uz": "Istalgan shifrmatnni ochtirish — tanlangan shifrmatn modeli; Atbashda esa kalit umuman yoʻq (alifbo teskari).",
+          "ru": "Возможность расшифровать любой шифртекст — это модель выбранного шифртекста; у Атбаш ключа нет вовсе (алфавит перевёрнут).",
+          "en": "Decrypting any ciphertext belongs to the chosen-ciphertext model; Atbash has no key at all (the alphabet is simply reversed)."
+        }
+      },
+      {
+        "type": "TF",
+        "difficulty": "HARD",
+        "points": 3,
+        "prompt": {
+          "uz": "Kalit fazosining katta boʻlishi shifrning bardoshliligi uchun yetarli.",
+          "ru": "Большого ключевого пространства достаточно, чтобы шифр был стойким.",
+          "en": "A large key space is enough to make a cipher strong."
+        },
+        "options": [
+          {
+            "uz": "Toʻgʻri",
+            "ru": "Верно",
+            "en": "True"
+          },
+          {
+            "uz": "Notoʻgʻri",
+            "ru": "Неверно",
+            "en": "False"
+          }
+        ],
+        "correct": [1],
+        "explanation": {
+          "uz": "Bir alifboli almashtirishda 26! kalit bor, lekin chastota tahlili uni tez ochadi: shifr statistikani ham yashirishi kerak, kalit fazosi — shart, lekin yetarli emas.",
+          "ru": "У простой замены 26! ключей, но частотный анализ вскрывает её быстро: шифр должен скрывать и статистику, одного ключевого пространства мало.",
+          "en": "Monoalphabetic substitution has 26! keys yet frequency analysis opens it quickly: a cipher must also hide statistics — the key space alone is not enough."
+        }
+      }
+    ]
+  },
+  "practice": {
+    "kind": "CODE",
+    "title": {
+      "uz": "Atbash shifri",
+      "ru": "Шифр Атбаш",
+      "en": "The Atbash cipher"
+    },
+    "statement": {
+      "uz": "Atbash shifrida alifbo teskari aylanadi: A ga Z, B ga Y mos keladi. Dasturingiz bitta satr matn oʻqisin va uni Atbash bilan shifrlab, natijani bitta satrda chiqaring: har bir lotin harfi teskari alifbodagi harfga almashadi, katta-kichik harf saqlanadi, harf boʻlmagan belgilar oʻzgarmaydi. Qoʻshimcha yozuv chiqarmang. Masalan, Hello World! kirsa, Svool Dliow! chiqadi.",
+      "ru": "В шифре Атбаш алфавит переворачивается: A соответствует Z, B — Y. Ваша программа читает одну строку текста, шифрует её Атбашем и выводит результат одной строкой: каждая латинская буква заменяется буквой из перевёрнутого алфавита, регистр сохраняется, не-буквы остаются на месте. Никаких дополнительных надписей не выводите. Например, Hello World! даёт Svool Dliow!.",
+      "en": "In the Atbash cipher the alphabet is reversed: A stands for Z, B for Y. Your program reads one line of text, encrypts it with Atbash and prints the result on one line: every Latin letter is replaced by its letter in the reversed alphabet, case is preserved, non-letters stay unchanged. Print no extra text. For example, Hello World! gives Svool Dliow!."
+    },
+    "code": {
+      "starter": {
+        "python": "matn = input()\nnatija = \"\"\nfor c in matn:\n    if \"A\" <= c <= \"Z\":\n        natija += chr(ord(\"A\") + ord(\"Z\") - ord(c))\n    elif \"a\" <= c <= \"z\":\n        natija += c\n    else:\n        natija += c\nprint(natija)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        String matn = new Scanner(System.in).nextLine();\n        StringBuilder natija = new StringBuilder();\n        for (char c : matn.toCharArray()) {\n            if (c >= 'A' && c <= 'Z') {\n                natija.append((char) ('A' + 'Z' - c));\n            } else if (c >= 'a' && c <= 'z') {\n                natija.append(c);\n            } else {\n                natija.append(c);\n            }\n        }\n        System.out.println(natija);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string matn;\n    getline(cin, matn);\n    string natija;\n    for (char c : matn) {\n        if (c >= 'A' && c <= 'Z') {\n            natija += char('A' + 'Z' - c);\n        } else if (c >= 'a' && c <= 'z') {\n            natija += c;\n        } else {\n            natija += c;\n        }\n    }\n    cout << natija << endl;\n    return 0;\n}\n"
+      },
+      "solution": {
+        "python": "matn = input()\nnatija = \"\"\nfor c in matn:\n    if \"A\" <= c <= \"Z\":\n        natija += chr(ord(\"A\") + ord(\"Z\") - ord(c))\n    elif \"a\" <= c <= \"z\":\n        natija += chr(ord(\"a\") + ord(\"z\") - ord(c))\n    else:\n        natija += c\nprint(natija)\n",
+        "java": "import java.util.Scanner;\n\npublic class Main {\n    public static void main(String[] args) {\n        String matn = new Scanner(System.in).nextLine();\n        StringBuilder natija = new StringBuilder();\n        for (char c : matn.toCharArray()) {\n            if (c >= 'A' && c <= 'Z') {\n                natija.append((char) ('A' + 'Z' - c));\n            } else if (c >= 'a' && c <= 'z') {\n                natija.append((char) ('a' + 'z' - c));\n            } else {\n                natija.append(c);\n            }\n        }\n        System.out.println(natija);\n    }\n}\n",
+        "cpp": "#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n    string matn;\n    getline(cin, matn);\n    string natija;\n    for (char c : matn) {\n        if (c >= 'A' && c <= 'Z') {\n            natija += char('A' + 'Z' - c);\n        } else if (c >= 'a' && c <= 'z') {\n            natija += char('a' + 'z' - c);\n        } else {\n            natija += c;\n        }\n    }\n    cout << natija << endl;\n    return 0;\n}\n"
+      },
+      "tests": [
+        { "input": "Hello World!\n", "expected": "Svool Dliow!", "hidden": false },
+        { "input": "ABC abc\n", "expected": "ZYX zyx", "hidden": false },
+        { "input": "Attack at Dawn\n", "expected": "Zggzxp zg Wzdm", "hidden": true },
+        { "input": "12345 !?,.\n", "expected": "12345 !?,.", "hidden": true },
+        { "input": "zz ZZ yy YY\n", "expected": "aa AA bb BB", "hidden": true }
+      ]
+    }
+  }
+}
