@@ -30,10 +30,10 @@ It stops at the first failing step; fix and run the same command again.
 
 A new subject and course are created **DRAFT**: students see nothing until an administrator publishes them
 through the platform's publication workflow (the validators check translations, weights and required
-lessons). The chain never publishes academic data on its own.  on a new course shows the
+lessons). The chain never publishes academic data on its own. `--dry-run` on a new course shows the
 scaffold plan, parses the lessons and checks the banks; the import/path steps need the course to exist.
 Proven end to end on a throwaway course (scaffold → lessons → check → verify → import → path, a rerun
-writes nothing, then soft-deleted). The platform upper-cases assessment component codes ( → ).
+writes nothing, then soft-deleted). The platform upper-cases assessment component codes (`YaN` → `YAN`).
 
 ## Rules
 
