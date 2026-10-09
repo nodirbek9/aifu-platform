@@ -22,7 +22,9 @@
             "en": "False"
           }
         ],
-        "correct": [1],
+        "correct": [
+          1
+        ],
         "explanation": {
           "uz": "Oʻtgan yozuvni oʻzgartirish keyingi barcha bloklarni buzadi va boshqa ishtirokchilar buni rad etadi.",
           "ru": "Изменение прошлой записи ломает все следующие блоки, и другие участники отвергают это.",
@@ -60,7 +62,9 @@
             "en": "It must be used only in private blockchains"
           }
         ],
-        "correct": [0],
+        "correct": [
+          0
+        ],
         "explanation": {
           "uz": "Proof of Stake mexanizmi energiya tejamkor va ishtirokchilarni garovga qoʻyilgan mablagʻga qarab tanlaydi.",
           "ru": "Механизм Proof of Stake энергоэффективен и выбирает участников по размеру внесённого залога.",
@@ -98,7 +102,11 @@
             "en": "Easy editing"
           }
         ],
-        "correct": [0, 1, 2],
+        "correct": [
+          0,
+          1,
+          2
+        ],
         "explanation": {
           "uz": "Blokcheynning asosiy xossalari: taqsimlanganlik, oʻzgarmaslik, shaffoflik va markazsizlik.",
           "ru": "Основные свойства блокчейна: распределённость, неизменность, прозрачность и децентрализация.",
@@ -136,7 +144,9 @@
             "en": "If transparent tracking of the origin of goods in the supply chain is required"
           }
         ],
-        "correct": [0],
+        "correct": [
+          0
+        ],
         "explanation": {
           "uz": "Agar bitta ishonchli tashkilot maʼlumotni boshqarsa, oddiy maʼlumotlar bazasi arzonroq va tezroq.",
           "ru": "Если данными управляет одна доверенная организация, обычная база данных дешевле и быстрее.",
@@ -164,7 +174,9 @@
             "en": "False"
           }
         ],
-        "correct": [1],
+        "correct": [
+          1
+        ],
         "explanation": {
           "uz": "Oʻzbekistonda kripto-aktivlar aylanmasi tartibga solingan va litsenziya olish talab etiladi.",
           "ru": "В Узбекистане оборот криптоактивов регулируется, и получение лицензии обязательно.",
@@ -180,7 +192,9 @@
           "ru": "Сколько битов имеет хеш-функция FNV-1a, использованная в примере цепочки хешей в уроке?",
           "en": "How many bits is the FNV-1a hash function used in the hash chain example in the lesson?"
         },
-        "answers": [32],
+        "answers": [
+          32
+        ],
         "tolerance": 0,
         "explanation": {
           "uz": "Darsdagi misolda oʻquv maqsadida 32 bitli FNV-1a funksiyasidan foydalanilgan.",
@@ -219,7 +233,11 @@
             "en": "Speeding up computer memory"
           }
         ],
-        "correct": [0, 1, 2],
+        "correct": [
+          0,
+          1,
+          2
+        ],
         "explanation": {
           "uz": "Taʼminot zanjiri, moliya, hujjatlarni tasdiqlash va davlat reyestrlari sanab oʻtilgan. Xotira tezlashtirish unga kirmaydi.",
           "ru": "Перечислены цепочки поставок, финансы, подтверждение документов и госреестры. Ускорение памяти к ним не относится.",
@@ -257,7 +275,9 @@
             "en": "They require records to be changed only with government permission"
           }
         ],
-        "correct": [0],
+        "correct": [
+          0
+        ],
         "explanation": {
           "uz": "Darsda aytilganidek, smart-kontrakt xatoliklari katta yoʻqotishlarga olib kelgan holatlar mavjud.",
           "ru": "Как сказано в уроке, ошибки смарт-контрактов приводили к большим потерям.",
@@ -307,9 +327,9 @@
         "cpp": "#include <cstdint>\n#include <cstdio>\n#include <iostream>\n#include <string>\n\nusing namespace std;\n\nuint32_t fnv1a(const string& matn) {\n    uint32_t h = 2166136261u;\n    for (unsigned char b : matn) h = (h ^ b) * 16777619u;\n    return h;\n}\n\nint main() {\n    string yozuv;\n    if (getline(cin, yozuv)) {\n        if (!yozuv.empty() && yozuv.back() == '\\r') yozuv.pop_back();\n        \n    }\n    return 0;\n}\n"
       },
       "solution": {
-        "python": "import sys\n\ndef fnv1a(matn):\n    h = 2166136261\n    for b in matn.encode(\"utf-8\"):\n        h = ((h ^ b) * 16777619) & 0xFFFFFFFF\n    return h\n\nmatn = sys.stdin.read().strip()\nprint(format(fnv1a(matn), \"08x\"))\n",
-        "java": "import java.nio.charset.StandardCharsets;\nimport java.util.Scanner;\n\npublic class Main {\n    static int fnv1a(String matn) {\n        int h = 0x811C9DC5;\n        for (byte b : matn.getBytes(StandardCharsets.UTF_8)) h = (h ^ (b & 0xFF)) * 16777619;\n        return h;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in, StandardCharsets.UTF_8);\n        if (in.hasNextLine()) {\n            String yozuv = in.nextLine().trim();\n            System.out.println(String.format(\"%08x\", fnv1a(yozuv)));\n        }\n    }\n}\n",
-        "cpp": "#include <cstdint>\n#include <cstdio>\n#include <iostream>\n#include <string>\n\nusing namespace std;\n\nuint32_t fnv1a(const string& matn) {\n    uint32_t h = 2166136261u;\n    for (unsigned char b : matn) h = (h ^ b) * 16777619u;\n    return h;\n}\n\nint main() {\n    string yozuv;\n    if (getline(cin, yozuv)) {\n        if (!yozuv.empty() && yozuv.back() == '\\r') yozuv.pop_back();\n        char buf[16];\n        snprintf(buf, sizeof buf, \"%08x\", fnv1a(yozuv));\n        cout << buf << endl;\n    }\n    return 0;\n}\n"
+        "python": "import sys\n\ndef fnv1a(matn):\n    h = 2166136261\n    for b in matn.encode(\"utf-8\"):\n        h = ((h ^ b) * 16777619) & 0xFFFFFFFF\n    return h\n\nmatn = sys.stdin.read().rstrip()\nprint(format(fnv1a(matn), \"08x\"))\n",
+        "java": "import java.nio.charset.StandardCharsets;\nimport java.util.Scanner;\n\npublic class Main {\n    static int fnv1a(String matn) {\n        int h = 0x811C9DC5;\n        for (byte b : matn.getBytes(StandardCharsets.UTF_8)) h = (h ^ (b & 0xFF)) * 16777619;\n        return h;\n    }\n\n    public static void main(String[] args) {\n        Scanner in = new Scanner(System.in, StandardCharsets.UTF_8);\n        if (in.hasNextLine()) {\n            String yozuv = in.nextLine().stripTrailing();\n            System.out.println(String.format(\"%08x\", fnv1a(yozuv)));\n        }\n    }\n}\n",
+        "cpp": "#include <cstdint>\n#include <cstdio>\n#include <iostream>\n#include <string>\n\nusing namespace std;\n\nuint32_t fnv1a(const string& matn) {\n    uint32_t h = 2166136261u;\n    for (unsigned char b : matn) h = (h ^ b) * 16777619u;\n    return h;\n}\n\nint main() {\n    string yozuv;\n    if (getline(cin, yozuv)) {\n        while (!yozuv.empty() && (yozuv.back() == '\\r' || yozuv.back() == ' ' || yozuv.back() == '\\t')) yozuv.pop_back();\n        char buf[16];\n        snprintf(buf, sizeof buf, \"%08x\", fnv1a(yozuv));\n        cout << buf << endl;\n    }\n    return 0;\n}\n"
       },
       "tests": [
         {

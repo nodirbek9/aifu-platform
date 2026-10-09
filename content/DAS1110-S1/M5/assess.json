@@ -32,7 +32,9 @@
             "en": "a[n - 1]"
           }
         ],
-        "correct": [0],
+        "correct": [
+          0
+        ],
         "explanation": {
           "uz": "Indeks — massiv boshidan siljish, birinchi element boshidan 0 qadam uzoqlikda. a[n] massivda yoʻq element, a[n - 1] esa oxirgi element.",
           "ru": "Индекс — это смещение от начала массива, первый элемент находится на нулевом шаге. a[n] — элемента, которого в массиве нет, a[n - 1] — последний элемент.",
@@ -60,7 +62,9 @@
             "en": "False"
           }
         ],
-        "correct": [0],
+        "correct": [
+          0
+        ],
         "explanation": {
           "uz": "Elementlar xotirada ketma-ket joylashgani uchun a[i] ga murojaat bir xil tez: manzil = boshlangʻich manzil + i · element oʻlchami. Qaysi elementga murojaat qilishning farqi yoʻq.",
           "ru": "Благодаря последовательному расположению обращение к a[i] одинаково быстрое: адрес = начальный адрес + i · размер элемента. Неважно, к какому именно элементу мы обращаемся.",
@@ -98,7 +102,11 @@
             "en": "The length of a Python list is fixed when it is created"
           }
         ],
-        "correct": [0, 1, 2],
+        "correct": [
+          0,
+          1,
+          2
+        ],
         "explanation": {
           "uz": "Python roʻyxatining hajmi oʻzgaruvchan: append bilan oxiriga element qoʻshiladi. Uzunligi yaratilganda belgilanadigani — Java massivi.",
           "ru": "Длина списка в Python меняется: append добавляет элемент в конец. Неизменная при создании длина — это свойство массива в Java.",
@@ -136,7 +144,9 @@
             "en": "a.count()"
           }
         ],
-        "correct": [0],
+        "correct": [
+          0
+        ],
         "explanation": {
           "uz": "Uch tilda uzunlik turlicha: Python tilida len(a), Java tilida a.length, C++ tilida a.size().",
           "ru": "Длина пишется по-разному: на Python len(a), на Java a.length, на C++ a.size().",
@@ -152,7 +162,9 @@
           "ru": "Если a = [4, 8, 15, 16, 23, 42], чему равно a[2] + a[5]?",
           "en": "If a = [4, 8, 15, 16, 23, 42], what is the value of a[2] + a[5]?"
         },
-        "answers": [57],
+        "answers": [
+          57
+        ],
         "tolerance": 0,
         "explanation": {
           "uz": "Indeks 0 dan boshlanadi: a[2] — uchinchi element 15, a[5] — oltinchi element 42. Yigʻindisi 57.",
@@ -181,7 +193,9 @@
             "en": "False"
           }
         ],
-        "correct": [1],
+        "correct": [
+          1
+        ],
         "explanation": {
           "uz": "Massiv uchun length qavssiz yoziladi, length() esa satrlar uchun ishlatiladi.",
           "ru": "Для массива пишется length без скобок, а length() — это для строк.",
@@ -197,7 +211,12 @@
           "ru": "Напишите метод, который разворачивает список в Python на месте.",
           "en": "Write the Python method that reverses a list in place."
         },
-        "answers": ["a.reverse()", "reverse()", "a.reverse", "reverse", "a[::-1]"],
+        "answers": [
+          "a.reverse()",
+          "reverse()",
+          "a.reverse",
+          "reverse"
+        ],
         "explanation": {
           "uz": "Darsda massivni teskari qilishning ikki qisqa yoʻli berilgan: a.reverse() va a[::-1]. Yuqoridagi dastur esa ikki koʻrsatkich usuli bilan yangi massiv yaratmasdan ishlaydi.",
           "ru": "В занятии даны два коротких способа: a.reverse() и a[::-1]. Приведённая же программа разворачивает массив на месте методом двух указателей, не создавая нового.",
@@ -235,7 +254,11 @@
             "en": "In all three languages the program stops at once"
           }
         ],
-        "correct": [0, 1, 2],
+        "correct": [
+          0,
+          1,
+          2
+        ],
         "explanation": {
           "uz": "C++ tilida xato xabari boʻlmagani uchun bu eng xavfli xatolardan biri: dastur baʼzan ishlaydi, baʼzan qulaydi. Shuning uchun sikl sharti doim i < n deb yoziladi, i <= n emas.",
           "ru": "Именно из-за отсутствия сообщения об ошибке в C++ это один из самых опасных дефектов: программа то работает, то падает. Поэтому условие цикла всегда пишут как i < n, а не i <= n.",
@@ -273,7 +296,9 @@
             "en": "Half of the array is not enough for swapping"
           }
         ],
-        "correct": [0],
+        "correct": [
+          0
+        ],
         "explanation": {
           "uz": "Chap va oʻng koʻrsatkichlar uchrashguncha ishlaydi: 7 ta elementli massivda 3 ta almashtirish (7 // 2) bajariladi va oʻrtadagi element joyida qoladi.",
           "ru": "Левый и правый указатели работают до встречи: в массиве из 7 элементов будет 3 обмена (7 // 2), а средний элемент останется на месте.",
@@ -306,12 +331,36 @@
         "cpp": "#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    vector<int> a(n);\n    for (int i = 0; i < n; i++) {\n        cin >> a[i];\n    }\n    int mn = a[0];\n    int mx = a[0];\n    for (int i = 1; i < n; i++) {\n        if (a[i] < mn) {\n            mn = a[i];\n        }\n        if (a[i] > mx) {\n            mx = a[i];\n        }\n    }\n    cout << mn + mx << endl;\n    return 0;\n}\n"
       },
       "tests": [
-        { "input": "5\n78 92 65 88 70\n", "expected": "157", "hidden": false },
-        { "input": "3\n-5 -2 -9\n", "expected": "-11", "hidden": false },
-        { "input": "1\n7\n", "expected": "14", "hidden": false },
-        { "input": "4\n0 0 0 0\n", "expected": "0", "hidden": true },
-        { "input": "6\n-1 -2 -3 -4 -5 -6\n", "expected": "-7", "hidden": true },
-        { "input": "4\n1000000 -1000000 5 7\n", "expected": "0", "hidden": true }
+        {
+          "input": "5\n78 92 65 88 70\n",
+          "expected": "157",
+          "hidden": false
+        },
+        {
+          "input": "3\n-5 -2 -9\n",
+          "expected": "-11",
+          "hidden": false
+        },
+        {
+          "input": "1\n7\n",
+          "expected": "14",
+          "hidden": false
+        },
+        {
+          "input": "4\n0 0 0 0\n",
+          "expected": "0",
+          "hidden": true
+        },
+        {
+          "input": "6\n-1 -2 -3 -4 -5 -6\n",
+          "expected": "-7",
+          "hidden": true
+        },
+        {
+          "input": "4\n1000000 -1000000 5 7\n",
+          "expected": "0",
+          "hidden": true
+        }
       ]
     }
   }

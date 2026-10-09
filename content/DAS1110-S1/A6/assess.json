@@ -32,7 +32,9 @@
             "en": "The conditional statement"
           }
         ],
-        "correct": [0],
+        "correct": [
+          0
+        ],
         "explanation": {
           "uz": "Dars jadvaliga koʻra: takrorlar soni oldindan maʼlum boʻlsa `for`, sikl biror hodisa roʻy berguncha davom etsa `while` tanlanadi.",
           "ru": "По таблице занятия: если число повторений заранее известно — `for`, если цикл идёт до какого-то события — `while`.",
@@ -60,7 +62,9 @@
             "en": "False"
           }
         ],
-        "correct": [0],
+        "correct": [
+          0
+        ],
         "explanation": {
           "uz": "Darsda bu koʻp uchraydigan xato: hisoblagich oshirilmasa, toʻxtash sharti hech qachon yolgʻon boʻlmaydi.",
           "ru": "В занятии это названо типичной ошибкой: без роста счётчика условие остановки никогда не станет ложным.",
@@ -76,7 +80,15 @@
           "ru": "Каким термином в занятии обозначают значение, которое знаменует конец последовательности (например, 0)?",
           "en": "What term does the lesson use for a value that marks the end of a sequence (for example, 0)?"
         },
-        "answers": ["sentinel", "toʻxtatuvchi qiymat", "toʻxtatuvchi", "sentinel value"],
+        "answers": [
+          "sentinel",
+          "toʻxtatuvchi qiymat",
+          "toʻxtatuvchi",
+          "sentinel value",
+          "сигнальное значение",
+          "сигнальное",
+          "сторожевое значение"
+        ],
         "explanation": {
           "uz": "Darsda bu — toʻxtatuvchi (sentinel) qiymat: u oʻzi hisobga kirmaydi, faqat ketma-ketlik oxirini bildiradi.",
           "ru": "В занятии это sentinel (то есть стоп-сигнал, «сигнальное» значение): само оно не считается, а лишь обозначает конец.",
@@ -92,7 +104,9 @@
           "ru": "Чему равен НОД(84, 36), вычисленный алгоритмом Евклида?",
           "en": "What is GCD(84, 36) computed with Euclid's algorithm?"
         },
-        "answers": [12],
+        "answers": [
+          12
+        ],
         "tolerance": 0,
         "explanation": {
           "uz": "(84, 36) → (36, 12) → (12, 0), demak EKUB = 12. Bu darsning tekshiruv savolidagi hisob.",
@@ -109,7 +123,9 @@
           "ru": "Сколько итераций выполнит цикл `for (int i = 10; i > 0; i -= 3)`?",
           "en": "How many iterations does the loop `for (int i = 10; i > 0; i -= 3)` run?"
         },
-        "answers": [4],
+        "answers": [
+          4
+        ],
         "tolerance": 0,
         "explanation": {
           "uz": "*i* qiymatlari 10, 7, 4, 1 — toʻrt marta; keyin *i* = -2 boʻlib shart buziladi, demak 4 iteratsiya.",
@@ -148,7 +164,9 @@
             "en": "so the program runs faster"
           }
         ],
-        "correct": [0],
+        "correct": [
+          0
+        ],
         "explanation": {
           "uz": "Bu «oldindan oʻqish» andozasi: birinchi qiymat sikldan oldin, keyingilari tana oxirida oʻqiladi; 0 hisobga kirmasligi aynan tana oxiridagi oʻqish taʼminlaydi.",
           "ru": "Это шаблон «предварительного чтения»: первое значение до цикла, остальные в конце тела; то, что 0 не считается, обеспечивает именно чтение в конце тела.",
@@ -186,7 +204,11 @@
             "en": "the loop of this algorithm might never stop"
           }
         ],
-        "correct": [0, 1, 2],
+        "correct": [
+          0,
+          1,
+          2
+        ],
         "explanation": {
           "uz": "Darsda *b* har qadamda qatʼiy kamayadi va manfiy boʻlmaydi, demak 0 ga yetadi va sikl toʻxtaydi; tartib xatosi esa alohida ogohlantirilgan.",
           "ru": "В занятии *b* строго убывает на каждом шаге и не становится отрицательным, значит дойдёт до 0 и цикл остановится; ошибка порядка отдельно выделена как предупреждение.",
@@ -214,7 +236,9 @@
             "en": "False"
           }
         ],
-        "correct": [0],
+        "correct": [
+          0
+        ],
         "explanation": {
           "uz": "Sikl bir marta ham ishlamaydi va `soni` = 0 boʻladi, shuning uchun `else` tarmogʻi ishlaydi.",
           "ru": "Цикл не выполняется ни разу, `soni` остаётся 0, поэтому срабатывает ветка `else`.",
@@ -252,7 +276,9 @@
             "en": "negative numbers being entered"
           }
         ],
-        "correct": [0],
+        "correct": [
+          0
+        ],
         "explanation": {
           "uz": "Birinchi son 0 boʻlsa `soni` = 0 va oʻrtacha hisoblab boʻlmaydi; `soni > 0` tekshiruvi nolga boʻlishning oldini oladi.",
           "ru": "Если первое число 0, то `soni` = 0 и среднее вычислить нельзя; проверка `soni > 0` предотвращает деление на ноль.",
@@ -269,9 +295,9 @@
       "en": "Sum of digits"
     },
     "statement": {
-      "uz": "Dasturingiz bitta manfiy boʻlmagan butun sonni oʻqisin va uning oʻnlik yozuvidagi raqamlar yigʻindisini bitta qatorga chiqaring (masalan, 1234 uchun 1 + 2 + 3 + 4 = 10). Son 0 boʻlsa, javob 0. Hisoblashda `while` siklidan foydalaning: oxirgi raqamni qoldiqdan oling (`% 10`), soʻng sonni butun boʻlinish bilan qisqartiring.",
-      "ru": "Программа читает одно неотрицательное целое число и выводит сумму его десятичных цифр одной строкой (например, для 1234 это 1 + 2 + 3 + 4 = 10). Если число равно 0, ответ 0. Для вычисления используйте цикл `while`: последнюю цифру берите от остатка (`% 10`), затем уменьшайте число целочисленным делением.",
-      "en": "Your program reads one non-negative integer and prints the sum of its decimal digits on a single line (for example, 1234 gives 1 + 2 + 3 + 4 = 10). If the number is 0, the answer is 0. Use a `while` loop: take the last digit from the remainder (`% 10`), then shrink the number with integer division."
+      "uz": "Dasturingiz bitta manfiy boʻlmagan butun sonni oʻqisin va uning oʻnlik yozuvidagi raqamlar yigʻindisini bitta qatorga chiqaring (masalan, 1234 uchun 1 + 2 + 3 + 4 = 10). Son 0 dan 2147483647 gacha (int chegarasi). Son 0 boʻlsa, javob 0. Hisoblashda `while` siklidan foydalaning: oxirgi raqamni qoldiqdan oling (`% 10`), soʻng sonni butun boʻlinish bilan qisqartiring.",
+      "ru": "Программа читает одно неотрицательное целое число и выводит сумму его десятичных цифр одной строкой (например, для 1234 это 1 + 2 + 3 + 4 = 10). Число от 0 до 2147483647 (граница int). Если число равно 0, ответ 0. Для вычисления используйте цикл `while`: последнюю цифру берите от остатка (`% 10`), затем уменьшайте число целочисленным делением.",
+      "en": "Your program reads one non-negative integer and prints the sum of its decimal digits on a single line (for example, 1234 gives 1 + 2 + 3 + 4 = 10). The number is between 0 and 2147483647 (the int range). If the number is 0, the answer is 0. Use a `while` loop: take the last digit from the remainder (`% 10`), then shrink the number with integer division."
     },
     "code": {
       "starter": {
@@ -285,11 +311,31 @@
         "cpp": "#include <iostream>\nusing namespace std;\n\nint main() {\n    int n;\n    cin >> n;\n    int sum = 0;\n    while (n > 0) {\n        sum += n % 10;\n        n /= 10;\n    }\n    cout << sum << endl;\n    return 0;\n}\n"
       },
       "tests": [
-        { "input": "1234\n", "expected": "10", "hidden": false },
-        { "input": "0\n", "expected": "0", "hidden": false },
-        { "input": "9\n", "expected": "9", "hidden": true },
-        { "input": "98765\n", "expected": "35", "hidden": true },
-        { "input": "1000\n", "expected": "1", "hidden": true }
+        {
+          "input": "1234\n",
+          "expected": "10",
+          "hidden": false
+        },
+        {
+          "input": "0\n",
+          "expected": "0",
+          "hidden": false
+        },
+        {
+          "input": "9\n",
+          "expected": "9",
+          "hidden": true
+        },
+        {
+          "input": "98765\n",
+          "expected": "35",
+          "hidden": true
+        },
+        {
+          "input": "1000\n",
+          "expected": "1",
+          "hidden": true
+        }
       ]
     }
   }
