@@ -1,4 +1,5 @@
 import { databaseAvailable, resetDemoStudent } from './db'
+import { suspendLearningPaths } from './path-state'
 
 /**
  * The flows change the demo student's data: a lesson gets completed, a solution is submitted.
@@ -11,6 +12,7 @@ export default function globalSetup(): void {
   if (!databaseAvailable) return
   try {
     resetDemoStudent('student3')
+    suspendLearningPaths()
   } catch (error) {
     console.warn(
       "e2e: could not reset the demo student's data — " +

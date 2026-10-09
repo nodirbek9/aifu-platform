@@ -232,6 +232,7 @@ a schema redesign.** Full model: `docs/domain/domain-model.md`.
 | Frontend rules, design, phases | `AGENTS.md`, `docs/04-DESIGN-BRIEF.md`, `docs/05-FRONTEND-PROMPTS.md` |
 | Sandbox threat model | `docs/code-execution/security-model.md` |
 | What to build next | `docs/02-ARCHITECTURE.md` §9 |
+| Add a subject / course (lessons, banks, midterm) | `skills/add-course/SKILL.md`, `tools/content/onboard.mjs` |
 | Task-specific coding rules | `skills/` (load the one matching your task) |
 
 ## 14. Working agreement for AI agents
