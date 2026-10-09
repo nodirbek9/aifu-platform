@@ -150,6 +150,28 @@ The Russian and English files must have the shape of the Uzbek one (the same key
 number of questions, options and hints). Output that the tests compare literally (`Kabisa`,
 `Tub emas`, `Salom, …!`) stays as it is in every language; the statement explains it.
 
+## 7a. Test banks and practice per lesson (`assess.json`, phase 6)
+
+Each lesson folder holds `assess.json`: `test` (8–10 questions, 2+ per difficulty, all three
+languages) and `practice` (`kind` `CODE` with a starter and a reference solution in python, java
+and cpp and 3+ tests, 2+ hidden; or `ANSWER` with checked questions). A course may have
+`midterm.json` (60+ questions, `afterLesson`). The exact format and every rule is
+`tools/content/assess-schema.mjs`.
+
+```bash
+node tools/content/assess.mjs check <COURSE> [--lesson X]        # offline: format and rules
+node tools/content/assess-verify.mjs <COURSE> [--lesson X]       # Docker: solutions pass, starters fail
+AIFU_PASSWORD=… node tools/content/assess-import.mjs <COURSE> [--lesson X] [--dry-run] [--replace]
+```
+
+Import is idempotent (codes `<COURSE>-<LESSON>-T`, `-P`, `-ON`). A lesson may have one active TEST
+and one active PRACTICE (partial unique index): where the dev seed already set one, import skips it
+unless `--replace` archives the seeded activity (an archived activity cannot be published again;
+go through DRAFT first). The seeded activities of DAS1110-S1 `M2`, `A2`, `A3`, `A8` and `MT6` are
+end-to-end fixtures and were kept. For `M2`, `A8` and `MT6` the new bank was not imported (the
+import skips the occupied step); for `A2` and `A3` it was imported with an archived activity. A NUM
+`tolerance` must stay below 1,000,000 (the column is numeric(12,6)).
+
 ## 8. Subject texts in three languages
 
 The subject's own copy — title, short title, aim ("Fan maqsadi"), objectives ("Fanning

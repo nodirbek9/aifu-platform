@@ -112,6 +112,12 @@ test.describe('the learning path (phase 5)', () => {
 
     await page.getByRole('button', { name: uz.admin.learningPath.giveAttemptAction }).click()
     const dialog = page.getByRole('dialog')
+    // the course has a quiz for every lesson now: pick the one whose attempts the test used up
+    await dialog.getByRole('combobox', { name: uz.admin.learningPath.selectQuiz }).click()
+    await page
+      .getByRole('option', { name: /DAS-Q-M2/ })
+      .first()
+      .click()
     await dialog.getByRole('combobox', { name: uz.admin.learningPath.selectStudent }).click()
     await page.getByRole('option', { name: 'Dev Student Three' }).first().click()
     await expect(dialog.getByText(uz.admin.learningPath.giveAttemptTitle)).toBeVisible()
