@@ -66,4 +66,18 @@ public interface EnrollmentRepository extends JpaRepository<Enrollment, UUID> {
     @EntityGraph(attributePaths = {"student", "course.subject", "course.term"})
     Page<Enrollment> findByCourse_IdAndStatusIn(
             UUID courseId, Collection<EnrollmentStatus> statuses, Pageable pageable);
+
+    @EntityGraph(attributePaths = {"student", "course.subject", "course.term"})
+    Page<Enrollment> findByStudent_IdAndStatusIn(
+            UUID studentId, Collection<EnrollmentStatus> statuses, Pageable pageable);
+
+    @EntityGraph(attributePaths = {"student", "course.subject", "course.term"})
+    Page<Enrollment> findByCourse_IdAndStudent_Id(UUID courseId, UUID studentId, Pageable pageable);
+
+    @EntityGraph(attributePaths = {"student", "course.subject", "course.term"})
+    Page<Enrollment> findByCourse_IdAndStudent_IdAndStatusIn(
+            UUID courseId,
+            UUID studentId,
+            Collection<EnrollmentStatus> statuses,
+            Pageable pageable);
 }

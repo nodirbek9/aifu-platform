@@ -105,6 +105,31 @@ public class EnrollmentService {
         return enrollments.findByStudent_Id(studentUserId, pageable);
     }
 
+    /** Administrative listing; supplied course and student filters intersect in SQL. */
+    @Transactional(readOnly = true)
+    public Page<Enrollment> listForAdmin(
+            UUID courseId,
+            UUID studentUserId,
+            Collection<EnrollmentStatus> statuses,
+            Pageable pageable) {
+        if (courseId == null && studentUserId == null) {
+            throw Exceptions.validation("At least one of courseId or userId is required");
+        }
+        if (studentUserId == null) {
+            return listByCourse(courseId, statuses, pageable);
+        }
+        boolean filterStatus = statuses != null && !statuses.isEmpty();
+        if (courseId == null) {
+            return filterStatus
+                    ? enrollments.findByStudent_IdAndStatusIn(studentUserId, statuses, pageable)
+                    : enrollments.findByStudent_Id(studentUserId, pageable);
+        }
+        return filterStatus
+                ? enrollments.findByCourse_IdAndStudent_IdAndStatusIn(
+                        courseId, studentUserId, statuses, pageable)
+                : enrollments.findByCourse_IdAndStudent_Id(courseId, studentUserId, pageable);
+    }
+
     @Transactional(readOnly = true)
     public List<EnrollmentEvent> listEvents(UUID enrollmentId) {
         return events.findByEnrollment_IdOrderByOccurredAtAsc(enrollmentId);
