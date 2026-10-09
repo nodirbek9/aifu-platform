@@ -130,7 +130,7 @@ Build, check and publish the timetable; teaching load
 | PUT | `/admin/timetable-entries/{entryId}` | Edit or move a class (same body as create; same conflict rules) | locale? | EntryRequest | 200 EntryView |
 | DELETE | `/admin/timetable-entries/{entryId}` | Remove a class from the timetable |  |  | 204 |
 | GET | `/admin/timetable-entries/{entryId}/exceptions` | One-off changes of a class, by date |  |  | 200 ExceptionView[] |
-| POST | `/admin/timetable-entries/{entryId}/exceptions` | Cancel, move or replace one occurrence of a class | locale? | ExceptionRequest | 201 ExceptionView |
+| POST | `/admin/timetable-entries/{entryId}/exceptions` | Add, cancel, move or replace one occurrence of a class | locale? | ExceptionRequest | 201 ExceptionView |
 | DELETE | `/admin/timetable-exceptions/{exceptionId}` | Undo a one-off change |  |  | 204 |
 | GET | `/admin/timetables` | Timetables, newest first; optionally of one term | termId? |  | 200 TimetableView[] |
 | POST | `/admin/timetables` | Create a draft timetable for a term, optionally as a copy of another one |  | CreateTimetableRequest | 201 TimetableView |

@@ -2477,7 +2477,7 @@
       "ExceptionRequest" : {
         "properties" : {
           "kind" : {
-            "enum" : [ "CANCELLED", "MOVED", "REPLACED" ],
+            "enum" : [ "CANCELLED", "MOVED", "REPLACED", "ADD" ],
             "type" : "string"
           },
           "newDate" : {
@@ -2519,7 +2519,7 @@
             "type" : "string"
           },
           "kind" : {
-            "enum" : [ "CANCELLED", "MOVED", "REPLACED" ],
+            "enum" : [ "CANCELLED", "MOVED", "REPLACED", "ADD" ],
             "type" : "string"
           },
           "newDate" : {
@@ -11188,7 +11188,7 @@
         "security" : [ {
           "bearerAuth" : [ ]
         } ],
-        "summary" : "Cancel, move or replace one occurrence of a class",
+        "summary" : "Add, cancel, move or replace one occurrence of a class",
         "tags" : [ "Admin: timetable" ]
       }
     },

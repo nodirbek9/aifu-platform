@@ -890,7 +890,7 @@ export interface paths {
         get: operations["exceptions"];
         put?: never;
         /**
-         * Cancel, move or replace one occurrence of a class
+         * Add, cancel, move or replace one occurrence of a class
          * @description The teacher(s) and the students of the groups get a notification.
          */
         post: operations["addException"];
@@ -4861,7 +4861,7 @@ export interface components {
         };
         ExceptionRequest: {
             /** @enum {string} */
-            kind: "CANCELLED" | "MOVED" | "REPLACED";
+            kind: "CANCELLED" | "MOVED" | "REPLACED" | "ADD";
             /** Format: date */
             newDate?: string;
             /** Format: uuid */
@@ -4880,7 +4880,7 @@ export interface components {
             /** Format: uuid */
             id?: string;
             /** @enum {string} */
-            kind?: "CANCELLED" | "MOVED" | "REPLACED";
+            kind?: "CANCELLED" | "MOVED" | "REPLACED" | "ADD";
             /** Format: date */
             newDate?: string;
             /** Format: int32 */

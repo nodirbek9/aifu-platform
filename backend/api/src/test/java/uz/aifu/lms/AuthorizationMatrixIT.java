@@ -2,6 +2,7 @@ package uz.aifu.lms;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 import org.junit.jupiter.api.Test;
@@ -17,6 +18,8 @@ import uz.aifu.lms.iam.api.dto.AuthDtos.TokenResponse;
 import uz.aifu.lms.iam.api.dto.UserDtos.SetRolesRequest;
 import uz.aifu.lms.iam.domain.RoleCode;
 import uz.aifu.lms.iam.domain.User;
+import uz.aifu.lms.scheduling.api.dto.SchedulingDtos.ExceptionRequest;
+import uz.aifu.lms.scheduling.domain.ExceptionKind;
 import uz.aifu.lms.support.AbstractIntegrationTest;
 import uz.aifu.lms.support.fixtures.UserFixtures;
 
@@ -172,5 +175,78 @@ class AuthorizationMatrixIT extends AbstractIntegrationTest {
 
     private String url(String path) {
         return "http://localhost:" + port + path;
+    }
+
+    @Test
+    void addTimetableException_withoutAnyToken_isUnauthorized() {
+        ExceptionRequest request =
+                new ExceptionRequest(
+                        LocalDate.now(),
+                        ExceptionKind.ADD,
+                        null,
+                        UUID.randomUUID(),
+                        null,
+                        null,
+                        "Testing unauthorized");
+
+        ResponseEntity<String> response =
+                rest.exchange(
+                        url("/api/v1/admin/timetable-entries/" + UUID.randomUUID() + "/exceptions"),
+                        HttpMethod.POST,
+                        new HttpEntity<>(request),
+                        String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.UNAUTHORIZED);
+    }
+
+    @Test
+    void addTimetableException_withTeacherToken_isForbidden() {
+        String teacherToken = tokenFor(fixtures.activeUser(RoleCode.TEACHER));
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(teacherToken);
+
+        ExceptionRequest request =
+                new ExceptionRequest(
+                        LocalDate.now(),
+                        ExceptionKind.ADD,
+                        null,
+                        UUID.randomUUID(),
+                        null,
+                        null,
+                        "Testing authorization");
+
+        ResponseEntity<String> response =
+                rest.exchange(
+                        url("/api/v1/admin/timetable-entries/" + UUID.randomUUID() + "/exceptions"),
+                        HttpMethod.POST,
+                        new HttpEntity<>(request, headers),
+                        String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+        assertThat(response.getBody()).contains("\"code\":\"AUTH_FORBIDDEN\"");
+    }
+
+    @Test
+    void addTimetableException_withStudentToken_isForbidden() {
+        String studentToken = tokenFor(fixtures.activeUser(RoleCode.STUDENT));
+        HttpHeaders headers = new HttpHeaders();
+        headers.setBearerAuth(studentToken);
+
+        ExceptionRequest request =
+                new ExceptionRequest(
+                        LocalDate.now(),
+                        ExceptionKind.ADD,
+                        null,
+                        UUID.randomUUID(),
+                        null,
+                        null,
+                        "Testing authorization");
+
+        ResponseEntity<String> response =
+                rest.exchange(
+                        url("/api/v1/admin/timetable-entries/" + UUID.randomUUID() + "/exceptions"),
+                        HttpMethod.POST,
+                        new HttpEntity<>(request, headers),
+                        String.class);
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.FORBIDDEN);
+        assertThat(response.getBody()).contains("\"code\":\"AUTH_FORBIDDEN\"");
     }
 }
