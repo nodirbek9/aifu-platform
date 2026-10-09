@@ -17,6 +17,7 @@ import { Skeleton } from '@/shared/ui/skeleton'
 import { useToast } from '@/shared/ui/toast'
 import { STATUS_TONE, STATUSES } from './model'
 import { StudentGroupCard } from './student-group-card'
+import { StudentEnrollmentsCard } from './student-enrollments-card'
 import {
   useResetPassword,
   useRolesQuery,
@@ -38,7 +39,7 @@ function Problem({ error }: { error: unknown }) {
   )
 }
 
-/** A-05 — one account: its details, roles, status (with a reason), a new password, an unlock. */
+/** A-05 / 7.1-F4 — account controls and student group/enrollment sections. */
 export function UserPage() {
   const { t } = useTranslation()
   const { userId = '' } = useParams()
@@ -78,7 +79,14 @@ export function UserPage() {
         <div className="grid grid-cols-1 gap-6">
           <DetailsCard key={`details-${data.id ?? ''}`} user={data} />
           {(data.roles ?? []).includes('STUDENT') && (
-            <StudentGroupCard key={`group-${data.id ?? ''}`} user={data} />
+            <>
+              <section aria-label={t('admin.studentCard.groupTitle')}>
+                <StudentGroupCard key={`group-${data.id ?? ''}`} user={data} />
+              </section>
+              <section aria-label={t('admin.studentCard.coursesTitle')}>
+                <StudentEnrollmentsCard key={`enrollments-${data.id ?? ''}`} user={data} />
+              </section>
+            </>
           )}
         </div>
         <div className="grid grid-cols-1 gap-6">
