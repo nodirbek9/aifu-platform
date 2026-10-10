@@ -1,4 +1,5 @@
 import {
+  AlertTriangle,
   BookOpen,
   CalendarDays,
   CalendarRange,
@@ -36,6 +37,7 @@ export type NavKey =
   | 'adminReference'
   | 'adminLoad'
   | 'adminAudit'
+  | 'adminProblems'
   | 'learningPath'
 
 export type NavItem = {
@@ -72,6 +74,7 @@ const NAV: Record<Role, readonly NavItem[]> = {
     { key: 'adminUsers', to: '/admin/users', icon: Users, primary: true },
     { key: 'adminStructure', to: '/admin/structure', icon: Layers, primary: true },
     { key: 'learningPath', to: '/admin/learning-path', icon: Route },
+    { key: 'adminProblems', to: '/admin/problems', icon: AlertTriangle },
     { key: 'adminReference', to: '/admin/reference', icon: Database },
     { key: 'adminLoad', to: '/admin/load', icon: Table2 },
     { key: 'announcements', to: '/announcements', icon: Megaphone },

@@ -157,6 +157,10 @@ const teacherFocusRoutes: RouteObject[] = [
 
 const adminRoutes: RouteObject[] = [
   {
+    path: 'problems',
+    lazy: async () => ({ Component: (await import('@/features/admin/problems-page')).ProblemsPage }),
+  },
+  {
     index: true,
     lazy: async () => ({
       Component: (await import('@/features/admin/admin-dashboard-page')).AdminDashboardPage,

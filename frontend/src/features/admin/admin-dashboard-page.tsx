@@ -141,6 +141,11 @@ export function AdminDashboardPage() {
           <Card>
             <CardHeader title={t('admin.needsAttention')} />
             <CardContent className="grid grid-cols-1 gap-3">
+              <Link to="/admin/problems" className={button({ variant: 'outline' })}>
+                <AlertTriangle aria-hidden className="size-4" />
+                {t('nav.adminProblems')}
+                <ChevronRight aria-hidden className="size-4" />
+              </Link>
               {load.isPending && termId !== undefined && <Skeleton className="h-16" />}
               {load.isSuccess && (
                 <Link

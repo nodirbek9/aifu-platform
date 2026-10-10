@@ -3,9 +3,332 @@ import { expect, test, type Locator, type Page } from '@playwright/test'
 import createClient from 'openapi-fetch'
 import type { components, paths } from '../src/shared/api/schema'
 import { demoPassword, expectFitsScreen, shot, signIn, texts } from './support'
+import { runSql } from './db'
+import { narrowProblemPage, type AdminProblemType } from '../src/features/admin/problems-model'
 
 const { uz } = texts
 type Schemas = components['schemas']
+
+test('problems dashboard and shell links, responsive themes and locales (7.4-F3)', async ({
+  page,
+}, testInfo) => {
+  test.setTimeout(180_000)
+  await signIn(page, 'admin')
+  await page.goto('/admin')
+  await page.getByRole('link', { name: uz.nav.adminProblems, exact: true }).last().focus()
+  await page.keyboard.press('Enter')
+  await expect(page).toHaveURL(/\/admin\/problems$/)
+  const reviews = [
+    { width: 390, height: 844, locales: ['uz', 'ru', 'en'] as const, themes: ['light', 'dark'] as const },
+    { width: 768, height: 1024, locales: ['uz'] as const, themes: ['light'] as const },
+    { width: 1440, height: 900, locales: ['uz', 'ru'] as const, themes: ['light', 'dark'] as const },
+  ]
+  await page.emulateMedia({ reducedMotion: 'reduce' })
+  for (const review of reviews) {
+    await page.setViewportSize({ width: review.width, height: review.height })
+    for (const locale of review.locales)
+      for (const theme of review.themes) {
+        await page.evaluate(
+          ({ locale, theme }) => {
+            localStorage.setItem('aifu-locale', locale)
+            localStorage.setItem('aifu-theme', theme)
+          },
+          { locale, theme },
+        )
+        await page.reload()
+        await expect(
+          page.getByRole('heading', { name: texts[locale].admin.problems.title, exact: true }),
+        ).toBeVisible()
+        await expect(
+          page.getByRole('region', { name: texts[locale].nav.adminProblems }).getByRole('status'),
+        ).toBeVisible()
+        await expectFitsScreen(page)
+        await shot(page, 'problems', `${review.width}.${theme}.${locale}.${testInfo.project.name}`)
+      }
+  }
+  await page.evaluate(() => localStorage.setItem('aifu-locale', 'uz'))
+  await page.reload()
+  await choose(page, uz.assignments.filterType, uz.admin.problems.type.LOCKED_ACCOUNT)
+  await page.reload()
+  await expect(page.getByRole('combobox', { name: uz.assignments.filterType })).toContainText(
+    uz.admin.problems.type.LOCKED_ACCOUNT,
+  )
+  if (testInfo.project.name === 'phone') {
+    await page.setViewportSize({ width: 390, height: 844 })
+    await page.getByRole('button', { name: uz.common.more, exact: true }).click()
+    await page.getByRole('link', { name: uz.nav.adminProblems, exact: true }).click()
+  } else {
+    await page
+      .getByRole('navigation', { name: uz.common.mainNavigation })
+      .getByRole('link', { name: uz.nav.adminProblems, exact: true })
+      .click()
+  }
+  await expect(page).toHaveURL(/\/admin\/problems$/)
+})
+
+test('problems navigation, all six filters and real fixes remove the exact rows (7.4-F3)', async ({
+  page,
+  baseURL,
+}, testInfo) => {
+  test.setTimeout(240_000)
+  const api = createClient<paths>({ baseUrl: baseURL })
+  const login = await result(
+    api.POST('/api/v1/auth/login', { body: { identifier: 'admin', password: demoPassword() } }),
+  )
+  if (!login.accessToken || !login.refreshToken) throw new Error('Authentication omitted tokens')
+  api.use({
+    onRequest({ request }) {
+      request.headers.set('Authorization', `Bearer ${login.accessToken}`)
+    },
+  })
+  const suffix = randomUUID().slice(0, 8)
+  const students: string[] = []
+  const enrollments: string[] = []
+  let courseId: string | undefined
+  let groupId: string | undefined
+  const status = (userId: string, value: 'ACTIVE' | 'DISABLED') =>
+    result(
+      api.PUT('/api/v1/admin/users/{id}/status', {
+        params: { path: { id: userId } },
+        body: { status: value, reason: 'Problems fixture' },
+      }),
+    )
+  const problems = async (type: AdminProblemType, pageNumber = 0) =>
+    narrowProblemPage(
+      await result(
+        api.GET('/api/v1/admin/problems', { params: { query: { type, page: pageNumber, size: 20 } } }),
+      ),
+    )
+  async function findPage(type: AdminProblemType, key: string) {
+    let current = await problems(type)
+    for (;;) {
+      if (current.content.some((row) => row.problemKey === key)) return current.page
+      if (!current.hasNext) throw new Error(`Missing real problem ${key}`)
+      current = await problems(type, current.page + 1)
+    }
+  }
+  try {
+    groupId = id(await result(api.POST('/api/v1/admin/groups', { body: { code: `E2E-P-${suffix}` } })))
+    const catalogue = await result(api.GET('/api/v1/admin/courses', { params: { query: { size: 100 } } }))
+    const template = catalogue.content?.find((course) => course.status === 'PUBLISHED')
+    if (!template) throw new Error('A published course is required')
+    const source = await result(
+      api.GET('/api/v1/admin/courses/{id}', { params: { path: { id: id(template) } } }),
+    )
+    if (!source.subjectId || !source.termId) throw new Error('Course context missing')
+    courseId = id(
+      await result(
+        api.POST('/api/v1/admin/courses', {
+          body: {
+            subjectId: source.subjectId,
+            termId: source.termId,
+            credits: source.credits ?? 6,
+            totalHours: source.totalHours ?? 150,
+            cohortCode: `E2E-P-${suffix}`,
+          },
+        }),
+      ),
+    )
+    // Isolated dev fixtures for lock/expired-attempt states that administrative APIs cannot create.
+    // No seeded course is changed and append-only attempt/grant history is retained.
+    runSql(`update courses set status = 'PUBLISHED' where id = '${courseId}'`)
+    for (let index = 0; index < 3; index++) {
+      const student = id(
+        await result(
+          api.POST('/api/v1/admin/users', {
+            body: {
+              username: `problem.${suffix}.${index}`,
+              email: `problem.${suffix}.${index}@example.test`,
+              fullName: `Problem ${suffix} ${index}`,
+              roles: ['STUDENT'],
+              studentProfile: { studentNumber: `P-${suffix}-${index}` },
+            },
+          }),
+        ),
+      )
+      students.push(student)
+      await status(student, 'ACTIVE')
+    }
+    const [ungrouped, inactive, locked] = students
+    if (!ungrouped || !inactive || !locked) throw new Error('Student fixture missing')
+    for (const student of [inactive, locked]) {
+      await result(
+        api.POST('/api/v1/admin/groups/{id}/students', {
+          params: { path: { id: groupId } },
+          body: { userIds: [student] },
+        }),
+      )
+      enrollments.push(
+        id(
+          await result(
+            api.POST('/api/v1/admin/enrollments', {
+              body: { studentUserId: student, courseId, source: 'ADMIN' },
+            }),
+          ),
+        ),
+      )
+    }
+    await status(inactive, 'DISABLED')
+    const midtermEnrollment = enrollments[1]
+    if (!midtermEnrollment) throw new Error('Midterm enrollment missing')
+    const moduleId = randomUUID(),
+      lessonId = randomUUID(),
+      quizId = randomUUID(),
+      activityId = randomUUID()
+    runSql(`
+      update users set locked_until = now() + interval '1 hour' where id = '${locked}';
+      insert into course_modules (id, course_id, code, position, status) values ('${moduleId}', '${courseId}', 'P-${suffix}', 0, 'PUBLISHED');
+      insert into lessons (id, module_id, position, session_type, status, is_required, estimated_minutes) values ('${lessonId}', '${moduleId}', 0, 'LECTURE', 'PUBLISHED', true, 1);
+      insert into quizzes (id, course_id, code, status, max_attempts, passing_percent, max_points, shuffle_questions) values ('${quizId}', '${courseId}', 'P-${suffix}', 'PUBLISHED', 1, 60, 100, false);
+      insert into quiz_translations (quiz_id, locale, title) values ('${quizId}', 'uz', 'E2E midterm ${suffix}');
+      insert into activities (id, course_id, position, activity_type, path_step, reference_id, is_graded, status, variant_strategy, collaboration_mode)
+        values ('${activityId}', '${courseId}', 0, 'QUIZ', 'MIDTERM', '${quizId}', false, 'PUBLISHED', 'NONE', 'INDIVIDUAL');
+      insert into course_learning_paths (course_id, enabled, midterm_activity_id, midterm_after_lesson_id) values ('${courseId}', true, '${activityId}', '${lessonId}');
+      insert into quiz_attempts (quiz_id, enrollment_id, activity_id, attempt_number, status, expires_at) values ('${quizId}', '${midtermEnrollment}', '${activityId}', 1, 'EXPIRED', now() - interval '1 hour');
+    `)
+    await signIn(page, 'admin')
+    await page.goto('/admin')
+    await page.getByRole('link', { name: uz.nav.adminProblems, exact: true }).last().click()
+    await expect(page).toHaveURL(/\/admin\/problems$/)
+    const cases: { type: AdminProblemType; key: string; path: string; fix: () => Promise<unknown> }[] = [
+      {
+        type: 'STUDENT_WITHOUT_GROUP',
+        key: ungrouped,
+        path: `/admin/users/${ungrouped}#group`,
+        fix: async () => {
+          await choose(page, uz.admin.studentCard.changeGroup, `E2E-P-${suffix}`)
+          await page.getByRole('button', { name: uz.admin.studentCard.changeGroup, exact: true }).click()
+          await expect(page.getByLabel(uz.profile.group, { exact: true })).toHaveValue(`E2E-P-${suffix}`)
+        },
+      },
+      {
+        type: 'COURSE_WITHOUT_TEACHER',
+        key: courseId,
+        path: `/admin/structure/courses/${courseId}`,
+        fix: async () => {
+          const teachers = await result(
+            api.GET('/api/v1/admin/users', {
+              params: { query: { role: 'TEACHER', size: 100, sort: ['fullName,asc'] } },
+            }),
+          )
+          const teacher = teachers.content?.[0]
+          if (!teacher?.fullName) throw new Error('Teacher fixture missing')
+          await choose(page, uz.admin.teacher, teacher.fullName)
+          await page.getByRole('button', { name: uz.admin.assign, exact: true }).click()
+          await expect(
+            page.getByRole('button', { name: uz.admin.removeTeacher.replace('{{name}}', teacher.fullName) }),
+          ).toBeVisible()
+        },
+      },
+      {
+        type: 'ACTIVE_ENROLLMENT_INACTIVE_USER',
+        key: enrollments[0] ?? '',
+        path: `/admin/users/${inactive}#enrollments`,
+        fix: async () => {
+          await choose(page, uz.admin.status, uz.admin.userStatus.ACTIVE)
+          await page.getByLabel(uz.admin.reason, { exact: true }).fill('Restore active student')
+          await page.getByRole('button', { name: uz.admin.changeStatus, exact: true }).click()
+          await expect
+            .poll(
+              async () =>
+                (await result(api.GET('/api/v1/admin/users/{id}', { params: { path: { id: inactive } } })))
+                  .status,
+            )
+            .toBe('ACTIVE')
+        },
+      },
+      {
+        type: 'LOCKED_ACCOUNT',
+        key: locked,
+        path: `/admin/users/${locked}#status`,
+        fix: async () => {
+          await page.getByRole('button', { name: uz.admin.unlock, exact: true }).focus()
+          await page.keyboard.press('Enter')
+          await expect(page.getByRole('button', { name: uz.admin.unlock, exact: true })).toHaveCount(0)
+        },
+      },
+      {
+        type: 'MIDTERM_ATTEMPTS_EXHAUSTED',
+        key: midtermEnrollment,
+        path: `/admin/learning-path?course=${courseId}&enrollment=${midtermEnrollment}&quiz=${quizId}`,
+        fix: async () => {
+          await expect(
+            page.getByRole('heading', { name: uz.admin.learningPath.title, exact: true }),
+          ).toBeVisible()
+          // Exact deep-link selection belongs to 7.4-F4; here exercise the existing grant API.
+          await result(
+            api.POST('/api/v1/admin/quizzes/{quizId}/enrollments/{enrollmentId}/attempt-grants', {
+              params: { path: { quizId, enrollmentId: midtermEnrollment } },
+              body: { reason: 'Problems coverage grant' },
+            }),
+          )
+        },
+      },
+      {
+        type: 'GROUP_WITHOUT_PUBLISHED_ENTRIES',
+        key: groupId,
+        path: `/admin/timetable?view=group&id=${groupId}`,
+        fix: async () => {
+          await expect(page.getByRole('heading', { name: uz.nav.adminTimetable, exact: true })).toBeVisible()
+          // Retire an unused group through its real administrative endpoint.
+          await api
+            .PUT('/api/v1/admin/groups/{id}/archived', {
+              params: { path: { id: groupId ?? '' }, query: { value: true } },
+            })
+            .then((response) => expect(response.response.ok).toBe(true))
+        },
+      },
+    ]
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    for (const item of cases) {
+      await page.goto('/admin/problems?page=3&other=keep')
+      await choose(page, uz.assignments.filterType, uz.admin.problems.type[item.type])
+      expect(new URL(page.url()).searchParams.has('page')).toBe(false)
+      expect(new URL(page.url()).searchParams.get('other')).toBe('keep')
+      const key = `${item.type}:${item.key}`
+      const pageNumber = await findPage(item.type, key)
+      await page.goto(`/admin/problems?type=${item.type}&page=${pageNumber}`)
+      const action = page
+        .locator(`section[aria-label="${uz.nav.adminProblems}"] a`)
+        .filter({ hasText: uz.admin.problems.fix })
+      const exactAction = action.and(page.locator(`a[href="${item.path}"]`))
+      await expect(exactAction).toBeVisible()
+      await expectFitsScreen(page)
+      await shot(page, 'problems', `${item.type}.${testInfo.project.name}`)
+      await exactAction.click()
+      await expect(page).toHaveURL(new RegExp(item.path.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '$'))
+      await item.fix()
+      await page.goto(`/admin/problems?type=${item.type}&page=${pageNumber}`)
+      await expect(page.getByRole('heading', { name: uz.admin.problems.title, exact: true })).toBeVisible()
+      await expect(
+        page.locator(`section[aria-label="${uz.nav.adminProblems}"] a[href="${item.path}"]`),
+      ).toHaveCount(0)
+      const remaining = await problems(item.type, pageNumber)
+      expect(remaining.content.some((row) => row.problemKey === key)).toBe(false)
+    }
+  } finally {
+    for (const enrollmentId of enrollments)
+      await api.PUT('/api/v1/admin/enrollments/{id}/status', {
+        params: {
+          path: { id: enrollmentId },
+          query: { status: 'WITHDRAWN', reason: 'Problems fixture cleanup' },
+        },
+      })
+    for (const student of students) {
+      runSql(`update users set locked_until = null where id = '${student}'`)
+      await status(student, 'DISABLED')
+    }
+    if (courseId)
+      await api.PUT('/api/v1/admin/courses/{id}/status', {
+        params: { path: { id: courseId }, query: { status: 'ARCHIVED' } },
+      })
+    if (groupId)
+      await api.PUT('/api/v1/admin/groups/{id}/archived', {
+        params: { path: { id: groupId }, query: { value: true } },
+      })
+    await api.POST('/api/v1/auth/logout', { body: { refreshToken: login.refreshToken } })
+  }
+})
 
 test('cancel then deactivate with selected withdrawals preserves history and terminal rows (7.3-F3)', async ({
   page,
