@@ -176,6 +176,70 @@
           }
         }
       },
+      "AdminProblemView" : {
+        "description" : "One administrative problem discovered across platform resources",
+        "properties" : {
+          "attemptsAllowed" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "attemptsUsed" : {
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "cohortCode" : {
+            "type" : "string"
+          },
+          "courseId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "enrollmentId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "fullName" : {
+            "type" : "string"
+          },
+          "grantAvailable" : {
+            "type" : "boolean"
+          },
+          "groupCode" : {
+            "type" : "string"
+          },
+          "groupId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "lockedUntil" : {
+            "format" : "date-time",
+            "type" : "string"
+          },
+          "problemKey" : {
+            "example" : "STUDENT_WITHOUT_GROUP:123e4567-e89b-12d3-a456-426614174000",
+            "type" : "string"
+          },
+          "quizId" : {
+            "format" : "uuid",
+            "type" : "string"
+          },
+          "subjectCode" : {
+            "type" : "string"
+          },
+          "termName" : {
+            "type" : "string"
+          },
+          "type" : {
+            "enum" : [ "STUDENT_WITHOUT_GROUP", "GROUP_WITHOUT_PUBLISHED_ENTRIES", "COURSE_WITHOUT_TEACHER", "ACTIVE_ENROLLMENT_INACTIVE_USER", "LOCKED_ACCOUNT", "MIDTERM_ATTEMPTS_EXHAUSTED" ],
+            "example" : "STUDENT_WITHOUT_GROUP",
+            "type" : "string"
+          },
+          "userId" : {
+            "format" : "uuid",
+            "type" : "string"
+          }
+        }
+      },
       "AnnouncementView" : {
         "properties" : {
           "audience" : {
@@ -4144,6 +4208,43 @@
           "content" : {
             "items" : {
               "$ref" : "#/components/schemas/ActivityDetail"
+            },
+            "type" : "array"
+          },
+          "hasNext" : {
+            "type" : "boolean"
+          },
+          "hasPrevious" : {
+            "type" : "boolean"
+          },
+          "page" : {
+            "example" : 0,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "size" : {
+            "example" : 20,
+            "format" : "int32",
+            "type" : "integer"
+          },
+          "totalElements" : {
+            "example" : 137,
+            "format" : "int64",
+            "type" : "integer"
+          },
+          "totalPages" : {
+            "example" : 7,
+            "format" : "int32",
+            "type" : "integer"
+          }
+        }
+      },
+      "PageResponseAdminProblemView" : {
+        "description" : "Paginated collection envelope",
+        "properties" : {
+          "content" : {
+            "items" : {
+              "$ref" : "#/components/schemas/AdminProblemView"
             },
             "type" : "array"
           },
@@ -9105,13 +9206,70 @@
         "responses" : {
           "200" : {
             "content" : {
+              "application/json" : {
+                "example" : {
+                  "content" : [ {
+                    "attemptNo" : 1,
+                    "cohortCode" : "2026",
+                    "courseId" : "20000000-0000-0000-0000-000000000001",
+                    "enrolledAt" : "2026-09-01T00:00:00Z",
+                    "id" : "10000000-0000-0000-0000-000000000001",
+                    "status" : "ACTIVE",
+                    "studentFullName" : "Example student",
+                    "studentUserId" : "30000000-0000-0000-0000-000000000001",
+                    "subjectCode" : "DAS1110",
+                    "termName" : "2026 Fall"
+                  } ],
+                  "hasNext" : false,
+                  "hasPrevious" : false,
+                  "page" : 0,
+                  "size" : 20,
+                  "totalElements" : 1,
+                  "totalPages" : 1
+                }
+              }
+            },
+            "description" : "Paginated enrollment summaries"
+          },
+          "400" : {
+            "content" : {
               "*/*" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/PageResponseEnrollmentSummary"
                 }
               }
             },
-            "description" : "OK"
+            "description" : "Missing filters or invalid query parameter"
+          },
+          "401" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageResponseEnrollmentSummary"
+                }
+              }
+            },
+            "description" : "Authentication required"
+          },
+          "403" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageResponseEnrollmentSummary"
+                }
+              }
+            },
+            "description" : "ENROLLMENT_READ permission required"
+          },
+          "404" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageResponseEnrollmentSummary"
+                }
+              }
+            },
+            "description" : "Supplied course is unavailable"
           },
           "default" : {
             "content" : {
@@ -9998,6 +10156,117 @@
         } ],
         "summary" : "List the full permission catalogue",
         "tags" : [ "Admin: roles" ]
+      }
+    },
+    "/api/v1/admin/problems" : {
+      "get" : {
+        "description" : "Read-only discovery across platform resources. Omit type to list all six types. Page size is capped at 100. Supported sort fields: type, problemKey. Default order: type ASC, problemKey ASC; missing tie-breakers are appended to explicit sorting.",
+        "operationId" : "list_16",
+        "parameters" : [ {
+          "description" : "Problem category; omit to include all categories",
+          "example" : "STUDENT_WITHOUT_GROUP",
+          "in" : "query",
+          "name" : "type",
+          "required" : false,
+          "schema" : {
+            "enum" : [ "STUDENT_WITHOUT_GROUP", "GROUP_WITHOUT_PUBLISHED_ENTRIES", "COURSE_WITHOUT_TEACHER", "ACTIVE_ENROLLMENT_INACTIVE_USER", "LOCKED_ACCOUNT", "MIDTERM_ATTEMPTS_EXHAUSTED" ],
+            "type" : "string"
+          }
+        }, {
+          "description" : "Zero-based page index (0..N)",
+          "in" : "query",
+          "name" : "page",
+          "required" : false,
+          "schema" : {
+            "default" : 0,
+            "minimum" : 0
+          }
+        }, {
+          "description" : "The size of the page to be returned",
+          "in" : "query",
+          "name" : "size",
+          "required" : false,
+          "schema" : {
+            "default" : 20,
+            "minimum" : 1
+          }
+        }, {
+          "description" : "Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported.",
+          "in" : "query",
+          "name" : "sort",
+          "required" : false,
+          "schema" : {
+            "items" : { }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "application/json" : {
+                "example" : {
+                  "content" : [ {
+                    "fullName" : "Example student",
+                    "problemKey" : "STUDENT_WITHOUT_GROUP:30000000-0000-0000-0000-000000000001",
+                    "type" : "STUDENT_WITHOUT_GROUP",
+                    "userId" : "30000000-0000-0000-0000-000000000001"
+                  } ],
+                  "hasNext" : false,
+                  "hasPrevious" : false,
+                  "page" : 0,
+                  "size" : 20,
+                  "totalElements" : 1,
+                  "totalPages" : 1
+                }
+              }
+            },
+            "description" : "Paginated administrative problems"
+          },
+          "400" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageResponseAdminProblemView"
+                }
+              }
+            },
+            "description" : "Invalid type or unsupported sort field"
+          },
+          "401" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageResponseAdminProblemView"
+                }
+              }
+            },
+            "description" : "Authentication required"
+          },
+          "403" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/PageResponseAdminProblemView"
+                }
+              }
+            },
+            "description" : "ANALYTICS_PLATFORM_READ permission required"
+          },
+          "default" : {
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            },
+            "description" : "Any failure (4xx, 5xx): the error envelope"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "summary" : "List administrative problems, optionally filtered by type",
+        "tags" : [ "Admin: problems" ]
       }
     },
     "/api/v1/admin/quizzes/{quizId}/enrollments/{enrollmentId}/attempt-grants" : {
@@ -21170,6 +21439,9 @@
   }, {
     "description" : "Build, check and publish the timetable; teaching load",
     "name" : "Admin: timetable"
+  }, {
+    "description" : "Platform-wide administrative problems",
+    "name" : "Admin: problems"
   }, {
     "description" : "A course's published quiz list",
     "name" : "Quizzes"

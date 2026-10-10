@@ -61,7 +61,7 @@ Enrollment administration
 
 | Method | Path | What it does | Query | Body | Returns |
 |---|---|---|---|---|---|
-| GET | `/admin/enrollments` | List enrollments by course or student, optionally filtered by status | courseId?, userId?, status?, page?, size?, sort? |  | 200 PageResponseEnrollmentSummary |
+| GET | `/admin/enrollments` | List enrollments by course or student, optionally filtered by status | courseId?, userId?, status?, page?, size?, sort? |  | 200 |
 | POST | `/admin/enrollments` | Enroll one student in a course |  | CreateEnrollmentRequest | 201 EnrollmentDetail |
 | GET | `/admin/enrollments/{id}` | Get one enrollment with its full transition history |  |  | 200 EnrollmentDetail |
 | PUT | `/admin/enrollments/{id}/status` | Transition an enrollment's status | status, reason? |  | 200 EnrollmentDetail |
@@ -90,6 +90,14 @@ Course learning path configuration and gate management
 |---|---|---|---|---|---|
 | GET | `/admin/courses/{courseId}/learning-path` | Get course learning path configuration |  |  | 200 LearningPathConfigView |
 | PUT | `/admin/courses/{courseId}/learning-path` | Configure or enable/disable course learning path |  | LearningPathConfigRequest | 200 LearningPathConfigView |
+
+## Admin: problems
+
+Platform-wide administrative problems
+
+| Method | Path | What it does | Query | Body | Returns |
+|---|---|---|---|---|---|
+| GET | `/admin/problems` | List administrative problems, optionally filtered by type | type?, page?, size?, sort? |  | 200 |
 
 ## Admin: roles
 

@@ -594,6 +594,26 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/admin/problems": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * List administrative problems, optionally filtered by type
+         * @description Read-only discovery across platform resources. Omit type to list all six types. Page size is capped at 100. Supported sort fields: type, problemKey. Default order: type ASC, problemKey ASC; missing tie-breakers are appended to explicit sorting.
+         */
+        get: operations["list_16"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/api/v1/admin/quizzes/{quizId}/enrollments/{enrollmentId}/attempt-grants": {
         parameters: {
             query?: never;
@@ -3805,6 +3825,38 @@ export interface components {
             /** @enum {string} */
             requirementType?: "REQUIRED" | "RECOMMENDED";
         };
+        /** @description One administrative problem discovered across platform resources */
+        AdminProblemView: {
+            /** Format: int32 */
+            attemptsAllowed?: number;
+            /** Format: int32 */
+            attemptsUsed?: number;
+            cohortCode?: string;
+            /** Format: uuid */
+            courseId?: string;
+            /** Format: uuid */
+            enrollmentId?: string;
+            fullName?: string;
+            grantAvailable?: boolean;
+            groupCode?: string;
+            /** Format: uuid */
+            groupId?: string;
+            /** Format: date-time */
+            lockedUntil?: string;
+            /** @example STUDENT_WITHOUT_GROUP:123e4567-e89b-12d3-a456-426614174000 */
+            problemKey?: string;
+            /** Format: uuid */
+            quizId?: string;
+            subjectCode?: string;
+            termName?: string;
+            /**
+             * @example STUDENT_WITHOUT_GROUP
+             * @enum {string}
+             */
+            type?: "STUDENT_WITHOUT_GROUP" | "GROUP_WITHOUT_PUBLISHED_ENTRIES" | "COURSE_WITHOUT_TEACHER" | "ACTIVE_ENROLLMENT_INACTIVE_USER" | "LOCKED_ACCOUNT" | "MIDTERM_ATTEMPTS_EXHAUSTED";
+            /** Format: uuid */
+            userId?: string;
+        };
         AnnouncementView: {
             /** @enum {string} */
             audience?: "COURSE" | "GROUP" | "EVERYONE" | "STUDENTS" | "TEACHERS";
@@ -5676,6 +5728,32 @@ export interface components {
         /** @description Paginated collection envelope */
         PageResponseActivityDetail: {
             content?: components["schemas"]["ActivityDetail"][];
+            hasNext?: boolean;
+            hasPrevious?: boolean;
+            /**
+             * Format: int32
+             * @example 0
+             */
+            page?: number;
+            /**
+             * Format: int32
+             * @example 20
+             */
+            size?: number;
+            /**
+             * Format: int64
+             * @example 137
+             */
+            totalElements?: number;
+            /**
+             * Format: int32
+             * @example 7
+             */
+            totalPages?: number;
+        };
+        /** @description Paginated collection envelope */
+        PageResponseAdminProblemView: {
+            content?: components["schemas"]["AdminProblemView"][];
             hasNext?: boolean;
             hasPrevious?: boolean;
             /**
@@ -8341,8 +8419,68 @@ export interface operations {
         };
         requestBody?: never;
         responses: {
-            /** @description OK */
+            /** @description Paginated enrollment summaries */
             200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    /**
+                     * @example {
+                     *       "content": [
+                     *         {
+                     *           "attemptNo": 1,
+                     *           "cohortCode": "2026",
+                     *           "courseId": "20000000-0000-0000-0000-000000000001",
+                     *           "enrolledAt": "2026-09-01T00:00:00Z",
+                     *           "id": "10000000-0000-0000-0000-000000000001",
+                     *           "status": "ACTIVE",
+                     *           "studentFullName": "Example student",
+                     *           "studentUserId": "30000000-0000-0000-0000-000000000001",
+                     *           "subjectCode": "DAS1110",
+                     *           "termName": "2026 Fall"
+                     *         }
+                     *       ],
+                     *       "hasNext": false,
+                     *       "hasPrevious": false,
+                     *       "page": 0,
+                     *       "size": 20,
+                     *       "totalElements": 1,
+                     *       "totalPages": 1
+                     *     }
+                     */
+                    "application/json": unknown;
+                };
+            };
+            /** @description Missing filters or invalid query parameter */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["PageResponseEnrollmentSummary"];
+                };
+            };
+            /** @description Authentication required */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["PageResponseEnrollmentSummary"];
+                };
+            };
+            /** @description ENROLLMENT_READ permission required */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["PageResponseEnrollmentSummary"];
+                };
+            };
+            /** @description Supplied course is unavailable */
+            404: {
                 headers: {
                     [name: string]: unknown;
                 };
@@ -8992,6 +9130,92 @@ export interface operations {
                 };
                 content: {
                     "*/*": components["schemas"]["PermissionView"][];
+                };
+            };
+            /** @description Any failure (4xx, 5xx): the error envelope */
+            default: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ApiError"];
+                };
+            };
+        };
+    };
+    list_16: {
+        parameters: {
+            query?: {
+                /**
+                 * @description Problem category; omit to include all categories
+                 * @example STUDENT_WITHOUT_GROUP
+                 */
+                type?: "STUDENT_WITHOUT_GROUP" | "GROUP_WITHOUT_PUBLISHED_ENTRIES" | "COURSE_WITHOUT_TEACHER" | "ACTIVE_ENROLLMENT_INACTIVE_USER" | "LOCKED_ACCOUNT" | "MIDTERM_ATTEMPTS_EXHAUSTED";
+                /** @description Zero-based page index (0..N) */
+                page?: unknown;
+                /** @description The size of the page to be returned */
+                size?: unknown;
+                /** @description Sorting criteria in the format: property,(asc|desc). Default sort order is ascending. Multiple sort criteria are supported. */
+                sort?: unknown;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Paginated administrative problems */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    /**
+                     * @example {
+                     *       "content": [
+                     *         {
+                     *           "fullName": "Example student",
+                     *           "problemKey": "STUDENT_WITHOUT_GROUP:30000000-0000-0000-0000-000000000001",
+                     *           "type": "STUDENT_WITHOUT_GROUP",
+                     *           "userId": "30000000-0000-0000-0000-000000000001"
+                     *         }
+                     *       ],
+                     *       "hasNext": false,
+                     *       "hasPrevious": false,
+                     *       "page": 0,
+                     *       "size": 20,
+                     *       "totalElements": 1,
+                     *       "totalPages": 1
+                     *     }
+                     */
+                    "application/json": unknown;
+                };
+            };
+            /** @description Invalid type or unsupported sort field */
+            400: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["PageResponseAdminProblemView"];
+                };
+            };
+            /** @description Authentication required */
+            401: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["PageResponseAdminProblemView"];
+                };
+            };
+            /** @description ANALYTICS_PLATFORM_READ permission required */
+            403: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "*/*": components["schemas"]["PageResponseAdminProblemView"];
                 };
             };
             /** @description Any failure (4xx, 5xx): the error envelope */
