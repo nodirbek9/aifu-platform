@@ -58,7 +58,8 @@
     "adminLoad": "Yuklama",
     "adminAudit": "Audit",
     "learningPath": "Oʻquv traektoriyasi",
-    "announcements": "Eʼlonlar"
+    "announcements": "Eʼlonlar",
+    "adminProblems": "Muammolar"
   },
   "auth": {
     "signInTitle": "Kirish",
@@ -1651,6 +1652,25 @@
         "already-satisfied": "Avval bajarilgan",
         "blocked": "Bajarishga kirishilmadi",
         "failed": "Xato"
+      }
+    },
+    "problems": {
+      "title": "Maʼmuriy muammolar",
+      "allTypes": "Barcha turlar",
+      "empty": "Bu filtrlarga mos muammo yoʻq",
+      "emptyBody": "Boshqa muammo turini tanlang yoki foydalanuvchi maʼlumotlarini tekshiring.",
+      "reviewUsers": "Foydalanuvchilarni tekshirish",
+      "fix": "Tuzatish",
+      "actionUnavailable": "Amal mavjud emas: kerakli maʼlumotlar yetishmaydi",
+      "reviewAttempt": "Urinishni tekshirish",
+      "count": "Topilgan muammolar: {{count}}",
+      "type": {
+        "STUDENT_WITHOUT_GROUP": "Guruhsiz talaba",
+        "GROUP_WITHOUT_PUBLISHED_ENTRIES": "Eʼlon qilingan jadvalda darsi yoʻq guruh",
+        "COURSE_WITHOUT_TEACHER": "Oʻqituvchisiz kurs",
+        "ACTIVE_ENROLLMENT_INACTIVE_USER": "Faol boʻlmagan foydalanuvchining faol kursga yozilishi",
+        "LOCKED_ACCOUNT": "Bloklangan hisob",
+        "MIDTERM_ATTEMPTS_EXHAUSTED": "Oraliq nazoratdan oʻtmasdan urinishlar tugagan"
       }
     }
   },

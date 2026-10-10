@@ -58,7 +58,8 @@
     "adminLoad": "Teaching load",
     "adminAudit": "Audit log",
     "learningPath": "Learning path",
-    "announcements": "Announcements"
+    "announcements": "Announcements",
+    "adminProblems": "Problems"
   },
   "auth": {
     "signInTitle": "Sign in",
@@ -1651,6 +1652,25 @@
         "already-satisfied": "Already complete",
         "blocked": "Not attempted",
         "failed": "Failed"
+      }
+    },
+    "problems": {
+      "title": "Administrative problems",
+      "allTypes": "All types",
+      "empty": "No problems match these filters",
+      "emptyBody": "Choose another problem type or review user records.",
+      "reviewUsers": "Review users",
+      "fix": "Fix",
+      "actionUnavailable": "Action unavailable: resource details are missing",
+      "reviewAttempt": "Review attempt",
+      "count": "Problems found: {{count}}",
+      "type": {
+        "STUDENT_WITHOUT_GROUP": "Student without a group",
+        "GROUP_WITHOUT_PUBLISHED_ENTRIES": "Group without published timetable entries",
+        "COURSE_WITHOUT_TEACHER": "Course without a teacher",
+        "ACTIVE_ENROLLMENT_INACTIVE_USER": "Active enrollment of an inactive user",
+        "LOCKED_ACCOUNT": "Locked account",
+        "MIDTERM_ATTEMPTS_EXHAUSTED": "Midterm attempts exhausted without passing"
       }
     }
   },

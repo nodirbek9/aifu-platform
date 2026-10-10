@@ -58,7 +58,8 @@
     "adminLoad": "Нагрузка",
     "adminAudit": "Аудит",
     "learningPath": "Траектория обучения",
-    "announcements": "Объявления"
+    "announcements": "Объявления",
+    "adminProblems": "Проблемы"
   },
   "auth": {
     "signInTitle": "Вход",
@@ -1651,6 +1652,25 @@
         "already-satisfied": "??? ?????????",
         "blocked": "?? ???????????",
         "failed": "??????"
+      }
+    },
+    "problems": {
+      "title": "Административные проблемы",
+      "allTypes": "Все типы",
+      "empty": "По этим фильтрам проблем нет",
+      "emptyBody": "Выберите другой тип проблемы или проверьте записи пользователей.",
+      "reviewUsers": "Проверить пользователей",
+      "fix": "Исправить",
+      "actionUnavailable": "Действие недоступно: нет данных ресурса",
+      "reviewAttempt": "Проверить попытку",
+      "count": "Найдено проблем: {{count}}",
+      "type": {
+        "STUDENT_WITHOUT_GROUP": "Студент без группы",
+        "GROUP_WITHOUT_PUBLISHED_ENTRIES": "Группа без занятий в опубликованном расписании",
+        "COURSE_WITHOUT_TEACHER": "Курс без преподавателя",
+        "ACTIVE_ENROLLMENT_INACTIVE_USER": "Активное зачисление неактивного пользователя",
+        "LOCKED_ACCOUNT": "Заблокированная учётная запись",
+        "MIDTERM_ATTEMPTS_EXHAUSTED": "Попытки промежуточного контроля исчерпаны без сдачи"
       }
     }
   },
