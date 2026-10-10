@@ -7,6 +7,183 @@ import { demoPassword, expectFitsScreen, shot, signIn, texts } from './support'
 const { uz } = texts
 type Schemas = components['schemas']
 
+test('cancel then deactivate with selected withdrawals preserves history and terminal rows (7.3-F3)', async ({
+  page,
+  baseURL,
+}, testInfo) => {
+  test.setTimeout(240_000)
+  const api = createClient<paths>({ baseUrl: baseURL })
+  const login = await result(
+    api.POST('/api/v1/auth/login', { body: { identifier: 'admin', password: demoPassword() } }),
+  )
+  if (!login.accessToken || !login.refreshToken) throw new Error('Authentication omitted tokens')
+  api.use({
+    onRequest({ request }) {
+      request.headers.set('Authorization', `Bearer ${login.accessToken}`)
+    },
+  })
+  const suffix = randomUUID().slice(0, 8)
+  let studentId: string | undefined
+  const enrollmentIds: string[] = []
+  const detail = (enrollmentId: string) =>
+    result(api.GET('/api/v1/admin/enrollments/{id}', { params: { path: { id: enrollmentId } } }))
+  const change = (
+    enrollmentId: string,
+    status: NonNullable<Schemas['EnrollmentDetail']['status']>,
+    reason: string,
+  ) =>
+    result(
+      api.PUT('/api/v1/admin/enrollments/{id}/status', {
+        params: { path: { id: enrollmentId }, query: { status, reason } },
+      }),
+    )
+  try {
+    studentId = id(
+      await result(
+        api.POST('/api/v1/admin/users', {
+          body: {
+            username: `remove.${suffix}`,
+            email: `remove.${suffix}@example.test`,
+            fullName: `Removal ${suffix}`,
+            roles: ['STUDENT'],
+            studentProfile: { studentNumber: `REMOVE-${suffix}` },
+          },
+        }),
+      ),
+    )
+    await result(
+      api.PUT('/api/v1/admin/users/{id}/status', {
+        params: { path: { id: studentId } },
+        body: { status: 'ACTIVE', reason: 'Removal fixture' },
+      }),
+    )
+    const catalogue = await result(
+      api.GET('/api/v1/admin/courses', { params: { query: { size: 100, locale: 'uz' } } }),
+    )
+    const courses = (catalogue.content ?? []).filter((course) => course.status === 'PUBLISHED').slice(0, 3)
+    if (courses.length !== 3) throw new Error('Three published courses are required for removal verification')
+    for (const course of courses) {
+      enrollmentIds.push(
+        id(
+          await result(
+            api.POST('/api/v1/admin/enrollments', {
+              body: { studentUserId: studentId, courseId: id(course), source: 'ADMIN' },
+            }),
+          ),
+        ),
+      )
+    }
+    const [selected, unselected, completed] = enrollmentIds
+    const [selectedCourse, , completedCourse] = courses
+    if (!selected || !unselected || !completed || !selectedCourse || !completedCourse)
+      throw new Error('Incomplete removal fixture')
+    await change(unselected, 'SUSPENDED', 'Unselected enrollment fixture')
+    await signIn(page, 'admin')
+    await page.goto(`/admin/users/${studentId}`)
+
+    // Exercise the actual terminal-state guard, without intercepting or fabricating an HTTP response.
+    await change(completed, 'COMPLETED', 'Completed by competing administrator')
+    const rejected = await api.PUT('/api/v1/admin/enrollments/{id}/status', {
+      params: {
+        path: { id: completed },
+        query: { status: 'WITHDRAWN', reason: 'Terminal withdrawal must fail' },
+      },
+    })
+    expect(rejected.response.status).toBe(422)
+    expect(rejected.error?.code).toBe('ENROLLMENT_INVALID_TRANSITION')
+    expect(rejected.error?.requestId).toBeTruthy()
+    await page.reload()
+    const card = page.getByRole('region', { name: uz.admin.studentCard.coursesTitle, exact: true })
+    const terminalRow = card
+      .getByRole('listitem')
+      .filter({ has: page.locator(`a[href="/admin/structure/courses/${id(completedCourse)}"]`) })
+    const before = await Promise.all(enrollmentIds.map(detail))
+    const currentEnrollments = await result(
+      api.GET('/api/v1/admin/enrollments', {
+        params: { query: { userId: studentId, size: 100 } },
+      }),
+    )
+    const selectedSnapshot = currentEnrollments.content?.find((enrollment) => enrollment.id === selected)
+    if (!selectedSnapshot) throw new Error('Selected enrollment snapshot missing')
+    const selectedLabel =
+      [selectedSnapshot.subjectCode, selectedSnapshot.cohortCode, selectedSnapshot.termName]
+        .filter(Boolean)
+        .join(' · ') +
+      ' · ' +
+      uz.admin.enrollmentStatus.ACTIVE
+
+    await page.getByRole('button', { name: uz.admin.removeStudent.title, exact: true }).click()
+    let dialog = page.getByRole('dialog')
+    await expect(dialog.getByRole('checkbox')).toHaveCount(3)
+    await dialog.getByRole('checkbox', { name: selectedLabel, exact: true }).check()
+    await dialog.getByLabel(uz.admin.reason).fill('Cancelled removal')
+    await dialog.getByRole('button', { name: uz.common.cancel, exact: true }).click()
+    await expect(dialog).toHaveCount(0)
+    expect(
+      (await result(api.GET('/api/v1/admin/users/{id}', { params: { path: { id: studentId } } }))).status,
+    ).toBe('ACTIVE')
+    expect(await Promise.all(enrollmentIds.map(detail))).toEqual(before)
+
+    await page.getByRole('button', { name: uz.admin.removeStudent.title, exact: true }).click()
+    dialog = page.getByRole('dialog')
+    await dialog.getByRole('checkbox', { name: selectedLabel, exact: true }).check()
+    const reason = `Removal decision ${suffix}`
+    await dialog.getByLabel(uz.admin.reason).fill(reason)
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    for (const width of [390, 768, 1440]) {
+      await page.setViewportSize({ width, height: 900 })
+      for (const theme of ['light', 'dark'] as const) {
+        await page.evaluate(
+          (theme) => document.documentElement.classList.toggle('dark', theme === 'dark'),
+          theme,
+        )
+        await expectFitsScreen(page)
+        await shot(page, 'remove-student', `${width}.${theme}.${testInfo.project.name}`)
+      }
+    }
+    await dialog.getByRole('button', { name: uz.admin.removeStudent.confirm }).focus()
+    await page.keyboard.press('Enter')
+    await expect(dialog.getByText(uz.admin.removeStudent.complete, { exact: true })).toBeVisible()
+    await dialog.getByRole('button', { name: uz.common.close, exact: true }).first().click()
+    await page.reload()
+    expect(
+      (await result(api.GET('/api/v1/admin/users/{id}', { params: { path: { id: studentId } } }))).status,
+    ).toBe('DISABLED')
+    await expect(page.getByRole('combobox', { name: uz.admin.status, exact: true })).toContainText(
+      uz.admin.userStatus.DISABLED,
+    )
+    const withdrawn = await detail(selected)
+    expect(withdrawn.status).toBe('WITHDRAWN')
+    expect(withdrawn.events?.slice(0, before[0]?.events?.length)).toEqual(before[0]?.events)
+    expect(withdrawn.events?.at(-1)).toMatchObject({ eventType: 'WITHDRAWN', toStatus: 'WITHDRAWN', reason })
+    expect(await detail(unselected)).toEqual(before[1])
+    expect(await detail(completed)).toEqual(before[2])
+    await expect(terminalRow).toContainText(uz.admin.enrollmentStatus.COMPLETED)
+    await expect(
+      terminalRow.getByRole('button', { name: uz.admin.studentCard.changeEnrollmentStatus }),
+    ).toHaveCount(0)
+  } finally {
+    // Preserve append-only enrollment history; retire only this test's non-terminal records.
+    for (const enrollmentId of enrollmentIds) {
+      const enrollment = await detail(enrollmentId)
+      if (
+        enrollment.status === 'ACTIVE' ||
+        enrollment.status === 'PENDING' ||
+        enrollment.status === 'SUSPENDED'
+      )
+        await change(enrollmentId, 'WITHDRAWN', 'Removal fixture cleanup')
+    }
+    if (studentId)
+      await result(
+        api.PUT('/api/v1/admin/users/{id}/status', {
+          params: { path: { id: studentId } },
+          body: { status: 'DISABLED', reason: 'Removal fixture cleanup' },
+        }),
+      )
+    await api.POST('/api/v1/auth/logout', { body: { refreshToken: login.refreshToken } })
+  }
+})
+
 test('teacher preset persists filters and separates weekly exceptions from term load (7.2-F3)', async ({
   page,
   baseURL,
