@@ -1754,7 +1754,8 @@
     "kind": {
       "CANCELLED": "Bekor qilinadi",
       "MOVED": "Koʻchiriladi",
-      "REPLACED": "Xona almashadi"
+      "REPLACED": "Xona almashadi",
+      "ADD": "Qoʻshimcha dars"
     },
     "confirm": {
       "publishTitle": "«{{name}}» eʼlon qilinsinmi?",
@@ -1768,7 +1769,13 @@
     "overScheduledBy": "Rejadan {{hours}} soat ortiq",
     "replacementTeacher": "Oʻrnini bosuvchi oʻqituvchi",
     "sameTeacher": "Oʻsha oʻqituvchi",
-    "sameRoom": "Oʻsha xona"
+    "sameRoom": "Oʻsha xona",
+    "addSingleClass": "Bir martalik dars qoʻshish",
+    "sourceClass": "Asosiy dars",
+    "singleClassDate": "Bir martalik dars sanasi",
+    "singleClassAdded": "Bir martalik dars qoʻshildi",
+    "noSourceClass": "Asosiy dars mavjud emas. Avval jadvalga dars qoʻshing.",
+    "chooseSourceClass": "Asosiy darsni tanlang"
   },
   "errors": {
     "NETWORK_ERROR": "Tarmoq xatosi — internet aloqasini tekshiring",

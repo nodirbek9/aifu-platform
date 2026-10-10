@@ -1754,7 +1754,8 @@
     "kind": {
       "CANCELLED": "Cancelled",
       "MOVED": "Moved",
-      "REPLACED": "Another room"
+      "REPLACED": "Another room",
+      "ADD": "Additional class"
     },
     "confirm": {
       "publishTitle": "Publish “{{name}}”?",
@@ -1768,7 +1769,13 @@
     "overScheduledBy": "{{hours}} h over the plan",
     "replacementTeacher": "Replacement teacher",
     "sameTeacher": "The same teacher",
-    "sameRoom": "The same room"
+    "sameRoom": "The same room",
+    "addSingleClass": "Add a single class",
+    "sourceClass": "Source class",
+    "singleClassDate": "Single class date",
+    "singleClassAdded": "Single class added",
+    "noSourceClass": "No source class exists. Add a class to the timetable first.",
+    "chooseSourceClass": "Choose a source class"
   },
   "errors": {
     "NETWORK_ERROR": "Network error — check your internet connection",
