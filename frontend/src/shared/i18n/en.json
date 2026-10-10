@@ -1635,6 +1635,23 @@
       "changeEnrollmentStatus": "Change enrollment status",
       "statusChanged": "Enrollment status changed",
       "reasonRequired": "Enter a reason for the status change"
+    },
+    "removeStudent": {
+      "title": "Deactivate student",
+      "description": "The account will be disabled and access revoked. Only the selected courses will be withdrawn; history is preserved. These actions are separate: successful changes remain if another action fails.",
+      "selectCourses": "Courses to withdraw from",
+      "allEligible": "Select all eligible courses",
+      "confirm": "Confirm deactivation and selected withdrawals",
+      "deactivateOnly": "Deactivation only: no courses selected for withdrawal.",
+      "partial": "Some actions are unfinished. Confirmed changes are preserved.",
+      "retryRemaining": "Retry unfinished actions",
+      "complete": "All selected actions are complete.",
+      "outcome": {
+        "succeeded": "Completed",
+        "already-satisfied": "Already complete",
+        "blocked": "Not attempted",
+        "failed": "Failed"
+      }
     }
   },
   "builder": {

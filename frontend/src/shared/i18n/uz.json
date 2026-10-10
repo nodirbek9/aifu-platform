@@ -1635,6 +1635,23 @@
       "changeEnrollmentStatus": "Kursga yozilish holatini oʻzgartirish",
       "statusChanged": "Kursga yozilish holati oʻzgartirildi",
       "reasonRequired": "Holatni oʻzgartirish sababini kiriting"
+    },
+    "removeStudent": {
+      "title": "Talaba hisobini o?chirish",
+      "description": "Hisob faolsizlantiriladi va kirish huquqi bekor qilinadi. Talaba faqat tanlangan kurslardan chiqariladi; tarix saqlanadi. Amallar alohida bajariladi: bir amal xato bersa, muvaffaqiyatli o?zgarishlar saqlanib qoladi.",
+      "selectCourses": "Chiqariladigan kurslar",
+      "allEligible": "Barcha mos kurslarni tanlash",
+      "confirm": "Hisobni faolsizlantirish va tanlangan kurslardan chiqarishni tasdiqlash",
+      "deactivateOnly": "Faqat hisob faolsizlantiriladi: chiqarish uchun kurs tanlanmagan.",
+      "partial": "Ayrim amallar tugallanmagan. Tasdiqlangan o?zgarishlar saqlangan.",
+      "retryRemaining": "Tugallanmagan amallarni qayta bajarish",
+      "complete": "Barcha tanlangan amallar bajarildi.",
+      "outcome": {
+        "succeeded": "Bajarildi",
+        "already-satisfied": "Avval bajarilgan",
+        "blocked": "Bajarishga kirishilmadi",
+        "failed": "Xato"
+      }
     }
   },
   "builder": {

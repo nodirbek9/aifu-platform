@@ -19,6 +19,7 @@ import { STATUS_TONE, STATUSES } from './model'
 import { StudentGroupCard } from './student-group-card'
 import { StudentEnrollmentsCard } from './student-enrollments-card'
 import { TeacherWorkCard } from './teacher-work-card'
+import { RemoveStudentDialog } from './remove-student-dialog'
 import {
   useResetPassword,
   useRolesQuery,
@@ -45,6 +46,7 @@ export function UserPage() {
   const { t } = useTranslation()
   const { userId = '' } = useParams()
   const user = useUserQuery(userId)
+  const [removing, setRemoving] = useState(false)
   if (user.isPending) return <Skeleton className="h-96" />
   if (user.isError) {
     return (
@@ -98,9 +100,19 @@ export function UserPage() {
         <div className="grid grid-cols-1 gap-6">
           <RolesCard key={`roles-${(data.roles ?? []).join()}`} user={data} />
           <StatusCard user={data} />
+          {(data.roles ?? []).includes('STUDENT') && (
+            <Button
+              variant="danger"
+              className="h-auto min-h-11 justify-self-start whitespace-normal"
+              onClick={() => setRemoving(true)}
+            >
+              {t('admin.removeStudent.title')}
+            </Button>
+          )}
           <PasswordCard user={data} />
         </div>
       </div>
+      {removing && <RemoveStudentDialog key={userId} user={data} onClose={() => setRemoving(false)} />}
     </div>
   )
 }
