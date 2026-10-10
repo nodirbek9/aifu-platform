@@ -567,6 +567,32 @@ export function BuilderPage() {
         <WeekPreview
           timetableId={selected.id ?? ''}
           scope={scope}
+          status={selected.status}
+          sourceClasses={(entries.data ?? []).flatMap((entry) =>
+            entry.id === undefined
+              ? []
+              : [
+                  {
+                    value: entry.id,
+                    label: [
+                      entry.subjectCode,
+                      entry.courseTitle,
+                      entry.dayOfWeek === undefined ? undefined : t(`builder.days.${entry.dayOfWeek}`),
+                      entry.startsAt?.slice(0, 5),
+                      entry.teacherName,
+                      entry.roomLabel,
+                      entry.groups?.map((group) => group.code).join(', '),
+                      entry.subgroup,
+                    ]
+                      .filter(Boolean)
+                      .join(' · '),
+                  },
+                ],
+          )}
+          onCreateSource={() => {
+            setPreview(false)
+            if (editable) setEditing({ start: startFor(1, orderedSlots[0]?.id ?? '') })
+          }}
           onClose={() => {
             setPreview(false)
           }}

@@ -1,6 +1,9 @@
 import { expect, test, type APIRequestContext, type Page } from '@playwright/test'
 import { restoreDemoTimetable } from './db'
 import { demoPassword, isPhone, signIn, texts } from './support'
+import createClient from 'openapi-fetch'
+import type { components, paths } from '../src/shared/api/schema'
+import { expectFitsScreen, shot } from './support'
 
 const { uz } = texts
 
@@ -16,6 +19,7 @@ async function adminRequest(request: APIRequestContext): Promise<Record<string, 
   const login = await request.post('/api/v1/auth/login', {
     data: { identifier: 'admin', password: demoPassword() },
   })
+  expect(login.ok(), 'The running backend must accept the demo administrator login').toBe(true)
   const { accessToken } = (await login.json()) as { accessToken: string }
   return { Authorization: `Bearer ${accessToken}` }
 }
@@ -145,4 +149,239 @@ test.describe('the administrator builds a week (spec §9, step 1)', () => {
       .poll(() => page.evaluate(() => document.documentElement.scrollWidth))
       .toBeLessThanOrEqual(width + 1)
   })
+})
+
+// Independent of the desktop-only drag-and-drop flow: ADD works on both projects.
+test('week preview adds one dated class and refreshes after removal (7.5-F3)', async ({
+  page,
+  request,
+  baseURL,
+}, testInfo) => {
+  test.setTimeout(180_000)
+  const headers = await adminRequest(request)
+  const api = createClient<paths>({ baseUrl: baseURL, headers })
+  type Schemas = components['schemas']
+  async function result<T>(call: Promise<{ data?: T; response: Response }>): Promise<T> {
+    const response = await call
+    if (!response.response.ok || response.data === undefined) {
+      throw new Error(
+        `Fixture API failed: ${response.response.status} ${new URL(response.response.url).pathname}`,
+      )
+    }
+    return response.data
+  }
+  const timetables = await result(api.GET('/api/v1/admin/timetables'))
+  const baseline = timetables.find((item) => item.status === 'PUBLISHED')
+  if (!baseline?.id || !baseline.termId || !baseline.termStartsOn)
+    throw new Error('A published demo timetable is required')
+  const templates = await result(
+    api.GET('/api/v1/admin/timetables/{id}/entries', {
+      params: { path: { id: baseline.id }, query: { locale: 'uz' } },
+    }),
+  )
+  const template = templates.find((item) => item.courseId && item.teacherUserId)
+  if (!template?.courseId || !template.teacherUserId) throw new Error('A real source class is required')
+  const slots = await result(api.GET('/api/v1/timetable/pair-slots'))
+  const pairs = slots
+    .filter((slot) => slot.shift === 'MORNING')
+    .sort((a, b) => (a.pairNo ?? 0) - (b.pairNo ?? 0))
+  const first = pairs[0]
+  const second = pairs[1]
+  if (!first?.id || !second?.id) throw new Error('Two morning pairs are required')
+  const marker = `E2E-TF3-${testInfo.project.name}-${Date.now()}`
+  let timetableId: string | undefined
+  let groupId: string | undefined
+  let roomId: string | undefined
+  const shiftDate = (date: string, days: number) => {
+    const value = new Date(`${date}T12:00:00Z`)
+    value.setUTCDate(value.getUTCDate() + days)
+    return value.toISOString().slice(0, 10)
+  }
+  try {
+    const group = await result(
+      api.POST('/api/v1/admin/groups', {
+        body: {
+          code: marker,
+          courseYear: 1,
+          plannedSize: 10,
+          shift: 'MORNING',
+        },
+      }),
+    )
+    groupId = group.id
+    const room = await result(
+      api.POST('/api/v1/admin/rooms', {
+        body: {
+          number: marker,
+          capacity: 30,
+          roomType: 'COMPUTER_LAB',
+          active: true,
+        },
+      }),
+    )
+    roomId = room.id
+    const timetable = await result(
+      api.POST('/api/v1/admin/timetables', {
+        body: {
+          name: marker,
+          termId: baseline.termId,
+        },
+      }),
+    )
+    timetableId = timetable.id
+    if (!timetableId || !groupId || !roomId) throw new Error('Missing fixture identifiers')
+    const body: Schemas['EntryRequest'] = {
+      courseId: template.courseId,
+      teacherUserId: template.teacherUserId,
+      groupIds: [groupId],
+      roomId,
+      sessionType: template.sessionType ?? 'LECTURE',
+      dayOfWeek: 1,
+      weekParity: 'EVERY',
+      pairSlotId: first.id,
+    }
+    const source = await result(
+      api.POST('/api/v1/admin/timetables/{id}/entries', {
+        params: { path: { id: timetableId }, query: { locale: 'uz' } },
+        body,
+      }),
+    )
+    const other = await result(
+      api.POST('/api/v1/admin/timetables/{id}/entries', {
+        params: { path: { id: timetableId }, query: { locale: 'uz' } },
+        body: { ...body, pairSlotId: second.id },
+      }),
+    )
+    if (!source.id || !other.id) throw new Error('Missing source identifiers')
+    const fixtureTimetableId = timetableId
+    const weekAt = (date: string) =>
+      result(
+        api.GET('/api/v1/admin/timetables/{id}/week', {
+          params: { path: { id: fixtureTimetableId }, query: { groupId, date, locale: 'uz' } },
+        }),
+      )
+    const load = () =>
+      result(
+        api.GET('/api/v1/admin/timetables/{id}/load', {
+          params: { path: { id: fixtureTimetableId }, query: { groupId, locale: 'uz' } },
+        }),
+      )
+    // Pick actual term dates using the server's holiday calendar, rather than assuming a free date.
+    let week = await weekAt(baseline.termStartsOn)
+    let monday: string | undefined
+    let addedDate: string | undefined
+    for (let attempt = 0; attempt < 8; attempt++) {
+      monday = week.days?.find((day) => day.classes?.some((item) => item.entryId === source.id))?.date
+      addedDate = week.days?.find(
+        (day) => day.date && !day.holiday && new Date(`${day.date}T12:00:00Z`).getUTCDay() === 2,
+      )?.date
+      if (monday && addedDate) break
+      week = await weekAt(shiftDate(week.weekStart ?? baseline.termStartsOn, 7))
+    }
+    if (!monday || !addedDate) throw new Error('No suitable non-holiday week in the term')
+    const originalLoad = await load()
+    const hours = (rows: Schemas['LoadRow'][]) =>
+      rows.reduce((total, row) => total + (row.scheduledHours ?? 0), 0)
+    await signIn(page, 'admin')
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    const address = `/admin/timetable?tt=${timetableId}&view=group&id=${groupId}`
+    await page.goto(address)
+    const openPreview = async () => {
+      await page.getByRole('button', { name: uz.builder.weekPreview, exact: true }).click()
+      const dialog = page.getByRole('dialog')
+      await dialog.getByLabel(uz.builder.weekOf).fill(addedDate ?? '')
+      const action = dialog.getByRole('button', { name: uz.builder.addSingleClass })
+      await action.focus()
+      await page.keyboard.press('Enter')
+      return dialog
+    }
+    let dialog = await openPreview()
+    await choose(page, uz.builder.sourceClass, new RegExp((source.startsAt ?? '').slice(0, 5)))
+    await choose(page, uz.builder.pair, new RegExp((first.startsAt ?? '').slice(0, 5)))
+    const reason = `${marker} additional class`
+    await dialog.getByLabel(uz.admin.reason).fill(reason)
+    await expect(dialog.getByLabel(uz.builder.singleClassDate)).toHaveValue(addedDate)
+    await dialog.getByRole('button', { name: uz.builder.addSingleClass }).click()
+    await expect(dialog.getByText(uz.builder.singleClassAdded)).toBeVisible()
+    const checkAdded = async () => {
+      const result = await weekAt(addedDate ?? '')
+      expect(
+        result.days
+          ?.find((day) => day.date === addedDate)
+          ?.classes?.filter((item) => item.entryId === source.id),
+      ).toHaveLength(1)
+      expect(
+        result.days?.find((day) => day.date === monday)?.classes?.some((item) => item.entryId === source.id),
+      ).toBe(true)
+    }
+    await checkAdded()
+    expect(hours(await load())).toBeGreaterThan(hours(originalLoad))
+    await expectFitsScreen(page)
+    await page.reload()
+    dialog = await openPreview()
+    await choose(page, uz.builder.sourceClass, new RegExp((source.startsAt ?? '').slice(0, 5)))
+    await expect(dialog.getByText(reason, { exact: false })).toBeVisible()
+    await checkAdded()
+    const nextDate = shiftDate(addedDate, 7)
+    await dialog.getByLabel(uz.builder.weekOf).fill(nextDate)
+    const next = await weekAt(nextDate)
+    expect(
+      next.days?.find((day) => day.date === nextDate)?.classes?.some((item) => item.entryId === source.id),
+    ).toBe(false)
+    expect(next.days?.flatMap((day) => day.classes ?? []).some((item) => item.entryId === source.id)).toBe(
+      true,
+    )
+    await dialog.getByLabel(uz.builder.weekOf).fill(addedDate)
+    await choose(page, uz.builder.sourceClass, new RegExp((other.startsAt ?? '').slice(0, 5)))
+    await choose(page, uz.builder.pair, new RegExp((first.startsAt ?? '').slice(0, 5)))
+    await dialog.getByLabel(uz.admin.reason).fill(`${marker} conflict`)
+    const refused = page.waitForResponse(
+      (response) =>
+        response.request().method() === 'POST' && response.url().includes(`/${other.id}/exceptions`),
+    )
+    await dialog.getByRole('button', { name: uz.builder.addSingleClass }).click()
+    expect((await refused).status()).toBe(409)
+    for (const kind of ['TEACHER', 'GROUP', 'ROOM'] as const) {
+      await expect(dialog.getByRole('alert').filter({ hasText: uz.builder.conflict[kind] })).toBeVisible()
+    }
+    await expect(dialog.getByText(uz.common.requestId, { exact: false })).toBeVisible()
+    await expectFitsScreen(page)
+    await choose(page, uz.builder.sourceClass, new RegExp((source.startsAt ?? '').slice(0, 5)))
+    await shot(page, '7.5-F3', `preview.light.uz.${testInfo.project.name}`)
+    const weekRefresh = page.waitForResponse(
+      (response) =>
+        response.url().includes(`/timetables/${timetableId}/week`) && response.request().method() === 'GET',
+    )
+    const loadRefresh = page.waitForResponse(
+      (response) =>
+        response.url().includes(`/timetables/${timetableId}/load`) && response.request().method() === 'GET',
+    )
+    await dialog.getByRole('button', { name: uz.builder.deleteChange }).focus()
+    await page.keyboard.press('Enter')
+    expect((await weekRefresh).ok()).toBe(true)
+    expect((await loadRefresh).ok()).toBe(true)
+    await expect(dialog.getByText(reason, { exact: false })).toHaveCount(0)
+    expect(hours(await load())).toBe(hours(originalLoad))
+    const removed = await weekAt(addedDate)
+    expect(
+      removed.days
+        ?.find((day) => day.date === addedDate)
+        ?.classes?.some((item) => item.entryId === source.id),
+    ).toBe(false)
+    expect(
+      removed.days?.find((day) => day.date === monday)?.classes?.some((item) => item.entryId === source.id),
+    ).toBe(true)
+    await page.keyboard.press('Escape')
+    await expect(page.getByRole('dialog')).toHaveCount(0)
+    await expectFitsScreen(page)
+  } finally {
+    // Only the isolated draft and its own reference records are removed; the published timetable is untouched.
+    for (const [path, id] of [
+      ['timetables', timetableId],
+      ['groups', groupId],
+      ['rooms', roomId],
+    ] as const) {
+      if (id) expect((await request.delete(`/api/v1/admin/${path}/${id}`, { headers })).ok()).toBe(true)
+    }
+  }
 })
