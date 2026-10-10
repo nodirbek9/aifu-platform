@@ -16,12 +16,13 @@ import { Pagination } from '@/shared/ui/pagination'
 import { Select } from '@/shared/ui/select'
 import { Skeleton } from '@/shared/ui/skeleton'
 import { Switch } from '@/shared/ui/switch'
+import { Tabs, TabsList, TabsTrigger } from '@/shared/ui/tabs'
 import { Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow } from '@/shared/ui/table'
 import { useAllGroupsQuery } from './reference-queries'
 import { STATUS_TONE, STATUSES } from './model'
 import { useCreateUser, useRolesQuery, useUsersQuery, type CreateUserInput } from './users-queries'
 
-/** A-05 — the users: search, filter by role and status (all kept in the address), open one, add one. */
+/** A-05 / 7.2-F3 — URL-backed user filters and a teacher preset on the existing list. */
 export function UsersPage() {
   const { t } = useTranslation()
   const locale = useLocale()
@@ -65,6 +66,17 @@ export function UsersPage() {
           </div>
         }
       />
+      <Tabs
+        value={filter.role === 'TEACHER' ? 'teachers' : 'users'}
+        onValueChange={(value) => {
+          setParam('role', value === 'teachers' ? 'TEACHER' : 'all')
+        }}
+      >
+        <TabsList aria-label={t('admin.role')}>
+          <TabsTrigger value="users">{t('nav.adminUsers')}</TabsTrigger>
+          <TabsTrigger value="teachers">{t('admin.teacherWork.tab')}</TabsTrigger>
+        </TabsList>
+      </Tabs>
       <div className="flex flex-wrap items-end gap-3">
         <Input
           className="w-72"

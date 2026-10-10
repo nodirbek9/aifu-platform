@@ -18,6 +18,7 @@ import { useToast } from '@/shared/ui/toast'
 import { STATUS_TONE, STATUSES } from './model'
 import { StudentGroupCard } from './student-group-card'
 import { StudentEnrollmentsCard } from './student-enrollments-card'
+import { TeacherWorkCard } from './teacher-work-card'
 import {
   useResetPassword,
   useRolesQuery,
@@ -39,7 +40,7 @@ function Problem({ error }: { error: unknown }) {
   )
 }
 
-/** A-05 / 7.1-F4 — account controls and student group/enrollment sections. */
+/** A-05 / 7.1-F4 / 7.2-F3 — account controls and sections for each of the user's roles. */
 export function UserPage() {
   const { t } = useTranslation()
   const { userId = '' } = useParams()
@@ -87,6 +88,11 @@ export function UserPage() {
                 <StudentEnrollmentsCard key={`enrollments-${data.id ?? ''}`} user={data} />
               </section>
             </>
+          )}
+          {(data.roles ?? []).includes('TEACHER') && (
+            <section aria-label={t('admin.teacherWork.tab')}>
+              <TeacherWorkCard key={`teacher-work-${data.id ?? ''}`} user={data} />
+            </section>
           )}
         </div>
         <div className="grid grid-cols-1 gap-6">

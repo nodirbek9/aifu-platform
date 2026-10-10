@@ -7,6 +7,273 @@ import { demoPassword, expectFitsScreen, shot, signIn, texts } from './support'
 const { uz } = texts
 type Schemas = components['schemas']
 
+test('teacher preset persists filters and separates weekly exceptions from term load (7.2-F3)', async ({
+  page,
+  baseURL,
+}, testInfo) => {
+  test.setTimeout(240_000)
+  const api = createClient<paths>({ baseUrl: baseURL })
+  const login = await result(
+    api.POST('/api/v1/auth/login', { body: { identifier: 'admin', password: demoPassword() } }),
+  )
+  if (!login.accessToken || !login.refreshToken) throw new Error('Authentication omitted tokens')
+  api.use({
+    onRequest({ request }) {
+      request.headers.set('Authorization', `Bearer ${login.accessToken}`)
+    },
+  })
+  const suffix = randomUUID().slice(0, 8)
+  const teachers: string[] = []
+  const courses: string[] = []
+  let timetableId: string | undefined
+  let groupId: string | undefined
+  try {
+    const year = await result(
+      api.POST('/api/v1/admin/academic-years', {
+        body: {
+          code: `F3-${suffix}`,
+          startsOn: '2026-10-05',
+          endsOn: '2026-10-30',
+        },
+      }),
+    )
+    const yearId = id(year)
+    const term = await result(
+      api.POST('/api/v1/admin/academic-years/{id}/terms', {
+        params: { path: { id: yearId } },
+        body: {
+          name: `F3 term ${suffix}`,
+          startsOn: '2026-10-05',
+          endsOn: '2026-10-30',
+          ordinal: 1,
+        },
+      }),
+    )
+    const termId = id(term)
+    for (const name of ['Original', 'Replacement']) {
+      teachers.push(
+        id(
+          await result(
+            api.POST('/api/v1/admin/users', {
+              body: {
+                username: `f3.${suffix}.${name.toLowerCase()}`,
+                email: `f3.${suffix}.${name}@example.test`,
+                fullName: `F3 ${suffix} ${name}`,
+                roles: ['TEACHER'],
+              },
+            }),
+          ),
+        ),
+      )
+    }
+    const teacherId = teachers[0]
+    const replacementId = teachers[1]
+    if (!teacherId || !replacementId) throw new Error('Missing fixture teachers')
+    for (const teacher of teachers)
+      await result(
+        api.PUT('/api/v1/admin/users/{id}/status', {
+          params: { path: { id: teacher } },
+          body: { status: 'ACTIVE', reason: 'F3 teacher fixture' },
+        }),
+      )
+    const subjects = await result(api.GET('/api/v1/admin/subjects', { params: { query: { size: 100 } } }))
+    const subject = subjects.content?.[0]
+    if (!subject) throw new Error('A subject is required for the teacher fixture')
+    for (const title of ['Scheduled', 'Unscheduled']) {
+      const courseId = id(
+        await result(
+          api.POST('/api/v1/admin/courses', {
+            body: {
+              subjectId: id(subject),
+              termId,
+              cohortCode: `F3-${suffix}-${title}`,
+              credits: 1,
+              totalHours: 36,
+            },
+          }),
+        ),
+      )
+      courses.push(courseId)
+      await result(
+        api.PUT('/api/v1/admin/courses/{id}/translations/{locale}', {
+          params: { path: { id: courseId, locale: 'uz' } },
+          body: { title: `F3 ${suffix} ${title}` },
+        }),
+      )
+      for (const teacher of teachers)
+        await result(
+          api.POST('/api/v1/admin/courses/{id}/teachers', {
+            params: { path: { id: courseId } },
+            body: { teacherUserId: teacher, teacherRole: 'LEAD' },
+          }),
+        )
+    }
+    const scheduled = courses[0]
+    const unscheduled = courses[1]
+    if (!scheduled || !unscheduled) throw new Error('Missing fixture courses')
+    await result(
+      api.PUT('/api/v1/admin/courses/{id}/session-allocations', {
+        params: { path: { id: scheduled } },
+        body: { sessionType: 'LECTURE', allocatedHours: 36 },
+      }),
+    )
+    groupId = id(await result(api.POST('/api/v1/admin/groups', { body: { code: `F3-${suffix}` } })))
+    timetableId = id(
+      await result(
+        api.POST('/api/v1/admin/timetables', { body: { name: `F3 timetable ${suffix}`, termId } }),
+      ),
+    )
+    const slots = await result(api.GET('/api/v1/admin/pair-slots'))
+    if (slots.length < 3) throw new Error('Three pair slots are required')
+    const entries: string[] = []
+    for (const slot of slots.slice(0, 3)) {
+      entries.push(
+        id(
+          await result(
+            api.POST('/api/v1/admin/timetables/{id}/entries', {
+              params: { path: { id: timetableId } },
+              body: {
+                courseId: scheduled,
+                teacherUserId: teacherId,
+                groupIds: [groupId],
+                pairSlotId: id(slot),
+                dayOfWeek: 1,
+                sessionType: 'LECTURE',
+                weekParity: 'EVERY',
+              },
+            }),
+          ),
+        ),
+      )
+    }
+    const cancelled = entries[1]
+    const replaced = entries[2]
+    if (!cancelled || !replaced) throw new Error('Missing fixture entries')
+    await result(
+      api.POST('/api/v1/admin/timetable-entries/{entryId}/exceptions', {
+        params: { path: { entryId: cancelled } },
+        body: { kind: 'CANCELLED', onDate: '2026-10-05', reason: 'F3 cancellation' },
+      }),
+    )
+    await result(
+      api.POST('/api/v1/admin/timetable-entries/{entryId}/exceptions', {
+        params: { path: { entryId: replaced } },
+        body: {
+          kind: 'REPLACED',
+          onDate: '2026-10-05',
+          newTeacherUserId: replacementId,
+          reason: 'F3 replacement',
+        },
+      }),
+    )
+
+    await signIn(page, 'admin')
+    await page.goto(`/admin/users?q=F3+${suffix}&status=ACTIVE&page=2`)
+    await page.getByRole('tab', { name: uz.admin.teacherWork.tab }).focus()
+    await page.keyboard.press('Enter')
+    await expect(page).toHaveURL(/role=TEACHER/)
+    expect(new URL(page.url()).searchParams.get('page')).toBeNull()
+    expect(new URL(page.url()).searchParams.get('q')).toBe(`F3 ${suffix}`)
+    expect(new URL(page.url()).searchParams.get('status')).toBe('ACTIVE')
+    await page.reload()
+    await expect(page.getByRole('tab', { name: uz.admin.teacherWork.tab })).toHaveAttribute(
+      'aria-selected',
+      'true',
+    )
+    await page.getByRole('link', { name: `F3 ${suffix} Original`, exact: true }).click()
+    const card = page.getByRole('region', { name: uz.admin.teacherWork.tab, exact: true })
+    await choose(page, uz.admin.academicYear, year.code ?? '', card)
+    await expect(card.getByRole('link', { name: `F3 ${suffix} Unscheduled`, exact: true })).toHaveAttribute(
+      'href',
+      `/admin/structure/courses/${unscheduled}`,
+    )
+    await card.getByLabel(uz.admin.date, { exact: true }).fill('2026-10-05')
+    const weekly = card.getByRole('region', { name: uz.admin.teacherWork.weeklyHours })
+    await expect(weekly.getByText('2', { exact: true })).toBeVisible()
+    const week = await result(
+      api.GET('/api/v1/admin/timetables/{id}/week', {
+        params: { path: { id: timetableId }, query: { teacherId, date: '2026-10-05', locale: 'uz' } },
+      }),
+    )
+    const classes = week.days?.flatMap((day) => day.classes ?? []) ?? []
+    expect(classes.some((item) => item.status === 'CANCELLED')).toBe(true)
+    expect(classes.some((item) => item.status === 'REPLACED' && item.teacherUserId === replacementId)).toBe(
+      true,
+    )
+    const load = await result(
+      api.GET('/api/v1/admin/timetables/{id}/load', {
+        params: { path: { id: timetableId }, query: { teacherId, locale: 'uz' } },
+      }),
+    )
+    const termLoad = card.getByRole('region', { name: uz.admin.teacherWork.termLoad })
+    for (const field of ['plannedHours', 'scheduledHours', 'remainingHours'] as const) {
+      const total = load.reduce((sum, row) => sum + (row[field] ?? 0), 0)
+      await expect(
+        termLoad
+          .locator('dd')
+          .filter({ hasText: new RegExp(`^${total}$`) })
+          .first(),
+      ).toBeVisible()
+    }
+    expect(load.reduce((sum, row) => sum + (row.scheduledHours ?? 0), 0)).toBeGreaterThan(2)
+    await card.getByLabel(uz.admin.date, { exact: true }).fill('2026-10-12')
+    await expect(weekly.getByText('6', { exact: true })).toBeVisible()
+    await card.getByLabel(uz.admin.date, { exact: true }).fill('2026-10-05')
+    await expect(weekly.getByText('2', { exact: true })).toBeVisible()
+    await page.emulateMedia({ reducedMotion: 'reduce' })
+    for (const width of [390, 768, 1440]) {
+      await page.setViewportSize({ width, height: 900 })
+      for (const locale of ['uz', 'ru', 'en'] as const) {
+        for (const theme of ['light', 'dark'] as const) {
+          await page.evaluate(
+            ({ locale, theme }) => {
+              localStorage.setItem('aifu-locale', locale)
+              localStorage.setItem('aifu-theme', theme)
+            },
+            { locale, theme },
+          )
+          await page.reload()
+          const localizedCard = page.getByRole('region', {
+            name: texts[locale].admin.teacherWork.tab,
+            exact: true,
+          })
+          await choose(page, texts[locale].admin.academicYear, year.code ?? '', localizedCard)
+          await expect(
+            localizedCard.getByRole('region', { name: texts[locale].admin.teacherWork.termLoad }),
+          ).toBeVisible()
+          await expectFitsScreen(page)
+          await shot(page, 'teacher-work', `${width}.${theme}.${locale}.${testInfo.project.name}`)
+        }
+      }
+    }
+  } finally {
+    if (timetableId) {
+      const deleted = await api.DELETE('/api/v1/admin/timetables/{id}', {
+        params: { path: { id: timetableId } },
+      })
+      expect(deleted.response.ok, 'fixture timetable cleanup').toBe(true)
+    }
+    for (const courseId of courses) {
+      const deleted = await api.DELETE('/api/v1/admin/courses/{id}', { params: { path: { id: courseId } } })
+      expect(deleted.response.ok, 'fixture course cleanup').toBe(true)
+    }
+    if (groupId)
+      await result(
+        api.PUT('/api/v1/admin/groups/{id}/archived', {
+          params: { path: { id: groupId }, query: { value: true } },
+        }),
+      )
+    for (const teacherId of teachers)
+      await result(
+        api.PUT('/api/v1/admin/users/{id}/status', {
+          params: { path: { id: teacherId } },
+          body: { status: 'DISABLED', reason: 'F3 fixture cleanup' },
+        }),
+      )
+    await api.POST('/api/v1/auth/logout', { body: { refreshToken: login.refreshToken } })
+  }
+})
+
 /** Fail with HTTP metadata only: authentication responses must never enter test logs. */
 async function result<T>(request: Promise<{ data?: T; response: Response }>): Promise<T> {
   const response = await request
