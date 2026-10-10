@@ -1,4 +1,4 @@
-import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient, type QueryClient } from '@tanstack/react-query'
 import type { components } from '@/shared/api/schema'
 import { api, unwrap } from '@/shared/api/client'
 import type { Locale } from '@/shared/i18n'
@@ -179,10 +179,7 @@ export function useAddException(entryId: string, locale: Locale) {
           body: request,
         }),
       ),
-    onSettled: async () => {
-      await queryClient.invalidateQueries({ queryKey: builderKeys.exceptions(entryId) })
-      await queryClient.invalidateQueries({ queryKey: ['timetable'] })
-    },
+    onSettled: () => invalidateExceptionQueries(queryClient, entryId),
   })
 }
 
@@ -193,8 +190,24 @@ export function useDeleteException(entryId: string) {
       unwrap(
         api.DELETE('/api/v1/admin/timetable-exceptions/{exceptionId}', { params: { path: { exceptionId } } }),
       ),
-    onSettled: () => queryClient.invalidateQueries({ queryKey: builderKeys.exceptions(entryId) }),
+    onSettled: () => invalidateExceptionQueries(queryClient, entryId),
   })
+}
+
+/** A dated change affects every view of occurrences, including other scopes and locales. */
+async function invalidateExceptionQueries(queryClient: QueryClient, entryId: string) {
+  await Promise.all(
+    [
+      builderKeys.exceptions(entryId),
+      ['admin', 'week-preview'],
+      ['admin', 'week'],
+      ['admin', 'timetable-load'],
+      ['admin', 'teaching-load'],
+      ['admin', 'courses', 'teacher-work'],
+      ['teacher'],
+      ['timetable'],
+    ].map((queryKey) => queryClient.invalidateQueries({ queryKey })),
+  )
 }
 
 export function useWeekPreviewQuery(
