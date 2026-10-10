@@ -1,8 +1,6 @@
 package uz.aifu.lms.enrollment.api;
 
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.ExampleObject;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -91,24 +89,7 @@ public class AdminEnrollmentController {
                     "Requires courseId or userId. When both are supplied, their filters intersect."
                             + " Unknown userId returns an empty page. Default order is enrolledAt"
                             + " descending, then id ascending; explicit sorting is preserved.")
-    @ApiResponse(
-            responseCode = "200",
-            description = "Paginated enrollment summaries",
-            content =
-                    @Content(
-                            mediaType = "application/json",
-                            examples =
-                                    @ExampleObject(
-                                            value =
-                                                    """
-                            {"content":[{"id":"10000000-0000-0000-0000-000000000001",
-                            "courseId":"20000000-0000-0000-0000-000000000001",
-                            "subjectCode":"DAS1110","cohortCode":"2026","termName":"2026 Fall",
-                            "studentUserId":"30000000-0000-0000-0000-000000000001",
-                            "studentFullName":"Example student","status":"ACTIVE","attemptNo":1,
-                            "enrolledAt":"2026-09-01T00:00:00Z"}],"page":0,"size":20,
-                            "totalElements":1,"totalPages":1,"hasNext":false,"hasPrevious":false}
-                            """)))
+    @ApiResponse(responseCode = "200", description = "Paginated enrollment summaries")
     @ApiResponse(responseCode = "400", description = "Missing filters or invalid query parameter")
     @ApiResponse(responseCode = "401", description = "Authentication required")
     @ApiResponse(responseCode = "403", description = "ENROLLMENT_READ permission required")

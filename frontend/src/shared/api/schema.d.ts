@@ -8425,31 +8425,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    /**
-                     * @example {
-                     *       "content": [
-                     *         {
-                     *           "attemptNo": 1,
-                     *           "cohortCode": "2026",
-                     *           "courseId": "20000000-0000-0000-0000-000000000001",
-                     *           "enrolledAt": "2026-09-01T00:00:00Z",
-                     *           "id": "10000000-0000-0000-0000-000000000001",
-                     *           "status": "ACTIVE",
-                     *           "studentFullName": "Example student",
-                     *           "studentUserId": "30000000-0000-0000-0000-000000000001",
-                     *           "subjectCode": "DAS1110",
-                     *           "termName": "2026 Fall"
-                     *         }
-                     *       ],
-                     *       "hasNext": false,
-                     *       "hasPrevious": false,
-                     *       "page": 0,
-                     *       "size": 20,
-                     *       "totalElements": 1,
-                     *       "totalPages": 1
-                     *     }
-                     */
-                    "application/json": unknown;
+                    "*/*": components["schemas"]["PageResponseEnrollmentSummary"];
                 };
             };
             /** @description Missing filters or invalid query parameter */
