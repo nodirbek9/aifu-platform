@@ -207,5 +207,15 @@ describe('learning-path helpers', () => {
         error: 'QUIZ_COURSE_MISMATCH',
       })
     })
+
+    it('rejects a single quiz lookup that carries no courseId', () => {
+      const result = resolveGrantTarget({
+        courseId,
+        targetQuizId: 'quiz-2',
+        quizzes: [],
+        quiz: { id: 'quiz-2' },
+      })
+      expect(result).toEqual({ valid: false, error: 'QUIZ_COURSE_MISMATCH' })
+    })
   })
 })

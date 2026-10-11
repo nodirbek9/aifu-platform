@@ -208,7 +208,7 @@ export function resolveGrantTarget(input: ResolveGrantTargetInput): ResolveGrant
         return { valid: false, error: 'QUIZ_COURSE_MISMATCH' }
       }
     } else if (quiz?.id === targetQuizId) {
-      if (quiz.courseId && quiz.courseId !== courseId) {
+      if (quiz.courseId !== courseId) {
         return { valid: false, error: 'QUIZ_COURSE_MISMATCH' }
       }
     } else {
