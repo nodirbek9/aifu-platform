@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Plus } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { useSearchParams } from 'react-router'
 import { textIn } from '@/features/authoring/model'
 import { useCurriculumTreeQuery } from '@/features/authoring/queries'
 import { useCourseQuizzesQuery } from '@/features/authoring/quiz-queries'
@@ -30,14 +31,21 @@ import { useToast } from '@/shared/ui/toast'
 import {
   buildLearningPathConfigRequest,
   isoToCampusDatetimeLocal,
+  resolveGrantTarget,
   useAttemptGrantsQuery,
   useGrantAttempt,
   useLearningPathConfigQuery,
+  useQuizDetailQuery,
   useSaveLearningPathConfig,
   validateGrantReason,
   type AttemptGrantView,
 } from './learning-path-queries'
-import { useCourseEnrollmentsQuery, useCoursesQuery } from './structure-queries'
+import {
+  useAdminCourseQuery,
+  useAdminEnrollmentQuery,
+  useCourseEnrollmentsQuery,
+  useCoursesQuery,
+} from './structure-queries'
 
 function ProblemAlert({ error }: { error: unknown }) {
   const { t } = useTranslation()
@@ -53,16 +61,68 @@ function ProblemAlert({ error }: { error: unknown }) {
 
 export function LearningPathPage() {
   const { t } = useTranslation()
+  const locale = useLocale()
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const courseParam = searchParams.get('course') ?? ''
+  const enrollmentParam = searchParams.get('enrollment') ?? ''
+  const quizParam = searchParams.get('quiz') ?? ''
+
   const coursesQuery = useCoursesQuery({ query: '', status: 'PUBLISHED', page: 0, size: 100 })
   const publishedCourses = coursesQuery.data?.content ?? []
 
-  const [pickedCourseId, setSelectedCourseId] = useState<string>('')
-  const selectedCourseId = pickedCourseId !== '' ? pickedCourseId : (publishedCourses[0]?.id ?? '')
+  const directCourseQuery = useAdminCourseQuery(courseParam)
+  const directCourse = directCourseQuery.data
 
-  const selectedCourse = publishedCourses.find((c) => c.id === selectedCourseId)
+  const directTitle =
+    directCourse?.translations?.find((tr) => tr.locale === locale)?.title ??
+    directCourse?.translations?.[0]?.title ??
+    directCourse?.cohortCode ??
+    ''
+
+  const courseOptions = [...publishedCourses]
+  if (directCourse?.id && !courseOptions.some((c) => c.id === directCourse.id)) {
+    courseOptions.unshift({
+      id: directCourse.id,
+      subjectCode: directCourse.subjectCode,
+      title: directTitle,
+      status: directCourse.status,
+    })
+  }
+
+  const selectedCourseId = courseParam !== '' ? courseParam : (publishedCourses[0]?.id ?? '')
+
+  const selectedCourse = courseOptions.find((c) => c.id === selectedCourseId)
   const courseTitle = selectedCourse
     ? `${selectedCourse.subjectCode ?? ''} — ${selectedCourse.title ?? ''}`
-    : ''
+    : directCourse?.id === selectedCourseId
+      ? `${directCourse.subjectCode ?? ''} — ${directTitle}`
+      : ''
+
+  const handleCourseChange = (nextCourseId: string) => {
+    setSearchParams(
+      (prev) => {
+        const next = new URLSearchParams(prev)
+        if (nextCourseId) {
+          next.set('course', nextCourseId)
+        } else {
+          next.delete('course')
+        }
+        next.delete('enrollment')
+        next.delete('quiz')
+        return next
+      },
+      { replace: true },
+    )
+  }
+
+  const isCourseLoading =
+    coursesQuery.isPending || (courseParam !== '' && directCourseQuery.isPending && courseOptions.length === 0)
+  const isCourseError =
+    (courseParam !== '' && directCourseQuery.isError && courseOptions.length === 0) ||
+    (courseParam === '' && coursesQuery.isError)
+  const courseError =
+    courseParam !== '' && directCourseQuery.isError ? directCourseQuery.error : coursesQuery.error
 
   return (
     <div className="grid grid-cols-1 gap-6">
@@ -78,8 +138,8 @@ export function LearningPathPage() {
           <Select
             label={t('admin.learningPath.selectCourse')}
             value={selectedCourseId}
-            onValueChange={setSelectedCourseId}
-            options={publishedCourses.map((c) => ({
+            onValueChange={handleCourseChange}
+            options={courseOptions.map((c) => ({
               value: c.id ?? '',
               label: `${c.subjectCode ?? ''} — ${c.title ?? ''}`,
             }))}
@@ -88,23 +148,30 @@ export function LearningPathPage() {
         </div>
       </header>
 
-      {coursesQuery.isPending && <Skeleton className="h-96" />}
+      {isCourseLoading && <Skeleton className="h-96" />}
 
-      {coursesQuery.isError && (
+      {isCourseError && (
         <ErrorState
-          problem={toApiProblem(coursesQuery.error)}
+          problem={toApiProblem(courseError)}
           onRetry={() => {
-            void coursesQuery.refetch()
+            if (courseParam !== '') void directCourseQuery.refetch()
+            else void coursesQuery.refetch()
           }}
         />
       )}
 
-      {coursesQuery.isSuccess && publishedCourses.length === 0 && <EmptyState title={t('admin.noCourses')} />}
+      {!isCourseLoading && !isCourseError && courseOptions.length === 0 && (
+        <EmptyState title={t('admin.noCourses')} />
+      )}
 
-      {selectedCourseId !== '' && (
+      {selectedCourseId !== '' && !isCourseError && (
         <>
           <LearningPathCard key={selectedCourseId} courseId={selectedCourseId} courseTitle={courseTitle} />
-          <ExtraAttemptsSection courseId={selectedCourseId} />
+          <ExtraAttemptsSection
+            courseId={selectedCourseId}
+            initialEnrollmentId={enrollmentParam !== '' ? enrollmentParam : undefined}
+            initialQuizId={quizParam !== '' ? quizParam : undefined}
+          />
         </>
       )}
     </div>
@@ -310,9 +377,18 @@ export function LearningPathCard({ courseId, courseTitle }: { courseId: string; 
   )
 }
 
-function ExtraAttemptsSection({ courseId }: { courseId: string }) {
+function ExtraAttemptsSection({
+  courseId,
+  initialEnrollmentId,
+  initialQuizId,
+}: {
+  courseId: string
+  initialEnrollmentId?: string
+  initialQuizId?: string
+}) {
   const { t } = useTranslation()
   const locale = useLocale()
+  const [, setSearchParams] = useSearchParams()
   const [page, setPage] = useState(0)
   const grantsQuery = useAttemptGrantsQuery({ courseId, page, size: 10 })
   const [grantDialogOpen, setGrantDialogOpen] = useState(false)
@@ -320,6 +396,24 @@ function ExtraAttemptsSection({ courseId }: { courseId: string }) {
   const grantsData = grantsQuery.data
   const grants = grantsData?.content ?? []
   const totalPages = grantsData?.totalPages ?? 1
+
+  const isDeepLink = Boolean(initialEnrollmentId && initialQuizId)
+  const isDialogOpen = grantDialogOpen || isDeepLink
+
+  const handleCloseDialog = () => {
+    setGrantDialogOpen(false)
+    if (initialEnrollmentId || initialQuizId) {
+      setSearchParams(
+        (prev) => {
+          const next = new URLSearchParams(prev)
+          next.delete('enrollment')
+          next.delete('quiz')
+          return next
+        },
+        { replace: true },
+      )
+    }
+  }
 
   return (
     <Card>
@@ -387,12 +481,12 @@ function ExtraAttemptsSection({ courseId }: { courseId: string }) {
           </>
         )}
 
-        {grantDialogOpen && (
+        {isDialogOpen && (
           <GiveAttemptDialog
             courseId={courseId}
-            onClose={() => {
-              setGrantDialogOpen(false)
-            }}
+            initialEnrollmentId={initialEnrollmentId}
+            initialQuizId={initialQuizId}
+            onClose={handleCloseDialog}
           />
         )}
       </CardContent>
@@ -403,10 +497,12 @@ function ExtraAttemptsSection({ courseId }: { courseId: string }) {
 export function GiveAttemptDialog({
   courseId,
   initialEnrollmentId,
+  initialQuizId,
   onClose,
 }: {
   courseId: string
   initialEnrollmentId?: string
+  initialQuizId?: string
   onClose: () => void
 }) {
   const { t } = useTranslation()
@@ -415,12 +511,30 @@ export function GiveAttemptDialog({
 
   const enrollmentsQuery = useCourseEnrollmentsQuery(courseId)
   const quizzesQuery = useCourseQuizzesQuery(courseId)
+  const targetEnrollmentQuery = useAdminEnrollmentQuery(initialEnrollmentId)
+  const targetQuizQuery = useQuizDetailQuery(initialQuizId)
   const grantMutation = useGrantAttempt()
 
   const [pickedQuizId, setQuizId] = useState<string>('')
   const [pickedEnrollmentId, setEnrollmentId] = useState<string>('')
   const [reason, setReason] = useState<string>('')
   const [touched, setTouched] = useState(false)
+
+  const isTargetLoading =
+    quizzesQuery.isPending ||
+    (Boolean(initialEnrollmentId) && targetEnrollmentQuery.isPending) ||
+    (Boolean(initialQuizId) && targetQuizQuery.isPending && !quizzesQuery.data?.some((q) => q.id === initialQuizId))
+
+  const targetValidation = resolveGrantTarget({
+    courseId,
+    targetEnrollmentId: initialEnrollmentId,
+    targetQuizId: initialQuizId,
+    enrollment: targetEnrollmentQuery.data,
+    quizzes: quizzesQuery.data,
+    quiz: targetQuizQuery.data,
+  })
+
+  const hasTargetMismatch = !isTargetLoading && !targetValidation.valid
 
   const quizChoices = (quizzesQuery.data ?? []).map((q) => {
     const title = q.translations?.find((tr) => tr.locale === locale)?.title ?? q.translations?.[0]?.title
@@ -429,20 +543,56 @@ export function GiveAttemptDialog({
       label: title ? `${title} (${q.code ?? ''})` : (q.code ?? q.id ?? ''),
     }
   })
+  if (
+    targetQuizQuery.data?.id &&
+    targetValidation.valid &&
+    !quizChoices.some((q) => q.value === targetQuizQuery.data?.id)
+  ) {
+    const title =
+      targetQuizQuery.data.translations?.find((tr) => tr.locale === locale)?.title ??
+      targetQuizQuery.data.translations?.[0]?.title
+    quizChoices.unshift({
+      value: targetQuizQuery.data.id,
+      label: title ? `${title} (${targetQuizQuery.data.code ?? ''})` : (targetQuizQuery.data.code ?? targetQuizQuery.data.id),
+    })
+  }
 
-  const quizId = pickedQuizId !== '' ? pickedQuizId : (quizChoices[0]?.value ?? '')
+  const quizId =
+    pickedQuizId !== ''
+      ? pickedQuizId
+      : initialQuizId !== undefined && initialQuizId !== ''
+        ? targetValidation.valid
+          ? initialQuizId
+          : ''
+        : (quizChoices[0]?.value ?? '')
 
   const enrollments = enrollmentsQuery.data ?? []
   const enrollmentChoices = enrollments.map((en) => ({
     value: en.id ?? '',
-    label: en.studentFullName ?? '',
+    label: en.studentFullName ?? en.id ?? '',
   }))
+  if (
+    targetEnrollmentQuery.data?.id &&
+    targetValidation.valid &&
+    !enrollmentChoices.some((en) => en.value === targetEnrollmentQuery.data?.id)
+  ) {
+    enrollmentChoices.unshift({
+      value: targetEnrollmentQuery.data.id,
+      label: targetEnrollmentQuery.data.studentFullName ?? targetEnrollmentQuery.data.id,
+    })
+  }
 
   const enrollmentId =
-    pickedEnrollmentId !== '' ? pickedEnrollmentId : (initialEnrollmentId ?? enrollmentChoices[0]?.value ?? '')
+    pickedEnrollmentId !== ''
+      ? pickedEnrollmentId
+      : initialEnrollmentId !== undefined && initialEnrollmentId !== ''
+        ? targetValidation.valid
+          ? initialEnrollmentId
+          : ''
+        : (enrollmentChoices[0]?.value ?? '')
 
   const reasonValid = validateGrantReason(reason)
-  const canSubmit = quizId !== '' && enrollmentId !== '' && reasonValid
+  const canSubmit = !hasTargetMismatch && quizId !== '' && enrollmentId !== '' && reasonValid
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
@@ -466,47 +616,57 @@ export function GiveAttemptDialog({
         <DialogTitle>{t('admin.learningPath.giveAttemptTitle')}</DialogTitle>
         <DialogDescription>{t('admin.learningPath.giveAttemptDescription')}</DialogDescription>
 
-        <form onSubmit={handleSubmit} className="mt-4 grid grid-cols-1 gap-4">
-          <Select
-            label={t('admin.learningPath.selectQuiz')}
-            value={quizId}
-            onValueChange={setQuizId}
-            options={quizChoices}
-            placeholder={t('authoring.choose')}
-          />
+        {isTargetLoading ? (
+          <Skeleton className="my-4 h-48" />
+        ) : (
+          <form onSubmit={handleSubmit} className="mt-4 grid grid-cols-1 gap-4">
+            {hasTargetMismatch && (
+              <p role="alert" className="bg-danger-soft text-small text-danger rounded-sm px-3 py-2 font-medium">
+                {t('admin.learningPath.targetMismatch')}
+              </p>
+            )}
 
-          <Select
-            label={t('admin.learningPath.selectStudent')}
-            value={enrollmentId}
-            onValueChange={setEnrollmentId}
-            options={enrollmentChoices}
-            placeholder={t('authoring.choose')}
-          />
-
-          <div>
-            <Textarea
-              label={t('admin.learningPath.grantReasonLabel')}
-              rows={3}
-              value={reason}
-              onChange={(e) => {
-                setReason(e.target.value)
-              }}
-              error={touched && !reasonValid ? t('admin.learningPath.grantReasonMinLength') : undefined}
+            <Select
+              label={t('admin.learningPath.selectQuiz')}
+              value={quizId}
+              onValueChange={setQuizId}
+              options={quizChoices}
+              placeholder={t('authoring.choose')}
             />
-            <p className="text-caption text-text-muted mt-1">{t('admin.learningPath.grantReasonHint')}</p>
-          </div>
 
-          <ProblemAlert error={grantMutation.error} />
+            <Select
+              label={t('admin.learningPath.selectStudent')}
+              value={enrollmentId}
+              onValueChange={setEnrollmentId}
+              options={enrollmentChoices}
+              placeholder={t('authoring.choose')}
+            />
 
-          <DialogFooter>
-            <DialogClose asChild>
-              <Button variant="ghost">{t('common.cancel')}</Button>
-            </DialogClose>
-            <Button type="submit" disabled={!canSubmit} loading={grantMutation.isPending}>
-              {t('admin.learningPath.submitGrant')}
-            </Button>
-          </DialogFooter>
-        </form>
+            <div>
+              <Textarea
+                label={t('admin.learningPath.grantReasonLabel')}
+                rows={3}
+                value={reason}
+                onChange={(e) => {
+                  setReason(e.target.value)
+                }}
+                error={touched && !reasonValid ? t('admin.learningPath.grantReasonMinLength') : undefined}
+              />
+              <p className="text-caption text-text-muted mt-1">{t('admin.learningPath.grantReasonHint')}</p>
+            </div>
+
+            <ProblemAlert error={grantMutation.error} />
+
+            <DialogFooter>
+              <DialogClose asChild>
+                <Button variant="ghost">{t('common.cancel')}</Button>
+              </DialogClose>
+              <Button type="submit" disabled={!canSubmit} loading={grantMutation.isPending}>
+                {t('admin.learningPath.submitGrant')}
+              </Button>
+            </DialogFooter>
+          </form>
+        )}
       </DialogContent>
     </Dialog>
   )

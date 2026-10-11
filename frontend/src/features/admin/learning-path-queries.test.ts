@@ -3,6 +3,7 @@ import {
   buildLearningPathConfigRequest,
   campusDatetimeLocalToIso,
   isoToCampusDatetimeLocal,
+  resolveGrantTarget,
   validateGrantReason,
 } from './learning-path-queries'
 
@@ -92,6 +93,118 @@ describe('learning-path helpers', () => {
       })
       expect(result).toEqual({
         enabled: true,
+      })
+    })
+  })
+
+  describe('resolveGrantTarget', () => {
+    const courseId = 'course-1'
+    const validEnrollment = { id: 'enr-1', courseId: 'course-1', studentFullName: 'Student One' }
+    const validQuiz = { id: 'quiz-1', courseId: 'course-1', title: 'Quiz 1' }
+    const otherCourseEnrollment = { id: 'enr-2', courseId: 'course-2', studentFullName: 'Student Two' }
+    const otherCourseQuiz = { id: 'quiz-2', courseId: 'course-2', title: 'Quiz 2' }
+
+    it('returns valid when neither enrollment nor quiz target is specified', () => {
+      const result = resolveGrantTarget({
+        courseId,
+      })
+      expect(result).toEqual({
+        valid: true,
+        enrollmentId: undefined,
+        quizId: undefined,
+      })
+    })
+
+    it('returns valid when targeted enrollment and quiz match courseId', () => {
+      const result = resolveGrantTarget({
+        courseId,
+        targetEnrollmentId: 'enr-1',
+        targetQuizId: 'quiz-1',
+        enrollment: validEnrollment,
+        quizzes: [validQuiz],
+      })
+      expect(result).toEqual({
+        valid: true,
+        enrollmentId: 'enr-1',
+        quizId: 'quiz-1',
+      })
+    })
+
+    it('returns valid when quiz is resolved via single quiz lookup with matching courseId', () => {
+      const result = resolveGrantTarget({
+        courseId,
+        targetEnrollmentId: 'enr-1',
+        targetQuizId: 'quiz-1',
+        enrollment: validEnrollment,
+        quizzes: [],
+        quiz: validQuiz,
+      })
+      expect(result).toEqual({
+        valid: true,
+        enrollmentId: 'enr-1',
+        quizId: 'quiz-1',
+      })
+    })
+
+    it('rejects missing or unresolved target enrollment', () => {
+      const result = resolveGrantTarget({
+        courseId,
+        targetEnrollmentId: 'enr-1',
+        enrollment: null,
+      })
+      expect(result).toEqual({
+        valid: false,
+        error: 'ENROLLMENT_NOT_FOUND',
+      })
+    })
+
+    it('rejects enrollment whose courseId does not match courseId', () => {
+      const result = resolveGrantTarget({
+        courseId,
+        targetEnrollmentId: 'enr-2',
+        enrollment: otherCourseEnrollment,
+      })
+      expect(result).toEqual({
+        valid: false,
+        error: 'ENROLLMENT_COURSE_MISMATCH',
+      })
+    })
+
+    it('rejects quiz when not found in course quizzes or single quiz lookup', () => {
+      const result = resolveGrantTarget({
+        courseId,
+        targetQuizId: 'quiz-unknown',
+        quizzes: [validQuiz],
+        quiz: null,
+      })
+      expect(result).toEqual({
+        valid: false,
+        error: 'QUIZ_NOT_FOUND',
+      })
+    })
+
+    it('rejects quiz when quiz.courseId does not match courseId in quizzes list', () => {
+      const result = resolveGrantTarget({
+        courseId,
+        targetQuizId: 'quiz-2',
+        quizzes: [otherCourseQuiz],
+      })
+      expect(result).toEqual({
+        valid: false,
+        error: 'QUIZ_COURSE_MISMATCH',
+      })
+    })
+
+    it('rejects quiz when single quiz lookup courseId does not match courseId', () => {
+      const result = resolveGrantTarget({
+        courseId,
+        targetQuizId: 'quiz-2',
+        quizzes: [],
+        quiz: otherCourseQuiz,
+      })
+      expect(result).toEqual({
+        valid: false,
+        error: 'QUIZ_COURSE_MISMATCH',
       })
     })
   })

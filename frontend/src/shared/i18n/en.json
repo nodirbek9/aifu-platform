@@ -1622,7 +1622,8 @@
       "grantReasonMinLength": "Reason must be at least 5 characters",
       "grantReasonHint": "Explain why the extra attempt is being granted (minimum 5 characters).",
       "submitGrant": "Grant attempt",
-      "grantSuccess": "Extra attempt granted successfully"
+      "grantSuccess": "Extra attempt granted successfully",
+      "targetMismatch": "The selected student or quiz does not match this course"
     },
     "studentCard": {
       "groupTitle": "Student group",

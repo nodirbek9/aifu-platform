@@ -13,6 +13,7 @@ export type CourseDetail = Schemas['CourseDetail']
 export type SessionType = Schemas['SetSessionAllocationRequest']['sessionType']
 export type ComponentInput = Schemas['CreateAssessmentComponentRequest']
 export type EnrollmentSummary = Schemas['EnrollmentSummary']
+export type EnrollmentDetail = Schemas['EnrollmentDetail']
 export type EnrollResult = Schemas['BulkEnrollResultView']
 export type CsvImportRow = Schemas['CsvImportRowView']
 
@@ -22,6 +23,7 @@ export const structureKeys = {
   courses: ['admin', 'courses'] as const,
   course: (id: string) => ['admin', 'courses', id] as const,
   enrollments: (courseId: string) => ['admin', 'enrollments', courseId] as const,
+  enrollment: (id: string) => ['admin', 'enrollments', 'detail', id] as const,
 }
 
 export type ListFilter = { query: string; status?: string; page: number }
@@ -189,6 +191,7 @@ export function useAdminCourseQuery(id: string) {
   return useQuery({
     queryKey: structureKeys.course(id),
     queryFn: () => unwrap(api.GET('/api/v1/admin/courses/{id}', { params: { path: { id } } })),
+    enabled: id !== '',
   })
 }
 
@@ -276,17 +279,26 @@ export function useSetRequiredLocales(id: string) {
 
 // ------------------------------------------------------------------ enrollments
 
-export function useCourseEnrollmentsQuery(courseId: string) {
+export function useCourseEnrollmentsQuery(courseId: string, page = 0, size = 20) {
   return useQuery({
-    queryKey: structureKeys.enrollments(courseId),
+    queryKey: [...structureKeys.enrollments(courseId), page, size],
     queryFn: async () =>
       (
         await unwrap(
           api.GET('/api/v1/admin/enrollments', {
-            params: { query: { courseId, size: 100, sort: ['enrolledAt,desc'] } },
+            params: { query: { courseId, page, size, sort: ['enrolledAt,desc'] } },
           }),
         )
       ).content ?? [],
+    enabled: courseId !== '',
+  })
+}
+
+export function useAdminEnrollmentQuery(id?: string) {
+  return useQuery({
+    queryKey: structureKeys.enrollment(id ?? ''),
+    queryFn: () => unwrap(api.GET('/api/v1/admin/enrollments/{id}', { params: { path: { id: id ?? '' } } })),
+    enabled: Boolean(id && id.trim() !== ''),
   })
 }
 

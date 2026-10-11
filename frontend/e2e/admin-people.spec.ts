@@ -255,13 +255,11 @@ test('problems navigation, all six filters and real fixes remove the exact rows 
           await expect(
             page.getByRole('heading', { name: uz.admin.learningPath.title, exact: true }),
           ).toBeVisible()
-          // Exact deep-link selection belongs to 7.4-F4; here exercise the existing grant API.
-          await result(
-            api.POST('/api/v1/admin/quizzes/{quizId}/enrollments/{enrollmentId}/attempt-grants', {
-              params: { path: { quizId, enrollmentId: midtermEnrollment } },
-              body: { reason: 'Problems coverage grant' },
-            }),
-          )
+          const dialog = page.getByRole('dialog')
+          await expect(dialog).toBeVisible()
+          await dialog.getByLabel(uz.admin.learningPath.grantReasonLabel).fill('Problems coverage grant')
+          await dialog.getByRole('button', { name: uz.admin.learningPath.submitGrant, exact: true }).click()
+          await expect(page.getByRole('dialog')).toHaveCount(0)
         },
       },
       {
@@ -1025,6 +1023,219 @@ test('student card persists group moves, paginated enrollments and reasoned tran
         params: { path: { id: groupId }, query: { value: true } },
       })
       expect(response.response.ok, 'fixture group archive').toBe(true)
+    }
+    await api.POST('/api/v1/auth/logout', { body: { refreshToken: login.refreshToken } })
+  }
+})
+
+test('exact attempt grant deep link beyond first page, rejects wrong-course ids, removes problem row (7.4-F4)', async ({
+  page,
+  baseURL,
+}) => {
+  test.setTimeout(240_000)
+  const api = createClient<paths>({ baseUrl: baseURL })
+  const login = await result(
+    api.POST('/api/v1/auth/login', { body: { identifier: 'admin', password: demoPassword() } }),
+  )
+  if (!login.accessToken || !login.refreshToken) throw new Error('Authentication omitted tokens')
+  api.use({
+    onRequest({ request }) {
+      request.headers.set('Authorization', `Bearer ${login.accessToken}`)
+    },
+  })
+
+  const suffix = randomUUID().slice(0, 8)
+  const studentIds: string[] = []
+  const enrollmentIds: string[] = []
+  let courseAId: string | undefined
+  let courseBId: string | undefined
+  let groupId: string | undefined
+
+  try {
+    const catalogue = await result(api.GET('/api/v1/admin/courses', { params: { query: { size: 100 } } }))
+    const template = catalogue.content?.find((course) => course.status === 'PUBLISHED')
+    if (!template) throw new Error('A published course is required')
+    const source = await result(
+      api.GET('/api/v1/admin/courses/{id}', { params: { path: { id: id(template) } } }),
+    )
+    if (!source.subjectId || !source.termId) throw new Error('Course context missing')
+
+    groupId = id(await result(api.POST('/api/v1/admin/groups', { body: { code: `F4-G-${suffix}` } })))
+
+    courseAId = id(
+      await result(
+        api.POST('/api/v1/admin/courses', {
+          body: {
+            subjectId: source.subjectId,
+            termId: source.termId,
+            credits: source.credits ?? 6,
+            totalHours: source.totalHours ?? 150,
+            cohortCode: `F4-A-${suffix}`,
+          },
+        }),
+      ),
+    )
+    runSql(`update courses set status = 'PUBLISHED' where id = '${courseAId}'`)
+
+    courseBId = id(
+      await result(
+        api.POST('/api/v1/admin/courses', {
+          body: {
+            subjectId: source.subjectId,
+            termId: source.termId,
+            credits: source.credits ?? 6,
+            totalHours: source.totalHours ?? 150,
+            cohortCode: `F4-B-${suffix}`,
+          },
+        }),
+      ),
+    )
+    runSql(`update courses set status = 'PUBLISHED' where id = '${courseBId}'`)
+
+    const createStudent = async (name: string, studentNumber: string) => {
+      const user = id(
+        await result(
+          api.POST('/api/v1/admin/users', {
+            body: {
+              username: `f4.${suffix}.${name}`,
+              email: `f4.${suffix}.${name}@example.test`,
+              fullName: `F4 ${suffix} Student ${name}`,
+              roles: ['STUDENT'],
+              studentProfile: { studentNumber, groupCode: `F4-G-${suffix}` },
+            },
+          }),
+        ),
+      )
+      studentIds.push(user)
+      await result(
+        api.PUT('/api/v1/admin/users/{id}/status', {
+          params: { path: { id: user } },
+          body: { status: 'ACTIVE', reason: 'F4 fixture' },
+        }),
+      )
+      return user
+    }
+
+    const targetStudent = await createStudent('target', `F4-T-${suffix}`)
+    const otherStudent = await createStudent('other', `F4-O-${suffix}`)
+
+    // Target student enrolled in Course A
+    const targetEnrollment = id(
+      await result(
+        api.POST('/api/v1/admin/enrollments', {
+          body: { studentUserId: targetStudent, courseId: courseAId, source: 'ADMIN' },
+        }),
+      ),
+    )
+    enrollmentIds.push(targetEnrollment)
+
+    // Other student enrolled in Course B
+    const otherEnrollment = id(
+      await result(
+        api.POST('/api/v1/admin/enrollments', {
+          body: { studentUserId: otherStudent, courseId: courseBId, source: 'ADMIN' },
+        }),
+      ),
+    )
+    enrollmentIds.push(otherEnrollment)
+
+    // Push targetEnrollment beyond the first enrollment page (size 20) by adding 22 newer enrollments to Course A
+    for (let index = 0; index < 22; index++) {
+      const filler = await createStudent(`filler${index}`, `F4-F${index}-${suffix}`)
+      const fillerEnrollment = id(
+        await result(
+          api.POST('/api/v1/admin/enrollments', {
+            body: { studentUserId: filler, courseId: courseAId, source: 'ADMIN' },
+          }),
+        ),
+      )
+      enrollmentIds.push(fillerEnrollment)
+    }
+
+    const quizAId = randomUUID()
+    const quizBId = randomUUID()
+    const moduleId = randomUUID()
+    const lessonId = randomUUID()
+    const activityId = randomUUID()
+
+    runSql(`
+      insert into course_modules (id, course_id, code, position, status) values ('${moduleId}', '${courseAId}', 'M-${suffix}', 0, 'PUBLISHED');
+      insert into lessons (id, module_id, position, session_type, status, is_required, estimated_minutes) values ('${lessonId}', '${moduleId}', 0, 'LECTURE', 'PUBLISHED', true, 1);
+      insert into quizzes (id, course_id, code, status, max_attempts, passing_percent, max_points, shuffle_questions) values ('${quizAId}', '${courseAId}', 'QA-${suffix}', 'PUBLISHED', 1, 60, 100, false);
+      insert into quiz_translations (quiz_id, locale, title) values ('${quizAId}', 'uz', 'Quiz A ${suffix}');
+      insert into activities (id, course_id, module_id, position, activity_type, path_step, reference_id, is_graded, status, variant_strategy, collaboration_mode)
+        values ('${activityId}', '${courseAId}', '${moduleId}', 0, 'QUIZ', 'MIDTERM', '${quizAId}', false, 'PUBLISHED', 'NONE', 'INDIVIDUAL');
+      insert into course_learning_paths (course_id, enabled, midterm_activity_id, midterm_after_lesson_id) values ('${courseAId}', true, '${activityId}', '${lessonId}');
+      insert into quiz_attempts (quiz_id, enrollment_id, activity_id, attempt_number, status, expires_at) values ('${quizAId}', '${targetEnrollment}', '${activityId}', 1, 'EXPIRED', now() - interval '1 hour');
+
+      insert into quizzes (id, course_id, code, status, max_attempts, passing_percent, max_points, shuffle_questions) values ('${quizBId}', '${courseBId}', 'QB-${suffix}', 'PUBLISHED', 1, 60, 100, false);
+      insert into quiz_translations (quiz_id, locale, title) values ('${quizBId}', 'uz', 'Quiz B ${suffix}');
+    `)
+
+    await signIn(page, 'admin')
+
+    // 1. Wrong-course enrollment rejected: otherEnrollment belongs to Course B, not Course A
+    await page.goto(`/admin/learning-path?course=${courseAId}&enrollment=${otherEnrollment}&quiz=${quizAId}`)
+    const dialog = page.getByRole('dialog')
+    await expect(dialog).toBeVisible()
+    await expect(dialog.getByRole('alert')).toContainText(uz.admin.learningPath.targetMismatch)
+    await expect(dialog.getByRole('button', { name: uz.admin.learningPath.submitGrant, exact: true })).toBeDisabled()
+
+    // 2. Wrong-course quiz rejected: quizBId belongs to Course B, not Course A
+    await page.goto(`/admin/learning-path?course=${courseAId}&enrollment=${targetEnrollment}&quiz=${quizBId}`)
+    await expect(dialog).toBeVisible()
+    await expect(dialog.getByRole('alert')).toContainText(uz.admin.learningPath.targetMismatch)
+    await expect(dialog.getByRole('button', { name: uz.admin.learningPath.submitGrant, exact: true })).toBeDisabled()
+
+    // 3. Problem dashboard navigation with deep link beyond first enrollment page
+    await page.goto('/admin/problems?type=MIDTERM_ATTEMPTS_EXHAUSTED')
+    const targetFixLink = page.locator(`a[href="/admin/learning-path?course=${courseAId}&enrollment=${targetEnrollment}&quiz=${quizAId}"]`)
+    await expect(targetFixLink).toBeVisible()
+    await targetFixLink.click()
+    await expect(page).toHaveURL(new RegExp(`/admin/learning-path\\?course=${courseAId}&enrollment=${targetEnrollment}&quiz=${quizAId}$`))
+
+    // 4. Exact quiz and student preselected without mismatch alert
+    await expect(dialog).toBeVisible()
+    await expect(dialog.getByRole('alert')).toHaveCount(0)
+    await expect(dialog.getByRole('combobox', { name: uz.admin.learningPath.selectQuiz })).toContainText(`Quiz A ${suffix}`)
+    await expect(dialog.getByRole('combobox', { name: uz.admin.learningPath.selectStudent })).toContainText(`F4 ${suffix} Student target`)
+
+    // 5. Successful grant removes problem row
+    await dialog.getByLabel(uz.admin.learningPath.grantReasonLabel).fill('Approved medical make-up')
+    await dialog.getByRole('button', { name: uz.admin.learningPath.submitGrant, exact: true }).click()
+    await expect(dialog).toHaveCount(0)
+    expect(new URL(page.url()).searchParams.has('enrollment')).toBe(false)
+    expect(new URL(page.url()).searchParams.has('quiz')).toBe(false)
+
+    // Confirm problem row disappears
+    await page.goto('/admin/problems?type=MIDTERM_ATTEMPTS_EXHAUSTED')
+    await expect(page.locator(`a[href="/admin/learning-path?course=${courseAId}&enrollment=${targetEnrollment}&quiz=${quizAId}"]`)).toHaveCount(0)
+  } finally {
+    for (const enrollmentId of enrollmentIds) {
+      await api.PUT('/api/v1/admin/enrollments/{id}/status', {
+        params: { path: { id: enrollmentId }, query: { status: 'WITHDRAWN', reason: 'F4 cleanup' } },
+      })
+    }
+    for (const studentId of studentIds) {
+      await api.PUT('/api/v1/admin/users/{id}/status', {
+        params: { path: { id: studentId } },
+        body: { status: 'DISABLED', reason: 'F4 cleanup' },
+      })
+    }
+    if (courseAId) {
+      await api.PUT('/api/v1/admin/courses/{id}/status', {
+        params: { path: { id: courseAId }, query: { status: 'ARCHIVED' } },
+      })
+    }
+    if (courseBId) {
+      await api.PUT('/api/v1/admin/courses/{id}/status', {
+        params: { path: { id: courseBId }, query: { status: 'ARCHIVED' } },
+      })
+    }
+    if (groupId) {
+      await api.PUT('/api/v1/admin/groups/{id}/archived', {
+        params: { path: { id: groupId }, query: { value: true } },
+      })
     }
     await api.POST('/api/v1/auth/logout', { body: { refreshToken: login.refreshToken } })
   }

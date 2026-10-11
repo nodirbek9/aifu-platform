@@ -1622,7 +1622,8 @@
       "grantReasonMinLength": "Sabab kamida 5 ta belgidan iborat boʻlishi kerak",
       "grantReasonHint": "Qoʻshimcha urinish nima sababdan berilayotganini tushuntiring (kamida 5 ta belgi).",
       "submitGrant": "Urinishni taqdim etish",
-      "grantSuccess": "Qoʻshimcha urinish muvaffaqiyatli taqdim etildi"
+      "grantSuccess": "Qoʻshimcha urinish muvaffaqiyatli taqdim etildi",
+      "targetMismatch": "Tanlangan talaba yoki test ushbu kursga mos kelmaydi"
     },
     "studentCard": {
       "groupTitle": "Talabaning guruhi",

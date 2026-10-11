@@ -4,6 +4,7 @@ import { api, unwrap } from '@/shared/api/client'
 import { CAMPUS_TIME_ZONE } from '@/shared/lib/dates'
 import { useRefreshingMutation } from './reference-queries'
 import { structureKeys } from './structure-queries'
+import { problemKeys } from './problems-queries'
 
 type Schemas = components['schemas']
 export type LearningPathConfigView = Schemas['LearningPathConfigView']
@@ -93,7 +94,16 @@ export function useGrantAttempt() {
       void queryClient.invalidateQueries({ queryKey: ['admin', 'attempt-grants'] })
       void queryClient.invalidateQueries({ queryKey: ['course-plan'] })
       void queryClient.invalidateQueries({ queryKey: ['quiz'] })
+      void queryClient.invalidateQueries({ queryKey: problemKeys.list })
     },
+  })
+}
+
+export function useQuizDetailQuery(quizId?: string) {
+  return useQuery({
+    queryKey: ['authoring', 'quiz', quizId ?? ''],
+    queryFn: () => unwrap(api.GET('/api/v1/teacher/quizzes/{id}', { params: { path: { id: quizId ?? '' } } })),
+    enabled: Boolean(quizId && quizId.trim() !== ''),
   })
 }
 
@@ -155,3 +165,61 @@ export function buildLearningPathConfigRequest(form: LearningPathFormState): Lea
   }
   return req
 }
+
+export type GrantTargetError =
+  | 'ENROLLMENT_NOT_FOUND'
+  | 'ENROLLMENT_COURSE_MISMATCH'
+  | 'QUIZ_NOT_FOUND'
+  | 'QUIZ_COURSE_MISMATCH'
+
+export type ResolveGrantTargetResult = {
+  valid: boolean
+  error?: GrantTargetError
+  enrollmentId?: string
+  quizId?: string
+}
+
+export type ResolveGrantTargetInput = {
+  courseId: string
+  targetEnrollmentId?: string
+  targetQuizId?: string
+  enrollment?: { id?: string; courseId?: string } | null
+  quizzes?: { id?: string; courseId?: string }[] | null
+  quiz?: { id?: string; courseId?: string } | null
+}
+
+/** Pure helper to validate targeted enrollment and quiz belong to the selected course */
+export function resolveGrantTarget(input: ResolveGrantTargetInput): ResolveGrantTargetResult {
+  const { courseId, targetEnrollmentId, targetQuizId, enrollment, quizzes, quiz } = input
+
+  if (targetEnrollmentId && targetEnrollmentId.trim() !== '') {
+    if (enrollment?.id !== targetEnrollmentId) {
+      return { valid: false, error: 'ENROLLMENT_NOT_FOUND' }
+    }
+    if (enrollment.courseId !== courseId) {
+      return { valid: false, error: 'ENROLLMENT_COURSE_MISMATCH' }
+    }
+  }
+
+  if (targetQuizId && targetQuizId.trim() !== '') {
+    const foundInList = quizzes?.find((q) => q.id === targetQuizId)
+    if (foundInList) {
+      if (foundInList.courseId && foundInList.courseId !== courseId) {
+        return { valid: false, error: 'QUIZ_COURSE_MISMATCH' }
+      }
+    } else if (quiz?.id === targetQuizId) {
+      if (quiz.courseId && quiz.courseId !== courseId) {
+        return { valid: false, error: 'QUIZ_COURSE_MISMATCH' }
+      }
+    } else {
+      return { valid: false, error: 'QUIZ_NOT_FOUND' }
+    }
+  }
+
+  return {
+    valid: true,
+    enrollmentId: targetEnrollmentId && targetEnrollmentId.trim() !== '' ? targetEnrollmentId : undefined,
+    quizId: targetQuizId && targetQuizId.trim() !== '' ? targetQuizId : undefined,
+  }
+}
+
