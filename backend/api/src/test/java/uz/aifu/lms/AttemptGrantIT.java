@@ -157,6 +157,40 @@ class AttemptGrantIT extends AbstractIntegrationTest {
     }
 
     @Test
+    void grantAttempt_forQuizOfAnotherCourse_isRefusedAsDifferentCourses() {
+        TestScenario scenario = setupScenario();
+        Course otherCourse = enrollmentFixtures.publishedCourse(150);
+        UUID foreignQuizId = UUID.randomUUID();
+        jdbc.update(
+                "INSERT INTO quizzes (id, course_id, code, max_attempts, max_points, passing_percent, status, "
+                        + "shuffle_questions, shuffle_options, reveal_policy, created_at, updated_at, version) "
+                        + "VALUES (?, ?, ?, 1, 10, 60, 'PUBLISHED', false, false, 'AFTER_LAST_ATTEMPT', now(), now(), 0)",
+                foreignQuizId,
+                otherCourse.getId(),
+                "QUIZ-" + UUID.randomUUID().toString().substring(0, 8));
+
+        ResponseEntity<ApiError> response =
+                rest.exchange(
+                        grantUrl(foreignQuizId, scenario.enrollment.getId()),
+                        HttpMethod.POST,
+                        new HttpEntity<>(
+                                new AttemptGrantRequest("exam retake allowed"),
+                                bearer(scenario.adminToken)),
+                        ApiError.class);
+
+        assertThat(response.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        assertThat(response.getBody()).isNotNull();
+        assertThat(response.getBody().code()).isEqualTo("VALIDATION_FAILED");
+        assertThat(response.getBody().message()).contains("different courses");
+        Integer grants =
+                jdbc.queryForObject(
+                        "SELECT count(*) FROM quiz_attempt_grants WHERE quiz_id = ?",
+                        Integer.class,
+                        foreignQuizId);
+        assertThat(grants).isZero();
+    }
+
+    @Test
     void grantAttempt_withReasonShorterThanFiveCharacters_returnsValidationFailed() {
         TestScenario scenario = setupScenario();
         exhaustAttempts(scenario.studentToken, scenario.quizId);

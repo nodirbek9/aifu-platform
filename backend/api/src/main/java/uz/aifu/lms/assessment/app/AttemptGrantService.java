@@ -55,6 +55,9 @@ public class AttemptGrantService {
         }
 
         Enrollment enrollment = enrollments.require(enrollmentId);
+        if (!quiz.getCourse().getId().equals(enrollment.getCourse().getId())) {
+            throw Exceptions.validation("Enrollment and quiz belong to different courses");
+        }
 
         Query lockQuery = entityManager.createNativeQuery("SELECT quiz_attempt_lock(:quiz, :enr)");
         lockQuery.setParameter("quiz", quizId);
