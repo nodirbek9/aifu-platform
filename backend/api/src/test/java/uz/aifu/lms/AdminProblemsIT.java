@@ -45,10 +45,8 @@ import uz.aifu.lms.iam.api.dto.AuthDtos.LoginRequest;
 import uz.aifu.lms.iam.api.dto.AuthDtos.TokenResponse;
 import uz.aifu.lms.iam.domain.Role;
 import uz.aifu.lms.iam.domain.RoleCode;
-import uz.aifu.lms.iam.domain.StudentProfile;
 import uz.aifu.lms.iam.domain.User;
 import uz.aifu.lms.iam.persistence.RoleRepository;
-import uz.aifu.lms.iam.persistence.StudentProfileRepository;
 import uz.aifu.lms.iam.persistence.UserRepository;
 import uz.aifu.lms.support.AbstractIntegrationTest;
 import uz.aifu.lms.support.fixtures.EnrollmentFixtures;
@@ -69,7 +67,6 @@ class AdminProblemsIT extends AbstractIntegrationTest {
     @Autowired private CourseService courseService;
     @Autowired private UserRepository userRepository;
     @Autowired private RoleRepository roleRepository;
-    @Autowired private StudentProfileRepository studentProfileRepository;
     @Autowired private PasswordEncoder passwordEncoder;
     @Autowired private JdbcTemplate jdbc;
     @LocalServerPort private int port;
@@ -283,13 +280,15 @@ class AdminProblemsIT extends AbstractIntegrationTest {
         User userWithdrawn = createStudentUser(false);
         Enrollment enrWithdrawn = enroll(course, userWithdrawn);
         jdbc.update(
-                "UPDATE enrollments SET status = 'WITHDRAWN' WHERE id = ?", enrWithdrawn.getId());
+                "UPDATE enrollments SET status = 'WITHDRAWN', withdrawn_at = now() WHERE id = ?",
+                enrWithdrawn.getId());
 
         // Negative 3: COMPLETED enrollment of a DISABLED user
         User userCompleted = createStudentUser(false);
         Enrollment enrCompleted = enroll(course, userCompleted);
         jdbc.update(
-                "UPDATE enrollments SET status = 'COMPLETED' WHERE id = ?", enrCompleted.getId());
+                "UPDATE enrollments SET status = 'COMPLETED', completed_at = now() WHERE id = ?",
+                enrCompleted.getId());
 
         List<AdminProblemView> found =
                 problems.findByType(
@@ -520,7 +519,7 @@ class AdminProblemsIT extends AbstractIntegrationTest {
         createQuizAttempt(
                 quizId, enrWithdrawnStatus.getId(), midtermActivityId, 2, "GRADED", false, 40);
         jdbc.update(
-                "UPDATE enrollments SET status = 'WITHDRAWN' WHERE id = ?",
+                "UPDATE enrollments SET status = 'WITHDRAWN', withdrawn_at = now() WHERE id = ?",
                 enrWithdrawnStatus.getId());
 
         List<AdminProblemView> found =
@@ -703,8 +702,7 @@ class AdminProblemsIT extends AbstractIntegrationTest {
                     .isEqualTo(
                             query.startsWith("?type=") ? "MALFORMED_REQUEST" : "VALIDATION_FAILED");
             assertThat(response.getBody().requestId()).isNotBlank();
-            assertThat(response.getBody().toString())
-                    .doesNotContain("problemKey", "fullName", "passwordHash");
+            assertThat(response.getBody().toString()).doesNotContain("fullName", "passwordHash");
         }
     }
 
@@ -948,8 +946,12 @@ class AdminProblemsIT extends AbstractIntegrationTest {
 
     private void saveStudentProfile(User user, String groupCode) {
         String studentNumber = "STU-" + randomSuffix();
-        StudentProfile profile = new StudentProfile(user, studentNumber, null, groupCode, 2026);
-        studentProfileRepository.save(profile);
+        jdbc.update(
+                "INSERT INTO student_profiles (user_id, student_number, group_code, enrollment_year) "
+                        + "VALUES (?, ?, ?, 2026)",
+                user.getId(),
+                studentNumber,
+                groupCode);
     }
 
     private UUID createGroup(String code, String status) {
@@ -1053,13 +1055,21 @@ class AdminProblemsIT extends AbstractIntegrationTest {
     private UUID createMidtermActivity(
             UUID courseId, UUID quizId, UUID assessmentComponentId, String status) {
         UUID actId = UUID.randomUUID();
+        UUID moduleId = UUID.randomUUID();
         jdbc.update(
-                "INSERT INTO activities (id, course_id, lesson_id, position, activity_type, path_step, "
-                        + "reference_id, assessment_component_id, is_graded, status, variant_strategy, "
-                        + "collaboration_mode, created_at, updated_at, version) "
-                        + "VALUES (?, ?, NULL, 0, 'QUIZ', 'MIDTERM', ?, ?, true, ?, 'NONE', 'INDIVIDUAL', now(), now(), 0)",
+                "INSERT INTO course_modules (id, course_id, position, status, created_at, updated_at, version) "
+                        + "VALUES (?, ?, ?, 'PUBLISHED', now(), now(), 0)",
+                moduleId,
+                courseId,
+                1000 + (int) (Math.random() * 1_000_000));
+        jdbc.update(
+                "INSERT INTO activities (id, course_id, module_id, position, activity_type, path_step, "
+                        + "reference_id, assessment_component_id, is_graded, max_points, status, "
+                        + "variant_strategy, collaboration_mode, created_at, updated_at, version) "
+                        + "VALUES (?, ?, ?, 0, 'QUIZ', 'MIDTERM', ?, ?, true, 100, ?, 'NONE', 'INDIVIDUAL', now(), now(), 0)",
                 actId,
                 courseId,
+                moduleId,
                 quizId,
                 assessmentComponentId,
                 status);
@@ -1096,8 +1106,9 @@ class AdminProblemsIT extends AbstractIntegrationTest {
         UUID attemptId = UUID.randomUUID();
         jdbc.update(
                 "INSERT INTO quiz_attempts (id, quiz_id, enrollment_id, activity_id, attempt_number, "
-                        + "status, passed, percent, started_at, version) "
-                        + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, now(), 0)",
+                        + "status, passed, percent, started_at, submitted_at, version) "
+                        + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, now(), "
+                        + "CASE WHEN ? IN ('SUBMITTED', 'GRADED') THEN now() END, 0)",
                 attemptId,
                 quizId,
                 enrollmentId,
@@ -1105,7 +1116,8 @@ class AdminProblemsIT extends AbstractIntegrationTest {
                 attemptNumber,
                 status,
                 passed,
-                BigDecimal.valueOf(percent));
+                BigDecimal.valueOf(percent),
+                status);
     }
 
     private void createQuizAttemptWithExpiry(

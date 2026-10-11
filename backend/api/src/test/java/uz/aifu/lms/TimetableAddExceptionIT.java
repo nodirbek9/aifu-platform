@@ -394,7 +394,10 @@ class TimetableAddExceptionIT extends AbstractIntegrationTest {
                                         + w.week1,
                                 WeekView.class)
                         .getBody();
-        assertThat(classes(weekAfterDelete)).hasSize(1);
+        // the Monday lecture and the Thursday lecture added above remain; only the ADD occurrence
+        // goes
+        assertThat(classes(weekAfterDelete)).hasSize(2);
+        assertThat(classes(weekAfterDelete)).extracting(ClassView::date).doesNotContain(addDate);
         assertThat(queryService.occurrenceOf(lecture.id(), addDate)).isEmpty();
 
         // Archived timetable rejected
