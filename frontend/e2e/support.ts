@@ -25,14 +25,18 @@ export function isPhone(testInfo: TestInfo): boolean {
  * Puts the account's saved interface language back to Uzbek through the API, so a test never
  * depends on what an earlier run left on the server.
  */
-export async function resetLocale(request: APIRequestContext, username: string): Promise<void> {
+export async function resetLocale(
+  request: APIRequestContext,
+  username: string,
+  locale: 'uz' | 'ru' | 'en' = 'uz',
+): Promise<void> {
   const login = await request.post('/api/v1/auth/login', {
     data: { identifier: username, password: demoPassword() },
   })
   expect(login.ok(), `API login of ${username}`).toBe(true)
   const tokens = (await login.json()) as { accessToken: string; refreshToken: string }
   const headers = { Authorization: `Bearer ${tokens.accessToken}` }
-  await request.patch('/api/v1/auth/me', { headers, data: { preferredLocale: 'uz' } })
+  await request.patch('/api/v1/auth/me', { headers, data: { preferredLocale: locale } })
   await request.post('/api/v1/auth/logout', { headers, data: { refreshToken: tokens.refreshToken } })
 }
 
@@ -79,4 +83,18 @@ export async function expectFitsScreen(page: Page): Promise<void> {
   await expect
     .poll(() => page.evaluate(() => document.documentElement.scrollWidth), { message: page.url() })
     .toBeLessThanOrEqual(screenWidth + 1)
+}
+
+/**
+ * Switches the interface language of a signed-in page. The session applies the profile's
+ * preferred language on load (the language control is hidden on narrow screens), so the
+ * preference is saved through the API and the page reloaded.
+ */
+export async function switchLocale(
+  page: Page,
+  locale: 'uz' | 'ru' | 'en',
+  username = 'admin',
+): Promise<void> {
+  await resetLocale(page.request, username, locale)
+  await page.reload()
 }

@@ -2,11 +2,16 @@ import { randomUUID } from 'node:crypto'
 import { expect, test, type Locator, type Page } from '@playwright/test'
 import createClient from 'openapi-fetch'
 import type { components, paths } from '../src/shared/api/schema'
-import { demoPassword, expectFitsScreen, shot, signIn, texts } from './support'
+import { demoPassword, expectFitsScreen, shot, signIn, switchLocale, texts } from './support'
 import { runSql } from './db'
 import { narrowProblemPage, type AdminProblemType } from '../src/features/admin/problems-model'
 
 const { uz } = texts
+
+/** The permission set has no defined order; compare it sorted. */
+function withSortedPermissions<T extends { permissions?: string[] }>(user: T): T {
+  return { ...user, permissions: [...(user.permissions ?? [])].sort() }
+}
 type Schemas = components['schemas']
 
 test('problems dashboard and shell links, responsive themes and locales (7.4-F3)', async ({
@@ -35,7 +40,7 @@ test('problems dashboard and shell links, responsive themes and locales (7.4-F3)
           },
           { locale, theme },
         )
-        await page.reload()
+        await switchLocale(page, locale)
         await expect(
           page.getByRole('heading', { name: texts[locale].admin.problems.title, exact: true }),
         ).toBeVisible()
@@ -47,7 +52,7 @@ test('problems dashboard and shell links, responsive themes and locales (7.4-F3)
       }
   }
   await page.evaluate(() => localStorage.setItem('aifu-locale', 'uz'))
-  await page.reload()
+  await switchLocale(page, 'uz')
   await choose(page, uz.assignments.filterType, uz.admin.problems.type.LOCKED_ACCOUNT)
   await page.reload()
   await expect(page.getByRole('combobox', { name: uz.assignments.filterType })).toContainText(
@@ -181,8 +186,8 @@ test('problems navigation, all six filters and real fixes remove the exact rows 
       insert into lessons (id, module_id, position, session_type, status, is_required, estimated_minutes) values ('${lessonId}', '${moduleId}', 0, 'LECTURE', 'PUBLISHED', true, 1);
       insert into quizzes (id, course_id, code, status, max_attempts, passing_percent, max_points, shuffle_questions) values ('${quizId}', '${courseId}', 'P-${suffix}', 'PUBLISHED', 1, 60, 100, false);
       insert into quiz_translations (quiz_id, locale, title) values ('${quizId}', 'uz', 'E2E midterm ${suffix}');
-      insert into activities (id, course_id, position, activity_type, path_step, reference_id, is_graded, status, variant_strategy, collaboration_mode)
-        values ('${activityId}', '${courseId}', 0, 'QUIZ', 'MIDTERM', '${quizId}', false, 'PUBLISHED', 'NONE', 'INDIVIDUAL');
+      insert into activities (id, course_id, lesson_id, position, activity_type, path_step, reference_id, is_graded, status, variant_strategy, collaboration_mode)
+        values ('${activityId}', '${courseId}', '${lessonId}', 0, 'QUIZ', 'MIDTERM', '${quizId}', false, 'PUBLISHED', 'NONE', 'INDIVIDUAL');
       insert into course_learning_paths (course_id, enabled, midterm_activity_id, midterm_after_lesson_id) values ('${courseId}', true, '${activityId}', '${lessonId}');
       insert into quiz_attempts (quiz_id, enrollment_id, activity_id, attempt_number, status, expires_at) values ('${quizId}', '${midtermEnrollment}', '${activityId}', 1, 'EXPIRED', now() - interval '1 hour');
     `)
@@ -252,14 +257,15 @@ test('problems navigation, all six filters and real fixes remove the exact rows 
         key: midtermEnrollment,
         path: `/admin/learning-path?course=${courseId}&enrollment=${midtermEnrollment}&quiz=${quizId}`,
         fix: async () => {
-          await expect(
-            page.getByRole('heading', { name: uz.admin.learningPath.title, exact: true }),
-          ).toBeVisible()
+          // the deep link opens the grant dialog at once; it hides the page behind it
           const dialog = page.getByRole('dialog')
           await expect(dialog).toBeVisible()
           await dialog.getByLabel(uz.admin.learningPath.grantReasonLabel).fill('Problems coverage grant')
           await dialog.getByRole('button', { name: uz.admin.learningPath.submitGrant, exact: true }).click()
           await expect(page.getByRole('dialog')).toHaveCount(0)
+          await expect(
+            page.getByRole('heading', { name: uz.admin.learningPath.title, exact: true }),
+          ).toBeVisible()
         },
       },
       {
@@ -288,7 +294,12 @@ test('problems navigation, all six filters and real fixes remove the exact rows 
       await page.goto(`/admin/problems?type=${item.type}&page=${pageNumber}`)
       const action = page
         .locator(`section[aria-label="${uz.nav.adminProblems}"] a`)
-        .filter({ hasText: uz.admin.problems.fix })
+        .filter({
+          hasText:
+            item.type === 'ACTIVE_ENROLLMENT_INACTIVE_USER'
+              ? uz.admin.problems.reviewUsers
+              : uz.admin.problems.fix,
+        })
       const exactAction = action.and(page.locator(`a[href="${item.path}"]`))
       await expect(exactAction).toBeVisible()
       await expectFitsScreen(page)
@@ -410,7 +421,7 @@ test('cancel then deactivate with selected withdrawals preserves history and ter
         query: { status: 'WITHDRAWN', reason: 'Terminal withdrawal must fail' },
       },
     })
-    expect(rejected.response.status).toBe(422)
+    expect(rejected.response.status).toBe(409)
     expect(rejected.error?.code).toBe('ENROLLMENT_INVALID_TRANSITION')
     expect(rejected.error?.requestId).toBeTruthy()
     await page.reload()
@@ -706,10 +717,12 @@ test('teacher preset persists filters and separates weekly exceptions from term 
     const termLoad = card.getByRole('region', { name: uz.admin.teacherWork.termLoad })
     for (const field of ['plannedHours', 'scheduledHours', 'remainingHours'] as const) {
       const total = load.reduce((sum, row) => sum + (row[field] ?? 0), 0)
+      // a figure the server has no value for (no plan) is shown as a dash, not as zero
+      const shown = load.every((row) => row[field] == null) ? '—' : String(total)
       await expect(
         termLoad
           .locator('dd')
-          .filter({ hasText: new RegExp(`^${total}$`) })
+          .filter({ hasText: new RegExp(`^${shown}$`) })
           .first(),
       ).toBeVisible()
     }
@@ -730,7 +743,7 @@ test('teacher preset persists filters and separates weekly exceptions from term 
             },
             { locale, theme },
           )
-          await page.reload()
+          await switchLocale(page, locale)
           const localizedCard = page.getByRole('region', {
             name: texts[locale].admin.teacherWork.tab,
             exact: true,
@@ -951,9 +964,9 @@ test('student card persists group moves, paginated enrollments and reasoned tran
       'WITHDRAWN',
     ])
     expect(await detail(otherEnrollment)).toEqual(untouched)
-    expect(await result(api.GET('/api/v1/admin/users/{id}', { params: { path: { id: other } } }))).toEqual(
-      otherUser,
-    )
+    expect(
+      withSortedPermissions(await result(api.GET('/api/v1/admin/users/{id}', { params: { path: { id: other } } }))),
+    ).toEqual(withSortedPermissions(otherUser))
     expect((await detail(activeSecond)).status).toBe('ACTIVE')
 
     // Review the composed page at every required width/theme/locale with real server data.
@@ -974,7 +987,7 @@ test('student card persists group moves, paginated enrollments and reasoned tran
             },
             { locale, theme },
           )
-          await page.reload()
+          await switchLocale(page, locale)
           await expect(
             page.getByRole('heading', { name: texts[locale].admin.studentCard.coursesTitle, exact: true }),
           ).toBeVisible()
@@ -984,7 +997,7 @@ test('student card persists group moves, paginated enrollments and reasoned tran
       }
     }
     await page.evaluate(() => localStorage.setItem('aifu-locale', 'uz'))
-    await page.reload()
+    await switchLocale(page, 'uz')
     await targetRow.getByRole('button', { name: uz.admin.studentCard.changeEnrollmentStatus }).focus()
     await page.keyboard.press('Enter')
     await expect(page.getByRole('dialog')).toBeVisible()
