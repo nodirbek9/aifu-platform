@@ -73,8 +73,13 @@ export function UsersPage() {
         }}
       >
         <TabsList aria-label={t('admin.role')}>
-          <TabsTrigger value="users">{t('nav.adminUsers')}</TabsTrigger>
-          <TabsTrigger value="teachers">{t('admin.teacherWork.tab')}</TabsTrigger>
+          {/* the tabs switch the list in place; there is no panel for aria-controls to point at */}
+          <TabsTrigger value="users" aria-controls={undefined}>
+            {t('nav.adminUsers')}
+          </TabsTrigger>
+          <TabsTrigger value="teachers" aria-controls={undefined}>
+            {t('admin.teacherWork.tab')}
+          </TabsTrigger>
         </TabsList>
       </Tabs>
       <div className="flex flex-wrap items-end gap-3">

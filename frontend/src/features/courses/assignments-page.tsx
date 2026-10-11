@@ -53,7 +53,7 @@ export function AssignmentsPage() {
   const filtered = course !== ALL || type !== ALL || state !== ALL
 
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-1 gap-6">
       <PageHeader
         title={t('nav.assignments')}
         context={activities.isSuccess ? t('assignments.count', { count: shown.length }) : undefined}

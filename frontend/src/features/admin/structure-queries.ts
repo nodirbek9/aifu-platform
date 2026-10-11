@@ -279,7 +279,7 @@ export function useSetRequiredLocales(id: string) {
 
 // ------------------------------------------------------------------ enrollments
 
-export function useCourseEnrollmentsQuery(courseId: string, page = 0, size = 20) {
+export function useCourseEnrollmentsQuery(courseId: string, page = 0, size = 100) {
   return useQuery({
     queryKey: [...structureKeys.enrollments(courseId), page, size],
     queryFn: async () =>

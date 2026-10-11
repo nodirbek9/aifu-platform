@@ -204,10 +204,13 @@ export function EntryPanel({ timetable, entry, start, editable, onDone }: EntryP
           onValueChange={(value) => {
             set({ courseId: value, teacherUserId: start?.teacherId ?? '' })
           }}
-          options={(courses.data?.content ?? []).map((item) => ({
-            value: item.id ?? '',
-            label: `${item.subjectCode ?? ''} · ${item.title ?? ''}`,
-          }))}
+          // an archived course is no longer taught: it cannot be put on a timetable
+          options={(courses.data?.content ?? [])
+            .filter((item) => item.status !== 'ARCHIVED' || item.id === form.courseId)
+            .map((item) => ({
+              value: item.id ?? '',
+              label: `${item.subjectCode ?? ''} · ${item.title ?? ''}`,
+            }))}
         />
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
           <Select

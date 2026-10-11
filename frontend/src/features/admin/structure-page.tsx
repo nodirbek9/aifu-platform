@@ -348,7 +348,7 @@ function CoursesTab() {
                         to={`/admin/structure/courses/${course.id ?? ''}`}
                         className="text-text hover:text-primary-hover font-medium underline-offset-4 hover:underline"
                       >
-                        {course.title}
+                        {course.title || course.subjectCode || course.cohortCode}
                       </Link>
                       {course.cohortCode !== undefined && (
                         <span className="text-caption text-text-muted block">{course.cohortCode}</span>
