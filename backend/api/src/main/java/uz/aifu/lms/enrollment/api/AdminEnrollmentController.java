@@ -19,6 +19,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -99,6 +100,12 @@ public class AdminEnrollmentController {
             @RequestParam(required = false) UUID userId,
             @RequestParam(required = false) EnrollmentStatus status,
             Pageable pageable) {
+        // Teachers hold ENROLLMENT_READ for their own roster (TeacherCourseStudentsController);
+        // this administrative list, above all a student's enrollments across every course, is
+        // for administrators only.
+        if (!accessGuard.caller().isAdmin()) {
+            throw new AccessDeniedException("Enrollment administration requires an administrator");
+        }
         if (courseId != null) {
             accessGuard.requireCourseEditor(courseId);
         }

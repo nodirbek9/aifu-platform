@@ -470,7 +470,7 @@ class AdminPeopleIT extends AbstractIntegrationTest {
         }
         var unrelatedAccess =
                 rest.exchange(
-                        url("/api/v1/me"),
+                        url("/api/v1/auth/me"),
                         HttpMethod.GET,
                         new HttpEntity<>(bearer(unrelatedSession.accessToken())),
                         CurrentUserResponse.class);
