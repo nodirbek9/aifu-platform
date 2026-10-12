@@ -32,6 +32,10 @@ export function ActivityRow({ activity, withCourse = false }: ActivityRowProps) 
   const locale = useLocale()
   const to = activityPath(activity)
   const overdue = activity.state === 'OVERDUE'
+  // A quiz that was handed in and did not pass is "not passed", never "in progress".
+  const failed =
+    activity.state === 'IN_PROGRESS' && activity.type === 'QUIZ' && activity.attemptsUsed > 0
+  const shownState = failed ? 'FAILED' : activity.state
 
   const body = (
     <>
@@ -44,7 +48,9 @@ export function ActivityRow({ activity, withCourse = false }: ActivityRowProps) 
         </p>
       </div>
       <div className="grid shrink-0 justify-items-end gap-1">
-        <Badge tone={stateTone[activity.state]}>{t(`activityState.${activity.state}`)}</Badge>
+        <Badge tone={failed ? 'danger' : stateTone[activity.state]}>
+          {t(`activityState.${shownState}`)}
+        </Badge>
         {activity.dueAt !== undefined && activity.state !== 'COMPLETED' && (
           <span
             className={cn(

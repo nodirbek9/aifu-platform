@@ -189,7 +189,8 @@
     "TODO": "Не выполнено",
     "IN_PROGRESS": "В работе",
     "COMPLETED": "Выполнено",
-    "OVERDUE": "Просрочено"
+    "OVERDUE": "Просрочено",
+    "FAILED": "Не пройдено"
   },
   "gradeSource": {
     "QUIZ": "Тест",

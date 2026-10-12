@@ -515,7 +515,11 @@ function Practice({ courseId, lessonId, blocks, lessonPath }: PracticeProps) {
   )
   if (!blocks.some((block) => block.kind === 'ref') && ofLesson.length === 0) return null
 
-  const practiceStep = lessonPath?.steps.practice
+  // The section lists the lesson's test and its practice, so it is done only when both are.
+  const sectionSteps = [lessonPath?.steps.test, lessonPath?.steps.practice].filter(
+    (step) => step !== undefined && step !== 'NONE',
+  )
+  const sectionDone = sectionSteps.length > 0 && sectionSteps.every((step) => step === 'DONE')
   const practiceActivityId = lessonPath?.practiceActivityId
   const practiceActivity =
     practiceActivityId !== undefined
@@ -536,9 +540,9 @@ function Practice({ courseId, lessonId, blocks, lessonPath }: PracticeProps) {
             <h2 className="font-display text-display-lg text-text font-semibold">
               {t('lesson.practiceTitle')}
             </h2>
-            {practiceStep !== undefined && practiceStep !== 'NONE' && (
-              <Badge tone={practiceStep === 'DONE' ? 'success' : 'warning'}>
-                {t(practiceStep === 'DONE' ? 'steps.statusDone' : 'steps.statusTodo')}
+            {sectionSteps.length > 0 && (
+              <Badge tone={sectionDone ? 'success' : 'warning'}>
+                {t(sectionDone ? 'steps.statusDone' : 'steps.statusTodo')}
               </Badge>
             )}
           </div>

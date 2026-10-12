@@ -189,7 +189,8 @@
     "TODO": "To do",
     "IN_PROGRESS": "In progress",
     "COMPLETED": "Completed",
-    "OVERDUE": "Overdue"
+    "OVERDUE": "Overdue",
+    "FAILED": "Not passed"
   },
   "gradeSource": {
     "QUIZ": "Quiz",

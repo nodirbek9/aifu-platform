@@ -145,7 +145,11 @@ export function DropCell({
           aria-label={addLabel}
           onClick={onAdd}
           data-print-hidden
-          className="text-text-muted hover:bg-surface-sunken hover:text-text focus-visible:outline-focus-ring grid min-h-8 place-items-center rounded-sm opacity-0 group-hover:opacity-100 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-2"
+          className={cn(
+            'text-text-muted hover:bg-surface-sunken hover:text-text focus-visible:outline-focus-ring grid min-h-8 place-items-center rounded-sm group-hover:opacity-100 hover:opacity-100 focus-visible:opacity-100 focus-visible:outline-2',
+            // an empty slot always shows its "+": a touch screen has no hover to reveal it
+            entries.length === 0 ? 'opacity-40' : 'opacity-0',
+          )}
         >
           <Plus aria-hidden className="size-4" />
         </button>

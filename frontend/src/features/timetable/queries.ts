@@ -20,10 +20,14 @@ export const timetableKeys = {
 
 /** Today's classes on the campus calendar: a student's by group, a teacher's own. */
 export function useTodayQuery(side: TimetableSide = 'student') {
+  // without the locale the server falls back to the browser's language, not the app's
+  const locale = useLocale()
   return useQuery({
-    queryKey: timetableKeys.today(side),
+    queryKey: [...timetableKeys.today(side), locale],
     queryFn: async () =>
-      narrowDay(await unwrap(api.GET('/api/v1/timetable/today', { params: { query: { as: side } } }))),
+      narrowDay(
+        await unwrap(api.GET('/api/v1/timetable/today', { params: { query: { as: side, locale } } })),
+      ),
     // a class may be cancelled or moved during the day
     refetchInterval: 5 * 60_000,
   })

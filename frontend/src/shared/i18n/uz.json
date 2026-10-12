@@ -189,7 +189,8 @@
     "TODO": "Bajarilmagan",
     "IN_PROGRESS": "Jarayonda",
     "COMPLETED": "Bajarilgan",
-    "OVERDUE": "Muddati oʻtgan"
+    "OVERDUE": "Muddati oʻtgan",
+    "FAILED": "Oʻtmadi"
   },
   "gradeSource": {
     "QUIZ": "Test",

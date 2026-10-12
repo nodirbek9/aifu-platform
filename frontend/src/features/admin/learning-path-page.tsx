@@ -46,6 +46,13 @@ import {
   useCourseEnrollmentsQuery,
   useCoursesQuery,
 } from './structure-queries'
+import { useUserQuery } from './users-queries'
+
+/** A user's name from their id (the query is shared, so a repeated id costs one request). */
+function UserName({ id }: { id: string | undefined }) {
+  const user = useUserQuery(id ?? '')
+  return <>{user.data?.fullName ?? user.data?.username ?? '—'}</>
+}
 
 function ProblemAlert({ error }: { error: unknown }) {
   const { t } = useTranslation()
@@ -189,6 +196,8 @@ export function LearningPathCard({ courseId, courseTitle }: { courseId: string; 
   const treeQuery = useCurriculumTreeQuery(courseId)
 
   const config = configQuery.data
+  const enabledByQuery = useUserQuery(config?.enabledBy ?? '')
+  const enabledByName = enabledByQuery.data?.fullName ?? enabledByQuery.data?.username ?? '—'
 
   const [enabled, setEnabled] = useState(false)
   const [midtermActivityId, setMidtermActivityId] = useState<string>('')
@@ -299,7 +308,7 @@ export function LearningPathCard({ courseId, courseTitle }: { courseId: string; 
               <p className="text-caption text-text-muted mt-1">
                 {t('admin.learningPath.enabledAt', {
                   date: formatDateTime(config.enabledAt, locale),
-                  by: config.enabledBy ?? '',
+                  by: enabledByName,
                 })}
               </p>
             )}
@@ -393,6 +402,22 @@ function ExtraAttemptsSection({
   const grantsQuery = useAttemptGrantsQuery({ courseId, page, size: 10 })
   const [grantDialogOpen, setGrantDialogOpen] = useState(false)
 
+  // the table names the quiz and the student instead of showing their ids
+  const quizzesQuery = useCourseQuizzesQuery(courseId)
+  const enrollmentsQuery = useCourseEnrollmentsQuery(courseId)
+  const quizLabelById = new Map(
+    (quizzesQuery.data ?? []).map((q) => [
+      q.id ?? '',
+      q.translations?.find((tr) => tr.locale === locale)?.title ??
+        q.translations?.[0]?.title ??
+        q.code ??
+        '',
+    ]),
+  )
+  const studentByEnrollmentId = new Map(
+    (enrollmentsQuery.data ?? []).map((en) => [en.id ?? '', en.studentFullName ?? '']),
+  )
+
   const grantsData = grantsQuery.data
   const grants = grantsData?.content ?? []
   const totalPages = grantsData?.totalPages ?? 1
@@ -463,11 +488,17 @@ function ExtraAttemptsSection({
                 <TableBody>
                   {grants.map((grant: AttemptGrantView) => (
                     <TableRow key={grant.id}>
-                      <TableCell className="text-small font-mono">{grant.quizId ?? '—'}</TableCell>
-                      <TableCell className="text-small font-mono">{grant.enrollmentId ?? '—'}</TableCell>
+                      <TableCell className="text-small">
+                        {quizLabelById.get(grant.quizId ?? '') ?? grant.quizId ?? '—'}
+                      </TableCell>
+                      <TableCell className="text-small">
+                        {studentByEnrollmentId.get(grant.enrollmentId ?? '') ??
+                          grant.enrollmentId ??
+                          '—'}
+                      </TableCell>
                       <TableCell className="text-small">{grant.reason ?? '—'}</TableCell>
-                      <TableCell className="text-small text-text-muted font-mono">
-                        {grant.grantedBy ?? '—'}
+                      <TableCell className="text-small text-text-muted">
+                        <UserName id={grant.grantedBy} />
                       </TableCell>
                       <TableCell className="text-small text-text-muted">
                         {grant.createdAt ? formatDateTime(grant.createdAt, locale) : '—'}
@@ -566,7 +597,8 @@ export function GiveAttemptDialog({
           : ''
         : (quizChoices[0]?.value ?? '')
 
-  const enrollments = enrollmentsQuery.data ?? []
+  // an attempt is only useful to a student who can still take it
+  const enrollments = (enrollmentsQuery.data ?? []).filter((en) => en.status === 'ACTIVE')
   const enrollmentChoices = enrollments.map((en) => ({
     value: en.id ?? '',
     label: en.studentFullName ?? en.id ?? '',

@@ -65,6 +65,7 @@ export function useUserQuery(id: string) {
   return useQuery({
     queryKey: userKeys.user(id),
     queryFn: () => unwrap(api.GET('/api/v1/admin/users/{id}', { params: { path: { id } } })),
+    enabled: id !== '',
   })
 }
 
