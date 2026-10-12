@@ -43,6 +43,7 @@ public class RequestIdFilter extends OncePerRequestFilter {
         } finally {
             MDC.remove(REQUEST_ID_KEY);
             MDC.remove("userId");
+            MDC.remove("userLabel");
         }
     }
 

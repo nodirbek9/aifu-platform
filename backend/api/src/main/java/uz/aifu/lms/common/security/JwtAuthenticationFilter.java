@@ -63,6 +63,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                                 // Correlates log lines with the acting user. Never log the token
                                 // itself.
                                 MDC.put("userId", user.id().toString());
+                                // The audit trail keeps this as the readable "who" of a record.
+                                MDC.put("userLabel", user.username());
                             });
         }
         chain.doFilter(request, response);

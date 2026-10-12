@@ -22,6 +22,7 @@ import uz.aifu.lms.iam.api.dto.AuthDtos.LoginRequest;
 import uz.aifu.lms.iam.api.dto.AuthDtos.TokenResponse;
 import uz.aifu.lms.iam.api.dto.RoleDtos.PermissionView;
 import uz.aifu.lms.iam.api.dto.RoleDtos.RoleView;
+import uz.aifu.lms.iam.api.dto.UserDtos.SetRolesRequest;
 import uz.aifu.lms.iam.domain.RoleCode;
 import uz.aifu.lms.iam.domain.User;
 import uz.aifu.lms.support.AbstractIntegrationTest;
@@ -100,6 +101,31 @@ class AdminSurfacesIT extends AbstractIntegrationTest {
                         PageResponse.class);
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertThat(response.getBody().content()).isNotEmpty();
+    }
+
+    @Test
+    void auditLog_namesTheActorOfAnAuthenticatedAction() {
+        User admin = userFixtures.activeUser(RoleCode.ADMIN);
+        User target = userFixtures.activeUser(RoleCode.STUDENT);
+        HttpHeaders headers = bearer(login(admin));
+        ResponseEntity<String> granted =
+                rest.exchange(
+                        url("/api/v1/admin/users/" + target.getId() + "/roles"),
+                        HttpMethod.PUT,
+                        new HttpEntity<>(
+                                new SetRolesRequest(java.util.Set.of("STUDENT", "TEACHER")),
+                                headers),
+                        String.class);
+        assertThat(granted.getStatusCode()).isEqualTo(HttpStatus.OK);
+
+        ResponseEntity<String> trail =
+                rest.exchange(
+                        url("/api/v1/admin/audit-log?actorUserId=" + admin.getId()),
+                        HttpMethod.GET,
+                        new HttpEntity<>(headers),
+                        String.class);
+        assertThat(trail.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(trail.getBody()).contains("\"actorLabel\":\"" + admin.getUsername() + "\"");
     }
 
     @Test
