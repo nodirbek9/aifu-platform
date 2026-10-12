@@ -127,7 +127,7 @@ class AttemptGrantIT extends AbstractIntegrationTest {
     }
 
     @Test
-    void secondGrant_forSameStudentAndQuiz_refusedWithInvalidStateTransition() {
+    void secondGrant_isRefusedWhileTheFirstIsUnused_andAllowedOnceItIsUsedUp() {
         TestScenario scenario = setupScenario();
         exhaustAttempts(scenario.studentToken, scenario.quizId);
 
@@ -141,7 +141,8 @@ class AttemptGrantIT extends AbstractIntegrationTest {
                         AttemptGrantView.class);
         assertThat(firstGrant.getStatusCode()).isEqualTo(HttpStatus.CREATED);
 
-        ResponseEntity<ApiError> secondGrant =
+        // the first grant is still unused: the student has an attempt left, so no second one
+        ResponseEntity<ApiError> tooEarly =
                 rest.exchange(
                         grantUrl(scenario.quizId, scenario.enrollment.getId()),
                         HttpMethod.POST,
@@ -149,11 +150,32 @@ class AttemptGrantIT extends AbstractIntegrationTest {
                                 new AttemptGrantRequest("second exam retake"),
                                 bearer(scenario.adminToken)),
                         ApiError.class);
+        assertThat(tooEarly.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        assertThat(tooEarly.getBody()).isNotNull();
+        assertThat(tooEarly.getBody().code()).isEqualTo("VALIDATION_FAILED");
 
-        assertThat(secondGrant.getStatusCode())
-                .isIn(HttpStatus.CONFLICT, HttpStatus.UNPROCESSABLE_ENTITY);
-        assertThat(secondGrant.getBody()).isNotNull();
-        assertThat(secondGrant.getBody().code()).isEqualTo("INVALID_STATE_TRANSITION");
+        // the extra attempt is used and failed: now the admin may give one more
+        AttemptDetail extra = startAttempt(scenario.studentToken, scenario.quizId);
+        submit(scenario.studentToken, extra.id());
+
+        ResponseEntity<AttemptGrantView> secondGrant =
+                rest.exchange(
+                        grantUrl(scenario.quizId, scenario.enrollment.getId()),
+                        HttpMethod.POST,
+                        new HttpEntity<>(
+                                new AttemptGrantRequest("second exam retake"),
+                                bearer(scenario.adminToken)),
+                        AttemptGrantView.class);
+        assertThat(secondGrant.getStatusCode()).isEqualTo(HttpStatus.CREATED);
+
+        ResponseEntity<AttemptAllowanceView> allowance =
+                rest.exchange(
+                        url("/api/v1/quizzes/" + scenario.quizId + "/attempts/me/allowance"),
+                        HttpMethod.GET,
+                        new HttpEntity<>(bearer(scenario.studentToken)),
+                        AttemptAllowanceView.class);
+        assertThat(allowance.getBody()).isNotNull();
+        assertThat(allowance.getBody().attemptsAllowed()).isEqualTo(4);
     }
 
     @Test

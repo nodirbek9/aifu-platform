@@ -11,7 +11,6 @@ import uz.aifu.lms.assessment.domain.QuizAttemptGrant;
 import uz.aifu.lms.assessment.persistence.QuizAttemptGrantRepository;
 import uz.aifu.lms.audit.app.AuditService;
 import uz.aifu.lms.audit.domain.AuditAction;
-import uz.aifu.lms.common.error.ErrorCode;
 import uz.aifu.lms.common.error.Exceptions;
 import uz.aifu.lms.enrollment.app.EnrollmentService;
 import uz.aifu.lms.enrollment.domain.Enrollment;
@@ -66,12 +65,9 @@ public class AttemptGrantService {
 
         int used = attemptService.maxAttemptNumber(quizId, enrollmentId);
         long existingGrants = grants.countByQuiz_IdAndEnrollment_Id(quizId, enrollmentId);
-        if (existingGrants >= 1) {
-            throw Exceptions.conflict(
-                    ErrorCode.INVALID_STATE_TRANSITION,
-                    "At most one grant is allowed per quiz and enrollment");
-        }
 
+        // A new grant is possible only once the whole allowance (earlier grants included) is
+        // used, so at most one grant is ever unused.
         long allowance = quiz.getMaxAttempts() + existingGrants;
 
         if (used < allowance) {

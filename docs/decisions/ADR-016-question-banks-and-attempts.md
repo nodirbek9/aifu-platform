@@ -40,6 +40,13 @@ snapshot). `max_attempts` is checked in the service only; seeds set it to 3. Uni
    PRACTICE (checked-answer task): no limit, pass 100, `reveal_policy = NEVER`.
    MIDTERM: max 2, pool 30, 2400 s, pass 60, `AFTER_LAST_ATTEMPT`.
 
+## Amendment (2026-10-12, owner)
+Point 4 no longer limits an enrollment to one grant in total. A student who failed the extra
+attempt too was stuck for good ("contact the dean" with nothing the admin could do). The admin may
+give another attempt, with a reason, each time the whole allowance (earlier grants included) is
+used up. The guard "has used the whole allowance" is unchanged, so still at most one unused grant;
+every grant stays append-only and audited. `AttemptGrantIT` covers both sides.
+
 ## Consequences
 - A student who already used 3 attempts keeps them (history intact); with max 2 they simply have
   none left. ADR-018 makes sure that cannot lock them out of lessons they already reached.
