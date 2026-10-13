@@ -301,16 +301,25 @@ class StudentDataIsolationIT extends AbstractIntegrationTest {
         // Prove the victim has real rows in the read model before exercising denied reads.
         for (AdminProblemType type :
                 List.of(AdminProblemType.STUDENT_WITHOUT_GROUP, AdminProblemType.LOCKED_ACCOUNT)) {
-            ResponseEntity<PageResponse<AdminProblemView>> allowed =
-                    rest.exchange(
-                            url("/api/v1/admin/problems?type=" + type + "&size=100"),
-                            HttpMethod.GET,
-                            new HttpEntity<>(bearer(adminToken)),
-                            new ParameterizedTypeReference<>() {});
-            assertThat(allowed.getStatusCode()).isEqualTo(HttpStatus.OK);
-            assertThat(allowed.getBody().content())
-                    .extracting(AdminProblemView::userId)
-                    .contains(owner.getId());
+            // The suite shares one database, so the list can span several pages.
+            List<UUID> seen = new java.util.ArrayList<>();
+            boolean hasNext = true;
+            for (int page = 0; hasNext; page++) {
+                ResponseEntity<PageResponse<AdminProblemView>> allowed =
+                        rest.exchange(
+                                url(
+                                        "/api/v1/admin/problems?type="
+                                                + type
+                                                + "&size=100&page="
+                                                + page),
+                                HttpMethod.GET,
+                                new HttpEntity<>(bearer(adminToken)),
+                                new ParameterizedTypeReference<>() {});
+                assertThat(allowed.getStatusCode()).isEqualTo(HttpStatus.OK);
+                allowed.getBody().content().forEach(p -> seen.add(p.userId()));
+                hasNext = allowed.getBody().hasNext();
+            }
+            assertThat(seen).contains(owner.getId());
         }
 
         List<String> queries = new java.util.ArrayList<>();
