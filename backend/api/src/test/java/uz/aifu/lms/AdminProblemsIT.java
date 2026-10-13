@@ -379,7 +379,7 @@ class AdminProblemsIT extends AbstractIntegrationTest {
         createQuizAttempt(quizId, enrExhausted.getId(), midtermActivityId, 2, "GRADED", false, 50);
 
         // Positive 2: 1 grant given, student also failed attempt 3 -> EXHAUSTED, grantAvailable =
-        // false
+        // true (ADR-016 amendment: another grant once the allowance is used up)
         User studentGrantExhausted = createStudentUser(true);
         Enrollment enrGrantExhausted = enroll(course, studentGrantExhausted);
         createQuizAttempt(
@@ -568,7 +568,7 @@ class AdminProblemsIT extends AbstractIntegrationTest {
                         .orElseThrow();
         assertThat(itemPositive2.getAttemptsUsed()).isEqualTo(3);
         assertThat(itemPositive2.getAttemptsAllowed()).isEqualTo(3);
-        assertThat(itemPositive2.getGrantAvailable()).isFalse();
+        assertThat(itemPositive2.getGrantAvailable()).isTrue();
 
         // Check Positive 3 with elapsed attempt
         AdminProblemView itemPositive3 =

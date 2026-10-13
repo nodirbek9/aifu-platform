@@ -46,6 +46,9 @@ attempt too was stuck for good ("contact the dean" with nothing the admin could 
 give another attempt, with a reason, each time the whole allowance (earlier grants included) is
 used up. The guard "has used the whole allowance" is unchanged, so still at most one unused grant;
 every grant stays append-only and audited. `AttemptGrantIT` covers both sides.
+The service now also enforces the rest of point 4, which it had skipped: no grant when the
+student passed or still has a usable attempt (open and not timed out, or waiting for grading).
+V037 makes `grant_available` true for every MIDTERM_ATTEMPTS_EXHAUSTED problem row.
 
 ## Consequences
 - A student who already used 3 attempts keeps them (history intact); with max 2 they simply have

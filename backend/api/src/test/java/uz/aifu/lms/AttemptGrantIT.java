@@ -179,6 +179,46 @@ class AttemptGrantIT extends AbstractIntegrationTest {
     }
 
     @Test
+    void grantAttempt_whileTheExtraAttemptIsInProgress_isRefused() {
+        TestScenario scenario = setupScenario();
+        exhaustAttempts(scenario.studentToken, scenario.quizId);
+        assertThat(grant(scenario, "exam retake allowed").getStatusCode())
+                .isEqualTo(HttpStatus.CREATED);
+        startAttempt(scenario.studentToken, scenario.quizId);
+
+        ResponseEntity<ApiError> refused = grant(scenario, "second exam retake");
+
+        assertThat(refused.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        assertThat(refused.getBody()).isNotNull();
+        assertThat(refused.getBody().code()).isEqualTo("VALIDATION_FAILED");
+    }
+
+    @Test
+    void grantAttempt_forAStudentWhoPassed_isRefused() {
+        TestScenario scenario = setupScenario();
+        exhaustAttempts(scenario.studentToken, scenario.quizId);
+        jdbc.update(
+                "UPDATE quiz_attempts SET passed = true WHERE quiz_id = ? AND enrollment_id = ?"
+                        + " AND attempt_number = 2",
+                scenario.quizId,
+                scenario.enrollment.getId());
+
+        ResponseEntity<ApiError> refused = grant(scenario, "exam retake allowed");
+
+        assertThat(refused.getStatusCode()).isEqualTo(HttpStatus.BAD_REQUEST);
+        assertThat(refused.getBody()).isNotNull();
+        assertThat(refused.getBody().code()).isEqualTo("VALIDATION_FAILED");
+    }
+
+    private ResponseEntity<ApiError> grant(TestScenario scenario, String reason) {
+        return rest.exchange(
+                grantUrl(scenario.quizId, scenario.enrollment.getId()),
+                HttpMethod.POST,
+                new HttpEntity<>(new AttemptGrantRequest(reason), bearer(scenario.adminToken)),
+                ApiError.class);
+    }
+
+    @Test
     void grantAttempt_forQuizOfAnotherCourse_isRefusedAsDifferentCourses() {
         TestScenario scenario = setupScenario();
         Course otherCourse = enrollmentFixtures.publishedCourse(150);

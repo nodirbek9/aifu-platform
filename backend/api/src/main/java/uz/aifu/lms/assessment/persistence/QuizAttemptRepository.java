@@ -32,6 +32,24 @@ public interface QuizAttemptRepository extends JpaRepository<QuizAttempt, UUID> 
     int findMaxAttemptNumber(
             @Param("quizId") UUID quizId, @Param("enrollmentId") UUID enrollmentId);
 
+    /**
+     * True when the student already passed the quiz or still has a usable attempt (open and not
+     * timed out, or waiting for grading). Same rule as the MIDTERM_ATTEMPTS_EXHAUSTED problem.
+     */
+    @Query(
+            """
+            select count(a) > 0 from QuizAttempt a
+            where a.quiz.id = :quizId and a.enrollment.id = :enrollmentId
+              and ((a.status = uz.aifu.lms.assessment.domain.AttemptStatus.GRADED and a.passed = true)
+                or a.status = uz.aifu.lms.assessment.domain.AttemptStatus.SUBMITTED
+                or (a.status = uz.aifu.lms.assessment.domain.AttemptStatus.IN_PROGRESS
+                    and (a.expiresAt is null or a.expiresAt > :now)))
+            """)
+    boolean existsPassedOrUsable(
+            @Param("quizId") UUID quizId,
+            @Param("enrollmentId") UUID enrollmentId,
+            @Param("now") Instant now);
+
     /** Backs {@code /quizzes/{id}/attempts/me}. */
     @EntityGraph(attributePaths = "quiz")
     Page<QuizAttempt> findByEnrollment_IdAndQuiz_IdOrderByAttemptNumberDesc(

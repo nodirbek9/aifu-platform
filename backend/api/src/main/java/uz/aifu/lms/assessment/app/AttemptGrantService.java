@@ -2,6 +2,7 @@ package uz.aifu.lms.assessment.app;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
+import java.time.Clock;
 import java.util.Map;
 import java.util.UUID;
 import org.springframework.stereotype.Service;
@@ -9,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import uz.aifu.lms.assessment.domain.Quiz;
 import uz.aifu.lms.assessment.domain.QuizAttemptGrant;
 import uz.aifu.lms.assessment.persistence.QuizAttemptGrantRepository;
+import uz.aifu.lms.assessment.persistence.QuizAttemptRepository;
 import uz.aifu.lms.audit.app.AuditService;
 import uz.aifu.lms.audit.domain.AuditAction;
 import uz.aifu.lms.common.error.Exceptions;
@@ -25,6 +27,8 @@ public class AttemptGrantService {
     private final EnrollmentService enrollments;
     private final EntityManager entityManager;
     private final AuditService auditService;
+    private final QuizAttemptRepository attempts;
+    private final Clock clock;
 
     public AttemptGrantService(
             QuizAttemptGrantRepository grants,
@@ -32,13 +36,17 @@ public class AttemptGrantService {
             AttemptService attemptService,
             EnrollmentService enrollments,
             EntityManager entityManager,
-            AuditService auditService) {
+            AuditService auditService,
+            QuizAttemptRepository attempts,
+            Clock clock) {
         this.grants = grants;
         this.quizzes = quizzes;
         this.attemptService = attemptService;
         this.enrollments = enrollments;
         this.entityManager = entityManager;
         this.auditService = auditService;
+        this.attempts = attempts;
+        this.clock = clock;
     }
 
     @Transactional
@@ -72,6 +80,10 @@ public class AttemptGrantService {
 
         if (used < allowance) {
             throw Exceptions.validation("Student still has attempts remaining");
+        }
+        if (attempts.existsPassedOrUsable(quizId, enrollmentId, clock.instant())) {
+            throw Exceptions.validation(
+                    "Student has passed this quiz or still has an attempt in progress");
         }
 
         User admin = entityManager.getReference(User.class, adminUserId);
